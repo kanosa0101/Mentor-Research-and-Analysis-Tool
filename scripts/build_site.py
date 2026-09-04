@@ -36,6 +36,8 @@ def main():
             rec["school_name"] = school_names.get(cfg["school"], cfg["school"])
             prov = rec.get("provenance", {})
             rec["institutes"] = rec.get("institutes") or []
+            rec["facets"] = [dict(f, id=f["id"].split(".", 1)[-1])
+                             for f in rec.get("facets") or []]
             rec["inst"] = "、".join(rec["institutes"])
             rec["page"] = f"{cfg['school']}-{cfg['dept']}-{p.slug}"
             profs.append(rec)

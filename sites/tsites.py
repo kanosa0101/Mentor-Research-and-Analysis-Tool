@@ -19,7 +19,8 @@ def iter_roster(cfg):
             scroll=cfg["list"].get("scroll", True))
         soup = BeautifulSoup(html, "html.parser")
         for a in soup.select("a[href]"):
-            nm = re.sub(r"\s+", "", str(a.get("title") or a.get_text(strip=True) or ""))
+            text = re.sub(r"\s+", "", str(a.get_text(strip=True) or ""))
+            nm = text or re.sub(r"\s+", "", str(a.get("title") or ""))
             if not re.match(r"^[\u4e00-\u9fa5·]{2,4}$", nm):
                 continue
             href = str(a.get("href") or "")
