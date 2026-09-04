@@ -32,8 +32,18 @@ def fetch(method, url, data=None, refresh=False):
         meta = json.loads(meta_p.read_text(encoding="utf-8"))
         return body_p.read_bytes(), meta, True
     _throttle()
-    r = requests.request(method, url, data=data, timeout=30,
+    last_err = None
+    for attempt in range(3):
+        try:
+            r = _request(method, url, data=data, timeout=30,
                          headers={"User-Agent": "Mozilla/5.0 (advisor-research local tool)"})
+            break
+        except requests.RequestException as e:
+            last_err = e
+            if attempt < 2:
+                time.sleep(3 * (attempt + 1))
+    else:
+        raise last_err
     r.raise_for_status()
     CACHE.mkdir(parents=True, exist_ok=True)
     body_p.write_bytes(r.content)
@@ -59,6 +69,21 @@ def fetch_text(method, url, data=None, refresh=False):
 
 
 _pw = None
+_direct = False
+
+
+def set_direct(enabled):
+    """绕过环境代理直连（对被代理分流规则拦截的站点用）。"""
+    global _direct
+    _direct = enabled
+
+
+def _request(method, url, **kw):
+    if _direct:
+        kw["proxies"] = {"http": None, "https": None}
+    s = requests.Session()
+    s.trust_env = not _direct
+    return s.request(method, url, **kw)
 
 
 def _get_browser():
@@ -66,7 +91,8 @@ def _get_browser():
     if _pw is None:
         from playwright.sync_api import sync_playwright
         _pw = sync_playwright().start()
-        _pw.browser = _pw.chromium.launch(headless=True)
+        kw = {"proxy": {"server": "direct://"}} if _direct else {}
+        _pw.browser = _pw.chromium.launch(headless=True, **kw)
     return _pw.browser
 
 

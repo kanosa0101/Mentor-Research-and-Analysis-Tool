@@ -184,6 +184,8 @@ def main():
     ap.add_argument("--refresh", action="store_true")
     args = ap.parse_args()
     cfg = load_cfg(args.school, args.dept)
+    if cfg.get("direct"):
+        fetch.set_direct(True)
     hook = load_hook(cfg)
     stats = {}
     if args.phase in ("all", "roster"):
