@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 副教授 (硕导,)
+title: 副教授
 supervisor: 硕导
 email: linfu@whu.edu.cn
 phone: '68775717'
@@ -119,6 +119,12 @@ detail_url: https://cs.whu.edu.cn/info/1019/2466.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2466.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -126,7 +132,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2466.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -150,9 +156,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2466.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

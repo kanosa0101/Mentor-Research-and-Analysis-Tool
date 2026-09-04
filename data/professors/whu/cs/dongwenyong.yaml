@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 教授 (博导,硕导)
+title: 教授
 supervisor: 博导、硕导
 email: dwy@whu.edu.cn
 phone: '68775603'
@@ -174,37 +174,6 @@ detail_url: https://cs.whu.edu.cn/info/1019/2881.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2881.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.whu.edu.cn/szdw/zrjs.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2881.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  supervisor:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2881.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2881.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  phone:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2881.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2881.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
 facets:
 - id: topic.ml
   origin: computed
@@ -231,3 +200,34 @@ facets:
   confidence: auto
   evidence:
   - keyword:算法设计
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.whu.edu.cn/szdw/zrjs.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.whu.edu.cn/info/1019/2881.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2881.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2881.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2881.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2881.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

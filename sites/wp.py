@@ -80,15 +80,23 @@ def parse_wp_detail(cfg, html, url):
     label_re = re.compile(
         LABEL + r"\s*[:：]\s*([^\n，。；]{0,120})(?=\s*" + LABEL + r"\s*[:：]|$)", re.I)
 
-    def handle(label, value, nxt=""):
+    def handle(label, value, rest=()):
         k = re.sub(r"\s+", "", label).lower()
         v = value.strip()
+        nxt = rest[0] if rest else ""
         if not v and not nxt:
             return
         if "姓" in k:
             out.setdefault("name", v or nxt)
         elif "职" in k and "称" in k:
-            t = v or nxt
+            # 内联标签会把词拆碎成多行（"职称：/副/教授、博士生导师"）, 逐行拼回
+            t = v
+            for extra in rest:
+                if re.search(r"教授|研究员|讲师|助教|工程师|实验师|馆员|院士", t):
+                    break
+                if re.match(LABEL, extra):
+                    break
+                t += extra
             out.setdefault("title", t)
             sup = [s for s in ("博导", "硕导") if s in t]
             if sup:
@@ -107,7 +115,7 @@ def parse_wp_detail(cfg, html, url):
         else:
             e = normalize_email(v)
             if not e:
-                e = normalize_email(v + " " + nxt)
+                e = normalize_email(v + " " + " ".join(rest))
             if not e:
                 for tok in re.split(r"\s+", v):
                     e = normalize_email(tok)
@@ -118,8 +126,7 @@ def parse_wp_detail(cfg, html, url):
 
     for i, line in enumerate(lines):
         for m in label_re.finditer(line):
-            nxt = lines[i + 1] if i + 1 < len(lines) else ""
-            handle(m.group(1), m.group(2), nxt)
+            handle(m.group(1), m.group(2), lines[i + 1:i + 4])
 
     if "email" not in out:
         for a in box.select('a[href^="mailto:"]'):

@@ -4,7 +4,8 @@ aliases: []
 school: tsinghua
 dept: cs
 status: enriched
-title: 长聘副教授，博士生导师
+title: 长聘副教授
+supervisor: 博导
 email: xuhua@mail.tsinghua.edu.cn
 phone: '13810102923'
 bio_raw: '姓名：徐华
@@ -374,6 +375,17 @@ detail_url: https://www.cs.tsinghua.edu.cn/info/1122/3562.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1122/3562.htm
 first_seen: '2026-09-02'
 last_verified: '2026-09-02'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -381,7 +393,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://www.cs.tsinghua.edu.cn/info/1122/3562.htm
     fetched_at: '2026-09-02'
     confidence: auto
@@ -410,14 +422,8 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1122/3562.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1122/3562.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

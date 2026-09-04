@@ -4,7 +4,7 @@ aliases: []
 school: ucas
 dept: ict
 status: enriched
-title: 研究员（院士）
+title: 研究员
 supervisor: 博导
 email: snh@ict.ac.cn
 bio_raw: '1985.09-1989.07：北京大学计算机系学习，获学士学位
@@ -41,6 +41,12 @@ detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496720.ht
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496720.html
 first_seen: '2026-09-02'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
 provenance:
   name:
     origin: crawled
@@ -48,7 +54,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496720.html
     fetched_at: '2026-09-02'
     confidence: auto
@@ -77,9 +83,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496720.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构

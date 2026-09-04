@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 教授 (博导,硕导)
+title: 教授
 supervisor: 博导、硕导
 email: wangdw@whu.edu.cn
 phone: 办公地点：
@@ -77,6 +77,17 @@ detail_url: https://cs.whu.edu.cn/info/1019/2939.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2939.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -84,7 +95,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2939.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -113,14 +124,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2939.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

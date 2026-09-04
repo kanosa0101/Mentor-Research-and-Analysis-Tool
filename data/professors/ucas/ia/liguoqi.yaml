@@ -4,7 +4,8 @@ aliases: []
 school: ucas
 dept: ia
 status: enriched
-title: 研究员、博士生导师
+title: 研究员
+supervisor: 博导
 email: guoqi.li@ia.ac.cn
 bio_raw: '李国齐
 
@@ -96,6 +97,12 @@ detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130910.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130910.html
 first_seen: '2026-09-02'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -108,7 +115,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130910.html
     fetched_at: '2026-09-02'
     confidence: auto
@@ -122,9 +129,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130910.html
+    fetched_at: '2026-09-02'
+    confidence: auto

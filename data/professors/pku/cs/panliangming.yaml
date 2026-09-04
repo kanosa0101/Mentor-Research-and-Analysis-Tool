@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 助理教授/研究员
+title: 助理教授
 email: liangmingpan@pku.edu.cn
 phone: 86-10-********
 bio_raw: '个人主页：
@@ -140,6 +140,22 @@ detail_url: https://cs.pku.edu.cn/info/1075/3937.htm
 profile_url: https://cs.pku.edu.cn/info/1075/3937.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -147,7 +163,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -181,19 +197,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1075/3937.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

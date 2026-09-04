@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 副研究员 (硕导)
+title: 副研究员
 supervisor: 硕导
 email: zhurong@whu.edu.cn
 phone: 办公地点：
@@ -74,6 +74,22 @@ detail_url: https://cs.whu.edu.cn/info/1019/2479.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2479.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -81,7 +97,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2479.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -105,19 +121,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2479.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

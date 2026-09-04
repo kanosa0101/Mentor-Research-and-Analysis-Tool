@@ -174,6 +174,15 @@ def _merge(prof, field, value, prov, changes=None):
         value = normalize_email(value)
         if not value:
             return
+    if field == "title":
+        # 职称规范化: 剥括号导师资格/长尾/空格, 统一规范词表
+        from crawler.title_util import normalize_title
+        value, sup_bits = normalize_title(value)
+        if sup_bits and not prof.supervisor:
+            prov_sup = Provenance(source=prov.source, fetched_at=prov.fetched_at)
+            _merge(prof, "supervisor", sup_bits, prov_sup, changes)
+        if not value:
+            return
     old = prof.provenance.get(field)
     if old is not None and old.origin == "manual":
         return

@@ -237,7 +237,18 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1367/19061.htm
 profile_url: https://ccst.jlu.edu.cn/info/1367/19061.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -259,14 +270,3 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/19061.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息

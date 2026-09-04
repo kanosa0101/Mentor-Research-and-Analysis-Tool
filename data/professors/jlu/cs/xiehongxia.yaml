@@ -4,7 +4,8 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
-title: 副
+title: 副教授
+supervisor: 博导
 bio_raw: '谢洪霞
 
   职称：
@@ -950,23 +951,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1359/18959.htm
 profile_url: https://ccst.jlu.edu.cn/info/1359/18959.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -993,3 +978,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:医学影像
+provenance:
+  name:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

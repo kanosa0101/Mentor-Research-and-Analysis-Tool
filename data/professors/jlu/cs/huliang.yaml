@@ -219,7 +219,28 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1175/18463.htm
 profile_url: https://ccst.jlu.edu.cn/info/1175/18463.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术
 provenance:
   name:
     origin: crawled
@@ -246,24 +267,3 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1175/18463.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络技术

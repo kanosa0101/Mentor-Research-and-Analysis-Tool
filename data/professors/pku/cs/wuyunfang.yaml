@@ -4,7 +4,8 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 副教授，博士生导师  职务：计算智能系副系主任
+title: 副教授
+supervisor: 博导
 email: wuyf@pku.edu.cn
 phone: 86-10-62765835-211
 bio_raw: '研究方向
@@ -260,6 +261,17 @@ detail_url: https://cs.pku.edu.cn/info/1083/1705.htm
 profile_url: https://cs.pku.edu.cn/info/1083/1705.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
@@ -267,7 +279,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -296,14 +308,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1083/1705.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 助理教授/研究员
+title: 助理教授
 email: haotang@pku.edu.cn
 bio_raw: '个人主页：
 
@@ -96,6 +96,22 @@ detail_url: https://cs.pku.edu.cn/info/1082/3208.htm
 profile_url: https://cs.pku.edu.cn/info/1082/3208.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -103,7 +119,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -132,19 +148,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1082/3208.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生成式
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身

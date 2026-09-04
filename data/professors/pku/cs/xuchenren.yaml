@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 长聘副教授/研究员
+title: 长聘副教授
 phone: 86-10-62767874
 bio_raw: '个人主页：
 
@@ -22,6 +22,22 @@ detail_url: https://cs.pku.edu.cn/info/1084/1717.htm
 profile_url: https://cs.pku.edu.cn/info/1084/1717.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -29,7 +45,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -58,19 +74,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1084/1717.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身

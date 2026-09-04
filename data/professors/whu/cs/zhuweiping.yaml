@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 副教授 (硕导)
+title: 副教授
 supervisor: 硕导
 email: wpzhu@whu.edu.cn
 phone: '17786500734'
@@ -138,6 +138,17 @@ detail_url: https://cs.whu.edu.cn/info/1019/2920.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2920.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -145,7 +156,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2920.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -174,14 +185,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2920.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

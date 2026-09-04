@@ -107,7 +107,13 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1367/20292.htm
 profile_url: https://ccst.jlu.edu.cn/info/1367/20292.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
 provenance:
   name:
     origin: crawled
@@ -129,9 +135,3 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/20292.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译

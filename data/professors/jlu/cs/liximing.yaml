@@ -4,7 +4,7 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
-title: 教授（吉林大学唐敖庆青年学者）
+title: 教授
 bio_raw: '基本信息
 
   姓名：李熙铭
@@ -1849,7 +1849,18 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1367/19282.htm
 profile_url: https://ccst.jlu.edu.cn/info/1367/19282.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -1866,14 +1877,3 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/19282.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

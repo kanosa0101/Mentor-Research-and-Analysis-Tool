@@ -4,7 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
-title: 特聘研究员、
+title: 特聘研究员
 bio_raw: '姓名：
 
   汪子乔
@@ -147,27 +147,6 @@ detail_url: https://cs.tongji.edu.cn/info/1061/4044.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/4044.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/4044.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/4044.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/4044.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -184,3 +163,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:具身
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/info/1061/4044.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/4044.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/4044.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

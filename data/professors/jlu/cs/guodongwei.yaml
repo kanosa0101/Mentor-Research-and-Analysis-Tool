@@ -62,23 +62,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1367/19107.htm
 profile_url: https://ccst.jlu.edu.cn/info/1367/19107.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1367/19107.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1367/19107.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -95,3 +79,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19107.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19107.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

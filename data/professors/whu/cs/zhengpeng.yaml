@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 副教授 ()
+title: 副教授
 email: pzheng@whu.edu.cn
 phone: '68775096'
 bio_raw: '郑鹏
@@ -83,32 +83,6 @@ detail_url: https://cs.whu.edu.cn/info/1019/2446.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2446.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.whu.edu.cn/szdw/zrjs.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2446.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2446.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  phone:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2446.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/2446.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
 facets:
 - id: topic.systems
   origin: computed
@@ -130,3 +104,29 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.whu.edu.cn/szdw/zrjs.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.whu.edu.cn/info/1019/2446.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2446.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2446.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2446.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

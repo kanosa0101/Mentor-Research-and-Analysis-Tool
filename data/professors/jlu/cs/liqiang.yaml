@@ -303,18 +303,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1399/21144.htm
 profile_url: https://ccst.jlu.edu.cn/info/1399/21144.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1399/21144.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -326,3 +315,14 @@ facets:
   confidence: auto
   evidence:
   - keyword:隐私
+provenance:
+  name:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1399/21144.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

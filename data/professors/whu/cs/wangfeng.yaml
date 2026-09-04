@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 教授 (博导,硕导)
+title: 教授
 supervisor: 博导、硕导
 email: fengwang@whu.edu.cn
 phone: '68776052'
@@ -270,6 +270,27 @@ detail_url: https://cs.whu.edu.cn/info/1019/2940.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2940.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -277,7 +298,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2940.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -306,24 +327,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2940.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计

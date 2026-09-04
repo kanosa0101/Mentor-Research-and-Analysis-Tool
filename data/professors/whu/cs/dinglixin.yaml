@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-title: 教授 (博导)
+title: 教授
 supervisor: 博导
 email: Lxding@whu.edu.cn
 phone: '68776032'
@@ -261,6 +261,17 @@ detail_url: https://cs.whu.edu.cn/info/1019/2885.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2885.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
 provenance:
   name:
     origin: crawled
@@ -268,7 +279,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.whu.edu.cn/info/1019/2885.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -292,14 +303,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2885.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算

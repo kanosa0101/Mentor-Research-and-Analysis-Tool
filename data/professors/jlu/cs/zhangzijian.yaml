@@ -4,7 +4,8 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
-title: 助理教授、博士生导师
+title: 助理教授
+supervisor: 博导
 bio_raw: '职称：
 
   助理教授、博士生导师
@@ -955,23 +956,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1359/19979.htm
 profile_url: https://ccst.jlu.edu.cn/info/1359/19979.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1359/19979.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ccst.jlu.edu.cn/info/1359/19979.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -988,3 +973,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19979.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19979.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19979.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -5,7 +5,7 @@ aliases:
 school: sjtu
 dept: ai
 status: enriched
-title: 正高
+title: 正高级
 office_address: 东川路800号
 bio_raw: '【基本信息】常务副院长
 
@@ -55,6 +55,7 @@ profile_url: https://ai.sjtu.edu.cn/faculty/detail/10
 first_seen: '2026-09-02'
 last_verified: '2026-09-02'
 source_updated_at: '2020-09-10'
+facets: []
 provenance:
   name:
     origin: crawled
@@ -62,7 +63,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://ai.sjtu.edu.cn/api/teacher/10
     fetched_at: '2026-09-02'
     confidence: auto
@@ -81,4 +82,3 @@ provenance:
     source: https://ai.sjtu.edu.cn/api/teacher/10
     fetched_at: '2026-09-02'
     confidence: auto
-facets: []

@@ -4,7 +4,7 @@ aliases: []
 school: ucas
 dept: ia
 status: enriched
-title: 副研究员、高级工程师
+title: 副研究员
 email: hu.guan@ia.ac.cn
 bio_raw: '关虎
 
@@ -667,6 +667,12 @@ detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240424_7131025.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240424_7131025.html
 first_seen: '2026-09-02'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -679,7 +685,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://ia.cas.cn/rcdw/fyjy/202404/t20240424_7131025.html
     fetched_at: '2026-09-02'
     confidence: auto
@@ -693,9 +699,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像

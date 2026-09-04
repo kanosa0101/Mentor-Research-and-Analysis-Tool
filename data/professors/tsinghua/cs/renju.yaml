@@ -4,7 +4,8 @@ aliases: []
 school: tsinghua
 dept: cs
 status: enriched
-title: 长聘副教授（博士生导师）
+title: 长聘副教授
+supervisor: 博导
 email: renju@tsinghua.edu.cn
 bio_raw: '姓名：任炬
 
@@ -113,37 +114,6 @@ detail_url: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
 first_seen: '2026-09-02'
 last_verified: '2026-09-02'
-provenance:
-  name:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
-  research_direction_raw:
-    origin: crawled
-    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
-    fetched_at: '2026-09-02'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -170,3 +140,39 @@ facets:
   confidence: auto
   evidence:
   - keyword:具身
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

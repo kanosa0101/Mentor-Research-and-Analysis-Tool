@@ -4,7 +4,8 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
-title: 助理教授、博士生导师
+title: 助理教授
+supervisor: 博导
 email: lrenqiang@jlu.edu.cn
 bio_raw: '罗仁强
 
@@ -387,7 +388,13 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1359/20324.htm
 profile_url: https://ccst.jlu.edu.cn/info/1359/20324.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
 provenance:
   name:
     origin: crawled
@@ -409,9 +416,8 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1359/20324.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
+  supervisor:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/20324.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

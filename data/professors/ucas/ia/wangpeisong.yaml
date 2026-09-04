@@ -4,7 +4,7 @@ aliases: []
 school: ucas
 dept: ia
 status: enriched
-title: 副研
+title: 副研究员
 email: peisong.wang@nlpr.ia.ac.cn
 bio_raw: '王培松
 
@@ -102,6 +102,22 @@ detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129843.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129843.html
 first_seen: '2026-09-02'
 last_verified: '2026-09-03'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -114,7 +130,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129843.html
     fetched_at: '2026-09-02'
     confidence: auto
@@ -133,19 +149,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

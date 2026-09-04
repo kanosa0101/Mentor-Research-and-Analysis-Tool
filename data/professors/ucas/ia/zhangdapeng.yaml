@@ -4,7 +4,7 @@ aliases: []
 school: ucas
 dept: ia
 status: enriched
-title: 研究员四级
+title: 研究员
 email: dapeng.zhang@ia.ac.cn
 bio_raw: '张大朋
 
@@ -147,6 +147,12 @@ detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130916.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130916.html
 first_seen: '2026-09-02'
 last_verified: '2026-09-03'
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -159,7 +165,7 @@ provenance:
     fetched_at: '2026-09-02'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130916.html
     fetched_at: '2026-09-02'
     confidence: auto
@@ -178,9 +184,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 教授  中国科学院院士
+title: 教授
 email: yang@sei.pku.edu.cn
 phone: 86-10-6275 1782
 bio_raw: '详细简历
@@ -21,6 +21,12 @@ detail_url: https://cs.pku.edu.cn/info/1085/2725.htm
 profile_url: https://cs.pku.edu.cn/info/1085/2725.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
 provenance:
   name:
     origin: crawled
@@ -28,7 +34,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: crawled
+    origin: computed
     source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -57,9 +63,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1085/2725.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统

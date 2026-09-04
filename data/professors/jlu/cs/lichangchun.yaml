@@ -4,7 +4,8 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
-title: 副教授、博士生导师
+title: 副教授
+supervisor: 博导
 email: changchunli93@gmail.com
 bio_raw: '职称：
 
@@ -274,7 +275,13 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1359/19756.htm
 profile_url: https://ccst.jlu.edu.cn/info/1359/19756.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -296,9 +303,8 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1359/19756.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  supervisor:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19756.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
