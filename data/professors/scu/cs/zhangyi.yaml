@@ -1,0 +1,55 @@
+slug: zhangyi
+name: 张轶
+aliases: []
+school: scu
+dept: cs
+status: enriched
+email: yi.zhang@scu.edu.cn
+bio_raw: '2000年9月 ~ 2004年7月 电子科技大学 本科
+
+  2004年8月 ~ 2005年7月 电子二十九所 研发
+
+  2005年7月 ~ 2010年4月 新加坡国立大学 博士
+
+  2009年7月 ~ 2011年4月 CE-Infosys R&D，Singapore
+
+  2011年5月 ~ 四川大学计算机学院'
+institutes: []
+photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1R9uADWadAAJKG0dFrQY954.png
+research_direction_raw: '[1]、视觉计算、[2]、模式识别、[3]、图像处理'
+detail_url: https://faculty.scu.edu.cn/zhangyi12/zh_CN/index.htm
+profile_url: https://faculty.scu.edu.cn/zhangyi12/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+provenance:
+  name:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangyi12/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangyi12/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangyi12/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

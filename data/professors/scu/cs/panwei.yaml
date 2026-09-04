@@ -1,0 +1,36 @@
+slug: panwei
+name: 潘薇
+aliases: []
+school: scu
+dept: cs
+status: enriched
+email: panwei@scu.edu.cn
+bio_raw: 1. 基于DSP嵌入式平台的车牌实时识别算法，包括基于高分辨率图像的实时多车牌定位算法的研发、字符识别算法的改进、针对DSP平台的算法优化研究等等。
+  2. 四川大学青年教师科研启动基金：基于机器视觉的驾驶人疲劳检测研究
+institutes: []
+detail_url: https://faculty.scu.edu.cn/panwei/zh_CN/index.htm
+profile_url: https://faculty.scu.edu.cn/panwei/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+provenance:
+  name:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/panwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/panwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

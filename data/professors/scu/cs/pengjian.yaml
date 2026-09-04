@@ -1,0 +1,54 @@
+slug: pengjian
+name: 彭舰
+aliases: []
+school: scu
+dept: cs
+status: enriched
+email: jianpeng@scu.edu.cn
+bio_raw: '单独或与人合作在国际会议或核心期刊上发表论文50余篇，其中SCI或EI检索30余篇。主编或者参与出版教科书5本，其中国家十一五规划教材2本，译著2本。
+
+  负责过国家自然科学基金，国家863子项目，国家重点实验室开放基金，四川省科技攻关项目，四川省应用基础项目，成都市科技攻关项目等近10项基金项目，还参与主研了包括973项目，国家自然科学基金在内的10余项'
+institutes: []
+photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1XY2Ae-b_AALCr-Af6hg702.png
+research_direction_raw: '[1]、大数据、云计算、移动计算、[2]、物联网与传感器网络'
+detail_url: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+profile_url: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
