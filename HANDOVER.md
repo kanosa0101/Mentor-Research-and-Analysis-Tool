@@ -19,10 +19,10 @@
 
 ## 2. 当前状态
 
-- **18 校 22 院系 2913 人**，全量 YAML 落盘 + 静态网站可浏览
-- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送至 `ac37058`
-- preflight（发布前检查）0 问题；issues 队列仅 1 条 open（西电一个官网死链 404，有意留痕）
-- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium
+- **22 校 26 院系 3664 人**，全量 YAML 落盘 + 静态网站可浏览
+- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送至 `f85c7f3`
+- preflight 仅 1 项问题：北师大 2 条官网死链留痕（zj 频道 404，有意保留）
+- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）
 
 ## 3. 架构与目录
 
@@ -124,12 +124,16 @@ provenance:                # 每字段出处——工具的立身之本
 | jlu/cs | simple_list | 36 | 29 | 17 | 0 | 36 | 34 |
 | ecnu/cs | wp | 28 | 0 | 28 | 0 | 28 | 27 |
 | nwpu/cs | simple_list | 23 | 0 | 0 | 0 | 0 | 0 |
-| csu/cs | tsites | 108 | 0 | 0 | 0 | 0 | 0 |
+| csu/cs | tsites | 108 | 92 | 61 | 87 | 79 | 49 |
 | ruc/ai | simple_list | 31 | 0 | 0 | 0 | 0 | 0 |
-| xidian/cs | xidian_cs | 155 | 65 | 0 | 42 | 154 | 120 |
-| **合计** | | **2913** | | | **805** | | **1757** |
+| xidian/cs | xidian_cs(委托tsites) | 155 | 147 | 83 | 107 | 154 | 97 |
+| bnu/ai | bnu_ai | 72 | 57 | 23 | 57 | 44 | 50 |
+| xjtu/cs | xjtu_cs | 75 | 47 | 22 | 59 | 10 | 17 |
+| scu/cs | scu_cs | 166 | 39 | 151 | 1 | 109 | 70 |
+| zju/cs | zju_cs | 438 | 63 | 59 | 436 | 0 | 64 |
+| **合计** | | **3664** | | | | | |
 
-要点：hit/nwpu/csu/ruc 是纯名单（官网无详情可抓，roster 级）；ucas/iie 是导师名单文章（只有姓名+博导+研究室）；xidian 邮箱是官网 JS 混淆无法还原，如实留空。facets 覆盖 1757/2913（60%），无标签的 1150 条全是 roster 级或官网无方向文字。
+要点：hit/nwpu/csu(已修)/ruc 是纯名单或低覆盖（官网无详情可抓，roster 级）；ucas/iie 是导师名单文章（只有姓名+博导+研究室）；xidian/川大邮箱经 tsites 解密接口还原（见 §10.15）；浙大简介在瑞数反爬后如实留空；浙大 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科）。
 
 ## 7. 网站
 
@@ -151,15 +155,15 @@ provenance:                # 每字段出处——工具的立身之本
 | scripts/probe_direct_render.py | 对通了的学校直接看名录渲染结构 | retest 通过后 |
 | scripts/verify_site.py | 站点抽查（页面数/关键内容/server） | build 后 |
 
-## 9. 未接入的 28 所学校（全部已定位处理方式，见 README 同类清单）
+## 9. 未接入的学校（剩 4 所 + 网络/WAF 阻断组）
 
-- **SPA/JS 懒加载，需逆向前端 API**（8 所）：浙大、南科大（cse.sustech.edu.cn/faculty/ 子页卡片 JS 加载）、上科大（sist szdwx 列表 JS）、复旦（登录墙）、北师大（博导/硕导频道已定位，列表 ajax）、西交（gr.xjtu.edu.cn 教师列表 ajax）、川大（faculty.scu.edu.cn 21 页 ajax）、华侨类无
-- **WAF 拦截（412/202），需会话/cookie 重试**（4 所）：北邮（**scs.bupt.edu.cn**）、川大（cs.scu.edu.cn）、重大、湖大
-- **待定位名录页**（3 所）：东南（dsxx 导师库混合外链）、厦大、大工软件学院（ss.dlut.edu.cn，注意大工计算机学部另有域名）
-- **网络层阻断**（13 所，直连+代理都重置）：北邮已确认域名但同样被拦、人大信息学院、华南理工已确认域名 www2.scut.edu.cn 可达……详见 README 网络说明
+- **SPA/JS 懒加载，需逆向前端 API**（4 所）：南科大（cse.sustech.edu.cn/faculty/ 子页卡片 JS 加载）、上科大（sist szdwx 列表 JS）、复旦（登录墙）、东南（dsxx 导师库混合外链）
+- **WAF 拦截（412/202），需会话/cookie 重试**（4 所）：北邮（**scs.bupt.edu.cn**）、重大、湖大（cs.scu.edu.cn 已不需要——faculty.scu.edu.cn tsites 已接入）
+- **待定位名录页**（2 所）：厦大、大工软件学院（ss.dlut.edu.cn，注意大工计算机学部另有域名）
+- **网络层阻断**（直连+代理都重置）：北邮、人大信息学院、华南理工（www2.scut.edu.cn 可达但间歇）、南开/华科（间歇通断）、电子科大等，详见 README 网络说明
 - **放弃**（1 所）：国防科大（军队院校）
 
-**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、湖大是 csee、华南理工是 www2、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn）。**接新校前先 websearch 核实官方域名**，这个教训花了一轮才学到。
+**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、湖大是 csee、华南理工是 www2、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。**接新校前先 websearch 核实官方域名**，这个教训花了一轮才学到。
 
 ## 10. 踩坑记录（每条都是真金白银的时间，接手前必读）
 
@@ -181,6 +185,16 @@ provenance:                # 每字段出处——工具的立身之本
 13. git push 大包经代理 408：`git config http.version HTTP/1.1` 已配置，别删
 14. 代理在 `127.0.0.1:10808`，"连不上"先区分：域名错（websearch 核实）vs 代理拦截（direct 模式）vs 真阻断（直连也重置）
 
+**2026-09-04 本轮新增（tsites 家族战役）**
+15. **tsites 邮箱/电话密文可直接解**：页面里 `<span _tsites_encrypt_field>` 存密文，前端请求 `/system/resource/tsites/tsitesencrypt.jsp?id=..&content=..&mode=..` 服务端解密——直接调同一接口即可还原。已用于中南/西电/川大。实现见 `sites/tsites.py: decrypt_encrypted_fields`（注意：标签载体容器必须恰好只含一个密文 span，否则会串味——安莹邮箱被邮编污染过）
+16. tsites 详情页有 4+ 种模板变体（字段块 h4/jbqk/data、散落行、`职务：X` 替代 `职称：`、标题带英文后缀 `<span>Personal Profile`），`_section_text` 匹配标题时要先剥掉英文字母
+17. **西交**：列表页 requestUrl 是 http 混合内容，浏览器/渲染都加载不出；逆向 `getsitecontentlist.js` 得到 `getsitelistcontent.jsp` 数据接口，collegeId/treeid/siteOwner/viewid 参数从页面 `load_p` JS 对象里抄
+18. **川大**：教师名单内嵌在列表页 `<script>` 的 `ImageScale(...).addimg(照片,主页URL,姓名,uid)` 调用里，raw html 正则提取
+19. **浙大**：www.cs.zju.edu.cn 根路径只是引导壳，真实站点在 **/csen/** 路径下；教师名录页是 JS 渲染的表格；博导硕导直接用官方 xlsx 附件（266 行 418 人，openpyxl 解析）；person.zju.edu.cn 的简介栏目在瑞数(frms-fingerprint)反爬后，如实留空
+20. **crawl.py 别名 bug**：`url.rsplit("/",1)[1][:-5]` 把 index.htm/page.htm 截成 inde/pag/lis/te 垃圾别名（全库 315 条已清理）；已改为剥真实扩展名 + 文件名无信息量时回退上一级目录名
+21. **build_site.py 孤儿页**：slug 变更后旧详情页残留（中南事故 100 个）——重建时按当前名单清理失效页面，已修
+22. 北师大列表形态：博导/硕导频道是**文章列表**（每学科一篇文章、表格按方向分组），不是教师列表；师资 zgj/fgj/zj 频道才是静态名单
+
 ## 11. 操作手册
 
 ```powershell
@@ -201,11 +215,12 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 
 ## 12. 建议的下一步（按价值排序）
 
-1. **tsites/SPA 逆向**：北师大/西交/川大/浙大/南科大/上科大/复旦/东南 —— 每校需逆向 ajax 接口（Playwright 监听 network 或读打包 JS），单校约 1-2 小时；`probe_direct_render.py`/XHR 监听脚本是起点
+1. **剩余 4 校 SPA 逆向**：南科大（cse.sustech.edu.cn faculty 子页卡片）、上科大（sist szdwx 列表 JS）、东南（dsxx 导师库混合外链）、复旦（登录墙）—— 每校 1-2 小时；Playwright XHR 监听是起点（本轮浙大/西交/川大的逆向套路见 §10.15-19，tsites 家族优先试 `getsitelistcontent.jsp` 同款接口）
 2. **facet 细化**：13 类关键词规则可继续调；`topic.*` 标签的 evidence 目前只记关键词，可升级为记录命中原文片段
 3. **附录 A 延后项**（需求文档有完整设计）：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
 4. **verified 人工核对流程**：从未启用；最小方案=每校抽 10 人人工核对 provenance 并置 verified
 5. 官网改版是常态：`crawl --refresh` + changes 日志会告诉你哪里变了；改版导致解析失效会进 issues 队列
+6. 浙大名录仅 64 人而官方 xlsx 有 418 位导师——若 person.zju.edu.cn 能过瑞数反爬，可补齐 374 位名录外导师的详情
 
 ## 13. 给下一个 agent 的三句话
 
