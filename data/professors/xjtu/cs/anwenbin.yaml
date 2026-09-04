@@ -1,0 +1,92 @@
+slug: anwenbin
+name: 安文斌
+aliases: []
+school: xjtu
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 硕导
+subjects: 人工智能
+email: wenbinan@xjtu.edu.cn
+office_address: 兴庆彭康楼212，创新港4-6036
+bio_raw: '隶属于陕西省大数据知识工程重点实验室
+
+  郑庆华院士团队
+
+  ，入选西安交通大学青年优秀人才支持计划，新加坡南洋理工大学（NTU）访问学者。近年来在NeurIPS、CVPR、ACL、AAAI等国际顶级会议及期刊上发表CCF-A/B论文十余篇，授权发明专利五项，担任ICML、ICLR、CVPR、ACL、TNNLS等国际顶级会议及期刊审稿人，参与
+
+  多项国家级项目，
+
+  研究方向包括
+
+  多模态大模型、
+
+  弱监督学习、自然语言处理以及智慧教育。'
+institutes:
+- 计算机科学与技术学院
+detail_url: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/anwenbin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

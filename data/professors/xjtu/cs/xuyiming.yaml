@@ -1,0 +1,97 @@
+slug: xuyiming
+name: 徐一明
+aliases: []
+school: xjtu
+dept: cs
+status: enriched
+title: 助理教授
+email: xuyiming@xjtu.edu.cn
+bio_raw: '西安交通大学青年优秀人才支持计划获得者，隶属于郑庆华院士团队，陕西省大数据知识工程重点实验室。弗吉尼亚大学（UVA）访问学者。主要从事图数据挖掘、自监督学习、异常检测、大语言模型等方面的研究工作，已在Science
+  Advances、ICML、ICDE、AAAI、MM、DMKD、NN、ECAI及Engineering等
+
+  国际顶级会议及期刊上发表CCF-A/B论文十余篇
+
+  ，其中第一作者/学生第一作者10篇，授权发明专利五项。
+
+  曾担任
+
+  ICML、ICLR、
+
+  NeurIPS
+
+  、TKDE、KDD、AAAI、
+
+  ACL
+
+  等国际顶级会议及期刊审稿人。主持青年科学基金项目（C类），
+
+  参与基金委
+
+  原创探索计划项目、新一代人工智能国家科技重大专项、 国自然重大专项、国自然面上、 陕西省重点研发计划、杭州市人工智能重大科技创新项目计划等
+
+  多项研究课题。
+
+  研究兴趣
+
+  大型语言模型：智能体自进化、LLM/智能体记忆、多智能体协作
+
+  安全机器学习：异常检测、OOD 泛化
+
+  可信机器学习：鲁棒性、因果推理、可解释性
+
+  AI/ML+X：偷逃骗税检测
+
+  欢迎感兴趣的研究生、本科生、远程实习生及同行专家学者交流合作。'
+institutes:
+- 计算机科学与技术学院
+detail_url: https://gr.xjtu.edu.cn/xuyiming/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/xuyiming/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xuyiming/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xuyiming/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xuyiming/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

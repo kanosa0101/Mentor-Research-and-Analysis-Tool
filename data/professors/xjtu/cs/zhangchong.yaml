@@ -1,0 +1,80 @@
+slug: zhangchong
+name: 张翀
+aliases: []
+school: xjtu
+dept: cs
+status: enriched
+title: 智能网络与网络安全教育部重点实验室主任助理
+supervisor: 硕导
+subjects: 人工智能
+email: zhangchong@xjtu.edu.cn
+office_address: 西安交通大学创新港校区鸿理楼
+institutes:
+- 计算机科学与技术学院
+research_direction_raw: 人工智能安全、对抗与后门攻防、智能体安全、大模型与知识图谱、图数据挖掘
+detail_url: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

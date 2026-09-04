@@ -1,0 +1,60 @@
+slug: maxiaobo
+name: 马小博
+aliases: []
+school: xjtu
+dept: cs
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+email: xma.cs@xjtu.edu.cn
+office_address: 兴庆/创新港
+institutes:
+- 计算机科学与技术学院
+research_direction_raw: 主要从事、人工智能赋能网络安全与智能网络空间感知研究、围绕复杂网络环境下的安全检测、网络测量和基础设施安全等问题、探索利用人工智能、网络分析和主动测量技术提升网络空间感知与防御能力。、方向1.
+  智能网络安全检测、【、核心问题、】、如何从看似正常的网络行为中发现隐藏的攻击？、随着网络攻击逐渐隐蔽化、攻击者可以利用加密通信、多阶段攻击链和正常网络服务隐藏真实意图、传统基于规则的检测方法面临挑战。、本方向研究如何从大规模、多源、加密网络数据中发现异常行为和攻击线索、重点关注：、加密流量分析与智能检测
+detail_url: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/xma.cs/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

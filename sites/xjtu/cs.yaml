@@ -2,11 +2,8 @@ school: xjtu
 dept: cs
 dept_name: 计算机科学与技术学院
 base_url: https://gr.xjtu.edu.cn
-hook: tsites
+hook: xjtu_cs
 direct: true
-roster_only: true
 list:
   urls:
     - https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
-  person_href: gr\.xjtu\.edu\.cn/(?!units_teacherlist)[^"]*index\.htm
-  scroll: true

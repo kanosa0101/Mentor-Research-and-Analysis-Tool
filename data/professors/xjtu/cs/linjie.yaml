@@ -1,0 +1,41 @@
+slug: linjie
+name: 蔺杰
+aliases:
+- jielin
+school: xjtu
+dept: cs
+status: enriched
+institutes:
+- 计算机科学与技术学院
+research_direction_raw: 边缘计算网络（Edge Computing/Fog Computing）、物联网（Internet of Things）、信息物理融合攻击、对抗性攻击、多智能体强化学习
+detail_url: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,0 +1,133 @@
+slug: zhangweizhan
+name: 张未展
+aliases: []
+school: xjtu
+dept: cs
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: zhangwzh@xjtu.edu.cn
+office_address: 彭康楼 230
+bio_raw: '张未展，西安交通大学计算机学院教授，博士生导师。某部委创新人才, 陕西省中青年科技创新领军人才
+
+  , CCF
+
+  杰出会员，
+
+  CCF
+
+  网络与数据通信
+
+  /
+
+  互联网
+
+  /
+
+  分布式计算与系统专委会执委，
+
+  CSIG
+
+  智能图形
+
+  /
+
+  多媒体专委会专委。现任
+
+  Cernet
+
+  西安核心节点主任、西安交大
+
+  -
+
+  咪咕
+
+  5G
+
+  未来媒体与人工智能联合创新实验室主任、陕西省大数据知识工程重点实验室副主任。研究方向为大规模分布式智能系统构建，涉及网络多媒体、移动边缘智能、多模态大模型等相关领域。在
+
+  TPAMI，TON, TMC, TPDS, TVCG, NeurIPS,ICML,CVPR,ICLR,ICCV,AAAI, MM, VR
+
+  等发表论文
+
+  100
+
+  余篇，授权专利
+
+  40
+
+  余项。曾第一完成人获陕西省科技进步一等奖，第二完成人获国家科技进步二等奖、教育部、电子学会科技进步一等奖、主要完成人获陕西省技术发明一等奖、中国自动化学会科技进步特等奖等。'
+institutes:
+- 计算机科学与技术学院
+detail_url: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+profile_url: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+first_seen: '2026-09-04'
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
+provenance:
+  name:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/zhangwzh123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
