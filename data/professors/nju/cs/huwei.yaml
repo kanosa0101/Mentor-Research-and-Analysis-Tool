@@ -52,3 +52,14 @@ provenance:
     source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

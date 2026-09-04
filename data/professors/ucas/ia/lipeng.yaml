@@ -134,3 +134,14 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

@@ -179,3 +179,19 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/6034.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化

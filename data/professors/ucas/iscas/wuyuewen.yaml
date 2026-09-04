@@ -198,3 +198,19 @@ provenance:
     source: https://people.ucas.ac.cn/~0077614
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算

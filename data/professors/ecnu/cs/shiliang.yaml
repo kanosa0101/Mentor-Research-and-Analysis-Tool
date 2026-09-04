@@ -2094,3 +2094,24 @@ provenance:
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

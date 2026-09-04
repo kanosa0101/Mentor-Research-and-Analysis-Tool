@@ -147,3 +147,24 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1109/3944.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

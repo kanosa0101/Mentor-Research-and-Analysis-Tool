@@ -1519,3 +1519,19 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2726.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

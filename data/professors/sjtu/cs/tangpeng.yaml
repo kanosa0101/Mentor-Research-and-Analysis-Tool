@@ -124,3 +124,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全

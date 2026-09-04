@@ -153,3 +153,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1116/3537.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互

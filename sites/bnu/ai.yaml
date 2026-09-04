@@ -1,0 +1,13 @@
+school: bnu
+dept: ai
+dept_name: 人工智能学院
+base_url: https://ai.bnu.edu.cn
+hook: tsites
+direct: true
+roster_only: true
+list:
+  urls:
+    - https://ai.bnu.edu.cn/zszl/yjszs/pyds/bssds/index.htm
+    - https://ai.bnu.edu.cn/zszl/yjszs/pyds/sssds/index.htm
+  person_href: ai\.bnu\.edu\.cn/info/\d+
+  scroll: true

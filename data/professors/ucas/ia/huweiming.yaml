@@ -1396,3 +1396,24 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131820.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

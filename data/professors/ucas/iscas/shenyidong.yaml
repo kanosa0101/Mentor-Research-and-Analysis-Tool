@@ -757,3 +757,14 @@ provenance:
     source: https://people.ucas.ac.cn/~ydshen
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

@@ -350,3 +350,14 @@ provenance:
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

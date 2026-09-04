@@ -127,3 +127,14 @@ provenance:
     source: http://web.xidian.edu.cn/cuijt/
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库

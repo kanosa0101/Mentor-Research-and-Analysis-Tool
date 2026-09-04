@@ -270,3 +270,14 @@ provenance:
     source: https://people.ucas.ac.cn/~cliang
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全

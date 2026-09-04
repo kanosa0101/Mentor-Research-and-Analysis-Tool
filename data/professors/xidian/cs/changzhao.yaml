@@ -188,3 +188,14 @@ provenance:
     source: http://faculty.xidian.edu.cn/changzhao/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库

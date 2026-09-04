@@ -66,3 +66,19 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241219_7504971.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态

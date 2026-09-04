@@ -136,3 +136,19 @@ provenance:
     source: http://www.cse.neu.edu.cn/2025/0703/c6641a288859/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身

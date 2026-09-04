@@ -144,3 +144,29 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1117/4596.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身

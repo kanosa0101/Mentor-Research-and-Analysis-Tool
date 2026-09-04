@@ -92,3 +92,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1258/7050.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

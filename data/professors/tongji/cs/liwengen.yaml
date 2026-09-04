@@ -36,3 +36,14 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/2826.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库

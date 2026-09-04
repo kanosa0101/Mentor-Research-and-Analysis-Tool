@@ -186,3 +186,19 @@ provenance:
     source: https://faculty.xidian.edu.cn/LIRONGHAN/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱

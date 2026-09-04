@@ -133,3 +133,14 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460084/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

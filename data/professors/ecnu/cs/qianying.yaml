@@ -226,3 +226,19 @@ provenance:
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247687
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

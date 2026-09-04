@@ -208,3 +208,19 @@ provenance:
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络

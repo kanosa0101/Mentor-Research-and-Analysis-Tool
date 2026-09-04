@@ -165,3 +165,19 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1112/7030.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱

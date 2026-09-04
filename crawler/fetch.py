@@ -91,8 +91,12 @@ def _get_browser():
     if _pw is None:
         from playwright.sync_api import sync_playwright
         _pw = sync_playwright().start()
-        kw = {"proxy": {"server": "direct://"}} if _direct else {}
-        _pw.browser = _pw.chromium.launch(headless=True, **kw)
+        if _direct:
+            _pw.browser = _pw.chromium.launch(
+                headless=True, proxy={"server": "direct://"},
+                args=["--no-proxy-server", "--proxy-bypass-list=*"])
+        else:
+            _pw.browser = _pw.chromium.launch(headless=True)
     return _pw.browser
 
 

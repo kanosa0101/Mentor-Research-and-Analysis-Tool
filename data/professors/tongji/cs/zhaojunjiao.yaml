@@ -292,3 +292,14 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/2820.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统

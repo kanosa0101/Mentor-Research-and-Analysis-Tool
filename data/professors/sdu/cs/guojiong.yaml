@@ -115,3 +115,14 @@ provenance:
     source: https://www.cs.sdu.edu.cn/info/1070/4416.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算复杂

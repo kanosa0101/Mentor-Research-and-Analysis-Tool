@@ -123,3 +123,19 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/fanlei.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码

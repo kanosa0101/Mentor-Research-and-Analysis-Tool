@@ -58,3 +58,14 @@ provenance:
     source: https://cs.nju.edu.cn/58/0f/c2639a153615/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

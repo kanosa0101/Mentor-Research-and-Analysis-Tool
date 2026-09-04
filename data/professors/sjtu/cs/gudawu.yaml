@@ -202,3 +202,19 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gudawu.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计

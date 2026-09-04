@@ -124,3 +124,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1108/3514.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计

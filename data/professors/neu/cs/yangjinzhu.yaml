@@ -31,3 +31,24 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157518/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像

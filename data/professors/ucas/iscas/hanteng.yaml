@@ -253,3 +253,24 @@ provenance:
     source: https://people.ucas.ac.cn/~tenghan
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互

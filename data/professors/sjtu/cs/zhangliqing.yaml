@@ -847,3 +847,19 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangliqing.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

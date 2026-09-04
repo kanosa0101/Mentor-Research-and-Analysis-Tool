@@ -155,3 +155,19 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人

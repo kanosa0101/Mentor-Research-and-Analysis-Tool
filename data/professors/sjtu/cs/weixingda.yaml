@@ -208,3 +208,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式

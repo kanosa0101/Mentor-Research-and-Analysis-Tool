@@ -186,3 +186,19 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZYY14/zh_CN/index/425015/list/
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

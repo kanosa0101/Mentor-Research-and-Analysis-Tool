@@ -126,3 +126,14 @@ provenance:
     source: https://web.xidian.edu.cn/yxu/index.html
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:6G

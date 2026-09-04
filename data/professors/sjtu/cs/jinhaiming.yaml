@@ -118,3 +118,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/jinhaiming.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算

@@ -48,3 +48,19 @@ provenance:
     source: http://www.cse.neu.edu.cn/2022/1230/c6641a225150/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

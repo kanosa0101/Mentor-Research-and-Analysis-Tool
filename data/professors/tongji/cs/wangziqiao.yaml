@@ -168,3 +168,19 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/4044.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身

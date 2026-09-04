@@ -47,3 +47,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangshaoting.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

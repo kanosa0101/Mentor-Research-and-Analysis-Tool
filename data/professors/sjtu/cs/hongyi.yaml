@@ -163,3 +163,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hongyi.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像

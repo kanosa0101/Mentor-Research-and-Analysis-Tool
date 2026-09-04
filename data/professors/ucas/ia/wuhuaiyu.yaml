@@ -1117,3 +1117,19 @@ provenance:
     source: https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131976.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

@@ -92,3 +92,19 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/1206/c6641a162063/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶

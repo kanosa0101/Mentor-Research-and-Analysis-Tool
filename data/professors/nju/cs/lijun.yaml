@@ -134,3 +134,19 @@ provenance:
     source: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

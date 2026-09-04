@@ -50,3 +50,19 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201405/t20140504_4108331.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

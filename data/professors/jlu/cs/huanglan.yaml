@@ -359,3 +359,19 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/19279.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

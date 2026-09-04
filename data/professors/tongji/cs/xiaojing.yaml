@@ -27,3 +27,14 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1062/2748.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

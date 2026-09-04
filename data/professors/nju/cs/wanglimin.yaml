@@ -138,3 +138,14 @@ provenance:
     source: https://cs.nju.edu.cn/2f/cc/c2639a274380/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉

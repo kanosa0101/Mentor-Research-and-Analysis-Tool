@@ -174,3 +174,14 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2920.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络

@@ -278,3 +278,14 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2505.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式

@@ -149,3 +149,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1116/3529.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

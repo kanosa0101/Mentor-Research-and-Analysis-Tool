@@ -1222,3 +1222,9 @@ provenance:
     source: https://people.ucas.ac.cn/~zhanglibo
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉

@@ -184,3 +184,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangyunbo.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身

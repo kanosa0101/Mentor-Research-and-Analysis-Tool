@@ -74,3 +74,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0805/c6641a157503/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

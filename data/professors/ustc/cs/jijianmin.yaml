@@ -106,3 +106,14 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460120/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

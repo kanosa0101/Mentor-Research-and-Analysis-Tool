@@ -573,3 +573,19 @@ provenance:
     source: https://cs.nju.edu.cn/c9/d4/c2639a51668/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

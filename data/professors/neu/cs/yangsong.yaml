@@ -202,3 +202,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2026/0723/c6641a458263/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算

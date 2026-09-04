@@ -30,3 +30,19 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0314/c6641a157448/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

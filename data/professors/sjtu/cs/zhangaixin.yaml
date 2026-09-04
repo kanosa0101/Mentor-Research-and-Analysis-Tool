@@ -56,3 +56,19 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangaixin.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码

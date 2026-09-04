@@ -240,3 +240,14 @@ provenance:
     source: https://cs.nju.edu.cn/58/06/c2639a153606/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

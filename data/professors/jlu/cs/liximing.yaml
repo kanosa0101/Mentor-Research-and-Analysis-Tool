@@ -1866,3 +1866,14 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/19282.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习

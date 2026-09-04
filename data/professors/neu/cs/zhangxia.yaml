@@ -168,3 +168,19 @@ provenance:
     source: http://www.cse.neu.edu.cn/2022/1116/c6641a222290/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

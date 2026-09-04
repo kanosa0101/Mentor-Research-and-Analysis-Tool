@@ -177,3 +177,14 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201011/t20101122_3025790.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

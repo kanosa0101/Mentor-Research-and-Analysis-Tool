@@ -102,3 +102,14 @@ provenance:
     source: https://cs.pku.edu.cn/info/1069/1630.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化

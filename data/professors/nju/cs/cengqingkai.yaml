@@ -54,3 +54,14 @@ provenance:
     source: https://cs.nju.edu.cn/58/1a/c2639a153626/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

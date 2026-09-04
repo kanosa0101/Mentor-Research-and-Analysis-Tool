@@ -182,3 +182,19 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/5620.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

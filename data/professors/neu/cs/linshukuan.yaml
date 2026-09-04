@@ -104,3 +104,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0313/c6641a157510/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算

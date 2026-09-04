@@ -121,3 +121,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1117/3542.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互

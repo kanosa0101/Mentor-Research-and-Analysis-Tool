@@ -328,3 +328,19 @@ provenance:
     source: https://www.cs.sdu.edu.cn/info/1070/2797.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组

@@ -89,3 +89,9 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangdequan.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型

@@ -103,3 +103,14 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460075/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

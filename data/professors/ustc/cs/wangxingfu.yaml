@@ -114,3 +114,29 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23239a463246/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

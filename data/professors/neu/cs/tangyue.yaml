@@ -39,3 +39,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2021/0325/c6641a190518/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

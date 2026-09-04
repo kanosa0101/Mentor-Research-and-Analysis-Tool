@@ -66,3 +66,14 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/1612.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

@@ -101,3 +101,14 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496789.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术

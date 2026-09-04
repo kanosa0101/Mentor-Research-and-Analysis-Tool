@@ -30,3 +30,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0303/c6641a157509/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像

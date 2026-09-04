@@ -49,3 +49,19 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202509/t20250911_7965588.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:渲染

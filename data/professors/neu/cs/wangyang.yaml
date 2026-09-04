@@ -112,3 +112,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2022/1230/c6641a225155/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶

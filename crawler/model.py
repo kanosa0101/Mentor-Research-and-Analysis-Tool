@@ -10,6 +10,13 @@ class Provenance(BaseModel):
     confidence: str = "auto"
 
 
+class Facet(BaseModel):
+    id: str
+    origin: str = "computed"
+    confidence: str = "auto"
+    evidence: list[str] = Field(default_factory=list)
+
+
 class Professor(BaseModel):
     slug: str
     name: str
@@ -33,6 +40,7 @@ class Professor(BaseModel):
     first_seen: Optional[str] = None
     last_verified: Optional[str] = None
     source_updated_at: Optional[str] = None
+    facets: list[Facet] = Field(default_factory=list)
     provenance: dict[str, Provenance] = Field(default_factory=dict)
 
 

@@ -48,3 +48,14 @@ provenance:
     source: https://cs.nju.edu.cn/6f/7d/c2639a159613/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

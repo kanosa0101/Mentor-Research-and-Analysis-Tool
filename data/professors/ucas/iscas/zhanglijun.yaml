@@ -126,3 +126,19 @@ provenance:
     source: https://people.ucas.ac.cn/~zhanglj
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶

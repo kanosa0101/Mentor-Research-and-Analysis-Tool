@@ -171,3 +171,24 @@ provenance:
     source: http://web.xidian.edu.cn/lgx/
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:渲染
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

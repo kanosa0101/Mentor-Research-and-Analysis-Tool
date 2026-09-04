@@ -188,3 +188,24 @@ provenance:
     source: https://faculty.xidian.edu.cn/HJ4/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统

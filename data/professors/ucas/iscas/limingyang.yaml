@@ -164,3 +164,19 @@ provenance:
     source: https://people.ucas.ac.cn/~mingyang
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

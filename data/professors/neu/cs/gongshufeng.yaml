@@ -71,3 +71,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2021/1228/c6641a208908/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库

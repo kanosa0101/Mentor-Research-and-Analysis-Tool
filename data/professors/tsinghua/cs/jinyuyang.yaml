@@ -96,3 +96,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1114/6843.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

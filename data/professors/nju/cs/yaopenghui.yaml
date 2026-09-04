@@ -256,3 +256,19 @@ provenance:
     source: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机

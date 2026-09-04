@@ -129,3 +129,19 @@ provenance:
     source: https://web.xidian.edu.cn/xiaxiaofang/index.html
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

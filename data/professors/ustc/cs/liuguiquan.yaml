@@ -84,3 +84,14 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460124/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

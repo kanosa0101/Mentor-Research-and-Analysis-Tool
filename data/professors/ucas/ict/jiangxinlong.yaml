@@ -64,3 +64,14 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202010/t20201023_5721594.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

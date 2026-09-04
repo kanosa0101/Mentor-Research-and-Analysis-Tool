@@ -34,3 +34,14 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1121/4063.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

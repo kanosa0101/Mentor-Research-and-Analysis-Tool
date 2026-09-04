@@ -193,3 +193,9 @@ provenance:
     source: http://web.xidian.edu.cn/lgao/
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

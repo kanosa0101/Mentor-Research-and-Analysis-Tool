@@ -189,3 +189,14 @@ provenance:
     source: https://faculty.xidian.edu.cn/LYS6/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

@@ -1,0 +1,13 @@
+school: scu
+dept: cs
+dept_name: 计算机学院（软件学院、智能科学与技术学院）
+base_url: https://faculty.scu.edu.cn
+hook: tsites
+direct: true
+roster_only: true
+list:
+  page_url_template: "https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM={n}&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012"
+  pages: 21
+  person_href: faculty\.scu\.edu\.cn/[a-zA-Z0-9]+/zh_CN
+  scroll: false
+  wait_ms: 2500

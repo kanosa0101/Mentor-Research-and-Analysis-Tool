@@ -88,3 +88,24 @@ provenance:
     source: http://www.cse.neu.edu.cn/2023/1225/c6641a241361/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:6G
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计

@@ -383,3 +383,9 @@ provenance:
     source: https://people.ucas.ac.cn/~lesun
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答

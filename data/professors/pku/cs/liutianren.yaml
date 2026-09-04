@@ -157,3 +157,19 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1690.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机

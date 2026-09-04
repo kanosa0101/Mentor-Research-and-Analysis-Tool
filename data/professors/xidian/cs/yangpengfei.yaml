@@ -186,3 +186,14 @@ provenance:
     source: https://faculty.xidian.edu.cn/YPF/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:6G

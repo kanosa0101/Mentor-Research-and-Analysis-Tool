@@ -93,3 +93,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangyuting.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化

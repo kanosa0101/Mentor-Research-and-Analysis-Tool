@@ -300,3 +300,14 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131822.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人

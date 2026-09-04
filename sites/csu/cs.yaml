@@ -1,0 +1,12 @@
+school: csu
+dept: cs
+dept_name: 计算机学院
+base_url: https://cse.csu.edu.cn
+hook: tsites
+direct: true
+roster_only: true
+list:
+  urls:
+    - https://cse.csu.edu.cn/szdw/jsml.htm
+  person_href: faculty\.csu\.edu\.cn/[a-z0-9]+/zh_CN
+  scroll: true

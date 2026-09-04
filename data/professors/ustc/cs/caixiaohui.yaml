@@ -198,3 +198,19 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

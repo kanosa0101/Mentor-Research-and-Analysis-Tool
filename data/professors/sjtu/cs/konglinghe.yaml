@@ -272,3 +272,14 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/konglinghe.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

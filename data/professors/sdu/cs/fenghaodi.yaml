@@ -338,3 +338,14 @@ provenance:
     source: https://www.cs.sdu.edu.cn/info/1070/5604.htm
     fetched_at: '2026-09-03'
     confidence: auto
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息

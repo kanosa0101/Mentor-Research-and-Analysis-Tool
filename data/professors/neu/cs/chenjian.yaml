@@ -59,3 +59,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2022/0227/c6641a210044/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗

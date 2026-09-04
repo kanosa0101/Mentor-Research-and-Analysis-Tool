@@ -63,3 +63,14 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201311/t20131115_3978989.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

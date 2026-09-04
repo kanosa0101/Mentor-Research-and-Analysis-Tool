@@ -121,3 +121,24 @@ provenance:
     source: https://people.ucas.ac.cn/~0070473
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:攻防
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统

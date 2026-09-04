@@ -972,3 +972,19 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1359/19979.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

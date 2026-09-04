@@ -100,3 +100,14 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1118/6617.htm
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学

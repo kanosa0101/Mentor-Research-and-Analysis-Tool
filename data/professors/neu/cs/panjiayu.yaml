@@ -114,3 +114,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2026/0302/c6641a450479/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网

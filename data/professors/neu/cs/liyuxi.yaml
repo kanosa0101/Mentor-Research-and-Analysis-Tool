@@ -120,3 +120,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2021/0325/c6641a190517/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全

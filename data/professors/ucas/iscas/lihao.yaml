@@ -249,3 +249,14 @@ provenance:
     source: https://people.ucas.ac.cn/~lihao
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据

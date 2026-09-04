@@ -157,3 +157,19 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:6G
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化

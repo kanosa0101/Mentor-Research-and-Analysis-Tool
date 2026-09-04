@@ -48,3 +48,14 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023729.html
     fetched_at: '2026-09-02'
     confidence: auto
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式

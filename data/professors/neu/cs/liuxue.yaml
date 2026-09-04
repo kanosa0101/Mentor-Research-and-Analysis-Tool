@@ -28,3 +28,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0813/c6641a157482/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线

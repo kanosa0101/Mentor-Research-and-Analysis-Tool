@@ -60,3 +60,14 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0303/c6641a157435/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
