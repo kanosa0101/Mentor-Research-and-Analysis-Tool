@@ -1,0 +1,10 @@
+school: xidian
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: https://cs.xidian.edu.cn
+hook: xidian_cs
+direct: true
+list:
+  urls:
+    - https://cs.xidian.edu.cn/szdw/dsjs.htm
+  person_href: (faculty|web)\.xidian\.edu\.cn/[A-Za-z0-9_-]+/?

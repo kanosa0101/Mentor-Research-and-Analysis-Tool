@@ -29,8 +29,6 @@ def _collect(cfg, page_url, text):
         href = urljoin(page_url, a["href"])
         if not pattern.search(href):
             continue
-        if re.search(r"(index|main|list)\.htm", href):
-            continue
         rec = {"name": nm, "url": href, "profile_url": href, "institutes": []}
         sup = [s for s in ("博导", "硕导") if s in (a.get("title") or "")]
         if sup:
