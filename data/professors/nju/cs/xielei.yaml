@@ -1,7 +1,6 @@
 slug: xielei
 name: 谢磊
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -27,32 +26,6 @@ detail_url: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
 profile_url: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  supervisor:
-    origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -94,3 +67,29 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.nju.edu.cn/2639/list.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.nju.edu.cn/2639/list.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.nju.edu.cn/2639/list.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

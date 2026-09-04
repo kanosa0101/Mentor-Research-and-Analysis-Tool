@@ -1,121 +1,13 @@
 slug: chengfei
 name: 程飞
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 程飞 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  CPQ
-
-  Bvz
-
-  Z3L
-
-  WIw
-
-  ziN
-
-  mg9
-
-  PGU
-
-  5KD
-
-  YZr
-
-  qei
-
-  shf
-
-  4q4
-
-  5eb
-
-  wEa
-
-  wKH
-
-  cHP
-
-  b7I
-
-  VVV
-
-  8L0
-
-  FVp
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  程飞
-
-  个人信息
-
-  Personal Information
-
-  讲师（高校）
-
-  硕士生导师
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  电子邮箱：
-
-  9ba76b3ba2a55cc7959afb3389d112a48475cd2ac2cce41d6c371c1aa95bae072c16da7f6cc5b967eb14e925384077ebde4a64902419ecded587138aa6a723471e6ccf840dffccb1bd36092518538ba3d355c16a297768e3f94d4006e746ec98c4e71b66e594582767f009dcb45dca784d8457e89a8b47d149fd988286b55191
-
-  扫描关注
-
-  个人简介
+title: 讲师（高校）
+supervisor: 硕导
+email: chengfe@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -148,31 +40,15 @@ bio_raw: '西安电子科技大学主页平台管理系统 程飞 首页  中文
   4. LightCL: Compact Continual Learning with Low Memory Footprint For Edge Device.
   ASP-DAC, 2025，通讯作者
 
-  5. QANS: Toward quantized neural network adversarial noise suppression. TCAD, 2023，通讯作者
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  暂无内容
-
-  研究方向
-
-  Research Focus
-
-  社会兼职'
+  5. QANS: Toward quantized neural network adversarial noise suppression. TCAD, 2023，通讯作者'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets: []
 provenance:
   name:
     origin: crawled
@@ -189,4 +65,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/CF6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,131 +1,14 @@
 slug: shenyulong
 name: 沈玉龙
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 沈玉龙 首页  中文主页
-
-  HPX
-
-  0li
-
-  yqh
-
-  5dA
-
-  psN
-
-  oCI
-
-  ClM
-
-  961
-
-  leR
-
-  SwO
-
-  i3L
-
-  AOg
-
-  9JE
-
-  z4k
-
-  dw6
-
-  vjg
-
-  xtg
-
-  5lv
-
-  2Q7
-
-  CoB
-
-  首页
-
-  科学研究
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科技成果
-
-  科研团队
-
-  获奖信息
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  招生信息
-
-  学生信息
-
-  我的相册
-
-  其他栏目
-
-  语种
-
-  English
-
-  沈玉龙
-
-  教授
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：国际合作与交流处
-
-  双肩挑单位：
-
-  计算机科学与技术学院
-
-  入职时间： 2006-03-01
-
-  学科：计算机系统结构
-
-  办公地点：西安电子科技大学南校区网安大楼A1-0912
-
-  联系方式：
-
-  aeb344815380aa4fff490fb26733a0ee2172eb91f822e698a368868099ee94cdf1594c810d2d8a98c7ce91024f783c100b9faead941649a2d01ef525dec864c85095fb2ed8f90da0e412f1208997a0153a38b457ff42584505527fe616dfe3c88072bbda1eb52b85791d31eb3bf6d818baba7a1db1ee99779a1f2be5c9e7c112
-
-  访问量：
-
-  最后更新时间：
-
-  .
-
-  .
-
-  个人简介
-
-  沈玉龙
+title: 教授
+subjects: 计算机系统结构
+email: ylshen@mail.xidian.edu.cn
+office_address: 西安电子科技大学北校区计算机科学与技术学院主楼IV-315
+bio_raw: '沈玉龙
 
   ，
 
@@ -165,13 +48,41 @@ bio_raw: '西安电子科技大学主页平台管理系统 沈玉龙 首页  中
   I am always looking for self-motivated international students for research (M.S.,
   Ph.D., or postdoc). Please send your CV and transcript to
 
-  chengke@xidian.edu.cn'
+  chengke@xidian.edu.cn
+
+  if you are interested. Information on Xidian M.S. and Ph.D. admission and scholarships
+  can be found
+
+  here
+
+  .
+
+  详细信息可前往旧版主页浏览
+
+  http://web.xidian.edu.cn/ylshen/'
 institutes:
 - 国际合作与交流处
+research_direction_raw: 5G系统安全、云计算平台及安全、大数据分析及安全、物联网及安全
 detail_url: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
 provenance:
   name:
     origin: crawled
@@ -188,19 +99,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SYL4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

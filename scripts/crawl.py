@@ -1,6 +1,7 @@
 import argparse
 import datetime
 import importlib.util
+import re
 import sys
 from pathlib import Path
 
@@ -65,7 +66,15 @@ def phase_roster(cfg, hook, refresh):
                              detail_url=rec["url"], first_seen=TODAY,
                              provenance={"name": prov_name})
             created += 1
-        stem = rec["url"].rsplit("/", 1)[1][:-5]
+        # 从 URL 提取有信息量的别名（常是拼音/工号）。文件名可能是 index/page/list 等
+        # 通用名（截碎就是 'inde'/'pag'/'lis' 事故），此时改用上一级有字母的目录名。
+        seg = rec["url"].rstrip("/").rsplit("/", 1)[1]
+        stem = re.sub(r"\.(s?html?|jspx?|aspx?|php)$", "", seg, flags=re.I)
+        if stem.lower() in ("index", "list", "main", "default", "page", ""):
+            parts = [p for p in rec["url"].rstrip("/").split("/")[:-1] if p]
+            stem = next((p for p in reversed(parts)
+                         if p.isascii() and p.isalpha()
+                         and p.lower() not in ("en", "zh", "cn")), "")
         if stem.isascii() and stem.isalpha() and stem != prof.slug and stem not in prof.aliases:
             prof.aliases.append(stem)
         for al in rec.get("aliases", []):

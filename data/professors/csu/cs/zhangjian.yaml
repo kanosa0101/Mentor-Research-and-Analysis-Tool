@@ -1,18 +1,86 @@
 slug: zhangjian
 name: 张健
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 人工智能
+office_address: 校本部管理楼2层
+bio_raw: '张健老师现工作于中南大学计算机学院，教授，博士生导师，中国指挥与控制学会高级会员，亚太人工智能协会（AAIA）高级会员，IEEE/ACM/CCF会员，现担任湖南省金融货币识别与自助服务平台工程技术研究中心主任，声探测与信息对抗湖南省国防科技重点实验室常务副主任，中国电子学会网络空间安全专家委员会执委，智能装备与数字孪生技术创新与测试工业和信息化部重点实验室学术委员会委员
+
+  ，
+
+  湖南省物联网行业协会常务理事，中南大学“认知计算与智能信息处理”科研团队负责人。张老师近年来致力于AI for Science和Data Intelligence方面的研究工作，研究方向主要面向红外物理智能、世界模型、具身智能、人工智能安全、认知对抗、迁移学习、知识本体、无人协同AI端侧推理等相关应用领域。
+
+  近5年，累计签订各类科研合同近5000万元。主持国家自科基金、战略高技术重点专项任务、国防科技创新特区项目课题、湖南省军民融合产业专项基金、湖南省自科基金等各级纵向'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  长期致力于网络空间安全、物理智能、目标识别与检测、认知计算、知识图谱、软件工程和无人系统等方向'
 detail_url: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zhangjian1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

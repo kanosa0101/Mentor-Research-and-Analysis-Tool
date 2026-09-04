@@ -1,18 +1,25 @@
 slug: kangsonglin
 name: 康松林
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
+status: enriched
+bio_raw: "English\n康松林\n( \n            副教授\n                                   )\n\
+  性别：\n男\n所在单位：\n计算机学院\n入职时间：\n1989-07-01\n所在单位：\n计算机学院\n性别：\n男\n在职信息：\n在职\n首页"
 institutes: []
 detail_url: http://faculty.csu.edu.cn/kangsonglin/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/kangsonglin/zh_CN/index.htm
 first_seen: '2026-09-04'
+last_verified: '2026-09-04'
 facets: []
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/kangsonglin/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

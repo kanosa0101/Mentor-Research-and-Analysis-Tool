@@ -1,7 +1,6 @@
 slug: zhanglan
 name: 张兰
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -688,6 +687,17 @@ detail_url: http://cs.ustc.edu.cn/2020/0706/c23235a460088/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0706/c23235a460088/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -709,14 +719,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0706/c23235a460088/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:隐私
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

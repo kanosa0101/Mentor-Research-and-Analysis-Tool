@@ -1,18 +1,60 @@
 slug: duanguihua
 name: 段桂华
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+bio_raw: '段桂华，博士，中南大学计算机学院教授、网络空间安全系书记，主要从事生物信息学、信息安全和密码学方面的研究。主持国家自然科学基金面上项目、国家重点研发子课题等项目
+
+  4
+
+  项，发表学术论文30余篇。主持省级教改项目2项、校级教改项目6项，获得高等教育（本科）国家级教学成果奖二等奖（5/24）、高校计算机专业优秀教师奖励计划、湖南省高校教工党支部书记“双带头人标兵”、湖南省普通高校教学能手、湖南省普通高校教师课堂教学竞赛一等奖、湖南省高等教育教学成果一等奖（1/9）、湖南省课程思政示范课程、教学名师和团队（1/6）、中南大学教学竞赛
+
+  “十佳讲课”、中南大学课程思政教学竞赛“三十佳”、中南大学优秀班导师标兵、中南大学校园十大心灵守护天使优秀教师、中南大学学科竞赛优秀指导负责教师等50余项荣誉称号。注重学生创新能力的培养，教学科研之余辅导学生参加各类学科竞赛，指导学生参加全国大学生信息安全竞赛、中国大学生服务外包创新创业大赛、中国大学生计算机设计大赛等学科竞赛获得国家级一等奖7项、二等奖12项、三等奖15项、省级奖励20余项。本人也获得了全国大学生信息安全竞赛优秀指导教师、全国高校互联网应用创新大赛优秀指导教师、全国高校云计算应用创新大赛最佳指导教师等荣誉。
+
+  近年来主持的'
+institutes:
+- 计算机学院
 detail_url: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/duanguihua/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

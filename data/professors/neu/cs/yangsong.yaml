@@ -1,7 +1,6 @@
 slug: yangsong
 name: 杨松
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -176,6 +175,17 @@ detail_url: http://www.cse.neu.edu.cn/2026/0723/c6641a458263/page.htm
 profile_url: http://www.cse.neu.edu.cn/2026/0723/c6641a458263/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -202,14 +212,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2026/0723/c6641a458263/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:边缘计算

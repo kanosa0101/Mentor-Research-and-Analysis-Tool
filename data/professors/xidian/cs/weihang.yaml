@@ -1,125 +1,13 @@
 slug: weihang
 name: 魏航
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 魏航 首页  中文主页
-
-  1j3
-
-  Ywe
-
-  uph
-
-  abr
-
-  VlB
-
-  U0Z
-
-  AvD
-
-  347
-
-  0Gp
-
-  VHR
-
-  OQK
-
-  kFX
-
-  3k5
-
-  Eku
-
-  WN0
-
-  SkK
-
-  CEl
-
-  l1q
-
-  lY3
-
-  0Wt
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  其他栏目
-
-  语种
-
-  English
-
-  魏航
-
-  硕士生导师
-
-  性别：女
-
-  毕业院校：哈尔滨工业大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  办公地点：网安大楼A1-424
-
-  电子邮箱：
-
-  47b3d73c7e2a8d46c24c2a12689bd51241a320ae3084aeb0c6781f6eccae3d3b8aee4b825e180af582c1c92c6333ea9696023a49d304cad886fbd013dc5e265467c8b80d65dfc4c65ba4b5c262806641939c1675d7364b0468878418105410f60f2fe77dadf8c5672276a6ae8288f0a5ea3c92727db965a3d16303ccb28956ea
-
-  访问量：
-
-  最后更新时间：
-
-  .
-
-  .
-
-  个人简介
-
-  魏航，博士，
+supervisor: 硕导
+email: weihang@xidian.edu.cn
+office_address: 网安大楼A1-424
+bio_raw: '魏航，博士，
 
   华山菁英副教授
 
@@ -163,13 +51,33 @@ bio_raw: '西安电子科技大学主页平台管理系统 魏航 首页  中文
 
   对
 
-  人工智能及交叉学科'
+  人工智能及交叉学科
+
+  感兴趣
+
+  的本科同学进入课题组学习
+
+  ，
+
+  参与'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 生物信息学、机器学习、非编码RNA与疾病关联识别、药物靶标分子预测
 detail_url: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -186,9 +94,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WEIHANG/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

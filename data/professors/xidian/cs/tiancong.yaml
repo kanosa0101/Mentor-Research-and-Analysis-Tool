@@ -150,27 +150,6 @@ detail_url: http://web.xidian.edu.cn/ctian/
 profile_url: http://web.xidian.edu.cn/ctian/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: http://web.xidian.edu.cn/ctian/
-    fetched_at: '2026-09-04'
-    confidence: auto
-  supervisor:
-    origin: crawled
-    source: http://web.xidian.edu.cn/ctian/
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: http://web.xidian.edu.cn/ctian/
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.ml
   origin: computed
@@ -197,3 +176,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:形式化
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ctian/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ctian/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ctian/
+    fetched_at: '2026-09-04'
+    confidence: auto

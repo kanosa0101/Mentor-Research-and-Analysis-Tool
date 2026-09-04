@@ -1,7 +1,6 @@
 slug: liyongkun
 name: 李永坤
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -197,6 +196,12 @@ detail_url: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
 provenance:
   name:
     origin: crawled
@@ -223,9 +228,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:存储系统

@@ -1,18 +1,125 @@
 slug: zhangjinrui
 name: 章晋睿
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 特聘教授
+supervisor: 硕导
+subjects: 计算机科学与技术
+email: zhangjinrui@csu.edu.cn
+office_address: 潇湘校区综合实验室405
+bio_raw: '章晋睿，男，中共党员，工学博士，现任中南大学计算机学院特聘教授。本硕博均毕业于中南大学，期间受国家留学基金委资助赴韩国国立首尔大学开展博士联合培养。2023年获博士学位后进入清华大学从事博士后研究，并曾先后在北京大学、微软亚洲研究院（MSRA）与清华大学智能产业研究院（AIR）开展科研工作。本人长期深耕边缘智能、移动计算与端侧异构计算等前沿方向，围绕智能系统在移动终端、边缘设备及真实复杂场景中的高效感知、计算与部署开展研究。近年来，已在
+  MobiCom、SenSys、SIGGRAPH Asia、INFOCOM、ICLR、ICML 以及 IEEE TMC、TON、TCSVT 等国际顶级学术会议与期刊发表论文
+  20 余篇，其中以第一作者或通讯作者发表 CCF-A 类及 JCR 一区论文 14 篇，多次在国际学术会议作大会口头报告。
+
+  相关研究成果入选“2022—2023 年中国物联网十大科技进展”
+
+  。本人先后入选中国电子学会“青年人才托举工程”及国家资助博士后研究人员计划，获 ACM SIGAPP China 优秀博士学位论文奖与 AIoTSys 最佳论文奖。受邀担任
+  IEEE INFOCOM、ACM IMWUT、IEEE TMC、IEEE TSC 等多个国际高水平会议及期刊审稿人。主持国家自然科学基金青年项目与中国博士后科学基金面上项目各
+  1 项，作为核心骨干参与国家重点研发计划、国家自然科学基金重点项目及多项国际/国家标准制定，并以第一负责人身份承担“清华—荣耀”、“清华—宏图”等多项重点校企合作项目，兼具扎实的理论创新能力与丰富的产业化落地经验。此外，本人曾获全国大学生智能汽车竞赛国家特等奖、美国大学生数学建模竞赛一等奖、湖南省智能车竞赛省一等奖、湖南省研究生人工智能创新大赛省一等奖等竞赛奖励。曾任中南大学计算机学院研究生会主席、学术部部长，获中南大学优秀学生干部标兵、中南大学优秀学生等荣誉称号。
+
+  在学生培养方面，本人秉持基础理论与工程实践结合的指导理念，既能悉心指导学生深耕前沿学术、冲击国际顶会顶刊，亦具备带领学生在高水平科技竞赛与企业级实战项目中斩获佳绩的丰富经验。
+
+  ThinkFly
+
+  课题组培养特色
+
+  ✅
+
+  氛围和谐，合作共进
+
+  课题组重视开放交流与团队协作，鼓励学生之间相互讨论、共同成长，努力营造积极、融洽、互助的科研氛围。
+
+  ✅
+
+  导师亲自指导，不“放羊”
+
+  本人将深度参与学生的科研选题、论文写作、系统实现、实验设计与投稿修改全过程，帮助学生尽快建立科研思维和独立解决问题的能力。
+
+  ✅
+
+  经费充足，成果导向激励明确
+
+  课题组科研经费保障充分，可支持学生开展高质量实验、系统开发、学术交流与国际会议投稿。对于取得高水平论文、竞赛获奖、项目突破等成果的同学，课题组将提供相应奖励与支持。
+
+  ✅
+
+  支持高质量实习与职业发展
+
+  在满足毕业要求和科研任务的基础上，支持学生前往知名高校、科研机构及头部企业开展实习，并可根据学生发展方向推荐相关机会，助力其未来深造、就业与长期发展。
+
+  课题组欢迎对边缘智能、移动计算、端侧大模型、智能感知、异构计算与系统优化等方向感兴趣的本科生、硕士生和博士生加入！邮箱：zhangjinrui@csu.edu.cn
+
+  英文主页：
+
+  https://zhangjinrui1992.github.io/'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  具身智能、[2]  边端大模型推理优化、[3]  边缘计算、[4]  端侧智能'
 detail_url: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/zhangjinrui/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

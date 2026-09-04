@@ -1,18 +1,125 @@
 slug: wanglei
 name: 王磊
 aliases:
-- inde
+- leiwang
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 副教授
+supervisor: 硕导
+email: wanglei@csu.edu.cn
+office_address: Information Building 533, Xiaoxiang campus
+bio_raw: '我于2007年从湖南大学获得计算机应用技术博士学位，现为中南大学计算机学院数据科学与工程系教师。
+
+  在教学方面
+
+  ，近期我主要承担了面向计算机类专业本科生的《多媒体原理与系统设计》、《面向对象编程(C++)》等专业课和面向全校本科生的《数据库应用技术》基础课。我在B站上发布了一些教学视频作为课堂教学的补充，涵盖了我曾经教过的《模拟电子技术》和最近的一些课程（
+
+  点
+
+  这里
+
+  ），我会不定时更新其中的视频。关于我的教学理念，我曾经发表了两篇散文在中南大学教师教学发展平台的公众号上，一篇名为《
+
+  新生
+
+  》，一篇名为《
+
+  教学中的陪伴感
+
+  》。
+
+  在科研方面
+
+  ，目前主要有两个方向。一是围绕微表情（人的不自主细微表情，0.5秒以内，难以察觉）做计算机视觉方面的检测和识别方法研究；二是运用大语言模型和多模态语言模型做信息提取和视觉问答方面的研究；中长期的目标是结合语言模型和视觉方法，探索从真实图像域向抽象及艺术夸张域的模型泛化和知识迁移问题（比如只看真实人脸，就能自动泛化到对卡通漫画人脸的理解）。此外，近年来也积极在医学领域展开交叉合作研究，探索将智能技术应用于诊断和护理的方法。
+
+  获奖情况
+
+  ：
+
+  湖南省普通高校教师课堂教学竞赛二等奖
+
+  1次，三等奖1次；
+
+  湖南省科学技术进步奖三等奖，排名第4
+
+  ；
+
+  指导学生参加ACM国际大学生程序设计竞赛3次获得亚洲区铜奖；
+
+  2009和2016年度中南大学优秀班导师；
+
+  指导学生在2022年中南大学第八届“互联网＋”大学生创新创业大赛高教主赛道中，荣获一等奖；
+
+  获2023年度教育部一华为“智能基座”栋梁之师奖励；
+
+  主持'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  计算机视觉和多模态语言模型的应用'
 detail_url: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/leiwang/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

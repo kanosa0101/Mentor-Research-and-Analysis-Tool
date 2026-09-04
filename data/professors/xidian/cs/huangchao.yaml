@@ -1,175 +1,42 @@
 slug: huangchao
 name: 黄超
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 教授
-bio_raw: '西安电子科技大学主页平台管理系统 黄超 首页  中文主页
-
-  .
-
-  登录
-
-  |
-
-  西安电子科技大学
-
-  |
-
-  手机版
-
-  |
-
-  扫描二维码访问手机版
-
-  语种切换
-
-  English
-
-  黄超
-
-  教授
-
-  +
-
-  基本信息
-
-  教师姓名：
-
-  黄超
-
-  教师拼音名称：
-
-  huangchao
-
-  电子邮箱：
-
-  126de91906568b50cc84782e8739bc9ad3432cc584c5ba0ecfe66ce6abf99b3e0a7a454614c5bd2b3ecc3bbc2e613f53c962396a74454391e54449f1c6452313171dfe9ae183235cdf7444d55c58eea3e22fedba95083547be8a7295fc14ffe8e2255542b0f8e772c0498df7d6a273c607c013d47c7f6892dcfdbf24bd773300
-
-  学历：
-
-  博士研究生毕业
-
-  办公地点：
-
-  网安大楼AI-306
-
-  性别：
-
-  男
-
-  联系方式：
-
-  126de91906568b50cc84782e8739bc9ad3432cc584c5ba0ecfe66ce6abf99b3e0a7a454614c5bd2b3ecc3bbc2e613f53c962396a74454391e54449f1c6452313171dfe9ae183235cdf7444d55c58eea3e22fedba95083547be8a7295fc14ffe8e2255542b0f8e772c0498df7d6a273c607c013d47c7f6892dcfdbf24bd773300
-
-  学位：
-
-  博士研究生毕业
-
-  职称：
-
-  教授
-
-  毕业院校：
-
-  南京大学
-
-  所在单位：
-
-  计算机科学与技术学院
-
-  联系方式
-
-  邮箱：
-
-  126de91906568b50cc84782e8739bc9ad3432cc584c5ba0ecfe66ce6abf99b3e0a7a454614c5bd2b3ecc3bbc2e613f53c962396a74454391e54449f1c6452313171dfe9ae183235cdf7444d55c58eea3e22fedba95083547be8a7295fc14ffe8e2255542b0f8e772c0498df7d6a273c607c013d47c7f6892dcfdbf24bd773300
-
-  通讯/办公地址：
-
-  82c8bcba2826a99cd66e0acd6bfa03a19214272045a66345a02c7842d7289ade81bed58195dafab8600408b38b8faf75c61300e5f76032765c204ffd3501194892f46fae5ad1688cf62e1d0503cd603c8ff57405c6840620efdc2a743535d4758865f6976208ee4c5cb249ec26d9c1b29a8fe1b69fd0de8c3eec401eca1f40d9
-
-  首页
-
-  研究方向
-
-  学术荣誉
-
-  招生信息
-
-  曾获荣誉
-
-  关闭
-
-  Fuo
-
-  bT4
-
-  Ha9
-
-  Om1
-
-  ZH8
-
-  kSO
-
-  GTq
-
-  qJa
-
-  IUx
-
-  0DK
-
-  pYy
-
-  PCC
-
-  ofS
-
-  ixB
-
-  uu8
-
-  Pv5
-
-  4md
-
-  o2f
-
-  37V
-
-  zjf
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果'
+bio_raw: "个人简介\n/\nPersonal Profile\n黄超，教授、博导，国家级青年人才。长期致力于形式化验证（Formal Methods）、机器学习（尤其是强化学习）以及信息物理系统/机器人（CPS\
+  \ & Robotics）的交叉前沿研究。其核心科研目标是为安全攸关（Safety-critical）系统中的人工智能算法提供自底向上严密的数学保障与可证明的安全性。近年在\
+  \ ICML, DAC, ICCAD, ACM TECS 等人工智能与系统领域顶级会议及期刊上发表多篇具有广泛影响力的学术论文。\n教育经历\n[1] 2007.09-2011.06\n\
+  南京大学 \n | 数学与应用数学\n\n | 本科(学士)\n[2] 2011.09-2018.03\n南京大学 \n | 计算机科学与技术\n  | 硕博连读（硕转博）\n\
+   | 硕博连读（硕转博）\n工作经历\n暂无内容\n社会兼职\n暂无内容\n团队成员\n暂无内容"
 institutes: []
+research_direction_raw: 研究方向、/、The Research Direction、[1]机器学习算法/模型可靠性保证
 detail_url: https://faculty.xidian.edu.cn/huangchao/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/huangchao/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -186,4 +53,8 @@ provenance:
     source: https://faculty.xidian.edu.cn/huangchao/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/huangchao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

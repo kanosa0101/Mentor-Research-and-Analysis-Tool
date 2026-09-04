@@ -1,18 +1,126 @@
 slug: zhangyongmin
 name: 张永敏
 aliases:
-- inde
+- ymzhang
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: zhangyongmin@csu.edu.cn
+office_address: 中南大学岳麓校区升华北楼404
+bio_raw: '中南大学计算机学院
+
+  教授，
+
+  硕士/
+
+  博士研究生导师，现任计算机科学系主任
+
+  。2015毕业于浙江大学控制科学与工程专业，导师为陈积明教授。博士期间曾到美国加州理工学院（Caltech）计算机工程系访问交流，导师为Steven Low教授。2015年12月至2019年5月在加拿大维多利亚大学电子工程系Lin
+  Cai教授课题组开展博士后研究，2019年6月，加入中南大学计算机学院。主要从事物联网、移动计算、智能计算、大数据等领域的资源管理与分布式优化，在IEEE/ACM
+  ToN, IEEE TMC、IEEE TSG、IEEE TITS等国际权威期刊以及IEEE INFOCOM、IEEE SECON等国际会议上发表论文70余篇。获国际会议IEEE
+  PIMRC 2012最佳论文奖，
+
+  2018年IEEE通信协会亚太区的杰出论文奖
+
+  ，
+
+  2019年教育部自然科学一等奖
+
+  ，
+
+  2022年湖北省自然科学三等奖，2024年中国电子学会自然科学一等奖。
+
+  入选
+
+  2020年度湖南省“百人计划”，
+
+  2022年
+
+  度
+
+  国家高层次青年人才
+
+  。曾担任IEEE Globecom, WCNC, ICC, VTC等重要国际会议程序委员会成员，担任IEEE/ACM ToN, TMC, TPDS, TII等期刊的审稿人。
+
+  对我的研究方向感兴趣的学生，可与我联系。
+
+  邮箱：zhangyongmin@csu.edu.cn 或 ymzhang.zju@gmail.com
+
+  注：2027年博士招生（正在进行中），硕士招生（正在进行中）。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  物联网、[2]  移动计算、[3]  边缘智能、[4]  医疗大数据'
 detail_url: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/ymzhang/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

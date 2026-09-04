@@ -1,141 +1,15 @@
 slug: zhaopeipei
 name: 赵佩佩
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 赵佩佩 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  e2q
-
-  BYk
-
-  9IB
-
-  Eco
-
-  HDL
-
-  74i
-
-  IiK
-
-  Vcj
-
-  Ett
-
-  vxO
-
-  aTW
-
-  I6c
-
-  7oK
-
-  9bT
-
-  nu6
-
-  RSb
-
-  tB9
-
-  R7w
-
-  P8B
-
-  isU
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  赵佩佩
-
-  个人信息
-
-  Personal Information
-
-  讲师（高校）
-
-  硕士生导师
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2023-05-01
-
-  办公地点：网安大楼AI-723
-
-  电子邮箱：
-
-  76cb968576c84ff636dc9b3d79353ba3ed89723e5d1f129724f4fc7b8d24d85e705782b0a84939be99486ad170cb5758b266698e1e0d6e092f03e7609d16c6b17420b285bf033939ea2544185252da6f88356bbe3f5c37df46f48669f3c0806ecb7ebed08fef3b50f0b672c3a1574d9a08e1446c16a13839a90894f74238be23
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  76cb968576c84ff636dc9b3d79353ba3ed89723e5d1f129724f4fc7b8d24d85e705782b0a84939be99486ad170cb5758b266698e1e0d6e092f03e7609d16c6b17420b285bf033939ea2544185252da6f88356bbe3f5c37df46f48669f3c0806ecb7ebed08fef3b50f0b672c3a1574d9a08e1446c16a13839a90894f74238be23
-
-  移动电话 :
-
-  86d33ec64ab6e191d5862a7578916b061693495b0b51e32ae0dd3ec4e9c81134856d7de53adc59264efbc176ad26b0d421f42e0b0ee7d46544b895044ba04d3b528d2925a25f75c6642abce21483eae9711e3b80117f0c87d95d216aa9f1aa1bfa4060275f62d682b141ca5b12d0786546b1c064c8148c7cf7ce54e55695a3e6
-
-  通讯/办公地址 :
-
-  867225c2007f47ac4c122ecc4e04d8bebc2d404ffb561fefda4c8163d3af12f60fd2ad4edc3b28a82ad14e8bc7ede2d4030b998f71877c763b6f38df47c968f42bb49d58ca1087480a825902dfba7244b9db8a3a6fd4776e98e7c92ccdbdf0428d2cb6d5a4caaba0517f06d481b9eb4cd84923fb5eb013a455ad1a7869ec12cc
-
-  扫描关注
-
-  个人简介
+title: 讲师（高校）
+supervisor: 硕导
+email: zhpp2023@xidian.edu.cn
+phone: '15229352195'
+office_address: 西安电子科技大学南校区网安大楼AI-723
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -163,13 +37,28 @@ bio_raw: '西安电子科技大学主页平台管理系统 赵佩佩 首页  中
 
   10
 
-  余篇，申请专利'
+  余篇，申请专利
+
+  3
+
+  项，担任
+
+  ICPR
+
+  会议审稿人。指导学生获得中国大学生服务外包创新创业大赛全国二等奖。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -186,4 +75,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHAOPEIPEI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

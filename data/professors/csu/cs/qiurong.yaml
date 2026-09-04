@@ -1,18 +1,103 @@
 slug: qiurong
 name: 裘嵘
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
+status: enriched
+title: 副教授
+supervisor: 硕导
+email: qiurongrong@126.com
+phone: '13975806309'
+bio_raw: '裘嵘，女，
+
+  博士，副教授，硕士生导师，湖南省神经科学学会青年委员。主要研究方向为机器学习、
+
+  医学大数据分析和挖掘、生物信息学
+
+  。
+
+  2008
+
+  年
+
+  11
+
+  月－
+
+  2009
+
+  年
+
+  12
+
+  月，在美国精神遗传学研究的著名学者——芝加哥大学
+
+  Elliot S. Gershon
+
+  教授的实验室进修，在他和中南大学医学遗传学国家重点实验室特聘教授刘春宇的指导下，从事
+
+  GWAS
+
+  数据分析研究。通过从事计算机应用技术与生物数据相结合的研究，在国际权威期刊和学术会议发表
+
+  SCI
+
+  论文多篇。主持和参加国家重点研发，国家自然科学基金等省部级课题多项。'
 institutes: []
+research_direction_raw: 研究方向、社会兼职、机器学习、医学大数据分析、生物信息学、暂无内容
 detail_url: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/qiurong/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

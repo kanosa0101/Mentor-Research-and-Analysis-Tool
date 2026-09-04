@@ -1,135 +1,14 @@
 slug: niuzhenxing
 name: 牛振兴
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 牛振兴 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  rkS
-
-  aeK
-
-  kXe
-
-  k6u
-
-  rWm
-
-  eRm
-
-  sTn
-
-  4B1
-
-  9Jy
-
-  6Mj
-
-  4IL
-
-  Ef9
-
-  sgv
-
-  KCo
-
-  bq4
-
-  FVt
-
-  Kpj
-
-  MIP
-
-  j0C
-
-  cFn
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  牛振兴
-
-  个人信息
-
-  Personal Information
-
-  教授
-
-  博士生导师
-
-  硕士生导师
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2021-06-01
-
-  学科：模式识别与智能系统
-
-  联系方式：
-
-  098999b2a2e8cb3872d8a4e185386ebe7f76de05f3f4a634ff8263d3d63fcd2c065d81b0fd779afeb97b8952b6557d36654e791c356bf7fc38311696f6c57a5bf9af23d08ad3410b09463ab45a98cb069eee8090fc02464cd3f4b51e5e207044c9be4e98646c810ee3c0caf15c09d9baab404393cfff1eb24e8cb6c5c7525ddf
-
-  电子邮箱：
-
-  7284b3af1546b8da6da45979bc6e87b8ee8d6ffa8df6b13c1b4ee9b9c9c42728bd2138dfb38213b3c3c00eb5a514169facb35891dd13c539da8405688795ece99e16f121d237bd23dcd24308ea9a1c8de0ab120bae29d4065cca76afb043d99891c1ff3c1faa7763cff8bc7b2d0c964edbd7d5bbdad7569dd473e04b68ac523a
-
-  扫描关注
-
-  同专业博导
-
-  同专业硕导
-
-  个人简介
+title: 教授
+supervisor: 博导、硕导
+subjects: 模式识别与智能系统
+email: zxniu@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -139,37 +18,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 牛振兴 首页  中
 
   长期从事计算机视觉与机器学习研究，任计算机视觉国际顶级会议CVPR、ICCV领域主席（Area Chair）。在重要期刊TPAMI、TIP和顶级会议CVPR、ICCV、ECCV、AAAI发表50余篇论文。
 
-  个人主页： https://sites.google.com/site/zhenxingniu007/
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  暂无内容
-
-  研究方向
-
-  Research Focus
-
-  社会兼职
-
-  Social Affiliations
-
-  计算机视觉
-
-  人工智能'
+  个人主页： https://sites.google.com/site/zhenxingniu007/'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、计算机视觉、人工智能、暂无内容
 detail_url: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -186,14 +53,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/NZX/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

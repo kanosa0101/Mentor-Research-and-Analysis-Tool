@@ -1,137 +1,13 @@
 slug: wangjing
 name: 王静
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 王静 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  S5f
-
-  iuR
-
-  y9U
-
-  vlG
-
-  yp8
-
-  7tq
-
-  iDi
-
-  r6u
-
-  EeT
-
-  jU3
-
-  CJJ
-
-  iKj
-
-  nBH
-
-  zQT
-
-  dfV
-
-  gFa
-
-  ZqN
-
-  qeH
-
-  TMu
-
-  KPb
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  王静
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2011-04-01
-
-  联系方式：
-
-  8fbaa2c686f7a75e7214d945d1e599b2137f69e16bbcd027e3461606362cbf26fc497266b96037f1a5f03925f7ad41740f4a87d9ad4f10ca66ab422fc4848dacad72f0d8a844d1fe7dca405880352c580d7ec81fac2c52e226f5f4e34eb7bb62123719ad2044f3ba8ad02cfd2855e4b6cc5ef358cb21289500358568be32c240
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  8fbaa2c686f7a75e7214d945d1e599b2137f69e16bbcd027e3461606362cbf26fc497266b96037f1a5f03925f7ad41740f4a87d9ad4f10ca66ab422fc4848dacad72f0d8a844d1fe7dca405880352c580d7ec81fac2c52e226f5f4e34eb7bb62123719ad2044f3ba8ad02cfd2855e4b6cc5ef358cb21289500358568be32c240
-
-  通讯/办公地址 :
-
-  abd0ee43d92ba25260eca7af52d89932971153dce3ec0886ea886f67df0d56150febed8ba32c0ca486687ddceefa388fabb1d6a1e25e98b78c3002c3de57ae5a98a84746a6bf95478c7d409597b7b7984532981d9a06aea7308898672e3141dbb8b9f35a56e9c23584029a3e70a202f43115a0a5153a5f39661beb918524c38a
-
-  邮编 :
-
-  130dcc7327ba53e37051315a5353cef895288983550b8b0c018caf31802218182536f89ff78fcc38fa478e105a9a8d3b0e9f2513d24d74e7df91f06222cdc971b233b1e859a28fd9bac8bcf0c18fb90427595ec739019c1f031f00b25f32d8d8533d52d3f384b80ceae190c72987249dcb63ee35151cdf46d7c4e022c65455b6
-
-  扫描关注
-
-  个人简介
+title: 副教授
+email: wangjing@mail.xidian.edu.cn
+office_address: 西电南校区网安大楼1205
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -163,13 +39,39 @@ bio_raw: '西安电子科技大学主页平台管理系统 王静 首页  中文
 
   和国际会议IEEE/WIC/ACM Web Intelligence Conference等以第一作者和通信作者发表的研究成果。同时本人作为第一申请人授权的发明专利7项包括ZL202210721927.9；
 
-  ZL201210000228.1'
+  ZL201210000228.1
+
+  和
+
+  ZL201210247491.0等。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、自然语言处理、社交网络分析、多模态知识图谱、暂无内容
 detail_url: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -186,4 +88,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJ20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

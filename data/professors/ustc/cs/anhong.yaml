@@ -1,7 +1,6 @@
 slug: anhong
 name: 安虹
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -535,6 +534,27 @@ detail_url: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组
 provenance:
   name:
     origin: crawled
@@ -561,24 +581,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:高性能计算
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:基因组

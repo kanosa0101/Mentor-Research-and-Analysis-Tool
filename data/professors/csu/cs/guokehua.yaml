@@ -1,18 +1,79 @@
 slug: guokehua
 name: 郭克华
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+supervisor: 博导
+subjects: 人工智能
+office_address: 中南大学新校区信息楼
+bio_raw: '郭克华，中南大学二级教授，人工智能学院/计算机学院博士生导师，中组部国家万人计划青年拔尖人才，湖南省芙蓉学者，湖南省杰出青年基金获得者，分别于2020、2024年两次主持获得湖南省科学技术奖、2025年主持获得湖南省教学成果奖一等奖，国家十四五规划教材主编，国家一流课程主讲人，湖南省青年骨干教师，美国Texas
+  A&M University访问学者，CCF大数据专家委员会、AI专业委员会、多媒体专业委员会执行委员，曾兼任长沙市人民政府科学技术局局长助理，获得中国电信教师奖励金。
+
+  研究方向：
+
+  理论研究领域，紧扣大数据处理、机器学习、深度学习中的少样本生成、样本增强、多源数据融合、多模态增量学习等进行研究；应用领域，在医疗大数据（糖尿病、皮肤、肿瘤等）、国防（情报生成、智能规划）等领域，研究开发契合实际场景的高可用、可移植人工智能系统，促进智能算法更高效、更低成本地赋能行业领域，与多家企业合作，产生了数亿元经济效益【具体见主持'
+institutes:
+- 人工智能学院
+research_direction_raw: '[1]  人工智能、大数据、智能计算、机器学习'
 detail_url: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guokehua/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

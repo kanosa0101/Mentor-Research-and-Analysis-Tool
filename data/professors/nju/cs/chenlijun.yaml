@@ -1,7 +1,6 @@
 slug: chenlijun
 name: 陈力军
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -122,6 +121,27 @@ detail_url: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
 profile_url: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -148,24 +168,3 @@ provenance:
     source: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

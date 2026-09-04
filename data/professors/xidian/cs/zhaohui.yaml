@@ -1,141 +1,15 @@
 slug: zhaohui
 name: 赵辉
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 赵辉 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  eod
-
-  Dq0
-
-  H0d
-
-  Mj3
-
-  dME
-
-  12H
-
-  RAJ
-
-  Yst
-
-  6D2
-
-  YNW
-
-  wAt
-
-  S9W
-
-  CYE
-
-  bSj
-
-  Muw
-
-  pIy
-
-  Wwm
-
-  IOJ
-
-  jNN
-
-  tQt
-
-  首页
-
-  科学研究
-
-  科研项目
-
-  科研团队
-
-  科研成果
-
-  研究领域
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  赵辉
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  博士生导师
-
-  硕士生导师
-
-  性别：男
-
-  毕业院校：西安交通大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2017-03-01
-
-  学科：计算机系统结构
-
-  办公地点：长安校区网安大楼10层A-1038
-
-  电子邮箱：
-
-  8ef5ade9749b04a1bceb30889c9ee0cce85e34b57bd35fd66a312cd6cc31da4e80fa9bf4d0ffa51d484834428bd9ca5acc1fa29361b11e3aebfabd9aeff0973121de13b21f6db44cdbdcd23aeea41e91bc4f3813e82e1fd27d0d7a179aeed753ef2d6c603d1374bafa6f3ad28ef380ebb2eeee54672b87abb04679c697c59d8a
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  8ef5ade9749b04a1bceb30889c9ee0cce85e34b57bd35fd66a312cd6cc31da4e80fa9bf4d0ffa51d484834428bd9ca5acc1fa29361b11e3aebfabd9aeff0973121de13b21f6db44cdbdcd23aeea41e91bc4f3813e82e1fd27d0d7a179aeed753ef2d6c603d1374bafa6f3ad28ef380ebb2eeee54672b87abb04679c697c59d8a
-
-  通讯/办公地址 :
-
-  4751771c918e1edea5691e1cff841c442c31be9478060f4c15dac0dceaa8ee3cd30131b109fbfedc63207cabcd84b4b107e10cb5c2aa1594bf27e683c94667bb8162b16d4c70a40dadd20267c9c158d5ae879d2604d65f6eeed3c5467eb86f8647d95010c6f0b42feaf977b1bb04e0574e1bf255d5e1f09db67a7e1952c47f7f
-
-  邮编 :
-
-  130dcc7327ba53e37051315a5353cef895288983550b8b0c018caf31802218182536f89ff78fcc38fa478e105a9a8d3b0e9f2513d24d74e7df91f06222cdc971b233b1e859a28fd9bac8bcf0c18fb90427595ec739019c1f031f00b25f32d8d8533d52d3f384b80ceae190c72987249dcb63ee35151cdf46d7c4e022c65455b6
-
-  扫描关注
-
-  同专业博导
-
-  同专业硕导
-
-  个人简介
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机系统结构
+email: hzhao@mail.xidian.edu.cn
+office_address: 陕西省西安市西沣路兴隆段266号
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -145,31 +19,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 赵辉 首页  中文
 
   获陕西省科技进步一等奖，发表IEEE TPDS、IEEE TCSVT、IEEE TMM等CCF推荐期刊/会议学术论文50余篇等，获国家发明专利、软件著作权30余项。
 
-  详细见：https://web.xidian.edu.cn/hzhao/
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  2011.09
-
-  2016.12
-
-  西安交通大学
-
-  计算机科学与技术
-
-  博士研究生毕业'
+  详细见：https://web.xidian.edu.cn/hzhao/'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、云计算 并行计算 任务调度、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -186,9 +54,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZhaoHui/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

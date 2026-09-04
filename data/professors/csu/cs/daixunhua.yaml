@@ -1,18 +1,138 @@
 slug: daixunhua
 name: 戴训华
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 特聘副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: dai.xh@csu.edu.cn
+office_address: 中南大学本部管理楼103-2
+bio_raw: '戴训华，男，博士，现为中南大学计算机学院副教授、硕士生导师。主要研究内容为无人机/机器人系统的优化设计、虚拟现实仿真、自主智能控制（视觉导航、集群编队、AI博弈决策等）、健康诊断和安全评估等方向。在国际知名期刊IEEE
+  TIE/TMECH/TAES和AIAA JGCD等发表论文多篇，出版专著三部，申请专利十余篇，开发了多套应用广泛的旋翼无人机设计与控制相关网站
+
+  https://rflysim.com
+
+  与工具箱
+
+  https://flyeval.com
+
+  。
+
+  【硕士招生】本实验室每年招收2个左右硕士研究生，1名博士生，感兴趣的同学可以联系邮箱dai.xh@csu.edu.cn
+
+  实验室配套条件（团队更多最新视频见
+
+  https://rflysim.com/doc/zh/0.Show/videos.html
+
+  ）：
+
+  其他平台
+
+  1）无人机Vicon毫米级室内集群编队飞行平台
+
+  2）基于UE5的无人机视觉算法开发平台
+
+  3）空中机器人专业课程与专著
+
+  4）机器人底层控制算法快速开发平台
+
+  https://rflysim.com
+
+  5）无人机智能自动设计工具箱
+
+  https://flyeval.com
+
+  6）基于FPGA的控制系统自动测试平台
+
+  7）其他实验条件动图
+
+  虚拟现实故障模拟                                                无人车硬件在环控制
+
+  无人机室内编队飞行                                                     室内抗扰飞行实验
+
+  无人车/机协同编队平台                                            机器视觉控制算法开发平台
+
+  8）数字孪生&虚拟现实&无人机市区蜂群编队
+
+  9）RflySim分布式多机视觉开发平台'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  旋翼无人机/机器人性能评估与全自动优化设计、[2]  无人系统底层控制算法自动代码生成平台、[3]  无人系统高逼真三维虚拟现实视景仿真、[4]  无人系统的顶层视觉感知与集群协同决策控制、[5]  基于FPGA实时仿真的无人控制系统全自动安全测试与评估'
 detail_url: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daixunhua/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

@@ -1,100 +1,28 @@
 slug: wangyifeng
 name: 王义峰
-aliases:
-- index
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
-bio_raw: '王义峰 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  王义峰的留言板
-
-  王义峰的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  基本信息
-
-  王义峰　副教授
-
-  硕导
-
-  硕士学科：(081203)计算机应用技术
-
-  工作单位：计算机学院
-
-  联系方式
-
-  通信地址：西安电子科技大学164信箱
-
-  电子邮箱：yfwang@xidian.edu.cn
-
-  办公电话：029 88204724
-
-  办公地点：西电新科技楼1302室
-
-  个人简介
-
-  西安电子科技大学计算机学院副教授，硕士生导师。2009年3月获西安电子科技大学计算机应用技术博士学位，从事计算机图形图像处理、计算机色彩管理、计算机人机交互等技术研究。参与项目2项,国家自然科学基金项目1项；近年来，在国内外重要学术期刊、国际会议上发表论文20余篇。
-
-  主要研究方向
-
-  计算机图形图像学
-
-  计算机色彩管理
-
-  计算机人机交互技术
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+bio_raw: 西安电子科技大学计算机学院副教授，硕士生导师。2009年3月获西安电子科技大学计算机应用技术博士学位，从事计算机图形图像处理、计算机色彩管理、计算机人机交互等技术研究。参与项目2项,国家自然科学基金项目1项；近年来，在国内外重要学术期刊、国际会议上发表论文20余篇。
 institutes: []
 detail_url: http://web.xidian.edu.cn/wangyifeng/index.html
 profile_url: http://web.xidian.edu.cn/wangyifeng/index.html
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -116,14 +44,3 @@ provenance:
     source: http://web.xidian.edu.cn/wangyifeng/index.html
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

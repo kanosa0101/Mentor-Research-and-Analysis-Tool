@@ -1,7 +1,6 @@
 slug: wangguangrun
 name: 王广润
-aliases:
-- te
+aliases: []
 school: sysu
 dept: cs
 status: enriched
@@ -14,6 +13,22 @@ detail_url: https://cse.sysu.edu.cn/teacher
 profile_url: https://cse.sysu.edu.cn/teacher
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -40,19 +55,3 @@ provenance:
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身

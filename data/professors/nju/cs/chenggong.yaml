@@ -1,7 +1,6 @@
 slug: chenggong
 name: 程龚
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -26,6 +25,22 @@ detail_url: https://cs.nju.edu.cn/c9/37/c2639a51511/page.htm
 profile_url: https://cs.nju.edu.cn/c9/37/c2639a51511/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -52,19 +67,3 @@ provenance:
     source: https://cs.nju.edu.cn/c9/37/c2639a51511/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:问答
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

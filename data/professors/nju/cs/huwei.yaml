@@ -1,7 +1,6 @@
 slug: huwei
 name: 胡伟
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -26,6 +25,17 @@ detail_url: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
 profile_url: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -52,14 +62,3 @@ provenance:
     source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

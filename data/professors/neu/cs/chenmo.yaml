@@ -1,7 +1,6 @@
 slug: chenmo
 name: 陈默
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -72,6 +71,12 @@ detail_url: http://www.cse.neu.edu.cn/2019/1206/c6641a162075/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/1206/c6641a162075/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -88,9 +93,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/1206/c6641a162075/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

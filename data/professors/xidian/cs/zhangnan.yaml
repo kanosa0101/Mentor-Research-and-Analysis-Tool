@@ -6,59 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导、硕导
-bio_raw: '张南 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  张南的留言板
-
-  张南的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  English
-
-  基本信息
-
-  张南  教授  博士生导师  硕士生导师
-
-  计算机科学与技术学院
-
-  联系方式
-
-  电子邮箱：nanzhang@xidian.edu.cn
-
-  个人简介
-
-  新版个人主页：
+bio_raw: '新版个人主页：
 
   西电教师个人主页系统 张南 中文主页 (xidian.edu.cn)
 
@@ -73,35 +21,23 @@ bio_raw: '张南 | 个人信息 | 西安电子科技大学个人主页
 
   西安市软件可信认证关键技术重点实验室
 
-  陕西省重点科技创新团队
-
-  主要研究方向
-
-  程序和芯片设计的形式化验证（Formal Verification）：时序逻辑（Temporal Logic）时序逻辑程序设计（Temporal Logic Programming）定理证明（Theorem
-  Proving）模型检测（Model Checking）运行时验证（Runtime Verification）
-
-  FPGA-EDA软件开发：逻辑综合，工艺映射，打包，布局布线，位流生成
-
-  智能规划（AI Planning）与自动推理（Automated Reasoning）
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  陕西省重点科技创新团队'
 institutes: []
 detail_url: http://web.xidian.edu.cn/zhangnan/
 profile_url: http://web.xidian.edu.cn/zhangnan/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -123,14 +59,3 @@ provenance:
     source: http://web.xidian.edu.cn/zhangnan/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

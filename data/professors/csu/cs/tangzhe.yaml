@@ -1,18 +1,42 @@
 slug: tangzhe
 name: 汤哲
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+email: tz@csu.edu.cn
+office_address: 中南大学新校区信息大楼
+institutes:
+- 计算机学院
 detail_url: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
 first_seen: '2026-09-04'
+last_verified: '2026-09-04'
 facets: []
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

@@ -1,7 +1,6 @@
 slug: lijun
 name: 李俊
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -113,6 +112,22 @@ detail_url: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
 profile_url: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -134,19 +149,3 @@ provenance:
     source: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

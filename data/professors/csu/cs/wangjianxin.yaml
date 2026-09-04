@@ -1,18 +1,203 @@
 slug: wangjianxin
 name: 王建新
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+office_address: 中南大学校本部计算机楼303室
+bio_raw: '王建新，中南大学计算机学院教授、博士生导师。
+
+  2001
+
+  年获得中南大学计算机应用技术博士学位。国务院学位委员会第七届学科评议组
+
+  (
+
+  计算机科学与技术
+
+  )
+
+  成员、享受国务院特殊津贴专家、新世纪优秀人才、湖南省杰出青年基金获得者、生物信息学湖南省重点实验室主任、
+
+  ACM Sigbio China
+
+  主席、国家重点研发计划项目和国家
+
+  973
+
+  计划前期专项项目首席科学家。
+
+  担任
+
+  TCBB
+
+  、
+
+  JCST
+
+  、
+
+  BDMA
+
+  等国际期刊编委，
+
+  FAW
+
+  、
+
+  ISBRA
+
+  以及
+
+  BIBM
+
+  等多个国际会议的大会主席。主要研究方向计算机算法与优化、网络优化理论、大数据应用、深度学习、生物信息学、虚拟实验环境等。近年来主持国家重点研发计划项目、国家自然科学基金委原创探索计划项目、国家自然科学基金委重点项目等
+
+  30
+
+  余项，在
+
+  Nature
+
+  、
+
+  Nature Communications
+
+  、
+
+  Briefings in Bioinformatics
+
+  、
+
+  Bioinformatics
+
+  等生物信息学领域的国际权威期刊上发表论文
+
+  300
+
+  余篇，获授权发明专利
+
+  50
+
+  项，出版专著
+
+  3
+
+  部。
+
+  2001
+
+  年获得国家教育部高等学校骨干教师资助计划资助并被确定为湖南省普通高校青年骨干教师培养对象；
+
+  2003
+
+  年获得教育部科技进步一等奖（排名第二），
+
+  2005
+
+  年和
+
+  2011
+
+  年获得湖南省科技进步二等奖（排名第一）；
+
+  2005
+
+  年被确定为湖南省普通高校学科带头人培养对象并入选国家新世纪优秀人才支持计划；
+
+  2006
+
+  年获湖南省杰出青年基金，成为
+
+  “
+
+  计算机优化算法及其应用技术研究
+
+  ”
+
+  教育部创新团队研究骨干；
+
+  2013
+
+  年获教育部高等学校科学研究优秀成果奖（科学技术）自然科学奖二等奖（排名第一）；
+
+  2021
+
+  年获得
+
+  CCF
+
+  科学技术奖自然科学二等奖（排名第一）和吴文俊人工智能科学技术奖自然科学三等奖（排名第二）；
+
+  2022
+
+  年获
+
+  CCF
+
+  科技成果奖技术发明二等奖（排名第二）；
+
+  2023
+
+  年获教育部高等学校科学研究优秀成果奖（科学技术）自然科学奖二等奖（排名第一）和湖南省高校知识产权创新团队奖（排名第一）。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  生物信息学、计算机算法与优化、深度学习、大数据处理、网络优化理论、虚拟实验环境'
 detail_url: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/wangjianxin1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

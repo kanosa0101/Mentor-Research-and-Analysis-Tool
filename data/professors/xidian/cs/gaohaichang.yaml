@@ -6,65 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-bio_raw: '高海昌 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  高海昌的留言板
-
-  高海昌的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  科研团队
-
-  课程教学
-
-  基本信息
-
-  高海昌　教授，博士生导师
-
-  学科：计算机科学与技术
-
-  学院：计算机科学与技术学院
-
-  招生信息
-
-  每年招收博士研究生1名，工学和工程硕士研究生4~5名，欢迎各位同学保送和报考。
-
-  对考生的要求：个人能力有差异，态度决定一切！
-
-  联系方式
-
-  电子邮箱：
-
-  hchgao AT xidian.edu.cn
-
-  办公地点：南校区网安大楼AI-812
-
-  个人简介
-
-  教授，博士生导师，网信创新人才，陕西省杰出青年基金获得者，西安市智能系统安全重点实验室主任；CCF杰出会员，IEEE会员，CCF网络与系统安全专委会执委，CIE中国电子学会网络空间安全专委会委员，CAAI中国人工智能学会智能信息网络专委会委员，中国兵工学会专委副主任委员。
+bio_raw: '教授，博士生导师，网信创新人才，陕西省杰出青年基金获得者，西安市智能系统安全重点实验室主任；CCF杰出会员，IEEE会员，CCF网络与系统安全专委会执委，CIE中国电子学会网络空间安全专委会委员，CAAI中国人工智能学会智能信息网络专委会委员，中国兵工学会专委副主任委员。
 
   现从事网络信息安全和人工智能安全相关的研究工作，相关研究成果被CCS、Usenix Security、NDSS、AAAI、ICML、ACSAC等国际顶级会议和IEEE
   Transactions on Dependable and Secure Computing
@@ -104,36 +46,18 @@ bio_raw: '高海昌 | 个人信息 | 西安电子科技大学个人主页
 
   ；
 
-  《身份认证技术》获陕西计算教育学会优秀教材一等奖
-
-  主要研究方向
-
-  主要研究方向
-
-  网络和系统安全，人工智能安全
-
-  当前研究领域
-
-  人工智能安全、大模型安全、CAPTCHA机制安全性和可用性
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  《身份认证技术》获陕西计算教育学会优秀教材一等奖'
 institutes: []
 detail_url: http://web.xidian.edu.cn/hchgao/
 profile_url: http://web.xidian.edu.cn/hchgao/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -155,14 +79,3 @@ provenance:
     source: http://web.xidian.edu.cn/hchgao/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

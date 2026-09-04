@@ -1,7 +1,6 @@
 slug: yuyao
 name: 于尧
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -123,6 +122,17 @@ detail_url: http://www.cse.neu.edu.cn/2019/0917/c6641a157494/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0917/c6641a157494/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -144,14 +154,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0917/c6641a157494/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

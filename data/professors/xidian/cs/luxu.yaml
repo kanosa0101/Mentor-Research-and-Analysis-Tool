@@ -1,151 +1,15 @@
 slug: luxu
 name: 陆旭
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 陆旭 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  Wjm
-
-  21m
-
-  KIa
-
-  epL
-
-  RH5
-
-  k89
-
-  ZfQ
-
-  4mF
-
-  Rqj
-
-  ZDO
-
-  lsm
-
-  prX
-
-  8Xp
-
-  WBn
-
-  3ZG
-
-  6Vp
-
-  h8j
-
-  exJ
-
-  kL4
-
-  OHo
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  陆旭
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  博士生导师
-
-  硕士生导师
-
-  主要任职：计算机科学与技术学院计算理论与技术研究所本硕博师联合党支部书记
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2018-03-01
-
-  学科：计算机软件与理论
-
-  办公地点：西安电子科技大学南校区网安大楼AI-308
-
-  电子邮箱：
-
-  8459c334919d342f4d7b6f4167dbf5158a91226980c7548bcce958c58b63dd03b52de7f6054dd3572fb28447fb9a9bb6d2ac5347fb87e8e8cec54410fc56513910a5a92ad592ccdd8facc075af83496438f6be3fe43768696ed807397ed52d07d847d83977a8a29bbafb98512751cc8a44dcfdb36d959712ca6fa37427982eca
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  8459c334919d342f4d7b6f4167dbf5158a91226980c7548bcce958c58b63dd03b52de7f6054dd3572fb28447fb9a9bb6d2ac5347fb87e8e8cec54410fc56513910a5a92ad592ccdd8facc075af83496438f6be3fe43768696ed807397ed52d07d847d83977a8a29bbafb98512751cc8a44dcfdb36d959712ca6fa37427982eca
-
-  通讯/办公地址 :
-
-  0e842b1c0912bfe2927001d75c29d6bac3164ef85eb811e463bc5ddc53acd163577b5cb4d70706f3ae95f1144a5649b783e27e05d723b518e24411733280295aa748537168fd8fcef3384bc6cfa9ba8fd77101eb2707f346ff1bdc928f4ed6eb76d77060d91325f675f4223b87800c9012b92995646b07685d9c214cc06de6c8
-
-  邮编 :
-
-  4f52fcb1cccea9b05a2a85486644e58f184db98011c170e3ae952a669d39451be169a79c97ff0c42326a7947ca29efe29df057669ae8131d3b029efc49ab5030834186e484e757487d83cf426efe3dd53c4b8dbde62d11b345c6fcbd687232626a25b6fd300d969d7168cb2716576a8c7f2ae28884a42a70c0260f504dda4c94
-
-  扫描关注
-
-  同专业博导
-
-  同专业硕导
-
-  个人简介
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机软件与理论
+email: xlu@xidian.edu.cn
+office_address: 西安电子科技大学南校区网安大楼AI-308
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -167,10 +31,24 @@ bio_raw: '西安电子科技大学主页平台管理系统 陆旭 首页  中文
   实验室硕士、博士名额充足，请有意向的同学随时联系'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、模型检测（Model Checking）、分离逻辑（Separation
+  Logic）、时序逻辑（Temporal Logic）、智能规划（Artificial Intelligence Planning）、程序验证（Program
+  Verification）、2020.11、至今、CCF形式化方法专委会执行委员
 detail_url: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -187,4 +65,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LX13/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

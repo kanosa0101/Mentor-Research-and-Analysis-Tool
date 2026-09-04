@@ -1,101 +1,13 @@
 slug: wangmingzhe
 name: 王鸣哲
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
-bio_raw: '西安电子科技大学主页平台管理系统 王鸣哲 首页  西安电子科技大学
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  Cho
-
-  DiY
-
-  79Z
-
-  n4Z
-
-  Cnh
-
-  Box
-
-  WNq
-
-  F5X
-
-  JkX
-
-  y2H
-
-  Hpk
-
-  WOc
-
-  0O8
-
-  jGR
-
-  pNN
-
-  cIH
-
-  OiT
-
-  fjX
-
-  rC6
-
-  VR1
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  科研项目
-
-  论文成果
-
-  科研团队
-
-  王鸣哲
-
-  个人信息
-
-  Personal Information
-
-  硕士生导师
-
-  主要任职：副教授
-
-  性别：男
-
-  毕业院校：University of New South Wales
-
-  学历：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2022-12-01
-
-  电子邮箱：
-
-  852c75bf39d0c9ed556623602e56bf5c66e03b5f3218b97aab5b2265b440c83b926e4838c2f29703e906e7e97f1a137ae18118381a4580a83e8a59df8ab7074694f270b72a9595f47e43460ca1aaf519b66bc519e6e70548ab2bdacc1a577bd72d852c9f7e2a7c0c3dc19f0e06a31a8bafb1c97b3d9a75e74d567697780c9fec
-
-  扫描关注
-
-  个人简介
+email: wangmingzhe@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -152,29 +64,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 王鸣哲 首页  西
   获得奖励：
 
   曾两次获得西安电子科技大学计算机科学与技术学院优秀青年人才奖，新南威尔士大学 (UNSW) 全额学费奖学金 (4年共计约16.8万澳元)、CSIRO研究奖学金
-  (3.5年共计3.5万澳元)、UNSW高等级学业奖学金 (7000澳元)、国家建设高水平大学公派研究生项目奖学金、国家奖学金、中国科学院国家空间科学中心优秀毕业论文等多项荣誉。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  2017.08
-
-  2022.01
-
-  新南威尔士大学 (University of New South Wales)
-
-  计算机科学与工程专业 (Computer Science and Engineering)'
+  (3.5年共计3.5万澳元)、UNSW高等级学业奖学金 (7000澳元)、国家建设高水平大学公派研究生项目奖学金、国家奖学金、中国科学院国家空间科学中心优秀毕业论文等多项荣誉。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、双目立体视觉深度感知、无监督/弱监督图像异常/缺陷检测、图像实时目标检测与跟踪、图像分析与特征配准、目前也跟随团队进行数据管理相关科研任务的研究、2024.06、至今、CCF计算机视觉专委委员、人工智能与模式识别专委委员、CAAI会员
 detail_url: https://faculty.xidian.edu.cn/WANGMINGZHE/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/WANGMINGZHE/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled
@@ -201,9 +109,13 @@ provenance:
     source: https://faculty.xidian.edu.cn/WANGMINGZHE/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WANGMINGZHE/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WANGMINGZHE/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

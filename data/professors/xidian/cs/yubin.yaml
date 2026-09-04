@@ -1,131 +1,14 @@
 slug: yubin
 name: 鱼滨
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 鱼滨 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  9UH
-
-  rBd
-
-  WUG
-
-  r4Y
-
-  Uvt
-
-  3yM
-
-  T8o
-
-  dKq
-
-  0Jb
-
-  VQC
-
-  GNV
-
-  0AJ
-
-  pGF
-
-  tnd
-
-  8CZ
-
-  W3h
-
-  BcG
-
-  ueZ
-
-  lJX
-
-  Q14
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  鱼滨
-
-  个人信息
-
-  Personal Information
-
-  教授
-
-  性别：男
-
-  毕业院校：西北大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2005-09-01
-
-  学科：计算机软件与理论
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  8469643a6bbd5078c5d8bf6255d0d1d36e4e94f0079bd7bc03f5db9b29f5f6d41f337d88868ec4515ac4179422eca1209e5e4016415f72e10df8052b8760ea57b5879fbf170d55235f68267fa75874d9a970863d3a4e5ac22f2a205b03c1e1218563590771384ed8966c0af21f319e3f3aea50ddca160d3418d3e7adf06201b2
-
-  通讯/办公地址 :
-
-  8fdc2f77b4fc439af5ab0b6d57c0f67174b1d36c319876a0c27894fe390cf94dee9aec34b809c7115754cd0cbb6cbd813d487bef2eef9b82b28e27d8a275b53019f4f9c8c1e4565ab0ea032ce2a77359a426de8f47e2de20f4d010c241d4ae91254884f25f6bc243f1a2bedd8536b9fda310fbb2f2fca9f549f01147586fe5b4
-
-  扫描关注
-
-  个人简介
+title: 教授
+subjects: 计算机软件与理论
+email: yubin@mail.xidian.edu.cn
+office_address: 老校区主楼IV区323
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -163,13 +46,41 @@ bio_raw: '西安电子科技大学主页平台管理系统 鱼滨 首页  中文
 
   30
 
-  余篇。'
+  余篇。
+
+  获陕西省政府科学技术奖三等奖，
+
+  陕西省教育厅科技进步一等奖，
+
+  陕西省高等学校科技进步二等奖。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、大数据安全与治理、机器学习、软件开发方法与环境、医学图像处理、陕西省计算机学会高级会员、陕西省网络与信息化领导小组专家咨询委员会委员、陕西省优秀留学回国人员
 detail_url: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -186,14 +97,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YB5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,7 +1,6 @@
 slug: shenderong
 name: 申德荣
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -17,6 +16,17 @@ detail_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -38,14 +48,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

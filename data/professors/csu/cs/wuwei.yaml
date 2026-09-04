@@ -1,18 +1,92 @@
 slug: wuwei
 name: 吴炜
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 特聘副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+bio_raw: '吴炜，男，1988.11出生于湖南，硕士生导师、博士生导师，分别在2011、2014和2018年获得中南大学、北京大学和澳大利亚悉尼科技大学计算机专业学士、硕士和博士学位。2018.4-2019.3先后在悉尼大学商学院和儿童医学研究所任职副研究员和数据科学家；2019.7-2020.8在悉尼科技大学做博士后；2020.8-2021.7在德国莱布尼茨汉诺威大学L3S研究中心做高级研究员；2021.9起在中南大学计算机学院任职特聘副教授，邓迪国际学院计算机教学系副主任，入选第十四批湖南省“百人计划”，中南大学升华学者（B岗）。
+
+  在数据挖掘领域提出一系列高效的基于哈希技术的数据表征算法，解决大数据特征提取的效率问题。在顶级数据挖掘与人工智能国际会议和期刊上发表文章40篇，其中CCF A类22篇，谷歌学术引用1200余次。算法多次被中国科学院院士、香港工程科学院院士、美国艺术与科学院院士、ACM/IEEE
+  Fellow高度评价，不仅启发生物信息学研究者使用哈希技术高效执行大规模生物学应用，而且有效解决AI发展的训练成本及手机有限的计算能力瓶颈问题。
+
+  发表在WWW 2021上的#GNN图表征算法被著名的图数据库neo4j应用
+
+  （
+
+  slides
+
+  ，
+
+  video
+
+  ）
+
+  。主持或参与多项'
+institutes:
+- 计算机学院
+research_direction_raw: 人工智能（Artificial Intelligence）、大数据（Big Data）、大模型（Large Language
+  Models）、数据挖掘（Data Mining）和算法（Algorithms）
 detail_url: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/wuwei/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

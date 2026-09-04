@@ -1,119 +1,12 @@
 slug: shenglijie
 name: 盛立杰
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 盛立杰 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  B24
-
-  3Fj
-
-  X7o
-
-  Xjv
-
-  37b
-
-  5a0
-
-  eSo
-
-  FnW
-
-  fXL
-
-  xg0
-
-  JG6
-
-  m2c
-
-  K3m
-
-  ldO
-
-  bY7
-
-  l4p
-
-  POC
-
-  466
-
-  sbt
-
-  nRD
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  盛立杰
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：男
-
-  毕业院校：清华大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2007-01-01
-
-  学科：软件工程
-
-  扫描关注
-
-  个人简介
+title: 副教授
+subjects: 软件工程
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -139,37 +32,26 @@ bio_raw: '西安电子科技大学主页平台管理系统 盛立杰 首页  中
 
   西安电子科技大学计算机学院副教授，硕士生导师。
 
-  迄今主持科研项目9项；在国内、国际刊物与学术会议上发表学术论文21篇，其中EI收录14篇，SCI收录1篇；已授权发明专利25项，申请发明专利4项，登记软件著作权5项。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  暂无内容
-
-  研究方向
-
-  Research Focus
-
-  社会兼职
-
-  Social Affiliations
-
-  计算机视觉
-
-  智能人机交互'
+  迄今主持'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、计算机视觉、智能人机交互、担任《Journal
+  of Computer Systems、Networks、and Communications》审稿人。
 detail_url: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -186,14 +68,18 @@ provenance:
     source: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SLJ/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

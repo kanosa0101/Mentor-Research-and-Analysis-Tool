@@ -1,7 +1,6 @@
 slug: liyue
 name: 李樾
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -24,6 +23,12 @@ detail_url: https://cs.nju.edu.cn/74/a2/c2639a423074/page.htm
 profile_url: https://cs.nju.edu.cn/74/a2/c2639a423074/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
 provenance:
   name:
     origin: crawled
@@ -50,9 +55,3 @@ provenance:
     source: https://cs.nju.edu.cn/74/a2/c2639a423074/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译

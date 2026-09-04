@@ -1,123 +1,13 @@
 slug: lijianan
 name: 李佳楠
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 李佳楠 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  L6y
-
-  vVL
-
-  suW
-
-  uoP
-
-  nLR
-
-  dEz
-
-  FcC
-
-  qyQ
-
-  Qdj
-
-  2lI
-
-  zDf
-
-  n6W
-
-  fmh
-
-  byR
-
-  Mh2
-
-  uaO
-
-  479
-
-  mEM
-
-  bEL
-
-  3qK
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  李佳楠
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  硕士生导师
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2021-09-01
-
-  电子邮箱：
-
-  132affe85947a7ea542469dffa9aa9fd3c992e36deb7b21642da683bf879fe937b5d8aebc2f060a4d2a6d06c46e6168085bbdcc32ef101658054c226724e2d90d8c65c9a136895e148f8153b3ce3535026e6fc0de86c7fb073554681671c59750ccdce23a6f3af0df4b5f04471a46d34dd0fe8fa653c878019eee37f50a00884
-
-  扫描关注
-
-  个人简介
+title: 副教授
+supervisor: 硕导
+email: lijianan@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -132,49 +22,20 @@ bio_raw: '西安电子科技大学主页平台管理系统 李佳楠 首页  中
   科学研究：
 
   本人面向国家人工智能方向的需求，长期从事多模态信息智能处理的理论和应用研究工作。主要研究方向包括图像及视频理解，行为识别，智能推荐等方面的工作。近年来，在多个国际知名学术期刊及会议 NeurIPS, ACMMM, IEEE-TCSVT,
-  PR等发表多篇高水平学术论文。先后参与科技部重点研发计划、国家自然科学基金、陕西省重点研发计划等多项科研项目，相关成果申请或授权国家发明专利多项。
-
-  招生信息：
-
-  (
-
-  对本研究组有意向的同学，随时与我
-
-  邮件
-
-  联系交流)
-
-  研究生招生：
-
-  目前隶属李青山教授团队，团队常年招收软件工程、电子信息等方向博士生、硕士生、以及学有余力的本科实习生。热诚欢迎有志于相关研究方向的优秀学生加入我们团队。
-
-  本科实习生：
-
-  诚挚欢迎对人工智能怀有浓厚兴趣，并有志于在该领域深耕钻研、探索前沿的本科生加入。
-
-  招生要求：
-
-  态度积极，扎实肯干，具备冲劲与内在驱动力。我作为一名青年教师，需要志同道合的同学并肩前行、共同成长。期待能在你求学和成长的路上提供支持，成为你向上攀登的一段阶梯。
-
-  研究最新动态-进展：
-
-  3/2/2026，论文Knowledge-empowered Course Recommendation with Cross-graph and Forgetting-aware
-  Cross-attention被Applied Soft Computing接收；
-
-  27/1/2026，论文SeeKRec: Towards Semantic-empowered Knowledge-aware Recommendation被DASFAA
-  2026 (Oral)接收；
-
-  27/1/2026，论文PreFact: Knowledge Propagation Regulating Network Toward Preferred Facts
-  for Knowledge-aware Recommendation被DASFAA 2026 (Oral)接收；
-
-  18/1/2026，论文Bundling-aware Masked Graph AutoEncoder for Bundle Recommendation被ICASSP
-  2026接收；'
+  PR等发表多篇高水平学术论文。先后参与科技部重点研发计划、国家自然科学基金、陕西省重点研发计划等多项'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、智能推荐、视频行为识别、图像及视频理解、暂无内容
 detail_url: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -191,9 +52,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LJN1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,7 +1,6 @@
 slug: jinpeiquan
 name: 金培权
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -100,6 +99,12 @@ detail_url: http://cs.ustc.edu.cn/2020/0906/c23239a460121/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23239a460121/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -121,9 +126,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460121/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

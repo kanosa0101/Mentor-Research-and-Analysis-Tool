@@ -1,7 +1,6 @@
 slug: wushuai
 name: 吴帅
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
@@ -171,17 +170,6 @@ detail_url: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
 profile_url: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -203,3 +191,14 @@ facets:
   confidence: auto
   evidence:
   - keyword:医学影像
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

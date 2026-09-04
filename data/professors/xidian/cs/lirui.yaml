@@ -4,141 +4,12 @@ aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 李瑞 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  kRR
-
-  uLh
-
-  xOS
-
-  mzR
-
-  CAW
-
-  AXu
-
-  O6N
-
-  euv
-
-  i5b
-
-  rfN
-
-  1JQ
-
-  mAz
-
-  sxl
-
-  77r
-
-  qxr
-
-  8K6
-
-  Ejp
-
-  BGM
-
-  nHI
-
-  H6a
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  李瑞
-
-  个人信息
-
-  Personal Information
-
-  教授
-
-  博士生导师
-
-  性别：男
-
-  毕业院校：西安交通大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  双肩挑单位：
-
-  计算机科学与技术学院
-
-  入职时间：2014-07-01
-
-  学科：软件工程
-
-  电子邮箱：
-
-  a7851b3acd89931fcad567f24b059b324f149197e46f181f0794b237b1301048bc81dc625b6a07bcf9470b7c10057ab663f46d60e3419707941174da0851f4007c4cbfbb3e00d21fd8e14b2ee5c560cb183041557cd2f9a1bbd0c030596fe4b42718dc18f7d9cf8d55b13e1d99dc371da596be1961531c778343deb838db7e1f
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  a7851b3acd89931fcad567f24b059b324f149197e46f181f0794b237b1301048bc81dc625b6a07bcf9470b7c10057ab663f46d60e3419707941174da0851f4007c4cbfbb3e00d21fd8e14b2ee5c560cb183041557cd2f9a1bbd0c030596fe4b42718dc18f7d9cf8d55b13e1d99dc371da596be1961531c778343deb838db7e1f
-
-  办公室电话 :
-
-  0a555b183253209ec07b396e25d2e8f7eb1f4fedc6596dc2551a11f1532139716e65dbe8c9d3e28d5e723e5b2a61f99e748d2d1ad04302b115542371cf3dd05dc08986ddeea6e998c2f3417a877f0c1faf4231c3b0d9f9637c2c91b9d06ad6a2e259014ce28b4f68d80a2a93f54f6451abb699ace276cf3768221f0035d507cf
-
-  扫描关注
-
-  同专业博导
-
-  同专业硕导
-
-  个人简介
+title: 教授
+supervisor: 博导
+subjects: 软件工程
+email: rli@xidian.edu.cn
+phone: 029-81891211
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -160,15 +31,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 李瑞 首页  中文
 
   青海省专家人才联合会理事、副秘书长，CCF分布式计算与系统专委会委员。
 
-  主要从事智能感知、物联网与智能化系统等方向的研究。主持包括国家重点研发计划课题、国家自然科学基金项目、青海省重点研发与转化计划项目、陕西省秦创原“科学家+工程师”队伍建设项目等科研项目20余项。担任国际会议程序委员会主席或委员20余次，在国内外主流学术期刊和会议上发表论文60余篇，公开/授权国家发明专利50余项。牵头制定团体/地方标准2项，参与制定国家标准2项。2019年获陕西高等学校科学技术奖一等奖。2021年获陕西省科技进步奖二等奖和陕西高等学校科学技术奖特等奖。
-
-  教育经历'
+  主要从事智能感知、物联网与智能化系统等方向的研究。主持包括国家重点研发计划课题、国家自然科学基金项目、青海省重点研发与转化计划项目、陕西省秦创原“科学家+工程师”队伍建设项目等'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、智能化系统、物联网、智能感知、网络管理与网络诊断、CCF分布式计算与系统专委会委员
 detail_url: http://faculty.xidian.edu.cn/LR3
 profile_url: http://faculty.xidian.edu.cn/LR3
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -185,14 +66,33 @@ provenance:
     source: http://faculty.xidian.edu.cn/LR3
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
+  email:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/LR3
+    fetched_at: '2026-09-04'
+    confidence: auto

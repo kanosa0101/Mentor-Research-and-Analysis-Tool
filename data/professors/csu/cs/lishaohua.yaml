@@ -1,18 +1,101 @@
 slug: lishaohua
 name: 李少华
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 讲师
+supervisor: 硕导
+email: shaohua.li@csu.edu.cn
+office_address: 计算机楼309
+bio_raw: '李少华，2021年毕业于华沙大学（University of Warsaw），获计算机科学博士学位，导师为Marcin Pilipczuk教授；2024年在德国CISPA亥姆霍兹信息安全中心完成博士后工作，导师为Dániel
+  Marx教授；2024年7月入职中南大学计算机学院。主要研究方向为NP难问题的参数算法与参数复杂性、图算法设计与分析、机器学习算法理论等，解决了团簇编辑问题基于保证值的参数复杂性与算法、度量维度问题在固定树宽图上的复杂性等长期开放性难题，在SoCG、ICALP、STACS、ESA、MFCS等理论计算机科学会议及ACM
+  Transactions on Algorithms、Discrete & Computational Geometry、Information and Computation、Journal
+  of Computer and System Sciences、Algorithmica等理论计算机科学期刊发表论文十余篇。曾获IPEC 2021最佳论文奖，曾担任ESA、STACS、MFCS、WALCOM、
+
+  Journal of Computer and System Sciences
+
+  等会议及期刊的审稿人。
+
+  【已发表论文】
+
+  https://dblp.org/pid/83/1926-5.htm
+
+  【讲授课程】
+
+  编译原理（必修课，48学时，秋季学期，本科生）
+
+  算法分析与设计（选修课，48学时，春季学期，本科生）
+
+  今年计划招收两名硕士研究生，欢迎对本人研究方向感兴趣的同学与我联系
+
+  邮箱: shaohua.li@csu.edu.cn'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  NP难问题的参数算法与参数复杂性、[2]  图算法设计与分析、[3]  机器学习算法理论'
 detail_url: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lishaohua1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

@@ -170,22 +170,6 @@ detail_url: http://web.xidian.edu.cn/ynquan/
 profile_url: http://web.xidian.edu.cn/ynquan/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: http://web.xidian.edu.cn/ynquan/
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: http://web.xidian.edu.cn/ynquan/
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.cv
   origin: computed
@@ -222,3 +206,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ynquan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ynquan/
+    fetched_at: '2026-09-04'
+    confidence: auto

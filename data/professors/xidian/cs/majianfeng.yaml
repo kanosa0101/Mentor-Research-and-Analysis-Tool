@@ -6,69 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-bio_raw: '马建峰 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  马建峰的留言板
-
-  马建峰的主页:
-
-  个人信息
-
-  论文成果
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  基本信息
-
-  马建峰　教授   博士生导师
-
-  网络空间安全学部主任
-
-  网络与信息安全学院分党委书记
-
-  网络与系统安全陕西省重点实验室主任
-
-  博士学科：计算机科学与技术、网络空间安全
-
-  工作单位：网络与信息安全学院
-
-  联系方式
-
-  通信地址：陕西省西安市太白南路2号西安电子科技大学网络与系统安全陕西省重点实验室
-
-  邮编：710071
-
-  电子邮箱：jfma@mail.xidian.edu.cn
-
-  办公电话：029-88204750
-
-  办公地点：太白校区科技实验楼1003#
-
-  个人简介
-
-  一、教育经历
+bio_raw: '一、教育经历
 
   1985
 
@@ -146,30 +84,23 @@ bio_raw: '马建峰 | 个人信息 | 西安电子科技大学个人主页
 
   10、“中国科学：信息科学”/“电子学报”/“计算机学报”/“密码学报”编委、“通信学报”编委会副主任／副主编
 
-  11、中国电子学会会士、中国计算机学会理事／会士、中国密码学会理事、中国网络空间安全协会常务理事、陕西省计算机学会副理事长等。
-
-  主要研究方向
-
-  应用密码学、无线网络安全、数据安全、移动智能系统安全
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  11、中国电子学会会士、中国计算机学会理事／会士、中国密码学会理事、中国网络空间安全协会常务理事、陕西省计算机学会副理事长等。'
 institutes: []
 detail_url: http://web.xidian.edu.cn/jfma/
 profile_url: http://web.xidian.edu.cn/jfma/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -191,19 +122,3 @@ provenance:
     source: http://web.xidian.edu.cn/jfma/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

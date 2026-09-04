@@ -1,7 +1,6 @@
 slug: luyao
 name: 陆遥
-aliases:
-- te
+aliases: []
 school: sysu
 dept: cs
 status: enriched
@@ -14,6 +13,27 @@ detail_url: https://cse.sysu.edu.cn/teacher
 profile_url: https://cse.sysu.edu.cn/teacher
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -40,24 +60,3 @@ provenance:
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像

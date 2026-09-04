@@ -1,175 +1,36 @@
 slug: zhuxinghui
 name: 祝幸辉
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 祝幸辉 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  vBQ
-
-  xFO
-
-  adp
-
-  S5t
-
-  6FT
-
-  BvL
-
-  L4F
-
-  StG
-
-  iks
-
-  U84
-
-  Nfm
-
-  IDm
-
-  ANS
-
-  dpb
-
-  ty5
-
-  KP6
-
-  rPp
-
-  lHX
-
-  vyY
-
-  PSQ
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  祝幸辉
-
-  个人信息
-
-  Personal Information
-
-  讲师（高校）
-
-  硕士生导师
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2023-06-01
-
-  办公地点：南校区网安大楼A1-911
-
-  联系方式：
-
-  946d570435c30a5706adaaa36441abd3414ee441f99a0419cd839d7d4e9874f4948aca939e0eaac302341353ddb6dcd3618d95a846f9b1fa19493f72a88e5b4c4d4ce19b0e6e88c034061b2bd938c0bc7527ddcccdba02b3f75d7551f6c86ccb17855d2638dd6079cbd2bb6b2b2d9e0cd2507fc7a5f200813a7be04dab633bb1
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  946d570435c30a5706adaaa36441abd3414ee441f99a0419cd839d7d4e9874f4948aca939e0eaac302341353ddb6dcd3618d95a846f9b1fa19493f72a88e5b4c4d4ce19b0e6e88c034061b2bd938c0bc7527ddcccdba02b3f75d7551f6c86ccb17855d2638dd6079cbd2bb6b2b2d9e0cd2507fc7a5f200813a7be04dab633bb1
-
-  通讯/办公地址 :
-
-  310ad6119ee0944656045bc2284eea61dabc4facf82e225c91a5f64c6aa18e0b48353a659b1e8c3096c375c29c2f74a4e67154d9c1d88101166abfcb8a675bc2e5f875e8d9e415eaaa28b9394679ca5882a09d8953d6bbda949b0a9f8219dcaf235f58417b3739bc8141faee5a093d06c14676d1ff911331267f09c62fc31f38
-
-  扫描关注
-
-  个人简介
+title: 讲师（高校）
+supervisor: 硕导
+email: xhzhu@xidian.edu.cn
+office_address: xhzhu@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
-  祝幸辉，博士，西安电子科技大学准聘副教授，主要研究方向为物联网及安全，主持或参与国家重点研发、GF基础加强计划、国家自然科学基金、陕西省重点产业创新链、企业横向项目等20余项，近3年科研经费到账500余万元。在国际知名期刊、会议发表论文18余篇，申请国家技术发明专利43项，授权18项，出版专著一部、教材一部，曾获陕西省科技工作者创新创业大赛金奖、中国发明专利优秀奖、青岛市科技进步二等奖等荣誉奖励。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  2019.08
-
-  2023.06
-
-  西安电子科技大学
-
-  计算机科学与技术
-
-  博士研究生毕业
-
-  2014.08
-
-  2017.06
-
-  西安电子科技大学
-
-  计算机系统结构
-
-  硕士研究生'
+  祝幸辉，博士，西安电子科技大学准聘副教授，主要研究方向为物联网及安全，主持或参与国家重点研发、GF基础加强计划、国家自然科学基金、陕西省重点产业创新链、企业横向项目等20余项，近3年科研经费到账500余万元。在国际知名期刊、会议发表论文18余篇，申请国家技术发明专利43项，授权18项，出版专著一部、教材一部，曾获陕西省科技工作者创新创业大赛金奖、中国发明专利优秀奖、青岛市科技进步二等奖等荣誉奖励。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、物联网及安全、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -186,14 +47,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHUXINGHUI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

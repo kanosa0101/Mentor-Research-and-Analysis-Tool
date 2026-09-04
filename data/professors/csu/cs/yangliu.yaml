@@ -1,18 +1,93 @@
 slug: yangliu
 name: 杨柳
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+office_address: 校本部管理楼#514
+bio_raw: '杨柳，女，教授，博士生导师/硕士生导师，美国德克萨斯州大学阿灵顿分校访问学者。现任教于中南大学计算机学院，主讲卡内基梅隆大学系列课程-SSD1（软件开发技术基础）、软件工程、软件度量及应用等课程，湖南省精品在线开放课程、湖南省一流本科课程《软件度量及应用》(线上线下混合，
+
+  软件度量及应用_中国大学MOOC
+
+  ) 课程负责人，国家精品资源共享课程《操作系统原理》的主讲教师之一，
+
+  第七届Intel杯全国大学生软件创新大赛特等奖指导教师。
+
+  研究方向包括知识图谱与推理、智能图计算、知识工程与智能软件、大模型等。主持国家自然科学基金面上项目、国家自然科学基金青年项目、科技部重大项目子课题、国家军委科技委项目、之江实验室（国家重点实验室）开放课题、教育部学科博士点专项科研基金、湖南省自然科学基金面上项目等纵向项目，主持完成了与中国原子能科学院、***研究所、哈尔滨工业大学、北京科技大学等单位合作的多项软件产品研制；作为骨干成员参与国家重大科研仪器设备研制专项“中国先进研究堆（CARR）工程科学应力谱仪”中核心控制与计算软件的研制，参与国家自然科学基金联合基金重大、国家高技术研究发展计划（863项目）、国家自然科学基金重点等多项国家级重大/重点项目。
+
+  获得教育部科技进步一等奖1项（排名第三），铁道科技一等奖1项，湖南省科技进步一等奖1项，甘肃省科技进步一等奖1项，机械工业科技进步特等奖1项，湖南省计算机学会高等教育教学成果奖一等奖1项。近年来以第一作者或通讯作者在TKDE、TGRS、Neural
+  Networks、KBS、AAAI、CVPR、NAACL等国内外知名期刊和会议上发表高水平学术论文50余篇，授权发明专利20余项，申请国际发明专利2项，申请软件著作权40余项，参编专著1部，鉴定项目2项。
+
+  本人2026年招收博士研究生1名、硕士研究生3名，欢迎感兴趣的学生邮件至yangliu#csu.edu.cn（#替换成@）。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  知识图谱构建与知识表示学习、[2]  知识工程与智能服务、[3]  软件质量管理及过程改进、[4]  结合深度学习的大图智能处理'
 detail_url: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yangliu/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

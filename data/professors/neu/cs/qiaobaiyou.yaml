@@ -1,7 +1,6 @@
 slug: qiaobaiyou
 name: 乔百友
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -26,22 +25,6 @@ detail_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/6314/list.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.ml
   origin: computed
@@ -58,3 +41,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/6314/list.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157486/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

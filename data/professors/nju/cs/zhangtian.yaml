@@ -1,7 +1,6 @@
 slug: zhangtian
 name: 张天
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -124,6 +123,22 @@ detail_url: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
 profile_url: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -150,19 +165,3 @@ provenance:
     source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

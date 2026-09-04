@@ -1,7 +1,6 @@
 slug: wugangshan
 name: 武港山
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -27,6 +26,12 @@ detail_url: https://cs.nju.edu.cn/58/1b/c2639a153627/page.htm
 profile_url: https://cs.nju.edu.cn/58/1b/c2639a153627/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -58,9 +63,3 @@ provenance:
     source: https://cs.nju.edu.cn/58/1b/c2639a153627/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉

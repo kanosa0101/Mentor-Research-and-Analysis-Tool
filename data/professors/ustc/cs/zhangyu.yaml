@@ -1,7 +1,6 @@
 slug: zhangyu
 name: 张昱
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -159,6 +158,22 @@ detail_url: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
 provenance:
   name:
     origin: crawled
@@ -180,19 +195,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无人系统

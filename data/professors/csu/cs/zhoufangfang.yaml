@@ -1,18 +1,80 @@
 slug: zhoufangfang
 name: 周芳芳
 aliases:
-- inde
+- zff
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+bio_raw: '周芳芳，女，工学博士，中南大学计算机学院，教授。分别于2002年、2007年在中南大学获得工学学士和工学博士学位，2005年-2006年清华大学智能技术与系统国家重点实验室访问学生，2009年-2010年UC
+  Davis(美国加利福尼亚大学Davis分校)博士后。2011年评为副教授，2012年创建中南大学可视化研究小组，2013年入选中南大学“531”人才，2016年评为教授。
+
+  长期从事可视化与可视分析、大模型与智能体、数据挖掘与机器学习等方向的研究与应用。近五年来，主持国家自然科学基金项目3项，省部级'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  大数据分析（BDA：big data analysis）、[2]  可视化与可视分析 （VIS：visualization
+  and visual analytics）、[3]  数据挖掘 （DM：data mining）、[4]  机器学习（ML：machine learning）、[5]  虚拟现实
+  （VR：virtual reality）'
 detail_url: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/zff/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

@@ -1,7 +1,6 @@
 slug: taoxianping
 name: 陶先平
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -25,6 +24,12 @@ detail_url: https://cs.nju.edu.cn/58/15/c2639a153621/page.htm
 profile_url: https://cs.nju.edu.cn/58/15/c2639a153621/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -56,9 +61,3 @@ provenance:
     source: https://cs.nju.edu.cn/58/15/c2639a153621/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:普适计算

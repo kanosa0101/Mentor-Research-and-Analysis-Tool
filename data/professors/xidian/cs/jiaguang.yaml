@@ -6,67 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-bio_raw: '贾广 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  贾广的留言板
-
-  贾广的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  English
-
-  基本信息
-
-  贾广 教授  博士生导师
-
-  工作单位：计算机学院
-
-  联系方式
-
-  E-mail：
-
-  gjia@xidian.edu.cn
-
-  办公地点：教辅楼225
-
-  主要研究方向
-
-  1、
-
-  个人简介
-
-  贾广，男，博士，教授，博士生导师，西电“华山学者”。
+bio_raw: '贾广，男，博士，教授，博士生导师，西电“华山学者”。
 
   1997年本科毕业于兰州大学物理学专业，2006于俄亥俄州立大学获得生物物理/医学影像博士学位。
 
@@ -86,49 +26,23 @@ bio_raw: '贾广 | 个人信息 | 西安电子科技大学个人主页
 
   2011/10-2013/07：美国俄亥俄州立大学  医学院放射科 助理教授、医学物理师、博士生导师
 
-  2008/12-2011/06：美国俄亥俄州立大学 医学院放射科 讲师
-
-  学术职务
-
-  Academic Radiology杂志  副编辑
-
-  美国医学物理学会AAPM Working Group on Magnetic Resonance Testing and Quality Assurance 
-  工作组成员
-
-  美国医学物理学会AAPM Working Group for Standards for Quantitative MR Measures  工作组成员
-
-  IEEE生物信息和生物医学国际会议(BIBM) Electronic Health Record   大会组织委员
-
-  《中国医疗设备》杂志  海外编委
-
-  北美放射学会RSNA定量医学影像  委员会委员
-
-  美国卫生部国立癌症所  基金评委
-
-  国医学物理学会AAPM2015年会MRgRT education session  分会主席
-
-  BioMed Research International杂志  客座主编
-
-  美国放射学院影像网络ACRIN Abdominal Committee  委员会委员
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  2008/12-2011/06：美国俄亥俄州立大学 医学院放射科 讲师'
 institutes: []
 detail_url: http://web.xidian.edu.cn/gjia/
 profile_url: http://web.xidian.edu.cn/gjia/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -150,14 +64,3 @@ provenance:
     source: http://web.xidian.edu.cn/gjia/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像

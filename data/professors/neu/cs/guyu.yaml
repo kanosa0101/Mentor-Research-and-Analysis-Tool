@@ -1,7 +1,6 @@
 slug: guyu
 name: 谷峪
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -234,22 +233,6 @@ detail_url: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/6314/list.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -271,3 +254,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据库
+provenance:
+  name:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/6314/list.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

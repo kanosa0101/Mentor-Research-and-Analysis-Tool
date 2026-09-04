@@ -1,133 +1,15 @@
 slug: huohongwei
 name: 霍红卫
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 霍红卫 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  wda
-
-  Fa9
-
-  pRK
-
-  7kO
-
-  pVx
-
-  SW9
-
-  cb9
-
-  PAQ
-
-  kCL
-
-  F5L
-
-  5e1
-
-  HHw
-
-  7Ld
-
-  teC
-
-  wn1
-
-  mCa
-
-  fQu
-
-  onB
-
-  D6r
-
-  0al
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  霍红卫
-
-  个人信息
-
-  Personal Information
-
-  教授
-
-  博士生导师
-
-  硕士生导师
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：1986-07-01
-
-  学科：计算机软件与理论
-
-  办公地点：计算中心213
-
-  电子邮箱：
-
-  1b04ec0ac28e6c02e558583eca52b0bdcd681bc1f74a9e1815f0efb534d88530ff60ab2066edfca0dcc2f8c686a8d992e1949dd4fc6636c181fd99982813bf9126fa8faa6b3484140cf91ac629eb39910dfd4f4605a01adaa86b5305c01bf174432a56913e28d8648d2470f565f79ff59593af17a113df4011a84b18b18ee313
-
-  扫描关注
-
-  同专业博导
-
-  同专业硕导
-
-  个人简介
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机软件与理论
+email: hwhuo@mail.xidian.edu.cn
+office_address: 计算中心213
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -165,13 +47,313 @@ bio_raw: '西安电子科技大学主页平台管理系统 霍红卫 首页  中
 
   常量时间操作：支持在常量时间内在图结构和图属性上的基本和导航操作。
 
-  高效的属性提取：能够快速检索顶点和边上的属性。'
+  高效的属性提取：能够快速检索顶点和边上的属性。
+
+  快速模式匹配：能够快速定位给定模式在顶点属性串和边属性串中的位置。
+
+  查询优化：在复杂查询、智能查询、图分析（BFS和PageRank）方面，在空间占用和查询时间方面显著优于传统图数据库系统。
+
+  2012年邀请Jeffrey S. Vitter教授访问西电（
+
+  http://oice.xidian.edu.cn/info/1010/1897.htm
+
+  ）
+
+  （
+
+  https://meeting.xidian.edu.cn/html/news/201301/202.html
+
+  ）
+
+  近期研究与软件开发
+
+  标签属性图压缩索引与查询优化
+
+  泛基因组压缩索引与近似模式搜索
+
+  神经网络模型压缩
+
+  主要研究方向: 压缩数据结构，熵压缩索引与检索，算法理论与算法工程
+
+  算法设计与分析，算法工程，串算法, 图算法
+
+  压缩索引与检索，压缩数据结构
+
+  图数据库压缩索引与相似性搜索，
+
+  属性图压缩索引与检索
+
+  泛基因组索引
+
+  ，基因组压缩与模式搜索
+
+  并行与分布式算法, 外存算法
+
+  Featured software
+
+  GeCSA: Practical High-order Entropy-compressed Text Self-indexing
+
+  (Hongwei Huo, Peng Long & Jeffrey Scott Vitter)
+
+  Welcome to my page :o)
+
+  Featured publications
+
+  H. Huo, Y. Yu, Z. He, J. S. Vitter, Indexing labeled property multidigraphs in entropy
+  space, with applications,
+
+  Proceedings of the 41st IEEE
+
+  International
+
+  Conference on
+
+  Data Engineering  (ICDE''25)
+
+  , Hong Kong SAR, China, 2025
+
+  ,
+
+  pp.
+
+  2478-2492
+
+  .
+
+  Source Code
+
+  .
+
+  PDF
+
+  .
+
+  CCF A类会议
+
+  H. Huo, Z. He, P. Liu, J. S. Vitter, FM-Adaptive: A practical data-aware FM-Index,
+
+  Workshop on Compressed Indexing and Graphs
+
+  , 23rd Symposium on Experimental Algorithms
+
+  ,
+
+  July 22-25, Venice, Italy
+
+  . 2025, Article No. 5; pp.5:1–5:22.
+
+  Source code
+
+  .
+
+  PDF
+
+  .
+
+  L. Guo, Z. He, H. Huo, Panaln: Indexing pangenopme for read alignment,
+
+  Bioinformatics
+
+  , August 28, Online, 2025.
+
+  Source Code
+
+  .
+
+  PDF
+
+  . CCF A类刊物
+
+  H. Huo, P. Long, J. S. Vitter, Practical high-order entropy-compressed text self-indexing,
+
+  IEEE Transactions on Knowledge and Data Engineering (TKDE)
+
+  ,  35(3): 2943-2960, 2023.
+
+  Source code
+
+  .
+
+  PDF
+
+  . CCF A类刊物
+
+  X. Chen, H. Huo, J. Huan, J. S. Vitter, W. Zheng, and L. Zou, MSQ-Index: A succinct
+  index for fast graph similarity search,
+
+  IEEE Transactions on Knowledge and Data Engineering (TKDE)
+
+  , 33(6):2654-2668, 2021.
+
+  Source Code
+
+  .
+
+  PDF
+
+  .  CCF A类刊物
+
+  Z. Li, J. Li, and H. Huo, Optimal in-place suffix sorting,
+
+  Information and Computation (IandC)
+
+  , 285(Part B):104818, May 2022
+
+  .
+
+  PDF
+
+  .
+
+  CCF A类刊物
+
+  H. Huo, P. Liu, C. Wang , H. Jiang and J. S.Vitter, CIndex: compressed indexes for
+  fast retrieval of FASTQ files,
+
+  Bioinformatics
+
+  ,
+
+  38(2):335-343, 2022
+
+  .
+
+  Source Code
+
+  .
+
+  PDF
+
+  .
+
+  CCF A类刊物
+
+  X. Chen, H. Huo, J. Huan, and J. S. Vitter, An efficient algorithm for graph edit
+  distance computation,
+
+  Knowledge-Based Systems (KBS)
+
+  ,163(2019): 762–775, 2019
+
+  .
+
+  Source Code
+
+  .
+
+  PDF
+
+  . 中科院一区
+
+  H. Huo, X. Chen, X. Guo, J. S. Vitter, Efficient compression and indexing for highly
+  repetitive DNA sequence collections,
+
+  I
+
+  EEE/ACM Transactions on Computational Biology and Bioinformatics
+
+  (TCBB)
+
+  , 18(6): 2394-2408, 2021.
+
+  PDF
+
+  . CCF B类刊物
+
+  Z. Sun, H. Huo, J. Huan, and J. S. Vitter, Feature reduction based on semantic similarity
+  for graph classification,
+
+  Neurocomputing
+
+  , 397:114–126, 2020.
+
+  PDF
+
+  . 中科院二区
+
+  H. Huo, X. Chen, Y. Zhao, X. Zhu, and J. S. Vitter, Practical succinct text indexes
+  in external memory,
+
+  Proceedings of the 2018 IEEE
+
+  Data Compression Conference (DCC''18)
+
+  , Snowbird, USA, 2018. 数据压缩顶会
+
+  Z. Li, J. Li and H. Huo, Optimal in-place suffix sorting,
+
+  Proceedings of the 25th International Symposium on String Processing and Information
+  Retrieval (SPIRE
+
+  ), Lima, Peru, 2018.  信息检索重要会议
+
+  H. Huo, Z. Sun, S. Li, J. S. Vitter, et al., CS2A: a compressed suffix array-based
+  method for short read alignment,
+
+  Proceedings of the 2016 IEEE Data Compression Conference (DC
+
+  C''16)
+
+  , Snowbird, USA, 2016. 数据压缩顶会
+
+  H. Huo, L. Chen, H. Zhao, J. S. Vitter, et al., A data-aware FM-index,
+
+  ACM-SIAM Proceedings of the 17th Meeting on Algorithm Engineering and Experiments
+  (ALENEX)
+
+  , San Diego, California, USA, 2015. 算法工程顶会
+
+  H. Huo, L. Chen, J. S. Vitter, and Y. Nekrich, A Practical implementation of compressed
+  suffix arrays with applications to self-indexing,
+
+  Proceedings of the 2014 IEEE
+
+  Data Compression Conference (DCC''14)
+
+  , Snowbird, USA, 2014. 数据压缩顶会
+
+  Software
+
+  实验室开发的软件可在
+
+  GitHub
+
+  上访问（压缩索引与检索、数据压缩、外存压缩索引，基因组压缩与模式搜索，图数据库熵压缩索引）
+
+  can be reached at: hwhuo@mail.xidian.edu.cn'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: '研究方向、Research Focus、社会兼职、Social Affiliations、Algorithm and
+  its complexity: string algorithms、graph algorithms、Compressed data structures、Compressed
+  indexes and retrieval for big data、Compressed indexing for graph databases、Graph
+  compression and search、Genomic compression and pattern search、Parallel and distributed
+  algorithms、External memory algorithms、Algorithm engineering、IEEE Senior Member、ACM
+  Member、CCF Senior Member'
 detail_url: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组
 provenance:
   name:
     origin: crawled
@@ -188,4 +370,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/hwhuo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

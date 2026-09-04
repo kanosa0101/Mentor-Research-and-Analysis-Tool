@@ -1,133 +1,14 @@
 slug: weijingxuan
 name: 魏静萱
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 魏静萱 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  6ce
-
-  QRx
-
-  VXK
-
-  fHr
-
-  G37
-
-  bT3
-
-  Ura
-
-  sb9
-
-  EqZ
-
-  sOF
-
-  Bym
-
-  V6i
-
-  1X7
-
-  uwR
-
-  zw8
-
-  wQN
-
-  kpT
-
-  S46
-
-  7VD
-
-  TTj
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  魏静萱
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2009-04-01
-
-  学科：计算机软件与理论
-
-  办公地点：主楼四区115
-
-  联系方式：
-
-  476c2c4cd29c63c7b51da1ed577625b048d375152bab76f2dbb61ada22bbdfee5422a10a96d98a88cd6349787473abd764eca83710c3fc8b14b67d37605724baf350851dad6107a13a245b7e26b087b358105c1a6ced61d44e1a636e2f82be75ee54896ebddca43e77fca036db835436f5671699e156b824e431c12a652cc888
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  476c2c4cd29c63c7b51da1ed577625b048d375152bab76f2dbb61ada22bbdfee5422a10a96d98a88cd6349787473abd764eca83710c3fc8b14b67d37605724baf350851dad6107a13a245b7e26b087b358105c1a6ced61d44e1a636e2f82be75ee54896ebddca43e77fca036db835436f5671699e156b824e431c12a652cc888
-
-  扫描关注
-
-  个人简介
+title: 副教授
+subjects: 计算机软件与理论
+email: wjx@xidian.edu.cn
+office_address: wjx@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -135,41 +16,21 @@ bio_raw: '西安电子科技大学主页平台管理系统 魏静萱 首页  中
 
   （排名第二）
 
-  。主持国家自然科学基金1项，获得发明专利3项，发表学术论文30余篇，其中SCI检索十余篇篇。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  2010.10
-
-  2011.10
-
-  新西兰惠灵顿维多利亚大学
-
-  计算机学院
-
-  访问学者
-
-  2010.05
-
-  2010.10
-
-  澳大利亚南昆士兰大学
-
-  计算机学院'
+  。主持国家自然科学基金1项，获得发明专利3项，发表学术论文30余篇，其中SCI检索十余篇篇。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、人工智能算法、智能计算、粒子群优化、遗传算法、动态优化、优化理论与方法、IEEE
+  member、CCF会员、IEEE transactions on evolutionary computation（A*）、计算机学报等评阅人
 detail_url: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -186,9 +47,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WJX5/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,18 +1,163 @@
 slug: yaoxin
 name: 姚鑫
 aliases:
-- inde
+- yao
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+bio_raw: '姚鑫，博士，副教授、
+
+  博士生导师、
+
+  软件工程系副主任、
+
+  湖湘青年英才（荷尖）
+
+  、
+
+  湖南省优青、长沙市杰青。中国中文信息学会大数据与隐私计算专委会常务委员、中国计算机学会（CCF）物联网专委会执行委员、湖南省通信学会理事，主要从事物联网、机器学习、社交网络、云计算、大数据等领域的安全和隐私保护研究。近年来先后在本领域CCF
+  A/B类会议USENIX Security（信息安全四大）、
+
+  INFOCOM、
+
+  NeurIPS（机器学习三大）、ICDCS、IWQoS等、CCF A/B类及国际权威期
+
+  刊IEEE/ACM Transactions on Networking、IEEE Transactions on Dependable and Secure
+  Computing、IEEE Transactions on Mobile Computing、IEEE Transactions on Services Computing、IEEE
+  Transactions on Vehicular Technology、IEEE Transaction on Emerging Topics in Computing等上发表论文三十余篇，授权发明专利5项。主持国家自然科学基金面上、青年项目，湖南省重大技术攻关，
+
+  湖南省重点研发，
+
+  湖南省自然科学基金优秀青年、青年项目，自治区重点研发计划项目子课题，长沙市杰出创新青年培养计划，网络与交换技术国家重点实验室开放基金，浙江省密码技术重点实验室开放课题等，参与多项
+  “新一代人工
+
+  智能”重大项目、国家自然科学基金项目和省部级项目。担任INFOCOM
+
+  2023~
+
+  2026、
+
+  KDD 2025、
+
+  ICLR 2025、IEEE Transactions on Mobile Computing、IEEE Transactions on Dependable
+  and Secure Computing、IEEE Transactions on Services Computing、IEEE Transactions on
+  Knowledge and Data Engineering等国际重要学术会议/刊物的审稿人。
+
+  获奖情况：
+
+  1
+
+  、2025/02，Distinguished TPC member of INFOCOM 2025；
+
+  2、2024/08，
+
+  湖南省计算机学会高等教育教学成果奖一等奖（排名第1），“
+
+  以课程群建设为核心，构建多元融合的软件工程人才培养体系
+
+  ”；
+
+  3、2024/02，Distinguished TPC member of INFOCOM 2024；
+
+  4、2023/07，
+
+  国家级教学成果奖二等奖
+
+  （排名第22）
+
+  ，“
+
+  以专业群建设为抓手，构建多源融合的信息类人才培养体系
+
+  ”；
+
+  5、2022/12，湖南省自然科学奖三等奖
+
+  （排名第3）
+
+  ，“
+
+  面向泛在电力物联网数据处理关键技术研究
+
+  ”；
+
+  6、2022/07，湖南省计算机学会高等教育教学成果奖一等奖
+
+  （排名第2）
+
+  ，“
+
+  基础学科拔尖人才培养模式的创新与实践—以计算机学科为例
+
+  ”；
+
+  招收2027年入学的硕士，欢迎联系！邮箱：xinyao AT csu.edu.cn
+
+  查看全部'
+institutes:
+- 计算机学院
+research_direction_raw: 物联网、机器学习、社交网络、云计算等领域的安全和隐私保护研究
 detail_url: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/yao/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

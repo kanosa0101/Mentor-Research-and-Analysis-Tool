@@ -1,18 +1,94 @@
 slug: daipeishan
 name: 戴培山
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: daipeishan@163.com
+bio_raw: '戴培山, 男，工学博士，副教授，博士后合作导师，博士生导师，硕士生导师。中国图象图形学会会员，中国自动化学会会员，中国生物医学工程学会会员。2012年8月-2013年8月美国芝加哥大学访问学者。获得2017年湖南省自然科学二等奖，2023中国自动化学会科技进步奖二等奖。发表学术论文数十篇。主持国家自然科学基金面上项目2项、湖南省自然科学基金面上项目2项，湖南省自然科学基金青年项目1项，湖南省教改项目1项，中南大学教改项目2项，参与国家自然科学基金项目多项，省部级项目多项。国家自然科学基金评审人。IEEE
+  transactions on medical imaging，Translational psychiatry，International Journal for
+  Computational Methods in Engineering Science & Mechanics, 自动化学报，生物医学工程学杂志，中国医学物理学等杂志审稿人。
+
+  主要研究兴趣：
+
+  人工智能在信号与图像分析与处理中的应用：机器学习与深度学习，模式识别和统计分析及其在医学信号与图像处理中的应用。
+
+  研究生招生，本科生指导，合作交流：
+
+  欢迎对医学影像分析感兴趣的同学、老师交流合作。
+
+  联系方式：Email：daipeishan@163.com ；QQ: 425674796
+
+  主持与参与'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  人脑图像处理与分析、[2]  多模态医学图像分析与处理、[3]  人工智能在脑认知科学中的应用、[4]  本科生毕业设计和创新创业项目方向还有：动画与游戏程序设计'
 detail_url: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/daipeishan/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

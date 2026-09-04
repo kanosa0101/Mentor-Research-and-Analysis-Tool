@@ -1,7 +1,6 @@
 slug: liandefu
 name: 连德富
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -181,6 +180,12 @@ detail_url: http://cs.ustc.edu.cn/2020/0828/c23235a460098/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0828/c23235a460098/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
 provenance:
   name:
     origin: crawled
@@ -202,9 +207,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460098/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型

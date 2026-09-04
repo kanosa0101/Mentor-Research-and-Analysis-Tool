@@ -1,18 +1,165 @@
 slug: longjun
 name: 龙军
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: jlong@csu.edu.cn
+phone: 0731-88879583
+office_address: 湖南省长沙市麓山南路932号逸夫楼216
+bio_raw: '龙军，
+
+  博士，二级教授、博士生导师，中国计算机学会杰出会员，美国哥伦比亚大学访问学者。现任中南大学大数据研究院院长，计算医学与大数据技术学科方向主要负责人，湖南省“十四五”教育信息化研究基地首席专家。主讲《软件工程》、《软件体系结构》、《数据仓库与数据挖掘》、《大数据前沿理论方法》、《算法优化与应用》等本科和研究生课程。
+
+  长期专注于
+
+  大数据计算与智能软件系统研究
+
+  ，建立了以大规模多模态数据跨网络对象化表征与量化计算为核心的多智能体高并行计算技术体系，研发了网构化流程类软件协同开发环境，解决泛在互联环境下流程类大型复杂信息系统开发难题。主持科研成果获
+
+  省部级科学技术
+
+  一等奖8项
+
+  、
+
+  二等奖6项
+
+  ，获
+
+  授权发明专利90项
+
+  、计算机
+
+  软件著作权70项
+
+  ，以第一/通讯作者发表CCF-A/B类或中科院1区论文
+
+  70余篇
+
+  ，出版
+
+  专著3部
+
+  、
+
+  教材6本
+
+  。技术创新成果在国铁集团、大秦铁路、神华集团，以及科技部、教育部、财政部、国家自然科学基金委、新疆自治区网信办、中海油、江南造船集团、军队有关单位等100多家企事业单位创新应用。
+
+  入选
+
+  教育部
+
+  新世纪优秀人才支持计划
+
+  、
+
+  湖南省芙蓉学者奖励计划特聘教授
+
+  、
+
+  新疆自治区天池特聘计划特聘教授
+
+  、
+
+  湖南省杰出青年基金
+
+  等人才计划。主导研发了湘雅医学大数据系统，带领团队聚焦计算医学，与国内外知名企业及高校深度合作，建立起跨校、跨院、跨学科交叉融合、自由开放的协同创新模式，积极推进医学人工智能研究，是医学大数据省部共建协同创新中心、网络资源管理与可信评估湖南省重点实验室、湖南省智能课堂与教育大数据研究发展中心、中南大学人工智能医生前沿技术研究中心等科研平台负责人。
+
+  研究方向：
+
+  >人工智能大模型
+
+  >
+
+  大数据计算与智能软件
+
+  >
+
+  可信数据空间
+
+  论文：
+
+  详见dblp：https://dblp.uni-trier.de/pid/40/5250.html'
+institutes:
+- 计算机学院
 detail_url: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/longjun/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

@@ -1,125 +1,13 @@
 slug: yangyanhua
 name: 杨延华
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 杨延华 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  PQ5
-
-  HVf
-
-  xGV
-
-  TIv
-
-  nFJ
-
-  fka
-
-  nNu
-
-  XLz
-
-  sY9
-
-  UQT
-
-  YNK
-
-  aeK
-
-  rD6
-
-  oNQ
-
-  oj8
-
-  SPz
-
-  RcM
-
-  UQQ
-
-  OWY
-
-  oi8
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  杨延华
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  博士生导师
-
-  硕士生导师
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2017-07-01
-
-  电子邮箱：
-
-  b50aea3c96bc43a5f2c3d3dd989f8ef4c5f35d35d5eade403847c998b064ace2168ffd1612a4b8d74ad61f00c83b1dd56025b012e972004c2c4afb0ac39f88c060e00b217f88f1509f84869e645c270765f67bb6eb3a04bebd2629b2a2666245324b4a262c24cbf64c1424798ce224cb42c63dbccdb1a746ebbbeb48439f875a
-
-  扫描关注
-
-  个人简介
+title: 副教授
+supervisor: 博导、硕导
+email: yanhyang@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -142,35 +30,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 杨延华 首页  中
   T-PAMI、
 
   T-IP、T-MM及Pattern Recognition等国际期刊和ICCV、AAAI、SIGIR、IJCAI等CCF A类国际顶级会议。担任多个国际期刊和国际会议的审稿人，如IEEE
-  T-CYB、NEUROCOMPUTING、CVPR、AAAI、IJCAI等。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  暂无内容
-
-  研究方向
-
-  Research Focus
-
-  社会兼职
-
-  Social Affiliations
-
-  暂无内容'
+  T-CYB、NEUROCOMPUTING、CVPR、AAAI、IJCAI等。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -187,14 +65,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YYH8/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

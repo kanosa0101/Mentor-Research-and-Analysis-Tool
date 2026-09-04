@@ -1,7 +1,6 @@
 slug: caixiaohui
 name: 蔡晓辉
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -177,6 +176,22 @@ detail_url: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -198,19 +213,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:普适计算
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

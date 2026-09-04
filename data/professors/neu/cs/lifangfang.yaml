@@ -1,7 +1,6 @@
 slug: lifangfang
 name: 李芳芳
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -44,6 +43,17 @@ detail_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157435/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157435/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -60,14 +70,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0303/c6641a157435/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计

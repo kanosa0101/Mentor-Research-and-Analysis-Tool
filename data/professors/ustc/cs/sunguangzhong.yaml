@@ -1,7 +1,6 @@
 slug: sunguangzhong
 name: 孙广中
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -151,6 +150,22 @@ detail_url: http://cs.ustc.edu.cn/2020/0906/c23235a460129/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23235a460129/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -177,19 +192,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0906/c23235a460129/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:高性能计算
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:普适计算

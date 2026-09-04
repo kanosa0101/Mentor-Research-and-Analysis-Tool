@@ -1,18 +1,80 @@
 slug: xiaojianyu
 name: 肖健宇
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+subjects: 计算机科学与技术. 控制科学与工程
+email: xiaojianyu@csu.edu.cn
+phone: '13739082388'
+office_address: 新校区信息楼425A
+bio_raw: '肖健宇，男，湖南邵阳人，
+
+  52
+
+  岁，工学博士，教授。长期从事计算机软件工程、算法、大数据平台、嵌入式系统的研究。现主持省级'
+institutes:
+- 计算机学院
+research_direction_raw: '[1].、基于GPU加速的并行异构算法、[2].、AI辅助编程、[3].、LawGPT：基于语言大模型LLM的生成式法律咨询系统、[4].、云视频会议系统、视频转码、视频事件理解AI算法、[5].、人脸识别算法并行化、移动端人脸识别优化与应用、通用指纹识别算法与平台'
 detail_url: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:GPT
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xiaojianyu/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

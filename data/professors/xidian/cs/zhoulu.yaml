@@ -1,110 +1,13 @@
 slug: zhoulu
 name: 周路
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
-bio_raw: '西安电子科技大学主页平台管理系统 周路 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  2yi
-
-  09n
-
-  A1R
-
-  J6U
-
-  AGb
-
-  sVI
-
-  s3w
-
-  fBh
-
-  4ue
-
-  Mn4
-
-  O4L
-
-  Vhg
-
-  ZOG
-
-  8Pb
-
-  sV2
-
-  lk0
-
-  Fja
-
-  jtR
-
-  BDE
-
-  dAE
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  科研项目
-
-  教学研究
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  周路
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  博士生导师
-
-  性别：男
-
-  毕业院校：上海交通大学
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2022-06-01
-
-  电子邮箱：
-
-  8b85c792ae00e412912e7bd54a8f74fd94532bed8010218ef044a67e1ade00cbb0106f76cf082e238fce8a225247e464ab14fe7bfa6efdc1c43d55d72004b437e01fdf672c47a379187153b72808b59aa83eb7050e3d41dc71bc6fcf6e42dcbd4fedcee080a2681cf9b282f132dd1a451e93da12beca93bf5c758bfffda4ef6e
-
-  扫描关注
-
-  个人简介
+supervisor: 博导
+email: zhoulu@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -176,13 +79,56 @@ bio_raw: '西安电子科技大学主页平台管理系统 周路 首页  中文
 
   [8] Anyuan Sang, Xuezheng Fan, Li Yang, Yuchen Wang,
 
-  Lu Zhou'
+  Lu Zhou
+
+  , Junbo Jia, Huipeng Yang. STGAN: Detecting Host Threats via Fusion of Spatial-Temporal
+  Features in Host Provenance Graphs, WWW 2025（CCF-A类会议）
+
+  [9] Tong Zhu, Zhen Huang,
+
+  Lu Zhou
+
+  , Guoxing Chen, Yan Meng, Haojin Zhu. Collaborative Ad Fraud Detection in Ad Networks,
+  IEEE TON 2025（CCF-A类期刊）
+
+  [10] Yan Meng, Yujia Huo, Yuxia Zhan,
+
+  Lu Zhou
+
+  , Lichuan Ma, Guoxing Chen, Qingqi Pei, Haojin Zhu. Privacy Policies in Virtual
+  Reality Platforms with Longitudinal Analysis, IEEE TON 2025（CCF-A类期刊）
+
+  [11] Guohao Li, Li Yang,
+
+  Lu Zhou
+
+  , Hongbin Huang, Hao Zhang, Jianfeng Ma. Practical and Collusion-Resistant Privacy-Preserving
+  Aggregation for Edge Intelligence, IEEE TDSC 2025（CCF-A类期刊）
+
+  [12] Anyuan Sang, Yuchen Wang, Junbo Jia, Li Yang, Pengbin Feng,
+
+  Lu Zhou
+
+  , Jianfeng Ma. Dependency Explosion in Attack Investigation with Splittable Tag
+  Propagation and Aggregation, IEEE TDSC 2025（CCF-A类期刊）'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -204,14 +150,18 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZHOULU/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

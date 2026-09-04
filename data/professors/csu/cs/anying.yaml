@@ -1,18 +1,209 @@
 slug: anying
 name: 安莹
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: anying@csu.edu.cn
+office_address: 中南大学校本部逸夫楼214
+bio_raw: '安莹
+
+  ，男，
+
+  计算机应用技术博士，中南大学大数据研究院副教授，博士生导师。医疗大数据应用技术国家工程实验室核心参与人员，湖南省医学大数据协同创新中心骨干成员、参与中南大学医疗大数据平台的整体设计和建设，湘雅医学大数据专病透明采集系统研发项目负责人。长期从事医学大数据分析与应用、机器学习等方面的科学研究。在
+
+  AIIM、
+
+  IEEE/ACM TCBB、CIBM、CMPB、JBI
+
+  等期刊或会议上发表学术论文40余篇。主持
+
+  或作为骨干参与国家重点研发计划、国家自然科学基金
+
+  、湖南省自然科学基金
+
+  及其他国家和省部级各类课题近
+
+  10
+
+  项。
+
+  近三年
+
+  部分
+
+  发表或录用的论文：
+
+  [1]
+
+  Ying An
+
+  , Guanglei Cai, Xianlai Chen, Lin Guo. PARSE: A personalized clinical time-series
+  representation learning framework via abnormal offsets analysis[J]. Computer Methods
+  and Programs in Biomedicine, 2023, Volume 242, DOI: 10.1016/j.cmpb.2023.107838.
+
+  [2]
+
+  Ying An
+
+  , Yinghong Shi, Lin Guo, Yu Sheng, and Xianlai Chen. Knowledge-Enhanced Difference-Aware
+  Clinical Time Series Representation Learning for Diagnosis Prediction[C]. Proceedings
+  of the 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM
+  2023), 2023.
+
+  [3] Mengjie Zou,
+
+  Ying An
+
+  , Hulin Kuang, Jianxin Wang. LGTRL-DE: Local and Global Temporal Representation
+  Learning with Demographic Embedding for in-hospital mortality prediction[J]. Journal
+  of Biomedical Informatics, 2023, 143 (2023) 104408.
+
+  [4] Chenglin Yang, Jiamei Deng, Xianlai Chen,
+
+  Ying An
+
+  . SPBERE: Boosting span-based pipeline biomedical entity and relation extraction
+  via entity information[J]. Journal of Biomedical Informatics, 2023, 145 (2023) 104456.
+
+  [5]
+
+  Ying An
+
+  , Xianyun Xia, Xianlai Chen, Fangxiang Wu, and Jianxin Wang. Chinese Clinical Named
+  Entity Recognition via Multi-head Self-attention Based BiLSTM-CRF[J]. Artificial
+  Intelligence in Medicine, 2022, 102282. DOI: 10.1016/j.artmed.2022.102282.
+
+  [6]
+
+  Yuxia Guan,
+
+  Ying An
+
+  , Jinrui Xu, Ning Liu, and Jianxin Wang. HA-ResNet: Residual Neural Network with
+  Hidden Attention for ECG Arrhythmia Detection using Two-dimensional Signal[J]. IEEE/ACM
+  Transactions on Computational Biology & Bioinformatics, 2022, DOI 10.1109/TCBB.2022.3198998.
+
+  [7]
+
+  Ying An
+
+  , Runze Li, Xianlai Chen. MERGE: A Multi-graph Attentive Representation Learning
+  Framework Integrating Group Information from Similar Patients[J]. Computers in Biology
+  and Medicine, December 2022, Volume 151, Part A, DOI: 10.1016/j.compbiomed.2022.106245.
+
+  [8]
+
+  Weibai Pan,
+
+  Ying An
+
+  , Yuxia Guan, Jianxin Wang. MCA-net: A multi-task channel attention network for
+  Myocardial infarction detection and location using 12-lead ECGs[J]. Computers in
+  Biology and Medicine, Volume 150, November 2022, DOI: 10.1016/j.compbiomed.2022.106199.
+
+  [9]
+
+  Ying An
+
+  , Nengjun Huang, Xianlai Chen, FangXiang Wu and Jianxin Wang. High-Risk Prediction
+  of Cardiovascular Diseases via Attention-Based Deep Neural Networks[J]. IEEE/ACM
+  Transactions on Computational Biology & Bioinformatics, 2021, DOI: 10.1109/TCBB.2019.2935059.
+
+  [10]
+
+  Ying An
+
+  , Kun Tang, and Jianxin Wang. Time-Aware Multi-Type Data Fusion Representation Learning
+  Framework for Risk Prediction of Cardiovascular Diseases
+
+  ，
+
+  IEEE/ACM Transactions on Computational Biology & Bioinformatics, 2021. DOI: 10.1109/tcbb.2021.3118418.
+
+  [11]
+
+  Ying An
+
+  , Haojia Zhang, Jianxin Wang, Yu Sheng, and Xianlai Chen. MAIN: Multimodal Attention-based
+  Fusion Networks for Diagnosis Prediction, International Conference on Bioinformatics
+  & Biomedicine (BIBM), 2021. DOI: 10.1109/BIBM52615.2021.9669634.
+
+  [12]
+
+  Xianlai Chen, Mingyue Xu,
+
+  Ying An
+
+  . Identifying the essential nodes in network pharmacology based on multilayer network
+  combined with random walk algorithm[J].
+
+  Journal of Biomedical Informatics
+
+  , 2021, DOI: 10.1016/j.jbi.2020.103666.'
+institutes:
+- 计算机学院
 detail_url: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/anying/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

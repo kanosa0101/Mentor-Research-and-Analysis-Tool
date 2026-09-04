@@ -1,121 +1,12 @@
 slug: yanjiexi
 name: 闫杰熹
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 闫杰熹 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  A4p
-
-  XGD
-
-  i3d
-
-  FcO
-
-  gYL
-
-  Kq7
-
-  KwG
-
-  ZJC
-
-  ABy
-
-  k0I
-
-  XwR
-
-  z05
-
-  U49
-
-  bRP
-
-  9zl
-
-  SvP
-
-  rYF
-
-  MqJ
-
-  ipj
-
-  0yU
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  闫杰熹
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2022-07-01
-
-  联系方式：
-
-  a3884e86ae19b05c202fc42095689b902f84bd0fe8374411f551b3083e5f9fd628151a4cb5e35d096936969b97fcbe2e8b2a3aaabd249a75813ea5ac5886080679f1f8ecca2733fc636b3daae0f7e1fc922049c281fb089c9d7955b4ac2c9e899b259eeed89dcb6ebbfbbbfc043dc96b3d2059b377cc9752eec70f475d821c32
-
-  扫描关注
-
-  个人简介
+title: 副教授
+phone: yanjiexi at xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -123,56 +14,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 闫杰熹 首页  中
 
   2024年陕西省高校优秀青年支持计划、2024年陕西省优秀博士学位论文奖
 
-  获得者。在相关领域主流期刊和学术会议发表论文10余篇，其中主持国家自然科学基金青年基金项目等科研项目，作为核心骨干成员参与国家重点研发计划2项、国家自然科学基金重点项目1项、陕西省重点产业创新链项目3项等。
-
-  受邀担任
-
-  ICML2025、NeurIPS2024领域主席（Area Chair）
-
-  ，常年担任NeurIPS（CCF A 类会议）、ICML（CCF A 类会议）、ICLR、KDD（CCF A 类会议）、CVPR（CCF A 类会议）、ICCV（CCF
-  A 类会议）、ECCV（CCF B类会议）、AAAI（CCF A 类会议）、IJCAI（CCF A 类会议）等高水平会议的PC Member，担任IEEE TNNLS、PR等高水平期刊的审稿人。
-
-  欢迎想要提前开展科研学习的本科同学与我联系，提前进入实验室学习。目前指导7名本科生开展科研和竞赛学习（2023级拔尖班学生2名，2023级卓越班学生1名，2024级卓越班学生4名）。
-
-  Good News：
-
-  2026.07.10
-
-  : 四篇论文被ACM MM 2025录用。
-
-  2026.05.01:  两篇论文被ICML 2026录用。
-
-  2026.04.07：两篇论文被ACL 2026录用。
-
-  2026.02.21：一篇论文被CVPR 2026录用。
-
-  2026.01.26：一篇论文被ICLR 2026录用（指导2023级本科生发表）。
-
-  2025.11.08：三篇论文被AAAI 2026录用。
-
-  2025.09.18: 一篇论文被NeurIPS 2025录用。
-
-  2025.07.05: 一篇论文被ACM MM 2025录用。
-
-  近年代表性学术成果：
-
-  Rethinking Noise Sampling in Class-Imbalanced Diffusion Models. C. Xu, J. Yan, M.
-  Yang, and C. Deng. IEEE TIP 2024. (一区TOP、CCF A类期刊)
-
-  LLM Knows Body Language, Too: Translating Speech Voices into Human Gestures. C.
-  Xu, G. Lyu, J. Yan
-
-  （通讯作者）
-
-  , M. Yang, and C. Deng. ACL 2024. (CCF A类会议)
-
-  Retrieval Across Any Domains via Large-scale Pre-trained Model. J. Yan'
+  获得者。在相关领域主流期刊和学术会议发表论文10余篇，其中主持国家自然科学基金青年基金项目等'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -189,14 +49,18 @@ provenance:
     source: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  phone:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YANJIEXI/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

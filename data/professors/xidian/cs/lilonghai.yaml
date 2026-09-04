@@ -1,129 +1,14 @@
 slug: lilonghai
 name: 李龙海
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 李龙海 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  ubi
-
-  SEU
-
-  ohk
-
-  Obd
-
-  eng
-
-  IFj
-
-  ODe
-
-  VJS
-
-  w7i
-
-  xt7
-
-  b1p
-
-  zVC
-
-  Ouk
-
-  BcN
-
-  WRO
-
-  4hy
-
-  xX3
-
-  inS
-
-  q16
-
-  kWQ
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  李龙海
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2002-04-01
-
-  学科：计算机系统结构
-
-  办公地点：新科技楼1301
-
-  联系方式：
-
-  a420b152da6050fc7a7851c80f9a0c9b1974cefdb2d5528a4a4eedb00a9014f78bccd5a66977b7d6d7abfe6e5f2d89552e5086806c43357586bb0ee888dcaa902b51315126ec09182e0d12cc0a40e2575b98ed6cf566ade4fec04cf3cbf00ad369966c88f3a9bca5037967507b57910ebcc28408561e6dc9d4dbaea6d3cab3bf
-
-  电子邮箱：
-
-  47940e3057d827be831db448a3742070f7c2731592bb8bb1f7688c3750347e244f51f22c606a8442869cb8e462836a22f5ebd327f16240ff5c50afd24e2b268d93bbecb584db1702aacee4f94e514beefc6bd0bcbe158939ffcdb56b97b68cdc2d68eec9748eb431b827104e2c6f94dbf090cdd4cd31a779ab7fad2c9ae3b92a
-
-  扫描关注
-
-  个人简介
+title: 副教授
+subjects: 计算机系统结构
+email: lhli@xidian.edu.cn
+office_address: 新科技楼1301
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -153,23 +38,35 @@ bio_raw: '西安电子科技大学主页平台管理系统 李龙海 首页  中
 
   多个地区得到了应用
 
-  。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容'
+  。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、高性能网络分布式计算、云存储技术、地理信息大数据分析与可视化、网络安全（Internet用户隐私保护技术、比特币隐私保护与应用、操作系统安全）、嵌入式系统（嵌入式软硬件协调设计、linux内核分析与移植、linux应用软件设计与优化）、暂无内容
 detail_url: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -186,19 +83,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LLH1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

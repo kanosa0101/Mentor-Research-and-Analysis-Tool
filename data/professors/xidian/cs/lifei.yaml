@@ -1,123 +1,13 @@
 slug: lifei
 name: 李飞
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 李飞 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  djt
-
-  may
-
-  OrO
-
-  bna
-
-  3K6
-
-  xtZ
-
-  CFv
-
-  haj
-
-  zsA
-
-  iPH
-
-  xKI
-
-  JHU
-
-  UyX
-
-  xku
-
-  SuY
-
-  F7M
-
-  Brs
-
-  qyl
-
-  94l
-
-  i7a
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  李飞
-
-  个人信息
-
-  Personal Information
-
-  讲师（高校）
-
-  性别：男
-
-  毕业院校：西北工业大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2022-07-01
-
-  办公地点：网络安全大楼 A1-528
-
-  电子邮箱：
-
-  8043498e4220127a38788bea98745358c5e66277ccf242a51d86ef652ee7441a4d4e7467e51ae196fcdaad6f48965c4d3b8206ba044f171ae2a18e65fb193553b4d121ddc3971c4e9cdb08a1703bb7f21e4bbc6fad11dd48caf5c627a500ea9cbb5f8c64e81c737694561edddc01c4153fbc256620c441d8f4f92afc78416561
-
-  扫描关注
-
-  个人简介
+title: 讲师（高校）
+email: lifei@xidian.edu.cn
+office_address: 网络安全大楼 A1-528
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -161,15 +51,35 @@ bio_raw: '西安电子科技大学主页平台管理系统 李飞 首页  中文
 
   招募本科实习生（以发表高水平论文为目标）
 
-  对CV、3D重建 (NeRF/3DGS)、具身智能 (VLA) 有兴趣的本科生，共同参与科研论文课题，有意者请邮箱联系。
-
-  教育经历'
+  对CV、3D重建 (NeRF/3DGS)、具身智能 (VLA) 有兴趣的本科生，共同参与科研论文课题，有意者请邮箱联系。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、边缘人工智能、多模态场景感知、图像复原与增强、暂无内容
 detail_url: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
 profile_url: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -186,29 +96,23 @@ provenance:
     source: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:AIGC
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIFEI/zh_CN/index/443423/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

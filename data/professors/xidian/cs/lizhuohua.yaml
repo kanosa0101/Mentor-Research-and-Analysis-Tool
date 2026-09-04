@@ -4,6 +4,11 @@ aliases: []
 school: xidian
 dept: cs
 status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术. 计算机软件与理论
+email: lizhuohua@xidian.edu.cn
+office_address: 广州市黄埔区新龙镇知明路83号西安电子科技大学广州研究院
 bio_raw: '西安电子科技大学主页平台管理系统 李卓华 首页  中文主页
 
   登录
@@ -120,8 +125,6 @@ bio_raw: '西安电子科技大学主页平台管理系统 李卓华 首页  中
 
   电子邮箱：
 
-  25228dbe960a167aae4e36453e66d53ec80f7fb41b099fac6074ce0ea37ecbdf5175c849c13221154d7a7ba6227c22018c542d802f614fe932841b26d2b6d0220e6d124fb1dbe7c76ccd4ab1225c6bd41141948679101c894734490ca67c44ed1b30c059720092b02cadc33d59f4a9b3ed5e18b8392415db4662e6b52badb3fb
-
   扫描关注
 
   同专业博导
@@ -162,13 +165,22 @@ bio_raw: '西安电子科技大学主页平台管理系统 李卓华 首页  中
 
   2025.08
 
-  至今'
+  至今
+
+  西安电子科技大学'
 institutes:
 - 广州研究院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、多臂赌博机算法、量子网络与量子计算、系统安全与软件工程、2025.12、至今、CCF网络与系统安全专业委员会执行委员
 detail_url: https://faculty.xidian.edu.cn/lizhuohua/
 profile_url: https://faculty.xidian.edu.cn/lizhuohua/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -185,4 +197,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/lizhuohua/
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/lizhuohua/
+    fetched_at: '2026-09-04'
+    confidence: auto

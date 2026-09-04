@@ -1,7 +1,6 @@
 slug: huangyihua
 name: 黄宜华
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -24,6 +23,27 @@ detail_url: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
 profile_url: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -50,24 +70,3 @@ provenance:
     source: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息

@@ -1,18 +1,101 @@
 slug: liaozhifang
 name: 廖志芳
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: zfliao@csu.edu.cn
+office_address: 本部管理楼519
+bio_raw: '廖志芳，女，博士，中南大学计算机学院教授，博士生导师。
+
+  近期主要从事开源智能软件、医学影像分析、知识图谱与推荐以及领域大数据分析等相关方面的研究。
+
+  近3年来以第一作者或通讯作者在国内外学术期刊和专题会议上发表论文近30余篇，其中包括AAAI、ICML、CVPR等CCF A会、BIBM/SANER等B会以及SCI检索期刊20余篇，获得软件工程CCF
+  B会 SANER2024最佳论文，获得20项软件著作权，7项专利。
+
+  主持国家重点研发课题、JK重大专项子课题、国家自然科学基金、国家社科基金、省自然科学基金、总装预研项目、国家科技支撑项目子课题多项，担任《计算机学报》、《软件学报》、TNSE、AAAI等期刊以及会议审稿人。
+
+  为CCF 软件工程专委会、计算机教育专委会委员。
+
+  所在实验室气氛活跃且和谐，指导老师包括廖志芳老师与郁松老师。
+
+  本实验室根据名额招收1-2名博士研究生，5-6名硕士研究生。
+
+  欢迎计算机、大数据、软件工程等相关专业学生加入实验室，联系邮箱：zfliao@csu.edu.cn。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  智能软件工程（AI4SE）：代码评审自动化、软件仓库挖掘与分析、软件智能推荐等、[2]  医学影像分析计算：医学影像域泛化、医学影像域适应、跨模态医学影像分析等、[3]  知识图谱与智能推荐：知识图谱推荐、大模型推荐等'
 detail_url: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/liaozhifang/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

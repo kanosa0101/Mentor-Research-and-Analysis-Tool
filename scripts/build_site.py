@@ -51,6 +51,11 @@ def main():
     fresh = max(verified) if verified else None
 
     (SITE / "p").mkdir(parents=True, exist_ok=True)
+    # slug 变更或记录下线会留下孤儿详情页（csu 职称误作姓名事故残留 100 个），重建时按当前名单清掉
+    live_pages = {r["page"] for r in profs}
+    for stale in (SITE / "p").glob("*.html"):
+        if stale.stem not in live_pages:
+            stale.unlink()
     html = env.get_template("index.html.j2").render(
         profs=profs,
         schools=[{"id": s, "name": n} for s, n in schools],

@@ -6,83 +6,8 @@ dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
-bio_raw: '宋娟 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  宋娟的留言板
-
-  宋娟的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  English
-
-  基本信息
-
-  宋娟 博士
-
-  副教授
-
-  硕士生导师
-
-  硕士学科：软件工程
-
-  工作单位：计算机与科学技术学院/国家示范性软件学院
-
-  联系方式
-
-  电子邮箱：songjuan@mail.xidian.edu.cn
-
-  办公地点：南校区网安大楼A1-630
-
-  研究方向
-
-  智能图像/视频压缩、基于深度学习的图像处理技术（deep learning）
-
-  图神经网络（Graph neural network）、
-
-  工作单位
-
-  西安电子科技大学嵌入式技术与视觉处理研究中心（
-
-  XDU-ETVP
-
-  ），成立于2015年10月。研究中心依托于原西电软件学院大数据技术和嵌入式系统实验室基础成立，重点关注嵌入式技术与机器视觉、环境感知与场景理解、即时定位与地图构建、深度学习、手势/手语识别、医学图像处理等热点研究方向。
-
-  2016年11月，本研究中心团队获西安电子科技大学首届“三好三有”研究生导学团队荣誉称号，是全校范围内“师德师风好”、“师生关系好”、“培养模式好”、“有先进文化”、“有出色管理”、“有突出业绩”的6个团队之一。
-
-  个人简介
-
-  宋娟
+email: songjuan@mail.xidian.edu.cn
+bio_raw: '宋娟
 
   ，博士，女，
 
@@ -124,26 +49,25 @@ bio_raw: '宋娟 | 个人信息 | 西安电子科技大学个人主页
 
   New ！！2026年有一个软件工程学硕统招指标，欢迎广大考生积极联系
 
-  ：songjuan@mail.xidian.edu.cn
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  ：songjuan@mail.xidian.edu.cn'
 institutes: []
+research_direction_raw: 智能图像/视频压缩、基于深度学习的图像处理技术（deep learning）、图神经网络（Graph neural
+  network）
 detail_url: http://web.xidian.edu.cn/songjuan/
 profile_url: http://web.xidian.edu.cn/songjuan/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -165,19 +89,13 @@ provenance:
     source: http://web.xidian.edu.cn/songjuan/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  email:
+    origin: crawled
+    source: http://web.xidian.edu.cn/songjuan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/songjuan/
+    fetched_at: '2026-09-04'
+    confidence: auto

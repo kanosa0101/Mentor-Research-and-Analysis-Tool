@@ -6,77 +6,8 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 硕导
-bio_raw: '褚华 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  褚华的留言板
-
-  褚华的主页:
-
-  个人信息
-
-  科学研究
-
-  科研成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  基本信息
-
-  褚华
-
-  职称：教授
-
-  性别：女
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士学位
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  学科：软件工程
-
-  联系方式
-
-  通信地址：西安电子科技大学168信箱
-
-  电子邮箱：hchu@mail.xidian.edu.cn
-
-  办公电话：029-88204611
-
-  办公地点：西安电子科技大学南校区网安大楼A1-609
-
-  个人简介
-
-  褚华，工学博士、教授、硕士生导师
+subjects: 软件工程
+bio_raw: '褚华，工学博士、教授、硕士生导师
 
   ，长期从事计算机软件领域的教学和科研工作，现任西安电子科技大学计算机科学与技术学院软件工程系主任、国家一流本科专业软件工程专业负责人、教育部“101”计划软件工程课程主要负责人、陕西省计算机教育学会理事、智慧金融软件工程新技术联合实验室副主任，担任Knowledge-based
   System（SCI 1区Top期刊）、ECML/PKDD 2023 & 2024 & 2025 & 2026（数据挖掘领域CCF B会议，兼会议程序委员会成员）、CIKM
@@ -118,63 +49,29 @@ bio_raw: '褚华 | 个人信息 | 西安电子科技大学个人主页
 
   智慧医疗
 
-  等跨领域的应用研究，受多项校企/科研院所合作项目支持。
-
-  主要研究方向
-
-  1. 智能推荐与决策：
-
-  1）针对数据稀疏性/冷启动场景的多元数据融合研究
-
-  ：融合并对齐多元数据，如知识图谱、多行为数据（浏览、收藏、评论等）、社交网络等，实现对数据稀疏性/冷启动场景的用户画像补全与精准推荐；
-
-  2）世界语言模型引导的生成式推荐研究
-
-  ：深入挖掘大语言模型（LLM）先验知识，探索AI Agent人类行为模拟与自主规划机制，实现语义理解与增强的自适应生成式推荐；
-
-  3）面向垂直领域应用的场景特性建模与推荐研究
-
-  ：引入丰富领域知识进行垂直领域推荐场景的任务理解，建模垂直领域推荐场景独有特性，定制化生成面向复杂场景的个性化推荐结果。
-
-  2. AI赋能智慧教育（AI for Education）：
-
-  1）大模型增强的知识图谱自动化构建与补全研究
-
-  ：利用大语言模型自动构建具备语义关联与先修后继逻辑的领域知识图谱，以实现知识管理的系统化表达与知识体系的智能补全；
-
-  2）多维度课堂行为深度智能解析与薄弱知识定位研究
-
-  ：精准识别学生在课堂上的复杂物理行为，利用多模态融合技术实现学情信息的多视图对齐与分析，以精准诊断学生知识状态；
-
-  3）基于认知诊断的个性化学习路径推荐研究
-
-  ：深入挖掘学生的历史学习行为，动态感知其知识状态与学习偏好，建模复杂的异构知识关联，以提供判别式/生成式的个性化学习资源推荐与学习路径规划；
-
-  4）基于智能体驱动的个性化设问式辅导研究
-
-  ：结合领域知识图谱与检索增强生成技术，模拟教师辅导逻辑，为学生提供个性化的“以思促学”设问式学习辅导，以实现“授人以鱼不如授人以渔”的个性化学习支持。
-
-  3. 面向对象、软件工程、逆向工程
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  等跨领域的应用研究，受多项校企/科研院所合作项目支持。'
 institutes:
 - 计算机科学与技术学院
 detail_url: http://web.xidian.edu.cn/chuhua/
 profile_url: http://web.xidian.edu.cn/chuhua/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -201,24 +98,8 @@ provenance:
     source: http://web.xidian.edu.cn/chuhua/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:语言模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  subjects:
+    origin: crawled
+    source: http://web.xidian.edu.cn/chuhua/
+    fetched_at: '2026-09-04'
+    confidence: auto

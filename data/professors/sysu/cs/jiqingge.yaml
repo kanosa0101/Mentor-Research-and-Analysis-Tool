@@ -1,7 +1,6 @@
 slug: jiqingge
 name: 纪庆革
-aliases:
-- te
+aliases: []
 school: sysu
 dept: cs
 status: enriched
@@ -14,6 +13,22 @@ detail_url: https://cse.sysu.edu.cn/teacher
 profile_url: https://cse.sysu.edu.cn/teacher
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -40,19 +55,3 @@ provenance:
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学

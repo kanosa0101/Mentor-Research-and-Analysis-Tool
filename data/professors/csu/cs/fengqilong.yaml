@@ -1,18 +1,76 @@
 slug: fengqilong
 name: 冯启龙
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+bio_raw: '冯启龙，中南大学计算机学院教授，博士生导师，计算机学院副院长。主要从事机器学习基础算法优化，大规模聚类算法优化析，计算机算法优化，大数据处理及分析等方面的研究。在Information
+  an
+
+  d Computation、SODA、ICML、NeurIPS、ICLR、IJCAI、AAAI等期刊和国际会议上发表论文60多篇，出版1本专著，获得省部级奖励2项。近年来主持国家自然科学基金等项目10余项，其中国家自然科学基金重点项目1项，面上项目3项，湘江实验室重点项目1项。湖南省青年芙蓉学者，中国计算机学会理论计算机科学专业委员会常委，中国计算机学会人工智能专业委员会委
+
+  员。
+
+  论文发表
+
+  情况详见
+
+  DBLP
+
+  。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  机器学习基础算法优化、[2]  大规模数据聚类分析、[3]  计算机算法优化、[4]  大数据处理及分析'
 detail_url: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengqilong/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

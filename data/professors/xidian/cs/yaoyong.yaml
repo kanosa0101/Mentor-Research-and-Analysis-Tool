@@ -1,137 +1,14 @@
 slug: yaoyong
 name: 姚勇
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 姚勇 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  JA2
-
-  Edt
-
-  QHO
-
-  hZ8
-
-  BhN
-
-  bDL
-
-  SAD
-
-  jHC
-
-  MoG
-
-  W68
-
-  PO2
-
-  9iG
-
-  3fI
-
-  j7t
-
-  ATo
-
-  sa7
-
-  R7V
-
-  8LR
-
-  7yE
-
-  Zqo
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  姚勇
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2006-03-01
-
-  学科：计算机应用技术
-
-  办公地点：北校区计算中心315室
-
-  电子邮箱：
-
-  ac23d16b6c28e1d68b1feabff78e156d43d78d5204f404306d1d3a77fcda30e3e085133b259d84971a40ededbed57258fbcb9a296c8c1a383526cc5ed6f7904afd3a81d703b76f98b40b32f2a486fe71421d76aa91da3329f6a5af08632451dea3797bc7b04c6d24eedab2e5098a60cd0d56a687c03a60b20f3b11a5c58be8d7
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  ac23d16b6c28e1d68b1feabff78e156d43d78d5204f404306d1d3a77fcda30e3e085133b259d84971a40ededbed57258fbcb9a296c8c1a383526cc5ed6f7904afd3a81d703b76f98b40b32f2a486fe71421d76aa91da3329f6a5af08632451dea3797bc7b04c6d24eedab2e5098a60cd0d56a687c03a60b20f3b11a5c58be8d7
-
-  通讯/办公地址 :
-
-  183f6359c28a7ffe526229e408439fd06e9ddc64e32e2d6191ed70bd95f96f89ae10e31e9051700869102aa2fe85cd885f2069dacc8138cc8b0f0f421b890c5b5962a264a1fe38e5e0c22272957ad9ba351b6270aa202889b7b42b145af7e667683db870c1bd88e9b85da1c092d2157e9d3d8f12e8f546c162b5a445ac4ac139
-
-  扫描关注
-
-  个人简介
+title: 副教授
+subjects: 计算机应用技术
+email: yaoyong@xidian.edu.cn
+office_address: 北校区计算中心315室
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -141,35 +18,25 @@ bio_raw: '西安电子科技大学主页平台管理系统 姚勇 首页  中文
 
   近5年内累计主持科技部国家科技支撑计划课题1项，校内基本科研业务费课题1项、企业合作课题1项，并作为核心研究人员参与2项国家自然科学基金项目、1项国家科技支撑计划课题、1项陕西省13115项目。其中“分布式数据挖掘优化”国家自然科学基金项目获得陕西高等学校科学技术奖二等奖，所在科研团队获得本研究方向国家发明专利申请1项和软件著作权8项。在本研究方向国内外刊物及国际会议累计发表SCI及EI检索的学术论文20余篇。
 
-  承担计算机学院 “程序设计基础” 公共基础课（CS1121905）、“软件工程”专业课（CS3121912）、“网络故障诊断”专业课（CS4221076）课程主讲教学，并担任软件工程课程组组长。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  2004.08
-
-  2009.03
-
-  西安电子科技大学
-
-  计算机应用技术
-
-  博士研究生毕业
-
-  博士学位
-
-  2003.09'
+  承担计算机学院 “程序设计基础” 公共基础课（CS1121905）、“软件工程”专业课（CS3121912）、“网络故障诊断”专业课（CS4221076）课程主讲教学，并担任软件工程课程组组长。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、1．数据挖掘算法及优化、2．分布式计算、暂无内容
 detail_url: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -186,14 +53,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/YY3/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

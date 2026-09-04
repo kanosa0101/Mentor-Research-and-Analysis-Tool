@@ -1,76 +1,11 @@
 slug: liuhui
 name: 刘惠
-aliases:
-- index
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 教授
-bio_raw: '刘惠 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  刘惠的留言板
-
-  刘惠的主页:
-
-  个人信息
-
-  科研方向
-
-  学术&竞赛
-
-  荣誉奖励
-
-  招生&就业
-
-  课程教学
-
-  基本信息
-
-  刘 惠  教授、博导、硕导
-
-  工作单位：
-
-  计算机科学与技术学院
-
-  联系方式
-
-  办公地点：西电南校区-网安大楼A座
-
-  邮箱：923091954@qq.com
-
-  研究方向
-
-  云计算 &
-
-  大数据
-
-  应用/系统监控&异常处理
-
-  大模型、AI Agent应用
-
-  端边云协同计算
-
-  个人简介
-
-  邀你加入“
+bio_raw: '邀你加入“
 
   Mobisys云智
 
@@ -164,28 +99,52 @@ bio_raw: '刘惠 | 个人信息 | 西安电子科技大学个人主页
 
   System
 
-  组和'
+  组和
+
+  AI
+
+  组，详细信息请看主页
+
+  “
+
+  科研方向
+
+  ”
+
+  介绍。
+
+  6.
+
+  科
+
+  研项目
+
+  ：
+
+  主持了国家自然科学基金面上和青年基金项目、国防预研项目、国家重点研发计划子课题、陕西省工业领域创新链项目、国家重点实验室开放基金、企业合作项目数十项
+
+  。
+
+  7. 成果简介
+
+  ：在ACM TODAES、IEEE TMC等国际学术期刊以及ACM Ubicomp、ACM Mobisys、ACM ICPP、ECRTS、DASFAA等国际学术会议发表论文70余篇，出版物联网专著
+  1 部、参与制定云计算与大数据行业标准1项、国防专利和发明专利授权30余项。
+
+  所在团队获得CCF A类学术会议“Distinguish Paper Award”等学术奖项以及教育部科技发明奖等科技奖项，被陕西省政府授予“陕西省科技创新团队”、“陕西高校青年创新团队”。
+
+  8. 业界交流
+
+  ：与工业界建立了广泛的合作关系，紧密跟踪计算机软硬件发展的新技术和热点，个人参加IT公司新技术培训和考试，已取得IBM、Intel、BEA、SUN、百度、AWS等IT公司颁发的专业技术认证证书15余项。
+
+  研制的大型企业应用系统在我国银行/电力/互联网/交通等行业和单位全国部署投产运行至今。具有
+
+  丰富的自主可控系统软件及算法、应用软件研发经验，注重解决实际场景问题。'
 institutes: []
+research_direction_raw: 云计算 &、大数据、应用/系统监控&异常处理、大模型、AI Agent应用、端边云协同计算
 detail_url: https://web.xidian.edu.cn/huiliu/index.html
 profile_url: https://web.xidian.edu.cn/huiliu/index.html
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://web.xidian.edu.cn/huiliu/index.html
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://web.xidian.edu.cn/huiliu/index.html
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -202,3 +161,29 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://web.xidian.edu.cn/huiliu/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/huiliu/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/huiliu/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto

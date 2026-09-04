@@ -1,110 +1,25 @@
 slug: xuyang
 name: 徐扬
-aliases:
-- index
+aliases: []
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 博导、硕导
-bio_raw: '徐扬 | 个人信息 | 西安电子科技大学个人主页
+bio_raw: '徐扬，陕西西安人，分别于2006年、2014年取得西安电子科技大学通信工程专业学士、通信与信息系统专业博士学位。2015年留校任教至今，现任副教授。研究兴趣物理层安全，网络经济学，网络性能分析、路由协议设计、区块链技术等。参加工作以来，累计发表论文30余篇，主持陕西省重点研发项目、国家自然科学基金(青年)、科技部重点研发项目子课题、陕西省电子信息产业“十三五”发展规划编制项目等。作为主要成员参与科技部重点研发项目、国家自然科学基金重点项目、陕西省科技统筹创新工程计划项目等。
 
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  徐扬的留言板
-
-  徐扬的主页:
-
-  个人信息
-
-  科学研究
-
-  论文成果
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生信息
-
-  English
-
-  基本信息
-
-  徐扬  副教授，博士生导师
-
-  硕士生导师
-
-  指导学科：计算机科学与技术（学术）；
-
-  电子信息（专业）
-
-  工作单位：计算机科学与技术学院
-
-  联系方式
-
-  通信地址：陕西省西安市雁塔区太白南路2号169信箱
-
-  办公地点：北校区主楼IV区111
-
-  电子邮箱：yxu@xidian.edu.cn
-
-  重要：研究生报考请关注招生信息栏！
-
-  个人简介
-
-  徐扬，陕西西安人，分别于2006年、2014年取得西安电子科技大学通信工程专业学士、通信与信息系统专业博士学位。2015年留校任教至今，现任副教授。研究兴趣物理层安全，网络经济学，网络性能分析、路由协议设计、区块链技术等。参加工作以来，累计发表论文30余篇，主持陕西省重点研发项目、国家自然科学基金(青年)、科技部重点研发项目子课题、陕西省电子信息产业“十三五”发展规划编制项目等。作为主要成员参与科技部重点研发项目、国家自然科学基金重点项目、陕西省科技统筹创新工程计划项目等。
-
-  欢迎同学们报考和咨询
-
-  主要研究方向
-
-  空天地一体化网络；
-
-  AI增强的6G技术；
-
-  智能语义网络；
-
-  移动群智感知与边缘计算；
-
-  通感算一体化网络。
-
-  版权声明
-
-  未经西安电子科技大学以及个人主页教师本人许可，不得复制、转载和传播本页内容，禁止用于任何商业用途。如需转载请征得主页所有者同意，并附上主页链接！
-
-  更新
-
-  技术支持：
-
-  电院网络中心
-
-  陕ICP备05016463号-3
-
-  © 2026 西安电子科技大学'
+  欢迎同学们报考和咨询'
 institutes: []
 detail_url: https://web.xidian.edu.cn/yxu/index.html
 profile_url: https://web.xidian.edu.cn/yxu/index.html
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -126,14 +41,3 @@ provenance:
     source: https://web.xidian.edu.cn/yxu/index.html
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:6G

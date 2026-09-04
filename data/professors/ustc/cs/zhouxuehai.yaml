@@ -1,7 +1,6 @@
 slug: zhouxuehai
 name: 周学海
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -88,6 +87,12 @@ detail_url: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled
@@ -109,9 +114,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构

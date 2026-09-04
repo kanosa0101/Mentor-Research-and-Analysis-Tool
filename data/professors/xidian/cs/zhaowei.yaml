@@ -1,10 +1,11 @@
 slug: zhaowei
 name: 赵伟
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
+title: 教授
+subjects: 计算机科学与技术
 bio_raw: '西安电子科技大学主页平台管理系统 赵伟 首页  中文主页
 
   登录
@@ -152,10 +153,12 @@ bio_raw: '西安电子科技大学主页平台管理系统 赵伟 首页  中文
   .'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、暂无内容、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets: []
 provenance:
   name:
     origin: crawled
@@ -172,4 +175,18 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets: []
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZW6/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

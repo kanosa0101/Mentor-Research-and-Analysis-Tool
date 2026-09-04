@@ -1,7 +1,6 @@
 slug: panjiayu
 name: 潘家雨
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -93,6 +92,17 @@ detail_url: http://www.cse.neu.edu.cn/2026/0302/c6641a450479/page.htm
 profile_url: http://www.cse.neu.edu.cn/2026/0302/c6641a450479/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -114,14 +124,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2026/0302/c6641a450479/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

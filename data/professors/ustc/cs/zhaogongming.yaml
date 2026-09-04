@@ -1,7 +1,6 @@
 slug: zhaogongming
 name: 赵功名
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -181,27 +180,6 @@ detail_url: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: http://cs.ustc.edu.cn/ys_23622/list.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: http://cs.ustc.edu.cn/ys_23622/list.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -223,3 +201,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:算法设计
+provenance:
+  name:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/ys_23622/list.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/ys_23622/list.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

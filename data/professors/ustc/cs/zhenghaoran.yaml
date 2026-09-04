@@ -1,7 +1,6 @@
 slug: zhenghaoran
 name: 郑浩然
-aliases:
-- pag
+aliases: []
 school: ustc
 dept: cs
 status: enriched
@@ -82,6 +81,17 @@ detail_url: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -103,14 +113,3 @@ provenance:
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息

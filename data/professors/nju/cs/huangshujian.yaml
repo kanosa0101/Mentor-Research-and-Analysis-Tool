@@ -1,7 +1,6 @@
 slug: huangshujian
 name: 黄书剑
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -24,6 +23,17 @@ detail_url: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
 profile_url: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
@@ -50,14 +60,3 @@ provenance:
     source: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理

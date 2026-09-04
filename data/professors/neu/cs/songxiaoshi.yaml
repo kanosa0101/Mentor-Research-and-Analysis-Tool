@@ -1,7 +1,6 @@
 slug: songxiaoshi
 name: 宋晓诗
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -172,6 +171,12 @@ detail_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157430/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157430/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
 provenance:
   name:
     origin: crawled
@@ -188,9 +193,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2019/0303/c6641a157430/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:5G

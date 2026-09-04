@@ -1,7 +1,6 @@
 slug: xufengyuan
 name: 许封元
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -22,6 +21,17 @@ detail_url: https://cs.nju.edu.cn/6f/7d/c2639a159613/page.htm
 profile_url: https://cs.nju.edu.cn/6f/7d/c2639a159613/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -48,14 +58,3 @@ provenance:
     source: https://cs.nju.edu.cn/6f/7d/c2639a159613/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

@@ -1,18 +1,160 @@
 slug: guining
 name: 桂宁
-aliases:
-- inde
+aliases: []
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+email: ninggui@gmail.com
+office_address: 中南大学管理楼 517
+bio_raw: '桂宁，中南大学计算机院教授，博士生导师。2012年比利时安特维普大学博士，2012年~2013 鲁汶大学博士后，主要研究领域，可解释的人工智能，图表示学习和图神经网络。发表SCI论文20余篇，近4年作为通讯作者发表
+  CCF 期刊和会议文章20余篇，其中CCF A类期刊/会议9篇， 期刊包括 IEEE TKDE（A类），IEEE TDSC（A类）,  IEEE TNNLS（B类), 
+  ACM TKDD(B类） Knowledge-based System(C类）等，CCF 会议 ICML
+
+  （A类）
+
+  , NeurIPS SIGKDD
+
+  （A类）
+
+  ，AAAI
+
+  （A类）
+
+  ，PAKDD(C类) 等。 累计授权专利10余项。承担工信部中国制造2025和工业互联网重大项目2项,（曾）承担国家基金4项，参与浙江省重大项目1项。获得省部级二等奖2项，厅局级二等奖一项。主要研究方向：面向可解释的工业大数据和人工智能。
+
+  实验室有着良好的硬件条件：配备六台高性能服务器，包括 A100等各类 GPU卡24张，另有多屏显示器、人体工学椅等。
+
+  实验室成员以研究生为主，有少量的优秀本科生。现有成员均获得较好的工作和深造机会: 罗宾理（本科生）和李幽 （研究生）两位 分别在 2019年 和2022年获得
+  微软亚洲研究院 的实习。已毕业的学生主要在阿里，腾讯，华为，网易，国网等单位。也有部分同学在美国和新加坡知名高校攻读学位，或者保研到清华、北大、南大等优秀院校。
+
+  每年可招收3名硕士研究生，经费充足，待遇优秀。招生名额有限，优先考虑有编程经验、独立解决问题、态度端正的学生。
+
+  欢迎具有推免资格的学生联系我, 招收 计算机学院 学硕和专硕研究生, 有意者可email联系我。
+
+  同时也欢迎对 图神经网络， 时序数据表示学习，可解释人工智能感兴趣的本科生加入我的团队。
+
+  email：ninggui@csu.edu.cn or ninggui@gmail.com
+
+  近几年发表或者录用的部分论文(
+
+  谷歌学术
+
+  )：
+
+  Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity，
+  Forty-third International Conference on Machine Learning, 2026(ICML 2026, 人工智能 CCF
+  A 会，学生第一作者，本人通讯作者)
+
+  Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series
+  Forecasting，Forty-third International Conference on Machine Learning, 2026(ICML
+  2026, 人工智能 CCF A 会，学生第一作者，本人通讯作者)
+
+  Heterogeneous Spatial Temporal Graph Neural Network for Multivariate Time Series
+  Forecasting, ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech
+  and Signal Processing (ICASSP) (ICASSP 2026, 人工智能 CCF B会，学生第一作者，本人通讯作者)
+
+  Non-stationary Diffusion For Probabilistic Time Series Forecasting, Forty-second
+  International Conference on Machine Learning, 2025(ICML 2025, 人工智能 CCF A 会，学生第一作者，本人通讯作者，2025.5月录用，亮点论文Spotlight，rate
+  2.59%),
+
+  Ordering-Based Causal Discovery for Linear and Nonlinear Relations, The Thirty-eighth
+  Annual Conference on Neural Information Processing Systems, 2024(NeurIPS 2024 人工智能
+  CCF A 会，学生第一作者，本人通讯作者，2024.9月录用）
+
+  Frequency Adaptive Normalization For Non-stationary Time Series Forecasting, The
+  Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024(NeurIPS
+  2024 人工智能 CCF A 会，学生第一作者，本人通讯作者，2024.9月录用）
+
+  Graph Representation Learning enhanced Semi-supervised Feature Selection, ACM Transactions
+  on Knowledge Discovery from Data(数据挖掘 CCF B类，IF=4.157,  学生第一作者，本人通讯作者，2024.8月录用）
+
+  Unsupervised Graph Representation Learning beyond Aggregated View[J],  IEEE Transactions
+  on Knowledge and Data Engineering, 2024 （数据挖掘 CCF A类，中科院2区， 学生第一作者，本人通讯作者, 2024.06录用）
+
+  GAEFS: Self-supervised Graph Auto-encoder enhanced Feature Selection[J]. Knowledge-Based
+  Systems, 2024: 111523.(中科院1区，人工智能 CCF C类，IF=8.038，) （2024.2月录用）
+
+  SimGCL: Graph Contrastive Learning by Finding Homophily in Heterophily, Knowledge
+  and Information Systems(数据挖掘 CCF B类,  学生第一作者，本人通讯作者，2023.10月录用）
+
+  Multi-View Graph Representation Learning Beyond Homophily, ACM Transactions on Knowledge
+  Discovery from Data(数据挖掘 CCF B类，IF=4.157,  学生第一作者，本人通讯作者，2023.4月录用）
+
+  Data Imputation with Iterative Graph Reconstruction, AAAI 2023(人工智能 CCF A类会议，Oral，
+  2023.2月，学生第一作者，本人通讯作者）
+
+  PairGNNs: enabling graph neural networks with pair-based view. Neural Computing
+  and Applications, 1-13, 2022.10 .(人工智能 CCF C类期刊，IF=5.606，学生第一作者，本人通讯作者）
+
+  Credibility Assessment Based Byzantine-resilient Decentralized Learning.  IEEE Transactions
+  on Dependable and Secure Computing,（安全 CCF A类，中科院2区，IF=7.33，2022.6月已录用，共同通讯）
+
+  Understanding via Exploration: Discovery of Interpretable Features with Deep Reinforcement
+  Learning.  IEEE Transactions on Neural Networks and Learning Systems(中科院1区，人工智能
+  CCF B类，IF=10.45，2022.6月 已录用，学生第一作者，本人通讯作者）
+
+  A-SFS: Semi-supervised Feature Selection based on Multi-task Self-supervision. 
+   Knowledge-based System(中科院1区，人工智能 CCF C类，IF=8.038，) （2022.6月录用，本人通讯作者）
+
+  An Embedded Feature Selection Framework for Control,   Proceedings of the 28th ACM
+  SIGKDD International Conference on Knowledge Discovery & Data Mining, 2022.8  (数据挖掘
+  CCF A类，数据挖掘领域影响力第一, 学生第一作者，本人通讯作者）
+
+  Graph Representation Learning Beyond Node and Homophily.   IEEE Transactions on
+  Knowledge and Data Engineering （数据挖掘 CCF A类，中科院2区，IF=6.98， 学生第一作者，本人通讯作者, 2022）
+
+  Self-supervised Adaptive Aggregator Learning on Graph.  Advances in Knowledge Discovery
+  and Data Mining - 25th Pacific-Asia Conference, PAKDD 2021(数据挖掘 CCF C类), 2021 （学生第一作者，本人通讯作者）
+
+  AFS: An Attention-Based Mechanism for Supervised Feature Selection.  Proceedings
+  of the AAAI Conference on Artificial Intelligence（人工智能 CCF A 类）, 2019, 33(01)（第一作者）'
+institutes:
+- 计算机学院
 detail_url: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/guining/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

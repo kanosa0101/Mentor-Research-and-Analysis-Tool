@@ -6,69 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-bio_raw: '高琳 | 个人信息 | 西安电子科技大学个人主页
-
-  学术信息网
-
-  西电导航
-
-  关于
-
-  使用说明
-
-  搜索
-
-  系统首页
-
-  登录
-
-  控制面板
-
-  收藏
-
-  高琳的留言板
-
-  高琳的主页:
-
-  个人信息
-
-  科学研究
-
-  学术论文
-
-  荣誉奖励
-
-  科研团队
-
-  课程教学
-
-  招生及就业
-
-  基本信息
-
-  计算生物信息学研究所
-
-  高琳　二级教授   博导
-
-  博士学科：计算机应用技术
-
-  硕士学科：计算机应用技术
-
-  工作单位：计算机科学与技术学院
-
-  联系方式
-
-  办公室地址：南校区 网安楼 A1-0411
-
-  实验室地址：南校区 网安楼 A1-0410，
-
-  A1-0413
-
-  Email：lgao@mail.xidian.edu.cn
-
-  个人简介
-
-  高琳，女，博士，二级教授，博士生导师，西安电子科技大学“华山学者”领军教授。计算机学会理事，计算机学会生物信息学专业委员会主任，
+bio_raw: '高琳，女，博士，二级教授，博士生导师，西安电子科技大学“华山学者”领军教授。计算机学会理事，计算机学会生物信息学专业委员会主任，
 
   人工智能学会理事，
 
@@ -166,12 +104,46 @@ bio_raw: '高琳 | 个人信息 | 西安电子科技大学个人主页
 
   Bioinformatics
 
-  》'
+  》
+
+  ,
+
+  《
+
+  Briefings in Bioinformatics
+
+  》
+
+  等期刊发表论文180
+
+  余篇
+
+  。
+
+  2012 年，发起创办了西部地区第一个 “
+
+  计算生物信息学研究所
+
+  ” 。2020年获批 “
+
+  西安市计算生物信息学重点实验室
+
+  ” ，2026 成立 “
+
+  计算生命交叉研究院
+
+  ”。依托西电信息学科优势，“计算机科学与技术”一级学科博士学位授权点和博士后流动站的支撑，用信息和系统的观点研究面向生物数据分析、挖掘和模式发现的基础理论和关键技术，开发生物数据分析软件平台，培养学科交叉型研究人才。'
 institutes: []
 detail_url: http://web.xidian.edu.cn/lgao/
 profile_url: http://web.xidian.edu.cn/lgao/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -193,9 +165,3 @@ provenance:
     source: http://web.xidian.edu.cn/lgao/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息

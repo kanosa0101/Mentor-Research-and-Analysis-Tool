@@ -1,7 +1,6 @@
 slug: sunzhengxing
 name: 孙正兴
-aliases:
-- pag
+aliases: []
 school: nju
 dept: cs
 status: enriched
@@ -25,6 +24,22 @@ detail_url: https://cs.nju.edu.cn/58/20/c2639a153632/page.htm
 profile_url: https://cs.nju.edu.cn/58/20/c2639a153632/page.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -56,19 +71,3 @@ provenance:
     source: https://cs.nju.edu.cn/58/20/c2639a153632/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

@@ -89,6 +89,12 @@ detail_url: http://web.xidian.edu.cn/kdwang/
 profile_url: http://web.xidian.edu.cn/kdwang/
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -105,9 +111,3 @@ provenance:
     source: http://web.xidian.edu.cn/kdwang/
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

@@ -1,127 +1,14 @@
 slug: suzhenzhen
 name: 苏镇镇
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 苏镇镇 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  dVm
-
-  jGH
-
-  o6g
-
-  jJe
-
-  nys
-
-  vZf
-
-  2sg
-
-  VU6
-
-  N6x
-
-  dJG
-
-  fUy
-
-  4lQ
-
-  KfV
-
-  kHz
-
-  sdJ
-
-  fan
-
-  u5K
-
-  jVj
-
-  Gh7
-
-  rZF
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  苏镇镇
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  硕士生导师
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2020-12-01
-
-  学科：计算机软件与理论
-
-  电子邮箱：
-
-  bde60f9ebe23dce06d5b1552f2a6eac04873c497b130b9d2dd54cbe869cf2ec4e1954c9cd5b1b46f8a2984ade865e2b3ca7b8528a9954c503ba420a119fa1fd2a3f7dad66197810710fd47d9f7661af79ae5bd448911a2133862ad6944b83b6b914f6b965db78cd009f1c5731a57a7d74cd614d3b8fe69cac15b42713ce8f33a
-
-  扫描关注
-
-  同专业硕导
-
-  个人简介
+title: 副教授
+supervisor: 硕导
+subjects: 计算机软件与理论
+email: zzsu@xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -135,41 +22,21 @@ bio_raw: '西安电子科技大学主页平台管理系统 苏镇镇 首页  中
 
   欢迎对目标跟踪、深度学习、智能感知等研究方向感兴趣的同学加入。
 
-  软件工程（学术学位：083500）、计算机技术（专业学位：085404）
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  2015.09
-
-  2020.12
-
-  西安电子科技大学
-
-  信息与通信工程
-
-  博士研究生毕业
-
-  工学博士学位
-
-  2011.09
-
-  2015.07
-
-  西安电子科技大学
-
-  数学与应用数学'
+  软件工程（学术学位：083500）、计算机技术（专业学位：085404）'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、1. 蜂群无人机建模与跟踪、2.
+  异构数据智能关联与分析、3. 可信AI模型测试验证、暂无内容
 detail_url: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -186,14 +53,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:6g
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/SZZ1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

@@ -1,7 +1,6 @@
 slug: wanhai
 name: 万海
-aliases:
-- te
+aliases: []
 school: sysu
 dept: cs
 status: enriched
@@ -13,6 +12,12 @@ detail_url: https://cse.sysu.edu.cn/teacher
 profile_url: https://cse.sysu.edu.cn/teacher
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -34,9 +39,3 @@ provenance:
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

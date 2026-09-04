@@ -1,7 +1,6 @@
 slug: fengzhiwei
 name: 冯智伟
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -22,6 +21,22 @@ detail_url: http://www.cse.neu.edu.cn/2022/1230/c6641a225150/page.htm
 profile_url: http://www.cse.neu.edu.cn/2022/1230/c6641a225150/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -48,19 +63,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2022/1230/c6641a225150/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

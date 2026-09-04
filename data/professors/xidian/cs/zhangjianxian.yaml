@@ -1,147 +1,15 @@
 slug: zhangjianxian
 name: 张剑贤
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 张剑贤 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  BPu
-
-  fYb
-
-  2pB
-
-  lF2
-
-  jsv
-
-  ebq
-
-  LJM
-
-  Kcf
-
-  kd4
-
-  IY1
-
-  gBU
-
-  ieW
-
-  9no
-
-  QcU
-
-  WpS
-
-  RPd
-
-  DrE
-
-  iwj
-
-  G8X
-
-  lCr
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  张剑贤
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  硕士生导师
-
-  主要任职：硕士研究生导师
-
-  性别：男
-
-  毕业院校：西安电子科技大学
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2012-04-01
-
-  学科：计算机科学与技术
-
-  办公地点：西安电子科技大学长安校区网络安全大楼A1032
-
-  联系方式：
-
-  6d2c56138f055975ea313b40557934f047c3fb844284aa5a9b83dd56257b7d5cdefbee586376ac098693f9f39e05ca06f302c68594c153a238e0c140a29fe2f826243e8762b2b9bae8b39ff320e275dd50204d2ccadd72b06c61146912e0c285b2e70fe5e7c976a90552c33843da0f87eef8f01ba62a6907e1e023a8669f7c1d
-
-  其他联系方式
-
-  Other Contact Information
-
-  邮箱 :
-
-  6d2c56138f055975ea313b40557934f047c3fb844284aa5a9b83dd56257b7d5cdefbee586376ac098693f9f39e05ca06f302c68594c153a238e0c140a29fe2f826243e8762b2b9bae8b39ff320e275dd50204d2ccadd72b06c61146912e0c285b2e70fe5e7c976a90552c33843da0f87eef8f01ba62a6907e1e023a8669f7c1d
-
-  通讯/办公地址 :
-
-  7df3a7678d17d6ff478f5b7e693278eecee090fb33efaaae7dc51bac056c8db95f7b1293e3076c25a3b84ac302c32c574f24541843ece7b07cc2a8dbc938086b06dc76d05348f5773b8998a9cf2bff8d839860d127694f08de36856d8cecc1874dd680b599d0cc4567b853d1fd1532d4b1cbb03458bedc5a467b34b01d4ab293
-
-  邮编 :
-
-  4f52fcb1cccea9b05a2a85486644e58f184db98011c170e3ae952a669d39451be169a79c97ff0c42326a7947ca29efe29df057669ae8131d3b029efc49ab5030834186e484e757487d83cf426efe3dd53c4b8dbde62d11b345c6fcbd687232626a25b6fd300d969d7168cb2716576a8c7f2ae28884a42a70c0260f504dda4c94
-
-  扫描关注
-
-  同专业硕导
-
-  个人简介
+title: 副教授
+supervisor: 硕导
+subjects: 计算机科学与技术
+email: jianxianzhang@mail.xidian.edu.cn
+office_address: jianxianzhang@mail.xidian.edu.cn
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -153,23 +21,35 @@ bio_raw: '西安电子科技大学主页平台管理系统 张剑贤 首页  中
 
   ）嵌入式系统专委会执行委员、体系结构和高性能计算专委委员
 
-  。主持及参与国家自然科学基金、国防预先研究、省部级科研项目及横向项目10余项，发表学术论文20多篇，获得发明专利多项，
-
-  获2021年度中国电子学会技术发明二等奖
-
-  。参与编写“十二五”普通高等教育本科国家级规划教材2本，获得陕西省高等教育优秀教材一等奖。曾多次获实验教学案例设计竞赛全国一/二等奖。
-
-  研究方向
-
-  ：嵌入式系统及
-
-  片上系统（SoC）、物联网技术及无线感知、高性能异构计算及处理器体系结构设计、图像处理算法并行加速优化。'
+  。主持及参与国家自然科学基金、国防预先研究、省部级'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、主要研究方向为片上系统及片上网络、高性能异构计算、视觉图像处理及深度学习算法并行优化、新能源汽车动力电池管理、嵌入式无线传感器网络。、计算机学会会员
 detail_url: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -186,9 +66,33 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZJX4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

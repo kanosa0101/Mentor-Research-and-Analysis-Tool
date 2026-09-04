@@ -1,7 +1,6 @@
 slug: zhengmeng
 name: 郑萌
-aliases:
-- pag
+aliases: []
 school: neu
 dept: cs
 status: enriched
@@ -17,6 +16,12 @@ detail_url: http://www.cse.neu.edu.cn/2025/0319/c6641a279239/page.htm
 profile_url: http://www.cse.neu.edu.cn/2025/0319/c6641a279239/page.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -38,9 +43,3 @@ provenance:
     source: http://www.cse.neu.edu.cn/2025/0319/c6641a279239/page.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

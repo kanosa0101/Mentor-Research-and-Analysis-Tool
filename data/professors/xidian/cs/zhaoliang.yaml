@@ -1,117 +1,12 @@
 slug: zhaoliang
 name: 赵亮
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 赵亮 首页  中文主页
-
-  登录
-
-  西安电子科技大学
-
-  English
-
-  zZQ
-
-  9aI
-
-  sPW
-
-  c0k
-
-  uga
-
-  OVp
-
-  1am
-
-  IVF
-
-  ggc
-
-  hIN
-
-  M0u
-
-  YKc
-
-  Kt5
-
-  VI6
-
-  ntX
-
-  qyN
-
-  uhV
-
-  wa3
-
-  cL8
-
-  z1V
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  赵亮
-
-  个人信息
-
-  Personal Information
-
-  副教授
-
-  性别：男
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间：2012-12-01
-
-  学科：计算机科学与技术
-
-  扫描关注
-
-  个人简介
+title: 副教授
+subjects: 计算机科学与技术
+bio_raw: '个人简介
 
   Personal Profile
 
@@ -119,51 +14,21 @@ bio_raw: '西安电子科技大学主页平台管理系统 赵亮 首页  中文
 
   2012年于意大利比萨大学计算机科学系获得博士学位。
 
-  2012年起在西安电子科技大学计算机学院计算理论与技术研究所工作至今。
-
-  教育经历
-
-  Education Background
-
-  工作经历
-
-  Work Experience
-
-  暂无内容
-
-  暂无内容
-
-  研究方向
-
-  Research Focus
-
-  社会兼职
-
-  Social Affiliations
-
-  1．软件形式化方法 2．程序验证 3．时序逻辑程序设计 4．面向对象程序理论
-
-  暂无内容
-
-  版权所有：西安电子科技大学　陕ICP备05016463号
-
-  手机版
-
-  访问量：
-
-  次
-
-  最后更新时间：
-
-  .
-
-  .'
+  2012年起在西安电子科技大学计算机学院计算理论与技术研究所工作至今。'
 institutes:
 - 计算机科学与技术学院
+research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、1．软件形式化方法 2．程序验证
+  3．时序逻辑程序设计 4．面向对象程序理论、暂无内容
 detail_url: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -180,9 +45,18 @@ provenance:
     source: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/ZL20/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto

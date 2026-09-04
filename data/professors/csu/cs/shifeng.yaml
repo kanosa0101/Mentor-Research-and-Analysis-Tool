@@ -1,18 +1,125 @@
 slug: shifeng
 name: 石峰
 aliases:
-- inde
+- fengshi
 school: csu
 dept: cs
-status: roster
-institutes: []
+status: enriched
+title: 副教授
+supervisor: 博导、硕导
+subjects: 计算机科学与技术
+email: fengshi@csu.edu.cn
+bio_raw: '石峰，中南大学计算机学院副教授、博士生导师。
+
+  长期聚焦理论计算机科学与智能优化领域，主要研究方向包括图论、组合优化、算法设计与分析、聚类分析、模式匹配及任务调度优化等。围绕子图同构、子图挖掘、模式匹配等经典NP-难解问题，系统开展高效算法设计与复杂度分析研究，提出了一系列具有理论创新性和应用启发性的算法方法，在相关研究领域形成了较为鲜明的研究特色。
+
+  主要的研究方向为：
+
+  (1)
+
+  算法理论与智能优化：
+
+  聚焦图论、组合优化与复杂任务调度中的NP-难解问题，研究精确算法、固定参数算法、近似算法、进化计算等高效求解方法，构建兼具理论保证、计算效率与实际适应性的优化决策方案，为复杂系统中的智能计算与资源优化提供算法支撑。
+
+  (2) 算法技术与
+
+  AI
+
+  融合创新：
+
+  面向新一代智能模型，探索将算法设计思想、复杂度分析方法与专家先验知识融入
+
+  AI
+
+  模型，提升其结构化推理、策略搜索与优化决策能力，推动
+
+  AI
+
+  从
+
+  “
+
+  数据驱动的模式压缩
+
+  ”
+
+  向
+
+  “
+
+  知识引导的智能求解
+
+  ”
+
+  演进。
+
+  个人网页
+
+  ，
+
+  论文列表：
+
+  https://dblp.org/pid/06/468-3.html
+
+  如果您对本人的研究领域感兴趣，欢迎报考本人研究生。
+
+  邮箱：fengshi@csu.edu.cn'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]  算法优化与设计、[2]  机器学习算法基础'
 detail_url: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
 first_seen: '2026-09-04'
-facets: []
+last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
     source: https://cse.csu.edu.cn/szdw/jsml.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/fengshi/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

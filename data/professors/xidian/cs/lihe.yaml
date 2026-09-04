@@ -1,175 +1,27 @@
 slug: lihe
 name: 李贺
-aliases:
-- inde
+aliases: []
 school: xidian
 dept: cs
 status: enriched
-bio_raw: '西安电子科技大学主页平台管理系统 李贺 首页  中文主页
-
-  yIB
-
-  X5d
-
-  YvH
-
-  Tal
-
-  PXy
-
-  mo1
-
-  t4S
-
-  1zu
-
-  ypN
-
-  XjY
-
-  SjV
-
-  5Hi
-
-  WeM
-
-  Avx
-
-  xuM
-
-  mmp
-
-  Djn
-
-  D5P
-
-  QzZ
-
-  kqN
-
-  首页
-
-  科学研究
-
-  研究领域
-
-  论文成果
-
-  专利
-
-  著作成果
-
-  科研项目
-
-  科研团队
-
-  教学研究
-
-  教学资源
-
-  授课信息
-
-  教学成果
-
-  获奖信息
-
-  招生信息
-
-  学生信息
-
-  教师博客
-
-  我的相册
-
-  其他栏目
-
-  语种
-
-  English
-
-  李贺
-
-  副教授
-
-  硕士生导师
-
-  性别：男
-
-  学历：博士研究生毕业
-
-  学位：博士研究生毕业
-
-  在职信息：在岗
-
-  所在单位：计算机科学与技术学院
-
-  入职时间： 2014-07-01
-
-  学科：计算机科学与技术
-
-  联系方式：
-
-  12b332ac6e2a3eeed0ff5c17960e54c7877f64b07b85edf526bc17796de4288d75ded91e60da84df234b1f4bc378669899cc8e8bcddbc907ef9d1495860918f42baaabd353febd168f88c8145eb8c8413830adb48dc014f206d6a44495437815b6a4c0ea1bf816ba844c5076739f9b63210fd8e9a612e3deb65259e486fa9b38
-
-  电子邮箱：
-
-  12b332ac6e2a3eeed0ff5c17960e54c7877f64b07b85edf526bc17796de4288d75ded91e60da84df234b1f4bc378669899cc8e8bcddbc907ef9d1495860918f42baaabd353febd168f88c8145eb8c8413830adb48dc014f206d6a44495437815b6a4c0ea1bf816ba844c5076739f9b63210fd8e9a612e3deb65259e486fa9b38
-
-  访问量：
-
-  最后更新时间：
-
-  .
-
-  .
-
-  同专业硕导
-
-  个人简介
-
-  欢迎对数据挖掘与深度学习感兴趣的工学和工程硕博士同学加入，同时也欢迎本科生同学参与课题组的实习项目。
-
-  其他联系方式
-
-  邮箱 :
-
-  12b332ac6e2a3eeed0ff5c17960e54c7877f64b07b85edf526bc17796de4288d75ded91e60da84df234b1f4bc378669899cc8e8bcddbc907ef9d1495860918f42baaabd353febd168f88c8145eb8c8413830adb48dc014f206d6a44495437815b6a4c0ea1bf816ba844c5076739f9b63210fd8e9a612e3deb65259e486fa9b38
-
-  通讯/办公地址 :
-
-  b350634ac2e54570604e115916b533be4a6ab9c78ddc4f63b96301dab8f60af6e7ef5e9c6352cd2f88a86b334fe806f1e64e930e9dce3a8b3b7d685723f9c0c6dc6e7d2d4783784b8c48e21d67e160aa8a22cc45b1d15774a55dab32391ebd298b03e762e9d05288f69d89d09edd4c3e14c9db6af690c9134bb2758977deb586
-
-  教育经历
-
-  [1]
-
-  2010.09 -- 2014.02
-
-  Chungbuk National University
-
-  计算机信息与通信工程
-
-  博士研究生毕业
-
-  博士学位
-
-  工作经历
-
-  [1]
-
-  2014.07 -- 2017.05
-
-  西安电子科技大学
-
-  研究方向
-
-  人工智能'
+title: 副教授
+supervisor: 硕导
+subjects: 计算机科学与技术
+email: heli@xidian.edu.cn
+office_address: 西安电子科技大学
+bio_raw: 欢迎对数据挖掘与深度学习感兴趣的工学和工程硕博士同学加入，同时也欢迎本科生同学参与课题组的实习项目。
 institutes:
 - 计算机科学与技术学院
 detail_url: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled
@@ -186,9 +38,28 @@ provenance:
     source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
+  email:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LH16/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
