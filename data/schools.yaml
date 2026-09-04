@@ -1,0 +1,159 @@
+schools:
+  - id: sjtu
+    name: 上海交通大学
+    tier: T1
+    include: true
+    note: 试点学校
+  - id: tsinghua
+    name: 清华大学
+    tier: T1
+    include: true
+  - id: pku
+    name: 北京大学
+    tier: T1
+    include: true
+  - id: fudan
+    name: 复旦大学
+    tier: T1
+    include: true
+  - id: zju
+    name: 浙江大学
+    tier: T1
+    include: true
+  - id: ustc
+    name: 中国科学技术大学
+    tier: T1
+    include: true
+  - id: nju
+    name: 南京大学
+    tier: T1
+    include: true
+  - id: buaa
+    name: 北京航空航天大学
+    tier: T2
+    include: true
+  - id: hit
+    name: 哈尔滨工业大学
+    tier: T2
+    include: true
+  - id: xjtu
+    name: 西安交通大学
+    tier: T2
+    include: true
+  - id: hust
+    name: 华中科技大学
+    tier: T2
+    include: true
+  - id: seu
+    name: 东南大学
+    tier: T2
+    include: true
+  - id: bit
+    name: 北京理工大学
+    tier: T2
+    include: true
+  - id: uestc
+    name: 电子科技大学
+    tier: T2
+    include: true
+  - id: ruc
+    name: 中国人民大学
+    tier: T2
+    include: true
+  - id: nankai
+    name: 南开大学
+    tier: T2
+    include: true
+  - id: tju
+    name: 天津大学
+    tier: T2
+    include: true
+  - id: whu
+    name: 武汉大学
+    tier: T2
+    include: true
+  - id: sysu
+    name: 中山大学
+    tier: T2
+    include: true
+  - id: xmu
+    name: 厦门大学
+    tier: T2
+    include: true
+  - id: tongji
+    name: 同济大学
+    tier: T2
+    include: true
+  - id: sdu
+    name: 山东大学
+    tier: T2
+    include: true
+  - id: csu
+    name: 中南大学
+    tier: T2
+    include: true
+  - id: scut
+    name: 华南理工大学
+    tier: T2
+    include: true
+  - id: nwpu
+    name: 西北工业大学
+    tier: T2
+    include: true
+  - id: ecnu
+    name: 华东师范大学
+    tier: T2
+    include: true
+  - id: jlu
+    name: 吉林大学
+    tier: T2b
+    include: true
+  - id: dlut
+    name: 大连理工大学
+    tier: T2b
+    include: true
+  - id: neu
+    name: 东北大学
+    tier: T2b
+    include: true
+  - id: hnu
+    name: 湖南大学
+    tier: T2b
+    include: true
+  - id: cqu
+    name: 重庆大学
+    tier: T2b
+    include: true
+  - id: scu
+    name: 四川大学
+    tier: T2b
+    include: true
+  - id: bnu
+    name: 北京师范大学
+    tier: T2b
+    include: true
+  - id: ucas
+    name: 中国科学院大学
+    tier: T3
+    include: true
+    note: 用户指定的 CAS 四所（计算所/自动化所/软件所/信工所），按院系挂在本校下
+  - id: bupt
+    name: 北京邮电大学
+    tier: T3
+    include: true
+  - id: xidian
+    name: 西安电子科技大学
+    tier: T3
+    include: true
+  - id: nudt
+    name: 国防科技大学
+    tier: T3
+    include: true
+  - id: sustech
+    name: 南方科技大学
+    tier: T3
+    include: true
+  - id: shanghaitech
+    name: 上海科技大学
+    tier: T3
+    include: true

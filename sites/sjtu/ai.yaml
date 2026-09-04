@@ -1,0 +1,8 @@
+school: sjtu
+dept: ai
+dept_name: 人工智能研究院
+base_url: https://ai.sjtu.edu.cn
+hook: sjtu_ai
+list:
+  url: https://ai.sjtu.edu.cn/api/teacher
+  method: GET

@@ -1,0 +1,9 @@
+school: sdu
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: https://www.cs.sdu.edu.cn
+hook: simple_list
+list:
+  urls:
+    - https://www.cs.sdu.edu.cn/szdw1/js.htm
+  person_href: /info/\d+/\d+\.htm

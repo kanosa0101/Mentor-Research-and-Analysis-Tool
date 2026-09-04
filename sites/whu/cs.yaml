@@ -1,0 +1,9 @@
+school: whu
+dept: cs
+dept_name: 计算机学院
+base_url: https://cs.whu.edu.cn
+hook: simple_list
+list:
+  urls:
+    - https://cs.whu.edu.cn/szdw/zrjs.htm
+  person_href: /info/\d+/\d+\.htm

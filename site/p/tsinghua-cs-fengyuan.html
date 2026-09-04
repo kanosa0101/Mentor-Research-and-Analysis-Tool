@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冯元 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{background:linear-gradient(120deg,#1d2b64,#3b5bdb 55%,#5f7ae0);color:#fff;padding:14px 24px}
+.top a{color:#cdd9ff;text-decoration:none;font-size:13px}
+.top a:hover{color:#fff}
+.top .crumb{margin-top:4px;font-size:12.5px;opacity:.85}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+</style>
+</head>
+<body>
+<div class="top">
+  <a href="../index.html">← 返回列表</a>
+  <div class="crumb">清华大学 · 计算机科学与技术系</div>
+</div>
+<div class="wrap">
+<div class="card">
+  
+  <h2>冯元 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>智能技术与系统实验室</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+    
+    <dt>研究方向</dt><dd>量子模型检测，量子程序验证，量子通信并发系统</dd>
+    <dt>邮箱</dt><dd>yuan_feng@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.cs.tsinghua.edu.cn/info/1121/6034.htm" target="_blank">https://www.cs.tsinghua.edu.cn/info/1121/6034.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-09-02</span>
+    <span>最近核对：2026-09-02</span>
+    
+  </div>
+  <div style="clear:both"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">姓名：冯元
+职称：教授
+邮件：yuan_feng@tsinghua.edu.cn
+教育背景
+本科，清华大学应用数学系 1999年
+博士，清华大学计算机科学与技术系 2004年
+社会兼职
+ACM Transactions on Software Engineering and Methodology: Associate Editor
+研究领域
+量子模型检测，量子程序验证，量子通信并发系统
+研究概况
+量子模型检测：经典模型检测是对顺序程序、并发协议、硬件系统进行形式化验证的一种重要技术。由于其可机械化和可以提供诊断信息，在工业界得到了广泛应用。我们提出了两种不同的量子马尔代夫链模型，并系统发展了线性和分支两种量子时序逻辑公式的模型检测方法。2021年，受剑桥大学出版社邀请，我们出版了《Model Checking Quantum Systems: Principles and Algorithms》，对量子模型检测这一新兴的研究方向，特别是我们课题组在这方面的工作进行了系统梳理。这是量子模型检测领域第一本学术专著。
+量子程序验证：Hoare逻辑是程序验证的逻辑基础，在程序设计方法学中处于核心地位。Hoare逻辑通过为命令式编程语言的所有程序结构定义合适的公理和推理规则，使得该语言下程序的正确性都可以进行(部分)自动化证明。我们建立了含经典变量的量子Hoare逻辑，证明其可靠性和相对完备性，并在文献中第一次成功的利用Hoare逻辑验证完整的Shor算法(ACM TQC 2021)。最近，我们进一步利用这种技术分别为不共享变量的量子并行程序(TCS 2022)、只含经典通信的分布式量子程序(ACM TOCL 2022)、含不确定性构造的量子程序(ASPLOS’23)设计了Hoare逻辑系统，并证明了它们的可靠性和相对完备性。
+量子通信并发系统：量子通信和密码是量子信息领域目前最为成熟、在某些方面已经获得实际应用的技术。为了形式化描述量子通信网络、为量子网络软件和通信协议的形式化验证奠定理论基础，我们提出了量子进程代数qCCS (Information and Computation 2007)。更重要的是，我们成功的找到了一种刻画量子进程等价性的互模拟关系，并证明了其对于各种进程构造的同余性(POPL’11, ACM TOPLAS 2012)。我们后续的一系列工作，包括符号互模拟 (ACM TOCL 2014)、开互模拟(TCS 2012)和基于分布的互模拟(CONCUR 2015)等，极大的丰富了qCCS的基础理论，也增强了其描述和验证实际量子通信系统的能力。
+学术成果
+Books
+[1]. M. Ying and Y. Feng. Model Checking Quantum Systems: Principles and Algorithms. Cambridge University Press, 2021.
+Journal Articles
+[2]. J. Ren, Y. Sui, X. Cheng, Y. Feng, J. Zhao. Dynamic Transitive Closure-Based Static Analysis through the Lens of Quantum Search. ACM Transactions on Software Engineering and Methodology, accepted (2024).
+[3]. Y. Feng, and S. Li. Abstract interpretation, Hoare logic, and incorrectness logic for quantum programs. Information and Computation, 294: 105077 (2023).
+[4]. X. Zhou, Y. Feng, and S. Li. Supervised Learning Enhanced Quantum Circuit Trans- formation. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 42(2): 437-447 (2023).
+[5]. Y. Feng, S. Li, and M. Ying. Verification of Distributed Quantum Programs. ACM Transactions on Computational Logic 23(3), 19:1-19:40 (2022).
+[6]. X. Zhou, Y. Feng, and S. Li. Quantum Circuit Transformation: A Monte Carlo Tree Search Framework. ACM Transactions on Design Automation of Electronic Systems 27(6) 59:1-59:27 (2022).
+[7]. X. Hong, X. Zhou, S. Li, Y. Feng, and M. Ying. A Tensor Network based Decision Diagram for Representation of Quantum Circuits. ACM Transactions on Design Automation of Electronic Systems 27 (6) 60:1-60:30 (2022).
+[8]. M. Ying, L. Zhou, Y. Li, Y. Feng. A proof system for disjoint parallel quantum programs. Theoretical Computer Science 897: 164-184 (2022).
+[9]. Y. Deng and Y. Feng. Formal Semantics of a Classical-Quantum Language. Theoretical Computer Science 913: 73-93 (2022).
+[10]. C. Fu, A. Turrini, X. Huang, L. Song, Y. Feng, L. Zhang. Model Checking for Probabilistic Multiagent Systems under Uniform Schedulers. Journal of Computer Science and Technology (2022).
+[11]. Y. Feng and M. Ying. Quantum Hoare logic with classical variables, ACM Transactions on Quantum Computing 2(4), 16:1-16:43 (2021).
+[12]. X. Fu, ..., Y. Feng. Quingo: A Programming Framework for Heterogeneous Quantum- Classical Computing with NISQ Features, ACM Transactions on Quantum Computing 2(4), 19:1-19:37 (2021).
+[13]. S. Li, X. Zhou, Y. Feng. Qubit Mapping Based on Subgraph Isomorphism and Filtered Depth-Limited Search, IEEE Transactions on Computers 70(11): 1777-1788 (2021).
+[14]. M. Xu, C. Huang, Y. Feng. Measuring the constrained reachability in quantum Markov chains, Acta Informatica 58(6), 653-674 (2021).
+[15]. W. Shi, Q. Cao, Y. Deng, H. Jiang, and Y. Feng. Symbolic Reasoning about Quantum Circuits in Coq, Journal of Computer Science and Technology 36 (6): 1291-1306 (2021).
+[16]. M. Ying, Y. Feng, S. Ying. Optimal Policies for Quantum Markov Decision Processes. International Journal of Automation and Computing 18(3): 410-421 (2021).
+[17]. X. Zhou, S. Li, Y. Feng. Quantum Circuit Transformation Based on Simulated Annealing and Heuristic Search, IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 39(12), 4683–4694 (2020).
+Conference Papers
+[18]. J. Guan, Y. Feng, A. Turrini, M. Ying. Measurement-based Verification of Quantum Markov Chains. Proceedings of the 36th International Conference on Computer Aided Verification (CAV’24), accepted.
+[19]. A. Basheer, Y. Feng, C. Ferrie, and S. Li. Ansatz-Agnostic Exponential Resource Saving in Variational Quantum Algorithms Using Shallow Shadows. Proceedings of the 33rd International Joint Conference on Artificial Intelligence (IJCAI’24), accepted.
+[20]. S. Li, K. Nguyen, Z. Clare and Y. Feng. Single-Qubit Gates Matter for Optimising Quantum Circuit Depth in Qubit Mapping. Proceedings of the 41st International Conference on Computer-Aided Design (ICCAD’23), 1-9.
+[21]. Y. Feng and Y. Xu. Verification of nondeterministic quantum programs. Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS’23)(3): 789-805 (2023).
+[22]. A. Basheer, Y. Feng, C. Ferrie, and S. Li. Alternating Layered Variational Quantum Circuits Can Be Classically Optimized Efficiently Using Classical Shadows. Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI’23): 6770-6778 (2023).
+[23]. L. Liu, K. Sun, C. Zhou, and Y. Feng. Two Views of Constrained Differential Privacy: Belief Revision and Update. Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI’23): 6450-6457 (2023).
+[24]. X. Hong, Y. Feng, S. Li, and M. Ying. Equivalence Checking of Dynamic Quantum Circuits. Proceedings of the 41st International Conference on Computer-Aided Design (ICCAD’22), 127:1-127:8 (2022).
+[25]. X. Hong, X. Zhou, S. Li, Y. Feng, and M. Ying. Approximate Equivalence Checking of Noisy Quantum Circuits. Proceedings of the 58th Design Automation Conference (DAC’21), 637-642 (2021).
+[26]. X. Zhou, Y. Feng, S. Li. A Monte Carlo Tree Search Framework for Quantum Circuit Transformation. Proceedings of the 39th International Conference on Computer-Aided Design (ICCAD’20), 138:1-138:7 (2020).</div>
+</div>
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+    
+    <tr>
+      <td>name</td>
+      <td>冯元</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/info/1121/6034.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>email</td>
+      <td>yuan_feng@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>institutes</td>
+      <td>智能技术与系统实验室</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>bio_raw</td>
+      <td>姓名：冯元
+职称：教授
+邮件：yuan_feng@tsinghua.edu.cn
+教育背景
+本科，清华大学应用数学...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/info/1121/6034.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>research_direction_raw</td>
+      <td>量子模型检测，量子程序验证，量子通信并发系统</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-02</td>
+      <td><a href="https://www.cs.tsinghua.edu.cn/info/1121/6034.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+  </table>
+</div>
+</div>
+</body>
+</html>

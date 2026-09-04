@@ -1,0 +1,16 @@
+school: sjtu
+dept: cs
+dept_name: 计算机学院（网络空间安全学院、密码学院）
+base_url: https://www.cs.sjtu.edu.cn
+hook: sjtu_cs
+list:
+  url: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+  method: POST
+  params:
+    page: "1"
+    cat_id: "20"
+    cat_code: jiaoshiml
+    type: "1"
+    zm: All
+    zc: 全部
+    search: ""

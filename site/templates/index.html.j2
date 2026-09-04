@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{background:linear-gradient(120deg,#1d2b64,#3b5bdb 55%,#5f7ae0);color:#fff;padding:22px 28px 20px}
+.top h1{margin:0;font-size:20px;font-weight:600;letter-spacing:.5px}
+.top .sub{margin-top:6px;font-size:12.5px;opacity:.85}
+.stats{display:flex;gap:26px;margin-top:14px;flex-wrap:wrap}
+.stat b{display:block;font-size:20px;font-weight:600}
+.stat span{font-size:11.5px;opacity:.8}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px 40px}
+.bar{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;margin:14px 0;box-shadow:0 6px 18px rgba(20,30,60,.06);
+  position:relative;z-index:2;flex-wrap:wrap}
+.fld{display:flex;align-items:center;gap:6px;background:#f7f8fa;border:1px solid var(--line);
+  border-radius:8px;padding:2px 4px 2px 10px}
+.fld label{font-size:12px;color:var(--muted);white-space:nowrap}
+.fld select,.fld input{border:none;background:transparent;padding:7px 6px;font-size:13px;outline:none;color:var(--ink);max-width:230px}
+.fld input{width:200px}
+.fld select{cursor:pointer}
+.fld select:disabled{color:#b8bfcc}
+.bar .count{margin-left:auto;color:var(--muted);font-size:12.5px;white-space:nowrap}
+details.cols{position:relative}
+details.cols summary{list-style:none;cursor:pointer;font-size:13px;color:var(--muted);
+  background:#f7f8fa;border:1px solid var(--line);border-radius:8px;padding:8px 12px;white-space:nowrap;user-select:none}
+details.cols summary::-webkit-details-marker{display:none}
+details.cols[open] .colbox{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+  border-radius:10px;box-shadow:0 8px 24px rgba(20,30,60,.12);padding:10px 14px;z-index:30;min-width:140px}
+.colbox label{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:13px;cursor:pointer;white-space:nowrap}
+.tblcard{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:auto;box-shadow:0 2px 10px rgba(20,30,60,.04)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+th{background:#fafbfd;color:var(--muted);font-size:12px;font-weight:600;position:sticky;top:0;
+  cursor:pointer;user-select:none}
+th:hover{color:var(--accent)}
+th.off,td.off{display:none}
+.c-name{width:104px}.c-school{width:96px}.c-title{width:150px}.c-sup{width:92px}
+.c-email{width:210px}.c-dept{width:150px}.c-status{width:86px}.c-ext{width:48px}
+th.c-inst{width:auto}
+td.name-cell a{font-weight:600;color:var(--ink);text-decoration:none;font-size:14px}
+td.name-cell a:hover{color:var(--accent);text-decoration:underline}
+td.institute-cell{color:#3d4757}
+td.email-cell{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#445}
+tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--accent-soft)}
+.missing{color:#b8bfcc;font-size:12px}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;white-space:nowrap}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.tag.sup{background:#f0eaff;color:#6b46c1}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.ext{color:#9aa3b2;font-size:14px}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+.pager{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap;
+  padding:10px 14px;border-top:1px solid var(--line);background:#fafbfd;border-radius:0 0 12px 12px;
+  font-size:12.5px;color:var(--muted)}
+.pager button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 10px;
+  cursor:pointer;font-size:12.5px;color:var(--ink)}
+.pager button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.pager button.cur{background:var(--accent);border-color:var(--accent);color:#fff;cursor:default}
+.pager button:disabled{opacity:.4;cursor:default}
+.pager .ell{padding:0 2px}
+.pager select{border:1px solid var(--line);border-radius:6px;padding:4px 6px;font-size:12.5px;background:#fff}
+.pager .info{margin-right:auto}
+.foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="wrap" style="padding-bottom:0">
+    <h1>导师库</h1>
+    <div class="sub">数据源：院系官网 · 名单驱动，逐字段可溯源{% if fresh %} · 数据核对至 {{ fresh }}{% endif %}</div>
+    <div class="stats">
+      <div class="stat"><b>{{ profs|length }}</b><span>导师总数</span></div>
+      <div class="stat"><b>{{ schools|length }}</b><span>学校</span></div>
+      <div class="stat"><b>{{ depts|length }}</b><span>院系</span></div>
+      <div class="stat"><b>{{ inst_count }}</b><span>研究所</span></div>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="bar">
+    <div class="fld"><input id="q" placeholder="搜索姓名 / 邮箱 / 研究所…"></div>
+    <div class="fld"><label>学校</label><select id="f-school"><option value="">全部</option>
+      {% for s in schools %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></div>
+    <div class="fld"><label>院系</label><select id="f-dept" disabled><option value="">全部</option></select></div>
+    <div class="fld"><label>职称</label><select id="f-title"><option value="">全部</option>
+      {% for t in titles %}<option>{{ t }}</option>{% endfor %}</select></div>
+    <div class="fld"><label>导师资格</label><select id="f-sup"><option value="">全部</option>
+      <option value="博导">博导</option><option value="硕导">硕导</option></select></div>
+    <details class="cols">
+      <summary>列设置 ▾</summary>
+      <div class="colbox" id="colbox"></div>
+    </details>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="tblcard">
+  <table id="tbl">
+    <thead><tr id="thead-row"></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="empty" id="empty" style="display:none">没有匹配的记录</div>
+  <div class="pager" id="pager"></div>
+  </div>
+  <div class="foot">数据来自各院系官网原始页面 · 每条字段可在详情页查看出处与抓取日期</div>
+</div>
+<script>
+const DATA = {{ payload }};
+let view = [...DATA], sortK = null, sortAsc = true;
+const el = id => document.getElementById(id);
+const STATUS = {roster:"仅名单", enriched:"已富化", verified:"已核对"};
+const badge = s => `<span class="tag tag-${s}">${STATUS[s]||s}</span>`;
+
+const COLS = [
+  {k:"school", label:"学校", def:true},
+  {k:"title",  label:"职称", def:true},
+  {k:"sup",    label:"导师资格", def:true},
+  {k:"inst",   label:"研究所", def:false},
+  {k:"email",  label:"邮箱", def:true},
+  {k:"dept",   label:"院系", def:true},
+  {k:"status", label:"状态", def:false},
+];
+let visible;
+let page = 1, pageSize = 50;
+try { visible = JSON.parse(localStorage.getItem("adv_cols_v2")) || null; } catch(e) { visible = null; }
+if (!visible || !Array.isArray(visible)) visible = COLS.filter(c=>c.def).map(c=>c.k);
+const isOn = k => visible.includes(k);
+
+const schoolDepts = {};
+DATA.forEach(p => {
+  (schoolDepts[p.school] = schoolDepts[p.school] || {})[p.dept] = p.dept_name;
+});
+const schoolName = {};
+DATA.forEach(p => schoolName[p.school] = p.school_name);
+
+function initCols(){
+  const box = el("colbox");
+  box.innerHTML = COLS.map(c =>
+    `<label><input type="checkbox" data-col="${c.k}" ${isOn(c.k)?"checked":""}>${c.label}</label>`).join("");
+  box.querySelectorAll("input").forEach(cb => cb.addEventListener("change", () => {
+    const k = cb.dataset.col;
+    visible = isOn(k) ? visible.filter(x => x !== k) : [...visible, k];
+    localStorage.setItem("adv_cols_v2", JSON.stringify(visible));
+    applyCols(); render();
+  }));
+}
+const HEADERS = [
+  {k:"name", cls:"c-name", label:"姓名", sort:"name"},
+  {k:"school", cls:"c-school", label:"学校", sort:"school_name"},
+  {k:"title", cls:"c-title", label:"职称", sort:"title"},
+  {k:"sup", cls:"c-sup", label:"导师资格", sort:"supervisor"},
+  {k:"inst", cls:"c-inst", label:"研究所", sort:"inst"},
+  {k:"email", cls:"c-email", label:"邮箱", sort:"email"},
+  {k:"dept", cls:"c-dept", label:"院系", sort:"dept_name"},
+  {k:"status", cls:"c-status", label:"状态", sort:"status"},
+  {k:"ext", cls:"c-ext", label:"", sort:null},
+];
+function applyCols(){
+  document.getElementById("thead-row").innerHTML = HEADERS
+    .filter(h => h.k === "name" || h.k === "ext" || isOn(h.k))
+    .map(h => `<th class="${h.cls}" ${h.sort ? `data-k="${h.sort}"` : ""}>${h.label}</th>`)
+    .join("");
+  bindSort();
+}
+function bindSort(){
+  document.querySelectorAll("#tbl th[data-k]").forEach(th=>th.addEventListener("click",()=>{
+    const k = th.dataset.k;
+    if(sortK===k) sortAsc=!sortAsc; else {sortK=k;sortAsc=true;}
+    page = 1; render();
+  }));
+}
+function initDepts(){
+  const fs = el("f-school"), fd = el("f-dept");
+  fs.addEventListener("change", () => {
+    const s = fs.value;
+    fd.innerHTML = '<option value="">全部</option>';
+    if (!s) { fd.disabled = true; page = 1; render(); return; }
+    fd.disabled = false;
+    Object.entries(schoolDepts[s] || {}).forEach(([id, name]) => {
+      const o = document.createElement("option");
+      o.value = id; o.textContent = name;
+      fd.appendChild(o);
+    });
+    page = 1; render();
+  });
+}
+
+function pageSel(v){ page = 1; pageSize = v; render(); }
+
+function renderPager(totalPages){
+  const elp = el("pager");
+  if (totalPages <= 1) { elp.innerHTML = ""; return; }
+  const nums = new Set([1, totalPages, page, page-1, page+1, page-2, page+2]);
+  const list = [...nums].filter(n => n >= 1 && n <= totalPages).sort((a,b)=>a-b);
+  let html = `<span class="info">共 ${view.length} 人 · 第 ${page} / ${totalPages} 页</span>`
+    + `<span>每页</span><select id="psize">${[20,50,100,500].map(n =>
+        `<option value="${n}" ${n===pageSize?"selected":""}>${n}</option>`).join("")}</select>`
+    + `<button ${page===1?"disabled":""} data-p="${page-1}">上一页</button>`;
+  let prev = 0;
+  for (const n of list) {
+    if (n - prev > 1) html += `<span class="ell">…</span>`;
+    html += `<button class="${n===page?"cur":""}" data-p="${n}">${n}</button>`;
+    prev = n;
+  }
+  html += `<button ${page===totalPages?"disabled":""} data-p="${page+1}">下一页</button>`;
+  elp.innerHTML = html;
+  elp.querySelectorAll("button[data-p]").forEach(b =>
+    b.addEventListener("click", () => { page = +b.dataset.p; render();
+      el("tbl").scrollIntoView({behavior:"smooth"}); }));
+  el("psize").addEventListener("change", e => pageSel(+e.target.value));
+}
+
+function render(){
+  const q = el("q").value.trim().toLowerCase(),
+        fs = el("f-school").value, fd = el("f-dept").value,
+        ft = el("f-title").value, fsup = el("f-sup").value;
+  view = DATA.filter(p=>{
+    if(fs && p.school !== fs) return false;
+    if(fd && p.dept !== fd) return false;
+    if(ft && p.title !== ft) return false;
+    if(fsup && !(p.supervisor||"").includes(fsup)) return false;
+    if(q){const hay=(p.name+" "+(p.email||"")+" "+(p.institutes||[]).join(" ")).toLowerCase();
+      if(!hay.includes(q)) return false;}
+    return true;
+  });
+  if(sortK){const k=sortK;view.sort((a,b)=>{
+    const x=(a[k]||"").toString(), y=(b[k]||"").toString();
+    return sortAsc ? x.localeCompare(y,"zh") : y.localeCompare(x,"zh");});}
+  const totalPages = Math.max(1, Math.ceil(view.length / pageSize));
+  if (page > totalPages) page = totalPages;
+  const start = (page - 1) * pageSize;
+  const rows = view.slice(start, start + pageSize);
+  const cells = p => ({
+    name: `<td class="name-cell" title="${p.name}"><a href="p/${p.page}.html">${p.name}</a></td>`,
+    school: `<td title="${p.school_name}">${p.school_name}</td>`,
+    title: `<td title="${p.title||"官网未提供"}">${p.title||'<span class="missing">官网未提供</span>'}</td>`,
+    sup: `<td>${p.supervisor?`<span class="tag sup">${p.supervisor}</span>`:'<span class="missing">—</span>'}</td>`,
+    inst: (()=>{const v=(p.institutes||[]).join("、")||"官网未提供";
+      return `<td class="institute-cell" title="${v}">${v}</td>`;})(),
+    email: `<td class="email-cell" title="${p.email||"官网未提供"}">${p.email||'<span class="missing">官网未提供</span>'}</td>`,
+    dept: `<td title="${p.dept_name||p.dept}">${p.dept_name||p.dept}</td>`,
+    status: `<td>${badge(p.status)}</td>`,
+    ext: `<td><a class="ext" href="${p.profile_url||p.detail_url}" target="_blank" title="官网页面">↗</a></td>`,
+  });
+  document.querySelector("#tbl tbody").innerHTML = rows.map(p=>{
+    const c = cells(p);
+    return "<tr>" + HEADERS.filter(h => h.k === "name" || h.k === "ext" || isOn(h.k))
+      .map(h => c[h.k]).join("") + "</tr>";
+  }).join("");
+  renderPager(totalPages);
+  const lo = view.length ? start + 1 : 0, hi = Math.min(start + pageSize, view.length);
+  el("count").textContent = `${lo}-${hi} / ${DATA.length} 人`;
+  el("empty").style.display = view.length ? "none" : "block";
+}
+["q","f-title","f-sup"].forEach(id=>el(id).addEventListener("input", () => { page = 1; render(); }));
+initCols(); applyCols(); initDepts(); render();
+</script>
+</body>
+</html>

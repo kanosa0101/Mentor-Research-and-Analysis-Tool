@@ -1,0 +1,11 @@
+school: ucas
+dept: ict
+dept_name: 计算技术研究所
+base_url: https://www.ict.ac.cn
+hook: ucas_ict
+list:
+  urls:
+    - https://www.ict.ac.cn/yjdw/yjy2020/
+    - https://www.ict.ac.cn/yjdw/fyjy2020/
+  method: GET
+  person_href: /sourcedb/[a-z0-9/]*t20\d{6}_\d+\.html

@@ -1,0 +1,11 @@
+school: ucas
+dept: ia
+dept_name: 自动化研究所
+base_url: https://ia.cas.cn
+hook: ucas_ia
+list:
+  urls:
+    - https://ia.cas.cn/rcdw/yjy/
+    - https://ia.cas.cn/rcdw/fyjy/
+  method: GET
+  person_href: /rcdw/(yjy|fyjy)/\d{6}/t20\d{6}_\d+\.html

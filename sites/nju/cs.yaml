@@ -1,0 +1,17 @@
+school: nju
+dept: cs
+dept_name: 计算机科学与技术系
+base_url: https://cs.nju.edu.cn
+hook: nju_cs
+list:
+  method: GET
+  person_href: /c\d+a\d+/page\.htm$
+  channels:
+    - url: https://cs.nju.edu.cn/2639/list.htm
+      cat: 教授
+    - url: https://cs.nju.edu.cn/2640/list.htm
+      cat: 副教授
+    - url: https://cs.nju.edu.cn/2641/list.htm
+      cat: 讲师/专职科研/博士后
+    - url: https://cs.nju.edu.cn/2642/list.htm
+      cat: 高级工程师

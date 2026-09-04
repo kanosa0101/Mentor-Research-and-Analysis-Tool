@@ -1,0 +1,8 @@
+school: sysu
+dept: cs
+dept_name: 计算机学院
+base_url: https://cse.sysu.edu.cn
+hook: sysu_cs
+list:
+  url: https://cse.sysu.edu.cn/teacher
+  method: RENDER

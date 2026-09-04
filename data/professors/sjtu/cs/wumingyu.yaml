@@ -1,0 +1,368 @@
+slug: wumingyu
+name: 吴明瑜
+aliases: []
+school: sjtu
+dept: cs
+status: enriched
+title: 副研究员
+email: mingyuwu@sjtu.edu.cn
+bio_raw: '个人简介
+
+  上海交通大学副研究员、博士生导师。主要研究兴趣为操作系统和语言运行时系统。成果发表在OSDI、ASPLOS、USENIX ATC、EuroSys、IEEE TC等国际高水平会议和期刊，获EuroSys
+  2024最佳论文奖、APSys 2018最佳论文runner-up奖、华为火花奖等，部分成果已经被OpenJDK、CPython、ArkTS等主流语言运行时社区接收并合入主线。
+
+  教育背景
+
+  2015.09 - 2020.08，上海交通大学软件学院，博士生
+
+  2011.09 - 2015.06，上海交通大学软件学院，本科生
+
+  工作履历
+
+  2020.11 - 至今，上海交通大学软件学院/计算机学院
+
+  教授课程
+
+  软件学院 编译原理与技术（SE3355）2021-2025年秋季学期
+
+  软件学院 云操作系统设计与实践 (SE3356) 2022-2026年春季学期
+
+  软件学院 系统设计与开发大型课程设计（系统软件）（SE4353）2022-2025年秋季学期
+
+  软件学院 计算机系统设计和实现（研） (EI6708) 2023-2026年春季学期
+
+  论文发表
+
+  完整列表：
+
+  https://ipads.se.sjtu.edu.cn/pub/members/mingyu_wu
+
+  [
+
+  Preprint 2026
+
+  ] CoAgent: Concurrency Control for Multi-Agent Systems. Hongtao Lyu, Dingyan Zhang,
+  Mingyu Wu, Xingda Wei, Haibo Chen. arXiv Preprint arXiv:2606.15376, 2026.
+
+  [
+
+  OSDI
+
+  ] Shaving the Peaks: Taming Tail Latency for Managed Workloads via Disaggregated
+  Garbage Collection. Hongtao Lyu, Yuhan Li,
+
+  Mingyu Wu
+
+  . Proceedings of the 20th USENIX Symposium on Operating Systems Design and Implementation.
+  July 2026.
+
+  [
+
+  SIGCSE TS
+
+  ] miniK8s: A Pedagogical Cloud-Native System. Dong Du,
+
+  Mingyu Wu
+
+  , Haibo Chen, Binyu Zang. Proceedings of the 56th ACM Technical Symposium on Computer
+  Science Education. February 2026.
+
+  [
+
+  Preprint 2025
+
+  ] FairBatching: Fairness-Aware Batch Formation for LLM Inference. Hongtao Lyu, Boyue
+  Liu, Mingyu Wu, Haibo Chen. arXiv Preprint arXiv:2510.14392, 2025.
+
+  [
+
+  ACM TACO
+
+  ] Object-Aware Memory Compression for Smartphones. Xinrui Li, Zhenyu Yang,
+
+  Mingyu Wu
+
+  , Haibo Chen, Binyu Zang. ACM Transactions on Architecture and Code Optimization.
+  December 2025.
+
+  [
+
+  ACM TOCS
+
+  ] Towards Serialization/Deserialization-free State Transfer in Serverless Workflows.
+  Xingda Wei, Fangming Lu, Zhuobin Huang, Rong Chen,
+
+  Mingyu Wu
+
+  , Haibo Chen. ACM Transactions on Computer Systems. March 2025.
+
+  [
+
+  EuroSys
+
+  ] Jade: A High-throughput Concurrent Copying Garbage Collector.
+
+  Mingyu Wu
+
+  , Liang Mao, Yude Lin, Yifeng Jin, Zhe Li, Hongtao Lyu, Jiawei Tang, Xiaowei Lu,
+  Hao Tang, Denghui Dong, Haibo Chen, Binyu Zang. Proceedings of the 19th European
+  Conference on Computer Systems, Athens, Greece, April, 2024.
+
+  [
+
+  EuroSys
+
+  ] Characterization and Reclamation of Frozen Garbage in Managed FaaS Workloads.
+  Ziming Zhao,
+
+  Mingyu Wu
+
+  , Haibo Chen, Binyu Zang. Proceedings of the 19th European Conference on Computer
+  Systems, Athens, Greece, April, 2024. (
+
+  Awarded with ACM Badges: Artifacts Evaluated, Artifacts Functional
+
+  )
+
+  [
+
+  EuroSys
+
+  ] Serialization/Deserialization-free State Transfer in Serverless Workflows with
+  RDMA-based Remote Memory Map. Fangming Lu, Xingda Wei, Zhuobin Huang, Rong Chen,
+
+  Mingyu Wu
+
+  , Haibo Chen. Proceedings of the 19th European Conference on Computer Systems, Athens,
+  Greece, April, 2024. (
+
+  Best Paper Award
+
+  )
+
+  [
+
+  IEEE TC
+
+  ] Toward An SGX-friendly Java Runtime.
+
+  Mingyu Wu
+
+  , Zhe Li, Haibo Chen, Binyu Zang, Shaojun Wang, Lei Yu, Sanhong Li, Haitao Song.
+  IEEE Transactions on Computers, pp. 44-57, January 2024.
+
+  link
+
+  [
+
+  IEEE TC
+
+  ] Flock: Towards Multitasking Virtual Machines for Function-as-a-Service. Ziming
+  Zhao,
+
+  Mingyu Wu
+
+  , Xujie Cao, Haibo Chen, Binyu Zang. IEEE Transactions on Computers, pp. 3153-3166,
+  November 2023.
+
+  link
+
+  [
+
+  ASPLOS
+
+  ] BeeHive: Sub-second Elasticity for Web Services with Semi-FaaS Execution. Ziming
+  Zhao,
+
+  Mingyu Wu
+
+  , Jiawei Tang, Binyu Zang, Zhaoguo Wang, and Haibo Chen. The 28th ACM International
+  Conference on Architectural Support for Programming Languages and Operating Systems,
+  Vancouver, Canada, March 25-29, 2023.
+
+  [
+
+  USENIX ATC
+
+  ] Zero-Change Object Transmission for Distributed Big Data Analytics.
+
+  Mingyu Wu
+
+  , Shuaiwei Wang, Haibo Chen, Binyu Zang. USENIX Annual Technical Conference, Carlsbad,
+  CA, USA, July 2022. (
+
+  Awarded with USENIX Badges: Artifacts Functional, Results Reproduced
+
+  )
+
+  [
+
+  VEE
+
+  ] Transparent and Lightweight Object Placement for Managed Workloads atop Hybrid
+  Memories. Zhe Li,
+
+  Mingyu Wu
+
+  . The 18th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments,
+  Lausanne, Switzerland, March 2022.
+
+  [
+
+  EuroSys
+
+  ] Bridging the Performance Gap for Copy-based Garbage Collectors atop Non-Volatile
+  Memory. Yanfei Yang,
+
+  Mingyu Wu
+
+  , Haibo Chen, Binyu Zang. Sixteenth European Conference on Computer Systems, Online
+  Event, United Kingdom, April 26-28, 2021.
+
+  [
+
+  USENIX ATC
+
+  ] Platinum: A CPU-Efficient Concurrent Garbage Collector for Tail-Reduction of Interactive
+  Services.
+
+  Mingyu Wu
+
+  , Ziming Zhao, Yanfei Yang, Haoyu Li, Haibo Chen, Binyu Zang, Haibing Guan, Sanhong
+  Li, Chuansheng Lu, Tongbao Zhang. USENIX Annual Technical Conference, Boston, MA,
+  USA, July 2020.
+
+  [
+
+  VEE
+
+  ] GCPersist: An Efficient GC-assisted Lazy Persistency Framework for Resilient Java
+  Applications on NVM.
+
+  Mingyu Wu
+
+  , Haibo Chen, Hao Zhu, Binyu Zang, Haibing Guan, The 16th ACM SIGPLAN/SIGOPS International
+  Conference on Virtual Execution Environments, Lausanne, Switzerland, March 2020.
+
+  [
+
+  VEE
+
+  ] ScissorGC: Scalable and Efficient Compaction for Java Full Garbage Collection.
+  Haoyu Li,
+
+  Mingyu Wu
+
+  , Binyu Zang, and Haibo Chen. Proceedings of ACM SIGPLAN/SIGOPS International Conference
+  on Virtual Execution Environments (VEE), 2019
+
+  [
+
+  APSys
+
+  ] Analysis and Optimization of Java Full Garbage Collection. Haoyu Li,
+
+  Mingyu Wu
+
+  , and Haibo Chen. The 9th ACM SIGOPS Asia-Pacific Workshop on Systems, Jeju Island,
+  South Korea, August 2018 (
+
+  Best Paper Runner-up
+
+  ).
+
+  [
+
+  SOSE
+
+  ] DwarfGC: A Space-Efficient and Crash-Consistent Garbage Collector in NVM for Cloud
+  Computing. Heting Li, and
+
+  Mingyu Wu
+
+  , IEEE Symposium on Service-Oriented System Engineering, Bamberg, Germany, March
+  2018.
+
+  [
+
+  ASPLOS
+
+  ] Espresso: Brewing Java For More Non-Volatility with Non-volatile Memory.
+
+  Mingyu Wu
+
+  , Ziming Zhao, Haoyu Li, Heting Li, Haibo Chen, Binyu Zang, and Haibing Guan. The
+  23rd ACM International Conference on Architectural Support for Programming Languages
+  and Operating Systems, Williamsburg, VA, USA, March 2018.
+
+  [
+
+  PPoPP
+
+  ] Recovering Performance for Vector-based Machine Learning on Managed Runtime.
+
+  Mingyu Wu
+
+  , Haibing Guan, Binyu Zang, Haibo Chen. Proceedings of the 22nd ACM SIGPLAN Symposium
+  on Principles and Practice of Parallel Programming. ACM, 2017.
+
+  获奖信息
+
+  EuroSys 2024最佳论文奖
+
+  APSys 2018最佳论文runner-up奖
+
+  学术服务
+
+  程序委员会成员：
+
+  - ASPLOS (2027)
+
+  - PPoPP (2026/2027）
+
+  - ChinaSys (2022/2025)
+
+  - VEE (2022)'
+institutes:
+- 并行与分布式系统研究所
+homepage: https://ipads.se.sjtu.edu.cn/zh/pub/members/mingyu_wu/
+photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/吴明瑜.jpg
+detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+last_verified: '2026-09-03'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

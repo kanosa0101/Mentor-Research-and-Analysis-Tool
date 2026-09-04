@@ -1,0 +1,17 @@
+school: ustc
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: http://cs.ustc.edu.cn
+hook: ustc_cs
+list:
+  method: GET
+  person_href: /c\d+a\d+/page\.htm$
+  channels:
+    - url: http://cs.ustc.edu.cn/ys_23622/list.htm
+      cat: 院士
+    - url: http://cs.ustc.edu.cn/js_23235/list.htm
+      cat: 教授
+    - url: http://cs.ustc.edu.cn/fjs_23239/list.htm
+      cat: 副教授
+    - url: http://cs.ustc.edu.cn/js_23242/list.htm
+      cat: 讲师

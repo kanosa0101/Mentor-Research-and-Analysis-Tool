@@ -1,0 +1,284 @@
+slug: xuewei
+name: 薛巍
+aliases: []
+school: tsinghua
+dept: cs
+status: enriched
+title: 教授
+email: xuewei@tsinghua.edu.cn
+bio_raw: '姓名：薛巍
+
+  职称：教授
+
+  邮箱：xuewei@tsinghua.edu.cn
+
+  个人主页：
+
+  https://hpc.cs.tsinghua.edu.cn/info/1537/2709.htm
+
+  教育背景
+
+  工学学士 (电机工程与应用电子技术系), 清华大学, 中国, 1998
+
+  工学学士 (环境科学与工程系), 清华大学, 中国, 1998
+
+  工学博士 (电机工程与应用电子技术系), 清华大学, 中国, 2003
+
+  社会兼职
+
+  中国计算机学会: 信息存储技术专业委员会委员 （2008-）
+
+  中国气象局高分辨率资料同化与数值天气模式攻关团队成员 （2015-）
+
+  国家超级计算无锡中心：研究科学家 （2016-）
+
+  研究领域
+
+  大规模科学计算，量化不确定性分析
+
+  研究概况
+
+  十亿亿次和千万核并发的超级计算机已成为现实，E级和10亿并发系统将于近年建成。并行度的快速增长为应用程序有效利用高端系统带来新的机遇和前所未有的挑战。针对此，本人近年来主要开展高可扩展并行算法和众核体系结构优化技术的研究，在高性能计算相关领域学术期刊和会议（包括SC、PPoPP、IPDPS、ICS和IEEE
+  TC等国际顶级会议和期刊等）已发表超过70篇高水平论文。特别地，在国际上首次成功开展千万核大气动力过程全隐式模拟，获得2016年ACM戈登贝尔奖（国际高性能计算应用最高奖，我国首次），入选2016年中国十大科技进展新闻；在国际上首次成功完成非线性大地震模拟，获得2017年ACM戈登贝尔奖，获评2017年清华大学重大学术成果；首次成功实现巨型电网系统的超实时动态过程仿真(IEEE
+  Transactions on Power Systems)。
+
+  大规模超级计算系统计算能力和并发度的快速增长使得其网络、I/O等共享部件潜在竞争加剧，同时静态的系统软件配置无法适应多样的应用动态访问需求，这些导致了共享部件的低效使用问题。本人领导的研究小组面向神威·太湖之光平台，研发了可扩展端到端的I/O性能采集与诊断系统，为定位应用I/O瓶颈，分析应用竞争，识别系统异常提供了基础平台；提出I/O资源动态调度策略，为提升应用I/O性能，提高存储资源利用率和缓解I/O干扰探索了有效手段，相关工作发表在相关领域的重要国际会议FAST和NSDI上。
+
+  针对气候系统模式中多物理耦合分析与不确定性分析的困难，本人研究并建立了新的多通量在线集合耦合和参数调优方法与平台，成为量化分析模式偏差和不确定性的有效工具,获得2013年度“清华大学-浪潮集团计算地球科学青年人才奖”（全国5人之一）,并得到科技部973课题和国家重点专项课题的持续资助。
+
+  主要研究项目和课题
+
+  国家重点专项课题: 无缝隙气候模式集合预测方法 (2016-2021)
+
+  国家重点专项课题: 地球系统模式参数分析优化方法研究与系统研制 (2017-2022)
+
+  中国气象局行业专项：GRAPES全球模式并行性能优化 （2015-）
+
+  九七三计划项目课题：多通量集合的耦合模拟研究 (2010-2014)
+
+  国家自然科学基金中美软件合作项目：面向大规模地学应用的高性能I/O方法与中间件研究 (2013-2014)
+
+  国家自然科学基金重大研究计划集成项目课题: 面向气候气象和地震波模拟的异构算法设计和优化 (2016-2018)
+
+  奖励与荣誉
+
+  ACM Gordon Bell Prize (2016和2017)
+
+  清华大学重大学术成果奖 （2017）
+
+  清华大学先进工作者（2016）
+
+  清华大学-浪潮集团计算地球科学青年人才奖 （2013）
+
+  军队科技进步奖三等奖 （2013）
+
+  清华大学班主任工作优秀奖二等奖 （2007）
+
+  学术成果
+
+  1.Xu Ji,Bin Yang,Tianyu Zhang,Xiaosong Ma,Xiupeng Zhu,Xiyang Wang,Nosayba El-Sayed,
+  Jidong Zhai,Weiguo Liu,Wei Xue*.Automatic, Application-Aware I/O Forwarding Resource
+  Allocation.FAST 2019: 265-279.
+
+  2.Bin Yang,Xu Ji,Xiaosong Ma,Xiyang Wang,Tianyu Zhang,Xiupeng Zhu,Nosayba El-Sayed,Haidong
+  Lan,Yibo Yang, Jidong Zhai,Weiguo Liu,Wei Xue*.End-to-end I/O Monitoring on a Leading
+  Supercomputer.NSDI 2019: 379-394.
+
+  3.Heng Lin, Xiaowei Zhu, Bowen Yu, Xiongchao Tang,Wei Xue, Wenguang Chen, Lufei
+  Zhang, Torsten Hoefler, Xiaosong Ma, Xin Liu, Weimin Zheng, and Jingfang Xu. 2018.
+  ShenTu: processing multi-trillion edge graphs on millions of cores in seconds. In
+  Proceedings of the International Conference for High Performance Computing, Networking,
+  Storage, and Analysis (SC ''18). IEEE Press, Piscataway, NJ, USA, Article 56, 11
+  pages. (2018 ACM Gordon Bell Prize Finalist).
+
+  4.Xiaohui Duan, Ping Gao, Tingjian Zhang, Meng Zhang, Weiguo Liu, Wusheng Zhang,Wei
+  Xue, Haohuan Fu, Lin Gan, Dexun Chen, Xiangxu Meng, and Guangwen Yang. 2018. Redesigning
+  LAMMPS for peta-scale and hundred-billion-atom simulation on Sunway TaihuLight.
+  In Proceedings of the International Conference for High Performance Computing, Networking,
+  Storage, and Analysis (SC ''18). IEEE Press, Piscataway, NJ, USA, Article 12, 12
+  pages.
+
+  5.Changxi Liu, Biwei Xie, Xin Liu,Wei Xue, Hailong Yang, and Xu Liu. 2018. Towards
+  Efficient SpMV on Sunway Manycore Architectures. In Proceedings of the 2018 International
+  Conference on Supercomputing (ICS ''18). ACM, New York, NY, USA, 363-373.
+
+  6.Xinliang Wang, Ping Xu,Wei Xue*, Yulong Ao, Chao Yang, Haohuan Fu, Lin Gan, Guangwen
+  Yang, and Weimin Zheng. 2018. A Fast Sparse Triangular Solver for Structured-grid
+  Problems on Sunway Many-core Processor SW26010. In Proceedings of the 47th International
+  Conference on Parallel Processing (ICPP 2018). ACM, New York, NY, USA, Article 53,
+  11 pages.
+
+  7.Xinliang Wang, Weifeng Liu,Wei Xue*, and Li Wu. 2018. swSpTRSV: a fast sparse
+  triangular solve with sparse level tile layout on sunway architectures. In Proceedings
+  of the 23rd ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming
+  (PPoPP ''18). ACM, New York, NY, USA, 338-353.
+
+  8.Xiongchao Tang, Jidong Zhai, Xuehai Qian, Bingsheng He,Wei Xue, and Wenguang Chen.
+  vSensor: leveraging fixed-workload snippets of programs for performance variance
+  detection. In Proceedings of the 23rd ACM SIGPLAN Symposium on Principles and Practice
+  of Parallel Programming (PPoPP ''18). ACM, New York, NY, USA, 124-136.
+
+  9.Tao Zhang, Minghua Zhang, Wuyin Lin, Yanluan Lin,Wei Xue, Haiyang Yu, Juanxiong
+  He, Xiaoge Xin, Hsi-Yen Ma, Shaocheng Xie, Weimin Zheng, Automatic tuning of the
+  Community Atmospheric Model (CAM5) by using short-term hindcasts with an improved
+  downhill simplex optimization method, Geosci. Model Dev., 11, 5189–5201, 2018.
+
+  10.Haoyu Xu, Tao Zhang, Yiqi Luo, Xin Huang,Wei Xue*, Parameter calibration in global
+  soil carbon models using surrogate-based optimization, Geosci. Model Dev., 11, 3027–3044,
+  2018.
+
+  11.Shizhen Xu, Yuanchao Xu
+
+  ,
+
+  Wei Xue*, Xipeng Shen, Fang Zheng, Xiaomeng Huang, Guangwen Yang. Taming the “Monster”:
+  Overcoming Program Optimization Challenges on SW26010 Through Precise Performance
+  Modeling, IPDPS 2018.
+
+  12.Nan Ding,Wei Xue*, Zhenya Song*, Haohuan Fu, Shiming Xu, and Weimin Zheng. An
+  automatic performance model-based scheduling tool for coupled climate system models.
+  Journal of Parallel and Distributed Computing (JPDC), 2018.
+
+  13.Haohuan Fu*; Conghui He*; Bingwei Chen; Zekun Yin; Zhenguo Zhang; Wenqiang Zhang;Tingjian
+  Zhang;Wei Xue*; Weiguo Liu; Wanwang Yin; Guangwen Yang; Xiaofei Chen*. 18.9-Pflops
+  nonlinear earthquake simulation on Sunway TaihuLight: enabling depiction of 18-Hz
+  and 8-meter scenarios. International Conference for High Performance Computing,
+  Networking, Storage and Analysis, SC, 2017, IEEE Press, pp. 2:1-12. (2017 ACM Gordon
+  Bell Prize Winner).
+
+  14.Xu Ji; Chao Wang; Nosayba El-Sayed; Xiaosong Ma; Youngjae Kim Sudharshan S. Vazhkudai;Wei
+  Xue; Daniel Sanchez. Understanding object-level memory Access Patterns across the
+  Spectrum. International Conference for High Performance Computing, Networking, Storage
+  and Analysis, SC, 2017, IEEE Press, pp.:1-12.
+
+  15.Yanluan Lin*; Wenhao Dong; Minghua Zhang*; Yuanyu Xie;Wei Xue; Jianbin HUANG;
+  Yong Luo. Causes of model dry and warm bias over central U.S and impact on climate
+  projections. Nature Communication 8, 2017.
+
+  16.Yulong Ao; Chao Yang*; Xinliang Wang;Wei Xue;Haohuan Fu;Fangfang Liu;Lin Gan;Ping
+  Xu;Wenjing Ma. 26 PFLOPS Stencil Computations for Atmospheric Modeling on Sunway
+  TaihuLight. 2017 IEEE INTERNATIONAL PARALLEL AND DISTRIBUTED PROCESSING SYMPOSIUM,
+  2017: 535-544.
+
+  17.Yang, Chao*;Xue, Wei*; Fu, Haohuan*; Hongtao You; Xinliang Wang; Yulong Ao; Fangfang
+  Liu; Lin Gan*; Ping Xu; Lanning Wang; Guangwen Yang; Weimin Zheng. 10M-Core Scalable
+  Fully-Implicit Solver for Nonhydrostatic Atmospheric Dynamics. International Conference
+  for High Performance Computing, Networking, Storage and Analysis, SC, 2016.57-68
+  (2016 ACM Gordon Bell Prize Winner).
+
+  18.Fu, Haohuan; Liao, Junfeng;Xue, Wei*; et al. Refactoring and Optimizing the Community
+  Atmosphere Model (CAM) on the Sunway TaihuLight Supercomputer. International Conference
+  for High Performance Computing, Networking, Storage and Analysis, SC, 2016.969-980.
+
+  19.Wang, Xinliang;Xue, Wei*; Zhai, Jidong; Xu, Yangtong; Zheng, Weimin; Lin, Haixiang.
+  A fast tridiagonal solver for Intel MIC architecture. 2016 IEEE INTERNATIONAL PARALLEL
+  AND DISTRIBUTED PROCESSING SYMPOSIUM (IPDPS 2016), 2016.172-181.
+
+  20.Yang Yibo; Wang Xiyang; Yang Bin; Liu Weiguo;Xue Wei*. IO trace tool for HPC
+  applications over Sunway TaihuLight Supercomputer. 2016 HPC China Annual Meeting.
+  (In Chinese, Best paper award).
+
+  21.Wei Xue; Xiaoge Xin; Jie Zhang, Wusheng Zhang, Haiping Wu; Zhenchun Huang; Tao
+  Zhang; Huimin Li, Nan Ding, Huang Huang. Development and testing of a multi-model
+  ensemble coupling framework. Book chapter of Development and Evaluation of High
+  Resolution Climate System Models, Springer, 163-208, 2016.
+
+  22.Xue, Wei; Yang, Chao; Fu, Haohuan; Wang, Xinliang; Xu, Yangtong; Liao, Junfeng;
+  Gan, Lin; Lu, Yutong; Ranjan, Rajiv; Wang, Lizhe. Ultra-Scalable CPU-MIC Acceleration
+  of Mesoscale Atmospheric Modeling on Tianhe-2. IEEE TRANSACTIONS ON COMPUTERS, 2015.64
+  (8): 2382-2393.
+
+  23.Xin, Xiaoge;Xue, Wei; Zhang, Minghua*; et al. How much of the NAO monthly variability
+  is from ocean-atmospheric coupling: results from an interactive ensemble climate
+  model. CLIMATE DYNAMICS, 2015.44 (3-4): 781-790.
+
+  24.Zhang, Tao; Li, Lijuan*; Lin, Yanluan;Xue, Wei*; et al. An automatic and effective
+  parameter optimization method for model tuning. GEOSCIENTIFIC MODEL DEVELOPMENT,
+  2015.8 (11): 3579-3591.
+
+  25.Gan, Lin; Fu, Haohuan*; Luk, Wayne; Yang, Chao;Xue, Wei; Huang, Xiaomeng; Zhang,
+  Youhui; Yang, Guangwen. Solving the Global Atmospheric Equations through Heterogeneous
+  Reconfigurable Platforms. ACM TRANSACTIONS ON RECONFIGURABLE TECHNOLOGY AND SYSTEMS,
+  2015.8 (2), Article 11.
+
+  26.Zhang, Jie;Xue, Wei*; Zhang, Minghua; et al. Climate impacts of stochastic atmospheric
+  perturbations on the ocean. INTERNATIONAL JOURNAL OF CLIMATOLOGY, 2014.34 (15):
+  3900-3912.
+
+  27.Xue, Wei; Yang, Chao; Fu, Haohuan; Wang, Xinliang; Xu, Yangtong; Gan, Lin; Lu,
+  Yutong; Zhu, Xiaoqian. Enabling and scaling a global shallow-water atmospheric model
+  on Tianhe-2. 2014 IEEE INTERNATIONAL PARALLEL AND DISTRIBUTED PROCESSING SYMPOSIUM
+  (IPDPS 2014), 2014.
+
+  28.Zou, Yinlong;Xue, Wei*; Liu, Shenshen. A case study of large-scale parallel I/O
+  analysis and optimization for numerical weather prediction system. FUTURE GENERATION
+  COMPUTER SYSTEMS, 2014.37 378-389.
+
+  29.Shu, Jiwu*; Shen, Zhirong;Xue, Wei. Shield: A stackable secure storage system
+  for file sharing in public storage. JOURNAL OF PARALLEL AND DISTRIBUTED COMPUTING,
+  2014.74 (9): 2872-2883.
+
+  30.Shen, Zhirong; Shu, Jiwu;Xue, Wei. Keyword Search with Access Control over Encrypted
+  Data in Cloud Computing. 2014 IEEE 22ND INTERNATIONAL SYMPOSIUM OF QUALITY OF SERVICE
+  (IWQOS), 2014.87-92.
+
+  31.Yang, Chao;Xue, Wei; Fu, Haohuan; Gan, Lin; Li, Linfeng; Xu, Yangtong; Lu, Yutong;
+  Sun, Jiachang; Yang, Guangwen; Zheng, Weimin. A Peta-scalable CPU-GPU Algorithm
+  for Global Atmospheric Simulations. ACM SIGPLAN NOTICES (PPoPP 2013), 2013.48 (8):
+  1-11.
+
+  32.Shen, Zhirong; Shu, Jiwu;Xue, Wei. Preferred Keyword Search over Encrypted Data
+  in Cloud Computing. 2013 IEEE/ACM 21ST INTERNATIONAL SYMPOSIUM ON QUALITY OF SERVICE
+  (IWQOS), 2013.207-212.
+
+  33.Xue Wei; Shu Jiwu; Liu Yang; Xue Mao. Corslet: A shared storage system keeping
+  your data private. SCIENCE CHINA-INFORMATION SCIENCES, 2011.54 (6): 1119-1128.
+
+  34.Shu, Jiwu;Xue, Wei*; Zheng, Weimin. A parallel transient stability simulation
+  for power systems. IEEE TRANSACTIONS ON POWER SYSTEMS, 2005.20 (4): 1709-1717.
+
+  35.Xue, Wei; Shu, Jiwu; Wu, Yongwei; Zheng, Weimin. Parallel algorithm and implementation
+  for realtime dynamic simulation of power system. 2005 INTERNATIONAL CONFERENCE ON
+  PARALLEL PROCESSSING, PROCEEDINGS (ICPP 2005), 2005.137-144.
+
+  高性能计算研究所主页：
+
+  https://hpc.cs.tsinghua.edu.cn/'
+institutes:
+- 高性能计算研究所
+research_direction_raw: 大规模科学计算，量化不确定性分析
+detail_url: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+profile_url: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+first_seen: '2026-09-02'
+last_verified: '2026-09-02'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/5272.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

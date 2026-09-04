@@ -1,0 +1,9 @@
+school: tongji
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: https://cs.tongji.edu.cn
+hook: simple_list
+list:
+  urls:
+    - https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+  person_href: /info/\d+/\d+\.htm

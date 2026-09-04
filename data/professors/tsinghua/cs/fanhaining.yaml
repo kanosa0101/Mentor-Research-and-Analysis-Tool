@@ -1,0 +1,177 @@
+slug: fanhaining
+name: 樊海宁
+aliases: []
+school: tsinghua
+dept: cs
+status: enriched
+title: 副研究员
+email: fhn@tsinghua.edu.cn
+bio_raw: '姓名：樊海宁
+
+  职称：副研究员
+
+  办公室：西主楼一区四层404
+
+  邮箱：fhn@tsinghua.edu.cn
+
+  教育背景
+
+  1988.9-1992.7 解放军南京通信工程学院计算机及指挥自动化专业获工学学士
+
+  1992.9-1996.5 解放军南京通信工程学院军事通信学专业获军事学硕士
+
+  1999.9-2005.1 清华大学计算机科学与技术系获工学博士
+
+  社会兼职
+
+  会议程序委员会委员
+
+  International Workshop on the Arithmetic of Finite Fields: WAIFI 2010, WAIFI 2012.
+
+  研究领域
+
+  密码计算，信息安全
+
+  研究概况
+
+  主要从事有限域计算快速算法设计。有限域GF(2^n)广泛应用于密码和纠错码等领域，我们在GF(2^n)并行乘法器设计领域所做出的原创性工作在多数GF(2^n)上是目前国际同类设计方案中的唯一最好结果，例如被ISO，NIST和ANSI等列为国际标准的“椭圆曲线数字签名算法（ECDSA）”所建议的5个GF(2^n)中的4个。
+
+  2016年，美光（Micron）将我们在2005年所设计的移位多项式基乘法器应用于包括3D XPoint（Intel-Micron联合开发）在内的下一代存储芯片，以降低BCH纠错码的译码延时（“Fast
+  Decoding ECC for Future Memories”，IEEE J-SAC）。
+
+  2023年，我们在2010年所设计的基于奇偶分裂的Overlap-free Karatsuba乘法器被用于美国NIST后量子密码（PQC）标准化过程中，以评估候选算法的硬件实现效率（High-Speed
+  Hardware Architectures and FPGA Benchmarking of CRYSTALS-Kyber, NTRU, and Saber，IEEE
+  TC）。
+
+  奖励与荣誉
+
+  2012 IET Information Security Premium Awards
+
+  学术成果
+
+  综述及专著章节
+
+  [1] M. Hasan and Haining Fan: 《Handbook of Finite Fields》, Ch. 16.7, “Binary extension
+  field arithmetic for hardware implementations”，CRC press, 2013 （Compiled by 88 international
+  contributors.）
+
+  [2] Haining Fan and M. Hasan, “A survey of some recent bit-parallel GF(2^n) multipliers,”
+  Finite Fields and Their Applications, vol. 32, pp. 5-43, March 2015 （Invited by
+  the “Twenty Year Anniversary Edition”.）
+
+  期刊论文
+
+  [1] Haining Fan, Simple multiplication algorithm for a class of GF(2^n); IEE Electronics
+  Letters, vol. 32, no.7, pp.636-637, 1996.
+
+  [2] Haining Fan and Yiqi Dai, Key function of normal basis multipliers in GF(2^n);
+  IEE Electronics Letters, vol. 38, no.23, pp. 1431-1432, Nov. 2002.
+
+  [3] Haining Fan and Yiqi Dai, Low complexity bit-parallel normal bases multipliers
+  for GF(2^n); IEE Electronics Letters, vol. 40, no.1, pp. 24-26, Jan. 2004.
+
+  [4] Haining Fan and Yiqi Dai, Normal basis multiplication algorithm for GF(2^n);
+  IEE Electronics Letters, vol. 40, no.18, pp. 1112-1113, Aug. 2004.
+
+  [5] Haining Fan and Yiqi Dai, Fast bit-parallel GF(2^n) multiplier for all trinomials;
+  IEEE Transactions on Computers, vol. 54, no. 4, pp. 485-490, Apr. 2005.
+
+  [6] Haining Fan, Duo Liu and Yiqi Dai, Two Software Normal Basis Multiplication
+  Algorithms for GF(2^n); Tsinghua Science and Technology, vol. 11, no.3, pp. 264-270,
+  2006.
+
+  [7] Haining Fan and M. Hasan, Relationship between GF(2^m) Montgomery and Shifted
+  Polynomial Basis Multiplication Algorithms; IEEE Transactions on Computers, vol.
+  55, no. 9, pp. 1202-1206, Sept. 2006.
+
+  [8] Haining Fan and M. Hasan, Fast Bit Parallel Shifted Polynomial Basis Multipliers
+  in GF(2^n); IEEE Transactions on Circuits & Systems I: regular papers, vol.53, no.12,
+  pp.2606-2615, 2006.
+
+  [9] Haining Fan and M. Hasan, A New Approach to Subquadratic Space Complexity Parallel
+  Multipliers for Extended Binary Fields; IEEE Transactions on Computers, vol. 56,
+  no. 2, pp. 224-233, Feb. 2007.
+
+  [10] Haining Fan and M. Hasan, Comments on ‘Five, Six, and Seven-Term Karatsuba-Like
+  Formulae’; IEEE Transactions on Computers, vol. 56, no. 5, pp. 716-717, May 2007.
+
+  [11] Haining Fan and M. Hasan, Subquadratic computational complexity schemes for
+  extended binary field multiplication using optimal normal bases; IEEE Transactions
+  on Computers, vol. 56, no. 10, pp. 1435-1437, Oct. 2007.
+
+  [12] Haining Fan and M. Hasan, Alternative to the Karatsuba algorithm for software
+  implementations of GF(2^n) multiplications; IET Information security, vol. 3, no.
+  2, pp. 60-65, 2009.
+
+  [13] Haining Fan, Jiaguang Sun, Ming Gu and Kwok-Yan Lam，Overlap-free Karatsuba-Ofman
+  polynomial multiplication algorithms; IET Information security, vol. 4, no. 1, pp.
+  8-14, 2010. (相关专利：ZL 2010 1 0279491.X 基于分治的亚二次多项式乘法器)
+
+  [14] Haining Fan, Jiaguang Sun, Ming Gu and Kwok-Yan Lam, Obtaining More Karatsuba-Like
+  Formulae over the Binary Field; IET Information security, vol. 6, no. 1, pp. 14-19,
+  2012.
+
+  [15] Cheng Su and Haining Fan, Impact of Intel''s new instruction sets on software
+  implementation of GF(2)[x] multiplication; Information Processing Letters, vol.
+  112, pp. 497-502, 2012.
+
+  [16] Xi Xiong and Haining Fan, GF(2^n) bit-parallel squarer using generalised polynomial
+  basis for new class of irreducible pentanomials, IET Electronics Letters，Vol. 50，No.
+  9，pp. 655–656，2014.
+
+  [17] Jiangtao Han and Haining Fan, GF(2^n) Shifted Polynomial Basis Multipliers
+  Based on Subquadratic Toeplitz Matrix-Vector Product Approach for All Irreducible
+  Pentanomials, IEEE Transactions on Computers, vol. 64, pp. 862-867, March, 2015.
+
+  [18] Yongjia Wang, Xi Xiong and Haining Fan, GF(2^n) redundant representation using
+  matrix embedding for irreducible trinomials, International Journal of Foundations
+  of Computer Science, vol. 27, pp. 463-478，2016.
+
+  [19] Haining Fan, A Chinese Remainder Theorem Approach to Bit-Parallel GF(2^n) Polynomial
+  Basis Multipliers for Irreducible Trinomials, IEEE Transactions on Computers, vol.
+  65, no.2, pp. 343-352，2016.
+
+  [20] Jiajun Zhang, Haining Fan, Low space complexity CRT-based bit-parallel GF(2^n)
+  polynomial basis multipliers for irreducible trinomials, Integration - the VLSI
+  Journal, vol. 58, pp. 55-63, 2017.
+
+  [21] Haining Fan, A trace based GF(2^n) inversion algorithm, IACR Cryptology ePrint
+  Archive 2020-482,2020.'
+institutes:
+- 计算机网络研究所
+research_direction_raw: 密码计算，信息安全
+detail_url: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+profile_url: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+first_seen: '2026-09-02'
+last_verified: '2026-09-02'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

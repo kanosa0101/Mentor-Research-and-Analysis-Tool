@@ -1,0 +1,8 @@
+school: ucas
+dept: iscas
+dept_name: 软件研究所
+base_url: https://is.cas.cn
+hook: ucas_iscas
+list:
+  url: https://is.cas.cn/yjsjy/dsxx/
+  method: GET

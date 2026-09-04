@@ -1,0 +1,44 @@
+from typing import Optional
+
+from pydantic import BaseModel, Field
+
+
+class Provenance(BaseModel):
+    origin: str = "crawled"
+    source: str
+    fetched_at: str
+    confidence: str = "auto"
+
+
+class Professor(BaseModel):
+    slug: str
+    name: str
+    aliases: list[str] = Field(default_factory=list)
+    school: str
+    dept: str
+    status: str = "roster"
+    title: Optional[str] = None
+    supervisor: Optional[str] = None
+    subjects: Optional[str] = None
+    email: Optional[str] = None
+    phone: Optional[str] = None
+    office_address: Optional[str] = None
+    bio_raw: Optional[str] = None
+    institutes: list[str] = Field(default_factory=list)
+    homepage: Optional[str] = None
+    photo_url: Optional[str] = None
+    research_direction_raw: Optional[str] = None
+    detail_url: str
+    profile_url: Optional[str] = None
+    first_seen: Optional[str] = None
+    last_verified: Optional[str] = None
+    source_updated_at: Optional[str] = None
+    provenance: dict[str, Provenance] = Field(default_factory=dict)
+
+
+class Issue(BaseModel):
+    kind: str
+    ref: str
+    message: str
+    first_seen: str
+    resolved: bool = False

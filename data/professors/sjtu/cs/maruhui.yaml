@@ -1,0 +1,188 @@
+slug: maruhui
+name: 马汝辉
+aliases: []
+school: sjtu
+dept: cs
+status: enriched
+title: 副研究员
+email: ruhuima@sjtu.edu.cn
+office_address: 电院3号楼229室
+bio_raw: '个人简介
+
+  马汝辉，博士，上海交通大学计算机学院副研究员、博士生导师。他是省部共建国家重点实验室培育基地、上海市可扩展计算与系统重点实验室、上海市云计算联合实验室骨干，获得上海市技术发明一等奖、江苏省科技进步三等奖、中国安全生产协会科技进步奖三等奖各一项，CollaborateCom
+  2022杰出贡献奖，同时曾获得上海交通大学师资博士后储备项目及IBM博士英才计划资助。指导学生获得国家数学建模竞赛二等奖、上海市数学建模大赛一等奖、中国大学生服务外包创新创业大赛东部赛区二等奖。指导本科生获得上海交通大学优秀本科毕业生（前1%），并获得“上海交通大学致远荣誉博士计划”奖励。教授课程《大电类学科重构离散计算教学》荣获上海交通大学教学成果二等奖。
+
+  马汝辉团队的核心研究围绕
+
+  分布式智能计算系统
+
+  的构建与优化展开，主要聚焦于三个紧密关联、相互支撑的方向：
+
+  方向一：分布式计算（联邦学习与分布式机器学习系统）
+
+  致力于解决数据孤岛和隐私保护下的协同机器学习问题。核心研究包括联邦学习算法的优化（如个性化、鲁棒性、通信效率、知识蒸馏）、联邦学习框架的设计（如跨域、区块链辅助），以及其在推荐系统、智慧农业、智能交通等领域的应用。研究成果主要发表在CCF-A类会议（如KDD,
+  ICCV, NeurIPS）和顶级期刊（
+
+  如
+
+  ACM ToIS, ACM RecSys）。
+
+  方向二：云计算系统（无服务器与新兴计算范式）
+
+  探索以无服务器计算（Serverless）为核心的下一代云计算范式。研究涵盖无服务器系统的性能瓶颈攻坚（如冷启动优化、I/O加速、资源调度）、新型应用架构（如流处理、大数据分析、模型服务），以及与边缘计算、量子计算等技术的结合。研究成果系统性发表于CCF-A类期刊（如TACO,
+  TC, TPDS, JSAC）和会议（如DAC）。
+
+  方向三：人工智能及大模型（推理优化与交叉应用）
+
+  致力于大型语言模型（LLM）等大模型的落地应用与系统级支撑技术。研究包括大模型的高效推理（如在边缘设备上的内存优化、管道并行、负载均衡）、领域应用，以及支撑大模型运行的分布式系统安全与优化。研究成果发表在CCF-A/B类会议（如ACL,
+  EMNLP, ICCD）和期刊（
+
+  如
+
+  TACO）。
+
+  教育背景
+
+  2008-09 至 2011-12, 上海交通大学, 计算机系统结构, 博士
+
+  工作履历
+
+  2018-01 至 今, 上海交通大学, 副研究员
+
+  2015-04 至 2017-12, 上海交通大学, 助理研究员
+
+  2013-12 至 2014-11, McGill University, 博士后
+
+  2011-12 至 2015-04, 上海交通大学,
+
+  博士后
+
+  论文发表
+
+  完整版论文列表：
+
+  Google Scholar
+
+  （一）云计算系统方向代表论文
+
+  [1] Lingxiao Jin, Zinuo Cai, Haoxin Wang, Zongpu Zhang, Ruhui Ma, Haibing Guan,
+  Yuan Liu, Rajkumar Buyya, "Ephemera: Accelerating I/O-Intensive Serverless Workloads
+  with a Harvested In-memory File System", ACM Transactions on Architecture and Code
+  Optimization. 2025.
+
+  (CCF-A, 通讯作者)
+
+  [2] Junhan Liu, Zinuo Cai, Yumou Liu, Hao Li, Zongpu Zhang, Ruhui Ma, Rajkumar Buyya,
+  "SMore: Enhancing GPU Utilization in Deep Learning Clusters by Serverless-based
+  Co-location Scheduling", IEEE Transactions on Parallel and Distributed Systems,
+  2025.
+
+  (CCF-A, 通讯作者)
+
+  [3] Lingxiao Jin, Zinuo Cai, Zebin Chen, Hongyu Zhao, Ruhui Ma, "AARC: Automated
+  Affinity-aware Resource Configuration for Serverless Workflows", Design Automation
+  Conference, 2025.
+
+  (CCF-A, 通讯作者)
+
+  [4] Renjun Zhang, Tianming Zhang, Zinuo Cai, Dongmei Li, Ruhui Ma, Buyya Rajkumar.
+  “MemoriaNova: Optimizing Memory-Aware Model Inference for Edge Computing”. ACM Transactions
+  on Architecture and Code Optimization, 2024.
+
+  (CCF-A, 通讯作者)
+
+  [5] Xinglei Chen, Zinuo Cai, Hanwen Zhang, Ruhui Ma, Rajkumar Buyya. “FasDL: An
+  Efficient Serverless-Based Training Architecture with Communication Optimization
+  and Resource Configuration”, IEEE Transactions on Computers, 2024.
+
+  (CCF-A, 通讯作者)
+
+  （二）人工智能方向代表论文
+
+  [1] Peiwen Jiang, Haitong Jiang, Ruhui Ma, Yvonne Jie Chen, Jinhua Cheng, "TST:
+  A Schema-Based Top-Down and Dynamic-Aware Agent of Text-to-Table Tasks", ACL Anthology,
+  2025.
+
+  (CCF-A, 通讯作者)
+
+  [2] Yicheng Di, Hongjian Shi, Xiaoming Wang, Ruhui Ma, Yuan Liu, "Federated Recommender
+  System Based on Diffusion Augmentation and Guided Denoising", ACM Transactions on
+  Information Systems, 2025.
+
+  (CCF-A, 通讯作者)
+
+  [3] Hongjian Shi, Weichu Zheng, Zifei Liu, Ruhui Ma and Haibing Guan, "Automatic
+  Pipeline Parallelism: A Parallel Inference Framework for Deep Learning Applications
+  in 6G Mobile Communication Systems", IEEE Journal on Selected Areas in Communications, 2023.
+
+  (CCF-A, 通讯作者)
+
+  [4] Jianqing Zhang, Yang Hua, Hao Wang, Tao Song, Zhengui Xue, Ruhui Ma, Haibing
+  Guan, "FedCP: Separating Feature Information for Personalized Federated Learning
+  via Conditional Policy", KDD, 2023.
+
+  (CCF-A, 通讯作者)
+
+  [5] Jianqing Zhang, Yang Hua, Hao Wang, Tao Song, Zhengui Xue, Ruhui Ma, Jian Cao,
+  Haibing Guan, "GPFL: Simultaneously Learning Global and Personalized Feature Information
+  for Personalized Federated Learning", CVPR, 2023.
+
+  (CCF-A, 通讯作者)
+
+  获奖信息
+
+  《云计算系统的低时延关键技术》荣获2020年度上海市技术发明一等奖
+
+  《基于融合架构的ICT云开放平台产品及大规模应用》荣获2016年度江苏省科技进步三等奖
+
+  CollaborateCom 2022杰出贡献奖
+
+  上海交通大学教学成果二等奖'
+institutes:
+- 可扩展计算研究所
+homepage: https://aisig.sjtu.edu.cn/
+photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/马汝辉.jpg
+detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+last_verified: '2026-09-03'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto

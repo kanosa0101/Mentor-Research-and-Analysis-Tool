@@ -1,0 +1,210 @@
+slug: weixingda
+name: 魏星达
+aliases: []
+school: sjtu
+dept: cs
+status: enriched
+title: 长聘教轨副教授
+email: wxdwfc@sjtu.edu.cn
+bio_raw: '个人简介
+
+  魏星达最近的研究聚焦于面向AI的分布式系统基础设施，期望能系统性地提升 AI 训练、推理和智能体等新兴应用的性能与可靠性。
+
+  近期的研究工作主要围绕以下几个方向展开：
+
+  一是
+
+  通过快速自动扩缩容和动态资源管理，构建可扩展的 AI 基础设施
+
+  。代表性工作包括 BlitzScale（OSDI''25）、PhoenixOS（SOSP''25）和 KunServe（EuroSys''26）。
+
+  二是
+
+  设计
+
+  高效的系统机制，更充分地利用计算资源
+
+  。代表性工作包括 LMMetric（OSDI''26）和 SpecActor（arXiv）。
+
+  三是
+
+  面向 AI 工作负载构建高速数据平面
+
+  。代表性工作包括 AITurbo（FAST''26）和 KVCache 缓存研究（ATC''25）。
+
+  上述工作大部分已经或正在被部署于华为、阿里巴巴、字节跳动等大型 AI 服务提供商的真实系统中。
+
+  更多信息请参见：
+
+  https://ipads.se.sjtu.edu.cn/pub/members/xingda_wei
+
+  教授课程
+
+  - 计算机系统工程
+
+  - 计算机系统原理
+
+  论文发表
+
+  部份论文发表:
+
+  [OSDI''26]
+
+  Simple is Better: Multiplication May Be All You Need for LLM Request Scheduling.
+  Dingyan Zhang, Jinbo Han, Kaixi Zhang,
+
+  Xingda Wei (corresponding author)
+
+  , Sijie Shen, Chenguang Fang, Wenyuan Yu, Jingren Zhou, Rong Chen. The 16th USENIX
+  Symposium on Operating Systems Design and Implementation.
+
+  [SOSP''25]
+
+  PhoenixOS: Concurrent OS-level GPU Checkpoint and Restore with Validated Speculation.
+
+  Xingda Wei (co-first)
+
+  , Zhuobin Huang (co-first)，Tianle Sun, Yingyi Hao，Rong Chen，Mingcong Han，Jinyu Gu，Haibo
+  Chen. The 31st Symposium on Operating Systems Principles.
+
+  [
+
+  OSDI''25
+
+  ] Fast and Live Model Auto Scaling with O(1) Host Caching. Dingyan Zhang, Haotian
+  Wang, Yang Liu,
+
+  Xingda Wei (Corresponding author)
+
+  , Yizhou Shan, Rong Chen, Haibo Chen. The 19th USENIX Symposium on Operating Systems
+  Design and Implementation.
+
+  [
+
+  ATC''25
+
+  ] KVCache Cache in the Wild: Characterizing and Optimizing KVCache Cache at a Large
+  Cloud Provider. Jiahao Wang, Jinbo Han,
+
+  Xingda Wei (Corresponding author)
+
+  , Sijie Shen, Dingyan Zhang, Chenguang Fang, Rong Chen, Wenyuan Yu, Haibo Chen.
+
+  [
+
+  NSDI''25
+
+  ] ODRP: On-Demand Remote Paging with Programmable RDMA. Zixuan Wang, Xingda Wei,
+  Jinyu Gu, Hongrui Xie, Rong Chen, and Haibo Chen. 22nd USENIX Symposium on Networked
+  Systems Design and Implementation.
+
+  [
+
+  EuroSys''24 (Best paper)
+
+  Serialization/Deserialization-free State Transfer in Serverless Workflows
+
+  . Fangming Lu,
+
+  Xingda Wei (Corresponding author)
+
+  , Zhuobin Huang, Rong Chen, Mingyu Wu, and Haibo Chen. The 19th ACM SIGOPS European
+  Conference on Computer Systems, Athens, Greece, April 2024.
+
+  [
+
+  OSDI''23
+
+  ] No Provisioned Concurrency: Fast RDMA-codesigned Remote Fork for Serverless Computing
+
+  .
+
+  Xingda Wei
+
+  , Fangming Lu, Tianxia Wang, Jinyu Gu, Yuhan Yang, Rong Chen, and Haibo Chen. 17th
+  USENIX Symposium on Operating Systems Design and Implementation, Boston, MA, US,
+  July 2023.
+
+  [
+
+  OSDI''23
+
+  ] Characterizing Off-path SmartNIC for Accelerating Distributed Applications
+
+  .
+
+  Xingda Wei
+
+  , Rongxin Cheng, Yuhan Yang, Rong Chen, and Haibo Chen. 17th USENIX Symposium on
+  Operating Systems Design and Implementation, Boston, MA, US, July 2023.
+
+  获奖信息
+
+  Eurosys Best paper, 2024
+
+  华为火花奖, 2022
+
+  ACM 中国优秀博士学位论文提名奖 (ACM China Doctoral Dissertation Award), 2021
+
+  ACM ChinaSys 优秀博士学位论文奖 (ACM ChinaSys Doctoral Dissertation Award), 2021
+
+  Honorable Mention of the ACM SIGOPS Dennis M. Ritchie Award, 2021
+
+  Huawei OlympusMons Pioneer Award, 2020
+
+  Microsoft Research Asia Fellowship Award, 2018
+
+  Excellent Bachelor Thesis, 2015
+
+  学术服务
+
+  Program Committee Member
+
+  2027: NSDI, OSDI
+
+  2026: ASPLOS, EuroSys
+
+  2025: NSDI, OSDI, CoNEXT, APSys
+
+  2024: NSDI, ASPLOS (Fall), CoNEXT (Winter)
+
+  2023: SysDW, Chinasys (Fall)
+
+  2022: EuroDW'
+institutes:
+- 并行与分布式系统研究所
+photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/魏星达.jpg
+detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+last_verified: '2026-09-03'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/weixingda.html
+    fetched_at: '2026-09-02'
+    confidence: auto

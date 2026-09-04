@@ -1,0 +1,128 @@
+slug: chenwenguang
+name: 陈文光
+aliases: []
+school: tsinghua
+dept: cs
+status: enriched
+title: 教授
+email: cwg@tsinghua.edu.cn
+bio_raw: '姓名：陈文光
+
+  职称：教授
+
+  邮箱：cwg@tsinghua.edu.cn
+
+  教育背景
+
+  工学学士 (计算机科学与技术), 清华大学, 中国, 1995;
+
+  工学博士 (计算机系统结构), 清华大学, 中国, 2000.
+
+  社会兼职
+
+  青海大学计算机系主任（2016-）；
+
+  中国计算机学会副秘书长（2015-）；
+
+  ACM中国理事会副主席（2014-）；
+
+  研究领域
+
+  并行处理，编程系统
+
+  研究概况
+
+  我长期研究高性能计算编程模型和编译系统，近几年在以图计算系统为代表的新一代大数据处理系统方面取得了进展。
+
+  2014年提出并实现了一种单机图处理引擎GridGraph，通过一种基于源和目的节点双层混洗的图数据结构，能够高效利用外存放置图的边，从而实现在单机上处理十亿结点以上的图。GridGraph性能比国际上同类单机图处理引擎如X-STREAM和GraphChi性能提高了一个数量级，论文在USENIX
+  ATC 15上发表。
+
+  2016年初，进一步研制成功了名为”双子座“的分布式图计算系统，通过稀疏/稠密双模式计算引擎、稀疏性敏感的紧凑数据结构以及细粒度动态负载平衡等技术，在典型大数据分析应用（如PageRank,
+  ALS等）上的性能是国际同类图计算系统PowerGraph和PowerLyra的十倍以上，是目前流行的大数据系统Spark性能的100倍以上，占用内存仅为其十分之一。论文在OSDI
+  16上发表。
+
+  研究课题
+
+  [1] 面向多核/众核处理器的并行程序调试技术与工具（课题编号：2012AA010901），2012-01至2015-12，科技部，863计划。
+
+  [2] 高性能计算机的评测、性能优化与编程（课题编号：61525202），2016-01至2020-12，国家自然科学基金委员会，国家杰出青年科学基金。
+
+  奖励与荣誉
+
+  国家科技进步二等奖——高性能集群计算机与海量存储系统 (2007)；
+
+  教育部科技进步一等奖——高性能计算机性能测试技术 (2009)；
+
+  教育部科技进步二等奖——深腾2600网络服务器系统 (2007).
+
+  学术成果
+
+  [1] Jianfei Chen, Kaiwei Li, Jun Zhu, Wenguang Chen:WarpLDA: a Cache Efficient O(1)
+  Algorithm for Latent Dirichlet Allocation. PVLDB 9(10): 744-755 (2016)
+
+  [2] Xiaowei Zhu, Wenguang Chen, Weimin Zheng, Xiaosong Ma:Gemini: A Computation-Centric
+  Distributed Graph Processing System. OSDI 2016: 301-316
+
+  [3] Xiaowei Zhu, Wentao Han, Wenguang Chen:GridGraph: Large-Scale Graph Processing
+  on a Single Machine Using 2-Level Hierarchical Partitioning. USENIX Annual Technical
+  Conference 2015: 375-386
+
+  [4] Jidong Zhai, Jianfei Hu, Xiongchao Tang, Xiaosong Ma, Wenguang Chen: CYPRESS:
+  Combining Static and Dynamic Analysis for Top-Down Communication Trace Compression.
+  SC 2014: 143-153
+
+  [5] Jidong Zhai, Wenguang Chen, Weimin Zheng: PHANTOM: predicting performance of
+  parallel applications on large-scale parallel machines using a single node. PPOPP
+  2010: 305-314
+
+  [6] Xing Zhou, Wenguang Chen, Weimin Zheng: Cache Sharing Management for Performance
+  Fairness in Chip Multiprocessors. PACT 2009: 384-393
+
+  [7] Ruini Xue, Xuezheng Liu, Ming Wu, Zhenyu Guo, Wenguang Chen, Weimin Zheng, Zheng
+  Zhang, Geoffrey M. Voelker: MPIWiz: subgroup reproducible replay of mpi applications.
+  PPOPP 2009: 251-260
+
+  [8] Jidong Zhai, Tianwei Sheng, Jiangzhou He, Wenguang Chen, Weimin Zheng: FACT:
+  fast communication trace collection for parallel applications through program slicing.
+  SC 2009
+
+  [9] Ruini Xue, Wenguang Chen, Weimin Zheng: CprFS: a user-level file system to support
+  consistent file states for checkpoint and restart. ICS 2008: 114-123'
+institutes:
+- 高性能计算研究所
+research_direction_raw: 并行处理，编程系统
+detail_url: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+profile_url: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+first_seen: '2026-09-02'
+last_verified: '2026-09-02'
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+    fetched_at: '2026-09-02'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/3513.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

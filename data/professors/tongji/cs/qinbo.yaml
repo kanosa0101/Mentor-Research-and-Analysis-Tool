@@ -1,0 +1,122 @@
+slug: qinbo
+name: 秦博
+aliases: []
+school: tongji
+dept: cs
+status: enriched
+title: 助理教授
+email: boqin@tongji.edu.cn
+bio_raw: '秦博，同济大学计算机科学与技术学院助理教授，硕士研究生导师。研究方向为天气气候现象的AI建模、AI模型的可预报性研究、数值模式的AI参数化方案构建、AI同化等。电子邮箱：
+
+  boqin@tongji.edu.cn
+
+  。
+
+  教育背景
+
+  2013/9 - 2017/6 同济大学 软件学院，学士
+
+  2017/9 - 2023/5 同济大学 软件学院，博士
+
+  工作履历
+
+  2023/8 - 2025/12 复旦大学 大气与海洋科学系，博士后
+
+  2025/12至今 同济大学 计算机科学与技术学院，助理教授
+
+  学术任职
+
+  近年来受邀参加EGU、AOGS、AGU等国际重要学术会议并作口头报告，在EGU2025以Convener身份组织“人工智能在资料同化中的应用”分会场；担任《Science
+  Advances》、《IEEE TGRS》 等多个高水平期刊审稿人，并参与多个重点实验室与学术平台建设。
+
+  教学情况
+
+  数据库原理与应用（国家双语教学示范课程、上海市重点课程、上海高校示范性全英语教学课程）
+
+  在研项目
+
+  1. [在研] 国家自然科学基金青年科学基金（C类），项目名称：基于可解释性AI模型的ENSO事件第一类可预测性问题研究，执行时间：2025.01-2027.12，聚焦ENSO事件在AI模型中的可预报性机理，研究如何利用CNOP方法揭示初始扰动对AI模型预测误差增长的影响。
+
+  2. [在研] 地球系统数值模拟与应用全国重点实验室（LabESM）开放课题，项目名称：基于增长型初始扰动分布最优估计的台风智能集合预报研究，执行时间：2026.01-2027.12，重点研究台风预报中的不确定性量化、集合预报设计与最优扰动理论。
+
+  3. [结题] 国家博士后创新人才支持计划，项目名称：基于AI的北半球中高纬极端事件的可预测性研究，执行时间：2023.08-2025.08，面向中高纬高影响天气事件，发展基于AI模型的可预报性分析框架，探索智能目标观测与集合预报新方法。
+
+  4. [结题] 上海市超级博士后项目，项目名称：可解释性AI模型与天气气候事件的可预报性问题研究，执行时间：2024.01-2025.12，围绕AI模型误差来源、敏感区域识别及预报误差演变机制开展研究。
+
+  学术成果及荣誉
+
+  1. 国家博士后创新人才支持计划
+
+  2. 上海市优秀毕业生（博士）
+
+  3. ESI "Highly Cited Paper", entitled "Predictability Study of Weather and Climate
+  Events Related to Artificial Intelligence Models"
+
+  4. WILEY "Top Cited Article", entitled "The first kind of predictability problem
+  of EI Niño predictions in a multivariatecoupled data-driven model"
+
+  代表性成果
+
+  围绕“如何利用人工智能技术，实现复杂天气气候系统预测更精准、认知更深入？”这一目标，已在理论方法、模型构建和实际应用三个层面形成较为系统的研究成果（https://scholar.google.com.hk/citations?user=ib4yEzMAAAAJ）。
+
+  1. 在ENSO智能预测方面取得代表性成果
+
+  提出了多个具有物理约束与可解释性的ENSO智能预测模型。代表性工作包括：
+
+  -ENSO-ASC：提出多变量图卷积耦合模型，将ENSO有效预报时长提升至18个月；
+
+  -ENSO-GTC：提出概率图卷积与全球时空遥相关耦合框架，将有效预报时长进一步提升至19个月，并被《Nature》相关论文评价为ENSO智能预报领域的基准模型之一。
+
+  -
+
+  其中，研发的ENSO智能模型已被国际最权威的ENSO实时预测机构IRI收录，成为全球首个ENSO AI集成预报模型，具备较强的国际应用影响力。
+
+  2. 在AI可解释性与可预报性研究方面形成特色方向
+
+  在传统可预报性理论基础上，扩展了经典CNOP方法，提出面向AI模型的增长型初始扰动最优估计新思路，用于定量分析初始不确定性如何影响天气气候事件预测结果。这一方向推动了“AI模型不仅用于预报，也用于揭示预报误差来源与动力机制”的新范式。相关成果发表于
+  QJRMS、AAS 等期刊，并获得国际同行积极评价，多篇论文入选 ESI高被引论文，并获评 Wiley Top Cited Article。
+
+  例如，在The first kind of predictability problem of El Niño predictions in a multivariate
+  coupled data-driven model一文中，首次在多变量耦合AI模型中系统研究ENSO事件的第一类可预报性问题，揭示了若干新型最优初始扰动及其增长机制。该成果被《Nature》子刊论文专题评述，认为其为AI模型中的天气气候可预报性研究提供了重要方向。
+
+  3. 在物理-数据融合建模方面形成稳定积累
+
+  围绕“如何让AI模型更符合物理规律、更可信、更具泛化能力”，构建了多个物理-数据融合驱动的天气气候预测模型，在ENSO、热带气旋、东亚环流及相关高影响事件预测中取得较好效果。相关工作涵盖：
+
+  -
+
+  物理约束下的深度学习预测模型；
+
+  -
+
+  面向极端天气气候事件的可解释诊断；
+
+  -
+
+  将AI模块嵌入地球系统模式或与动力模式耦合的智能建模框架。'
+institutes: []
+detail_url: https://cs.tongji.edu.cn/info/1121/4064.htm
+profile_url: https://cs.tongji.edu.cn/info/1121/4064.htm
+first_seen: '2026-09-03'
+last_verified: '2026-09-03'
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4064.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4064.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4064.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
