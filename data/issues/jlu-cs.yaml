@@ -1,0 +1,8 @@
+- kind: fetch_or_parse_error
+  ref: lixiongfei
+  message: 'ProxyError(MaxRetryError("HTTPSConnectionPool(host=''ccst.jlu.edu.cn'',
+    port=443): Max retries exceeded with url: /info/1367/19068.htm (Caused by ProxyError(''Unable
+    to connect to proxy'', RemoteDisconnected(''Remote end closed connection without
+    response'')))"))'
+  first_seen: '2026-09-04'
+  resolved: true

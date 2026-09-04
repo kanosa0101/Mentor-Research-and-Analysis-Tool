@@ -8,6 +8,10 @@ from crawler import fetch
 PERSON_PAGE = re.compile(r"/c\d+a\d+/page\.htm$")
 
 
+def iter_roster(cfg):
+    return walk_channels(cfg, cfg["list"]["channels"])
+
+
 def walk_channels(cfg, channels):
     people = {}
     meta = None
@@ -23,7 +27,8 @@ def walk_channels(cfg, channels):
             if n > 0 and "没有找到" in text and len(text) < 3000:
                 break
             for rec in parse_person_anchors(cfg, page_url, text):
-                rec["title"] = cat
+                if cat:
+                    rec["title"] = cat
                 key = rec["name"]
                 if key not in people:
                     people[key] = rec
@@ -38,11 +43,12 @@ def _has_next(text, page_url, next_n):
 
 
 def parse_person_anchors(cfg, page_url, text):
+    pattern = re.compile(cfg["list"].get("person_href") or r"/c\d+a\d+/page\.htm$")
     soup = BeautifulSoup(text, "html.parser")
     out = {}
     for a in soup.select("a[href]"):
         href = urljoin(page_url, a["href"])
-        if not PERSON_PAGE.search(href):
+        if not pattern.search(href):
             continue
         raw = re.sub(r"\s+", "", a.get("title") or a.get_text(strip=True) or "")
         name = re.sub(r"[（(][^)）]*[)）]", "", raw)
@@ -54,6 +60,10 @@ def parse_person_anchors(cfg, page_url, text):
             rec["supervisor"] = "、".join(sup)
         out.setdefault((name, href), rec)
     return list(out.values())
+
+
+def parse_detail(cfg, html, url):
+    return parse_wp_detail(cfg, html, url)
 
 
 def parse_wp_detail(cfg, html, url):

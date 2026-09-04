@@ -1,0 +1,10 @@
+school: ecnu
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: https://cs.ecnu.edu.cn
+hook: wp
+list:
+  method: GET
+  person_href: _redirect\?siteId=\d+&columnId=\d+&articleId=\d+
+  channels:
+    - url: https://cs.ecnu.edu.cn/jzgml/list.htm

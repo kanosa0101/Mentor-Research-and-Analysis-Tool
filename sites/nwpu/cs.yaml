@@ -1,0 +1,10 @@
+school: nwpu
+dept: cs
+dept_name: 计算机学院
+base_url: https://jsj.nwpu.edu.cn
+hook: simple_list
+roster_only: true
+list:
+  urls:
+    - https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
+  person_href: teacher\.nwpu\.edu\.cn/\d+\.html?

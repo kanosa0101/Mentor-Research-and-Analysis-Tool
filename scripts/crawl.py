@@ -109,6 +109,8 @@ def phase_roster(cfg, hook, refresh):
 
 
 def phase_enrich(cfg, hook, refresh):
+    if cfg.get("roster_only"):
+        return {"enriched": 0, "failed": 0, "field_changes": 0, "note": "roster_only"}
     school, dept = cfg["school"], cfg["dept"]
     existing = store.load_all(school, dept)
     issues = store.load_issues(school, dept)
