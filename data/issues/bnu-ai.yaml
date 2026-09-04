@@ -1,1 +1,10 @@
-[]
+- kind: fetch_or_parse_error
+  ref: lijia-2
+  message: 'HTTPError(''404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'')'
+  first_seen: '2026-09-04'
+  resolved: false
+- kind: fetch_or_parse_error
+  ref: wangzhichun-2
+  message: 'HTTPError(''404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'')'
+  first_seen: '2026-09-04'
+  resolved: false

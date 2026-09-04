@@ -2,12 +2,19 @@ school: bnu
 dept: ai
 dept_name: 人工智能学院
 base_url: https://ai.bnu.edu.cn
-hook: tsites
+hook: bnu_ai
 direct: true
-roster_only: true
 list:
   urls:
+    - https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm
+  # 师资名单：正高/副高/中级（静态 hash 列表页）
+  faculty_channels:
+    - https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm
+    - https://ai.bnu.edu.cn/xygk/szdw/fgj/index.htm
+    - https://ai.bnu.edu.cn/xygk/szdw/zj/index.htm
+  # 培养导师：每学科一篇文章，表格内给博导/硕导名单（含师资页链接）
+  bds_channels:
     - https://ai.bnu.edu.cn/zszl/yjszs/pyds/bssds/index.htm
+  sds_channels:
     - https://ai.bnu.edu.cn/zszl/yjszs/pyds/sssds/index.htm
-  person_href: ai\.bnu\.edu\.cn/info/\d+
-  scroll: true
+  person_href: ^[0-9a-f]{32}\.htm$
