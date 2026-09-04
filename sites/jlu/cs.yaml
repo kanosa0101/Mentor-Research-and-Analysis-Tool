@@ -5,6 +5,11 @@ base_url: https://ccst.jlu.edu.cn
 hook: simple_list
 list:
   urls:
+    # 师资全频道(荣休教师 rxjs 不收); 各频道可能有 listN 翻页
     - https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
     - https://ccst.jlu.edu.cn/szdw/taqxz.htm
+    - https://ccst.jlu.edu.cn/szdw/js.htm
+    - https://ccst.jlu.edu.cn/szdw/fjs.htm
+    - https://ccst.jlu.edu.cn/szdw/js1.htm
+    - https://ccst.jlu.edu.cn/szdw/dxxz.htm
   person_href: /info/\d+/\d+\.htm

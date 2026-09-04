@@ -21,7 +21,11 @@ def walk_channels(cfg, channels):
         while n < 40:
             page_url = url if n == 0 else re.sub(r"list\.htm$", f"list{n+1}.htm", url)
             try:
-                text, meta, _ = fetch.fetch_text("GET", page_url)
+                if cfg["list"].get("render"):
+                    # 名单内嵌在页面 JS 里（如华东师大按职称分类按钮）, 需渲染展开
+                    text, meta, _ = fetch.fetch_rendered(page_url, wait_ms=2000)
+                else:
+                    text, meta, _ = fetch.fetch_text("GET", page_url)
             except Exception:
                 break
             if n > 0 and "没有找到" in text and len(text) < 3000:

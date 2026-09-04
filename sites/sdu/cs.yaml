@@ -5,5 +5,10 @@ base_url: https://www.cs.sdu.edu.cn
 hook: simple_list
 list:
   urls:
+    # 师资 5 频道; 官网仅教授频道有条目, 其多为空壳(2026-09-05 核实)
     - https://www.cs.sdu.edu.cn/szdw1/js.htm
+    - https://www.cs.sdu.edu.cn/szdw1/yjy.htm
+    - https://www.cs.sdu.edu.cn/szdw1/fjs.htm
+    - https://www.cs.sdu.edu.cn/szdw1/fyjy.htm
+    - https://www.cs.sdu.edu.cn/szdw1/zljs.htm
   person_href: /info/\d+/\d+\.htm

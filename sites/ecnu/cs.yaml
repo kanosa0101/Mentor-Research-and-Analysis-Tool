@@ -5,6 +5,8 @@ base_url: https://cs.ecnu.edu.cn
 hook: wp
 list:
   method: GET
+  # 名单内嵌在页面 JS 里按职称分类按钮渲染, 需 Playwright 展开
+  render: true
   person_href: _redirect\?siteId=\d+&columnId=\d+&articleId=\d+
   channels:
     - url: https://cs.ecnu.edu.cn/jzgml/list.htm

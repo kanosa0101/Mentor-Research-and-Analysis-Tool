@@ -4,6 +4,7 @@ aliases: []
 school: sdu
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姜海涛   教授
 
   htjiang@sdu.edu.cn
@@ -94,18 +95,7 @@ institutes: []
 detail_url: https://www.cs.sdu.edu.cn/info/1070/2808.htm
 profile_url: https://www.cs.sdu.edu.cn/info/1070/2808.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://www.cs.sdu.edu.cn/szdw1/js.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://www.cs.sdu.edu.cn/info/1070/2808.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.theory
   origin: computed
@@ -117,3 +107,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:基因组
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/szdw1/js.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1070/2808.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1070/2808.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

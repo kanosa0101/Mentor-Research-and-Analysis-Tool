@@ -4,6 +4,7 @@ aliases: []
 school: sdu
 dept: cs
 status: enriched
+title: 教授
 email: jguo@sdu.edu.cn
 bio_raw: '郭炅
 
@@ -98,7 +99,18 @@ institutes: []
 detail_url: https://www.cs.sdu.edu.cn/info/1070/4416.htm
 profile_url: https://www.cs.sdu.edu.cn/info/1070/4416.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算复杂
 provenance:
   name:
     origin: crawled
@@ -115,14 +127,8 @@ provenance:
     source: https://www.cs.sdu.edu.cn/info/1070/4416.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算复杂
+  title:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1070/4416.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

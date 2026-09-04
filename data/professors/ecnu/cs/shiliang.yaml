@@ -2073,27 +2073,6 @@ detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
 first_seen: '2026-09-04'
 last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-04'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
-    fetched_at: '2026-09-04'
-    confidence: auto
-  phone:
-    origin: crawled
-    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
-    fetched_at: '2026-09-04'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
-    fetched_at: '2026-09-04'
-    confidence: auto
 facets:
 - id: topic.llm
   origin: computed
@@ -2115,3 +2094,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247715
+    fetched_at: '2026-09-04'
+    confidence: auto
