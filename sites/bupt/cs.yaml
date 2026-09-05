@@ -1,0 +1,13 @@
+school: bupt
+dept: cs
+dept_name: 计算机学院（国家示范性软件学院）
+base_url: https://scs.bupt.edu.cn
+hook: bupt_cs
+direct: true
+# 全站瑞数 412 —— requests 质询页自动降级 CDP 真实 Chrome (crawler/fetch.py)
+cdp_fallback: true
+list:
+  method: GET
+  person_href: teacher\.bupt\.edu\.cn/[a-z]+
+  urls:
+    - https://scs.bupt.edu.cn/szjs1/jsyl.htm

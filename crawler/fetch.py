@@ -1,5 +1,7 @@
 import hashlib
 import json
+import shutil
+import subprocess
 import time
 from pathlib import Path
 
@@ -44,7 +46,19 @@ def fetch(method, url, data=None, refresh=False):
                 time.sleep(3 * (attempt + 1))
     else:
         raise last_err
-    r.raise_for_status()
+    try:
+        r.raise_for_status()
+    except requests.HTTPError as e:
+        # WAF 质询页(瑞数 412/网防 403 等)自动降级走 CDP 真实浏览器
+        if (_cdp_fallback and e.response is not None
+                and e.response.status_code in (403, 412, 503) and not data):
+            text, meta, _ = fetch_cdp(url)
+            return text.encode("utf-8"), meta, False
+        raise
+    if _cdp_fallback and r.status_code == 202 and len(r.content) < 10000:
+        # 网防(wengine)质询页走 202 短响应, requests 视为成功——按特征降级
+        text, meta, _ = fetch_cdp(url)
+        return text.encode("utf-8"), meta, False
     CACHE.mkdir(parents=True, exist_ok=True)
     body_p.write_bytes(r.content)
     meta = {
@@ -127,6 +141,105 @@ def fetch_rendered(url, refresh=False, wait_ms=1500, timeout=35000, scroll=False
     CACHE.mkdir(parents=True, exist_ok=True)
     body_p.write_text(html, encoding="utf-8")
     meta = {"url": url, "method": "RENDER", "status": status,
+            "fetched_at": time.strftime("%Y-%m-%d")}
+    meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    return html, meta, False
+
+
+# ---- CDP 真实浏览器后端（破瑞数/网防等强 WAF：真实 Chrome 指纹 + 执行 JS 质询）----
+
+CDP_PORT = 9222
+_cdp = None
+_cdp_fallback = False
+_CHROME_CANDIDATES = [
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+]
+
+
+def set_cdp_fallback(enabled):
+    """开启后 requests 遇 403/412/503 自动降级走 CDP 真实浏览器重试。"""
+    global _cdp_fallback
+    _cdp_fallback = enabled
+
+
+def _chrome_exe():
+    for p in _CHROME_CANDIDATES:
+        if Path(p).exists():
+            return p
+    return shutil.which("chrome") or shutil.which("chrome.exe")
+
+
+def _cdp_alive():
+    # 探测必须无视环境代理(用户环境是 SOCKS 127.0.0.1:10808, 会劫持回环地址)
+    s = requests.Session()
+    s.trust_env = False
+    try:
+        s.get(f"http://127.0.0.1:{CDP_PORT}/json/version", timeout=2).raise_for_status()
+        return True
+    except Exception:
+        return False
+
+
+def _ensure_chrome_debug():
+    """确保本机真实 Chrome 以调试端口运行（独立 profile，不动用户日常会话）。"""
+    if _cdp_alive():
+        return
+    exe = _chrome_exe()
+    if not exe:
+        raise RuntimeError("chrome.exe not found; 安装 Chrome 或配置 _CHROME_CANDIDATES")
+    profile = CACHE.parent / "chrome-profile"
+    profile.mkdir(parents=True, exist_ok=True)
+    subprocess.Popen(
+        [exe, f"--remote-debugging-port={CDP_PORT}",
+         f"--user-data-dir={profile}",
+         "--no-first-run", "--no-default-browser-check", "about:blank"],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    for _ in range(60):
+        time.sleep(0.5)
+        if _cdp_alive():
+            return
+    raise RuntimeError("chrome debug instance did not start on port %d" % CDP_PORT)
+
+
+def _get_cdp_browser():
+    global _cdp, _pw
+    if _cdp is None:
+        _ensure_chrome_debug()
+        from playwright.sync_api import sync_playwright
+        if _pw is None:
+            _pw = sync_playwright().start()
+        _cdp = _pw.chromium.connect_over_cdp(f"http://127.0.0.1:{CDP_PORT}")
+    return _cdp
+
+
+def fetch_cdp(url, refresh=False, wait_ms=2500, timeout=45000, scroll=False):
+    """CDP 真实 Chrome 抓取。用浏览器默认上下文（保留 cookie/指纹），
+    新开页用完即关。结果独立缓存键 CDP+url。"""
+    key = _key("CDP", url, None)
+    body_p = CACHE / (key + ".body")
+    meta_p = CACHE / (key + ".meta.json")
+    if body_p.exists() and not refresh:
+        meta = json.loads(meta_p.read_text(encoding="utf-8"))
+        return body_p.read_text(encoding="utf-8"), meta, True
+    b = _get_cdp_browser()
+    ctx = b.contexts[0] if b.contexts else b.new_context()
+    page = ctx.new_page()
+    try:
+        page.goto(url, timeout=timeout, wait_until="domcontentloaded")
+        page.wait_for_timeout(wait_ms)
+        if scroll:
+            for _ in range(6):
+                page.mouse.wheel(0, 3000)
+                page.wait_for_timeout(500)
+            page.wait_for_timeout(1200)
+        html = page.content()
+        status = 200
+    finally:
+        page.close()
+    CACHE.mkdir(parents=True, exist_ok=True)
+    body_p.write_text(html, encoding="utf-8")
+    meta = {"url": url, "method": "GET+CDP", "status": status,
             "fetched_at": time.strftime("%Y-%m-%d")}
     meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     return html, meta, False

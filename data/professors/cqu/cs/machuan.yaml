@@ -1,0 +1,145 @@
+slug: machuan
+name: 马川
+aliases: []
+school: cqu
+dept: cs
+status: enriched
+title: 副教授
+supervisor: 硕导
+email: chuan.ma@njust.edu.cn
+bio_raw: '马川博士目前在重庆大学计算机学院担任副教授，
+
+  IEEE
+
+  可信数据共享国际标准委员会秘书长。马川博士于
+
+  2009
+
+  年至
+
+  2013
+
+  年在北京邮电大学攻读学士学位，于
+
+  2014
+
+  年至
+
+  2018
+
+  年在悉尼大学攻读博士学位。马川博士致力于无线通信、机器学习以及隐私保护融合的相关研究，面向信息论、随机优化理论和人工智能的交叉融合，先后开展了基于社交网络的基站缓存技术、高密度基站的网络性能分析以及基于大数据的隐私保护算法设计等工作，目前专注于分布式多智能体系统的的隐私与安全保护方向，并取得了一定的创新型成果。已在相关研究领域比如Nature
+  Machine Intelligence, NDSS, ICML, TIFS等期刊会议上发表英文论文
+
+  50
+
+  余篇，其中在
+
+  SCI
+
+  期刊上发表论文
+
+  20
+
+  余篇，
+
+  4
+
+  篇
+
+  ESI
+
+  高被引论文。马川博士获得
+
+  2018
+
+  年国际会议
+
+  IEEE WCNC
+
+  学生最佳论文奖，
+
+  2022
+
+  年
+
+  IEEE
+
+  信号处理协会最佳论文奖，
+
+  2022
+
+  年中国电子协会网络安全协会最佳论文，担任多个知名国际期刊，国际会议的审稿人。感兴趣的同学可以从Google scholar上了解最近的科研方向。'
+institutes:
+- 计算机学院
+research_direction_raw: '[1]、人工智能安全、隐私保护、数据要素流通'
+detail_url: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+profile_url: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.cqu.edu.cn/szdw/bdsd.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.cqu.edu.cn/machuan1/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

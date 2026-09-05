@@ -1,0 +1,20 @@
+- kind: fetch_or_parse_error
+  ref: dengshaojiang
+  message: 'Error(''Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at http://www.cs.cqu.edu.cn/info/1680/10184.htm\nCall
+    log:\n  - navigating to "http://www.cs.cqu.edu.cn/info/1680/10184.htm", waiting
+    until "domcontentloaded"\n'')'
+  first_seen: '2026-09-05'
+  resolved: true
+- kind: fetch_or_parse_error
+  ref: liuweining
+  message: 'MissingSchema("Invalid URL ''../info/1614/11197.htm'': No scheme supplied.
+    Perhaps you meant https://../info/1614/11197.htm?")'
+  first_seen: '2026-09-05'
+  resolved: true
+- kind: fetch_or_parse_error
+  ref: yangjiyun
+  message: 'Error(''Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at http://www.cs.cqu.edu.cn/info/1275/4061.htm\nCall
+    log:\n  - navigating to "http://www.cs.cqu.edu.cn/info/1275/4061.htm", waiting
+    until "domcontentloaded"\n'')'
+  first_seen: '2026-09-05'
+  resolved: true

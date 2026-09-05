@@ -1,0 +1,6 @@
+- kind: fetch_or_parse_error
+  ref: shiyan
+  message: 'TimeoutError(''Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating
+    to "https://teacher.bupt.edu.cn/shiyan", waiting until "domcontentloaded"\n'')'
+  first_seen: '2026-09-05'
+  resolved: true

@@ -204,6 +204,9 @@ def main():
     cfg = load_cfg(args.school, args.dept)
     if cfg.get("direct"):
         fetch.set_direct(True)
+    if cfg.get("cdp_fallback"):
+        # 瑞数/网防站点: requests 412/403/202 质询页自动降级 CDP 真实浏览器
+        fetch.set_cdp_fallback(True)
     hook = load_hook(cfg)
     stats = {}
     if args.phase in ("all", "roster"):

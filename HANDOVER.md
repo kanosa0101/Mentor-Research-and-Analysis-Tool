@@ -20,16 +20,16 @@
 
 ## 2. 当前状态（2026-09-05 实测）
 
-- **33 校 39 院系 5171 人**，全量 YAML 落盘 + 静态网站可浏览
-- 全库字段覆盖：**邮箱 3907（75%）、职称 3718（71%）、简介 3255（62%）、博导硕导 1949（37%）**
+- **36 校 42 院系 5654 人**，全量 YAML 落盘 + 静态网站可浏览
+- 全库字段覆盖：**邮箱 4335（76%）、职称 4027（71%）、简介 3440（60%）、博导硕导 2037（36%）**
 - 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
 - git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
-- preflight 绿（0 PROBLEM）；49 条 open issues 均已人工复验标 `reviewed`：北师大 2 + 南科大 3（外部主页被墙/反爬）+ 天大 1（官网死链）+ 厦大 43（官方 404），如实留痕
-- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）
-- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已四类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）。
-  邮箱 <95% 的院系均已抽查：确认真缺失的留痕（csu 71% 剩余为 tsites 页无邮箱字段、dlut 解密接口站点侧故障、hnu 70% 为官网"电子邮件"字段空白+页脚公邮陷阱 §7.37、scut 73% 为 meta 被官网截断）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
+- preflight 绿（0 PROBLEM）；open issues 均已人工复验标 `reviewed`（官网死链/外部主页被墙），如实留痕
+- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）；**CDP 真实 Chrome 后端（crawler/fetch.py，破瑞数/网防）**
+- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已五类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）⑤ CDP 真实浏览器穿透 WAF 后的明文字段（北邮 80%/重大 88%/电子科大 97%）
+  邮箱 <95% 的院系均已抽查：确认真缺失的留痕（csu/dlut 站点侧问题、hnu 70% 官网字段空白、scut 73% meta 截断、bupt 80% 主页无邮箱字段）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
 
-## 3. 数据现状：已接入 33 个院系（audit.py 实测，2026-09-05）
+## 3. 数据现状：已接入 36 个院系（audit.py 实测，2026-09-05）
 
 | 院系 | hook | 人数 | 职称 | 邮箱 | 博导硕导 | 简介 | facets |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -72,7 +72,10 @@
 | ruc/info | ruc_info(hash名录+.content) | 67 | 94% | 95% | 46% | 62% | 0 |
 | hnu/cs | hnu_cs(卡片表+people详情) | 187 | 94% | 70% | 0 | 82% | 0 |
 | scut/cs | scut_cs(职称三栏目+meta) | 76 | 100% | 73% | 14% | 67% | 0 |
-| **合计** | | **5171** | | | | | |
+| bupt/cs | bupt_cs(CDP名录+tsites明文) | 217 | 30% | 80% | 0 | 0 | 0 |
+| cqu/cs | cqu_cs(CDP导师名单+faculty子页) | 77 | 68% | 88% | 100% | 85% | 0 |
+| uestc/cs | uestc_cs(CDP筛选列表+info文章) | 189 | 100% | 97% | 5% | 62% | 0 |
+| **合计** | | **5654** | | | | | |
 
 要点：
 - hit/nwpu 是纯名单（roster 级，详情页网络不可达/无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 简介在瑞数反爬后如实留空，**按拼音猜测 person.zju.edu.cn 主页 URL 已实测全部 404，无富化源**
@@ -81,6 +84,7 @@
 - bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
 - **hnu（09-05 接入）**：域名是 **csee.hnu.edu.cn**（cs.hnu.edu.cn 是阻断主因——域名错了）；卡片表名录 6 页（按职称分类频道）+ /people/<id> 详情表；邮箱 70% 抽查确认为官网"电子邮件"字段真空白（页脚 xiaoban@hnu.edu.cn 是公邮，勿录）；无博导硕导字段
 - **scut（09-05 接入）**：www2.scut.edu.cn/cs；师资按职称分三栏目（22284 教授/22285 副教授/22286 讲师），栏目名即 roster 级职称；正文只有介绍图片的页面字段全靠 meta description（§7.35），面包屑兜底职称；专职研究人员栏目（zzyjry）是 AJAX 空壳未接
+- **CDP 三连（09-05 接入，§7.39）**：北邮 217（scs 名录 → teacher.bupt tsites 主页，邮箱明文、无密文 span，职称 30%=主页只有职务）；重大 77（cs.cqu.edu.cn 渲染导师名单 → faculty.cqu.edu.cn 个人信息在 yjgk 子页，导师资格 roster 级 100%）；电子科大 189（js_sz.jsp GET 筛选 FirstLetter+A-Z → info 文章页，职称 roster 级 100%、邮箱 97%）
 
 ## 4. 网站
 
@@ -106,14 +110,13 @@
 
 ## 6. 未接入的学校与剩余难点
 
-已接入 33 校（清单见 §3）。范围内**未接入**的只剩网络/WAF 阻断组：
+已接入 36 校（清单见 §3）。范围内**未接入**的只剩：
 
-- **华科**：间歇性网络阻断（直连+代理都超时，2026-09-05 复测仍不通）——网络稳定后用 `retest_direct.py` 复测
-- **北邮（瑞数 WAF，2026-09-05 定论）**：**网址没错**——用户给的 `scs.bupt.edu.cn/szjs1/jsyl.htm`（教师名录，按中心分组 ~190 人）和 `teacher.bupt.edu.cn/zhoufeng/zh_CN/index.htm`（tsites 主页）都是对的。但 www/scs/teacher/ai/sice **整个 bupt.edu.cn 域全部 412**（瑞数动态安全），本地无头/有头/反自动化 flag/cookie 回种/换出口 IP 全部只拿到 39 字节空壳。服务端渲染通道（web_reader 类服务）能读出全文，说明是客户端指纹拦截、内容本身无恙——但该通道是人工 MCP 工具、无法进爬虫管线，逐人手读 190 人不现实。**结论：本地破解无解，等 fetch 框架支持远程渲染后端或网络指纹变化后复测**
-- **重大（cs.cqu.edu.cn，瑞数 412）**：同款瑞数，服务端渲染可读（导航/师资栏目完整）——同上等远程渲染
-- **电子科大（scse.uestc.edu.cn，网防 202）**：202 是网防 wengine 质询页；服务端渲染能过网防，但站内师资页 URL 未定位（`/szdw/jsml.htm` 等 404），本地访问仍 202
+- **华科**：间歇性网络阻断（直连+代理都超时）——网络稳定后用 `retest_direct.py` 复测；通了可试 CDP
 - **南开**：cc.nankai.edu.cn 与 cs.nankai.edu.cn 均超时，网络环境变化后再测
 - **放弃**（1 所）：国防科大（军队院校，用户明确不考虑）
+
+**WAF 阻断组已全部攻克（2026-09-05，CDP 真实浏览器后端 §7.39）**：北邮（瑞数 412）→ 217 人、重大（瑞数 412 + JS 壳列表）→ 77 人、电子科大（网防 202）→ 189 人。原理：瑞数/网防拦的是客户端指纹，CDP 连本机真实 Chrome（真实插件/字体/历史 cookie）即放行；服务端代读通道曾证明内容可读但不可管线化，CDP 是管线化的正解。浙大 person.zju（瑞数）、哈工大教师系统也可用同一路径富化（§9）。
 
 **重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、**湖大是 csee 不是 cs（09-05 已验证接入）**、**华南理工是 www2（09-05 已验证接入）**、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。且"网络阻断"结论会过期——**北航/北理工/天大/人大信息学院 09-05 复测突然就通了**。接新校前先 websearch 核实官方域名 + 跑 retest 复测。
 
@@ -164,6 +167,8 @@
 36. **WP 站师资按职称分栏目 = roster 级职称白送（华南理工）**：`22284/list.htm`（教授）、`22285`（副教授）、`22286`（讲师/助理教授）是三个栏目——只抓第一个会漏 57% 的人（华南理工 33→76 人、职称 57%→100%）。channel 带 `cat:` 字段进 `list_title`。**接 WP 站先翻全站导航找师资栏目树**。面包屑"师资队伍 > 教授"是详情页职称兜底信号（scut_cs 的 `_BREADCRUMB_TITLE`）
 37. **页脚公共邮箱陷阱（湖大/华南理工）**：湖大详情页"电子邮件"字段为空但页脚备案区有 `xiaoban@hnu.edu.cn`，华南理工页脚有 `x2js@scut.edu.cn`——全页正则会吃到，**必须排除页脚/备案区，绝不能把学院公邮录成教师邮箱**（宁可缺）。湖大 55 人无邮箱经抽查为官网"电子邮件"字段真空白
 38. **preflight issue 的 reviewed 语义**：官网死链（xmu 43 条 404、tju/bnu 各 1-2 条）和外部主页被墙（sustech scholar.google 403）是**如实记录**，不该删；preflight 只对未复验的 open issue 报 PROBLEM，人工复验后在 issue 条目加 `reviewed: true`。**"网络抖动"类 issue 先重跑再判**：sustech 两条 ConnectionError 复测时已恢复
+39. **CDP 真实浏览器后端（破瑞数/网防的定论方案，crawler/fetch.py）**：① `_ensure_chrome_debug()` 启动本机真实 Chrome（独立 profile `cache/chrome-profile`，不动用户日常会话）监听 9222，playwright `connect_over_cdp` 接管，用默认上下文（保留指纹/cookie）新开页抓完即关 ② `fetch()` 对 **412/403/503** 抛错时自动降级 `fetch_cdp`；**网防 wengine 走 202 短响应（requests 视为成功）**，按 `status==202 且 body<10KB` 特征降级 ③ 两个大坑：**环境变量 http_proxy 是 SOCKS（127.0.0.1:10808）时 `proxies={"http":None}` 不禁用代理反而回退环境设置，探测回环 9222 必须 `trust_env=False`**；Chrome 启动要 15-30s，等待循环别设 10s ④ **两个爬虫进程不得同时用 CDP**（EPIPE：playwright driver 管道崩）——串行跑 ⑤ 列表页 requests 返回 200 的 JS 壳（重大）不会触发降级，hook 里必须**显式 `fetch_cdp(wait_ms=5000, scroll=True)`** ⑥ Chrome 走系统代理出口，瑞数照样放行（指纹优先于 IP）
+40. **重大 tsites 是"成果展示型"**：faculty.cqu.edu.cn 的 index.htm 只有论文/专利栏目，**个人信息（职称/导师/邮箱）在 yjgk 子页**（栏目 ID 每人不同，从主页导航正则找）；邮箱标签是"联系方式："不是"电子邮箱"。北邮 tsites 相反——无密文 span，邮箱明文在 `div#gerenxinxi`。电子科大师资卡片 `span.name` 第二个就是职称（roster 级白送）；列表分页参数是 **`&fromWenCountNo=99`**（GET 生效）
 
 ## 8. 操作手册
 
@@ -185,29 +190,27 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 
 ## 9. 后续计划（2026-09-05 制定，按价值排序）
 
-**阶段一：远程渲染后端（杠杆最大，一次工程解锁 5+ 数据源）**
-1. fetch 框架加 CDP 真实浏览器后端：playwright `connect_over_cdp` 连用户日常 Chrome（`--remote-debugging-port=9222`，一次性配置）。真实浏览器指纹（真实插件/字体/历史 cookie）是瑞数最难防的形态，且能复用登录态
-2. 验证顺序：北邮 scs 名录 → 北邮 teacher tsites（tsitesencrypt 解密接口同走 CDP）→ 重大 → 电子科大（先定位师资页 URL，`/szdw/jsml.htm` 等 404）→ 华科复测 → 浙大 person.zju（374 人 xlsx 名录富化）→ hit 教师系统（240 人纯名单富化）
-3. 预期收益：+3 校（北邮~190/重大/电子科大~250）+ 浙大 374 富化 + hit 240 富化 ≈ 全库 +600~800 人、邮箱 +400~500
-4. fallback：人工导出中继（用户浏览器保存名录页 HTML 到 data/manual/，hook 优先读）——只对名录页级有效
+**阶段一：远程渲染后端（✅ 已完成）**
+- CDP 真实浏览器后端已上线（§7.39），北邮 217/重大 77/电子科大 189 三校接入，全库 33→36 校
 
-**阶段二：存量数据第三轮补全（与阶段一穿插）**
-1. scu 职称 23% → tsites 详情页职称字段再挖（166 人，邮箱已 90%）
-2. xmu 邮箱 7% → 43 条死链绕行：列表页/英文名录/学院公告找邮箱
-3. dlut 8%/0% → tsites 解密接口复测（站点侧故障可能已恢复）
-4. jlu 43% / neu 53% / tongji 58% 逐校专项（手段见 §7.27 邮箱回归方法论）
-5. supervisor 全库 37% 排查：tsites 系详情页"博导/硕导"标注漏抓检查（套磁筛导师的关键字段）
+**阶段二：CDP 红利扩收 + 存量第三轮补全（当前焦点）**
+1. **浙大 person.zju 富化**：374 人 xlsx 名录级，CDP 过瑞数后抓 person.zju.edu.cn 主页（职称/邮箱/简介）——预期全库邮箱 +200~300
+2. **哈工大富化**：240 人纯名单（职称/邮箱全 0），教师系统 CDP 试抓
+3. **北邮职称 30% → 子页挖掘**：teacher.bupt 主页"更多"子页（jsxx）可能有职称/方向
+4. scu 职称 23% → tsites 详情页再挖；xmu 邮箱 7% 死链绕行；dlut 8% 解密接口复测；jlu 43% / neu 53% / tongji 58% 逐校专项
+5. supervisor 全库 36% 排查：tsites 系详情页"博导/硕导"标注漏抓检查（套磁筛导师关键字段）
 6. verified 人工核对启动：每校抽 10 人核对 provenance（需用户参与）
+7. 华科/南开复测（通了可试 CDP）
 
-**阶段三：产品层启动（数据面够大后，顺序待用户定）**
+**阶段三：产品层启动（顺序待用户定）**
 1. 状态写回 + 套磁看板：意向/已发/已回状态管理——套磁工作流核心，建议最先做
 2. 对比页（P3，已推迟）：3-5 位导师并排对比
 3. AI 分析层：LLM 结构化研究方向/简介 → 学生画像匹配（需要 LLM API）
 4. SOP/申请信生成
 
-**运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；华科/南开定期 `retest_direct.py`；瑞数组等 CDP 后端通了复测；官网改版靠 changes 日志监控（§7.25 教训：文档结论要复检）
+**运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
 
-**决策点**：① CDP 需要用户配合开一次浏览器端口 ② AI 层需要 LLM API key ③ 阶段三内部顺序由用户按套磁工作流定
+**决策点**：① CDP 需要本机 Chrome（已自动化启动，无需用户配合）② AI 层需要 LLM API key ③ 阶段三内部顺序由用户按套磁工作流定
 
 ## 10. 给下一个 agent 的三句话
 

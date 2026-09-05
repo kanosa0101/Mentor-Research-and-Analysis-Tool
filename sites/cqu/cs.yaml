@@ -1,0 +1,14 @@
+school: cqu
+dept: cs
+dept_name: 计算机学院
+base_url: https://cs.cqu.edu.cn
+hook: cqu_cs
+direct: true
+# 列表页 requests 返回 200 JS 壳, hook 内显式 fetch_cdp 渲染; detail 在
+# faculty.cqu.edu.cn(无 WAF), 学院域 info 页被瑞数拦时 requests 自动降级 CDP
+cdp_fallback: true
+list:
+  method: GET
+  person_href: faculty\.cqu\.edu\.cn/[A-Za-z]+/zh_CN
+  urls:
+    - https://cs.cqu.edu.cn/szdw/bdsd.htm
