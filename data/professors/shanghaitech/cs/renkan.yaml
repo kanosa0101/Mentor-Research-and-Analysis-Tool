@@ -1,0 +1,70 @@
+slug: renkan
+name: 任侃
+aliases:
+- rk
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: renkan@shanghaitech.edu.cn
+institutes:
+- 视觉与数据智能中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/6a/6e/87ec01664bc1be13ba2cfbf11dc5/cc6d2abe-d8e6-4dba-9b0c-6c5259069048_s.jpg
+research_direction_raw: 机器学习，大语言模型与AI智能体，多模态大模型、数据科学
+detail_url: http://sist.shanghaitech.edu.cn/rk/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/rk/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/rk/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

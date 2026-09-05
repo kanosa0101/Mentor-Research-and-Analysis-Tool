@@ -1,0 +1,75 @@
+slug: wuyoulong
+name: 吴幼龙
+aliases: []
+school: shanghaitech
+dept: cs
+status: enriched
+title: 副教授
+supervisor: 博导
+email: wuyl1@shanghaitech.edu.cn
+phone: 021-20685369
+institutes:
+- 智能网络中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/9d/c6/4b6307754e8283da5fb6f8e354a1/27dcf45b-7038-4775-abbc-4303ef576c2f_s.jpg
+research_direction_raw: 信息论，和信息论在其他它领域的应用，如无线通信、机器学习、分布式计算等领域
+detail_url: http://sist.shanghaitech.edu.cn/wuyl1/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/wuyl1/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/wuyl1/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

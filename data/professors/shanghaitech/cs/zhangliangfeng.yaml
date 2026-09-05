@@ -1,0 +1,60 @@
+slug: zhangliangfeng
+name: 张良峰
+aliases:
+- zhanglf
+school: shanghaitech
+dept: cs
+status: enriched
+title: 副教授
+supervisor: 博导
+email: zhanglf@shanghaitech.edu.cn
+institutes:
+- 系统与安全中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/dd/fa/6f9619fe4aafb8f30d08d7b6509f/0b3b7397-835e-42d6-a578-e126eccfd10e_s.jpg
+research_direction_raw: 密码协议设计，云计算安全，多方计算安全， 区块链安全
+detail_url: http://sist.shanghaitech.edu.cn/zhanglf/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/zhanglf/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/zhanglf/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

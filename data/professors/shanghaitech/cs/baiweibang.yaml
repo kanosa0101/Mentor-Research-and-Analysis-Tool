@@ -1,0 +1,71 @@
+slug: baiweibang
+name: 白卫邦
+aliases:
+- baiwb
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: wbbai@shanghaitech.edu.cn
+phone: 021-20684556
+institutes:
+- 自动化与机器人中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/0a/60/922ffc3b4f5a85077d161bdca6f7/323a6131-11ed-4a3f-a517-7d19ccf3272c_s.png
+research_direction_raw: 医疗机器人，仿生机器人，机器人优化设计与智能控制，具身智能
+detail_url: http://sist.shanghaitech.edu.cn/baiwb/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/baiwb/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/baiwb/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

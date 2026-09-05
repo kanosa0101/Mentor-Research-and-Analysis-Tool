@@ -1,0 +1,71 @@
+slug: hayajun
+name: 哈亚军
+aliases:
+- hayj
+school: shanghaitech
+dept: cs
+status: enriched
+title: 教授
+supervisor: 博导
+email: hayj@shanghaitech.edu.cn
+phone: 021-20685371
+institutes:
+- 后摩尔器件与集成系统中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/40/9a/49885b5644f5bb9dc692ef0bc905/71d3917b-f2cc-4cc6-bc42-85fd1b9e4484_s.jpg
+research_direction_raw: FPGA结构、设计工具及应用 超低功耗数字电路与系统设计 硬件安全、智能与无人驾驶汽车、机器学习相关嵌入式系统研究及应用
+detail_url: http://sist.shanghaitech.edu.cn/hayj/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/hayj/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/hayj/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

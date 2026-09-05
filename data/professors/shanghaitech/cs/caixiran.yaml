@@ -1,0 +1,65 @@
+slug: caixiran
+name: 蔡夕然
+aliases:
+- caixr
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: caixr@shanghaitech.edu.cn
+institutes:
+- 智能医学信息研究中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/3a/16/6cfba0ab4bd9ad3b50e0d8f7d0fa/b85bf473-6dbf-4c0f-9720-cb161fd9dc3b_s.jpg
+research_direction_raw: 新型超声成像方法，超声治疗的图像引导和监控问题，深度学习在超声成像中的应用。
+detail_url: http://sist.shanghaitech.edu.cn/caixr/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/caixr/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/caixr/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

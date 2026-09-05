@@ -1,0 +1,71 @@
+slug: xiaoyuan
+name: 肖原
+aliases:
+- xy
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: xiaoyuan@shanghaitech.edu.cn
+phone: 021-20684602
+institutes:
+- 系统与安全中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/6c/30/247c1a074db4bf3c81e256648f35/4442c37b-0548-441a-8b6c-912b89753e76_s.jpg
+research_direction_raw: 系统安全，（微）架构，Side-channel Attacks，Trusted Execution Environments，x86，RISC-V，网络，云计算，边缘计算，移动计算，物联网
+detail_url: http://sist.shanghaitech.edu.cn/xy/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/xy/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/xy/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

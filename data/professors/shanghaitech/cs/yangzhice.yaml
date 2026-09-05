@@ -1,0 +1,71 @@
+slug: yangzhice
+name: 杨智策
+aliases:
+- yangzhc
+school: shanghaitech
+dept: cs
+status: enriched
+title: 副教授
+supervisor: 博导
+email: yangzhc@shanghaitech.edu.cn
+phone: 021-20685362
+institutes:
+- 系统与安全中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/c0/14/d5e0e6284540b3587c6afdb217b9/50cb1023-6c65-42d1-ae60-8e43996a2ee5_s.jpg
+research_direction_raw: 安全与隐私，移动计算，人机交互系统
+detail_url: http://sist.shanghaitech.edu.cn/yangzhc/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/yangzhc/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/yangzhc/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

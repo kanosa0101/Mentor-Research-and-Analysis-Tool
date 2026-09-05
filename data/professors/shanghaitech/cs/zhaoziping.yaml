@@ -1,0 +1,71 @@
+slug: zhaoziping
+name: 赵子平
+aliases:
+- zhao
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: zipingzhao@shanghaitech.edu.cn
+phone: 021-20685551
+institutes:
+- 智能网络中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/a1/b8/8001dc574075b4bdfe256af376fa/966d3854-cfb8-4625-bade-6d3673f99db8_s.jpg
+research_direction_raw: 大模型和算法，生成AI，物理AI，数据分析，机器学习和信号处理（侧重优化和统计）
+detail_url: http://sist.shanghaitech.edu.cn/zhao/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/zhao/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/zhao/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

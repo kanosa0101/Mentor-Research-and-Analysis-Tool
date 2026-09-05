@@ -1,0 +1,70 @@
+slug: xulin
+name: 徐林
+aliases: []
+school: shanghaitech
+dept: cs
+status: enriched
+title: 副教授
+supervisor: 博导
+email: xulin1@shanghaitech.edu.cn
+phone: 021-20684449
+institutes:
+- 智能医学信息研究中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/b9/3f/ba7c1cde4f1c82ed7d785e5a75a0/5d6ee582-c367-4db3-b8a6-2f53ae11ad8b_s.jpg
+research_direction_raw: 生理信号采集与处理（EMG、EEG、ECG），神经肌肉康复，脑机接口，可穿戴医疗设备
+detail_url: http://sist.shanghaitech.edu.cn/xulin1/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/xulin1/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/xulin1/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto

@@ -1,0 +1,65 @@
+slug: xiaochenxi
+name: 肖晨曦
+aliases:
+- xcx
+school: shanghaitech
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 博导
+email: xiaochx@shanghaitech.edu.cn
+institutes:
+- 自动化与机器人中心
+photo_url: https://sist.shanghaitech.edu.cn/_upload/article/images/a7/0f/3b4f62744b15b1509f330d72c828/72bff44a-9a2c-4ebc-a219-1da306f72130_s.jpg
+research_direction_raw: 机器人，具身智能，遥操作，触觉交互，强化学习
+detail_url: http://sist.shanghaitech.edu.cn/xcx/main.htm
+profile_url: http://sist.shanghaitech.edu.cn/xcx/main.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+provenance:
+  name:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://sist.shanghaitech.edu.cn/xcx/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+    fetched_at: '2026-09-05'
+    confidence: auto
