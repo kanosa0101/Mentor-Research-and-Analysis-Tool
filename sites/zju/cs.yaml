@@ -3,7 +3,8 @@ dept: cs
 dept_name: 计算机科学与技术学院
 base_url: http://www.cs.zju.edu.cn
 hook: zju_cs
-# 该站 https 经代理 SSL 失败, 仅 http 可达; person.zju.edu.cn 走代理正常
+# person.zju.edu.cn 挂瑞数: requests 拿 200 指纹壳, fetch 按壳特征降级 CDP
+cdp_fallback: true
 list:
   urls:
     - http://www.cs.zju.edu.cn/csen/27003/list.htm

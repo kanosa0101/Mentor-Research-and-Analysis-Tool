@@ -59,6 +59,10 @@ def fetch(method, url, data=None, refresh=False):
         # 网防(wengine)质询页走 202 短响应, requests 视为成功——按特征降级
         text, meta, _ = fetch_cdp(url)
         return text.encode("utf-8"), meta, False
+    if _cdp_fallback and len(r.content) < 3000 and b"frms-fingerprint" in r.content:
+        # 瑞数 200 指纹壳(浙大 person 等)——正文只有 JS 探针, CDP 执行质询后才有内容
+        text, meta, _ = fetch_cdp(url)
+        return text.encode("utf-8"), meta, False
     CACHE.mkdir(parents=True, exist_ok=True)
     body_p.write_bytes(r.content)
     meta = {

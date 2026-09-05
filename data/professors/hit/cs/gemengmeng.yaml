@@ -1,9 +1,11 @@
 slug: gemengmeng
 name: 葛蒙蒙
-aliases: []
+aliases:
+- jsml
 school: hit
 dept: cs
 status: enriched
+supervisor: 硕导
 institutes:
 - 信息对抗技术研究所
 detail_url: http://www.cs.hit.edu.cn/jsml/list.htm
@@ -21,4 +23,9 @@ provenance:
     origin: crawled
     source: http://www.cs.hit.edu.cn/jsml/list.htm
     fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://www.cs.hit.edu.cn/jsml/list.htm
+    fetched_at: '2026-09-05'
     confidence: auto
