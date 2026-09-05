@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 兼职教授
 bio_raw: '肖京
 
   肖京
@@ -15,18 +16,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1062/2748.htm
 profile_url: https://cs.tongji.edu.cn/info/1062/2748.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1062/2748.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.db
   origin: computed
@@ -38,3 +28,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1062/2748.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

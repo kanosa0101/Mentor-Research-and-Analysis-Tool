@@ -4,15 +4,47 @@ aliases: []
 school: ruc
 dept: ai
 status: enriched
+title: 教授
+bio_raw: '卢志武博士，中国人民大学高瓴人工智能学院教授，长聘副教授，博士生导师。2005年毕业于北京大学数学科学学院信息科学系，获理学硕士学位；2011年毕业于香港城市大学计算机系，获PhD学位。主要研究方向为机器学习与计算机视觉。设计首个公开的中文通用图文预训练模型文澜BriVL，早于OpenAI发布类Sora的视频生成底座VDT。获评南风窗2024年度科学家。以主要作者身份发表学术论文90余篇，其中在Nat
+  Commun、TPAMI、IJCV等国际期刊和ICML、ICLR、NeurIPS、CVPR、ICCV等国际会议上发表论文50余篇。指导学生获得2021年CCF优博、2021年百度奖学金、2025年吴玉章奖、2025年“京东杯”创业大赛特等奖。担任CCF生物信息学专委会委员。担任NeurIPS、ICML、ICLR、ICCV、CVPR等国际顶级会议的（资深）程序委员。
+
+  点击访问个人主页
+
+  视频简介'
 institutes: []
 detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm
 profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-facets: []
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

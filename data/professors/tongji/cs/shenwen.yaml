@@ -160,7 +160,18 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/4046.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/4046.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -182,14 +193,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/4046.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

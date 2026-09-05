@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 兼职教授
 bio_raw: '马旭
 
   马旭
@@ -25,7 +26,13 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1062/2749.htm
 profile_url: https://cs.tongji.edu.cn/info/1062/2749.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -37,9 +44,8 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1062/2749.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

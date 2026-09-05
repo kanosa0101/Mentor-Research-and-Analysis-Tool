@@ -127,7 +127,23 @@ homepage: https://eezkni.github.io/
 detail_url: https://cs.tongji.edu.cn/info/1063/3606.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/3606.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -149,19 +165,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/3606.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

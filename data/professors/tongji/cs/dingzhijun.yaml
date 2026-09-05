@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姓　　名
 
   丁志军
@@ -55,7 +56,13 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1061/2816.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/2816.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -67,9 +74,8 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2816.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

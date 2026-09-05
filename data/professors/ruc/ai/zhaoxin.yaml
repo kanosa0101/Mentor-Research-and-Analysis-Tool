@@ -4,15 +4,46 @@ aliases: []
 school: ruc
 dept: ai
 status: enriched
+title: 教授
+bio_raw: '赵鑫，中国人民大学高瓴人工智能学院教授，长聘副教授，国家优青项目获得者。2014年7月于北京大学获得博士学位，随后进入中国人民大学工作至今。研究领域为信息检索与自然语言处理，共计发表论文200余篇，谷歌学术引用1.8万余次，曾主导研发了伯乐（推荐系统库RecBole）、妙笔（文本生成库TextBox）等开源工具，组织编写了大语言模型综述论文《A
+  Survey of Large Language Models》(预印版文章)，《大语言模型》中文书。荣获2020年吴文俊人工智能优秀青年奖、ECIR 2021时间检验奖（Test
+  of Time Award）、RecSys 2022最佳学生论文提名（Best student paper runner-up）、CIKM 2022最佳资源论文提名（Best
+  resource paper runnerup）等，入选中国科协青年人才托举工程、北京智源青年科学家、CCF-IEEE CS青年科学家。研究成果荣获教育部自然科学奖一等奖，北京市自然科学奖二等奖，中国计算机学会自然科学奖二等奖等。
+
+  点击访问个人主页
+
+  视频简介
+
+  海报'
 institutes: []
 detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
 profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-facets: []
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

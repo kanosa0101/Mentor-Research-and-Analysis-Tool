@@ -1,0 +1,82 @@
+slug: douliang
+name: 窦亮
+aliases: []
+school: ecnu
+dept: cs
+status: enriched
+title: 副教授
+email: ldou@cs.ecnu.edu.cn
+phone: 021-62233668
+bio_raw: '社会兼职
+
+  研究方向
+
+  软件方法及技术、智能教育、交叉智能应用
+
+  招生与培养
+
+  开授课程
+
+  目前开设课程
+
+  编译原理及实践（本科生专业必修课）
+
+  数据库原理与教育应用（教育信息技术-计算机双学位本科生专业必修课）
+
+  曾经讲授课程
+
+  现代软件工程（本科生专业选修课）
+
+  数据库系统实践（本科生专业必修课）
+
+  编译原理
+
+  （本科生专业必修课）
+
+  编译原理实践（本科生专业必修课）
+
+  计算机导论实验（本科生专业选修课）
+
+  数据库技术（夜大学专业必修课）'
+institutes: []
+detail_url: https://faculty.ecnu.edu.cn/_s16/dl2/main.psp
+profile_url: https://faculty.ecnu.edu.cn/_s16/dl2/main.psp
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/dl2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/dl2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto

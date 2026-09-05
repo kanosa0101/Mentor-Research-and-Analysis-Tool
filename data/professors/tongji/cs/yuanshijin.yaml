@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-email: binmu@tongji.edu.cn
+email: yuanshijin@tongji.edu.cn
 bio_raw: '袁时金 Yuan Shijin 博士，教授，博导
 
   办公室：同济大学嘉定校区济事楼312 L室
@@ -441,33 +441,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1061/2730.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/2730.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  supervisor:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -494,3 +468,29 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据库
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

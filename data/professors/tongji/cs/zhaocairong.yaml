@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姓　　名
 
   赵才荣
@@ -62,23 +63,7 @@ homepage: https://vill.tongji.edu.cn/
 detail_url: https://cs.tongji.edu.cn/info/1061/2789.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/2789.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2789.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/2789.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -105,3 +90,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:图形学
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2789.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2789.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

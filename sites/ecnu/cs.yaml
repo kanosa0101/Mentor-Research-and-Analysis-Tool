@@ -2,11 +2,9 @@ school: ecnu
 dept: cs
 dept_name: 计算机科学与技术学院
 base_url: https://cs.ecnu.edu.cn
-hook: wp
+hook: ecnu_cs
 list:
   method: GET
-  # 名单内嵌在页面 JS 里按职称分类按钮渲染, 需 Playwright 展开
-  render: true
-  person_href: _redirect\?siteId=\d+&columnId=\d+&articleId=\d+
-  channels:
-    - url: https://cs.ecnu.edu.cn/jzgml/list.htm
+  # .team ul li 服务端内嵌全部教师(姓名/个人主页/职称/邮箱/导师资格)
+  urls:
+    - https://cs.ecnu.edu.cn/jzgml/list.htm

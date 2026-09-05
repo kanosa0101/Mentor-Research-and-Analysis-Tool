@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姓　　名 程鹏
 
   研究方向 时空数据管理、向量数据管理、空间智能等
@@ -124,23 +125,7 @@ homepage: https://cspcheng.github.io
 detail_url: https://cs.tongji.edu.cn/info/1061/3617.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/3617.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/3617.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/3617.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -167,3 +152,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据管理
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/3617.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/3617.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

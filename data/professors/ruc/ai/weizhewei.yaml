@@ -4,15 +4,38 @@ aliases: []
 school: ruc
 dept: ai
 status: enriched
+title: 教授
+bio_raw: '魏哲巍，教授，博导，国家高层次人才。担任中国人民大学高瓴人工智能学院副院长，新一代智能搜索与推荐教育部工程研究中心副主任。2008年本科毕业于北京大学数学科学学院，2012年博士毕业于香港科技大学计算机系。研究方向为人工智能与大数据基础算法，致力于为人工智能与大数据中的核心问题设计简洁、高效且具备理论保证的算法与模型。先后获得PODS
+  2022时间检验奖、2023年世界人工智能大会青年优秀论文提名奖、VLDB 2024最佳论文提名奖。主持国家自然科学基金重点项目、科技部新一代人工智能国家科技重大专项课题。现任IEEE
+  TPAMI编委、FCS青年编委；曾任PODS、ICDT等国际会议论文集主席，并担任ICML、NeurIPS、ICLR等国际顶级会议领域主席。兼任琶洲实验室（黄埔）青年科学家。指导博士生获得百度奖学金、微软学者、CCF优秀博士论文奖等重要荣誉。
+
+  点击访问个人主页
+
+  视频简介'
 institutes: []
 detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
 profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-facets: []
+last_verified: '2026-09-05'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

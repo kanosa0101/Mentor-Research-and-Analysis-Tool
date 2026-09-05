@@ -512,23 +512,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/2756.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/2756.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1063/2756.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1063/2756.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -550,3 +534,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:生物信息
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2756.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2756.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

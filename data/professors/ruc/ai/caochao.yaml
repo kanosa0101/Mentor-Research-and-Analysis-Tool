@@ -4,15 +4,49 @@ aliases: []
 school: ruc
 dept: ai
 status: enriched
+title: 教授
+email: caozhao@ruc.edu.cn
+bio_raw: 曹朝，中国人民大学高瓴人工智能学院教授，分别于2004年和2010年获得北京理工大学学士和博士学位。于2025年5月加入中国人民大学，曾任华为泊松实验室主任、华为云EI（企业智能）服务产品部架构与设计部负责人（大模型、大数据、昇腾云技术首席架构师）、华为搜索技术工作组组长、华为区块链技术工作组组长；曾主导从0-1打造华为搜索引擎内核和区块链内核，在华为核心产品和服务中发挥关键作用。研究方向为智能体、大模型、信息检索、分布式系统，在相关领域发表论文30余篇，申请专利20余项，主导编写的《区块链技术及应用》获评高被引图书TOP
+  1%。担任中国中文信息学会信息检索专委会常务委员、语言生成与大模型专委会委员，中国计算机学会区块链专委会委员、数据库专委会委员。
 institutes: []
 detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
 profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
-facets: []
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

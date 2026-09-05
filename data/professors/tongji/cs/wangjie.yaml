@@ -151,7 +151,18 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/3610.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/3610.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -173,14 +184,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/3610.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:联邦学习
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

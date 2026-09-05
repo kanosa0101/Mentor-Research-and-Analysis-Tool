@@ -1,0 +1,73 @@
+slug: wanglinlin
+name: 王琳琳
+aliases: []
+school: ecnu
+dept: cs
+status: enriched
+title: 研究员
+email: llwang@cs.ecnu.edu.cn
+phone: 021-62233630
+bio_raw: '研究内容: 自然语言处理--ChatGPT大模型训练
+
+  欢迎对ChatGPT大模型感兴趣的同学报考
+
+  社会兼职
+
+  研究方向
+
+  自然语言处理
+
+  数据挖掘
+
+  机器学习
+
+  招生与培养
+
+  开授课程'
+institutes: []
+detail_url: https://faculty.ecnu.edu.cn/_s16/wll/main.psp
+profile_url: https://faculty.ecnu.edu.cn/_s16/wll/main.psp
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:GPT
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/wll/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/wll/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto

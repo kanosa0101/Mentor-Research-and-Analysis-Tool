@@ -1,0 +1,88 @@
+slug: yangyan
+name: 杨燕
+aliases: []
+school: ecnu
+dept: cs
+status: enriched
+title: 副教授
+email: yanyang@cs.ecnu.edu.cn
+phone: '62233635'
+bio_raw: '社会兼职
+
+  研究方向
+
+  研究方向为自然语言处理和知识计算，
+
+  研究兴趣为多技能对话系统，
+
+  着重将知识与自然语言结合研究医疗、教育、金融等应用场景的自然语言理解、小样本知识抽取、知识引导的预测推理、约束对话生成
+
+  等任务。
+
+  招生与培养
+
+  开授课程
+
+  本科生：
+
+  自然语言处理导论
+
+  知识分析及应用
+
+  科学计算与编程基础
+
+  计算机前沿技术研讨
+
+  编程导论
+
+  Python程序设计
+
+  C程序设计基础
+
+  硕士生：
+
+  自然语言处理与实践
+
+  知识分析及实践'
+institutes: []
+detail_url: https://faculty.ecnu.edu.cn/_s16/yy2/main.psp
+profile_url: https://faculty.ecnu.edu.cn/_s16/yy2/main.psp
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/yy2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/yy2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto

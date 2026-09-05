@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 副教授
 bio_raw: '姓  名
 
   罗烨
@@ -410,18 +411,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/2762.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/2762.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1063/2762.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -458,3 +448,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2762.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

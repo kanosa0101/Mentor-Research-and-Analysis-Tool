@@ -1,0 +1,74 @@
+slug: caoqiang
+name: 曹强
+aliases: []
+school: ecnu
+dept: cs
+status: enriched
+title: 研究员
+email: qcao@cs.ecnu.edu.cn
+bio_raw: '曹强，博士，青年研究员，紫江青年学者，研究方向为
+
+  在线社交网络安全、深度学习、计算机网络、网络大数据
+
+  。武汉大学计算机学院本科、硕士，美国杜克大学计算机科学系博士、博士后，在NSDI、CCS、ICDCS、HotCloud、TPDS、TWeb等国际知名会议和期刊上发表论文多篇。
+
+  社会兼职
+
+  研究方向
+
+  在线社交网络安全、深度学习、计算机网络、网络大数据
+
+  招生与培养
+
+  开授课程
+
+  《现代计算机网络》
+
+  《计算机系统基础》'
+institutes: []
+detail_url: https://faculty.ecnu.edu.cn/_s16/cq2/main.psp
+profile_url: https://faculty.ecnu.edu.cn/_s16/cq2/main.psp
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: computed
+    source: https://cs.ecnu.edu.cn/jzgml/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/cq2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/cq2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto

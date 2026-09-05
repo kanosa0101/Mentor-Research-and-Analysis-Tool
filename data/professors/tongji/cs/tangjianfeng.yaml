@@ -134,7 +134,18 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1064/2776.htm
 profile_url: https://cs.tongji.edu.cn/info/1064/2776.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -151,14 +162,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1064/2776.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

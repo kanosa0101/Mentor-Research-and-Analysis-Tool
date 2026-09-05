@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 特聘研究员
+email: ziqiaowang@tongji.edu.cn
 bio_raw: '姓名：
 
   汪子乔
@@ -146,7 +147,7 @@ homepage: https://ziqiaowanggeothe.github.io/
 detail_url: https://cs.tongji.edu.cn/info/1061/4044.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/4044.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -170,7 +171,7 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
+    origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/4044.htm
     fetched_at: '2026-09-03'
     confidence: auto
@@ -180,6 +181,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/4044.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/4044.htm
     fetched_at: '2026-09-03'

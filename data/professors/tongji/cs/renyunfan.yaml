@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姓
 
   名：
@@ -57,7 +58,18 @@ homepage: https://renyunfan.cn
 detail_url: https://cs.tongji.edu.cn/info/1061/4045.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/4045.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -74,14 +86,8 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/4045.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

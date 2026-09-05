@@ -900,7 +900,18 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/2765.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/2765.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -922,14 +933,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1063/2765.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

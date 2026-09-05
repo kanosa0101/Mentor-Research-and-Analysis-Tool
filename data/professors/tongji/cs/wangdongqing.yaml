@@ -77,7 +77,18 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1064/2774.htm
 profile_url: https://cs.tongji.edu.cn/info/1064/2774.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -99,14 +110,3 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1064/2774.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

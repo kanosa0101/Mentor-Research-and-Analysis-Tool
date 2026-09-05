@@ -4,6 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
+title: 教授
 bio_raw: '姓　　名
 
   刘锡伟
@@ -71,7 +72,13 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1061/2806.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/2806.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -83,9 +90,8 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2806.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
+  title:
+    origin: computed
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
