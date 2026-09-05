@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>毛先领 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand"><span class="logo"></span><h1>导师库</h1></div>
+    <a href="../index.html">← 返回列表</a>
+    <span class="crumb">北京理工大学 · 计算机学院</span>
+  </div>
+</header>
+<div class="wrap">
+<div class="card">
+  
+  <h2>毛先领 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">准聘教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+    
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>maoxl@bit.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-09-05</span>
+    <span>最近核对：2026-09-05</span>
+    
+  </div>
+  <div style="clear:both"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人信息
+男，准聘教授，博导，国家级青年人才。主要研究深度学习与科技大数据挖掘，具体研究Information Extraction、Question Answering and Dialogue和Learn to Hashing等方向。担任计算机学会中文信息技术专委会委员，中文信息学会青工委执行委员以及语言与知识专委会委员；已在SIGIR、AAAI、IJCAI、ACM MM、SIGMOD、WWW、TOIS、TKDE等国际期刊会议上发表50余篇论文；指导学生分别获NLPCC 2019和ICKG 2020最佳论文奖；部分成果获中国电子学会科技进步一等奖(2018)和浙江省科技进步三等奖(2018)，正在承担或参与国家重点研发计划课题、国家自然科学基金重点项目和面上项目等10余项。主持研发了Hammer Scholar学术平台（hammerscholar.net）。所指导学生已在字节跳动、微软、百度、华为、阿里、滴滴研究院、小米科技、中科院信工所、英国爱丁堡大学等IT公司或科研院所就业或者继续深造。
+科研方向
+主要研究深度学习与科技大数据挖掘，具体研究Information Extraction、 Question Answering and Dialogue和Learn to Hashing等方向。
+代表性学术成果
+1) Span Graph   Transformer for Document-level Named Entity Recognition; Hongli Mao,
+Xian-Ling   Mao
+; AAAI 2024 （
+CCF A
+）
+2) Can   Cross-Lingual Transferability of Multilingual Transformers Be Activated   Without End-Task Data?Z Chi, HY Huang,
+XL Mao
+; ACL 2023 （
+CCF A
+）
+3) AttenWalker:   Unsupervised Long-Document Question Answering via Attention-based Graph   Walking Y Nie, H Huang, W Wei,
+XL Mao
+; ACL 2023 （
+CCF A
+）
+4) Data-Aware   Proxy Hashing for Cross-modal Retrieval; RC Tu,
+XL Mao
+, W Ji, W Wei, H   Huang; SIGIR 2023（
+CCF A
+）
+5) Towards   Efficient Coarse-grained Dialogue Response Selection; T Lan,
+XL Mao
+, W   Wei, X Gao, H Huang; TOIS（
+CCF A
+）
+6) Exploring   Dense Retrieval for Dialogue Response Selection；Tian Lan, Deng Cai, Yan Wang, Yixuan Su, Heyan Huang,
+Xian-Ling   Mao
+; TOIS （
+CCF A
+）
+7) Cross-domain   coreference modeling in dialogue state tracking with prompt learning; HD Xu,   XL Mao, P Yang, F Sun, H Huang; Knowledge-Based Systems, 283, 111189 (
+SCI
+一区
+)
+8) Out-of-scope   intent detection with intent-invariant data augmentation; F Sun, H Huang, P   Yang, H Xu,
+X Mao
+; Knowledge-Based Systems 283, 111167 (
+SCI
+一区
+)
+9) Unsupervised   Cross-modal Hashing via Semantic Text Mining; RC Tu,
+XL Mao
+, Q Lin, W   Ji, W Qin, W Wei, H Huang; IEEE Transactions on Multimedia (
+SCI
+一区
+)
+10) Dependency-Aware   Neural Topic Model; H Huang, YK Tang, X Shi,
+XL Mao
+; Information   Processing & Management (
+SCI
+一区
+)
+11) Unsupervised   Hashing with Semantic Concept Mining; RC Tu,
+XL Mao
+, KQ Lin, C Cai, W   Qin, W Wei, H Wang, H Huang; SIGMOD 2023
+12) Learning   relation ties with a force-directed graph in distant supervised relation   extraction; YM Shang, H Huang, X Sun, W Wei,
+XL Mao
+; ACM Transactions   on Information Systems 41 (1), 1-23Yuming Shang, Heyan Huang, Xin Sun, Wei   Wei,
+Xian-Ling Mao
+: A pattern-aware self-attention network for distant   supervised relation extraction. Inf. Sci. 2022, 584: 269-279 (
+SCI
+一区
+)
+13) Heyan Huang,   Yuming Shang, Xin Sun, Wei Wei,
+Xian-Ling Mao
+: Three birds, one stone:   A novel translation based framework for joint entity and relation extraction.   Knowl. Based Syst. 2022, 236: 107677 (
+SCI
+一区
+)
+14) Jia-Nan Guo,
+Xian-Ling Mao
+, Shu-Yang Lin, Wei Wei, Heyan Huang: Deep kernel   supervised hashing for node classification in structural networks. Inf. Sci.   569: 1-12 (2021)（
+SCI
+一区
+）
+15) Zewen Chi,   Li Dong, Bo Zheng, Shaohan Huang,
+Xian-Ling Mao
+, Heyan Huang, Furu   Wei: Improving Pretrained Cross-Lingual Language Models via Self-Labeled Word   Alignment. ACL/IJCNLP (1) 2021: 3418-3430 （
+CCF A
+）
+16) Puhai Yang,   Heyan Huang,
+Xian-Ling Mao
+: Comprehensive Study: How the Context   Information of Different Granularity Affects Dialogue State Tracking?   ACL/IJCNLP (1) 2021: 2481-2491 （
+CCF A
+）
+17) Zewen Chi,   Li Dong, Shuming Ma, Shaohan Huang, Saksham Singhal,
+Xian-Ling Mao
+,   Heyan Huang, Xia Song, Furu Wei: mT6: Multilingual Pretrained Text-to-Text   Transformer with Translation Pairs.
+EMNLP
+2021: 1671-1683 （
+CCF B
+）
+18) Rong-Cheng   Tu,
+Xian-Ling Mao
+, Cihang Kong, Zihang Shao, Ze-Lin Li, Wei Wei, Heyan   Huang: Weighted Gaussian Loss based Hamming Hashing. ACM Multimedia 2021:   3409-3417 （
+CCF A
+）
+19) Rong-Cheng   Tu,
+Xian-Ling Mao
+, Jia-Nan Guo, Wei Wei, Heyan Huang: Partial-Softmax   Loss based Deep Hashing. WWW 2021: 2869-2878（
+CCF A
+）
+20) Tian Lan,
+Xian-Ling   Mao
+, Wei Wei, Xiaoyan Gao, Heyan Huang:PONE: A Novel   Automatic Evaluation Metric for Open-domain Generative Dialogue Systems. ACM   Trans. Inf. Syst. 39(1): 7:1-7:37 (2020) (
+CCF A
+)
+21) Zewen Chi,   Li Dong, Furu Wei, Wenhui Wang,
+Xian-Ling Mao,
+Heyan Huang:   Cross-Lingual Natural Language Generation via Pre-Training. AAAI 2020:   7570-7577 (
+CCF A
+)
+22) Yuming   Shang, Heyan Huang,
+Xian-Ling Mao
+, Xin Sun, Wei Wei, Are Noisy   Sentences Useless for Distant Supervised Relation Extraction?
+AAAI 2020
+.（
+CCF A
+）
+23) Rongcheng   Tu,
+Xian-Ling Mao
+, Bing Ma, Yong Hu, Tan Yan, Wei Wei and Heyan Huang;   Deep Cross-Modal Hashing with Hashing Functions and Unified Hash Codes   Jointly Learning,
+TKDE
+2020
+. (
+CCF A
+)
+24) Rongcheng   Tu,
+Xian-Ling Mao
+, Wei Wei , MLS3RDUH: Deep Unsupervised Hashing via   Manifold based Local Semantic Similarity Structure Reconstructing,
+IJCAI   2020
+. (
+CCF A
+)
+25) Rongcheng Tu,
+Xian-Ling Mao
+, Bosii   Feng, Shuying Yu, Object Detection based Deep Unsupervised Hashing,
+IJCAI
+2019
+(
+CCF-A
+)
+26) Zewen Chi;   Heyan Huang; Shenjian Zhao; Heng-Da Xu;
+Xian-Ling Mao
+; Fast and   Accurate Bilingual Lexicon Induction via Matching Optimization,
+NLPCC 2019
+.（CCF C，
+最佳学生论文
+）
+27) Xiaojian   Jiang,
+Xian-Ling Mao
+, et al. "HSDS: An Abstractive Model for   Automatic Survey Generation." International Conference on Database   Systems for Advanced Applications. Springer, Cham (
+DASFAA 2019
+). （
+CCF B
+）
+28) Zewen Chi;   Li Dong; Furu Wei; Wenhui Wang; Xian-Ling Mao; Heyan Huang*; Cross-lingual   Natural Language Generation via Pre-Training,
+AAAI 2019
+(
+CCF A
+)
+29) Dan   Wang, Heyan Huang, Chi Lu, Bo-Si Feng, Liqiang Nie, Guihua Wen,
+Xian-Ling Mao
+; Supervised Deep   Hashing for Hierarchical Labeled Data;
+AAA   2018
+(
+CCF A
+)
+30)
+Xian-Ling   Mao
+,Bo-Si   Feng, Yi-Jing Hao, Liqiang Nie, Heyan Huang, Guihua Wen ; S2JSD-LSH: A   Locality-Sensitive Hashing Schema for Probability Distributions;
+AAAI
+2017
+（
+CCF A
+）
+31)
+Yi-Kun Tang,
+Xian-Ling Mao
+,   Heyan Huang; Labeled Phrase Latent Dirichlet Allocation and its Online   Learning Algorithm;
+Data Mining and   Knowledge Discovery
+, 2017 (
+SCI
+,   3.16);
+32)
+Yi-Kun Tang,
+Xian-Ling Mao
+,   Heyan Huang, Xuewen Shi, Guihua Wen, Conceptualization topic modeling;
+Multimedia Tools & Applications
+,   2017 (
+SCI
+, 1.53);
+33)
+Xian-Ling Mao
+, Yi-Jing Hao, Qiang Zhou, Wenqing Yuan, Liner Yang,   Heyan Huang; A Novel Fast Framework for Topic Labeling Based on   Similarity-preserved Hashing;
+COLING
+,   2016
+（
+CCF B
+）
+34)
+Xian-Ling Mao
+, Yijing Hao, Dang Wang, Heyan Huang; Query Completion   in Community-based Question Answering Search;
+Neurocomputing
+, 2016
+（
+SCI
+, 3.317
+）
+35)
+Xiaochi Wei,   Heyan Huang, Liqiang, Nie, Hanwang Zhang,
+Xian-Ling Mao
+, Tat-Seng Chua; I Know What You Want to Express: Sentence   Element Inference by Incorporating External Knowledge Base;
+TKDE
+, 2016
+（
+CCF A
+）
+36)
+Lili Mei,   Heyan Huang, Xiaochi Wei,
+Xian-Ling   Mao
+; A Novel Unsupervised Method for New Words Extraction;
+SCIENCE CHINA Information Sciences
+，2016
+（
+SCI
+）
+37)
+Xiaochi Wei,   Heyan Huang, Chin-Yew Lin, Xin Xin,
+Xian-Ling Mao
+, Shangguang Wang: Re-Ranking Voting-Based Answers by   Discarding User Behavior Biases.；
+IJCAI
+, 2015
+（
+CCF   A
+）
+38)
+Xian-Ling Ma
+o, Zhao-Yan Ming, Tat-Seng Chua, Si Li, Hongfei Yan and   Xiaoming Li; SSHLDA: A Semi-Supervised   Hierarchical Topic Model；
+EMNLP
+, 2012
+（
+CCF   B
+）
+39)
+Xian-Ling Mao
+, Jing He, Hongfei Yan, Xiaoming Li;
+Hierarchical Topic Integration   Through Semi-supervised hierarchical Topic Modeling；
+CIKM
+, 2012
+（
+CCF B
+）
+40)
+Xian-Ling   Mao
+, Zhao-Yan Ming, Tat-Seng Chua,   Hongfei Yan and Xiaoming Li; Automatic Labeling Hierarchical Topics；
+CIKM
+, 2012
+（
+CCF B
+）
+承担科研情况
+1) 01/2022 –12/2025  国家自然科学基金面上项目：富语义哈希建模研究，主持
+2) 05/2019 –04/2023  国家重点研发计划课题：语言智能处理关键技术研究，主持
+3) 01/2018 –12/2021  国家自然科学基金面上项目：融入概念的高效主题分析框架与关键技术研究，主持
+所获奖励
+中国电子学会科技进步一等奖(2018)和浙江省科技进步三等奖(2018)
+社会兼职
+担任计算机学会中文信息技术专委会委员，中文信息学会青工委委员以及语言与知识专委会委员；ACM TOIS (SCI 一区)、ACM TIST (SCI 一区)、Information Sciences (SCI 一区)、SIGIR (CCF A)、IJCAI (CCF A)、 AAAI（CCF A）和SIGKDD（CCF A）等国际著名期刊和会议评审人或程序委员会委员或高级程序委员会委员。
+备注
+招收博士和硕士研究生；
+招收校内外本科实习生；
+邮件联系</div>
+</div>
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+    
+    <tr>
+      <td>name</td>
+      <td>毛先领</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>title</td>
+      <td>准聘教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>email</td>
+      <td>maoxl@bit.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>office_address</td>
+      <td>北京理工大学中教1001房</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>bio_raw</td>
+      <td>个人信息
+男，准聘教授，博导，国家级青年人才。主要研究深度学习与科技大数据挖掘，具体研究Information...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/6e14806577d145b886e02f7eb14157ba.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+  </table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+school: bit
+dept: cs
+dept_name: 计算机学院
+base_url: https://cs.bit.edu.cn
+hook: bit_cs
+direct: true
+list:
+  method: GET
+  render: true
+  person_href: /[0-9a-f]{32}\.htm$
+  channels:
+    - url: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+      cat: 博导
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/index.htm
+      cat: 硕导

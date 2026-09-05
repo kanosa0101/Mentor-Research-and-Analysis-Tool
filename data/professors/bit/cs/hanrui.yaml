@@ -1,0 +1,127 @@
+slug: hanrui
+name: 韩锐
+aliases: []
+school: bit
+dept: cs
+status: enriched
+title: 准聘教授
+supervisor: 博导
+bio_raw: '个人信息
+
+  韩锐，教授、博士生导师，国家级青年人才。2010年毕业于清华大学并获优秀硕士毕业生，2014年博士毕业于伦敦帝国理工学院。主要研究方向是：
+
+  边缘智能、具身智能
+
+  ，专注
+
+  端侧大模型训练技术
+
+  ，包括单设备多模态大模型、分布式多设备协同训练、开放环境安全防护。
+
+  主持国家自然科学基金青年/面上项3项，及工信部高质量发展专项和国家自然科学基金重点项目课题。研究成果在ACM MobiCom，IEEE INFOCOM，TC，TPDS，TDSC，TKDE等CCF
+  A类、SCI一区会议期刊发表论文40余篇，授权发明专利十余项。获
+
+  CCF-A类会议MobiCom 2021最佳社区论文亚军奖
+
+  （Best Community Paper Award Runner-up）、德国纽伦堡发明展银奖(序1)，作为副主编编写教材《物联网技术概论 第3版》，获评工信部工程硕博士精品教材。上述学术成果指导研制了面向国防安全的资源感知边缘侧模型训练系统和智能汽车模型训练系统。
+
+  多次担任分布式系统、云计算、边缘计算领域重要会议程序委员，包括CCF推荐会议ACM EuroSys, KDD, Middleware, ICDCS，DSN，CCGrid，CLOUD
+  ，ICCCN等。多次担任BPOE大数据基准测试国际研讨会大会主席，以及高水平IEEE/ACM Transaction学术期刊客座编辑、审稿人。
+
+  招生计划：每年招收博士生1人，硕士研究生2～3人。
+
+  联系方式：hanrui@bit.edu.cn（379068433@qq.com）
+
+  科研方向
+
+  端侧大模型训练技术
+
+  1.
+
+  单设备多模态大模型
+
+  ：
+
+  1.1. 背景动机：服务器模型预训练无法应对模型部署后的未知场景，亟需研究端侧模型实时演化/重训技术。
+
+  1.2. 关键技术：大小模型协同训练、神经元粒度模型缩放，实现高精度、低开销端侧训练。
+
+  1.3. 应用场景：边缘侧智能制造、车联网。
+
+  2.
+
+  分布式多设备协同训练
+
+  ：
+
+  2.1. 背景动机：传统AI巨头集中式高成本模型训练，正向数据分布式处理、小算力充分利用的去中心化模型训练演化。
+
+  2.2. 关键技术：去中心联邦学习、强化学习驱动的交互式协同训练（环境交互、机机交互），实现异构设备知识正迁移。
+
+  2.3. 应用场景：
+
+  具身智能体
+
+  （人形机器人、无人机/车/艇、巡飞弹）。
+
+  3.
+
+  开放环境安全防护
+
+  ：
+
+  3.1. 背景动机：在万物互联时代，模型安全范式正由服务器端预定义场景防护，转变为输入分布持续变化的开放场景防护。
+
+  3.2. 关键技术：端侧性能、精度、安全多目标优化，实现轻量化安全和隐私保护。
+
+  3.3. 应用场景：具身智能、数据中台。
+
+  代表性学术成果
+
+  代表作及链接：
+
+  （1）移动端神经网络模型运行优化（2021年北京市本科毕设优秀指导教师）：LegoDNN: Block-grained Scaling of Deep Neural
+  Networks for Mobile Vision，发表CCF A类会议ACM MobiCom 2021，获Best Community Paper Runner-up
+  Award，链接：https://www.bit.edu.cn/xww/xzw/xsjl1/b6fd821190c64afaa3790a6ddeb465a8.htm
+
+  （2）分布式边缘端联邦学习训练优化（2022年北京市本科毕设优秀指导教师）：Fedknow: Federated continual learning with
+  signature task knowledge integration at edge[100]，发表CCF A类会议IEEE ICDE 2023长文，链接：https://github.com/LINC-BIT/FedKNOW
+
+  承担科研情况
+
+  所获奖励
+
+  社会兼职
+
+  备注
+
+  Google学术：https://scholar.google.com/citations?user=pFFQdo0AAAAJ&hl=en
+
+  英文主页：https://sites.google.com/site/hanruisystem/'
+institutes: []
+detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f4c51efcbf2c426a8515cc7684af5525.htm
+profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f4c51efcbf2c426a8515cc7684af5525.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets: []
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.bit.edu.cn/szdw/jsml/bssds/f4c51efcbf2c426a8515cc7684af5525.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.bit.edu.cn/szdw/jsml/bssds/f4c51efcbf2c426a8515cc7684af5525.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.bit.edu.cn/szdw/jsml/bssds/f4c51efcbf2c426a8515cc7684af5525.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

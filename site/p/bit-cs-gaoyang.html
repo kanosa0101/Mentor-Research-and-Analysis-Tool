@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高扬 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand"><span class="logo"></span><h1>导师库</h1></div>
+    <a href="../index.html">← 返回列表</a>
+    <span class="crumb">北京理工大学 · 计算机学院</span>
+  </div>
+</header>
+<div class="wrap">
+<div class="card">
+  
+  <h2>高扬 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+    
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>gyang@bit.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-09-05</span>
+    <span>最近核对：2026-09-05</span>
+    
+  </div>
+  <div style="clear:both"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人信息
+博士生导师，主要从事大模型训练、文本自动生成技术，及其技术应用转化。发表国际期刊会议高水平论文60余篇，包括CCF A类、SCI等。担任AAAI, WebConf, ARR 等文本生成领域主席，国际期刊编委，高水平国际会议程序委员会委员，及期刊审稿人。主持研发DirectionAI智慧教育平台（http://directionai.cn）及其成果转化，以及明德基座大模型研发（MindLLM）和国产生态大模型建设，开源 “端侧”对话大模型等一系列开源项目（https://github.com/DIRECT-BIT）。作为参与人获得中国电子学会科技进步奖一等奖，国防科技进步二等奖。爱丁堡大学访问学者，担任中国中文信息学会青工委，CCF 大模型论坛执委，CCF YOCSEF委员等。
+科研方向
+大模型训练与原理、自主进化与推理思考模型、文本生成及其技术应用转化
+代表性学术成果
+Google 学术链接
+DIRECT Lab链接
+大模型及文本生成
+1. Jiawei Li, Yizhe Yang, Yu Bai, Xiaofeng Zhou, Yinghao Li, Huashan Sun, Yuhang Liu, Xingpeng Si, Yuhao Ye, Yixiao Wu, Yiguan Lin, Bin Xu, Ren bowen, Chong Feng, Heyan Huang,
+Yang Gao*
+, Fundamental Capabilities of Large Language Models and their Applications in Domain Scenarios: A Survey, ACL 2024 (
+CCF A
+)
+2. Yinghao Li, Siyu Miao,
+Yang Gao*
+, Heyan Huang ,Word Matters: What Influences Domain Adaptation in Summarization? ACL 2024 (
+CCF A
+)
+3. Jiancheng Du,
+Yang Gao*
+, Domain adaptation and Summary Distillation for Unsupervised Query Focused Summarization, IEEE Transactions on Knowledge and Data Engineering, volume: 36, issue: 3, 2023. (
+CCF A期刊
+)
+4. Jiaao Zhan,
+Yang Gao*
+, Yu Bai, Qianhui Liu，Stage-wise Stylistic Headline Generation: Style Generation and Summarized Content Insertion. IJCAI 2022: 4489-4495. (
+CCF A
+)
+5. Yu Bai, Heyan Huang, Kai Fan,
+Yang Gao
+, Yiming Zhu, Jiaao Zhan, Zewen Chi, Boxing Chen. Unifying Cross-lingual Summarization and Machine Translation with Compression Rate. SIGIR 2022: 1087-1097 (
+CCF A
+)
+6. Yizhe Yang, Huashan Sun, Jiawei Li, Runheng Liu, Yinghao Li, Yuhang Liu, Heyan Huang,
+Yang Gao*
+, MindLLM: Pre-training Lightweight Large Language Model from Scratch, Evaluations and Domain Applications. arXiv:2310.15777, 2023. (
+开源地址
+)
+7. Haonan Wang,
+Yang Gao*
+, Yu Bai, Mirella Lapata, Heyan Huang, Exploring Explainable Selection to Control Abstractive Summarization, 35 th AAAI Conference on Artificial Intelligence (AAAI’2021), Feb. 2-Feb 9, 2021 (
+CCF A
+)
+8.
+Yang Gao*
+, Qianhui Liu, Yizhe Yang, Ke Wang , Latent representation discretization for unsupervised text style generation. Inf. Process. Manag. 61(2): 103643 (2024) (
+SCI 一区
+)
+9. Yu Bai,
+Yang Gao
+, Heyan Huang, Cross-lingual Abstractive Summarization with Limited Parallel Resources, Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, ACL 2021. (
+CCF A
+)
+10. Heyan Huang, Yinghao Li, Huashan Sun, Yu Bai, and
+Yang Gao*
+. How Far Can In-Context Alignment Go? Exploring the State of In-Context Alignment. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 8623–8644
+11. Huashan Sun, Yixiao Wu, Yizhe Yang, Yinghao Li, Jiawei Li, Yuhao Ye,
+Yang Gao*
+. PSST: A Benchmark for Evaluation-driven Text Public-Speaking Style Transfer.  In Findings of the Association for Computational Linguistics: EMNLP 2024, pages  8438-8471.
+12. Yu Bai, Xiyuan Zou, Heyan Huang, Sanxing Chen, Marc-Antoine Rondeau,
+Yang Gao
+, and Jackie CK Cheung. 2024. CItruS: Chunked Instruction-aware State Eviction for Long Sequence Modeling. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing(EMNLP), pages 5908–5930
+13. Yizhe Yang, Heyan Huang, Yuhang Liu,
+Yang Gao*
+. Graph vs. Sequence: An Empirical Study on Knowledge Forms for Knowledge-Grounded Dialogue, In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing(EMNLP) :15846–15858.
+14. Yaoling Li, Heyan Huang, Yu Bai,
+Yang Gao*
+, Enhancing consistency with the fusion of paralleled decoders for text generation, Information Fusion 114, 102652 (
+SCI 一区
+)
+推理与理解
+15. Mucheng Ren, Heyan Huang,
+Yang Gao
+，Prediction or Comparison: Toward Interpretable Qualitative Reasoning. ACL/IJCNLP 2021: 664-675 （
+CCF A
+）
+16. Qian Liu, Heyan Huang, Guangquan Zhang,
+Yang Gao
+, Junyu Xuan, Jie Lu. Semantic Structure-based Word Embedding by Incorporating Concept Convergence and Word Divergence, AAAI 2018. (
+CCF A
+)
+17.
+Yang Gao*
+, Yue Xu, Heyan Huang, Qian Liu, Linjing Wei, Luyang Liu, Jointly Learning Topics in Sentence Embedding for Document Summarization, IEEE Transactions on Knowledge and Data Engineering (TKDE), Vol: 32, Issue: 4, 2020: 688 - 699.（
+CCF A期刊
+）
+18. Luyang Liu, Heyan Huang,
+Yang Gao
+, Yongfeng Zhang, Xiaochi Wei, Neural Variational Correlated Topic Modeling, WWW 2019，San Francisco, CA, USA. (
+CCF A
+)
+19. Yizhe Yang, H Huang,
+Yang Gao*
+, Jiawei Li, Building knowledge-grounded dialogue systems with graph-based semantic modeling，Knowledge-Based Systems, 2024. (
+SCI 一区
+)
+20. Mucheng Ren , Heyan Huang , Yuxiang Zhou , Qianwen Cao , Yuan Bu, and
+Yang Gao
+, TCM-SD: A Benchmark for Probing Syndrome Differentiation via Natural Language Processing, In Proceedings of CCL 2022,
+Best Paper Award.
+21. Xinyue Liang, Jiawei Li, Yizhe Yang,
+Yang Gao*
+, Enhance Numerical Sensitivity and Reasoning Completeness for Quantitative Understanding- Proceedings of the 18th International Workshop on Semantic Evaluation (SemEval-2024).
+22. Yuxiang Zhou, Lejian Liao,
+Yang Gao*
+, et al. TopicBERT: A Topic-Enhanced Neural Language Model Fine-Tuned for Sentiment Classification. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2023,34(1): 380-393. (
+SCI 一区
+)
+23. Yuxiang Zhou, Lejian Liao,
+Yang Gao*
+, Heyan Huang, Extracting salient features from convolutional discriminative filters, Information Sciences, volume 558, May 2021: 265-279.
+SCI 一区
+)
+24.
+Yang Gao
+, Yue Xu, Yuefeng Li, Pattern-based topics for document modelling in information filtering, IEEE Transactions on Knowledge and Data Engineering (TKDE), 2015, 24(6): 1629-1642.（
+CCF A期刊
+)
+25. Yuxiang Zhou, Lejian Liao,
+Yang Gao*
+, Zhanming Jie, Wei Lu: To be Closer: Learning to Link up Aspects with Opinions. EMNLP (1) 2021: 3899-3909
+承担科研情况
+主持项目：
+1. 国家自然科学基金重大研究计划培育，数据与知识双驱动的可信决策生成研究与应用，2024年01月至 2026年 12月，项目负责人
+2. 国家自然科学基金青年项目, 融合语义相似性和关联性的深层主题模型研究, 2017年1月-2019年12月，项目负责人
+3. CCF-AIR青年基金，基于大规模预训练模型的少样本学习研究，2022年10月-2023年10月，项目负责人
+4. 腾讯创意基金，基于医疗知识的可规划文本摘要生成，2020年10月1日-2021年12月31日，项目负责人
+5. 北京理工大学青年发展基金，面向多模态数据的文本描述生成系统，2021年1月-2023年12月，项目负责人
+主要参与项目：
+1. 国家重点研发计划, 大数据知识工程基础理论及其应用研究, 2016 年 7 月 至 2020 年 12 月, 项目骨干。
+2. 国家自然科学基金应急管理项目，中文语义深度计算与阅读理解，2018年1月至2018年12月，项目骨干。
+3. 教育部-中国移动科研基金，基于语义的电信领域客户投诉内容的实体挖掘与主题关键词抽取研究，2018.4-2020.4,项目骨干。
+4. 北京市重点项目，面向城市态势的多源跨媒体深度语义分析与推理关键技术，2020.1-2023.12，项目骨干。
+5. 北京市基金重点项目, 融合听觉信息的语言理解技术研究及应用验证,2018.1-2019.12，项目骨干。
+6. 国家重点研发计划课题，基于***的人物画像分析，2017.3-2020.4，项目骨干。
+所获奖励
+1. 2018年 “基于海量知识的智能理解与推理关键技术及智能政务应用”获中国电子学会科技进步奖一等奖
+2. 2022年“异构大数据智能处理关键技术及应用”获国防科技进步二等奖
+3. 2021,2022年， 北京理工大学优秀硕士学位论文，指导教师
+社会兼职
+担任计算机学会 CCF NLPCC专委会委员，CCF 大模型论坛执委，中文信息学会青工委委员，多个CCF A类会议期刊(ACL, EMNLP, WebConf, TKDE, TNNLS, ICDM. et.al. )领域主席/评审人/程序委员会委员。
+备注
+课题组招收博士、硕士，并欢迎高年级本科生实习</div>
+</div>
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+    
+    <tr>
+      <td>name</td>
+      <td>高扬</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>email</td>
+      <td>gyang@bit.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>office_address</td>
+      <td>中心教学楼10层</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+    <tr>
+      <td>bio_raw</td>
+      <td>个人信息
+博士生导师，主要从事大模型训练、文本自动生成技术，及其技术应用转化。发表国际期刊会议高水平论文60余篇，...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-09-05</td>
+      <td><a href="https://cs.bit.edu.cn/szdw/jsml/bssds/78c31a2505434740a51076b614742941.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+    
+  </table>
+</div>
+</div>
+</body>
+</html>

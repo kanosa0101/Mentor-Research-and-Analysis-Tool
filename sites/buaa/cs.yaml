@@ -1,0 +1,14 @@
+school: buaa
+dept: cs
+dept_name: 计算机学院
+base_url: http://scse.buaa.edu.cn
+hook: buaa_cs
+direct: true
+list:
+  method: GET
+  person_href: /info/\d+/\d+\.htm$
+  channels:
+    - url: http://scse.buaa.edu.cn/szdw/qtjs.htm
+      cat: null
+    - url: http://scse.buaa.edu.cn/szdw/jcrc1.htm
+      cat: null

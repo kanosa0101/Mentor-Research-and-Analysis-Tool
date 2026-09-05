@@ -1,0 +1,11 @@
+school: ruc
+dept: info
+dept_name: 信息学院
+base_url: http://info.ruc.edu.cn
+hook: ruc_info
+direct: true
+list:
+  method: GET
+  person_href: /[0-9a-f]{32}\.htm$
+  channels:
+    - url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/bx/bx1/index.htm

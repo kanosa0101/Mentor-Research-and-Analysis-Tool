@@ -1,0 +1,15 @@
+school: tju
+dept: cs
+dept_name: 计算机科学与技术学院
+base_url: https://cs.tju.edu.cn
+hook: tju_cs
+direct: true
+list:
+  method: GET
+  person_href: /info/\d+/\d+\.htm$
+  channels:
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/zgj.htm   # 按职称·正高
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/fgj.htm   # 按职称·副高
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/zj.htm    # 按职称·中级
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/cj.htm    # 按职称·初级
+    - url: https://cic.tju.edu.cn/jyjx/yjsjy/yjsdsml.htm     # 研究生导师名录(补漏)
