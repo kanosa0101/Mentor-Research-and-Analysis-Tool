@@ -1,18 +1,49 @@
 slug: yangsu
 name: 杨夙
-aliases: []
+aliases:
+- ys
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: suyang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/52/c30604a443474/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/52/c30604a443474/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+research_direction_raw: Computer Vision、Urban Informatics、Data Mining
+detail_url: http://ai.fudan.edu.cn/ys/list.htm
+profile_url: http://ai.fudan.edu.cn/ys/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

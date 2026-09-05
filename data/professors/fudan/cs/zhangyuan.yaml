@@ -4,39 +4,39 @@ aliases: []
 school: fudan
 dept: cs
 status: enriched
-title: 教授
+title: 教授、博导
 supervisor: 博导
-bio_raw: 教授、博导，国家级青年人才，主要研究方向为软件安全，研究工作获USENIX Security 2022杰出论文奖、ACM SIGSOFT 2024杰出论文奖、IEEE
-  S&P 2025杰出论文奖、ACM CCS 2025杰出论文奖，部分研究成果应用于华为、阿里、OPPO、vivo等公司，获华为优秀技术成果奖、阿里巴巴优秀技术合作项目、OPPO产学研优秀合作伙伴、vivo最佳安全技术合作伙伴奖。带领复旦白泽战队获得国内外顶尖安全攻防赛事20余次冠军，发现大量真实软硬件系统高危漏洞，获2021年国家信息安全漏洞库最具价值漏洞奖。
+email: yuanxzhang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/89/c30604a443785/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/89/c30604a443785/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/0d/9e/b98ddced43738d5bfd637c0132c6/e07fd322-1ad0-41d3-a2e3-62f82ba3cfe1.png
+detail_url: http://ai.fudan.edu.cn/zy_37542/list.htm
+profile_url: http://ai.fudan.edu.cn/zy_37542/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/89/c30604a443785/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/89/c30604a443785/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  photo_url:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/89/c30604a443785/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,37 @@
 slug: hurui
 name: 胡锐
-aliases: []
+aliases:
+- hr
 school: fudan
 dept: cs
 status: enriched
+title: 研究实习员
+email: hurui@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/31/76/c30604a733558/page.htm
-profile_url: https://cs.fudan.edu.cn/31/76/c30604a733558/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+detail_url: http://ai.fudan.edu.cn/hr/list.htm
+profile_url: http://ai.fudan.edu.cn/hr/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

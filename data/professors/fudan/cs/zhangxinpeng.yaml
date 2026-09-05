@@ -1,32 +1,43 @@
 slug: zhangxinpeng
 name: 张新鹏
-aliases: []
+aliases:
+- zxp
 school: fudan
 dept: cs
 status: enriched
-title: 教授
-bio_raw: 国家杰出青年科学基金获得者，二级教授。曾赴美国纽约州立大学宾汉顿分校访问，受德国洪堡基金会资助作为资深研究员赴德国康斯坦茨大学访问。主持国家自然科学基金重点项目、国家自然科学基金原创探索项目、国家重点研发计划、国家863计划等科研项目40余项。发表论文400余篇，被引20000余次，连续十一年入选“爱思唯尔”中国高被引学者榜单，并入选“科睿唯安”全球高被引科学家。授权发明专利20余项。以第一完成人获上海市自然科学奖一等奖，参与获得国家级教学成果二等奖两次。担任
-  IEEE Trans. on Information Forensics and Security （IEEE T-IFS）等国际学术期刊的 Associate
-  Editor、ACM IH&MMSec与IEEE WIFS等国际学术会议的程序委员会主席和大会主席。
+title: 教授、博导、国家杰出青年科学基金获得者
+supervisor: 博导
+email: zhangxinpeng@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/da/5d/425366c948dca866bd2d5dd0517b/ed96b489-667e-4670-85ca-95168b9b6bc4.jpg
+detail_url: http://ai.fudan.edu.cn/zxp/list.htm
+profile_url: http://ai.fudan.edu.cn/zxp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

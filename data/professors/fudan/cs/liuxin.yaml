@@ -1,18 +1,49 @@
 slug: liuxin
 name: 刘新
-aliases: []
+aliases:
+- lx
 school: fudan
 dept: cs
 status: enriched
+title: 讲师、专业学位硕导
+supervisor: 硕导
+email: liu_xin@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/2a/c30604a443690/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/2a/c30604a443690/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/c5/a6/91eeda2242fb97720113d2cd6546/7d52f573-72de-4615-b70f-b7483914691a.jpg
+research_direction_raw: 数字媒体技术，网络质量控制
+detail_url: http://ai.fudan.edu.cn/lx/list.htm
+profile_url: http://ai.fudan.edu.cn/lx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

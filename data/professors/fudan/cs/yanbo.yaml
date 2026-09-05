@@ -1,48 +1,43 @@
 slug: yanbo
 name: 颜波
-aliases: []
+aliases:
+- yb
 school: fudan
 dept: cs
 status: enriched
-title: 教授
+title: 教授、博导
 supervisor: 博导
-bio_raw: 颜波博士，复旦大学计算与智能创新学院教授/博导、教育部长江学者。现任复旦大学计算与智能创新学院学术委员会副主任、计算机科学与技术一级学科负责人和博士后流动站站长、复旦大学-江南造船“船舶+AI联合实验室”主任、上海市图像图形学学会副理事长。主要研究领域包括：计算机视觉、科学智能和智能制造等。至今以通讯作者在Nature
-  Methods、Nature Biomedical Engineering、Nature Photonics、IEEE Trans.等国际期刊和CVPR、ICCV、IJCAI等CCF
-  A类会议发表论文100 余篇。先后获得国家优秀青年科学基金、国家自然科学基金联合重点基金／面上基金／青年基金、华为基金和中船集团等多项省部级项目和企业合作项目的资助。
+email: byan@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/4a/c30604a443466/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/4a/c30604a443466/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/60/09/463dd54c4b92b96af7a03700de4d/522a9af1-f6d8-4b3c-9556-7925998f5f21.jpg
+detail_url: http://ai.fudan.edu.cn/yb/list.htm
+profile_url: http://ai.fudan.edu.cn/yb/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/4a/c30604a443466/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/4a/c30604a443466/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  photo_url:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/4a/c30604a443466/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

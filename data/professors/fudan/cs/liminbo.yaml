@@ -1,41 +1,43 @@
 slug: liminbo
 name: 李敏波
-aliases: []
+aliases:
+- lmb
 school: fudan
 dept: cs
 status: enriched
-title: 副教授
+title: 副教授、硕导
 supervisor: 硕导
-bio_raw: 智能化软件工程与系统实验室副教授，硕导。2001年获清华大学博士。2001-2002 新加坡国立大学博士后，2003-2004金蝶软件研究员，2006-2012年用友软件兼职ERP应用研究与系统集成总监。主要研究方向为工业数据挖掘、工业应用软件、工业AI应用。先后承担完成国家自然科学基金、国家重点研发计划项目、国家863计划等8项，省部级项目7项，企业项目40余项。发表五十余篇学术论文。
+email: limb@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/0e/c30604a443662/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/0e/c30604a443662/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/2b/47/022a99324177a148862528820a07/405b9603-6dc0-462c-8e85-01b8ff736a3a.jpg
+detail_url: http://ai.fudan.edu.cn/lmb/list.htm
+profile_url: http://ai.fudan.edu.cn/lmb/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/0e/c30604a443662/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/0e/c30604a443662/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  photo_url:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/0e/c30604a443662/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

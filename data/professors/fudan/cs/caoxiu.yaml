@@ -1,40 +1,43 @@
 slug: caoxiu
 name: 曹袖
 aliases:
-- aa
+- cx
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 曹袖，男，1968年生，复旦大学计算与智能创新学院高级工程师、硕士生导师。先后在复旦大学获理学学士和硕士学位。长期从事计算机网络、分布式系统、电力自动化、智能电网、电力大数据和人工智能、社会计算等方向的科研、应用系统研发和教学工作。主要成果包括：科研及教学获奖19项（含9项省部级奖），负责或参与完成的研究项目及应用系统开发100余项，发表核心或EI及以上刊物和会议论文40余篇，获授权专利20余项，主编参编专著5本。
+title: 高级工程师
+supervisor: 硕导
+email: Xiucao@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/aa/c30604a443306/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/aa/c30604a443306/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/e3/e9/11ee30b34090ae6b544f670bff07/2baa9120-df03-42b0-9567-9800496fbc5f.jpg
+detail_url: http://ai.fudan.edu.cn/cx/list.htm
+profile_url: http://ai.fudan.edu.cn/cx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c3/aa/c30604a443306/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

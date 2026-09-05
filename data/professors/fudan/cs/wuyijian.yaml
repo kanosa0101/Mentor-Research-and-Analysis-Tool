@@ -1,18 +1,49 @@
 slug: wuyijian
 name: 吴毅坚
-aliases: []
+aliases:
+- wyj
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 博导
+email: wuyijian@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/30/c30604a443440/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/30/c30604a443440/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+research_direction_raw: 软件工程，软件复用，软件产品线，软件维护与再工程
+detail_url: http://ai.fudan.edu.cn/wyj/list.htm
+profile_url: http://ai.fudan.edu.cn/wyj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

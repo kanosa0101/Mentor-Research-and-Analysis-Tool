@@ -1,19 +1,49 @@
 slug: zhudonglai
 name: 朱东来
 aliases:
-- ce
+- zdl
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 硕导
+email: zhudl@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/ce/c30604a443854/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/ce/c30604a443854/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/b9/12/edcbd8294412a2ff2860a3565c8c/03e4acd8-5068-453d-8f16-97742d2ed164.jpg
+research_direction_raw: 管理信息系统，电子商务，面向服务工程
+detail_url: http://ai.fudan.edu.cn/zdl/list.htm
+profile_url: http://ai.fudan.edu.cn/zdl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

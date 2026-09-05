@@ -1,24 +1,37 @@
 slug: wangjingran
 name: 王静然
-aliases: []
+aliases:
+- wjr
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 主要负责学院前台、资产管理、行政、会务，软件学院宣传等工作。
+title: 研究实习员
+email: wangjr_@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/31/c7/c30604a733639/page.htm
-profile_url: https://cs.fudan.edu.cn/31/c7/c30604a733639/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/0a/f3/0204b3d143449034811ff5abaed8/c905df24-531c-4455-9597-97f1c81f5571.jpg
+detail_url: http://ai.fudan.edu.cn/wjr/list.htm
+profile_url: http://ai.fudan.edu.cn/wjr/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/31/c7/c30604a733639/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

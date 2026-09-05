@@ -1,18 +1,49 @@
 slug: zhangwenqiang
 name: 张文强
-aliases: []
+aliases:
+- zwq
 school: fudan
 dept: cs
 status: enriched
+title: 研究员、博导
+supervisor: 博导
+email: wqzhang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/85/c30604a443781/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/85/c30604a443781/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/70/93/e929fb594445ab7d4c0b32091a79/c68f2e20-6a28-4071-ab2c-5d29594eb950.jpg
+research_direction_raw: 机器人、人工智能、计算机视觉、智能装备
+detail_url: http://ai.fudan.edu.cn/zwq/list.htm
+profile_url: http://ai.fudan.edu.cn/zwq/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

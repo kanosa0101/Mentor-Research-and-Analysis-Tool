@@ -1,24 +1,37 @@
 slug: xueshen
 name: 薛莘
-aliases: []
+aliases:
+- xx
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 计算与智能创新学院研究生教务员，主要负责研究生学籍管理、教学培养工作。
+title: 助理研究员
+email: xueshen@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/5b/f4/c30604a482292/page.htm
-profile_url: https://cs.fudan.edu.cn/5b/f4/c30604a482292/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/90/c3/2e2d9e424862931b55c6f5b93d27/0f4937b0-9661-47e7-b849-6deaab050b8c.jpg
+detail_url: http://ai.fudan.edu.cn/xx/list.htm
+profile_url: http://ai.fudan.edu.cn/xx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/5b/f4/c30604a482292/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

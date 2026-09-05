@@ -1,24 +1,37 @@
 slug: zhuyuanting
 name: 朱元婷
-aliases: []
+aliases:
+- zyt
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 复旦大学公共绩效与信息化研究中心副主任，主要开展绩效评价、数字治理、区域发展相关研究
+title: 助理研究员
+email: zhuyt@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/b9/c30604a443833/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/b9/c30604a443833/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/77/66/2cde3e744c879800505cebb725ea/f8529575-7b18-40e5-9fe5-9164b403bb9c.jpg
+detail_url: http://ai.fudan.edu.cn/zyt/list.htm
+profile_url: http://ai.fudan.edu.cn/zyt/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/b9/c30604a443833/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

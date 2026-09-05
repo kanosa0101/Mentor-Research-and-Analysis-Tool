@@ -1,18 +1,49 @@
 slug: xuhui
 name: 徐辉
-aliases: []
+aliases:
+- xh
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 博导
+email: xuh@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/3c/c30604a443452/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/3c/c30604a443452/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/3b/31/22d83733417fa650180f34689cdc/b61795e2-710a-47f5-aa2e-3cc15c3c91cd.png
+research_direction_raw: 软件安全、程序分析、AI系统软件可靠性
+detail_url: http://ai.fudan.edu.cn/xh/list.htm
+profile_url: http://ai.fudan.edu.cn/xh/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

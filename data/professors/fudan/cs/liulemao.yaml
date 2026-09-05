@@ -1,36 +1,37 @@
 slug: liulemao
 name: 刘乐茂
-aliases: []
+aliases:
+- llm
 school: fudan
 dept: cs
 status: enriched
 title: 副教授
-bio_raw: 刘乐茂，复旦大学副教授；2013年博士毕业于哈尔滨工业大学，随后在纽约城市大学进行博士后研究，2014年就职于日本国立信息通信研究机构(NICT)，2017年至2025年于腾讯先后担任高级研究员和专家研究员。到目前为止，在ACL,
-  EMNLP, NAACL, NeurIPS, ICLR, TPAMI等CCF-A/B类会议和刊物上发表论文90多篇，谷歌学术引用5000+次；研究成果曾获得ACL2021杰出论文奖和中国计算语言学大会(2020)最佳展示奖。
+email: lemaoliu@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/a4/b9/c30604a763065/page.htm
-profile_url: https://cs.fudan.edu.cn/a4/b9/c30604a763065/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/85/40/e65880f142ed8514895534f1dcef/5e0500f0-a5c0-4870-aa17-50e4bbfbd79f.jpg
+detail_url: http://ai.fudan.edu.cn/llm/list.htm
+profile_url: http://ai.fudan.edu.cn/llm/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/a4/b9/c30604a763065/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/a4/b9/c30604a763065/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

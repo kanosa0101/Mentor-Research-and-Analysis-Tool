@@ -1,18 +1,49 @@
 slug: zhaoyunlei
 name: 赵运磊
-aliases: []
+aliases:
+- zyl
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: ylzhao@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/9d/c30604a443805/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/9d/c30604a443805/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/4b/a4/3abe11dc4c10a2347ce25a287a14/cc71b4fe-0802-43f3-acc0-4a219e4d23d4.jpg
+research_direction_raw: 密码学理论及应用、网络安全。
+detail_url: http://ai.fudan.edu.cn/zyl/list.htm
+profile_url: http://ai.fudan.edu.cn/zyl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

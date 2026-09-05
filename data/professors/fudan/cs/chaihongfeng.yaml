@@ -1,19 +1,43 @@
 slug: chaihongfeng
 name: 柴洪峰
 aliases:
-- ae
+- chf
 school: fudan
 dept: cs
 status: enriched
+title: 院士
+supervisor: 博导
+email: hfchai@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/ae/c30604a443310/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/ae/c30604a443310/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/9f/75/4804f7a547a09d27375de63d6145/3f5ea2b8-c4d7-410b-8a79-28677267a684.jpg
+detail_url: http://ai.fudan.edu.cn/chf/list.htm
+profile_url: http://ai.fudan.edu.cn/chf/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

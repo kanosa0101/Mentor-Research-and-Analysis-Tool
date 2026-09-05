@@ -1,18 +1,49 @@
 slug: zhangwei
 name: 张巍
-aliases: []
+aliases:
+- zw
 school: fudan
 dept: cs
 status: enriched
+title: 副教授、博导
+supervisor: 博导
+email: weizh@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/81/c30604a443777/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/81/c30604a443777/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/c3/65/8487a51e465088d01f8b10ccdb89/8dcbb0a6-8a65-4f03-b1c9-02ee03b49d1e.png
+research_direction_raw: 机器视觉、图像视频分析与理解、统计模式识别
+detail_url: http://ai.fudan.edu.cn/zw/list.htm
+profile_url: http://ai.fudan.edu.cn/zw/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

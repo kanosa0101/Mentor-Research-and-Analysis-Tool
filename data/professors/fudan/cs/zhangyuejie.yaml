@@ -1,19 +1,49 @@
 slug: zhangyuejie
 name: 张玥杰
 aliases:
-- bd
+- zyj
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: yjzhang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/bd/c30604a443837/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/bd/c30604a443837/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/32/94/a918a31e41ecb29840fc577d08e0/fdab0cee-740c-4522-8cfe-e8cd6b82f12a.jpg
+research_direction_raw: 跨媒体信息处理与检索、自然语言理解
+detail_url: http://ai.fudan.edu.cn/zyj/list.htm
+profile_url: http://ai.fudan.edu.cn/zyj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

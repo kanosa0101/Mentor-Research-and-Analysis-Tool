@@ -1,18 +1,49 @@
 slug: wangpeng
 name: 王鹏
-aliases: []
+aliases:
+- wp
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: pengwang5@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/0e/c30604a443406/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/0e/c30604a443406/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/c5/1c/b2d5c8ad420e91bdcc0245d7955f/911a2e91-9c2d-4bb4-b347-a590fe5ff8c8.jpg
+research_direction_raw: 数据挖掘，数据流处理、海量数据管理
+detail_url: http://ai.fudan.edu.cn/wp/list.htm
+profile_url: http://ai.fudan.edu.cn/wp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

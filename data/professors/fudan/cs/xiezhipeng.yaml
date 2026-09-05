@@ -1,18 +1,49 @@
 slug: xiezhipeng
 name: 谢志鹏
-aliases: []
+aliases:
+- xzp
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 博导
+email: xiezp@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/3a/c30604a443450/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/3a/c30604a443450/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/97/96/24852b584200a76133c869c79a13/9caf14f9-a3e2-4c5a-8411-31dbc7cabba5.jpg
+research_direction_raw: 数据挖掘，Web 挖掘，生物信息学
+detail_url: http://ai.fudan.edu.cn/xzp/list.htm
+profile_url: http://ai.fudan.edu.cn/xzp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

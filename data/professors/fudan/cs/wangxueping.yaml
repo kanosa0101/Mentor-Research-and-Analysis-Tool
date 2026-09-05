@@ -1,18 +1,49 @@
 slug: wangxueping
 name: 王雪平
-aliases: []
+aliases:
+- wxp
 school: fudan
 dept: cs
 status: enriched
+title: 讲师、专业学位硕导
+supervisor: 硕导
+email: wangxp@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/16/c30604a443414/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/16/c30604a443414/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+research_direction_raw: 计算机网络、信息安全、智能电网
+detail_url: http://ai.fudan.edu.cn/wxp/list.htm
+profile_url: http://ai.fudan.edu.cn/wxp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

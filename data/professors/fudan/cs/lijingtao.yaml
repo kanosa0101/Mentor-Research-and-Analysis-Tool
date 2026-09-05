@@ -1,18 +1,49 @@
 slug: lijingtao
 name: 李景涛
-aliases: []
+aliases:
+- ljt
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 硕导
+email: lijt@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/0a/c30604a443658/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/0a/c30604a443658/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/f3/7d/b1c9555547319cad4af2ac234ce7/587e6dce-033e-47e9-bf48-b7a0651c4871.jpg
+research_direction_raw: 网络与系统安全，网络测量、网络行为学
+detail_url: http://ai.fudan.edu.cn/ljt/list.htm
+profile_url: http://ai.fudan.edu.cn/ljt/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

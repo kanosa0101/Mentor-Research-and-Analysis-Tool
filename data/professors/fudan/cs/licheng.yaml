@@ -1,44 +1,49 @@
 slug: licheng
 name: 李晟
-aliases: []
+aliases:
+- ls
 school: fudan
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-bio_raw: 复旦大学计算与智能创新学院教授、博导。主要研究方向为多媒体内容安全、多媒体内容生成、人工智能安全，在知名国际期刊和会议如IEEE TPAMI、IEEE
-  TIP、IEEE TIFS、IEEE TDSC、NDSS、NeurIPS、CVPR、ICCV等发表论文 100 余篇。获得了上海市科技进步二等奖、中国科技产业化促进会科技创新二等奖，以及IEEE
-  WIFS、IEEE MMSP、世界人工智能大会等多个会议的最佳论文奖或提名奖。主持了国家自然科学基金面上/青年项目、国家重点研发计划子课题、国家自然科学基金重点项目子课题等国家级项目，以及上海市青年科技英才扬帆计划、阿里巴巴创新研究计划、CCF-蚂蚁专项基金等省部级和企业合作项目，研究成果被IEEE
-  Spectrum等国际知名科技媒体专题报道。
+email: lisheng@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/10/c30604a443664/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/10/c30604a443664/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/4f/a7/9d35efad493e841a8ff4833e9541/4758f5e3-3f92-4192-a91a-4782f8aa22a1.jpg
+research_direction_raw: 多媒体内容安全、多媒体内容生成、人工智能安全
+detail_url: http://ai.fudan.edu.cn/ls/list.htm
+profile_url: http://ai.fudan.edu.cn/ls/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/10/c30604a443664/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/10/c30604a443664/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  research_direction_raw:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/10/c30604a443664/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

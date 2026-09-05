@@ -1,52 +1,49 @@
 slug: geweifeng
 name: 戈维峰
-aliases: []
+aliases:
+- gwf
 school: fudan
 dept: cs
 status: enriched
 title: 副教授
-bio_raw: 戈维峰，复旦大学计算与智能创新学院副教授。于华中科技大学、清华大学、香港大学分别获学士、硕士与博士学位，并于2020年荣获香港大学李嘉诚奖和杰出研究生奖提名。主要研究领域包括计算机视觉、认知计算和人形机器人通用智能，在视觉感知理解、知识快速学习及多模态认知推理等方面取得了一系列科研成果。迄今为止，已在人工智能顶级会议和期刊上发表学术论文40余篇，涵盖IEEE
-  Trans和ACM Trans期刊，如TIP、TOG、TMM、TCSVT，以及国际人工智能顶级会议，如CVPR、ICCV、ECCV、NeurIPS、AAAI、ACMMM和ACL等。主持了国家自然科学基金委青年项、上海市科委新一代信息技术重点专项、复旦大学计算机学院优秀青年培育计划等多个项目，参与了科学技术部重点研发计划课题，并入选了复旦大学战略人才培育计划、上海市浦江人才计划和上海市领军人才计划。现担任中国计算机学会青年精英论坛（YOCSEF）上海学术委员，上海计算机学会多媒体专委会秘书长，中国图象图形学学会视觉大数据专委会以及中国人工智能学会具身智能专业委员会委员。曾担任国际顶级期刊IEEE
-  TIP、IEEE TNNLS、IEEE TMM和IEEE TCSVT等审稿人，以及国际学术会议CVPR、ICCV、ECCV、AAAI、NeurIPS、ICML、ICLR等程序委员会委员。
+supervisor: 硕导
+email: wfge@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/d6/c30604a443350/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/d6/c30604a443350/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/3b/3b/91b48f2245568fdb0f02d3c591aa/6ac4f575-661f-493b-892f-3208caf1d8b1.png
+research_direction_raw: 计算机视觉、模式识别、机器学习
+detail_url: http://ai.fudan.edu.cn/gwf/list.htm
+profile_url: http://ai.fudan.edu.cn/gwf/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c3/d6/c30604a443350/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c3/d6/c30604a443350/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

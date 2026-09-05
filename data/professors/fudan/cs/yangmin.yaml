@@ -4,15 +4,45 @@ aliases: []
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: m_yang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/4e/c30604a443470/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/4e/c30604a443470/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/a6/fd/2b0969604c8d9d119c9c4ba26443/7c698398-221e-4d5d-8c5e-835a2f892415.jpg
+research_direction_raw: 网络安全，主要包括恶意代码检测、漏洞分析挖掘、AI 安全、区块链安全、Web 安全和系统安全机制等。
+detail_url: http://ai.fudan.edu.cn/ym_37286/list.htm
+profile_url: http://ai.fudan.edu.cn/ym_37286/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

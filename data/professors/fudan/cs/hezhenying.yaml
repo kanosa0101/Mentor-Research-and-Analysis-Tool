@@ -4,15 +4,45 @@ aliases: []
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: zhenying@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/31/c3/c30604a733635/page.htm
-profile_url: https://cs.fudan.edu.cn/31/c3/c30604a733635/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/be/8b/90ef5d6b4e79b588e55a2919c670/36602958-5200-4517-8446-4797c38b9e3f.png
+research_direction_raw: AI4DB, DB4AI
+detail_url: http://ai.fudan.edu.cn/hzy2/list.htm
+profile_url: http://ai.fudan.edu.cn/hzy2/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

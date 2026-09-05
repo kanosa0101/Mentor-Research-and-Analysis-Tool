@@ -1,37 +1,43 @@
 slug: yeguangnan
 name: 叶广楠
-aliases: []
+aliases:
+- ygn
 school: fudan
 dept: cs
 status: enriched
-title: 研究员
-bio_raw: 叶广楠，复旦大学计算与智能创新学院院长助理，复旦大学金融科技研究院，研究员，博士生导师，国家人工智能学院上海创智学院，教授，国家重点研发计划首席科学家，国家级青年人才计划入选者，上海市领军人才。博士毕业于美国哥伦比亚大学，师从世界著名多媒体领域专家、哥伦比亚大学工程学院院长Shih-Fu
-  Chang教授。曾就职于美国IBM沃森研究院、美国AT&T多媒体实验室、日本NEC北美智能研究院等多家世界著名人工智能研究机构。主要研究领域为金融科技、图模型算法、多模态特征融合、计算机视觉等。主持国家重点研发计划，国家自然科学基金优秀青年科学基金，参与中国工程院战略研究与咨询项目。曾任美国沃森研究院金融风险与检测领域的首席专家和全球负责人，领导了IBM全球7个不同地区的相关科研部门的30多位研究人员，开发了IBM
-  在智能金融领域首个金融风险检测云服务系统，并与多家世界知名的银行和金融机构开展了广泛的项目合作，如日本Mizuho 银行中国银行纽约分行、美国银行、荷兰ING银行、加拿大养老基金等。
+title: 研究员、博导
+supervisor: 博导
+email: yegn@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/5b/f6/c30604a482294/page.htm
-profile_url: https://cs.fudan.edu.cn/5b/f6/c30604a482294/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/b5/b3/491fcdf04dcb84ca6c471ada5494/f26e7c79-ee48-4e33-924e-65cb0034b2ad.jpg
+detail_url: http://ai.fudan.edu.cn/ygn/list.htm
+profile_url: http://ai.fudan.edu.cn/ygn/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/5b/f6/c30604a482294/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/5b/f6/c30604a482294/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

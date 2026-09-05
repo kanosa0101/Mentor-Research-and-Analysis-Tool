@@ -1,18 +1,43 @@
 slug: chentongbing
 name: 陈彤兵
-aliases: []
+aliases:
+- ctb
 school: fudan
 dept: cs
 status: enriched
+title: 讲师
+email: tbchen@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/b6/c30604a443318/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/b6/c30604a443318/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/f1/45/b4ad9f3b48799fdb44547be65def/0eb25280-bf09-4842-ab0b-16acb53d425f.jpg
+research_direction_raw: 数据库和知识库，电子商务
+detail_url: http://ai.fudan.edu.cn/ctb/list.htm
+profile_url: http://ai.fudan.edu.cn/ctb/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

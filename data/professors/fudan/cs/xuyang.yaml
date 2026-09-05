@@ -1,18 +1,49 @@
 slug: xuyang
 name: 徐扬
-aliases: []
+aliases:
+- xy
 school: fudan
 dept: cs
 status: enriched
+title: 教授，博导
+supervisor: 博导
+email: xuy@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/44/c30604a443460/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/44/c30604a443460/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/4a/ca/5f88cc9d48ea8f77acaf495393ca/ffb1acc1-07e8-41cd-b358-1266884d8e95.jpg
+research_direction_raw: 计算机网络、软件定义网络、数据中心网络、分布式机器学习、边缘计算
+detail_url: http://ai.fudan.edu.cn/xy/list.htm
+profile_url: http://ai.fudan.edu.cn/xy/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

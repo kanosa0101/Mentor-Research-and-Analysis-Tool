@@ -1,18 +1,49 @@
 slug: hanhaibin
 name: 阚海斌
-aliases: []
+aliases:
+- khb
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: hbkan@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/00/c30604a443392/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/00/c30604a443392/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/fa/cf/1542efb94e4f98cdc30545daeb2e/e2fffe0e-d166-43fd-b78b-5b5194e5e60c.jpg
+research_direction_raw: 编码与信息论，密码学与信息安全，计算复杂性
+detail_url: http://ai.fudan.edu.cn/khb/list.htm
+profile_url: http://ai.fudan.edu.cn/khb/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

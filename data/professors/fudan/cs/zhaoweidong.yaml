@@ -1,29 +1,43 @@
 slug: zhaoweidong
 name: 赵卫东
-aliases: []
+aliases:
+- zwd
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 2001年于东南大学获博士学位，后进入复旦大学博士后流动站，，主讲深度学习及其应用等课程，2011年赴纽约大学访学。获上海市教学成果奖、上海市教师教学创新大赛一等奖，主持国家一流课程，入选高校计算机专业优秀教师奖励计划。主持国家自然科学基金、企业合作等课题40余项，发表论文100多篇，出版《商务智能（第6版）》《机器学习（第2版）》等教材专著10余部，获上海市科技进步二等奖。持有CDA三级数据科学家认证，为华为、阿里云等企业认证专家。
+title: 副教授、硕导
+supervisor: 硕导
+email: wdzhao@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/95/c30604a443797/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/95/c30604a443797/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/9f/f1/dfba92a34491be18795845fe6649/77a3f63d-e78e-446c-8e15-15a8a57476e4.png
+detail_url: http://ai.fudan.edu.cn/zwd/list.htm
+profile_url: http://ai.fudan.edu.cn/zwd/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/95/c30604a443797/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

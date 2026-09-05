@@ -1,18 +1,49 @@
 slug: hanweili
 name: 韩伟力
-aliases: []
+aliases:
+- hwl
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: wlhan@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/e2/c30604a443362/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/e2/c30604a443362/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/45/3d/c7ef187d47e0b3a04d62504b3688/22b3232a-e8e7-42cf-a6e1-fe5f101a3cf3.jpg
+research_direction_raw: 数据驱动的系统安全、访问控制、人工智能系统安全
+detail_url: http://ai.fudan.edu.cn/hwl/list.htm
+profile_url: http://ai.fudan.edu.cn/hwl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

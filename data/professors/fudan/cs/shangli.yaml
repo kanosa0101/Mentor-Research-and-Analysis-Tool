@@ -1,18 +1,49 @@
 slug: shangli
 name: 尚笠
-aliases: []
+aliases:
+- sl
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: lishang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/4a/c30604a443722/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/4a/c30604a443722/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/f9/53/d1f8d8cb4acebbc52cb56e383333/658708f8-d316-4e68-bb7d-4560c2d14350.png
+research_direction_raw: 计算机与嵌入式系统、人机交互与智能、集成电路与EDA
+detail_url: http://ai.fudan.edu.cn/sl/list.htm
+profile_url: http://ai.fudan.edu.cn/sl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,49 @@
 slug: chenweinan
 name: 陈伟男
-aliases: []
+aliases:
+- cwn
 school: fudan
 dept: cs
 status: enriched
+title: 工程师、专业学位硕导
+supervisor: 硕导
+email: wnchen@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/b8/c30604a443320/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/b8/c30604a443320/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/42/6a/83bdef0e4e5a86d523ed4059e5d8/87225899-7cb9-4f8d-b85a-7452384d7218.jpg
+research_direction_raw: 可重构计算，嵌入式系统，数据采集和监控
+detail_url: http://ai.fudan.edu.cn/cwn/list.htm
+profile_url: http://ai.fudan.edu.cn/cwn/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,41 +1,49 @@
 slug: sunweiwei
 name: 孙未未
-aliases: []
+aliases:
+- sww
 school: fudan
 dept: cs
 status: enriched
 title: 教授
-bio_raw: 复旦大学计算与智能创新学院教授，博士生导师，于复旦大学获学士、硕士和博士学位，复旦大学程序设计竞赛队教练。研究兴趣包括大模型、AI算法、大数据和数据科学，作为项目负责人主持国家863课题、国家自然科学基金项目和企业合作项目等数十项。曾获上海市科技进步奖特等奖、任圆通速递专家工作站首席专家。指导学生曾获上海市优秀硕士学位论文、ACM
-  SIGMOD China优秀博士论文、ACM SIGSPATIAL China优秀博士论文。曾获上海市育才奖、谷歌奖教金、复旦大学优秀研究生导师等荣誉。任中国大学生程序设计竞赛组委会副主席、教育部“101”计划课程建设组专家。
+supervisor: 博导
+email: wwsun@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/58/c30604a443736/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/58/c30604a443736/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/d6/15/ef4015f24f4db335f4efe445525d/7672a9fc-6a42-493e-a86a-395644e3be9e.jpg
+research_direction_raw: 大模型、AI算法、大数据和数据科学
+detail_url: http://ai.fudan.edu.cn/sww/list.htm
+profile_url: http://ai.fudan.edu.cn/sww/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/58/c30604a443736/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/58/c30604a443736/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

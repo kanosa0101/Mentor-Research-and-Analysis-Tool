@@ -1,41 +1,43 @@
 slug: wangzhihui
 name: 王智慧
-aliases: []
+aliases:
+- wzh
 school: fudan
 dept: cs
 status: enriched
-bio_raw: 目前主要研究方向为大数据管理与分析、机器学习与数据挖掘、数据安全与隐私保护等。曾在 Simon Fraser University 学术访问，期间获得
-  Ebco/Epic Visiting Scholar 荣誉称号。当前已承担及参与国家自然科学基金、国家重点研发计划、以及上海市科技创新计划等多项研究工作，在重要国际学术会议及学术期刊上发表论文多篇，曾获
-  DASFAA “Best Paper Award Nomination”、NDBC “萨师煊优秀论文奖” 等表彰。
+title: 讲师、专业学位硕导
+supervisor: 硕导
+email: zhhwang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/79/8b/628823734749828b7667834db053/7d3e5231-7e4d-4cd3-88a5-af51b59421ec.jpg
+detail_url: http://ai.fudan.edu.cn/wzh/list.htm
+profile_url: http://ai.fudan.edu.cn/wzh/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

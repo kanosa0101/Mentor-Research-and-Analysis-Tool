@@ -4,38 +4,39 @@ aliases: []
 school: fudan
 dept: cs
 status: enriched
-title: 教授
+title: 教授、博导
 supervisor: 博导
-bio_raw: 熊贇，复旦大学计算与智能创新学院教授，博导，上海市数据科学重点实验室副主任。曾任中国计算机学会CCF上海青年论坛主席。研究方向数据科学与人工智能。研究工作获国家、省部级及阿里、蚂蚁金服、微信支付、西门子等企业资助。在ICML、Neurips、KDD、TKDE等上发表论文100余篇，授权专利10余项，出版专著4本。获CCF技术发明奖、上海市科技进步奖等奖项。提出一批大数据智能算法，已被应用于证券交易所、医联平台、交通信息中心等上海市大数据建设重要领域。
+email: yunx@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/c8/c30604a443848/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/c8/c30604a443848/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/9e/b1/8181ef854f0595ec632b1aa6e38b/b59c5a22-75f9-488b-bf93-2fd64e4a2475.png
+detail_url: http://ai.fudan.edu.cn/xy_37635/list.htm
+profile_url: http://ai.fudan.edu.cn/xy_37635/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/c8/c30604a443848/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/c8/c30604a443848/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  photo_url:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/c8/c30604a443848/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

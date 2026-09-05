@@ -1,18 +1,43 @@
 slug: wujiangxing
 name: 邬江兴
-aliases: []
+aliases:
+- wjx
 school: fudan
 dept: cs
 status: enriched
+title: 教授
+supervisor: 博导
+email: jxwu@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/28/c30604a443432/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/28/c30604a443432/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/2b/e1/3e557f6c49b9a0ea0431adac331b/b0d8101a-4fdf-4127-a97a-87bec5746d93.png
+detail_url: http://ai.fudan.edu.cn/wjx/list.htm
+profile_url: http://ai.fudan.edu.cn/wjx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,36 +1,43 @@
 slug: zhangjunping
 name: 张军平
-aliases: []
+aliases:
+- zjp
 school: fudan
 dept: cs
 status: enriched
-title: 教授
-bio_raw: 复旦大学计算与智能创新学院教授、博士生导师，中国自动化学会普及工作委员会主任。研究方向包括人工智能、图像处理、生物认证、智能交通等。连续五年（2021—2025）入选全球前2%顶尖科学家榜单终身科学影响力排行榜，谷歌学术引用万余次。著有《人工智能的边界》《人工智能极简史》《爱犯错的智能体》《高质量读研》等书。其中《人工智能的边界》入选25年中国好书8月专榜。《人工智能极简史》2024
-  年获第十九届文津图书奖提名图书（科普类）；《爱犯错的智能体》2020 年获第六届中国科普作家协会优秀科普图书金奖；《高质量读研》重印近20次，广受读者好评。
+title: 教授、博导
+supervisor: 博导
+email: jpzhang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/6a/c30604a443498/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/6a/c30604a443498/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/40/44/dcbaca78479ca0783c12a26d2c0d/b71c577c-02d2-454f-ad98-f27b9569dc23.jpg
+detail_url: http://ai.fudan.edu.cn/zjp/list.htm
+profile_url: http://ai.fudan.edu.cn/zjp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/6a/c30604a443498/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c4/6a/c30604a443498/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,43 @@
 slug: liangjin
 name: 梁瑾
-aliases: []
+aliases:
+- lj
 school: fudan
 dept: cs
 status: enriched
+title: 高级工程师
+supervisor: 硕导
+email: jliang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/1a/c30604a443674/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/1a/c30604a443674/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+detail_url: http://ai.fudan.edu.cn/lj/list.htm
+profile_url: http://ai.fudan.edu.cn/lj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

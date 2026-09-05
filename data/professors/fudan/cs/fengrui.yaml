@@ -1,19 +1,49 @@
 slug: fengrui
 name: 冯瑞
 aliases:
-- ce
+- fr
 school: fudan
 dept: cs
 status: enriched
+title: 研究员、博导
+supervisor: 博导
+email: fengrui@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/ce/c30604a443342/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/ce/c30604a443342/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/f8/38/ece543734559bfb5f4bb374fe1de/f1389c95-85b1-45a9-b273-a2748523adb3.jpg
+research_direction_raw: 人工智能、跨媒体智能、医学影像分析、视频大数据
+detail_url: http://ai.fudan.edu.cn/fr/list.htm
+profile_url: http://ai.fudan.edu.cn/fr/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

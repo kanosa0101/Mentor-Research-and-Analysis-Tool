@@ -1,32 +1,43 @@
 slug: pengxin
 name: 彭鑫
-aliases: []
+aliases:
+- px
 school: fudan
 dept: cs
 status: enriched
-title: 教授
-bio_raw: '复旦大学计算与智能创新学院副院长、教授，国家级高层次人才计划入选者。中国计算机学会杰出会员、软件工程专委会副主任、开源发展委员会常务委员，中国汽车工程学会汽车基础软件分会副主任，《Journal
-  of Software: Evolution and Process》联合主编，《ACM Transactions on Software Engineering
-  and Methodology》、《软件学报》等期刊编委。获“NASAC青年软件创新奖”及“中创软件人才奖”，入选上海市东方英才拔尖项目。研究方向包括软件智能化开发、云原生与AI原生系统、智能汽车与智能制造基础软件等。'
+title: 教授、博导
+supervisor: 博导
+email: pengxin@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/41/c30604a443713/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/41/c30604a443713/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/d5/65/7968a1ce4c47a22d39dc874c1d82/141a899e-b85f-4547-a03e-a737d083a734.png
+detail_url: http://ai.fudan.edu.cn/px/list.htm
+profile_url: http://ai.fudan.edu.cn/px/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/41/c30604a443713/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/41/c30604a443713/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

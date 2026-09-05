@@ -1,18 +1,49 @@
 slug: wujun
 name: 吴俊
-aliases: []
+aliases:
+- wj
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: wujun@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/2c/c30604a443436/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/2c/c30604a443436/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/77/bf/22466f0e4ac2a61da13c85a9b526/2cdf1d13-1d12-48e7-87eb-81962a6fb8eb.png
+research_direction_raw: 无线网络、强化学习&深度学习、信源信道编码、嵌入式系统
+detail_url: http://ai.fudan.edu.cn/wj/list.htm
+profile_url: http://ai.fudan.edu.cn/wj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,49 @@
 slug: zhaowenyun
 name: 赵文耘
-aliases: []
+aliases:
+- zwy
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: wyzhao@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/97/c30604a443799/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/97/c30604a443799/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/c8/01/a09c73cf4ec9b71bfe3ccc9ac2f3/967d0487-1299-4e69-9661-b3139c31de70.jpg
+research_direction_raw: 软件工程、企业应用集成、电子商务
+detail_url: http://ai.fudan.edu.cn/zwy/list.htm
+profile_url: http://ai.fudan.edu.cn/zwy/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

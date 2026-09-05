@@ -1,18 +1,43 @@
 slug: jiangzhongding
 name: 姜忠鼎
-aliases: []
+aliases:
+- jzd
 school: fudan
 dept: cs
 status: enriched
+title: 副教授、硕导
+supervisor: 硕导
+email: zdjiang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/f2/c30604a443378/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/f2/c30604a443378/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+detail_url: http://ai.fudan.edu.cn/jzd/list.htm
+profile_url: http://ai.fudan.edu.cn/jzd/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,37 @@
 slug: xurui
 name: 徐睿
-aliases: []
+aliases:
+- xr
 school: fudan
 dept: cs
 status: enriched
+title: 管理员
+email: xurui@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/3e/c30604a443454/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/3e/c30604a443454/page.htm
+photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
+detail_url: http://ai.fudan.edu.cn/xr/list.htm
+profile_url: http://ai.fudan.edu.cn/xr/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,18 +1,49 @@
 slug: zhangkai
 name: 张凯
-aliases: []
+aliases:
+- zk
 school: fudan
 dept: cs
 status: enriched
+title: 副教授
+supervisor: 博导
+email: zhangk@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/73/c30604a443763/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/73/c30604a443763/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/bb/3d/f16a27824a519e364209819c492e/9b5220d0-8901-4dae-9f15-4a1f7cb7df09.png
+research_direction_raw: 数据库系统、并行于分布式计算、网络系统
+detail_url: http://ai.fudan.edu.cn/zk/list.htm
+profile_url: http://ai.fudan.edu.cn/zk/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

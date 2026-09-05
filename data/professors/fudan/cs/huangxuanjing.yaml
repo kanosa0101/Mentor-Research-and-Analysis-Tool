@@ -1,40 +1,43 @@
 slug: huangxuanjing
 name: 黄萱菁
-aliases: []
+aliases:
+- hxj
 school: fudan
 dept: cs
 status: enriched
-title: 特聘教授
-bio_raw: 黄萱菁，复旦大学特聘教授，国家级领军人才。主要从事人工智能、自然语言处理和大语言模型研究。兼任中国计算机学会理事/自然语言处理专委会主任、中国中文信息学会理事、国际计算语言学学会执委/亚太分会主席。在国际重要学术刊物和会议发表论文200余篇，被引3万余次，8次入选优秀论文奖。获钱伟长中文信息处理科学技术奖、人工智能全球女性学者、全球前2%顶尖科学家、福布斯中国科技女性、上海市育才奖、复旦大学“钟扬式的好老师”、复旦大学“研究生心目中的好导师”、复旦大学“廖凯原最受欢迎教师奖”等多项荣誉。
+title: 教授、博导
+supervisor: 博导
+email: xjhuang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c3/e8/c30604a443368/page.htm
-profile_url: https://cs.fudan.edu.cn/c3/e8/c30604a443368/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/df/a8/986c401841678676fb70a2a4f206/30a4c38e-d753-41b7-bc5d-6230e34d9e56.jpg
+detail_url: http://ai.fudan.edu.cn/hxj/list.htm
+profile_url: http://ai.fudan.edu.cn/hxj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c3/e8/c30604a443368/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c3/e8/c30604a443368/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

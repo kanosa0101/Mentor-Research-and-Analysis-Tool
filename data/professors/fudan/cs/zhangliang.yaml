@@ -4,15 +4,45 @@ aliases: []
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: lzhang@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/77/c30604a443767/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/77/c30604a443767/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/1c/20/6da1d322448194fc045a3e3dde18/3411b203-efaf-45b5-8bf8-be3fba21f21d.jpg
+research_direction_raw: Web 与服务计算，以数据为中心的工作流
+detail_url: http://ai.fudan.edu.cn/zl_37515/list.htm
+profile_url: http://ai.fudan.edu.cn/zl_37515/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

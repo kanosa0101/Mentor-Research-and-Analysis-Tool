@@ -1,37 +1,43 @@
 slug: zhaojin
 name: 赵进
-aliases: []
+aliases:
+- zj
 school: fudan
 dept: cs
 status: enriched
 title: 教授
-bio_raw: 赵进，教授，研究方向主要包括网络系统结构、等。在网络领域的重要国际期刊和会议上发表学术论文50余篇。作为项目负责人，研究工作得到了国家自然科学基金、重点研发计划、知名互联网企业的资助。担任网络领域多个知名期刊和会议的编委或TPC、如IEEE
-  Transactions on Network and Service Management的编委、IEEE INFOCOM 等会议的程序委员会委员。担任ACM
-  MobiCom 2025出版主席，NoF 2022 Demo共同主席，CNSM 2022 Student Travel Grants共同主席。获得过上海市科技进步一等奖、上海市自然科学二等奖等。
+supervisor: 博导
+email: jzhao@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c5/91/c30604a443793/page.htm
-profile_url: https://cs.fudan.edu.cn/c5/91/c30604a443793/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/6d/d0/9ab9ab7641c29fdcde56259291cb/3f196ca1-6c10-45ea-a9b5-c10c1e43a58a.jpg
+detail_url: http://ai.fudan.edu.cn/zj/list.htm
+profile_url: http://ai.fudan.edu.cn/zj/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/91/c30604a443793/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
-  bio_raw:
+  email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/c5/91/c30604a443793/page.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

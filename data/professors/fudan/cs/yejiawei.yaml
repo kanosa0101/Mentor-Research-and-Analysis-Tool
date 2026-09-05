@@ -1,18 +1,43 @@
 slug: yejiawei
 name: 叶家炜
-aliases: []
+aliases:
+- yjw
 school: fudan
 dept: cs
 status: enriched
+title: 工程师
+email: jwye@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/60/c30604a443488/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/60/c30604a443488/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/86/00/f3625bec42bfbe58f6c54c28b682/3bae25a1-6b79-4aa6-8b72-14435557feaa.jpg
+research_direction_raw: 计算机网络，信息安全
+detail_url: http://ai.fudan.edu.cn/yjw/list.htm
+profile_url: http://ai.fudan.edu.cn/yjw/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto

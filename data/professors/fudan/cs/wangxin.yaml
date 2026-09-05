@@ -1,18 +1,49 @@
 slug: wangxin
 name: 王新
-aliases: []
+aliases:
+- wx
 school: fudan
 dept: cs
 status: enriched
+title: 教授、博导
+supervisor: 博导
+email: xinw@fudan.edu.cn
 institutes: []
-detail_url: https://cs.fudan.edu.cn/c4/14/c30604a443412/page.htm
-profile_url: https://cs.fudan.edu.cn/c4/14/c30604a443412/page.htm
+photo_url: https://cs.fudan.edu.cn/_upload/article/images/83/03/42dd3d40446d97f80b073cdd1685/0769704d-7ca1-40f2-9a35-1c9a253df44d.jpg
+research_direction_raw: 新一代互联网体系结构、无线与移动网络、数据中心网络、网络存储系统等
+detail_url: http://ai.fudan.edu.cn/wx/list.htm
+profile_url: http://ai.fudan.edu.cn/wx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
     origin: crawled
-    source: https://cs.fudan.edu.cn/szdw/list.htm
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
