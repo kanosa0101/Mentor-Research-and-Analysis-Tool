@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+email: xwliu@tongji.edu.cn
 phone: 通讯地址上海市曹安公路4800号电信大楼刘锡伟，1982年生，2008年博士毕业于复旦大学数学科学学院（硕博连读），获上海市优秀毕业生称号。2010年，从复旦大学物理学博士后流动站出站后进入同济大学电子与信息工程学院计算机科学与技术系任教，历任讲师、副教授。201...
 bio_raw: '姓　　名
 
@@ -92,11 +93,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2806.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2806.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2806.htm
     fetched_at: '2026-09-03'

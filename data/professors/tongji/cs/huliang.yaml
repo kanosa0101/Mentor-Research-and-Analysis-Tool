@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+email: lianghu@tongji.edu.cn
 phone: 通讯地址上海市曹安公路4800号电信学院420室胡亮，分别在上海交通大学计算机科学与工程系，获得计算机应用技术博士
 bio_raw: '姓　　名
 
@@ -82,11 +83,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2811.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2811.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2811.htm
     fetched_at: '2026-09-03'

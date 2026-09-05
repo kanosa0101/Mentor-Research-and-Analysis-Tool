@@ -83,10 +83,11 @@ bio_raw: 'E-Mail：weigong@ustc.edu.cn
 
   【更新于2025年1月】'
 institutes: []
+homepage: https://ubiot.ustc.edu.cn/weigong/
 detail_url: http://cs.ustc.edu.cn/2020/0828/c23235a460078/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0828/c23235a460078/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -120,6 +121,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0828/c23235a460078/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460078/page.htm
     fetched_at: '2026-09-03'

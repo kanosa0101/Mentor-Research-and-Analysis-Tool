@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: xupf@bnu.edu.cn
 bio_raw: 北京师范大学程序设计竞赛队主教练，近五年指导队伍获ICPC/CCPC获金/银牌三十余枚。主要研究方向为机器学习、人工智能教育，发表相关论文四十余篇。主要教授课程为《信息竞赛师资培训》。
 institutes: []
 photo_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/images/2025-01/04363c20869d4be1b005a86defd679da.png
@@ -13,7 +14,7 @@ research_direction_raw: 人工智能教育
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/f1f954d1f06648ce8e259f8c56e67283.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/f1f954d1f06648ce8e259f8c56e67283.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/f1f954d1f06648ce8e259f8c56e67283.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/f1f954d1f06648ce8e259f8c56e67283.htm
     fetched_at: '2026-09-04'

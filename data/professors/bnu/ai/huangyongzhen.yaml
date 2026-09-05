@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 081200计算机科学与技术
+email: huangyongzhen@bnu.edu.cn
 bio_raw: '黄永祯
 
   ，湖南郴州人，2006年毕业于华中科技大学获学士学位，2011年毕业于中国科学院自动化所获博士学位(师从谭铁牛院士),现任北京师范大学教授、多模态感知与计算团队负责人，研究方向包括计算机视觉、多模态大模型、具身智能、AI4Science等。
@@ -22,7 +23,7 @@ research_direction_raw: 计算机视觉与模式识别
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -76,6 +77,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm
     fetched_at: '2026-09-04'

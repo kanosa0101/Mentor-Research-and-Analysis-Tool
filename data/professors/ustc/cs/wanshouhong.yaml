@@ -5,6 +5,8 @@ school: ustc
 dept: cs
 status: enriched
 title: 副教授
+email: wansh@ustc.edu.cn
+phone: E - Mail：wansh@ustc.edu.cn
 bio_raw: '电　话：
 
   E - Mail：wansh@ustc.edu.cn
@@ -81,7 +83,7 @@ institutes: []
 detail_url: http://cs.ustc.edu.cn/2020/0906/c23239a460133/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23239a460133/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -105,6 +107,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460133/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460133/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460133/page.htm
     fetched_at: '2026-09-03'

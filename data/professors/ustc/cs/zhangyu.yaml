@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: yuzhang@ustc.edu.cn
 phone: (0551)63603804
 bio_raw: '电  话：(0551)63603804
 
@@ -154,10 +155,11 @@ bio_raw: '电  话：(0551)63603804
 
   张昱, 陈意云, 郑启龙. 编译原理课程的教学方法和教材建设. 中国大学教学, 61-62, 2005.7.'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~yuzhang
 detail_url: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -191,6 +193,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23235a460147/page.htm
     fetched_at: '2026-09-03'

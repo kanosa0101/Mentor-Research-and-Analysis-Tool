@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 讲师
+email: yuhh@jlu.edu.cn
 phone: 0431-85166478
 bio_raw: '姓名：于海鸿
 
@@ -124,6 +125,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1211/19220.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1211/19220.htm
     fetched_at: '2026-09-05'

@@ -4,9 +4,9 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
-title: 教授
-phone: 通讯地址上海市曹安公路4800号智信馆杨恺现任同济大学长聘教授，上海自主智能无人系统科学中心博导，上海计算机学会网络专委会副主任，国家级人才。杨恺博士分别在东南大学,
-  新加坡国立大学, 哥伦比亚大学获得学士, 硕士,和博士
+title: 长聘教授
+email: kaiyang@tongji.edu.cn
+phone: 通讯地址上海市曹安公路4800号智信馆杨恺现任同济大学长聘教授，上海自主智能无人系统科学中心博导，上海计算机学会网络专委会副主任，国家级人才。杨恺博士分别在东南大学,新加坡国立大学,哥伦比亚大学获得学士,硕士,和博士
 bio_raw: '姓　　名
 
   杨恺
@@ -91,11 +91,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2793.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2793.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2793.htm
     fetched_at: '2026-09-03'

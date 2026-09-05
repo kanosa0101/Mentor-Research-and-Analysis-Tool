@@ -4,8 +4,9 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
-title: 教授
-phone: 65982954通讯地址上海市曹安公路4800号同济大学电信大楼同济大学教授、博士生导师，计算机科学与技术专业负责人。现任同济大学研究生院副院长，曾任计算机科学与技术系系主任。1991年于华中师范大学计算机系获理学学士
+title: 长聘教授
+email: jhguan@tongji.edu.cn
+phone: '65982954'
 bio_raw: '姓　　名
 
   关佶红
@@ -106,11 +107,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2814.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2814.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2814.htm
     fetched_at: '2026-09-03'

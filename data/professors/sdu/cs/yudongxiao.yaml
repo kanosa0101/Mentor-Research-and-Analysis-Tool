@@ -5,6 +5,7 @@ school: sdu
 dept: cs
 status: enriched
 title: 教授
+email: dxyu@sdu.edu.cn
 bio_raw: '于东晓
 
   教授、博士生导师。
@@ -78,6 +79,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1070/5367.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://www.cs.sdu.edu.cn/info/1070/5367.htm
     fetched_at: '2026-09-03'

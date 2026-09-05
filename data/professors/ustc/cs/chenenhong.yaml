@@ -111,10 +111,11 @@ bio_raw: '电　话：(0551)63601558
   Rao: Learning to detect subway arrivals for passengers on a train. Frontiers of
   Computer Science 8(2): 316-329 (2014)'
 institutes: []
+homepage: http://bigdata.ustc.edu.cn/
 detail_url: http://cs.ustc.edu.cn/2020/0806/c23235a460077/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0806/c23235a460077/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -148,6 +149,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0806/c23235a460077/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0806/c23235a460077/page.htm
     fetched_at: '2026-09-03'

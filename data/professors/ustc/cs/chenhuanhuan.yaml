@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: hchen@ustc.edu.cn
+phone: E-Mail：  hchen@ustc.edu.cn
 bio_raw: '电　话：
 
   E-Mail：  hchen@ustc.edu.cn
@@ -107,10 +108,11 @@ bio_raw: '电　话：
   Tasks for Clustered Multi-Task Learning. In Proceedings of the ACM SIGKDD international
   conference on Knowledge Discovery and Data Mining (KDD''19), US, 2019.'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~hchen/
 detail_url: http://cs.ustc.edu.cn/2020/0828/c23235a460073/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0828/c23235a460073/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -139,6 +141,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0828/c23235a460073/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0828/c23235a460073/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460073/page.htm
     fetched_at: '2026-09-03'

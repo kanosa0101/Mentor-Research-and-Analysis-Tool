@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+email: wenyy@neusoft.com
 bio_raw: '闻英友，男，博士，教授，博士生导师，计算机软件国家工程研究中心副主任，国家重点研发计划首席科学家，中文信息学会大模型专家委员会委员，辽宁省科技伦理委员会委员，兼任辽宁省网络空间安全专业技术创新中心主任，中国医科大学客座教授；曾任教育部计算机类专业教指委委员。研究方向：人工智能、生成式
 
   AI
@@ -101,6 +102,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2022/1116/c6641a222289/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2022/1116/c6641a222289/page.htm
     fetched_at: '2026-09-04'

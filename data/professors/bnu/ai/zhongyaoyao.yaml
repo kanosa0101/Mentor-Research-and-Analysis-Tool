@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 讲师
 supervisor: 硕导
+email: zhongyy@bnu.edu.cn
 bio_raw: '研究兴趣为
 
   教育
@@ -49,7 +50,7 @@ research_direction_raw: 教育 人工智能、生物特征识别、大模型智�
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zj/863ae7c8f61141a6a88b620a5d00ffbd.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zj/863ae7c8f61141a6a88b620a5d00ffbd.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -83,6 +84,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zj/863ae7c8f61141a6a88b620a5d00ffbd.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zj/863ae7c8f61141a6a88b620a5d00ffbd.htm
     fetched_at: '2026-09-04'

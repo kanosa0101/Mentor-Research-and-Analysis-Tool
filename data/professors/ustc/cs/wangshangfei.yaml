@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: sfwang@ustc.edu.cn
 phone: 0551-63602824
 bio_raw: '电　话： 0551-63602824
 
@@ -88,10 +89,11 @@ bio_raw: '电　话： 0551-63602824
   Unit Recognition with Domain Knowledge. IEEE Trans. on Cybernetics, 48(11): 3265-3276
   (2018)'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~sfwang/
 detail_url: http://cs.ustc.edu.cn/2020/0706/c23235a460101/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0706/c23235a460101/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -115,6 +117,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0706/c23235a460101/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0706/c23235a460101/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0706/c23235a460101/page.htm
     fetched_at: '2026-09-03'

@@ -5,6 +5,7 @@ school: bnu
 dept: ai
 status: enriched
 supervisor: 硕导
+email: hengyu@bnu.edu.cn
 bio_raw: 北京师范大学人工智能学院副教授，2014年到2023年先后在三星北京研究院、搜狗、阿里巴巴和Shopee从事多语言信息处理技术的研究，并将其成功应用于面向全球电子商务的商业化场景，发表学术论文20余篇，获得ACL杰出论文奖，浙江省科学技术进步二等奖，达摩奖等荣誉。2024年起在北京师范大学任教，主要研究领域为大语言模型，表示学习，自然语言处理。欢迎感兴趣的老师、研究生和本科生随时通过邮件或微信联系进行学术交流与合作。
 institutes: []
 photo_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/images/2024-03/52ffda66-687f-4610-9e5a-3b01038798fa.jpeg
@@ -12,7 +13,7 @@ research_direction_raw: 大语言模型、表示学习、自然语言处理
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/a21efea8a5774f6fbb18ee5a8b803d23.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/a21efea8a5774f6fbb18ee5a8b803d23.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/a21efea8a5774f6fbb18ee5a8b803d23.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/a21efea8a5774f6fbb18ee5a8b803d23.htm
     fetched_at: '2026-09-04'

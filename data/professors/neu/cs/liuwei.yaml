@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+email: lwei@neusoft.com
 bio_raw: '刘威，东北大学控制理论与控制工程博士毕业，现任东软睿驰汽车技术（沈阳）有限公司自动驾驶业务线副总经理，东北大学教授、博士生导师。带领团队重点研究辅助驾驶和自动驾驶环境感知、传感器融合、决策控制、高性能计算等关键技术，研发出辅助驾驶产品成功在美国、日本及国内市场销售。兼任中国人工智能学会智能驾驶专业委员会委员、中国汽车工程学会智能交通分会理事、汽车电子产业联盟专家委员会、辽宁省人工智能学会理事会理事。作为负责人，承担国家重点研发计划、自然科学基金、电子基金、
 
   863
@@ -100,6 +101,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2022/1116/c6641a222292/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2022/1116/c6641a222292/page.htm
     fetched_at: '2026-09-04'

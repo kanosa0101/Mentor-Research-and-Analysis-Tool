@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: bhua@ustc.edu.cn
 phone: (0551)63607043
 bio_raw: '电　话： (0551)63607043
 
@@ -78,10 +79,11 @@ bio_raw: '电　话： (0551)63607043
   Symposium on Principles and Practice of Parallel Programming (PPoPP), New York ,
   USA , Mar. 29-31, 2006．'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~bhua/
 detail_url: http://cs.ustc.edu.cn/2020/0426/c23235a460080/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0426/c23235a460080/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.network
   origin: computed
@@ -105,6 +107,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0426/c23235a460080/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0426/c23235a460080/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0426/c23235a460080/page.htm
     fetched_at: '2026-09-03'

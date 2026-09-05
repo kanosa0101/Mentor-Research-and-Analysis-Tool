@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 副教授
+email: huangwc@ustc.edu.cn
 bio_raw: 'E - Mail：huangwc@ustc.edu.cn
 
   个人主页：
@@ -77,10 +78,11 @@ bio_raw: 'E - Mail：huangwc@ustc.edu.cn
   Lu. Fine-grained Refinement on TPM-based Protocol Applications. IEEE Transactions
   on Information Forensics and Security. vol.8, no.6, 2013: 1013-1026. (CCF Rank A)'
 institutes: []
+homepage: https://faculty.ustc.edu.cn/huangwenchao/
 detail_url: http://cs.ustc.edu.cn/2020/0906/c23239a460119/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23239a460119/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -109,6 +111,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460119/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460119/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460119/page.htm
     fetched_at: '2026-09-03'

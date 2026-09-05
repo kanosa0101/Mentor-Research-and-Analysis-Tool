@@ -530,10 +530,11 @@ bio_raw: '电话:0551-63603583
   and 25.7 billion grids，In the Proceedings of the International Conference for High
   Performance Computing, Networking, Storage and Analysis(SC)，2021.11'
 institutes: []
+homepage: http://acsa.ustc.edu.cn/
 detail_url: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -577,6 +578,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0426/c23235a460072/page.htm
     fetched_at: '2026-09-03'

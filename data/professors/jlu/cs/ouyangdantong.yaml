@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+email: ouyd@jlu.edu.cn
 phone: 0431-85167836
 bio_raw: '姓名： 欧阳丹彤
 
@@ -191,6 +192,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19046.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1367/19046.htm
     fetched_at: '2026-09-04'

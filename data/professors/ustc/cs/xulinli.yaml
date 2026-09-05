@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: linlixu@ustc.edu.cn
 bio_raw: 'E- mail：linlixu@ustc.edu.cn
 
   个人主页：
@@ -58,10 +59,11 @@ bio_raw: 'E- mail：linlixu@ustc.edu.cn
   Linli Xu, James Neufeld, Bryce Larson and Dale Schuurmans. Maximum Margin Clustering.
   In Advances in Neural Information Processing Systems (NIPS-04), pages 1537-1544.'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~linlixu/
 detail_url: http://cs.ustc.edu.cn/2020/0905/c23235a460141/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0905/c23235a460141/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -80,6 +82,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23235a460141/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23235a460141/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23235a460141/page.htm
     fetched_at: '2026-09-03'

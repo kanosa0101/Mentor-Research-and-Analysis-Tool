@@ -125,7 +125,9 @@ def parse_detail(cfg, html, url):
         if "title" in out and "supervisor" in out and "email" in out \
                 and "research_directions" in out:
             break
-        if "职称" in line[:4] and "title" not in out:
+        # 一行可能同时含 职称 和 邮箱("职称：教授 博士生导师 邮箱：xx@yy"),
+        # 各字段独立判断, 不能用 elif 链
+        if "title" not in out and "职称" in line[:4]:
             m = re.search(r"职称[：:]\s*(.+)", line)
             v = m.group(1) if m else ""
             tm = re.search(r"(讲席|特聘|长聘|兼职|客座|荣誉)?(教授|副教授|助理教授|讲师|助教|"
@@ -136,17 +138,21 @@ def parse_detail(cfg, html, url):
                           for s in re.findall(r"(博士生导师|硕士生导师)", v)})
             if sup:
                 out["supervisor"] = "、".join(sup)
-        elif "research_directions" not in out and line.startswith("研究方向"):
+        if "research_directions" not in out and line.startswith("研究方向"):
             out["research_directions"] = [
                 x.strip() for x in re.split(r"[、，,;；]", line.split("：", 1)[-1])
                 if x.strip()][:20]
-        elif "email" not in out and (line.startswith("邮箱") or line.startswith("Email")):
-            m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", line)
+        if "email" not in out and re.search(r"邮箱|Email", line, re.I):
+            m = (re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", line)
+                 or (re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}",
+                               lines[lines.index(line) + 1])
+                     if line.rstrip("：:").endswith(("邮箱", "Email"))
+                     and lines.index(line) + 1 < len(lines) else None))
             if m:
                 out["email"] = m.group(0)
-        elif "phone" not in out and (line.startswith("办公电话") or line.startswith("电话")):
+        if "phone" not in out and (line.startswith("办公电话") or line.startswith("电话")):
             out["phone"] = line.split("：", 1)[-1].strip()
-        elif "office_address" not in out and (line.startswith("办公地点") or line.startswith("办公地址")):
+        if "office_address" not in out and (line.startswith("办公地点") or line.startswith("办公地址")):
             out["office_address"] = line.split("：", 1)[-1].strip()
 
     # ---- 简介与研究方向栏目 ----

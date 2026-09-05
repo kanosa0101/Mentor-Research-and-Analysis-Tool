@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 讲师
+email: fengss@jlu.edu.cn
 phone: '85166478'
 bio_raw: '姓名：冯莎莎
 
@@ -90,6 +91,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1211/19237.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1211/19237.htm
     fetched_at: '2026-09-05'

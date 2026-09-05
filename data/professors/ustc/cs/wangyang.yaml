@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: angyan@ustc.edu.cn
+phone: 0512-65007182
 bio_raw: '电 话：
 
   0512-65007182
@@ -244,10 +245,11 @@ bio_raw: '电 话：
 
   [更新于2025年7月】'
 institutes: []
+homepage: https://di.ustc.edu.cn/_upload/tpl/15/71/5489/template5489/PersonalSite/index.html
 detail_url: http://cs.ustc.edu.cn/2020/0906/c23235a460136/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23235a460136/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -276,6 +278,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23235a460136/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23235a460136/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23235a460136/page.htm
     fetched_at: '2026-09-03'

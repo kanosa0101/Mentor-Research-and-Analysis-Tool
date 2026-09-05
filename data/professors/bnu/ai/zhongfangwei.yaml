@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 副教授
 supervisor: 博导、硕导
+email: fangweizhong@bnu.edu.cn
 bio_raw: '钟方威，北京师范大学人工智能学院副教授，博士生导师。博士毕业于北京大学计算机学院，后在北京大学智能学院从事博士后研究。入选国家博士后创新人才支持计划、北京市科技新星计划，获
   ACM 中国人工智能分会新星奖、优秀博士论文奖等荣誉。
 
@@ -18,7 +19,7 @@ research_direction_raw: 认知推理、自主智能体、具身智能、多智�
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/067725da68f443e09e675307b4e7132a.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/067725da68f443e09e675307b4e7132a.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.robotics
   origin: computed
@@ -52,6 +53,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/067725da68f443e09e675307b4e7132a.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/067725da68f443e09e675307b4e7132a.htm
     fetched_at: '2026-09-04'

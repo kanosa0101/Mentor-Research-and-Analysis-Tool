@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+email: siyang@163.com
 phone: 通讯地址上海市曹安公路4800号电信大楼顾嗣扬，1994年11月毕业于上海交通大学，获博士
 bio_raw: '姓　　名
 
@@ -79,11 +80,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2840.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2840.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1063/2840.htm
     fetched_at: '2026-09-03'

@@ -5,13 +5,14 @@ school: bnu
 dept: ai
 status: enriched
 title: 教授
+email: hejun@bnu.edu.cn
 institutes: []
 photo_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/images/2024-03/0675320e93d3434eba59d040c72eafed.jpg
 research_direction_raw: 图像处理、模式识别
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/c4e3eb667c854961bd74b6b7875e0fb7.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/c4e3eb667c854961bd74b6b7875e0fb7.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zgj/c4e3eb667c854961bd74b6b7875e0fb7.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zgj/c4e3eb667c854961bd74b6b7875e0fb7.htm
     fetched_at: '2026-09-04'

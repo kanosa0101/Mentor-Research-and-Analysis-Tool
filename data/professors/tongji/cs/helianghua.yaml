@@ -5,7 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
-phone: 021-69589867通讯地址上海市曹安公路4800号电信大楼何良华，教授，博导。2005年博士毕业于东南大学后，进入同济大学控制科学与工程博士后站，2007年出站后留校任教。入选上海市启明星计划、教育部新世纪人才计划、“长...
+email: helianghua@tongji.edu.cn
+phone: 021-69589867
 bio_raw: '姓　　名
 
   何良华
@@ -90,11 +91,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2812.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2812.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2812.htm
     fetched_at: '2026-09-03'

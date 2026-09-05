@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: shaokui@bnu.edu.cn
 bio_raw: '张少魁，北京师范大学人工智能学院副教授、硕士生导师。他于2023年6月在清华大学计算机系取得博士学位；于2025年7月在清华大学计算机系博士后出站，均师从张松海教授。
 
   张少魁的研究方向为计算机图形学、虚拟现实和三维数字场景构建，主要讨论如何度量物体间的空间关联关系，基于几何算法/扩散模型/大模型/多模态输入/交互，以智能、高效且可控地构建三维场景。他已在相关领域发表八篇一作CCF-A类期刊/会议长文。
@@ -17,7 +18,7 @@ research_direction_raw: 计算机图形学、虚拟现实、数字三维场景�
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/3e9b60d67593492cbdb5db55cdd2b3dd.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/3e9b60d67593492cbdb5db55cdd2b3dd.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -61,6 +62,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/3e9b60d67593492cbdb5db55cdd2b3dd.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/3e9b60d67593492cbdb5db55cdd2b3dd.htm
     fetched_at: '2026-09-04'

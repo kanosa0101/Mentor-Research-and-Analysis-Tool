@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: xiaomj@ustc.edu.cn
 phone: 0512-87161312
 bio_raw: '电　话： 0512-87161312
 
@@ -77,10 +78,11 @@ bio_raw: '电　话： 0512-87161312
   Routing in Mobile Social Networks. IEEE INFOCOM, April 14-19, Turin, Italy, 2013.(CCF
   A类国际会议)'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~xiaomj
 detail_url: http://cs.ustc.edu.cn/2020/0827/c23235a460087/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0827/c23235a460087/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -119,6 +121,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460087/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460087/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460087/page.htm
     fetched_at: '2026-09-03'

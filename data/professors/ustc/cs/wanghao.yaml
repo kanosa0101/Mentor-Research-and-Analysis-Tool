@@ -306,10 +306,11 @@ bio_raw: 'Email:
 
   【更新于2025年7月】'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~wanghao3/
 detail_url: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
 profile_url: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -338,6 +339,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
     fetched_at: '2026-09-03'

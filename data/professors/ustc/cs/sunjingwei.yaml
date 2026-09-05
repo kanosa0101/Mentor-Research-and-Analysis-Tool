@@ -128,10 +128,11 @@ bio_raw: 'E
 
   【更新于2026年3月】'
 institutes: []
+homepage: https://faculty.ustc.edu.cn/sunjingwei/zh_CN/index.htm
 detail_url: http://cs.ustc.edu.cn/2021/0113/c23239a579719/page.htm
 profile_url: http://cs.ustc.edu.cn/2021/0113/c23239a579719/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -165,6 +166,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2021/0113/c23239a579719/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/0113/c23239a579719/page.htm
     fetched_at: '2026-09-03'

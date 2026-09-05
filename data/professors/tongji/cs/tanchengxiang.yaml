@@ -5,7 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
-phone: 通讯地址上海市曹安公路4800号电信大楼谭成翔，1965年生, 工学博士（1994年），工学学士（1985年），博士生导师（2000年起）、信息安全专业负责人，国家互联网信息办公室教育部“网络空间国际治理研究基地”（同济）副主任，上...
+email: jerrytan@tongji.edu.cn
+phone: 通讯地址上海市曹安公路4800号电信大楼谭成翔，1965年生,工学博士（1994年），工学学士（1985年），博士生导师（2000年起）、信息安全专业负责人，国家互联网信息办公室教育部“网络空间国际治理研究基地”（同济）副主任，上...
 bio_raw: '姓　　名
 
   谭成翔
@@ -71,11 +72,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2803.htm
+    fetched_at: '2026-09-03'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2803.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2803.htm
     fetched_at: '2026-09-03'

@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 教授
 supervisor: 博导、硕导
+email: zhen.cui@bnu.edu.cn
 bio_raw: '曾入选国家高层次青年人才计划，并获得江苏省杰出青年基金资助。研究涉及计算机视觉、模式识别等领域，近期主要聚焦于
 
   概率分布学习（扩散模型、概率流等）、图深度学习（Graph Deep Learning）与深度强化学习
@@ -33,7 +34,7 @@ research_direction_raw: 计算机视觉、模式识别
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/0d50b4c5d12c429dbe8e4dd73c190bf2.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zgj/0d50b4c5d12c429dbe8e4dd73c190bf2.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -72,6 +73,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zgj/0d50b4c5d12c429dbe8e4dd73c190bf2.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zgj/0d50b4c5d12c429dbe8e4dd73c190bf2.htm
     fetched_at: '2026-09-04'

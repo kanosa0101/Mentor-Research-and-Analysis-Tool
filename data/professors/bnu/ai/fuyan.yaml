@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: fuyan@bnu.edu.cn
 bio_raw: 研究领域包括机器学习，信息检索及自然语言处理等。承担课程包括机器学习、现代信息检索导论、软件工程、信息技术及应用、计算思维概论等。
 institutes: []
 photo_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/images/2023-11/09c943f5a9b04970b5a25f8209373081.jpeg
@@ -13,7 +14,7 @@ research_direction_raw: 机器学习、信息检索、自然语言处理
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/0560ddc56e984b978df7c24232024cc2.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/0560ddc56e984b978df7c24232024cc2.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.nlp
   origin: computed
@@ -52,6 +53,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/0560ddc56e984b978df7c24232024cc2.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/0560ddc56e984b978df7c24232024cc2.htm
     fetched_at: '2026-09-04'

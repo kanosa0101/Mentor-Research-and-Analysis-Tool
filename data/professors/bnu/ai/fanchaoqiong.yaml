@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 讲师
 supervisor: 硕导
+email: fcq@bnu.edu.cn
 bio_raw: 主要从事强化学习、深度学习、类脑神经网络、智能决策等领域的研究。主持国家自然科学基金青年基金1项、中央高校基本科研业务费专项资助项目1项，以及多项企业横向合作项目；参与国家自然科学基金重点项目。近年来在IEEE
   TMC、TWC、Research等国内外知名期刊和会议上发表论文20余篇，申请专利10余项。
 institutes: []
@@ -14,7 +15,7 @@ research_direction_raw: 强化学习、深度学习、类脑神经网络、智�
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zj/1eeea5c75aeb43ff83621364205590c7.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zj/1eeea5c75aeb43ff83621364205590c7.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -48,6 +49,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zj/1eeea5c75aeb43ff83621364205590c7.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zj/1eeea5c75aeb43ff83621364205590c7.htm
     fetched_at: '2026-09-04'

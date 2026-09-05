@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 email: jianhui@ustc.edu.cn
+phone: （0
 bio_raw: '电  话：
 
   （0
@@ -135,10 +136,11 @@ bio_raw: '电  话：
 
   , Jerusalem, Israel, March 8-12 2021. accepted.'
 institutes: []
+homepage: http://staff.ustc.edu.cn/~jianhui
 detail_url: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
 profile_url: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.db
   origin: computed
@@ -162,6 +164,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
     fetched_at: '2026-09-03'

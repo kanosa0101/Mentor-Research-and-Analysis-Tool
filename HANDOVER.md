@@ -208,7 +208,7 @@ provenance:                # 每字段出处——工具的立身之本
 24. **sudy WP 通用查询接口**：上科大 `/_wp3services/generalQuery?queryObj=teacherHome` 是 **POST** 表单（siteId/conditions(exField8=分类)/returnInfos/rows=999），GET 会 500；请求须 trust_env=False + X-Requested-With 头。字段：title=姓名、exField1=职称+博导、exField4=方向、exField5=研究中心
 25. **"SPA"结论要复检**：南科大被记为"JS 卡片加载"，实际是服务端渲染卡片（.teacherlist）——旧结论是渲染没等够/选择器没匹配上的误报。接手时先重新核实再信文档
 26. 东南师资三频道（按职称/按方向/按系别）是纯文本名单（h2 + div.ry-md>p.ry-xm），无教师链接——三页按姓名合并出 职称/方向/系别；师资博士后（ry-bz 标注）不入库
-27. 邮箱回归（2026-09-05）：低覆盖院系逐一核实——hit/nwpu 教师系统网络不可达（直连重置/代理503）、iie/seu 官网无详情页、zju 瑞数反爬、csu/xidian/bnu/xjtu/tongji 页面确实没写。**别再在这些院系的解析上花时间**
+27. **邮箱回归（2026-09-05 两轮）**：低覆盖院系必须抽查页面验证，不能凭解析结果断言"官网没有"。第一轮误判教训：北师大/同济/中科大的邮箱明明在页面里（电子邮箱变体/同行多字段/E-Mail 带空格/mailto 编码双邮箱/meta 无冒号标签），解析器没吃到。修复后 bnu 32→73%、ustc 64→97%、tongji 30→58%、sdu 52→64%、jlu 34→43%。**确认是真缺失的**：hit（jsml 无链接且教师系统网络不可达）、iie/seu（无详情页）、xjtu（页面无密文 span）、zju（瑞数，简介已通过 session cookie 绕过）。**neu 注意**：页脚邮箱 neucse@cse.neu.edu.cn 是学院公邮（neu_cs 钩子已排除），本人邮箱在简介"电子邮件 xxx"句式里（53% 上限）
 
 ## 11. 操作手册
 

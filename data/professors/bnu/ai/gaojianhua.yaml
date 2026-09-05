@@ -4,6 +4,7 @@ aliases: []
 school: bnu
 dept: ai
 status: enriched
+email: gaojh@bnu.edu.cn
 bio_raw: '主持
 
   国家自然科学基金青年项目（
@@ -75,7 +76,7 @@ research_direction_raw: 计算机体系结构、并行与高性能计算、大�
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/zj/8730b86554214b389bbedf5a5d137092.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/zj/8730b86554214b389bbedf5a5d137092.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -104,6 +105,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/zj/8730b86554214b389bbedf5a5d137092.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/zj/8730b86554214b389bbedf5a5d137092.htm
     fetched_at: '2026-09-04'

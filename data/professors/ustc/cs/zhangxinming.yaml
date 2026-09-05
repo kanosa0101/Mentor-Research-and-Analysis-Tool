@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+email: xinming@ustc.edu.cn
 phone: (0551)63602446
 bio_raw: '电　话：(0551)63602446
 
@@ -455,10 +456,11 @@ bio_raw: '电　话：(0551)63602446
   Relationship-Preserving Heterogeneous Graph Representations via Metagraph Embedding,
   IEEE Transactions on Knowledge and Data Engineering, 34(3), 2022.'
 institutes: []
+homepage: https://dsxt.ustc.edu.cn/zj_js.asp?zzid=1284;
 detail_url: http://cs.ustc.edu.cn/2020/0827/c23235a460089/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0827/c23235a460089/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -497,6 +499,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460089/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460089/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460089/page.htm
     fetched_at: '2026-09-03'

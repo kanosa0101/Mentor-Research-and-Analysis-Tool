@@ -6,6 +6,7 @@ dept: ai
 status: enriched
 title: 副教授
 supervisor: 博导、硕导
+email: wangmei1@bnu.edu.cn
 bio_raw: '王玫，北京师范大学人工智能学院副教授，2022年博士毕业于北京邮电大学，研究兴趣包括计算机视觉、深度学习、模式识别等方向。已在
 
   IEEE TPAMI、IEEE TIP、PR、CVPR、ICCV
@@ -21,7 +22,7 @@ research_direction_raw: 计算机视觉、深度学习、模式识别
 detail_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/69b29f6da4da48e59a51b89d5780da48.htm
 profile_url: https://ai.bnu.edu.cn/xygk/szdw/fgj/69b29f6da4da48e59a51b89d5780da48.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -65,6 +66,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://ai.bnu.edu.cn/xygk/szdw/fgj/69b29f6da4da48e59a51b89d5780da48.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ai.bnu.edu.cn/xygk/szdw/fgj/69b29f6da4da48e59a51b89d5780da48.htm
     fetched_at: '2026-09-04'

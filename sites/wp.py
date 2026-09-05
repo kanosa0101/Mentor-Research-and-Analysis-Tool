@@ -77,11 +77,13 @@ def _meta_fields(soup, out):
     md = soup.find("meta", attrs={"name": "description"})
     if not md or not md.get("content"):
         return
-    mc = md["content"]
+    # 值和标签可能挤在一起且带空格("姓 名曾国荪职 称教授"), 去空白后按标签切
+    mc = re.sub(r"[\s\u3000]+", "", md["content"])
     from crawler.email_util import normalize_email
     labels = ["姓名", "性别", "职称", "最高学历", "最高学位", "学历", "学位",
-              "电话", "Email", "电子邮件", "邮箱", "研究方向", "学科专业", "详细情况"]
-    # 按出现位置排序, 同位置的取更长标签
+              "联系电话", "电话", "Email", "电子邮件", "邮箱", "研究方向",
+              "学科", "学科专业", "导师类型", "详细情况", "单位",
+              "通讯地址", "办公地点", "个人主页", "电子邮箱"]
     pos = {}
     for lb in labels:
         i = mc.find(lb + "：") if lb + "：" in mc else mc.find(lb + ":")
@@ -94,7 +96,7 @@ def _meta_fields(soup, out):
     for (i, lb), (j, _) in zip(order, order[1:] + [(len(mc), "")]):
         start = i + len(lb)
         start += 1 if start < j and mc[start] in "：:" else 0
-        vals[lb] = mc[start:j].strip()
+        vals[lb] = mc[start:j]
     def v(*names):
         for n in names:
             if vals.get(n):
@@ -102,12 +104,15 @@ def _meta_fields(soup, out):
         return None
     if "title" not in out and v("职称"):
         out["title"] = v("职称")
-    if "phone" not in out and v("电话"):
-        out["phone"] = v("电话")
+    if "phone" not in out and v("联系电话", "电话"):
+        out["phone"] = v("联系电话", "电话")
     if "email" not in out:
-        e = normalize_email(v("Email", "电子邮件", "邮箱") or "")
-        if e:
-            out["email"] = e
+        m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}",
+                      v("Email", "电子邮件", "邮箱") or "")
+        if m:
+            e = normalize_email(m.group(0))
+            if e:
+                out["email"] = e
     if "research_direction_raw" not in out and v("研究方向"):
         out["research_direction_raw"] = v("研究方向")[:200]
 
@@ -122,7 +127,7 @@ def parse_wp_detail(cfg, html, url):
         return {}
     lines = [l.strip() for l in box.get_text("\n", strip=True).split("\n") if l.strip()]
     out = {}
-    LABEL = r"(姓\s*名|职\s*称|电\s*话|邮\s*箱|电子邮件|E-?Mail|个人主页|主\s*页|领域|研究方向|联系邮箱)"
+    LABEL = r"(姓\s*名|职\s*称|电\s*话|邮\s*箱|电子邮件|E\s*-\s*[Mm]ail|个人主页|主\s*页|领域|研究方向|联系邮箱)"
     label_re = re.compile(
         LABEL + r"\s*[:：]\s*([^\n，。；]{0,120})(?=\s*" + LABEL + r"\s*[:：]|$)", re.I)
 
@@ -175,11 +180,15 @@ def parse_wp_detail(cfg, html, url):
             handle(m.group(1), m.group(2), lines[i + 1:i + 4])
 
     if "email" not in out:
+        from urllib.parse import unquote
         for a in box.select('a[href^="mailto:"]'):
-            from crawler.email_util import normalize_email
-            e = normalize_email(a["href"][7:])
-            if e:
-                out["email"] = e
+            # mailto 可能带多个 URL 编码的邮箱(同济: xx@yy%EF%BC%8Czz@ww)
+            for tok in re.split(r"[,;，；\s]+", unquote(a["href"][7:])):
+                e = normalize_email(tok)
+                if e:
+                    out["email"] = e
+                    break
+            if "email" in out:
                 break
     if "email" not in out:
         flat = box.get_text("", strip=True)
