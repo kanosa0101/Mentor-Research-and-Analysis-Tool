@@ -1,7 +1,7 @@
 # 项目交接文档（HANDOVER）
 
 > 写给下一个接手的 agent / 开发者。读完这篇应该能不问人直接干活。
-> 最后更新：2026-09-05，对应 git 基线 `698788e`。
+> 最后更新：2026-09-05（晚），数据基线 31 校 37 院系 4908 人（`audit.py` 实测）。
 > 配套阅读：`REQUIREMENTS.md`（需求与决策）、`ARCHITECTURE.md`（架构与数据模型）、`README.md`（用户视角速览）。
 > 架构、数据模型、七种站点范式、目录结构 → 全部在 ARCHITECTURE.md，本篇只讲**现状、踩坑、操作**。
 
@@ -20,14 +20,14 @@
 
 ## 2. 当前状态（2026-09-05 实测）
 
-- **28 校 33 院系 4494 人**，全量 YAML 落盘 + 静态网站可浏览
-- 全库字段覆盖：**邮箱 3227（72%）、职称 3084（69%）、简介 2662（59%）、博导硕导 1655（37%）**
-- 各院系明细见 §6；各院系人数与覆盖率随时可跑 `audit.py` 复核
-- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送（最新 `698788e`）
-- preflight 仅 48 条 open issues：北师大 2 条官网死链 + 南科大 3 条教师外链 + 厦大 43 条详情死链（官方 404，留痕）
+- **31 校 37 院系 4908 人**，全量 YAML 落盘 + 静态网站可浏览
+- 全库字段覆盖：**邮箱 3719（75%）、职称 3465（70%）、简介 3049（62%）、博导硕导 1938（39%）**
+- 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
+- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送（最新 `0039c179`）
+- preflight 仅 49 条 open issues：北师大 2 + 南科大 3 + 天大 1（官网死链）+ 厦大 43（官方 404），均如实留痕
 - 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）
-- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已四类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则。
-  **邮箱 <95% 的院系基本都查过问题**（用户教训：低覆盖大概率是找错页/解析漏，不能断言"官网没有"——已修复 5 类系统性漏提取，见 §10.27）；剩余低覆盖院系逐一核实为官网侧原因，但接手后建议对 xjtu/csu/xidian 的 tsites 联系方式子页再抽查一轮。
+- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已四类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）。
+  邮箱 <95% 的院系均已两轮抽查：确认真缺失的留痕（csu 71% 剩余为 tsites 页无邮箱字段、dlut 解密接口站点侧故障）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
 
 ## 3. 数据现状：已接入 33 个院系（audit.py 实测，2026-09-05）
 
@@ -52,11 +52,11 @@
 | jlu/cs | simple_list | 185 | 95% | 43% | 11% | 97% | 0 |
 | ecnu/cs | ecnu_cs(改造wp) | 70 | 98% | 100% | 0 | 98% | 0 |
 | nwpu/cs | simple_list | 23 | 0 | 0 | 0 | 0 | 0 |
-| csu/cs | tsites | 108 | 85% | 56% | 80% | 73% | 45% |
+| csu/cs | tsites | 108 | 85% | 71% | 80% | 73% | 52% |
 | ruc/ai | simple_list | 31 | 100% | 67% | 0 | 41% | 0 |
-| xidian/cs | xidian_cs(委托tsites) | 155 | 94% | 53% | 69% | 99% | 62% |
+| xidian/cs | xidian_cs(委托tsites) | 155 | 94% | 90% | 69% | 99% | 62% |
 | bnu/ai | bnu_ai | 72 | 79% | 73% | 79% | 61% | 69% |
-| xjtu/cs | xjtu_cs | 75 | 62% | 29% | 78% | 13% | 22% |
+| xjtu/cs | xjtu_cs | 75 | 62% | 68% | 78% | 13% | 22% |
 | scu/cs | scu_cs(委托tsites) | 166 | 23% | 90% | 0 | 65% | 42% |
 | zju/cs | zju_cs | 438 | 14% | 13% | 99% | 13% | 14% |
 | sustech/cs | sustech_cs | 39 | 100% | 100% | 0 | 28% | 0 |
@@ -66,13 +66,17 @@
 | xmu/cs | xmu_cs | 51 | 100% | 7% | 5% | 9% | 1% |
 | dlut/cs | dlut_cs(委托tsites) | 12 | 100% | 8% | 83% | 83% | 100% |
 | dlut/ss | dlut_cs(委托tsites) | 12 | 100% | 0 | 58% | 66% | 75% |
-| **合计** | | **4494** | | | | | |
+| buaa/cs | buaa_cs(卡片+目录翻页) | 82 | 100% | 96% | 8% | 98% | 0 |
+| tju/cs | tju_cs(名录锚文字+wp) | 114 | 99% | 99% | 82% | 98% | 0 |
+| bit/cs | bit_cs(渲染名录+summary) | 151 | 81% | 88% | 100% | 90% | 0 |
+| ruc/info | ruc_info(hash名录+.content) | 67 | 94% | 95% | 46% | 62% | 0 |
+| **合计** | | **4908** | | | | | |
 
 要点：
-- hit/nwpu 是纯名单（roster 级，详情页网络不可达/无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 简介在瑞数反爬后如实留空
-- xidian/川大邮箱经 tsites 解密接口还原；上科大/复旦走 generalQuery POST 接口
-- xmu 43 条详情死链是官网本身 404（已逐一留痕）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障
-- scu 职称 23%、zju/xjtu/xmu 低覆盖：已抽样核实为官网详情页无该字段，但符合"低覆盖=可疑"规律的，接手后可再抽查
+- hit/nwpu 是纯名单（roster 级，详情页网络不可达/无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 简介在瑞数反爬后如实留空，**按拼音猜测 person.zju.edu.cn 主页 URL 已实测全部 404，无富化源**
+- xidian/川大邮箱经 tsites 解密接口还原 + 明文四形态兜底；上科大/复旦走 generalQuery POST 接口；复旦 bio 经核实官网侧无源（generalQuery 无简介字段、exField5"个人主页"文章页是空壳），homepage 链接已入库（107 人）
+- xmu 43 条详情死链是官网本身 404（已逐一留痕）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障；tju 1 条官网死链留痕
+- bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
 
 ## 4. 网站
 
@@ -98,15 +102,14 @@
 
 ## 6. 未接入的学校与剩余难点
 
-已接入 28 校（清单见 §3）。范围内**未接入**的只剩网络/WAF 阻断组：
+已接入 31 校（清单见 §3）。范围内**未接入**的只剩网络/WAF 阻断组：
 
-- **华科**：间歇性网络阻断（直连+代理都超时，间歇通断）——网络稳定后用 `retest_direct.py` 复测
-- **WAF 拦截，需会话/cookie 重试**：北邮（**scs.bupt.edu.cn**，注意不是 scse）、重大、湖大（csee）
-- **网络层阻断**：人大信息学院、华南理工（www2.scut.edu.cn 间歇）、南开、电子科大等
-- **放弃**（1 所）：国防科大（军队院校）
-- **低覆盖待挖**：xjtu/csu/xidian 的 tsites 联系方式子页可能藏邮箱；scu 职称、xmu 详情死链后无替代源；复旦 bio 0%（generalQuery 无简介字段，可试教师主页）
+- **华科**：间歇性网络阻断（直连+代理都超时，2026-09-05 复测仍不通）——网络稳定后用 `retest_direct.py` 复测
+- **WAF 拦截（412/202），需会话/cookie 重试**：北邮（**scs.bupt.edu.cn**，注意不是 scse）、重大、电子科大（202 质询页）
+- **网络层阻断**：湖大（连接重置）、南开（超时）、华南理工（SSL 错误）等——2026-09-05 复测结果，网络环境变化后再测
+- **放弃**（1 所）：国防科大（军队院校，用户明确不考虑）
 
-**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、湖大是 csee、华南理工是 www2、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。**接新校前先 websearch 核实官方域名**，这个教训花了一轮才学到。
+**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、湖大是 csee、华南理工是 www2、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。且"网络阻断"结论会过期——**北航/北理工/天大/人大信息学院 09-05 复测突然就通了**。接新校前先 websearch 核实官方域名 + 跑 retest 复测。
 
 ## 7. 踩坑记录（每条都是真金白银的时间，接手前必读）
 
@@ -145,6 +148,13 @@
 28. **职称归一化**：`crawler/title_util.py` 的 `normalize_title` 统一处理（括号导师资格拆进 supervisor、"、"分段、副高→副高级、前缀词表）；管线在 `_merge` 自动接入；存量 297 处已修。新职称词出现时在词表加一行
 29. **preflight 的 payload↔data 一致性**：site/p/ 里残留孤儿页会报错——build_site.py 已自动清理，但手改 site/ 后要重跑 build
 
+**2026-09-05 下午新增（四所新校 + tsites 二轮）**
+30. **正则量词边界坑（两连）**：`电子?邮箱` 解析为"电(必选)+子(可选)+邮箱"，纯"邮箱"开头的行反而匹配不上——量词要括起来 `(?:电子)?邮箱`。北航 `电子邮箱`（先"电话"后"邮箱"交替都不命中开头"电"）同理。**写标签正则先拿真实样本验证**，别脑补
+31. **tsites 明文邮箱四形态**（`sites/tsites.py` 兜底，全部只在 email 缺失时触发）：① 裸 `<p>xxx@yy</p>` 无任何标签（西交 gr.xjtu）→ 全页唯一邮箱才采用，多个时取与站点同校域的（官方域 vs QQ/163 并存）② `电子邮箱：` 标签行 + 值在下一个兄弟元素（西电 web.xidian 跨 `<p>`）③ mailto href 是明文但锚文本混淆（"hchgao AT xidian.edu.cn"）④ span id 即语义（`_tsites_encryp_tsteacher_tsemail`，父容器无标签文字）；另 `Email:`（无连字符）是 `E-mail` 之外的高频变体。战果：xjtu 29→68%、xidian 53→90%、csu 56→71%（csu 剩余经主页+子页两轮核实为官网无邮箱字段）
+32. **VSB CMS 三级跳转**（天大/人大信院）：栏目首页是 807B 的 `window.location.href` 跳转壳，真实列表在 `azc/zgj/1.htm` 这类三层路径下，翻页是 `/N.htm` 目录形态；人大信院落地页是 hash 链接（32位hex.htm）+ index2.htm 翻页，锚文字粘连"姓名研究方向…讲授课程…"，姓名取开头汉字段即可
+33. **北理工名录是渲染后注入**：原始 HTML 和渲染早期都没有人员链接，`fetch_rendered(wait_ms=6000, scroll=True)` 后出现（32 位 hash 链接）；详情页却是服务端渲染（直接 requests 可解析）。**渲染失败先怀疑等待不够**，别急着下"SPA"结论（§7.25 同款教训）。另外钩子返回的 url 必须 urljoin 成绝对路径——crawl.py 的别名提取 `rsplit("/",1)[1]` 对无斜杠相对路径会 IndexError
+34. **crawl.py roster 拷贝字段**：`phase_roster` 只拷贝 title/email/phone/supervisor/subjects/research_direction_raw/photo_url/**homepage**——给 rec 塞其他字段（如 homepage 曾被静默丢弃）要先核对这个列表
+
 ## 8. 操作手册
 
 ```powershell
@@ -165,14 +175,13 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 
 ## 9. 建议的下一步（按价值排序）
 
-1. **华科接入**：网络间歇阻断，用 `retest_direct.py` 复测，通了先抓计算机学院
-2. **低覆盖院系二轮抽查**（用户教训：<95% 邮箱大概率有问题）：xjtu/csu/xidian 的 tsites 联系方式子页、seu 名单页邮箱、tongji 剩余 42%、jlu 剩余 57%
-3. **复旦补全**：bio 0%（generalQuery 无简介），exField5 有 faculty 主页链接可跟进（注意"只存 URL 不抓正文"边界——faculty.fudan.edu.cn 属官网页面，可按需解边界）
-4. **浙大补全**：xlsx 名录级 374 人可尝试 person.zju.edu.cn 主页富化（session cookie 方案已在 zju_cs.py 验证）
-5. **facet 细化**：13 类关键词规则可继续调；evidence 可升级为记录命中原文片段
-6. **附录 A 延后项**：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
-7. **verified 人工核对**：未启动；最小方案=每校抽 10 人核对 provenance
-8. 官网改版是常态：`crawl --refresh` + changes 日志；南科大"SPA"误报的教训（§7.25）——文档结论要复检
+1. **华科/北邮/重大/电子科大**：网络/WAF 阻断组，定期用 `retest_direct.py` 复测（北航/北理工/天大/人大信院就是复测后突然通的）；北邮需过 412 WAF（带 cookie 会话重试）
+2. **低覆盖院系剩余抽查**（邮箱 <95% 但已核实官网侧的除外）：tongji 58%（卡片字段形态再挖）、jlu 43%（meta 兜底已用，剩余看官网）、neu 53%（简介句式上限）、xjtu 剩余 24 人、ruc/ai 67%（人大高瓴名录页待复测——info 学院 09-05 已通）
+3. **浙大补全**：xlsx 名录级 374 人无公开主页源（拼音猜测 person.zju.edu.cn 全 404 已实测）；若能过瑞数反爬可大幅补齐
+4. **facet 细化**：13 类关键词规则可继续调；evidence 可升级为记录命中原文片段
+5. **附录 A 延后项**：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
+6. **verified 人工核对**：未启动；最小方案=每校抽 10 人核对 provenance
+7. 官网改版是常态：`crawl --refresh` + changes 日志；南科大"SPA"误报的教训（§7.25）——文档结论要复检
 
 ## 10. 给下一个 agent 的三句话
 

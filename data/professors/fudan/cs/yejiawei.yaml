@@ -8,6 +8,7 @@ status: enriched
 title: 工程师
 email: jwye@fudan.edu.cn
 institutes: []
+homepage: '###'
 photo_url: https://cs.fudan.edu.cn/_upload/article/images/86/00/f3625bec42bfbe58f6c54c28b682/3bae25a1-6b79-4aa6-8b72-14435557feaa.jpg
 research_direction_raw: 计算机网络，信息安全
 detail_url: http://ai.fudan.edu.cn/yjw/list.htm
@@ -37,6 +38,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'

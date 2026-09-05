@@ -45,7 +45,14 @@ def iter_roster(cfg):
         u = (r.get("cnUrl") or "").strip()
         if not nm or not u:
             continue
+        # exField5 是"个人主页"文章页——实测为空壳(无正文, meta 仅"点击进入个人主页")，
+        # 只存链接不换 detail_url(ai.fudan cnUrl 仍是身份锚点)
+        hp = (r.get("exField5") or "").strip()
+        if hp and "fudan" in hp:
+            hp = hp if hp.startswith("http") else "https://cs.fudan.edu.cn" + hp
         rec = {"name": nm, "url": u, "profile_url": u, "institutes": []}
+        if hp:
+            rec["homepage"] = hp
         if r.get("email"):
             rec["email"] = r["email"]
         if r.get("phone"):

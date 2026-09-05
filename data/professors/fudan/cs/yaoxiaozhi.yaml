@@ -8,6 +8,7 @@ status: enriched
 title: 助理研究员
 email: xzyao@fudan.edu.cn
 institutes: []
+homepage: '###'
 photo_url: https://cs.fudan.edu.cn/_res/articleType/teacher_CN.jpg
 detail_url: http://ai.fudan.edu.cn/yxz/list.htm
 profile_url: http://ai.fudan.edu.cn/yxz/list.htm
@@ -31,6 +32,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   photo_url:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/53161/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
