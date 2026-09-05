@@ -1,18 +1,30 @@
 slug: dishimin
 name: 邸世民
-aliases: []
+aliases:
+- shimindi
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: shimin.di@seu.edu.cn
+bio_raw: 他长期服务于数据挖掘与人工智能领域多个学术团队，受邀担任多个重要国际期刊编委，现任国产知名期刊群《The Innovation Informatics》学术编委，以及《The
+  Innovation Reviews》和《The Innovation Insights》编委。担任中国计算机学会推荐A类国际会议的领域主席或程序委员会成员30余次，并多次担任《IEEE
+  Transactions on Pattern Analysis and Machine Intelligence》《IEEE Transactions on
+  Knowledge and Data Engineering》等国际期刊审稿人。
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/shimindi/main.htm
+profile_url: https://cs.seu.edu.cn/shimindi/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled
@@ -20,6 +32,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/shimindi/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +49,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/shimindi/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/shimindi/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

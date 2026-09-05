@@ -1,15 +1,19 @@
 slug: zhouxiaoyu
 name: 周晓宇
-aliases: []
+aliases:
+- zhouxy
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: zhouxy@seu.edu.cn
+bio_raw: 曾参加过多项国家和省自然科学基金项目、部委重点预先研究项目、江苏省科技攻关项目以及与Intel、南瑞等国内外大型IT企业的合作项目。曾在国内外学术杂志和会议上发表论文30余篇，7次获得省部级科技进步奖和教育部提名国家科学技术奖。
 institutes:
 - 计算机科学系
 research_direction_raw: 计算机软件与理论
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/zhouxy/main.htm
+profile_url: https://cs.seu.edu.cn/zhouxy/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhouxy/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhouxy/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhouxy/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

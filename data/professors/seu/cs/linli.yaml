@@ -5,14 +5,37 @@ school: seu
 dept: cs
 status: enriched
 title: 中级
+supervisor: 硕导
+email: linli321@seu.edu.cn
+bio_raw: 欢迎对多模态大模型、时空大数据分析以及具身智能决策等方向感兴趣，数学基础扎实，算法能力过硬的同学联系我！同时欢迎对科研有兴趣的本科生加入我们团队进行科研创新训练！
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/linli321/main.htm
+profile_url: https://cs.seu.edu.cn/linli321/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -20,6 +43,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/linli321/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +60,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/linli321/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/linli321/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

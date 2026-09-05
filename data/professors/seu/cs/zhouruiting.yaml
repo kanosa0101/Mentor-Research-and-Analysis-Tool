@@ -1,18 +1,27 @@
 slug: zhouruiting
 name: 周睿婷
-aliases: []
+aliases:
+- ruitingzhou
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: ruitingzhou@seu.edu.cn
+bio_raw: 年在加拿大卡尔加里大学获得计算机科学博士学位。香港中文大学计算机科学与工程学系博士后。研究兴趣为云计算与边缘计算、边缘智能、AI Infra。已发表60
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/ruitingzhou/main.htm
+profile_url: https://cs.seu.edu.cn/ruitingzhou/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -20,6 +29,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/ruitingzhou/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +46,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/ruitingzhou/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/ruitingzhou/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

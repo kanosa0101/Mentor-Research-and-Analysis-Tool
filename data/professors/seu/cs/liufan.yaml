@@ -5,11 +5,16 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 硕导
+email: liufan@seu.edu.cn
+bio_raw: 曾获ACM China SIGMM Doctoral Dissertation Award、CVPR 2026 DataMFM Challenge
+  1st Place Award、SIGIR 2026 eCommerce Data Challenge 1st Place Award、ECCV 2024 Corner
+  Case Scene Generation Challenge 1st Place Award 以及 ACM WSDM 和 IEEE TMM 杰出审稿人奖等多项学术奖励。更多详细信息请查看
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/liufan/main.htm
+profile_url: https://cs.seu.edu.cn/liufan/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +25,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liufan/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +42,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liufan/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liufan/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

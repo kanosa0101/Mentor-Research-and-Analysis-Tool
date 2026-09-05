@@ -1,15 +1,19 @@
 slug: wuweiwei
 name: 吴巍炜
-aliases: []
+aliases:
+- weiweiwu
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: weiweiwu@seu.edu.cn
+bio_raw: 2011年分别获得香港城市大学和中国科技大学博士学位，2011-2012年新加坡南洋理工大学博士后，2012年起加入东南大学担任副教授、博导，2019年起担任教授。
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/weiweiwu/main.htm
+profile_url: https://cs.seu.edu.cn/weiweiwu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weiweiwu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weiweiwu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weiweiwu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

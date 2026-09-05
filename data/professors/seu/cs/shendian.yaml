@@ -1,18 +1,35 @@
 slug: shendian
 name: 沈典
-aliases: []
+aliases:
+- dianshen
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: dshen@seu.edu.cn
+bio_raw: 在“江苏省网络与信息安全重点实验室”从事教学科研工作。主持多项国家级、省部级科研项目，累计在 CCF 推荐 A 类 ToN、TMC、TSC、EuroSys、INFOCOM、ICNP、DAC
+  等国际会议和期刊上发表论文 30 余篇，申请并授权国家发明专利多项。从博士期间起，参加诺贝尔奖得主丁肇中教授领衔的 AMS02 实验，研发了面向 AMS 科学大数据应用的云计算资源管理系统。曾担任
+  ACM 南京学生分会首届主席，全国高校云计算应用创新大赛组委会秘书，获得教育部科技发展中心颁发的“最佳组织奖”。现担任江苏省计算机学会云计算专委会、网络通信专委会委员，ACM
+  SIGCOMM 2024 AE、IEEE MSN 2020、IEEE CSCWD 2018–2021、IEEE ToN、IEEE TSC 等多个国际会议、期刊的程序委员会成员或审稿人。
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/dianshen/main.htm
+profile_url: https://cs.seu.edu.cn/dianshen/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,6 +37,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dianshen/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +54,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dianshen/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dianshen/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

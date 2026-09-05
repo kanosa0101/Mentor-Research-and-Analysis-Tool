@@ -5,11 +5,15 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: fenglei@seu.edu.cn
+bio_raw: 长期担任多个国际高水平会议（如ICML、NeurIPS、ICLR）的领域主席，并担任国际知名期刊（如TMLR、NN）的编委。目前已在国际高水平学术会议与期刊上发表论文100余篇，获得了ICLR
+  2022杰出论文奖荣誉提名、2024年世界人工智能大会青年优秀论文提名奖等荣誉，
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/fenglei/main.htm
+profile_url: https://cs.seu.edu.cn/fenglei/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/fenglei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/fenglei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/fenglei/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

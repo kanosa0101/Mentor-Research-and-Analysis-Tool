@@ -5,11 +5,14 @@ school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: qilei@seu.edu.cn
+bio_raw: 2020年博士毕业于南京大学计算机科学与技术系，2018年8月至2019年8月在CSC的资助下到澳大利亚沃隆港大学进行学术交流访问。目前在所研究领域的权威期刊和顶级会议上发表论文60+篇，并主持多项国家/省部级项目。入选国家资助博士后研究人员计划、江苏省卓越博士后、东南大学紫金学者等人才支持计划；曾获CCF产学合作基金优秀项目案例
 institutes:
 - 计算机科学系
 research_direction_raw: 机器学习与知识工程
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/qilei/main.htm
+profile_url: https://cs.seu.edu.cn/qilei/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -26,6 +29,11 @@ provenance:
     confidence: auto
   title:
     origin: crawled
+    source: https://cs.seu.edu.cn/qilei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
@@ -37,5 +45,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/qilei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/qilei/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

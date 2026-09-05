@@ -1,0 +1,51 @@
+slug: tangxuehai
+name: 汤学海
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: tangxuehai@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 主要研究方向为人工智能安全、大模型安全等。作为项目负责人或者技术负责人，先后承担国家重点计划课题、工信部大模型服务平台等国家项目。相关研究成果发表在ACL、ICML、AAAI、EMNLP等知名国际学术会议。荣获钱伟长中文信息处理科学技术奖一等奖、中国网络空间安全协会2024十大优秀网络安全创新成果。入选中国科学院青年创新促进会。
+detail_url: https://people.ucas.ac.cn/~0079048
+profile_url: https://people.ucas.ac.cn/~0079048
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0079048
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0079048
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0079048
+    fetched_at: '2026-09-05'
+    confidence: auto

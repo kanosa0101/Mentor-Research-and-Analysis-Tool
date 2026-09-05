@@ -1,23 +1,46 @@
 slug: xiaoguohui
 name: 肖国辉
-aliases: []
+aliases:
+- guohuixiao
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: guohui.xiao@seu.edu.cn
+bio_raw: 肖国辉，正高级职称，东南大学博士生导师，国家级青年人才计划入选者。博士毕业于奥地利维也纳技术大学 (Vienna University of Technology)
+  计算机学院，本、硕毕业于北京大学数学科学学院。曾任意大利博尔扎诺自由大学 (Free University of Bozen-Bolzano) 助理教授、挪威卑尔根大学
+  (University of Bergen) 长聘副教授、挪威奥斯陆大学 (Univeristy of Oslo) 研究员。主要研究领域为知识工程、知识图谱、逻辑推理、自然语言处理、大语言模型技术。研究涉及基础理论、系统开发和实际用例。曾入选Aminer
+  2023、2024年度AI2000全球最具影响力人工智能学者。主持开发了开源虚拟知识图谱系统Ontop，在学术界和工业界有广泛影响。共发表文章120余篇，包括期刊JAIR、SWJ、JWS、AAAI、JBR、JBI，会议IJCAI、AAAI、KR、ISWC、ICDT等。据2024年Google
+  Scholar统计，引用数4000+，H-index为29。
 institutes:
 - 计算机科学系
 research_direction_raw: 机器学习与知识工程
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/guohuixiao/main.htm
+profile_url: https://cs.seu.edu.cn/guohuixiao/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 - id: topic.ml
   origin: computed
   confidence: auto
   evidence:
   - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -25,6 +48,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/guohuixiao/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -37,5 +65,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/guohuixiao/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/guohuixiao/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

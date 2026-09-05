@@ -1,18 +1,27 @@
 slug: jianglongyu
 name: 姜龙玉
-aliases: []
+aliases:
+- jly
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: jly@seu.edu.cn
+bio_raw: 、恰佩克产教融合教学名师奖、东南大学青年教师授课竞赛奖、东南大学教学成果一等、二等奖，中泰国立奖教金等奖励。主要社会兼职有国家留学基金委公派出国项目会评专家，中国图形图像协会视觉传感专委会副主任委员。
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/jly/main.htm
+profile_url: https://cs.seu.edu.cn/jly/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -20,6 +29,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jly/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +46,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jly/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jly/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

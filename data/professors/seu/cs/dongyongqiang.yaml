@@ -1,15 +1,19 @@
 slug: dongyongqiang
 name: 董永强
-aliases: []
+aliases:
+- dongyq
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: dongyq@seu.edu.cn
+bio_raw: 每年招收学术型和专业型硕士研究生2-3名(南京校区)，专业型硕士研究生2-3名(苏州校区)。希望进入本实验室的同学，应具有较好的语数外基础和沟通能力，有浓厚的专业兴趣和较强的实践动手能力，有把事情做实做好的愿望和一定的钻研精神。欢迎符合上述条件的同学与我们联系，并期待你的加入！
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/dongyq/main.htm
+profile_url: https://cs.seu.edu.cn/dongyq/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dongyq/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dongyq/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/dongyq/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

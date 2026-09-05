@@ -1,15 +1,19 @@
 slug: liuzhihao
 name: 刘志昊
-aliases: []
+aliases:
+- lzh
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: lzh@seu.edu.cn
+bio_raw: 积极与国内外同行和相关企业进行合作，可与国内外导师联合指导相关学生。实验室毕业生主要去往字节跳动、腾讯、阿里、华为、国有大型企业和银行、高校等就业。
 institutes:
 - 计算机科学系
 research_direction_raw: 计算机软件与理论
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/lzh/main.htm
+profile_url: https://cs.seu.edu.cn/lzh/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lzh/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lzh/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lzh/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

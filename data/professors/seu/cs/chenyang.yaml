@@ -5,11 +5,13 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: chenyang.list@seu.edu.cn
 institutes:
 - 影像科学与技术系
 research_direction_raw: 影像科学与图像处理
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/chenyang/main.htm
+profile_url: https://cs.seu.edu.cn/chenyang/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -26,6 +28,11 @@ provenance:
     confidence: auto
   title:
     origin: crawled
+    source: https://cs.seu.edu.cn/chenyang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
@@ -37,5 +44,10 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chenyang/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

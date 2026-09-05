@@ -1,23 +1,43 @@
 slug: wutianxing
 name: 吴天星
-aliases: []
+aliases:
+- tianxingwu
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: tianxingwu@seu.edu.cn
+bio_raw: 吴天星，副教授、博导，获评江苏省“双创博士”、江苏省“科技副总”、南京市择优留学人才。两次入选东南大学“至善青年学者”支持计划（2021、2025）。主要研究方向：知识图谱、大语言模型、知识表示与推理、人工智能应用。曾获江苏省计算机学会优秀博士学位论文奖，SIGIR最佳短文提名，WISA最佳学生论文奖，CCKS最佳论文奖，OpenKG优秀开放资源奖。主持国家自然科学基金面上项目、青年项目，江苏省产学研合作项目等纵横向课题多项。在人工智能领域内国际期刊及会议发表论文80余篇，10余项国家发明专利获得授权。担任中国计算机学会信息系统专委会、自然语言处理专委会执行委员，CCF
+  YOCSEF南京24-25年度主席，CCF南京执行委员，
 institutes:
 - 计算机科学系
 research_direction_raw: 机器学习与知识工程
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/tianxingwu/main.htm
+profile_url: https://cs.seu.edu.cn/tianxingwu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 - id: topic.ml
   origin: computed
   confidence: auto
   evidence:
   - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -25,6 +45,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/tianxingwu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -37,5 +62,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/tianxingwu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/tianxingwu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

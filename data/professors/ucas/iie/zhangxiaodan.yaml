@@ -4,27 +4,48 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 博导
-institutes:
-- 智能认知安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: zhangxiaodan@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 人工智能安全与协同治理北京市重点实验室副主任，科技部重点专项指南编制专家。专注于人工智能算法安全与智能协同、大模型安全对齐与应用技术、互联网信息分析与挖掘等领域科研和工程建设。主持或核心参与国家重大工程、国家重点研发计划、国自然重点、中科院战略先导专项、中央网信办、北京市科委等项目等30余项，在AAAI、ACM、ICLR、EMNLP等发表高水平论文30余篇、申请发明专利10余项、撰写学术报告50余
+detail_url: https://people.ucas.ac.cn/~iiezxd
+profile_url: https://people.ucas.ac.cn/~iiezxd
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~iiezxd
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~iiezxd
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~iiezxd
+    fetched_at: '2026-09-05'
+    confidence: auto

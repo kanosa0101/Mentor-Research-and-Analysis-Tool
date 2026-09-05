@@ -4,27 +4,59 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 博导
+email: chenxiaojun@iie.ac.cn
+office_address: 海淀区树村路19号中国科学院信息工程研究所
 institutes:
-- 数据安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+- 通信地址： 海淀区树村路19号中国科学院信息工程研究所
+research_direction_raw: 人工智能安全与数据隐私保护：随着互联网大数据技术和人工智能技术的发展，人工智能本身面临的安全问题日益严重。我们主要关注其中的两类问题。1）模型安全：由于深度学习模型的不可解释性，对抗样本和模型后门攻击等威胁妨碍模型的应用，针对该问题研究在NLP/IMAGE/GRAPH等任务上更鲁棒的网络模型训练和后门攻击检测算法、2）数据安全：针对数据滥用和隐私数据泄露的风险数据，以及数据安全法对数据共享利用的规
+detail_url: https://people.ucas.ac.cn/~0040771
+profile_url: https://people.ucas.ac.cn/~0040771
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~0040771
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040771
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040771
+    fetched_at: '2026-09-05'
     confidence: auto
   institutes:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~0040771
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []

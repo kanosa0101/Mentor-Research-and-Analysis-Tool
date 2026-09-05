@@ -4,27 +4,27 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 硕导
-institutes:
-- 高等级系统安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: wangyan@iie.ac.cn
+office_address: 北京海淀区树村路19号
+institutes: []
+detail_url: https://people.ucas.ac.cn/~wangyan1205
+profile_url: https://people.ucas.ac.cn/~wangyan1205
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~wangyan1205
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~wangyan1205
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []

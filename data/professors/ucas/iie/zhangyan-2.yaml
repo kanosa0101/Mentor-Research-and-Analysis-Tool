@@ -1,0 +1,52 @@
+slug: zhangyan-2
+name: 张棪
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: zhangyan80@iie.ac.cn
+office_address: 北京市海淀区树村路19号中国科学院信息工程研究所第八研究室
+institutes:
+- 通信地址： 北京市海淀区树村路19号中国科学院信息工程研究所第八研究室
+research_direction_raw: 长期从事网络技术与网络安全的相关理论研究与关键技术研发，主要研究方向为移动通信安全、网络安全。作为负责人先后承担研究所重大任务、国家科技重大专项课题、国家自然科学基金、北京市科技计划课题、大型企业横向课题等多个重要科研项目，发表论文四十余篇，申请发明专利二十余项。主持研制和建设的高等级移动通信系统取得了良好的应用效果。
+detail_url: https://people.ucas.ac.cn/~0040770
+profile_url: https://people.ucas.ac.cn/~0040770
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040770
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040770
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040770
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0040770
+    fetched_at: '2026-09-05'
+    confidence: auto

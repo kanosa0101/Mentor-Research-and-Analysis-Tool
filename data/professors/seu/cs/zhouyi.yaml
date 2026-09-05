@@ -1,15 +1,19 @@
 slug: zhouyi
 name: 周毅
-aliases: []
+aliases:
+- yizhou
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: yizhou@seu.edu.cn
+bio_raw: 欢迎对相关研究方向有浓厚兴趣（Self-motivated !!!）、数学优秀、编程能力扎实的同学与我一起工作，每年招收1-2名博士生、3-4名硕士生。
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/yizhou/main.htm
+profile_url: https://cs.seu.edu.cn/yizhou/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yizhou/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yizhou/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yizhou/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

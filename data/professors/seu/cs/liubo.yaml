@@ -1,18 +1,42 @@
 slug: liubo
 name: 刘波
-aliases: []
+aliases:
+- bliu
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: bliu@seu.edu.cn
+bio_raw: 研究兴趣包括算力网络路由与安全、网络大数据智能处理与用户行为分析、基于大模型的Agent拟人化研究，社交网络舆情感知与分析、用户画像与推荐、自然语言处理与智能问答、网络行为分析与安全防御。主持和参与科研项目31项（主持9项，参与21项），其中主持国家自然科学基金项目4项、横向项目5项，参与完成国家自然科学基金项目6项、省部级项目7项，作为技术骨干参与国家重点研发计划项目3项。申请和授权国家发明专利20项，
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/bliu/main.htm
+profile_url: https://cs.seu.edu.cn/bliu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,6 +44,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/bliu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +61,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/bliu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/bliu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

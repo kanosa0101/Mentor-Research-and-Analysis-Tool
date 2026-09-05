@@ -1,18 +1,32 @@
 slug: liwei
 name: 李伟
-aliases: []
+aliases:
+- xchlw
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 硕导
+email: xchlw@seu.edu.cn
+bio_raw: 网络与数据通信专业委员会副主任，江苏省计算机学会常务理事。在下一代网络体系结构、算力网络、网络大数据与网络智能等研究领域，主持或参与完成国家自然科学基金、国家
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/xchlw/main.htm
+profile_url: https://cs.seu.edu.cn/xchlw/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,6 +34,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xchlw/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +51,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xchlw/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xchlw/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

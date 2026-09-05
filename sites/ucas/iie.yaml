@@ -1,8 +1,8 @@
 school: ucas
 dept: iie
 dept_name: 信息工程研究所
-base_url: https://iie.cas.cn
-hook: ucas_iie
+base_url: https://scs.ucas.ac.cn
+hook: iie_cs
 list:
-  url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
+  url: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
   method: GET

@@ -1,15 +1,20 @@
 slug: zhangyudong
 name: 张煜东
-aliases: []
+aliases:
+- yudongzhang
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: yudongzhang@seu.edu.cn
+bio_raw: '欢迎与我联系申请CJ学者(海外高水平大学正教授或讲席教授, 特别优秀的可以放宽到副教授)、海优（年薪70W左右）、上岗正高、上岗副高、至善博士后（年薪35W+）、师资博士后（年薪18W+）、联合培养博士后(学费:
+  3W/年)、访问学者(学费: 2W/年)职位！'
 institutes:
 - 影像科学与技术系
 research_direction_raw: 影像科学与图像处理
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/yudongzhang/main.htm
+profile_url: https://cs.seu.edu.cn/yudongzhang/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -26,6 +31,11 @@ provenance:
     confidence: auto
   title:
     origin: crawled
+    source: https://cs.seu.edu.cn/yudongzhang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
@@ -37,5 +47,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yudongzhang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yudongzhang/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -4,27 +4,45 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 硕导
+email: tuchenyang@iie.ac.cn
+office_address: 北京市海淀区树村路19号中国科学院信息工程研究所1号楼
 institutes:
-- 数据安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+- 通信地址： 北京市海淀区树村路19号中国科学院信息工程研究所1号楼
+research_direction_raw: 研究兴趣包括密码系统在新场景下的应用、密码设备安全分析等，先后主持国家自然科学基金1项，国家重点研发计划1项，省部级项目1项，作为核心人员研制国家标准1项，密码行业标准3项，已授权发明专利5项，欧洲专利2项，累计在包括IEEE TIFS、ESORICS、ICCD、DASFAA等国内外学术期刊和会议发表学术论文近30篇。此外，带领团队参加了侧信道密码分析领域国际著名学术大赛DPA
+  Contest v
+detail_url: https://people.ucas.ac.cn/~tuchenyang
+profile_url: https://people.ucas.ac.cn/~tuchenyang
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~tuchenyang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~tuchenyang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~tuchenyang
+    fetched_at: '2026-09-05'
     confidence: auto
   institutes:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~tuchenyang
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []

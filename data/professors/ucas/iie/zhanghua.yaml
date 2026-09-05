@@ -1,0 +1,46 @@
+slug: zhanghua
+name: 张华
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: zhanghua@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 智能安全,可信计算，计算机视觉，多模态内容分析与理解
+detail_url: https://people.ucas.ac.cn/~huazhangiie
+profile_url: https://people.ucas.ac.cn/~huazhangiie
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~huazhangiie
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~huazhangiie
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~huazhangiie
+    fetched_at: '2026-09-05'
+    confidence: auto

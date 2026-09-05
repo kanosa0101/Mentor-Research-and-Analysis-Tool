@@ -1,18 +1,32 @@
 slug: songaibo
 name: 宋爱波
-aliases: []
+aliases:
+- absong
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: absong@seu.edu.cn
+bio_raw: 云计算与大数据科学；基于智能的数据管理；知识图谱嵌入复杂逻辑查询；大数据机器学习索引；网络表格计算；设计图纸的智能识别（已应用于国家电网）；无监督目标跟踪等
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/absong/main.htm
+profile_url: https://cs.seu.edu.cn/absong/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,6 +34,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/absong/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +51,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/absong/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/absong/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

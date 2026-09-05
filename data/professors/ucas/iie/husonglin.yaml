@@ -4,27 +4,53 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 博导
+office_address: 北京市海淀区树村路19号
 institutes:
-- 智能认知安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+- 岗位教授     中国科学院大学
+research_direction_raw: 主要研究方向为大数据、自然语言处理、知识图谱等，当前专注于大模型安全、知识增强的内容安全。作为项目负责人或者技术负责人，先后承担
+detail_url: https://people.ucas.ac.cn/~husonglin
+profile_url: https://people.ucas.ac.cn/~husonglin
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~husonglin
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~husonglin
+    fetched_at: '2026-09-05'
     confidence: auto
   institutes:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~husonglin
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []

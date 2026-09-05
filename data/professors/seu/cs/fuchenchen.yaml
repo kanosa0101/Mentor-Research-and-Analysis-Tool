@@ -5,11 +5,15 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: chenchen_fu@seu.edu.cn
+bio_raw: 。自2019年1月起在东南大学计算机科学与工程学院任职副教授。在相关领域的国际优秀会议与期刊上（包括TC, TKDE, TCAD, INFOCOM,
+  RTSS, DAC等）发表论文60余篇，其中CCF A类论文30余篇。获2018年国际会议EMSOFT journal track（CCF A类期刊TCAD）最佳论文提名。并担任多个国际著名期刊的审稿
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/chenchen_fu/main.htm
+profile_url: https://cs.seu.edu.cn/chenchen_fu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chenchen_fu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chenchen_fu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chenchen_fu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

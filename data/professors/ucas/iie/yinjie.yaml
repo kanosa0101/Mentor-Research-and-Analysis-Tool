@@ -1,0 +1,41 @@
+slug: yinjie
+name: 尹捷
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: yinjie@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 人工智能赋能网络攻防，恶意代码对抗，云安全
+detail_url: https://people.ucas.ac.cn/~0085348
+profile_url: https://people.ucas.ac.cn/~0085348
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:攻防
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085348
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085348
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085348
+    fetched_at: '2026-09-05'
+    confidence: auto

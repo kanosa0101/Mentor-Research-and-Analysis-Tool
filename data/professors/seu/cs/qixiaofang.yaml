@@ -1,15 +1,20 @@
 slug: qixiaofang
 name: 戚晓芳
-aliases: []
+aliases:
+- xfqi
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: xfqi@seu.edu.cn
+bio_raw: 2008年3月获东南大学计算机应用技术专业博士学位，2009年10月－2010年11月受国家留学基金委资助， 赴美国University of Delaware信息与计算机系访问研究。东南大学SATAS（Software
+  Analysis, Testing, Analytics, and Security）实验室负责人。主持或参加多项国家自然基金、国家重点研发计划项目以及与华为、奇虎360、江苏省电力设计院等大型企业的合作项目，获教育部提名国家自然科学奖二等奖。以第一作者在国内外期刊会议上发表多篇SCI、EI以及ISTP收录的论文，多个国内外著名学术期刊审稿人。中国计算机学会(CCF)软件专委会专委，江苏省计算机学会计算机软件专委会副主任。
 institutes:
 - 计算机科学系
 research_direction_raw: 计算机软件与理论
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/xfqi/main.htm
+profile_url: https://cs.seu.edu.cn/xfqi/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +25,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xfqi/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +42,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xfqi/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xfqi/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

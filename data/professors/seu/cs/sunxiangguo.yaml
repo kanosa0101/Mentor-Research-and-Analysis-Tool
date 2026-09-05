@@ -5,14 +5,29 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 硕导
+email: hsiang-kuo.sun@seu.edu.cn
+bio_raw: 孙相国，教授，博士生导师。加入东南大学以前，他曾在香港中文大学担任博后研究员，于东南大学获得博士学位，期间先后在微软亚洲研究院、杭州之江实验室、澳大利亚昆士兰大学等单位进行联合博士培养。他的研究方向聚焦于数据挖掘、在线社交网络与社会计算，并致力于探索面向社会网络的下一代通用人工智能。在SIGKDD,
+  VLDB, TKDE, NeurIPS, ICML, ICLR, TheWebConf, EMNLP, WSDM, CIKM, TOIS, TNNLS, RecSys,
+  IJCAI等国际顶尖会议期刊发表高水平论文40余篇。现担任中国人工智能学会-社会计算专委会副秘书长，以及多个知名期刊的青年副主编。
 institutes:
 - 计算机工程系
 research_direction_raw: 数据科学
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/sunxiangguo/main.htm
+profile_url: https://cs.seu.edu.cn/sunxiangguo/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled
@@ -20,6 +35,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sunxiangguo/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +52,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sunxiangguo/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sunxiangguo/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

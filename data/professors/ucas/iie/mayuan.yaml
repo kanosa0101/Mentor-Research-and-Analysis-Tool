@@ -4,27 +4,38 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 博导
-institutes:
-- 密码理论与技术研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: mayuan@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 发表论文在IEEE TIFS、TCAD、AsiaCrypt、FSE、CHES、ICCD、CT-RSA、SAC等。我的研究领域在密码工程，尤其是：
+detail_url: https://people.ucas.ac.cn/~mayuan
+profile_url: https://people.ucas.ac.cn/~mayuan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~mayuan
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~mayuan
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~mayuan
+    fetched_at: '2026-09-05'
+    confidence: auto

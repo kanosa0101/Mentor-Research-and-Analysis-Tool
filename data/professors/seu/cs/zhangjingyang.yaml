@@ -1,15 +1,21 @@
 slug: zhangjingyang
 name: 张靖阳
-aliases: []
+aliases:
+- jyzhang
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: j.y.zhang@seu.edu.cn
+bio_raw: 'Selective Rank-1 Orthogonality Regularization: Rethinking Stability-Plasticity
+  Balance in Continual Medical Image Classification 被医学影像领域TOP会议《International Conference
+  on Medical Image Computing and Computer-Assisted Intervention》'
 institutes:
 - 影像科学与技术系
 research_direction_raw: 影像科学与图像处理
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/jyzhang/main.htm
+profile_url: https://cs.seu.edu.cn/jyzhang/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -18,6 +24,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -25,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jyzhang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -37,5 +53,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jyzhang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/jyzhang/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

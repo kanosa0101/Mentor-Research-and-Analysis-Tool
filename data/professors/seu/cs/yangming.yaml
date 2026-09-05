@@ -5,14 +5,27 @@ school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: yangming2002@seu.edu.cn
+bio_raw: 东南大学计算机学院教授、博士生导师，中央某部委国家高层次人才，现任江苏省网络与信息安全重点实验室主任，中国通信学会通信安全技术委员会委员、中国指挥与控制学会安全应急共享知识专业委员会委员、江苏省计算机学会常务理事及网络空间治理专委会副主任，研究领域为计算机网络和网络安全。
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/yangming2002/main.htm
+profile_url: https://cs.seu.edu.cn/yangming2002/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -20,6 +33,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yangming2002/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +50,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yangming2002/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/yangming2002/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

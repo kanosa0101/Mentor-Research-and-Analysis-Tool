@@ -1,15 +1,19 @@
 slug: sunmingxuan
 name: 孙明萱
-aliases: []
+aliases:
+- msun
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 硕导
+email: msun@seu.edu.cn
+bio_raw: 获多项美国发明专利。部分成果受到冯•诺伊曼奖章得主、拉格朗日奖得主等国际权威学者引用好评，且已成功转化，有效支撑月均千万用户的工业级应用。获美国自然科学基金委杰出青年奖（
 institutes:
 - 计算机科学系
 research_direction_raw: 机器学习与知识工程
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/msun/main.htm
+profile_url: https://cs.seu.edu.cn/msun/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -26,6 +30,11 @@ provenance:
     confidence: auto
   title:
     origin: crawled
+    source: https://cs.seu.edu.cn/msun/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
@@ -37,5 +46,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/msun/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/msun/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

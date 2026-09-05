@@ -1,15 +1,19 @@
 slug: lvjianhua
 name: 吕建华
-aliases: []
+aliases:
+- lujianhua
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: lujianhua@seu.edu.cn
+bio_raw: 毕业于东北大学，获计算机软件与理论博士。香港科技大学、香港中文大学博士后，普渡大学高级访问学者。主持完成多项国家自然科学基金项目、江苏省自然科学基金项目，主持攻关完成多项企业生产难题。累计培养研究生120余名，其中留学生8名。发表研究论文50余篇，授权国家发明专利6项。
 institutes:
 - 计算机工程系
 research_direction_raw: 数据科学
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/lujianhua/main.htm
+profile_url: https://cs.seu.edu.cn/lujianhua/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lujianhua/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lujianhua/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/lujianhua/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

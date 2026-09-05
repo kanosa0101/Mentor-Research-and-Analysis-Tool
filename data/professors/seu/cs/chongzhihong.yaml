@@ -5,11 +5,14 @@ school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: chongzhihong@seu.edu.cn
+bio_raw: 研究生招生：欢迎爱动脑筋、有探索兴趣、有创业冲动或者职业追求、喜欢运动的同学联系、沟通。我的问题是：之前你解决过值得告诉我的问题和方法以及心路历程？读研想解决什么问题？为什么值得你用三年的时间琢磨这个问题？（这里的问题是指科学问题、技术问题、工程问题、专业领域，例如，计算机/人工智能/数据科学/政治/经济/社会/心理等领域的科学、技术、工程、管理问题）
 institutes:
 - 计算机工程系
 research_direction_raw: 数据科学
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/chongzhihong/main.htm
+profile_url: https://cs.seu.edu.cn/chongzhihong/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +23,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chongzhihong/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +40,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chongzhihong/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/chongzhihong/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -1,0 +1,41 @@
+slug: zhangxinxuan
+name: 张心轩
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: zhangxinxuan@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 密码学、密码协议、零知识证明、ZK-SNARK、可验证密态计算
+detail_url: https://people.ucas.ac.cn/~zhangxinxuan
+profile_url: https://people.ucas.ac.cn/~zhangxinxuan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~zhangxinxuan
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~zhangxinxuan
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~zhangxinxuan
+    fetched_at: '2026-09-05'
+    confidence: auto

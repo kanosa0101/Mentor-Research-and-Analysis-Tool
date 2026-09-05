@@ -4,27 +4,38 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 硕导
-institutes:
-- 智能认知安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: zhongjinwen@iie.ac.cn
+office_address: 海淀区树村路19号
+institutes: []
+research_direction_raw: 大数据管理、智能数据分析
+detail_url: https://people.ucas.ac.cn/~zhongjinwen
+profile_url: https://people.ucas.ac.cn/~zhongjinwen
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~zhongjinwen
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~zhongjinwen
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~zhongjinwen
+    fetched_at: '2026-09-05'
+    confidence: auto

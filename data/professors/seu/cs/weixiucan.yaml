@@ -1,23 +1,45 @@
 slug: weixiucan
 name: 魏秀参
-aliases: []
+aliases:
+- weixs
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: weixs@seu.edu.cn
+bio_raw: 魏秀参，东南大学青年首席教授、博士生导师，国家基金委青年科学基金项目B类（原优青）获得者、国家重点研发计划首席青年科学家、江苏省杰青。主要从事计算机视觉、机器学习、具身智能和AI4Science方面研究，带领团队开源“PyRetri”、“Hawkeye”等细粒度图像分析算法库（均入选ACM
+  Multimedia开源竞赛Winner Entry）。在国际顶级期刊和会议发表论文八十余篇，Google Scholar Citations逾10000次，相关研究工作获得“江苏省自然科学百篇优秀学术成果”以及含CVPR
+  iNaturalist在内的国际权威学术评测等10余项世界冠军。担任IEEE TPAMI/TIP/TMM/TCSVT编委，NeurIPS/CVPR/ICCV/AAAI/IJCAI等国际会议的领域主席、研讨会主席、讲习班主席等10余次，并任中国图像图形学会（CSIG）理事、Fundamental
+  Research/电子学报（英文版）青年编委、CSIG青托俱乐部主席、中国计算机学会计算机视觉专委会副秘书长、CSIG青工委副秘书长、VALSE常务AC等。曾入选CSIG青年科学家奖、吴文俊人工智能优秀青年奖、中国科协青年人才托举工程等。主编教材《解析深度学习》已重印8次并入选“十四五”国家重点出版物出版规划、中国计算机学会推荐教材和省部级重点教材等，另出版学术专著1部。（以上信息更新至2026年6月）
 institutes:
 - 计算机科学系
 research_direction_raw: 机器学习与知识工程
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/weixs/main.htm
+profile_url: https://cs.seu.edu.cn/weixs/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 - id: topic.ml
   origin: computed
   confidence: auto
   evidence:
   - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -25,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weixs/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -37,5 +64,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weixs/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/weixs/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

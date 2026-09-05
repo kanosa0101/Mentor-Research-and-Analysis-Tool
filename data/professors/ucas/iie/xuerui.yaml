@@ -1,0 +1,46 @@
+slug: xuerui
+name: 薛锐
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: xuerui@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 密码学与安全协议, 安全协议分析的形式化方法.
+detail_url: https://people.ucas.ac.cn/~xuerui
+profile_url: https://people.ucas.ac.cn/~xuerui
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xuerui
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xuerui
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xuerui
+    fetched_at: '2026-09-05'
+    confidence: auto

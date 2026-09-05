@@ -4,27 +4,38 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 硕导
-institutes:
-- 电磁与工控安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: maorui@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 从事网络安全防护体系及关键技术研究（如身份认证、访问控制等）、应用系统安全防护等方面的工程实践及国家标准制定工作。
+detail_url: https://people.ucas.ac.cn/~maorui
+profile_url: https://people.ucas.ac.cn/~maorui
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~maorui
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~maorui
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~maorui
+    fetched_at: '2026-09-05'
+    confidence: auto

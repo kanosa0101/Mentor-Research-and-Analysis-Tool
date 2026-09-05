@@ -5,11 +5,17 @@ school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: zhuxia@seu.edu.cn
+bio_raw: '在IEEE TWC、European Journal of Operational Research、Integrated Computer-Aided
+  Engineering、Computers & Industrial Engineering、International Journal of Production
+  Research、International Journal of Computer Integrated Manufacturing、Science in China
+  Series F: Information Sciences（中国科学）、计算机学报、软件学报、SIGKDD、SMC、CASE、CSCWD、HCC等高水平国际国内期刊或国际会议上发表论文多篇，已授权专利近20项。'
 institutes:
 - 计算机工程系
 research_direction_raw: 数据科学
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/zhuxia/main.htm
+profile_url: https://cs.seu.edu.cn/zhuxia/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +26,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhuxia/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +43,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhuxia/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/zhuxia/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

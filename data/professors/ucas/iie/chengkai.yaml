@@ -1,0 +1,46 @@
+slug: chengkai
+name: 程凯
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: chengkai@iie.ac.cn
+office_address: ‌北京市海淀区树村路 19 号‌
+institutes: []
+research_direction_raw: "主要研究方向是二进制软件漏洞挖掘、软件供应链安全、大模型赋能安全研究等。作为骨干人员\uFEFF参与国家重点研发计划、国家重大专项等多项国家级课题，在S&P、USENIX、ISSTA、DSN、ACSAC等会议发表学术论文15余篇，在主流嵌入式设备自动发现0day漏洞400余个，获得CVE编号300余项。"
+detail_url: https://people.ucas.ac.cn/~0085351
+profile_url: https://people.ucas.ac.cn/~0085351
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:漏洞
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085351
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085351
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0085351
+    fetched_at: '2026-09-05'
+    confidence: auto

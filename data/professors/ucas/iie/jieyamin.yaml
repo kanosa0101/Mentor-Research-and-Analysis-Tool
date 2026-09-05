@@ -1,0 +1,41 @@
+slug: jieyamin
+name: 解亚敏
+aliases: []
+school: ucas
+dept: iie
+status: enriched
+email: xieyamin@iie.ac.cn
+office_address: 北京市海淀区树村路19号
+institutes: []
+research_direction_raw: 系统安全与安防技术，主要包括主动防御、系统安全机制与加固等，利用人工智能赋能解决网络攻防中的问题，如基于黑盒的安防机制检测边界探测、新型攻击检测与防御等。
+detail_url: https://people.ucas.ac.cn/~xieyamin
+profile_url: https://people.ucas.ac.cn/~xieyamin
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xieyamin
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xieyamin
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~xieyamin
+    fetched_at: '2026-09-05'
+    confidence: auto

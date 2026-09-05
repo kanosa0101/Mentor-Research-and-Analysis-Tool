@@ -1,15 +1,19 @@
 slug: liwei-2
 name: 李微
-aliases: []
+aliases:
+- liwei
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 硕导
+email: liwei@seu.edu.cn
+bio_raw: 多年从事航空领域军工项目研究，承担航空基金、国家自然科学基金和军工项目多项，早期研究内容包括复合材料结构分析、鸟撞以及飞机结构隐身性能仿真、虚拟仪器和雷达自动测试系统等工作，目前，主要从事专利挖掘和社会网络相关应用研究。
 institutes:
 - 计算机工程系
 research_direction_raw: 数据科学
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/liwei/main.htm
+profile_url: https://cs.seu.edu.cn/liwei/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liwei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liwei/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/liwei/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

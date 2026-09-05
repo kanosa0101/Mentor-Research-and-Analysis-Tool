@@ -1,15 +1,19 @@
 slug: xuxiangyu
 name: 徐翔宇
-aliases: []
+aliases:
+- xyxu
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: xy-xu@seu.edu.cn
+bio_raw: 国家自然科学基金青年项目、江苏省自然科学基金青年项目、产学研合作项目，参与江苏省重点研发计划、国家重点研发计划、国家自然科学基金重点项目等多项。
 institutes:
 - 计算机工程系
 research_direction_raw: 网络计算
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/xyxu/main.htm
+profile_url: https://cs.seu.edu.cn/xyxu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xyxu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xyxu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xyxu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

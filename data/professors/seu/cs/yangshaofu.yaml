@@ -1,18 +1,34 @@
 slug: yangshaofu
 name: 杨绍富
-aliases: []
+aliases:
+- sfyang
 school: seu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
+email: sfyang@seu.edu.cn
+bio_raw: 杨绍富，教授，博士生导师。于 2016 年在香港中文大学机械与自动化工程系获博士学位。主要从事多智能体强化学习、分布式优化与博弈等基础理论及其应用研究。研究工作发表于
+  Automatica、IEEE 汇刊系列（TPAMI、TAC、TIFS、TSP 等）、Science China 系列等国内外权威学术期刊上。主持国家自然科学基金青年项目、面上项目、装备预研教育部联合基金项目等。曾获中国仿真学会自然科学奖一等奖，入选中国科协青年人才托举工程、斯坦福全球前2%顶尖科学家、江苏省
+  333 高层次人才培养工程（第三层次）、中组部第九批援藏干部等。
 institutes:
 - 计算机科学系
 research_direction_raw: 智能系统与应用
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/sfyang/main.htm
+profile_url: https://cs.seu.edu.cn/sfyang/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -20,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sfyang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +53,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sfyang/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/sfyang/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

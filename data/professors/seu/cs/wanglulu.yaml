@@ -5,11 +5,15 @@ school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: wanglulu@seu.edu.cn
+bio_raw: '先后主持和参与多项自然基金课题、国家重点研发计划、军内研究课题和任务。在《Information and Software Technology》、《Journal
+  of Systems and Software》、《Science China: Information science》、《软件学报》、《计算机学报》等国内外著名期刊和会议发表学术论文20余篇，参与编著软件工程教材《软件架构：理论与实践》，参与译著《软件架构建模和仿真：Palladio方法》、《软件架构：Python语言实现》。'
 institutes:
 - 计算机科学系
 research_direction_raw: 计算机软件与理论
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/wanglulu/main.htm
+profile_url: https://cs.seu.edu.cn/wanglulu/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
@@ -20,6 +24,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/wanglulu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -32,5 +41,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/wanglulu/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/wanglulu/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

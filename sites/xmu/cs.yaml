@@ -1,0 +1,15 @@
+school: xmu
+dept: cs
+dept_name: 计算机科学与技术系（信息学院）
+base_url: https://cs.xmu.edu.cn
+hook: xmu_cs
+list:
+  # 教师卡片混链 faculty.xmu.edu.cn tsites 主页 和 informatics 文章页(部分死链)
+  person_href: (/info/\d+/\d+\.htm|faculty\.xmu\.edu\.cn/[A-Za-z0-9]+/zh_CN)
+  channels:
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      cat: 教授
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      cat: 副教授
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      cat: 助理教授

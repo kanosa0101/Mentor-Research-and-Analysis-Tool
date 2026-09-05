@@ -1,15 +1,19 @@
 slug: jixu
 name: 季续
-aliases: []
+aliases:
+- xuji
 school: seu
 dept: cs
 status: enriched
 title: 副高级
+supervisor: 博导
+email: xuji@seu.edu.cn
+bio_raw: 毕业生去向：课题组硕士毕业生多就职于阿里、字节跳动等IT大厂或上海联影医疗等国内龙头医疗影像设备企业，部分毕业生被推荐前往欧美或港澳地区读博深造。
 institutes:
 - 影像科学与技术系
 research_direction_raw: 影像科学与图像处理
-detail_url: https://cse.seu.edu.cn/49355/list.htm
-profile_url: https://cse.seu.edu.cn/49355/list.htm
+detail_url: https://cs.seu.edu.cn/xuji/main.htm
+profile_url: https://cs.seu.edu.cn/xuji/main.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -18,6 +22,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -25,6 +34,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xuji/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
     fetched_at: '2026-09-05'
@@ -37,5 +51,15 @@ provenance:
   institutes:
     origin: crawled
     source: https://cse.seu.edu.cn/49355/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xuji/main.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.seu.edu.cn/xuji/main.htm
     fetched_at: '2026-09-05'
     confidence: auto

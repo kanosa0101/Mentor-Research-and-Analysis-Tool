@@ -4,27 +4,33 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 博导
-institutes:
-- 网络威胁分析研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+email: jiangzhengwei@iie.ac.cn
+office_address: 北京市海淀区树村路19号1号楼4层
+institutes: []
+research_direction_raw: 招生信息
+detail_url: https://people.ucas.ac.cn/~jzw
+profile_url: https://people.ucas.ac.cn/~jzw
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets: []
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~jzw
+    fetched_at: '2026-09-05'
     confidence: auto
-  institutes:
+  office_address:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~jzw
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~jzw
+    fetched_at: '2026-09-05'
+    confidence: auto

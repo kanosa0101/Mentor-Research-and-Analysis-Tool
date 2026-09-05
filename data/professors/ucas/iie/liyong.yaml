@@ -4,27 +4,44 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
-supervisor: 硕导
+email: liyong@iie.ac.cn
+office_address: 北京市海淀区树村路19号中国科学院信息工程研究所
 institutes:
-- 智能认知安全研究室
-detail_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-profile_url: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+- 通信地址： 北京市海淀区树村路19号中国科学院信息工程研究所
+research_direction_raw: 网络安全，信息安全，人工智能，在ICML、ACM MM、IEEE TIP、IJCV等国际顶级会议和期刊发表多篇论文，主持承担国家重点研发计划课题，军发预研课题，国家部委重大工程项目等5项研究类、系统建设类项目任务，获国家发明专利5项
+detail_url: https://people.ucas.ac.cn/~iieliyong
+profile_url: https://people.ucas.ac.cn/~iieliyong
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://scs.ucas.ac.cn/index.php/zh-cn/szdw/graduateteacher
+    fetched_at: '2026-09-05'
     confidence: auto
-  supervisor:
+  email:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~iieliyong
+    fetched_at: '2026-09-05'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~iieliyong
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~iieliyong
+    fetched_at: '2026-09-05'
     confidence: auto
   institutes:
     origin: crawled
-    source: https://iie.cas.cn/xsjy/dsjs/202512/t20251231_8093886.html
-    fetched_at: '2026-09-02'
+    source: https://people.ucas.ac.cn/~iieliyong
+    fetched_at: '2026-09-05'
     confidence: auto
-facets: []
