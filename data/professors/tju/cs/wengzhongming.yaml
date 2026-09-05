@@ -34,7 +34,27 @@ detail_url: http://cic.tju.edu.cn/info/1114/1234.htm
 profile_url: http://cic.tju.edu.cn/info/1114/1234.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶
 provenance:
   name:
     origin: crawled

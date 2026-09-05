@@ -15,7 +15,12 @@ detail_url: http://ai.fudan.edu.cn/mdl/list.htm
 profile_url: http://ai.fudan.edu.cn/mdl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled

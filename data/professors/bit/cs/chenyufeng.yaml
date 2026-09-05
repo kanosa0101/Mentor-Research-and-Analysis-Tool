@@ -117,7 +117,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/fd3b41d0071346c790b187dc510b48
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/fd3b41d0071346c790b187dc510b485b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
 provenance:
   name:
     origin: crawled

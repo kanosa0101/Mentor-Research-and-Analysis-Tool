@@ -1,0 +1,52 @@
+slug: fubin
+name: 付彬
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+email: fubin@hnu.edu.cn
+bio_raw: 付彬，博士，副教授，硕士生导师。2013年博士毕业于湖南大学计算机科学与技术专业，2005年起在湖南大学工作。主要研究方向为车联网、车内网、物联网、深度学习等。联系方式：fubin@hnu.edu.cn.
+institutes: []
+research_direction_raw: 车联网、车内网、物联网、深度学习
+detail_url: http://csee.hnu.edu.cn/people/fubin
+profile_url: http://csee.hnu.edu.cn/people/fubin
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/fubin
+    fetched_at: '2026-09-05'
+    confidence: auto

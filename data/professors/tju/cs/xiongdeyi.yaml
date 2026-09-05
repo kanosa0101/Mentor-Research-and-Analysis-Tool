@@ -30,7 +30,17 @@ detail_url: https://cic.tju.edu.cn/info/1115/1148.htm
 profile_url: https://cic.tju.edu.cn/info/1115/1148.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled

@@ -48,7 +48,22 @@ detail_url: http://cic.tju.edu.cn/info/1103/1110.htm
 profile_url: http://cic.tju.edu.cn/info/1103/1110.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled

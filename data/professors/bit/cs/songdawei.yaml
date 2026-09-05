@@ -1231,7 +1231,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/0fc03ac63f2e4a1a9f0f9fb63c83e6
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/0fc03ac63f2e4a1a9f0f9fb63c83e633.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled

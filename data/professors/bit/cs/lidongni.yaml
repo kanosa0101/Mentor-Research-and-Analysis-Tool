@@ -175,7 +175,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/2273fa485fe441b3a966e9cf5123a4
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/2273fa485fe441b3a966e9cf5123a46d.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
 provenance:
   name:
     origin: crawled

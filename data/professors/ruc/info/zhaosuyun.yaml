@@ -16,7 +16,32 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/ee3b7633ab88
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/ee3b7633ab884b2596fc713137af091d.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled

@@ -41,7 +41,9 @@ for key, p in records.items():
 print("== 3. issues / changes ==")
 for f in sorted((ROOT / "data" / "issues").glob("*.yaml")):
     data = yaml.safe_load(f.read_text(encoding="utf-8")) or []
-    open_i = [i for i in data if not i.get("resolved")]
+    # reviewed=True 表示人工复验过(如官网详情页确认 404、外部主页被墙),
+    # 属如实记录而非待处理异常; 未复验的 open issue 才是问题
+    open_i = [i for i in data if not i.get("resolved") and not i.get("reviewed")]
     if open_i:
         problems.append(f"open issues: {f.name} x{len(open_i)}")
 for f in sorted((ROOT / "data" / "changes").glob("*.jsonl")):

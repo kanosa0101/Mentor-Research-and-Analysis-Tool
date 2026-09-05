@@ -34,7 +34,17 @@ detail_url: https://cic.tju.edu.cn/info/1117/2647.htm
 profile_url: https://cic.tju.edu.cn/info/1117/2647.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled

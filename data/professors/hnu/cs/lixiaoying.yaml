@@ -1,0 +1,46 @@
+slug: lixiaoying
+name: 李小英
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+bio_raw: 李小英，女，博士，从事计算机教育教学及研究工作多年。荣获湖南省第二届微课大赛一等奖、2015年湖南省普通高校教师信息化教学竞赛二等奖。主持湖南省教改项目2项，校级教改项目多项。
+institutes: []
+research_direction_raw: 数据挖掘；生物信息处理
+detail_url: http://csee.hnu.edu.cn/people/lixiaoying
+profile_url: http://csee.hnu.edu.cn/people/lixiaoying
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/lixiaoying
+    fetched_at: '2026-09-05'
+    confidence: auto

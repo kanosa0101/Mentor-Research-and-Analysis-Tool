@@ -213,7 +213,32 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/872015590c7547eaa9ea4d7bed5f53
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/872015590c7547eaa9ea4d7bed5f53fb.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled

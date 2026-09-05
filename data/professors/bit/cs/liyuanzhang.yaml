@@ -167,7 +167,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/4724ad383ab649a188614a31c3e98b
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/4724ad383ab649a188614a31c3e98b8e.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled

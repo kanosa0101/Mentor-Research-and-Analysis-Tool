@@ -310,7 +310,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/5fe9cc6a567c4556a12e5b9cf41453
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/5fe9cc6a567c4556a12e5b9cf414532a.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled

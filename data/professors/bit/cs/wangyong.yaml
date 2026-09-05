@@ -206,7 +206,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/2c9277ba52e741caabb06f5712a0f2
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/2c9277ba52e741caabb06f5712a0f26b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:攻防
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

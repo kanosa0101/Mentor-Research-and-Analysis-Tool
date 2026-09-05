@@ -138,7 +138,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/6d789a98247d42f68b8db406cff5df
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/6d789a98247d42f68b8db406cff5df8b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
 provenance:
   name:
     origin: crawled

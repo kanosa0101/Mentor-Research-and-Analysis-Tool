@@ -22,7 +22,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/9edbe5fd2b694627b9caa9bf388543
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/9edbe5fd2b694627b9caa9bf3885432c.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled

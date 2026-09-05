@@ -20,14 +20,14 @@
 
 ## 2. 当前状态（2026-09-05 实测）
 
-- **31 校 37 院系 4908 人**，全量 YAML 落盘 + 静态网站可浏览
-- 全库字段覆盖：**邮箱 3719（75%）、职称 3465（70%）、简介 3049（62%）、博导硕导 1938（39%）**
+- **33 校 39 院系 5171 人**，全量 YAML 落盘 + 静态网站可浏览
+- 全库字段覆盖：**邮箱 3907（75%）、职称 3718（71%）、简介 3255（62%）、博导硕导 1949（37%）**
 - 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
-- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送（最新 `0039c179`）
-- preflight 仅 49 条 open issues：北师大 2 + 南科大 3 + 天大 1（官网死链）+ 厦大 43（官方 404），均如实留痕
+- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
+- preflight 绿（0 PROBLEM）；49 条 open issues 均已人工复验标 `reviewed`：北师大 2 + 南科大 3（外部主页被墙/反爬）+ 天大 1（官网死链）+ 厦大 43（官方 404），如实留痕
 - 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）
 - **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已四类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）。
-  邮箱 <95% 的院系均已两轮抽查：确认真缺失的留痕（csu 71% 剩余为 tsites 页无邮箱字段、dlut 解密接口站点侧故障）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
+  邮箱 <95% 的院系均已抽查：确认真缺失的留痕（csu 71% 剩余为 tsites 页无邮箱字段、dlut 解密接口站点侧故障、hnu 70% 为官网"电子邮件"字段空白+页脚公邮陷阱 §7.37、scut 73% 为 meta 被官网截断）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
 
 ## 3. 数据现状：已接入 33 个院系（audit.py 实测，2026-09-05）
 
@@ -70,13 +70,17 @@
 | tju/cs | tju_cs(名录锚文字+wp) | 114 | 99% | 99% | 82% | 98% | 0 |
 | bit/cs | bit_cs(渲染名录+summary) | 151 | 81% | 88% | 100% | 90% | 0 |
 | ruc/info | ruc_info(hash名录+.content) | 67 | 94% | 95% | 46% | 62% | 0 |
-| **合计** | | **4908** | | | | | |
+| hnu/cs | hnu_cs(卡片表+people详情) | 187 | 94% | 70% | 0 | 82% | 0 |
+| scut/cs | scut_cs(职称三栏目+meta) | 76 | 100% | 73% | 14% | 67% | 0 |
+| **合计** | | **5171** | | | | | |
 
 要点：
 - hit/nwpu 是纯名单（roster 级，详情页网络不可达/无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 简介在瑞数反爬后如实留空，**按拼音猜测 person.zju.edu.cn 主页 URL 已实测全部 404，无富化源**
 - xidian/川大邮箱经 tsites 解密接口还原 + 明文四形态兜底；上科大/复旦走 generalQuery POST 接口；复旦 bio 经核实官网侧无源（generalQuery 无简介字段、exField5"个人主页"文章页是空壳），homepage 链接已入库（107 人）
-- xmu 43 条详情死链是官网本身 404（已逐一留痕）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障；tju 1 条官网死链留痕
+- xmu 43 条详情死链是官网本身 404（已逐一留痕并 reviewed）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障；tju 1 条官网死链留痕
 - bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
+- **hnu（09-05 接入）**：域名是 **csee.hnu.edu.cn**（cs.hnu.edu.cn 是阻断主因——域名错了）；卡片表名录 6 页（按职称分类频道）+ /people/<id> 详情表；邮箱 70% 抽查确认为官网"电子邮件"字段真空白（页脚 xiaoban@hnu.edu.cn 是公邮，勿录）；无博导硕导字段
+- **scut（09-05 接入）**：www2.scut.edu.cn/cs；师资按职称分三栏目（22284 教授/22285 副教授/22286 讲师），栏目名即 roster 级职称；正文只有介绍图片的页面字段全靠 meta description（§7.35），面包屑兜底职称；专职研究人员栏目（zzyjry）是 AJAX 空壳未接
 
 ## 4. 网站
 
@@ -102,14 +106,16 @@
 
 ## 6. 未接入的学校与剩余难点
 
-已接入 31 校（清单见 §3）。范围内**未接入**的只剩网络/WAF 阻断组：
+已接入 33 校（清单见 §3）。范围内**未接入**的只剩网络/WAF 阻断组：
 
 - **华科**：间歇性网络阻断（直连+代理都超时，2026-09-05 复测仍不通）——网络稳定后用 `retest_direct.py` 复测
-- **WAF 拦截（412/202），需会话/cookie 重试**：北邮（**scs.bupt.edu.cn**，注意不是 scse）、重大、电子科大（202 质询页）
-- **网络层阻断**：湖大（连接重置）、南开（超时）、华南理工（SSL 错误）等——2026-09-05 复测结果，网络环境变化后再测
+- **北邮（瑞数 WAF，2026-09-05 定论）**：**网址没错**——用户给的 `scs.bupt.edu.cn/szjs1/jsyl.htm`（教师名录，按中心分组 ~190 人）和 `teacher.bupt.edu.cn/zhoufeng/zh_CN/index.htm`（tsites 主页）都是对的。但 www/scs/teacher/ai/sice **整个 bupt.edu.cn 域全部 412**（瑞数动态安全），本地无头/有头/反自动化 flag/cookie 回种/换出口 IP 全部只拿到 39 字节空壳。服务端渲染通道（web_reader 类服务）能读出全文，说明是客户端指纹拦截、内容本身无恙——但该通道是人工 MCP 工具、无法进爬虫管线，逐人手读 190 人不现实。**结论：本地破解无解，等 fetch 框架支持远程渲染后端或网络指纹变化后复测**
+- **重大（cs.cqu.edu.cn，瑞数 412）**：同款瑞数，服务端渲染可读（导航/师资栏目完整）——同上等远程渲染
+- **电子科大（scse.uestc.edu.cn，网防 202）**：202 是网防 wengine 质询页；服务端渲染能过网防，但站内师资页 URL 未定位（`/szdw/jsml.htm` 等 404），本地访问仍 202
+- **南开**：cc.nankai.edu.cn 与 cs.nankai.edu.cn 均超时，网络环境变化后再测
 - **放弃**（1 所）：国防科大（军队院校，用户明确不考虑）
 
-**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、湖大是 csee、华南理工是 www2、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。且"网络阻断"结论会过期——**北航/北理工/天大/人大信息学院 09-05 复测突然就通了**。接新校前先 websearch 核实官方域名 + 跑 retest 复测。
+**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、**湖大是 csee 不是 cs（09-05 已验证接入）**、**华南理工是 www2（09-05 已验证接入）**、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。且"网络阻断"结论会过期——**北航/北理工/天大/人大信息学院 09-05 复测突然就通了**。接新校前先 websearch 核实官方域名 + 跑 retest 复测。
 
 ## 7. 踩坑记录（每条都是真金白银的时间，接手前必读）
 
@@ -154,6 +160,10 @@
 32. **VSB CMS 三级跳转**（天大/人大信院）：栏目首页是 807B 的 `window.location.href` 跳转壳，真实列表在 `azc/zgj/1.htm` 这类三层路径下，翻页是 `/N.htm` 目录形态；人大信院落地页是 hash 链接（32位hex.htm）+ index2.htm 翻页，锚文字粘连"姓名研究方向…讲授课程…"，姓名取开头汉字段即可
 33. **北理工名录是渲染后注入**：原始 HTML 和渲染早期都没有人员链接，`fetch_rendered(wait_ms=6000, scroll=True)` 后出现（32 位 hash 链接）；详情页却是服务端渲染（直接 requests 可解析）。**渲染失败先怀疑等待不够**，别急着下"SPA"结论（§7.25 同款教训）。另外钩子返回的 url 必须 urljoin 成绝对路径——crawl.py 的别名提取 `rsplit("/",1)[1]` 对无斜杠相对路径会 IndexError
 34. **crawl.py roster 拷贝字段**：`phase_roster` 只拷贝 title/email/phone/supervisor/subjects/research_direction_raw/photo_url/**homepage**——给 rec 塞其他字段（如 homepage 曾被静默丢弃）要先核对这个列表
+35. **WP meta description 标签变体又添一例（华南理工）**：meta 里写的是 `E-mail：`（带连字符），`_meta_fields` 的 labels 只有 `Email` 匹配不上——labels 清单现已含 `E-mail`。**WP meta 标签拼写无穷变体，新站接入先 dump meta description 全文核对**。华南理工正文只有一张介绍图片（`wp_articlecontent` 空壳、无 `v_news_content`），字段全靠 meta；`box is None` 分支已改为 meta 兜底 + bio_raw
+36. **WP 站师资按职称分栏目 = roster 级职称白送（华南理工）**：`22284/list.htm`（教授）、`22285`（副教授）、`22286`（讲师/助理教授）是三个栏目——只抓第一个会漏 57% 的人（华南理工 33→76 人、职称 57%→100%）。channel 带 `cat:` 字段进 `list_title`。**接 WP 站先翻全站导航找师资栏目树**。面包屑"师资队伍 > 教授"是详情页职称兜底信号（scut_cs 的 `_BREADCRUMB_TITLE`）
+37. **页脚公共邮箱陷阱（湖大/华南理工）**：湖大详情页"电子邮件"字段为空但页脚备案区有 `xiaoban@hnu.edu.cn`，华南理工页脚有 `x2js@scut.edu.cn`——全页正则会吃到，**必须排除页脚/备案区，绝不能把学院公邮录成教师邮箱**（宁可缺）。湖大 55 人无邮箱经抽查为官网"电子邮件"字段真空白
+38. **preflight issue 的 reviewed 语义**：官网死链（xmu 43 条 404、tju/bnu 各 1-2 条）和外部主页被墙（sustech scholar.google 403）是**如实记录**，不该删；preflight 只对未复验的 open issue 报 PROBLEM，人工复验后在 issue 条目加 `reviewed: true`。**"网络抖动"类 issue 先重跑再判**：sustech 两条 ConnectionError 复测时已恢复
 
 ## 8. 操作手册
 
@@ -175,13 +185,14 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 
 ## 9. 建议的下一步（按价值排序）
 
-1. **华科/北邮/重大/电子科大**：网络/WAF 阻断组，定期用 `retest_direct.py` 复测（北航/北理工/天大/人大信院就是复测后突然通的）；北邮需过 412 WAF（带 cookie 会话重试）
-2. **低覆盖院系剩余抽查**（邮箱 <95% 但已核实官网侧的除外）：tongji 58%（卡片字段形态再挖）、jlu 43%（meta 兜底已用，剩余看官网）、neu 53%（简介句式上限）、xjtu 剩余 24 人、ruc/ai 67%（人大高瓴名录页待复测——info 学院 09-05 已通）
-3. **浙大补全**：xlsx 名录级 374 人无公开主页源（拼音猜测 person.zju.edu.cn 全 404 已实测）；若能过瑞数反爬可大幅补齐
-4. **facet 细化**：13 类关键词规则可继续调；evidence 可升级为记录命中原文片段
-5. **附录 A 延后项**：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
-6. **verified 人工核对**：未启动；最小方案=每校抽 10 人核对 provenance
-7. 官网改版是常态：`crawl --refresh` + changes 日志；南科大"SPA"误报的教训（§7.25）——文档结论要复检
+1. **华科/南开**：网络阻断组，定期用 `retest_direct.py` 复测（北航/北理工/天大/人大信院就是复测后突然通的）
+2. **北邮/重大/电子科大（WAF 定论组）**：瑞数/网防全站拦截本地指纹（§6 已定论网址没错），本地破解无解；**正解是给 fetch 框架加远程渲染后端**（服务端渲染通道已验证可读全文），或等网络指纹变化复测
+3. **低覆盖院系剩余抽查**（邮箱 <95% 但已核实官网侧的除外）：tongji 58%（卡片字段形态再挖）、jlu 43%（meta 兜底已用，剩余看官网）、neu 53%（简介句式上限）、xjtu 剩余 24 人、ruc/ai 67%（人大高瓴名录页待复测——info 学院 09-05 已通）
+4. **浙大补全**：xlsx 名录级 374 人无公开主页源（拼音猜测 person.zju.edu.cn 全 404 已实测）；若能过瑞数反爬可大幅补齐
+5. **facet 细化**：13 类关键词规则可继续调；evidence 可升级为记录命中原文片段
+6. **附录 A 延后项**：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
+7. **verified 人工核对**：未启动；最小方案=每校抽 10 人核对 provenance
+8. 官网改版是常态：`crawl --refresh` + changes 日志；南科大"SPA"误报的教训（§7.25）——文档结论要复检
 
 ## 10. 给下一个 agent 的三句话
 

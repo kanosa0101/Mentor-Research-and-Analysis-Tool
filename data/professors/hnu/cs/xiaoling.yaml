@@ -1,0 +1,56 @@
+slug: xiaoling
+name: 肖玲
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+bio_raw: ',ChengjieWei,RuiLi,Vision-basedFallPredictionWithSpatial-TemporalGraphConvoutionalNetworks;IEEEInternetofThingsJournal;2026,13(6)（SCI二区）'
+institutes: []
+research_direction_raw: 可穿戴计算、无线感知与普适计算、多模态空间感知与推理、健康医疗
+detail_url: http://csee.hnu.edu.cn/people/xiaoling
+profile_url: http://csee.hnu.edu.cn/people/xiaoling
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/xiaoling
+    fetched_at: '2026-09-05'
+    confidence: auto

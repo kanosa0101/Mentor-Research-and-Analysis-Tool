@@ -33,7 +33,12 @@ detail_url: http://cic.tju.edu.cn/info/1117/3165.htm
 profile_url: http://cic.tju.edu.cn/info/1117/3165.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
 provenance:
   name:
     origin: crawled

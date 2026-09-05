@@ -32,7 +32,17 @@ detail_url: http://cic.tju.edu.cn/info/1115/1238.htm
 profile_url: http://cic.tju.edu.cn/info/1115/1238.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled

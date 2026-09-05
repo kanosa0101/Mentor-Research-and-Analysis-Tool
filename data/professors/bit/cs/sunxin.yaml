@@ -78,7 +78,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/3a0c03eb1fad4a3f8be8a261f96f02
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/3a0c03eb1fad4a3f8be8a261f96f023f.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled

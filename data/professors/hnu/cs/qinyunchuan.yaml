@@ -1,0 +1,51 @@
+slug: qinyunchuan
+name: 秦云川
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+email: qinyunchuan@hnu.edu.cn
+bio_raw: 目前主要研究方向为具身智能操作系统体系架构、安全与可靠性机制等。在NeurIPS/AAAI/TCAD/TCE/T-CYB/TOPC/TEC/TII/TVT等本领域权威期刊和会议发表相关学术论文30余篇，出版技术专著4本，牵头起草了国家行业标准1项，申请发明专利93项，其中已授权31项。曾获广东省科技进步二等奖(排名1)、湖南省科技进步奖一等奖、中国产学研合作创新成果一等奖等奖项。
+institutes: []
+research_direction_raw: 自主无人系统、智能驾驶、移动机器人
+detail_url: http://csee.hnu.edu.cn/people/qinyunchuan
+profile_url: http://csee.hnu.edu.cn/people/qinyunchuan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/qinyunchuan
+    fetched_at: '2026-09-05'
+    confidence: auto

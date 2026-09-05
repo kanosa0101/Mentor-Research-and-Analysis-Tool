@@ -86,7 +86,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/35c3595f34674d83b34039f6c22f5a
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/35c3595f34674d83b34039f6c22f5ab5.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled

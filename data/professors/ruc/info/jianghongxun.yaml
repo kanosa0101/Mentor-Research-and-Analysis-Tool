@@ -16,7 +16,27 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/js_5/fb399c9b31e34
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/js_5/fb399c9b31e34965ad44e381f31f48e3.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled

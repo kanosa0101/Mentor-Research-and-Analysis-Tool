@@ -174,7 +174,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/d2d14d4b951947658e978f68397586
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/d2d14d4b951947658e978f683975861b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

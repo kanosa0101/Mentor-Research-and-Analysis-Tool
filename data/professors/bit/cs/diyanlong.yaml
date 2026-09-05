@@ -109,7 +109,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f9f0bcf1ebc24293af5b02334a8567
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f9f0bcf1ebc24293af5b02334a8567a7.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled

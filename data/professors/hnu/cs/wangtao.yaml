@@ -1,0 +1,62 @@
+slug: wangtao
+name: 王涛
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 助理教授
+email: wangtao@hnu.edu.cn
+bio_raw: 湖南省智慧司法研究院专家，区块链底层技术及应用湖南省重点实验室技术专家，教育部学位与研究生教育发展中心评审专家，中国计算机学会会员，中国人工智能学会会员。多家期刊，会议审稿人。从事多年教学科研工作，讲授课程包括计算机网络，操作系统，数字图像处理，面向对象设计，程序设计基础等。
+institutes: []
+research_direction_raw: 包括人工智能，区块链，多智能体合作，演化博弈，计算机网络，网络安全等方向
+detail_url: http://csee.hnu.edu.cn/people/wangtao
+profile_url: http://csee.hnu.edu.cn/people/wangtao
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/wangtao
+    fetched_at: '2026-09-05'
+    confidence: auto

@@ -32,7 +32,17 @@ detail_url: http://cic.tju.edu.cn/info/1098/1175.htm
 profile_url: http://cic.tju.edu.cn/info/1098/1175.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled

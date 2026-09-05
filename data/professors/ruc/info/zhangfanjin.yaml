@@ -12,7 +12,22 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/4674dd761ce8
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/4674dd761ce84a0f9d3a07288fe3c471.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled

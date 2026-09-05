@@ -1,0 +1,57 @@
+slug: liyouhuan
+name: 李友焕
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+email: liyouhuan@hnu.edu.cn
+bio_raw: 李友焕，副教授，博导，湖南省青年骨干教师，CCF高级会员，CCF数据库专委会、信息系统专委会执行委员，大数据专委会通讯委员。分别于2013年和2018年获北京大学理学学士学位和理学博士学位，目前研究方向为基于大模型多智能体的数据处理优化技术。
+institutes: []
+research_direction_raw: 聚焦大模型数据推理加速的前沿研究，也从事一些大模型应用研究，包括基于大模型的数据管理（text2sql等）以及大模型驱动的数据分析（安全攻防等）
+detail_url: http://csee.hnu.edu.cn/people/liyouhuan
+profile_url: http://csee.hnu.edu.cn/people/liyouhuan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/liyouhuan
+    fetched_at: '2026-09-05'
+    confidence: auto

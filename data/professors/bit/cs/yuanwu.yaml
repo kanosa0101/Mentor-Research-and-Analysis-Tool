@@ -100,7 +100,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/6817cd3b9c534b2f8fcb62c4cfd4e2
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/6817cd3b9c534b2f8fcb62c4cfd4e2dd.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

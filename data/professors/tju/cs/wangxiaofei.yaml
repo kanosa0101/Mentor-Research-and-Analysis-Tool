@@ -33,7 +33,17 @@ detail_url: http://cic.tju.edu.cn/info/1114/1140.htm
 profile_url: http://cic.tju.edu.cn/info/1114/1140.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled

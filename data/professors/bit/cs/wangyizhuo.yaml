@@ -323,7 +323,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/f181f051b5e54defad563a6ea1a532
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/f181f051b5e54defad563a6ea1a5329f.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled

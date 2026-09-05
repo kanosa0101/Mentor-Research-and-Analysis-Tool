@@ -15,7 +15,12 @@ detail_url: http://ai.fudan.edu.cn/ym_37286/list.htm
 profile_url: http://ai.fudan.edu.cn/ym_37286/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled

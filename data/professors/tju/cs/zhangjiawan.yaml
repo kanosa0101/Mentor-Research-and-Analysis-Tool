@@ -34,7 +34,17 @@ detail_url: http://cic.tju.edu.cn/info/1117/1246.htm
 profile_url: http://cic.tju.edu.cn/info/1117/1246.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled

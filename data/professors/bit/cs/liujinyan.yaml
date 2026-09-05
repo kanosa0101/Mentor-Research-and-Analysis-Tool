@@ -155,7 +155,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/680a2f55144449cfba0b807317c3ce
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/680a2f55144449cfba0b807317c3cea3.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled

@@ -14,7 +14,17 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/3847c3192070
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/3847c3192070434781093594cf0d3c71.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

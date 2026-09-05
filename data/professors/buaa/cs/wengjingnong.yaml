@@ -56,7 +56,22 @@ detail_url: http://scse.buaa.edu.cn/info/1078/8827.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8827.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
 provenance:
   name:
     origin: crawled

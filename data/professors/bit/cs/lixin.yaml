@@ -400,7 +400,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/e0a7ea1ec73740e2ac05891eede79a
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/e0a7ea1ec73740e2ac05891eede79a10.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled

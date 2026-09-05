@@ -132,7 +132,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/11ecdda7276a4202ac64fb245bdab4
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/11ecdda7276a4202ac64fb245bdab419.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

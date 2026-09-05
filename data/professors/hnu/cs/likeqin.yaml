@@ -1,0 +1,62 @@
+slug: likeqin
+name: 李克勤
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+email: likq@hnu.edu.cn
+bio_raw: 云计算、雾计算和移动边缘计算、高能效计算和通信、物联网和信息物理系统、异构计算系统、大数据计算、高性能计算、CPU-GPU混合协同计算、计算机系统结构、计算机网络、机器学习、智能计算
+institutes: []
+research_direction_raw: 云计算、雾计算和移动边缘计算、高能效计算和通信、物联网和信息物理系统、异构计算系统、大数据计算、高性能计算、CPU-GPU混合协同计算、计算机系统结构、计算机网络、机器学习、智能计算
+detail_url: http://csee.hnu.edu.cn/people/likeqin
+profile_url: http://csee.hnu.edu.cn/people/likeqin
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/likeqin
+    fetched_at: '2026-09-05'
+    confidence: auto

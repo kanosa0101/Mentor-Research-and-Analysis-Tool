@@ -18,7 +18,17 @@ detail_url: http://scse.buaa.edu.cn/info/1078/11031.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/11031.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
 provenance:
   name:
     origin: crawled

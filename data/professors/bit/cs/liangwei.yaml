@@ -162,7 +162,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/8b9943e7a8984a65a3ba3c3e6b3b16
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/8b9943e7a8984a65a3ba3c3e6b3b161b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled

@@ -165,7 +165,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/bfe58e6dabde423aa9dde17ceeb9d8
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/bfe58e6dabde423aa9dde17ceeb9d8ff.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled

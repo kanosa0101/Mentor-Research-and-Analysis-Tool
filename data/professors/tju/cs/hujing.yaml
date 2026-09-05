@@ -43,7 +43,17 @@ detail_url: http://cic.tju.edu.cn/info/1099/1100.htm
 profile_url: http://cic.tju.edu.cn/info/1099/1100.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled

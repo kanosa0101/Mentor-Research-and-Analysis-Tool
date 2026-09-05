@@ -32,7 +32,17 @@ detail_url: http://cic.tju.edu.cn/info/1114/2607.htm
 profile_url: http://cic.tju.edu.cn/info/1114/2607.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled

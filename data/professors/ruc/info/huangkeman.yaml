@@ -16,7 +16,12 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/fjs_a/b7e3b01865c5
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/fjs_a/b7e3b01865c54f28ade2c68279095d2b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled

@@ -13,7 +13,17 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/418462431bfb
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/418462431bfb4a8280359068cb470e88.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

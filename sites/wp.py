@@ -81,8 +81,8 @@ def _meta_fields(soup, out):
     mc = re.sub(r"[\s\u3000]+", "", md["content"])
     from crawler.email_util import normalize_email
     labels = ["姓名", "性别", "职称", "最高学历", "最高学位", "学历", "学位",
-              "联系电话", "电话", "Email", "电子邮件", "邮箱", "研究方向",
-              "学科", "学科专业", "导师类型", "详细情况", "单位",
+              "联系电话", "电话", "E-mail", "Email", "电子邮件", "邮箱",
+              "研究方向", "学科", "学科专业", "导师类型", "详细情况", "单位",
               "通讯地址", "办公地点", "个人主页", "电子邮箱"]
     pos = {}
     for lb in labels:
@@ -108,7 +108,7 @@ def _meta_fields(soup, out):
         out["phone"] = v("联系电话", "电话")
     if "email" not in out:
         m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}",
-                      v("Email", "电子邮件", "邮箱") or "")
+                      v("E-mail", "Email", "电子邮件", "邮箱") or "")
         if m:
             e = normalize_email(m.group(0))
             if e:
@@ -124,7 +124,14 @@ def parse_wp_detail(cfg, html, url):
     box = soup.select_one(".v_news_content") or soup.select_one("#vsb_content") \
         or soup.select_one(".wp_articlecontent")
     if box is None:
-        return {}
+        # 华南理工等站正文只有一张介绍图片(无文本容器), 字段全靠 meta description
+        out = {}
+        _meta_fields(soup, out)
+        if out and "bio_raw" not in out:
+            md = soup.find("meta", attrs={"name": "description"})
+            if md and md.get("content") and len(md["content"].strip()) > 30:
+                out["bio_raw"] = md["content"].strip()
+        return out
     lines = [l.strip() for l in box.get_text("\n", strip=True).split("\n") if l.strip()]
     out = {}
     LABEL = r"(姓\s*名|职\s*称|电\s*话|邮\s*箱|电子邮件|E\s*-\s*[Mm]ail|个人主页|主\s*页|领域|研究方向|联系邮箱)"
@@ -200,6 +207,16 @@ def parse_wp_detail(cfg, html, url):
                 break
     out["bio_raw"] = "\n".join(lines) or None
     _meta_fields(soup, out)
+    if "email" not in out and out.get("bio_raw"):
+        # 简介里的"E-Mail：xxx"碎片形态(华南理工: E / -mail： / 值 跨三行)——剥空白后按标签取
+        b = re.sub(r"\s+", "", out["bio_raw"])
+        m = re.search(
+            r"(?:E-?[Mm]ail|电子邮件|电子邮箱|邮箱)[:：]"
+            r"([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})", b)
+        if m:
+            e = normalize_email(m.group(1))
+            if e:
+                out["email"] = e
     if "title" not in out and out.get("bio_raw"):
         head = " ".join(lines[:2])
         m = re.search(r"(长聘教轨|讲席|特聘|副)?(助理教授|副教授|教授|研究员|讲师)", head)

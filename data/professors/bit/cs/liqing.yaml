@@ -173,7 +173,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/ced50e2083394011921d790be84b79
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/ced50e2083394011921d790be84b79db.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled

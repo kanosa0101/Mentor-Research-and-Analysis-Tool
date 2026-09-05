@@ -1,0 +1,57 @@
+slug: lirui
+name: 李蕊
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+email: rui@hnu.edu.cn
+bio_raw: 博士，先进嵌入式计算技术与智能医疗系统湖南省工程研究中心理事，2001年毕业于湖南科技大学，获工学学士学位。2007年毕业于湖南大学计算机应用专业，获工学博士学位。2007年7月起在湖南大学任教至今。
+institutes: []
+research_direction_raw: 智慧医疗、深度学习、嵌入式智能、先进嵌入式计算、音视频处理、操作系统等
+detail_url: http://csee.hnu.edu.cn/people/lirui
+profile_url: http://csee.hnu.edu.cn/people/lirui
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/lirui
+    fetched_at: '2026-09-05'
+    confidence: auto

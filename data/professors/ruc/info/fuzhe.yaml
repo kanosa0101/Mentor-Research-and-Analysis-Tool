@@ -14,7 +14,22 @@ detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/js1_7/5d5c9d3ec431
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jjxxglx1/js1_7/5d5c9d3ec4314b6cb6784b32cc606138.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

@@ -152,7 +152,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/0663b1f8c6904fe8b299228b750535
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/0663b1f8c6904fe8b299228b750535d7.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

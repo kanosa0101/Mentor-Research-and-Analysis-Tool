@@ -232,7 +232,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/9fb48f9ba2f94204b02bbfcd9c84c3
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/9fb48f9ba2f94204b02bbfcd9c84c30b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:llm
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled

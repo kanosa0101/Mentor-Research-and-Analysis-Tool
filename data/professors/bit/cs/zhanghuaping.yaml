@@ -156,7 +156,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/0d60585168644bdd9fd96219a13782
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/0d60585168644bdd9fd96219a137823d.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

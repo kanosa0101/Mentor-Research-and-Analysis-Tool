@@ -111,7 +111,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/90232d1a89cb4a06af180f111c6a85
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/90232d1a89cb4a06af180f111c6a8531.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled

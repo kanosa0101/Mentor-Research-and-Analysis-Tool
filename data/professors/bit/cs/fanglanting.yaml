@@ -110,7 +110,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/29921f8fd28b4325a89c20af9b7b48
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/29921f8fd28b4325a89c20af9b7b4833.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled

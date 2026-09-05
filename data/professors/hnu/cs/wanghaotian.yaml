@@ -1,0 +1,52 @@
+slug: wanghaotian
+name: 王昊天
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 助理教授
+email: wanghaotian@hnu.edu.cn
+bio_raw: 王昊天，博士，助理教授，湖南省芙蓉计划青年人才（科技创新类）。江西抚州人，本科毕业于南昌大学，博士毕业于湖南大学，读博期间曾赴NanyangTechnologicalUniversity联合培养。入选2024年度博士后创新人才支持计划(国家资助博士后研究人员计划A档)，湖南大学赫曦博士后，副研究员。
+institutes: []
+research_direction_raw: 稀疏张量计算、异构并行计算、智能编译优化、大模型智能体优化和交互式智能系统。
+detail_url: http://csee.hnu.edu.cn/people/wanghaotian
+profile_url: http://csee.hnu.edu.cn/people/wanghaotian
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/wanghaotian
+    fetched_at: '2026-09-05'
+    confidence: auto

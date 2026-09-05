@@ -47,7 +47,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/911c46a950e641619082ff62b785e7
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/911c46a950e641619082ff62b785e7f0.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled

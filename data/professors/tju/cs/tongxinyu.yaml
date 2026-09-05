@@ -40,7 +40,12 @@ detail_url: http://cic.tju.edu.cn/info/1111/3353.htm
 profile_url: http://cic.tju.edu.cn/info/1111/3353.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

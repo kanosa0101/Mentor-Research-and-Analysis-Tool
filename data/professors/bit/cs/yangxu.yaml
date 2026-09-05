@@ -185,7 +185,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/cae8f6c19a0244868e56e957d722b3
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/cae8f6c19a0244868e56e957d722b3b2.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled

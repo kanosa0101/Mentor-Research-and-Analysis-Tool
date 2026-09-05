@@ -36,7 +36,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/1c14ed0a70d44a488836fbef9524e8
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/1c14ed0a70d44a488836fbef9524e8bc.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled

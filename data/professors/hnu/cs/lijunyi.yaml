@@ -1,0 +1,46 @@
+slug: lijunyi
+name: 李军义
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+email: junyilee@hnu.edu.cn
+institutes: []
+research_direction_raw: 隐私保护、软件工程与大数据、区块链技术
+detail_url: http://csee.hnu.edu.cn/people/lijunyi
+profile_url: http://csee.hnu.edu.cn/people/lijunyi
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto

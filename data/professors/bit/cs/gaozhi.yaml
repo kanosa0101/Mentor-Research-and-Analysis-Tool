@@ -93,7 +93,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/6745ff453226406ba1424e53c2dc2c
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/6745ff453226406ba1424e53c2dc2c6f.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled

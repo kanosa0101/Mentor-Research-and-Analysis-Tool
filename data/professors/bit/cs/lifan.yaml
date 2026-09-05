@@ -763,7 +763,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1594ad64b47f4b969df01bf82d6a4b
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1594ad64b47f4b969df01bf82d6a4bb6.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled

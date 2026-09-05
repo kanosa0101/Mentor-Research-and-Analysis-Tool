@@ -23,7 +23,12 @@ detail_url: http://cic.tju.edu.cn/info/1066/3856.htm
 profile_url: http://cic.tju.edu.cn/info/1066/3856.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
 provenance:
   name:
     origin: crawled

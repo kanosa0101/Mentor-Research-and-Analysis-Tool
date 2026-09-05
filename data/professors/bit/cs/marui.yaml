@@ -203,7 +203,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/6eb6ae67430b41aca8cfa59289c7a9
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/6eb6ae67430b41aca8cfa59289c7a911.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled

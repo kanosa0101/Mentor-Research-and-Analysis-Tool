@@ -34,7 +34,12 @@ detail_url: https://cic.tju.edu.cn/info/1116/1242.htm
 profile_url: https://cic.tju.edu.cn/info/1116/1242.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled

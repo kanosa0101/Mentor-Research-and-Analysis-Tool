@@ -111,7 +111,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/db3378b81f2e47568dc4fbeb37ab3e
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/db3378b81f2e47568dc4fbeb37ab3e54.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled

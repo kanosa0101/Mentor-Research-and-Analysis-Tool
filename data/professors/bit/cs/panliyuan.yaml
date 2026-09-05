@@ -203,7 +203,12 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/c0152a10ce284790bfaecc07a8f786
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/c0152a10ce284790bfaecc07a8f7863f.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled

@@ -38,7 +38,12 @@ detail_url: http://scse.buaa.edu.cn/info/1078/8385.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8385.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视频分析
 provenance:
   name:
     origin: crawled

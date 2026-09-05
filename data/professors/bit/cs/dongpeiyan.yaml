@@ -130,7 +130,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f379fa62bdd54f9ba7045310f38775
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/f379fa62bdd54f9ba7045310f3877537.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled

@@ -16,7 +16,17 @@ detail_url: http://ai.fudan.edu.cn/xzp/list.htm
 profile_url: http://ai.fudan.edu.cn/xzp/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled

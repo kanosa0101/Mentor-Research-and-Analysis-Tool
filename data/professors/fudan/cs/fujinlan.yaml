@@ -16,7 +16,17 @@ detail_url: http://ai.fudan.edu.cn/fjl/list.htm
 profile_url: http://ai.fudan.edu.cn/fjl/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled

@@ -466,7 +466,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1b7641ea785d4c77a113e13047487d
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1b7641ea785d4c77a113e13047487dad.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled

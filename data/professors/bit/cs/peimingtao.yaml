@@ -141,7 +141,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/54be428869294bd69fc573bc5a8518
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/54be428869294bd69fc573bc5a85180b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled

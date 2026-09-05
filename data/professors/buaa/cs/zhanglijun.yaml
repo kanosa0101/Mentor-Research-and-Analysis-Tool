@@ -17,7 +17,12 @@ detail_url: http://scse.buaa.edu.cn/info/1078/7379.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/7379.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled

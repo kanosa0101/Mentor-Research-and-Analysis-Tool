@@ -22,7 +22,22 @@ detail_url: http://scse.buaa.edu.cn/info/1078/8384.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8384.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶
 provenance:
   name:
     origin: crawled

@@ -95,7 +95,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/96b3a6fad2904578b1256006fd8d78
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/96b3a6fad2904578b1256006fd8d781d.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled

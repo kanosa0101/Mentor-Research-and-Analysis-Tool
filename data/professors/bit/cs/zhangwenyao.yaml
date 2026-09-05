@@ -56,7 +56,27 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/157a8dc3807b46e29768bc83114bf3
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/157a8dc3807b46e29768bc83114bf323.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled

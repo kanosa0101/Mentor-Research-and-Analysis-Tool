@@ -1,0 +1,51 @@
+slug: yangliang
+name: 杨亮
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+bio_raw: 主要研究领域为无线通信、低空网络、车联网及边缘计算，发表IEEE期刊类论文170余篇，其中高被引论文13篇，热点论文2篇，Google及ResearchGate的H指数为46，连续6年入选斯坦福全球前2%顶尖科学家榜单，入选2023、2024、2025年爱思唯尔"中国高被引学者"。主持国家自然科学基金项目5项及国家重点研发计划课题1项，参与国家自然科学基金区域创新发展联合基金重点项目1项(课题负责人)。担任多个国际期刊编委(如IEEE-TCOM、IEEE-TCCN、IEEE-TVT、IEEE-IoT-J、IEEE-WCL、IEEE-COMML、中国科学：信息科学、通信学报、电子与信息学报、物联网学报等)。2007年广东省优秀博士学位论文获得者。2019年度湖南省自然科学奖2等奖获得者（排名第1）、2021年中国电子学会优秀科技工作者、2020年IEEEWCL最佳编委。湖南省电子学会副理长。
+institutes: []
+research_direction_raw: 无线通信技术、智能通信技术、无线通信中的机器学习、车联网及移动边缘计算、低空网络(无人机数据采集、无人机物流)、机器人通信控制一体化
+detail_url: http://csee.hnu.edu.cn/people/yangliang
+profile_url: http://csee.hnu.edu.cn/people/yangliang
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/yangliang
+    fetched_at: '2026-09-05'
+    confidence: auto

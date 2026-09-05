@@ -52,7 +52,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/bf81e55817734eae9490503c63213d
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/bf81e55817734eae9490503c63213dc2.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

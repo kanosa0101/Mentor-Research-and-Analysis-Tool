@@ -1,0 +1,17 @@
+school: scut
+dept: cs
+dept_name: 计算机科学与工程学院
+base_url: https://www2.scut.edu.cn/cs
+hook: scut_cs
+direct: true
+list:
+  method: GET
+  person_href: c2228[456]a\d+/page\.htm$
+  channels:
+    # 师资按职称分三个栏目, 栏目名即职称(roster 级直出)
+    - url: https://www2.scut.edu.cn/cs/22284/list.htm
+      cat: 教授
+    - url: https://www2.scut.edu.cn/cs/22285/list.htm
+      cat: 副教授
+    - url: https://www2.scut.edu.cn/cs/22286/list.htm
+      cat: 讲师

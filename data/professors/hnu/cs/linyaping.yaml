@@ -1,0 +1,51 @@
+slug: linyaping
+name: 林亚平
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+bio_raw: 林亚平：教授，博士生导师。1982年获湖南大学授予的学士学位、1985年获国防科技大学授予的硕士学位、2000年获湖南大学授予的博士学位。2004年-2005年在美国Texas大学Arlington分校访问研究。长期从事计算机科学与技术和软件工程教学与科研工作。主要研究方向包括计算机网络、云安全和机器学习。
+institutes: []
+research_direction_raw: 计算机网络、云安全和机器学习
+detail_url: http://csee.hnu.edu.cn/people/linyaping
+profile_url: http://csee.hnu.edu.cn/people/linyaping
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/linyaping
+    fetched_at: '2026-09-05'
+    confidence: auto

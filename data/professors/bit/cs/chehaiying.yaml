@@ -103,7 +103,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/7b1953d6d12e4a539ba35bd571326c
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/7b1953d6d12e4a539ba35bd571326c90.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled

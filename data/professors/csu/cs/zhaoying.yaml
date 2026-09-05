@@ -50,7 +50,37 @@ detail_url: http://faculty.csu.edu.cn/zhaoying/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/zhaoying/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled

@@ -1,0 +1,52 @@
+slug: luohuizhang
+name: 罗辉章
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+email: luohuizhang@hnu.edu.cn
+bio_raw: 罗辉章，岳麓学者晨星A岗和湖南省百人计划获得者，国家级青年人才。2012年和2017年于重庆大学分别获得计算机科学与技术学士学位和博士学位，2017年7月至2020年12月于美国新泽西理工学院从事博士后研究工作。现为湖南大学信息科学与工程学院计算机科学系教授，其主要研究方向为高性能计算及计算机体系结构。
+institutes: []
+research_direction_raw: 高性能计算及计算机体系结构，AI与HPC融合，大模型加速
+detail_url: http://csee.hnu.edu.cn/people/luohuizhang
+profile_url: http://csee.hnu.edu.cn/people/luohuizhang
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/luohuizhang
+    fetched_at: '2026-09-05'
+    confidence: auto

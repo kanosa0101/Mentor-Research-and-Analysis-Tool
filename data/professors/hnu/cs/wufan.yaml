@@ -1,0 +1,46 @@
+slug: wufan
+name: 吴帆
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+email: wufan@hnu.edu.cn
+institutes: []
+research_direction_raw: 智能无人系统，并行与分布式计算，人工智能
+detail_url: http://csee.hnu.edu.cn/people/wufan
+profile_url: http://csee.hnu.edu.cn/people/wufan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto

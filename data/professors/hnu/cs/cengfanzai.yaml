@@ -1,0 +1,58 @@
+slug: cengfanzai
+name: 曾凡仔
+aliases:
+- zengfanzai
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+email: zengfanzi@126.com
+bio_raw: 教授，博士生导师。物联网专委会委员、网络与数据通信专委会委员、通信理论与信号处理专委会委员、云计算与大数据应用专委会委员、物联网学报编委。2005年博士毕业于北京交通大学。2005年3月加入湖南大学计算机与通信学院。2006年4月到2008年4月在东南大学移动通信国家重点实验室从事博士后研究工作。2008年9月赴美国密歇根理工大学做一年的访问学者。2015年12月赴英国诺丁汉大学做高级访问学者半年。目前研究方向为智能通信，移动计算与网络大数据等。
+institutes: []
+research_direction_raw: 移动计算、隐私保护、算力网资源调度
+detail_url: http://csee.hnu.edu.cn/people/zengfanzai
+profile_url: http://csee.hnu.edu.cn/people/zengfanzai
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zengfanzai
+    fetched_at: '2026-09-05'
+    confidence: auto

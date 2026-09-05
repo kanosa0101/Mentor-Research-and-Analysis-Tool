@@ -140,7 +140,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/755a407f292f4e79ada32d06f9c279
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/755a407f292f4e79ada32d06f9c279c0.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled

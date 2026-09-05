@@ -39,7 +39,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/900b95428653471793286a55de809e
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/900b95428653471793286a55de809e0e.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled

@@ -110,7 +110,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/12b147cc9bbe406a954c16193cf6b0
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/12b147cc9bbe406a954c16193cf6b0cf.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:药物
 provenance:
   name:
     origin: crawled

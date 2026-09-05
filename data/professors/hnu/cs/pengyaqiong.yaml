@@ -1,0 +1,62 @@
+slug: pengyaqiong
+name: 彭亚琼
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 副教授
+email: pengyaqiong@hnu.edu.cn
+bio_raw: 彭亚琼，博士，副教授，CCF/IEEE/ACM会员。主要研究领域包含并行与分布式处理、服务计算、具身智能、大模型安全等，主持国家自然科学基金1项，担任IEEE-TPDS、IEEE-TNNLS等有国际影响力刊物的审稿人，已在国际顶级学术期刊与重要学术会议发表论文近20篇。
+institutes: []
+research_direction_raw: 并行与分布式处理、服务计算、人工智能、大模型安全等
+detail_url: http://csee.hnu.edu.cn/people/pengyaqiong
+profile_url: http://csee.hnu.edu.cn/people/pengyaqiong
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/pengyaqiong
+    fetched_at: '2026-09-05'
+    confidence: auto

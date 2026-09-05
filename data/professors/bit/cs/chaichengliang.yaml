@@ -465,7 +465,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/110325d289024176b20e6ec7953dd8
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/110325d289024176b20e6ec7953dd80b.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled

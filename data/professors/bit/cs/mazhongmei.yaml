@@ -38,7 +38,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/a10eab2271d64e6c86f36bdd3f9e81
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/a10eab2271d64e6c86f36bdd3f9e81bd.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

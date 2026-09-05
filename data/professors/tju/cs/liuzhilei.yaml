@@ -51,7 +51,17 @@ detail_url: https://cic.tju.edu.cn/info/1103/2755.htm
 profile_url: https://cic.tju.edu.cn/info/1103/2755.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled

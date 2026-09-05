@@ -524,7 +524,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/5ab2fb8997f546aeb93abc0d903ecf
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/5ab2fb8997f546aeb93abc0d903ecfa9.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled

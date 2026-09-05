@@ -1,0 +1,67 @@
+slug: jinmin
+name: 金敏
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 教授
+email: jinmin@hnu.edu.cn
+bio_raw: 金敏，教授，博士生导师。毕业于中南大学信息工程学院，获学士、硕士和博士学位；国内知名电力与物联网智能化公司6年企业研发工作经历，任高级项目经理、项目管理室主任；作为引进人才进入湖南大学。美国佐治亚理工大学电子与计算机科学系访问学者，教育部学位中心博士论文评审专家，教育部-IBM精品课程负责人，湖南省高校青年骨干教师，湖南省优秀硕士生导师，湖南大学优秀教师，J-BIOMEDINFORM、ArtificialIntelligenceReview、中南大学学报等国际期刊审稿人，湖南盛通信息技术有限公司首席专家。
+institutes: []
+research_direction_raw: 人工智能与数据科学, 机器学习与深度学习，基于多模态大数据的生物医疗，工业嵌入式智能系统，软件工程与软件过程
+detail_url: http://csee.hnu.edu.cn/people/jinmin
+profile_url: http://csee.hnu.edu.cn/people/jinmin
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/jinmin
+    fetched_at: '2026-09-05'
+    confidence: auto

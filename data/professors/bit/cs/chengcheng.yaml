@@ -116,7 +116,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/51b71c26194b46d8a431457626d078
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/51b71c26194b46d8a431457626d0785c.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled

@@ -172,7 +172,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1d2a0354986e4247a776ff1afba753
 profile_url: https://cs.bit.edu.cn/szdw/jsml/bssds/1d2a0354986e4247a776ff1afba75333.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled

@@ -203,7 +203,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/29f4f6d1c8b54e6791fc98f2c64866
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/29f4f6d1c8b54e6791fc98f2c64866e3.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled

@@ -94,7 +94,17 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/4289876f93ad432498425519db9f6d
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/4289876f93ad432498425519db9f6dbe.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled

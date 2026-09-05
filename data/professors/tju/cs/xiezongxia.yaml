@@ -31,7 +31,12 @@ detail_url: http://cic.tju.edu.cn/info/1115/1236.htm
 profile_url: http://cic.tju.edu.cn/info/1115/1236.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled

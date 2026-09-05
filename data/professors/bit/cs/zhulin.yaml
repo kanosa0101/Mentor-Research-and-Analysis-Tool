@@ -274,7 +274,22 @@ detail_url: https://cs.bit.edu.cn/szdw/jsml/sssds/911e39cd49c343cd9543449ad32aa2
 profile_url: https://cs.bit.edu.cn/szdw/jsml/sssds/911e39cd49c343cd9543449ad32aa241.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled

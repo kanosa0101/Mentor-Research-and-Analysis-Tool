@@ -5,6 +5,8 @@
     port=443): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
   first_seen: '2026-09-05'
   resolved: false
+  reviewed: true
+  review_note: 外部个人主页(mayuxin.me/mingtang.website代理可达,直连拒绝;scholar.google 403反爬)——非官网数据问题
 - kind: fetch_or_parse_error
   ref: PANGLIEMENG
   message: 'ConnectionError(MaxRetryError(''HTTPSConnectionPool(host=\''scholar.google.com\'',
@@ -13,6 +15,8 @@
     Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
   first_seen: '2026-09-05'
   resolved: false
+  reviewed: true
+  review_note: 外部个人主页(mayuxin.me/mingtang.website代理可达,直连拒绝;scholar.google 403反爬)——非官网数据问题
 - kind: fetch_or_parse_error
   ref: tangming
   message: 'ConnectionError(MaxRetryError(''HTTPSConnectionPool(host=\''mingtang.website\'',
@@ -20,3 +24,5 @@
     port=443): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
   first_seen: '2026-09-05'
   resolved: false
+  reviewed: true
+  review_note: 外部个人主页(mayuxin.me/mingtang.website代理可达,直连拒绝;scholar.google 403反爬)——非官网数据问题

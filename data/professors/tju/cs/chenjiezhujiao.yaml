@@ -41,7 +41,12 @@ detail_url: https://cic.tju.edu.cn/info/1094/1085.htm
 profile_url: https://cic.tju.edu.cn/info/1094/1085.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
-facets: []
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
 provenance:
   name:
     origin: crawled

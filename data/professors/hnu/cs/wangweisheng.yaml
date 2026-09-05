@@ -1,0 +1,51 @@
+slug: wangweisheng
+name: 王伟胜
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 助理教授
+bio_raw: 男，博士。主要从事计算机视觉，图像分析，医学影像分析、疾病计算机辅助诊断等研究。承担及参与国家自然科学基金、湖南省自然科学基金、湖南省科技计划多项，承担基于深度学习的计算机视觉领域的目标检测及识别关键算法研究及应用的多项校企合作项目。发表论文多篇。
+institutes: []
+research_direction_raw: 计算机视觉，图像分析，医学影像分析、疾病计算机辅助诊断
+detail_url: http://csee.hnu.edu.cn/people/wangweisheng
+profile_url: http://csee.hnu.edu.cn/people/wangweisheng
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/wangweisheng
+    fetched_at: '2026-09-05'
+    confidence: auto

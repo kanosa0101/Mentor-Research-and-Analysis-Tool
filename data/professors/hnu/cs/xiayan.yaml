@@ -1,0 +1,46 @@
+slug: xiayan
+name: 夏艳
+aliases: []
+school: hnu
+dept: cs
+status: enriched
+title: 助理教授
+bio_raw: 夏艳，女，博士，讲师。2001年6月开始在湖南大学工作。主要研究方向为计算机网络、无线网络、大数据。近年来主要参与：传感器网络辅助下的认知无线电动态频谱资源管理研究（国家自然科学基金）。
+institutes: []
+research_direction_raw: 计算机网络、无线网络、大数据
+detail_url: http://csee.hnu.edu.cn/people/xiayan
+profile_url: http://csee.hnu.edu.cn/people/xiayan
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
+provenance:
+  name:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/xiayan
+    fetched_at: '2026-09-05'
+    confidence: auto
