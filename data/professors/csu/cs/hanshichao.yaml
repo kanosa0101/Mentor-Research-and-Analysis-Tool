@@ -7,6 +7,7 @@ status: enriched
 title: 副教授
 supervisor: 硕导
 subjects: 计算机科学与技术
+email: kanshichao@csu.edu.cn
 office_address: 新校区信息楼429
 bio_raw: 2021年6月毕业于北京交通大学信息科学研究所，2019年9月至2020年10月在美国密苏里大学哥伦比亚分校访学，2021年9月入职中南大学，主要研究方向为多模态大模型。近年来在国际高水平期刊和会议上发表论文六十余篇，其中包括CCF-A类期刊IEEE
   TPAMI、IEEE TIP、IEEE TMM，以及IEEE TNNLS、IEEE TCSVT等主流期刊，并在CCF-A类国际会议ICML、CVPR、ACMMM等发表多篇论文。主持或联合承担国家自然科学基金青年基金、湖南省自然科学基金青年基金等
@@ -15,7 +16,7 @@ institutes:
 detail_url: https://faculty.csu.edu.cn/kanshichao/zh_CN/
 profile_url: https://faculty.csu.edu.cn/kanshichao/zh_CN/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -59,6 +60,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/kanshichao/zh_CN/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.csu.edu.cn/kanshichao/zh_CN/
     fetched_at: '2026-09-04'

@@ -5,13 +5,14 @@ aliases:
 school: xjtu
 dept: cs
 status: enriched
+email: jielin@mail.xjtu.edu.cn
 institutes:
 - 计算机科学与技术学院
 research_direction_raw: 边缘计算网络（Edge Computing/Fog Computing）、物联网（Internet of Things）、信息物理融合攻击、对抗性攻击、多智能体强化学习
 detail_url: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
 profile_url: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://gr.xjtu.edu.cn/jielin/zh_CN/index.htm
     fetched_at: '2026-09-04'

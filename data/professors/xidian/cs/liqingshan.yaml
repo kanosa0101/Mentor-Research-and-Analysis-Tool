@@ -1,11 +1,13 @@
 slug: liqingshan
 name: 李青山
-aliases: []
+aliases:
+- qshli
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导、硕导
+email: qshli@mail.xidian.edu.cn
 bio_raw: '李青山，1973年12月，博士，教授，硕士生导师，博士生导师。
 
   基本介绍
@@ -43,7 +45,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/qshli/
 profile_url: https://web.xidian.edu.cn/qshli/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.db
   origin: computed
@@ -67,6 +69,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/qshli/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/qshli/
     fetched_at: '2026-09-04'

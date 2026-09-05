@@ -1,11 +1,13 @@
 slug: cuijiangtao
 name: 崔江涛
-aliases: []
+aliases:
+- cuijt
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: cuijt@xidian.edu.cn
 bio_raw: '崔江涛，西安电子科技大学计算机科学与技术学院二级教授、博士生导师。1998、2001和2005年分别在西安电子科技大学计算机学院获本科、硕士和博士学位。2007年至2008年作为国家公派访问学者赴澳大利亚昆士兰大学从事访问研究。国家级高层次人才，省级教学名师，享受国务院政府特殊津贴，入选教育部科学技术委员会学部委员、教育部计算机类专业教学指导委员会委员。
 
   近年来主持国家科技重大专项等攻关项目的研发工作，在数据库、数据工程、数据质量管理与流通等领域开展科学研究与关键技术攻关。任国家学科创新引智基地、省高校工程研究中心、西安市重点实验室主任；曾任计算机科学与技术学院(国家示范性软件学院)执行院长、"计算机科学与技术"双一流学科负责人。中国计算机学会（CCF）杰出会员、CCF理事、担任CCF数据库/大数据/区块链专委会委员，陕西省计算机学会/计算机教育学会副理事长。国家级一流专业、一流线下课程和虚拟教研室负责人，担任本科教育教学审核评估、工程教育专业认证专家，获国家教学成果奖二等奖2项，陕西省教学成果奖一等奖2项。'
@@ -13,7 +15,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/cuijt/
 profile_url: http://web.xidian.edu.cn/cuijt/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.db
   origin: computed
@@ -37,6 +39,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/cuijt/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/cuijt/
     fetched_at: '2026-09-04'

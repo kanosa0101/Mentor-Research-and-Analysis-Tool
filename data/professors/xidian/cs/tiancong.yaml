@@ -1,11 +1,13 @@
 slug: tiancong
 name: 田聪
-aliases: []
+aliases:
+- ctian
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: tico_tools@163.com
 bio_raw: '田聪 | 田聪的主页 | 西安电子科技大学个人主页
 
   学术信息网
@@ -149,7 +151,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/ctian/
 profile_url: http://web.xidian.edu.cn/ctian/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -193,6 +195,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/ctian/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/ctian/
     fetched_at: '2026-09-04'

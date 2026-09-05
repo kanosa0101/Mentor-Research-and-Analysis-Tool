@@ -1,10 +1,12 @@
 slug: zhangliyong
 name: 张立勇
-aliases: []
+aliases:
+- zhangly
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
+email: zhangliyong@xidian.edu.cn
 bio_raw: '张立勇 | 个人信息 | 西安电子科技大学个人主页
 
   学术信息网
@@ -88,7 +90,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/zhangly/
 profile_url: http://web.xidian.edu.cn/zhangly/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.theory
   origin: computed
@@ -107,6 +109,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/zhangly/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/zhangly/
     fetched_at: '2026-09-04'

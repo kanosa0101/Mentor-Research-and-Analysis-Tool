@@ -7,13 +7,14 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 计算机科学与技术
+email: qin.xia@xjtu.edu.cn
 institutes:
 - 计算机科学与技术学院
 research_direction_raw: 专业方向、1）高性能计算   2）智慧教育
 detail_url: https://gr.xjtu.edu.cn/qin.xia/zh_CN/index.htm
 profile_url: https://gr.xjtu.edu.cn/qin.xia/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/qin.xia/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://gr.xjtu.edu.cn/qin.xia/zh_CN/index.htm
     fetched_at: '2026-09-04'

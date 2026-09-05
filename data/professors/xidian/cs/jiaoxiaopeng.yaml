@@ -1,11 +1,13 @@
 slug: jiaoxiaopeng
 name: 焦晓鹏
-aliases: []
+aliases:
+- xpjiao
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: xpjiao@xidian.edu.cn
 bio_raw: '焦晓鹏,男,1984年1月生,于2004年获得西安电子科技大学计算机科学与技术学士学位,2009年获得西安电子科技大学计算机系统结构博士学位.2010年起留校工作.
   2010.6至2012年2月在新加坡国立大学做博士后研究，并于2011.6-2011.7在美国俄克拉荷马大学访问。
 
@@ -26,7 +28,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/xpjiao/
 profile_url: http://web.xidian.edu.cn/xpjiao/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -50,6 +52,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/xpjiao/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/xpjiao/
     fetched_at: '2026-09-04'

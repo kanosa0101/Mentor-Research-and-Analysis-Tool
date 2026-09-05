@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: qwang@xidian.edu.cn
 bio_raw: '西安电子科技大学教授、副校长，教育部区块链技术应用与评测工程研究中心主任、陕西省人机交互与可穿戴计算重点实验室主任。兼任教育部教育信息化与教学方法创新指导委员会副秘书长；中国计算机学会杰出会员、嵌入式系统名誉主任；中国电子教育学会副理事长、高等教育分会会长；中国高等教育学会常务理事、创新创业分会副理事长，智能教育研究分会副理事长。
 
   主要研究方向为嵌入式系统与安全、人机交互与可穿戴计算、计算机输入输出系统等。在
@@ -21,7 +22,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/wangquan/
 profile_url: http://web.xidian.edu.cn/wangquan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -50,6 +51,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/wangquan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/wangquan/
     fetched_at: '2026-09-04'

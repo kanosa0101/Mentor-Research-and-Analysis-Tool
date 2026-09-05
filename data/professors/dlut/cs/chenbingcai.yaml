@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 计算机应用技术. 通信与信息系统
+phone: 39e2312e9168
 office_address: 创新园大厦
 bio_raw: '个人简介
 
@@ -92,6 +93,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/chenbingcai/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/chenbingcai/zh_CN/index.htm
     fetched_at: '2026-09-05'

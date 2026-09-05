@@ -1,11 +1,13 @@
 slug: guanziyu
 name: 管子玉
-aliases: []
+aliases:
+- zyguan
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: zyguan@xidian.edu.cn
 bio_raw: '管子玉，1982年生，博士，西安电子科技大学教授、博士生导师，曾获国家级青年人才项目。主持基金委重点项目、面上项目等国家级项目。在数据挖掘、信息检索、数据管理等领域的顶级国际会议和期刊发表论文150余篇，包括TKDE、TPAMI、TNNLS、TIP、VLDB、SIGMOD、SIGIR、ICDE、WWW、AAAI、IJCAI、SIGKDD、CVPR等。担任TKDE、Neurocomputing和International
   Journal of Machine Learning and Cybernetics编委，担任多个高水平国际会议程序委员会委员/资深委员，如SIGKDD、IJCAI、AAAI、NeurIPS、SIGIR、CIKM等，担任领域内知名国际会议环太平洋多媒体会议PCM
   2016组织主席。获2025年度中国自动化学会自然科学奖一等奖、2024年度陕西省自然科学奖一等奖、2024年度AAAI最佳论文奖、2020年度浙江省自然科学奖一等奖等科研奖励。
@@ -35,7 +37,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/zyguan/
 profile_url: http://web.xidian.edu.cn/zyguan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -64,6 +66,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/zyguan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/zyguan/
     fetched_at: '2026-09-04'

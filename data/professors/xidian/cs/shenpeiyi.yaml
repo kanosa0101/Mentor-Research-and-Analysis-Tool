@@ -1,10 +1,12 @@
 slug: shenpeiyi
 name: 沈沛意
-aliases: []
+aliases:
+- pyshen
 school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: pyshen@xidian.edu.cn
 bio_raw: '沈沛意：男，1969年10月出生。籍贯：浙江绍兴。获得双博士学位（英国巴斯大学，中国西安电子科技大学），和双博士后经历（英国巴斯大学，新加坡国立大学）。在SCIENCE
   IN CHINA, IEEE PAMI 和 IEEE TVCG 等杂志和会议发表论文30余篇。完成和主持国家863项目、国家重大科技项目、自然科学基金项目、中法合作项目、陕西省13115重大科技项目、无锡530归国人员创业（A类）等多项相关课题。曾任世界500强企业安捷伦科技（原惠普）（Agilent
   Technologies）高级工程师/副教授（美国，英国，新加坡和马来西亚）、英国撒里大学（Univ. of Surrey）信号处理研究中心（CVSSP）研究员（RESEARCH
@@ -21,7 +23,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/pyshen/
 profile_url: http://web.xidian.edu.cn/pyshen/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -35,6 +37,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/pyshen/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/pyshen/
     fetched_at: '2026-09-04'

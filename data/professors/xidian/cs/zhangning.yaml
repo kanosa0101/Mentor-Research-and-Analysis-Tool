@@ -1,10 +1,13 @@
 slug: zhangning
 name: 张宁
-aliases: []
+aliases:
+- ZHANGNING
 school: xidian
 dept: cs
 status: enriched
 title: 讲师
+email: zhangning7730@xidian.edu.cn
+phone: '15929949395'
 bio_raw: "个人简介\n/\nPersonal Profile\n主要从事智能体（AI Agent）及边缘AI、数据智能及数据空间\n、系统软件及\n工业软件等方面的研究，近年来主持了2025KGJ子领域二期“基于人工智能的节流型面设计优化和验证”、2025年JKW国防预研课题“智能应用敏捷构造技术与原型系统研究”，2021年国家重点研发计划“集团企业价值链数字生态理论研究”子课题、2024年数据空间技术与系统全国重点实验室开放基金“基于数联网的工业制造数据智能服务”，作为主要研究人员参与了2021年装发预研项目“支持多编码和多传输协议的分布式标识解析技术”、2024年国家自然科学基金“面向开源深度学习软件的自适应可信性保障机制”，以及国家863计划等多项国家级和省部级项目，研究成果在国内外学术会议和期刊发表多篇学术论文，并授权了多项发明专利。\n\
   教育经历\n[1] 2015.04-2020.06\n西北工业大学 \n | 兵器科学与技术\n  | 博士学位\n | 博士研究生毕业\n[2] 2011.09-2014.03\n\
   西北工业大学 \n | 软件工程\n  | 硕士学位\n | 硕士研究生\n[3] 2007.09-2011.06\n西北工业大学 \n | 软件工程\n  | 学士学位\n\
@@ -19,7 +22,7 @@ research_direction_raw: 研究方向、/、The research direction、暂无内容
 detail_url: http://faculty.xidian.edu.cn/ZHANGNING/zh_CN/index.htm
 profile_url: http://faculty.xidian.edu.cn/ZHANGNING/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -48,6 +51,16 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/ZHANGNING/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.xidian.edu.cn/ZHANGNING/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.xidian.edu.cn/ZHANGNING/zh_CN/index.htm
     fetched_at: '2026-09-04'

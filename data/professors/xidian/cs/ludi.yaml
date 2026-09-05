@@ -1,17 +1,19 @@
 slug: ludi
 name: 卢笛
-aliases: []
+aliases:
+- dlu
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: dlu@xidian.edu.cn
 bio_raw: 就职于西安电子科技大学计算机科学与技术学院、博士、教授、博士生导师。
 institutes: []
 detail_url: https://web.xidian.edu.cn/dlu/index.html
 profile_url: https://web.xidian.edu.cn/dlu/index.html
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -30,6 +32,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/dlu/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/dlu/index.html
     fetched_at: '2026-09-04'

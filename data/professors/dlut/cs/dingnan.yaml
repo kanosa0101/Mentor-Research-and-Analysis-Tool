@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 计算机应用技术. 计算机系统结构
+phone: 405829d593b1
 office_address: 创新园大厦 A822
 bio_raw: '个人简介
 
@@ -323,6 +324,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/2005011019/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/2005011019/zh_CN/index.htm
     fetched_at: '2026-09-05'

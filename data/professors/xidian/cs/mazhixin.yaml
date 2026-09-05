@@ -1,11 +1,13 @@
 slug: mazhixin
 name: 马志欣
-aliases: []
+aliases:
+- xmzhi
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: mzx@xidian.edu.cn
 bio_raw: '2022年9月至今在西安电子科技大学广州研究院未来计算中心双跨任教
 
   2016年至2017年在美国UCSD访学交流15个月
@@ -23,7 +25,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/xmzhi/
 profile_url: http://web.xidian.edu.cn/xmzhi/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -47,6 +49,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/xmzhi/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/xmzhi/
     fetched_at: '2026-09-04'

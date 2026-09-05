@@ -7,6 +7,7 @@ status: enriched
 title: 工程师
 supervisor: 硕导
 subjects: 电机与电器
+phone: 64ae24c395b0
 institutes:
 - 计算机科学与技术学院
 research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、智能电器、高压电器、真空开关、无线电能传输、暂无内容
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/huangzhihui/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/huangzhihui/zh_CN/index.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: xiaofangxia89@gmail.com
 bio_raw: '夏小芳，博士，现任职于西安电子科技大学计算机科学与技术学院，教授，博导。
 
   担任先进数据库陕西省高校工程研究中心、西安市先进数据库技术重点实验室副主任。
@@ -29,7 +30,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/xiaxiaofang/index.html
 profile_url: https://web.xidian.edu.cn/xiaxiaofang/index.html
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/xiaxiaofang/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/xiaxiaofang/index.html
     fetched_at: '2026-09-04'

@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 硕导
 subjects: 软件工程
+email: hchu@mail.xidian.edu.cn
 bio_raw: '褚华，工学博士、教授、硕士生导师
 
   ，长期从事计算机软件领域的教学和科研工作，现任西安电子科技大学计算机科学与技术学院软件工程系主任、国家一流本科专业软件工程专业负责人、教育部“101”计划软件工程课程主要负责人、陕西省计算机教育学会理事、智慧金融软件工程新技术联合实验室副主任，担任Knowledge-based
@@ -55,7 +56,7 @@ institutes:
 detail_url: http://web.xidian.edu.cn/chuhua/
 profile_url: http://web.xidian.edu.cn/chuhua/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -99,6 +100,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   subjects:
+    origin: crawled
+    source: http://web.xidian.edu.cn/chuhua/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/chuhua/
     fetched_at: '2026-09-04'

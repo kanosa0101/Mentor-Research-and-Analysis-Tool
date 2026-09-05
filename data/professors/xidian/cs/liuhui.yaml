@@ -1,10 +1,12 @@
 slug: liuhui
 name: 刘惠
-aliases: []
+aliases:
+- huiliu
 school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: 923091954@qq.com
 bio_raw: '邀你加入“
 
   Mobisys云智
@@ -144,7 +146,7 @@ research_direction_raw: 云计算 &、大数据、应用/系统监控&异常处�
 detail_url: https://web.xidian.edu.cn/huiliu/index.html
 profile_url: https://web.xidian.edu.cn/huiliu/index.html
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -183,6 +185,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/huiliu/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/huiliu/index.html
     fetched_at: '2026-09-04'

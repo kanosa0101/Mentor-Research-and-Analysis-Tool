@@ -1,11 +1,13 @@
 slug: gaolin
 name: 高琳
-aliases: []
+aliases:
+- lgao
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: lgao@mail.xidian.edu.cn
 bio_raw: '高琳，女，博士，二级教授，博士生导师，西安电子科技大学“华山学者”领军教授。计算机学会理事，计算机学会生物信息学专业委员会主任，
 
   人工智能学会理事，
@@ -137,7 +139,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/lgao/
 profile_url: http://web.xidian.edu.cn/lgao/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.bio
   origin: computed
@@ -161,6 +163,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/lgao/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/lgao/
     fetched_at: '2026-09-04'

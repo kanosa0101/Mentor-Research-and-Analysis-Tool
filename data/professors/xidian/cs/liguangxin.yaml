@@ -1,11 +1,13 @@
 slug: liguangxin
 name: 李广鑫
-aliases: []
+aliases:
+- lgx
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: lgx@xidian.edu.cn
 bio_raw: '李广鑫，男，西安电子科技大学计算机学院副教授、硕士生导师，智能媒体与数据工程研究所副所长。
 
   最高学历为计算机应用技术博士 ，现为CCF会员、Yocsef西安AC委员，陕西省、西安市政府信息化建设咨询专家。
@@ -47,7 +49,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/lgx/
 profile_url: http://web.xidian.edu.cn/lgx/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -76,6 +78,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/lgx/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/lgx/
     fetched_at: '2026-09-04'

@@ -5,6 +5,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: liuweixd@mail.xidian.edu.cn
 bio_raw: '2007
 
   年获得英国南安普顿大学无线通信专业的博士学位。
@@ -14,7 +15,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/liuwei/
 profile_url: http://web.xidian.edu.cn/liuwei/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.network
   origin: computed
@@ -33,6 +34,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/liuwei/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/liuwei/
     fetched_at: '2026-09-04'

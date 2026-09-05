@@ -1,11 +1,13 @@
 slug: chaihuimin
 name: 柴慧敏
-aliases: []
+aliases:
+- hmchai
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: chaihm@mail.xidian.edu.cn
 bio_raw: '柴慧敏，女，博士，西安电子科技大学计算机学院副教授，硕士生导师。1998年于南开大学计算机与科学系获得学士学位，2003年于西安电子科技大学计算机学院获得工学硕士学位，2009于西安电子科技大学计算机学院获得工学博士学位。
 
   态势估计为信息融合系统中的高层融合部分，主要研究态势估计模型与评估方法；研究计算机协同系统中的协同方法与实现技术。结合研究工作，先后参与或主持了高校基本科研业务费项目等，并发表了相关论文若干篇。'
@@ -13,7 +15,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/hmchai/
 profile_url: http://web.xidian.edu.cn/hmchai/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -32,6 +34,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/hmchai/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/hmchai/
     fetched_at: '2026-09-04'

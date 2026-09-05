@@ -1,11 +1,13 @@
 slug: wangxiaobing
 name: 王小兵
-aliases: []
+aliases:
+- xbwang
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: x@mail.xidian.edu.cn
 bio_raw: '计算机拔尖班负责人。
 
   计算机科学系党支部书记，系主任。
@@ -21,7 +23,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/xbwang/
 profile_url: http://web.xidian.edu.cn/xbwang/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -40,6 +42,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/xbwang/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/xbwang/
     fetched_at: '2026-09-04'

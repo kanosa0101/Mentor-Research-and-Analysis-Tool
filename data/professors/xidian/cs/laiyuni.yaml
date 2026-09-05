@@ -1,9 +1,11 @@
 slug: laiyuni
 name: 赖裕妮
-aliases: []
+aliases:
+- list
 school: xidian
 dept: cs
 status: enriched
+email: laiyuni@xidian.edu.cn
 bio_raw: '个人简介
 
   /
@@ -54,7 +56,7 @@ research_direction_raw: 研究方向、/、The Research Direction、[1]AI 安全
 detail_url: https://faculty.xidian.edu.cn/laiyuni/zh_CN/index/476802/list/index.htm
 profile_url: https://faculty.xidian.edu.cn/laiyuni/zh_CN/index/476802/list/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -93,6 +95,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/laiyuni/zh_CN/index/476802/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/laiyuni/zh_CN/index/476802/list/index.htm
     fetched_at: '2026-09-04'

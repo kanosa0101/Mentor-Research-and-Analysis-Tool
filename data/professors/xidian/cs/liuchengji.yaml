@@ -1,11 +1,13 @@
 slug: liuchengji
 name: 刘成基
-aliases: []
+aliases:
+- list
 school: xidian
 dept: cs
 status: enriched
 title: 讲师
 supervisor: 硕导
+email: liuchengji@xidian.edu.cn
 phone: liuchengji@xidian.edu.cn
 bio_raw: '个人简介
 
@@ -25,7 +27,7 @@ research_direction_raw: 研究方向、Research Focus、社会兼职、Social Af
 detail_url: https://faculty.xidian.edu.cn/LIUCHENGJI/zh_CN/index/439811/list/index.htm
 profile_url: https://faculty.xidian.edu.cn/LIUCHENGJI/zh_CN/index/439811/list/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -59,7 +61,7 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
-    origin: computed
+    origin: crawled
     source: https://faculty.xidian.edu.cn/LIUCHENGJI/zh_CN/index/439811/list/index.htm
     fetched_at: '2026-09-04'
     confidence: auto
@@ -69,6 +71,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIUCHENGJI/zh_CN/index/439811/list/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIUCHENGJI/zh_CN/index/439811/list/index.htm
     fetched_at: '2026-09-04'

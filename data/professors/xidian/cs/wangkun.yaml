@@ -5,6 +5,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 副教授
+email: wangkun@xidian.edu.cn
 bio_raw: '个人简介
 
   王琨（男），西安电子科技大学计算机学院副教授。先后在1996、2001、2006年于西安电子科技大学计算机学院获得工学学士、工学硕士、工学博士学位。任陕西省信息安全标准化技术委员会（SX/TC
@@ -21,7 +22,7 @@ research_direction_raw: 个人简介、王琨（男）、西安电子科技大�
 detail_url: http://web.xidian.edu.cn/wangkun/
 profile_url: http://web.xidian.edu.cn/wangkun/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -50,6 +51,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/wangkun/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/wangkun/
     fetched_at: '2026-09-04'

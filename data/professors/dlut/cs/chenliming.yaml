@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 计算机应用技术
+phone: 4ef561ce61df
 office_address: 创新园大厦B1001
 bio_raw: '个人简介
 
@@ -319,6 +320,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/chenliming/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/chenliming/zh_CN/index.htm
     fetched_at: '2026-09-05'

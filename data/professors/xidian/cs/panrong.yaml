@@ -1,11 +1,13 @@
 slug: panrong
 name: 潘蓉
-aliases: []
+aliases:
+- rpan
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: rpan@xidian.edu.cn
 bio_raw: '潘蓉 | 个人信息 | 西安电子科技大学个人主页
 
   学术信息网
@@ -93,7 +95,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/rpan/
 profile_url: http://web.xidian.edu.cn/rpan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -122,6 +124,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/rpan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/rpan/
     fetched_at: '2026-09-04'

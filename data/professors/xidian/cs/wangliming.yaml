@@ -1,9 +1,11 @@
 slug: wangliming
 name: 王黎明
-aliases: []
+aliases:
+- wanglm
 school: xidian
 dept: cs
 status: enriched
+email: wanglm@mail.xidian.edu.cn
 bio_raw: '王黎明 | 个人信息 | 西安电子科技大学个人主页
 
   学术信息网
@@ -65,7 +67,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/wanglm/
 profile_url: http://web.xidian.edu.cn/wanglm/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -74,6 +76,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/wanglm/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/wanglm/
     fetched_at: '2026-09-04'

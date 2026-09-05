@@ -1,10 +1,12 @@
 slug: yuanxiguo
 name: 袁细国
-aliases: []
+aliases:
+- xgyuan
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
+email: xiguoyuan@mail.xidian.edu.cn
 bio_raw: '基本简介
 
   副教授，计算机学院，西安电子科技大学，2011年6月获得西安电子科技大学计算机应用技术专业博士学位，博士论文题目《Simulation of Genomic Variants
@@ -33,7 +35,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/xgyuan/
 profile_url: http://web.xidian.edu.cn/xgyuan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -57,6 +59,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/xgyuan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/xgyuan/
     fetched_at: '2026-09-04'

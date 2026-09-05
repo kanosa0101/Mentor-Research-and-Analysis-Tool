@@ -1,11 +1,13 @@
 slug: zhangshixiong
 name: 张世雄
-aliases: []
+aliases:
+- sxzhang
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: zhangsx@xidian.edu.cn
 bio_raw: '个人简介
 
   Personal Profile
@@ -490,7 +492,7 @@ research_direction_raw: 研究方向、Research Focus、社会兼职、Social Af
 detail_url: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets: []
 provenance:
   name:
@@ -519,6 +521,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
     fetched_at: '2026-09-04'

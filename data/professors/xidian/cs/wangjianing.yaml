@@ -1,11 +1,13 @@
 slug: wangjianing
 name: 王佳宁
-aliases: []
+aliases:
+- wjn
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 博导、硕导
+email: jnwang@xidian.edu.cn
 bio_raw: '王佳宁，博士，现为西安电子科技大学计算机科学与技术学院副教授，硕士生导师，
 
   IEEE
@@ -97,7 +99,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/wjn/index.html
 profile_url: https://web.xidian.edu.cn/wjn/index.html
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -131,6 +133,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/wjn/index.html
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/wjn/index.html
     fetched_at: '2026-09-04'

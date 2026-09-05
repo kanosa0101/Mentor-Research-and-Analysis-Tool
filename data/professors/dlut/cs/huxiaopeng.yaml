@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 计算机应用技术. 信号与信息处理
+phone: 2ba9439d73f5
 office_address: 创新园大厦-A0922
 bio_raw: '个人简介
 
@@ -132,6 +133,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/2009011195/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/2009011195/zh_CN/index.htm
     fetched_at: '2026-09-05'

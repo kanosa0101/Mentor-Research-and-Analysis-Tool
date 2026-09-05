@@ -1,11 +1,13 @@
 slug: jiaguang
 name: 贾广
-aliases: []
+aliases:
+- gjia
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: gjia@xidian.edu.cn
 bio_raw: '贾广，男，博士，教授，博士生导师，西电“华山学者”。
 
   1997年本科毕业于兰州大学物理学专业，2006于俄亥俄州立大学获得生物物理/医学影像博士学位。
@@ -31,7 +33,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/gjia/
 profile_url: http://web.xidian.edu.cn/gjia/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -60,6 +62,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/gjia/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/gjia/
     fetched_at: '2026-09-04'

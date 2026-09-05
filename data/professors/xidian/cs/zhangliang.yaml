@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: liangzhang@xidian.edu.cn
 bio_raw: '张亮 | 个人简介 | 西安电子科技大学个人主页
 
   学术信息网
@@ -174,7 +175,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/zhangliang/
 profile_url: http://web.xidian.edu.cn/zhangliang/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -213,6 +214,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/zhangliang/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/zhangliang/
     fetched_at: '2026-09-04'

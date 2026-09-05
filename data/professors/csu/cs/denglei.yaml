@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导
 subjects: 计算机科学与技术
+email: leideng@csu.edu.cn
 office_address: 中南大学本部管理楼
 bio_raw: 邓磊，男，中南大学计算机学院教授、博士生导师。博士毕业于同济大学，曾在美国哥伦比亚大学从事博士后研究。主要研究大数据挖掘、生物计算、智能诊疗和JavaEE/C#/iOS/Android/微信应用软件开发。近年来主持和参与国家级和省部级
 institutes:
@@ -14,7 +15,7 @@ institutes:
 detail_url: http://faculty.csu.edu.cn/denglei/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/denglei/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/denglei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://faculty.csu.edu.cn/denglei/zh_CN/index.htm
     fetched_at: '2026-09-04'

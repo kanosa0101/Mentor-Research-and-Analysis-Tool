@@ -1,9 +1,11 @@
 slug: wushuai
 name: 吴帅
-aliases: []
+aliases:
+- WUSHUAI
 school: xidian
 dept: cs
 status: enriched
+email: wushuai@xidian.edu.cn
 bio_raw: '西安电子科技大学主页平台管理系统 吴帅 Home  Home
 
   登录
@@ -169,7 +171,7 @@ institutes: []
 detail_url: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
 profile_url: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -198,6 +200,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/WUSHUAI/en/index.htm
     fetched_at: '2026-09-04'

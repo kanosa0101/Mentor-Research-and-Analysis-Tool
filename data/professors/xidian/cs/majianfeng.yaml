@@ -1,11 +1,13 @@
 slug: majianfeng
 name: 马建峰
-aliases: []
+aliases:
+- jfma
 school: xidian
 dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: jfma@mail.xidian.edu.cn
 bio_raw: '一、教育经历
 
   1985
@@ -89,7 +91,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/jfma/
 profile_url: http://web.xidian.edu.cn/jfma/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -118,6 +120,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/jfma/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/jfma/
     fetched_at: '2026-09-04'

@@ -1,11 +1,13 @@
 slug: tanguimin
 name: 覃桂敏
-aliases: []
+aliases:
+- gmqin
 school: xidian
 dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: gmqin@mail.xidian.edu.cn
 bio_raw: '西安电子科技大学计算机科学与技术学院副教授、硕士生导师。先后于西安电子科技大学机电工程专业、计算机软件与理论、计算机应用技术获学士、硕士和博士学位。曾在同济大学电子与信息工程学院计算机科学与技术博士后流动站学习和研究两年，在美国德州大学休斯敦健康科学研究中心访问研究一年。中国计算机学会会员，生物信息学专业委员会委员。
 
   ICIBM2018
@@ -209,7 +211,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/gmqin/
 profile_url: http://web.xidian.edu.cn/gmqin/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.bio
   origin: computed
@@ -233,6 +235,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/gmqin/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/gmqin/
     fetched_at: '2026-09-04'

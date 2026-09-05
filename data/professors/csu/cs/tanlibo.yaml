@@ -7,6 +7,7 @@ dept: cs
 status: enriched
 title: 特聘教授
 supervisor: 博导
+email: lbqin@csu.edu.cn
 bio_raw: '覃立波，男，中南大学特聘教授，博士生导师，小米青年学者，师从车万翔教授。现任中国中文信息学会青工委秘书长。主要研究兴趣为人工智能、自然语言处理、人机对话、大模型等，在人工智能及自然语言处理等领域国际会议NeurIPS、ACL、EMNLP、AAAI上发表论文多篇。研究成果曾入选Paper
   Digest高影响力论文
 
@@ -239,7 +240,7 @@ institutes:
 detail_url: https://faculty.csu.edu.cn/qinlibo/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/qinlibo/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -273,6 +274,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/qinlibo/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://faculty.csu.edu.cn/qinlibo/zh_CN/index.htm
     fetched_at: '2026-09-04'

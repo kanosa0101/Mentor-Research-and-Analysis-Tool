@@ -3,6 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 from crawler import fetch
+from crawler.email_util import normalize_email
 
 
 def iter_roster(cfg):
@@ -77,6 +78,13 @@ def decrypt_encrypted_fields(soup, html, url):
             if any(k in label for k in kws):
                 field = f
                 break
+        # 部分模板(西电 faculty HH6)父容器无标签文字, 语义直接写在 span id 里
+        if not field:
+            sid = span.get("id", "")
+            if "tsemail" in sid:
+                field = "email"
+            elif "tscontact" in sid or "tsphone" in sid:
+                field = "phone"
         if field == "office_address" and "邮编" in label:
             continue
         if not field or field in out:
@@ -95,6 +103,10 @@ def decrypt_encrypted_fields(soup, html, url):
         except Exception:
             continue
         if val:
+            # 部分模板 tscontact 解密出的实际是邮箱, 按值形态纠偏
+            if field == "phone" and normalize_email(val):
+                out.setdefault("email", val)
+                continue
             out[field] = val
     return out
 
@@ -216,9 +228,45 @@ def parse_detail(cfg, html, url):
         bio = re.split(r"其他联系方式|科研项目|论文成果", bio)[0].strip()
         if len(bio) > 30:
             out["bio_raw"] = bio
-            # 邮箱常明文写在简介里（"请发到邮箱：xxx@yyy"），页面无字段节时兜底提取
-            if "email" not in out:
-                m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", bio)
-                if m:
-                    out["email"] = m.group(0)
+    if "email" not in out:
+        # 标签形态兜底(全页扫描): "Email: x@y" / "电子邮箱：x@y" 同行带值，
+        # 或标签行/值跨行(西电模板 <p>电子邮箱：</p><p>值</p>)。
+        # 值可能是 mailto 锚文本混淆("hchgao AT xidian.edu.cn")，normalize_email 会还原
+        for el in soup.find_all(string=re.compile(r"电子?邮箱|E\s*-?\s*[Mm]ail", re.I)):
+            ls = (el.string or "").strip()
+            m = re.match(r"^电子?邮箱\s*[:：]\s*(.+)$", ls, re.I) or \
+                re.match(r"^E\s*-?\s*[Mm]ail\s*[:：]\s*(.+)$", ls, re.I)
+            if not m and re.match(r"^电子?邮箱\s*[:：]?$", ls, re.I):
+                nxt = el.find_next_sibling()
+                if nxt is None and el.parent is not None:
+                    nxt = el.parent.find_next_sibling()
+                if nxt is not None:
+                    m = re.match(r"^电子?邮箱\s*[:：]?\s*(.+)$",
+                                 f"邮箱：{nxt.get_text(strip=True)}", re.I)
+            if m:
+                e = normalize_email(m.group(1))
+                if e:
+                    out["email"] = e
+                    break
+    if "email" not in out:
+        # mailto href 兜底(西电 web.xidian 模板: <a href="mailto:x@y">x AT y</a>, 锚文本混淆但 href 是明文)
+        for a in soup.select('a[href^="mailto:"]'):
+            e = normalize_email(a["href"][7:])
+            if e:
+                out["email"] = e
+                break
+    if "email" not in out:
+        # 裸 <p> 明文兜底(西交 gr.xjtu 模板无任何标签)。全页唯一邮箱直接采用；
+        # 多个时仅当恰好一个与站点同校域(xjtu.edu.cn 等)——个人 QQ/163 并存时取官方域
+        uniq = {normalize_email(e) for e in re.findall(
+            r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", soup.get_text(" ", strip=True))} - {None}
+        if len(uniq) == 1:
+            out["email"] = uniq.pop()
+        elif uniq:
+            host = re.match(r"https?://([^/]+)", url).group(1)
+            parts = host.split(".")
+            base_dom = "." + ".".join(parts[-3:]) if host.endswith(("edu.cn", "com.cn", "gov.cn", "ac.cn")) else "." + ".".join(parts[-2:])
+            same = [e for e in uniq if e.lower().endswith(base_dom)]
+            if len(same) == 1:
+                out["email"] = same[0]
     return out

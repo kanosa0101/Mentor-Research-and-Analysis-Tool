@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导、硕导
+email: nanzhang@xidian.edu.cn
 bio_raw: '新版个人主页：
 
   西电教师个人主页系统 张南 中文主页 (xidian.edu.cn)
@@ -26,7 +27,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/zhangnan/
 profile_url: http://web.xidian.edu.cn/zhangnan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.security
   origin: computed
@@ -55,6 +56,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/zhangnan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/zhangnan/
     fetched_at: '2026-09-04'

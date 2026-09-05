@@ -1,16 +1,18 @@
 slug: liulifang
 name: 刘立芳
-aliases: []
+aliases:
+- lfliu
 school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: lfliu@mail.xidian.edu.cn
 bio_raw: 刘立芳，博士，教授，1995年和1998年在中国人民解放军装备学院分获学士和工学硕士学位，2006年西安电子科技大学获工学博士学位，同年9月进入智能感知与图像理解教育部重点实验室从事博士后科研工作，从事智能信息处理在生物信息学中的应用研究，2010年博士后出站；主持完成国家自然科学青年基金项目1项（No.60705004，项目期限：2008.01-2010.12），中央高校基本科研业务费项目1项（项目编号：721004494，项目期限：2010.11-2012.11），陕西省自然科学基金项目等多项
 institutes: []
 detail_url: http://web.xidian.edu.cn/lfliu/
 profile_url: http://web.xidian.edu.cn/lfliu/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.cv
   origin: computed
@@ -34,6 +36,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/lfliu/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/lfliu/
     fetched_at: '2026-09-04'

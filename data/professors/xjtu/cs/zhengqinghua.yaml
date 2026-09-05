@@ -8,6 +8,7 @@ status: enriched
 title: 教授
 supervisor: 博导
 subjects: 计算机科学与技术
+email: qhzheng@xjtu.edu.cn
 bio_raw: '郑庆华，浙江嵊州人，博士，教授，博士生导师。中国工程院院士，中国计算机学会会士，中国人工智能学会会士。教育部科技委学部委员，教育部计算与智能教学指导委员会主任（原大学计算机教学指导委员会），国家杰出青年科学基金获得者，国家自然科学基金创新群体负责人。
 
   长期从事知识工程研究，是该领域学术带头人，是大数据知识工程新领域开拓者之一。在
@@ -48,7 +49,7 @@ institutes:
 detail_url: https://gr.xjtu.edu.cn/qhzheng/zh_CN/index.htm
 profile_url: https://gr.xjtu.edu.cn/qhzheng/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.db
   origin: computed
@@ -82,6 +83,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/qhzheng/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://gr.xjtu.edu.cn/qhzheng/zh_CN/index.htm
     fetched_at: '2026-09-04'

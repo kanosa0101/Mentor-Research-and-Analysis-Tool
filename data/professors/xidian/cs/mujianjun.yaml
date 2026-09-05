@@ -1,10 +1,12 @@
 slug: mujianjun
 name: 慕建君
-aliases: []
+aliases:
+- jjmu
 school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: jjmu@xidian.edu.cn
 bio_raw: '♦
 
   慕建君，男，工学博士，  西安电子科技大学教授， 博士研究生导师。
@@ -62,7 +64,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/jjmu/
 profile_url: http://web.xidian.edu.cn/jjmu/
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -86,6 +88,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/jjmu/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/jjmu/
     fetched_at: '2026-09-04'
