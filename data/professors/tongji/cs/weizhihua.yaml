@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 021-69589250通讯地址上海市曹安公路4800号电信学院408室卫志华，同济大学教授，同济大学模式识别与智能系统专业博士，法国里昂二大信息学博士。现任同济大学计算机科学与技术系教授，博士生导师，计算机科学与技术系副主任，同济大学计算机与信息技术国家...
 bio_raw: '姓　　名
 
   卫志华
@@ -79,4 +80,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2797.htm
+    fetched_at: '2026-09-03'
     confidence: auto

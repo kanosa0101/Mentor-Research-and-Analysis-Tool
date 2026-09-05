@@ -4,6 +4,7 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
+title: 讲师
 email: dengcy@jlu.edu.cn
 bio_raw: '基本情况
 
@@ -76,6 +77,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1211/19213.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1211/19213.htm
     fetched_at: '2026-09-05'

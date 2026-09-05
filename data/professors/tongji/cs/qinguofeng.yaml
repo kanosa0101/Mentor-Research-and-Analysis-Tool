@@ -5,6 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+phone: 通讯地址四平路1239号同济大学1.个人基本情况秦国锋，男，自2007年起在同济大学电子与信息工程学院计算机科学与技术系任副研究员。独有发明专利8项，解决超大交流电微小电阻测量世界难题，取得显著经济社会效益，近年来，在IEEE
+  transactions、Neural Computing ...
 bio_raw: '姓　　名
 
   秦国锋
@@ -91,4 +93,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2836.htm
+    fetched_at: '2026-09-03'
     confidence: auto

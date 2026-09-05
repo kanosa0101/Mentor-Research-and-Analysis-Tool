@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: dcheng@tongji.edu.cn
+phone: 通讯地址：同济大学嘉定校区智信馆
 bio_raw: '姓　　名
 
   程大伟
@@ -88,4 +89,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/3991.htm
+    fetched_at: '2026-09-03'
     confidence: auto

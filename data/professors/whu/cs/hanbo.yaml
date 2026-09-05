@@ -80,7 +80,28 @@ institutes: []
 detail_url: https://cs.whu.edu.cn/info/1019/2945.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2945.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -107,24 +128,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2945.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计

@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 通讯地址上海市四平路1239号电子与信息工程学院杨志强 男，1964年12月生，博士，教授。计算机基础教室室主任，同济大学计算机与信息技术教学实验中心基础平台主任（国家级教学实验示范中心）；上海市计算机基础教育协会秘书长，华东地区计算机基础教育研究会常务理事，...
 bio_raw: '姓　　名
 
   杨志强
@@ -127,4 +128,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2842.htm
+    fetched_at: '2026-09-03'
     confidence: auto

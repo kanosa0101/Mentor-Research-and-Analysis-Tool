@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+phone: 通讯地址上海市曹安公路4800号电信大楼232室赵君峤博士现为同济大学计算机科学与技术学院副教授。于2011年获得武汉大学摄影测量与遥感专业博士
 bio_raw: '姓　　名
 
   赵君峤
@@ -308,4 +309,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2820.htm
+    fetched_at: '2026-09-03'
     confidence: auto

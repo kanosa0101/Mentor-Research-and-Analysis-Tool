@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 通讯地址上海市曹安公路4800号电信大楼陈永生 男，1966年2月生，1993年4月毕业于北方交通大学，获工学博士
 bio_raw: '姓　　名
 
   陈永生
@@ -91,4 +92,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2818.htm
+    fetched_at: '2026-09-03'
     confidence: auto

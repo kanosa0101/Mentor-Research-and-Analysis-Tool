@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hul@jlu.edu.cn
 phone: 0431-85168277
 bio_raw: '胡亮教授、博士生导师
@@ -263,6 +264,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1175/18463.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1175/18463.htm
     fetched_at: '2026-09-04'

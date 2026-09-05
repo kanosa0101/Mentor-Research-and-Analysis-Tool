@@ -4,6 +4,7 @@ aliases: []
 school: neu
 dept: cs
 status: enriched
+email: wangyang2@cse.neu.edu.cn
 bio_raw: '王样
 
   ，女，
@@ -99,7 +100,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2022/1230/c6641a225155/page.htm
 profile_url: http://www.cse.neu.edu.cn/2022/1230/c6641a225155/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.systems
   origin: computed
@@ -118,6 +119,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2022/1230/c6641a225155/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2022/1230/c6641a225155/page.htm
     fetched_at: '2026-09-04'

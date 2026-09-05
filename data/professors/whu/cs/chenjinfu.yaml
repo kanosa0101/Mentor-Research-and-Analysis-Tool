@@ -4,6 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
+title: 副教授
 bio_raw: '陈金富
 
   武汉大学计算机学院 软件工程系 副教授
@@ -208,18 +209,7 @@ institutes: []
 detail_url: https://cs.whu.edu.cn/info/1019/3521.htm
 profile_url: https://cs.whu.edu.cn/info/1019/3521.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.whu.edu.cn/szdw/zrjs.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/3521.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.ml
   origin: computed
@@ -231,3 +221,19 @@ facets:
   confidence: auto
   evidence:
   - keyword:漏洞
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.whu.edu.cn/szdw/zrjs.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/3521.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/3521.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

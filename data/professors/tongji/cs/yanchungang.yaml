@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 021-69589867通讯地址1986年于山东科技大学应用数学专业获理学学士
 bio_raw: '姓　　名
 
   闫春钢
@@ -128,4 +129,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2794.htm
+    fetched_at: '2026-09-03'
     confidence: auto

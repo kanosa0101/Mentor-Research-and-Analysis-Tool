@@ -4,6 +4,8 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
+title: 教授
+phone: 0431-85168187
 bio_raw: '基本情况：
 
   李强
@@ -322,6 +324,16 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1399/21144.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1399/21144.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1399/21144.htm
     fetched_at: '2026-09-04'

@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+email: xiangsheng@tongji.edu.cn
 bio_raw: '姓名
 
   向声
@@ -130,4 +131,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/4062.htm
+    fetched_at: '2026-09-03'
     confidence: auto

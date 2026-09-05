@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 69589864通讯地址上海市曹安路4800号同济大学智信馆217室张亚英，教授，2004年毕业于上海交通大学计算机科学与技术系，获工学博士
 bio_raw: '姓　　名
 
   张亚英
@@ -228,4 +229,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2790.htm
+    fetched_at: '2026-09-03'
     confidence: auto

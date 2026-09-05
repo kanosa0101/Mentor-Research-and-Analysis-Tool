@@ -19,10 +19,13 @@
 
 ## 2. 当前状态
 
-- **22 校 26 院系 3664 人**，全量 YAML 落盘 + 静态网站可浏览
-- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送至 `f85c7f3`
-- preflight 仅 1 项问题：北师大 2 条官网死链留痕（zj 频道 404，有意保留）
+- **25 校 29 院系 4174 人**，全量 YAML 落盘 + 静态网站可浏览
+- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
+- preflight 仅 5 条留痕：北师大 2 条官网死链 + 南科大 3 条教师外链主页抓取失败（scholar.google 等被代理拦），均如实记录
 - 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）
+- **邮箱是最关键字段**（仅次于姓名）：全库 2514/4174（60%）。获取手段已三类齐备：
+  ① tsites 密文解密接口（中南/西电/川大）② WP meta description 字段兜底（吉大/山大）③ 页面明文/简介正则。
+  覆盖低的院系均核实为官网侧原因（hit/nwpu 网络不可达、iie 无详情页、seu 名单无邮箱、zju 瑞数反爬）。
 
 ## 3. 架构与目录
 
@@ -131,7 +134,10 @@ provenance:                # 每字段出处——工具的立身之本
 | xjtu/cs | xjtu_cs | 75 | 47 | 22 | 59 | 10 | 17 |
 | scu/cs | scu_cs | 166 | 39 | 151 | 1 | 109 | 70 |
 | zju/cs | zju_cs | 438 | 63 | 59 | 436 | 0 | 64 |
-| **合计** | | **3664** | | | | | |
+| sustech/cs | sustech_cs | 39 | 39 | 39 | 0 | 11 | 0 |
+| shanghaitech/cs | sist_cs | 149 | 97 | 147 | 88 | 0 | 89 |
+| seu/cs | seu_cs | 125 | 125 | 0 | 0 | 0 | 125 |
+| **合计** | | **4174** | | | | | |
 
 要点：hit/nwpu/csu(已修)/ruc 是纯名单或低覆盖（官网无详情可抓，roster 级）；ucas/iie 是导师名单文章（只有姓名+博导+研究室）；xidian/川大邮箱经 tsites 解密接口还原（见 §10.15）；浙大简介在瑞数反爬后如实留空；浙大 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科）。
 
@@ -194,6 +200,11 @@ provenance:                # 每字段出处——工具的立身之本
 20. **crawl.py 别名 bug**：`url.rsplit("/",1)[1][:-5]` 把 index.htm/page.htm 截成 inde/pag/lis/te 垃圾别名（全库 315 条已清理）；已改为剥真实扩展名 + 文件名无信息量时回退上一级目录名
 21. **build_site.py 孤儿页**：slug 变更后旧详情页残留（中南事故 100 个）——重建时按当前名单清理失效页面，已修
 22. 北师大列表形态：博导/硕导频道是**文章列表**（每学科一篇文章、表格按方向分组），不是教师列表；师资 zgj/fgj/zj 频道才是静态名单
+23. **WP meta description 兜底**：很多 WP 站把 姓名/职称/电话/Email 压进 `<meta name="description">`（标签间无分隔符），按已知标签切位置取值（`sites/wp.py: _meta_fields`）——吉大职称 80→95%、山大 0→94% 靠它
+24. **sudy WP 通用查询接口**：上科大 `/_wp3services/generalQuery?queryObj=teacherHome` 是 **POST** 表单（siteId/conditions(exField8=分类)/returnInfos/rows=999），GET 会 500；请求须 trust_env=False + X-Requested-With 头。字段：title=姓名、exField1=职称+博导、exField4=方向、exField5=研究中心
+25. **"SPA"结论要复检**：南科大被记为"JS 卡片加载"，实际是服务端渲染卡片（.teacherlist）——旧结论是渲染没等够/选择器没匹配上的误报。接手时先重新核实再信文档
+26. 东南师资三频道（按职称/按方向/按系别）是纯文本名单（h2 + div.ry-md>p.ry-xm），无教师链接——三页按姓名合并出 职称/方向/系别；师资博士后（ry-bz 标注）不入库
+27. 邮箱回归（2026-09-05）：低覆盖院系逐一核实——hit/nwpu 教师系统网络不可达（直连重置/代理503）、iie/seu 官网无详情页、zju 瑞数反爬、csu/xidian/bnu/xjtu/tongji 页面确实没写。**别再在这些院系的解析上花时间**
 
 ## 11. 操作手册
 
@@ -215,12 +226,13 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 
 ## 12. 建议的下一步（按价值排序）
 
-1. **剩余 4 校 SPA 逆向**：南科大（cse.sustech.edu.cn faculty 子页卡片）、上科大（sist szdwx 列表 JS）、东南（dsxx 导师库混合外链）、复旦（登录墙）—— 每校 1-2 小时；Playwright XHR 监听是起点（本轮浙大/西交/川大的逆向套路见 §10.15-19，tsites 家族优先试 `getsitelistcontent.jsp` 同款接口）
-2. **facet 细化**：13 类关键词规则可继续调；`topic.*` 标签的 evidence 目前只记关键词，可升级为记录命中原文片段
-3. **附录 A 延后项**（需求文档有完整设计）：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
-4. **verified 人工核对流程**：从未启用；最小方案=每校抽 10 人人工核对 provenance 并置 verified
-5. 官网改版是常态：`crawl --refresh` + changes 日志会告诉你哪里变了；改版导致解析失效会进 issues 队列
-6. 浙大名录仅 64 人而官方 xlsx 有 418 位导师——若 person.zju.edu.cn 能过瑞数反爬，可补齐 374 位名录外导师的详情
+1. **复旦**（唯一未接入校，名录在登录墙后）——需校友/公开渠道核实替代源
+2. **华东师大补全**：名录按职称分类按钮加载，默认分类已抓（28→70），其余类别（副教授/专职科研等）需 Playwright 点击逐类采集（钩子已就位 `sites/ecnu/ecnu_cs.py`）
+3. **浙大补全**：官方名录仅 64 人 vs xlsx 418 人，若能过瑞数反爬可大幅补齐（含 374 名录外导师）
+4. **facet 细化**：13 类关键词规则可继续调；evidence 可升级为记录命中原文片段
+5. **附录 A 延后项**：学术数据层 → AI 分析层 → 学生画像+匹配+SOP+信件；对比页；状态写回+看板
+6. **verified 人工核对**：未启动；最小方案=每校抽 10 人核对 provenance
+7. 官网改版是常态：`crawl --refresh` + changes 日志；南科大"SPA"误报的教训（§10.25）——文档结论要复检
 
 ## 13. 给下一个 agent 的三句话
 

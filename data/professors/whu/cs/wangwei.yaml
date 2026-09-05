@@ -4,7 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
-email: wangw@whu.edu.cn
+email: wangw@whu.edu.cn2
 bio_raw: '1.
 
   个人与课题组情况介绍
@@ -181,28 +181,7 @@ homepage: https://metaiot.group/
 detail_url: https://cs.whu.edu.cn/info/1019/55961.htm
 profile_url: https://cs.whu.edu.cn/info/1019/55961.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.whu.edu.cn/szdw/zrjs.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/55961.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/55961.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.whu.edu.cn/info/1019/55961.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-05'
 facets:
 - id: topic.llm
   origin: computed
@@ -229,3 +208,24 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.whu.edu.cn/szdw/zrjs.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/55961.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/55961.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/55961.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

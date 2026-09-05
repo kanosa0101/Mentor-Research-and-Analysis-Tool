@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+email: zslizsli@163.com
 phone: 13089115516/13644407985
 bio_raw: '吉林大学，计算机科学与技术学院，教授，博士生导师
 
@@ -1286,6 +1287,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19051.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1367/19051.htm
     fetched_at: '2026-09-05'

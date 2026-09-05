@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 预聘助理教授
+email: fanguiyun@tongji.edu.cn
 bio_raw: '姓名
 
   范桂云
@@ -185,4 +186,9 @@ provenance:
     origin: crawled
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/3865.htm
+    fetched_at: '2026-09-03'
     confidence: auto

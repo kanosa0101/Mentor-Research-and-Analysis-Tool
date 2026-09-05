@@ -75,7 +75,18 @@ homepage: http://cs.whu.edu.cn/IPAI/
 detail_url: https://cs.whu.edu.cn/info/1019/2932.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2932.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -107,14 +118,3 @@ provenance:
     source: https://cs.whu.edu.cn/info/1019/2932.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

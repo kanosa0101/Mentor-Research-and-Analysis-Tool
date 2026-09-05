@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+phone: 通讯地址上海市嘉定区曹安公路4800号电信大楼（邮政编码：201804）刘钦源，同济大学计算机科学与技术学院长聘教授、博导。入选国家优青、上海晨光学者。2012年本科毕业于华中科技大学，2017年博士毕业于清华大学，获清华大学...
 bio_raw: '姓　　名
 
   刘钦源
@@ -79,4 +80,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2808.htm
+    fetched_at: '2026-09-03'
     confidence: auto

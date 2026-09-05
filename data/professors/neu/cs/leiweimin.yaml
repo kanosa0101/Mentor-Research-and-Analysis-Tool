@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+email: leiweimin@mail.neu.edu.cn
 bio_raw: '雷为民，男，
 
   东北大学计算机科学与工程学院教授，
@@ -72,7 +73,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157499/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0303/c6641a157499/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 facets:
 - id: topic.network
   origin: computed
@@ -91,6 +92,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0303/c6641a157499/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0303/c6641a157499/page.htm
     fetched_at: '2026-09-04'
