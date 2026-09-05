@@ -1,0 +1,57 @@
+slug: zhangjianguo
+name: 张建国
+aliases: []
+school: sustech
+dept: cs
+status: enriched
+title: 教授
+email: zhangjg@sustech.edu.cn
+bio_raw: '办公室：
+
+  南方科技大学工学院南楼313室
+
+  研究方向：
+
+  计算机视觉、多模态大模型、深度学习、医学图像及信息处理、人工智能等'
+institutes: []
+detail_url: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+profile_url: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+provenance:
+  name:
+    origin: crawled
+    source: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+    fetched_at: '2026-09-05'
+    confidence: auto
