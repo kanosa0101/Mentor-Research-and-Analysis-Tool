@@ -11,12 +11,25 @@ subjects: 软件工程、电子信息、计算机科学与技术
 email: zhpcui@zju.edu.cn
 phone: 0571-88206681
 office_address: 紫金港校区蒙民伟楼502
+bio_raw: '崔兆鹏，浙江大学计算机学院CAD&CG国家重点实验室“百人计划”研究员、博士生导师。2009和2012年在西安电子科技大学分别获得学士和硕士学位，2017年在加拿大西蒙弗雷泽大学（Simon
+  Fraser University）获得博士学位。2017年至2020年在瑞士苏黎世联邦理工学院（ETH Zurich）计算机视觉和几何实验室（CVG）任高级研究员。
+
+  研究方向是三维计算机视觉，涉及计算机视觉、机器人、计算机图形学等领域。目前研究主要侧重于基于视觉信息的三维感知和理解，具体包括三维重建、运动恢复结构、多视角立体几何、三维场景理解、同时定位与地图构建、视频图像编辑等问题，近年来在计算机视觉、机器人、计算机图形学、机器学习等领域顶级期刊和会议（CVPR、ICCV、SIGGRAPH、NeurIPS、ICRA、IROS）上发表论文50余篇，曾获ICRA
+  2020 Best Paper in Robot Vision Finalist 和 IROS 2021 Best Paper Award on Safety,
+  Security, and Rescue Robotics in memory of Motohiro Kisoi Finalist, 3DV 2024最佳论文荣誉提名。担任Pattern
+  Recognition、RA-L等国际期刊编委，CVPR、ECCV、3DV领域主席, ICRA、IROS副编委、
+
+  AAAI、IJCAI高级程序委员。
+
+  课题组积极招纳博士后、博士研究生、硕士研究生及本科实习生，欢迎加入。更多信息请见个人主页：
+
+  http://www.cad.zju.edu.cn/home/zhpcui/'
 institutes: []
 research_direction_raw: 计算机视觉、计算机图形学、机器人感知、混合现实
 detail_url: https://person.zju.edu.cn/zhpcui
 profile_url: https://person.zju.edu.cn/zhpcui
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2025-09-27'
 facets:
 - id: topic.cv
@@ -24,6 +37,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 - id: topic.graphics
   origin: computed
   confidence: auto
@@ -71,6 +89,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhpcui
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/zhpcui
     fetched_at: '2026-09-04'

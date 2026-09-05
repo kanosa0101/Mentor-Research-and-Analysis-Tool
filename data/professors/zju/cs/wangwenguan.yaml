@@ -8,14 +8,190 @@ status: enriched
 title: 研究员
 supervisor: 博导
 email: wenguanwang@zju.edu.cn
+bio_raw: '王文冠现任浙江大学计算机学院
+
+  百人计划研究员
+
+  ，博士生导师，
+
+  国家优秀青年基金（海外）获得者
+
+  ，IEEE Senior Member。
+
+  2022-2023，
+
+  任悉尼科技大学（University of Technology Sydney）
+
+  讲师/助理教授
+
+  （Lecturer），获
+
+  澳洲优秀青年基金
+
+  （DECRA）
+
+  。
+
+  2020
+
+  ∼
+
+  2022年，在苏黎世联邦理工学院（ETH Zurich）任
+
+  博后
+
+  研究员
+
+  （Research Fellow）。2018
+
+  ∼
+
+  2019 年，先后任起源人工智能研究院（IIAI）
+
+  研究员
+
+  （Research Scientist）和
+
+  资深研究员
+
+  （Senior
+
+  Scientist
+
+  ）。
+
+  2016-2018年，在加州大学洛杉矶分校（UCLA）访学。
+
+  2018年获北京理工大学博士学位。
+
+  指导学生获得国自然博士生基金、国家奖学金、中国科协博士生青托、竺可桢奖学金。
+
+  长期
+
+  招收博士后/博士/硕士/访问学生！
+
+  欢迎本科生同学加入实验室开展科研训练或参加各类国家级大创项目
+
+  ！
+
+  研究方向：
+
+  具身人工智能（Embodied AI），AI for Science
+
+  ，
+
+  神经-符号计算（Neuro-Symbolic Computi
+
+  n
+
+  g）等。
+
+  学术成果：
+
+  在顶级期刊及会议（如Nature Communications
+
+  ，Cell Innovation，
+
+  IEEE TPAMI，IJCV，ICLR，NeurIPS，CVPR，ICCV，ECCV，AAAI，SIGGRAPH Asia，ACMMM）发表学术论文
+
+  120余篇
+
+  。谷歌学术引用3万余次，H-index
+
+  90
+
+  。
+
+  荣誉奖励：
+
+  曾获
+
+  《福布斯》
+
+  中国青年海归菁英 100 人（2025年）、
+
+  《麻省理工科技评论》
+
+  中国AI100青年先锋（2025年）、
+
+  青橙
+
+  奖
+
+  （2024年，全国15人）、
+
+  ACM 中国新星奖
+
+  （2023年，全国2人）、
+
+  Intel中国学术英才
+
+  （2023年，全国6人）、澳大利亚研究理事会（Australian Research Council，ARC）
+
+  优秀青年基金
+
+  （Discovery Early Career Researcher Award，DECRA）（2022年）、
+
+  科睿唯安全球高被引科学家
+
+  （2023、2024
+
+  、2025
+
+  年）、斯坦福大学“
+
+  全球前 2% 顶尖科学家
+
+  ”（2022、2023、2024
+
+  、2025
+
+  年）、
+
+  Elsevier高被引中国学者
+
+  （2020、2021、2022、2023
+
+  、2024
+
+  年）、
+
+  世界人工智能大会优秀青年论文奖
+
+  （2020年）、
+
+  中国人工智能学会优博奖
+
+  （2019年）、
+
+  ACM 中国优博奖
+
+  （2018年）。带队在15个国际学术竞赛中获得先进名次（7项冠军、3项亚军和5项季军）。
+
+  个人主页：
+
+  https://sites.google.com/view/wenguanwang
+
+  谷歌学术：
+
+  https://scholar.google.com/citations?user=CqAQQkgAAAAJ&hl=zh-CN
+
+  Github：
+
+  https://github.com/wenguanwang'
 institutes: []
 research_direction_raw: 数据和知识驱动的人工智能、机器感知、以人为中心的人工智能、具身人工智能、AI for Science
 detail_url: https://person.zju.edu.cn/wenguanwang
 profile_url: https://person.zju.edu.cn/wenguanwang
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-08-14'
 facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 - id: topic.robotics
   origin: computed
   confidence: auto
@@ -43,6 +219,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: https://person.zju.edu.cn/wenguanwang
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/wenguanwang
     fetched_at: '2026-09-04'

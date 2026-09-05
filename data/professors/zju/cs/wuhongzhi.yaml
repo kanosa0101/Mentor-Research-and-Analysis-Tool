@@ -10,14 +10,23 @@ supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
 phone: +86-571-88206681
 office_address: 紫金港校区蒙民伟楼
+bio_raw: '吴鸿智，浙江大学计算机科学与技术学院计算机辅助设计与图形学国家重点实验室教授、博士生导师。本科毕业于复旦大学计算机科学与工程系，博士毕业于美国耶鲁大学计算机科学系，师从Julie
+  Dorsey和Holly Rushmeier教授。曾于微软亚洲研究院网络图形组担任访问学生。目前主要研究兴趣为计算机图形学与视觉、虚拟现实和三维重建。
+
+  更多信息请访问网页http://hongzhiwu.com/'
 institutes: []
 research_direction_raw: 计算机图形学、虚拟现实、三维重建
 detail_url: https://person.zju.edu.cn/hwu
 profile_url: https://person.zju.edu.cn/hwu
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2022-02-12'
 facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
 - id: topic.graphics
   origin: computed
   confidence: auto
@@ -55,6 +64,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/hwu
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/hwu
     fetched_at: '2026-09-04'

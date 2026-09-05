@@ -1,0 +1,36 @@
+slug: zhangqi
+name: 张奇
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: 张奇，国家级领军人才、博士生导师。兼任上海市智能信息处理重点实验室副主任，中国中文信息学会理事、CCF大模型论坛常务委员、CIPS信息检索专委会常务委员、CIPS大模型专委会委员。多次担任ACL、EMNLP、COLING、全国信息检索大会等重要国际和国内会议的程序委员会主席、领域主席、讲习班主席等职务。近年来，承担了国家重点研发计划课题、国家自然科学基金、上海市科委等的多个项目，在国际重要学术期刊和会议上发表论文200余篇。获得WSDM
+  2014最佳论文提名奖、COLING 2018 领域主席推荐奖、NLPCC 2019杰出论文奖、COLING 2022杰出论文奖。获得上海市“晨光计划”人才计划、复旦大学“卓越2025”人才培育计划等支持，获得钱伟长中文信息处理科学技术一等奖、汉王青年创新一等奖、上海市科技进步二等奖、教育部科技进步二等奖、IBM
+  Faculty Award等奖项。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/5b/f8/c30604a482296/page.htm
+profile_url: https://cs.fudan.edu.cn/5b/f8/c30604a482296/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/5b/f8/c30604a482296/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

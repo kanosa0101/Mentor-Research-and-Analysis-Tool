@@ -1,0 +1,48 @@
+slug: chenchen
+name: 陈辰
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: '陈辰，博士，复旦大学高级工程师。研究领域为深度学习和大数据分析。国家重点研发项目子课题负责人，作为主要骨干参与了包括国家自然科学基金重点、面上项目在内的多个研究项目。
+
+  研究领域包括人工智能和大数据分析等，围绕大模型智能体开展了深入研究，并取得了诸多成果。
+
+  所指导的复旦大学信息安全竞赛队伍六星战队多次在国内、国际竞赛中获奖。'
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c5/c2/c30604a443842/page.htm
+profile_url: https://cs.fudan.edu.cn/c5/c2/c30604a443842/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c5/c2/c30604a443842/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

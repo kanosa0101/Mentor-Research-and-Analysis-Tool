@@ -9,12 +9,32 @@ supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
 email: liu_zx@zju.edu.cn
 office_address: 浙江大学玉泉校区曹光彪西楼405室
+bio_raw: '计算机学院特聘研究员，研究方向为智能化软件工程，包括AI for SE及SE for AI。具体研究内容包括程序理解、自动化编程、测试自动化、开发决策智能推荐等。目前的研究聚焦于从软件工程大数据中挖掘和利用软件开发知识，结合人工智能方法和程序分析技术设计自动化工具，帮助开发者理解、撰写、变更和测试源代码，做出高质量的开发决策，提升软件开发的效率和质量。
+
+  近年来，已在软件工程领域国际顶级/重要学术期刊或会议 TSE、TOSEM、ICSE、FSE、ASE、ISSTA等发表二十余篇论文。主持国自然青年科学基金项目1项。受邀担任SANER
+  2023，APSEC 2023, ICSE 2023 Tool Demo Track, Internetware 2023, ChinaSoft 2022, Internetware
+  2022, APSEC 2020 Poster Track和AI for Software Engineering Book的程序委员会委员，TSE，TOSEM，EMSE，TR,
+  ASE Journal，SPE，Journal of Software: Evolution and Process，软件学报等学术期刊审稿人。担任CCF软件工程专委会执行委员。
+
+  曾连续三年作为第一作者获得CCF-A类会议ASE的
+
+  ACM SIGSOFT Distinguished Paper Award，
+
+  2021年被评为
+
+  浙江大学启真优秀青年学者
+
+  。
+
+  更多信息请参见个人主页：https://zhongxin-liu.github.io
+
+  课题组长期招收相关方向硕士/博士研究生以及本科实习生，欢迎感兴趣的同学通过邮件与我联系（liu_zx@zju.edu.cn）'
 institutes: []
 research_direction_raw: 智能软件工程、大模型、智能体
 detail_url: https://person.zju.edu.cn/liuzhongxin
 profile_url: https://person.zju.edu.cn/liuzhongxin
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-03-03'
 facets:
 - id: topic.llm
@@ -22,6 +42,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:大模型
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -54,6 +79,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/liuzhongxin
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/liuzhongxin
     fetched_at: '2026-09-04'

@@ -7,14 +7,155 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+bio_raw: 'Biography
+
+  黄正行，男，浙江大学人工智能研究所教授，博士生导师。围绕医疗临床决策范式转变这一临床医学、信息科学和数据科学领域的交叉研究前沿，开展从数据到知识、从知识到决策的医疗多模态表征学习理论方法研究，成功应用于复杂疾病临床智能决策与精准诊疗。累计发表学术论文100余篇，其中以第一或通讯作者（含共同通讯）在Nature
+  Medicine、NEJM AI、Science Advances、Nature Communications、Brain、IEEE-TBME等高水平期刊及AAAI、MICCAI等重要会议发表论文70余篇；成果被多篇综述、评论、年鉴及Nature、Nature
+  Medicine、Nature Aging等权威期刊正面引用，并作为核心证据纳入临床专家共识；授权国家发明专利18项；现任中国中文信息学会理事和医疗健康与生物信息处理专委会副主任委员，Society
+  for Artificial Intelligence in Medicine (AIME) 理事会成员（国内唯一当选学者）；担任医学人工智能核心期刊《Artificial
+  Intelligence in Medicine》Executive Editor，Nature合作期刊《npj Digital Medicine》等6本高水平期刊的Associate
+  Editor或编委；入选斯坦福大学/Elsevier发布的“World Top 2% Scientist”2025年度榜单；作为核心成员，荣获军队科学技术进步一等奖、中国电子学会科技进步一等奖、教育部高等学校科学研究优秀成果一等奖等3项省部级重要奖励。
+
+  We are looking for self-motivated Postdoc/PhD/MSc/RA/Interns, who are interested
+  in AI in Medicine. Please drop me an email with your CV and transcripts.
+
+  News
+
+  [03/2026]
+
+  恭喜张瑞霞同学顺利完成博士答辩；瑞霞就职新疆医科大学医学工程技术学院，扎根祖国西部，为边疆的“AI+医疗”的发展贡献力量，祝福瑞霞事业顺利，前程似锦！
+
+  [03/2026] Autism Screening
+
+  论文被Nature Communications接收，恭喜邓睿康同学。睿康为浙大计算机本科毕业生，获2025年校优秀毕业设计，现已跨保至上海交大临床医学（4+4），立志推动医工交叉创新。祝睿康同学前程远大！
+
+  [01/2026] ECG2CMR
+
+  论文被
+
+  NEJM AI
+
+  接收，恭喜丁正尧同学（预印版：https://arxiv.org/abs/2411.13602）
+
+  [01/2026]
+
+  anyECG-chat
+
+  论文被
+
+  AAAI2026
+
+  接收，恭喜李海涛同学（预印版：https://arxiv.org/abs/2506.00942）
+
+  [12/2025]
+
+  胡毓健同学获得2025年度
+
+  国家自然科学基金青年学生基础研究项目（博士研究生）资助
+
+  （项目批准号：825B2011，项目名称：基于多模态数据融合学习的急性主动脉夹层可解释诊断模型研究），恭喜毓健！
+
+  [12/2025]
+
+  丁正尧同学入选"
+
+  青年科技人才培育工程博士生专项计划
+
+  " ，恭喜正尧!
+
+  [11/2025]
+
+  易帆同学荣获2024-2025年度
+
+  浙江大学研究生国家奖学金
+
+  ，恭喜易帆！
+
+  Editorship
+
+  1
+
+  、
+
+  Society for Artificial Intelligence in Medicine (AIME)
+
+  理事会成员
+
+  2
+
+  、
+
+  Artificial Intelligence in Medicine   Executive Editor (2025 -- )
+
+  3
+
+  、
+
+  npj Digital Medicine    Associate Editor (2024 -- )
+
+  4
+
+  、
+
+  Journal of Medical Systems    Associate Editor (2024 -- )
+
+  5
+
+  、
+
+  BMC Medical Informatics and Decision Making    Associate Editor (2024 -- )
+
+  6
+
+  、
+
+  npj Health Systems Editorial board member (2026 -- )
+
+  7
+
+  、
+
+  BMC Medicine Editorial board member (2025 -- )
+
+  8
+
+  、
+
+  Journal of Biomedical Informatics   Editorial board member (2020 -- )
+
+  9
+
+  、中国中文信息学会理事、医疗健康与生物信息处理专委会副主委
+
+  10
+
+  、中国计算机学会历史工作委员会执行委员
+
+  11
+
+  、中国老年医学会数字诊疗专委会常务委员
+
+  12
+
+  、中国医学装备协会人工智能和医用机器人工作委员会常务委员'
 institutes: []
 research_direction_raw: 医学人工智能
 detail_url: https://person.zju.edu.cn/zhengxinghuang
 profile_url: https://person.zju.edu.cn/zhengxinghuang
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-06-08'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -32,6 +173,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   supervisor:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhengxinghuang
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/zhengxinghuang
     fetched_at: '2026-09-04'

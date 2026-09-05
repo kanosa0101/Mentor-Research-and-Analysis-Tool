@@ -8,12 +8,59 @@ title: 讲师
 supervisor: 硕导
 email: wengkai@zju.edu.cn
 office_address: 曹光彪主楼5楼
+bio_raw: '2018年入选中国高校计算机专业优秀教师奖励计划，曾获国家教学成果一等奖、二等奖各1项，浙江省教学成果一等奖2项，获2018年度浙江大学永平杰出教学贡献奖。
+
+  在中国大学
+
+  MOOC
+
+  开设了
+
+  C
+
+  语言程序设计、
+
+  Java
+
+  语言程序设计等课程，是目前选课人数最多、最活跃的课程之一，是累计选课人数最多的教师之一，累计选课人次
+
+  300
+
+  余万，单次选课最高
+
+  28
+
+  万人，其中两门课程被认定为国家精品在线开放课程。
+
+  主要研究方向
+
+  嵌入式
+
+  嵌入式实时操作系统：包括RTOS基础理论和实现，构件化RTOS和组件远程动态更新，协程在RTOS中的应用
+
+  嵌入式系统评测：对嵌入式系统，包括操作系统和应用系统的功能、性能、能耗等的评测设计
+
+  嵌入式系统应用：在工农业生产中的嵌入式产品开发
+
+  嵌入式并行计算：SIMD在嵌入式上的编程支持，使用FPGA实现的神经网络加速
+
+  传感网应用：使用WSN的室内定位研究，使用LoRa、ZigBEE、APRS等方式的传感网部署和应用
+
+  编程语言
+
+  新的语法结构的分析与比较研究，尤其关注针对并行和新的指令体系提供高级语言支持的问题
+
+  编程语言在浏览器中的解释执行
+
+  计算机教育
+
+  尤其关注K-12编程教育，包括方法和工具'
 institutes: []
 research_direction_raw: 嵌入式操作系统、嵌入式系统应用、编程语言原理、计算机教育
 detail_url: https://person.zju.edu.cn/wengkai
 profile_url: https://person.zju.edu.cn/wengkai
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2020-05-11'
 facets:
 - id: topic.systems
@@ -48,6 +95,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/wengkai
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/wengkai
     fetched_at: '2026-09-04'

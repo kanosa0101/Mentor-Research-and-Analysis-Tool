@@ -10,12 +10,14 @@ supervisor: 硕导
 email: weng@cad.zju.edu.cn
 phone: '88206681'
 office_address: 浙江大学紫金港校区蒙民伟楼
+bio_raw: 现任浙江大学计算机科学与技术学院副教授，获得University of Wisconsin - Milwaukee计算机科学博士学位，获得浙江大学控制科学与工程硕士和本科学位。研究兴趣为计算机图形学和多媒体。近年来在ACM
+  TOG/IEEE TVCG等期刊和国际会议上发表论文10余篇，主持国家自然科学基金项目2项。
 institutes: []
 research_direction_raw: 计算机图形学
 detail_url: https://person.zju.edu.cn/ylweng
 profile_url: https://person.zju.edu.cn/ylweng
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2018-08-31'
 facets:
 - id: topic.graphics
@@ -55,6 +57,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/ylweng
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/ylweng
     fetched_at: '2026-09-04'

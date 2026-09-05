@@ -1,0 +1,51 @@
+slug: xuexiangyang
+name: 薛向阳
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+title: 教授
+bio_raw: 薛向阳，博士，复旦大学计算与智能创新学院教授，博士生导师。现任大数据研究院、类脑智能科学与技术研究院副院长。当前研究方向为多模态大模型、具身智能和类脑智能等，在顶级期刊（如IEEE
+  TPAMI）和会议（如CVPR、ICCV、NeurIPS等）上发表论文130余篇，获国际期刊IEEE TMM 2016与国际会议ICME 2017论文奖，论文引用2.3万次，发明专利授权50余项。作为第一完成人及主要完成人，获国家科技进步奖一等奖1项和二等奖1项、国家自然科学奖二等奖1项、省部级科学技术一等奖6项。入选上海市启明星计划和学术带头人计划，享受国务院特殊津贴，CCF杰出会员，上海市人工智能学会副理事长、IEEE上海分会副主席、CSIG情感计算与理解专委会副主任。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/31/e9/c30604a733673/page.htm
+profile_url: https://cs.fudan.edu.cn/31/e9/c30604a733673/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/31/e9/c30604a733673/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/31/e9/c30604a733673/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

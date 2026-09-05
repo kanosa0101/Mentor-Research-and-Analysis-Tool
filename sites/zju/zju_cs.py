@@ -144,28 +144,36 @@ def parse_detail(cfg, html, url):
     m = re.search(r"更新时间\s*[：:]\s*(\d{4}-\d{2}-\d{2})", body_text)
     if m:
         out["source_updated_at"] = m.group(1)
-    # 个人简介等内容在 column API
+    # 个人简介等内容在 column API; 接口校验 session cookie(route/PHPSESSID),
+    # 必须先用同一会话访问页面再调接口, 否则 Access denied
     apic = re.search(r"var apiColumn\s*=\s*[\"']([^\"']+)[\"']", html)
     puid = re.search(r"var pageUid\s*=\s*[\"']([^\"']+)[\"']", html)
-    if apic and puid:
-        nav = soup.select_one("#tab_nav")
-        col_id = None
-        if nav:
-            for li in nav.select("li"):
-                if "个人简介" in li.get_text():
-                    col_id = li.get("col")
-        if col_id:
-            try:
-                api = ("https://person.zju.edu.cn" + apic.group(1) +
-                       f"&column_id={col_id}&pageUid={puid.group(1)}&type=1")
-                jtext, _, _ = fetch.fetch_text("GET", api)
-                import json
-                data = json.loads(jtext).get("data") or {}
-                content = data.get("content") or ""
-                bio = BeautifulSoup(content, "html.parser").get_text("\n", strip=True)
-                bio = re.sub(r"\n{2,}", "\n", bio).strip()
-                if len(bio) > 30:
-                    out["bio_raw"] = bio[:5000]
-            except Exception:
-                pass
+    col_id = None
+    nav = soup.select_one("#tab_nav")
+    if nav:
+        for li in nav.select("li"):
+            if "个人简介" in li.get_text():
+                col_id = li.get("col")
+    if apic and puid and col_id:
+        import json as _json
+        import requests as _requests
+        try:
+            s = _requests.Session()
+            s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            r0 = s.get(url, timeout=20)  # 取 session cookie + 新鲜签名
+            fresh_apic = re.search(r"var apiColumn\s*=\s*[\"']([^\"']+)[\"']", r0.text)
+            if not fresh_apic:
+                return out
+            api = ("https://person.zju.edu.cn" + fresh_apic.group(1) +
+                   f"&column_id={col_id}&pageUid={puid.group(1)}&type=1")
+            r = s.get(api, headers={"Referer": url, "X-Requested-With": "XMLHttpRequest"},
+                      timeout=20)
+            data = _json.loads(r.text).get("data") or {}
+            content = data.get("content") or ""
+            bio = BeautifulSoup(content, "html.parser").get_text("\n", strip=True)
+            bio = re.sub(r"\n{2,}", "\n", bio).strip()
+            if len(bio) > 30:
+                out["bio_raw"] = bio[:5000]
+        except Exception:
+            pass
     return out

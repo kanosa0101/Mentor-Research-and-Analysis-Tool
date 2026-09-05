@@ -10,14 +10,37 @@ supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
 email: gpan@zju.edu.cn
 office_address: 浙江大学玉泉校区老生仪楼一楼
+bio_raw: '浙江大学求是特聘教授、博导，
+
+  脑机智能全国重点实验室主任，
+
+  国家杰出青年基金获得者，入选国家级领军人才，计算机系统结构与先进计算研究所所长，中国人工智能学会会士、常务理事、脑机融合与生物机器智能专委会主任委员，中国自动化学会机器人智能专业委员会副主任委员，中国神经科学学会类脑智能分会副主任委员、脑机接口与交互分会副主任委员等。主要研究方向为人工智能、脑机接口、类脑计算、计算机视觉、普适计算等。已发表学术论文200多篇，获授权发明专利60多项。获CCF-IEEE
+  CS青年科学家奖(2016)、IEEE TCSC Award for Excellence (Middle Career Researcher, 2018)，入选2016年中国高等学校十大科技进展、2020年世界互联网领先科技成果等。获两次国际会议或期刊的时间考验论文奖（Test-of-Time
+  Paper Award），指导学生获CCF-A类国际会议的最佳论文奖、最佳论文提名奖多次。目前担任IEEE Trans. Neural Networks and
+  Learning Systems、Cognitive Neurodynamics等多个国际期刊编委。'
 institutes: []
 research_direction_raw: 人工智能、脑机接口、类脑计算、普适计算等
 detail_url: https://person.zju.edu.cn/gpan
 profile_url: https://person.zju.edu.cn/gpan
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-02-11'
 facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 - id: topic.hci
   origin: computed
   confidence: auto
@@ -55,6 +78,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/gpan
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/gpan
     fetched_at: '2026-09-04'

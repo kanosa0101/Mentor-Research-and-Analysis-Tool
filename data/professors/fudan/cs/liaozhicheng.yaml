@@ -1,0 +1,39 @@
+slug: liaozhicheng
+name: 廖志成
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: 研究领域涉及数据科学、大数据、数据挖掘、信息安全等方面的研究。作为主要人员参加过30余项国家自然科学基金项目、国家863计划项目、国家教委项目以及上海市科委项目，先后获得过中国高校科学技术二等奖1项，上海市科学技术奖科技进步二等奖3项，中国智能交通协会科学技术二等奖1项。发表论文12篇，参与编写著作8册。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c5/20/c30604a443680/page.htm
+profile_url: https://cs.fudan.edu.cn/c5/20/c30604a443680/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c5/20/c30604a443680/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

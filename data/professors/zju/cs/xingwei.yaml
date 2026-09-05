@@ -10,12 +10,17 @@ subjects: 软件工程、电子信息、计算机科学与技术
 email: wxing@zju.edu.cn
 phone: 0571-87951247
 office_address: 玉泉校区 曹光彪大楼 516
+bio_raw: '邢卫，浙江大学计算机科学与技术学院计算机系主任，博士，副教授，博士生导师。长期从事操作系统、计算机网络、离散数学、软件工程等专业核心课程的教学，并主持计算机系专业培养方案的制定，承担计算机系教学管理工作等
+
+  。主要从事计算机视觉内容智能生成（图像可控生成：图像风格迁移、图像修复、图像对抗生成、跨域图像迁移；视频的可控编辑，应用领域：虚拟数字人、虚拟换装；三维内容智能生成：包括NERF、3D高斯等）、多模态大模型、空间智能、具身智能等。面向文旅、教育、电力、汽车等领域，与支付宝、阿里、华为、美团等国内20家头部企业，联合开发了球幕/环幕沉浸式展示、复杂模型和超大艺术图像的基于web
+  的快速展示、艺术图像风格自动识别、地铁巡检系统、图案智能创意设计、图案知识图谱、可穿戴沉浸式展示SDK、舆情智能分析、面向文化遗产领域的智能检索与问答、文博机器人、人形机器人具身智能系统、考古动态场景三维采集装置、智能驾驶舱等20多套软件系统。在计算机视觉内容生成、大模型等方面发表论文100多篇，其中在人工智能、机器视觉等顶级会期刊和会议如CVPR、NIPS、AAAI、ICCV、ACM
+  MM、IJCAI、CVIU、IET等论文30多篇，申请发明专利60多项，持有软件著作权20余项，累计指导博士和硕士研究生40余名。是 TIP、AAAI、CVPR、TVCJ、SIGGRAPH、NCA等顶级会议和期刊的审稿人。作为技术骨干承担项目60项，其中国家自然科学基金面上项目1项、国家973计划2项、国家重大社科基金3项、国家重大艺术基金2项、国家科技支撑计划10项、国家重大专项5项、浙江省重大专项3项、浙江省基金2项。曾援疆赴塔里木大学任职任教一年半，担任信息工程学院副院长、学校信息化工作领导小组办公室常务副主任。'
 institutes: []
 research_direction_raw: 计算机视觉（基于人工智能的内容生成AIGC，包括图像处理、视频编辑、三维内容生成）、多模态大模型、具身智能、空间智能
 detail_url: https://person.zju.edu.cn/0092031
 profile_url: https://person.zju.edu.cn/0092031
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-02-11'
 facets:
 - id: topic.llm
@@ -23,16 +28,46 @@ facets:
   confidence: auto
   evidence:
   - keyword:AIGC
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
 - id: topic.cv
   origin: computed
   confidence: auto
   evidence:
   - keyword:计算机视觉
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 - id: topic.robotics
   origin: computed
   confidence: auto
   evidence:
   - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled
@@ -70,6 +105,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0092031
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/0092031
     fetched_at: '2026-09-04'

@@ -9,14 +9,23 @@ title: 研究员
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
 email: qingliucs@zju.edu.cn
+bio_raw: 柳晴，浙江大学百人计划研究员，博士生导师。主要研究方向为图数据智能分析、图数据安全与隐私保护、大数据管理与分析等。已在国内外顶级学术期刊或会议发表论文四十余篇，其中VLDBJ、TKDE、SIGMOD、VLDB、ICDE等CCF
+  A 类论文二十余篇，出版英文学术专著1部，授权发明专利8项、软件著作权1项，获得ICDE 2025最佳系统展示论文奖，大学生系统能力大赛数据库管理系统设计赛优秀指导教师。指导学生获得CSCC
+  全国大学生计算机系统能力大赛 数据库管理系统设计赛三等奖、PolarDB 创新赛优胜奖。现为中国计算机协会数据库专业委员会执行委员和中国计算机协会信息系统专业委员会执行委员。担任Data
+  Science Engineering期刊副执行主编，曾/正担任VLDBJ、TKDE等10余个国内外顶级/重要学术期刊评审专家；VLDB、ICDE、KDD、CIKM、PAKDD等多个顶级/重要学术会议程序委员会委员。
 institutes: []
 research_direction_raw: 数据库可用性、图数据分析、大数据
 detail_url: https://person.zju.edu.cn/qingliu
 profile_url: https://person.zju.edu.cn/qingliu
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2025-10-08'
 facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 - id: topic.db
   origin: computed
   confidence: auto
@@ -49,6 +58,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: https://person.zju.edu.cn/qingliu
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/qingliu
     fetched_at: '2026-09-04'

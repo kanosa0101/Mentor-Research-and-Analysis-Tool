@@ -1,0 +1,75 @@
+slug: hanyuqi
+name: 韩雨琪
+aliases: []
+school: dlut
+dept: cs
+status: enriched
+title: 助理教授
+supervisor: 硕导
+subjects: 计算机系统结构
+bio_raw: '常年招收硕士研究生和有意愿尽早科研的本科生。
+
+  feel free to contact！
+
+  Currently, my lab lacks the necessary resources to accept international students,
+  including applying via CSC or others. I Wish all applicants success in finding an
+  appropriate supervisor.'
+institutes:
+- 计算机科学与技术学院
+research_direction_raw: 由于无线网络的质量极易受环境干扰、导致视频传输的信源信道编码受限于最差的信道特性、传输效率低。基于强化学习的边缘网络资源部署方案、无需假设信道条件、而是通过对无线环境的不断探索、基于先验知识和当前接收到的信息感知当前的无线环境、并通过对无线环境的估计构建最优的计算传输部署的方案、实现无线网络在真实环境下的高效利用。、无人集群（如无人机、无人车等）的自主协同控制依赖于高精度感知、而复杂不确定环境给一些标准的传感器（如可见光相机）带来的新的问题。设计多模态协同互补策略、建立红外相机、事件相机、可见光相机、IMU等多传感器配准融合机制、研究高维态势数据的编码采集机制和非结构化互补采集技术、解决高维态势的高通量采集需求和低带宽传输之间的矛盾、。、全息视频推动数字工厂、虚拟课堂
+detail_url: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+profile_url: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+provenance:
+  name:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/xyjslb.jsp?urltype=tsites.CollegeTeacherList&wbtreeid=1003&st=0&id=1220&lang=zh_CN
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/hanyuqi/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

@@ -10,14 +10,31 @@ supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
 email: szhao@zju.edu.cn
 office_address: 浙江大学脑机智能全国重点实验室/玉泉校区老生仪楼一楼
+bio_raw: '欢迎硕士/博士研究生、博士后、科研助理加入课题组，也欢迎对学术竞赛、发高水平学术论文、科研等感兴趣的同学(课题组有众多数据集)，来实验室做SRTP、毕设、交流访问等。
+
+  联系方式: szhao@zju.edu.cn  也可办公室面谈^_^
+
+  赵莎，博士，博士生导师 (学科：计算机科学与技术、电子信息、人工智能、软件工程)，浙江大学计算机科学与技术学院、浙江大学脑机智能全国重点实验研究员，团队负责人是潘纲教授。2017年06月博士毕业于浙江大学计算机科学与技术学院，2015年9月至2016年9月在美国卡耐基梅隆大学做访问研究，2017年6月-2021年1月在浙江大学计算机学院做博士后研究。
+
+  近期主要研究方向为脑机接口，人工智能，聚焦于无创脑信号解码与闭环调控、脑机接口基座大模型等研究。发表论文近 70篇，获得 CCF-A 会议、IEEE汇刊最佳论文/封面文章共计6次，包括ACM
+  UbiComp最佳论文奖 (CCF A，一作，国内首篇)，IEEE ToG杰出论文奖，IEEE一区期刊 JBHI 封面文章。入选 2023 年 AI 华人女性青年学者榜(全球共
+  80 人)，获得 2022年ACM分会新星奖。主持国家自然基金委面上项目、青年项目、浙江省尖兵专项计划、浙江省自然基金委重点项目、科技创新2030-“脑科学与类脑研究”重大项目子课题、科技部重点研发计划子课题、央地联动项目子课题、中国博士后科学基金特等资助等项目。现任
+  ACM杭州分会秘书长，CCF 普适计算专委副秘书长。担任 ICML, ICLR, AAAI等会议程序委员会委员，以及 TKDE、TNSRE、TCDS、TBME等国际顶级会议与期刊的审稿人。更多信息请见
+
+  http://www.shazhao.net'
 institutes: []
 research_direction_raw: 脑机接口、人工智能、数据挖掘、普适计算
 detail_url: https://person.zju.edu.cn/szhao
 profile_url: https://person.zju.edu.cn/szhao
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-04-28'
 facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
 - id: topic.ml
   origin: computed
   confidence: auto
@@ -60,6 +77,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/szhao
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/szhao
     fetched_at: '2026-09-04'

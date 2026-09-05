@@ -11,12 +11,13 @@ subjects: 计算机科学与技术、电子信息、软件工程
 email: yedeshi@zju.edu.cn
 phone: '87951054'
 office_address: 玉泉校区邵逸夫工商楼215
+bio_raw: 叶德仕，浙江大学计算机学院副教授。2005获得浙江大学数学系理学博士学位。研究方向为：计算机软件与理论，算法设计与分析，算法机制设计与博弈论等。至今发表国际期刊论文40多篇。主持国家自然科学青年科学基金１项和面上项目2项。
 institutes: []
 research_direction_raw: 计算机软件与理论、算法设计与分析、算法机制设计与博弈论
 detail_url: https://person.zju.edu.cn/dye
 profile_url: https://person.zju.edu.cn/dye
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2020-07-21'
 facets:
 - id: topic.theory
@@ -61,6 +62,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/dye
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/dye
     fetched_at: '2026-09-04'

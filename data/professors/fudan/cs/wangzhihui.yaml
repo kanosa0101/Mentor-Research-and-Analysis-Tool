@@ -1,0 +1,41 @@
+slug: wangzhihui
+name: 王智慧
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: 目前主要研究方向为大数据管理与分析、机器学习与数据挖掘、数据安全与隐私保护等。曾在 Simon Fraser University 学术访问，期间获得
+  Ebco/Epic Visiting Scholar 荣誉称号。当前已承担及参与国家自然科学基金、国家重点研发计划、以及上海市科技创新计划等多项研究工作，在重要国际学术会议及学术期刊上发表论文多篇，曾获
+  DASFAA “Best Paper Award Nomination”、NDBC “萨师煊优秀论文奖” 等表彰。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
+profile_url: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c4/1e/c30604a443422/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

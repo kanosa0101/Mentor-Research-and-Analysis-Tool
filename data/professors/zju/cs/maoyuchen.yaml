@@ -8,12 +8,17 @@ status: enriched
 title: 讲师
 email: maoyc@zju.edu.cn
 office_address: 曹光彪科技大楼418室
+bio_raw: '我现在是浙江大学计算机学院的一名讲师，主要研究方向为理论计算机科学。我本科毕业于浙江大学自动化专业，之后在香港科技大学取得计算机科学与工程专业博士学位。我的博士导师为郑绍荣（
+
+  Cheng Siu-Wing
+
+  ）教授。'
 institutes: []
 research_direction_raw: 理论计算机科学、组合优化
 detail_url: https://person.zju.edu.cn/maoyc
 profile_url: https://person.zju.edu.cn/maoyc
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-07-04'
 facets:
 - id: topic.theory
@@ -43,6 +48,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/maoyc
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/maoyc
     fetched_at: '2026-09-04'

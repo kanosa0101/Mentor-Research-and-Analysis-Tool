@@ -10,12 +10,61 @@ subjects: 电子信息、软件工程、计算机科学与技术
 email: sleepyhunt@zju.edu.cn
 phone: '13073687936'
 office_address: 曹光彪主楼411
+bio_raw: '陈佳伟，浙江大学计算机学院“百人计划”研究员（@陈纯院士领导的ZLST实验室），正高，博导。 2020年博士毕业于浙江大学计算机学院（导师：陈纯院士），2020-2022年间在中国科学技术大学从事博士后研究工作（合作导师：何向南教授）。近5年在
+
+  国际旗舰期刊会议上发表论文80余篇，曾获
+
+  ACL 2026杰出论文奖（CCF-A）
+
+  ,
+
+  WSDM 2025最佳论文奖（清华A类）
+
+  ,
+
+  SIGIR 2023最佳论文提名奖（CCF-A类）
+
+  等重要奖项。我的主要研究方向包括：
+
+  1. 生成式推荐
+
+  ：探索新型的生成式推荐模型架构、优化算法和
+
+  scaling laws。
+
+  2.
+
+  大语言模型
+
+  ：主要聚焦于LLM后训练算法（
+
+  e.g., SFT, RL
+
+  ）和LLM的垂域应用。
+
+  3.
+
+  自主智能体
+
+  ：主要聚焦于智能体的自主进化技术与连续学习能力。
+
+  4.
+
+  安全可信人工智能
+
+  ：致力于研发无偏、鲁棒、可解释、可控、安全的人工智能模型与算法。
+
+  我的主页：
+
+  https://jiawei-chen.github.io/
+
+  实验室长期招收博士生/硕士生/本科实习生，如果你对推荐系统、大语言模型、智能体等研究方向感兴趣，欢迎向我们投递简历。'
 institutes: []
 research_direction_raw: 推荐系统、大模型、智能体
 detail_url: https://person.zju.edu.cn/0022087
 profile_url: https://person.zju.edu.cn/0022087
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-07-15'
 facets:
 - id: topic.llm
@@ -23,6 +72,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -60,6 +114,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022087
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/0022087
     fetched_at: '2026-09-04'

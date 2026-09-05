@@ -9,14 +9,254 @@ title: 研究员
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
 email: luchen@zju.edu.cn
+bio_raw: '欢迎
+
+  保研/考研的博士/硕士研究生、
+
+  本科SRTP竞赛/毕业设计等对科研感兴趣
+
+  的本科生
+
+  加入实验室。
+
+  有意愿加入实验室的同学可发邮件到 luchen@zju.edu.cn
+
+  陈璐、浙江大学“百人计划”研究员，博士生导师，国家特聘青年专家（
+
+  2021
+
+  ）。
+
+  2016
+
+  年
+
+  6
+
+  月获浙江大学计算机科学与技术专业工学博士学位，
+
+  2016
+
+  年
+
+  10
+
+  月至
+
+  2017
+
+  年
+
+  9
+
+  月在新加坡南洋理工大学担任博士后，
+
+  2017
+
+  年
+
+  10
+
+  月至
+
+  2019
+
+  年
+
+  7
+
+  月在丹麦奥尔堡大学担任助理教授，
+
+  2019
+
+  年
+
+  8
+
+  月晋升为副教授，
+
+  2020
+
+  年
+
+  9
+
+  月入职浙江大学且被聘为“百人计划（
+
+  A
+
+  类）”研究员。
+
+  研究方向为多模态大数据管理。已在国内外顶级学术期刊或会议
+
+  VLDBJ
+
+  、
+
+  TKDE
+
+  、
+
+  SIGMOD
+
+  、
+
+  VLDB
+
+  、
+
+  ICDE
+
+  、
+
+  SIGIR
+
+  等发表论文
+
+  80
+
+  余篇，出版中文学术专著
+
+  1
+
+  部，
+
+  授权发明专利8项
+
+  ，并获
+
+  ICDE 2022
+
+  最佳论文奖、
+
+  2021 ACM SIGSPATIAL
+
+  中国新星奖、
+
+  ICDE 2019
+
+  优秀论文（
+
+  One of the Best Papers
+
+  ）、
+
+  APWeb-WAIM 2018
+
+  最佳论文奖、
+
+  2017
+
+  年度
+
+  CCF
+
+  优秀博士学位论文奖、
+
+  ICDE 2015
+
+  优秀论文等。曾
+
+  /
+
+  正担任重要学术期刊
+
+  WWWJ
+
+  和
+
+  DSE
+
+  专刊特邀编辑，知名学术会议
+
+  IEEE ICWL 2020
+
+  程序委员会共同主席、
+
+  SpatialDI 2021
+
+  和
+
+  IEEE ICBK 2019
+
+  宣传共同主席、
+
+  MDM 2019
+
+  博士论坛共同主席、
+
+  WISE 2017
+
+  出版主席，
+
+  VLDBJ
+
+  、
+
+  TKDE
+
+  、
+
+  TKDD
+
+  等
+
+  10
+
+  余个国内外顶级
+
+  /
+
+  重要学术期刊评审专家，
+
+  VLDB
+
+  、
+
+  ICDE
+
+  、
+
+  DASFAAA
+
+  、
+
+  CIKM
+
+  、
+
+  WISE
+
+  、
+
+  MDM
+
+  、
+
+  APWeb-WAIM
+
+  等顶级
+
+  /
+
+  重要学术会议程序委员会委员
+
+  20
+
+  余次。'
 institutes: []
 research_direction_raw: 数据库、大数据处理、度量空间数据管理、时空数据管理、查询可用性分析
 detail_url: https://person.zju.edu.cn/luchen
 profile_url: https://person.zju.edu.cn/luchen
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2023-12-27'
 facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 - id: topic.db
   origin: computed
   confidence: auto
@@ -49,6 +289,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: https://person.zju.edu.cn/luchen
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/luchen
     fetched_at: '2026-09-04'

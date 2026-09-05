@@ -1,0 +1,30 @@
+slug: yangguangliang
+name: 杨广亮
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: 博士毕业于德州农工大学，随后于佐治亚理工学院从事博士后研究，2021年回国加入复旦大学。长期致力于系统安全前沿研究，聚焦底层复杂软件的安全分析与防护，在内存安全与程序分析方向取得系列创新成果。在安全顶会发表论文20余篇，三度荣获顶会IEEE
+  S&P、USENIX Security、ACM FSE的“杰出论文奖”，并长期担任安全顶会程序委员。获上海市海外高层次人才、华为新工科等人才计划支持。代表作包括代码分析框架“莲花”、内存安全语言“易安”。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c4/4c/c30604a443468/page.htm
+profile_url: https://cs.fudan.edu.cn/c4/4c/c30604a443468/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c4/4c/c30604a443468/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

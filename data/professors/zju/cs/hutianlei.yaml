@@ -10,14 +10,54 @@ supervisor: 硕导
 subjects: 网络空间安全、电子信息、软件工程、计算机科学与技术
 email: htl@zju.edu.cn
 phone: '13958091761'
+bio_raw: '胡天磊，男，
+
+  1982
+
+  年
+
+  10
+
+  月出生，博士，副教授。
+
+  2006
+
+  年毕业于浙江大学计算机学院，获得计算机博士学位。
+
+  2006
+
+  年至今在浙江大学计算机学院工作。在数据库、互联网、人工智能等相关研究领域发表论文
+
+  50
+
+  余篇，大部分论文被
+
+  EI
+
+  、
+
+  SCI
+
+  检索。作为主要研究人员参与了国家
+
+  863
+
+  项目
+
+  “大型通用数据库管理系统OSCAR V6.5研发及应用”，自然科学基金项目“自治数据库系统关键技术研究”，浙江省重大软件专项“大型互联网海量数据存储与处理平台”，重大横向项目“分布式数据库管理与系统开发”等多个研究项目的工作，上述项目的成果在网易互动娱乐有限公司的多个产品中得到了应用，并于2011年和2024年分别获得浙江省科技进步一等奖。'
 institutes: []
 research_direction_raw: 数据库、大数据管理、图形学
 detail_url: https://person.zju.edu.cn/htl
 profile_url: https://person.zju.edu.cn/htl
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2025-08-04'
 facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 - id: topic.graphics
   origin: computed
   confidence: auto
@@ -60,6 +100,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/htl
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/htl
     fetched_at: '2026-09-04'

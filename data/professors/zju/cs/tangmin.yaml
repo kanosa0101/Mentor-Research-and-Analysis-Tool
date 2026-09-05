@@ -9,12 +9,13 @@ title: 教授
 supervisor: 博导
 email: tang_m@zju.edu.cn
 phone: '87951414'
+bio_raw: https://min-tang.github.io/home/
 institutes: []
 research_direction_raw: 计算机图形学、计算机辅助设计、物理仿真、GPU计算加速
 detail_url: https://person.zju.edu.cn/tangm
 profile_url: https://person.zju.edu.cn/tangm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2019-03-29'
 facets:
 - id: topic.graphics
@@ -49,6 +50,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/tangm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/tangm
     fetched_at: '2026-09-04'

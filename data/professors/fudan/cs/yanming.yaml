@@ -1,0 +1,31 @@
+slug: yanming
+name: 严明
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: 高级工程师，主要研究方向高性能网络、网络安全审计、云计算等，曾参与多项国家重点研发及省部级科研项目，获上海市科学技术进步二等奖3项，三等奖1项，在CCF
+  A/B相关国际会议及期刊和SCI/EI/中文核心等期刊上发表论文近30篇，获IWQoS 2024 Best Paper Runner-up Award，CoNEXT
+  2022 Best Paper Award等，同时获多项软著及发明专利，个人曾获“上海市新长征突击手”等荣誉，目前承担多门本科专业课程。
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c4/48/c30604a443464/page.htm
+profile_url: https://cs.fudan.edu.cn/c4/48/c30604a443464/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c4/48/c30604a443464/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

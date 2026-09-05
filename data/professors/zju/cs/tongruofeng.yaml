@@ -7,14 +7,39 @@ status: enriched
 title: 教授
 supervisor: 博导
 email: trf@zju.edu.cn
+bio_raw: '童若锋，男，1969年4月出生，浙江大学计算机学院教授，博士生导师。浙江大学计算机学院CAD&CG国家重点实验室副主任。1996年浙江大学应用数学专业博士毕业，1999年10月至2001年9月日本广岛大学智
+  能系统与造型实验室访问学者。承担了"
+
+  基于人体姿态数据库的立体呈现与远程交互关键技术与系统
+
+  "、“基于视频素材分析与融合的虚拟场景生成技术与系统”、“几何形状的修复和重建方法研究”等863、973 和国家自然科学基金的研究，并正在与Qualcomm等国际知名公司开展项目合作。研究兴趣包括：虚拟现实，计算机视觉、基于人工智能的辅助医学诊断。
+
+  更详细介绍见实验室网站:
+
+  http://give.zju.edu.cn'
 institutes: []
 research_direction_raw: 计算机应用技术
 detail_url: https://person.zju.edu.cn/0096114
 profile_url: https://person.zju.edu.cn/0096114
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2018-08-07'
-facets: []
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -37,6 +62,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0096114
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/0096114
     fetched_at: '2026-09-04'

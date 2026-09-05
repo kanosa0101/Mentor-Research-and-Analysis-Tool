@@ -1,0 +1,46 @@
+slug: fenghongwei
+name: 冯红伟
+aliases: []
+school: fudan
+dept: cs
+status: enriched
+bio_raw: '冯红伟，计算机软件与理论博士，在复旦大学计算与智能创新学院工作，从事知识图谱与知识管理、大模型应用的研究。
+
+  (1) 中国科技部科技创新2030-“新一代人工智能”重大项目, 2020AAA0109300, 工业领域知识自动构建
+
+  与推理决策技术及应用, 2020年
+
+  (2) 参与国家自然科学基金委员会, 重大研究计划, 92270121, 数据与知识联合驱动的双系统认知智能理论与
+
+  技术研究，2023年
+
+  (3) 主持高等教育出版社有限公司, 基于知识图谱的智适应学习数字教材系统，2021年
+
+  (4) 主持上海市教育委员会教学研究室, 横向咨询项目, 无, 数据处理及分析技术咨询服务,2020年'
+institutes: []
+detail_url: https://cs.fudan.edu.cn/c5/c6/c30604a443846/page.htm
+profile_url: https://cs.fudan.edu.cn/c5/c6/c30604a443846/page.htm
+first_seen: '2026-09-05'
+last_verified: '2026-09-05'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/szdw/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.fudan.edu.cn/c5/c6/c30604a443846/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

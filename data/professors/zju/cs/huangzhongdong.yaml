@@ -9,12 +9,25 @@ supervisor: 硕导
 subjects: 电子信息、软件工程
 email: hzd@zju.edu.cn
 office_address: 浙江大学曹光彪楼513室
+bio_raw: '黄忠东副教授，
+
+  1989
+
+  年本科毕业于浙江大学信电系无线电专业，
+
+  1995
+
+  年硕士毕业于浙江大学计算机系并留校任教，
+
+  2003
+
+  年获得计算机应用博士学位。主要研究方向为数据库系统、大规模信息系统等。'
 institutes: []
 research_direction_raw: 数据库系统、金融信息系统、网络安全
 detail_url: https://person.zju.edu.cn/0095044
 profile_url: https://person.zju.edu.cn/0095044
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2024-10-24'
 facets:
 - id: topic.security
@@ -27,6 +40,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -59,6 +77,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0095044
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/0095044
     fetched_at: '2026-09-04'

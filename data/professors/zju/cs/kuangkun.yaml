@@ -9,12 +9,21 @@ title: 副教授
 supervisor: 博导
 email: kunkuang@zju.edu.cn
 office_address: 则通楼108
+bio_raw: '况琨，
+
+  浙江大学人工智能学院副教授，博士生导师，人工智能系副主任。主要研究方向为因果推理、数据挖掘、因果可信学习和智慧司法。在Cell Patterns, TPAMI,
+  TKDE, ICML, NeurIPS, KDD等相关领域顶级期刊及会议上发表论文100余篇。作为项目/ 课题负责人承担国家重点研发专项、国家自然科学基金等项目，曾获ACM
+  SIGAI中国新星奖，教育部、浙江省、中国人工智能学会和中国电子学会科技进步一等奖，中国图象图形学学会自然科学一等奖，浙江省教学成果特等奖等奖励。
+
+  个人主页：
+
+  https://kunkuang.github.io/'
 institutes: []
 research_direction_raw: 因果人工智能；智慧司法；垂域大模型
 detail_url: https://person.zju.edu.cn/kunkuang
 profile_url: https://person.zju.edu.cn/kunkuang
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-04-28'
 facets:
 - id: topic.llm
@@ -22,6 +31,16 @@ facets:
   confidence: auto
   evidence:
   - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -49,6 +68,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunkuang
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/kunkuang
     fetched_at: '2026-09-04'

@@ -8,12 +8,22 @@ title: 研究员
 supervisor: 博导
 email: liu.zemin@zju.edu.cn
 office_address: 浙江大学玉泉校区曹光彪高科技大楼
+bio_raw: '刘泽民，浙江大学计算机科学与技术学院“百人计划”研究员，博士生导师，国家级青年人才项目入选者。于2016年11月至2017年8月在新加坡高等数字科学中心（ADSC）进行学术交流，2019年4月至2024年4月分别在新加坡管理大学和新加坡国立大学担任研究科学家与高级研究员。主要研究方向为多模态大模型、垂直领域大模型、大小模型端云协同、大模型通专协同，及图表征学习等。在相关领域发表数十篇CCF-A类论文。担任了NeurIPS、ICML、ICLR、WWW、ACL、EMNLP等人工智能顶会的Area
+  Chair（领域主席），及AAAI、IJCAI的Senior PC member。
+
+  个人英文主页为：
+
+  https://zemin-liu.github.io/
+
+  。
+
+  欢迎有自我驱动力的学生来实验室开展多模态大模型、群体智能、具身智能等相关方向的研究工作。感兴趣的同学可以联系邮箱：liu.zemin@zju.edu.cn。'
 institutes: []
 research_direction_raw: 人工智能、数据挖掘、多模态大模型、垂直领域大模型、大小模型端云协同、大模型通专协同、图表征学习、图神经网络
 detail_url: https://person.zju.edu.cn/liuzemin
 profile_url: https://person.zju.edu.cn/liuzemin
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2026-03-09'
 facets:
 - id: topic.llm
@@ -21,6 +31,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
 - id: topic.cv
   origin: computed
   confidence: auto
@@ -31,6 +46,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据挖掘
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -58,6 +78,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/liuzemin
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/liuzemin
     fetched_at: '2026-09-04'

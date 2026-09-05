@@ -1,0 +1,10 @@
+school: dlut
+dept: ss
+dept_name: 国家示范性软件学院
+base_url: http://faculty.dlut.edu.cn
+hook: dlut_cs
+direct: true
+list:
+  urls:
+    - http://faculty.dlut.edu.cn/xyjslb.jsp?urltype=tsites.CollegeTeacherList&wbtreeid=1003&st=0&id=1167&lang=zh_CN
+  unit_ids: ["1167"]

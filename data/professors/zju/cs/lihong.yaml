@@ -10,12 +10,45 @@ subjects: 电子信息
 email: lihong@zju.edu.cn
 phone: 0571-87951598
 office_address: 玉泉校区智泉大楼
+bio_raw: '李红，浙江大学计算机学院，副研究员，计算机科学与技术专业，博士学位，教育部重点实验室副主任，
+
+  IEEE
+
+  、
+
+  CCF
+
+  会员，主要从事智能无人系统、类脑系统基础软件、汽车电子等相关领域研究。作为负责人和主要成员承担了
+
+  国家自然科学基金、
+
+  核高基重大专项、
+
+  863
+
+  计划等
+
+  10
+
+  余个项目。获国家科技发明二等奖、浙江省科技进步一等奖和教育部科技进步二等奖各
+
+  1
+
+  项；发表论文
+
+  20
+
+  余篇；已授权发明专利
+
+  50
+
+  余项。'
 institutes: []
 research_direction_raw: 操作系统、类脑基础软件
 detail_url: https://person.zju.edu.cn/lihong
 profile_url: https://person.zju.edu.cn/lihong
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-05'
 source_updated_at: '2023-12-20'
 facets:
 - id: topic.systems
@@ -23,6 +56,11 @@ facets:
   confidence: auto
   evidence:
   - keyword:操作系统
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
 provenance:
   name:
     origin: crawled
@@ -60,6 +98,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/lihong
+    fetched_at: '2026-09-04'
+    confidence: auto
+  bio_raw:
     origin: crawled
     source: https://person.zju.edu.cn/lihong
     fetched_at: '2026-09-04'
