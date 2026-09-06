@@ -68,6 +68,11 @@ def main():
         profs=profs, fresh=fresh,
         payload=json.dumps(profs, ensure_ascii=False).replace("</", "<\\/"))
     (SITE / "board.html").write_text(board, encoding="utf-8")
+    # 对比页：同 payload；选人名单在 localStorage，纯静态无服务依赖
+    cmp = env.get_template("compare.html.j2").render(
+        profs=profs, fresh=fresh,
+        payload=json.dumps(profs, ensure_ascii=False).replace("</", "<\\/"))
+    (SITE / "compare.html").write_text(cmp, encoding="utf-8")
     for r in profs:
         html = env.get_template("detail.html.j2").render(p=r)
         (SITE / "p" / f"{r['page']}.html").write_text(html, encoding="utf-8")

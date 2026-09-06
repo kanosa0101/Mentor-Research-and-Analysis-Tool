@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>导师对比 · 导师库</title>
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#171e2b;--muted:#6b7280;--line:#e6e9ef;
+  --accent:#2f54c8;--accent-soft:#eef2ff;--ok:#0c8a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+.topin{max-width:1280px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:16.5px;font-weight:700;letter-spacing:.3px}
+.navlink{font-size:13px;color:var(--accent);text-decoration:none}
+.navlink:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px 40px}
+.hint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:10px;padding:12px 16px;
+  font-size:13.5px;margin:14px 0}
+.tblcard{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#fafbfc;font-size:12px;font-weight:600;letter-spacing:.3px;position:sticky;top:0;
+  box-shadow:inset 0 -1px 0 var(--line)}
+td.lb,th.lb{width:96px;background:#fafbfd;color:var(--muted);font-size:11.5px;font-weight:600;
+  white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--accent-soft)}
+td .cell{word-break:break-all;white-space:normal;line-height:1.55}
+.missing{color:#b8bfcc;font-size:12px}
+.mono{font-family:Consolas,Menlo,monospace;font-size:12.5px;color:#445}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;background:#f0eaff;color:#6b46c1}
+.chip{display:inline-block;font-size:11px;background:#e8f4fd;color:#1a5d8f;border-radius:6px;
+  padding:2px 8px;margin:1px 2px 1px 0}
+.pvl{font-size:11px;color:#9aa3b2;margin-left:6px;white-space:nowrap}
+.pvl:hover{color:var(--accent)}
+.pcol .pn{font-size:15px;font-weight:700}
+.pcol .ps{font-size:11.5px;color:var(--muted);margin-top:2px}
+.pcol .rm{float:right;color:#c3cad6;cursor:pointer;font-size:16px;line-height:1}
+.pcol .rm:hover{color:#d64545}
+.copied{color:var(--ok)!important;border-color:var(--ok)!important}
+.copybtn{border:1px solid var(--line);background:#fff;border-radius:5px;font-size:10.5px;
+  padding:1px 6px;cursor:pointer;color:var(--muted);margin-left:5px}
+.copybtn:hover{border-color:var(--accent);color:var(--accent)}
+.foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand"><span class="logo"></span><h1>导师对比</h1></div>
+    <a class="navlink" href="index.html">← 导师库</a>
+    <a class="navlink" href="board.html">套磁看板</a>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hint" id="hint" style="display:none">
+    还没有可对比的导师：回<a href="index.html">导师库</a>勾选 2–5 位（姓名列前的复选框），再点右下角"对比"。
+  </div>
+  <div class="tblcard" id="card" style="display:none">
+    <table id="cmp"><thead><tr id="thead-row"></tr></thead><tbody></tbody></table>
+  </div>
+  <div class="foot">字段旁 ↗ 为官网出处（悬停看抓取日期） · 缺失字段显示"官网未提供"</div>
+</div>
+<script>
+const DATA = {{ payload }};
+const byId = {}; DATA.forEach(p => byId[p.page] = p);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
+  systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
+  db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
+  hci:"人机交互", bio:"AI+生物医疗"};
+let SEL = [];
+try { SEL = JSON.parse(localStorage.getItem("compare_sel")||"[]").filter(id => byId[id]); } catch(e) {}
+SEL = [...new Set(SEL)].slice(0, 5);
+
+const MIS = '<span class="missing">官网未提供</span>';
+const chips = p => (p.facets||[]).map(f => `<span class="chip">${esc(FACET_LABELS[f.id]||f.id)}</span>`).join("");
+// prov: 有出处时在值旁挂 ↗（悬停显示抓取日期）
+const ROWS = [
+  {label:"姓名", f:p=>`<a href="p/${p.page}.html">${esc(p.name)}</a>`},
+  {label:"学校", f:p=>esc(p.school_name)},
+  {label:"院系", f:p=>esc(p.dept_name||p.dept)},
+  {label:"职称", f:p=>p.title?esc(p.title):MIS, prov:"title"},
+  {label:"导师资格", f:p=>p.supervisor?`<span class="tag">${esc(p.supervisor)}</span>`:MIS, prov:"supervisor"},
+  {label:"方向", f:p=>chips(p)||MIS},
+  {label:"邮箱", f:p=>p.email?`<span class="mono">${esc(p.email)}</span><button class="copybtn" data-copy="${esc(p.email)}">复制</button>`:MIS, prov:"email"},
+  {label:"电话", f:p=>p.phone?`<span class="mono">${esc(p.phone)}</span>`:MIS, prov:"phone"},
+  {label:"研究所", f:p=>(p.institutes||[]).length?esc(p.institutes.join("、")):MIS, prov:"institutes"},
+  {label:"个人主页", f:p=>p.homepage?`<a href="${esc(p.homepage)}" target="_blank">主页 ↗</a>`:MIS, prov:"homepage"},
+  {label:"官网页面", f:p=>`<a href="${esc(p.profile_url||p.detail_url)}" target="_blank">原文 ↗</a>`},
+  {label:"简介摘录", f:p=>p.bio_raw?esc(String(p.bio_raw).slice(0,130))+(String(p.bio_raw).length>130?"…":""):MIS, prov:"bio_raw"},
+  {label:"入库/核对", f:p=>esc((p.first_seen||"—")+" / "+(p.last_verified||"—"))},
+];
+const provMark = (p, k) => {
+  const v = (p.provenance||{})[k];
+  return v ? `<a class="pvl" href="${esc(v.source)}" target="_blank" title="抓取 ${esc(v.fetched_at)} · ${esc(v.origin)}">↗</a>` : "";
+};
+function render(){
+  if(SEL.length < 2){
+    document.getElementById("hint").style.display = "block";
+    document.getElementById("card").style.display = "none";
+    return;
+  }
+  document.getElementById("card").style.display = "block";
+  document.getElementById("thead-row").innerHTML = `<th class="lb">字段</th>` + SEL.map(id=>{
+    const p = byId[id];
+    return `<th class="pcol"><span class="rm" data-rm="${id}" title="移出对比">×</span>
+      <div class="pn"><a href="p/${id}.html">${esc(p.name)}</a></div>
+      <div class="ps">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div></th>`;
+  }).join("");
+  document.querySelector("#cmp tbody").innerHTML = ROWS.map(r =>
+    `<tr><td class="lb">${r.label}</td>` + SEL.map(id=>{
+      const p = byId[id];
+      return `<td><div class="cell">${r.f(p)}${r.prov?provMark(p, r.prov):""}</div></td>`;
+    }).join("") + `</tr>`).join("");
+  document.querySelectorAll("[data-rm]").forEach(b=>b.addEventListener("click", ()=>{
+    SEL = SEL.filter(x => x !== b.dataset.rm);
+    localStorage.setItem("compare_sel", JSON.stringify(SEL));
+    render();
+  }));
+  document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click", ()=>{
+    const done = ()=>{ b.textContent = "已复制"; b.classList.add("copied");
+      setTimeout(()=>{ b.textContent = "复制"; b.classList.remove("copied"); }, 1200); };
+    const err = ()=>{ b.textContent = "失败"; setTimeout(()=>{ b.textContent = "复制"; }, 1200); };
+    const fb = ()=>{
+      const ta = document.createElement("textarea");
+      ta.value = b.dataset.copy; ta.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy") ? done() : err(); } catch(e){ err(); }
+      finally{ document.body.removeChild(ta); }
+    };
+    (navigator.clipboard && navigator.clipboard.writeText
+      ? navigator.clipboard.writeText(b.dataset.copy) : Promise.reject()).then(done, fb);
+  }));
+}
+render();
+</script>
+</body>
+</html>

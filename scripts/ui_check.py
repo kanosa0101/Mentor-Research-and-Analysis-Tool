@@ -104,6 +104,30 @@ with sync_playwright() as pw:
     assert not left, "移出看板后 outreach 仍有残留"
     print("detail remove -> cleaned ok")
 
+    # ---- 对比页 ----
+    page.goto(BASE + "/index.html", wait_until="domcontentloaded")
+    page.wait_for_timeout(1000)
+    page.evaluate("localStorage.removeItem('compare_sel'); SEL.clear(); updateCmpBtn();")
+    page.reload(wait_until="domcontentloaded")
+    page.wait_for_timeout(1000)
+    cbs = page.locator("[data-sel]")
+    cbs.nth(0).check()
+    cbs.nth(1).check()
+    btn = page.locator("#cmpbtn")
+    assert btn.is_visible(), "勾选后对比按钮未出现"
+    assert "2" in btn.inner_text(), "对比按钮计数不为 2"
+    page.screenshot(path=str(OUT / "ui_index_sel.png"))
+    btn.click()
+    page.wait_for_url("**/compare.html")
+    page.wait_for_timeout(800)
+    assert page.locator("#cmp th.pcol").count() == 2, "对比页应有 2 列"
+    nrows = page.locator("#cmp tbody tr").count()
+    print("compare rows:", nrows)
+    assert nrows >= 12, "对比行数不足"
+    page.screenshot(path=str(OUT / "ui_compare.png"))
+    page.evaluate("localStorage.removeItem('compare_sel')")
+    print("compare page ok")
+
     print("console errors:", errors[:5] if errors else "NONE")
     assert not errors, f"console 有错误: {errors[:3]}"
     b.close()

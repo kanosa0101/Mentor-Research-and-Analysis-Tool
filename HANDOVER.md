@@ -97,6 +97,7 @@
 
 - **列表页**：搜索、学校→院系级联、职称/导师资格/方向（多选 facet）筛选、全列排序、列显示开关（localStorage `adv_cols_v3`）、分页（每页 50 可调 20/50/100/500）、**跟进列（⭐ 标意向 + 状态徽标）**
 - **详情页**：字段卡片 + **套磁跟进卡片（状态下拉/备注/历史时间线）** + 简介原文 + provenance 出处表（每个字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- **对比页 compare.html**：列表页勾选 2–5 人 → 右下角浮动"对比"按钮；字段×导师矩阵（13 行：姓名/学校/院系/职称/导师资格/方向/邮箱复制/电话/研究所/主页/官网页/简介摘录/入库核对），逐字段挂官网出处↗，选人名单存 localStorage（compare_sel），纯静态无服务依赖
 - **看板页 board.html**：5 列拖拽看板（意向→已发信→已回复→推进中→归档）+ 搜索加人 + 邮箱一键复制（clipboard API + execCommand 兜底）
 - **跟进数据流**：只经 `scripts/serve.py` 的 `/api/outreach`（GET/PATCH/DELETE，标准库实现）读写 `data/outreach.yaml`——**不进任何生成文件**（仓库公开，隐私分界）；页面加载探测 `/api/health` 动态拉取，改状态无需重建站点；file:// 直开由 `location.protocol` 门控降级只读（不发 fetch）
 - 表头表体由同一份 `HEADERS` 数组生成——**这是两次错位事故后的铁律，别改回两套**
@@ -146,7 +147,7 @@
 8. PowerShell 里写内联 `python -c "..."` 引号必炸——**一律写脚本文件再跑**（Git Bash 里 `python -c` 单引号包住可用）
 9. Windows 控制台中文乱码是显示问题：命令前加 `$env:PYTHONIOENCODING='utf-8'`
 10. `Set-Content` 写文件会带 BOM（曾毁过 crawl.py）；`nul` 是 Windows 保留设备名，glob 出来是假象
-11. **表头表体必须同一份 HEADERS 数组生成**——两套来源两次错位事故
+11. **表头表体必须同一份 HEADERS 数组生成**——两套来源两次错位事故。列表页表头/表体的过滤条件现已抽成共享函数 `rowCols()`（index.html.j2），**新加列只改 HEADERS + cells()，别再写第三份过滤**（对比页 checkbox 列首日就靠这个抓出表体漏改）
 12. UI 验证的正确姿势：Playwright 打开页面抓 console/pageerror + 读 DOM 断言；`#count` 永远显示全库总数，**过滤效果看 pager 的 `.info`（共 X 人）**
 13. git push 大包经代理 408：`git config http.version HTTP/1.1` 已配置，别删
 14. 代理在 `127.0.0.1:10808`，"连不上"先区分：域名错（websearch 核实）vs 代理拦截（direct 模式）vs 真阻断（直连也重置）
@@ -232,7 +233,7 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 7. 华科/南开复测（~~09-06 直连+代理均 TCP 阻断~~ 已复测定论不变，等网络环境）
 
 **阶段三：产品层（计划 PRODUCT_PLAN.md，2026-09-06 用户审定"确认开始"）**
-顺序：~~① 状态写回+套磁看板~~ ✅ 09-06 完成（serve.py 标准库 PATCH API + board.html 拖拽看板 + 列表跟进列/详情跟进卡 + preflight §7 校验 + ui_check 扩展全绿）→ ② 对比页 → ③ 学生画像+SOP（等用户素材）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach 不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
+顺序：~~① 状态写回+套磁看板~~ ✅ 09-06（serve.py + board.html）→ ~~② 对比页~~ ✅ 09-06（compare.html + 列表勾选/浮动按钮 + ui_check 对比流全绿）→ ③ 学生画像+SOP（骨架已搭好 data/student.yaml + data/student_sop.md，**等用户填素材**）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach 不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
 
 **运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
 
