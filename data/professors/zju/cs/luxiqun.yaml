@@ -4,14 +4,31 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 硕导
 subjects: 计算机科学与技术
+email: xqlu@zju.edu.cn
+phone: 0571-87951888
+office_address: 曹光标主楼612
+bio_raw: 陆系群，博士，副教授。1997年7月华南理工大学无线电研究所毕业，获工学博士学位。1996年7月到1997年7月香港大学计算机系研究助理，主要研究方向是图像子带编码和滤波器阵列设计等。1997年9月进入浙江大学计算机系工作。2001年8月获国家留学基金委资助以访问学者身份到美国佐治亚理工学院(Georgia Institute of Technology)进行为期一年的研究工作。目前主要从事图像保边滤波方法、目标跟踪、和三维重建等图像处理和计算机视觉方面的研究开发工作。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#陆系群
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机视觉、多媒体信号处理、多媒体网络技术
+detail_url: https://person.zju.edu.cn/0097159
+profile_url: https://person.zju.edu.cn/0097159
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-14'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术
 provenance:
   name:
     origin: crawled
@@ -20,11 +37,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0097159
+    fetched_at: '2026-09-06'
     confidence: auto

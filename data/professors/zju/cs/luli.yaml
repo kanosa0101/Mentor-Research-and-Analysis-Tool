@@ -4,14 +4,79 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 特聘研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+office_address: 玉泉校区逸夫工商管理楼319室
+bio_raw: '卢立，浙江大学
+
+  计算机科学与技术学院-
+
+  网络空间安全学院
+
+  特聘研究员、博士生导师，IEEE/ACM/CCF高级会员，
+
+  IEEE TI
+
+  FS、ACM IMWUT、J-NaNA期刊编
+
+  委，CCF网络与系统安全、普适计算、物联网等专委会执委，IEEE 汽车技术协会(VTS)自动驾驶汽车专委会委员。分别于上海交通大学、西安交通大学获工学博士学位、工学/管理学双学士学位。曾获国家留学基金委资助访问美国罗格斯大学无线信息与网络实验室（WINLAB）。研究工作主要集中在智能语音安全、智能驾驶安全、物联网安全、普适计算等方向。在CCF-A国际期刊/会议上发表50余篇论文，包括IEEE
+  S&P、USENIX Security、IMWUT/UbiComp、SenSys、TIFS、TMC、ToN等；获授权专利33项。主持国家重点研发计划课题、国家自然科学基金面上、浙江省“尖兵领雁+X”科技计划项目、浙江省自然科学基金、华为/蚂蚁/阿里公司横向等9项项目
+
+  。
+
+  获IEEE/ACM IWQoS最佳论文提名奖，IEEE ICC最佳论文奖，2项
+
+  MobiCom最佳海报提名奖，
+
+  ACM SIGAPP China新星奖，
+
+  华为-浙大联合实验室优秀合作奖，
+
+  USENIX Security 2025 Notable Reviewer Award，IEEE INFOCOM 2024年杰出程序委员会委员
+
+  等奖项。指导学生获国家自然科学基金青年学生基础研究项目（博士研究生）、中国科协青年人才托举计划博士生专项、全国网络安全学院学生创新资助计划项目、浙江大学未来学术新星项目、求是飞鹰计划资助项目等。
+
+  担任国际会议ACM BCB等AC，IEEE ICC奖励委员会委员，USENIX Security、INFOCOM、CVPR、ACM MM、AAAI、IWQoS、VehicleSec等TPC，及国际期刊TMC、ToN、TDSC、TC等审稿人。
+
+  具体信息详见：
+
+  https://lynnlilu.github.io/
+
+  。欢迎对语音大模型护栏、语音水印标识、语音与智能体交叉安全、软件系统模糊测试等方向感兴趣的同学联系！'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#卢立
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 智能系统安全、物联网安全、普适计算
+detail_url: https://person.zju.edu.cn/lynnluli
+profile_url: https://person.zju.edu.cn/lynnluli
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-08-27'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -20,11 +85,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/lynnluli
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/lynnluli
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/lynnluli
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lynnluli
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lynnluli
+    fetched_at: '2026-09-06'
     confidence: auto

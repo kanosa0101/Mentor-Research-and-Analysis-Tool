@@ -4,14 +4,78 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、计算机科学与技术、电子信息
+email: bo.feng@zju.edu.cn
+bio_raw: '冯博，百人计划研究员，博导，国家优秀青年科学基金（海外）项目获得者。研究领域包括：软件与系统安全、机器人/无人机/具身智能安全、AI/智能体驱动的程序分析与漏洞挖掘。主要成果发表在IEEE
+  S&P、USENIX Security等安全领域四大国际顶会，IEEE TDSC等CCF-A类高水平期刊上。研究构建首个完全基于模拟器的自动化嵌入式固件漏洞挖掘平台，基于首创的处理器—外设接口建模机制，发现12个高危零日漏洞。11个国家、二十多所国际知名高校的领域专家使用该平台，10余篇CCF-A类高水平会议论文使用该测试集作为测试基准。主持重点研发计划课题、国家自然科学基金、某重大项目等国家级项目4项，曾作为骨干成员参与美国国防部高级研究计划局（DARPA）、美国国家科学基金会（NSF）等资助的多个大型项目，总资助金额超过2000万美元。多次受邀担任网络安全四大国际顶会ACM
+  CCS 2023/2024、NDSS 2024、USENIX Security 2024等国际高水平学术会议程序委员会委员。2023年荣获浙江大学“启真优秀青年学者”荣誉。
+
+  实验室长期招收
+
+  软件与系统安全、机器人/无人机/具身智能安全、AI/智能体驱动的程序分析与漏洞挖掘
+
+  方向的博士后/博士/硕士/本科生/工程师，具有大厂实习独立内推通道，欢迎动手能力强、对研究有浓厚兴趣的同学报考。bo.feng[at]zju.edu.cn
+
+  【工作经历】
+
+  “百人计划”研究员，浙江大学，计算机科学与技术学院/网络空间安全学院，2023-至今
+
+  博士后研究员，美国佐治亚理工学院，2022-2023
+
+  合作导师：Dr. Wenke Lee (John P. Imlay Jr. Chair, ACM Fellow, IEEE Fellow), Dr. Sukarno
+  Mertoguno
+
+  【教育经历】
+
+  博士，美国东北大学，计算机科学专业，2017-2022
+
+  导师：
+
+  Dr. Long Lu
+
+  （卢龙  博士），现任蔚来汽车副总裁、首席数字安全官
+
+  博士（转学至美国东北大学），美国纽约大学石溪分校，计算机科学专业，2015-2017
+
+  导师：
+
+  Dr. Long Lu
+
+  （卢龙  博士），
+
+  现任蔚来汽车副总裁
+
+  、首席数字安全官
+
+  学士，武汉大学，计算机科学与技术专业，2011-2015
+
+  【主持项目】
+
+  国家重点研发计划“智能机器人”专项课题，“安全威胁机理分析及行为可信任检测”，项目负责人，纵向，2024-2027
+
+  某重大项目，XX研究，项目负责人，纵向，2024-2027
+
+  国家自然科学基金面上项目，“基于模拟器的智能汽车ECU固件漏洞挖掘方法及平台”，项目负责人，纵向，2025-2028'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#冯博
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 软件与系统安全、机器人/无人机/具身智能安全、AI/智能体驱动的程序分析与漏洞挖掘
+detail_url: https://person.zju.edu.cn/fengbo
+profile_url: https://person.zju.edu.cn/fengbo
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-06-02'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -20,11 +84,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/fengbo
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/fengbo
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/fengbo
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/fengbo
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/fengbo
+    fetched_at: '2026-09-06'
     confidence: auto

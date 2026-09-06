@@ -4,14 +4,79 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+phone: 0571-87953173
+office_address: 浙江大学玉泉校区曹光彪楼518房间
+bio_raw: '2006年于浙江大学获得计算机科学与技术专业工学博士学位，攻读博士期间获得“微软学者”称号。
+
+  主要研究兴趣包括图像信息处理、机器视觉与模式识别、深度模型知识重组、图机器学习等，
+
+  在IEEE T-PAMI, IEEE T-IP, T-MM, T-SMCB, Information Sciences, Pattern Recognition,
+  CVPR, ECCV and ACM MM等在内的会议和期刊上发表论文200余篇。
+
+  担任Information Sciences, Journal of Visual Communication and Image Representation,
+  Neural Processing Letters等国际期刊Associate Editor，并且是ACM Multimedia, ICIP, ICASSP,
+  ICME, PCM, PSIVT and CAIP等国际会议的审稿专家和程序委员，另外还是IEEE T-PAMI,T-IP, T-VCG, T-KDE, T-MM,
+  T-CSVT, TSMCB, IJCV, PR, INS, CVIU等期刊的特邀审稿专家。
+
+  2022--现在，浙大城市学院，讲席教授
+
+  2015--现在，浙江大学，教授
+
+  2015，新加坡国立大学，访问教授
+
+  2012–2014，美国华盛顿大学，访问学者
+
+  2009，新加坡南洋理工大学，访问教授
+
+  2007，香港理工大学，访问学者
+
+  IEEE资深会员，ACM专业会员
+
+  中国图象图形学会高级会员，中国指挥与控制学会高级会员，中国计算机学会会员，中国人工智能学会会员、中国能源研究会会员
+
+  中国图象图形学会视觉大数据专委会委员、中国图象图形学会图像智能边缘计算专委会委员、
+
+  中国能源研究会人工智能专委会委员
+
+  视觉感知教育部-微软重点实验室（浙江大学）副主任
+
+  浙大城市学院超大规模图数据高性能智能计算研究中心主任'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#宋明黎
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 人工智能、计算机视觉、机器学习
+detail_url: https://person.zju.edu.cn/msong
+profile_url: https://person.zju.edu.cn/msong
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-08-09'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -20,11 +85,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/msong
+    fetched_at: '2026-09-06'
     confidence: auto

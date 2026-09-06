@@ -4,14 +4,60 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 助理研究员
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息
+email: huangxiuqi@zju.edu.cn
+office_address: 紫金港校区蒙民伟楼409
+bio_raw: '黄修齐，博士，浙江大学计算机辅助设计与图形系统全国重点实验室专职研究员，是可视分析（
+
+  ZJUVAI
+
+  ）小组一员，在
+
+  陈为
+
+  教授的指导下开展工作。2024年6月于上海交通大学计算机科学与工程系获得工学博士学位，师从陈贵海教授、高晓沨教授。研究方向为分布式系统的数据管理与性能优化，在ACM/IEEE
+  TON、IEEE TVCG、VLDB、ICDE、KDD、ICWS、DASFAA等国际顶尖期刊和会议发表10余篇论文。
+
+  最近的研究兴趣包括：大模型时代的算力基础设施（数据存储改进、数据供给加速、资源扩缩调度、训练推理优化）、多模态模型的垂直领域应用（智慧医疗、可解释）。目前，我正在积极招收博士研究生与硕士研究生加入浙江大学可视分析小组，由陈为老师共同指导。欢迎有充分自驱力、有扎实基础的同学加入我们，并欢迎实习生，可提交申请至
+
+  VAI简历投递
+
+  。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#黄修齐
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据管理
+detail_url: https://person.zju.edu.cn/huangxq
+profile_url: https://person.zju.edu.cn/huangxq
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-07-16'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -27,4 +73,29 @@ provenance:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/huangxq
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/huangxq
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/huangxq
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/huangxq
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/huangxq
+    fetched_at: '2026-09-06'
     confidence: auto

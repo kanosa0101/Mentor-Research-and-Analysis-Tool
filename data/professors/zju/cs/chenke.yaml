@@ -4,14 +4,26 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副研究员
 supervisor: 硕导
 subjects: 计算机科学与技术、软件工程、电子信息
+office_address: 土木科技楼
+bio_raw: '陈珂，浙江大学计算机科学与技术学院副研究员，硕士生导师。2007
+
+  年浙江大学计算机数据库方向博士毕业，2011 年评为副研究员、硕士生导师。主要从事数据库系统和技术、海量信息检索、高效数据处理等方面的研究。近年来的研究重点是如何提升和优化数据处理和信息检索的效率，并改进数据库系统的性能。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#陈珂
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据库系统、大数据处理、信息检索
+detail_url: https://person.zju.edu.cn/kechenpage
+profile_url: https://person.zju.edu.cn/kechenpage
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-07-30'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -20,11 +32,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/kechenpage
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/kechenpage
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/kechenpage
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kechenpage
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kechenpage
+    fetched_at: '2026-09-06'
     confidence: auto

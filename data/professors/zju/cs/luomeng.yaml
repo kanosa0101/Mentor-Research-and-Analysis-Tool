@@ -4,14 +4,51 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+bio_raw: '罗梦，百人计划研究员/博导/海外优青。主要从事网络与系统安全相关科研工作，研究领域包括：移动安全、Web安全、网络犯罪分析检测、AI辅助系统安全等。博士毕业于美国纽约州立大学石溪分校，曾任美国东北大学博士后研究员。研究致力于识别和防御移动终端（如智能手机、物联网设备等）访问互联网所面临的各种新型网络安全威胁及网络犯罪问题。作为项目负责人主持科技部重点研发计划、国家自然科学基金国家级重要项目及课题3项，以及华为、蚂蚁等企业横向项目。在ACM
+  CCS、NDSS等信息安全四大国际顶会和WWW、TDSC、TKDE等CCF-A类计算机领域国际顶级期刊和会议发表多篇论文。研究成果具有极强应用价值，安全漏洞报告得到谷歌、阿里巴巴等国际知名厂商和中国、美国等重要银行和政府网站等的确认与修复，并获得漏洞报告奖励。在社会服务方面，受邀担任多个信息安全四大国际顶会和CCF-A类国际顶会的程序委员会委员TPC（ACM
+  CCS 2023/2024、NDSS 2024/2025，WWW 2023），担任CCF-B类信息安全顶级期刊ACM TOPS的Associate Editor；国内方面，担任ACM
+  SIGSAC China委员、CCF互联网专委会执行委员、《通信学报》网络空间数据安全与治理专题特邀专家等。
+
+  实验室长期招收网络与系统安全领域感兴趣的博士后/博士/硕士/本科生，尤其欢迎动手能力强、对研究有浓厚兴趣的同学。meng.luo[at]zju.edu.cn
+
+  【主要科研项目】
+
+  1. 科技部国家重点研发计划项目，课题负责人，“敏感数据出境异常事件分析与预警关键技术”
+
+  2. 国家自然科学基金委青年科学基金项目，牵头，“基于攻击图构建的移动应用网络攻击检测与溯源方法研究”
+
+  3. 国家自然科学基金优秀青年科学基金项目（海外），牵头，“网络犯罪分析与检测”
+
+  【课程教学】
+
+  《系统安全原理和实践》                  本科生   2024夏学期
+
+  《网络空间安全导论》                      本科生   2024春夏学期
+
+  《软件安全》                                    研究生   2024春夏学期
+
+  《信息安全前沿技术和研究方法论》研究生   2024春夏学期'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#罗梦
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: Web安全、移动安全、物联网安全、数据驱动安全、网络犯罪检测
+detail_url: https://person.zju.edu.cn/mengluo
+profile_url: https://person.zju.edu.cn/mengluo
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-11-08'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -20,11 +57,26 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/mengluo
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/mengluo
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/mengluo
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/mengluo
+    fetched_at: '2026-09-06'
     confidence: auto

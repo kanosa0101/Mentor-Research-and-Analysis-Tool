@@ -4,14 +4,36 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
-supervisor: 博导、硕导
+title: 副教授
+supervisor: 博导
 subjects: 计算机科学与技术、软件工程、电子信息、网络空间安全
+email: kaibu@zju.edu.cn
+office_address: 则通楼503
+bio_raw: '浙江大学计算机科学与技术学院副教授，浙江大学网络空间安全研究中心成员。于2013年获香港理工大学电子计算学系博士学位，于2006、2009年获南京邮电大学计算机学院学士、硕士学位。主要研究方向为网络安全。曾在MICRO、HPCA、NDSS、INFOCOM、ToN、TIFS、TPDS等国际会议和期刊发表多篇论文。
+
+  更多信息欢迎参见
+
+  http://list.zju.edu.cn/kaibu
+
+  , 谢谢:)'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#卜凯
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机网络与信息安全
+detail_url: https://person.zju.edu.cn/kaibu
+profile_url: https://person.zju.edu.cn/kaibu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2022-07-28'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -20,11 +42,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kaibu
+    fetched_at: '2026-09-06'
     confidence: auto

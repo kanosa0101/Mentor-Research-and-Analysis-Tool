@@ -4,14 +4,87 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+email: dongw@zju.edu.cn
+office_address: 玉泉校区则通楼311
+bio_raw: '董玮，浙江大学计算机科学与技术学院教授、博导，教育部“长江学者奖励计划”特聘教授。现任计算机科学与技术学院副院长、浙江大学人工智能教育教学研究中心主任，
+
+  曾任浙江大学
+
+  信息技术中心副主任。
+
+  2005年、2011年获浙江大学计算机科学与技术专业学士和博士学位，2012年2月留校工作，并分别于2012年底、2016年底被评为副教授、教授。中国计算机学会(CCF)杰出会员，ACM中国SIGMOBILE副主席，CCF物联网专委、CCF互联网专委、CCF分布式计算与系统专委执行委员、浙江省计算机学会嵌入式与物联网技术专委秘书长。
+
+  曾获全国优博论文提名、CCF-Intel青年学者提升计划、浙江省杰出青年基金、浙江省
+
+  高层次人才特殊支持计划青年拔尖人才
+
+  、国家高层次人才特殊支持计划青年拔尖人才
+
+  。
+
+  主要研究方向包括具身智能物联网、边缘智能与算力网络、物联网数据安全等。主持与
+
+  承担
+
+  国家重点研发计划课题、
+
+  国家自然科学基金、
+
+  浙江省自然科学基金重大项目、浙江省重大研发计划
+
+  等国家和省部级项目20多项。在ACM MobiCom、MobiSys、SenSys、UbiComp/IMWUT、CCS、USENIX NSDI、IEEE INFOCOM等著名国际会议以及IEEE/ACM
+  Trans on Networking、IEEE Trans on Mobile Computing等著名国际期刊上发表论文200余篇，其中CCF A类及
+
+  IEEE/ACM Trans
+
+  论文100余篇。多次担任国际知名学术会议组委会成员、程序委员会委员。授权发明专利30余项，主编工信部/浙江省十四五规划教材1部（《从创意到原型：物联网应用快速开发》）、十四五国家重点出版物出版规划著作1部
+
+  。
+
+  以第一完成人，获2023年浙江省科技进步一等奖、2025年中国计算机学会技术发明二等奖、2021年中国计算机学会科技进步杰出奖。
+
+  指导多位博士生获CCF优秀博士论文激励计划、国家自然科学基金博士生基金、
+
+  华为天才少年计划
+
+  等。
+
+  个人主页
+
+  ：
+
+  https://dongw.emnets.cn'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#董玮
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 智能物联网、物联网数据安全、边缘计算与云边协同、算力网络、无线低功耗网络
+detail_url: https://person.zju.edu.cn/dongw
+profile_url: https://person.zju.edu.cn/dongw
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-06-15'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -20,11 +93,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/dongw
+    fetched_at: '2026-09-06'
     confidence: auto

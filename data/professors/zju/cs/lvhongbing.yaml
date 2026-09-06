@@ -4,14 +4,29 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息、软件工程
+email: lhb@zju.edu.cn
+bio_raw: 1966年生，1984年进入浙江大学学习，1995年获博士学位。目前主要从事大数据、机器学习以及智能控制能领域的科研工作，以及技术转移、科技成果转化等产学研工作。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#吕红兵
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机应用技术
+detail_url: https://person.zju.edu.cn/0095175
+profile_url: https://person.zju.edu.cn/0095175
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-16'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,11 +35,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0095175
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0095175
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0095175
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0095175
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0095175
+    fetched_at: '2026-09-06'
     confidence: auto

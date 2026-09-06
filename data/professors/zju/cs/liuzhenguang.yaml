@@ -4,14 +4,73 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: liuzhenguang2008@gmail.com
+phone: '15868190820'
+office_address: 浙大玉泉校区曹光彪主楼
+bio_raw: '浙江大学百人计划研究员，博士生导师，具有三年以上海外留学经历，曾任新加坡国立大学
+
+  Research Fellow
+
+  、新加坡科技研究局Research Fellow。主要研究方向为区块链智能合约安全和深度学习，入选首批“浙江省高校领军人才青年优秀人才”，“浙江省万人计划青年拔尖人才”，“全球区块链专利创新人才百人榜”等，作为负责人主持的基于区块链存证的视频安全存储与解析成果获浙江省科技进步二等奖（第一完成人）。区块链金融领域应用成果获中国电子学会科技进步二等奖
+
+  （第二完成人）
+
+  。作为负责人主持国家工信部揭榜挂帅项目、国家重点研发计划课题、国家自然科学基金面上项目、浙江省重点研发计划项目、
+
+  国家重点研发计划子课题、浙江省自然科学基金、
+
+  CCF-蚂蚁科研基金、
+
+  之江实验室智海计划项目
+
+  等多项，与蚂蚁、华为、腾讯、中国高铁（
+
+  中车株洲所
+
+  ）、上海期货交易所等行业头部企业合作。
+
+  在PAMI、S&P、CCS、USENIX Security、TIFS、TDSC、TKDE、NeurIPS、AAAI、IJCAI、ACM MM、CVPR、ICCV、WWW等
+
+  高水平期刊会议上发表论文100余篇，其中第一/通讯作者CCF A类论文41篇。获最佳论文奖项3项，发表第一或通讯作者ESI高被引论文多篇。曾获PoseTrack多帧姿态估计挑战赛全球第1名、李光耀全球商业大赛Services类别冠军（共有来自50多个国家的500余支队伍，包括剑桥、斯坦福、MIT、新加坡国立、南洋理工等队伍，我们为进入决赛的唯一中国队伍）、中国互联网+创新创业大赛金奖（约11万个项目，30个金奖）等荣誉。担任了CCF
+  A类的WWW、KDD、CVPR、ICCV、NeurlPS、ICLR、AAAI、IJCAI、ACM Multimedia、SIGGRAPH等多个CCF A类顶会的高级程序委员会委员或委员，担任多个IEEE/ACM
+  Transactions如TPAMI、TIFS、TVCG、TIP等顶刊的审稿人。担任TDSC特邀编辑主办专刊。
+
+  长期招收博士生和研究生，为立志科研学生
+
+  100%
+
+  提供海外名校老师指导支持，为立志工业界的学生提供实习机会。一起合作指导学生科研的
+
+  海外名校包括：美国普渡大学、英国伦敦大学学院（全球前10左右）、新加坡国立大学、新加坡南洋理工大学、香港大学（中国香港）。
+
+  招生要求：1.努力踏实，数学或英文基础好加分。2.有团队精神不那么自私。希望学生能够一周有两三次体育运动锻炼身体，身体是一切的根本。
+
+  联系邮箱：
+
+  liu
+
+  zhenguang AT zju.edu.cn'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#刘振广
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 区块链、深度学习
+detail_url: https://person.zju.edu.cn/lzg
+profile_url: https://person.zju.edu.cn/lzg
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-02-14'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +79,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lzg
+    fetched_at: '2026-09-06'
     confidence: auto

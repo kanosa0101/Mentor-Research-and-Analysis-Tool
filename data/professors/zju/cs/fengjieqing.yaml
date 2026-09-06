@@ -4,14 +4,39 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、计算机科学与技术、电子信息
+email: jqfeng@cad.zju.edu.cn
+phone: 0571 88206681 506
+office_address: 浙江大学 紫金港校区 蒙民伟楼 510室
+bio_raw: '冯结青，男，1970年出生。浙江大学CAD&CG国家重点实验室教授，博士生导师。1992年毕业于国防科技大学系统工程与应用数学系，获工学学士学位；
+  1997年毕业于浙江大学应用数学系，获计算几何与计算机图形学博士学位。1997～1999年先后在法国路易斯巴斯德大学（现斯特拉斯堡大学）计算机科学系和香港中文大学计算机科学与工程学系从事访问研究。1999.2加入浙江大学CAD&CG国家重点实验室，同年晋升副研究员，2003.12晋升研究员，2005.1遴选为博士生导师，2011.1转聘为教授。
+
+  近年来主要从事计算机辅助设计与图形学、光热太阳能仿真与优化的研究，在基于曲面控制的空间变形、空间变形反走样、点云的数字几何处理、高质量软影的实时绘制、代数曲线曲面的实时绘制、计算机辅助卡通角色编辑与插值、人体建模、颜色校正、光热太阳能建模与仿真等方面取得了一系列研究成果。研究工作曾获国际学术会议CASA2014最佳论文奖、CAD/Graphics2019最佳论文奖、Pacific
+  Graphics2024
+
+  最佳论文提名
+
+  ，还曾获全国学术会议Chinagraph2012最佳论文奖，指导学生获得CAD/CG2012、CAD/CG2014、
+
+  CAD/CG2017、
+
+  CAD/CG2020的优秀学生论文奖。出版译著一本，参与编写教材一本。作为项目负责人，主持国家自然科学基金重点项目和面上项目、教育部博士点基金和浙江省自然科学基金人才项目多项。研究工作曾获2000年浙江省科技进步三等奖，2001年获得首届陆增镛CAD&CG高科技奖二等奖，2004年入选浙江省新世纪151人才工程第二层次培养人员，2009年获教育部自然科学奖一等奖，2010年入选教育部“新世纪优秀人才支持计划”。目前担任《计算机辅助设计与图形学学报》编委（2007.1~今）、《Visual
+  Computing for Industry,Biomedicine and Art》编委（2016.8~今）、《图学学报》副主编(2017.8~今)、《计算机科学》编委（2019.5～今）。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#冯结青
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机辅助设计、计算机图形学、光热太阳能仿真
+detail_url: https://person.zju.edu.cn/jqfeng
+profile_url: https://person.zju.edu.cn/jqfeng
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-10'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -20,11 +45,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jqfeng
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,104 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副研究员
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: cszhl@zju.edu.cn
+phone: 0571-87951904
+office_address: 浙江大学玉泉校区曹东206
+bio_raw: '实验室会帮助每位学生快速成长，在相关方向快速建立学术思维并发表有学术价值、工业价值的论文，会为有能力的学生提供额外的算力和人员支持。实验室目前的研究方向包括：神经渲染与计算（NERF）、AIGC（基于人工智能的内容生成）
+
+  、多模态大模型、具身智能、空间智能
+
+  等。实验室除了提高学生的专业学术能力以外，特别重视提高学生的内在修为。欢迎有远大学术理想、孩童般好奇心的
+
+  本科生、硕士生、博士生加入实验室，有意者请邮件联系：cszhl@zju.edu.cn.
+
+  内在修为（品德良好、积极上进、踏实认真、自律、善于克服困难、格局大、三观正）良好者优先。希望加入实验室的人可将简历发到我的邮箱，1-3天内会回复。
+
+  赵磊，男，
+
+  博士
+
+  。现任
+
+  浙江大学计算机学院副
+
+  研究员，博士生导师。主要从事
+
+  计算机视觉内容智能生成、多模态大模型、空间智能以及具身智能。
+
+  面向文旅、教育、电力、汽车等领域，与支付宝、阿里、华为、美团等国内20家头部企业，联合开发了球幕/环幕沉浸式展示、复杂模型和超大艺术图像的基于web 的快速展示、艺术图像风格自动识别、地铁巡检系统、图案智能创意设计、图案知识图谱、可穿戴沉浸式展示SDK、舆情智能分析、面向文化遗产领域的智能检索与问答、文博机器人、人形机器人具身智能系统、考古动态场景三维采集装置、智能驾驶舱、毛绒玩具、智能AI终端、水下机器人、博物馆智能AI检测柜等20多套软件系统或装备。在计算机视觉内容生成、大模型等方面发表论文100
+
+  多篇，其中在人工智能、机器视觉等顶级会
+
+  期刊和会议
+
+  如CVPR、NIPS、AAAI、ICCV、ACM MM
+
+  、IJCAI、CVIU、
+
+  IET
+
+  等论文30多篇，申请发明专利
+
+  5
+
+  0多项，是 TIP、AAAI、CVPR、TVCJ、Siggraph、NCA等top会议和期刊的审稿人。
+
+  作为技术骨干
+
+  承担项目92项，其中国家自然科学基金面上项目1项、国家973计划2项、国家重大社科基金3项、国家重大艺术基金2项、国家科技支撑计划10项、国家重大专项5项、浙江省重大专项3项、浙江省基金2项
+
+  。
+
+  长期招收博士后、硕士生、博士生，欢迎有意向参与多模态大模型、大模型优化与具身智能的同学与我联系:
+
+  cszhl@zju.edu.cn。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#赵磊
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机视觉（视觉内容智能生成即AIGC，包括：三维内容生成、视频可控编辑、图像可控生成，应用领域：虚拟数字人、虚拟换装）、多模态大语言模型、具身智能
+detail_url: https://person.zju.edu.cn/zhaolei
+profile_url: https://person.zju.edu.cn/zhaolei
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-05-29'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled
@@ -20,11 +110,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaolei
+    fetched_at: '2026-09-06'
     confidence: auto

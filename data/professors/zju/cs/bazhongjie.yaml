@@ -4,14 +4,49 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 计算机科学与技术、网络空间安全、电子信息
+email: zhongjieba@zju.edu.cn
+office_address: 浙江大学玉泉校区科工楼
+bio_raw: '巴钟杰，计算机科学与技术学院/网络空间安全学院“百人计划”研究员，博导。2019年毕业于美国纽约州立大学布法罗分校并获得计算机科学与工程博士学位。曾任加拿大麦吉尔大学计算机科学学院博士后研究员。2020年加入浙江大学。研究工作主要围绕深度合成与检测、AIGC安全、物联网安全、隐私保护等方向展开。在S&P，CCS，NDSS，Usenix
+  Security，TDSC，TIFS等多个CCF-A类国际著名会议及期刊中发表了30余篇论文；申请国家技术发明专利20余项，主持国家重点研发课题、
+
+  国家自然科学基金面上项目、
+
+  省自然科学基金重大项目等。担任ACM CCS, IEEE ICDCS等多个国际著名会议的TPC成员以及IEEE Internet of Things Journal的编委；多项研究成果在工业界具有广泛应用，并受到包括CCTV，新华网，中国科学报，NSF
+  News在内的超过80家海内外媒体的广泛报道。其中，团队在加速计窃听方向的工作促使了谷歌公司对安卓操作系统权限管理机制进行优化，在AIGC安全方面的工作得到Midjourney与Stability
+  AI的认可并用于产品提升。
+
+  团队目前招收对AIGC安全、深度合成与检测方向具有浓厚兴趣的博士后/博士/硕士/本科生。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#巴钟杰
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 物联网安全、隐私保护、智能感知
+detail_url: https://person.zju.edu.cn/zhongjieba
+profile_url: https://person.zju.edu.cn/zhongjieba
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2024-07-22'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -20,11 +55,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhongjieba
+    fetched_at: '2026-09-06'
     confidence: auto

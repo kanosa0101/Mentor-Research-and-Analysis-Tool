@@ -4,14 +4,50 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+email: haitaoxu@zju.edu.cn
+bio_raw: '许海涛，浙江大学百人计划研究员，博士生导师。2015年12月博士毕业于威廉与玛丽学院，2016年1月至2018年5月于美国西北大学先后担任博士后、研究助理教授职位，2018年7月至2020年12月于亚利桑那州立大学担任
+  tenure-track 助理教授。
+
+  许博士主要从事网络黑灰产治理
+
+  、大语言模型隐私与安全、攻击检测溯源
+
+  、
+
+  以及
+
+  Web安全
+
+  等领域的研究。其研究成果先后发表在USENIX Security、NDSS、ICSE、
+
+  WWW、
+
+  IMWUT/UbiComp、CHI、TIFS等国际顶级会议以及期刊，部分成果被华尔街日报、中国日报等主流媒体报道。
+
+  招收博士后、博士生、硕士生、访问学生。申请者需具备扎实的网络/系统/安全领域研究基础，具有CTF竞赛获奖经历者将获优先考虑
+
+  。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#许海涛
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 网络黑灰产治理、大语言模型隐私与安全、攻击检测溯源、Web安全
+detail_url: https://person.zju.edu.cn/haitaoxu
+profile_url: https://person.zju.edu.cn/haitaoxu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-14'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
 provenance:
   name:
     origin: crawled
@@ -20,11 +56,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/haitaoxu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/haitaoxu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/haitaoxu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/haitaoxu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/haitaoxu
+    fetched_at: '2026-09-06'
     confidence: auto

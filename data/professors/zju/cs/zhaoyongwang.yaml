@@ -4,14 +4,47 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+office_address: 浙江大学玉泉校区
+bio_raw: '赵永望，浙江大学，教授/博士生导师。担任ARINC653国际操作系统标准委员会委员（国内唯一委员）、国际信息技术安全评估标准(Common Criteria,CC)操作系统内核技术委员会委员、中国计算机学会(CCF)高级会员、CCF系统软件专委会和形式化方法专委会委员。任国际标准化组织
+  ISO/IEC JTC1 SOA研究组组长、国家信标委分委会委员，起草4项ISO国际标准、12项国家标准。曾任新加坡南洋理工大学高级研究员。主要研究方向包括操作系统安全、形式化验证、编程语言原理等。主持和参与国家自然基金、核高基重大专项、重点研发计划、载人航天工程重点项目、工信部物联网创新项目等10余项，2011和2017年分别获得中国电子学会和山东省科技进步一等奖。相关研究成果得到美国波音、法国空客和国际知名实时操作系统厂商的认可，被纳入国际标准，并在开源实时操作系统社区产生影响力。
+
+  目前招收博士后/博士/硕士/本科生，计算机或信息类方向均可，需要喜欢数学或编程。有兴趣的欢迎与我邮箱联系。
+
+  具体信息详见：
+
+  https://lvpgroup.github.io'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#赵永望
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 形式化方法 ：形式逻辑、形式化验证、并发理论、定理证明、程序验证等、操作系统与安全 ：OS形式化验证、微内核/分区/隔离内核、Linux内核、ARINC653等、编程语言与编译
+  ：函数式编程、并发语言、程序语义、可信编译、程序证明等、安全认证 ：CC信息安全认证、DO-178 B/C、ISO 26262、IEC 61508等
+detail_url: https://person.zju.edu.cn/zhaoyw
+profile_url: https://person.zju.edu.cn/zhaoyw
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2022-09-20'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -20,11 +53,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/zhaoyw
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaoyw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaoyw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaoyw
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/zhaoyw
+    fetched_at: '2026-09-06'
     confidence: auto

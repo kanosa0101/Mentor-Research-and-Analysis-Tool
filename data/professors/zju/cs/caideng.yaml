@@ -4,14 +4,71 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、计算机科学与技术、电子信息
+email: dengcai@cad.zju.edu.cn
+phone: 88206681-528
+office_address: 浙江大学紫金港校区蒙民伟楼508
+bio_raw: '蔡登，浙江大学计算机学院教授，博导，国家优秀青年基金获得者、万人计划青年拔尖人才、青年
+
+  973
+
+  首席科学家。主要研究方向是机器学习。近年来在人工智能及计算机视觉领域的国际顶尖学术会议及期刊上共发表学术论文
+
+  130
+
+  余篇，共被他人引用
+
+  15000
+
+  余次，
+
+  H
+
+  指数
+
+  53
+
+  。目前担任
+
+  IEEE TKDE
+
+  编委，
+
+  AAAI 2017
+
+  和
+
+  IJCAI 2017
+
+  资深程序委员会委员。获得
+
+  2012
+
+  年国际人工智能年会最佳论文奖。
+
+  详细个人主页：
+
+  www.cad.zju.edu.cn/home/dengcai/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#蔡登
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 机器学习、数据挖掘、计算机视觉
+detail_url: https://person.zju.edu.cn/dengcai
+profile_url: https://person.zju.edu.cn/dengcai
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-13'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -20,11 +77,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/dengcai
+    fetched_at: '2026-09-06'
     confidence: auto

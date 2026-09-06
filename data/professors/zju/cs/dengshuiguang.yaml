@@ -4,14 +4,35 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: dengsg@zju.edu.cn
+phone: 0571-87951647
+office_address: 玉泉校区则通楼305
+bio_raw: "邓水光，浙江大学计算机科学与技术学院求是特聘教授，国家杰出青年基金获得者（2021年），IET Fellow，CCF杰出会员/CCF杰出演讲者。现担任浙江省数智服务技术重点实验室副主任、浙江大学数字农业农村研究中心副主任、浙江大学中原研究院大数据与人工智能研究中心主任、CCF服务计算专委副主任。于2002、2007年毕业于浙江大学获计算机专业学士和博士学位；于2014年和2015年在美国麻省理工学院、斯坦福大学访问研究。曾获中国青年五四奖章、国家万人计划青年拔尖人才、IEEE\
+  \ TCSVC Rising Star、CCF服务计算杰出成就奖等荣誉称号。\n主要研究方向为服务计算、云计算/边缘计算、类脑计算、软件工程、大数据等。担任IEEE\
+  \ Trans. on Services Computing (CCF A)、Knowledge and Information \r\nSystems (CCF\
+  \ B)等国际期刊Associate Editor。近年来，在国际权威期刊和会议上发表论文100余篇，获10次国际期刊和会议的杰出论文奖/最佳论文奖/最佳学生论文奖，入围2022-2024全球前2%顶尖科学家终身榜，入选爱思唯尔2020-2024年中国高被引学者；授权发明专利100余项（包括PCT国际发明专利授权6项），获得中国发明专利银奖1项、日内瓦国际专利展金奖1项、中国发明博览会金奖1项；在Springer、IET、Elsevier等出版5部学术专著；主持国家杰出青年基金项目、国家重点研发计划重点专项项目、国家自然科学基金区域联合重点项目、浙江省自然科学基金重大项目等，研究成果获国家科技进步二等奖1项，省部科技进步一等奖5项。\n\
+  欢迎优秀学生联系并加入我的课题组"
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#邓水光
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 服务计算、云计算/边缘计算、类脑计算、软件工程、大数据
+detail_url: https://person.zju.edu.cn/shuiguang
+profile_url: https://person.zju.edu.cn/shuiguang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-05-29'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -20,11 +41,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/shuiguang
+    fetched_at: '2026-09-06'
     confidence: auto

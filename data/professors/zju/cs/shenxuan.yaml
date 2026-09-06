@@ -4,14 +4,27 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 计算机科学与技术
+email: shenxuan@zju.edu.cn
+bio_raw: '沈轩是浙江大学第一类“百人计划”研究员、博士生导师，入选国家级高层次青年人才计划。2025年博士毕业于美国东北大学（Northeastern University）计算机工程系，主要研究领域为大型生成式人工智能的高效部署与硬件协同优化。
+
+  个人主页：https://shawnricecake.github.io/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#沈轩
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: Efficient Deep Learning、Large Generative Models、Software-Hardware
+  Co-Design
+detail_url: https://person.zju.edu.cn/0026163
+profile_url: https://person.zju.edu.cn/0026163
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-07-14'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
 provenance:
   name:
     origin: crawled
@@ -20,11 +33,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0026163
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0026163
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0026163
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0026163
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0026163
+    fetched_at: '2026-09-06'
     confidence: auto

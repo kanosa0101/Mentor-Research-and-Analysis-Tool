@@ -4,14 +4,31 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+email: yangziqi@zju.edu.cn
+bio_raw: 杨子祺，浙江大学百人计划研究员，博士生导师。本科毕业于华中科技大学，博士毕业于新加坡国立大学。担任CCF网络与系统安全专委会执行委员，长期担任网络与信息安全领域四大顶会IEEE
+  S&P、ACM CCS程序委员会委员，CCF-A类会议AAAI、MM、NeurIPS等程序委员会委员，担任TDSC、TIFS 等顶刊常驻评审。深度参与制定强制性国家标准GB
+  45438-2025《网络安全技术 人工智能生成合成内容标识方法》，研发强制性标准配套服务平台GCmark。曾获ACM AISec最佳审稿人、全国大学生信息安全竞赛优胜奖指导教师等奖项。主讲课程获评浙江省“名师名课”省级一流课程、入选教育部国家高等教育智慧教育平台人工智能通识课程。研究方向包括人工智能安全、大模型安全、智能体安全，发表安全四大论文及CCF-A类论文20余篇，主持和参与国家自然科学基金项目、科技部重点研发计划项目等多个国家级科研项目。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#杨子祺
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 信息安全、人工智能安全、大模型安全、智能化攻防
+detail_url: https://person.zju.edu.cn/yangziqi
+profile_url: https://person.zju.edu.cn/yangziqi
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-05-14'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +37,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/yangziqi
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/yangziqi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/yangziqi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yangziqi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yangziqi
+    fetched_at: '2026-09-06'
     confidence: auto

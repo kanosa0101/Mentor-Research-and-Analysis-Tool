@@ -4,14 +4,30 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副研究员
 supervisor: 硕导
 subjects: 电子信息
+email: rickyskyxie@zju.edu.cn
+office_address: 紫金港蒙民伟楼526
+bio_raw: 2008年本科毕业于浙江大学自动化专业，2013年博士毕业于浙江大学计算机科学与技术专业。分别任浙江大学博士后（2013-2015），美国休斯顿大学博士后（2016-2018），之江实验室高级研究专员（2018-2024）。2021年初经之江实验室职称评聘委员会评为副研究员。2024年9月起就职于浙江大学计算机辅助设计与图形系统（CAD&CG）全国重点实验室专职研究员。长期从事混合现实应用研究，搭建飞机维修诱导、医疗手术导航、自动驾驶虚拟仿真等系统多套。担任浙江省人工智能学会增强现实分会委员。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#谢天
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 混合现实应用、无人系统、虚拟仿真
+detail_url: https://person.zju.edu.cn/xietian
+profile_url: https://person.zju.edu.cn/xietian
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2024-10-16'
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -27,4 +43,29 @@ provenance:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/xietian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/xietian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/xietian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xietian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xietian
+    fetched_at: '2026-09-06'
     confidence: auto

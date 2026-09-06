@@ -4,14 +4,27 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
-supervisor: 博导、硕导
+title: 研究员
+supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: chenlin198662@zju.edu.cn
+office_address: 曹光彪主楼407
+bio_raw: 陈林博士，现为浙江大学百人计划研究员。之前为德克萨斯理工大学Tenure Track助理教授。他于2013年在浙江大学取得计算机专业博士学位，之后曾先后在柏林工业大学，慕尼黑工业大学等从事博士后工作。他的研究兴趣为理论计算机领域的近似算法和参数算法。他当前的研究重点为加性组合(additive
+  combinatorics)理论与算法设计的结合，课题包括子集和(subset-sum)，背包(knapsack)，调度/排序(scheduling)，整数规划(integer
+  programming)，双层优化(bi-level optimization)等。他的研究获得(美国)自然科学基金(NSF 1756014)，(中国)自然科学基金优秀青年科学基金项目（海外）的资助。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#陈林
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 算法与计算复杂性，组合优化，整数规划，加性组合理论
+detail_url: https://person.zju.edu.cn/0024110
+profile_url: https://person.zju.edu.cn/0024110
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-05-05'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算复杂
 provenance:
   name:
     origin: crawled
@@ -20,11 +33,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0024110
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,47 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: qinzhan@zju.edu.cn
+office_address: 玉泉校区曹光彪楼528A
+bio_raw: '秦湛，计算机科学与技术学院/网络空间安全学院“百人计划”研究员，博导。
+
+  2017年于美国纽约州立大学布法罗分校获得计算机科学与工程博士学位，2017年9月至2018年12月于美国德克萨斯大学圣安东尼奥分校电气工程与计算机系任助理教授。
+
+  主要研究用户数据安全、云计算安全等领域的研究工作。
+
+  在数据安全与隐私保护领域，参与开拓了多个当今的研究热点方向，包括差分隐私下的数据共享、本地差分隐私保护的数据收集、社交网络中的差分隐私保护等，是国际上本地差分隐私研究的先行者之一；
+
+  在云计算安全领域，在包括图像特征提取、图像搜索与匹配等研究方向上提出并实现了一系列的创新理论方法与系统。
+
+  目前已发表多篇学术论文，其中15篇发表在IEEE/ACM汇刊等顶级期刊和ACM计算机与通信安全国际会议（CCS）、ACM知识感知国际会议（SIGKDD）、ACM多媒体国际会议（MM）、ACM嵌入式网络传感器系统国际会议（SenSys）、IEEE计算机通信国际会议（INFOCOM）、IEEE
+  ToN、TIFS、TDSC、TSG、WCM等CCF A类顶级国际学术会议与期刊上。
+
+  根据谷歌学者（Google Scholar）的统计，文章五年内总引用次数则超过1000次。
+
+  其中差分隐私保护方面的文章获得多位知名学者在多篇最新安全领域顶级会议（如IEEE S&P’17、18, USENIX’16、17，）的引用， 获得过包括ACM网络安全会议（ASIACCS’18）、IEEE/ACM全球网络服务质量（IWQoS’17）最佳论文奖等多个奖项。
+
+  目前招收博士/硕士/本科生，要求对人工智能/隐私计算感兴趣。要求有项目科研经历，具备较好的数学基础、编程能力、英语读写能力和参与科研的激情。有兴趣的请与我邮箱联系。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#秦湛
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据安全、隐私计算、AI安全
+detail_url: https://person.zju.edu.cn/qinzhan
+profile_url: https://person.zju.edu.cn/qinzhan
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-06-02'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +53,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/qinzhan
+    fetched_at: '2026-09-06'
     confidence: auto

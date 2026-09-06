@@ -4,14 +4,66 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+office_address: 浙江大学玉泉校区曹光彪主楼526-3
+bio_raw: '张帆同志出生于浙江杭州，高中毕业于杭州高级中学。2001年于西安交通大学获得计算机科学与技术专业本科学位，指导老师是
+
+  郑庆华教授
+
+  。2004年于上海交通大学信息与安全工程学院获得硕士学位，导师是
+
+  张申生教授
+
+  。同时硕士期间承蒙
+
+  谷大武教授
+
+  的指导。2011年于美国康涅狄格大学计算机科学与工程系获得博士学位，导师是
+
+  Zhijie Shi 教授
+
+  、
+
+  Aggelos Kiayias 教授
+
+  和
+
+  Sanguthevar Rajasekaran 教授
+
+  。2014年起，加入浙江大学信息与电子工程学院电子工程系。
+
+  2019年起，加入浙江大学计算机科学与技术学院/网络空间安全学院，同时在阿里巴巴-浙江大学前沿技术联合研究中心、之江实验室担任兼聘教授。
+
+  张帆同志在网络空间安全领域从事多年的科研工作，近5年在硬件安全、芯片设计、体系结构、密码学领域发表高水平论文 60 余篇，其中CCF-A/B会议期刊论文约20余篇。其中，2012年获国际会议
+  COSADE最佳论文奖。2018 年获中国密码学会ChinaCrypt最佳论文奖。2019年获亚洲硬件安全年会AsianHOST最佳海报奖。2018年以浙江大学为第一单位在密码硬件安全领域顶级会议CHES上发表了高水平学术论文1篇，系浙江大学在该会议上被接收的第一篇论文。出版了《密码故障分析与防护》和《下一代电信网与服务的安全管理》两本著作。作为中国密码学会专家组成员参与编写了《2014－2015密码学学科发展报告》。2020年担任嵌入式系统安全证明国际会议PROOFS的程序委员会主席，并担任DAC、AsiaCCS、ICICS、SCC、SPACE、FDTC、AsianHOST、MASS、ICPADS等重要国际会议的
+  TPC 成员。担任IEEE Access，CyberSecurity等国际期刊的副编辑，并担任IEEE TIFS、TCAD、JoC等顶级期刊的长期审稿人。
+
+  张帆同志的研究领域主要包括：硬件安全、系统安全、网络安全等安全相关领域。其聚焦的研究方向主要包括：旁路攻击与防御、故障攻击与防御、计算机体系结构、网络加密流量、后量子密码等。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#张帆
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 网络空间安全（硬件安全、物联网安全、网络安全、系统安全、密码学等）
+detail_url: https://person.zju.edu.cn/fanzhang
+profile_url: https://person.zju.edu.cn/fanzhang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2024-01-18'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -20,11 +72,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/fanzhang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/fanzhang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/fanzhang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/fanzhang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/fanzhang
+    fetched_at: '2026-09-06'
     confidence: auto

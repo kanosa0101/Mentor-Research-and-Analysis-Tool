@@ -4,13 +4,20 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 电子信息、计算机科学与技术
+email: ysliu@cad.zju.edu.cn
+phone: 0571-88206681-524
+office_address: 紫金港校区蒙民伟大楼520
+bio_raw: 男，副研究员，2000年获浙江大学机械与能源工程学院机械制造及其自动化专业博士学位，同年进入浙江大学CAD&CG国家重点实验室从事博士后研究。2002年出站后赴香港城市大学从事高级访问学者研究。2003年留浙江大学计算机学院CAD&CG国家重点实验室工作。主要从事计算机辅助公差建模、设计知识检索与重用、三维模型检索、MEMS设计与仿真等方面的研究工作。发表论文近30篇。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#刘玉生
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机辅助设计与制造、基于模型的系统工程、模型驱动的创新设计
+detail_url: https://person.zju.edu.cn/0003172
+profile_url: https://person.zju.edu.cn/0003172
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-13'
 facets: []
 provenance:
   name:
@@ -20,11 +27,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0003172
+    fetched_at: '2026-09-06'
     confidence: auto

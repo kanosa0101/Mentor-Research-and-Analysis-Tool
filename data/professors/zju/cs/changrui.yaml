@@ -4,14 +4,40 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导
 subjects: 网络空间安全、软件工程、计算机科学与技术、电子信息
-institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#常瑞
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+email: crix1021@zju.edu.cn
+office_address: 玉泉校区曹光彪楼
+institutes:
+- 计算机科学与技术学院
+research_direction_raw: 智能计算系统及安全(硬件辅助安全、体系结构安全、智能车载系统安全、AI Agent安全)、形式化方法（定理证明、模型检测、智能增强的自动化证明）、LLM
+  程序分析（面向java、rust、go、C、C++等语言生态）
+detail_url: https://person.zju.edu.cn/changrui
+profile_url: https://person.zju.edu.cn/changrui
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -20,11 +46,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/changrui
+    fetched_at: '2026-09-06'
     confidence: auto

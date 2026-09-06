@@ -4,14 +4,59 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息、软件工程
+email: yyc@cs.zju.edu.cn
+phone: '87951647'
+office_address: 曹光彪东楼503
+bio_raw: '浙江大学计算机学院副教授，博士，硕士生导师，
+
+  ACM
+
+  会员，计算机学会高级会员。
+
+  2000
+
+  年毕业于浙江大学电气学院，获控制理论与控制工程专业博士学位。
+
+  2002
+
+  年浙江大学计算机学院博士后出站留校任教。研究方向为模式识别与机器学习。曾主持国家自然科学基金、
+
+  863
+
+  计划、浙江省自然科学基金等多项国家级、省级科研项目。目前开展包括声纹识别、深伪语音鉴别、音乐可视化计算、遥感计算计算在内的研究工作。迄今已在国内外相关领域权威期刊及会议上发表高质量学术论文
+
+  60
+
+  余篇，出版专著
+
+  1
+
+  本，已获授权中国发明专利近二十项、美国专利一项、软件著作版权
+
+  6
+
+  项。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#杨莹春
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 语音识别、生物特征识别、遥感计算、音乐可视化计算
+detail_url: https://person.zju.edu.cn/yyczju
+profile_url: https://person.zju.edu.cn/yyczju
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2023-03-13'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
 provenance:
   name:
     origin: crawled
@@ -20,11 +65,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yyczju
+    fetched_at: '2026-09-06'
     confidence: auto

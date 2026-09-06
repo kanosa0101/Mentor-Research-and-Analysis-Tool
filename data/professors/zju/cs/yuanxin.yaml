@@ -4,14 +4,30 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 硕导
 subjects: 计算机科学与技术、软件工程
+email: yxxinyuan@zju.edu.cn
+phone: '87951916'
+bio_raw: 袁昕博士，1995年获浙江大学机械系机械制造专业的学士学位。1998年获浙江大学光仪系测试计量仪器技术及应用专业的硕士学位。2002年获浙江大学计算机系计算机应用专业的博士学位。同年赴香港科技大学从事医学图像的博士后研究。2004年任教于浙江大学计算机学院。研究方向是医学图像处理。已在国内外学术期刊和会议上发表论文20篇，其中EI收录7篇，SCI收录4篇。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#袁昕
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机应用、医学影像处理
+detail_url: https://person.zju.edu.cn/yuanxin
+profile_url: https://person.zju.edu.cn/yuanxin
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-13'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -20,11 +36,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/yuanxin
+    fetched_at: '2026-09-06'
     confidence: auto

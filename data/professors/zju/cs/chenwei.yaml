@@ -4,14 +4,71 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: chenvis@zju.edu.cn
+phone: 0571-88206681-529
+office_address: 浙江大学计算机辅助设计与图形学国家重点实验室
+bio_raw: '陈为，博导，浙江大学求是特聘教授，国家级高层次人才，CCF会士。
+
+  现任浙江大学计算机辅助设计与图形系统全国重点实验室副主任，浙江大学艺术与考古图像数据实验室常务副主任
+
+  。
+
+  2002年-2021年，浙江大学计算机学院，讲师、副教授（2004）、教授（2009）；浙江大学计算机学院副院长(2017.9-2021.11)
+
+  1996年-2002年，浙江大学应用数学系，获博士学位
+
+  1992
+
+  年
+
+  -1996
+
+  年，浙江大学应用数学系，获学士学位
+
+  承担国家自然科学基金重点项目等十余项。“十三五”国家重点研发计划“云计算与大数据”重点专项专家组成员，“十四五”国家重点研发计划“先进计算与新兴软件”重点专项专家组成员。研究领域为大数据可视分析和人机混合智能。发表IEEE/ACM
+  Transactions和IEEE VIS顶级期刊和会议论文100余篇，4篇论文获可视化领域顶级会议IEEE VIS最佳论文提名。出版教材/专著6部；承担国家自然科学基金重点项目等十余项。担任5个IEEE/ACM汇刊的编委和浙大创刊国际期刊Visual
+  Informatics执行主编。研究成果获中国计算机学会技术发明奖一等奖1项（2020）、浙江省自然科学奖一等奖2项（2017、2021）、浙江省科技进步奖一等奖（2023）、教育部科技进步二等奖、浙江省科技进步二等奖等。
+
+  陈为教授目前带领浙江大学VAI小组（https://zjuvai.cn）
+
+  欢迎具有强烈上进心和良好的数学与编程基础的本科同学或研究生同学与我们联系（简历可投至https://zjuvailab.feishu.cn/share/base/form/shrcnJEMgFGgu6uCYHCknJAumVh）；
+
+  我们期待
+
+  有热情、有创造力、有团队精神的你
+
+  加入我们团队共同探索未来。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#陈为
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 大数据可视分析、数字人文可视分析、多模态大模型、垂直领域大模型
+detail_url: https://person.zju.edu.cn/wei_chen
+profile_url: https://person.zju.edu.cn/wei_chen
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-09'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -20,11 +77,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/wei_chen
+    fetched_at: '2026-09-06'
     confidence: auto

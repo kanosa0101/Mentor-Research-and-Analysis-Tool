@@ -4,14 +4,144 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: kunzhou@zju.edu.cn
+phone: 0571-88206681
+office_address: 浙江大学紫金港校区蒙民伟楼
+bio_raw: '浙江大学计算机学院教授，
+
+  国际计算机学会会士 (ACM Fellow)，国际电气电子工程师协会会士 (IEEE Fellow)。1997年获浙江大学工学学士学位，2002年获浙江大学工学博士学位，
+
+  2007年入选
+
+  教育部长江学者特聘教授，2008年获国家杰出青年科学基金，2024年主持
+
+  国家自然科学基金创新研究群体项目
+
+  。
+
+  2013年至今任浙江大学计算机辅助设计与图形系统全国重点实验室主任
+
+  。
+
+  研究领域为计算机图形学和人工智能。在ACM和IEEE汇刊上发表论文100余篇，论文引用1万余次，获发明专利100余项，研究成果在4000余家国内外企事业单位得到规模化应用。获得国家自然科学奖二等奖
+  2 项 (2013、2020)、国家科技进步奖二等奖 1 项
+
+  (
+
+  2025
+
+  )
+
+  、
+
+  全国创新争先奖
+
+  (
+
+  2026
+
+  )
+
+  、省部级科技成果一等奖4项
+
+  、
+
+  NVIDIA Professor Par
+
+  tnership Award (
+
+  2009
+
+  )、
+
+  中国计算机图形学杰出奖 (
+
+  2010
+
+  )、中国
+
+  青年科技奖 (
+
+  2011
+
+  )、
+
+  麻
+
+  省理工学院《技术评论》全球杰出青年创新人物奖
+
+  (MIT TR35 Award,
+
+  2011
+
+  )、陈嘉庚青
+
+  年科学奖 (
+
+  2016
+
+  )、科学探索奖 (
+
+  2021
+
+  )、亚洲图形学会杰出技术贡献奖
+
+  (
+
+  Asiagraphics Outstanding Technical Contributions Award
+
+  , 2022)、
+
+  ACM SIGGRAPH时间检验奖 (ACM SIGGRAPH Test-of-Tim
+
+  e Award,
+
+  2024
+
+  )
+
+  。
+
+  担任学术期刊《Visual Informatics》创刊主编、《Frontiers of Computer Science》执行主编，现/曾担任学术期刊《ACM
+  Transactions on Graphics》、
+
+  《IEEE Transactions on Pattern Analysis & Machine Intelligience》、
+
+  《IEEE Transactions on Visualization & Computer Graphics》、《IEEE Computer Graphics
+  & Applications》、《Computer Graphics Forum》、《Science China - Information Science》、《Research》、《The
+  Visual Computer》、《Computational Visual Media》、《计算机研究与发展》、《科技导报》编委，《IEEE Spectrum》编辑顾问委员会委员。曾担任沙特阿拉伯国王科技大学可视计算中心科学顾问。担任
+
+  中国图像图形学会副理事长、
+
+  中国计算机学会常务理事（计算机辅助设计与图形学专委会主任）、中国电子学会虚拟现实分会主任、中国人工智能学会智能交互专委会副主任。
+
+  实验室长期招聘全职科研人员、博士后及研究生，有意者请邮件联系。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#周昆
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学、计算机视觉、人机交互、虚拟现实
+detail_url: https://person.zju.edu.cn/kunzhou
+profile_url: https://person.zju.edu.cn/kunzhou
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-07-17'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -20,11 +150,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/kunzhou
+    fetched_at: '2026-09-06'
     confidence: auto

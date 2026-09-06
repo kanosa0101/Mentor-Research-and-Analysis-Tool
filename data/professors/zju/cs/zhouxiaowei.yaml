@@ -4,14 +4,41 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 特聘教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: xwzhou@zju.edu.cn
+phone: 0571-88206681
+office_address: 紫金港校区蒙民伟楼429
+bio_raw: '周晓巍，浙江大学求是特聘教授，国家科技创新领军人才，国家重点研发项目首席科学家。研究方向主要为三维视觉与空间智能。近五年在相关领域的顶级期刊与会议上发表论文百余篇，多次入选CVPR最佳论文候选，成果在中船集团、中国兵器、华为、蚂蚁、商汤等头部企业的项目和产品中成功应用。曾获得浙江省自然科学一等奖，两次获得CCF优秀图形开源贡献奖，入选全球前2%顶尖科学家榜单、爱思唯尔中国高被引学者。培养学生获得CCF优博、国自然优秀学生基金。担任国际顶级期刊IJCV编委、顶级会议CVPR/ICCV领域主席，CSIG
+  三维视觉专委会副主任，曾任图形学与混合现实研讨会（GAMES）执行委员会主席。
+
+  更多信息请见个人主页：
+
+  xzhou.me'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#周晓巍
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 三维计算机视觉与图形学、混合现实、智能机器人
+detail_url: https://person.zju.edu.cn/xzhou
+profile_url: https://person.zju.edu.cn/xzhou
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-07-29'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -20,11 +47,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xzhou
+    fetched_at: '2026-09-06'
     confidence: auto

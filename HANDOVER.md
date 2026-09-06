@@ -21,7 +21,7 @@
 ## 2. 当前状态（2026-09-05 实测）
 
 - **36 校 42 院系 5654 人**，全量 YAML 落盘 + 静态网站可浏览
-- 全库字段覆盖：**邮箱 4335（76%）、职称 4027（71%）、简介 3440（60%）、博导硕导 2205（38%）**
+- 全库字段覆盖：**邮箱 4422（78%）、职称 4140（73%）、简介 3539（62%）、博导硕导 2267（40%）**
 - 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
 - git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
 - preflight 绿（0 PROBLEM）；open issues 均已人工复验标 `reviewed`（官网死链/外部主页被墙），如实留痕
@@ -58,7 +58,7 @@
 | bnu/ai | bnu_ai | 72 | 79% | 73% | 79% | 61% | 69% |
 | xjtu/cs | xjtu_cs | 75 | 62% | 68% | 78% | 13% | 22% |
 | scu/cs | scu_cs(委托tsites) | 166 | 23% | 90% | 0 | 65% | 42% |
-| zju/cs | zju_cs | 438 | 14% | 13% | 99% | 13% | 14% |
+| zju/cs | zju_cs(名录+xlsx+CDP person) | 438 | 37% | 33% | 99% | 35% | 38% |
 | sustech/cs | sustech_cs | 39 | 100% | 100% | 0 | 28% | 0 |
 | shanghaitech/cs | sist_cs | 149 | 65% | 98% | 59% | 0 | 59% |
 | seu/cs | seu_cs | 128 | 100% | 85% | 86% | 67% | 97% |
@@ -72,14 +72,14 @@
 | ruc/info | ruc_info(hash名录+.content) | 67 | 94% | 95% | 46% | 62% | 0 |
 | hnu/cs | hnu_cs(卡片表+people详情) | 187 | 94% | 70% | 0 | 82% | 0 |
 | scut/cs | scut_cs(职称三栏目+meta) | 76 | 100% | 73% | 14% | 67% | 0 |
-| bupt/cs | bupt_cs(CDP名录+tsites明文) | 217 | 30% | 80% | 0 | 0 | 0 |
+| bupt/cs | bupt_cs(CDP名录+tsites明文+jsxx子页) | 217 | 35% | 80% | 28% | 0 | 0 |
 | cqu/cs | cqu_cs(CDP导师名单+faculty子页) | 77 | 68% | 88% | 100% | 85% | 0 |
 | uestc/cs | uestc_cs(CDP筛选列表+info文章) | 189 | 100% | 97% | 5% | 62% | 0 |
 | hit/cs | hit_cs(jsml+CDP导师名单) | 240 | 0 | 0 | 70% | 0 | 0 |
 | **合计** | | **5654** | | | | | |
 
 要点：
-- hit 详情无源已定论（教师主页是内网穿透地址外网 404），但博导/硕导名单页（cs.hit.edu.cn/22195/22196，CDP 渲染）已补 supervisor 168/240；nwpu 是纯名单（roster 级，无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 主页 CDP 已可抓（66 人名录链接者已富化 59 邮箱）；**名录只链 66 人，374 名 xlsx 导师的 person URL 需逆向门户搜索接口（Vue SPA+瑞数），拼音猜测已实测全 404**
+- hit 详情无源已定论（教师主页是内网穿透地址外网 404），但博导/硕导名单页（cs.hit.edu.cn/22195/22196，CDP 渲染）已补 supervisor 168/240；nwpu 是纯名单（roster 级，无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 主页 CDP 已可抓（66 人名录链接者已富化 59 邮箱）；**门户搜索接口已逆向（§7.41）**：/server/api/front/psons/search 全校 5841 人可拉，计算机学院 169 人匹配入库 103 人 detail_url 修正为 person 主页（CDP 富化），邮箱 13→33%、职称 14→37%；剩余 271 名 xlsx 导师接口无记录（无 person 主页），拼音猜测全 404
 - xidian/川大邮箱经 tsites 解密接口还原 + 明文四形态兜底；上科大/复旦走 generalQuery POST 接口；复旦 bio 经核实官网侧无源（generalQuery 无简介字段、exField5"个人主页"文章页是空壳），homepage 链接已入库（107 人）
 - xmu 43 条详情死链是官网本身 404（已逐一留痕并 reviewed）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障；tju 1 条官网死链留痕
 - bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
@@ -113,8 +113,8 @@
 
 已接入 36 校（清单见 §3）。范围内**未接入**的只剩：
 
-- **华科**：间歇性网络阻断（直连+代理都超时）——网络稳定后用 `retest_direct.py` 复测；通了可试 CDP
-- **南开**：cc.nankai.edu.cn 与 cs.nankai.edu.cn 均超时，网络环境变化后再测
+- **华科**：09-06 复测直连+代理均 ConnectTimeout（TCP 层不通，纯网络阻断）——网络稳定后复测，通了可试 CDP
+- **南开**：09-06 复测 cc/cs 两域直连+代理均 ConnectTimeout（TCP 层不通）——网络稳定后复测
 - **放弃**（1 所）：国防科大（军队院校，用户明确不考虑）
 
 **WAF 阻断组已全部攻克（2026-09-05，CDP 真实浏览器后端 §7.39）**：北邮（瑞数 412）→ 217 人、重大（瑞数 412 + JS 壳列表）→ 77 人、电子科大（网防 202）→ 189 人。原理：瑞数/网防拦的是客户端指纹，CDP 连本机真实 Chrome（真实插件/字体/历史 cookie）即放行；服务端代读通道曾证明内容可读但不可管线化，CDP 是管线化的正解。浙大 person.zju（瑞数）、哈工大教师系统也可用同一路径富化（§9）。
@@ -169,6 +169,9 @@
 37. **页脚公共邮箱陷阱（湖大/华南理工）**：湖大详情页"电子邮件"字段为空但页脚备案区有 `xiaoban@hnu.edu.cn`，华南理工页脚有 `x2js@scut.edu.cn`——全页正则会吃到，**必须排除页脚/备案区，绝不能把学院公邮录成教师邮箱**（宁可缺）。湖大 55 人无邮箱经抽查为官网"电子邮件"字段真空白
 38. **preflight issue 的 reviewed 语义**：官网死链（xmu 43 条 404、tju/bnu 各 1-2 条）和外部主页被墙（sustech scholar.google 403）是**如实记录**，不该删；preflight 只对未复验的 open issue 报 PROBLEM，人工复验后在 issue 条目加 `reviewed: true`。**"网络抖动"类 issue 先重跑再判**：sustech 两条 ConnectionError 复测时已恢复
 39. **CDP 真实浏览器后端（破瑞数/网防的定论方案，crawler/fetch.py）**：① `_ensure_chrome_debug()` 启动本机真实 Chrome（独立 profile `cache/chrome-profile`，不动用户日常会话）监听 9222，playwright `connect_over_cdp` 接管，用默认上下文（保留指纹/cookie）新开页抓完即关 ② `fetch()` 对 **412/403/503** 抛错时自动降级 `fetch_cdp`；**网防 wengine 走 202 短响应（requests 视为成功）**，按 `status==202 且 body<10KB` 特征降级 ③ 两个大坑：**环境变量 http_proxy 是 SOCKS（127.0.0.1:10808）时 `proxies={"http":None}` 不禁用代理反而回退环境设置，探测回环 9222 必须 `trust_env=False`**；Chrome 启动要 15-30s，等待循环别设 10s ④ **两个爬虫进程不得同时用 CDP**（EPIPE：playwright driver 管道崩）——串行跑 ⑤ 列表页 requests 返回 200 的 JS 壳（重大）不会触发降级，hook 里必须**显式 `fetch_cdp(wait_ms=5000, scroll=True)`** ⑥ Chrome 走系统代理出口，瑞数照样放行（指纹优先于 IP）
+41. **浙大 person 门户 API 逆向（appkey/sign 签名）**：前端 emitAjax 三件套——`appkey = Base64→Hex(反转的Base64串)`、`sign = MD5(salt + path + sorted_kv(data) + timestamp + " " + salt)`（salt 也是 Base64→Hex 固定串）、`timestamp` 毫秒。请求走 `/server/api/front/psons/search?size=100&page=N`（**/server 前缀**，不带它 403/Access denied——那是前端代理路径），返回 JSON（totalElements=5841 全校）。API 本身不被瑞数拦（裸 requests 也能调，缺签名头才 400），**页面内 fetch/XHR 反而 403**（瑞数 4 对 XHR 注动态 token，但应用层签名缺了照样 403——两层签名别混淆）。UI 路线注意：SPA 是 history 路由，服务端真实路径带 `/index` 前缀（/index/search），直接 goto 可渲染
+42. **北邮 tsites 的 jsxx 子页才有 职称/导师资格**（主页只有职务/单位/邮箱/办公地点），链接形态 `/<py>/zh_CN/jsxx/<id>/jsxx/jsxx.htm`，字段标签与值常分两行（"职称：
+教授"）——职称正则要带下一行兜底
 40. **重大 tsites 是"成果展示型"**：faculty.cqu.edu.cn 的 index.htm 只有论文/专利栏目，**个人信息（职称/导师/邮箱）在 yjgk 子页**（栏目 ID 每人不同，从主页导航正则找）；邮箱标签是"联系方式："不是"电子邮箱"。北邮 tsites 相反——无密文 span，邮箱明文在 `div#gerenxinxi`。电子科大师资卡片 `span.name` 第二个就是职称（roster 级白送）；列表分页参数是 **`&fromWenCountNo=99`**（GET 生效）
 
 ## 8. 操作手册

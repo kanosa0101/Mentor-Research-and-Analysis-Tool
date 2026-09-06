@@ -4,14 +4,90 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: shijianli@zju.edu.cn
+phone: 0571-87951647
+office_address: 浙江大学玉泉校区老生仪楼一楼
+bio_raw: '李石坚：
+
+  男，1979年生，浙江大学计算机学院教授，博士生导师，CCF普适计算专委会常委，IEEE和ACM会员。2006年9月于浙江大学获得工学博士学位，2008年11月自浙江大学控制科学与工程博士后流动站出站，
+
+  2010
+
+  年于法国巴黎国立电信研究院访学
+
+  。研究兴趣集中于普适计算、人工智能、人机交互等领域。近年来主持了科技创新2030重大项目、科技支撑计划子课题、国家自然科学基金等多个科研课题，作为负责人承担项目逾千万。已在领域内多个重要期刊和会议上发表（录用）了70余篇学术论文，H指数30，Google
+  Scholar引用3600余次。任《
+
+  Journal of Systems  Architecture》、
+
+  《International Journal of Distributed Sensor Networks》（任期已满）等期刊编委，以
+
+  及
+
+  《Wireless Communications and Mobile Computing》、Ubicomp、PAKDD、JRS、GrC、MSN、UIC、PCC等十余个期刊和国际会议的审稿人或PC委员。
+
+  曾获2015年国家科技进步二等奖、2014年教育部科技进步一等奖等奖项。
+
+  近几年主要研究课题：
+
+  自研人工智能平台和框架；
+
+  系统机器学习领域：AutoML、编译优化、计算图优化、GPU集群异常检测等；
+
+  应用领域：基于大模型的特定应用（农业、电网、金融、脑机）。
+
+  对博士生的主要期望：
+
+  在某个特定方向成为兼具理论和应用能力的专家。
+
+  毕业时具备独立申报和承担科研/应用项目的能力。
+
+  发表4篇有价值的学术论文。
+
+  对硕士生的主要期望：
+
+  1. 经历一个项目开题到结题的完整周期。
+
+  2. 针对某个特定问题，具备从设计技术路线、开发实现、评估及改进、文档撰写、专利成果整理的体验和能力。
+
+  3. 满足学院的其他要求。
+
+  实验室经费充足、任务饱满，主要工作面向国家重大需求，欢迎博硕士生报考。
+
+  请拟报考的硕士生先大致了解下人工智能框架（如Jittor、Paddle等）、MLSYS和MLOPS平台等方面内容，确定是否符合个人志趣。
+
+  同时欢迎相关方向博士毕业生应聘博士后研究岗位。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#李石坚
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 人工智能、普适计算
+detail_url: https://person.zju.edu.cn/lishijian
+profile_url: https://person.zju.edu.cn/lishijian
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-11'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -20,11 +96,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lishijian
+    fetched_at: '2026-09-06'
     confidence: auto

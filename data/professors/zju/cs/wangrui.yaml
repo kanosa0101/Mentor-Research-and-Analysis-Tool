@@ -4,14 +4,27 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+phone: 0571-88206681-430
+office_address: 浙江大学紫金港校区蒙民伟楼430
+bio_raw: "浙江大学，计算机科学与技术学院，CAD&CG国家重点实验室，教授，博导。\n• 2017年－至今，浙江大学，计算机科学与技术学院，教授\n•\t\
+  2010年－2016年，浙江大学，计算机科学与技术学院，副教授\n• 2012年－2014年，美国Cornell大学，计算机学院，访问副教授\n• 2008年－2010年，浙江大学，计算机科学与技术学院，师资博后/讲师\n\
+  毕业硕/博毕业生，除部分出国深造外，广泛就职于国内外游戏公司/IT企业。\n详情请访问实验室个人主页：\nhttp://www.cad.zju.edu.cn/home/rwang/"
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#王锐
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学、虚拟现实、数字娱乐、实时渲染
+detail_url: https://person.zju.edu.cn/rwang
+profile_url: https://person.zju.edu.cn/rwang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2024-01-30'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -20,11 +33,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/rwang
+    fetched_at: '2026-09-06'
     confidence: auto

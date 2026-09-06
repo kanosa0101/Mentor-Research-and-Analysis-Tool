@@ -4,13 +4,19 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 硕导
 subjects: 电子信息、软件工程
+email: bzhou@zju.edu.cn
+phone: 0571-87952385
+office_address: 曹光彪主楼503室
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#周波
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据处理技术、云计算、软件工程、金融信息技术
+detail_url: https://person.zju.edu.cn/bzhou
+profile_url: https://person.zju.edu.cn/bzhou
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-14'
 facets: []
 provenance:
   name:
@@ -27,4 +33,29 @@ provenance:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/bzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/bzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/bzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/bzhou
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/bzhou
+    fetched_at: '2026-09-06'
     confidence: auto

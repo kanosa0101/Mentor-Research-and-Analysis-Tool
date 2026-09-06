@@ -4,14 +4,171 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
-supervisor: 博导、硕导
+title: 教授
+supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+office_address: 则通楼309
+bio_raw: '浙江大学计算机科学与技术学院教授，IEEE资深会员。
+
+  于2009年获计算机科学与工程博士学位，
+
+  是
+
+  同年度香港中文大学工程学院最优博士论文奖
+
+  以及香港中文大学青年学者论文奖
+
+  获得者
+
+  。攻读博士期间曾
+
+  作为访问学者
+
+  于
+
+  UIUC ECE系 Image
+
+  Foundation
+
+  and Processing Group交流。2009年1月进入瑞士ETH Zurich BIWI Computer Vision Lab
+
+  进行博士后阶段研究。曾担任阿里巴巴-浙江大学前沿技术联合研究中心计算机视觉与视频分析实验室主任，主持的“俪知虚拟人”项目荣获阿里巴巴集团学术合作最佳项目奖。研究方向为：计算机视觉与模式识别
+
+  。
+
+  目前担任国际期刊Neurocomputing编委。是
+
+  包括
+
+  IEEE TPAMI
+
+  /
+
+  TIP/TNNLS
+
+  、
+
+  ACM Computing Survey
+
+  /
+
+  TOIS
+
+  /
+
+  TIST在内的多个
+
+  国际
+
+  期刊
+
+  审稿人，以及AAAI/IJCAI/CVPR等会议的PC和SPC
+
+  。
+
+  Selected papers:
+
+  [1]
+
+  Wentong Li, Yuqian Yuan, Jian liu, Dongqi Tang, Song Wang, Jie Qin,
+
+  Jianke
+
+  Zhu*
+
+  , Lei Zhang, “TokenPacker: Efficient Visual Projector for Multimodal LLM”,
+
+  International Journal of Computer Vision (
+
+  IJCV)
+
+  , 2025.
+
+  [2]
+
+  Yisu Zhang,
+
+  Jianke Zhu*
+
+  , and Lixiang Lin, “FastMESH: Fast Surface Reconstruction by Hexagonal Mesh-based
+  Neural Rendering”,
+
+  Comput. Vis. Image Underst.
+
+  , 2025.
+
+  [3]
+
+  Xiaolu Liu, Ruizi Yang, Song Wang, Junbo Chen,
+
+  Jianke Zhu*
+
+  , “Uncertainty-Instructed Structure Injection for Generalizable HD Map Construction”,
+
+  CVPR2025
+
+  .
+
+  [4]
+
+  Hanxun Yu, Wentong Li, Song Wang, Junbo Chen,
+
+  Jianke Zhu*
+
+  , “Inst3D-LMM: Instance-Aware 3D Scene Understanding with Multi-modal Instruction
+  Tuning”,
+
+  CVPR2025
+
+  .
+
+  [5]
+
+  Wentong Li, Wenyu Liu,
+
+  Jianke Zhu*
+
+  , Miaomiao Cui, Risheng Yu, Lei Zhang, and Xiansheng Hua, “Box2Mask: Instance Segmentation
+  by Level Set Evolution”,
+
+  IEEE Trans. on Pattern Analysis and Machine Intelligences (T-PAMI)
+
+  , 2024.
+
+  [6]
+
+  Zhuopeng Li, Chunming Wu, Liangjun Zhang, and
+
+  Jianke Zhu*
+
+  , “DGNR: Density-Guided Neural Point Rendering of Large Driving Scenes”,
+
+  IEEE Transactions on Automation Science and Engineering
+
+  , 2025.'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#朱建科
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机视觉、机器学习
+detail_url: https://person.zju.edu.cn/jkzhu
+profile_url: https://person.zju.edu.cn/jkzhu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-07-07'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -20,11 +177,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/jkzhu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/jkzhu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/jkzhu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jkzhu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jkzhu
+    fetched_at: '2026-09-06'
     confidence: auto

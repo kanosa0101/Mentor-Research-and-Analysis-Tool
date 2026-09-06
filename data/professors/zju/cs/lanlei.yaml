@@ -4,14 +4,37 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 电子信息、计算机科学与技术
+email: leilan@zju.edu.cn
+office_address: 紫金港校区蒙民伟楼409
+bio_raw: 蓝磊现任浙江大学计算机辅助设计与图形系统全国重点实验室百人计划研究员。于厦门大学获得博士学位，随后在美国克莱蒙森大学和犹他大学从事博士后研究工作。研究方向主要包括物理仿真、几何建模与GPU并行计算等，在
+  ACM Transactions on Graphics（TOG）、SIGGRAPH、SIGGRAPH Asia、AAAI 等国际顶级期刊和会议发表论文二十余篇。近年来主要围绕大规模可变形体仿真、高精度接触建模和机器人并行仿真训练等方向开展研究，承担国自然重点支持项目、
+  科技部重大专项等项目，获国家级青年人才项目资助。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#蓝磊
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学、物理动画、碰撞检测、具身仿真、数值计算
+detail_url: https://person.zju.edu.cn/0025815
+profile_url: https://person.zju.edu.cn/0025815
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-06-23'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -20,11 +43,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0025815
+    fetched_at: '2026-09-06'
     confidence: auto

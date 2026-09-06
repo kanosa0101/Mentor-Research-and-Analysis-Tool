@@ -4,14 +4,90 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: linhz@zju.edu.cn
+bio_raw: '林怀忠，浙江大学副教授，
+
+  博士生导师
+
+  。
+
+  主要从事
+
+  计算机视觉内容智能生成（图像可控生成：图像风格迁移、图像修复、图像对抗生成、跨域图像迁移；视频的可控编辑，
+
+  应用领域：虚拟数字人、虚拟换装
+
+  ；三维内容只能生成：包括NERF、3D高斯等）、多模态大模型、空间智能、具身智能。
+
+  面向文旅、教育、电力、汽车等领域，与支付宝、阿里、华为、美团等国内20家头部企业，联合开发了球幕/环幕沉浸式展示、复杂模型和超大艺术图像的基于web 的快速展示、艺术图像风格自动识别、地铁巡检系统、图案智能创意设计、图案知识图谱、可穿戴沉浸式展示SDK、舆情智能分析、面向文化遗产领域的智能检索与问答、文博机器人、人形机器人具身智能系统、考古动态场景三维采集装置、智能驾驶舱等20多套软件系统。在计算机视觉内容生成、大模型等方面发表论文100
+
+  多篇，其中在人工智能、机器视觉等顶级会
+
+  期刊和会议
+
+  如CVPR、NIPS、AAAI、ICCV、ACM MM
+
+  、IJCAI、CVIU、
+
+  IET
+
+  等论文30多篇，申请发明专利
+
+  4
+
+  0多项，是 TIP、AAAI、CVPR、TVCJ、Siggraph、NCA等top会议和期刊的审稿人。
+
+  作为技术骨干
+
+  承担项目70项
+
+  。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#林怀忠
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机视觉（视觉内容智能生成即AIGC，包括：三维内容生成、视频可控编辑、图像可控生成，应用领域：虚拟数字人、虚拟换装）、多模态大模型、具身智能、空间智能
+detail_url: https://person.zju.edu.cn/lhz
+profile_url: https://person.zju.edu.cn/lhz
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-05-12'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:问答
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled
@@ -20,11 +96,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/lhz
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/lhz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/lhz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lhz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/lhz
+    fetched_at: '2026-09-06'
     confidence: auto

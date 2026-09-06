@@ -4,14 +4,57 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: liujian2411@zju.edu.cn
+office_address: 浙江大学玉泉校区曹光彪楼
+bio_raw: '刘健，长聘副教授，博士生导师。2019年11月加入浙江大学网络空间安全学院。
+
+  2018年7月获得芬兰
+
+  阿尔托大学
+
+  博士学位
+
+  ，并于同年加入
+
+  加州大学伯克利分校
+
+  担任博士后
+
+  研究员。其
+
+  研究领域涵盖应用密码学、分布式系统、区块链、人工智能。致力于构建可证明安全的、易用的、可部署的系统应用。
+
+  个人主页：
+
+  https://jianliu.phd/
+
+  招收博士后/博士/硕士/本科实习生/访问学生，要求对科研有浓厚兴趣和扎实的编程功底。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#刘健
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 应用密码学、分布式系统、区块链、机器学习
+detail_url: https://person.zju.edu.cn/jianliu
+profile_url: https://person.zju.edu.cn/jianliu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-03-04'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -20,11 +63,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jianliu
+    fetched_at: '2026-09-06'
     confidence: auto

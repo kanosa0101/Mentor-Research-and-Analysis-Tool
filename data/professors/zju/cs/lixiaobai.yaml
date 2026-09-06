@@ -4,14 +4,39 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: xiaobai.li@zju.edu.cn
+phone: '15042310282'
+office_address: 萧山区平澜路 杭州国际科创中心水博园区 B06 304
+bio_raw: 浙江大学百人计划研究员，博导。本科毕业于北京大学，硕士毕业于中科院大学，博士毕业于芬兰奥卢大学。获得芬兰科学院博后奖金，2020年至2023年4月在芬兰奥卢大学担任tenure
+  track助理教授，主持芬兰科学院、芬兰工作环境基金会等多个科研项目，并荣获奥卢大学2019最具科学领导力的青年学者奖。2023年底加入浙江大学网络空间安全学院，兼任奥卢大学客座教授。研究领域包括机器视觉、机器学习、情感计算、生物识别等。具体方向有微表情识别、基于视频的远程生理信号测量、生物特征识别、人脸活体检测、对抗攻击和伪造检测、多模态情感识别和内容生成等等。发表期刊和会议文章70余篇，包括高水平期刊和会议文章如IEEE
+  TPAMI、TAC、SPM、PIEEE、IJCV、ICCV、CVPR等十余篇，谷歌学术检索H指数40，总引用8900，入选2022至2024年全球2%高被引学者。IEEE高级会员，IEEE
+  MLSP委员会委员，ELLIS会员，CSIG情感计算与理解专委会常委，担任IEEE-TCSVT、IEEE-TMM、CVIU和IVC期刊副编辑。关于微表情的研究被麻省理工科技评论报道，远程心率测量文章获IEEE芬兰区2020年最佳学生论文奖。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#李晓白
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 机器视觉、机器学习、情感计算、生物识别、伪造检测
+detail_url: https://person.zju.edu.cn/0022089
+profile_url: https://person.zju.edu.cn/0022089
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-10'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +45,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022089
+    fetched_at: '2026-09-06'
     confidence: auto

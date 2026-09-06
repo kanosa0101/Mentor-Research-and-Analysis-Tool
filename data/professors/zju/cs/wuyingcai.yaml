@@ -4,14 +4,206 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: ycwu@zju.edu.cn
+phone: 0571-88206682
+office_address: 浙江大学紫金港校区计算机辅助设计与图形系统全国重点实验室
+bio_raw: '长期招聘全职科研人员、博士后及研究生，有意者请邮件联系：
+
+  ycwu@zju.edu.cn
+
+  浙江大学求是特聘/长聘教授、长江学者，任CAD&CG全国重点实验室副主任，致力于数据可视分析、AI数据分析和人机交互研究，聚焦体育人工智能，社交媒体分析，工业大数据等应用，担任国家重点研发计划“工业软件”重点专项指南组专家，承担国家重点研发计划
+
+  重点专项
+
+  2
+
+  项
+
+  (“
+
+  网络空间安全治理
+
+  ”
+
+  重点专项和
+
+  “
+
+  国际合作
+
+  ”
+
+  重点专项各
+
+  1
+
+  项
+
+  )
+
+  ，国家基金委重点项目1项，国家基金委联合重点项目
+
+  2
+
+  项等。
+
+  相关成果应用于京东、阿里巴巴等公司的智慧城市方面的重要业务，并构建了乒乓球国家队的智能大数据分析决策系统，提供专业技术支撑，成效显著，助力国家队东京奥运夺得佳绩，受到媒体的广泛报道和关注（
+
+  中央电视台
+
+  、
+
+  浙江卫视
+
+  、
+
+  光明日报
+
+  、
+
+  浙江日报
+
+  、
+
+  钱江晚报
+
+  等），获
+
+  2021年浙江省自然科学一等奖(排名第二），2023年浙江省科学技术进步一等奖（排名第一）
+
+  。
+
+  在
+
+  IEEE VIS
+
+  、
+
+  ACM KDD
+
+  、
+
+  ACM CHI
+
+  等著名国际会议和
+
+  IEEE TVCG
+
+  、
+
+  CGF
+
+  等学术期刊发表学术论文
+
+  100
+
+  余篇，其中可视分析领域顶级期刊（
+
+  CCF A
+
+  类）
+
+  IEEE TVCG
+
+  论文
+
+  80
+
+  余篇
+
+  。在CCF A类的
+
+  可视分析顶级会议
+
+  IEEE VIS
+
+  上获
+
+  最佳论文奖1次（2025）、
+
+  最佳论文提名6次
+
+  (2009, 2014, 2021a, 2021b, 2022, 2024)
+
+  ，在ACM CHI上获最佳论文提名1次（2025），在
+
+  亚太可视化年会（
+
+  IEEE Pacific Visualization
+
+  ）获最佳论文提名2次（2016，2021）等。
+
+  担任IEEE PacificVis 2025 TVCG Journal Track论文主席，ACM CHI 2025-2026可视化委员会副主席，
+
+  IEEE VIS 2022-2023
+
+  （
+
+  CCF A
+
+  类会议）领域论文主席
+
+  ，
+
+  IEEE PacificVis 2017
+
+  、
+
+  ChinaVis 2016-2017
+
+  等会议的论文主席和
+
+  IEEE VIS 2021
+
+  的研讨会主席，《软件学报》领域编委，《计算机辅助设计与图形学学报》、《IEEE Transactions on Visualization and Computer
+  Graphics》、《
+
+  Journal of Visualization
+
+  》和《
+
+  Visual Informatics
+
+  》等期刊编委。
+
+  团队介绍：
+
+  ridl45vr.pdf
+
+  团队主页：
+
+  https://zjuidg.org/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#巫英才
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 可视化与可视分析、体育人工智能、社交网络数据分析与挖掘、工业软件
+detail_url: https://person.zju.edu.cn/ycwu
+profile_url: https://person.zju.edu.cn/ycwu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-11-01'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -20,11 +212,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/ycwu
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,29 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
-supervisor: 博导、硕导
+title: 副教授
+supervisor: 博导
 subjects: 网络空间安全、电子信息、软件工程、计算机科学与技术
+phone: 0571-88206681-426
+office_address: 紫金港校区蒙民伟楼426
+bio_raw: '陶煜波，浙江大学计算机学院CAD&CG国家重点实验室副教授。于2003年、2009年分别获得浙江大学计算机科学与技术学士、博士学位。之后在浙江大学进行博士后研究。2010至2012年在英国贝德福德大学(University
+  of Bedfordshire)作为博士后从事生物医学可视化的研究。2012年9月进入浙江大学计算机学院CAD&CG国家重点实验室工作，作为项目负责人已承担国家自然科学基金青年基金项目2项。
+
+  研究方向是科学计算可视化、可视分析和电磁计算。已发表相关学术论文30余篇，包括IEEE Trans. on Visualization and Computer
+  Graphics, IEEE Trans. on Image Processing, IEEE Trans. on Antennas and Propagation等本领域顶级期刊。截止2013年2月，发表论文被国际同行引用110余次。多次受邀参加国际学术期刊和会议的评审工作。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#陶煜波
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据可视分析，科学计算可视化，人工智能
+detail_url: https://person.zju.edu.cn/0009665
+profile_url: https://person.zju.edu.cn/0009665
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-07-03'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
 provenance:
   name:
     origin: crawled
@@ -20,11 +35,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009665
+    fetched_at: '2026-09-06'
     confidence: auto

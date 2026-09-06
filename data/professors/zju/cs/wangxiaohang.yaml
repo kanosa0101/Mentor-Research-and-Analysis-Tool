@@ -4,14 +4,125 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 网络空间安全、电子信息
+email: xiaohangwang@zju.edu.cn
+phone: '-'
+bio_raw: '王小航，浙江大学计算机学院/网络空间安全学院教授。
+
+  研究方向为计算机体系结构、系统架构优化。
+
+  毕业于浙江大学信电系，曾在华南理工大学软件学院任教。
+
+  发表包括IEEE/ACM Trans顶级期刊和DAC顶级会议在内的论文70余篇，获得包括VLSI-SoC在内的两项硬件设计与硬件安全领域著名会议最佳论文奖。
+
+  主持科研项目
+
+  20余
+
+  项（国家级
+
+  6
+
+  项：国家自然科学基金重点、面上、青年、
+
+  NSFC
+
+  -
+
+  广东联合超算项目、科技部重点研发课题），
+
+  担任片上网络领域知名会议
+
+  NoCS 18/22
+
+  分会组织者，CCF DAC 2023 组织委员会副主席，
+
+  NoCArc 18
+
+  指导委员会委员，
+
+  APCCAS 18
+
+  分会主席，
+
+  ICCAD
+
+  、
+
+  CF
+
+  （
+
+  CCF B
+
+  类会议）
+
+  TPC
+
+  成员，在
+
+  ICCS 20
+
+  做特邀报告并担任程序委员会主席，在
+
+  20
+
+  、
+
+  21
+
+  年
+
+  CCF
+
+  容错计算年会分论坛做特邀报告，担任
+
+  Mathematics
+
+  （
+
+  JCR
+
+  一区）、
+
+  Computers and Electrical Engineering
+
+  、
+
+  Integration, the VLSI Journal
+
+  等期刊客座主编，计算机技术与发展期刊的专题编委，担任中
+
+  国计算机学会（
+
+  CCF
+
+  ）容错计算、集成电路专委的委员。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#王小航
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 性能建模与仿真、计算机体系结构、LLM系统架构优化
+detail_url: https://person.zju.edu.cn/xiaohangwang
+profile_url: https://person.zju.edu.cn/xiaohangwang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-11-11'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +131,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/xiaohangwang
+    fetched_at: '2026-09-06'
     confidence: auto

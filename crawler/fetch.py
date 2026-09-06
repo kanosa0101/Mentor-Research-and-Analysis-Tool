@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import time
@@ -247,3 +248,33 @@ def fetch_cdp(url, refresh=False, wait_ms=2500, timeout=45000, scroll=False):
             "fetched_at": time.strftime("%Y-%m-%d")}
     meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     return html, meta, False
+
+
+def fetch_cdp_json(api_url, wait_ms=1500, refresh=False):
+    """在 CDP 真实浏览器页面上下文里调用同源 XHR API——自动携带瑞数 cookie/签名
+    （裸 requests/CDP 直连 API 会 Access denied）。锚点页每次先加载以稳拿质询 cookie。"""
+    key = _key("CDPJSON", api_url, None)
+    body_p = CACHE / (key + ".body")
+    meta_p = CACHE / (key + ".meta.json")
+    if body_p.exists() and not refresh:
+        meta = json.loads(meta_p.read_text(encoding="utf-8"))
+        return body_p.read_text(encoding="utf-8"), meta, True
+    b = _get_cdp_browser()
+    ctx = b.contexts[0] if b.contexts else b.new_context()
+    page = ctx.new_page()
+    try:
+        origin = re.match(r"(https?://[^/]+)", api_url).group(1)
+        page.goto(origin + "/", timeout=45000, wait_until="domcontentloaded")
+        page.wait_for_timeout(wait_ms)
+        js = ("fetch(%r, {headers: {'X-Requested-With': 'XMLHttpRequest'}})"
+              ".then(function(r){return r.text()})") % api_url
+        text = page.evaluate(js)
+        status = 200
+    finally:
+        page.close()
+    CACHE.mkdir(parents=True, exist_ok=True)
+    body_p.write_text(text or "", encoding="utf-8")
+    meta = {"url": api_url, "method": "GET+CDPJSON", "status": status,
+            "fetched_at": time.strftime("%Y-%m-%d")}
+    meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    return text, meta, False

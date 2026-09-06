@@ -4,14 +4,41 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: zthzheng@zju.edu.cn
+bio_raw: '郑天航，百人计划研究员
+
+  /
+
+  博导/国家优秀青年科学基金（海外）项目获得者。郑天航研究员致力于人工智能多维度攻防的研究。在人工智能安全领域，他近五年发表20篇左右论文，以第一作者发表7篇CCF-A长文。这些论文分别发表于
+  TDSC、CCS、NDSS、ICML、TIFS、AAAI、ICCV、IJCAI、INFOCOM、UAI、EMNLP、MLSys 等会议期刊。根据谷歌学术搜索（Google
+  Scholar），他的研究工作被引用超2000次。此外，他主持了国自然面上项目等多项国家级/省部级项目课题，他还担任了 IEEE TCSVT的编委与人工智能顶会
+  ICML 和NeurIPS 的领域主席。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#郑天航
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 人工智能安全、大模型安全
+detail_url: https://person.zju.edu.cn/tianhangzheng
+profile_url: https://person.zju.edu.cn/tianhangzheng
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-01-21'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +47,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/tianhangzheng
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/tianhangzheng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/tianhangzheng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/tianhangzheng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/tianhangzheng
+    fetched_at: '2026-09-06'
     confidence: auto

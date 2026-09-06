@@ -4,14 +4,43 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 长聘副教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: haishuai.wang@zju.edu.cn
+office_address: 浙江大学玉泉校区曹光彪东楼408
+bio_raw: '王海帅，浙江大学计算机学院长聘副教授、百人计划研究员、博士生导师。回国前曾任华盛顿大学计算机系、哈佛大学医学院和普渡大学(西北)计算机系博士后、助理教授和长聘副教授。入选国家高层次青年人才计划、浙江省海外高层次人才计划、上海市领军人才、美国杰出人才、澳大利亚全球人才、《麻省理工科技评论》中国
+  “智能计算创新人物”、国家重点研发计划青年科学家项目。
+
+  以第一/通讯作者发表ICML、CVPR、ICCV、NeurIPS、AAAI、Nature/Cell子刊等论文150余篇，主持国家自然科学基金、国家重点研发计划重大项目和科技创新2030—“新一代人工智能”重大项目子课题等省部级项目和校企合作项目20余项。担任浙江大学-超级医生国医人工智能联合研发中心主任、浙大计算机-支付宝智能体创新联合实验室副主任、浙江大学－普健肝胆胰医学人工智能联合研发中心副主任、国际期刊Neural
+  Networks副主编、Cell子刊The Innovation青年编委等职务。
+
+  主要研究方向为人工智能、多模态大模型与智能体、智慧医疗等。科研成果已在多家大型医院和企业实际部署使用，并多次获国际顶会和顶刊的论文奖。
+
+  实验室长期与哈佛大学、帝国理工、悉尼大学、宾夕法尼亚大学、伦敦大学、阿里、华为、字节、蚂蚁金服等机构紧密合作，欢迎有意向博士后、博士、硕士、本科生（计算机和医学交叉领域）联系，待遇从优，并为申请者提供良好的职业规划和出国交流机会，欢迎联系！'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#王海帅
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 大模型与智能体、医学人工智能、多模态数据分析
+detail_url: https://person.zju.edu.cn/haishuaiwang
+profile_url: https://person.zju.edu.cn/haishuaiwang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-05-08'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -20,11 +49,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/haishuaiwang
+    fetched_at: '2026-09-06'
     confidence: auto

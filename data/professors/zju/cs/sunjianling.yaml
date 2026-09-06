@@ -4,14 +4,31 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: sunjl@zju.edu.cn
+phone: 0571-87952700
+office_address: 玉泉校区逸夫工商管理楼234
+bio_raw: 浙江大学计算机学院教授、博士生导师。1993年获浙江大学计算机应用专业博士学位。2001年赴美国道富银行工作访问。浙江大学-道富技术中心联合创始人。阿里巴巴-浙江大学前沿技术联合研究中心“下一代数据库技术实验室”负责人。从事数据库系统、机器学习、金融科技、软件工程等方向的研究。承担20多项金融领域国际合作项目。主持国家自然科学基金、863等科研项目等。获得国家教委科技进步二等奖、浙江省科技进步奖一等奖、浙江大学“青年教师优秀教学奖”二等奖、“竺可桢基金优秀教师奖”等。发表论文百余篇。合著出版数据库书籍三部。曾长期担任浙江大学计算机学院数据库系统课程负责人、教育部-微软精品课程“数据库系统”负责人、浙江大学计算机学院教学督导、浙江大学软件学院教学指导委员会委员。中国计算机学会数据库专业委员会委员。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#孙建伶
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据库系统、机器学习、金融科技、软件工程
+detail_url: https://person.zju.edu.cn/sunjl
+profile_url: https://person.zju.edu.cn/sunjl
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-10'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -20,11 +37,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/sunjl
+    fetched_at: '2026-09-06'
     confidence: auto

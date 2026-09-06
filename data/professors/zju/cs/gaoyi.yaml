@@ -4,14 +4,36 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、计算机科学与技术、电子信息
+email: gaoyi@zju.edu.cn
+bio_raw: '高艺，浙江大学计算机学院教授，博士生导师，入选浙江省“万人计划”青年拔尖人才，入选CCF青年人才发展计划，CCF物联网专委执行委员，CCF青工委委员（2019），ACM会员，IEEE会员。2009年9月至2014年12月，于浙江大学计算机学院直接攻博。2011年10月至2012年10月，由国家留学基金委资助赴加拿大麦吉尔大学（McGill
+  University）访问研究。2014年博士毕业后加入浙江大学计算机学院软件研究所。主要研究方向包括物联网与传感网、边缘智能、无线和移动计算、软件定义网络等。作为项目组核心成员参与国家973基础研究项目，国家自然科学基金，教育部科研基金等多项国家级省级科研项目。作为项目负责人承担国家自然科学基金2项，浙江省“尖兵”研发攻关项目1项，浙江省自然科学基金1项（面上项目）。在国际顶级期刊IEEE/ACM
+  ToN, IEEE TC, IEEE TPDS, IEEE TMC以及国际顶级会议ACM MOBICOM,
+
+  USENIX
+
+  ATC, ACM SIGMETRICS, USENIX NSDI, IEEE INFOCOM等发表100余篇高质量论文。
+
+  https://yi-gao.github.io/
+
+  Publications
+
+  Google Scholar Profile'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#高艺
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 物联网、网络测量、无线与移动计算、智能感知计算、边缘计算
+detail_url: https://person.zju.edu.cn/gaoyi
+profile_url: https://person.zju.edu.cn/gaoyi
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2024-11-18'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -20,11 +42,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/gaoyi
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/gaoyi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/gaoyi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/gaoyi
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/gaoyi
+    fetched_at: '2026-09-06'
     confidence: auto

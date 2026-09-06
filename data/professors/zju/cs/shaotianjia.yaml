@@ -4,14 +4,40 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 长聘副教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+phone: 0571-88206681-535
+office_address: 浙江大学紫金港校区蒙民伟楼
+bio_raw: '邵天甲，浙江大学CAD&CG全国重点实验室百人计划研究员、博士生导师，获国家自然科学基金优秀青年科学基金项目资助。加入浙大之前，他在英国利兹大学计算机学院（School
+  of Computing, University of Leeds, UK）担任Lecturer（终身教职）。本科毕业于清华大学自动化系，博士毕业于清华大学高等研究院。研究方向是计算机图形学和三维视觉，包括三维场景重建，数字人、3D
+  AIGC等。已在计算机图形学和视觉的顶级期刊和会议（ACM TOG, SIGGRAPH, TVCG, CVPR等）发表CCF-A类论文50余篇。他是ACM SIGGRAPH
+  2022/2023程序委员，CVM 2022程序委员会共同主席，现担任国际期刊《The Visual Computer》和《Computers & Graphics》编委，中国电子学会虚拟现实分会秘书长。详情请见：
+
+  https://tianjiashao.github.io'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#邵天甲
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学、计算机视觉
+detail_url: https://person.zju.edu.cn/tjshao
+profile_url: https://person.zju.edu.cn/tjshao
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-08-30'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -20,11 +46,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/tjshao
+    fetched_at: '2026-09-06'
     confidence: auto

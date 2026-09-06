@@ -4,14 +4,68 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: zhangguofeng@cad.zju.edu.cn
+phone: 0571-88208701
+office_address: 浙江大学紫金港校区东1A509
+bio_raw: '浙江大学
+
+  CAD&CG
+
+  国家重点实验室教授，
+
+  博士生导师。主要从事运动恢复结构、同时定位与地图构建、三维重建、增强现实、视频分割与编缉等方面的研究工作，尤其在同时定位与地图构建和三维重建方面的研究取得了一系列重要成果，研制了一系列相关软件，如
+
+  ACTS, LS-ACTS, RDSLAM, RKSLAM
+
+  等
+
+  (
+
+  下载网址：
+
+  http://www.zjucvg.net )
+
+  ，并开源了非连续特征跟踪
+
+  ENFT
+
+  、分段集束调整
+
+  SegmentBA
+
+  和高效的增量式集束调整
+
+  EIBA
+
+  等算法的源代码（详见
+
+  https://github.com/ZJUCVG/
+
+  ）。获全国百篇优秀博士学位论文奖、计算机学会优秀博士学位论文奖以及教育部高等学校科学研究优秀成果奖科学技术进步奖一等奖
+
+  (
+
+  排名第
+
+  4)
+
+  。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#章国锋
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机视觉、增强现实
+detail_url: https://person.zju.edu.cn/0009726
+profile_url: https://person.zju.edu.cn/0009726
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2020-01-09'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -20,11 +74,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0009726
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,212 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: bohan.zhuang@zju.edu.cn
+office_address: 紫金港校区行政楼1319
+bio_raw: '庄博涵博士现任浙江大学百人计划研究员、博士生导师，
+
+  入选国家级高层次青年人才计划；兼任图灵班班主任和超算队指导老师。其主要研究方向为
+
+  高效大模型算法与系统协同优化，打造极致
+
+  token
+
+  性价比。
+
+  当前
+
+  应用侧围绕
+
+  Agent Loops
+
+  、
+
+  World Models和Embodied AI
+
+  场景展开
+
+  。
+
+  他于
+
+  2018
+
+  年
+
+  至
+
+  2020
+
+  年担任澳大利亚机器人视觉中心高级研究员；自
+
+  2020
+
+  年（
+
+  26
+
+  岁）起，担任
+
+  Monash University (
+
+  QS #31
+
+  )
+
+  长聘助理教授，作为独立
+
+  PI
+
+  创立
+
+  ZIP Lab
+
+  ，带领团队在
+
+  Efficient AI
+
+  领域开展
+
+  production-grade research,
+
+  取得一系列兼具学术影响力与工业落地价值的成果。
+
+  2024
+
+  年
+
+  6
+
+  月回国任教后，现为
+
+  Monash University
+
+  兼职副教授
+
+  ，
+
+  并与阿里达摩院、通义实验室、爱橙，以及
+
+  ByteDance Seed、
+
+  腾讯混元
+
+  、
+
+  Nvidia Research
+
+  、
+
+  Microsoft Research、
+
+  MiniMax
+
+  等全球头部工业界研究团队保持深度科研合作。
+
+  ZIP Lab
+
+  首批
+
+  7
+
+  名博士毕业生（
+
+  2021
+
+  年入学）均进入头部大厂担任研究科学家，或海内外顶尖高校担任助理教授，包括
+
+  DeepSeek、ByteDance Seed USA & Singapore、CUHK
+
+  等
+
+  ，部分学生入选
+
+  Top Seed、
+
+  阿里星
+
+  等人才计划。其中，首位博士毕业生加入
+
+  DeepSeek
+
+  后，作为共同作者参与开发了
+
+  DeepSeek-V3/V4/R1/VL2/Janus
+
+  等一系列重要工作
+
+  。实验室本科毕业生多赴顶尖高校深造
+
+  PhD
+
+  , 并有成员斩获
+
+  UC Berkeley EECS Graduate Fellowships
+
+  。
+
+  团队迄今已在
+
+  NeurIPS
+
+  、
+
+  ICLR
+
+  、
+
+  ICML
+
+  和
+
+  TPAMI
+
+  等国际顶级会议与期刊上发表论文
+
+  8
+
+  0
+
+  余篇，相关研究成果推动了大模型的高效训练与部署，助力产业落地。
+
+  实验室主页
+
+  :
+
+  https://ziplab.co
+
+  个人主页
+
+  :
+
+  https://bohanzhuang.github.io'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#庄博涵
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: Efficient AI、Efficient Algorithm and System Co-design、Multimodal
+  Large Foundation Models
+detail_url: https://person.zju.edu.cn/bohan_zhuang
+profile_url: https://person.zju.edu.cn/bohan_zhuang
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-06-20'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -20,11 +218,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/bohan_zhuang
+    fetched_at: '2026-09-06'
     confidence: auto

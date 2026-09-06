@@ -4,14 +4,32 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导、硕导
 subjects: 电子信息、软件工程、计算机科学与技术
+email: hqm03ster@gmail.com
+phone: +86-18768117461
+office_address: 紫金港蒙民伟楼424室
+bio_raw: '侯启明，男，汉族，1985年生。博士毕业于清华大学高等研究院，计算机图形学方向。2010年来浙江大学工作。
+
+  紧急声明：
+
+  2018年8月1日，Cingularity（兴谷）团队擅自发表不实宣传，号称我是他们的首席科学家。
+
+  本人已于2018年7月26日明确拒绝他们首席科学家的邀请，并已要求他们撤下（据说是不小心发出来的）相关材料。特此声明。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#侯启明
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学
+detail_url: https://person.zju.edu.cn/0010046
+profile_url: https://person.zju.edu.cn/0010046
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2018-09-12'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -27,4 +45,34 @@ provenance:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0010046
+    fetched_at: '2026-09-06'
     confidence: auto

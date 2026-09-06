@@ -4,6 +4,7 @@ aliases: []
 school: bupt
 dept: cs
 status: enriched
+title: 讲师
 email: wangzl@bupt.edu.cn
 office_address: 教三630
 institutes:
@@ -11,7 +12,7 @@ institutes:
 detail_url: https://teacher.bupt.edu.cn/wangzunliang
 profile_url: https://teacher.bupt.edu.cn/wangzunliang
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -30,6 +31,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://teacher.bupt.edu.cn/wangzunliang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  title:
     origin: crawled
     source: https://teacher.bupt.edu.cn/wangzunliang
     fetched_at: '2026-09-05'

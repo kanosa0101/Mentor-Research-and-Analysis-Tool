@@ -4,14 +4,76 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: binbinz@zju.edu.cn
+bio_raw: '实验室常年招收
+
+  博士/硕士研究生，目前还有2027年9月入学的计算机学院专硕名额2个，软件学院专硕名额2个，2027年9月入学的博士名额
+
+  1
+
+  个，欢迎联系！
+
+  也欢迎
+
+  启真问学/SRTP/毕业设计等对科研感兴趣
+
+  的本科生
+
+  加入实验室。
+
+  有意愿加入实验室的同学可发邮件到binbinz@zju.edu.cn。
+
+  赵彬彬，浙江大学计算机学院百人计划研究员、
+
+  博士生导师
+
+  ，
+
+  获美国佐治亚理工学院电子与计算机工程博士和硕士学位、浙江大学计算机科学与技术学士学位，入选优秀青年科学基金项目（海外），获国家优秀自费留学生奖学金，主持基础加强计划技术领域基金、
+
+  国家青年科学基金项目等多个国家级项目
+
+  。
+
+  研究方向包括具身智能安全、人工智能安全、
+
+  软件与系统安全
+
+  等。近五年来，已累计在IEEE S&P、USENIX Security、NDSS、ICLR、ASE、ISSTA、TDSC等CCF A类期刊/会议上发表论文20余篇。担任TIFS、TDSC、CCS、USENIX
+  Security、NDSS等CCF A类期刊/会议的评审人或程序委员会委员。
+
+  个人主页：
+
+  https://www.bbge.org/
+
+  谷歌学术：
+
+  https://scholar.google.com/citations?user=FVMlXK8AAAAJ&hl
+
+  实验室主页：
+
+  https://nesa.zju.edu.cn/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#赵彬彬
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 软件与系统安全、具身智能安全、人工智能安全
+detail_url: https://person.zju.edu.cn/binz
+profile_url: https://person.zju.edu.cn/binz
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-08-26'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -20,11 +82,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/binz
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/binz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/binz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/binz
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/binz
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,31 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导
 subjects: 软件工程、计算机科学与技术、电子信息
+email: lingfengbao@zju.edu.cn
+office_address: 玉泉校区曹光彪西楼405
+bio_raw: '鲍凌峰，浙江大学副教授，现任区块链与数据安全全国重点实验室主任助理。研究方向为区块链与软件工程，专注于智能合约安全与分析、智能化软件工程、软件安全与质量保障等领域。已在国内外高水平期刊和会议上发表论文90余篇，并获得ISSTA、ICSME、MSR等知名会议杰出论文奖。担任《Blockchain
+  Research and Applications》期刊青年编委，多次担任ICSE、ESEC/FSE、ASE等软件工程顶级会议程序委员会委员，以及TSE、TOSEM等权威期刊审稿人。主持“国家网络空间安全“国家科技重大专项项目课题、乾元国家实验室纵向项目、国家自然科学基金面上项目等
+  10 余项。
+
+  更多信息请参见个人主页
+
+  https://baolingfeng.github.io。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#鲍凌峰
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 智能化软件工程、区块链、智能合约
+detail_url: https://person.zju.edu.cn/baolingfeng
+profile_url: https://person.zju.edu.cn/baolingfeng
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-08-13'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +37,36 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/baolingfeng
+    fetched_at: '2026-09-06'
     confidence: auto

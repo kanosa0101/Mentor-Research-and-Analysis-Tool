@@ -4,14 +4,30 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 特聘研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: mxzhang97@zju.edu.cn
+bio_raw: '特聘研究员、博士生导师。主要研究方向为web安全（JS程序分析、恶意脚本检测）和软件安全（漏洞挖掘、合规分析）。2018年本科毕业于武汉大学计算机专业弘毅班，2022年博士毕业于香港中文大学计算机科学与工程学系，同年加入浙江大学。相关研究成果全部发表于CCF-A类国际顶级学术会议和期刊，包括IEEE
+  S&P, USENIX Security, CCS, ICSE, ESEC/FSE, WWW, TIFS等，获得安全领域四大顶会CCS 2024杰出论文奖，担任相关领域顶级会议（NDSS
+  2025, ICSE 2025, ISSTA 2024等）的程序委员会委员和CCF-A类期刊（TDSC 2025, TC 2024, TON 2023等）审稿人。详情见：
+
+  https://zhangmx1997.github.io
+
+  欢迎对相关领域感兴趣、有志于发表顶级学术论文的本科生、研究生联系我（mxzhang97@zju.edu.cn）。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#张明雪
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: Web安全、软件安全
+detail_url: https://person.zju.edu.cn/0022387
+profile_url: https://person.zju.edu.cn/0022387
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2025-03-26'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -20,11 +36,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0022387
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022387
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022387
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022387
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0022387
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -5,6 +5,7 @@ school: bupt
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xuezhe@bupt.edu.cn
 office_address: 北京市海淀区西土城路10号北京邮电大学
 institutes:
@@ -12,7 +13,7 @@ institutes:
 detail_url: https://teacher.bupt.edu.cn/xuezhe
 profile_url: https://teacher.bupt.edu.cn/xuezhe
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -36,6 +37,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://teacher.bupt.edu.cn/xuezhe
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://teacher.bupt.edu.cn/xuezhe
     fetched_at: '2026-09-05'

@@ -4,14 +4,41 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、软件工程、电子信息、计算机科学与技术
+email: jinfeiliu@zju.edu.cn
+bio_raw: '刘金飞，百人计划研究员，博士生导师，国家高层次青年人才，浙江省杰青，小米青年学者。2017年博士毕业于美国埃默里大学，荣获埃默里大学毕业生最高荣誉“Chris
+  Schoettle杰出研究奖”，毕业后在佐治亚理工学院和埃默里大学任博士后研究员。刘金飞博士主要从事数据要素交易、数据安全与合规等方向的研究工作。发表了60余篇同行评议的会议与期刊论文，其中CCF-A类论文50余篇，荣获包括CCF-A类顶会CCS杰出论文奖在内的多个奖项，设计了全球首个以机器学习模型为交易对象的数据要素交易架构。担任ACM
+  TKDD和AILET副主编，是数据库领域所有旗舰会议（e.g., VLDB, SIGMOD, ICDE）和其他领域旗舰会议（e.g., CCS, NeuIPS,
+  KDD, SIGIR, WWW）的程序委员会委员，参与国标《数据交易安全服务》和国际IEEE数字水印标准制定，主持国家自然科学基金、国家重点研发计划课题和浙江省杰出青年科学基金。
+
+  招收博士后/博士/硕士/访问学生！同时欢迎本科生加入DIVER研究小组！对于有意向去美国攻读博士学位的同学，表现优秀者可直通Duke、Harvard、Stanford、Emory和Gatech等学校。
+
+  本人指导学生去向良好：学术界包括哈佛大学等名校计算机系教授，工业界包括谷歌公司等头部企业重要管理岗位。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#刘金飞
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据要素市场、数据安全与合规
+detail_url: https://person.zju.edu.cn/jinfeiliu
+profile_url: https://person.zju.edu.cn/jinfeiliu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-06-19'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -20,11 +47,31 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/jinfeiliu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/jinfeiliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/jinfeiliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jinfeiliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/jinfeiliu
+    fetched_at: '2026-09-06'
     confidence: auto

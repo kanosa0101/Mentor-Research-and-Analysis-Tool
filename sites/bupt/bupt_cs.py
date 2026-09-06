@@ -3,6 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 from crawler import fetch
+from crawler.email_util import normalize_email
 
 # scs.bupt.edu.cn 名录页(单页 jsyl.htm)按研究中心分组, 每人链到 teacher.bupt.edu.cn
 # 的 tsites 主页。全站瑞数 412 —— crawl 以 cdp_fallback: true 走真实 Chrome。
@@ -66,4 +67,32 @@ def parse_detail(cfg, html, url):
             t = re.search(r"(讲席|特聘|长聘)?(教授|副教授|助理教授|研究员|副研究员|讲师)", val)
             if t:
                 out.setdefault("title", t.group(0))
+    # jsxx(基本信息)子页有 职称/导师资格 —— 主页只有职务, 子页字段更全
+    m = re.search(r'href="(/[^"]+/jsxx/\d+/jsxx/jsxx\.htm)"', html)
+    if m:
+        sub = re.match(r"(https?://[^/]+)", url).group(1) + m.group(1)
+        try:
+            sub_html, _, _ = fetch.fetch_text("GET", sub)
+            sub_txt = re.sub(r"<[^>]+>", "\n", sub_html)
+            sub_lines = [l.strip() for l in sub_txt.split("\n") if l.strip()]
+            for i, line in enumerate(sub_lines):
+                if "title" not in out:
+                    mm = re.match(r"职称\s*[:：]\s*(.*)$", line)
+                    if mm:
+                        t = re.search(r"(讲席|特聘|长聘)?(教授|副教授|助理教授|研究员|副研究员|讲师)",
+                                      mm.group(1) + " " + (sub_lines[i + 1] if i + 1 < len(sub_lines) else ""))
+                        if t:
+                            out["title"] = t.group(0)
+                if "supervisor" not in out:
+                    sup = [s for s in ("博士生导师", "硕士生导师") if s in line]
+                    if sup:
+                        out["supervisor"] = "博导" if "博士" in sup[0] else "硕导"
+                if "email" not in out:
+                    mm = re.match(r"电子邮箱\s*[:：]\s*(.+)$", line)
+                    if mm:
+                        e = normalize_email(mm.group(1))
+                        if e:
+                            out["email"] = e
+        except Exception:
+            pass
     return out

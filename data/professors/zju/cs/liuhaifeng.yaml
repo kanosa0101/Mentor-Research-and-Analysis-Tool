@@ -4,14 +4,40 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 副教授
 supervisor: 博导
 subjects: 电子信息、计算机科学与技术
+email: haifengliu@zju.edu.cn
+phone: 0571-87951647
+office_address: 浙江大学玉泉校区曹光彪大楼521室
+bio_raw: '刘海风，
+
+  浙江大学刘海风
+
+  [1]
+
+  博士，副教授，2009年获加拿大
+
+  多伦多大学
+
+  计算机系博士学位。从2009年11月起，任教
+
+  浙江大学
+
+  计算机学院工程所，从事机器学习，信息检索，数据挖掘等研究。'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#刘海风
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 机器学习，信息检索，数据挖掘
+detail_url: https://person.zju.edu.cn/hfliu
+profile_url: https://person.zju.edu.cn/hfliu
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2021-11-15'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -20,11 +46,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/hfliu
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,14 +4,39 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: wusai@zju.edu.cn
+phone: 0571-87952026
+office_address: 浙江大学玉泉校区土木科技楼5楼
+bio_raw: 伍赛博士2002和2005年于北京大学分别获得学士和硕士学位，于2011年在新加坡国立大学获得博士学位，主要的研究方向包括：分布式数据、大数据处理、人工智能驱动的数据分析等。在数据库领域顶级/重要学术期刊ACM
+  Computing Survey、The VLDB Journal (VLDBJ)、IEEE Transactions on Knowledge and Data
+  Engineering (TKDE)等和国际会议SIGMOD、VLDB、ICDE、SIGIR等发表论文100多篇。大数据并行处理框架epiC的论文被评选为VLDB
+  2014最佳论文奖,分布式数据库BestPeer++论文获ICDE 2012最佳论文提名，数据库逻辑错误识别的工作获得SIGMOD 2023最佳论文奖。论文《Distributed
+  data management using MapReduce》作为滑铁卢大学、雅典大学等大数据课程教材。申请人是多个国际知名会议（VLDB2010, ICDE2011，CIKM2011,
+  VLDB2014, ICDE2014, SIGMOD2014, SIGMOD2015, VLDB2015，VLDB2016, VLDB2017，CIKM2017,
+  ICDE 2018, VLDB2018, VLDB2019, VLDB 2022, KDD 2021, KDD 2022）的程序委员会委员，是VLDB 2014会议的Web
+  Chair，APWeb 2015 的Tutorial Chair， APWeb 2011特邀报告学者。申请人基于epiC开发的yzStack大数据平台已经在浙江省财政厅、南方电网超高压、杭州市海关等项目上得到应用。大数据相关研究成果获得了2016年教育部科技进步奖一等奖（4/10）,
+  2019年电子学会科技进步特等奖（6/15）, 2020年电子学会科技进步一等奖（3/15）, 2020年教育部科技进步奖一等奖（9/10）。2020获得国家级青年人才。
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#伍赛
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 数据库、大数据处理、数据库智能化、分布式数据处理
+detail_url: https://person.zju.edu.cn/0011057
+profile_url: https://person.zju.edu.cn/0011057
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-02-09'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -20,11 +45,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0011057
+    fetched_at: '2026-09-06'
     confidence: auto

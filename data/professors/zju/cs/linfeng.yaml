@@ -4,14 +4,122 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 研究员
 supervisor: 博导
 subjects: 网络空间安全、电子信息、计算机科学与技术
+email: flin@zju.edu.cn
+phone: 0571-87953846
+office_address: 浙大玉泉曹光彪科技楼
+bio_raw: '林峰
+
+  ，
+
+  网络空间安全学院/
+
+  计算机科学与技术学院“
+
+  百人计划
+
+  ”研究员，博导。教育部青年长江学者、浙江省高层次人才。
+
+  CCF杰出会员，
+
+  IEEE高级会员，
+
+  ACM会员，
+
+  电子学会网络空间安全专委会委员，CCF网络与系统安全专委会委员，
+
+  CCF
+
+  物联网专委会委员，CCF普适计算专委会委员，CCF数据治理发展委员会委员，电子学会物联网专委会委员, ACM SIGBED China青年委员。本科毕业于浙江大学，2015年在美国田纳西理工大学电子与计算机工程学系获博士学位。曾任美国科罗拉多大学丹佛分校计算机科学与工程系助理教授，及纽约州立大学布法罗分校研究科学家。研究工作主要集中在物联网安全、
+
+  人工智能安全
+
+  、
+
+  网联车与自动驾驶安全、智能物联网等方面。在国际一流期刊与重要国际会议上发表150余篇高水平文章，包括移动计算领域（
+
+  MobiCom,
+
+  MobiSys, SenSys, UbiComp, Infocom等
+
+  ）、信息安全领域（Oakland，
+
+  CCS，Security
+
+  ，
+
+  NDSS等
+
+  ）和人工智能领域（CVPR、AAAI、IJCAI、WWW）；参与编写英文专著1部，制定行业标准2项。主持国家自然科学基金联合基金重点项目、面上项目、浙江省自然科学基金重点项目，华为、蚂蚁、吉利、浙数文化、浙商银行、
+
+  光通天下、中国联通
+
+  等企业项目，参与科技部重点研发项目和
+
+  浙江省科技厅项目
+
+  。担任IEEE Network Magazine, IET Information Security, Security and Communication Networks等多个国际期刊副主编和国际一流会议的组委会成员，包括Morse''22
+  TPC Chair, IoTDI''20 Publicity Chair, WiSec''20
+
+  Publicity Chair, IDSC''19
+
+  Publication Chair, ICPADS''22 Track Co-Chair, NDSS''21, MASS''21, Globecom''19 Session
+  Chair, 以及MobiCom''22, SenSys''22''21, MobiHoc''23''22, IoTDI''22, ICDCS''20 等会议的TPC成员。获2021年ACM
+  SIGSAC China 新星奖，SIGMOBILE Research Highlights论文奖, IEEE/ACM CHASE''22, ACM MobiSys''20,
+  IEEE Globecom''19, IEEE BHI''17 国际会议4次最佳论文奖，ACM SenSys''21, IEEE INFOCOM‘21会议2次最佳论文提名奖，ACM
+  Hotmobile''18 最佳演示奖，ACM MobiCom''22 最佳海报奖提名，电子学会网络空间安全大会''23最佳论文奖，教育部创“芯”大赛全国一等奖及优秀指导教师奖，中国高校计算机大赛网络技术挑战赛总决赛一等奖
+
+  及优秀指导教师奖
+
+  ，全国大学生信息安全竞赛作品赛一等奖及优秀指导教师奖，
+
+  “
+
+  华为杯
+
+  ”人工智能创新大赛国际组一等奖，
+
+  NVDB-CNVD汽车信息安全总决赛二等奖，中国机器人及人工智能大赛总决赛二等奖，全国人工智能创新应用大赛总决赛二等奖，沃达丰全球无线创新项目竞赛提名奖等。
+
+  目前招收博士后/博士/硕士/本科生，要求对
+
+  人工智能、智能体、
+
+  自动驾驶、或信息安全感兴趣。动手能力强，有项目科研经历，或人工智能的相关经验，或有足够的时间和兴趣来学习。欢迎计算机，信息/通信工程，或信息安全相关背景的同学加入我们的研究团队。有兴趣的请与我邮箱联系。
+
+  个人主页请访问
+
+  https://flin.group/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#林峰
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 智能网联车安全，物联网安全，人工智能安全，无线感知攻防，生物识别身份认证
+detail_url: https://person.zju.edu.cn/flin
+profile_url: https://person.zju.edu.cn/flin
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2026-03-01'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -20,11 +128,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/flin
+    fetched_at: '2026-09-06'
     confidence: auto

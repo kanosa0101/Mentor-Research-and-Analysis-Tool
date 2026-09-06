@@ -4,14 +4,31 @@ aliases: []
 school: zju
 dept: cs
 status: enriched
+title: 长聘教授
 supervisor: 博导
 subjects: 软件工程、电子信息、计算机科学与技术
+email: xww@cad.zju.edu.cn
+phone: 0571-88206681
+office_address: 浙江大学紫金港校区蒙民伟楼
+bio_raw: '现任浙江大学计算机科学与技术学院CAD&CG国家重点实验室长聘教授，教育部长江学者。曾任日本立命馆大学博士后，微软亚洲研究院网络图形组研究员,
+  浙江省钱江学者特聘教授。主要研究兴趣为计算几何、物理仿真、3D打印和虚拟现实。2014年起受国家自然科学基金优秀青年基金资助， 2022年入选教育部长江学者奖励计划。
+
+  详情请见：
+
+  http://www.cad.zju.edu.cn/home/weiweixu/'
 institutes: []
-detail_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm#许威威
-profile_url: http://www.cs.zju.edu.cn/csen/2021/0915/c27006a2421689/page.htm
+research_direction_raw: 计算机图形学、三维几何处理、快速物理仿真、快速原型设计及三维打印技术
+detail_url: https://person.zju.edu.cn/0015060
+profile_url: https://person.zju.edu.cn/0015060
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
-facets: []
+last_verified: '2026-09-06'
+source_updated_at: '2022-04-27'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -20,11 +37,41 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://www.cs.zju.edu.cn/csen/27003/list.htm
-    fetched_at: '2026-09-04'
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
     confidence: auto
   subjects:
     origin: crawled
     source: http://www.cs.zju.edu.cn/csen/27003/list.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://person.zju.edu.cn/0015060
+    fetched_at: '2026-09-06'
     confidence: auto

@@ -4,12 +4,13 @@ aliases: []
 school: bupt
 dept: cs
 status: enriched
+supervisor: 硕导
 institutes:
 - 计算机学院（国家示范性软件学院）
 detail_url: https://teacher.bupt.edu.cn/luojuanjuan1
 profile_url: https://teacher.bupt.edu.cn/luojuanjuan1
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -18,6 +19,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://teacher.bupt.edu.cn/luojuanjuan1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://teacher.bupt.edu.cn/luojuanjuan1
     fetched_at: '2026-09-05'
