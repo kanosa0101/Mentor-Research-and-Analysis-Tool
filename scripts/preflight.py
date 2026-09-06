@@ -6,6 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import yaml
+from crawler.ai_util import validate_ai_block
 from crawler.model import Professor
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -111,6 +112,19 @@ if of.exists():
     print(f"entries: {len(odata)}")
 else:
     print("none (data/outreach.yaml 不存在)")
+
+print("== 8. AI 块（evidence 必须可回溯到库内材料）==")
+n_ai = 0
+for key, p in records.items():
+    if not p.ai:
+        continue
+    n_ai += 1
+    mats = {"title": p.title, "supervisor": p.supervisor,
+            "institutes": "、".join(p.institutes or []),
+            "research_direction_raw": p.research_direction_raw, "bio_raw": p.bio_raw}
+    if not validate_ai_block(p.ai.model_dump(mode="json"), mats):
+        problems.append(f"ai block invalid (元数据缺失或证据不可回溯): {key}")
+print(f"ai blocks: {n_ai}")
 
 print("\n== PROBLEMS ==")
 if problems:

@@ -50,7 +50,7 @@
 
 **验收**：schema 定稿 + SOP 用户确认可用。
 
-## 4. P3.4 AI 归纳层（依赖 LLM API key）
+## 4. P3.4 AI 归纳层（✅ 骨架 2026-09-06 完成；实跑等 LLM API key）
 
 - `scripts/ai_enrich.py --school --dept [--refresh]`：缓存优先，`cache/ai/<sha1(输入指纹+prompt_version+model)>.json`（cache/ 已整体 gitignore），改 prompt 必升 prompt_version
 - 输入只限库内材料（bio_raw / research_direction_raw / facets / title / institutes）

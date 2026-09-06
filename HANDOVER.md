@@ -118,6 +118,7 @@
 | scripts/verify_site.py | 站点抽查（页面数/关键内容/server） | build 后 |
 | scripts/email_spotcheck.py / title_survey.py | 邮箱/职称抽查工具 | 回归排查 |
 | scripts/fix_titles.py | 职称一次性迁移（normalize_title 重跑+垃圾清空） | 词表改动后 |
+| scripts/ai_enrich.py | AI 归纳（缓存优先+evidence 硬校验；需 AI_API_BASE/KEY/MODEL 环境变量；--mock 自测 --dry 预览） | 配好 key 后按院系跑 |
 | scripts/probe_*.py | 一次性探针（历史调试用，可不看） | - |
 
 ## 6. 未接入的学校与剩余难点
@@ -233,7 +234,7 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 7. 华科/南开复测（~~09-06 直连+代理均 TCP 阻断~~ 已复测定论不变，等网络环境）
 
 **阶段三：产品层（计划 PRODUCT_PLAN.md，2026-09-06 用户审定"确认开始"）**
-顺序：~~① 状态写回+套磁看板~~ ✅ 09-06（serve.py + board.html）→ ~~② 对比页~~ ✅ 09-06（compare.html + 列表勾选/浮动按钮 + ui_check 对比流全绿）→ ③ 学生画像+SOP（骨架已搭好 data/student.yaml + data/student_sop.md，**等用户填素材**）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach 不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
+顺序：~~① 状态写回+套磁看板~~ ✅ 09-06（serve.py + board.html）→ ~~② 对比页~~ ✅ 09-06（compare.html + 列表勾选/浮动按钮 + ui_check 对比流全绿）→ ③ 学生画像+SOP（骨架已搭好 data/student.yaml + data/student_sop.md，**等用户填素材**）→ ④ AI 归纳层（**骨架✅ 09-06**：model.AiBlock/AiClaim + crawler/ai_util.py evidence 校验 + scripts/ai_enrich.py 缓存优先/mock 可测 + 详情页 AI 区块 + preflight §8 证据回溯校验；**实跑等用户给 AI_API_BASE/KEY/MODEL**，OpenAI 兼容接口）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach/AI 匹配点不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
 
 **运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
 

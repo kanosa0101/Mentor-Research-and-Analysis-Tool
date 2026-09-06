@@ -17,6 +17,19 @@ class Facet(BaseModel):
     evidence: list[str] = Field(default_factory=list)
 
 
+class AiClaim(BaseModel):
+    text: str
+    evidence: list[str] = Field(default_factory=list)
+
+
+class AiBlock(BaseModel):
+    model: str
+    prompt_version: str
+    generated_at: str
+    research_summary: list[AiClaim] = Field(default_factory=list)
+    highlights: list[AiClaim] = Field(default_factory=list)
+
+
 class Professor(BaseModel):
     slug: str
     name: str
@@ -41,6 +54,7 @@ class Professor(BaseModel):
     last_verified: Optional[str] = None
     source_updated_at: Optional[str] = None
     facets: list[Facet] = Field(default_factory=list)
+    ai: Optional[AiBlock] = None          # AI 归纳（导师侧, origin=ai, 必带 evidence）
     provenance: dict[str, Provenance] = Field(default_factory=dict)
 
 
