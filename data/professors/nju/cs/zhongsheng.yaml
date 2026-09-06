@@ -17,10 +17,11 @@ bio_raw: '个人主页：
 
   gmail.com'
 institutes: []
+homepage: https://www.shengzhong.info
 detail_url: https://cs.nju.edu.cn/58/08/c2639a153608/page.htm
 profile_url: https://cs.nju.edu.cn/58/08/c2639a153608/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -44,6 +45,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/08/c2639a153608/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/58/08/c2639a153608/page.htm
     fetched_at: '2026-09-03'

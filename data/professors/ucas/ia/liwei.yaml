@@ -368,7 +368,33 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202409/W020240923497108667266.JPG
 detail_url: https://ia.cas.cn/rcdw/fyjy/202409/t20240923_7378754.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202409/t20240923_7378754.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -400,29 +426,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

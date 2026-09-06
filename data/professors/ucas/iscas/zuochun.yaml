@@ -123,7 +123,23 @@ research_direction_raw: 083500-软件工程、软件工程工商管理
 detail_url: https://people.ucas.ac.cn/~zuochun
 profile_url: https://people.ucas.ac.cn/~zuochun
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -155,19 +171,3 @@ provenance:
     source: https://people.ucas.ac.cn/~zuochun
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱

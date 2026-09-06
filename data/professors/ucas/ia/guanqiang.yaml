@@ -67,7 +67,13 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240425338873086040.png
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129800.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129800.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -99,9 +105,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

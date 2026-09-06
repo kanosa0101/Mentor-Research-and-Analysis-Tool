@@ -46,7 +46,18 @@ research_direction_raw: 计算机软件与理论
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201411/t20141115_4253438.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201411/t20141115_4253438.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -83,14 +94,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201411/t20141115_4253438.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

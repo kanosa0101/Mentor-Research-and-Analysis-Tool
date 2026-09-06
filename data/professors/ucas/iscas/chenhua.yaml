@@ -85,7 +85,13 @@ research_direction_raw: 083900-网络空间安全、密码测评,侧信道技术
 detail_url: https://people.ucas.ac.cn/~chenhua
 profile_url: https://people.ucas.ac.cn/~chenhua
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -117,9 +123,3 @@ provenance:
     source: https://people.ucas.ac.cn/~chenhua
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全

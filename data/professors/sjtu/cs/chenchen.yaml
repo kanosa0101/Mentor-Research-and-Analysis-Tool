@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: chen-chen@sjtu.edu.cn
 office_address: SEIEE 3-119
 bio_raw: '个人简介
@@ -26,7 +27,13 @@ homepage: https://jhc.sjtu.edu.cn/~chen-chen/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/陈晨.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenchen.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenchen.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -68,9 +75,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenchen.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenchen.html
+    fetched_at: '2026-09-02'
+    confidence: auto

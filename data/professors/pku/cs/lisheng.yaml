@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 研究员
+title: 副教授
 email: lisheng@pku.edu.cn
 phone: 86-10-62755392
 bio_raw: '个人主页：http://www.graphics.pku.edu.cn/members/lisheng/index.htm
@@ -24,7 +24,18 @@ research_direction_raw: 计算机图形图像、虚拟/增强现实技术、实�
 detail_url: https://cs.pku.edu.cn/info/1071/3089.htm
 profile_url: https://cs.pku.edu.cn/info/1071/3089.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:渲染
 provenance:
   name:
     origin: crawled
@@ -33,7 +44,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1071/3089.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -66,14 +77,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/3089.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:渲染

@@ -5,8 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: liuguanjun@tongji.edu.cn
-phone: 通讯地址上海市曹安公路4800号同济大学电信学院235室刘关俊，教授，博士生导师。2011年获得同济大学计算机软件与理论专业博士
 bio_raw: '姓　　名
 
   刘关俊
@@ -299,12 +299,12 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2809.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  phone:
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2809.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  email:
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2809.htm
     fetched_at: '2026-09-03'

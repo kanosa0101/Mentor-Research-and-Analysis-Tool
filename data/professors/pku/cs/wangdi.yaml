@@ -49,7 +49,18 @@ research_direction_raw: 程序设计语言，概率编程
 detail_url: https://cs.pku.edu.cn/info/1083/1706.htm
 profile_url: https://cs.pku.edu.cn/info/1083/1706.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -86,14 +97,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1083/1706.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

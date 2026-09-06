@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hexu2015@hnu.edu.cn
 bio_raw: 贺旭，教授，博导。芙蓉计划科技创新类青年人才。主要从事人工智能(AI)辅助CAD研究，以及AI嵌入式研究。曾在国际顶级期刊TCAD、顶级会议DAC、ICCAD和物理设计一流会议ISPD上发表多篇论文，并屡次带队参加并获得国际顶级会议竞赛的冠亚军。主持多个国家自然科学基金项目，包括重大研究计划，联合基金，面上项目和青年基金等，以及主持CCF等多个研究项目和课题。与国内多家知名头部企业，包括华为诺亚，华为武研所，概伦电子，飞腾公司等有合作和交流。曾多次担任CCFA类会议DAC、会议CCFDAC和ISEDA的TPC，以及国际期刊TCAD、TODAES、Integration、Computers&Graphics和会议DAC、DATE、ASP-DAC等审稿人。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 人工智能辅助CAD研究，AI嵌入式，多模态大
 detail_url: http://csee.hnu.edu.cn/people/hexu
 profile_url: http://csee.hnu.edu.cn/people/hexu
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/hexu
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/hexu
     fetched_at: '2026-09-05'

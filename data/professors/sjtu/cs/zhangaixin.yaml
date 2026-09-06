@@ -24,7 +24,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250619/20250619160716.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangaixin.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangaixin.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -56,19 +72,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangaixin.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码

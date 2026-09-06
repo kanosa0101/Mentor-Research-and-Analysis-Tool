@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: shengyun.liu@sjtu.edu.cn
 bio_raw: "个人简介\n刘盛云\n现任\n上海交通大学计算机学院（网络空间安全学院、密码学院）\n长聘教轨副教授，博士生导师；\n毕业于法国巴黎高等电信学院\n\
   （\nTélécom ParisTech，现已加入Institut Polytechnique de \nParis），获计算机与网络专业博士学位，曾任蚂蚁集团区块链平台部高级技术专家；代表性研究成果发表在OSDI,\
@@ -51,7 +52,23 @@ homepage: https://shengyunliu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/刘盛云.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liushengyun.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liushengyun.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled
@@ -88,19 +105,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liushengyun.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据管理
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liushengyun.html
+    fetched_at: '2026-09-02'
+    confidence: auto

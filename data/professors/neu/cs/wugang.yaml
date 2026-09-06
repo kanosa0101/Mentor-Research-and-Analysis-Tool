@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wugang@mail.neu.edu.cn
 bio_raw: '吴刚，男，博士，教授，博士生导师。辽宁省大数据管理与分析重点实验室副主任。中国中文信息学会语言与知识计算专委会委员，中国计算机学会会员，
 
@@ -156,6 +157,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0311/c6641a157477/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0311/c6641a157477/page.htm
     fetched_at: '2026-09-04'

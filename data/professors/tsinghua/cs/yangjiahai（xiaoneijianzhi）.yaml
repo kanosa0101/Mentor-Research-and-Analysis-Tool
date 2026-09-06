@@ -6,6 +6,7 @@ school: tsinghua
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yang@cernet.edu.cn
 phone: +86 10 62783492
 bio_raw: '姓名：杨家海
@@ -386,7 +387,18 @@ research_direction_raw: IPv6及新一代互联网体系结构、互联网络管�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1126/3579.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1126/3579.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -423,14 +435,8 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1126/3579.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1126/3579.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

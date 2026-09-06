@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: chenxie95@sjtu.edu.cn
 office_address: 电院3号楼501
 bio_raw: '个人简介
@@ -53,7 +54,23 @@ homepage: https://chenxie95.github.io/zh
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/陈谐.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenxie.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenxie.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -95,19 +112,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenxie.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenxie.html
+    fetched_at: '2026-09-02'
+    confidence: auto

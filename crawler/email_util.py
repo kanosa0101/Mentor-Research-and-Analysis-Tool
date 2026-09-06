@@ -42,7 +42,12 @@ def _tokens(raw):
             parts.append(c)
     s = "".join(parts)
     s = s.replace("＠", "@")
-    s = re.sub(r"[(（【\[{]\s*(?:at|＠)\s*[)）\]}】]", "@", s, flags=re.I)
+    # 括号包裹的 @ 混淆: "(at)"、"（＠）"、人大 AI 学院 "(@)"(ASCII @ 也算)
+    s = re.sub(r"[(（【\[{]\s*(?:at|＠|@)\s*[)）\]}】]", "@", s, flags=re.I)
+    # 孤儿括号残留: "yi.zeng (@)ruc.edu.cn" 分词后左括号被 _clean_token 剥掉,
+    # 只剩 "@)" 形态; 两方向都兜一下
+    s = re.sub(r"@\s*[)）\]}】](?=[A-Za-z0-9.])", "@", s)
+    s = re.sub(r"(?<=[A-Za-z0-9._%+-])[(（\[{]\s*@(?=[A-Za-z0-9.-])", "@", s)
     s = re.sub(r"[(（【\[{]\s*(?:dot|点)\s*[)）\]}】]", ".", s, flags=re.I)
     return s
 

@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: huangguifang@iie.ac.cn
 office_address: 北京市海淀区杏石口路65号益园C2楼
 institutes: []
@@ -11,7 +12,7 @@ research_direction_raw: 密码协议设计与分析、公钥密码算法
 detail_url: https://people.ucas.ac.cn/~huangguifang
 profile_url: https://people.ucas.ac.cn/~huangguifang
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~huangguifang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~huangguifang
     fetched_at: '2026-09-05'

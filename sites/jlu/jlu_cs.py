@@ -7,6 +7,8 @@ OCR 常把 @ 后域名拆碎/漏字，而该院邮箱域几乎全为 jlu.edu.cn�
 import re
 from urllib.parse import urljoin
 
+from bs4 import BeautifulSoup
+
 from crawler import fetch
 from sites.simple_list import parse_detail as _simple_parse, iter_roster as _simple_roster
 
@@ -109,4 +111,11 @@ def parse_detail(cfg, html, url):
                 if e:
                     out["email"] = e
                     break
+    if not out.get("supervisor"):
+        # 基本信息表的结构化标注: "是否博导：是/否"——只取"是", "否"绝不入库
+        from crawler.supervisor_util import extract_supervisor
+        soup = BeautifulSoup(html, "html.parser")
+        sup = extract_supervisor(soup.get_text("\n", strip=True))
+        if sup:
+            out["supervisor"] = sup
     return out

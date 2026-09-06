@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 博导
 email: wangkunpeng@iie.ac.cn
 office_address: 树村路19号
 institutes: []
@@ -11,7 +12,7 @@ research_direction_raw: 密码学基础，椭圆曲线密码学，格密码，�
 detail_url: https://people.ucas.ac.cn/~kpwang
 profile_url: https://people.ucas.ac.cn/~kpwang
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~kpwang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~kpwang
     fetched_at: '2026-09-05'

@@ -4,7 +4,8 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 教授
+title: 副教授
+supervisor: 博导
 email: lige@pku.edu.cn
 phone: 86-10-62751794-11
 bio_raw: '个人主页：
@@ -18,7 +19,13 @@ research_direction_raw: 程序生成，程序理解，深度学习
 detail_url: https://cs.pku.edu.cn/info/1071/1679.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1679.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -27,7 +34,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1071/1679.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -37,7 +44,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1071/1679.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -55,9 +62,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1679.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1071/1679.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

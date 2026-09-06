@@ -187,7 +187,28 @@ research_direction_raw: 图数据分析和学习、AI+DB
 detail_url: https://cs.pku.edu.cn/info/1066/1619.htm
 profile_url: https://cs.pku.edu.cn/info/1066/1619.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled
@@ -229,24 +250,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1066/1619.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据管理

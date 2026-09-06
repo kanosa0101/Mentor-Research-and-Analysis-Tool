@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: lxchen@sjtu.edu.cn
 office_address: 微纳综合实验楼2号楼504-A室
 bio_raw: '个人简介
@@ -31,7 +32,13 @@ homepage: https://lx-chen-sjtu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250915/20250915124453.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlixing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlixing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -73,9 +80,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlixing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlixing.html
+    fetched_at: '2026-09-02'
+    confidence: auto

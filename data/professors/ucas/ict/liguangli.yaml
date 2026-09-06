@@ -23,7 +23,18 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/W02024121958736536149
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241219_7504909.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241219_7504909.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
 provenance:
   name:
     origin: crawled
@@ -55,14 +66,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241219_7504909.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译

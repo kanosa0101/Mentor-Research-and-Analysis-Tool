@@ -493,7 +493,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202412/W020241216419518010170.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202412/t20241216_7482843.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202412/t20241216_7482843.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -520,14 +531,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

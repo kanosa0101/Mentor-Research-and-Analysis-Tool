@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yangwangdong@hnu.edu.cn
 bio_raw: 博士，二级教授，博士生导师，入选国家高层次人才计划，湖南大学“岳麓学者”，主要研究领域为高性能计算、并行数值算法和程序性能优化，长期在天河一号，二号、三号国产超算平台以及鲲鹏、飞腾、MT、海光DCU、寒武纪和景嘉微GPU等国产处理器上进行并行算法的设计和应用，主持研制了一系列的基础数值算法函数库和性能优化工具。获的华为火花奖2项（线性方程组迭代方法与预条件的自动选择，面向ARM64平台应用源码矩阵化检测及优化工具），获得湖南省自然科学一等奖（面向人工智能的异构并行算法设计理论与方法）、二等奖（异构并行与分布式系统的任务调度理论和并行算法设计方法）、中国产学研合作创新成果一等奖（面向人工智能的大数据并行处理平台与应用）各1项。主持国家自然科学基金面上项目2项，国家自科基金重点项目1项，国家重点研发计划课题3项，湖南省重点研发计划项目等科研项目10多项，主持曙光、华为等企业合作项目6项。获得发明专利授权10多项，发表SCI/EI收录论文40多篇，其中SC、ICDE、TC、TPDS等CCF推荐的A类会议和期刊12篇。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 高性能计算，异构并行编程，并行数值算�
 detail_url: http://csee.hnu.edu.cn/people/yangwangdong
 profile_url: http://csee.hnu.edu.cn/people/yangwangdong
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/yangwangdong
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/yangwangdong
     fetched_at: '2026-09-05'

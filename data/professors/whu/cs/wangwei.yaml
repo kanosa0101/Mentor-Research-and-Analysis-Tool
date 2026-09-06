@@ -4,6 +4,7 @@ aliases: []
 school: whu
 dept: cs
 status: enriched
+supervisor: 博导
 email: wangw@whu.edu.cn2
 bio_raw: '1.
 
@@ -181,7 +182,7 @@ homepage: https://metaiot.group/
 detail_url: https://cs.whu.edu.cn/info/1019/55961.htm
 profile_url: https://cs.whu.edu.cn/info/1019/55961.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -225,6 +226,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/55961.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.whu.edu.cn/info/1019/55961.htm
     fetched_at: '2026-09-03'

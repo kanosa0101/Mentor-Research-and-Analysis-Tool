@@ -6,11 +6,12 @@ school: cqu
 dept: cs
 status: enriched
 supervisor: 硕导
+email: sj_deng@cqu.edu.cn
 institutes: []
 detail_url: https://cs.cqu.edu.cn/info/1680/10184.htm
 profile_url: https://cs.cqu.edu.cn/info/1680/10184.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -21,5 +22,10 @@ provenance:
   supervisor:
     origin: crawled
     source: https://cs.cqu.edu.cn/szdw/bdsd.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.cqu.edu.cn/info/1680/10184.htm
     fetched_at: '2026-09-05'
     confidence: auto

@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: kaiyuanzhu@sjtu.edu.cn
 office_address: 上海市闵行区东川路800号电院3-315
 bio_raw: '个人简介
@@ -161,7 +162,18 @@ homepage: https://sjtu-cg.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260406/20260406144854.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/z.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/z.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组
 provenance:
   name:
     origin: crawled
@@ -203,14 +215,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/z.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:隐私
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:基因组
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/z.html
+    fetched_at: '2026-09-02'
+    confidence: auto

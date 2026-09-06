@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: kexu@nlsde.buaa.edu.cn
 phone: 010-82315704
 bio_raw: 许可，男，1971年8月生，教授，博士生导师。分别于1993年7月和2000年3月在北京航空航天大学飞行器设计与应用力学系和计算机科学与工程系获学士和博士学位。现工作于北京航空航天大学计算机学院软件开发环境国家重点实验室。获"全国百篇优秀博士论文"奖和中创软件人才奖。入选北京市科技新星计划和教育部新世纪优秀人才支持计划。主持或作为学术骨干参与了国家自然科学基金、973和国家攀登计划等科研项目。其中，所负责的一项国家自然科学基金项目在结题时被基金委评为特优。现任《中国科学:信息科学》等期刊编委，曾任973项目首席科学家助理和项目专家组成员。主要从事算法与复杂性、数据挖掘和网络等方面的研究工作。
@@ -15,7 +16,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2655.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2655.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -49,6 +50,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2655.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2655.htm
     fetched_at: '2026-09-05'

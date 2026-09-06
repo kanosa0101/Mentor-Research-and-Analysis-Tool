@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lengbiao@buaa.edu.cn
 bio_raw: '冷彪，北京航空航天大学计算机学院教授、博士生导师。2004年本科毕业于国防科技大学计算机学院，2009年博士毕业于清华大学计算机系。从2009年到2019年在北京航空航天大学计算机学院任讲师、副教授、教授。
 
@@ -23,7 +24,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/7291.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/7291.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -62,6 +63,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/7291.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/7291.htm
     fetched_at: '2026-09-05'

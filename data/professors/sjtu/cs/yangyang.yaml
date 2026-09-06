@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: alayman@sjtu.edu.cn
 office_address: 上海市闵行区东川路800号电院3-527
 bio_raw: '个人简介
@@ -342,7 +343,18 @@ homepage: https://compbio.sjtu.edu.cn/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/杨旸.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangyang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangyang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -384,14 +396,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yangyang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/yangyang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

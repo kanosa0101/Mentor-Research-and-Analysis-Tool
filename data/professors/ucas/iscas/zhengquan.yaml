@@ -209,7 +209,18 @@ research_direction_raw: ​计算机图形学，三维计算机视觉、，、�
 detail_url: https://people.ucas.ac.cn/~quanzheng
 profile_url: https://people.ucas.ac.cn/~quanzheng
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -241,14 +252,3 @@ provenance:
     source: https://people.ucas.ac.cn/~quanzheng
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学

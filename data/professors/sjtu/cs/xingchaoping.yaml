@@ -93,7 +93,13 @@ homepage: https://xingcp.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250904/20250904194908.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xingchaoping.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xingchaoping.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -130,9 +136,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xingchaoping.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码

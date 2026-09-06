@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xkshen@buaa.edu.cn
 phone: 010-82317604
 bio_raw: 沈旭昆，男，1965年生，博士，教授，博士生导师。担任虚拟现实技术与系统国家重点实验室副主任，担任中国系统仿真学会常务理事，兼任虚拟技术应用专业委员会主任；担任中国图学会常务理事，兼任数字媒体专业委员会主任。
@@ -13,7 +14,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2650.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2650.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2650.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2650.htm
     fetched_at: '2026-09-05'

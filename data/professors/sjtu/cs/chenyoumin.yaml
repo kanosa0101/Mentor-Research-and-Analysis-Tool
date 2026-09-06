@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: chenyoumin@sjtu.edu.cn
 office_address: 电院3-524
 bio_raw: '个人简介
@@ -354,7 +355,18 @@ homepage: https://chenyoumin1993.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250614/20250614204734.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyoumin.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyoumin.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
 provenance:
   name:
     origin: crawled
@@ -396,14 +408,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyoumin.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:存储系统
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyoumin.html
+    fetched_at: '2026-09-02'
+    confidence: auto

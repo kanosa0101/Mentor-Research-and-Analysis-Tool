@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: rj_wli@hnu.edu.cn18900795910
 bio_raw: 李玮，男，博士，湖南大学计算机学院副教授/高级工程师，湖南省智慧法治研究院/湖南大学智慧司法交叉研究中心研究员，硕士生导师，美国马里兰大学访问学者,国际TOGAF认证企业架构设计师,软件工程造价师。华中科技大学本科及双硕士（材料加工、计算机软件与理论），湖南大学计算机科学与技术专业博士。1998年-2012年国内知名IT企业从事软件开发与管理工作，先后担任项目经理、产品经理、技术总监等职务，2004年调入湖南大学计算机学院从事教学科研工作。具有丰富多年企业工作工程经验和高校人工智能算法科研理论基础，同时具有材料加工专业和计算机专业学科背景。主要科研方向：深度学习与计算机视觉、自然语言处理（文本摘要自动生成、文本语义分析）、基于大数据的系统（设备）故障预测技术，并积极为政府/企事业单位提供信息化建设/智慧城市/数字经济发展规划与咨询（聚焦政府、公安、法院、教育、交通、电力、医疗等行业）。主持和参与60多项国家级、省部级、企业合作项目，国内一级学报、国际期刊（SCI、EI）及其他国内国际期刊上发表科研论文20余篇，获得国家专利授权4项，软件著作权7项。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 深度学习与计算机视觉、自然语言处理（�
 detail_url: http://csee.hnu.edu.cn/people/liwei
 profile_url: http://csee.hnu.edu.cn/people/liwei
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -61,6 +62,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/liwei
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/liwei
     fetched_at: '2026-09-05'

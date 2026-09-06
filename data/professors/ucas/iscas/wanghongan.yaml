@@ -91,7 +91,18 @@ research_direction_raw: 083500-软件工程081203-计算机应用技术、自然
 detail_url: https://people.ucas.ac.cn/~hongan
 profile_url: https://people.ucas.ac.cn/~hongan
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -123,14 +134,3 @@ provenance:
     source: https://people.ucas.ac.cn/~hongan
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

@@ -260,7 +260,7 @@ research_direction_raw: 自然语言处理
 detail_url: https://cs.pku.edu.cn/info/1083/1705.htm
 profile_url: https://cs.pku.edu.cn/info/1083/1705.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -279,8 +279,8 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1083/1705.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -290,7 +290,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1083/1705.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:

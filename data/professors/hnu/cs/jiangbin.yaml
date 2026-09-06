@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jiangbin@hnu.edu.cn
 bio_raw: 日本国东京工业大学工学博士、外国人特别研究员。CCF高级会员，ACM、IEEE会员，中国计算机学会大数据专家委员会（TFBD）专家委员，中国计算机学会协同计算专业委员会（TCCC）委员，中国计算机学会计算机应用专业委员会（TCAPP）委员，中国人工智能学会（CAAI）会员，教育部学位与研究生教育评估专家，北京市自然科学基金评审专家，湖南省科技咨询与评审专家，湖南省工业机器视觉工程技术研究中心专家指导委员，长沙市工业科技特派员，邵阳市人民政府科技经济顾问，株洲市网络安全和信息化专家。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 人工智能，大数据技术，机器视觉，机器�
 detail_url: http://csee.hnu.edu.cn/people/jiangbin
 profile_url: http://csee.hnu.edu.cn/people/jiangbin
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -61,6 +62,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/jiangbin
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/jiangbin
     fetched_at: '2026-09-05'

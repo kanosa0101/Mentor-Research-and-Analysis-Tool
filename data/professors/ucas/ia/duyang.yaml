@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: yang.du@ia.ac.cn
 bio_raw: '杜洋
 
@@ -562,7 +563,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202407/W020260513349447843159.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202407/t20240705_7212652.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202407/t20240705_7212652.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -594,19 +611,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202407/t20240705_7212652.html
+    fetched_at: '2026-09-02'
+    confidence: auto

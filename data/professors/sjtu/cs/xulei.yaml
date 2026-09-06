@@ -70,7 +70,28 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260815/20260815145500.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xulei.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xulei.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:GPT
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -102,24 +123,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xulei.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:GPT
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身

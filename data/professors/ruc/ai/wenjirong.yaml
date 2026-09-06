@@ -1,16 +1,18 @@
 slug: wenjirong
 name: 文继荣
-aliases: []
+aliases:
+- wjr
 school: ruc
 dept: ai
 status: enriched
 title: 教授
+email: jrwen@ruc.edu.cn
 bio_raw: 文继荣，中国人民大学高瓴人工智能学院执行院长，国家高层次人才特聘专家。“大模型与智慧治理”北京市重点实验室主任，担任新一代智能搜索与推荐教育部工程研究中心主任。2018年入选首批“北京市卓越青年科学家”,2019年担任北京智源人工智能研究院首席科学家。目前担任中央统战部党外知识分子建言献策专家组专家、北京市第十四届政协常委、第八届教育部科技委委员、中国计算机学会常务理事等。
 institutes: []
 detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm
 profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -29,6 +31,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm
     fetched_at: '2026-09-04'

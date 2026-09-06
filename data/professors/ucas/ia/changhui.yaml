@@ -71,7 +71,23 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202410/W020241008315340418419.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202410/t20241008_7393999.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202410/t20241008_7393999.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled
@@ -103,19 +119,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可穿戴

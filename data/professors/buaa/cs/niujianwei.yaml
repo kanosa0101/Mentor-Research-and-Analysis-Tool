@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: niujianwei@buaa.edu.cn
 phone: 010-82317613
 bio_raw: '牛建伟，北京航空航天大学蓝天杰出二级教授，博士生导师，IEEE Fellow，北航具身智能机器人研究院副院长，美国卡内基梅隆大学访问学者，工业互联网产教融合国家级创新平台首席科学家，科技部重点研发计划首席科学家，中国仿真学会工业互联网专委会主任，浙江省“全省工业大数据与机器人智能系统重点实验室”主任，中国电子学会机器人分会总干事，IEEE
@@ -30,7 +31,7 @@ homepage: https://shi.buaa.edu.cn/jwniu
 detail_url: http://scse.buaa.edu.cn/info/1078/2664.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2664.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -84,6 +85,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2664.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2664.htm
     fetched_at: '2026-09-05'

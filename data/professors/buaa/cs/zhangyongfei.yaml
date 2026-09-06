@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yfzhang@buaa.edu.cn
 phone: 010-82314108
 bio_raw: '张永飞
@@ -36,7 +37,7 @@ homepage: http://teacher.buaa.edu.cn/yfzhang/
 detail_url: http://scse.buaa.edu.cn/info/1078/9215.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/9215.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -95,6 +96,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/9215.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/9215.htm
     fetched_at: '2026-09-05'

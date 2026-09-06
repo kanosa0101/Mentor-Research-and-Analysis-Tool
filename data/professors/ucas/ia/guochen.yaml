@@ -109,7 +109,18 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240425336663585236.png
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129818.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129818.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -136,14 +147,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

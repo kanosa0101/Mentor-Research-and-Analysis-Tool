@@ -174,7 +174,18 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240425343232857809.png
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129814.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129814.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -206,14 +217,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉

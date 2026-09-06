@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: zhongyuli@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -94,7 +95,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250615/20250615212424.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lizhongyu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lizhongyu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -126,19 +143,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lizhongyu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/lizhongyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

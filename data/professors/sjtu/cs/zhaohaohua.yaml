@@ -46,7 +46,18 @@ homepage: https://bcmi.sjtu.edu.cn/home/zhaohaohua/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613161632.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohaohua.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohaohua.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -88,14 +99,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohaohua.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

@@ -126,7 +126,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/洪义.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/hongyi.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/hongyi.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -163,14 +174,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hongyi.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像

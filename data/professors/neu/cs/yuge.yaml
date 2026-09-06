@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: '于戈，东北大学计算机学院教授，博士生导师，中国计算机学会会士，
 
   CCF
@@ -100,6 +101,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157533/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157533/page.htm
     fetched_at: '2026-09-04'

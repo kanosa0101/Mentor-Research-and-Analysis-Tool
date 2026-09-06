@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: gongbell@gmail.com
 phone: 010-82338059
 bio_raw: '姜博，教授，博士生导师，CCF软件工程专委委员，CCF系统软件专委委员,北京市隐私计算与区块链高精尖中心研究员。主要研究方向为软件测试、系统安全和操作系统。他目前主持和参与的项目包括国家重点研发计划，国家自然科学基金面上项目和重点项目，以及多项企业（华为，腾讯，滴滴，中海油等）合作课题。近年来在国际知名期刊和会议共发表学术论文60余篇，包括多篇软件工程和系统软件领域的文章（ASE
@@ -23,7 +24,7 @@ homepage: http://jiangbo.buaa.edu.cn/
 detail_url: http://scse.buaa.edu.cn/info/1078/9989.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/9989.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -62,6 +63,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/9989.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/9989.htm
     fetched_at: '2026-09-05'

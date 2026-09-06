@@ -35,6 +35,14 @@ def parse_detail(cfg, html, url):
     m = re.search(r"电子邮件[：:]\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})", text)
     if m:
         out["email"] = m.group(1)
+    # 头部徽标行: "曹亚男 女 博导 中国科学院信息工程研究所"(149/283 有, 其余为页面无徽标)
+    m = re.search(r"[\u4e00-\u9fa5·]{2,4}[\s\u00a0]+(?:男|女)[\s\u00a0]+"
+                  r"((?:博士生导师|硕士生导师|博导|硕导)[\s\u00a0]*)+", text)
+    if m:
+        badges = re.findall(r"博士生导师|硕士生导师|博导|硕导", m.group(0))
+        sup = "、".join("博导" if "博" in b else "硕导" for b in dict.fromkeys(badges))
+        if sup:
+            out["supervisor"] = sup
     m = re.search(r"研究领域\n([^\n]{2,200})", text)
     if m:
         out["research_directions"] = [x.strip() for x in re.split(r"[;；]", m.group(1))

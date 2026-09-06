@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: qwert3472@sjtu.edu.cn
 office_address: 软件学院5313
 bio_raw: '个人简介
@@ -143,7 +144,28 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/张谦.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangqian.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangqian.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -180,24 +202,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangqian.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:普适计算
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangqian.html
+    fetched_at: '2026-09-02'
+    confidence: auto

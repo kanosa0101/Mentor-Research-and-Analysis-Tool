@@ -1,6 +1,7 @@
 slug: houpengpeng
 name: 侯朋朋
-aliases: []
+aliases:
+- dsxx
 school: ucas
 dept: iscas
 status: enriched
@@ -12,7 +13,13 @@ research_direction_raw: 操作系统，智能系统
 detail_url: https://is.cas.cn/yjsjy/dsxx/
 profile_url: https://is.cas.cn/yjsjy/dsxx/
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
 provenance:
   name:
     origin: crawled
@@ -39,9 +46,3 @@ provenance:
     source: https://is.cas.cn/yjsjy/dsxx/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统

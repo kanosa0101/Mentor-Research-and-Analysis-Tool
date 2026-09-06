@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 硕导
 email: cszhongwang@tongji.edu.cn
 bio_raw: '王忠
 
@@ -134,6 +135,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4075.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1121/4075.htm
     fetched_at: '2026-09-03'

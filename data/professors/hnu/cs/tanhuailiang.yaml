@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: tanhuailiang@hnu.edu.cn
 bio_raw: 谭怀亮，博士，教授，博士生导师。湖南省工程技术研究中心主任(视频图像智能分析处理)；中国电子科学技术委员会委员；飞腾信息技术有限公司高级技术专家；长沙智能制造研究总院专家委员会专家。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 大数据与云计算、云存储、虚拟化技术；GP
 detail_url: http://csee.hnu.edu.cn/people/tanhuailiang
 profile_url: http://csee.hnu.edu.cn/people/tanhuailiang
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/tanhuailiang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/tanhuailiang
     fetched_at: '2026-09-05'

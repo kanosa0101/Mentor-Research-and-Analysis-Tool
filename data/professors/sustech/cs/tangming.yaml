@@ -3,13 +3,15 @@ name: 唐茗
 aliases: []
 school: sustech
 dept: cs
-status: roster
-title: 副教授
+status: enriched
+title: 研究员
+supervisor: 博导
 email: tangm3@sustech.edu.cn
 institutes: []
 detail_url: https://mingtang.website/
 profile_url: https://mingtang.website/
 first_seen: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -19,11 +21,16 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+    source: https://mingtang.website/
     fetched_at: '2026-09-05'
     confidence: auto
   email:
     origin: crawled
     source: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://mingtang.website/
     fetched_at: '2026-09-05'
     confidence: auto

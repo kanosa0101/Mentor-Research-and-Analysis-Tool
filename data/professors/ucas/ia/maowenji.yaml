@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 正高级
+supervisor: 博导
 email: wenji.mao@ia.ac.cn
 bio_raw: '毛文吉
 
@@ -265,7 +266,28 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020250606308976178788.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131823.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131823.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -297,24 +319,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131823.html
+    fetched_at: '2026-09-02'
+    confidence: auto

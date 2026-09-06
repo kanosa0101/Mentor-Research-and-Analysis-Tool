@@ -4,7 +4,7 @@ aliases: []
 school: tongji
 dept: cs
 status: enriched
-title: 博导/硕导
+title: 教授（研究员）
 supervisor: 博导、硕导
 email: duopeng@tongji.edu.cn
 bio_raw: '姓
@@ -97,13 +97,13 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/4055.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.tongji.edu.cn/info/1061/4055.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
   supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/4055.htm
     fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+    fetched_at: '2026-09-06'
     confidence: auto

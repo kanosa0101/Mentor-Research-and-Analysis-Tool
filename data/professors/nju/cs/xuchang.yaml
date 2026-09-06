@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导
 email: changxu@nju.edu.cn
+phone: 025-89680919
 bio_raw: '许畅，现为南京大学计算机软件新技术全国重点实验室和计算机学院教授、博士生导师。他于
 
   2000
@@ -259,10 +260,11 @@ bio_raw: '许畅，现为南京大学计算机软件新技术全国重点实验�
 
   025-89680919'
 institutes: []
+homepage: http://cs.nju.edu.cn/changxu
 detail_url: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
 profile_url: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -277,12 +279,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
@@ -291,6 +293,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://cs.nju.edu.cn/58/00/c2639a153600/page.htm
     fetched_at: '2026-09-03'

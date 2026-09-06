@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jywang@buaa.edu.cn
 phone: 010-82338177
 bio_raw: '王静远，北航计算机学院教授、兼任北航经管学院兼聘教授，博士生导师。担任北航“数据智能研究中心”副主任、北京城市实验室副主任。毕业于清华大学计算机系，获工学博士学位。长期从事人工智能与大数据技术在智慧城市、交通管理、公共卫生等领域的应用基础研究，研究兴趣包括时空数据挖掘、可解释人工智能、城市计算与智慧城市等。在信息科学、管理科学、城市科学的交叉领域形成了一系列理论与实践应用并重、跨学科特色鲜明的科研成果。
@@ -87,7 +88,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/8382.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8382.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -121,6 +122,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8382.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8382.htm
     fetched_at: '2026-09-05'

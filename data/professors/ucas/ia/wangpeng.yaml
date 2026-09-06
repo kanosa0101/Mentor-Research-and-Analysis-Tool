@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 正高级
+supervisor: 博导
 email: peng_wang@ia.ac.cn
 bio_raw: '王鹏
 
@@ -405,7 +406,33 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424337532582935.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129917.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129917.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -437,29 +464,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可视化
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129917.html
+    fetched_at: '2026-09-02'
+    confidence: auto

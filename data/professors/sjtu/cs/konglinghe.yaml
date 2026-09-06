@@ -225,7 +225,18 @@ homepage: https://www.cs.sjtu.edu.cn/~linghe.kong/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613104105.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/konglinghe.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/konglinghe.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -272,14 +283,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/konglinghe.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

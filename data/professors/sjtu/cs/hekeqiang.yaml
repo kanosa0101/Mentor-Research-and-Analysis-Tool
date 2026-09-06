@@ -194,7 +194,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250905/20250905104207.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -221,14 +232,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

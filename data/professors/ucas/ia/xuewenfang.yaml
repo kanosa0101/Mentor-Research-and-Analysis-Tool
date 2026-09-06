@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 副研究员
+supervisor: 硕导
 email: wenfang.xue@ia.ac.cn
 bio_raw: "薛文芳\n/\n职　　称:\n副研究员\n邮　　编:\n100190\n电子邮件:\nwenfang.xue@ia.ac.cn\n部门/实验室:\n\
   智能感知与计算研究中心\n通讯地址:\n北京市海淀区中关村东路104号智能化大厦\n个人简历\n薛文芳，副研究员，硕士生导师。2002年在北京航空航天大学获得通信与信息系统专业博士学位，2003年在中国科学院自动化研究所模式识别国家重点实验室从事博士后研究工作，2005年留所工作。主持和参与外交部与基金委联合资助重大研究计划、中国科协海智计划、“新一代人工智能”重大专项等多个国家级重点项目。研究新型机器学习/强化学习算法和新型图数据建模分析框架，提升大宗商品价格预测稳定性、可解释性和推理认知能力。目前正全力整合金融、科技、产业、政策，协力打造全球投资智慧风控综合智库，服务中国企业更好走出去。相关研究成果获得外交部郑泽光副部长的高度认可和专函表扬，获得新华网和中央电视台的多次报道。\n\
@@ -38,7 +39,18 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240424310360427511.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129876.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129876.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -70,14 +82,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129876.html
+    fetched_at: '2026-09-02'
+    confidence: auto

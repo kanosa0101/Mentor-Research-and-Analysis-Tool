@@ -5,6 +5,7 @@ school: tsinghua
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: zyh02@tsinghua.edu.cn
 phone: 010-62783505-8003
 bio_raw: '姓名：张悠慧
@@ -141,7 +142,13 @@ research_direction_raw: 高性能处理器微体系结构、类脑计算芯片�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1107/3506.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1107/3506.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled
@@ -178,9 +185,8 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1107/3506.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1107/3506.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

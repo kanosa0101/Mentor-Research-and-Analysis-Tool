@@ -114,7 +114,13 @@ research_direction_raw: 量子体系结构与系统，量子纠错与容错，�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1122/6619.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1122/6619.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled
@@ -146,9 +152,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1122/6619.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构

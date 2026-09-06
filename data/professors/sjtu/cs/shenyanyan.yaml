@@ -53,7 +53,18 @@ homepage: https://shenyanyan-sjtu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/沈艳艳.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenyanyan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenyanyan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -90,14 +101,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenyanyan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

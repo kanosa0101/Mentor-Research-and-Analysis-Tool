@@ -34,7 +34,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250614/20250614151613.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengconghui.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengconghui.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -66,14 +77,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengconghui.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

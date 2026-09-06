@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: hexf@cs.ecnu.edu.cn
 phone: 021-62233061
 bio_raw: '华东师范大学计算机学院教授，博士生导师
@@ -83,7 +84,7 @@ institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247675
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247675
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -130,4 +131,9 @@ provenance:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247675
+    fetched_at: '2026-09-04'
     confidence: auto

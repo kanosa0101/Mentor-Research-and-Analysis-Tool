@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 bio_raw: '王金明，博士，副教授，博士生导师。2019年、2021年和2026年分别获哈尔滨工业大学通信工程专业学士、信息与通信工程专业硕士和博士学位。主要从事无线通信与智能网络优化相关研究，研究方向涵盖低轨卫星互联网、智能反射面与反向散射通信、可移动天线、车联网通信、物理层安全及人工智能等，重点聚焦复杂无线通信环境下的智能传输、资源优化与安全通信理论及关键技术。
 
   近年来，围绕智能反射面辅助反向散射通信、智慧物联网通信、低轨卫星通信及可移动天线等方向开展研究，在IEEE Communications Surveys & Tutorials、IEEE
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2026/0902/c6641a462970/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2026/0902/c6641a462970/page.htm
     fetched_at: '2026-09-04'

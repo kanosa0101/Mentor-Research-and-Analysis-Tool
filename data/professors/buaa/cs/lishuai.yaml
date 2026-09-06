@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lishuai@buaa.edu.cn
 phone: 010-82316329
 bio_raw: 李帅，北京航空航天大学教授、博士生导师，国家级领军人才，现任计算机学院副院长、虚拟现实技术与系统全国重点实验室党支部书记、中国仿真学会理事、中国仿真学会医疗仿真专委会主任、中国图象图形学学会虚拟现实专委会副主任、中国解剖学会智慧解剖分会副主任、北京市知识产权战略咨询委员会委员。长期从事虚拟现实、智慧医疗、具身智能等方向的研究，相关成果在IEEE
@@ -14,7 +15,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/7416.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/7416.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.graphics
   origin: computed
@@ -53,6 +54,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/7416.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/7416.htm
     fetched_at: '2026-09-05'

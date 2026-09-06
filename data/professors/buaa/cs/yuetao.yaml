@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yuetao@buaa.edu.cn
 phone: 010-82317496
 bio_raw: '岳涛，北京航空航天大学教授，博士生导师。2006年和2010年分别在加拿大获得硕士和博士学位，曾在Simula研究所担任首席研究员（研究教授）。研究方向包括软件测试、不确定性软件工程、模型驱动工程、量子软件工程；在软件工程领域共发表高质量学术论文170余篇。现担任国际期刊《ACM
@@ -22,7 +23,7 @@ homepage: https://yue-tao.github.io/
 detail_url: http://scse.buaa.edu.cn/info/1078/10993.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/10993.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -51,6 +52,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/10993.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/10993.htm
     fetched_at: '2026-09-05'

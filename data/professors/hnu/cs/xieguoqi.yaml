@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xgqman@hnu.edu.cn
 bio_raw: 谢国琪，博士、教授、博士生导师，嵌入式与网络计算湖南省重点实验室主任、国家级青年人才、湖南省杰青、ZVM嵌入式虚拟化实时操作系统创始人（ZVM官网：http://esnl.hnu.edu.cn/zvm/）。兼任中国计算机学会（CCF）嵌入式系统专委秘书长，担任JSA、JCSC及MICPRO3本SCI期刊编委，获华为开源贡献精英教师奖。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 嵌入式系统、实时系统、嵌入式虚拟化、�
 detail_url: http://csee.hnu.edu.cn/people/xieguoqi
 profile_url: http://csee.hnu.edu.cn/people/xieguoqi
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/xieguoqi
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/xieguoqi
     fetched_at: '2026-09-05'

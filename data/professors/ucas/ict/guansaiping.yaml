@@ -23,7 +23,13 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202502/W02025022054794933433
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202502/t20250220_7530344.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202502/t20250220_7530344.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -55,9 +61,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202502/t20250220_7530344.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱

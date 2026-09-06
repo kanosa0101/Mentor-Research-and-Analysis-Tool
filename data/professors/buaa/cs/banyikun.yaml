@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yikunb@buaa.edu.cn
 bio_raw: 班义琨，北京航空航天大学计算机学院教授、博士生导师，国家级青年人才。于伊利诺伊大学厄巴纳-香槟分校（UIUC）计算机系获得博士学位，曾分别在北京大学和武汉大学获得硕士与学士学位。研究方向涵盖强化学习、大语言模型与具身智能等前沿领域，在NeurIPS、ICLR、JMLR、KDD、WWW等顶级会议及期刊发表论文40余篇，其中以一作或通讯作者身份发表20余篇，一作/通讯身份获得oral、spotlight等，多篇工作被机器之心、新浪等多家媒体报道。曾在美国多家知名企业担任科研实习生，其研究成果集成于亚马逊云平台、美国Instacart、美国梅森诊所等，曾参与美国NSF、DARPA、USDA
   AFRI等多项科研项目，曾与MIT-IBM Watson AI Lab、Princeton、Meta AI、Amazon AWS等机构深度合作。曾获得UIUC杰出博士论文奖提名、Siebel博士奖学金、UIUC
@@ -13,7 +14,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1546/12266.htm
 profile_url: http://scse.buaa.edu.cn/info/1546/12266.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -52,6 +53,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1546/12266.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1546/12266.htm
     fetched_at: '2026-09-05'

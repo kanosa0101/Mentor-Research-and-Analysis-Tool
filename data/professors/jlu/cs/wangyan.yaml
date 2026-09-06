@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wy6868@jlu.edu.cn
 bio_raw: '姓名：
 
@@ -266,6 +267,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19061.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1367/19061.htm
     fetched_at: '2026-09-04'

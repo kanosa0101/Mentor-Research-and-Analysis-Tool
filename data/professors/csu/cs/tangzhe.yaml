@@ -5,6 +5,7 @@ school: csu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: tz@csu.edu.cn
 office_address: 中南大学新校区信息大楼
 bio_raw: '个人简介
@@ -34,7 +35,7 @@ research_direction_raw: 研究方向、Research Direction、Teacher homepage、�
 detail_url: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -88,6 +89,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://faculty.csu.edu.cn/tangzhe/zh_CN/index.htm
     fetched_at: '2026-09-04'

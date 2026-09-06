@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: tfsun@sjtu.edu.cn
 phone: '13564454752'
 office_address: 东川路800号上海交通大学闵行校区软件大楼5213室
@@ -147,7 +148,28 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/孙锬锋.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/suntanfeng.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/suntanfeng.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -189,24 +211,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/suntanfeng.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:AIGC
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/suntanfeng.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -68,7 +68,13 @@ research_direction_raw: 并行与分布式系统，存储系统
 detail_url: https://www.cs.tsinghua.edu.cn/info/1108/3517.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1108/3517.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -105,9 +111,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1108/3517.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式

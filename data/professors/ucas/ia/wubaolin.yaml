@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 正高级
+supervisor: 硕导
 email: baolin.wu@ia.ac.cn
 bio_raw: '吴保林
 
@@ -947,7 +948,13 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429593825430361.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130979.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130979.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -974,9 +981,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130979.html
+    fetched_at: '2026-09-02'
+    confidence: auto

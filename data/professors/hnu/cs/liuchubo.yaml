@@ -5,13 +5,14 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: liuchubo@hnu.edu.cn
 institutes: []
 research_direction_raw: 高性能计算、人工智能、体系结构、博弈论、近似算法与随机算法
 detail_url: http://csee.hnu.edu.cn/people/liuchubo
 profile_url: http://csee.hnu.edu.cn/people/liuchubo
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -37,5 +38,10 @@ provenance:
   research_direction_raw:
     origin: crawled
     source: http://csee.hnu.edu.cn/teacher/syjs/1
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/liuchubo
     fetched_at: '2026-09-05'
     confidence: auto

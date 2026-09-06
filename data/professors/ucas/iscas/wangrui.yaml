@@ -73,7 +73,13 @@ research_direction_raw: 083500-软件工程、大数据与智能信息处理
 detail_url: https://people.ucas.ac.cn/~iscaswangrui
 profile_url: https://people.ucas.ac.cn/~iscaswangrui
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -105,9 +111,3 @@ provenance:
     source: https://people.ucas.ac.cn/~iscaswangrui
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

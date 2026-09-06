@@ -17,7 +17,18 @@ homepage: https://xionggj001.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260320/20260320131937.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiongguojun.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiongguojun.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -54,14 +65,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xiongguojun.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式

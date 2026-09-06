@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: mingyuwu@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -329,7 +330,18 @@ homepage: https://ipads.se.sjtu.edu.cn/zh/pub/members/mingyu_wu/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/吴明瑜.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
 provenance:
   name:
     origin: crawled
@@ -366,14 +378,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wumingyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

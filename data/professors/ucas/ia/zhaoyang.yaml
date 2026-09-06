@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 副研究员
+supervisor: 硕导
 email: zhaoyang2015@ia.ac.cn
 bio_raw: '赵阳
 
@@ -203,7 +204,28 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240423609210136970.png
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129925.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129925.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -235,24 +257,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129925.html
+    fetched_at: '2026-09-02'
+    confidence: auto

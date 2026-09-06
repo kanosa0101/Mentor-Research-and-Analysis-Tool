@@ -119,7 +119,28 @@ research_direction_raw: 083500-软件工程、智能软件工程、网络分布�
 detail_url: https://people.ucas.ac.cn/~wchen
 profile_url: https://people.ucas.ac.cn/~wchen
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:漏洞
 provenance:
   name:
     origin: crawled
@@ -151,24 +172,3 @@ provenance:
     source: https://people.ucas.ac.cn/~wchen
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:漏洞

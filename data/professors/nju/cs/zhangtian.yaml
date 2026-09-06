@@ -6,7 +6,8 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
-email: lutong@nju.edu.cn
+email: ztluck@nju.edu.cn
+phone: '83685977'
 bio_raw: '张天，男，南京大学计算机学院教授、博士生导师，
 
   CCF
@@ -119,10 +120,11 @@ bio_raw: '张天，男，南京大学计算机学院教授、博士生导师，
 
   @nju.edu.cn'
 institutes: []
+homepage: https://cs.nju.edu.cn/zhangtian/index.htm
 detail_url: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
 profile_url: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -147,12 +149,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
@@ -161,6 +163,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/43/c2639a51523/page.htm
     fetched_at: '2026-09-03'

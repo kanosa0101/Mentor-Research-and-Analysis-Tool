@@ -143,7 +143,18 @@ research_direction_raw: 083500-软件工程
 detail_url: https://people.ucas.ac.cn/~0074489
 profile_url: https://people.ucas.ac.cn/~0074489
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -175,14 +186,3 @@ provenance:
     source: https://people.ucas.ac.cn/~0074489
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态

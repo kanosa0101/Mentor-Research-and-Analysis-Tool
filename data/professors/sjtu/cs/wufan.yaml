@@ -111,7 +111,23 @@ homepage: https://www.cs.sjtu.edu.cn/~fwu/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/吴帆.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wufan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wufan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -153,19 +169,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wufan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

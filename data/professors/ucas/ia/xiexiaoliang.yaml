@@ -443,7 +443,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429628597102818.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131982.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131982.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -470,19 +486,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像

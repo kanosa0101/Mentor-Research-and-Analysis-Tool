@@ -195,7 +195,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251231/20251231095225.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/dongxiaoju.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/dongxiaoju.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -237,14 +248,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongxiaoju.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可视化
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

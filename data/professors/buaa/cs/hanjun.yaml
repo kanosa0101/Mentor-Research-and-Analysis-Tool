@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jun_han@buaa.edu.cn
 phone: 010-82316340
 bio_raw: '韩军，男，博士，教授，博士生导师。1990年毕业于北京理工大学自动控制系，1999至2003年在澳大利亚邦德大学计算机学院学习工作，获博士学位。现为北京航空航天大学计算机学院计算机新技术研究所（ACT）、大数据科学与脑机智能高精尖创新中心教授，兼任北京市计算机新技术重点实验室副主任、复杂产品先进制造系统教育部工程中心网络支撑研究室主任等。作为项目和课题负责人，主持负责了多项国家自然科学基金面上项目、国家自然科学基金重点项目、核高基重大专项等国家重点研发计划项目；作为技术负责人或主要研究人员参与了多项973项目、863重点项目等的研究工作。
@@ -16,7 +17,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2675.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2675.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -50,6 +51,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2675.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2675.htm
     fetched_at: '2026-09-05'

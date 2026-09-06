@@ -40,7 +40,23 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202007/P02020072250378199583
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202007/t20200722_5639395.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202007/t20200722_5639395.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -67,19 +83,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202007/t20200722_5639395.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

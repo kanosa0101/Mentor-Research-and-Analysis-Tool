@@ -64,7 +64,18 @@ research_direction_raw: 计算机网络, 分布式信息系统
 detail_url: https://www.cs.tsinghua.edu.cn/info/1127/3596.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1127/3596.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -101,14 +112,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1127/3596.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

@@ -245,7 +245,23 @@ research_direction_raw: 网络空间安全、新一代互联网体系结构、�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1126/7184.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1126/7184.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
 provenance:
   name:
     origin: crawled
@@ -282,19 +298,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1126/7184.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:5G

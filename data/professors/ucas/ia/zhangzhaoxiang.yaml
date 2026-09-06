@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: zhaoxiang.zhang@ia.ac.cn
 bio_raw: "张兆翔\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nzhaoxiang.zhang@ia.ac.cn\n部门/实验室:\n\
   智能感知与计算研究中心\n通讯地址:\n北京市海淀区中关村东路99号智能化大厦\n个人简历\n张兆翔，博士，中国科学院自动化研究所智能感知与计算研究中心常务副主任，研究员、博士生导师，中国科学院大学岗位教授，中国科学院脑科学与智能技术卓越创新中心骨干，入选“教育部长江学者奖励计划”、“国家万人计划青年拔尖人才”和“教育部新世纪优秀人才支持计划”，曾获得北京市科学技术奖科技进步奖一等奖（排名第一）、中国人工智能学会吴文俊技术发明奖二等奖（排名第一）。张兆翔博士的研究兴趣包括：模式识别、计算机视觉与深度学习，具体研究方向包括：视觉认知计算、类脑学习和面向开放环境的视觉感知与理解，在本领域国际主流期刊与会议上发表论文200余篇，近五年来在IEEE\
@@ -323,7 +324,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424296969356105.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129877.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129877.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -355,19 +372,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129877.html
+    fetched_at: '2026-09-02'
+    confidence: auto

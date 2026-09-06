@@ -21,7 +21,18 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/W02025120842784861304
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023729.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023729.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -48,14 +59,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023729.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:联邦学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式

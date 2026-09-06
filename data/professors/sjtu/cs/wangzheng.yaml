@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: wzheng@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -35,7 +36,23 @@ homepage: https://zhengwang100.github.io/.
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250615/20250615201514.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangzheng.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangzheng.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -72,19 +89,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangzheng.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangzheng.html
+    fetched_at: '2026-09-02'
+    confidence: auto

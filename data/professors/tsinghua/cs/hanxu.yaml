@@ -35,7 +35,13 @@ research_direction_raw: 智能计算系统，人工智能，知识计算
 detail_url: https://www.cs.tsinghua.edu.cn/info/1114/6422.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1114/6422.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
 provenance:
   name:
     origin: crawled
@@ -67,9 +73,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1114/6422.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型

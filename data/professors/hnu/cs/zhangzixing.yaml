@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: zixingzhang@hnu.edu.cn
 bio_raw: 教授、博导、人工智能先进制造研究院副院长、文化与媒体计算研究中心副主任、国家高层次青年人才、省科技领军人才、小米青年学者、IEEE高级会员、情感计算国际旗舰期刊IEEE-TAFFC副编委。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 人工智能、语音与语言处理、AI4SocialScience�
 detail_url: http://csee.hnu.edu.cn/people/zhangzixing
 profile_url: http://csee.hnu.edu.cn/people/zhangzixing
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zhangzixing
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/zhangzixing
     fetched_at: '2026-09-05'

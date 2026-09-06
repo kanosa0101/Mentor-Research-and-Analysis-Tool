@@ -41,7 +41,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250904/20250904122436.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guojie.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guojie.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -73,14 +84,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/guojie.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

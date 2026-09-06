@@ -146,7 +146,23 @@ homepage: xiangliyao.cn
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/向立瑶.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiangliyao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiangliyao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -188,19 +204,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xiangliyao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

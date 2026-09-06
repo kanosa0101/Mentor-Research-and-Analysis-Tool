@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 office_address: 目前在国家自然科学基金委借调
 bio_raw: '个人简介
 
@@ -162,7 +163,28 @@ homepage: https://mifa.sjtu.edu.cn/~weiranhuang/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250708/20250708194353.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huangweiran.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huangweiran.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -199,24 +221,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huangweiran.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huangweiran.html
+    fetched_at: '2026-09-02'
+    confidence: auto

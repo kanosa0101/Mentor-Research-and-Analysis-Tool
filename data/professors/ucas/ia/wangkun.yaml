@@ -164,7 +164,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424339404807588.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129856.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129856.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -196,19 +212,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可视化
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像

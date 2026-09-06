@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: '杨晓春，女，博士，二级教授，博士生导师。2019年入选国家级高层次人才，科技部中青年科技创新领军人才，国家优秀青年基金获得者，教育部新世纪优秀人才，辽宁省优秀科技工作者，兴辽计划特聘教授，沈阳市人大常委会咨询专家；获宝钢优秀教师奖、国家重点研发专项项目首席科学家；CCF数据库专委会副主任委员，CCF协同计算专委常委委员。《Data
   Science and Engineering》副主编、《软件学报》编委、《电子学报》编委、《计算机科学与探索》编委。长期从事数据管理与分析领域的教学科研工作，主要研究方向包括大数据管理与知识工程、数据库理论与技术、数据质量管理、数据隐私保护、智能推荐系统等。中国计算机学会CCF杰出会员，ACM高级会员，IEEE高级会员。
 
@@ -39,6 +40,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157517/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157517/page.htm
     fetched_at: '2026-09-04'

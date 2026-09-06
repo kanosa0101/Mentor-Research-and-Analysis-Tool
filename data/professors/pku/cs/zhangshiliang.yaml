@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 长聘副教授
+title: 长聘教授
 email: slzhang.jdl@pku.edu.cn
 bio_raw: '个人主页：
 
@@ -81,7 +81,18 @@ research_direction_raw: 多媒体内容分析与检索，计算机视觉，模�
 detail_url: https://cs.pku.edu.cn/info/1086/1731.htm
 profile_url: https://cs.pku.edu.cn/info/1086/1731.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -90,12 +101,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/1731.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/1731.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -118,14 +129,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1086/1731.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

@@ -5,13 +5,14 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: 1995年毕业于沈阳工业学院电子工程系;2001年毕业于华东交通大学,获交通信工程及控制专业硕士学位;2004年毕业于上海大学，获通信与信息系统专业博士学位,并进入湖南大学工作。2005年,晋升为副教授;2008年,破格晋升为教授,并被评为湖南大学优秀教师,入选湖南省青年骨干教师培养对象。2010年,入选湖南省新世纪121人才工程。2010年8月至2011年8月,国家公派在英国Surrey大学进行访问学者交流。2011年,被遴选为博士生导师,并入选教育部新世纪优秀人才支持计划。2017年,入选首批
 institutes: []
 research_direction_raw: 图像/视频信号处理(侧重图像/视频信息安全)，人工智能应用及安全，显示驱动算法IP核移植
 detail_url: http://csee.hnu.edu.cn/people/yanggaobo
 profile_url: http://csee.hnu.edu.cn/people/yanggaobo
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -40,6 +41,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/yanggaobo
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/yanggaobo
     fetched_at: '2026-09-05'

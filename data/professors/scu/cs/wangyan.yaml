@@ -5,6 +5,7 @@ school: scu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 硕导
 email: wangyanscu@hotmail.com
 bio_raw: '王艳，博士，四川大学计算机学院副教授、硕士生导师。2015年6月获得四川大学博士学位。2014年4月至2015年4月在美国北卡莱罗纳大学教堂山分校（UNC）进行联合培养博士学习。2017年5月至2018年5月在澳大利亚伍仑贡大学（UOW）和澳大利亚悉尼大学（USYD）从事博士后工作。2015年7月入职四川大学计算机学院，2018年9月晋升为副教授，同年破格增列为硕士生导师。
 
@@ -55,6 +56,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/wangyan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.scu.edu.cn/wangyan/zh_CN/index.htm
     fetched_at: '2026-09-04'

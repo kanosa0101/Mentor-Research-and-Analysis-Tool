@@ -7,6 +7,7 @@ dept: ss
 status: enriched
 title: 教授
 supervisor: 博导、硕导
+phone: 66dc22527359
 bio_raw: '教育背景：
 
   学士学位：吉林大学计算机系，
@@ -137,7 +138,7 @@ institutes:
 detail_url: http://faculty.dlut.edu.cn/GuoHe/zh_CN/index.htm
 profile_url: http://faculty.dlut.edu.cn/GuoHe/zh_CN/index.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -166,6 +167,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/GuoHe/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/GuoHe/zh_CN/index.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: jie.tan@ia.ac.cn
 bio_raw: '谭杰
 
@@ -256,38 +257,7 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424596408108034.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  photo_url:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -319,3 +289,39 @@ facets:
   confidence: auto
   evidence:
   - keyword:机器人
+provenance:
+  name:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130948.html
+    fetched_at: '2026-09-02'
+    confidence: auto

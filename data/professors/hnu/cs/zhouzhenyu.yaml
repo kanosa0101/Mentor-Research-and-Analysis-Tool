@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 硕导
 email: zhenyu.giraffe@aliyun.com
 bio_raw: 小样本学习是当前深度学习领域的重要研究方向之一，在计算机视觉、自然语言处理等多个领域具有广泛的应用前景。研究小样本学习方法，不仅能提升深度学习模型在数据受限环境下的鲁棒性，还能促进深度学习技术在更多实际应用中的落地。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 计算机视觉、图像处理、人工智能、小样�
 detail_url: http://csee.hnu.edu.cn/people/zhouzhenyu
 profile_url: http://csee.hnu.edu.cn/people/zhouzhenyu
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -51,6 +52,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zhouzhenyu
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/zhouzhenyu
     fetched_at: '2026-09-05'

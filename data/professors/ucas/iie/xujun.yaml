@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: xujun@iie.ac.cn
 office_address: 北京市海淀区树村路19号中国科学院信息工程研究所
 institutes:
@@ -12,7 +13,7 @@ research_direction_raw: 公钥密码算法分析与设计、基于格的分析�
 detail_url: https://people.ucas.ac.cn/~CryptoXu
 profile_url: https://people.ucas.ac.cn/~CryptoXu
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~CryptoXu
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~CryptoXu
     fetched_at: '2026-09-05'

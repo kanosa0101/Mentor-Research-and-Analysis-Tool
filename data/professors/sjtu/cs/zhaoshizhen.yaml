@@ -140,7 +140,13 @@ homepage: jhc.sjtu.edu.cn/~shizhenzhao/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/赵世振.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -177,9 +183,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

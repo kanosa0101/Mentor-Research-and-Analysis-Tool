@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: xiaobaowu@sjtu.edu.cn
 office_address: 电院3号楼524
 bio_raw: '个人简介
@@ -123,7 +124,18 @@ homepage: https://bobxwu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260129/20260129154644.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuxiaobao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuxiaobao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
@@ -165,14 +177,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuxiaobao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuxiaobao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

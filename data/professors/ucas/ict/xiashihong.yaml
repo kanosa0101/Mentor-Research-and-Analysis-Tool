@@ -34,7 +34,18 @@ research_direction_raw: 计算机应用技术
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496743.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496743.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -71,14 +82,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496743.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

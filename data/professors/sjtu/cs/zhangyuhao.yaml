@@ -63,7 +63,13 @@ homepage: www.zyhwtc.com
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/张宇昊.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangyuhao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangyuhao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -100,9 +106,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangyuhao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

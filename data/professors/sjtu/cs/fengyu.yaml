@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: y-feng@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -350,7 +351,28 @@ homepage: https://yufenguofr.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250616/20250616110617.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/fengyu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/fengyu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:渲染
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -387,24 +409,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/fengyu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:渲染
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/fengyu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

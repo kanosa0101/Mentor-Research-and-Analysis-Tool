@@ -425,7 +425,18 @@ homepage: https://mivenhan.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/赵涵.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
 provenance:
   name:
     origin: crawled
@@ -467,14 +478,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaohan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算

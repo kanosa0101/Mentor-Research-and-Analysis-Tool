@@ -4,9 +4,9 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 研究员
+title: 长聘副教授
 email: xiaozhen@pku.edu.cn
-phone: 86-10-6276 5815-8001
+phone: 86-10-62765815-8001
 bio_raw: '个人主页：http://zhenxiao.com/
 
   Education
@@ -33,7 +33,13 @@ research_direction_raw: 区块链、分布式系统
 detail_url: https://cs.pku.edu.cn/info/1084/1711.htm
 profile_url: https://cs.pku.edu.cn/info/1084/1711.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -42,17 +48,17 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1084/1711.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1084/1711.htm
     fetched_at: '2026-09-03'
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1084/1711.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -75,9 +81,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1084/1711.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式

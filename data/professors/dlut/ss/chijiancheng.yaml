@@ -7,7 +7,9 @@ status: enriched
 title: 助理教授
 supervisor: 硕导
 subjects: 软件工程
-office_address: c4c198122898
+email: chijiancheng@dlut.edu.cn
+phone: c4c198122898
+office_address: 大连理工大学开发区校区综合楼317
 bio_raw: '池建成，博士，
 
   大连理工大学软件学院、国际信息与软件学院助理教授，硕士生导师，大连市高层次人才。国际电气电子工程师协会（
@@ -239,7 +241,7 @@ institutes:
 detail_url: http://faculty.dlut.edu.cn/chijiancheng/zh_CN/index.htm
 profile_url: http://faculty.dlut.edu.cn/chijiancheng/zh_CN/index.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -283,6 +285,16 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/chijiancheng/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/chijiancheng/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/chijiancheng/zh_CN/index.htm
     fetched_at: '2026-09-05'

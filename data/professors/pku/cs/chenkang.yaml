@@ -153,7 +153,18 @@ research_direction_raw: 系统软件
 detail_url: https://cs.pku.edu.cn/info/1062/6300.htm
 profile_url: https://cs.pku.edu.cn/info/1062/6300.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -195,14 +206,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/6300.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身

@@ -1,6 +1,7 @@
 slug: wuenhua
 name: 吴恩华
-aliases: []
+aliases:
+- dsxx
 school: ucas
 dept: iscas
 status: enriched
@@ -12,7 +13,18 @@ research_direction_raw: 计算机图形学与虚拟现实，图像视频处理�
 detail_url: https://is.cas.cn/yjsjy/dsxx/
 profile_url: https://is.cas.cn/yjsjy/dsxx/
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -39,14 +51,3 @@ provenance:
     source: https://is.cas.cn/yjsjy/dsxx/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学

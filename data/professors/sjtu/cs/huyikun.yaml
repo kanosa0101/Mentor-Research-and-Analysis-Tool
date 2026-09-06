@@ -44,7 +44,18 @@ homepage: https://yikunh.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/胡易坤.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huyikun.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huyikun.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -86,14 +97,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huyikun.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全

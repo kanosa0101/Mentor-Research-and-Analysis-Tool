@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lr@buaa.du.cn
 phone: 010-82338083
 bio_raw: '刘瑞，男，博士，教授，博士生导师，现在北航软件开发环境国家重点实验室工作，担任国家科技资源共享服务工程技术研究中心总工，主要从事数据库、大数据管理及数据挖掘、自然语言处理、科技资源共享等方面的研究。此外，先后担任互联网标准化组织W3C顾问委员会代表、中国高等教育协会实验室分会特聘委员、中国分析测试协会高校分会特聘专家，中国林业科学研究院大型仪器设备开放共享管理委员会委员等。2008～2009曾在美国匹兹堡大学做访问研究。
@@ -38,7 +39,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/8383.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8383.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -77,6 +78,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8383.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8383.htm
     fetched_at: '2026-09-05'

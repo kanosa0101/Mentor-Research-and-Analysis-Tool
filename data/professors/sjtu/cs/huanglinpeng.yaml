@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 特聘教授
+supervisor: 博导
 email: lphuang@sjtu.edu.cn
 phone: 021-342043
 office_address: 东川路800号上海交通大学电院群楼3-433
@@ -96,7 +97,28 @@ homepage: www.hlpsjtu.cn
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250906/20250906115315.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinpeng.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinpeng.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -143,24 +165,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinpeng.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinpeng.html
+    fetched_at: '2026-09-02'
+    confidence: auto

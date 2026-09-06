@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: swma@pku.edu.cn
+phone: 86-10-627561
 bio_raw: '个人主页：https://idm.pku.edu.cn/info/1017/1035.htm
 
   教育背景
@@ -97,7 +98,8 @@ research_direction_raw: 视频处理与编码
 detail_url: https://cs.pku.edu.cn/info/1072/1695.htm
 profile_url: https://cs.pku.edu.cn/info/1072/1695.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets: []
 provenance:
   name:
     origin: crawled
@@ -106,7 +108,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1072/1695.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -134,4 +136,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1072/1695.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets: []
+  phone:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1072/1695.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

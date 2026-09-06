@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: zhangjindong_100@163.com
 phone: '13514319858'
 bio_raw: '姓名：张晋东
@@ -1175,6 +1176,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1028/19303.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/19303.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xuan_liu@hnu.edu.cn
 bio_raw: 。主持国自科等国家和省部级项目11项。中国计算机学会普适计算专委会常委委员。IEEE/ACMTrans等多个国际期刊和会议审稿人、以及多个国内外学术会议相关程序委员和组织委员会委员。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 具身智能，智能感知
 detail_url: http://csee.hnu.edu.cn/people/liuxuan
 profile_url: http://csee.hnu.edu.cn/people/liuxuan
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.robotics
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/liuxuan
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/liuxuan
     fetched_at: '2026-09-05'

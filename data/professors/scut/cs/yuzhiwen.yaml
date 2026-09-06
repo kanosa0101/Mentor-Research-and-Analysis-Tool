@@ -6,6 +6,7 @@ school: scut
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: zhwyu@scut.edu.cn
 bio_raw: 'Zhiwen Yu
 
@@ -698,7 +699,7 @@ institutes: []
 detail_url: https://www2.scut.edu.cn/cs/2017/0129/c22284a327666/page.htm
 profile_url: https://www2.scut.edu.cn/cs/2017/0129/c22284a327666/page.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -719,5 +720,10 @@ provenance:
   title:
     origin: crawled
     source: https://www2.scut.edu.cn/cs/22284/list.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://www2.scut.edu.cn/cs/2017/0129/c22284a327666/page.htm
     fetched_at: '2026-09-05'
     confidence: auto

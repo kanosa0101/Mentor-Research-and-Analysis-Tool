@@ -64,7 +64,18 @@ research_direction_raw: 并行计算、性能工具
 detail_url: https://www.cs.tsinghua.edu.cn/info/1114/6843.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1114/6843.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -96,14 +107,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1114/6843.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

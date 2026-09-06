@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: '肖桐，博士，教授，博士生导师，东北大学计算机学院人工智能系主任，东北大学自然语言处理实验室主任。
 
   2012
@@ -114,6 +115,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157478/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157478/page.htm
     fetched_at: '2026-09-04'

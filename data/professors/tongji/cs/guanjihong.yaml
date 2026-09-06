@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 长聘教授
+supervisor: 博导
 email: jhguan@tongji.edu.cn
 phone: '65982954'
 bio_raw: '姓　　名
@@ -117,6 +118,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2814.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2814.htm
     fetched_at: '2026-09-03'

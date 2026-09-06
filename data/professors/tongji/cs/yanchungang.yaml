@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导、硕导
 email: cgyan2@163.com
 phone: 021-69589867
 bio_raw: '姓　　名
@@ -137,6 +138,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2794.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2794.htm
     fetched_at: '2026-09-03'

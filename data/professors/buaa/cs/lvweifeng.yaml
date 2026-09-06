@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lwf@nlsde.buaa.edu.cn
 bio_raw: '吕卫锋，教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，虚拟现实技术与系统国家实验室主任。主要从事大数据挖掘理论与智慧城市应用方面研究工作，目前是中国软件行业协会秘书长、副理事长，中国航空教育学会副理事长，中国高等教育学会工程专业学位委员会副理事长，入选国家高层次青年人才计划。
 
@@ -17,7 +18,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2658.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2658.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2658.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2658.htm
     fetched_at: '2026-09-05'

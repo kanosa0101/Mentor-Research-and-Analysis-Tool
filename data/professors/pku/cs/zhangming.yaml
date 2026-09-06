@@ -5,6 +5,7 @@ school: pku
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: mzhang_cs@pku.edu.cn
 phone: 86-10-6276 5822
 bio_raw: '个人主页：https://pkudlib.github.io/
@@ -368,48 +369,7 @@ research_direction_raw: 文本挖掘、知识图谱、图神经网络、计算�
 detail_url: https://cs.pku.edu.cn/info/1086/1730.htm
 profile_url: https://cs.pku.edu.cn/info/1086/1730.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
-provenance:
-  name:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  phone:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  research_direction_raw:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  homepage:
-    origin: crawled
-    source: https://cs.pku.edu.cn/info/1086/1730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://cs.pku.edu.cn/info/1086/1730.htm
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -436,3 +396,49 @@ facets:
   confidence: auto
   evidence:
   - keyword:药物
+provenance:
+  name:
+    origin: crawled
+    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1086/1730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1086/1730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1086/1730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1086/1730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1086/1730.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

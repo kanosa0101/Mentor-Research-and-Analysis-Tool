@@ -77,7 +77,13 @@ research_direction_raw: 数据科学系统、数据库系统、Data+AI
 detail_url: https://www.cs.tsinghua.edu.cn/info/1112/6905.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1112/6905.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -109,9 +115,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1112/6905.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

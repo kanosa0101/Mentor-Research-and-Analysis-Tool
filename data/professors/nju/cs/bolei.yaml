@@ -17,10 +17,11 @@ bio_raw: '个人主页：
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/bulei
 detail_url: https://cs.nju.edu.cn/c9/6f/c2639a51567/page.htm
 profile_url: https://cs.nju.edu.cn/c9/6f/c2639a51567/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -44,6 +45,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/6f/c2639a51567/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/6f/c2639a51567/page.htm
     fetched_at: '2026-09-03'

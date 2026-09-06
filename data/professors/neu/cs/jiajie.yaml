@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jiajie@mail.neu.edu.cn
 bio_raw: '贾杰，教授，博士生导师，中国物联网专委会委员，中国通信学会高级会员，中国计算机学会会员，第十届辽宁省青年科技奖获得者，辽宁省“兴辽英才计划”青年拔尖人才。主要研究方向包括
 
@@ -80,6 +81,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0805/c6641a157503/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0805/c6641a157503/page.htm
     fetched_at: '2026-09-04'

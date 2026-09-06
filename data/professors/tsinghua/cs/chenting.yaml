@@ -208,7 +208,28 @@ institutes:
 detail_url: https://www.cs.tsinghua.edu.cn/info/1121/3560.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1121/3560.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组
 provenance:
   name:
     origin: crawled
@@ -240,24 +261,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/3560.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:基因组

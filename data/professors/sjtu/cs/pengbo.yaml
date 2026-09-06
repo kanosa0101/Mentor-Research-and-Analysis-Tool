@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理研究员
+supervisor: 博导
 email: pengbo_michael@sjtu.edu.cn
 office_address: 闵行校区软件大楼1411
 bio_raw: '个人简介
@@ -196,7 +197,18 @@ homepage: https://tcloud.sjtu.edu.cn/people/pengbo/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250617/20250617180256.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/pengbo.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/pengbo.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
 provenance:
   name:
     origin: crawled
@@ -238,14 +250,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pengbo.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:存储系统
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/pengbo.html
+    fetched_at: '2026-09-02'
+    confidence: auto

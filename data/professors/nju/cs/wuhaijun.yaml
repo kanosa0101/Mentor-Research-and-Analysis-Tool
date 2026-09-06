@@ -1,6 +1,7 @@
 slug: wuhaijun
 name: 吴海军
-aliases: []
+aliases:
+- ec
 school: nju
 dept: cs
 status: enriched
@@ -22,10 +23,11 @@ bio_raw: '2000年1月硕士毕业于南京大学计算机系，1992年7月学士
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/wuhaijun
 detail_url: https://cs.nju.edu.cn/c9/ec/c2642a51692/page.htm
 profile_url: https://cs.nju.edu.cn/c9/ec/c2642a51692/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -49,6 +51,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/ec/c2642a51692/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/ec/c2642a51692/page.htm
     fetched_at: '2026-09-03'

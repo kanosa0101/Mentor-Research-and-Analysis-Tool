@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: lichengzhang@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -86,7 +87,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260625/20260625195410.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lichengzhang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lichengzhang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:5G
 provenance:
   name:
     origin: crawled
@@ -118,9 +125,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lichengzhang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:5G
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/lichengzhang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

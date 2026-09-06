@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 supervisor: 硕导
+email: 1989@163.com
 bio_raw: '刘英帆，河南新郑人。分别于2011年和2014年在西安电子科技大学获得学士和硕士学位，于2019年在香港中文大学系统工程与工程管理系获得博士学位。2019年入职西安电子科技大学计算机科学与技术学院。于2023年8月-2024年1月在香港中文大学访问。是CCF会员、CCF数据库专委会执行委员。
 
   本人主要研究方向为向量数据库及其优化、高性能计算。在数据库和数据挖掘顶会SIGMOD、VLDB、ICDE、KDD、WWW和顶刊TODS等发表论文20多篇。'
@@ -13,7 +14,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/liuyingfan/
 profile_url: https://web.xidian.edu.cn/liuyingfan/
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/liuyingfan/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/liuyingfan/
     fetched_at: '2026-09-04'

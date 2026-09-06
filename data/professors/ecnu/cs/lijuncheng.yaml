@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: jcli@cs.ecnu.edu.cn
 phone: 021-62233580
 bio_raw: '李俊诚，副教授，博导，上海市青年科技英才“扬帆计划”获得者，入选斯坦福大学发布的【全球前2%顶尖科学家】榜单，获中国产学研合作创新成果一等奖。博士毕业于华东师范大学，师从张桂戌教授，曾担任香港中文大学博后研究员，合作导师为曾铁勇教授。主持包括国自然青年基金、上海自然面上项目、上海启明星项目（扬帆专项）、上海高校青年教师重点资助项目及多个重点实验室开放课题。长期从事复杂场景下的视觉增强与感知和医学影像智能处理等研究，取得了一系列原创性成果，在国际知名期刊和会议（如：ACM
@@ -161,7 +162,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/ljc2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/ljc2/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -195,6 +196,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/ljc2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/ljc2/main.psp
     fetched_at: '2026-09-05'

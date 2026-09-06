@@ -133,7 +133,23 @@ research_direction_raw: 知识图谱构建及应用，大语言模型
 detail_url: https://www.cs.tsinghua.edu.cn/info/1112/7030.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1112/7030.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -165,19 +181,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1112/7030.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱

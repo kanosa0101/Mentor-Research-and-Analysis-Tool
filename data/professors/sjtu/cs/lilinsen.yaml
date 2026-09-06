@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: lsli@sjtu.edu.cn
 office_address: 软件大楼5203室
 bio_raw: '个人简介
@@ -171,7 +172,28 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/李林森.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lilinsen.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lilinsen.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -208,24 +230,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lilinsen.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/lilinsen.html
+    fetched_at: '2026-09-02'
+    confidence: auto

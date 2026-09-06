@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yxtong@buaa.edu.cn
 phone: 010-82338152
 bio_raw: '童咏昕，北京航空航天大学教授，博士生导师，国家级领军人才。2014年于香港科技大学获计算机科学与工程学博士学位，随后留校担任研究助理教授，2015年加入北京航空航天大学软件开发环境国家重点实验室工作。
@@ -30,7 +31,7 @@ homepage: https://yongxintong.github.io
 detail_url: http://scse.buaa.edu.cn/info/1078/8726.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8726.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -84,6 +85,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8726.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8726.htm
     fetched_at: '2026-09-05'

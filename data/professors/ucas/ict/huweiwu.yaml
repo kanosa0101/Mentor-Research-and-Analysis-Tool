@@ -6,6 +6,7 @@ dept: ict
 status: enriched
 title: 研究员
 supervisor: 博导
+email: hww@ict.ac.cn
 bio_raw: '1986.9-1991.7，中国科学技术大学,计算机科学技术系，大学本科
 
   1991.9-1996.3，中国科学院研究生院，计算机系统结构，博士
@@ -21,7 +22,13 @@ research_direction_raw: 计算机系统结构
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496637.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496637.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
 provenance:
   name:
     origin: crawled
@@ -53,9 +60,8 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496637.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
+  email:
+    origin: crawled
+    source: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496637.html
+    fetched_at: '2026-09-02'
+    confidence: auto

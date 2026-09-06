@@ -34,7 +34,28 @@ research_direction_raw: 计算机应用技术
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201803/t20180307_4970727.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201803/t20180307_4970727.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -71,24 +92,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201803/t20180307_4970727.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱

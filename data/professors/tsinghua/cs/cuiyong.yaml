@@ -5,6 +5,7 @@ school: tsinghua
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: cuiyong@tsinghua.edu.cn
 phone: '62603059'
 bio_raw: "姓名：崔勇\n职称：教授\n电话：62603059\n邮箱：cuiyong@tsinghua.edu.cn\n主页：\nhttp://www.cuiyong.net\n\
@@ -174,7 +175,28 @@ research_direction_raw: 互联网体系结构与网络安全、大模型的网�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1126/3589.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1126/3589.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术
 provenance:
   name:
     origin: crawled
@@ -211,24 +233,8 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1126/3589.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络技术
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1126/3589.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

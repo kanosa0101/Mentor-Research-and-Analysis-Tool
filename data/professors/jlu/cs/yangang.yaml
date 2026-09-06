@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: gyan8@jlu.edu.cn
 bio_raw: '个人简介：
 
@@ -266,6 +267,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1398/20677.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1398/20677.htm
     fetched_at: '2026-09-04'

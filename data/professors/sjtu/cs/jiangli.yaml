@@ -2079,7 +2079,13 @@ homepage: https://jianglisjtu.github.io/index.html
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250616/20250616131817.jpeg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jiangli.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jiangli.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
 provenance:
   name:
     origin: crawled
@@ -2116,9 +2122,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/jiangli.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构

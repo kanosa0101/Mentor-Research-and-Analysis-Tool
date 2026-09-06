@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 特聘研究员
+supervisor: 博导
 email: zhangbaida@gmail.com
 bio_raw: 张百达，1984年生，汉族，中共党员，现为湖南大学研究员，博士生导师，长期从事强化学习方面的研究与教学，多次参加银河/天河超级计算机系统的攻关研制工作，取得了一系列重要的技术成果，获军队科技进步三等奖一次，获慈云桂科技奖金一次，荣立三等功一次。主持多项国家级项目的研制，发表论文二十余篇，授权专利五项。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 强化学习、机器人
 detail_url: http://csee.hnu.edu.cn/people/zhangbaida
 profile_url: http://csee.hnu.edu.cn/people/zhangbaida
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zhangbaida
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/zhangbaida
     fetched_at: '2026-09-05'

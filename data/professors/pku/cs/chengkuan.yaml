@@ -20,7 +20,18 @@ research_direction_raw: 计算模型与复杂性，伪随机与编码，机器�
 detail_url: https://cs.pku.edu.cn/info/1062/1614.htm
 profile_url: https://cs.pku.edu.cn/info/1062/1614.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -57,14 +68,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/1614.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

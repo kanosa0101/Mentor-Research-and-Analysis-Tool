@@ -24,7 +24,18 @@ research_direction_raw: 人工智能、计算社会科学、大数据管理
 detail_url: https://cs.pku.edu.cn/info/1062/1612.htm
 profile_url: https://cs.pku.edu.cn/info/1062/1612.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -66,14 +77,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/1612.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

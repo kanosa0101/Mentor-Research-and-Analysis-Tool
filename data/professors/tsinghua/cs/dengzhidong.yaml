@@ -170,7 +170,38 @@ research_direction_raw: 人工智能（深度神经网络、深度强化学习�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1121/3558.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1121/3558.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -207,34 +238,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/3558.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:虚拟现实
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

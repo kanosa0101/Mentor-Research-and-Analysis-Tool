@@ -5,6 +5,7 @@ school: scu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: puyifei@scu.edu.cn
 bio_raw: '蒲亦非：博士（毕业于四川大学）、双博士后（出站于电子科技大学、法国科学院）、四川大学计算机学院（软件学院）教授、博士生导师、四川省科技创新创业领军人才、第十一批四川省学术和技术带头人后备人选、成都市高层次创新创业人才、四川省青年科技创新研究团队骨干成员。国家科技专家库在库专家、教育部学位与研究生教育第四轮学科评估专家、教育部研究生学位论文评议专家、四川省特聘专家、成都市特聘专家。
 
@@ -62,6 +63,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/puyifei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.scu.edu.cn/puyifei/zh_CN/index.htm
     fetched_at: '2026-09-04'

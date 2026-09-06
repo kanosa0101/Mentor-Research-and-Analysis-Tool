@@ -119,7 +119,18 @@ research_direction_raw: 人机交互、普适计算、个人简介、王运涛�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1117/5273.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1117/5273.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -151,14 +162,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1117/5273.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:虚拟现实
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

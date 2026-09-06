@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: li.g@sjtu.edu.cn
 phone: 021-34204167
 office_address: 上海市闵行区东川路800号上海交通大学软件大楼1212
@@ -365,7 +366,28 @@ homepage: https://basics.sjtu.edu.cn/~liguoqiang
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/李国强.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -412,24 +434,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:边缘计算
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

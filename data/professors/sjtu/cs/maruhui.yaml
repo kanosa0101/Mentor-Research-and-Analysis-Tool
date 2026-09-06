@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: ruhuima@sjtu.edu.cn
 office_address: 电院3号楼229室
 bio_raw: '个人简介
@@ -144,7 +145,43 @@ homepage: https://aisig.sjtu.edu.cn/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/马汝辉.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:联邦学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -186,39 +223,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:联邦学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:边缘计算
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/maruhui.html
+    fetched_at: '2026-09-02'
+    confidence: auto

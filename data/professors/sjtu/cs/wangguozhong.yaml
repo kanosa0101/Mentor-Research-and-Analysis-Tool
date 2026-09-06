@@ -60,7 +60,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251129/20251129162733.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangguozhong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangguozhong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -92,9 +98,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangguozhong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

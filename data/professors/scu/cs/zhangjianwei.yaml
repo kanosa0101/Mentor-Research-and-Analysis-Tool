@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+supervisor: 博导
 institutes: []
 photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1NpGALmzZAAI_FYASC3M864.png
 detail_url: https://faculty.scu.edu.cn/zhangjianwei/zh_CN/index.htm
@@ -20,5 +21,10 @@ provenance:
   photo_url:
     origin: crawled
     source: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangjianwei/zh_CN/index.htm
     fetched_at: '2026-09-04'
     confidence: auto

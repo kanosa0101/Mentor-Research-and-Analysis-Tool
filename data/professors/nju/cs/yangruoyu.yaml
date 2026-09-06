@@ -5,6 +5,7 @@ school: nju
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: yangry@nju.edu.cn
 phone: '89680929'
 bio_raw: '杨若瑜，女，1977年生，安徽滁州人，副教授、硕士生导师。1997年毕业于南京大学计算机科学与技术系，获学士学位。2002年毕业于南京大学计算机科学与技术系，获工学博士学位并留校任教。2004年底被聘为副教授、硕士生导师至今。主要研究方向为图形识别、计算机视觉及三维建模和仿真。主持和参与多个研究或应用型项目。先后在《Automation
@@ -24,10 +25,11 @@ bio_raw: '杨若瑜，女，1977年生，安徽滁州人，副教授、硕士生
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/yangry
 detail_url: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
 profile_url: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -47,7 +49,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -61,6 +63,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/65/c2640a51557/page.htm
     fetched_at: '2026-09-03'

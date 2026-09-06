@@ -1,6 +1,7 @@
 slug: zhannaijun
 name: 詹乃军
-aliases: []
+aliases:
+- dsxx
 school: ucas
 dept: iscas
 status: enriched
@@ -12,7 +13,13 @@ research_direction_raw: 嵌入式系统、程序验证、形式化方法
 detail_url: https://is.cas.cn/yjsjy/dsxx/
 profile_url: https://is.cas.cn/yjsjy/dsxx/
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -39,9 +46,3 @@ provenance:
     source: https://is.cas.cn/yjsjy/dsxx/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

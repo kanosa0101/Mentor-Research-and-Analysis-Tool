@@ -150,7 +150,23 @@ research_direction_raw: 人工智能，机器学习理论与方法，包括深�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1121/5620.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1121/5620.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -182,19 +198,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/5620.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 email: ttjiang@pku.edu.cn
-phone: 86-10-62753424
+phone: 86-
 bio_raw: '个人主页：http://scholar.pku.edu.cn/ttjiang
 
   教育工作背景
@@ -34,7 +34,13 @@ research_direction_raw: 计算机视觉、图像视频处理
 detail_url: https://cs.pku.edu.cn/info/1069/1634.htm
 profile_url: https://cs.pku.edu.cn/info/1069/1634.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -43,7 +49,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1069/1634.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -53,7 +59,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1069/1634.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -76,9 +82,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1069/1634.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉

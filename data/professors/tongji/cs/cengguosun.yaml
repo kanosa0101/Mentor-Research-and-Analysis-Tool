@@ -5,8 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导、硕导
 email: gszeng@tongji.edu.cn
-phone: 通讯地址上海市曹安公路4800号智信馆517室曾国荪，本科、硕士、博士均毕业于上海交通大学。现为同济大学计算机科学与技术系教授，“计算机软件与理论”专业博士生导师。是国家重点研发计划项目首席科学家，上海市优秀学科带头人，国家科技奖励评审专家，国家自然科...
 bio_raw: '姓　　名
 
   曾国荪
@@ -75,12 +75,12 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2802.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  phone:
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2802.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  email:
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2802.htm
     fetched_at: '2026-09-03'

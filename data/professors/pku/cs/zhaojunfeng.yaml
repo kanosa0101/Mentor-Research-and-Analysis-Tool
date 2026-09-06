@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 研究员
+title: 副教授
 email: zhaojf@pku.edu.cn
 phone: 86-10-6275 1794-15
 bio_raw: '主要研究方向
@@ -192,7 +192,23 @@ research_direction_raw: 大数据分析、大语言模型、知识工程、数�
 detail_url: https://cs.pku.edu.cn/info/1086/3087.htm
 profile_url: https://cs.pku.edu.cn/info/1086/3087.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -201,7 +217,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/3087.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -229,19 +245,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1086/3087.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

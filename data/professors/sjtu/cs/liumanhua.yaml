@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: mhliu@sjtu.edu.cn
 phone: 021-34208489
 office_address: 东川路800号上海交通大学软件大楼5楼
@@ -311,7 +312,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/刘满华.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liumanhua.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liumanhua.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -353,14 +365,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liumanhua.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liumanhua.html
+    fetched_at: '2026-09-02'
+    confidence: auto

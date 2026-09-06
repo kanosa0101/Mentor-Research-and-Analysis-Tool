@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: fmfang@cs.ecnu.edu.cn
 phone: +86-021-62233560
 bio_raw: '方发明，博士，华东师范大学计算机科学与技术学院视觉与机器智能研究所副所长、教授、博士生导师，上海市“
@@ -230,7 +231,7 @@ institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247673
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247673
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -267,4 +268,9 @@ provenance:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247673
+    fetched_at: '2026-09-04'
     confidence: auto

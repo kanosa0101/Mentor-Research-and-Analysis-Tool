@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: xfhelen@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -293,7 +294,23 @@ homepage: https://xfhelen.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/侯小凤.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/houxiaofeng.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/houxiaofeng.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -330,19 +347,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/houxiaofeng.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/houxiaofeng.html
+    fetched_at: '2026-09-02'
+    confidence: auto

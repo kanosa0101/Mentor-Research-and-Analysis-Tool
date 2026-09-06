@@ -190,7 +190,13 @@ research_direction_raw: 媒体计算、多媒体SoC芯片设计、视频大数�
 detail_url: https://cs.pku.edu.cn/info/1069/1632.htm
 profile_url: https://cs.pku.edu.cn/info/1069/1632.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -199,7 +205,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1069/1632.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -227,9 +233,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1069/1632.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

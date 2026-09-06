@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hzhao@hnu.edu.cn0731-88821563
 bio_raw: 牵头的教学成果获2022年国家级教学成果二等奖，国家级一流本科专业、国家级一流本科课程、国家精品课程和国家级精品资源共享课负责人，主编出版国家级规划教材8本。带领团队长期致力于学生计算机系统能力培养教育教学改革，所牵头的“鲲鹏计算机系统能力培养课程群虚拟教研室”获评教育部首批虚拟教研室建设试点，并成为全国50个典型虚拟教研室之一。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 多模态信息处理、自然语言处理、情感计�
 detail_url: http://csee.hnu.edu.cn/people/zhaohuan
 profile_url: http://csee.hnu.edu.cn/people/zhaohuan
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -51,6 +52,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zhaohuan
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/zhaohuan
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: bjiang@deit.ecnu.edu.cn
 bio_raw: '江波，华东师范大学上海智能教育研究院
 
@@ -150,7 +151,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s8/jb2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s8/jb2/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -189,6 +190,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s8/jb2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s8/jb2/main.psp
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: qy@buaa.edu.cn
 phone: 010-82339001
 bio_raw: '齐越，博士，教授，博士生导师。虚拟现实/增强现实技术及应用国家工程实验室（北航）副主任，虚拟现实技术与系统全国重点实验室研究员。美国哈佛大学高级访问学者。主要从事虚拟现实/增强现实、计算机图形学、计算机视觉、人工智能等方面研究。近些年主持了国家自然科学基金、国家重点研发计划、国家863计划、国家科技支撑计划等科研项目。研究成果发表在《ACM
@@ -19,7 +20,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2661.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2661.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -53,6 +54,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2661.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2661.htm
     fetched_at: '2026-09-05'

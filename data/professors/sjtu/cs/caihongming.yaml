@@ -137,7 +137,18 @@ homepage: https://ist.sjtu.edu.cn/memberscaihm
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/蔡鸿明.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/caihongming.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/caihongming.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:边缘计算
 provenance:
   name:
     origin: crawled
@@ -174,14 +185,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/caihongming.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:边缘计算

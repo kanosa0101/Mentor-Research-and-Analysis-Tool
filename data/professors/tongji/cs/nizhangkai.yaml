@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: zkni@tongji.edu.cn
 bio_raw: '倪张凯，博士，同济大学计算机科学与技术学院副教授、博士生导师、院务助理，入选上海市领军人才（海外）青年人才、上海市浦江人才计划。
 
@@ -167,6 +168,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/3606.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1063/3606.htm
     fetched_at: '2026-09-03'

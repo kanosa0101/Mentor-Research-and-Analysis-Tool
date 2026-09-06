@@ -33,7 +33,18 @@ photo_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/P020231108565266340339.jp
 detail_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6930268.html
 profile_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6930268.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -65,14 +76,3 @@ provenance:
     source: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6930268.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

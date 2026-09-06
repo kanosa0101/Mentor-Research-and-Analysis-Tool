@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 副教授
+title: 助理教授
 email: zongqing.lu@pku.edu.cn
 bio_raw: '卢宗青
 
@@ -22,7 +22,23 @@ research_direction_raw: 强化学习、多模态大模型、通用智能体
 detail_url: https://cs.pku.edu.cn/info/1071/1694.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1694.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
 provenance:
   name:
     origin: crawled
@@ -59,19 +75,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1694.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习

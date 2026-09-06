@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: t.huang@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -174,7 +175,28 @@ homepage: https://taohuang.info
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613213923.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huangtao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huangtao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -211,24 +233,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huangtao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huangtao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

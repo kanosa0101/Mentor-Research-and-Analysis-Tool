@@ -340,7 +340,13 @@ homepage: https://lanqing-sjtu.github.io/academic/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613121245.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yanglanqing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yanglanqing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -382,9 +388,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yanglanqing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

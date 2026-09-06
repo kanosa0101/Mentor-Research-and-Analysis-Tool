@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: zhengtao.zhang@ia.ac.cn
 bio_raw: '张正涛
 
@@ -150,7 +151,28 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424596416715019.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130951.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130951.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -182,24 +204,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130951.html
+    fetched_at: '2026-09-02'
+    confidence: auto

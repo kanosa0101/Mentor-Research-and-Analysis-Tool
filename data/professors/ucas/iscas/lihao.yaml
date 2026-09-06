@@ -217,7 +217,18 @@ research_direction_raw: 083900-网络空间安全、人工智能安全与隐私�
 detail_url: https://people.ucas.ac.cn/~lihao
 profile_url: https://people.ucas.ac.cn/~lihao
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -249,14 +260,3 @@ provenance:
     source: https://people.ucas.ac.cn/~lihao
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

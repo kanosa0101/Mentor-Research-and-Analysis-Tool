@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导
 email: chenlj@nju.edu.cn
+phone: '18951991936'
 bio_raw: '一、现在职位：南京大学计算机科学与技术系、计算机软件新技术国家重点实验室（南京大学）教授、博士研究生导师，南京大学智能机器人研究院院长。
 
   二、研究方向：智能机器人。
@@ -120,7 +121,7 @@ institutes: []
 detail_url: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
 profile_url: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -150,7 +151,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
@@ -164,6 +165,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://cs.nju.edu.cn/58/16/c2639a153622/page.htm
     fetched_at: '2026-09-03'

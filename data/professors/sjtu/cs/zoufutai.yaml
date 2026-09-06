@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 高级工程师
+supervisor: 硕导
 email: zoufutai@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -123,7 +124,23 @@ homepage: https://netsec.sjtu.edu.cn
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/邹福泰.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zoufutai.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zoufutai.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
 provenance:
   name:
     origin: crawled
@@ -160,19 +177,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zoufutai.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zoufutai.html
+    fetched_at: '2026-09-02'
+    confidence: auto

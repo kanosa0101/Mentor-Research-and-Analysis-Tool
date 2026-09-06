@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: q.yin@sjtu.edu.cn
 office_address: 电院3号楼501
 bio_raw: '个人简介
@@ -80,7 +81,13 @@ homepage: https://basics.sjtu.edu.cn/~qyin
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/尹强.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yinqiang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yinqiang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -122,9 +129,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yinqiang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/yinqiang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

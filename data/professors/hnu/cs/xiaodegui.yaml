@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: dgxiao@hnu.edu.cn
 bio_raw: 1972年生，南县人。工学博士，湖南大学计算机学院教授、博士生导师。1994年武汉纺织工学院（现武汉纺织大学）工业自动化专业本科毕业，2003年华中科技大学计算机系统结构专业博士研究生毕业，毕业后即到湖南大学从事教学科研工作。2006年11月至2007年12月于美国休斯顿大学进行学术访问，从事石油勘探的大规模地震数据并行处理和可视化研究。目前主要围绕计算机视觉、智能网联汽车、物联网技术及应用等开展研究及产学研用合作。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 图像/视频处理、计算机视觉、智能驾驶、�
 detail_url: http://csee.hnu.edu.cn/people/xiaodegui
 profile_url: http://csee.hnu.edu.cn/people/xiaodegui
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/xiaodegui
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/xiaodegui
     fetched_at: '2026-09-05'

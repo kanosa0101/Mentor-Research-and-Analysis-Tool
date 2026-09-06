@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: yizhou.wang@pku.edu.cn
-phone: 86-10-6275 3457
+phone: 86-10-62753457
 bio_raw: '个人主页：
 
   https://cfcs.pku.edu.cn/wangyizhou/
@@ -38,7 +38,18 @@ research_direction_raw: 计算机视觉/人工智能、统计建模与计算、�
 detail_url: https://cs.pku.edu.cn/info/1083/1704.htm
 profile_url: https://cs.pku.edu.cn/info/1083/1704.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -47,7 +58,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1083/1704.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -57,7 +68,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1083/1704.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -80,14 +91,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1083/1704.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

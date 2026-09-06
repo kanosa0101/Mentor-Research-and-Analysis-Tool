@@ -19,10 +19,11 @@ bio_raw: '黄书剑，博士，南京大学计算机学院教授，博士生导�
 
   nju.edu.cn'
 institutes: []
+homepage: http://nlp.nju.edu.cn/huangsj
 detail_url: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
 profile_url: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -42,12 +43,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/d2/c2639a51666/page.htm
     fetched_at: '2026-09-03'

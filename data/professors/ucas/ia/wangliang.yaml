@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: wangliang@nlpr.ia.ac.cn
 bio_raw: "王亮\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nwangliang@nlpr.ia.ac.cn\n部门/实验室:\n\
   多模态人工智能系统全国重点实验室\n通讯地址:\n北京市海淀区中关村东路96号智能化大厦\n个人简历\n王亮，博士，研究员，博导，国际模式识别学会会士（IAPR\
@@ -247,7 +248,33 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424338835748200.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129880.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129880.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -279,29 +306,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129880.html
+    fetched_at: '2026-09-02'
+    confidence: auto

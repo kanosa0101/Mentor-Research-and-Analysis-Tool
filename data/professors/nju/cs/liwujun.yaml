@@ -298,10 +298,11 @@ bio_raw: '李武军
 
   http://cs.nju.edu.cn/lwj'
 institutes: []
+homepage: http://cs.nju.edu.cn/lwj/
 detail_url: https://cs.nju.edu.cn/c9/54/c2639a51540/page.htm
 profile_url: https://cs.nju.edu.cn/c9/54/c2639a51540/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -341,10 +342,15 @@ provenance:
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/54/c2639a51540/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/54/c2639a51540/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/54/c2639a51540/page.htm
     fetched_at: '2026-09-03'

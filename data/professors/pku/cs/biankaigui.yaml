@@ -39,7 +39,18 @@ research_direction_raw: 计算机网络
 detail_url: https://cs.pku.edu.cn/info/1061/1602.htm
 profile_url: https://cs.pku.edu.cn/info/1061/1602.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -81,14 +92,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1061/1602.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: hanyanni@iie.ac.cn
 office_address: 北京市海淀区上地街道树村路19号
 institutes: []
@@ -11,7 +12,7 @@ research_direction_raw: 数据智能分析、数据安全
 detail_url: https://people.ucas.ac.cn/~0037602
 profile_url: https://people.ucas.ac.cn/~0037602
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0037602
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~0037602
     fetched_at: '2026-09-05'

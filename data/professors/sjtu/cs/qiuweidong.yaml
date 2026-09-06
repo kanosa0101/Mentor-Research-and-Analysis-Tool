@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教授
+supervisor: 博导
 email: qiuwd@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -144,7 +145,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613154335.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/qiuweidong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/qiuweidong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:隐私
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -176,14 +188,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/qiuweidong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:隐私
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/qiuweidong.html
+    fetched_at: '2026-09-02'
+    confidence: auto

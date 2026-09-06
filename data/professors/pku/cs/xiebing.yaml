@@ -38,7 +38,13 @@ research_direction_raw: 软件工程、计算机科学理论、分布式系统
 detail_url: https://cs.pku.edu.cn/info/1084/1712.htm
 profile_url: https://cs.pku.edu.cn/info/1084/1712.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -47,7 +53,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1084/1712.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -57,7 +63,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1084/1712.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -75,9 +81,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1084/1712.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式

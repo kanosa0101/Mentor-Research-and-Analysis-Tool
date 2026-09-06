@@ -39,7 +39,13 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240425343415478086.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129823.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129823.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
 provenance:
   name:
     origin: crawled
@@ -71,9 +77,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型

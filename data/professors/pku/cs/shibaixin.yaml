@@ -5,6 +5,7 @@ school: pku
 dept: cs
 status: enriched
 title: 长聘副教授
+supervisor: 博导
 email: shiboxin@pku.edu.cn
 phone: 86-10-********
 bio_raw: '实验室主页：
@@ -40,7 +41,7 @@ research_direction_raw: 人工智能
 detail_url: https://cs.pku.edu.cn/info/1078/1674.htm
 profile_url: https://cs.pku.edu.cn/info/1078/1674.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -94,6 +95,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1078/1674.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.pku.edu.cn/info/1078/1674.htm
     fetched_at: '2026-09-03'

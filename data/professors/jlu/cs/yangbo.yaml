@@ -5,7 +5,8 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
-email: cjx@jlu.edu.cn
+supervisor: 博导
+email: ybo@jlu.edu.cn
 phone: 0431-85166892
 bio_raw: '杨博
 
@@ -1034,6 +1035,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19045.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1367/19045.htm
     fetched_at: '2026-09-04'

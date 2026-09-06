@@ -149,7 +149,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250617/20250617144609.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yuhan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yuhan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -181,9 +187,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yuhan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

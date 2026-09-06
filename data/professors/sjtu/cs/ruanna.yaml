@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: naruan@sjtu.edu.cn
 office_address: SEIEE 3-527
 bio_raw: '个人简介
@@ -459,7 +460,18 @@ homepage: https://www.cs.sjtu.edu.cn/~naruan/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613124425.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/ruanna.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/ruanna.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -501,14 +513,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/ruanna.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/ruanna.html
+    fetched_at: '2026-09-02'
+    confidence: auto

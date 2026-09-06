@@ -4,7 +4,8 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 研究员
+title: 副教授
+supervisor: 博导
 email: yangtong@pku.edu.cn
 phone: 86-10-6275 6342
 bio_raw: '个人主页：
@@ -43,7 +44,23 @@ research_direction_raw: 网络大数据关键技术、高速数据流处理算�
 detail_url: https://cs.pku.edu.cn/info/1085/1720.htm
 profile_url: https://cs.pku.edu.cn/info/1085/1720.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -52,7 +69,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1085/1720.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -85,19 +102,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1085/1720.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1085/1720.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

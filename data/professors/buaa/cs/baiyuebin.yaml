@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: byb@buaa.edu.cn
 phone: 010-82339020
 bio_raw: '白跃彬，男，博士，教授，博士生导师，毕业于西安交通大学计算机系，获计算机系统结构专业博士学位。
@@ -18,7 +19,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2662.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2662.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -57,6 +58,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2662.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2662.htm
     fetched_at: '2026-09-05'

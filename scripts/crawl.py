@@ -54,11 +54,27 @@ def phase_roster(cfg, hook, refresh):
     people, _ = hook.iter_roster(cfg)
     existing = store.load_all(school, dept)
     by_url = {(p.detail_url, p.name): p for p in existing.values()}
+    by_name = {p.name: p for p in existing.values()}
     used = set(existing)
     issues = store.load_issues(school, dept)
     created = updated = 0
+    # stable_urls: 名单 URL 会漂移的站点(zju xlsx 导师的"#姓名"锚点 vs 门户 API
+    # 富化后的 person 主页)按姓名回退匹配存量, 保留既有详情页 URL, 不重复入库
+    url_matched = set()
+    name_matched = set()
     for rec in people:
         prof = by_url.get((rec["url"], rec["name"]))
+        name_only = False
+        if prof is None and cfg.get("stable_urls"):
+            cand = by_name.get(rec["name"])
+            if cand is not None and cand.slug not in url_matched \
+                    and cand.slug not in name_matched:
+                prof = cand
+                name_only = True
+        if prof is not None:
+            url_matched.add(prof.slug)
+            if name_only:
+                name_matched.add(prof.slug)
         if prof is None:
             slug = make_slug(rec["name"], used)
             prov_name = Provenance(source=list_url(cfg), fetched_at=TODAY)
@@ -80,7 +96,8 @@ def phase_roster(cfg, hook, refresh):
         for al in rec.get("aliases", []):
             if al and al not in prof.aliases:
                 prof.aliases.append(al)
-        if rec.get("profile_url") and prof.profile_url != rec["profile_url"]:
+        if rec.get("profile_url") and prof.profile_url != rec["profile_url"] \
+                and not name_only:
             prof.profile_url = rec["profile_url"]
         list_prov = Provenance(source=list_url(cfg), fetched_at=TODAY)
         for key in ("title", "email", "phone", "supervisor", "subjects",
@@ -104,7 +121,7 @@ def phase_roster(cfg, hook, refresh):
     current_urls = {(r["url"], r["name"]) for r in people}
     current_slugs = set()
     for prof in existing.values():
-        if (prof.detail_url, prof.name) in current_urls:
+        if (prof.detail_url, prof.name) in current_urls or prof.slug in name_matched:
             current_slugs.add(prof.slug)
         else:
             store.upsert_issue(issues, "missing_in_list", prof.slug,
@@ -149,6 +166,13 @@ def phase_enrich(cfg, hook, refresh):
         rd = d.get("research_directions") or []
         if rd:
             _merge(prof, "research_direction_raw", "、".join(rd), prov, changes)
+        if not prof.supervisor and d.get("bio_raw"):
+            # 导师资格兜底: 简介自述"教授、博士生导师"(职称相邻紧模式, 见
+            # supervisor_util)。bio_raw 是简介正文, 站内导航栏目名不混入
+            from crawler.supervisor_util import extract_supervisor
+            sup = extract_supervisor(d["bio_raw"])
+            if sup:
+                _merge(prof, "supervisor", sup, prov, changes)
         for msg in d.get("unknown_fields") or []:
             store.upsert_issue(issues, "unknown_detail_field", prof.slug, msg)
         for i in issues:

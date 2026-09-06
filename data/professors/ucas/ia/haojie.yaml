@@ -162,7 +162,13 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429596541355686.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130998.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130998.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
 provenance:
   name:
     origin: crawled
@@ -194,9 +200,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130998.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:高性能计算

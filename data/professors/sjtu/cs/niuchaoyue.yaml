@@ -267,7 +267,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613105241.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -304,19 +320,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生成式
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习

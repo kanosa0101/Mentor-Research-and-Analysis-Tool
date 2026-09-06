@@ -120,7 +120,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251110/20251110195545.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jinyaohui.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jinyaohui.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -152,19 +168,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/jinyaohui.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

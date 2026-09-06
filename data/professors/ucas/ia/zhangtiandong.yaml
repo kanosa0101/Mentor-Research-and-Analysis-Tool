@@ -124,7 +124,18 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202603/W020260327639330947702.png
 detail_url: https://ia.cas.cn/rcdw/fyjy/202603/t20260327_8178539.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202603/t20260327_8178539.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -156,14 +167,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

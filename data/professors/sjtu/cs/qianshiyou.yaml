@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: qshiyou@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -234,7 +235,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/钱诗友.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/qianshiyou.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/qianshiyou.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -266,9 +273,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/qianshiyou.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/qianshiyou.html
+    fetched_at: '2026-09-02'
+    confidence: auto

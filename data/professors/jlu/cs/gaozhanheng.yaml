@@ -4,6 +4,7 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
+email: gzh@jlu.edu.cn
 bio_raw: '基本情况
 
   姓
@@ -231,6 +232,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1028/19179.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/19179.htm
     fetched_at: '2026-09-05'

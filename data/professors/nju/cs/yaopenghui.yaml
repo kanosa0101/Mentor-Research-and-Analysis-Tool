@@ -1,6 +1,7 @@
 slug: yaopenghui
 name: 姚鹏晖
-aliases: []
+aliases:
+- cd
 school: nju
 dept: cs
 status: enriched
@@ -225,10 +226,11 @@ bio_raw: '姚鹏晖，教授，博士生导师；
 
   电子邮件：pyao@nju.edu.cn'
 institutes: []
+homepage: http://penghuiyao.info
 detail_url: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
 profile_url: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -253,12 +255,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
@@ -267,6 +269,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/2f/cd/c2639a274381/page.htm
     fetched_at: '2026-09-03'

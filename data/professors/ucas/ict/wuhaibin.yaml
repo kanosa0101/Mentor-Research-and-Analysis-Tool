@@ -31,7 +31,13 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202603/W02026030238210632301
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202603/t20260302_8146715.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202603/t20260302_8146715.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled
@@ -58,9 +64,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202603/t20260302_8146715.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构

@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 特聘教授
+supervisor: 博导
 email: lzma@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -521,7 +522,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/马利庄.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/malizhuang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/malizhuang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -553,14 +565,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/malizhuang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/malizhuang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

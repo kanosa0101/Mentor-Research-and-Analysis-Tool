@@ -1,6 +1,7 @@
 slug: ningjingyi
 name: 宁静仪
-aliases: []
+aliases:
+- fa
 school: nju
 dept: cs
 status: enriched
@@ -12,10 +13,11 @@ bio_raw: '个人主页：
 
   电子邮件：ningjy@nju.edu.cn'
 institutes: []
+homepage: https://jingyinju.github.io
 detail_url: https://cs.nju.edu.cn/fa/2d/c2641a719405/page.htm
 profile_url: https://cs.nju.edu.cn/fa/2d/c2641a719405/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -34,6 +36,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/fa/2d/c2641a719405/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/fa/2d/c2641a719405/page.htm
     fetched_at: '2026-09-03'

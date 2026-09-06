@@ -80,7 +80,7 @@ def _meta_fields(soup, out):
     # 值和标签可能挤在一起且带空格("姓 名曾国荪职 称教授"), 去空白后按标签切
     mc = re.sub(r"[\s\u3000]+", "", md["content"])
     from crawler.email_util import normalize_email
-    labels = ["姓名", "性别", "职称", "最高学历", "最高学位", "学历", "学位",
+    labels = ["姓名", "性别", "职称", "最高学历", "最高学位", "学历", "学历学位", "学位",
               "联系电话", "电话", "E-mail", "Email", "电子邮件", "邮箱",
               "研究方向", "学科", "学科专业", "导师类型", "详细情况", "单位",
               "通讯地址", "办公地点", "个人主页", "电子邮箱"]
@@ -100,7 +100,12 @@ def _meta_fields(soup, out):
     def v(*names):
         for n in names:
             if vals.get(n):
-                return vals[n].strip()
+                val = vals[n].strip()
+                # CMS 摘要截断省略号("电话：86-10-62765825..."/"电话：...")会粘进值尾,
+                # 纯点值视为空; 尾部点串剥掉(北大 meta 暴露)
+                val = re.sub(r"[.．…·\s]+$", "", val)
+                if val and not re.fullmatch(r"[.．…·]+", val):
+                    return val
         return None
     if "title" not in out and v("职称"):
         out["title"] = v("职称")
@@ -162,7 +167,13 @@ def parse_wp_detail(cfg, html, url):
             if sup:
                 out.setdefault("supervisor", "、".join(sup))
         elif "话" in k:
-            out.setdefault("phone", v or nxt)
+            cand = v or nxt
+            # 值空时取下一行, 但必须形如电话(数字/连字符为主): tongji 信息表
+            # "联系电话：" 空值时下一行是"通讯地址…"地址行, 会把地址+简介整段
+            # 粘成电话(12 例)——含汉字一概拒收
+            if cand and re.match(r"^[+0-9\s\-－—*xX转()（）.]{5,}$", cand) \
+                    and re.search(r"\d{4}", cand):
+                out.setdefault("phone", cand)
         elif "主页" in k:
             src = v or nxt
             a = re.search(r"https?://[^\s，。；]+", src) \
@@ -232,4 +243,12 @@ def parse_wp_detail(cfg, html, url):
             sup = [s for s in ("博导", "硕导") if s in head]
             if sup:
                 out.setdefault("supervisor", "、".join(sup))
+    if "supervisor" not in out and box is not None:
+        # 导师资格兜底: tongji "导师类型 博／硕导" 结构化标签 + 职称相邻自述
+        # ("教授、博士生导师")。只在正文容器内找, 站内导航(ustc "兼职教授/博导"
+        # 栏目名)不进 box, 天然排除
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(box.get_text("\n", strip=True))
+        if sup:
+            out["supervisor"] = sup
     return out

@@ -55,7 +55,13 @@ research_direction_raw: 向量数据库技术和系统，时空大数据处理
 detail_url: https://www.cs.tsinghua.edu.cn/info/1113/6640.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1113/6640.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -87,9 +93,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1113/6640.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库

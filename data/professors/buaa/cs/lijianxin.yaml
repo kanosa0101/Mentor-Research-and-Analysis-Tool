@@ -5,7 +5,8 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
-email: inlijx@buaa.edu.cn
+supervisor: 博导
+email: lijx@buaa.edu.cn
 phone: 010-82339274
 bio_raw: '李建欣，博士，教授，博士生导师，大数据科学与脑机智能高精尖创新中心研究员。2001年和2008年分别在北京航空航天大学计算机学院获工学学士和博士学位，2008年英国卢瑟福.阿普尔顿国家实验室访问，2011年微软亚洲研究院访问研究员，2015-2016年间美国卡内基梅隆大学CMU机器学习系访问学者。现为IEEE和ACM会员，计算机学会（CCF）高级会员，中国人工智能学会青工委委员，CCF大数据专委会委员等。
 
@@ -30,7 +31,7 @@ homepage: http://act.buaa.edu.cn/lijx
 detail_url: http://scse.buaa.edu.cn/info/1078/2674.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2674.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -74,6 +75,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2674.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2674.htm
     fetched_at: '2026-09-05'

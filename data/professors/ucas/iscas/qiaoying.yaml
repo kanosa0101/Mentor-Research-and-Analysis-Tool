@@ -83,7 +83,13 @@ research_direction_raw: 081203-计算机应用技术、人机交互技术,实时
 detail_url: https://people.ucas.ac.cn/~yqiao
 profile_url: https://people.ucas.ac.cn/~yqiao
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -115,9 +121,3 @@ provenance:
     source: https://people.ucas.ac.cn/~yqiao
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

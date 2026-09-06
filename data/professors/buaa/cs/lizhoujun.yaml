@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lizj@buaa.edu.cn
 phone: 010-82338247
 bio_raw: 李舟军，男，1963年9月生，博士，教授，博士生导师。现任北京航空航天大学计算机学院信息安全系主任，智能信息处理研究所副所长、信息安全与智能信息处理研究室主任。现为国务院学位委员会网络空间安全学科评议组成员，中国网络空间安全协会常务理事，网络空间安全协会竞评演练工委会副主委，《信息安全学报》、《网络与信息安全学报》、《计算机科学》等期刊编委。IEEE、ACM、AAAI会员，中国计算机学会高级会员，数据库、计算机安全、理论计算机科学等专业委员会委员。曾任国际期刊《International
@@ -23,7 +24,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2643.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2643.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -77,6 +78,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2643.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2643.htm
     fetched_at: '2026-09-05'

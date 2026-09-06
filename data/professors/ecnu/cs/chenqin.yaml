@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: qchen@cs.ecnu.edu.cn
 bio_raw: '陈琴，华东师范大学计算机科学与技术学院教授、博士生导师，现任上海市计算机学会自然语言处理专委会秘书长、中国中文信息学会青年工作委员会委员。主要研究方向为自然语言处理，目前致力于大模型可信生成与安全对齐，以及大模型在教育、心理等垂直领域的技术研究和应用。作为项目主要负责人之一，带领团队研发了教育大模型EduChat和小花狮
 
@@ -60,7 +61,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/cq2_21262/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/cq2_21262/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -104,6 +105,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/cq2_21262/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/cq2_21262/main.psp
     fetched_at: '2026-09-05'

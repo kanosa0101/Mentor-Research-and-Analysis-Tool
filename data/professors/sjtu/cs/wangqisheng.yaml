@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: QishengWang@sjtu.edu.cn
 office_address: 电院3号楼315
 bio_raw: '个人简介
@@ -108,7 +109,13 @@ homepage: https://wangqs13.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260204/20260204004747.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangqisheng.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangqisheng.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -150,9 +157,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangqisheng.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangqisheng.html
+    fetched_at: '2026-09-02'
+    confidence: auto

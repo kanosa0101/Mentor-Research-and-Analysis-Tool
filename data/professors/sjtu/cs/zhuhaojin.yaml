@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 特聘教授
+supervisor: 博导
 email: zhu-hj@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -177,7 +178,18 @@ homepage: https://nsec.sjtu.edu.cn/~hjzhu/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/朱浩瑾.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhuhaojin.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhuhaojin.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -214,14 +226,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhuhaojin.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhuhaojin.html
+    fetched_at: '2026-09-02'
+    confidence: auto

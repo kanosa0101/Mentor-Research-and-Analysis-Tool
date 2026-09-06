@@ -105,7 +105,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429587084710342.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130967.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7130967.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -127,14 +138,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像

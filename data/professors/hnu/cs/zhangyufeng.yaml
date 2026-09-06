@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yufengzhang@hnu.edu.cn
 bio_raw: 现任湖南大学计算机学院教授，博士生导师，国家级高层次青年人才，岳麓学者，中国计算机学会形式化方法专委会委员。本硕博毕业于国防科技大学计算机学院。2020年加入湖南大学计算机学院。研究方向为高可信软件、程序分析与测试、人工智能。主持国家自然科学基金青年/面上项目、工信部某重大专项子课题、CCF-华为胡杨林基金等多项项目，参与多项973、863、核高基、科技部重点研发、国防预研等项目。在ICSE,ASE,FSE,ISSTA,ISSRE,IEEE-TSC,NeurIPS,TKDE等顶级国际会议及期刊上发表论文二十余篇。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 高可信软件、程序分析与测试、人工智能
 detail_url: http://csee.hnu.edu.cn/people/zhangyufeng
 profile_url: http://csee.hnu.edu.cn/people/zhangyufeng
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.theory
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/zhangyufeng
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/zhangyufeng
     fetched_at: '2026-09-05'

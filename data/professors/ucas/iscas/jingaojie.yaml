@@ -51,7 +51,13 @@ research_direction_raw: 081203-计算机应用技术、可信人工智能，机�
 detail_url: https://people.ucas.ac.cn/~sggjin
 profile_url: https://people.ucas.ac.cn/~sggjin
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -83,9 +89,3 @@ provenance:
     source: https://people.ucas.ac.cn/~sggjin
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: zhidong.cao@ia.ac.cn
 bio_raw: "曹志冬\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nzhidong.cao@ia.ac.cn\n部门/实验室:\n\
   多模态人工智能系统全国重点实验室\n通讯地址:\n北京市海淀区中关村东路95号\n个人简历\n曹志冬，理学博士，现任职于中国科学院自动化研究所多模态人工智能系统全国重点实验室，研究员，博士生导师。国家杰出青年科学基金获得者，科技创新2030——“新一代人工智能”重大项目负责人（首席科学家），荣获全国科技系统抗击新冠肺炎疫情先进个人，所领导团队荣获全国科技系统抗击新冠肺炎疫情先进集体，在多个国家一级学会的专委会和分会担任委员、分会理事与常务理事。主持和承担20多项国家级项目和课题，核心参与了国家科技重大专项、国家科技重点研发计划、基金委重大研究计划及国家中长期科学和技术发展规划(2021—2035)与新一代人工智能战略规划。在国内外权威期刊和国际会议上发表研究论文120余篇，出版著作3部，获省部级科技奖励10项，十多份研究报告得到两办采纳。\n\
@@ -70,7 +71,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240423500588610488.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129949.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129949.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -102,14 +114,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129949.html
+    fetched_at: '2026-09-02'
+    confidence: auto

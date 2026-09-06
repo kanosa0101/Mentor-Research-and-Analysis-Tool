@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: wuyue@sjtu.edu.cn
 phone: '02134205025'
 office_address: '#800, Dongchuan Road'
@@ -933,7 +934,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613145259.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuyue.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuyue.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -975,19 +992,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuyue.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuyue.html
+    fetched_at: '2026-09-02'
+    confidence: auto

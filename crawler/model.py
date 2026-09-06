@@ -50,3 +50,6 @@ class Issue(BaseModel):
     message: str
     first_seen: str
     resolved: bool = False
+    # 人工复验标记: True=确认属官网侧问题(死链/字段确缺/外链被墙), preflight 不再报
+    reviewed: Optional[bool] = None
+    review_note: Optional[str] = None

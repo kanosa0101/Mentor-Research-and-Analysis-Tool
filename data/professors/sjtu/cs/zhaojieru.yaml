@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: zhao-jieru@sjtu.edu.cn
 office_address: 电院3号楼529室
 bio_raw: '个人简介
@@ -106,7 +107,13 @@ homepage: https://zjru.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250614/20250614161706.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaojieru.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaojieru.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
 provenance:
   name:
     origin: crawled
@@ -148,9 +155,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaojieru.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaojieru.html
+    fetched_at: '2026-09-02'
+    confidence: auto

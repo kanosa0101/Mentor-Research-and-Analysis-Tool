@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 长聘副教授
+title: 副教授
 email: lisujian@pku.edu.cn
 phone: 86-10-62753081
 bio_raw: '个人主页：http://www.icl.pku.edu.cn/members/lisujian/default.htm
@@ -23,7 +23,13 @@ research_direction_raw: 自然语言处理、自动文摘、篇章分析
 detail_url: https://cs.pku.edu.cn/info/1071/1680.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1680.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
@@ -32,7 +38,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1071/1680.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -65,9 +71,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1680.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理

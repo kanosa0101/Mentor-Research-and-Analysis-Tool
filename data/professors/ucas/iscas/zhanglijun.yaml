@@ -94,7 +94,23 @@ research_direction_raw: 081202-计算机软件与理论、模型检测，形式�
 detail_url: https://people.ucas.ac.cn/~zhanglj
 profile_url: https://people.ucas.ac.cn/~zhanglj
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自动驾驶
 provenance:
   name:
     origin: crawled
@@ -126,19 +142,3 @@ provenance:
     source: https://people.ucas.ac.cn/~zhanglj
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自动驾驶

@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: dqwang@buaa.edu.cn
 phone: 010-82338084
 bio_raw: 王德庆，北京航空航天大学计算机学院教授，博士生导师。国家科技资源共享服务工程技术研究中心总工，CCF高级会员、大数据专委会委员，中文信息学会开源情报专委会委员、全国标准数字化标准化工作组（SAC/SWG29）委员、IEEE
@@ -15,7 +16,7 @@ homepage: https://ktl.buaa.edu.cn/
 detail_url: http://scse.buaa.edu.cn/info/1078/11323.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/11323.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -69,6 +70,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/11323.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/11323.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: dhuang@buaa.edu.cn
 phone: 010-82338431
 bio_raw: '黄迪，博士，教授，博士生导师，国家高层次青年人才，电气和电子工程师协会（IEEE）高级会员，中国计算机学会（CCF）杰出会员，中国人工智能学会（CAAI）杰出会员。分别于2005年和2008年在北京航空航天大学计算机学院获得学士和硕士学位，2011年在法国里昂中央理工大学获得博士学位。长期从事计算机视觉、模式识别、具身智能方向基础理论与关键技术的研究工作，具体内容涉及通用视觉模型构建与适配、多模态视觉感知（二维/三维目标检测与识别、视觉抓取）、视觉生成、生物特征识别及情感计算等。曾主持国家重点研发计划、国家自然科学基金、北京市自然科学基金、教育部博士点基金等基础研究项目和微软、阿里、美团、字节跳动等企业的合作应用项目，还作为主要成员参与了新一代人工智能重大专项、国家973/863计划、法国科研署计划等多项国内外研究任务。已在IEEE
@@ -19,7 +20,7 @@ homepage: https://irip.buaa.edu.cn/dihuang/index.html
 detail_url: http://scse.buaa.edu.cn/info/1078/7417.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/7417.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -73,6 +74,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/7417.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/7417.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: csu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 bio_raw: '副教授，硕士生导师，2010年毕业于加拿大韦仕敦大学[原西安大略大学]，获软件工程博士学位；2006年毕业于清华大学，获软件工程学硕士学位；2004年毕业于湖南师范大学，获计算机科学学士学位。现就职于信息学院计算机系。已在国际顶级及重要会议(如ICSE和ICSM)和期刊(如ESE和SEN)上发表论文超20篇。2011年撰写专著“Architectural
   Degeneration of Software Systems”(ISBN号: 978-3-8443-1958-3)；2009年参编专著“Pervasive
   Information Security and Privacy Developments: Trends and Advancements”(ISBN号：978-1-61692-000-5)，2014年撰写200万字的大部头专著《软件工程核心知识》上、下卷（ISBN：978-7-5470-2984-8）。'
@@ -14,7 +15,7 @@ research_direction_raw: '[1].、软件工程（涵括所有子学科：需求工
 detail_url: http://faculty.csu.edu.cn/lizude/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/lizude/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -38,6 +39,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/lizude/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://faculty.csu.edu.cn/lizude/zh_CN/index.htm
     fetched_at: '2026-09-04'

@@ -87,7 +87,13 @@ homepage: https://jhc.sjtu.edu.cn/~kuanyang/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/杨宽.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangkuan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangkuan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -129,9 +135,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yangkuan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

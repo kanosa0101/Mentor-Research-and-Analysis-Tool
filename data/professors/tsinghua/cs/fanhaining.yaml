@@ -143,7 +143,18 @@ research_direction_raw: 密码计算，信息安全
 detail_url: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -175,14 +186,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1127/3600.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计

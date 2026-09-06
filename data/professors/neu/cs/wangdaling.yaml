@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wangdaling@cse.neu.edu.cn
 bio_raw: '王大玲，女，现任东北大学计算机科学与工程学院计算机科学系教授、博士生导师。分别于1984、1990、2003年获东北大学学士、硕士、博士学位，并于2004年1月~4月在香港科技大学计算机科学系作访问学者。中国中文信息学会社会媒体处理专业委员会常务委员，中国中文信息学会情感计算专业委员会委员，中国计算机学会自然语言处理专业委员会委员。曾经主持国家自然科学基金面上项目、国家863项目（子课题），国家重点专项基金项目、国家重点研发（子课题）项目，参与国家973项目，目前正在主持“社会媒体处理、对话生成”方面的国家自然科学基金项目，曾获教育部高效自然科学二等奖、辽宁省科技进步一等奖。近年来，在IEEE
   Transactions on Neural Networks and Learning Systems、IEEE Transactions on Multimedia、World
@@ -48,6 +49,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0314/c6641a157532/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0314/c6641a157532/page.htm
     fetched_at: '2026-09-04'

@@ -350,7 +350,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/杨旭波.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangxubo.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yangxubo.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -387,14 +398,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yangxubo.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:虚拟现实
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

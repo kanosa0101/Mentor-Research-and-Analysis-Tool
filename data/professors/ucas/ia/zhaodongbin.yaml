@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 正高级研究员
+supervisor: 博导
 email: dongbin.zhao@ia.ac.cn
 bio_raw: "赵冬斌\n/\n1996-09--2000-04    哈尔滨工业大学   博士\n1994-09--1996-07    哈尔滨工业大学  \
   \ 硕士\n1990-09--1994-07    哈尔滨工业大学   学士\n职　　称:\n正高级研究员\n邮　　编:\n100190\n电子邮件:\ndongbin.zhao@ia.ac.cn\n\
@@ -86,7 +87,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240423612481151751.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129930.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129930.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -118,19 +135,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129930.html
+    fetched_at: '2026-09-02'
+    confidence: auto

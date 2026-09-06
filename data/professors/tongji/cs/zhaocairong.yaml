@@ -5,8 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: zhaocairong@tongji.edu.cn
-phone: 通讯地址上海市曹安公路4800号电信学院405室赵才荣，工学博士。现任同济大学电子与信息工程学院计算机系教授，博士生导师。曾任香港理工大学兼职研究员（2016-2017）。担任上海市计算机学会计算机视觉专委会主任，中国图象图形学...
 bio_raw: '姓　　名
 
   赵才荣
@@ -113,12 +113,12 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2789.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  phone:
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2789.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  email:
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2789.htm
     fetched_at: '2026-09-03'

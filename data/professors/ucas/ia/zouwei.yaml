@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: wei.zou@ia.ac.cn
 bio_raw: '邹伟
 
@@ -64,7 +65,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202512/W020251217374230650260.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202512/t20251217_8028569.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202512/t20251217_8028569.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -91,14 +103,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202512/t20251217_8028569.html
+    fetched_at: '2026-09-02'
+    confidence: auto

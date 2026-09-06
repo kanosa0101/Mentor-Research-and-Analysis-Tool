@@ -19,10 +19,11 @@ bio_raw: '黄宜华，博士，南京大学计算机科学与技术系教授，�
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/yhuang
 detail_url: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
 profile_url: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -52,12 +53,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -66,6 +67,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/58/0d/c2639a153613/page.htm
     fetched_at: '2026-09-03'

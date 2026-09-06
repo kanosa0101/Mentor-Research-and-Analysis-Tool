@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: chexj@jlu.edu.cn
 phone: 0431-81252777
 bio_raw: '车翔玖
@@ -577,6 +578,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1240/19969.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1240/19969.htm
     fetched_at: '2026-09-04'

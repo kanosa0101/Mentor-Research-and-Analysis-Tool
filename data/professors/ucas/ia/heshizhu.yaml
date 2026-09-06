@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 硕导
 email: shizhu.he@nlpr.ia.ac.cn
 bio_raw: "何世柱\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nshizhu.he@nlpr.ia.ac.cn\n部门/实验室:\n\
   复杂系统认知与决策实验室\n通讯地址:\n北京市海淀区中关村东路95号\n个人简历\n何世柱研究员，硕士生导师。主要研究方向为问答系统、知识工程和自然语言处理。主持或参与国家自然科学基金面上项目、重点项目、科技部\"\
@@ -33,7 +34,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240425324371347302.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129834.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129834.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -65,19 +82,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129834.html
+    fetched_at: '2026-09-02'
+    confidence: auto

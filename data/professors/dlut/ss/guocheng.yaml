@@ -7,6 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导、硕导
 subjects: 软件工程. 计算机应用技术
+phone: 32a2c4a64321
 bio_raw: '个人简介
 
   Personal Profile
@@ -359,7 +360,7 @@ research_direction_raw: 研究方向、Research Focus、社会兼职、Social Af
 detail_url: http://faculty.dlut.edu.cn/2012011156/zh_CN/index.htm
 profile_url: http://faculty.dlut.edu.cn/2012011156/zh_CN/index.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -413,6 +414,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: http://faculty.dlut.edu.cn/2012011156/zh_CN/index.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  phone:
     origin: crawled
     source: http://faculty.dlut.edu.cn/2012011156/zh_CN/index.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: qfzhuge@cs.ecnu.edu.cn
 phone: 021-62233333
 bio_raw: '诸葛晴凤
@@ -224,7 +225,7 @@ institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247720
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247720
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -266,4 +267,9 @@ provenance:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247720
+    fetched_at: '2026-09-04'
     confidence: auto

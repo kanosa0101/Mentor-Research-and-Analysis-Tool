@@ -6,6 +6,7 @@ school: scut
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: csjwei@scut.edu.cn
 phone: 无
 bio_raw: '姓名：韦佳
@@ -144,7 +145,7 @@ institutes: []
 detail_url: https://www2.scut.edu.cn/cs/2017/0129/c22285a327660/page.htm
 profile_url: https://www2.scut.edu.cn/cs/2017/0129/c22285a327660/page.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -183,6 +184,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://www2.scut.edu.cn/cs/2017/0129/c22285a327660/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://www2.scut.edu.cn/cs/2017/0129/c22285a327660/page.htm
     fetched_at: '2026-09-05'

@@ -42,7 +42,13 @@ photo_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/P020231108516737973689.jp
 detail_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6923475.html
 profile_url: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6923475.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -69,9 +75,3 @@ provenance:
     source: http://ict.cas.cn/sourcedb/cn/jssrck/202311/t20231108_6923475.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

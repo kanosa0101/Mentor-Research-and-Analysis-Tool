@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: lubingxian@neu.edu.cn
 bio_raw: '卢炳先，博士，东北大学计算机科学与工程学院副教授，博士生导师，主要研究方向为新型感知与计算、无线位置安全、工业大模型等，综合利用智能感知与无线定位等新方法来增强无线网络安全性与易用性。研究成果发表在国际知名期刊以及ACM
   SIGCOMM （CCF A类）、IEEE INFOCOM（CCF A类）等国际顶级会议。以第一及通信作者发表高水平论文20余篇，成果获发明专利授权12项。主持国家自然科学基金青年项目1项，辽宁省科技创新重大专项课题1项，大连市重点研发计划课题1项，参与国家自然科学基金重点项目2项。研究成果获得辽宁省科学技术进步二等奖，获2021年ACM
@@ -49,6 +50,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2025/0414/c6641a281513/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2025/0414/c6641a281513/page.htm
     fetched_at: '2026-09-04'

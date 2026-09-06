@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: qiliuql@ustc.edu.cn
 phone: 0551-63603823
 bio_raw: '电　话： 0551-63603823
@@ -110,7 +111,7 @@ homepage: http://staff.ustc.edu.cn/~qiliuql/
 detail_url: http://cs.ustc.edu.cn/2020/0828/c23235a460099/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0828/c23235a460099/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -149,6 +150,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   homepage:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0828/c23235a460099/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0828/c23235a460099/page.htm
     fetched_at: '2026-09-03'

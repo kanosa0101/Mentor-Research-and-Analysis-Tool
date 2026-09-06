@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: ljcai@hnu.edu.cn0731-88821513
 bio_raw: 蔡立军，男，中共党员，计算机应用技术专业博士，教授，博士生导师。1982年考入华中工学院（现华中科技大学），先后获华中工学院工学学士学位、湖南大学的工程硕士学位、工学博士学位。先后任湖南大学远程与继续教育学院副院长、湖南大学教务处副处长，国家超级计算长沙中心湖南大学建设办公室主任。现任湖南大学现代工程训练中心主任兼教务处副处长，教育部工程训练教学指导委员会委员；中南地区港澳特区金工研究会副理事长；湖南省物联网协会副理事长。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 机器学习、生物信息学、云计算、大数据
 detail_url: http://csee.hnu.edu.cn/people/cailijun
 profile_url: http://csee.hnu.edu.cn/people/cailijun
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/cailijun
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/cailijun
     fetched_at: '2026-09-05'

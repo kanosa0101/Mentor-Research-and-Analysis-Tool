@@ -96,7 +96,18 @@ photo_url: http://ict.cas.cn/sourcedb/cn/jssrck/202312/P020231219543136806182.jp
 detail_url: http://ict.cas.cn/sourcedb/cn/jssrck/202312/t20231219_6945595.html
 profile_url: http://ict.cas.cn/sourcedb/cn/jssrck/202312/t20231219_6945595.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -123,14 +134,3 @@ provenance:
     source: http://ict.cas.cn/sourcedb/cn/jssrck/202312/t20231219_6945595.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱

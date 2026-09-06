@@ -29,7 +29,23 @@ research_direction_raw: 计算机软件与理论
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202210/t20221021_6537611.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202210/t20221021_6537611.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -66,19 +82,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202210/t20221021_6537611.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生成式
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习

@@ -160,7 +160,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429601295401059.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131024.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131024.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -192,19 +208,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131024.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:虚拟现实
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

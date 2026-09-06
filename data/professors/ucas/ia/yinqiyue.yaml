@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 副研究员
+supervisor: 硕导
 email: qyyin@nlpr.ia.ac.cn
 bio_raw: "尹奇跃\n/\n职　　称:\n副研究员\n邮　　编:\n100190\n电子邮件:\nqyyin@nlpr.ia.ac.cn\n部门/实验室:\n\
   中国科学院自动化研究所复杂系统认知与决策实验室\n通讯地址:\n北京市海淀区中关村东路95号\n个人简历\n尹奇跃，中国科学院自动化研究所副研究员，硕士生导师。2017年于中国科学院大学获得博士学位，并于中国科学院自动化研究所工作至今。长期从事博弈决策尤其是智能体自主进化与多模态对齐研究，在相关领域发表高水平学术论文五十余篇，是国内外多个期刊与会议（如IEEE\
@@ -33,7 +34,33 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240424304174473894.png
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129809.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129809.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -65,29 +92,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129809.html
+    fetched_at: '2026-09-02'
+    confidence: auto

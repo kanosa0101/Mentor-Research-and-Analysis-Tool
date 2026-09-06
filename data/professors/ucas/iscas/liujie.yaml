@@ -647,38 +647,7 @@ research_direction_raw: 083500-软件工程081202-计算机软件与理论、大
 detail_url: https://people.ucas.ac.cn/~liujie
 profile_url: https://people.ucas.ac.cn/~liujie
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://is.cas.cn/yjsjy/dsxx/
-    fetched_at: '2026-09-03'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://is.cas.cn/yjsjy/dsxx/
-    fetched_at: '2026-09-03'
-    confidence: auto
-  supervisor:
-    origin: crawled
-    source: https://is.cas.cn/yjsjy/dsxx/
-    fetched_at: '2026-09-03'
-    confidence: auto
-  subjects:
-    origin: crawled
-    source: https://is.cas.cn/yjsjy/dsxx/
-    fetched_at: '2026-09-03'
-    confidence: auto
-  research_direction_raw:
-    origin: crawled
-    source: https://people.ucas.ac.cn/~liujie
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://people.ucas.ac.cn/~liujie
-    fetched_at: '2026-09-02'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -715,3 +684,34 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://is.cas.cn/yjsjy/dsxx/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://is.cas.cn/yjsjy/dsxx/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://is.cas.cn/yjsjy/dsxx/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  subjects:
+    origin: crawled
+    source: https://is.cas.cn/yjsjy/dsxx/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~liujie
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~liujie
+    fetched_at: '2026-09-02'
+    confidence: auto

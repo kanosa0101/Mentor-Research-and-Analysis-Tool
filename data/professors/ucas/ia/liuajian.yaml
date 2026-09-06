@@ -123,7 +123,23 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202603/W020260330305339369506.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202603/t20260330_8178819.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202603/t20260330_8178819.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数字人
 provenance:
   name:
     origin: crawled
@@ -155,19 +171,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数字人

@@ -4,6 +4,7 @@ aliases: []
 school: neu
 dept: cs
 status: enriched
+supervisor: 博导
 email: wangqg@mail.neu.edu.cn
 bio_raw: '王千阁
 
@@ -85,6 +86,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2026/0302/c6641a450480/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2026/0302/c6641a450480/page.htm
     fetched_at: '2026-09-04'

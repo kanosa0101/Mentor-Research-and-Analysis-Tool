@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 email: yuhs@pku.edu.cn
-phone: 86-10-62754248
+phone: 86-10-6275424
 bio_raw: '个人主页：
 
   详细简历
@@ -18,7 +18,13 @@ research_direction_raw: 并行处理
 detail_url: https://cs.pku.edu.cn/info/1085/1725.htm
 profile_url: https://cs.pku.edu.cn/info/1085/1725.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
 provenance:
   name:
     origin: crawled
@@ -27,7 +33,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1085/1725.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -37,7 +43,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1085/1725.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -55,9 +61,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1085/1725.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:高性能计算

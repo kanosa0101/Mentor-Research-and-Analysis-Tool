@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教授
+supervisor: 博导
 email: wuct@sjtu.edu.cn
 phone: 021-34208230
 office_address: 上海市闵行区东川路800号电信群楼3号楼513
@@ -602,7 +603,18 @@ homepage: https://www.cs.sjtu.edu.cn/~wuct
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/吴晨涛.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuchentao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wuchentao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -649,14 +661,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuchentao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wuchentao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -6,6 +6,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: yym@xidian.edu.cn
 bio_raw: 杨亚明，博士，副教授，硕士研究生导师。主要研究方向是图数据的表示学习与知识挖掘技术，获得陕西省自然科学一等奖，陕西省优秀博士学位论文。主持国家自然科学基金面上项目/青年项目、陕西省重点研发计划项目等。在IEEE
   TKDE、NeurIPS、ICML、ACM SIGKDD、ACM WWW、IEEE ICDE、AAAI等CCF A类期刊/会议发表学术论文，其中两篇一作IEEE
@@ -15,7 +16,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/yym/
 profile_url: https://web.xidian.edu.cn/yym/
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -34,6 +35,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   email:
+    origin: crawled
+    source: https://web.xidian.edu.cn/yym/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://web.xidian.edu.cn/yym/
     fetched_at: '2026-09-04'

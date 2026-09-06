@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: guangyi.xiao@gmail.com
 bio_raw: 肖光意，智能计算系主任、副教授、博士生导师，同时还是CCF、IEEE、ACM会员，长期从事人工智能领域的研究工作。他的主要研究方向包括自然语言处理、图像识别、迁移学习、视觉文本检索和多模态对齐。截至目前，他已发表了30余篇高水平的学术论文，其中包括IJCAI、ACMMM、TKDE、TII、JPDC、JIII、TAES、TITS、TOMM等知名学术期刊或会议，同时承担了多项科研课题，包括国家青年基金、湖南省重点研发计划和湖南省自科等。此外，主持了10余项大型图像集视频AI分析项目，并将研究成果应用于中联环境、中电建集团等大型央企。CVPR、AAAI、IJCAI、MM、TII、TITS的审稿人。团队依托于超算创新研究院、文化与媒体计算研究中心，拥有充足的算力和数据优势。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 自然语言处理、图像识别、迁移学习
 detail_url: http://csee.hnu.edu.cn/people/xiaoguangyi
 profile_url: http://csee.hnu.edu.cn/people/xiaoguangyi
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/xiaoguangyi
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/xiaoguangyi
     fetched_at: '2026-09-05'

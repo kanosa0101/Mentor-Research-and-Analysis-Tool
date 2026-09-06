@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: jzhou@cs.ecnu.edu.cn
 bio_raw: '华东师范大学青年研究员（紫江青年学者），上海人工智能实验室双聘研究员，博士生导师，2021年博士毕业于华东师范大学计算机学院，2021-2023年在复旦自然语言处理实验室做博士后工作（合作导师为黄萱菁教授）。主要研究方向为持续学习、大模型、智能体等，以一作/通讯作者在CVPR、ICLR、ACM
   Computing Survey等会议期刊上发表论文50余篇，Google引用3000余次，获得COLING 2022杰出论文奖，中科院院刊FITEE封面论文奖。以项目负责人主持国自然面上、上海市经信委AI专项、CIPS-SMP清智大模型基金等科研项目多项。其提出经验驱动终身学习的自进化理念并将其用于教育、农业生态等领域，带领团队研发并开源了技能自进化框架AutoSkill、教育大模型EduChat等产品，在GitHub、HuggingFace开源平台下载上万次。曾获得上海市科技进步二等奖、上海市东方英才计划青年项目、上海市启明星扬帆计划等荣誉。担任多个重要国际会议以及期刊（包括
@@ -186,7 +187,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/zj2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/zj2/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -215,6 +216,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/zj2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/zj2/main.psp
     fetched_at: '2026-09-05'

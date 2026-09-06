@@ -4,7 +4,7 @@ aliases: []
 school: pku
 dept: cs
 status: enriched
-title: 副研究员
+title: 助理研究员
 email: gaimeng@pku.edu.cn
 phone: 86-10-62765819
 bio_raw: '个人主页：http://www.graphics.pku.edu.cn/members/gaimeng
@@ -19,7 +19,13 @@ research_direction_raw: 计算机图形学、实时渲染、虚拟现实、视�
 detail_url: https://cs.pku.edu.cn/info/1066/3084.htm
 profile_url: https://cs.pku.edu.cn/info/1066/3084.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -28,7 +34,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1066/3084.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -38,7 +44,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1066/3084.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -61,9 +67,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1066/3084.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学

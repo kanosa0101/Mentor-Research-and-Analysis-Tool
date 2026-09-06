@@ -5,6 +5,7 @@ school: sdu
 dept: cs
 status: enriched
 title: 副教授
+email: ruihua_zhang@sdu.edu.cn
 bio_raw: '张瑞华   副教授
 
   emai:ruihua_zhang@sdu.edu.cn;
@@ -210,7 +211,7 @@ institutes: []
 detail_url: https://www.cs.sdu.edu.cn/info/1071/2813.htm
 profile_url: https://www.cs.sdu.edu.cn/info/1071/2813.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -234,6 +235,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1071/2813.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://www.cs.sdu.edu.cn/info/1071/2813.htm
     fetched_at: '2026-09-05'

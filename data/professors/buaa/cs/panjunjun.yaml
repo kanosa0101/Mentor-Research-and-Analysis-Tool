@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: pan_junjun@buaa.edu.cn
 phone: 010-82316329
 bio_raw: '潘俊君，博士，教授，博士生导师。本科、硕士毕业于西北工业大学计算机学院。2006年获全额奖学金，进入伯恩茅斯大学-英国国家计算机动画中心（NCCA）攻读博士学位，2010年博士毕业后在该中心从事博士后研究。2012年在美国伦斯勒理工大学的医学模拟、仿真与成像中心担任Research
@@ -19,7 +20,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/8380.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8380.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.graphics
   origin: computed
@@ -53,6 +54,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8380.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8380.htm
     fetched_at: '2026-09-05'

@@ -24,7 +24,13 @@ homepage: https://shi-bai.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251226/20251226124358.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/baishi.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/baishi.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -61,9 +67,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/baishi.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码

@@ -67,4 +67,11 @@ def parse_detail(cfg, html, url):
                   r"助理教授|研究员|副研究员|助理研究员|讲师)", text[:400])
     if m:
         out["title"] = m.group(0)
+    if not out.get("supervisor"):
+        # 简介英文头衔旁常注中文导师资格("Associate Professor (研究员，博士生导师)"),
+        # 全页紧模式提取——南科大页面已验证无导航误配(dry-run +2)
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(text)
+        if sup:
+            out["supervisor"] = sup
     return out

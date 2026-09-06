@@ -48,7 +48,13 @@ homepage: https://pangpu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250614/20250614085208.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
 provenance:
   name:
     origin: crawled
@@ -90,9 +96,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统

@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 准聘副教授
 supervisor: 博导
+email: zhouqianyu@jlu.edu.cn
 bio_raw: '职称：
 
   准聘副教授、博士生导师
@@ -493,5 +494,10 @@ provenance:
   supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1359/19757.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19757.htm
+    fetched_at: '2026-09-06'
     confidence: auto

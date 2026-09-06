@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: leilei.gu@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -115,7 +116,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/顾磊磊.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guleilei.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guleilei.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -147,14 +159,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/guleilei.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/guleilei.html
+    fetched_at: '2026-09-02'
+    confidence: auto

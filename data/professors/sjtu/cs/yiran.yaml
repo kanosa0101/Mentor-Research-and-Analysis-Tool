@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: ranyi@sjtu.edu.cn
 office_address: 上海交通大学闵行校区电信3号楼533室
 bio_raw: '个人简介
@@ -286,7 +287,28 @@ homepage: https://yiranran.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613153037.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yiran.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yiran.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -328,24 +350,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yiran.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生成式
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/yiran.html
+    fetched_at: '2026-09-02'
+    confidence: auto

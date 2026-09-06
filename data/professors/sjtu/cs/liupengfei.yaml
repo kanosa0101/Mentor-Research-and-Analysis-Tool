@@ -82,7 +82,23 @@ homepage: https://plms.ai/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/刘鹏飞.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liupengfei.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liupengfei.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生成式
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -119,19 +135,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liupengfei.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生成式
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态

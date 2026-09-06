@@ -5,6 +5,7 @@ school: whu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: xuyj@whu.edu.cn
 phone: '68775607'
 bio_raw: '徐佑军
@@ -88,7 +89,7 @@ institutes: []
 detail_url: https://cs.whu.edu.cn/info/1019/2454.htm
 profile_url: https://cs.whu.edu.cn/info/1019/2454.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -137,6 +138,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.whu.edu.cn/info/1019/2454.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.whu.edu.cn/info/1019/2454.htm
     fetched_at: '2026-09-03'

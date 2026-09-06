@@ -350,43 +350,7 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/刘功申.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  photo_url:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  office_address:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
-    fetched_at: '2026-09-02'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -423,3 +387,39 @@ facets:
   confidence: auto
   evidence:
   - keyword:图形学
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  office_address:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liugongshen.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -5,6 +5,7 @@ school: sdu
 dept: cs
 status: enriched
 title: 教授
+email: 266237fenghaodi@sdu.edu
 bio_raw: '冯好娣 教授
 
   山东大学计算机科学与技术学院
@@ -327,7 +328,7 @@ institutes: []
 detail_url: https://www.cs.sdu.edu.cn/info/1070/5604.htm
 profile_url: https://www.cs.sdu.edu.cn/info/1070/5604.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.theory
   origin: computed
@@ -351,6 +352,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://www.cs.sdu.edu.cn/info/1070/5604.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://www.cs.sdu.edu.cn/info/1070/5604.htm
     fetched_at: '2026-09-03'

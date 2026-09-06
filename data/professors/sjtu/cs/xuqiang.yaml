@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理研究员
+supervisor: 博导
 email: xuqiangwhu@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -269,7 +270,33 @@ homepage: https://qiangxu-sjtu.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613201523.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xuqiang.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xuqiang.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -306,29 +333,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xuqiang.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:AIGC
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/xuqiang.html
+    fetched_at: '2026-09-02'
+    confidence: auto

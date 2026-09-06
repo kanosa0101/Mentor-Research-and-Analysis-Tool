@@ -114,7 +114,23 @@ homepage: https://isabelleliu630.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/刘雨桐.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liuyutong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/liuyutong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -156,19 +172,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liuyutong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

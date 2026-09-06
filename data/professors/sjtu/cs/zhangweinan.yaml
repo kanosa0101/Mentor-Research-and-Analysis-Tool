@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wnzhang@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -73,7 +74,23 @@ homepage: https://wnzhang.net/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251009/20251009122003.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangweinan.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangweinan.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -110,19 +127,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangweinan.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangweinan.html
+    fetched_at: '2026-09-02'
+    confidence: auto

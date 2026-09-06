@@ -71,6 +71,12 @@ def decrypt_encrypted_fields(soup, html, url):
             if len(p.select("span[_tsites_encrypt_field]")) > 1:
                 break
             label = p.get_text(" ", strip=True).replace(cipher, "").lower()
+            if len(label) > 80:
+                # 大容器(整块信息区)标签必串味: xjtu 桂小林 jbqk 块里空的
+                # "电子邮箱：" 会污染隔壁 "联系方式" 密文的分类——弃用标签,
+                # 让 span id 语义兜底(tscontact→phone)
+                label = ""
+                break
             if any(k in label for _, kws in _ENC_LABELS for k in kws):
                 break
         field = None
@@ -104,8 +110,14 @@ def decrypt_encrypted_fields(soup, html, url):
             continue
         if val:
             # 部分模板 tscontact 解密出的实际是邮箱, 按值形态纠偏
+            # (xjtu 桂小林: 值是 "Tel:…;xlgui AT mail.xjtu.edu.cn;…" 混合串,
+            #  必须存归一化后的邮箱本体, 存原串会把 Tel/Fax 一起带进 email)
             if field == "phone" and normalize_email(val):
-                out.setdefault("email", val)
+                out.setdefault("email", normalize_email(val))
+                continue
+            # email 字段解密值必须是邮箱形态——串味/联系方式串(Tel/Fax)不入库,
+            # 留给明文兜底链去找真邮箱
+            if field == "email" and not normalize_email(val):
                 continue
             out[field] = val
     return out
@@ -239,16 +251,16 @@ def parse_detail(cfg, html, url):
         # 标签形态兜底(全页扫描): "Email: x@y" / "电子邮箱：x@y" 同行带值，
         # 或标签行/值跨行(西电模板 <p>电子邮箱：</p><p>值</p>)。
         # 值可能是 mailto 锚文本混淆("hchgao AT xidian.edu.cn")，normalize_email 会还原
-        for el in soup.find_all(string=re.compile(r"电子?邮箱|E\s*-?\s*[Mm]ail", re.I)):
+        for el in soup.find_all(string=re.compile(r"(?:电子)?邮箱|E\s*-?\s*[Mm]ail", re.I)):
             ls = (el.string or "").strip()
-            m = re.match(r"^电子?邮箱\s*[:：]\s*(.+)$", ls, re.I) or \
+            m = re.match(r"^(?:电子)?邮箱\s*[:：]\s*(.+)$", ls, re.I) or \
                 re.match(r"^E\s*-?\s*[Mm]ail\s*[:：]\s*(.+)$", ls, re.I)
-            if not m and re.match(r"^电子?邮箱\s*[:：]?$", ls, re.I):
+            if not m and re.match(r"^(?:电子)?邮箱\s*[:：]?$", ls, re.I):
                 nxt = el.find_next_sibling()
                 if nxt is None and el.parent is not None:
                     nxt = el.parent.find_next_sibling()
                 if nxt is not None:
-                    m = re.match(r"^电子?邮箱\s*[:：]?\s*(.+)$",
+                    m = re.match(r"^(?:电子)?邮箱\s*[:：]?\s*(.+)$",
                                  f"邮箱：{nxt.get_text(strip=True)}", re.I)
             if m:
                 e = normalize_email(m.group(1))
@@ -261,6 +273,38 @@ def parse_detail(cfg, html, url):
             e = normalize_email(a["href"][7:])
             if e:
                 out["email"] = e
+                break
+    if "email" not in out:
+        # 标签窗口扫描(陈衡/桂小林暴露的形态⑤): 标签与值跨节点分裂——
+        # "Email：<strong><span>hengchen</span></strong>@xjtu.edu.cn"、
+        # "xlgui AT mail.xjtu.edu.c"+"n" 值被 span 切开。
+        # 形态②要求值在标签同一字符串节点里吃不到; 这里取标签所在容器块
+        # get_text("") 不插分隔符拼回, AT 还原后去空白再扫描。
+        # 候选多个时与形态④同样只认唯一同校域(官方域 vs QQ/163 并存)。
+        for el in soup.find_all(string=re.compile(r"(?:电子)?邮箱|E\s*-?\s*[Mm]ail|电子邮件")):
+            blk = el.parent
+            for _ in range(4):
+                if blk is None or blk.name in ("body", "html", "p", "td", "th", "li", "div", "tr"):
+                    break
+                blk = blk.parent
+            if blk is None:
+                continue
+            txt = blk.get_text("")
+            txt = re.sub(r"(?<![A-Za-z0-9.@_])\s*\[?\s*AT\s*\]?\s*(?![A-Za-z0-9.@])",
+                         "@", txt, flags=re.I)
+            txt = re.sub(r"\s+", "", txt)
+            cands = {normalize_email(e) for e in re.findall(
+                r"[A-Za-z0-9._%+-]{2,}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", txt)} - {None}
+            if not cands:
+                continue
+            host = re.match(r"https?://([^/]+)", url).group(1)
+            parts = host.split(".")
+            base_dom = ("." + ".".join(parts[-3:])) if host.endswith(
+                ("edu.cn", "com.cn", "gov.cn", "ac.cn")) else "." + ".".join(parts[-2:])
+            same = [e for e in cands if e.lower().endswith(base_dom)]
+            pick = same if same else list(cands)
+            if len(pick) == 1:
+                out["email"] = pick[0]
                 break
     if "email" not in out:
         # 裸 <p> 明文兜底(西交 gr.xjtu 模板无任何标签)。全页唯一邮箱直接采用；
@@ -276,4 +320,12 @@ def parse_detail(cfg, html, url):
             same = [e for e in uniq if e.lower().endswith(base_dom)]
             if len(same) == 1:
                 out["email"] = same[0]
+    if "supervisor" not in out:
+        # 导师资格兜底: xjtu 变体模板头区 "<h4>副教授 、 博士生导师</h4>"、
+        # 简介自述"副教授，博士，博士生导师"。全页已验证无导航误配
+        # (dry-run: xjtu+4/scu+2/csu+2, 其余 tsites 校零变化)
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(soup.get_text("\n", strip=True))
+        if sup:
+            out["supervisor"] = sup
     return out

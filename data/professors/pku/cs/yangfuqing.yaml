@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: yang@sei.pku.edu.cn
-phone: 86-10-6275 1782
+phone: 86-10-62751782
 bio_raw: '详细简历
 
   从事系统软件、软件工程、软件工业化生产技术和系统等方面的教学和研究工作。主持研制成功我国第一台百万次集成电路计算机多道运行操作系统和第一个全部用高级语言书写的操作系统；倡导和推动成立北京大学计算机科技系，1983-1999年担任系主任期间，将该系建成国内一流和国际知名的计算机科学技术研究和人才培养基地；在国内率先倡导软件工程研究，创办了国内第一个软件工程学科；开创了软件技术的基础研究领域；主持了历经多个五年计划的国家重点科技攻关项目——青鸟工程和国家863计划若干重点课题的研究；创建了软件工程国家工程研究中心；提出“人才培养与产业建设互动”的理念，创建了以新机制、新模式办学的示范性软件学院。
@@ -20,7 +20,7 @@ research_direction_raw: 系统软件，软件工程
 detail_url: https://cs.pku.edu.cn/info/1085/2725.htm
 profile_url: https://cs.pku.edu.cn/info/1085/2725.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -34,8 +34,8 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1085/2725.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -45,7 +45,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1085/2725.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:

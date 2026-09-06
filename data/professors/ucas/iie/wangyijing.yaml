@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: wangyijing@iie.ac.cn
 office_address: 北京市海淀区树村路19号2A113室
 institutes: []
@@ -11,7 +12,7 @@ research_direction_raw: 网络安全态势感知，数智融合计算
 detail_url: https://people.ucas.ac.cn/~0079062
 profile_url: https://people.ucas.ac.cn/~0079062
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0079062
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~0079062
     fetched_at: '2026-09-05'

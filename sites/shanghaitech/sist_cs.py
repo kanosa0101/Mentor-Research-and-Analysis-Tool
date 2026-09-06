@@ -85,4 +85,11 @@ def parse_detail(cfg, html, url):
         m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
         if m:
             out["email"] = m.group(0)
+    if not out.get("supervisor"):
+        # bio_raw 截取段落常不含导师自述("现为中科院研究员…岗位教授，博士生导师"),
+        # 全页紧模式提取——上科大页面已验证无导航误配(dry-run +29 全为真自述)
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(text)
+        if sup:
+            out["supervisor"] = sup
     return out

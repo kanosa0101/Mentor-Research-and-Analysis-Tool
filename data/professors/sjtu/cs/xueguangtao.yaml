@@ -1154,7 +1154,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/薛广涛.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xueguangtao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xueguangtao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -1186,14 +1197,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xueguangtao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

@@ -24,7 +24,13 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/W02024120654364849206
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241206_7452089.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241206_7452089.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -51,9 +57,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202412/t20241206_7452089.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态

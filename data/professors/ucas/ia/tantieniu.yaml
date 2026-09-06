@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 bio_raw: "谭铁牛\n/\n职　　称:\n研究员\n邮　　编:\n100190\n部门/实验室:\n多模态人工智能系统全国重点实验室\n通讯地址:\n北京市海淀区中关村东路95号智能化大厦\n\
   个人简历\n谭铁牛，研究员，博士生导师。1984年获西安交通大学学士学位，1986年和1989年分别获英国帝国理工学院硕士与博士学位。1989-1997年在英国雷丁大学计算机科学系工作任教。1998年回国到中科院自动化所工作，曾任中国科学院自动化研究所所长、中国科学院副秘书长、中国科学院副院长、中央人民政府驻香港特别行政区联络办公室副主任。现为南京大学党委书记、中国科学院自动化研究所智能感知与计算研究中心主任。2013年当选中国科学院院士，2014年当选英国皇家工程院外籍院士和发展中国家科学院（TWAS）院士，2016年当选巴西科学院通讯院士，2022年获国际模式识别领域最高奖——傅京孙奖。\n\
   谭铁牛博士主要从事图像处理、计算机视觉和模式识别等相关领域的研究工作，目前的研究主要集中在生物特征识别、图像视频理解和信息内容安全等三个方向。他主持过一批由国家基金委、国家杰出青年基金、国家973计划、863计划、国际合作计划等资助的科研项目。现已出版编（专）著15部并在主要的国内外学术期刊和国际学术会议上发表论文700多篇，获准和申请发明专利160多项。他现为或曾为国际权威期刊《IEEE\
@@ -429,7 +430,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240613348739771897.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129881.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129881.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -456,19 +473,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129881.html
+    fetched_at: '2026-09-02'
+    confidence: auto

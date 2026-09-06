@@ -223,7 +223,18 @@ homepage: https://xijunlee.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250920/20250920223342.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lixijun.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lixijun.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
 provenance:
   name:
     origin: crawled
@@ -265,14 +276,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lixijun.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘

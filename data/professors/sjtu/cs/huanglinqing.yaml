@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理研究员
+supervisor: 博导
 email: huanglinqing@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -579,7 +580,28 @@ homepage: https://shaoyuhlq.github.io/HuangLinqing0228.github.io//
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250613/20250613121648.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinqing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinqing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据挖掘
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络空间安全
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -616,24 +638,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinqing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据挖掘
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络空间安全
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huanglinqing.html
+    fetched_at: '2026-09-02'
+    confidence: auto

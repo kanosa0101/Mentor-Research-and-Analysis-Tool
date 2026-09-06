@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: caoda@hnu.edu.cn
 bio_raw: 曹达，副教授，博士生导师，岳麓学者，湖南省优青。研究方向包括计算机视觉、多媒体分析、信息检索、自然语言处理等。主持国家自然科学基金1项、湖南省自然科学基金3项、校企合作项目10项，参与国家重点研发计划1项、湖南省重点研发计划1项。迄今为止以第一或通讯作者发表论文20余篇（含CCFA类论文10篇），其中包括CVPR、MM、SIGIR等国际顶尖会议，以及TNNLS、TOIS、TKDE、TOMM等国际顶级期刊，同时担任SIGIR、KDD、TKDD、TKDE、TII、INS、KBS等会议、期刊的审稿人。申请国家发明专利10项，其中9项已授权。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 计算机视觉、多媒体分析、信息检索、自�
 detail_url: http://csee.hnu.edu.cn/people/caoda
 profile_url: http://csee.hnu.edu.cn/people/caoda
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/caoda
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/caoda
     fetched_at: '2026-09-05'

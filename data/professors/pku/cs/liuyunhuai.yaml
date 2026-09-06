@@ -87,7 +87,18 @@ research_direction_raw: 物联网、移动计算、智慧城市、工业互联�
 detail_url: https://cs.pku.edu.cn/info/1071/1681.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1681.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
 provenance:
   name:
     origin: crawled
@@ -129,14 +140,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1681.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网

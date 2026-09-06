@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jiangwenjun@hnu.edu.cn
 bio_raw: 姜文君，湖南大学教授，博导，岳麓学者，CCF高级会员，分布式计算与系统专委会委员，中文信息学会社会媒体处理专委会委员，湖南省普通高等学校青年骨干教师培养对象。主要研究兴趣包括社交网络分析、个性化推荐、智慧教育与学习优化等。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 社交网络分析、个性化推荐、智慧教育与�
 detail_url: http://csee.hnu.edu.cn/people/jiangwenjun
 profile_url: http://csee.hnu.edu.cn/people/jiangwenjun
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/jiangwenjun
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/jiangwenjun
     fetched_at: '2026-09-05'

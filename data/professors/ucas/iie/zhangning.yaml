@@ -4,13 +4,14 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: zhangning@iie.ac.cn
 office_address: 北京市海淀区树村路19号
 institutes: []
 detail_url: https://people.ucas.ac.cn/~0076116
 profile_url: https://people.ucas.ac.cn/~0076116
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -24,6 +25,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   office_address:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~0076116
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~0076116
     fetched_at: '2026-09-05'

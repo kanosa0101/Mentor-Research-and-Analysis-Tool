@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: dfma@buaa.edu.cn
 phone: 010-82316339
 bio_raw: 马殿富，男，1960年生，教授，博士生导师。2001年至2011年任计算机学院院长。现任软件开发环境国家重点实验室副主任，教育部计算机类教学指导委员会秘书长，计算机学会教育工委主任，中国信标委SOA分委员会副组长，计算机工程教育专业认证专家。多年一直从事数理逻辑和软件工程建模与形式化方法等教学。2005年获国家教学一等奖，2014年获得国家教学二等奖。
@@ -13,7 +14,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2638.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2638.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -47,6 +48,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2638.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2638.htm
     fetched_at: '2026-09-05'

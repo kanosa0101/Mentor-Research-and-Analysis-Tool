@@ -5,6 +5,7 @@ school: scu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 硕导
 email: wenzheng.xu3@gmail.com
 bio_raw: '徐文政，博士，副研究员，硕士生导师。 现为四川大学计算机学院副研究员。在中山大学于2008、2010、2015年分别获得理学学士、工学硕士、工学博士学位。在2012年至2014年间访问澳大利亚国立大学，师从Professor
   Weifa Liang。2016年4月-6月担任香港中文大学著名网络数据库专家Professor Jeffrey Xu Yu的高级研究员。2015年博士毕业后作为引进人才进入四川大学计算机学院担任特聘副研究员。
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   title:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/xuwenzheng/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.scu.edu.cn/xuwenzheng/zh_CN/index.htm
     fetched_at: '2026-09-04'

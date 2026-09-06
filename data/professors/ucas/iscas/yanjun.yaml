@@ -6,7 +6,7 @@ dept: iscas
 status: enriched
 supervisor: 博导
 subjects: 软件工程
-email: yanjun@otcaix.iscas.ac.cn
+email: yanjun@ios.ac.cn
 bio_raw: '[中文]
 
   [English]
@@ -165,7 +165,13 @@ research_direction_raw: 程序分析与软件测试
 detail_url: https://people.ucas.ac.cn/~yanjun
 profile_url: https://people.ucas.ac.cn/~yanjun
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:LLM
 provenance:
   name:
     origin: crawled
@@ -174,8 +180,8 @@ provenance:
     confidence: auto
   email:
     origin: crawled
-    source: https://is.cas.cn/yjsjy/dsxx/
-    fetched_at: '2026-09-03'
+    source: https://people.ucas.ac.cn/~yanjun
+    fetched_at: '2026-09-02'
     confidence: auto
   supervisor:
     origin: crawled
@@ -197,9 +203,3 @@ provenance:
     source: https://people.ucas.ac.cn/~yanjun
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:LLM

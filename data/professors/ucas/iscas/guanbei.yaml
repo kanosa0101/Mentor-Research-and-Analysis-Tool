@@ -77,7 +77,18 @@ research_direction_raw: 083500-软件工程、大数据分析技术和人工智�
 detail_url: https://people.ucas.ac.cn/~0059014
 profile_url: https://people.ucas.ac.cn/~0059014
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -109,14 +120,3 @@ provenance:
     source: https://people.ucas.ac.cn/~0059014
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

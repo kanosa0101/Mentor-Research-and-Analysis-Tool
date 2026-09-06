@@ -15,7 +15,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260301/20260301153349.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangshaoting.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangshaoting.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -47,14 +58,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangshaoting.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗

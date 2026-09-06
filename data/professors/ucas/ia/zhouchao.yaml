@@ -2181,7 +2181,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202406/W020240621559343010653_ORIGIN.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202406/t20240621_7194305.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202406/t20240621_7194305.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -2208,14 +2219,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 副高级
+supervisor: 硕导
 email: yunlong.wang@ia.ac.cn
 bio_raw: "王云龙\n/\n中国科学技术大学\n2014.08-2019.06    工学博士   研究生    导师： 谭铁牛 院士\n专业方向：模式识别与智能系统\n\
   毕业论文：光场图像增强与识别方法研究\n中国科学技术大学\n2010.08-2014.07    工学学士   本科生    导师： 关胜晓 副教授\n专业方向：自动化\n\
@@ -76,38 +77,7 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240424333359199675.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  photo_url:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -139,3 +109,39 @@ facets:
   confidence: auto
   evidence:
   - keyword:生物信息
+provenance:
+  name:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129889.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -61,7 +61,13 @@ research_direction_raw: 081202-计算机软件与理论、计算数学，并行�
 detail_url: https://people.ucas.ac.cn/~zhangya
 profile_url: https://people.ucas.ac.cn/~zhangya
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
 provenance:
   name:
     origin: crawled
@@ -93,9 +99,3 @@ provenance:
     source: https://people.ucas.ac.cn/~zhangya
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算

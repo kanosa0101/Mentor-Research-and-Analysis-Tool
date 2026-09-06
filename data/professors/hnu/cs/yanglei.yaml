@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jt_yl@hnu.edu.cn
 bio_raw: 杨磊，教授，博士生导师，美国UMassLowell访问学者，CCF高级会员，ACM、IEEE会员,华为大数据认证讲师，兼任湖南大学重庆研究院院长。主要研究领域及兴趣：分布式计算与存储、群智计算、具身智能、人工智能及其应用、大数据处理、计算机网络。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 分布式计算与存储、群智计算、具身智能�
 detail_url: http://csee.hnu.edu.cn/people/yanglei
 profile_url: http://csee.hnu.edu.cn/people/yanglei
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/yanglei
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/yanglei
     fetched_at: '2026-09-05'

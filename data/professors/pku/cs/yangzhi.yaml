@@ -5,8 +5,9 @@ school: pku
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: yangzhi@pku.edu.cn
-phone: 86-10-6275 6342
+phone: 86-10-62755342
 bio_raw: '个人主页：https://yangzhihome.github.io/
 
   北京大学信计算机学院副研究员，博士生导师。主要研究方向为深度学习模型的分布式并行、计算优化、算法和系统设计。在 OSDI、ATC、SIGMOD、VLDB、KDD、NIPS、WWW、ICLR、ICML、SoCC、ICDCS等高水平国际学术会议上和ACM/IEEE
@@ -18,7 +19,18 @@ research_direction_raw: 计算机系统、分布式系统
 detail_url: https://cs.pku.edu.cn/info/1085/1723.htm
 profile_url: https://cs.pku.edu.cn/info/1085/1723.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
 provenance:
   name:
     origin: crawled
@@ -37,7 +49,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1085/1723.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -60,14 +72,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1085/1723.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1085/1723.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

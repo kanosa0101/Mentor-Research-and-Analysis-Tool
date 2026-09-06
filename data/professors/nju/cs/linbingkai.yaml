@@ -117,10 +117,11 @@ bio_raw: '林冰凯，本科
 
   https://sites.google.com/site/bingkai314159/'
 institutes: []
+homepage: https://sites.google.com/site/bingkai314159/
 detail_url: https://cs.nju.edu.cn/97/c0/c2639a432064/page.htm
 profile_url: https://cs.nju.edu.cn/97/c0/c2639a432064/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.theory
   origin: computed
@@ -149,6 +150,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/97/c0/c2639a432064/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/97/c0/c2639a432064/page.htm
     fetched_at: '2026-09-03'

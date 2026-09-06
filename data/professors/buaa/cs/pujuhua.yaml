@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: pujh@buaa.edu.cn
 phone: 010-82316583
 bio_raw: '蒲菊华，博士，教授，博士生导师，北京市科技新星，国家智慧城市标准总体组成员，中国计算机学会计算机教育专业委员会执行委员，国家一流本科课程主讲教师，北京市优秀教学团队核心成员。2005年博士毕业于北京航空航天大学计算机学院，后加入先进计算机应用技术教育部工程研究中心工作；2004年4月至7月在香港科技大学访问研究，2011年1月至2012年1月在美国佐治亚理工大学访问研究。长期从事智慧城市理论方法、关键技术和应用的研究，曾获教育部技术发明一等奖(数据活化的关键技术及其智慧城市应用），北京市科技进步二等奖(大型分布式多媒体会议系统)和三等奖(南水北调中线干线工程建设管理门户系统)，北京市教学成果一等奖等奖励。目前的主要研究领域为智慧城市、城市计算和大数据分析。与佐治亚理工大学、南加州大学、苏黎世联邦理工学院、阿卜杜拉国王科技大学、香港科技大学、香港城市大学等境外知名大学都有良好的合作关系。
@@ -22,7 +23,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/11340.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/11340.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/11340.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/11340.htm
     fetched_at: '2026-09-05'

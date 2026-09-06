@@ -21,10 +21,11 @@ bio_raw: '胡伟，博士，南京大学教授、博士生导师。于东南大�
 
   电子邮件：whu@nju.edu.cn'
 institutes: []
+homepage: http://ws2.nju.edu.cn/kgwiki/
 detail_url: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
 profile_url: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -44,12 +45,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/4f/c2639a51535/page.htm
     fetched_at: '2026-09-03'

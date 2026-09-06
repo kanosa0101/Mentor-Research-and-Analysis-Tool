@@ -45,7 +45,18 @@ research_direction_raw: 计算机应用技术
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201211/t20121113_3682430.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/201211/t20121113_3682430.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -82,14 +93,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/201211/t20121113_3682430.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学

@@ -6,6 +6,7 @@ school: scut
 dept: cs
 status: enriched
 title: 教授
+supervisor: 硕导
 email: jwzhang@scut.edu.cn
 phone: 020-39380285-3404
 bio_raw: '基本信息
@@ -659,7 +660,7 @@ institutes: []
 detail_url: https://www2.scut.edu.cn/cs/2017/0129/c22285a327630/page.htm
 profile_url: https://www2.scut.edu.cn/cs/2017/0129/c22285a327630/page.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -693,6 +694,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://www2.scut.edu.cn/cs/2017/0129/c22285a327630/page.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://www2.scut.edu.cn/cs/2017/0129/c22285a327630/page.htm
     fetched_at: '2026-09-05'

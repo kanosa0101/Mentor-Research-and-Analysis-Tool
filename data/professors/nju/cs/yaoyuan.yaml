@@ -13,10 +13,11 @@ bio_raw: '个人主页：
 
   电子邮箱：y.yao@nju.edu.cn'
 institutes: []
+homepage: https://cs.nju.edu.cn/yuanyao/
 detail_url: https://cs.nju.edu.cn/22/9c/c2640a139932/page.htm
 profile_url: https://cs.nju.edu.cn/22/9c/c2640a139932/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets: []
 provenance:
   name:
@@ -40,6 +41,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/22/9c/c2640a139932/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/22/9c/c2640a139932/page.htm
     fetched_at: '2026-09-03'

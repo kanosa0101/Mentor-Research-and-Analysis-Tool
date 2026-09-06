@@ -21,7 +21,18 @@ research_direction_raw: 计算机应用技术
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202012/t20201204_5808256.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202012/t20201204_5808256.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -58,14 +69,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202012/t20201204_5808256.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

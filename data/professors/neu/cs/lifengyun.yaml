@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: lifengyun@mail.neu.edu.cn
 bio_raw: '李凤云，女，博士，副教授，硕士生导师，沈阳市高层次人才（
 
@@ -103,6 +104,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/1206/c6641a162063/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/1206/c6641a162063/page.htm
     fetched_at: '2026-09-04'

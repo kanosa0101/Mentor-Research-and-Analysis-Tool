@@ -89,7 +89,28 @@ research_direction_raw: 083500-软件工程081002-信号与信息处理081203-�
 detail_url: https://people.ucas.ac.cn/~0070473
 profile_url: https://people.ucas.ac.cn/~0070473
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:攻防
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无人系统
 provenance:
   name:
     origin: crawled
@@ -121,24 +142,3 @@ provenance:
     source: https://people.ucas.ac.cn/~0070473
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:攻防
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无人系统

@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: gaoyq@mail.neu.edu.cn
 bio_raw: '高韵淇，东北大学副教授、博士生导师，浙江大学与英国萨里大学联合培养博士（国家留学基金委资助），
 
@@ -158,6 +159,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2026/0728/c6641a458365/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2026/0728/c6641a458365/page.htm
     fetched_at: '2026-09-04'

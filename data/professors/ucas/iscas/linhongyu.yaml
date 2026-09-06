@@ -329,7 +329,18 @@ research_direction_raw: 大模型、自然语言理解
 detail_url: https://people.ucas.ac.cn/~hongyu
 profile_url: https://people.ucas.ac.cn/~hongyu
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:NLP
 provenance:
   name:
     origin: crawled
@@ -361,14 +372,3 @@ provenance:
     source: https://people.ucas.ac.cn/~hongyu
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:NLP

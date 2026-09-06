@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: weilong@sjtu.edu.cn
 office_address: 上海市闵行区东川路800号电院3号楼214
 bio_raw: '个人简介
@@ -159,7 +160,13 @@ homepage: https://weilongzheng.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/郑伟龙.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengweilong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengweilong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
 provenance:
   name:
     origin: crawled
@@ -201,9 +208,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengweilong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengweilong.html
+    fetched_at: '2026-09-02'
+    confidence: auto

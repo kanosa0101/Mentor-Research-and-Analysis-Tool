@@ -22,10 +22,11 @@ bio_raw: '谢磊，南京大学计算机学院副院长，教授，博导，入�
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/lxie
 detail_url: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
 profile_url: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -75,12 +76,12 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -89,6 +90,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/77/c2639a51575/page.htm
     fetched_at: '2026-09-03'

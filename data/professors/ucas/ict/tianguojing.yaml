@@ -100,7 +100,18 @@ research_direction_raw: 计算机软件与理论
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202010/t20201023_5721551.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202010/t20201023_5721551.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:网络技术
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -137,14 +148,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202010/t20201023_5721551.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:网络技术
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

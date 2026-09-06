@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: chenlusz@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -90,7 +91,13 @@ homepage: https://coai-sjtu.github.io
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/陈露.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大语言模型
 provenance:
   name:
     origin: crawled
@@ -127,9 +134,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大语言模型
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenlu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -5,6 +5,7 @@ school: pku
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: trl@pku.edu.cn
 phone: +86 (0)10 6275-0405
 bio_raw: '个人主页：
@@ -115,7 +116,23 @@ research_direction_raw: 密码学
 detail_url: https://cs.pku.edu.cn/info/1071/1690.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1690.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -157,19 +174,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1690.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1071/1690.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

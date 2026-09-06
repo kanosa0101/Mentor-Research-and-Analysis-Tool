@@ -126,7 +126,18 @@ research_direction_raw: 机器学习，贝叶斯方法，深度学习，数据�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1121/3551.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1121/3551.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -158,14 +169,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/3551.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

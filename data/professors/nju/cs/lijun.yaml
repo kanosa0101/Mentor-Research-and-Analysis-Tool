@@ -108,10 +108,11 @@ bio_raw: '李俊，毕业于南京大学计算机科学与技术系，承担《�
 
   nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/lijun
 detail_url: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
 profile_url: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -145,6 +146,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/d6/c2642a51670/page.htm
     fetched_at: '2026-09-03'

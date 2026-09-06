@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副研究员
+supervisor: 博导
 email: kejing@cs.sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -17,7 +18,13 @@ homepage: https://crystal-kej.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/柯晶.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/kejing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/kejing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -54,9 +61,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/kejing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/kejing.html
+    fetched_at: '2026-09-02'
+    confidence: auto

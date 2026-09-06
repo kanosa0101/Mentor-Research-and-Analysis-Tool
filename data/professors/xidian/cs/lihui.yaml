@@ -6,6 +6,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 教授
+email: hli@xidian.edu.cn
 bio_raw: '2005年于哈尔滨工业大学计算机科学与技术学院获得本科学位，并分别于2007年和2012年在新加坡南洋理工大学获得硕士和博士学位，主要研究方向包括数据挖据，保护隐私的数据查询和检索等。入选西安电子科技大学华山学者菁英人才计划，在社交网络的知识发现和挖掘、安全的数据查询等领域取得了较有影响的研究成果，相关成果发表在数据管理、数据挖掘领域顶级会议
 
   SIGMOD, SIGKDD, VLDB, ICDE, INFOCOM, EDBT, CIKM
@@ -29,7 +30,7 @@ institutes: []
 detail_url: https://web.xidian.edu.cn/hli/
 profile_url: https://web.xidian.edu.cn/hli/
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/hli/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://web.xidian.edu.cn/hli/
     fetched_at: '2026-09-04'

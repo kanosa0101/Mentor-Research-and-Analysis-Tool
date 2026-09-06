@@ -5,8 +5,9 @@ school: pku
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hg@pku.edu.cn
-phone: 86-10-6275 7670转16
+phone: 86-10-62757670转16
 bio_raw: '个人主页：http://sei.pku.edu.cn/~huanggang
 
   主要研究方向
@@ -46,7 +47,18 @@ research_direction_raw: 系统软件与自适应
 detail_url: https://cs.pku.edu.cn/info/1067/1624.htm
 profile_url: https://cs.pku.edu.cn/info/1067/1624.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -55,7 +67,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1067/1624.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -65,7 +77,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1067/1624.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -88,14 +100,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1067/1624.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1067/1624.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: fanhongfei@tongji.edu.cn
 phone: 021 6958 9332
 bio_raw: '范鸿飞 博士
@@ -935,6 +936,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2765.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1063/2765.htm
     fetched_at: '2026-09-03'

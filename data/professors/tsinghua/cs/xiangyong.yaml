@@ -95,7 +95,18 @@ research_direction_raw: 操作系统内核分析、车载自组网、计算机�
 detail_url: https://www.cs.tsinghua.edu.cn/info/1127/3592.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1127/3592.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -132,14 +143,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1127/3592.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

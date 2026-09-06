@@ -399,7 +399,23 @@ research_direction_raw: 电子设计自动化(EDA)算法与软件、机器学习
 detail_url: https://www.cs.tsinghua.edu.cn/info/1111/4776.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1111/4776.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -436,19 +452,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1111/4776.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

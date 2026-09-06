@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 supervisor: 博导
+email: hongxiaxie@jlu.edu.cn
 bio_raw: '谢洪霞
 
   职称：
@@ -997,5 +998,10 @@ provenance:
   supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1359/18959.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/18959.htm
+    fetched_at: '2026-09-06'
     confidence: auto

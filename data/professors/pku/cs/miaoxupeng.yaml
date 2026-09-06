@@ -5,6 +5,7 @@ school: pku
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: xupeng.miao@pku.edu.cn
 bio_raw: '个人主页：https://hsword.github.io/
 
@@ -36,7 +37,23 @@ research_direction_raw: 机器学习系统
 detail_url: https://cs.pku.edu.cn/info/1072/4600.htm
 profile_url: https://cs.pku.edu.cn/info/1072/4600.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据管理
 provenance:
   name:
     origin: crawled
@@ -73,19 +90,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1072/4600.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据管理
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1072/4600.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

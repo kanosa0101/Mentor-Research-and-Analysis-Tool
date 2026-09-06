@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xch@buaa.edu.cn
 phone: 010-82317651
 bio_raw: '夏春和，教授，博士生导师，网络技术北京市重点实验室主任。2006年9月至2007年8月曾在美国University of Michigan大学计算机系做访问学者。近年来一直从事计算机网络及网络安全方面的研究工作，参与了863项目“分布式虚拟战场环境”、
@@ -17,7 +18,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2651.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2651.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -56,6 +57,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2651.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2651.htm
     fetched_at: '2026-09-05'

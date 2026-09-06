@@ -54,7 +54,13 @@ research_direction_raw: 嵌入式系统设计，形式化方法、学术主页�
 detail_url: https://people.ucas.ac.cn/~xueyang
 profile_url: https://people.ucas.ac.cn/~xueyang
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -86,9 +92,3 @@ provenance:
     source: https://people.ucas.ac.cn/~xueyang
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

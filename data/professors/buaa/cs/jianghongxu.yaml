@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: jianghx@buaa.edu.cn
 phone: 010-82314108
 bio_raw: '姜宏旭：男，1976年出生，博士，研究员，博士生导师，虚拟现实技术与系统全国重点实验室、数字媒体北京市重点实验室成员。1998年7月于北京航空航天大学获学士学位，2003年12月于北航模式识别与智能系统专业获博士学位，2005年12月在北航计算机应用专业博士后出站，2006年至今在北航计算机学院任教，2016-2017年在美国加州大学洛杉矶分校DRL实验室从事动态神经网络计算方面访问研究。主要研究方向包括人工智能、遥感及计算机视觉、智能计算和嵌入式实时系统等，涉及人工智能算子重构、图算融合、智能模型压缩、模型编译优化与部署加速等多方面技术。
@@ -27,7 +28,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/6393.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/6393.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -71,6 +72,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/6393.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/6393.htm
     fetched_at: '2026-09-05'

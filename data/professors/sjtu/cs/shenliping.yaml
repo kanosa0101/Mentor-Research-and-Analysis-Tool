@@ -163,38 +163,7 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260205/20260205052106.jpeg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  photo_url:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
-    fetched_at: '2026-09-02'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -226,3 +195,34 @@ facets:
   confidence: auto
   evidence:
   - keyword:普适计算
+provenance:
+  name:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenliping.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -93,7 +93,18 @@ research_direction_raw: 存储系统、体系结构、操作系统
 detail_url: https://cs.pku.edu.cn/info/1086/1734.htm
 profile_url: https://cs.pku.edu.cn/info/1086/1734.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:存储系统
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -130,14 +141,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1086/1734.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:存储系统
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

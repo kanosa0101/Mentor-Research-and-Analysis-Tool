@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 副研究员
+supervisor: 硕导
 email: weijingwei2014@ia.ac.cn
 bio_raw: '魏靖伟
 
@@ -1019,7 +1020,33 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240424333126368116.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129857.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129857.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:强化学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医学影像
 provenance:
   name:
     origin: crawled
@@ -1051,29 +1078,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:强化学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医学影像
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129857.html
+    fetched_at: '2026-09-02'
+    confidence: auto

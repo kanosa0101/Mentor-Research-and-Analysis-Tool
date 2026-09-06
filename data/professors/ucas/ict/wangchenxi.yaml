@@ -24,7 +24,13 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202209/W02026081754640396569
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202209/t20220902_6508356.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202209/t20220902_6508356.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
 provenance:
   name:
     origin: crawled
@@ -56,9 +62,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202209/t20220902_6508356.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统

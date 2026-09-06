@@ -264,7 +264,23 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429628401978914.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131981.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131981.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -296,19 +312,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240425_7131981.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

@@ -32,7 +32,23 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/W02025120841936960825
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023725.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023725.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:分布式
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
 provenance:
   name:
     origin: crawled
@@ -59,19 +75,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023725.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:分布式
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线

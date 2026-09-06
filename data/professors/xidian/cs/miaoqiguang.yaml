@@ -7,6 +7,7 @@ dept: cs
 status: enriched
 title: 教授
 supervisor: 博导
+email: qgmiao@xidian.edu.cn
 bio_raw: '苗启广
 
   ，博士，教授，博士生导师，西安电子科技大学计算机科学与技术学院副院长，学院教授委员会主任；西安市大数据与视觉智能重点实验室主任；中国计算机学会（CCF）理事、CCF
@@ -28,7 +29,7 @@ institutes: []
 detail_url: http://web.xidian.edu.cn/qgmiao/
 profile_url: http://web.xidian.edu.cn/qgmiao/
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -72,6 +73,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/qgmiao/
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://web.xidian.edu.cn/qgmiao/
     fetched_at: '2026-09-04'

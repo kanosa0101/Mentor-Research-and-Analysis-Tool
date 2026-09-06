@@ -6,6 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: lqz@nju.edu.cn
+phone: 025-89684681
 bio_raw: '刘奇志，博士，南京大学计算机学院教授。现为中国计算机学会高级会员和数据库专委会执行委员。曾在英国伦敦大学学院访学。主要研究方向为高性能数据管理技术。参加
 
   /
@@ -63,7 +64,7 @@ institutes: []
 detail_url: https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm
 profile_url: https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -78,7 +79,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
@@ -87,6 +88,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm
     fetched_at: '2026-09-03'

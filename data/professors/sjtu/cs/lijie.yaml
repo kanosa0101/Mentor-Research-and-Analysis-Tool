@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 讲席教授
+supervisor: 博导
 email: lijiecs@sjtu.edu.cn
 office_address: 上海市东川路800号上海交通大学计算机学院
 bio_raw: '个人简介
@@ -26,7 +27,23 @@ homepage: https://www.cs.sjtu.edu.cn/~lijie/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251001/20251001114403.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lijie.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lijie.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -68,19 +85,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lijie.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/lijie.html
+    fetched_at: '2026-09-02'
+    confidence: auto

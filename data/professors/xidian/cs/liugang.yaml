@@ -5,6 +5,7 @@ school: xidian
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 subjects: 计算机系统结构. 网络空间安全. 计算机应用技术
 email: gliu@xidian.edu.cn
 phone: '13609191080'
@@ -21,7 +22,7 @@ research_direction_raw: 研究方向、Research Focus、社会兼职、Social Af
 detail_url: https://faculty.xidian.edu.cn/LG4/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/LG4/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -85,6 +86,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LG4/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LG4/zh_CN/index.htm
     fetched_at: '2026-09-04'

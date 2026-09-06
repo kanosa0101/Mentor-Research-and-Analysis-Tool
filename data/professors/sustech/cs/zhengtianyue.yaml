@@ -5,6 +5,7 @@ school: sustech
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: zhengty@sustech.edu.cn
 bio_raw: '个人简介
 
@@ -289,7 +290,7 @@ institutes: []
 detail_url: https://faculty.sustech.edu.cn/?tagid=zhengty&iscss=1&snapid=1&orderby=date&go=2
 profile_url: https://faculty.sustech.edu.cn/?tagid=zhengty&iscss=1&snapid=1&orderby=date&go=2
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -318,6 +319,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.sustech.edu.cn/?tagid=zhengty&iscss=1&snapid=1&orderby=date&go=2
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.sustech.edu.cn/?tagid=zhengty&iscss=1&snapid=1&orderby=date&go=2
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: xiaosj@sjtu.edu.cn
 office_address: ​上海交通大学软件大楼3301室
 bio_raw: '个人简介
@@ -43,7 +44,23 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/肖双九.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiaoshuangjiu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/xiaoshuangjiu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -80,19 +97,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/xiaoshuangjiu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:AIGC
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可视化
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/xiaoshuangjiu.html
+    fetched_at: '2026-09-02'
+    confidence: auto

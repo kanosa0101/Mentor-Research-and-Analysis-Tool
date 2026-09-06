@@ -5,6 +5,7 @@ school: scu
 dept: cs
 status: enriched
 title: 正高级
+supervisor: 博导
 email: chenliangyin@scu.edu.cn
 office_address: 四川成都四川大学计算机学院（望江校区）
 bio_raw: '个人简介
@@ -107,6 +108,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/chenliangyin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.scu.edu.cn/chenliangyin/zh_CN/index.htm
     fetched_at: '2026-09-04'

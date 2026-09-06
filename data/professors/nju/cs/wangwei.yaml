@@ -17,10 +17,11 @@ bio_raw: '南京大学计算机学院教授。1997年和2000年于南京大学�
 
   电子邮件：ww@nju.edu.cn'
 institutes: []
+homepage: http://cs.nju.edu.cn/ww
 detail_url: https://cs.nju.edu.cn/c9/52/c2639a51538/page.htm
 profile_url: https://cs.nju.edu.cn/c9/52/c2639a51538/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -40,7 +41,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.nju.edu.cn/2639/list.htm
+    source: https://cs.nju.edu.cn/c9/52/c2639a51538/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
   supervisor:
@@ -54,6 +55,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/52/c2639a51538/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/52/c2639a51538/page.htm
     fetched_at: '2026-09-03'

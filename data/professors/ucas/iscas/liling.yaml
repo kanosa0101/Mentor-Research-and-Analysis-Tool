@@ -343,7 +343,18 @@ research_direction_raw: ：智能计算、大模型、高性能代码生成（�
 detail_url: https://people.ucas.ac.cn/~lli
 profile_url: https://people.ucas.ac.cn/~lli
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
 provenance:
   name:
     origin: crawled
@@ -375,14 +386,3 @@ provenance:
     source: https://people.ucas.ac.cn/~lli
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译

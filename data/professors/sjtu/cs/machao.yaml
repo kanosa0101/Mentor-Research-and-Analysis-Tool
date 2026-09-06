@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: chaoma@sjtu.edu.cn
 phone: 021-34208478
 office_address: 上海市闵行区东川路800号上海交通大学软件大楼5楼人工智能研究院504室
@@ -20,7 +21,23 @@ homepage: https://vision.sjtu.edu.cn/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/马超.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/machao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/machao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -67,19 +84,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/machao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/machao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

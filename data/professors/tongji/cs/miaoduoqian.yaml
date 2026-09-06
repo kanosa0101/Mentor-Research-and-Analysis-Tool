@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导、硕导
 email: dqmiao@tongji.edu.cn
 phone: 上海市曹安公路4800号电信大楼
 bio_raw: '姓　　名
@@ -99,12 +100,17 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2805.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  phone:
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2805.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  email:
+  supervisor:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/2805.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  phone:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2805.htm
     fetched_at: '2026-09-03'

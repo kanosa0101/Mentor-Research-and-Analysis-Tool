@@ -5,8 +5,9 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hukai@buaa.edu.cn
-phone: 82339460电子邮件：hukai@buaa.edu.cn办公地点：北航新主楼G座G1041
+phone: 010-82339460
 bio_raw: '胡凯，博士，教授，博士生导师，北京市计算机学会理事。北航计算机学院系统结构学科，分布式系统研究方向。2001年在北航计算机系获博士学位，2001~2003年在新加坡南洋理工大学任研究员（Research
   Fellow），参与多国合作的新加坡国家重点项目，合著英文专著《Anatomy of HCTS》（2006年,NUS Publishing）。2004年回国加入北航计算机学院。2011年受邀在法国雷恩一大短期客座访问，2014年在美国亚利桑那州立大学做访问学者。之前曾在航空院所工作多年，任主任设计师，主持和参与了多项航空系统大型项目研发。
 
@@ -26,7 +27,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2676.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2676.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -70,6 +71,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2676.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2676.htm
     fetched_at: '2026-09-05'

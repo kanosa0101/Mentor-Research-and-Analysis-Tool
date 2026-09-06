@@ -5,6 +5,7 @@ school: tsinghua
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: peidan@tsinghua.edu.cn
 phone: 010-62783690
 bio_raw: '姓名：裴丹
@@ -363,7 +364,13 @@ research_direction_raw: 智能运维（AIOps）、时间序列智能（Time Seri
 detail_url: https://www.cs.tsinghua.edu.cn/info/1126/7243.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1126/7243.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -400,9 +407,8 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1126/7243.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络
+  supervisor:
+    origin: crawled
+    source: https://www.cs.tsinghua.edu.cn/info/1126/7243.htm
+    fetched_at: '2026-09-02'
+    confidence: auto

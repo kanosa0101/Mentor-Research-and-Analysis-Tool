@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: nmzuo@nlpr.ia.ac.cn
 bio_raw: '左年明
 
@@ -52,7 +53,28 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202407/W020240719307176303057.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202407/t20240719_7230677.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202407/t20240719_7230677.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:无线
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可穿戴
 provenance:
   name:
     origin: crawled
@@ -79,24 +101,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:无线
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可穿戴
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202407/t20240719_7230677.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -5,8 +5,8 @@ school: tongji
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导、硕导
 email: xiaoguowang@mail.tongji.edu.cn
-phone: 通讯地址上海市曹安路4800号电子与信息工程学院王晓国，同济大学电子与信息工程学院计算机科学与技术系教授，博士生导师，工学博士。IEEE上海分会副主席。主要从事智慧城市、大数据、互联网金融反欺诈等领域的研究和应用工作。主持或作为主要参与...
 bio_raw: '姓　　名
 
   王晓国
@@ -73,12 +73,12 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1061/2798.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  phone:
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2798.htm
     fetched_at: '2026-09-03'
     confidence: auto
-  email:
+  supervisor:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/2798.htm
     fetched_at: '2026-09-03'

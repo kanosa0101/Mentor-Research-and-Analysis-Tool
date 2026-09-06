@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: guoxingchen@sjtu.edu.cn
 office_address: SEIEE-3-525
 bio_raw: '个人简介
@@ -55,7 +56,18 @@ homepage: https://donnod.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250616/20250616131812.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenguoxing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenguoxing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:操作系统
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -97,14 +109,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenguoxing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:操作系统
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenguoxing.html
+    fetched_at: '2026-09-02'
+    confidence: auto

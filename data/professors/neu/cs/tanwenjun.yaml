@@ -4,6 +4,7 @@ aliases: []
 school: neu
 dept: cs
 status: enriched
+supervisor: 博导
 email: tanwenjun@cse.neu.edu.cn
 bio_raw: '覃文军，男，
 
@@ -159,6 +160,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0314/c6641a157446/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0314/c6641a157446/page.htm
     fetched_at: '2026-09-04'

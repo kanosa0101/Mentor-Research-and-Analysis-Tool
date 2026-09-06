@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: tuchenyang@iie.ac.cn
 office_address: 北京市海淀区树村路19号中国科学院信息工程研究所1号楼
 institutes:
@@ -13,7 +14,7 @@ research_direction_raw: 研究兴趣包括密码系统在新场景下的应用�
 detail_url: https://people.ucas.ac.cn/~tuchenyang
 profile_url: https://people.ucas.ac.cn/~tuchenyang
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   institutes:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~tuchenyang
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~tuchenyang
     fetched_at: '2026-09-05'

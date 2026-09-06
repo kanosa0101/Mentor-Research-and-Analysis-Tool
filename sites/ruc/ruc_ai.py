@@ -7,6 +7,7 @@ import re
 from bs4 import BeautifulSoup
 
 from crawler import fetch
+from crawler.email_util import normalize_email
 from sites.simple_list import iter_roster  # 名单逻辑一致, 复用
 
 _TITLE_RE = re.compile(
@@ -30,8 +31,23 @@ def parse_detail(cfg, html, url):
     m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
     if m:
         out["email"] = m.group(0)
+    if "email" not in out:
+        # 联系栏 "邮箱：dou(@)ruc.edu.cn" / "邮箱：yi.zeng (@)ruc.edu.cn"——
+        # (@) 混淆正则吃不到, 交给 normalize_email 还原(已支持括号 @)
+        m = re.search(r"(?:(?:电子)?邮箱|E\s*-?\s*[Mm]ail)[：:]\s*([^\n]{2,80})", text)
+        if m:
+            e = normalize_email(m.group(1))
+            if e:
+                out["email"] = e
     # 简介: 姓名/职称行之后到 教育经历 之间的大段
     m = re.search(r"\n(助理教授|讲师|副教授|教授|研究员)\n(.{50,}?)(?:\n教育经历\n|\n工作经历\n)", text, re.S)
     if m:
         out["bio_raw"] = m.group(2).strip()[:5000]
+    if not out.get("supervisor"):
+        # bio_raw 段落常截不到联系栏自述("吴玉章讲席教授，博导。"), 全页紧模式
+        # 提取——人大 AI 页面已验证无导航误配(dry-run +9)
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(text)
+        if sup:
+            out["supervisor"] = sup
     return out

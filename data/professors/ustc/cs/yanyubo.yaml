@@ -5,6 +5,8 @@ school: ustc
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
+email: yuboyan@ustc.edu.cn
 bio_raw: 'E-mai：yuboyan@ustc.edu.cn
 
   研究方向
@@ -85,7 +87,7 @@ institutes: []
 detail_url: http://cs.ustc.edu.cn/2020/0906/c23239a461675/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0906/c23239a461675/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -109,6 +111,16 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a461675/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a461675/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a461675/page.htm
     fetched_at: '2026-09-03'

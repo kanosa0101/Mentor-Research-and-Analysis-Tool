@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wei.shen@sjtu.edu.cn
 phone: 021-34208485
 office_address: 上海市闵行区东川路800号上海交通大学软件大楼
@@ -150,7 +151,18 @@ homepage: https://shenwei1231.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250626/20250626111312.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenwei.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shenwei.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
 provenance:
   name:
     origin: crawled
@@ -197,14 +209,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenwei.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shenwei.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: shshen@nlpr.ia.ac.cn
 bio_raw: "申抒含\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nshshen@nlpr.ia.ac.cn\n部门/实验室:\n\
   中国科学院工业视觉智能装备技术工程实验室\n通讯地址:\n北京市海淀区中关村东路95号\n个人简历\n申抒含，中国科学院自动化研究所研究员、博士生导师，中国科学院大学人工智能学院岗位教授，中科院工业视觉智能装备技术工程实验室副主任。研究领域为三维计算机视觉理论与应用，包括大规模场景三维重建、智能机器人三维环境感知、场景三维语义理解等。在计算机视觉、摄影测量、机器人等领域国际期刊和国际会议，如IEEE\
@@ -99,7 +100,28 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424596410980233.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130949.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130949.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -131,24 +153,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7130949.html
+    fetched_at: '2026-09-02'
+    confidence: auto

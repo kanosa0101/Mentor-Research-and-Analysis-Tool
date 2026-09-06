@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: liuhongbin@ia.ac.cn
 bio_raw: '刘宏斌
 
@@ -573,38 +574,7 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240423500302471788.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
-provenance:
-  name:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-02'
-    confidence: auto
-  bio_raw:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  title:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  email:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  institutes:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
-    fetched_at: '2026-09-02'
-    confidence: auto
-  photo_url:
-    origin: crawled
-    source: https://ia.cas.cn/rcdw/yjy/
-    fetched_at: '2026-09-03'
-    confidence: auto
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -636,3 +606,39 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+provenance:
+  name:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-02'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
+    fetched_at: '2026-09-02'
+    confidence: auto
+  photo_url:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129950.html
+    fetched_at: '2026-09-02'
+    confidence: auto

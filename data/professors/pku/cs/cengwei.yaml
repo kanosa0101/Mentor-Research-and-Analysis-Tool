@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 研究员
 email: weizeng@pku.edu.cn
-phone: 86-10-********
+phone: 86-10-62758116
 bio_raw: '个人主页：
 
   http://idm.pku.edu.cn/info/1017/1047.htm
@@ -48,7 +48,18 @@ research_direction_raw: 人工智能、多媒体
 detail_url: https://cs.pku.edu.cn/info/1086/3081.htm
 profile_url: https://cs.pku.edu.cn/info/1086/3081.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器人
 provenance:
   name:
     origin: crawled
@@ -57,17 +68,17 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/3081.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/3081.htm
     fetched_at: '2026-09-03'
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1086/3081.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -90,14 +101,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1086/3081.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器人

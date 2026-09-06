@@ -5,6 +5,7 @@ school: ruc
 dept: info
 status: enriched
 title: 教授
+supervisor: 博导
 email: ycw@ruc.edu.cn
 bio_raw: 王永才，中国人民大学计算机系教授，博导，计算机系副系主任、信息学院科研与学科建设工委主任。本科、博士均毕业与清华大学自动化系，师从郑大钟和赵千川教授，是CCF智能机器人专委会执行委员、物联网专委会执行委员、中国控制学会DEDS专委会执行委员、SIGBED
   China专委、CAAI认知与信息处理等专委会委员，主要研究领域为：智能体系统、视觉空间计算、Spatial AI、协同感知、SLAM、多智能体强化学习，在国内外知名期刊和会议发表论文120余篇，其中CCF
@@ -15,7 +16,7 @@ institutes: []
 detail_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/198d5c8fc91c4a0895a1edde318db3a9.htm
 profile_url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/198d5c8fc91c4a0895a1edde318db3a9.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -54,6 +55,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   title:
+    origin: crawled
+    source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/198d5c8fc91c4a0895a1edde318db3a9.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/198d5c8fc91c4a0895a1edde318db3a9.htm
     fetched_at: '2026-09-05'

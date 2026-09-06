@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 硕导
 email: kqhuang@nlpr.ia.ac.cn
 bio_raw: '黄凯奇
 
@@ -149,7 +150,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240425322413035365.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129813.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129813.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -181,14 +193,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129813.html
+    fetched_at: '2026-09-02'
+    confidence: auto

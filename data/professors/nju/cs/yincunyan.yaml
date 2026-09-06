@@ -1,6 +1,7 @@
 slug: yincunyan
 name: 尹存燕
-aliases: []
+aliases:
+- df
 school: nju
 dept: cs
 status: enriched
@@ -16,10 +17,11 @@ bio_raw: '个人主页：
 
   nju.edu.cn'
 institutes: []
+homepage: http://nlp.nju.edu.cn/yincy/
 detail_url: https://cs.nju.edu.cn/c9/df/c2642a51679/page.htm
 profile_url: https://cs.nju.edu.cn/c9/df/c2642a51679/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -43,6 +45,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/c9/df/c2642a51679/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  homepage:
     origin: crawled
     source: https://cs.nju.edu.cn/c9/df/c2642a51679/page.htm
     fetched_at: '2026-09-03'

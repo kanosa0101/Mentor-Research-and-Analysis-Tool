@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: xlhuang@cs.ecnu.edu.cn
 phone: 021-62233627
 bio_raw: '黄新力，现任华东师范大学计算机科学与技术学院教授、博士生导师，研究兴趣集中在网络与智能计算系统领域，目前的研究工作涉及可扩展分布式系统与网络、分布式机器学习与边缘智能、可信与安全人工智能系统、智能物联网与数据分析等方向。
@@ -158,7 +159,7 @@ institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247722
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247722
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -210,4 +211,9 @@ provenance:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247722
+    fetched_at: '2026-09-04'
     confidence: auto

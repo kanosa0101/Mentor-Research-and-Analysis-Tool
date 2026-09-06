@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: jiali@buaa.edu.cn
 bio_raw: '李甲，博士，教授，博士生导师，中国民主同盟盟员，
 
@@ -31,7 +32,7 @@ homepage: http://cvteam.buaa.edu.cn/
 detail_url: http://scse.buaa.edu.cn/info/1078/7295.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/7295.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -70,6 +71,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/7295.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/7295.htm
     fetched_at: '2026-09-05'

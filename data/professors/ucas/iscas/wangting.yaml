@@ -65,7 +65,18 @@ research_direction_raw: 并行计算，高性能计算大数据，并行算法
 detail_url: https://people.ucas.ac.cn/~wangting
 profile_url: https://people.ucas.ac.cn/~wangting
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:并行计算
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -97,14 +108,3 @@ provenance:
     source: https://people.ucas.ac.cn/~wangting
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:并行计算
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

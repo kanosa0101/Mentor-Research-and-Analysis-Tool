@@ -76,7 +76,18 @@ homepage: https://www.cs.sjtu.edu.cn/~jinhaiming/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/金海明.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jinhaiming.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/jinhaiming.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:物联网
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:普适计算
 provenance:
   name:
     origin: crawled
@@ -118,14 +129,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/jinhaiming.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:物联网
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:普适计算

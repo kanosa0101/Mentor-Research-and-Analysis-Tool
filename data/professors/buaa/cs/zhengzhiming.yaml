@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+email: tangshaoting@buaa.edu.cn
 bio_raw: '郑志明教授，中国科学院院士，国家教学名师。1987年毕业于北京大学数学系，获理学博士学位。现任软件开发环境国家重点实验室主任，北航人工智能研究院院长，教育部数学专业教指委主任，中国通信学会副理事长等职。曾任北京大学数学科学学院副院长，北京大学副教务长，北京航空航天大学副校长。主要从事动力系统、人工智能、区块链、网络安全等方向的研究工作。承担“973”、“863”、国家自然科学基金委和国防科工委重大专项基金等项目20余项。在国内外一流期刊发表学术论文140余篇，授权国家发明专利32项，著作2本。作为第一完成人获国家技术发明奖一等奖、何梁何利科技进步奖、教育部自然科学奖一等奖、国防技术发明奖一等奖、国家教学成果特等奖等奖励。
 
   如有报考研究生意向，请联系：唐老师tangshaoting@buaa.edu.cn'
@@ -12,7 +13,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/8422.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8422.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -31,6 +32,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8422.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8422.htm
     fetched_at: '2026-09-05'

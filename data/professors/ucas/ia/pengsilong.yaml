@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 正高级
+supervisor: 博导
 email: silong.peng@ia.ac.cn
 bio_raw: '彭思龙
 
@@ -616,7 +617,13 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240429600871620245.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131022.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131022.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图像
 provenance:
   name:
     origin: crawled
@@ -648,9 +655,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131022.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图像
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240424_7131022.html
+    fetched_at: '2026-09-02'
+    confidence: auto

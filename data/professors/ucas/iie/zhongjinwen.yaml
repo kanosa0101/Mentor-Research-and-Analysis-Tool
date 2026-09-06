@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: zhongjinwen@iie.ac.cn
 office_address: 海淀区树村路19号
 institutes: []
@@ -11,7 +12,7 @@ research_direction_raw: 大数据管理、智能数据分析
 detail_url: https://people.ucas.ac.cn/~zhongjinwen
 profile_url: https://people.ucas.ac.cn/~zhongjinwen
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~zhongjinwen
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~zhongjinwen
     fetched_at: '2026-09-05'

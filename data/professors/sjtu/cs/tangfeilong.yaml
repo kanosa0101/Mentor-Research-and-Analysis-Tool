@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: tang_feilong@sjtu.edu.cn
 phone: 021-34205321
 office_address: 电信群楼3-430
@@ -233,7 +234,28 @@ homepage: https://www.cs.sjtu.edu.cn/jiaoshiml/tangfeilong.html
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/唐飞龙.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/tangfeilong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/tangfeilong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:系统结构
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -280,24 +302,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangfeilong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:系统结构
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangfeilong.html
+    fetched_at: '2026-09-02'
+    confidence: auto

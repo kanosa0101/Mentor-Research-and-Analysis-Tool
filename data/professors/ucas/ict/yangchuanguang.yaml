@@ -21,7 +21,13 @@ photo_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/W02025120936065283060
 detail_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023694.html
 profile_url: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023694.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
 provenance:
   name:
     origin: crawled
@@ -53,9 +59,3 @@ provenance:
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202512/t20251208_8023694.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉

@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: yfbai@hnu.edu.cn
 bio_raw: 白艳锋，男，1980年生，河南郑州人，博士，教授。2005.6毕业于华南师范大学，获硕士学位；2008.6毕业于中国科学院上海光学精密机械研究所，获博士学位；2008.7受聘讲师进入东南大学工作，2012.4晋级副教授；2014.9进入湖南大学工作；2016.12-2017.12美国田纳西大学，访问学者；2019年晋级教授。长期从事“鬼”成像，图像处理，信号检测与处理，非线性光学和量子光学等方面的研究。主持国家级项目9项，参与国家级项目10项。在国内外学术期刊上发表论文近80篇，全部为
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: “鬼”成像，图像处理，机器学习，信号�
 detail_url: http://csee.hnu.edu.cn/people/baiyanfeng
 profile_url: http://csee.hnu.edu.cn/people/baiyanfeng
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/baiyanfeng
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/baiyanfeng
     fetched_at: '2026-09-05'

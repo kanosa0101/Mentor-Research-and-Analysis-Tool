@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: kliu@nlpr.ia.ac.cn
 bio_raw: "刘康\n/\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nkliu@nlpr.ia.ac.cn\n部门/实验室:\n复杂系统认知与决策实验室\n\
   通讯地址:\n北京市海淀区中关村东路95号\n个人简历\n刘康研究员，博士生导师;中国科学院大学人工智能学院岗位教授，北京智源人工智能研究院青年科学家。研究领域包括信息抽取、网络挖掘、问答系统等，同时也涉及模式识别与机器学习方面的基础研究。在人工智能、自然语言处理、知识工程等领域国际重要会议和期刊发表多篇学术论文，Google\
@@ -38,7 +39,28 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240424357079590701.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129835.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129835.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:知识图谱
 provenance:
   name:
     origin: crawled
@@ -70,24 +92,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:知识图谱
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129835.html
+    fetched_at: '2026-09-02'
+    confidence: auto

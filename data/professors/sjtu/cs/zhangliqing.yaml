@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教授
+supervisor: 博导
 email: lqzhang@sjtu.edu.cn
 phone: 021-34204423
 office_address: 电信群楼3-435室
@@ -800,7 +801,23 @@ homepage: https://bcmi.sjtu.edu.cn/~zhangliqing/Index_cn.html
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/张丽清.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangliqing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangliqing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:生物信息
 provenance:
   name:
     origin: crawled
@@ -847,19 +864,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangliqing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:生物信息
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangliqing.html
+    fetched_at: '2026-09-02'
+    confidence: auto

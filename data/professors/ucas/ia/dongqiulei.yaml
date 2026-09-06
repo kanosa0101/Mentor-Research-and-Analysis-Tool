@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: qldong@nlpr.ia.ac.cn
 bio_raw: '董秋雷
 
@@ -73,7 +74,18 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240425340944933552.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129938.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129938.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:nlp
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -105,14 +117,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:nlp
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129938.html
+    fetched_at: '2026-09-02'
+    confidence: auto

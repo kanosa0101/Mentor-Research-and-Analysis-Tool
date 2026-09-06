@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 助理研究员
+supervisor: 硕导
 email: songsli@sjtu.edu.cn
 office_address: 上海交通大学电院4号楼4-317
 bio_raw: '个人简介
@@ -181,7 +182,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260609/20260609103152.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lisongsong.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/lisongsong.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
 provenance:
   name:
     origin: crawled
@@ -218,9 +225,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/lisongsong.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/lisongsong.html
+    fetched_at: '2026-09-02'
+    confidence: auto

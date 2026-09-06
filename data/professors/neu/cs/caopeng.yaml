@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: '曹鹏，男，博士，加拿大阿尔伯塔大学联合培养博士，教授，博士生导师，人工智能系副主任。
 
   主要研究方向：
@@ -152,6 +153,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0813/c6641a157451/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0813/c6641a157451/page.htm
     fetched_at: '2026-09-04'

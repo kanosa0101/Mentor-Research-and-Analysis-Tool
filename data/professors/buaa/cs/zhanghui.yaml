@@ -5,8 +5,9 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: hzhang@buaa.edu.cn
-phone: 82338088电子邮件：hzhang@buaa.edu.cn
+phone: 010-82338088
 bio_raw: '张辉，男，博士，教授，博士生导师。1985年考入北航计算机学院，先后获得学士、硕士和博士学位。1997-2001，担任北航网络中心副主任。2007.2-2008.2在美国芝加哥大学/Argonne国家实验室访问研究，从事Grid
   Computing研究。现兼任国家科技资源共享服务工程技术研究中心副主任，负责科技资源信息整合、管理与共享服务的技术研发工作。
 
@@ -35,7 +36,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2677.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2677.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -79,6 +80,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2677.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2677.htm
     fetched_at: '2026-09-05'

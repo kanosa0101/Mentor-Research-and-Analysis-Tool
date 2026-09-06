@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 硕导
 email: chli@cs.ecnu.edu.cn
 phone: 传真：
 bio_raw: '招收2027年秋季入学的硕士生、直博生，也欢迎对科研感兴趣的本科生参与日常科研。
@@ -49,7 +50,7 @@ homepage: http://chenhui.li
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247730
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247730
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.graphics
   origin: computed
@@ -86,4 +87,9 @@ provenance:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247730
+    fetched_at: '2026-09-04'
     confidence: auto

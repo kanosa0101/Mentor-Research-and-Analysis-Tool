@@ -188,7 +188,13 @@ research_direction_raw: 量子计算、程序设计语言的语义学, 人工智
 detail_url: https://www.cs.tsinghua.edu.cn/info/1121/3553.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1121/3553.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -220,9 +226,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1121/3553.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

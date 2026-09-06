@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: liuxd@buaa.edu.cn
 phone: 010-82316285
 bio_raw: 刘旭东，1965年4月出生，博士、教授、博士生导师。现任北京航空航天大学计算机学院计算机新技术研究所（ACT）所长、可信网络计算技术重点学科实验室主任、北京市大数据科学与脑机智能高精尖创新中心执行主任。主要从事云计算与大数据、网络化软件开发方法、工业互联网等领域的研究工作，作为项目负责人先后承担国家重点研发计划“工业机器人云平台”、国家863计划“可信的国家软件资源共享与协同生产环境”、“大规模服务化软件的组合开发与运行演化技术及平台”、“基于中国云产品的混合云关键技术与系统”，核高基课题“国产中间件参考实现及平台”等重点项目或课题5项，作为核心骨干参与973计划、科技支撑计划、自然基金创新群体项目、自然基金重点项目等课题多项。在WWW、AAAI、ICSE、IJCAI等相关领域的重要会议和期刊发表论文百余篇，申请专利30余项。在曾获国家科学技术发明二等奖1项、国家科学技术进步二等奖2项、省部级科技进步一等奖5项；在教学研究方面，曾获国家教学成果一等奖1项、国家教学成果二等奖1项，此外，还曾获北京市教学名师、国防科工委优秀教师、宝钢优秀教师特等奖、北京市教育创新标兵等荣誉称号。
@@ -12,7 +13,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/2646.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2646.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2646.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2646.htm
     fetched_at: '2026-09-05'

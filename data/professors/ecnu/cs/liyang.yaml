@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: yli@cs.ecnu.edu.cn
 phone: 021-62233362
 bio_raw: '李洋，博士，华东师范大学计算机科学与技术学院副教授、博士生导师。主要研究方向为
@@ -244,7 +245,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/ly2_19214/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/ly2_19214/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -288,6 +289,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/ly2_19214/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/ly2_19214/main.psp
     fetched_at: '2026-09-05'

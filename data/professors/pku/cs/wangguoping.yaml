@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 教授
 email: wgp@pku.edu.cn
-phone: 86-10-6275 1781
+phone: 86-10-6275
 bio_raw: 汪国平
 institutes:
 - 元宇宙技术研究所
@@ -14,7 +14,18 @@ research_direction_raw: 计算机图形学，人机交互
 detail_url: https://cs.pku.edu.cn/info/1083/1699.htm
 profile_url: https://cs.pku.edu.cn/info/1083/1699.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.hci
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:人机交互
 provenance:
   name:
     origin: crawled
@@ -23,7 +34,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1083/1699.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -33,7 +44,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1083/1699.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -51,14 +62,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1083/1699.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.hci
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:人机交互

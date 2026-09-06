@@ -5,13 +5,14 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 bio_raw: 主持国家自然科学基金项目、教育部留学回国人员科研启动基金项目、湖南省科技计划项目省重点研发计划项目、湖南省自然科学基金项目、光通信与光波技术教育部重点实验室(北京邮电大学)项目、企业合作项目30余项。作为主要成员参与国家重大科研仪器研制项目、国家重点研发计划项目、国家863计划项目、国家自然科学基金项目等。2012年至2013年，获国家留学基金资助，在英国布里斯托大学进行访问研究。以第一作者和通讯作者在光通信领域重要学术期刊发表高水平论文100余篇，申请国家发明专利20余项。湖南省自然科学奖二等奖获得者（第一完成人），湖南省普通高校青年骨干教师，湖南省优秀博士学位论文指导老师，湖南省优秀硕士学位论文指导老师。目前是OSA会员、中国通信学会高级会员、湖南省通信学会理事、湖南省光学学会理事，国家自然科学基金评审专家、教育部学位中心评审专家，OL、OEx、IEEE/OSAJLT、IEEEPTL等期刊审稿人。
 institutes: []
 research_direction_raw: 光载无线通信，实时光通信，空间光通信，通信感知一体化
 detail_url: http://csee.hnu.edu.cn/people/hejing
 profile_url: http://csee.hnu.edu.cn/people/hejing
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.network
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/hejing
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/hejing
     fetched_at: '2026-09-05'

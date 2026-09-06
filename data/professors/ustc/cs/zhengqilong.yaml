@@ -5,6 +5,7 @@ school: ustc
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: QLZheng@ustc.edu.cn
 phone: 0551-63602441
 bio_raw: '电　 话： 0551-63602441
@@ -190,7 +191,7 @@ institutes: []
 detail_url: http://cs.ustc.edu.cn/2020/0905/c23239a460153/page.htm
 profile_url: http://cs.ustc.edu.cn/2020/0905/c23239a460153/page.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -224,6 +225,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   email:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23239a460153/page.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460153/page.htm
     fetched_at: '2026-09-03'

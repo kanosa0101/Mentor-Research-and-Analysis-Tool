@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: yapingzhu@tongji.edu.cn
 bio_raw: '朱亚萍
 
@@ -87,4 +88,9 @@ provenance:
     origin: computed
     source: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/3611.htm
+    fetched_at: '2026-09-03'
     confidence: auto

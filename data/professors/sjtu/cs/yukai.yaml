@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 特聘教授
+supervisor: 博导
 email: kai.yu@sjtu.edu.cn
 phone: 02134207864
 office_address: 电信群楼3号楼539
@@ -434,7 +435,18 @@ homepage: https://x-lance.sjtu.edu.cn/~kaiyu/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/俞凯.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yukai.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yukai.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:多模态
 provenance:
   name:
     origin: crawled
@@ -481,14 +493,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yukai.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:多模态
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/yukai.html
+    fetched_at: '2026-09-02'
+    confidence: auto

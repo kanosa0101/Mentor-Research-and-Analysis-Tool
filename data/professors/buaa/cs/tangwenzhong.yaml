@@ -5,8 +5,9 @@ school: buaa
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: tangwenzhong@buaa.edu.cn
-phone: 010-82315082 办公室：新主楼D1013
+phone: 010-82315082
 bio_raw: '唐文忠，男，1968年生，博士，研究员，博士生导师。现任国家科技资源共享服务工程技术研究中心主任、中国航空工程科技发展战略研究院秘书长、中关村智慧城市产业与技术创新战略联盟常务理事长。
 
   主要从事人工智能、网络与信息安全、物联网、智慧城市等方向的研究工作。
@@ -20,7 +21,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/5220.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/5220.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -64,6 +65,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/5220.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/5220.htm
     fetched_at: '2026-09-05'

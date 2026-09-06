@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 特聘教授
+supervisor: 博导
 email: shengbin@sjtu.edu.cn
 office_address: 上海市闵行区东川路800号电信群楼3号楼511室
 bio_raw: '个人简介
@@ -193,7 +194,23 @@ homepage: https://www.researchgate.net/profile/Bin-Sheng-3
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250911/20250911162204.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shengbin.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/shengbin.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:虚拟现实
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -235,19 +252,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/shengbin.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:虚拟现实
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/shengbin.html
+    fetched_at: '2026-09-02'
+    confidence: auto

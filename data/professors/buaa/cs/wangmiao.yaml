@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: miaow@buaa.edu.cn
 bio_raw: '汪淼，教授，博士生导师，2011年于西安电子科技大学获学士学位，2016年于清华大学计算机系获博士学位
 
@@ -31,7 +32,7 @@ homepage: http://miaowang.me
 detail_url: http://scse.buaa.edu.cn/info/1546/12075.htm
 profile_url: http://scse.buaa.edu.cn/info/1546/12075.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.graphics
   origin: computed
@@ -65,6 +66,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1546/12075.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1546/12075.htm
     fetched_at: '2026-09-05'

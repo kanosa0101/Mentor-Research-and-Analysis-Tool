@@ -84,4 +84,11 @@ def parse_detail(cfg, html, url):
                  and not re.search(r"备案|copyright|版权", p, re.I)]
         if paras:
             out["bio_raw"] = re.sub(r"\s+", "", paras[0])[:2000]
+    if not out.get("supervisor"):
+        # 教师介绍段落自述"现为计算机学院通信工程系教授、博士生导师"(在 bio_raw
+        # 截取段落之外), 全页紧模式提取——hnu 页面无导航误配(dry-run +22 全为真自述)
+        from crawler.supervisor_util import extract_supervisor
+        sup = extract_supervisor(soup.get_text("\n", strip=True))
+        if sup:
+            out["supervisor"] = sup
     return out

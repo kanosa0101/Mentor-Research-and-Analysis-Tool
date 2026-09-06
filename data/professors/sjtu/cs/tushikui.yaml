@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘副教授
+supervisor: 博导
 email: tushikui@sjtu.edu.cn
 office_address: 东川路800号电院3号楼541
 bio_raw: '个人简介
@@ -136,7 +137,23 @@ homepage: https://www.cs.sjtu.edu.cn/~tushikui/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/涂仕奎.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/tushikui.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/tushikui.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:基因组
 provenance:
   name:
     origin: crawled
@@ -178,19 +195,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tushikui.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:基因组
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tushikui.html
+    fetched_at: '2026-09-02'
+    confidence: auto

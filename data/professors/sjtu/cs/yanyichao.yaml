@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: yanyichao@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -147,7 +148,28 @@ homepage: https://daodaofr.github.io/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260316/20260316164739.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yanyichao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/yanyichao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:AIGC
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:图形学
+- id: topic.robotics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:具身
 provenance:
   name:
     origin: crawled
@@ -184,24 +206,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/yanyichao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:AIGC
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:图形学
-- id: topic.robotics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:具身
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/yanyichao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

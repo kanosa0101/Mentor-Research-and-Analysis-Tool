@@ -21,7 +21,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/管海兵.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guanhaibing.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/guanhaibing.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:高性能计算
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大数据
 provenance:
   name:
     origin: crawled
@@ -53,14 +64,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/guanhaibing.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:高性能计算
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大数据

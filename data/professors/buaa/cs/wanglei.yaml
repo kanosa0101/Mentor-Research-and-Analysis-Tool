@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wanglei@buaa.edu.cn
 phone: 010-82316284
 bio_raw: '王雷，男，博士，教授，博士生导师，从事操作系统、虚拟化、并行优化技术等方面的研究工作。讲授计算机系本科生专业基础课“操作系统”和研究生选修课“操作系统结构分析”两门。承担了国家自然科学基金项目“基于复杂网络的操作系统演化与结构稳定性研究”，以操作系统内部网络结构作为研究对象，探索操作系统中复杂网络的形成机理和演化规律。与百度合作，负责了863重大项目“以支撑搜索服务为主的网络操作系统研制”子课题“分布式系统可用性的研究”。负责了核高基重大专项“开源操作系统内核分析和安全性评估”分课题“面向典型硬件平台及关键特性的Android内核特色模块分析”。参加了863重大专项“高效能计算机系统研制及关键技术研究”，并负责“基于龙芯的结点机系统软件”子课题。在Information
@@ -21,7 +22,7 @@ institutes: []
 detail_url: http://scse.buaa.edu.cn/info/1078/8384.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/8384.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -60,6 +61,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/8384.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/8384.htm
     fetched_at: '2026-09-05'

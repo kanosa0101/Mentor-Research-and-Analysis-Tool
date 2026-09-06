@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 email: gongsf@mail.neu.edu.cn
 bio_raw: '巩树凤，
 
@@ -77,6 +78,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2021/1228/c6641a208908/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2021/1228/c6641a208908/page.htm
     fetched_at: '2026-09-04'

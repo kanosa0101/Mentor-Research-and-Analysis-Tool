@@ -5,8 +5,9 @@ school: pku
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: bin.cui@pku.edu.cn
-phone: 86-10-6276 5821
+phone: 86-10-
 bio_raw: '个人主页：https://cuibinpku.github.io/
 
   主要研究方向
@@ -36,7 +37,18 @@ research_direction_raw: AI系统、数据库、大数据
 detail_url: https://cs.pku.edu.cn/info/1062/1608.htm
 profile_url: https://cs.pku.edu.cn/info/1062/1608.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.db
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:数据库
 provenance:
   name:
     origin: crawled
@@ -45,7 +57,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1062/1608.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -55,7 +67,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1062/1608.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -78,14 +90,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/1608.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.db
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:数据库
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1062/1608.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

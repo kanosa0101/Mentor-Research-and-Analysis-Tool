@@ -503,7 +503,18 @@ homepage: https://sites.google.com/view/yifulai/homepage?authuser=0
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260514/20260514183659.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:密码
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -540,14 +551,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:密码
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

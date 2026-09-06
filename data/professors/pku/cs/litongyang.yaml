@@ -5,6 +5,7 @@ school: pku
 dept: cs
 status: enriched
 title: 助理教授
+supervisor: 博导
 email: tongyangli@pku.edu.cn
 phone: 86 (0)10 6276-6141
 bio_raw: '个人主页：
@@ -77,7 +78,18 @@ research_direction_raw: 量子算法设计（特别是量子机器学习、量�
 detail_url: https://cs.pku.edu.cn/info/1071/1687.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1687.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:算法设计
 provenance:
   name:
     origin: crawled
@@ -119,14 +131,8 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1687.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:算法设计
+  supervisor:
+    origin: crawled
+    source: https://cs.pku.edu.cn/info/1071/1687.htm
+    fetched_at: '2026-09-03'
+    confidence: auto

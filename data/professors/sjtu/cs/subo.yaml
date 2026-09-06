@@ -23,7 +23,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20251127/20251127183859.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/subo.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/subo.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.network
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机网络
 provenance:
   name:
     origin: crawled
@@ -55,14 +66,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/subo.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.network
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机网络

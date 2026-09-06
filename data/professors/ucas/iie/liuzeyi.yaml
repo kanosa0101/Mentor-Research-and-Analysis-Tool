@@ -4,6 +4,7 @@ aliases: []
 school: ucas
 dept: iie
 status: enriched
+supervisor: 硕导
 email: liuzeyi@iie.ac.cn
 office_address: 北京市海淀区树村路19号
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 面向国家部委在一线业务开展过程中存在�
 detail_url: https://people.ucas.ac.cn/~liuzeyi
 profile_url: https://people.ucas.ac.cn/~liuzeyi
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://people.ucas.ac.cn/~liuzeyi
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://people.ucas.ac.cn/~liuzeyi
     fetched_at: '2026-09-05'

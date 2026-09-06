@@ -15,7 +15,7 @@ research_direction_raw: 人工智能安全、对抗与后门攻防、智能体�
 detail_url: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
 profile_url: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -39,11 +39,6 @@ facets:
   - keyword:知识图谱
 provenance:
   name:
-    origin: crawled
-    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
-    fetched_at: '2026-09-04'
-    confidence: auto
-  title:
     origin: crawled
     source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
     fetched_at: '2026-09-04'
@@ -77,4 +72,9 @@ provenance:
     origin: crawled
     source: https://gr.xjtu.edu.cn/zhangchong/zh_CN/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://gr.xjtu.edu.cn/units_teacherlist.jsp?id=1025&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1021
+    fetched_at: '2026-09-06'
     confidence: auto

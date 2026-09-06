@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 硕导
 email: jiaxinchen@buaa.edu.cn
 bio_raw: '陈佳鑫，男，博士。先后于2009年、2012年和2017年获北航应用数学专业学士学位、数学专业硕士学位及计算机应用技术专业博士学位。2017至2018年间在纽约大学阿布扎比分校从事博士后研究工作。2018至2021年在起源人工智能研究院担任研究科学家，现为北京航空航天大学计算机学院副教授/硕士生导师。目前主要研究方向包括计算机视觉（智能视频分析、图像检索、三维视觉）、模式识别、机器学习等。作为核心成员参与多项国家自然科学基金项目、港澳台合作项目等。相关研究成果已发表论文23篇，包括IEEE
   Transactions on Image Processing (TIP)、IEEE Transactions on Pattern Analysis and
@@ -24,7 +25,7 @@ homepage: http://shi.buaa.edu.cn/chenjiaxin/zh_CN/index.htm
 detail_url: http://scse.buaa.edu.cn/info/1546/10607.htm
 profile_url: http://scse.buaa.edu.cn/info/1546/10607.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -58,6 +59,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1546/10607.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1546/10607.htm
     fetched_at: '2026-09-05'

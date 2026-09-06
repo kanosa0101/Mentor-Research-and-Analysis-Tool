@@ -5,6 +5,7 @@ school: ecnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: fxu@cs.ecnu.edu.cn
 phone: 86-21-62233309
 bio_raw: '徐飞，华东师范大学计算机科学与技术学院教授、博士生导师、本科教学副院长。2007年、2009年和2014年在华中科技大学分别获得学士、硕士和博士学位。主要研究方向为云计算与分布式系统，近年来聚焦于面向AI基础设施的高效能资源管理。主持国家自然科学基金面上项目、青年项目、上海市科委重点项目、腾讯基础平台技术犀牛鸟专项研究计划、华为合作项目等多项课题。在IEEE
@@ -387,7 +388,7 @@ institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/xf2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/xf2/main.psp
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -416,6 +417,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/xf2/main.psp
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/xf2/main.psp
     fetched_at: '2026-09-05'

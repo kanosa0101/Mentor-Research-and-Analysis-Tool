@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lgx1034@163.com
 phone: Email：
 bio_raw: '基本情况
@@ -229,3 +230,8 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1367/19078.htm 邮箱图片(目检校正OCR l/1与c/e混淆)
     fetched_at: '2026-09-06'
     confidence: exact
+  supervisor:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1367/19078.htm
+    fetched_at: '2026-09-05'
+    confidence: auto

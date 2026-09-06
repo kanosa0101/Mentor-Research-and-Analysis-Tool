@@ -5,6 +5,7 @@ school: ucas
 dept: ia
 status: enriched
 title: 研究员
+supervisor: 博导
 email: zhenhua.hu@ia.ac.cn
 bio_raw: "胡振华\n/\n2009.3 – 2012.8\t西安电子科技大学 博士学位\n2006.9 – 2008.12 西华大学 硕士学位\n2001.9\
   \ – 2005.7\t山东师范大学 学士学位\n职　　称:\n研究员\n邮　　编:\n100190\n电子邮件:\nzhenhua.hu@ia.ac.cn\n\
@@ -93,7 +94,13 @@ photo_url: https://ia.cas.cn/rcdw/yjy/202404/W020240425323708579999.jpg
 detail_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129853.html
 profile_url: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129853.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:影像
 provenance:
   name:
     origin: crawled
@@ -125,9 +132,8 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:影像
+  supervisor:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129853.html
+    fetched_at: '2026-09-02'
+    confidence: auto

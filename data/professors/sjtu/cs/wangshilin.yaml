@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: wsl@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -205,7 +206,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/王士林.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshilin.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshilin.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -237,14 +249,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshilin.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshilin.html
+    fetched_at: '2026-09-02'
+    confidence: auto

@@ -33,7 +33,13 @@ research_direction_raw: 自然语言处理、句法语义分析
 detail_url: https://cs.pku.edu.cn/info/1062/1609.htm
 profile_url: https://cs.pku.edu.cn/info/1062/1609.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.nlp
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:自然语言处理
 provenance:
   name:
     origin: crawled
@@ -42,7 +48,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1062/1609.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -52,7 +58,7 @@ provenance:
     confidence: auto
   phone:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1062/1609.htm
     fetched_at: '2026-09-03'
     confidence: auto
   research_direction_raw:
@@ -75,9 +81,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1062/1609.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.nlp
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:自然语言处理

@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: ronghg@hnu.edu.cn0731-88821974
 bio_raw: 荣辉桂，男，博士，教授/博士生导师，软件工程系主任，中国计算机学会(CCF)杰出会员，湖南省人工智能学会理事，IEEE和ACM会员；主研方向为物联网与边缘计算；数据挖掘；多智能体协同决策与应用；主持国自科基金面上项目、国家重点研发计划子课题、国家发改委专项、湖南省重点研发计划等国家与省级课题多项。美国密歇根州立大学(MSU)计算机科学与工程系(2014-2015)，英国南安普顿大学(UOS)电子与计算机学院(2024-2025)国家公派访问学者。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 物联网与边缘计算；数据挖掘；多智能体�
 detail_url: http://csee.hnu.edu.cn/people/ronghuigui
 profile_url: http://csee.hnu.edu.cn/people/ronghuigui
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/ronghuigui
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/ronghuigui
     fetched_at: '2026-09-05'

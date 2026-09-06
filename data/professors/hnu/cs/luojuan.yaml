@@ -5,6 +5,7 @@ school: hnu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: juanluo@hnu.edu.cn
 bio_raw: 罗娟，岳麓学者特聘教授，博士生导师，副院长。本科毕业于国防科技大学，硕士博士毕业于武汉大学。曾就职于武汉邮科院烽火网络公司，美国加州大学Irvine分校访问学者。入选教育部新世纪优秀人才，获得湖南省杰出青年基金、教育部-华为智能基座优秀教师、湖南省青年骨干教师。入选2021斯坦福大学发布的“全球前2%顶尖科学家”榜单。获得湖南省教学成果一等奖、湖南省技术发明二等奖、机械工业科技进步二等奖等。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: 物联网、云计算、人工智能
 detail_url: http://csee.hnu.edu.cn/people/luojuan
 profile_url: http://csee.hnu.edu.cn/people/luojuan
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.network
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://csee.hnu.edu.cn/people/luojuan
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://csee.hnu.edu.cn/people/luojuan
     fetched_at: '2026-09-05'

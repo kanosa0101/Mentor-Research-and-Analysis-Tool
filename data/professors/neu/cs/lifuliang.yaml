@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: lifuliang207@126.com
 bio_raw: '李福亮，博士毕业于清华大学计算机系，东北大学计算机学院教授、博士生导师，国家级高层次青年人才。担任华为中央研究院专家顾问、华为数通产品线智库顾问，
 
@@ -77,6 +78,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0916/c6641a157480/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0916/c6641a157480/page.htm
     fetched_at: '2026-09-04'

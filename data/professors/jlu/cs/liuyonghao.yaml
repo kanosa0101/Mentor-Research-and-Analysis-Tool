@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导
 bio_raw: '基本信息
 
   刘永皓，吉林大学计算机科学与技术学院准聘副教授，博士生导师。主要研究方向为图表征学习、生物信息学与大语言模型，围绕图神经网络、空间多组学建模及相关智能计算方法开展研究。
@@ -747,6 +748,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/21147.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1359/21147.htm
     fetched_at: '2026-09-04'

@@ -62,7 +62,13 @@ research_direction_raw: 程序设计语言，软件工程，高可靠人工智�
 detail_url: https://cs.pku.edu.cn/info/1086/1737.htm
 profile_url: https://cs.pku.edu.cn/info/1086/1737.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -104,9 +110,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1086/1737.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

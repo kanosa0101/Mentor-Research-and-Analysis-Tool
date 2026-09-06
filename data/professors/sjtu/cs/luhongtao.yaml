@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教授
+supervisor: 博导
 email: htlu@sjtu.edu.cn
 phone: 021-34204879
 bio_raw: '个人简介
@@ -555,7 +556,18 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/卢宏涛.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/luhongtao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/luhongtao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.cv
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:计算机视觉
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -592,14 +604,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/luhongtao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.cv
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:计算机视觉
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/luhongtao.html
+    fetched_at: '2026-09-02'
+    confidence: auto

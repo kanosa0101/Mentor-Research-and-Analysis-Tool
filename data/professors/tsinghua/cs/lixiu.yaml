@@ -27,7 +27,13 @@ institutes:
 detail_url: https://www.cs.tsinghua.edu.cn/info/1132/3614.htm
 profile_url: https://www.cs.tsinghua.edu.cn/info/1132/3614.htm
 first_seen: '2026-09-02'
-last_verified: '2026-09-02'
+last_verified: '2026-09-06'
+facets:
+- id: topic.graphics
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:可视化
 provenance:
   name:
     origin: crawled
@@ -59,9 +65,3 @@ provenance:
     source: https://www.cs.tsinghua.edu.cn/info/1132/3614.htm
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.graphics
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:可视化

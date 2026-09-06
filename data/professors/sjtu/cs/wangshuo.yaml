@@ -6,6 +6,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 长聘教轨副教授
+supervisor: 博导
 email: wangshuosj@sjtu.edu.cn
 bio_raw: '个人简介
 
@@ -322,7 +323,28 @@ homepage: https://www.wang-shuo.com/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250616/20250616114847.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.llm
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:大模型
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
+- id: topic.bio
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:医疗
 provenance:
   name:
     origin: crawled
@@ -359,24 +381,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.llm
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:大模型
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全
-- id: topic.bio
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:医疗
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
+    fetched_at: '2026-09-02'
+    confidence: auto

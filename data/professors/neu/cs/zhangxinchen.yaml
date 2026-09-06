@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+supervisor: 博导、硕导
 email: zhangxinchen@cse.neu.edu.cn
 bio_raw: "张新晨，东北大学计算机学院副教授，博士生导师、硕士生导师。博士毕业于香港大学电机与计算机工程系，本科毕业于哈尔滨工业大学（深圳）自动化系。与香港大学、哥伦比亚大学、芝加哥大学、香港科技大学、香港理工大学、南方科技大学等海内外高校保持密切学术合作。\n\
   研究兴趣聚焦于人工智能与安全的交叉领域，以及\nAI\n驱动的智慧健康。具体包括：\n1\n）网络与系统安全：基于机器学习\n/\n深度学习\n/\n大模型的入侵检测、物联网系统安全防御；\n\
@@ -68,6 +69,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2026/0304/c6641a450567/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2026/0304/c6641a450567/page.htm
     fetched_at: '2026-09-04'

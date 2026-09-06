@@ -67,7 +67,13 @@ research_direction_raw: 083500-软件工程、081202-计算机软件与理论、
 detail_url: https://people.ucas.ac.cn/~zhaijian
 profile_url: https://people.ucas.ac.cn/~zhaijian
 first_seen: '2026-09-03'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:形式化
 provenance:
   name:
     origin: crawled
@@ -99,9 +105,3 @@ provenance:
     source: https://people.ucas.ac.cn/~zhaijian
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:形式化

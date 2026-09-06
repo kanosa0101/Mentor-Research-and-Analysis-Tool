@@ -38,7 +38,23 @@ research_direction_raw: 新型体系结构、设计自动化
 detail_url: https://cs.pku.edu.cn/info/1071/1683.htm
 profile_url: https://cs.pku.edu.cn/info/1071/1683.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:深度学习
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:体系结构
+- id: topic.security
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:安全
 provenance:
   name:
     origin: crawled
@@ -47,7 +63,7 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    source: https://cs.pku.edu.cn/info/1071/1683.htm
     fetched_at: '2026-09-03'
     confidence: auto
   email:
@@ -80,19 +96,3 @@ provenance:
     source: https://cs.pku.edu.cn/info/1071/1683.htm
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:深度学习
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:体系结构
-- id: topic.security
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:安全

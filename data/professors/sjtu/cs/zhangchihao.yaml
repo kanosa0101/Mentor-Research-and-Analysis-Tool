@@ -509,7 +509,13 @@ homepage: https://chihaozhang.com
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250904/20250904105640.png
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangchihao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangchihao.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.theory
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:理论计算机
 provenance:
   name:
     origin: crawled
@@ -546,9 +552,3 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangchihao.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.theory
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:理论计算机

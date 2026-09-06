@@ -456,7 +456,13 @@ photo_url: https://ia.cas.cn/rcdw/fyjy/202404/W020240429612269335653.jpg
 detail_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131825.html
 profile_url: https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131825.html
 first_seen: '2026-09-02'
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.ml
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:机器学习
 provenance:
   name:
     origin: crawled
@@ -483,9 +489,3 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/
     fetched_at: '2026-09-03'
     confidence: auto
-facets:
-- id: topic.ml
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:机器学习

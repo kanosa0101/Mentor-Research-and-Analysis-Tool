@@ -5,6 +5,7 @@ school: sjtu
 dept: cs
 status: enriched
 title: 研究员
+supervisor: 博导
 email: chenyt@sjtu.edu.cn
 office_address: 电院3号楼511
 bio_raw: '个人简介
@@ -170,7 +171,13 @@ institutes:
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/陈雨亭.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyuting.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyuting.html
-last_verified: '2026-09-03'
+last_verified: '2026-09-06'
+facets:
+- id: topic.systems
+  origin: computed
+  confidence: auto
+  evidence:
+  - keyword:编译
 provenance:
   name:
     origin: crawled
@@ -207,9 +214,8 @@ provenance:
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyuting.html
     fetched_at: '2026-09-02'
     confidence: auto
-facets:
-- id: topic.systems
-  origin: computed
-  confidence: auto
-  evidence:
-  - keyword:编译
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/chenyuting.html
+    fetched_at: '2026-09-02'
+    confidence: auto

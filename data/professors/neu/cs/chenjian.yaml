@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: chenjian@mail.neu.edu.cn
 bio_raw: '陈剑，男，教授，博士生导师，教授，
 
@@ -65,6 +66,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2022/0227/c6641a210044/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2022/0227/c6641a210044/page.htm
     fetched_at: '2026-09-04'

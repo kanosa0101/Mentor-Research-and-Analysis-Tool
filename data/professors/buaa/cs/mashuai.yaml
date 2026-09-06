@@ -5,6 +5,7 @@ school: buaa
 dept: cs
 status: enriched
 title: 教授
+supervisor: 博导
 email: mashuai@buaa.edu.cn
 phone: 010-82338293
 bio_raw: '马帅，博士，北京航空航天大学计算机学院教授，博士生导师。分别获得了北京大学和英国爱丁堡大学的两个博士学位，英国爱丁堡大学博士后，曾在美国贝尔实验室总部实习，在微软亚洲研究院访问。多年从事大数据理论与系统的研究，研究成果持续发表在数据库领域、数据挖掘、人工智能和系统等顶级会议(SIGMOD、VLDB、ICDE、WWW、MobiCom、USENIX
@@ -21,7 +22,7 @@ homepage: https://mashuai-ms.github.io/
 detail_url: http://scse.buaa.edu.cn/info/1078/2667.htm
 profile_url: http://scse.buaa.edu.cn/info/1078/2667.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -60,6 +61,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://scse.buaa.edu.cn/info/1078/2667.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  supervisor:
     origin: crawled
     source: http://scse.buaa.edu.cn/info/1078/2667.htm
     fetched_at: '2026-09-05'
