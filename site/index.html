@@ -20,6 +20,8 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .brand h1{margin:0;font-size:16.5px;font-weight:700;letter-spacing:.3px}
 .brand .sub{font-size:12px;color:var(--muted);margin-left:2px}
+.navlink{font-size:13px;color:var(--accent);text-decoration:none}
+.navlink:hover{text-decoration:underline}
 .tstats{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted)}
 .tstats b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .tstats .badge{background:var(--accent-soft);color:var(--accent);border-radius:20px;padding:3px 10px;font-size:11.5px}
@@ -72,6 +74,16 @@ tbody tr:hover td{background:var(--accent-soft)}
 .tag-enriched{background:var(--accent-soft);color:var(--accent)}
 .tag-verified{background:#e3f7ef;color:var(--ok)}
 .tag.sup{background:#f0eaff;color:#6b46c1}
+.c-outreach{width:132px}
+.o-cell{white-space:nowrap}
+.star{cursor:pointer;color:#c9d1de;font-size:15px;line-height:1;vertical-align:-2px;user-select:none}
+.star:hover,.star.on{color:#f0b429}
+.otag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-left:4px}
+.o-interested{background:var(--accent-soft);color:var(--accent)}
+.o-emailed{background:#fef4e0;color:var(--warn)}
+.o-replied{background:#e3f7ef;color:var(--ok)}
+.o-meeting{background:#f0eaff;color:#6b46c1}
+.o-archived{background:#f1f3f7;color:#9aa3b2}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .ext{color:#9aa3b2;font-size:14px}
@@ -94,6 +106,7 @@ a:hover{text-decoration:underline}
   <div class="topin">
     <div class="brand"><span class="logo"></span><h1>导师库</h1>
       <span class="sub">院系官网师资 · 逐字段可溯源</span></div>
+    <a class="navlink" href="board.html">套磁看板</a>
     <div class="tstats">
       <span><b>5649</b> 导师</span>
       <span><b>36</b> 校</span>
@@ -139,6 +152,14 @@ let view = [...DATA], sortK = null, sortAsc = true;
 const el = id => document.getElementById(id);
 const STATUS = {roster:"仅名单", enriched:"已富化", verified:"已核对"};
 const badge = s => `<span class="tag tag-${s}">${STATUS[s]||s}</span>`;
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+let OUT = {}, API_OK = false;
+async function patchO(id, body){
+  const r = await fetch("/api/outreach/" + id, {method:"PATCH",
+    headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
 
 const COLS = [
   {k:"school", label:"学校", def:true},
@@ -149,6 +170,7 @@ const COLS = [
   {k:"email",  label:"邮箱", def:true},
   {k:"dept",   label:"院系", def:true},
   {k:"status", label:"状态", def:false},
+  {k:"outreach", label:"跟进", def:true},
 ];
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
@@ -156,7 +178,7 @@ const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器
   hci:"人机交互", bio:"AI+生物医疗"};
 let visible;
 let page = 1, pageSize = 50;
-try { visible = JSON.parse(localStorage.getItem("adv_cols_v2")) || null; } catch(e) { visible = null; }
+try { visible = JSON.parse(localStorage.getItem("adv_cols_v3")) || null; } catch(e) { visible = null; }
 if (!visible || !Array.isArray(visible)) visible = COLS.filter(c=>c.def).map(c=>c.k);
 const isOn = k => visible.includes(k);
 
@@ -174,7 +196,7 @@ function initCols(){
   box.querySelectorAll("input").forEach(cb => cb.addEventListener("change", () => {
     const k = cb.dataset.col;
     visible = isOn(k) ? visible.filter(x => x !== k) : [...visible, k];
-    localStorage.setItem("adv_cols_v2", JSON.stringify(visible));
+    localStorage.setItem("adv_cols_v3", JSON.stringify(visible));
     applyCols(); render();
   }));
 }
@@ -188,6 +210,7 @@ const HEADERS = [
   {k:"email", cls:"c-email", label:"邮箱", sort:"email"},
   {k:"dept", cls:"c-dept", label:"院系", sort:"dept_name"},
   {k:"status", cls:"c-status", label:"状态", sort:"status"},
+  {k:"outreach", cls:"c-outreach", label:"跟进", sort:null},
   {k:"ext", cls:"c-ext", label:"", sort:null},
 ];
 let facetSel = [];
@@ -292,6 +315,13 @@ function render(){
     email: `<td class="email-cell" title="${p.email||"官网未提供"}">${p.email||'<span class="missing">官网未提供</span>'}</td>`,
     dept: `<td title="${p.dept_name||p.dept}">${p.dept_name||p.dept}</td>`,
     status: `<td>${badge(p.status)}</td>`,
+    outreach: (()=>{
+      const o = OUT[p.page], st = o && o.status;
+      const tag = st ? `<span class="otag o-${st}">${OLABEL[st]}</span>` : "";
+      if(!API_OK) return `<td class="o-cell">${tag||'<span class="missing">—</span>'}</td>`;
+      const t = !st ? "标为意向" : (st==="interested" ? "点击移出意向" : "在看板："+OLABEL[st]);
+      return `<td class="o-cell"><span class="star ${st?"on":""}" data-star="${p.page}" title="${t}">★</span>${tag}</td>`;
+    })(),
     ext: `<td><a class="ext" href="${p.profile_url||p.detail_url}" target="_blank" title="官网页面">↗</a></td>`,
   });
   document.querySelector("#tbl tbody").innerHTML = rows.map(p=>{
@@ -305,6 +335,23 @@ function render(){
   el("empty").style.display = view.length ? "none" : "block";
 }
 ["q","f-title","f-sup"].forEach(id=>el(id).addEventListener("input", () => { page = 1; render(); }));
+document.querySelector("#tbl tbody").addEventListener("click", async e=>{
+  const s = e.target.closest("[data-star]"); if(!s || !API_OK) return;
+  const id = s.dataset.star, cur = OUT[id] && OUT[id].status;
+  try{
+    if(!cur) OUT[id] = await patchO(id, {status:"interested"});
+    else if(cur==="interested"){ await fetch("/api/outreach/"+id, {method:"DELETE"}); delete OUT[id]; }
+    else return;
+    render();
+  }catch(err){ alert("保存失败：" + err.message); }
+});
+(async ()=>{  // serve.py 在线则加载跟进数据；file:// 直开不发请求（fetch 会报错），降级为只读
+  if(location.protocol === "file:") return;
+  try{
+    const h = await fetch("/api/health").then(r=>r.json());
+    if(h && h.ok){ OUT = await fetch("/api/outreach").then(r=>r.json()); API_OK = true; render(); }
+  }catch(e){}
+})();
 initCols(); initFacets(); applyCols(); initDepts(); render();
 </script>
 </body>

@@ -63,6 +63,11 @@ def main():
         titles=titles, institutes=insts, inst_count=len(insts), fresh=fresh,
         payload=json.dumps(profs, ensure_ascii=False).replace("</", "<\\/"))
     (SITE / "index.html").write_text(html, encoding="utf-8")
+    # 看板页：与列表页共用 payload（不含跟进数据——隐私分界，outreach 只经 serve.py 的 API 提供）
+    board = env.get_template("board.html.j2").render(
+        profs=profs, fresh=fresh,
+        payload=json.dumps(profs, ensure_ascii=False).replace("</", "<\\/"))
+    (SITE / "board.html").write_text(board, encoding="utf-8")
     for r in profs:
         html = env.get_template("detail.html.j2").render(p=r)
         (SITE / "p" / f"{r['page']}.html").write_text(html, encoding="utf-8")

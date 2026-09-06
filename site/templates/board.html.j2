@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>套磁看板 · 导师库</title>
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#171e2b;--muted:#6b7280;--line:#e6e9ef;
+  --accent:#2f54c8;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+.topin{max-width:1280px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:16.5px;font-weight:700;letter-spacing:.3px}
+.navlink{font-size:13px;color:var(--accent);text-decoration:none}
+.navlink:hover{text-decoration:underline}
+.tstats{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted)}
+.tstats b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px 40px}
+.bar{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:8px 10px;margin:14px 0;position:relative;z-index:5;flex-wrap:wrap}
+.fld{display:flex;align-items:center;gap:6px;background:#f7f8fa;border:1px solid var(--line);
+  border-radius:8px;padding:2px 4px 2px 10px}
+.fld:focus-within{border-color:var(--accent);background:#fff}
+.fld label{font-size:12px;color:var(--muted);white-space:nowrap}
+.fld input,.fld select{border:none;background:transparent;padding:6px 6px;font-size:13px;outline:none;color:var(--ink)}
+.fld input{width:220px}
+.addbox{position:relative}
+.addres{position:absolute;left:0;top:calc(100% + 4px);width:340px;max-height:320px;overflow:auto;background:#fff;
+  border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(20,30,60,.12);display:none;z-index:20}
+.addres .ar{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid #f1f3f7;font-size:13px}
+.addres .ar:last-child{border-bottom:none}
+.addres .ar .who{flex:1;min-width:0}
+.addres .ar .who b{font-size:13.5px}
+.addres .ar .who span{color:var(--muted);font-size:12px;margin-left:6px}
+.addres .ar button{border:1px solid var(--accent);color:var(--accent);background:#fff;border-radius:6px;
+  padding:3px 10px;font-size:12px;cursor:pointer;white-space:nowrap}
+.addres .ar button:hover{background:var(--accent-soft)}
+.count{margin-left:auto;color:var(--muted);font-size:12.5px;white-space:nowrap}
+.hint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:10px;padding:12px 16px;
+  font-size:13.5px;margin:14px 0}
+.hint code{background:#fbf0d9;border-radius:5px;padding:1px 7px;font-size:12.5px}
+.cols{display:flex;gap:12px;align-items:flex-start;margin-top:4px}
+.col{flex:1;min-width:212px;background:#eef0f4;border:1px solid var(--line);border-radius:12px;padding:8px}
+.col.dragover{outline:2px dashed var(--accent);outline-offset:-3px;background:var(--accent-soft)}
+.col-h{display:flex;align-items:center;gap:8px;padding:2px 4px 8px;font-size:13px;font-weight:600}
+.col-h .cdot{width:8px;height:8px;border-radius:50%}
+.col-h .n{margin-left:auto;font-size:11.5px;color:var(--muted);background:#fff;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-variant-numeric:tabular-nums}
+.col-b{display:flex;flex-direction:column;gap:8px;min-height:220px}
+.cardo{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 11px;cursor:grab;
+  box-shadow:0 1px 3px rgba(20,30,60,.05)}
+.cardo:active{cursor:grabbing}
+.cardo.dragging{opacity:.45}
+.c-top{display:flex;align-items:baseline;gap:6px}
+.c-top a{font-weight:600;color:var(--ink);text-decoration:none;font-size:14px}
+.c-top a:hover{color:var(--accent)}
+.c-top .rm{margin-left:auto;color:#c3cad6;cursor:pointer;font-size:15px;line-height:1;padding:0 2px}
+.c-top .rm:hover{color:#d64545}
+.c-sub{color:var(--muted);font-size:11.5px;margin-top:2px}
+.c-mid{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;background:#f1f3f7;color:#556;max-width:100%;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag.sup{background:#f0eaff;color:#6b46c1}
+.chip{display:inline-block;font-size:11px;background:#e8f4fd;color:#1a5d8f;border-radius:6px;padding:2px 8px}
+.c-mail{margin-top:7px;display:flex;align-items:center;gap:6px;font-family:Consolas,Menlo,monospace;
+  font-size:12px;color:#445;min-width:0}
+.c-mail .em{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c-mail button{border:1px solid var(--line);background:#fff;border-radius:5px;font-size:10.5px;padding:1px 6px;
+  cursor:pointer;color:var(--muted);white-space:nowrap}
+.c-mail button:hover{border-color:var(--accent);color:var(--accent)}
+.c-mail .copied{color:var(--ok);border-color:var(--ok)}
+.c-note{margin-top:6px;font-size:12px;color:#5a6472;background:#f7f8fa;border-radius:6px;padding:5px 8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-date{margin-top:6px;font-size:10.5px;color:#a8b0be}
+.foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand"><span class="logo"></span><h1>套磁看板</h1></div>
+    <a class="navlink" href="index.html">← 导师库</a>
+    <div class="tstats"><span>跟进中 <b id="tracked">0</b> 人</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hint" id="hint" style="display:none">
+    看板需要本地写回服务：运行 <code>python scripts\serve.py</code> 后刷新本页（直接双击打开时为只读模式，无法记录跟进状态）。
+  </div>
+  <div class="bar">
+    <div class="fld addbox"><input id="addq" placeholder="搜索姓名，加入看板…" autocomplete="off">
+      <div class="addres" id="addres"></div>
+    </div>
+    <div class="fld"><label>学校</label><select id="f-school"><option value="">全部</option></select></div>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="cols" id="cols"></div>
+  <div class="foot">拖动卡片换列即自动保存 · 点 × 移出看板（清除备注与历史）</div>
+</div>
+<script>
+const DATA = {{ payload }};
+const byId = {}; DATA.forEach(p => byId[p.page] = p);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const ODOT = {interested:"#2f54c8", emailed:"#b45309", replied:"#0c8a5b", meeting:"#6b46c1", archived:"#9aa3b2"};
+const COLS = [
+  {id:"interested", label:"意向"},
+  {id:"emailed",    label:"已发信"},
+  {id:"replied",    label:"已回复"},
+  {id:"meeting",    label:"推进中"},
+  {id:"archived",   label:"归档"},
+];
+const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
+  systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
+  db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
+  hci:"人机交互", bio:"AI+生物医疗"};
+let OUT = {}, API_OK = false, schoolFilter = "";
+
+const el = id => document.getElementById(id);
+async function patch(id, body){
+  const r = await fetch("/api/outreach/" + id, {method:"PATCH",
+    headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+  if(!r.ok) throw new Error((await r.json().catch(()=>({}))).error || r.status);
+  return r.json();
+}
+async function removeEntry(id){
+  const r = await fetch("/api/outreach/" + id, {method:"DELETE"});
+  if(!r.ok) throw new Error("delete " + r.status);
+}
+
+function cardHTML(id, e){
+  const p = byId[id]; if(!p) return "";
+  const chips = (p.facets||[]).slice(0,2).map(f =>
+    `<span class="chip">${esc(FACET_LABELS[f.id]||f.id)}</span>`).join("");
+  const mail = p.email ? `<div class="c-mail"><span class="em" title="${esc(p.email)}">${esc(p.email)}</span>
+      <button data-copy="${esc(p.email)}">复制</button></div>` : "";
+  const note = e.notes ? `<div class="c-note" title="${esc(e.notes)}">${esc(e.notes)}</div>` : "";
+  return `<div class="cardo" draggable="true" data-id="${id}">
+    <div class="c-top"><a href="p/${id}.html">${esc(p.name)}</a><span class="rm" data-rm="${id}" title="移出看板">×</span></div>
+    <div class="c-sub">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div>
+    <div class="c-mid">${p.title?`<span class="tag" title="${esc(p.title)}">${esc(p.title)}</span>`:""}
+      ${p.supervisor?`<span class="tag sup">${esc(p.supervisor)}</span>`:""}${chips}</div>
+    ${mail}${note}<div class="c-date">更新 ${esc(e.updated_at||"")}</div>
+  </div>`;
+}
+
+function render(){
+  // 学校下拉选项（首次）
+  const fs = el("f-school");
+  if(!fs.options.length){
+    const schools = [...new Map(DATA.map(p=>[p.school,p.school_name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],"zh"));
+    fs.innerHTML = '<option value="">全部</option>' + schools.map(([id,n])=>`<option value="${id}">${esc(n)}</option>`).join("");
+  }
+  let total = 0;
+  el("cols").innerHTML = COLS.map(c=>{
+    const ids = Object.keys(OUT).filter(id => OUT[id].status === c.id)
+      .filter(id => byId[id] && (!schoolFilter || byId[id].school === schoolFilter))
+      .sort((a,b)=>String(OUT[b].updated_at||"").localeCompare(String(OUT[a].updated_at||"")));
+    total += ids.length;
+    return `<div class="col" data-col="${c.id}">
+      <div class="col-h"><span class="cdot" style="background:${ODOT[c.id]}"></span>${c.label}
+        <span class="n">${ids.length}</span></div>
+      <div class="col-b">${ids.map(id=>cardHTML(id, OUT[id])).join("") || '<div style="height:190px"></div>'}</div>
+    </div>`;
+  }).join("");
+  el("tracked").textContent = Object.keys(OUT).length;
+  el("count").textContent = `看板 ${total} 人 · 全库 ${DATA.length} 人`;
+  bindBoard();
+}
+
+function bindBoard(){
+  document.querySelectorAll(".cardo").forEach(c=>{
+    c.addEventListener("dragstart", e=>{
+      e.dataTransfer.setData("text/plain", c.dataset.id);
+      c.classList.add("dragging");
+    });
+    c.addEventListener("dragend", ()=>c.classList.remove("dragging"));
+  });
+  document.querySelectorAll(".col").forEach(col=>{
+    col.addEventListener("dragover", e=>{ e.preventDefault(); col.classList.add("dragover"); });
+    col.addEventListener("dragleave", ()=>col.classList.remove("dragover"));
+    col.addEventListener("drop", async e=>{
+      e.preventDefault(); col.classList.remove("dragover");
+      const id = e.dataTransfer.getData("text/plain");
+      const target = col.dataset.col;
+      if(!id || !OUT[id] || OUT[id].status === target) return;
+      try{ OUT[id] = await patch(id, {status: target}); render(); }
+      catch(err){ alert("保存失败：" + err.message); }
+    });
+  });
+  document.querySelectorAll("[data-rm]").forEach(b=>{
+    b.addEventListener("click", async ()=>{
+      const id = b.dataset.rm;
+      if(!confirm("把该导师移出看板？备注与历史将一并清除。")) return;
+      try{ await removeEntry(id); delete OUT[id]; render(); }
+      catch(err){ alert("操作失败：" + err.message); }
+    });
+  });
+  document.querySelectorAll("[data-copy]").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const done = ()=>{ b.textContent = "已复制"; b.classList.add("copied");
+        setTimeout(()=>{ b.textContent = "复制"; b.classList.remove("copied"); }, 1200); };
+      const fallback = ()=>{
+        const ta = document.createElement("textarea");
+        ta.value = b.dataset.copy; ta.style.cssText = "position:fixed;opacity:0";
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand("copy") ? done() : err(); }
+        catch(e){ err(); }
+        finally{ document.body.removeChild(ta); }
+      };
+      const err = ()=>{ b.textContent = "复制失败"; setTimeout(()=>{ b.textContent = "复制"; }, 1200); };
+      (navigator.clipboard && navigator.clipboard.writeText
+        ? navigator.clipboard.writeText(b.dataset.copy) : Promise.reject())
+        .then(done, fallback);
+    });
+  });
+}
+
+// 搜索添加
+el("addq").addEventListener("input", ()=>{
+  const q = el("addq").value.trim().toLowerCase(), box = el("addres");
+  if(!q){ box.style.display = "none"; return; }
+  const hits = DATA.filter(p =>
+      (p.name + p.school_name + (p.email||"")).toLowerCase().includes(q)).slice(0, 8);
+  box.innerHTML = hits.length ? hits.map(p=>{
+    const on = OUT[p.page] && OUT[p.page].status;
+    return `<div class="ar"><div class="who"><b>${esc(p.name)}</b>
+      <span>${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}${p.title?" · "+esc(p.title):""}</span></div>
+      ${on?`<span style="font-size:11.5px;color:var(--ok)">已在看板</span>`
+          :`<button data-add="${p.page}">＋ 加入意向</button>`}</div>`;
+  }).join("") : '<div class="ar">没有匹配的导师</div>';
+  box.style.display = "block";
+  box.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click", async ()=>{
+    const id = b.dataset.add;
+    try{ OUT[id] = await patch(id, {status:"interested"}); render();
+         el("addq").value = ""; el("addres").style.display = "none"; }
+    catch(err){ alert("添加失败：" + err.message); }
+  }));
+});
+document.addEventListener("click", e=>{
+  if(!e.target.closest(".addbox")) el("addres").style.display = "none";
+});
+el("f-school").addEventListener("change", ()=>{ schoolFilter = el("f-school").value; render(); });
+
+(async ()=>{  // 写回服务在线则加载跟进数据，否则显示提示；file:// 不发请求
+  if(location.protocol !== "file:"){
+    try{
+      const h = await fetch("/api/health").then(r=>r.json());
+      if(h && h.ok){
+        OUT = await fetch("/api/outreach").then(r=>r.json());
+        API_OK = true;
+      }
+    }catch(e){}
+  }
+  if(!API_OK) el("hint").style.display = "block";
+  render();
+})();
+</script>
+</body>
+</html>

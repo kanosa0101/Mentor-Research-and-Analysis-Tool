@@ -95,8 +95,10 @@
 
 ## 4. 网站
 
-- **列表页**：搜索、学校→院系级联、职称/导师资格/方向（多选 facet）筛选、全列排序、列显示开关（localStorage `adv_cols_v2`）、分页（每页 50 可调 20/50/100/500）
-- **详情页**：字段卡片 + 简介原文 + provenance 出处表（每个字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- **列表页**：搜索、学校→院系级联、职称/导师资格/方向（多选 facet）筛选、全列排序、列显示开关（localStorage `adv_cols_v3`）、分页（每页 50 可调 20/50/100/500）、**跟进列（⭐ 标意向 + 状态徽标）**
+- **详情页**：字段卡片 + **套磁跟进卡片（状态下拉/备注/历史时间线）** + 简介原文 + provenance 出处表（每个字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- **看板页 board.html**：5 列拖拽看板（意向→已发信→已回复→推进中→归档）+ 搜索加人 + 邮箱一键复制（clipboard API + execCommand 兜底）
+- **跟进数据流**：只经 `scripts/serve.py` 的 `/api/outreach`（GET/PATCH/DELETE，标准库实现）读写 `data/outreach.yaml`——**不进任何生成文件**（仓库公开，隐私分界）；页面加载探测 `/api/health` 动态拉取，改状态无需重建站点；file:// 直开由 `location.protocol` 门控降级只读（不发 fetch）
 - 表头表体由同一份 `HEADERS` 数组生成——**这是两次错位事故后的铁律，别改回两套**
 - 零构建：Jinja2 模板 `site/templates/` → `build_site.py` 生成；UI 风格：白底紧凑工具栏（CSRankings/Linear 风），用户明确否决渐变横幅
 
@@ -105,6 +107,7 @@
 | 脚本 | 用途 | 何时跑 |
 | ---- | ---- | ---- |
 | scripts/crawl.py | 抓取入口（--school --dept [--phase roster/enrich] [--refresh]） | 加新校/更新数据 |
+| scripts/serve.py | 本地服务：静态托管 + /api/outreach 写回（--port 默认 8000，只绑 127.0.0.1） | 日常浏览+套磁跟进 |
 | scripts/build_site.py | 重建静态站（自动清理失效详情页） | 每次数据变化后 |
 | scripts/audit.py | 覆盖率审计（各院系字段覆盖%） | 每轮迭代后 |
 | scripts/preflight.py | 发布前体检（schema/邮箱/站点一致性/issues） | 提交前 |
@@ -191,6 +194,11 @@
 52. **phase_roster 的 stable_urls（zju）**：zju xlsx 导师 roster URL 是目录文章页`#姓名`锚点，上一会话经门户 API 把 103 人 detail_url 改成 person.zju 主页后，**重跑 roster 必然 URL 不匹配 → 重复入库 -2 假人**（本次实爆 103 条）。修法=配置 `stable_urls: true` 时按姓名回退匹配存量、保留既有 URL，并把这类匹配算作"仍在名单"（防 missing_in_list 误报）。**同名多人（zhangwei-2）场景下回退只匹配一次，多余同名 rec 仍走新建——属正确行为**
 53. **Issue 模型必须含 reviewed 字段**：此前 reviewed/review_note 只是 YAML 里的额外键，pydantic 加载即丢，save_issues 重写文件后标记蒸发（本次 tongji/neu/dlut 等 120 条被批量重跑抹掉，preflight 全红）。模型已加 `reviewed/review_note` 字段持久化。另：上会话写入的 issue 用了 `detail/created` 键名（schema 是 `message/first_seen`）导致 crawl 直接崩——**手写 issue 条目必须走 Issue 模型同款键名**
 
+**产品层（2026-09-06 ~）**
+54. **详情页 UI 验证禁用 networkidle**：详情页照片是官网外链，networkidle 会被拖到 30s 超时——goto 用 `domcontentloaded` + wait。file:// 下 fetch 直接抛 console error（"URL scheme file not supported"）——页面用 `location.protocol === "file:"` 门控不发请求，别只靠 try/catch
+55. **ui_check 状态残留会让 ⭐ 语义反转**：上轮测试残留的 interested 让下轮 star 点击变成"移出"——ui_check 开跑先 `unlink` data/outreach.yaml（serve 每请求重读文件，删文件即净空）。另：列表页加新默认列要把 localStorage 版本号 bump（adv_cols_v2→v3），否则老用户存的列配置里没有新列
+56. **serve API 测试两坑**：Git Bash 里 `curl -d '{"note":"中文"}'` 进包是 GBK，服务端 json.loads 报 invalid json——用 UTF-8 文件体 `--data-binary @f.json`；headless Chromium 的 clipboard.writeText 默认拒绝——Playwright `new_context(permissions=["clipboard-read","clipboard-write"])` 授权后才能 E2E 验证（页内另有 execCommand 兜底）
+
 ## 8. 操作手册
 
 ```powershell
@@ -223,8 +231,8 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 6. verified 人工核对启动：每校抽 10 人核对 provenance（需用户参与）
 7. 华科/南开复测（~~09-06 直连+代理均 TCP 阻断~~ 已复测定论不变，等网络环境）
 
-**阶段三：产品层（计划已成文 PRODUCT_PLAN.md，待用户审定后逐阶段实施）**
-顺序：① 状态写回+套磁看板（data/outreach.yaml + scripts/serve.py 标准库写回）→ ② 对比页 → ③ 学生画像+SOP（等用户素材）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界：仓库是公开的，outreach/画像/SOP/信件/AI 匹配点一律不进 git 不进静态站**；数据模型、改动面、验收标准、决策点见 PRODUCT_PLAN.md
+**阶段三：产品层（计划 PRODUCT_PLAN.md，2026-09-06 用户审定"确认开始"）**
+顺序：~~① 状态写回+套磁看板~~ ✅ 09-06 完成（serve.py 标准库 PATCH API + board.html 拖拽看板 + 列表跟进列/详情跟进卡 + preflight §7 校验 + ui_check 扩展全绿）→ ② 对比页 → ③ 学生画像+SOP（等用户素材）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach 不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
 
 **运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
 

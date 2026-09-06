@@ -1,6 +1,6 @@
 # 产品层计划（阶段三）
 
-状态：**待用户审定**（2026-09-06 成文）
+状态：**实施中**（2026-09-06 用户"确认开始"；P3.1 已完成，P3.2 进行中）
 前置：数据层收官——36 校 42 院系 5649 人，邮箱 80% / 职称 74% / 博导硕导 53%，preflight 绿。
 本文是 HANDOVER §9 阶段三的展开，沿用 REQUIREMENTS v0.6 §8 延后项的既有设计，不推翻已决事项。
 
@@ -11,7 +11,7 @@
 3. **铁律沿用**：表头表体同一 HEADERS 数组；UI 改动必过 ui_check.py（Playwright console+DOM）；preflight 先绿再提交；文档同步、每阶段完成即推送
 4. **"不推测填充"延伸到 AI**：AI 归纳必带 evidence，无证据断言不落库（REQUIREMENTS §8.2 硬约束）
 
-## 1. P3.1 状态写回 + 套磁看板（先做，套磁工作流核心）
+## 1. P3.1 状态写回 + 套磁看板（✅ 2026-09-06 完成）
 
 **数据模型**：新建 `data/outreach.yaml`（单文件，**不放进 professor YAML**）
 
@@ -27,7 +27,7 @@
 - 新页 `site/board.html`：5 列看板，HTML5 拖拽换列即 PATCH；卡片=姓名/学校·院系/职称/导师资格/方向 chip/**邮箱一键复制**；学校筛选+搜索；列头计数
 - 列表页：COLS+HEADERS 各加 `跟进` 列（铁律同数组）；行内 ⭐ 一键标意向（serve 模式可用）
 - 详情页：跟进卡片（状态下拉+备注+历史时间线）
-- **新鲜度方案**：build_site 把 outreach 快照合并进 payload；页面加载时 /api/health 通则 fetch `/api/outreach` 覆盖——**改状态无需重建站点**；file:// 直开用快照、写操作降级为只读并提示 `python scripts/serve.py`
+- **加载方案（实现定稿，纯 API）**：outreach 数据**不进任何生成文件**（快照方案因隐私废弃）；页面加载探测 `/api/health`，通则 fetch `/api/outreach` 动态加载——改状态无需重建站点；file:// 直开由协议门控降级只读并提示 `python scripts\serve.py`
 
 **preflight 扩展**：outreach.yaml schema 校验（status 枚举、page id 存在于导师库、history 结构）。
 

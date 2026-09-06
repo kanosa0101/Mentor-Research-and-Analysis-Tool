@@ -16,12 +16,17 @@
 python scripts\crawl.py --school <s> --dept <d>              # 抓取（缓存优先，重跑零新请求）
 python scripts\crawl.py --school <s> --dept <d> --refresh    # 强制回源（检测官网变化）
 python scripts\build_site.py                                 # 重建静态站
-python -m http.server 8000 --directory site                  # 本地预览 http://localhost:8000
+python scripts\serve.py                                      # 本地服务：静态站 + 套磁跟进写回
+python -m http.server 8000 --directory site                  # 纯静态预览（跟进只读）
 
 python scripts\audit.py        # 各院系字段覆盖率审计
 python scripts\preflight.py    # 提交前体检（schema/邮箱/站点一致性/issues）
 python scripts\tag_facets.py   # 重算方向 facet（改规则后）
 ```
+
+## 套磁跟进（看板）
+
+`python scripts\serve.py` 后打开 `http://127.0.0.1:8000/board.html`：5 列看板（意向→已发信→已回复→推进中→归档），拖拽换列自动保存，搜索姓名可直接加人，卡片邮箱一键复制；列表页有跟进列（⭐ 标意向），详情页有跟进卡片（状态/备注/历史）。数据存 `data/outreach.yaml`（gitignore，仅本地，不进公开仓库）；直接双击打开 HTML 为只读模式。
 
 ## 更新机制
 

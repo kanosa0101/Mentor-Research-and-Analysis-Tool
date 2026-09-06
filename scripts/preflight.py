@@ -74,7 +74,7 @@ for pat in ("scripts/probe_*.py", "scripts/debug_*.py", "scripts/check_*.py",
             "cache/*.html", "**/__pycache__", "*.pyc"):
     junk += [str(x) for x in ROOT.glob(pat)]
 gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
-for need in ("cache/", "__pycache__/", "*.pyc"):
+for need in ("cache/", "__pycache__/", "*.pyc", "data/outreach.yaml", "data/letters/"):
     if need not in gitignore:
         problems.append(f".gitignore missing: {need}")
 ignored = any(line.strip() in ("cache/", "cache") for line in gitignore.splitlines())
@@ -89,6 +89,28 @@ for s in schools:
 for sid in used_schools:
     if sid not in {s["id"] for s in schools}:
         problems.append(f"school not in schools.yaml: {sid}")
+
+print("== 7. outreach.yaml（套磁跟进, 私人数据）==")
+of = ROOT / "data" / "outreach.yaml"
+if of.exists():
+    odata = yaml.safe_load(of.read_text(encoding="utf-8")) or {}
+    valid_status = {"interested", "emailed", "replied", "meeting", "archived"}
+    for pid, e in odata.items():
+        parts = str(pid).split("-", 2)
+        if len(parts) != 3 or not all(parts):
+            problems.append(f"outreach bad id: {pid}")
+            continue
+        if f"{parts[0]}/{parts[1]}/{parts[2]}" not in records:
+            problems.append(f"outreach unknown professor: {pid}")
+        e = e or {}
+        if e.get("status") not in valid_status:
+            problems.append(f"outreach bad status: {pid} {e.get('status')!r}")
+        for h in e.get("history") or []:
+            if not (isinstance(h, dict) and h.get("date") and h.get("action")):
+                problems.append(f"outreach bad history entry: {pid}")
+    print(f"entries: {len(odata)}")
+else:
+    print("none (data/outreach.yaml 不存在)")
 
 print("\n== PROBLEMS ==")
 if problems:

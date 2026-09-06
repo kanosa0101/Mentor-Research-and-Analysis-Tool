@@ -48,10 +48,11 @@ sites/              适配层（每校一个目录）
   tsites.py         tsites 教师系统通用钩子（含密文解密）
   <school>/<dept>.yaml    一院系一配置（入口 URL/person_href/hook/direct/roster_only）
   <school>/<hook>.py      该校解析钩子（通用钩子覆盖不了才写）
-scripts/            入口与一次性工具（crawl/build_site/audit/preflight/tag_facets…）
+scripts/            入口与一次性工具（crawl/build_site/audit/preflight/tag_facets/serve…）
 data/               产出（进 git）：schools.yaml · professors/ · issues/ · changes/
+                    + data/outreach.yaml（套磁跟进，**不进 git**，仅 serve.py 读写）
 cache/http/         原始响应缓存（gitignore）
-site/               生成的静态网站（进 git）
+site/               生成的静态网站（进 git；跟进数据不经生成文件）
 ```
 
 ## 3. 数据模型
@@ -116,10 +117,12 @@ provenance:                # 每字段出处
 
 **加新学校三步**：① 写 `sites/<school>/<dept>.yaml`（先 websearch 核实官方域名）② 通用钩子不够时写钩子（`iter_roster` + `parse_detail`）③ `crawl.py --school X --dept Y` → `build_site.py`。
 
-## 6. 静态站点
+## 6. 静态站点与本地服务
 
-- 列表页：搜索、学校→院系级联、职称/导师资格/方向（13 类 facet）多选筛选、全列排序、列显示开关（localStorage）、分页（20/50/100/500）
-- 详情页：字段卡片 + 简介原文 + provenance 出处表（逐字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- 列表页：搜索、学校→院系级联、职称/导师资格/方向（13 类 facet）多选筛选、全列排序、列显示开关（localStorage）、分页（20/50/100/500）、跟进列（⭐ 标意向）
+- 详情页：字段卡片 + 套磁跟进卡片（状态/备注/历史） + 简介原文 + provenance 出处表（逐字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- 看板页 board.html：5 列拖拽看板 + 搜索加人 + 邮箱一键复制
+- **跟进状态走运行时**：`scripts/serve.py`（stdlib ThreadingHTTPServer，只绑 127.0.0.1）静态托管 site/ 并提供 `GET /api/health`、`GET/PATCH/DELETE /api/outreach/<page-id>`，原子写 `data/outreach.yaml`（gitignore）。页面动态探测加载，file:// 协议门控降级只读——**跟进数据绝不进生成文件/公开仓库**
 - **表头表体由同一份 `HEADERS` 数组生成**——两次错位事故后的铁律
 - 零构建：Jinja2 模板 `site/templates/` → `build_site.py` 生成，生成物进 git；重建时自动清理失效详情页（防孤儿页）
 
