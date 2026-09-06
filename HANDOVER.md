@@ -223,11 +223,8 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 6. verified 人工核对启动：每校抽 10 人核对 provenance（需用户参与）
 7. 华科/南开复测（~~09-06 直连+代理均 TCP 阻断~~ 已复测定论不变，等网络环境）
 
-**阶段三：产品层启动（顺序待用户定）**
-1. 状态写回 + 套磁看板：意向/已发/已回状态管理——套磁工作流核心，建议最先做
-2. 对比页（P3，已推迟）：3-5 位导师并排对比
-3. AI 分析层：LLM 结构化研究方向/简介 → 学生画像匹配（需要 LLM API）
-4. SOP/申请信生成
+**阶段三：产品层（计划已成文 PRODUCT_PLAN.md，待用户审定后逐阶段实施）**
+顺序：① 状态写回+套磁看板（data/outreach.yaml + scripts/serve.py 标准库写回）→ ② 对比页 → ③ 学生画像+SOP（等用户素材）→ ④ AI 归纳层（等 LLM key，evidence 硬约束）→ ⑤ 信件草稿。**隐私分界：仓库是公开的，outreach/画像/SOP/信件/AI 匹配点一律不进 git 不进静态站**；数据模型、改动面、验收标准、决策点见 PRODUCT_PLAN.md
 
 **运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
 
