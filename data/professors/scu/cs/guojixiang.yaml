@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: guojixiang@scu.edu.cn
 bio_raw: 2011年毕业于香港中文大学计算机科学与工程系，获博士学位，其导师为虚拟现实与可视化领域的专家Dr. Heng Pheng Ann。之后，进入四川大学计算机学院工作。从攻读博士学位以来，一直从事计算机图形、虚拟现实与可视化等方面的研究工作。先后参与了血管介入微创手术模拟训练系统、基于虚拟现实的眼科手术模拟训练系统等多个项目的研究工作，目前已有多篇论文发表。
 institutes: []
@@ -11,7 +12,7 @@ photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1RgmABc
 detail_url: https://faculty.scu.edu.cn/guojixiang/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/guojixiang/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.graphics
   origin: computed
@@ -35,6 +36,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/guojixiang/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/guojixiang/zh_CN/index.htm
     fetched_at: '2026-09-04'

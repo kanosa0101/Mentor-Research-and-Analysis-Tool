@@ -107,8 +107,10 @@ def _meta_fields(soup, out):
     if "phone" not in out and v("联系电话", "电话"):
         out["phone"] = v("联系电话", "电话")
     if "email" not in out:
-        m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}",
-                      v("E-mail", "Email", "电子邮件", "邮箱") or "")
+        # 标签切分可能把下个标签(Wechat：/QQ：等)并进本值, 先按"标签词+冒号"截断
+        val = re.split(r"(?i)(?:微信|We\s*Chat|QQ|电话|Tel|Phone|地址|Address)\s*[：:]",
+                       v("E-mail", "Email", "电子邮件", "邮箱") or "")[0]
+        m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9])", val)
         if m:
             e = normalize_email(m.group(0))
             if e:
@@ -201,7 +203,11 @@ def parse_wp_detail(cfg, html, url):
         flat = box.get_text("", strip=True)
         for m in re.finditer(r"[@＃]|[(（{\[]\s*at\s*[)）\]}]", flat, re.I):
             lo, hi = max(0, m.start() - 30), min(len(flat), m.start() + 41)
-            e = normalize_email(flat[lo:hi])
+            seg = flat[lo:hi]
+            # 中文标签与邮箱在 get_text("") 下粘连成一个 token("系方式：a@b.c"),
+            # 先正则剥出纯邮箱再归一, 否则 normalize 的 ASCII \w 拒收
+            dm = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9])", seg)
+            e = normalize_email(dm.group(0)) if dm else normalize_email(seg)
             if e:
                 out["email"] = e
                 break
@@ -210,9 +216,10 @@ def parse_wp_detail(cfg, html, url):
     if "email" not in out and out.get("bio_raw"):
         # 简介里的"E-Mail：xxx"碎片形态(华南理工: E / -mail： / 值 跨三行)——剥空白后按标签取
         b = re.sub(r"\s+", "", out["bio_raw"])
+        b = re.split(r"(?i)(?:微信|WeChat|QQ|电话|Tel|Phone|地址|Address)[:：]", b)[0]
         m = re.search(
             r"(?:E-?[Mm]ail|电子邮件|电子邮箱|邮箱)[:：]"
-            r"([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})", b)
+            r"([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9]))", b)
         if m:
             e = normalize_email(m.group(1))
             if e:

@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: lvzj@scu.edu.cn
 bio_raw: 1999年6月获重庆大学理学硕士学位，2003年6月获电子科技大学工学博士学位，2003年8至2005年8月在电子科技大学从事第一站博士后科研工作，2006年1月至2007年12月在中国航天科工集团061基地从事第二站博士后科研工作，1999年7月至2009年6月在中国电子科技集团公司第十研究所工作。主要从事国防预研项目、演示验证项目、型号项目、国家863项目、省科技厅科技支撑计划项目、国家空管委项目、高端装备创新研制项目以及横向
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: '[1]、无线网络技术、[2]、空中交通监视与�
 detail_url: https://faculty.scu.edu.cn/lvzejun/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/lvzejun/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/lvzejun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/lvzejun/zh_CN/index.htm
     fetched_at: '2026-09-04'

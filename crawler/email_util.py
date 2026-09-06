@@ -1,6 +1,13 @@
 import re
 
 VALID = re.compile(r"^[\w.+-]+@[\w-]+(\.[\w-]+)+$", re.A)
+# 防 OCR/标签粘连把下个词吞进域名("jlu.edu.cnWechat"); 长 TLD 白名单外一律拒收
+_LONG_TLDS = {"info", "online", "site", "club", "tech", "cloud", "email", "name"}
+
+
+def _tld_ok(s):
+    last = s.rsplit(".", 1)[-1].lower()
+    return len(last) <= 3 or last in _LONG_TLDS
 
 
 def _clean_token(tok):
@@ -17,7 +24,7 @@ def normalize_email(raw):
         return None
     for chunk in re.split(r"[;；,，/、]+", raw.strip()):
         s = _tokens(chunk)
-        if VALID.match(s):
+        if VALID.match(s) and _tld_ok(s):
             return s
     return None
 

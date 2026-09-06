@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: pengxi@scu.edu.cn
 bio_raw: '彭玺，教授，博导，国家特聘青年教授；于
 
@@ -299,7 +300,7 @@ research_direction_raw: '[1]、机器学习、[2]、计算机视觉、[3]、多�
 detail_url: https://faculty.scu.edu.cn/pengxi/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/pengxi/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.nlp
   origin: computed
@@ -338,6 +339,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/pengxi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/pengxi/zh_CN/index.htm
     fetched_at: '2026-09-04'

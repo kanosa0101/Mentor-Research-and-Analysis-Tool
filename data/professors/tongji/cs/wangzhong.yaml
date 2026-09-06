@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 助理教授
+email: cszhongwang@tongji.edu.cn
 bio_raw: '王忠
 
   ，同济大学计算机科学与技术学院助理教授、硕士生导师
@@ -99,7 +100,7 @@ homepage: https://cszhong
 detail_url: https://cs.tongji.edu.cn/info/1121/4075.htm
 profile_url: https://cs.tongji.edu.cn/info/1121/4075.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -128,6 +129,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4075.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1121/4075.htm
     fetched_at: '2026-09-03'

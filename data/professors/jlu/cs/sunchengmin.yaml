@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 讲师
+email: suncm@jlu.edu.cn
 phone: Email：
 bio_raw: '基本情况
 
@@ -65,7 +66,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1211/19227.htm
 profile_url: https://ccst.jlu.edu.cn/info/1211/19227.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -93,3 +94,8 @@ provenance:
     source: https://ccst.jlu.edu.cn/info/1211/19227.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  email:
+    origin: manual
+    source: https://ccst.jlu.edu.cn/info/1211/19227.htm 邮箱图片(目检校正OCR l/1与c/e混淆)
+    fetched_at: '2026-09-06'
+    confidence: exact

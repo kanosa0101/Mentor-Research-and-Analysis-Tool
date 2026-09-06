@@ -4,6 +4,7 @@ aliases: []
 school: neu
 dept: cs
 status: enriched
+email: mjiao@mail.neu.edu.cn
 phone: ）联系方式：15566104459
 bio_raw: '个人网页链接：http://faculty.neu.edu.cn/cc/mhjiao/index.html
 
@@ -15,7 +16,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2019/1206/c6641a162069/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/1206/c6641a162069/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -44,6 +45,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   phone:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/1206/c6641a162069/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/1206/c6641a162069/page.htm
     fetched_at: '2026-09-04'

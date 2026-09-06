@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: chenyuanyuan@scu.edu.cn
 bio_raw: 陈媛媛，博士，副教授， 四川省人工智能学会理事，IEEE会员。2004年6月于电子科技大学获学士学位；2007年3月于上海交通大学获硕士学位，同年7月在四川大学计算机学院从事教学科研工作；2015年12月于四川大学获博士学位。
   近年来主要研究方向为人工智能、神经网络、智能医疗等。目前已在国内外高水平期刊和会议上发表SCI、EI检索论文20余篇。其中SCI检索论文12篇，2篇论文曾分获2014、2106年度IEEE成都分部最佳论文奖。作为负责人承担多项国家级
@@ -12,7 +13,7 @@ photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1aEWAXd
 detail_url: https://faculty.scu.edu.cn/chenyuanyuan/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/chenyuanyuan/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.bio
   origin: computed
@@ -36,6 +37,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/chenyuanyuan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/chenyuanyuan/zh_CN/index.htm
     fetched_at: '2026-09-04'

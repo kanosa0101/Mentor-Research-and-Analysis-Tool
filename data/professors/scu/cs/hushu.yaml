@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: hushu@scu.edu.cn
 bio_raw: 1993年9月-2000年7月在四川大学计算中心工作，任讲师，2000年7月至今四川大学图形图像研究所工作，任副教授。胡术副教授一直从事计算机应用开发和相关领域的开发、开发工作,具体研究方向包括计算机网络、中间件系统、分布式系统等。目前已在权威国际国内学术期刊和国际会议上发表论文10余篇；获得国家发明授权9项；作为负责人已主持国家级项目9项。其中主持国家空管委项目1项。于2005年获得国家科技进步奖一等奖1项，2004-2005年获得教育部一等奖励1项、二等奖1项。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: '[1]、分布式系统、[2]、中间件系统、[3]、�
 detail_url: https://faculty.scu.edu.cn/hushu/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/hushu/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -51,6 +52,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/hushu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/hushu/zh_CN/index.htm
     fetched_at: '2026-09-04'

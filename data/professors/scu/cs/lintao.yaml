@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: lintao@scu.edu.cn
 bio_raw: 2003年获得工学硕士学位，同年10月留学日本，于2007年获得信息科学博士学位。曾工作于日本早稻田大学，担任博士后研究员、客座讲师。 2008年作为四川大学引进人才进入四川大学计算机学院工作，成立人机交互与数字媒体实验室。主要研究兴趣：智能人机交互、自动可用性测试、娱乐交互、游戏智能、用户界面自动生成、人格计算、情感计算、教育游戏等。
   迄今在国内外人机交互研究领域的期刊及学术会议发表论文30余篇，参编游戏设计与开发教材1部，申请国家专利1项。近年主持或参与了多项教育部、四川省科技支撑、日本学术振兴会
@@ -13,7 +14,7 @@ research_direction_raw: '[1]、情感计算、[2]、人格计算、[3]、软件�
 detail_url: https://faculty.scu.edu.cn/lintao1/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/lintao1/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.hci
   origin: computed
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/lintao1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/lintao1/zh_CN/index.htm
     fetched_at: '2026-09-04'

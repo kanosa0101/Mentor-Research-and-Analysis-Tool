@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: lxhw@scu.edu.cn
 bio_raw: 1995年西安交大本科毕业，1998年西安交通大学硕士毕业，2004年北京工业大学毕业，获工学博士学位。 2004年年6月-2007年9月，北京工业大学电控学院信号与信息处理研究室，讲师，2005年9月-
   2006年3月，香港理工大学，RA， 2007年10月至今， 四川大学计算机学院，副教授。李晓华副教授长期从事图像处理、模式识别及智能监控等方面研究工作。作为负责人已主持国家级项目1项，省厅级项目2项。作为主研参加国家自然基金项目3项。目前发表文章近30余篇，其中SCI收录4篇，EI收录9篇。
@@ -13,7 +14,7 @@ research_direction_raw: '[1]、目标跟踪、[2]、人群异常检测、[3]、�
 detail_url: https://faculty.scu.edu.cn/lixiaohua/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/lixiaohua/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/lixiaohua/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/lixiaohua/zh_CN/index.htm
     fetched_at: '2026-09-04'

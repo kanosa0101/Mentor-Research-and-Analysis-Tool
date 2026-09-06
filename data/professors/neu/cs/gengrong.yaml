@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+email: gengrong@mail.neu.edu.cn
 bio_raw: '耿蓉，女，博士，副教授，长期从事无线网络关键技术研究工作，在智能通信、网络优化与安全等领域取得多项创新成果。曾赴美国
 
   The University of Texas at San Antonio
@@ -46,7 +47,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2019/0813/c6641a157460/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0813/c6641a157460/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -70,6 +71,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0813/c6641a157460/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0813/c6641a157460/page.htm
     fetched_at: '2026-09-04'

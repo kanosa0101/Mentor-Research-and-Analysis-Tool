@@ -18,18 +18,18 @@
 - AI 归纳层、学术数据层（DBLP/OpenAlex）、学生画像、SOP+信件、状态写回看板 → 全部设计保留在 REQUIREMENTS.md §8，**延后未做**
 - 原则：官网没写的就是没有，值留空显示"官网未提供"，绝不推测填充
 
-## 2. 当前状态（2026-09-05 实测）
+## 2. 当前状态（2026-09-06 实测）
 
 - **36 校 42 院系 5654 人**，全量 YAML 落盘 + 静态网站可浏览
-- 全库字段覆盖：**邮箱 4422（78%）、职称 4140（73%）、简介 3539（62%）、博导硕导 2267（40%）**
+- 全库字段覆盖：**邮箱 4515（80%）、职称 4219（75%）、简介 3539（62%）、博导硕导 2267（40%）**
 - 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
 - git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
-- preflight 绿（0 PROBLEM）；open issues 均已人工复验标 `reviewed`（官网死链/外部主页被墙），如实留痕
-- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）；**CDP 真实 Chrome 后端（crawler/fetch.py，破瑞数/网防）**
-- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已五类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）⑤ CDP 真实浏览器穿透 WAF 后的明文字段（北邮 80%/重大 88%/电子科大 97%）
-  邮箱 <95% 的院系均已抽查：确认真缺失的留痕（csu/dlut 站点侧问题、hnu 70% 官网字段空白、scut 73% meta 截断、bupt 80% 主页无邮箱字段）；仍有提升空间的（xjtu 68%、tongji 58%、jlu 43%、neu 53%）在 §9 列为下一步
+- preflight 绿（0 PROBLEM）；open issues 均已人工复验标 `reviewed`（官网死链/外部主页被墙/官网字段确缺），如实留痕
+- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）、**rapidocr-onnxruntime（图片邮箱 OCR，jlu_cs）**；**CDP 真实 Chrome 后端（crawler/fetch.py，破瑞数/网防）**
+- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已六类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）⑤ CDP 真实浏览器穿透 WAF 后的明文字段（北邮 80%/重大 88%/电子科大 97%）⑥ **详情页图片邮箱 rapidocr 识别**（吉大 43→71%，§7.43）
+  邮箱 <95% 的院系均已逐页核验：确认真缺失的留痕（csu/dlut 站点侧问题——dlut 解密接口已复测为挂死、hnu 70% 官网字段空白、scut 73% meta 截断、bupt 80% 主页无邮箱字段、neu 40 人/tongji 52 人正文确无邮箱）；仍有提升空间的（xjtu 68%、ruc/ai 67%）在 §9 列为下一步
 
-## 3. 数据现状：已接入 36 个院系（audit.py 实测，2026-09-05）
+## 3. 数据现状：已接入 36 个院系（audit.py 实测，2026-09-06）
 
 | 院系 | hook | 人数 | 职称 | 邮箱 | 博导硕导 | 简介 | facets |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -45,11 +45,11 @@
 | ustc/cs | wp | 72 | 100% | 97% | 0 | 98% | 0 |
 | nju/cs | wp | 102 | 100% | 88% | 65% | 81% | 0 |
 | whu/cs | simple_list | 109 | 89% | 88% | 53% | 91% | 0 |
-| tongji/cs | simple_list | 156 | 100% | 58% | 6% | 78% | 0 |
+| tongji/cs | wp | 156 | 100% | 66% | 6% | 78% | 0 |
 | sdu/cs | simple_list | 17 | 94% | 64% | 0 | 100% | 0 |
 | sysu/cs | sysu_cs(渲染) | 112 | 98% | 97% | 0 | 0 | 96% |
-| neu/cs | neu_cs(委托wp) | 147 | 72% | 53% | 2% | 89% | 0 |
-| jlu/cs | simple_list | 185 | 95% | 43% | 11% | 97% | 0 |
+| neu/cs | neu_cs(委托wp) | 147 | 72% | 72% | 2% | 89% | 0 |
+| jlu/cs | jlu_cs(simple_list+图片邮箱OCR) | 185 | 95% | 71% | 11% | 97% | 0 |
 | ecnu/cs | ecnu_cs(改造wp) | 70 | 98% | 100% | 0 | 98% | 0 |
 | nwpu/cs | simple_list | 23 | 0 | 0 | 0 | 0 | 0 |
 | csu/cs | tsites | 108 | 85% | 71% | 80% | 73% | 52% |
@@ -57,7 +57,7 @@
 | xidian/cs | xidian_cs(委托tsites) | 155 | 94% | 90% | 69% | 99% | 62% |
 | bnu/ai | bnu_ai | 72 | 79% | 73% | 79% | 61% | 69% |
 | xjtu/cs | xjtu_cs | 75 | 62% | 68% | 78% | 13% | 22% |
-| scu/cs | scu_cs(委托tsites) | 166 | 23% | 90% | 0 | 65% | 42% |
+| scu/cs | scu_cs(委托tsites) | 166 | 71% | 90% | 0 | 65% | 42% |
 | zju/cs | zju_cs(名录+xlsx+CDP person) | 438 | 37% | 33% | 99% | 35% | 38% |
 | sustech/cs | sustech_cs | 39 | 100% | 100% | 0 | 28% | 0 |
 | shanghaitech/cs | sist_cs | 149 | 65% | 98% | 59% | 0 | 59% |
@@ -81,7 +81,8 @@
 要点：
 - hit 详情无源已定论（教师主页是内网穿透地址外网 404），但博导/硕导名单页（cs.hit.edu.cn/22195/22196，CDP 渲染）已补 supervisor 168/240；nwpu 是纯名单（roster 级，无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 主页 CDP 已可抓（66 人名录链接者已富化 59 邮箱）；**门户搜索接口已逆向（§7.41）**：/server/api/front/psons/search 全校 5841 人可拉，计算机学院 169 人匹配入库 103 人 detail_url 修正为 person 主页（CDP 富化），邮箱 13→33%、职称 14→37%；剩余 271 名 xlsx 导师接口无记录（无 person 主页），拼音猜测全 404
 - xidian/川大邮箱经 tsites 解密接口还原 + 明文四形态兜底；上科大/复旦走 generalQuery POST 接口；复旦 bio 经核实官网侧无源（generalQuery 无简介字段、exField5"个人主页"文章页是空壳），homepage 链接已入库（107 人）
-- xmu 43 条详情死链是官网本身 404（已逐一留痕并 reviewed）；dlut tsites 解密接口返回截断值（浏览器也显示为空），属站点侧故障；tju 1 条官网死链留痕
+- xmu 43 条详情死链是官网本身 404（已逐一留痕并 reviewed）；dlut tsites 解密接口已复测为**服务端挂死**（requests/CDP 三路超时，浏览器也显示为空），属站点侧故障、23 人留痕（§7.45）；tju 1 条官网死链留痕
+- **存量低覆盖专项（2026-09-06 完成）**：scu 职称 23→71%（tsites bs 信息块"职务：教授"标签扫描，§tsites.py）；jlu 邮箱 43→71%（**图片邮箱 OCR** 52 人全目检，§7.43）；neu 邮箱 53→72%（简介正文标签变体搜索 +29 人，页脚公邮陷阱 40 人留痕，§7.44）；tongji 邮箱 58→66%（wp @ 扫描粘连修复 +13 人，52 人留痕，§7.44）；dlut 解密接口挂死定论（§7.45）
 - bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
 - **hnu（09-05 接入）**：域名是 **csee.hnu.edu.cn**（cs.hnu.edu.cn 是阻断主因——域名错了）；卡片表名录 6 页（按职称分类频道）+ /people/<id> 详情表；邮箱 70% 抽查确认为官网"电子邮件"字段真空白（页脚 xiaoban@hnu.edu.cn 是公邮，勿录）；无博导硕导字段
 - **scut（09-05 接入）**：www2.scut.edu.cn/cs；师资按职称分三栏目（22284 教授/22285 副教授/22286 讲师），栏目名即 roster 级职称；正文只有介绍图片的页面字段全靠 meta description（§7.35），面包屑兜底职称；专职研究人员栏目（zzyjry）是 AJAX 空壳未接
@@ -172,7 +173,10 @@
 41. **浙大 person 门户 API 逆向（appkey/sign 签名）**：前端 emitAjax 三件套——`appkey = Base64→Hex(反转的Base64串)`、`sign = MD5(salt + path + sorted_kv(data) + timestamp + " " + salt)`（salt 也是 Base64→Hex 固定串）、`timestamp` 毫秒。请求走 `/server/api/front/psons/search?size=100&page=N`（**/server 前缀**，不带它 403/Access denied——那是前端代理路径），返回 JSON（totalElements=5841 全校）。API 本身不被瑞数拦（裸 requests 也能调，缺签名头才 400），**页面内 fetch/XHR 反而 403**（瑞数 4 对 XHR 注动态 token，但应用层签名缺了照样 403——两层签名别混淆）。UI 路线注意：SPA 是 history 路由，服务端真实路径带 `/index` 前缀（/index/search），直接 goto 可渲染
 42. **北邮 tsites 的 jsxx 子页才有 职称/导师资格**（主页只有职务/单位/邮箱/办公地点），链接形态 `/<py>/zh_CN/jsxx/<id>/jsxx/jsxx.htm`，字段标签与值常分两行（"职称：
 教授"）——职称正则要带下一行兜底
-40. **重大 tsites 是"成果展示型"**：faculty.cqu.edu.cn 的 index.htm 只有论文/专利栏目，**个人信息（职称/导师/邮箱）在 yjgk 子页**（栏目 ID 每人不同，从主页导航正则找）；邮箱标签是"联系方式："不是"电子邮箱"。北邮 tsites 相反——无密文 span，邮箱明文在 `div#gerenxinxi`。电子科大师资卡片 `span.name` 第二个就是职称（roster 级白送）；列表分页参数是 **`&fromWenCountNo=99`**（GET 生效）
+43. **详情页"邮箱值是防爬 PNG 图片"（吉大）→ rapidocr 本地 OCR 管线（sites/jlu/jlu_cs.py）**：`<td>Email：</td><td><img …>` 值列是 18px 高的小图，rapidocr 的 **det 模型对细长低对比单行图会丢前段**——直接调 `ocr.text_recognizer(整行放大6x图)` 整行识别才稳。识别结果常把 @ 后域名拆碎/漏字，**修复策略是只信 @ 前的 local part + 已知域名重组**（该院邮箱域固定）；混淆形态"xxx at yyy/[AT]"在去空格前先还原为 @。**OCR 结果必须目检**：52 张图拼成大图逐一核对，揪出 l/1、l/I、c/e 字符级混淆 2 例（已改 manual origin 覆盖）。另注意 vsb CMS 的 img 真实路径在 **vurl 属性**（src 可能是丢目录的相对名），且 vurl 有 `/_vsl/…` 缩略图形态（OCR 必败），要 vurl→src 依次回退
+44. **wp 邮箱提取两处新坑（同济/东北暴露）**：① `box.get_text("", strip=True)` 无分隔拼接会把中文标签和邮箱粘成一个 token（"系方式：a@b.c"），normalize 的 ASCII `\w` 拒收——@ 扫描窗口内先用正则剥出纯邮箱再归一；② 邮箱正则 TLD `[A-Za-z]{2,}` 会把后续标签词吞进域名（"jlu.edu.cnWechat"）——**右边界前瞻挡不住纯字母**，解法是标签切分处按"WeChat/QQ/Tel…+冒号"预截断 + `email_util._tld_ok` 尾标签长度/白名单校验兜底。东北正文邮箱标签变体多（电子邮件/电子邮箱/联系方式/邮件联系），且常被 span 隔断——**在 get_text 纯文本上按变体搜**（neu_cs），页脚公邮 neucse 由过滤兜底
+45. **dlut tsites 解密接口挂死实锤（复测 2026-09-06）**：tsitesencrypt.jsp 在 requests 直连/代理/CDP 真浏览器三路下均 >20s 无响应挂起（页面本身 0.6s 可达），浏览器渲染同样空——**站点侧故障，唯一邮箱来源不可用**；英文版页面亦整体超时。23 人按 `email_missing_source_side` 留痕 reviewed，等站点恢复后 `crawl --refresh` 重跑即可
+46. **重大 tsites 是"成果展示型"**：faculty.cqu.edu.cn 的 index.htm 只有论文/专利栏目，**个人信息（职称/导师/邮箱）在 yjgk 子页**（栏目 ID 每人不同，从主页导航正则找）；邮箱标签是"联系方式："不是"电子邮箱"。北邮 tsites 相反——无密文 span，邮箱明文在 `div#gerenxinxi`。电子科大师资卡片 `span.name` 第二个就是职称（roster 级白送）；列表分页参数是 **`&fromWenCountNo=99`**（GET 生效）
 
 ## 8. 操作手册
 
@@ -201,7 +205,7 @@ python scripts\tag_facets.py   # 重算方向标签（改规则后）
 1. **浙大**：名录只链 66 人（已确认上限），59 人邮箱/简介已得；**374 名 xlsx 导师需逆向 person.zju 门户搜索接口**（Vue SPA + 瑞数，CDP 已过 WAF，剩接口逆向）——预期全库邮箱 +200~300
 2. **哈工大 ✅ supervisor 168/240**：博导/硕导名单页（cs.hit.edu.cn/22195、22196）CDP 渲染按姓名合并；详情无源已定论——教师主页是内网穿透地址（homepage-hit-edu-cn.ivpn.hit.edu.cn:1080，外网 404），cs.hit 主站已通但教师详情只在校内
 3. **北邮职称 30% → 子页挖掘**：teacher.bupt 主页"更多"子页（jsxx）可能有职称/方向
-4. scu 职称 23% → tsites 详情页再挖；xmu 邮箱 7% 死链绕行；dlut 8% 解密接口复测；jlu 43% / neu 53% / tongji 58% 逐校专项
+4. ~~scu 职称 23% / dlut 解密接口复测 / jlu 43% / neu 53% / tongji 58% 逐校专项~~ **✅ 2026-09-06 完成**（scu 职称 71%、jlu 邮箱 71%、neu 72%、tongji 66%、dlut 挂死定论，§3 要点）；xmu 邮箱 7% 死链已逐一留痕（官网 404，无绕行来源）——剩余 xjtu 68% / ruc-ai 67% 待挖
 5. supervisor 全库 36% 排查：tsites 系详情页"博导/硕导"标注漏抓检查（套磁筛导师关键字段）
 6. verified 人工核对启动：每校抽 10 人核对 provenance（需用户参与）
 7. 华科/南开复测（通了可试 CDP）

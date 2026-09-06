@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: yanliliu@scu.edu.cn
 bio_raw: 刘艳丽，2010年6月博士毕业于浙江大学计算机辅助设计与图形学（CAD&CG）国家重点实验室，师从著名计算机图形学专家彭群生教授。2010年7月加入四川大学计算机学院，历任讲师、副教授、教授。2010年11月至2011年11月在法国国家信息科学与控制研究院（INRIA）从事博士后研究。刘艳丽博士长期从事计算机图形学、计算机视觉、图像/视频处理与等领域交叉方向的研究，研究方向包括虚拟现实/增强现实、基于视觉的高精度定位、人脸识别、图像视频增强等。其中，在面向增强现实的光照分析与重建、基于在线视频的阴影检测与处理、人脸图像的光效处理等方面的研究处于国际前列。研究成果在相关领域顶级期刊IEEE
   Transactions on Visualization and Computer Graphics (TVCG)、IEEE Transactions on
@@ -13,7 +14,7 @@ photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAyGB1SOyAPt
 detail_url: https://faculty.scu.edu.cn/liuyanli/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/liuyanli/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/liuyanli/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/liuyanli/zh_CN/index.htm
     fetched_at: '2026-09-04'

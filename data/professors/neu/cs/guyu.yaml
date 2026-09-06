@@ -4,6 +4,7 @@ aliases: []
 school: neu
 dept: cs
 status: enriched
+email: guyu@mail.neu.edu.cn
 bio_raw: '谷峪，
 
   1981
@@ -232,7 +233,7 @@ homepage: https://idma-neu.github.io/
 detail_url: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -266,6 +267,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0329/c6641a157516/page.htm
     fetched_at: '2026-09-04'

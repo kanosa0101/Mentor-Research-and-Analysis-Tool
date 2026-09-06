@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: luochuan@my.swjtu.edu.cn
 bio_raw: '罗川，副教授，硕士生导师；西南交通大学博士，四川大学博士后，加拿大里贾纳大学联合培养博士，哈佛大学交叉学科短期访问学者；中国人工智能学会粒计算与知识发现专业委员会委员，IEEE/IRSS/CCF/CAAI会员。
 
@@ -18,7 +19,7 @@ research_direction_raw: '[1]、增量学习与并行计算、[2]、粒计算与�
 detail_url: https://faculty.scu.edu.cn/luochuan/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/luochuan/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -52,6 +53,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/luochuan/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/luochuan/zh_CN/index.htm
     fetched_at: '2026-09-04'

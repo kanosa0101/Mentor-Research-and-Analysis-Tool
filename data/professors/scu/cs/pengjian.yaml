@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: jianpeng@scu.edu.cn
 bio_raw: '单独或与人合作在国际会议或核心期刊上发表论文50余篇，其中SCI或EI检索30余篇。主编或者参与出版教科书5本，其中国家十一五规划教材2本，译著2本。
 
@@ -14,7 +15,7 @@ research_direction_raw: '[1]、大数据、云计算、移动计算、[2]、物�
 detail_url: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -48,6 +49,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/pengjian/zh_CN/index.htm
     fetched_at: '2026-09-04'

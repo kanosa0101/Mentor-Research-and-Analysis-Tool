@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副研究员
 email: shaobing.gao@ucl.ac.uk
 bio_raw: 高绍兵，博士，2017年6月毕业于电子科技大学生命科学与技术学院，2017年被四川大学引进为特聘副研究员（副高）；2015年至2016年，在伦敦大学学院（University
   College London）行为神经科学研究中心进行联合博士培养。高绍兵博士的主要研究领域是“类脑计算”，主要研究方向包括计算机视觉，视觉颜色信息处理，视觉自适应，生物脉冲神经网络，基于大脑GPS机理的机器人导航技术，深度学习等。高绍兵博士在生物医学工程，计算神经科学及神经电生理实验领域接受过严格的训练，拥有实验神经科学和工科的研究背景。已在计算机视觉，模式识别以及计算神经科学领域刊物和会议IEEE
@@ -15,7 +16,7 @@ research_direction_raw: '[1]、深度学习、[2]、生物脉冲神经网络、[
 detail_url: https://faculty.scu.edu.cn/gaoshaobing/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/gaoshaobing/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -54,6 +55,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/gaoshaobing/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/gaoshaobing/zh_CN/index.htm
     fetched_at: '2026-09-04'

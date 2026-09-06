@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: huchen@scu.edu.cn
 bio_raw: 2011年6月于电子科技大学获得博士学位，2008年9月至2009年9月在美国加州大学圣地亚哥分校（University California,
   San Diego），电子与计算机工程学院，视频处理实验室进行研究与学习，为联合培养博士；2011 年 12 月至今在四川大学计算机学院任教。主 要从事基于图像与视频处理、人工智能、模式识别以及计算机视觉等领域的研究与开发工作，具体研究方向包括视频分析与处理、视频编解码、
@@ -14,7 +15,7 @@ research_direction_raw: '[1]、深度学习、[2]、视频分析与处理、[3]�
 detail_url: https://faculty.scu.edu.cn/chenhu/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/chenhu/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -48,6 +49,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/chenhu/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/chenhu/zh_CN/index.htm
     fetched_at: '2026-09-04'

@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 副教授
+email: yanglei@mail.neu.edu.cn
 bio_raw: '杨雷
 
   ，1974年4月生，男，辽宁营口人。中共党员，现任东北大学计算机科学与工程学副教授。针对大数据有效管理与利用的迫切需要，根据国家需求和跟踪国际学术前沿，紧扣“大数据管理”主题，以“分析业务流程优化”为主线，在交互式业务流程建模、分析应用性能优化、数据优化管理等方面进行系统深入地研究，并取得创新性学术成果。主持承担国家以及省部级等纵向科研课题6项，其中作为课题负责人承担国家科技支撑计划课题1项，发表论文50余篇。授权国家发明专利6项。获辽宁省自然科学学术成果一等奖1项、辽宁省科技进步二等奖1项、辽宁省高等教育学会优秀论文一等奖1项。
@@ -74,7 +75,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157479/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157479/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -98,6 +99,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157479/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157479/page.htm
     fetched_at: '2026-09-04'

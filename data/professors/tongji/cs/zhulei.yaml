@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 研究员
+email: leizhu0608@gmail.com
 bio_raw: '朱磊，同济大学研究员、博士生导师，教育部青年长江学者，小米青年学者，计算机科学与技术学院院务助理，同济大学工程智能研究院大模型与算法中心负责人。主要研究方向为高效能多模态大模型与空间智能。
 
   已在
@@ -218,7 +219,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1061/3378.htm
 profile_url: https://cs.tongji.edu.cn/info/1061/3378.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -247,6 +248,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1061/3378.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1061/3378.htm
     fetched_at: '2026-09-03'

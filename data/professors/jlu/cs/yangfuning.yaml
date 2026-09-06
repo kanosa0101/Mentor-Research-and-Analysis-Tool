@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 副教授
+email: yfn@jlu.edu.cn
 bio_raw: '基本情况
 
   姓名：杨馥宁
@@ -720,7 +721,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1028/20507.htm
 profile_url: https://ccst.jlu.edu.cn/info/1028/20507.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.security
   origin: computed
@@ -749,6 +750,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1028/20507.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/20507.htm
     fetched_at: '2026-09-05'

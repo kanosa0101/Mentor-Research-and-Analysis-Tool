@@ -4,13 +4,14 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 讲师
 email: yuchen@scu.edu.cn
 bio_raw: 2011.1-2012.1：University of Maryland (访问学者)；2008.7-至今，四川大学计算机学院教师 自08年9月至今，承担本科生的《离散数学》、《算法设计》等课程的教学工作。
 institutes: []
 detail_url: https://faculty.scu.edu.cn/chenyu1/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/chenyu1/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.theory
   origin: computed
@@ -29,6 +30,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/chenyu1/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/chenyu1/zh_CN/index.htm
     fetched_at: '2026-09-04'

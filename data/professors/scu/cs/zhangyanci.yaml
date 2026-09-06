@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: yczhang@scu.edu.cn
 bio_raw: 张严辞，1993 年本科毕业于四川大学计算机科学系计算机软件专业；1997 年9 月至2003 年7 月在中国科学院软件研究所在吴恩华教授指导下进行基于图像的绘制和建模技术的研究，获得博士学位，博士论文题目《基于图像的实时漫游技术研究》；2004
   年在香港中文大学以研究助理身份在孙汉秋教授指导下从事基于点的建模和绘制等方面的研究工作；2005 年5 月至2008年6 月在瑞士苏黎世大学以博士后身份在Renato
@@ -16,7 +17,7 @@ research_direction_raw: '[1]、3D游戏技术、[2]、基于GPU的通用并行�
 detail_url: https://faculty.scu.edu.cn/zhangyanci/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/zhangyanci/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -55,6 +56,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangyanci/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhangyanci/zh_CN/index.htm
     fetched_at: '2026-09-04'

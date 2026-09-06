@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+email: shendr@mail.neu.edu.cn
 bio_raw: '申德荣，教授，博士生导师。中国计算机学会高级会员，CCF信息系统专委会常务委员，CCF数据库专委会执行委员。吉林大学计算机学士、硕士，东北大学博士。主要研究方向为分布式数据库、大数据集成、推荐系统、知识图谱等。主持国家863计划、国家自然科学基金、国家973子课题等项目。在VLDB、ICDE、AAAI、WWW等著名期刊和会议上发表论文多篇，主编研究生教材3部，出版专著1部。获省部级科技奖3项，获辽宁省研究生教学成果奖1项。指导的研究生多次获国际会议最佳论文奖，多人次获东北大学优秀毕业论文。
 
   联系邮箱：shendr@mail.neu.edu.cn或shenderong@cse.neu.edu.cn
@@ -15,7 +16,7 @@ homepage: http://faculty.neu.edu.cn/shendr/
 detail_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -44,6 +45,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0312/c6641a157527/page.htm
     fetched_at: '2026-09-04'

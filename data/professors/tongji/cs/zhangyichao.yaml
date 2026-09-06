@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 副教授
+email: yichaozhang@tongji.edu.cn
 bio_raw: '张毅超，
 
   同济大学计算机科学与技术学院副教授、博士生导师、数据科学与人工智能系副主任。
@@ -36,7 +37,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1063/2829.htm
 profile_url: https://cs.tongji.edu.cn/info/1063/2829.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.db
   origin: computed
@@ -60,6 +61,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1063/2829.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1063/2829.htm
     fetched_at: '2026-09-03'

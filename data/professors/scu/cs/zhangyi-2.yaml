@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: zhangyi@scu.edu.cn
 bio_raw: '1994年7月毕业于中国科学院数学研究所，获理学博士学位。现为四川大学计算机学院/软件学院院长、教授、博士生导师、机器智能实验室主任，IEEE
   Fellow，IEEE成都分会主席，中国计算机学会理论计算机专委会委员，中国计算机学会模式识别与人工智能专委会委员，中国人工智能学会机器学习专委会委员，国家自然科学基金委会评专家，教育部新世纪优秀人才，四川省有突出贡献的优秀专家，四川省学术和技术带头人，成都市有突出贡献的优秀专家，享受国务院政府特殊津贴。
@@ -20,7 +21,7 @@ photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1ZhKAZk
 detail_url: https://faculty.scu.edu.cn/zhangyi123/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/zhangyi123/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -49,6 +50,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhangyi123/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhangyi123/zh_CN/index.htm
     fetched_at: '2026-09-04'

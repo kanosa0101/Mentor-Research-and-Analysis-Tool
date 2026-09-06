@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: cswei@scu.edu.cn
 bio_raw: 现为四川大学计算机学院教授、计算机科学系系主任。2009年毕业于香港城市大学电脑科学系，获博士学位，师从多媒体计算专家Chong-Wah NGO教授，其后曾于美国加州伯克利大学从事博士后研究。主要从事多媒体计算及相关方向的研究，为多媒体计算方向国际著名团队VIREO的奠基成员之一。其负责的自动视频语义检索小组自2006年起一直在美国国家标准技术研究院(NIST)的TRECVID年度评测中保持前5的优秀成绩(其中2008年为第2)。其相关著作多次发布在多媒体计算方向的顶级国际会议ACM
   Multimedia及顶级期刊IEEE Transactions On Multimedia, IEEE Transactions on Image Processing,
@@ -15,7 +16,7 @@ research_direction_raw: '[1]、可穿戴设备、[2]、物联网、[3]、多媒�
 detail_url: https://faculty.scu.edu.cn/weixiaoyong/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/weixiaoyong/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -64,6 +65,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/weixiaoyong/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/weixiaoyong/zh_CN/index.htm
     fetched_at: '2026-09-04'

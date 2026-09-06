@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 副教授
+email: gnqu@jlu.edu.cn
 phone: Email：
 bio_raw: '基本情况
 
@@ -69,7 +70,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1028/19170.htm
 profile_url: https://ccst.jlu.edu.cn/info/1028/19170.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.systems
   origin: computed
@@ -85,15 +86,20 @@ provenance:
   title:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/19170.htm
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-09-06'
     confidence: auto
   phone:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/19170.htm
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-09-06'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1028/19170.htm
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-09-06'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1028/19170.htm
+    fetched_at: '2026-09-06'
     confidence: auto

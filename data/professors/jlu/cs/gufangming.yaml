@@ -5,6 +5,7 @@ school: jlu
 dept: cs
 status: enriched
 title: 讲师
+email: gufm@jlu.edu.cn
 phone: Email：
 bio_raw: '基本情况
 
@@ -51,7 +52,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1211/19219.htm
 profile_url: https://ccst.jlu.edu.cn/info/1211/19219.htm
 first_seen: '2026-09-05'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -80,6 +81,11 @@ provenance:
     fetched_at: '2026-09-05'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1211/19219.htm
+    fetched_at: '2026-09-05'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1211/19219.htm
     fetched_at: '2026-09-05'

@@ -5,6 +5,7 @@ school: tongji
 dept: cs
 status: enriched
 title: 助理教授
+email: zhanghaodong@tongji.edu.cn
 bio_raw: '张浩东，同济大学计算机科学与技术学院助理教授、硕士生导师。先后于北京理工大学、德国慕尼黑工业大学、清华大学等国内外高校学习与工作，入选国家博士后创新人才支持计划、清华大学水木学者。曾获中国交通运输协会技术发明奖一等奖、第五届中国交通运输工程学会全国优秀博士学位论文奖。
 
   主要研究方向为具身交互智能，围绕人工智能与先进功能材料、生物信息、自动驾驶等前沿领域开展交叉研究，致力于推动智能交互系统的技术创新与场景落地。目前已在Nature
@@ -17,7 +18,7 @@ institutes: []
 detail_url: https://cs.tongji.edu.cn/info/1121/4063.htm
 profile_url: https://cs.tongji.edu.cn/info/1121/4063.htm
 first_seen: '2026-09-03'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.robotics
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-03'
     confidence: auto
   title:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1121/4063.htm
+    fetched_at: '2026-09-03'
+    confidence: auto
+  email:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1121/4063.htm
     fetched_at: '2026-09-03'

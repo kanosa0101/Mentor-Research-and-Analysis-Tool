@@ -205,6 +205,13 @@ def parse_detail(cfg, html, url):
             v = _label_value("职务")
             if v and _TITLE_RE.fullmatch(v):
                 out["title"] = v
+    if "title" not in out:
+        # scu 等模板信息块独立于头区: <div class="bs bs-1"><p>职务：教授</p>…<p>所在单位：…</p></div>
+        for p in soup.select("div.bs p, div.bsbx p"):
+            m = re.match(r"^(?:职称|职务)\s*[:：]\s*(.+)$", p.get_text(" ", strip=True))
+            if m and _TITLE_RE.fullmatch(m.group(1).strip()):
+                out["title"] = m.group(1).strip()
+                break
 
     v = _label_value("所在单位")
     if v:
@@ -259,7 +266,7 @@ def parse_detail(cfg, html, url):
         # 裸 <p> 明文兜底(西交 gr.xjtu 模板无任何标签)。全页唯一邮箱直接采用；
         # 多个时仅当恰好一个与站点同校域(xjtu.edu.cn 等)——个人 QQ/163 并存时取官方域
         uniq = {normalize_email(e) for e in re.findall(
-            r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", soup.get_text(" ", strip=True))} - {None}
+            r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9])", soup.get_text(" ", strip=True))} - {None}
         if len(uniq) == 1:
             out["email"] = uniq.pop()
         elif uniq:

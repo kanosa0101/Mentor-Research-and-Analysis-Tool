@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: qjzhao@scu.edu.cn
 bio_raw: 1999-2006年在上海交通大学计算机系获得学士与硕士学位，2006-2010年在香港理工大学电子计算学系获得博士学位，2010-2012年在美国密歇根州立大学从事博士后研究，2012年回国加入四川大学，历任副教授、教授。2019年8月起援藏担任西藏大学信息科学技术学院副院长、学科带头人。赵博士长期从事生物特征识别和计算机视觉领域的研究，近期的研究兴趣主要包括三维建模与识别及其在刑事科学、视频监控、医疗保健、人机交互等领域的应用，目标检测与识别及其在生态调查、动物保护、群体分析等方面的应用。赵博士已发表学术会议及期刊论文80余篇，包括CVPR、ECCV、AAAI、ICB、PR、IEEE
   TPAMI、IEEE TIFS等，出版计算机视觉相关专著和译著2部，已获授权美国专利一项、中国专利五项。赵博士主持的
@@ -12,7 +13,7 @@ photo_url: https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1Q2qATM
 detail_url: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
     fetched_at: '2026-09-04'

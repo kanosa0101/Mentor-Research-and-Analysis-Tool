@@ -22,13 +22,17 @@ def parse_detail(cfg, html, url):
     if email and "neucse@" in email.lower():
         del out["email"]  # 学院公邮, 非教师本人
     if "email" not in out:
-        # 教师邮箱藏在简介文本里("电子邮件 caochunhong@cse.neu.edu.cn")
+        # 教师邮箱藏在简介文本里。标签变体多(电子邮件/电子邮箱/联系方式/邮件联系…),
+        # 且常被 span 等标签隔断, 必须在 get_text 纯文本上搜; 文章正文在页脚之前,
+        # 页脚"邮箱：neucse@…"是学院公邮, 由 neucse 过滤兜底
         soup = BeautifulSoup(html, "html.parser")
         for tag in soup(["script", "style"]):
             tag.decompose()
         text = soup.get_text(" ", strip=True)
-        m = re.search(r"电子邮件\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})", text)
-        if m and "neucse" not in m.group(1):
+        m = re.search(r"(?:电子邮件|电子邮箱|E-?mail|联系方式|邮件联系|邮箱|信箱)"
+                      r"\s*[：:]?\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})",
+                      text, re.I)
+        if m and "neucse" not in m.group(1).lower():
             e = normalize_email(m.group(1))
             if e:
                 out["email"] = e

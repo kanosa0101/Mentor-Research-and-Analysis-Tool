@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: leiduan@scu.edu.cn
 bio_raw: '2008年12月获四川大学计算机应用技术专业博士学位。毕业后留校任教。2007年9月至2008年9月于美国Wright State大学做联合培养博士研究生。2012年10月至2013年10月于加拿大Simon
   Fraser大学做访问学者。
@@ -15,7 +16,7 @@ research_direction_raw: '[1]、智能信息系统、[2]、数据库技术、[3]�
 detail_url: https://faculty.scu.edu.cn/duanlei/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/duanlei/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -49,6 +50,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/duanlei/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/duanlei/zh_CN/index.htm
     fetched_at: '2026-09-04'

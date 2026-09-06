@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: lixiaofeng2009@scu.edu.cn
 bio_raw: 2000年7月至2002年6月，美国普度大学工程技术学院(印第安那波利斯)，获机械工程硕士学位，从事混合动力汽车动力传递系统设计仿真及其与产品数据管理系统集成等研究。2002年7月至2005年8月，美国福特汽车公司，从事标准零部件库系统及其与C3P(CAD/CAE/CAM/PIM)等系统集成的研发工作。2005年12月至今，四川大学计算机学院，从事计算机应用技术、图形图像处理技术、视觉合成技术、三维人脸识别技术等研究工作，先后承担或参与国家和省部级纵向科研任务10项，包括自然科学基金重点项目1项，973计划课题1项，863计划项目4项，科技支撑计划课题1项，重大科学仪器专项项目1项。获国家科技进步二等奖一项。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: '[1]、三维人脸识别、[2]、视觉合成、[3]、�
 detail_url: https://faculty.scu.edu.cn/lixiaofeng/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/lixiaofeng/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -46,6 +47,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/lixiaofeng/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/lixiaofeng/zh_CN/index.htm
     fetched_at: '2026-09-04'

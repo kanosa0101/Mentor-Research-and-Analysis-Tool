@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: zhumin@scu.edu.cn
 bio_raw: '教育与工作经历：2004年获得应用数学理学博士学位。1996年留校任教，2005年至今，先后担任学院副院长、党委副书记，2007年聘任为教授。目前为博士生导师，计算机科学与技术学位分委会副主席，四川省有突出贡献优秀专家，四川省教学名师。2013-2014年作为访问学者在美国凯斯西储大学进行学术交流，此外先后前往爱尔兰、日本、中国香港、中国台湾等多所高校进行交流访问。
 
@@ -62,7 +63,7 @@ research_direction_raw: '[1]、生物信息学、[2]、图像处理、[3]、信�
 detail_url: https://faculty.scu.edu.cn/zhumin/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/zhumin/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -106,6 +107,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhumin/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhumin/zh_CN/index.htm
     fetched_at: '2026-09-04'

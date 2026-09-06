@@ -4,6 +4,7 @@ aliases: []
 school: jlu
 dept: cs
 status: enriched
+email: yuehs@jlu.edu.cn
 bio_raw: '个人简介
 
   岳恒山
@@ -662,7 +663,7 @@ institutes: []
 detail_url: https://ccst.jlu.edu.cn/info/1359/19747.htm
 profile_url: https://ccst.jlu.edu.cn/info/1359/19747.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.llm
   origin: computed
@@ -686,6 +687,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: https://ccst.jlu.edu.cn/info/1359/19747.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: https://ccst.jlu.edu.cn/info/1359/19747.htm
     fetched_at: '2026-09-04'

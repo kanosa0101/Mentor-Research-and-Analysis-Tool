@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: liuzhengxi@scu.edu.cn
 bio_raw: 从1983年起一直在高校从事计算机应用技术相关的教学、科研工作，2001年起担任硕士生导师，研究领域为计算机应用、数字图象处理与视频分析，具体研究方向包括计算机应用技术、图形图象技术与应用、大场景视频分析与应用、移动微地图技术与应用、嵌入式系统与应用等。
 institutes: []
@@ -12,7 +13,7 @@ research_direction_raw: '[1]、智能系统与信息处理、[2]、大场景视�
 detail_url: https://faculty.scu.edu.cn/liuzhengxi/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/liuzhengxi/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -41,6 +42,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/liuzhengxi/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/liuzhengxi/zh_CN/index.htm
     fetched_at: '2026-09-04'

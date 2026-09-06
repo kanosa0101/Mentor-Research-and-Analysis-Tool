@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 教授
 email: lvjiancheng@scu.edu.cn
 bio_raw: 2003年3月毕业于电子科技大学获计算机应用硕士学位。曾在中兴通讯股份有限公司工作两年，参与了多个项目的研发与管理工作。2006年12月毕业于电子科技大学获计算机科学博士学位；2007年3月-2008年6月在新加坡国立大学从事博士后研究；2008年7月作为引进人才加入四川大学，被特聘为教授，2009年5月被评为博士生导师。
   至2012年12月已发表学术论文30篇，SCI收录24篇。其中，在IEEE Transactions系列期刊发表论文6篇；英文专著一部《Subspace Learning
@@ -15,7 +16,7 @@ research_direction_raw: '[1]、神经计算及其应用、[2]、数据挖掘、[
 detail_url: https://faculty.scu.edu.cn/lvjiancheng/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/lvjiancheng/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.ml
   origin: computed
@@ -44,6 +45,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/lvjiancheng/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/lvjiancheng/zh_CN/index.htm
     fetched_at: '2026-09-04'

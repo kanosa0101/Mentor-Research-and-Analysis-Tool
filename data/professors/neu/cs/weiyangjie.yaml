@@ -5,6 +5,7 @@ school: neu
 dept: cs
 status: enriched
 title: 教授
+email: weiyangjie@cse.neu.edu.cn
 bio_raw: '魏阳杰，女，1978年出生，博士，教授，博士生导师。
 
   Ÿ 1998/09-2002/07，吉林大学，电子信息工程专业，本科/学士；
@@ -33,7 +34,7 @@ institutes: []
 detail_url: http://www.cse.neu.edu.cn/2019/0813/c6641a157497/page.htm
 profile_url: http://www.cse.neu.edu.cn/2019/0813/c6641a157497/page.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-05'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -62,6 +63,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   bio_raw:
+    origin: crawled
+    source: http://www.cse.neu.edu.cn/2019/0813/c6641a157497/page.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  email:
     origin: crawled
     source: http://www.cse.neu.edu.cn/2019/0813/c6641a157497/page.htm
     fetched_at: '2026-09-04'

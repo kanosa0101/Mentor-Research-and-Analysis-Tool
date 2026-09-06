@@ -4,6 +4,7 @@ aliases: []
 school: scu
 dept: cs
 status: enriched
+title: 副教授
 email: hekun@scu.edu.cn
 bio_raw: 2006年7月开始在四川大学计算机(软件)学院从事教学科研工作， 2010年被评为副教授。 2002年在四川大学电气学院获得工学硕士学位；2006年在四川大学电子学院获得工学博士学位。
   主要承担本科多门课程的理论教学（计算机游戏编程、多媒体技术、离散数学）和硕士研究生的《计算机科学进展》教学，并主编本科教材《计算机游戏编程——基础篇》。 多年来一直从事图像处理分析的研究，具体研究方向包括图像处理数字图像水印、模式识别等。目前已在权威国际国内学术期刊和国际会议上发表论文40余篇，其中EI收录12篇；主持或参加多项纵横
@@ -13,7 +14,7 @@ research_direction_raw: '[1]、模式识别、[2]、数字水印、[3]、图像�
 detail_url: https://faculty.scu.edu.cn/hekun/zh_CN/index.htm
 profile_url: https://faculty.scu.edu.cn/hekun/zh_CN/index.htm
 first_seen: '2026-09-04'
-last_verified: '2026-09-04'
+last_verified: '2026-09-06'
 facets:
 - id: topic.cv
   origin: computed
@@ -42,6 +43,11 @@ provenance:
     fetched_at: '2026-09-04'
     confidence: auto
   research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/hekun/zh_CN/index.htm
+    fetched_at: '2026-09-04'
+    confidence: auto
+  title:
     origin: crawled
     source: https://faculty.scu.edu.cn/hekun/zh_CN/index.htm
     fetched_at: '2026-09-04'
