@@ -100,7 +100,7 @@ def iter_roster(cfg):
                 p.setdefault("research_direction_raw", rec["direction"])
             if rec.get("subjects"):
                 p.setdefault("subjects", rec["subjects"])
-    return list(people.values()), None
+    return list(people.values()), meta
 
 
 def parse_detail(cfg, html, url):

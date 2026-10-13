@@ -1,4 +1,5 @@
 import json
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -8,15 +9,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import yaml
 from crawler.ai_util import validate_ai_block
 from crawler.model import Professor
+from crawler.outreach_util import validate_outreach
 
 ROOT = Path(__file__).resolve().parent.parent
+parser = argparse.ArgumentParser()
+parser.add_argument('--root', type=Path, default=ROOT, help='校验独立测试数据根')
+ROOT = parser.parse_args().root
+def load_yaml(path):
+    return yaml.load(path.read_text(encoding='utf-8'), Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
+
 problems = []
 
 print("== 1. YAML + schema 校验 ==")
 records = {}
 for f in sorted((ROOT / "data" / "professors").glob("*/*/*.yaml")):
     try:
-        d = yaml.safe_load(f.read_text(encoding="utf-8"))
+        d = load_yaml(f)
         p = Professor.model_validate(d)
     except Exception as e:
         problems.append(f"schema: {f}: {repr(e)[:80]}")
@@ -41,7 +49,7 @@ for key, p in records.items():
 
 print("== 3. issues / changes ==")
 for f in sorted((ROOT / "data" / "issues").glob("*.yaml")):
-    data = yaml.safe_load(f.read_text(encoding="utf-8")) or []
+    data = load_yaml(f) or []
     # reviewed=True 表示人工复验过(如官网详情页确认 404、外部主页被墙),
     # 属如实记录而非待处理异常; 未复验的 open issue 才是问题
     open_i = [i for i in data if not i.get("resolved") and not i.get("reviewed")]
@@ -57,11 +65,24 @@ print("ok")
 
 print("== 4. 站点一致性 ==")
 idx = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-m = re.search(r"const DATA = (\[.*?\]);\n", idx, re.S)
-payload = json.loads(m.group(1).replace("<\\/", "</"))
+try:
+    data_file = ROOT / 'site' / 'data.js'
+    if 'const DATA = window.MENTOR_DATA;' in idx:
+        raw = data_file.read_text(encoding='utf-8')
+        m = re.search(r'window.MENTOR_DATA = (\[.*\]);', raw, re.S)
+    else:
+        m = re.search(r"const DATA = (\[.*?\]);\n", idx, re.S)
+    payload = json.loads(m.group(1).replace("<\\/", "</"))
+except (OSError, AttributeError, ValueError) as e:
+    problems.append(f'payload invalid: {e}')
+    payload = []
 print(f"payload rows: {len(payload)} (data {len(records)})")
 if len(payload) != len(records):
     problems.append(f"payload {len(payload)} != data {len(records)}")
+expected_ids = {k.replace('/', '-', 2) for k in records}
+actual_ids = {p.get('page') for p in payload}
+if actual_ids != expected_ids or len(actual_ids) != len(payload):
+    problems.append('payload IDs differ from professor records')
 for p in payload:
     if not (ROOT / "site" / "p" / f"{p['page']}.html").exists():
         problems.append(f"missing detail page: {p['page']}")
@@ -82,7 +103,7 @@ ignored = any(line.strip() in ("cache/", "cache") for line in gitignore.splitlin
 print(f"junk candidates: {len(junk)} | gitignore cache: {ignored}")
 
 print("== 6. schools.yaml ==")
-schools = yaml.safe_load((ROOT / "data" / "schools.yaml").read_text(encoding="utf-8"))["schools"]
+schools = load_yaml(ROOT / 'data' / 'schools.yaml')["schools"]
 used_schools = {k.split("/")[0] for k in records}
 for s in schools:
     if s["id"] not in used_schools and s.get("include"):
@@ -94,7 +115,12 @@ for sid in used_schools:
 print("== 7. outreach.yaml（套磁跟进, 私人数据）==")
 of = ROOT / "data" / "outreach.yaml"
 if of.exists():
-    odata = yaml.safe_load(of.read_text(encoding="utf-8")) or {}
+    odata = load_yaml(of) or {}
+    try:
+        validate_outreach(odata, expected_ids)
+    except ValueError as e:
+        problems.append(f'outreach: {e}')
+        odata = {}
     valid_status = {"interested", "emailed", "replied", "meeting", "archived"}
     for pid, e in odata.items():
         parts = str(pid).split("-", 2)
@@ -133,3 +159,4 @@ if problems:
 else:
     print("NONE")
 print(f"total: {len(problems)}")
+sys.exit(1 if problems else 0)

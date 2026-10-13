@@ -70,8 +70,11 @@ a:hover{text-decoration:underline}
   </div>
   <div class="foot">字段旁 ↗ 为官网出处（悬停看抓取日期） · 缺失字段显示"官网未提供"</div>
 </div>
+<script src="data.js"></script>
+<script src="compare-data.js"></script>
 <script>
-const DATA = {{ payload }};
+const DATA = window.MENTOR_DATA;
+DATA.forEach(p => Object.assign(p, window.MENTOR_COMPARE[p.page]));
 const byId = {}; DATA.forEach(p => byId[p.page] = p);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
@@ -97,8 +100,8 @@ const ROWS = [
   {label:"研究所", f:p=>(p.institutes||[]).length?esc(p.institutes.join("、")):MIS, prov:"institutes"},
   {label:"个人主页", f:p=>p.homepage?`<a href="${esc(p.homepage)}" target="_blank">主页 ↗</a>`:MIS, prov:"homepage"},
   {label:"官网页面", f:p=>`<a href="${esc(p.profile_url||p.detail_url)}" target="_blank">原文 ↗</a>`},
-  {label:"简介摘录", f:p=>p.bio_raw?esc(String(p.bio_raw).slice(0,130))+(String(p.bio_raw).length>130?"…":""):MIS, prov:"bio_raw"},
-  {label:"入库/核对", f:p=>esc((p.first_seen||"—")+" / "+(p.last_verified||"—"))},
+  {label:"简介摘录", f:p=>p.bio_excerpt?esc(p.bio_excerpt):MIS, prov:"bio_raw"},
+  {label:"入库/来源抓取", f:p=>esc((p.first_seen||"—")+" / "+(p.source_date||"—"))},
 ];
 const provMark = (p, k) => {
   const v = (p.provenance||{})[k];

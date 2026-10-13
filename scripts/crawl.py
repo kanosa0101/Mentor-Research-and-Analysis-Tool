@@ -51,7 +51,13 @@ def make_slug(name, used):
 
 def phase_roster(cfg, hook, refresh):
     school, dept = cfg["school"], cfg["dept"]
-    people, _ = hook.iter_roster(cfg)
+    with fetch.refresh_scope(refresh):
+        people, roster_meta = hook.iter_roster(cfg)
+    if not people:
+        raise ValueError('名单为空，停止入库；请核验官网和解析器，不将抓取失败当作人员消失')
+    if not roster_meta or not roster_meta.get('fetched_at'):
+        raise ValueError('名单缺少真实抓取日期，停止入库，不能用解析日期替代来源日期')
+    fetched_at = roster_meta['fetched_at']
     existing = store.load_all(school, dept)
     by_url = {(p.detail_url, p.name): p for p in existing.values()}
     by_name = {p.name: p for p in existing.values()}
@@ -77,7 +83,7 @@ def phase_roster(cfg, hook, refresh):
                 name_matched.add(prof.slug)
         if prof is None:
             slug = make_slug(rec["name"], used)
-            prov_name = Provenance(source=list_url(cfg), fetched_at=TODAY)
+            prov_name = Provenance(source=list_url(cfg), fetched_at=fetched_at)
             prof = Professor(slug=slug, name=rec["name"], school=school, dept=dept,
                              detail_url=rec["url"], first_seen=TODAY,
                              provenance={"name": prov_name})
@@ -99,7 +105,7 @@ def phase_roster(cfg, hook, refresh):
         if rec.get("profile_url") and prof.profile_url != rec["profile_url"] \
                 and not name_only:
             prof.profile_url = rec["profile_url"]
-        list_prov = Provenance(source=list_url(cfg), fetched_at=TODAY)
+        list_prov = Provenance(source=list_url(cfg), fetched_at=fetched_at)
         for key in ("title", "email", "phone", "supervisor", "subjects",
                     "research_direction_raw", "photo_url", "homepage"):
             v = rec.get(key) or rec.get("list_" + key)
@@ -112,10 +118,12 @@ def phase_roster(cfg, hook, refresh):
                 setattr(prof, key, v.strip() if isinstance(v, str) else v)
                 prof.provenance.setdefault(key, list_prov)
         for inst in rec.get("institutes", []):
+            if prof.provenance.get('institutes') and prof.provenance['institutes'].origin == 'manual':
+                continue
             if inst not in prof.institutes:
                 prof.institutes.append(inst)
                 prof.provenance.setdefault(
-                    "institutes", Provenance(source=list_url(cfg), fetched_at=TODAY))
+                    "institutes", Provenance(source=list_url(cfg), fetched_at=fetched_at))
                 updated += 1
         store.save_professor(prof)
     current_urls = {(r["url"], r["name"]) for r in people}
@@ -146,8 +154,9 @@ def phase_enrich(cfg, hook, refresh):
         if prof.status == "verified":
             continue
         try:
-            html, meta, _ = fetch.fetch_text("GET", prof.detail_url, refresh=refresh)
-            d = hook.parse_detail(cfg, html, prof.detail_url)
+            with fetch.refresh_scope(refresh):
+                html, meta, hit = fetch.fetch_text("GET", prof.detail_url, refresh=refresh)
+                d = hook.parse_detail(cfg, html, prof.detail_url)
         except Exception as e:
             store.upsert_issue(issues, "fetch_or_parse_error", prof.slug, repr(e))
             failed += 1
@@ -161,8 +170,7 @@ def phase_enrich(cfg, hook, refresh):
             prof.aliases.append(canonical)
         for inst in d.get("institute_from_detail") or []:
             if inst not in prof.institutes:
-                prof.institutes.append(inst)
-                _merge(prof, "institutes", prof.institutes, prov, changes)
+                _merge(prof, "institutes", prof.institutes + [inst], prov, changes)
         rd = d.get("research_directions") or []
         if rd:
             _merge(prof, "research_direction_raw", "、".join(rd), prov, changes)
@@ -179,7 +187,10 @@ def phase_enrich(cfg, hook, refresh):
             if i.kind == "fetch_or_parse_error" and i.ref == prof.slug:
                 i.resolved = True
         prof.status = "enriched"
-        prof.last_verified = TODAY
+        prof.last_parsed = TODAY
+        prof.last_fetched = meta['fetched_at']
+        if not hit:
+            prof.last_verified = meta['fetched_at']
         if d.get("source_updated_at"):
             prof.source_updated_at = str(d["source_updated_at"])
         store.save_professor(prof)

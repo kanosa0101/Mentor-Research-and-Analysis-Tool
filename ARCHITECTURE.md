@@ -7,7 +7,7 @@
 
 ## 1. 总览
 
-系统是一个**爬取管线 + 静态站点生成器**，没有运行时服务：
+系统是一个**爬取管线 + 静态站点生成器**，另有可选本地私人工作流服务：
 
 ```
 sites/<school>/<dept>.yaml（每院系一份配置）
@@ -81,6 +81,8 @@ provenance:                # 每字段出处
 
 按字段路径索引，`origin ∈ {crawled, computed, ai, manual}`，`confidence ∈ {verified, auto, unverified}`。本期只用 `crawled` + `manual`；`ai` 留给延后层（必须带 model/prompt_version/evidence）。
 
+2026-10-13 更新：AI 模型与摘录管线已实现，真实 API 试验仍待验收。`last_parsed` 表示最近解析；`last_fetched` 表示详情响应真实来源日期（缓存命中保留旧日期）；历史 `last_verified` 不作为人工核验标记。页面使用来源日期并显示超过 30 天/未知的人数。人工 fields 和非 computed facets 都受保护。
+
 ### 3.3 三条不变量（管线任何改动都不能破坏）
 
 1. `origin: manual` 的字段重跑不覆盖——用户手改受保护
@@ -125,6 +127,10 @@ provenance:                # 每字段出处
 - **跟进状态走运行时**：`scripts/serve.py`（stdlib ThreadingHTTPServer，只绑 127.0.0.1）静态托管 site/ 并提供 `GET /api/health`、`GET/PATCH/DELETE /api/outreach/<page-id>`，原子写 `data/outreach.yaml`（gitignore）。页面动态探测加载，file:// 协议门控降级只读——**跟进数据绝不进生成文件/公开仓库**
 - **表头表体由同一份 `HEADERS` 数组生成**——两次错位事故后的铁律
 - 零构建：Jinja2 模板 `site/templates/` → `build_site.py` 生成，生成物进 git；重建时自动清理失效详情页（防孤儿页）
+
+2026-10-13 增量：列表/看板/对比共用精简 `site/data.js`；完整简介搜索只在输入检索时加载 `search.js`，对比附加材料仅在对比页加载 `compare-data.js`。模板开启 HTML 转义，来源链接限制 HTTP(S)。私人跟进增加 `next_action`、`due_date`、`tags`，备份恢复 API 校验同源请求及备份结构。
+
+通知试验由 `sites/notices.yaml` 配置三个官方栏目，`monitor_notices.py` 输出 `data/notices.json` 与栏目变化历史，生成 `site/notices.html`。只监测当前栏目页，标题年份不自动转换成入学年份或截止日期，失败不删除历史通知。
 
 ## 7. 关键设计决策
 

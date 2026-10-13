@@ -1,0 +1,28 @@
+# 官方招生栏目小样本；只监测当前栏目页，非历史全量采集。
+targets:
+  - school: tsinghua
+    dept: cs
+    name: 清华计算机系
+    url: https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm
+    selector: 'a[href*="/info/1048/"]'
+    title_selector: h5
+  - school: pku
+    dept: cs
+    name: 北大计算机学院
+    url: https://cs.pku.edu.cn/zsxx/yjszs.htm
+    selector: 'a[href*="/info/1051/"]'
+    title_selector: h4
+  - school: sjtu
+    dept: cs
+    name: 上交计算机学院
+    url: https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html
+    api: https://www.cs.sjtu.edu.cn/active/ajax_type_list.html
+    post:
+      page: 1
+      cat_code: bsyjs_zsgz
+      type: ''
+      search: ''
+      extend_id: '0'
+      template: ajax_news_list1_search
+    selector: 'a[href*="/bsyjs_zsgz/"]'
+    title_selector: .tit

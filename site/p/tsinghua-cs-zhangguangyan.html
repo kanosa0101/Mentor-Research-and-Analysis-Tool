@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>张广艳 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">副教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>高性能计算研究所</dd>
     <dt>导师资格</dt><dd>官网未提供</dd>
-    
+
     <dt>研究方向</dt><dd>大数据计算，存储系统，分布式处理</dd>
     <dt>邮箱</dt><dd>gyzh@tsinghua.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-02</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-02</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -141,26 +147,26 @@ a:hover{text-decoration:underline}
 （2）公共云存储的数据组织与在线恢复：提出了冗余存储中计算与传输高效调度理论，设计了大规模分布式存储系统容错方法，有效克服了数据可靠、存储成本与 I/O 性能之间的矛盾。在保持存储系统中数据高可用的同时，提高了存储系统的写性能、降级读性能和恢复性能。
 （3）数据密集型计算中的数据组织与高效访问：提倡存算一体的协同理论与系统架构，设计了领域专用的数据压缩表示与高效访问方法，拓宽了大数据系统 I/O 能力的优化思路。利用大数据计算的行为特征减少了数据访问量，在保持计算并行性的同时提高了数据访问局部性，进而通过优化数据访问效率提高了大数据计算的性能。
 学术成果
-[1]. Tianyang Jiang, Guangyan Zhang, Zican Huang, Xiaosong Ma, Junyu Wei, Zhiyue Li, Weimin Zheng. FusionRAID: Achieving Consistent Low Latency for Commodity SSD Arrays. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST'21), Santa Clara, CA, February 2021. Pages 355-370.
-[2]. Junyu Wei, Guangyan Zhang, Yang Wang, Zhiwei Liu, Zhanyang Zhu, Junchao Chen, Tingtao Sun, Qi Zhou. On the Feasibility of Parser-based Log Compression in Large-Scale Cloud Systems. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST'21), Santa Clara, CA, February 2021. Pages 249-262.
+[1]. Tianyang Jiang, Guangyan Zhang, Zican Huang, Xiaosong Ma, Junyu Wei, Zhiyue Li, Weimin Zheng. FusionRAID: Achieving Consistent Low Latency for Commodity SSD Arrays. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST&#39;21), Santa Clara, CA, February 2021. Pages 355-370.
+[2]. Junyu Wei, Guangyan Zhang, Yang Wang, Zhiwei Liu, Zhanyang Zhu, Junchao Chen, Tingtao Sun, Qi Zhou. On the Feasibility of Parser-based Log Compression in Large-Scale Cloud Systems. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST&#39;21), Santa Clara, CA, February 2021. Pages 249-262.
 [3]. Xiaqing Li, Guangyan Zhang, Weimin Zheng. SmartTuning: Selecting HyperParameters of a ConvNet System for Fast Training and Small Working Memory. IEEE Transactions on Parallel and Distributed Systems, Volume: 32, Issue: 7, Pages: 1690-1701. July 2021.
 [4]. Guangyan Zhang, Zhufan Wang, Xiaosong Ma, Songlin Yang, Zican Huang, Weimin Zheng. Determining Data Distribution for Large Disk Enclosures with 3-D Data Templates. ACM Transactions on Storage, Volume 15, Issue 4, Article No. 27, December 2019. 1-38 pages.
-[5]. Zhufan Wang, Guangyan Zhang, Yang Wang, Qinglin Yang, Jiaji Zhu. Dayu: Fast and Low-interference Data Recovery in Very-large Storage Systems. in the Proceedings of the 2019 USENIX Annual Technical Conference (ATC'19), Renton, WA, July 2019. Pages 993-1007.
+[5]. Zhufan Wang, Guangyan Zhang, Yang Wang, Qinglin Yang, Jiaji Zhu. Dayu: Fast and Low-interference Data Recovery in Very-large Storage Systems. in the Proceedings of the 2019 USENIX Annual Technical Conference (ATC&#39;19), Renton, WA, July 2019. Pages 993-1007.
 [6]. Chengwen Wu, Guangyan Zhang, Yang Wang, Xinyang Jiang, Weimin Zheng. Redio: Accelerating Disk-based Graph Processing by Reducing Disk I/Os. IEEE Transactions on Computers, Volume: 68, Issue: 3, Page(s): 414 - 425. March 2019.
 [7]. Xiaqing Li, Guangyan Zhang, Zhufan Wang, Weimin Zheng. HyConv: Accelerating Multi-phase CNN Computation by Fine-grained Policy Selection. IEEE Transactions on Parallel and Distributed Systems, Volume: 30, Issue: 2, Page(s): 388 - 399. Feb. 2019.
-[8]. Guangyan Zhang, Zican Huang, Xiaosong Ma, Songlin Yang, Zhufan Wang, Weimin Zheng. RAID+: Deterministic and Balanced Data Distribution for Large Disk Enclosures. in the Proceedings of the 16th USENIX Conference on File and Storage Technologies (FAST'18), Oakland, CA, February 2018. Pages 279-293.
+[8]. Guangyan Zhang, Zican Huang, Xiaosong Ma, Songlin Yang, Zhufan Wang, Weimin Zheng. RAID+: Deterministic and Balanced Data Distribution for Large Disk Enclosures. in the Proceedings of the 16th USENIX Conference on File and Storage Technologies (FAST&#39;18), Oakland, CA, February 2018. Pages 279-293.
 [9]. Guangyan Zhang, Shuhan Cheng, Jiwu Shu, Qingda Hu, and Weimin Zheng. Accelerating Breadth-First Graph Search on a Single Server by Dynamic Edge Trimming. Journal of Parallel and Distributed Computing (JPDC), Volume 120, Pages 383-394, October 2018.
 [10]. Dawei Sun, Guangyan Zhang, Chengwen Wu, Keqin Li, and Weimin Zheng. Building a Fault Tolerant Framework with Deadline Guarantee in Big Data Stream Computing Environments, Journal of Computer and System Sciences, Volume 89, November 2017, Pages 4-23.
 [11]. Guangyan Zhang, Guiyong Wu, Yu Lu, Jie Wu, and Weimin Zheng. Xscale: Online X-code RAID-6 Scaling Using Lightweight Data Reorganization.IEEE Transactions on Parallel and Distributed Systems, Volume: 27, Issue: 12, Page(s): 3687 - 3700. Dec. 2016.
 [12]. Xiaqing Li, Guangyan Zhang, H. Howie Huang, Zhufan Wang and Weimin Zheng. Performance Analysis of GPU-based Convolutional Neural Networks, in the Proceedings of the 45th International Conference on Parallel Processing (ICPP-2016), Philadelphia, PA USA, August 2016.
-[13]. Shuhan Cheng, Guangyan Zhang, Jiwu Shu, Qingda Hu, and Weimin Zheng. FastBFS: Fast Breadth-First Graph Search on a Single Server, in the Proceedings of the 30th IEEE International Parallel & Distributed Processing Symposium (IPDPS'16), Chicago, Illinois USA, May 2016.
+[13]. Shuhan Cheng, Guangyan Zhang, Jiwu Shu, Qingda Hu, and Weimin Zheng. FastBFS: Fast Breadth-First Graph Search on a Single Server, in the Proceedings of the 30th IEEE International Parallel &amp; Distributed Processing Symposium (IPDPS&#39;16), Chicago, Illinois USA, May 2016.
 [14]. Guangyan Zhang, Guiyong Wu, Shupeng Wang, Jiwu Shu, Weimin Zheng, and Keqin Li. CaCo: An Efficient Cauchy Coding Approach for Cloud Storage Systems. IEEE Transactions on Computers, Volume: 65, Issue: 2, Page(s): 435 - 447. Feb. 2016.
 [15]. Dawei Sun, Guangyan Zhang, Songlin Yang, Weimin Zheng, Samee Khan, and Keqin Li. Re-Stream: real-time and energy-efficient resource scheduling in big data stream computing environments, Information Sciences, Volume 319, Pages 92-112, October 2015.
 [16]. Guangyan Zhang, Jigang Wang, Keqin Li, Jiwu Shu, and Weimin Zheng, Redistribute Data to Regain Load Balance during RAID-4 Scaling. IEEE Transactions on Parallel and Distributed Systems,Volume: 26, Issue: 1, Page(s): 219 - 229. Jan. 2015.
 [17]. Guangyan Zhang, Keqin Li, Jingzhe Wang, Weimin Zheng, Accelerate RDP RAID-6 Scaling by Reducing Disk I/Os and XOR Operations. IEEE Transactions on Computers,Volume: 64, Issue: 1, Page(s): 32 - 44. Jan. 2015.
 [18]. Guangyan Zhang, Weimin Zheng, Keqin Li, Rethinking RAID-5 Data Layout for Better Scalability. IEEE Transactions on Computers, Volume: 63, Issue: 11, Page(s): 2816 - 2828. Nov. 2014.
 [19]. Zhang, G., Zheng, W., and Li, K. 2013. Design and evaluation of a new approach to RAID-0 scaling. ACM Transactions on Storage, 9, 4, Article 11 (November 2013), 31 pages.
-[20]. Weimin Zheng, Guangyan Zhang. FastScale: Accelerate RAID Scaling by Minimizing Data Migration. in the Proceedings of the 9th USENIX Conference on File and Storage Technologies (FAST'11), San Jose, CA, February 2011.
+[20]. Weimin Zheng, Guangyan Zhang. FastScale: Accelerate RAID Scaling by Minimizing Data Migration. in the Proceedings of the 9th USENIX Conference on File and Storage Technologies (FAST&#39;11), San Jose, CA, February 2011.
 [21]. Yang Wang, Jiwu Shu, Guangyan Zhang, Wei Xue, Weimin Zheng. SOPA: Selecting the Optimal Policy Adaptively. ACM transactions on storage, Volume 6 Issue 2, July 2010 .
 [22]. Guangyan Zhang, Weimin Zheng, and Jiwu Shu. ALV: A New Data Redistribution Approach to RAID-5 Scaling. IEEE Transactions on Computers, Vol. 59, No. 3. pp. 345-357, March 2010.
 [23]. Guangyan Zhang, Jiwu Shu, Wei Xue, and Weimin Zheng. Design and Implementation of an Out-of-Band Virtualization System for Large SANs. IEEE Transactions on Computers, Vol. 56, No. 12. pp. 1654-1665, Dec 2007.
@@ -172,7 +178,7 @@ a:hover{text-decoration:underline}
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>张广艳</td>
@@ -181,7 +187,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>副教授</td>
@@ -190,7 +196,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1108/3515.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>gyzh@tsinghua.edu.cn</td>
@@ -199,7 +205,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>62783505-8004</td>
@@ -208,7 +214,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1108/3515.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>institutes</td>
       <td>高性能计算研究所</td>
@@ -217,7 +223,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>姓名：张广艳
@@ -230,7 +236,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1108/3515.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>大数据计算，存储系统，分布式处理</td>
@@ -239,7 +245,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1108/3515.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -251,6 +257,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -265,7 +274,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -274,7 +283,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

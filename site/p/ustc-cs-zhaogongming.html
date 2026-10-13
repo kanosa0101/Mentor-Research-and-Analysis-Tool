@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>赵功名 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">副教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>博导</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>gmzhao@ustc.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-03</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-03</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -182,16 +188,16 @@ https://int-ustc.github.io/
 11.2018年度国家留学基金委公派留学奖学金
 12.2017年度硕士研究生国家奖学金
 十篇代表性论著：
-1、[SIGCOMM'26]Baoqing Wang, *Gongming Zhao, *Hongli Xu, Shibo Wu, Zhuolong Yu, Jiawei Liu, Junhong Lu, Shaohui Xu, Fanjie Meng, Rethinking Cloud Optimization: Volatility-Driven for Better Outcomes, SIGCOMM 2026. (CCF A类)
-2、[WWW'25] Pengbo Wang, *Gongming Zhao, Yuantao Wu, *Hongli Xu, Haibo Wang, X-ClusterLink: An Efficient Cross-Cluster Communication Framework in Multi-Kubernetes Clusters, International World Wide Web Conferences (WWW), 2025. (Acceptance Rate: 19.8%) (CCF A类)
-3、[ToN'25] Gongming Zhao, Yichen Dong, *Hongli Xu, Jin Fang, Zhen Yao, Baoyi An, Gangyi Luo, *Chu Xu, Resource-Aware Distributed Training Job Placement for GPU Cluster Defragmentation, IEEE/ACM Transactions on Networking (ToN), 2025. (CCF A类)
-4、[ToN'24] Yuhang Qiu, *Gongming Zhao, Hongli Xu, He Huang, Chunming Qiao, PARING: Joint Task Placement and Routing for Distributed Training with In-network Aggregation, IEEE/ACM Transactions on Networking (ToN), 2024. (CCF A类)
-5、[ToN'23] Jin Fang, *Gongming Zhao, Hongli Xu, Changbo Wu, Zhuolong Yu, GRID: Gradient Routing with In-network Aggregation for Distributed Training, IEEE Transactions on Networking (ToN), 2023. (CCF A类)
-6、[INFOCOM'23] Gongming Zhao, Jingzhou Wang, *Hongli Xu, Zhuolong Yu, Chunming Qiao, COIN: Cost-Efficient Traffic Engineering with Various Pricing Schemes in Clouds, INFOCOM'23, May. 2023. (Acceptance Rate: 252/1312=19.2%) (CCF A类)
-7、[NSDI'22] Qianyu Zhang, *Gongming Zhao, *Hongli Xu, Zhuolong Yu, Liguang Xie, Yangming Zhao, Chunming Qiao, Ying Xiong, Liusheng Huang, Zeta: A Scalable and Robust East-West Communication Framework in Large-Scale Clouds (Acceptance Rate: 50/298=16.8%，CCF A类)
-8、[INFOCOM'21] Jingzhou Wang, *Gongming Zhao, *Hongli Xu, He Huang, Luyao Luo, Yongqiang Yang, Robust Service Mapping in Multi-Tenant Clouds (Acceptance Rate: 252/1266=19.9%，CCF A类)
-9、[INFOCOM'20] Gongming Zhao, *Hongli Xu, Jingyuan Fan, Liusheng Huang, Chunming Qiao, HiFi: Hybrid Rule Placement for Fine-Grained Flow Management in SDNs, (Acceptance Rate: 268/1354=19.8%，CCF A类)
-10、[TON'18] Gongming Zhao, *Hongli Xu, Shigang Chen, Liusheng Huang, Pengzhan Wang, Joint optimization of flow table and group table for default paths in SDNs  (CCF A类)
+1、[SIGCOMM&#39;26]Baoqing Wang, *Gongming Zhao, *Hongli Xu, Shibo Wu, Zhuolong Yu, Jiawei Liu, Junhong Lu, Shaohui Xu, Fanjie Meng, Rethinking Cloud Optimization: Volatility-Driven for Better Outcomes, SIGCOMM 2026. (CCF A类)
+2、[WWW&#39;25] Pengbo Wang, *Gongming Zhao, Yuantao Wu, *Hongli Xu, Haibo Wang, X-ClusterLink: An Efficient Cross-Cluster Communication Framework in Multi-Kubernetes Clusters, International World Wide Web Conferences (WWW), 2025. (Acceptance Rate: 19.8%) (CCF A类)
+3、[ToN&#39;25] Gongming Zhao, Yichen Dong, *Hongli Xu, Jin Fang, Zhen Yao, Baoyi An, Gangyi Luo, *Chu Xu, Resource-Aware Distributed Training Job Placement for GPU Cluster Defragmentation, IEEE/ACM Transactions on Networking (ToN), 2025. (CCF A类)
+4、[ToN&#39;24] Yuhang Qiu, *Gongming Zhao, Hongli Xu, He Huang, Chunming Qiao, PARING: Joint Task Placement and Routing for Distributed Training with In-network Aggregation, IEEE/ACM Transactions on Networking (ToN), 2024. (CCF A类)
+5、[ToN&#39;23] Jin Fang, *Gongming Zhao, Hongli Xu, Changbo Wu, Zhuolong Yu, GRID: Gradient Routing with In-network Aggregation for Distributed Training, IEEE Transactions on Networking (ToN), 2023. (CCF A类)
+6、[INFOCOM&#39;23] Gongming Zhao, Jingzhou Wang, *Hongli Xu, Zhuolong Yu, Chunming Qiao, COIN: Cost-Efficient Traffic Engineering with Various Pricing Schemes in Clouds, INFOCOM&#39;23, May. 2023. (Acceptance Rate: 252/1312=19.2%) (CCF A类)
+7、[NSDI&#39;22] Qianyu Zhang, *Gongming Zhao, *Hongli Xu, Zhuolong Yu, Liguang Xie, Yangming Zhao, Chunming Qiao, Ying Xiong, Liusheng Huang, Zeta: A Scalable and Robust East-West Communication Framework in Large-Scale Clouds (Acceptance Rate: 50/298=16.8%，CCF A类)
+8、[INFOCOM&#39;21] Jingzhou Wang, *Gongming Zhao, *Hongli Xu, He Huang, Luyao Luo, Yongqiang Yang, Robust Service Mapping in Multi-Tenant Clouds (Acceptance Rate: 252/1266=19.9%，CCF A类)
+9、[INFOCOM&#39;20] Gongming Zhao, *Hongli Xu, Jingyuan Fan, Liusheng Huang, Chunming Qiao, HiFi: Hybrid Rule Placement for Fine-Grained Flow Management in SDNs, (Acceptance Rate: 268/1354=19.8%，CCF A类)
+10、[TON&#39;18] Gongming Zhao, *Hongli Xu, Shigang Chen, Liusheng Huang, Pengzhan Wang, Joint optimization of flow table and group table for default paths in SDNs  (CCF A类)
 （更新于
 2026
 年
@@ -204,7 +210,7 @@ https://int-ustc.github.io/
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>赵功名</td>
@@ -213,7 +219,7 @@ https://int-ustc.github.io/
       <td>2026-09-03</td>
       <td><a href="http://cs.ustc.edu.cn/ys_23622/list.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>副教授</td>
@@ -222,7 +228,7 @@ https://int-ustc.github.io/
       <td>2026-09-03</td>
       <td><a href="http://cs.ustc.edu.cn/ys_23622/list.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>Email
@@ -236,7 +242,7 @@ https://gmzhao-ustc.git...</td>
       <td>2026-09-03</td>
       <td><a href="http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>gmzhao@ustc.edu.cn</td>
@@ -245,7 +251,7 @@ https://gmzhao-ustc.git...</td>
       <td>2026-09-03</td>
       <td><a href="http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -254,7 +260,7 @@ https://gmzhao-ustc.git...</td>
       <td>2026-09-03</td>
       <td><a href="http://cs.ustc.edu.cn/2020/0928/c23239a460151/page.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -266,6 +272,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -280,7 +289,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -289,7 +298,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

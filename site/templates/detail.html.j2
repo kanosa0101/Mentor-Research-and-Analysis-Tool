@@ -96,7 +96,8 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：{{ p.first_seen or "—" }}</span>
-    <span>最近核对：{{ p.last_verified or "—" }}</span>
+    <span>字段来源最晚抓取：{{ p.source_date or "—" }}</span>
+{% if p.last_parsed %}<span>最近解析：{{ p.last_parsed }}</span>{% endif %}
     {% if p.source_updated_at %}<span>官网数据更新于：{{ p.source_updated_at }}</span>{% endif %}
   </div>
   <div style="clear:both"></div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 {% if p.bio_raw %}
@@ -129,7 +135,7 @@ a:hover{text-decoration:underline}
 {% endif %}
 {% if p.ai %}
 <div class="card ai">
-  <h3>AI 归纳<span class="ai-meta">{{ p.ai.model }} · prompt {{ p.ai.prompt_version }} · {{ p.ai.generated_at }} · 每条断言附材料原文证据</span></h3>
+  <h3>AI 选取的原文片段<span class="ai-meta">{{ p.ai.model }} · prompt {{ p.ai.prompt_version }} · {{ p.ai.generated_at }} · 未经人工核验</span></h3>
   {% if p.ai.research_summary %}<h4>方向归纳</h4>
   <ul class="ai-claims">{% for c in p.ai.research_summary %}<li>{{ c.text }}{% for e in c.evidence %}<span class="ev" title="材料原文：{{ e }}">〔{{ e|truncate(46) }}〕</span>{% endfor %}</li>{% endfor %}</ul>{% endif %}
   {% if p.ai.highlights %}<h4>亮点（材料内事实）</h4>
@@ -160,13 +166,16 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 <script>
-const PID = "{{ p.page }}";
+const PID = {{ p.page|tojson }};
 const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
 const $ = id => document.getElementById(id);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -181,7 +190,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -190,7 +199,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

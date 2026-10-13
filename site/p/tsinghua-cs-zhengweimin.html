@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>郑纬民 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>高性能计算研究所</dd>
     <dt>导师资格</dt><dd>官网未提供</dd>
-    
+
     <dt>研究方向</dt><dd>高性能计算机体系结构、并行算法和系统、存储系统、大数据和人工智能处理平台</dd>
     <dt>邮箱</dt><dd>zwm-dcs@tsinghua.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-02</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-02</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -144,14 +150,14 @@ a:hover{text-decoration:underline}
 2016年，ACM戈登.贝尔奖
 2019年，当选为中国工程院院士
 学术成果
-[1]. Tianyang Jiang, Guangyan Zhang, Zican Huang, Xiaosong Ma, Junyu Wei, Zhiyue Li, Weimin Zheng. FusionRAID: Achieving Consistent Low Latency for Commodity SSD Arrays. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST'21), Santa Clara, CA, February 2021. Pages 355-370.
+[1]. Tianyang Jiang, Guangyan Zhang, Zican Huang, Xiaosong Ma, Junyu Wei, Zhiyue Li, Weimin Zheng. FusionRAID: Achieving Consistent Low Latency for Commodity SSD Arrays. in the Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST&#39;21), Santa Clara, CA, February 2021. Pages 355-370.
 [2]. Xiaqing Li, Guangyan Zhang, Weimin Zheng. SmartTuning: Selecting HyperParameters of a ConvNet System for Fast Training and Small Working Memory. IEEE Transactions on Parallel and Distributed Systems, Volume: 32, Issue: 7, Pages: 1690-1701. July 2021.
 [3]. Xue Li, Mingxing Zhang, Kang Chen, Yongwei Wu, Xuehai Qian, Weimin Zheng. 3-D Partitioning for Large-scale Graph Processing. IEEE Transactions on Computers (TC), 2020.
 [4]. Guangyan Zhang, Zhufan Wang, Xiaosong Ma, Songlin Yang, Zican Huang, Weimin Zheng. Determining Data Distribution for Large Disk Enclosures with 3-D Data Templates. ACM Transactions on Storage, Volume 15, Issue 4, Article No. 27, December 2019. 1-38 pages.
 [5]. Chengwen Wu, Guangyan Zhang, Yang Wang, Xinyang Jiang, Weimin Zheng. Redio: Accelerating Disk-based Graph Processing by Reducing Disk I/Os. IEEE Transactions on Computers, Volume: 68, Issue: 3, Page(s): 414 - 425. March 2019.
 [6]. Xiaqing Li, Guangyan Zhang, Zhufan Wang, Weimin Zheng. HyConv: Accelerating Multi-phase CNN Computation by Fine-grained Policy Selection. IEEE Transactions on Parallel and Distributed Systems, Volume: 30, Issue: 2, Page(s): 388 - 399. Feb. 2019.
 [7]. Zhiyuan Ai, Mingxing Zhang, Yongwei Wu, Xuehai Qian, Kang Chen, Weimin Zheng. CLIP: A Disk I/O Focused Parallel Out-of-core Graph Processing System. IEEE Transactions on Parallel and Distributed Systems (TPDS), 2019, Vol. 30, Issue 1, pp. 45-62.
-[8]. Guangyan Zhang, Zican Huang, Xiaosong Ma, Songlin Yang, Zhufan Wang, Weimin Zheng. RAID+: Deterministic and Balanced Data Distribution for Large Disk Enclosures. in the Proceedings of the 16th USENIX Conference on File and Storage Technologies (FAST'18), Oakland, CA, February 2018. Pages 279-293.
+[8]. Guangyan Zhang, Zican Huang, Xiaosong Ma, Songlin Yang, Zhufan Wang, Weimin Zheng. RAID+: Deterministic and Balanced Data Distribution for Large Disk Enclosures. in the Proceedings of the 16th USENIX Conference on File and Storage Technologies (FAST&#39;18), Oakland, CA, February 2018. Pages 279-293.
 [9]. Guangyan Zhang, Shuhan Cheng, Jiwu Shu, Qingda Hu, and Weimin Zheng. Accelerating Breadth-First Graph Search on a Single Server by Dynamic Edge Trimming. Journal of Parallel and Distributed Computing (JPDC), Volume 120, Pages 383-394, October 2018.
 [10]. Mengxing Liu, Mingxing Zhang, Kang Chen, Xuehai Qian, Yongwei Wu, Weimin Zheng, Jinglei Ren. DudeTx: Durable Transactions Made Decoupled. ACM Transactions on Storage (ToS), 2018, Vol. 14, Issue 1, pp. 7:1-7:28.
 [11]. Xiongchao Tang, Jidong Zhai, Bowen Yu, Wenguang Chen, Weimin Zheng, Keqin Li. An Efficient In-Memory Checkpoint Method and its Practice on Fault-Tolerant HPL. (TPDS 2018).
@@ -161,19 +167,19 @@ a:hover{text-decoration:underline}
 [15]. Pin Gao, Mingxing Zhang, Kang Chen, Yongwei Wu, Weimin Zheng. High Performance Graph Processing with Locality Oriented Design. IEEE Transactions on Computers (ToC), 2017, Vol. 66, Issue 7, pp.1261-1267.
 [16]. Mengxing Liu, Mingxing Zhang, Kang Chen, Xuehai Qian, Yongwei Wu,Weimin Zheng, Jinglei Ren. DudeTM: Building Durable Transactions with Decoupling for Persistent Memory. 22nd Architectural Support for Programming Languages and Operating Systems (ASPLOS 2017).
 [17]. Xiongchao Tang, Jidong Zhai, Bowen Yu, Wenguang Chen, Weimin Zheng. Self-Checkpoint: An In-Memory Checkpoint Method Using Less Space and Its Practice on Fault-Tolerant HPL. PPOPP. 2017.
-[18]. Heng Lin, Xiongchao Tang, Bowen Yu, Youwei Zhuo, Wenguang Chen, Jidong Zhai, Wanwang Yin and Weimin Zheng. Scalable Graph Traversal on Sunway TaihuLight with Ten Million Cores. Proceedings of the 20th international conference on Parallel and distributed processing. (IPDPS '17).
+[18]. Heng Lin, Xiongchao Tang, Bowen Yu, Youwei Zhuo, Wenguang Chen, Jidong Zhai, Wanwang Yin and Weimin Zheng. Scalable Graph Traversal on Sunway TaihuLight with Ten Million Cores. Proceedings of the 20th international conference on Parallel and distributed processing. (IPDPS &#39;17).
 [19]. Guangyan Zhang, Guiyong Wu, Yu Lu, Jie Wu, and Weimin Zheng. Xscale: Online X-code RAID-6 Scaling Using Lightweight Data Reorganization. IEEE Transactions on Parallel and Distributed Systems, Volume: 27, Issue: 12, Page(s): 3687 - 3700. Dec. 2016.
 [20]. Xiaqing Li, Guangyan Zhang, H. Howie Huang, Zhufan Wang and Weimin Zheng. Performance Analysis of GPU-based Convolutional Neural Networks, in the Proceedings of the 45th International Conference on Parallel Processing ( ICPP-2016), Philadelphia, PA USA, August 2016.
-[21]. Shuhan Cheng, Guangyan Zhang, Jiwu Shu, Qingda Hu, and Weimin Zheng. FastBFS: Fast Breadth-First Graph Search on a Single Server, in the Proceedings of the 30th IEEE International Parallel & Distributed Processing Symposium (IPDPS'16), Chicago, Illinois USA, May 2016.
+[21]. Shuhan Cheng, Guangyan Zhang, Jiwu Shu, Qingda Hu, and Weimin Zheng. FastBFS: Fast Breadth-First Graph Search on a Single Server, in the Proceedings of the 30th IEEE International Parallel &amp; Distributed Processing Symposium (IPDPS&#39;16), Chicago, Illinois USA, May 2016.
 [22]. Guangyan Zhang, Guiyong Wu, Shupeng Wang, Jiwu Shu, Weimin Zheng, and Keqin Li. CaCo: An Efficient Cauchy Coding Approach for Cloud Storage Systems. IEEE Transactions on Computers, Volume: 65, Issue: 2, Page(s): 435 - 447. Feb. 2016.
 [23]. Mingxing Zhang, Yongwei Wu, Kang Chen, Xuehai Qian, Xue Li and Weimin Zheng. Exploring the Hidden Dimension in Graph Processing. 12th USENIX Symposium on Operating Systems Design and Implementation (OSDI 2016).
 [24]. Mingxing Zhang, Yongwei Wu, Kang Chen, Teng Ma,Weimin Zheng. Measuring and Optimizing Distributed Array Programs. 42nd International Conference on Very Large Data Bases (VLDB 2016).
 [25]. Mingxing Zhang, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren, and Weimin Zheng. A Lightweight System for Detecting and Tolerating Concurrency Bugs. IEEE Transactions on Software Engineering (TSE), 2016, Vol. 42, Issue 10, pp.899-917.
 [26]. Weichao Guo, Kang Chen, Huan Feng, Yongwei Wu, Rui Zhang, Weimin Zheng. MARS: Mobile Application Relaunching Speed-up through Flash-Aware Page Swapping. IEEE Transactions on Computers (ToC), 2016, Vol. 65, Issue 3, pp.916-928.
 [27]. Xinliang Wang, Wei Xue, Jidong Zhai, Yangtong Xu,Weimin Zheng, Hai Xiang Lin. A Fast Tridiagonal Solver for Intel MIC Architecture. IPDPS. 2016.
-[28]. Xiaowei Zhu, Wenguang Chen, Weimin Zheng, Xiaosong Ma. Gemini: A Computation-Centric Distributed Graph Processing System. In 12th USENIX Symposium on Operating Systems Design and Implementation. (OSDI '16).
-[29]. Shuangcheng Niu, Jidong Zhai, Xiaosong Ma, Xiongchao Tang, Wenguang Chen, Weimin Zheng. Building Semi-Elastic Virtual Clusters for Cost-Effective HPC Cloud Resource Provisioning. IEEE Transactions on Parallel and Distributed Systems, 27(7) (TPDS '16).
-[30]. Jidong Zhai, Wenguang Chen, Weimin Zheng, Keqin Li. Performance Prediction for Large-Scale Parallel Applications Using Representative Replay. EEE Transactions on Computers, 65(7) (TC '16).
+[28]. Xiaowei Zhu, Wenguang Chen, Weimin Zheng, Xiaosong Ma. Gemini: A Computation-Centric Distributed Graph Processing System. In 12th USENIX Symposium on Operating Systems Design and Implementation. (OSDI &#39;16).
+[29]. Shuangcheng Niu, Jidong Zhai, Xiaosong Ma, Xiongchao Tang, Wenguang Chen, Weimin Zheng. Building Semi-Elastic Virtual Clusters for Cost-Effective HPC Cloud Resource Provisioning. IEEE Transactions on Parallel and Distributed Systems, 27(7) (TPDS &#39;16).
+[30]. Jidong Zhai, Wenguang Chen, Weimin Zheng, Keqin Li. Performance Prediction for Large-Scale Parallel Applications Using Representative Replay. EEE Transactions on Computers, 65(7) (TC &#39;16).
 [31]Jidong Zhai, Feng Zhang, Qingwen Li, Wenguang Chen, Weimin Zheng. Characterizing and optimizing TPC-C workloads on large-scale systems using SSD arrays. SCIENCE CHINA Information Sciences 59(9) 2016.</div>
 </div>
 
@@ -182,7 +188,7 @@ a:hover{text-decoration:underline}
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>郑纬民</td>
@@ -191,7 +197,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -200,7 +206,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3505.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>zwm-dcs@tsinghua.edu.cn</td>
@@ -209,7 +215,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3505.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>62783505-8003</td>
@@ -218,7 +224,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3505.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>institutes</td>
       <td>高性能计算研究所</td>
@@ -227,7 +233,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>姓名：郑纬民
@@ -240,7 +246,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3505.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>高性能计算机体系结构、并行算法和系统、存储系统、大数据和人工智能处理平台</td>
@@ -249,7 +255,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3505.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -261,6 +267,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -275,7 +284,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -284,7 +293,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

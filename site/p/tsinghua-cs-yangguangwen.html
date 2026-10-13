@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>杨广文 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>高性能计算研究所</dd>
     <dt>导师资格</dt><dd>官网未提供</dd>
-    
+
     <dt>研究方向</dt><dd>并行与分布式计算，地球系统模式</dd>
     <dt>邮箱</dt><dd>ygw@tsinghua.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-02</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-02</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -135,7 +141,7 @@ a:hover{text-decoration:underline}
 研究领域
 并行与分布式计算，地球系统模式
 研究概况
-我自2003年以来，负责多项国家973、863及自然基金委等重点科研项目，共发表论文85余篇，其中有28 篇被SCI检索。我在国际重要刊物Journal of Grid Computing、Concurrency and Computation: Practice & Experience、Nucleic Acids Research、Nano Letters和国际著名会议CCGrid、Grid、ICNP、ICDCS、IPTPS、ICPP等上发表了相关论文。主要研究成果如下：
+我自2003年以来，负责多项国家973、863及自然基金委等重点科研项目，共发表论文85余篇，其中有28 篇被SCI检索。我在国际重要刊物Journal of Grid Computing、Concurrency and Computation: Practice &amp; Experience、Nucleic Acids Research、Nano Letters和国际著名会议CCGrid、Grid、ICNP、ICDCS、IPTPS、ICPP等上发表了相关论文。主要研究成果如下：
 1. 在网格计算技术与系统的研究开发方面，开展了计算网格系统性能分析研究，提出了基于区间的网格性能预测方法，为性能分析结果的实用化迈出了坚实的一步，研究成果发表在网格领域的重要国际会议Grid 2007和CCGrid 2008上；开发了Corsair存储系统，是首个国内云存储平台，截止到2010年6月，系统已有15000多个注册用户以及300多个社区，平均日访问量3000余人次、日数据传输量1.3TB，目前的存储总量达到100TB。
 2. 在高性能计算与应用方面，研究并开发了一个基于Java的异构集群并行计算环境，避免了目标代码和数据的异构性；开展了高性能计算程序优化与分析技术研究，支持交叉学科研究，如与材料系合作完成的论文“Icosahedral FACE-Centered Cubic Fe Nanoparticles”发表在纳米顶级刊物NANO LETTERS上。
 3．在分布式信息服务与集成技术方面，提出了一种针对结构化P2P系统的多层次索引切分策略，较好地解决了现有索引切分策略的瓶颈——主干网对分带宽占用过多，具有均匀性和局部延迟性两个基本特征。这一研究结果是利用IR技术在P2P网络上进行内容检索方向上的早期工作，相关论文发表在P2P顶级会议IPTPS上，据Google Scholar检索数据统计，被引用58次。
@@ -154,7 +160,7 @@ a:hover{text-decoration:underline}
 学术成果
 [1] Guangwen Yang, Hai Jin, Minglu Li, Nong Xiao, Wei Li, Zhaohui Wu, Yongwei Wu. Grid Computing in China. Journal of Grid Computing, vol. 2, no. 2, pp. 193-206, 2004.
 [2] M. Chen, G.W. Yang. Reciprocity: Enforcing contribution in P2P perpendicular downloading. IEICE Transactions On Information And Systems, vol. E89D, no. 2, pp. 563-569, 2006.
-[3] B.Y. Zhang, G.W. Yang, W.M. Zheng. Jcluster: an efficient Java parallel environment on a large-scale heterogeneous cluster. Concurrency and Computation: Practice & Experience, vol. 18, no. 12, pp. 1541-1557, 2006.
+[3] B.Y. Zhang, G.W. Yang, W.M. Zheng. Jcluster: an efficient Java parallel environment on a large-scale heterogeneous cluster. Concurrency and Computation: Practice &amp; Experience, vol. 18, no. 12, pp. 1541-1557, 2006.
 [4] J.J. Jiang, G.W. Yang. An optimal replication strategy for data grid systems. Frontiers of Computer Science in China, vol. 1, no. 3, pp. 338-348, 2007.
 [5] Tao Ling, Lin Xie, Jing Zhu, Huimin Yu, Hengqiang Ye, Rong Yu, Zhiying Cheng, Li Liu, Li Liu, Guangwen Yang, Zhida Cheng, Yujia Wang and Xiuliang Ma. Icosahedral Face-Centered Cubic Fe Nanoparticles: Facile Synthesis and Characterization with Aberration-Corrected TEM. Nano Letters, vol. 9, no. 4, pp. 1572-1576, 2009.
 [6] Yongwei Wu, Yulai Yuan, Guangwen Yang, Weimin Zheng. An Adaptive Task-level Fault-tolerant Approach for Grid. Journal of Supercomputing, vol. 51, no. 2, pp. 97-114, 2010.
@@ -169,7 +175,7 @@ a:hover{text-decoration:underline}
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>杨广文</td>
@@ -178,7 +184,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -187,7 +193,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>ygw@tsinghua.edu.cn</td>
@@ -196,7 +202,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>62798985</td>
@@ -205,7 +211,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>institutes</td>
       <td>高性能计算研究所</td>
@@ -214,7 +220,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>姓名：杨广文
@@ -228,7 +234,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>并行与分布式计算，地球系统模式</td>
@@ -237,7 +243,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-02</td>
       <td><a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -249,6 +255,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -263,7 +272,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -272,7 +281,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

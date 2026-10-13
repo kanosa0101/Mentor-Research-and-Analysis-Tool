@@ -26,8 +26,8 @@ def walk_channels(cfg, channels):
                     text, meta, _ = fetch.fetch_rendered(page_url, wait_ms=2000)
                 else:
                     text, meta, _ = fetch.fetch_text("GET", page_url)
-            except Exception:
-                break
+            except Exception as e:
+                raise RuntimeError(f'名单分页抓取失败: {page_url}') from e
             if n > 0 and "没有找到" in text and len(text) < 3000:
                 break
             for rec in parse_person_anchors(cfg, page_url, text):

@@ -31,7 +31,7 @@ def load_all(school, dept):
 def _yaml_load(path):
     import yaml
 
-    return yaml.safe_load(path.read_text(encoding="utf-8"))
+    return yaml.load(path.read_text(encoding="utf-8"), Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
 
 
 def save_professor(prof):
@@ -63,6 +63,13 @@ def save_issues(school, dept, issues):
 def upsert_issue(issues, kind, ref, message):
     for i in issues:
         if i.kind == kind and i.ref == ref:
+            if i.resolved or i.message != message:
+                if i.reviewed or i.review_note:
+                    i.review_history.append({'date': TODAY, 'reviewed': i.reviewed,
+                                             'review_note': i.review_note, 'message': i.message})
+                i.resolved = False
+                i.reviewed = False
+                i.review_note = None
             i.message = message
             return
     issues.append(Issue(kind=kind, ref=ref, message=message, first_seen=TODAY))

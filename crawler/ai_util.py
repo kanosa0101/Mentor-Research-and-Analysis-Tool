@@ -32,12 +32,14 @@ def parse_llm_json(text: str):
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.S)
     try:
-        return json.loads(text)
+        value = json.loads(text)
+        return value if isinstance(value, dict) else None
     except json.JSONDecodeError:
         m = re.search(r"\{.*\}", text, re.S)
         if m:
             try:
-                return json.loads(m.group(0))
+                value = json.loads(m.group(0))
+                return value if isinstance(value, dict) else None
             except json.JSONDecodeError:
                 return None
         return None
@@ -53,19 +55,36 @@ def validate_claims(claims, materials: dict):
 
     返回 (kept_claims, dropped_count)。材料字典的值全部参与拼接。
     """
-    hay = _norm(" ".join(str(v) for v in materials.values() if v))
     kept, dropped = [], 0
+    if not isinstance(claims, list):
+        return [], int(bool(claims))
     for c in claims or []:
+        if not isinstance(c, dict) or not isinstance(c.get('text'), str) or not isinstance(c.get('evidence'), list):
+            dropped += 1
+            continue
         text = (c.get("text") or "").strip()
-        evs = [e.strip() for e in (c.get("evidence") or []) if e and e.strip()]
+        evs = [e.strip() for e in c['evidence'] if isinstance(e, str) and e.strip()]
         if not text:
             dropped += 1
             continue
-        good = [e for e in evs if _norm(e) and _norm(e) in hay]
-        if not good:
+        # 自动公开层只接受原文摘录：文本必须包含于同一字段的引用片段中。
+        # 这不是语义蕴含判断；自由改写仍需另外的人工审阅流程。
+        binding = None
+        good = []
+        for field in ('research_direction_raw', 'bio_raw', 'title', 'supervisor', 'institutes'):
+            material = materials.get(field)
+            if isinstance(material, list):
+                material = '、'.join(str(x) for x in material)
+            if not isinstance(material, str):
+                continue
+            matches = [e for e in evs if _norm(e) in _norm(material) and _norm(text) in _norm(e)]
+            if matches and (not c.get('source_field') or c['source_field'] == field):
+                binding, good = field, matches
+                break
+        if not binding:
             dropped += 1
             continue
-        kept.append({"text": text, "evidence": good})
+        kept.append({"text": text, "evidence": good, 'source_field': binding})
     return kept, dropped
 
 
@@ -75,11 +94,8 @@ def validate_ai_block(block: dict, materials: dict) -> bool:
             or not block.get("generated_at"):
         return False
     for key in ("research_summary", "highlights"):
-        for c in block.get(key) or []:
-            if not (c.get("text") or "").strip():
-                return False
-            if not any(e.strip() and _norm(e) in _norm(" ".join(
-                    str(v) for v in materials.values() if v))
-                    for e in c.get("evidence") or []):
-                return False
+        claims = block.get(key) or []
+        _, dropped = validate_claims(claims, materials)
+        if dropped:
+            return False
     return True

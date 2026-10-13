@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>官方招生通知 · 导师库</title>
+<style>
+body{margin:0;background:#f6f7f9;color:#171e2b;font:14px -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-size:21px}
+.hint{padding:12px;background:#fff7e8;border:1px solid #f2ddb0;border-radius:8px;line-height:1.7}
+.bar{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}select,input{padding:8px;border:1px solid #e6e9ef;border-radius:6px}
+.card{background:white;border:1px solid #e6e9ef;border-radius:8px;padding:14px;margin:10px 0}.meta{color:#6b7280;font-size:12px;line-height:1.8}.title{font-size:15px;font-weight:600}.error{color:#b45309}
+</style></head>
+<body><main>
+<a href="index.html">← 导师库</a> · <a href="board.html">套磁看板</a>
+<h1>官方招生通知</h1>
+<p class="hint">这是清华、北大、上交三个院系当前栏目页的监测试验。通知标题中的年份与入学年份分别记录；截止日期未核验时显示未知。请打开官网核实申请路径、资格和日期。栏目更新需运行监测命令并重建站点。</p>
+<div class="bar"><select id="school"><option value="">全部院系</option>{% for key, source in sources.items() %}<option value="{{ key }}">{{ key }}</option>{% endfor %}</select><input id="search" placeholder="搜索通知标题"><span id="count"></span></div>
+{% for key, source in sources.items() %}<div class="meta{% if source.error %} error{% endif %}"><a href="{{ source.url }}" target="_blank">{{ key }} 官方栏目</a> · 最后抓取 {{ source.fetched_at or "未知" }}{% if source.error %} · 抓取失败：{{ source.error }}{% endif %}</div>{% endfor %}
+{% for n in notices %}
+<article class="card" data-school="{{ n.school }}/{{ n.dept }}" data-title="{{ n.title }}">
+<a class="title" href="{{ n.url }}" target="_blank">{{ n.title }}</a>
+<div class="meta">{{ n.unit }} · 发布日期 {{ n.publication_date or "官网列表未明确提供完整日期" }} · 抓取 {{ n.fetched_at }}</div>
+<div class="meta">标题年份 {{ n.title_years|join("、") or "未知" }} · 入学年份 {{ n.admission_year or "待核验" }} · 路径线索 {{ n.route_hint or "未知" }} · 截止日期 {{ n.deadline or "待核验" }}</div>
+<div class="meta">{% if n.reviewed %}已核验{% else %}候选通知，申请条件和日期尚未核验{% endif %}{% if not n.seen_in_latest_list %} · 最近栏目页未出现，保留历史记录{% endif %} · <a href="{{ n.source }}" target="_blank">列表来源</a></div>
+</article>
+{% endfor %}
+<script>
+function filter(){const school=document.getElementById('school').value,q=document.getElementById('search').value.trim().toLowerCase();let n=0;document.querySelectorAll('article').forEach(a=>{const show=(!school||a.dataset.school===school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});document.getElementById('count').textContent=n+' 条候选通知';}
+document.getElementById('school').addEventListener('change',filter);document.getElementById('search').addEventListener('input',filter);filter();
+</script></main></body></html>

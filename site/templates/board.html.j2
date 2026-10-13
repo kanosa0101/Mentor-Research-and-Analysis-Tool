@@ -47,6 +47,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
   font-size:13.5px;margin:14px 0}
 .hint code{background:#fbf0d9;border-radius:5px;padding:1px 7px;font-size:12.5px}
 .cols{display:flex;gap:12px;align-items:flex-start;margin-top:4px}
+@media(max-width:800px){.cols{overflow-x:auto}.col{flex:0 0 230px}.topin{height:auto;min-height:54px;flex-wrap:wrap}.addres{max-width:85vw}}
 .col{flex:1;min-width:212px;background:#eef0f4;border:1px solid var(--line);border-radius:12px;padding:8px}
 .col.dragover{outline:2px dashed var(--accent);outline-offset:-3px;background:var(--accent-soft)}
 .col-h{display:flex;align-items:center;gap:8px;padding:2px 4px 8px;font-size:13px;font-weight:600}
@@ -99,13 +100,17 @@ body{margin:0;background:var(--bg);color:var(--ink);
       <div class="addres" id="addres"></div>
     </div>
     <div class="fld"><label>学校</label><select id="f-school"><option value="">全部</option></select></div>
+    <label><input id="only-due" type="checkbox">待办已到期</label>
+    <button id="backup" disabled>导出跟进备份</button>
+    <label><button id="restore" disabled>恢复备份</button><input id="backup-file" type="file" accept=".json" hidden></label>
     <span class="count" id="count"></span>
   </div>
   <div class="cols" id="cols"></div>
   <div class="foot">拖动卡片换列即自动保存 · 点 × 移出看板（清除备注与历史）</div>
 </div>
+<script src="data.js"></script>
 <script>
-const DATA = {{ payload }};
+const DATA = window.MENTOR_DATA;
 const byId = {}; DATA.forEach(p => byId[p.page] = p);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
@@ -122,6 +127,7 @@ const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
   hci:"人机交互", bio:"AI+生物医疗"};
 let OUT = {}, API_OK = false, schoolFilter = "";
+const today = new Date().toLocaleDateString("sv-SE");
 
 const el = id => document.getElementById(id);
 async function patch(id, body){
@@ -142,19 +148,22 @@ function cardHTML(id, e){
   const mail = p.email ? `<div class="c-mail"><span class="em" title="${esc(p.email)}">${esc(p.email)}</span>
       <button data-copy="${esc(p.email)}">复制</button></div>` : "";
   const note = e.notes ? `<div class="c-note" title="${esc(e.notes)}">${esc(e.notes)}</div>` : "";
+  const next = e.next_action ? `<div class="c-note">下一步：${esc(e.next_action)}</div>` : "";
+  const due = e.due_date ? `<div class="c-note" style="color:${e.due_date<=today?'var(--warn)':'var(--muted)'}">${e.due_date<=today?'已到期':'计划日期'}：${esc(e.due_date)}</div>` : "";
+  const tags = (e.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join(" ");
   return `<div class="cardo" draggable="true" data-id="${id}">
     <div class="c-top"><a href="p/${id}.html">${esc(p.name)}</a><span class="rm" data-rm="${id}" title="移出看板">×</span></div>
     <div class="c-sub">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div>
     <div class="c-mid">${p.title?`<span class="tag" title="${esc(p.title)}">${esc(p.title)}</span>`:""}
       ${p.supervisor?`<span class="tag sup">${esc(p.supervisor)}</span>`:""}${chips}</div>
-    ${mail}${note}<div class="c-date">更新 ${esc(e.updated_at||"")}</div>
+    ${mail}${note}${next}${due}${tags}<div class="c-date">更新 ${esc(e.updated_at||"")}</div>
   </div>`;
 }
 
 function render(){
   // 学校下拉选项（首次）
   const fs = el("f-school");
-  if(!fs.options.length){
+  if(fs.options.length === 1){
     const schools = [...new Map(DATA.map(p=>[p.school,p.school_name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],"zh"));
     fs.innerHTML = '<option value="">全部</option>' + schools.map(([id,n])=>`<option value="${id}">${esc(n)}</option>`).join("");
   }
@@ -162,6 +171,7 @@ function render(){
   el("cols").innerHTML = COLS.map(c=>{
     const ids = Object.keys(OUT).filter(id => OUT[id].status === c.id)
       .filter(id => byId[id] && (!schoolFilter || byId[id].school === schoolFilter))
+      .filter(id => !el("only-due").checked || (OUT[id].next_action && OUT[id].due_date && OUT[id].due_date <= today && OUT[id].status !== "archived"))
       .sort((a,b)=>String(OUT[b].updated_at||"").localeCompare(String(OUT[a].updated_at||"")));
     total += ids.length;
     return `<div class="col" data-col="${c.id}">
@@ -248,6 +258,27 @@ document.addEventListener("click", e=>{
   if(!e.target.closest(".addbox")) el("addres").style.display = "none";
 });
 el("f-school").addEventListener("change", ()=>{ schoolFilter = el("f-school").value; render(); });
+el("only-due").addEventListener("change", render);
+el("backup").addEventListener("click", async ()=>{
+  try{
+    const r = await fetch("/api/backup"); if(!r.ok) throw new Error("导出失败");
+    const url = URL.createObjectURL(new Blob([JSON.stringify(await r.json(), null, 2)], {type:"application/json"}));
+    const a = document.createElement("a"); a.href=url; a.download="导师跟进备份-"+today+".json"; a.click();
+    setTimeout(()=>URL.revokeObjectURL(url), 1000);
+  }catch(e){alert(e.message);}
+});
+el("restore").addEventListener("click", ()=>el("backup-file").click());
+el("backup-file").addEventListener("change", async ()=>{
+  const file = el("backup-file").files[0]; if(!file) return;
+  try{
+    const data = JSON.parse(await file.text());
+    if(!confirm("恢复将替换当前跟进记录；旧记录会自动备份到本地 data/backups。继续？")) return;
+    const r = await fetch("/api/restore", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+    const result = await r.json(); if(!r.ok) throw new Error(result.error || "恢复失败");
+    OUT = await fetch("/api/outreach").then(r=>r.json()); render();
+    alert("已恢复 "+result.restored+" 条跟进记录");
+  }catch(e){alert(e.message);}finally{el("backup-file").value="";}
+});
 
 (async ()=>{  // 写回服务在线则加载跟进数据，否则显示提示；file:// 不发请求
   if(location.protocol !== "file:"){
@@ -260,6 +291,7 @@ el("f-school").addEventListener("change", ()=>{ schoolFilter = el("f-school").va
     }catch(e){}
   }
   if(!API_OK) el("hint").style.display = "block";
+  el("backup").disabled = el("restore").disabled = !API_OK;
   render();
 })();
 </script>

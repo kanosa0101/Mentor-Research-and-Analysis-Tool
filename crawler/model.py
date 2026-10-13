@@ -20,6 +20,7 @@ class Facet(BaseModel):
 class AiClaim(BaseModel):
     text: str
     evidence: list[str] = Field(default_factory=list)
+    source_field: Optional[str] = None
 
 
 class AiBlock(BaseModel):
@@ -52,6 +53,8 @@ class Professor(BaseModel):
     profile_url: Optional[str] = None
     first_seen: Optional[str] = None
     last_verified: Optional[str] = None
+    last_fetched: Optional[str] = None
+    last_parsed: Optional[str] = None
     source_updated_at: Optional[str] = None
     facets: list[Facet] = Field(default_factory=list)
     ai: Optional[AiBlock] = None          # AI 归纳（导师侧, origin=ai, 必带 evidence）
@@ -67,3 +70,4 @@ class Issue(BaseModel):
     # 人工复验标记: True=确认属官网侧问题(死链/字段确缺/外链被墙), preflight 不再报
     reviewed: Optional[bool] = None
     review_note: Optional[str] = None
+    review_history: list[dict] = Field(default_factory=list)

@@ -88,7 +88,7 @@ a:hover{text-decoration:underline}
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>博导</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>官网未提供</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-04</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-04</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,13 +120,18 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
 <div class="card">
   <h3>个人简介（官网原文）</h3>
   <div class="bio">侯朝焕，于1995年当选中国科学院院士，现任中国科学院声学所研究员、博士生导师、中国声学学会名誉理事长，历任中科院信息技术学部副主任、中国声学学会理事长、国家自然科学基金委信息技术科学部主任、中国科学院微电子战略指导委员会主任、国家自然科学基金委系统芯片重大研究计划专家组组长等职。侯朝焕院士曾经被授予全国先进工作者、国家级有突出贡献的中青年专家、中央直属机关优秀党员。
-侯朝焕院士在声学和信息处理领域成果卓越，发表论文200多篇，先后完成12项国家重大项目，其中三项获国家发明奖，一项获国家科技进步二等奖，一项获国防科技进步一等奖，四项获中科院科技进步奖（含中科院特等奖一项）、一项获中科院杰出成就奖。侯朝焕院士60年代在水声工程研究中主持研制“水声信号起伏统计特性测量系统”，推动了水声信号场和混响-噪声场统计特性的研究。70年代提出了“相移多波束基阵信号处理系统”并完成总体设计；80年代主持完成了“智能型水声信号处理系统”研制以及13.2亿次DSP-l 阵列信号处理机研制。在国内率先开展VLSI信号处理研究，将信号处理和集成电路设计融合发展。1993年完成快速富里叶变换FFT、波束形成DBF和QRD-RLS递推滤波等信号处理专用芯片的研制，达到当时的国际领先水平。1999年作为项目首席科学家主持国家973项目“面向功能可重组结构的DSP&CPU芯片及其软件的基础研究”。2009年，在侯朝焕院士的积极倡导下，国家自然科学基金委启动了单芯片系统集成SOC重大科学计划，侯院士担任专家组组长，开展SOC的关键科学问题研究，促进我国在SOC领域快速发展，并与国际SOC芯片技术同步发展。</div>
+侯朝焕院士在声学和信息处理领域成果卓越，发表论文200多篇，先后完成12项国家重大项目，其中三项获国家发明奖，一项获国家科技进步二等奖，一项获国防科技进步一等奖，四项获中科院科技进步奖（含中科院特等奖一项）、一项获中科院杰出成就奖。侯朝焕院士60年代在水声工程研究中主持研制“水声信号起伏统计特性测量系统”，推动了水声信号场和混响-噪声场统计特性的研究。70年代提出了“相移多波束基阵信号处理系统”并完成总体设计；80年代主持完成了“智能型水声信号处理系统”研制以及13.2亿次DSP-l 阵列信号处理机研制。在国内率先开展VLSI信号处理研究，将信号处理和集成电路设计融合发展。1993年完成快速富里叶变换FFT、波束形成DBF和QRD-RLS递推滤波等信号处理专用芯片的研制，达到当时的国际领先水平。1999年作为项目首席科学家主持国家973项目“面向功能可重组结构的DSP&amp;CPU芯片及其软件的基础研究”。2009年，在侯朝焕院士的积极倡导下，国家自然科学基金委启动了单芯片系统集成SOC重大科学计划，侯院士担任专家组组长，开展SOC的关键科学问题研究，促进我国在SOC领域快速发展，并与国际SOC芯片技术同步发展。</div>
 </div>
 
 
@@ -133,25 +139,25 @@ a:hover{text-decoration:underline}
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>侯朝焕</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
       <td>2026-09-04</td>
-      <td><a href="https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012" target="_blank">原文 ↗</a></td>
+      <td><a href="https://faculty.scu.edu.cn/xyjs.jsp?id=1035&amp;lang=zh_CN&amp;PAGENUM=1&amp;totalpage=21&amp;st=0&amp;urltype=tsites.CollegeTeacherList&amp;wbtreeid=1012" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>photo_url</td>
       <td>https://faculty.scu.edu.cn/_resources/group1/M00/00/03/CgMAx2B1NBuAAYK4AAHQz9Sa62k907.png</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
       <td>2026-09-04</td>
-      <td><a href="https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012" target="_blank">原文 ↗</a></td>
+      <td><a href="https://faculty.scu.edu.cn/xyjs.jsp?id=1035&amp;lang=zh_CN&amp;PAGENUM=1&amp;totalpage=21&amp;st=0&amp;urltype=tsites.CollegeTeacherList&amp;wbtreeid=1012" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>侯朝焕，于1995年当选中国科学院院士，现任中国科学院声学所研究员、博士生导师、中国声学学会名誉理事长，历任中科院...</td>
@@ -160,7 +166,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-04</td>
       <td><a href="https://faculty.scu.edu.cn/houchaohuan/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>研究员</td>
@@ -169,7 +175,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-04</td>
       <td><a href="https://faculty.scu.edu.cn/houchaohuan/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -178,7 +184,7 @@ a:hover{text-decoration:underline}
       <td>2026-09-04</td>
       <td><a href="https://faculty.scu.edu.cn/houchaohuan/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -190,6 +196,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -204,7 +213,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -213,7 +222,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

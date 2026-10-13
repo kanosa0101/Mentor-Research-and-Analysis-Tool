@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>徐飞 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>博导</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>fxu@cs.ecnu.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-05</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-05</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -222,7 +228,7 @@ Efficient job scheduling for LLM training and inference in deep learning cluste
 Communication scheduling optimization for distributed machine learning
 Task scheduling for performance optimization of DAG-style data analytics
 2. Predictable Cloud Computing (云计算性能保证):
-Resource (VMs & serverless functions) provisioning for predictable performance in the cloud
+Resource (VMs &amp; serverless functions) provisioning for predictable performance in the cloud
 Performance measurements, modeling, and optimization of representative cloud workloads (distributed DNN training, big data analytics, NoSQL databases, etc.)
 Live migration of virtual machines and containers
 3. Collaborative Cloud-Edge-Client Computing (云边端协同计算):
@@ -249,9 +255,9 @@ in Hubei Province
 ).
 May 2015
 ,
-Won 2015 ACM Wuhan & Hubei Computer Society Doctoral Dissertation Award
+Won 2015 ACM Wuhan &amp; Hubei Computer Society Doctoral Dissertation Award
 (获得2015年度
-ACM武汉&湖北省计算机学会优秀博士论文奖
+ACM武汉&amp;湖北省计算机学会优秀博士论文奖
 ).
 My Google Scholar Citation Webpage
 招生与培养
@@ -317,7 +323,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>徐飞</td>
@@ -326,7 +332,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://cs.ecnu.edu.cn/jzgml/list.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -335,7 +341,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://cs.ecnu.edu.cn/jzgml/list.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>86-21-62233309</td>
@@ -344,7 +350,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://cs.ecnu.edu.cn/jzgml/list.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>fxu@cs.ecnu.edu.cn</td>
@@ -353,7 +359,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://faculty.ecnu.edu.cn/_s16/xf2/main.psp" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>徐飞，华东师范大学计算机科学与技术学院教授、博士生导师、本科教学副院长。2007年、2009年和2014年在华中科...</td>
@@ -362,7 +368,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://faculty.ecnu.edu.cn/_s16/xf2/main.psp" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -371,7 +377,7 @@ raduated in Summer 2020 and works in Ctrip, S</div>
       <td>2026-09-05</td>
       <td><a href="https://faculty.ecnu.edu.cn/_s16/xf2/main.psp" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -383,6 +389,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -397,7 +406,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -406,7 +415,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

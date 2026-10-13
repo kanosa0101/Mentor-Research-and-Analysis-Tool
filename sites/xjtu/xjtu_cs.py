@@ -30,7 +30,7 @@ def iter_roster(cfg):
             "startnum": startnum, "endnum": startnum + _PAGE,
         }
         url = _API + "?" + urllib.parse.urlencode(q)
-        text, _, _ = fetch.fetch_text("GET", url)
+        text, meta, _ = fetch.fetch_text("GET", url)
         try:
             data = json.loads(text)
         except Exception:
@@ -60,7 +60,7 @@ def iter_roster(cfg):
         page += 1
         if total and len(people) >= total:
             break
-    return people, None
+    return people, meta
 
 
 def parse_detail(cfg, html, url):

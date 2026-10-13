@@ -1,0 +1,10 @@
+# 核心采集与静态站；Python 3.12+（本轮使用 3.14）。
+requests>=2.28,<3
+PyYAML>=6,<7
+Jinja2>=3.1,<4
+pydantic>=2.0,<3
+beautifulsoup4>=4.12,<5
+pypinyin>=0.55,<1
+playwright>=1.40,<2
+openpyxl>=3.1,<4
+# 图片邮箱 OCR 可选；只在相关院系使用，见 README。

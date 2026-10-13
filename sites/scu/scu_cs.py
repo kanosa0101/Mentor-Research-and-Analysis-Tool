@@ -21,7 +21,7 @@ def iter_roster(cfg):
     n_pages = int(cfg["list"].get("pages", 1))
     for n in range(1, n_pages + 1):
         url = tpl.format(n=n)
-        html, _, _ = fetch.fetch_text("GET", url)
+        html, meta, _ = fetch.fetch_text("GET", url)
         for pic, home, nm in _ADDIMG.findall(html):
             u = home if home.startswith("http") else "https://faculty.scu.edu.cn" + home
             nm = nm.strip()
@@ -33,7 +33,7 @@ def iter_roster(cfg):
                 rec["photo_url"] = ("https://faculty.scu.edu.cn" + pic
                                     if pic.startswith("/") else pic)
             people[u] = rec
-    return list(people.values()), None
+    return list(people.values()), meta
 
 
 def parse_detail(cfg, html, url):

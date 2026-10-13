@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>刘华虓 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>官网未提供</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>liuhuaxiao@jlu.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-05</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-05</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -169,7 +175,7 @@ CCF公益工作委员会委员，NOI-Pre项目入门组算法主讲教师，2024
 领域开展了前沿探索，意图帮助视障群体可以平等、便捷、无障碍的与
 移动应用进行交互。2017年至今以第一责任作者发表SCI检索论文40余篇，其中包CCF推荐A类期刊IEEE Transactions on Software Engineering（TSE）、ACM Transactions on Software Engineering and Methodology（TOSEM）、IEEE Transactions on Computers（TC）
 6
-篇，实现了吉林大学在软件工程领域顶级期刊发表上的突破。在CCF推荐B类/中科院1区期刊Information and Software Technology、Information Sciences、Journal of Systems and Software、Journal of Software: Evolution and Process、Software: Practice and Experience、IET Software、Science of Computer Programming、Journal of Computer Science& Technology、ACM Transactions on Design Automation of Electronic Systems等发表论文
+篇，实现了吉林大学在软件工程领域顶级期刊发表上的突破。在CCF推荐B类/中科院1区期刊Information and Software Technology、Information Sciences、Journal of Systems and Software、Journal of Software: Evolution and Process、Software: Practice and Experience、IET Software、Science of Computer Programming、Journal of Computer Science&amp; Technology、ACM Transactions on Design Automation of Electronic Systems等发表论文
 22
 篇。合作参与CCF-A类期刊会议ICSE26、TSE、TOSEM论文
 4
@@ -359,7 +365,7 @@ Information and Software Technology
 Lei Liu, Xiu Ma,
 Huaxiao Liu*
 , Guang-li Li, and Lei Liu. FlexPDA: A Flexible Programming Framework for Deep Learning Accelerators.
-Journal of Computer Science& Technology
+Journal of Computer Science&amp; Technology
 (2022.10 CCF-B)
 [18]
 Mengxi Zhang,
@@ -495,7 +501,7 @@ TikTok
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>刘华虓</td>
@@ -504,7 +510,7 @@ TikTok
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/szdw/zpzpjs.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -513,7 +519,7 @@ TikTok
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/20712.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>职称：
@@ -531,7 +537,7 @@ liuh...</td>
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/20712.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>liuhuaxiao@jlu.edu.cn</td>
@@ -540,7 +546,7 @@ liuh...</td>
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/20712.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -552,6 +558,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -566,7 +575,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -575,7 +584,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

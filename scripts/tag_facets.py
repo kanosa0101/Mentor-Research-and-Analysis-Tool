@@ -36,14 +36,14 @@ def match(text):
 def main():
     for f in sorted(Path("data/professors").glob("*/*/*.yaml")):
         d = store._yaml_load(f)
-        old = {x["id"] for x in d.get("facets", []) if x.get("origin") == "computed"}
+        preserved = [x for x in d.get('facets', []) if x.get('origin') != 'computed']
+        protected_ids = {x['id'] for x in preserved}
         text = " ".join(str(d.get(k) or "") for k in
                         ("research_direction_raw", "bio_raw"))
-        text = text[:1500]
         hits = match(text)
         facets = [Facet(id=fid, origin="computed", confidence="auto",
-                        evidence=[f"keyword:{kw}"]) for fid, kw in hits]
-        d["facets"] = [x.model_dump(mode="json") for x in facets]
+                        evidence=[f"keyword:{kw}"]) for fid, kw in hits if fid not in protected_ids]
+        d["facets"] = preserved + [x.model_dump(mode="json") for x in facets]
         import yaml
         f.write_text(yaml.safe_dump(d, allow_unicode=True, sort_keys=False),
                      encoding="utf-8")

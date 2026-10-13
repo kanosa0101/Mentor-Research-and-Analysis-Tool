@@ -4,6 +4,8 @@ import re
 import shutil
 import subprocess
 import time
+from contextlib import contextmanager
+from contextvars import ContextVar
 from pathlib import Path
 
 import requests
@@ -11,6 +13,17 @@ import requests
 CACHE = Path(__file__).resolve().parent.parent / "cache" / "http"
 MIN_INTERVAL = 0.5
 _last = [0.0]
+_refresh = ContextVar('crawl_refresh', default=False)
+
+
+@contextmanager
+def refresh_scope(enabled):
+    """让现有站点钩子的名单、详情和辅助请求继承本轮刷新要求。"""
+    token = _refresh.set(bool(enabled) or _refresh.get())
+    try:
+        yield
+    finally:
+        _refresh.reset(token)
 
 
 def _key(method, url, data):
@@ -28,6 +41,7 @@ def _throttle():
 
 
 def fetch(method, url, data=None, refresh=False):
+    refresh = refresh or _refresh.get()
     key = _key(method, url, data)
     body_p = CACHE / (key + ".body")
     meta_p = CACHE / (key + ".meta.json")
@@ -53,17 +67,17 @@ def fetch(method, url, data=None, refresh=False):
         # WAF 质询页(瑞数 412/网防 403 等)自动降级走 CDP 真实浏览器
         if (_cdp_fallback and e.response is not None
                 and e.response.status_code in (403, 412, 503) and not data):
-            text, meta, _ = fetch_cdp(url)
-            return text.encode("utf-8"), meta, False
+            text, meta, hit = fetch_cdp(url, refresh=refresh)
+            return text.encode("utf-8"), meta, hit
         raise
     if _cdp_fallback and r.status_code == 202 and len(r.content) < 10000:
         # 网防(wengine)质询页走 202 短响应, requests 视为成功——按特征降级
-        text, meta, _ = fetch_cdp(url)
-        return text.encode("utf-8"), meta, False
+        text, meta, hit = fetch_cdp(url, refresh=refresh)
+        return text.encode("utf-8"), meta, hit
     if _cdp_fallback and len(r.content) < 3000 and b"frms-fingerprint" in r.content:
         # 瑞数 200 指纹壳(浙大 person 等)——正文只有 JS 探针, CDP 执行质询后才有内容
-        text, meta, _ = fetch_cdp(url)
-        return text.encode("utf-8"), meta, False
+        text, meta, hit = fetch_cdp(url, refresh=refresh)
+        return text.encode("utf-8"), meta, hit
     CACHE.mkdir(parents=True, exist_ok=True)
     body_p.write_bytes(r.content)
     meta = {
@@ -120,6 +134,7 @@ def _get_browser():
 
 
 def fetch_rendered(url, refresh=False, wait_ms=1500, timeout=35000, scroll=False):
+    refresh = refresh or _refresh.get()
     key = _key("RENDER", url, None)
     body_p = CACHE / (key + ".body")
     meta_p = CACHE / (key + ".meta.json")
@@ -221,6 +236,7 @@ def _get_cdp_browser():
 def fetch_cdp(url, refresh=False, wait_ms=2500, timeout=45000, scroll=False):
     """CDP 真实 Chrome 抓取。用浏览器默认上下文（保留 cookie/指纹），
     新开页用完即关。结果独立缓存键 CDP+url。"""
+    refresh = refresh or _refresh.get()
     key = _key("CDP", url, None)
     body_p = CACHE / (key + ".body")
     meta_p = CACHE / (key + ".meta.json")
@@ -253,6 +269,7 @@ def fetch_cdp(url, refresh=False, wait_ms=2500, timeout=45000, scroll=False):
 def fetch_cdp_json(api_url, wait_ms=1500, refresh=False):
     """在 CDP 真实浏览器页面上下文里调用同源 XHR API——自动携带瑞数 cookie/签名
     （裸 requests/CDP 直连 API 会 Access denied）。锚点页每次先加载以稳拿质询 cookie。"""
+    refresh = refresh or _refresh.get()
     key = _key("CDPJSON", api_url, None)
     body_p = CACHE / (key + ".body")
     meta_p = CACHE / (key + ".meta.json")

@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>张铭 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>数据科学与工程研究所</dd>
     <dt>导师资格</dt><dd>博导</dd>
-    
+
     <dt>研究方向</dt><dd>文本挖掘、知识图谱、图神经网络、计算机教育研究</dd>
     <dt>邮箱</dt><dd>mzhang_cs@pku.edu.cn</dd>
     <dt>个人主页</dt><dd><a href="https://pkudlib.github.io/" target="_blank">https://pkudlib.github.io/</a></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-03</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-03</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -247,7 +253,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
 3. Yifang Qin, Hongjun Wu, Wei Ju, Xiao Luo, Ming Zhang: A Diffusion model for POI recommendation. ACM Transactions on Information Systems 2024, 42 (2), 54:1-54
 4. Zequn Liu, Wei Zhang, Yingce Xia, Lijun Wu, Shufang Xie, Tao Qin, Ming Zhang, Tie-Yan Liu: MolXPT: Wrapping Molecules with Text for Generative Pre-training. ACL (2) 2023: 1606-1616
 5. Wei Ju, Yifang Qin, Ziyue Qiao, Xiao Luo, Yifan Wang, Yanjie Fu, Ming Zhang: Kernel-based Substructure Exploration for Next POI Recommendation. ICDM 2022最佳论文提名
-6. Jianhao Shen, Yichun Yin, Lin Li, Lifeng Shang, Xin Jiang, Ming Zhang, Qun Liu: Generate & Rank: A Multi-task Framework for Math Word Problems. EMNLP (Findings) 2021: 2269-2279 (被OpenAI团队Training verifiers to solve math word problems一文三处引用)
+6. Jianhao Shen, Yichun Yin, Lin Li, Lifeng Shang, Xin Jiang, Ming Zhang, Qun Liu: Generate &amp; Rank: A Multi-task Framework for Math Word Problems. EMNLP (Findings) 2021: 2269-2279 (被OpenAI团队Training verifiers to solve math word problems一文三处引用)
 7. A Clear, A Parrish, J Impagliazzo, P Wang, P Ciancarini, E Cuadros-Vargas, S Frezza, J Gal-Ezer, A Pears, S Takada, H Topi, G van der Veer, A Vichare, L Waguespack, M Zhang: Computing curricula 2020 (CC2020) paradigms for global computing education. ACM/IEEE
 8. Yifan Wang, Suyao Tang, Yuntong Lei, Weiping Song, Sheng Wang, Ming Zhang: DisenHAN: Disentangled Heterogeneous Graph Attention Network for Recommendation. CIKM 2020: 1605-1614
 9. Chence Shi, Minkai Xu, Zhaocheng Zhu, Weinan Zhang, Ming Zhang, Jian Tang: GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation. ICLR 2020
@@ -264,14 +270,14 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
 20. Jian Tang, Jingzhou Liu, Ming Zhang, Qiaozhu Mei: Visualizing Large-scale and High-dimensional Data. WWW 2016: 287-297. 最佳论文提名
 21. Jian Tang, Meng Qu, Mingzhe Wang, Ming Zhang, Jun Yan, Qiaozhu Mei: LINE: Large-scale Information Network Embedding. WWW 2015: 1067-1077. WWW’2015 被引最多的论文（截止2024年11月，被引6500多次）
 22. Chenguang Wang, Yangqiu Song, Ahmed El-Kishky, Dan Roth, Ming Zhang, Jiawei Han: Incorporating World Knowledge to Document Clustering via Heterogeneous Information Networks. KDD 2015: 1215-1224
-23. Ming Zhang, Jile Zhu, Yanzhen Zou, Hongfei Yan, Dan Hao, Chuxiong Liu: Educational Evaluation in the PKU SPOC Course "Data Structures and Algorithms". In Proc. of ACM Conference on Learning at Scale 2015: 237-240
+23. Ming Zhang, Jile Zhu, Yanzhen Zou, Hongfei Yan, Dan Hao, Chuxiong Liu: Educational Evaluation in the PKU SPOC Course &#34;Data Structures and Algorithms&#34;. In Proc. of ACM Conference on Learning at Scale 2015: 237-240
 24. Jian Tang, Zhaoshi Meng, XuanLong Nguyen, Qiaozhu Mei, Ming Zhang. Understanding the Limiting Factors of Topic Modeling via Posterior Contraction Analysis. ICML 2014: 190-198. Best Paper最佳论文奖
 25. Tao Sun, Ming Zhang, and Qiaozhu Mei. Unexpected Relevance: An Empirical Study of Serendipity in Retweets. In The 7th International AAAI Conference on Weblogs and Social Media, 2013.
 26. Xiaolong Wang, Furu Wei, Xiaohua Liu, Ming Zhou and Ming Zhang. Graph-based Sentiment Classification for Hashtags in Twitter. CIKM 2011, Glasgow, UK. PP1031-1040.
 27. Haoyuan Li, Yi Wang, Dong Zhang, Ming Zhang and Edward Chang. PFP: Parallel FP-Growth for Query Recommendation. In ACM Recommender Systems 2008. Pages 107-114. PFP has been made part of Apache Mahout (http://mahout.apache.org/users/misc/parallel-frequent-pattern-mining.html).
 28. 张铭，银平，邓志鸿，杨冬青，“SVM+BiHMM：基于统计方法的元数据自动抽取混合模型”。《软件学报》.19(2).358-368，2008年2月
 29. 邓志鸿，唐世渭，张铭，杨冬青，陈捷。“Ontology研究综述”。《北京大学学报》（自然科学），2002年9月，第38卷5期：730-738
-30. Ming Zhang, Virginia Mary Lo: Undergraduate computer science education in China. SIGCSE 2010, pp. 396-400. A referred paper by the course "Images of Computing" delivered by Dr. Carol Frieze,http://www.cs.cmu.edu/~cfrieze/courses/
+30. Ming Zhang, Virginia Mary Lo: Undergraduate computer science education in China. SIGCSE 2010, pp. 396-400. A referred paper by the course &#34;Images of Computing&#34; delivered by Dr. Carol Frieze,http://www.cs.cmu.edu/~cfrieze/courses/
 31. 张铭，耿国华，陈卫卫，胡学刚. 数据结构与算法课程教学实施方案[J]。中国大学教学，2011（3）：PP56-60.
 32. 张铭，赵海燕，王腾蛟，宋国杰，《数据结构与算法实验教程》，高等教育出版社，2011年1月。普通高等教育“十一五”国家级规划教材。
 33. 张铭、王腾蛟、赵海燕，《数据结构与算法》，高等教育出版社，2008年 6月。普通高等教育“十一五”国家级规划教材
@@ -284,7 +290,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>张铭</td>
@@ -293,7 +299,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -302,7 +308,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/info/1086/1730.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>mzhang_cs@pku.edu.cn</td>
@@ -311,7 +317,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>86-10-6276 5822</td>
@@ -320,7 +326,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/info/1086/1730.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>文本挖掘、知识图谱、图神经网络、计算机教育研究</td>
@@ -329,7 +335,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>institutes</td>
       <td>数据科学与工程研究所</td>
@@ -338,7 +344,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>homepage</td>
       <td>https://pkudlib.github.io/</td>
@@ -347,7 +353,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/info/1086/1730.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>个人主页：https://pkudlib.github.io/
@@ -358,7 +364,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/info/1086/1730.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -367,7 +373,7 @@ https://scholar.google.com/citations?user=LbzoQBsAAAAJ
       <td>2026-09-03</td>
       <td><a href="https://cs.pku.edu.cn/info/1086/1730.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -379,6 +385,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -393,7 +402,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -402,7 +411,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

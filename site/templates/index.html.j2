@@ -114,17 +114,19 @@ a:hover{text-decoration:underline}
     <div class="brand"><span class="logo"></span><h1>导师库</h1>
       <span class="sub">院系官网师资 · 逐字段可溯源</span></div>
     <a class="navlink" href="board.html">套磁看板</a>
+    <a class="navlink" href="notices.html">招生通知</a>
     <div class="tstats">
       <span><b>{{ profs|length }}</b> 导师</span>
       <span><b>{{ schools|length }}</b> 校</span>
       <span><b>{{ depts|length }}</b> 院系</span>
-      {% if fresh %}<span class="badge">核对至 {{ fresh }}</span>{% endif %}
+      {% if fresh %}<span class="badge">来源最晚抓取 {{ fresh }}</span>{% endif %}
+      <span class="badge">来源超过 30 天或未知：{{ stale }} 人</span>
     </div>
   </div>
 </header>
 <div class="wrap">
   <div class="bar">
-    <div class="fld"><input id="q" placeholder="搜索姓名 / 邮箱 / 研究所…"></div>
+    <div class="fld"><input id="q" placeholder="搜索姓名 / 研究方向 / 简介 / 邮箱…"></div>
     <div class="fld"><label>学校</label><select id="f-school"><option value="">全部</option>
       {% for s in schools %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></div>
     <div class="fld"><label>院系</label><select id="f-dept" disabled><option value="">全部</option></select></div>
@@ -140,6 +142,9 @@ a:hover{text-decoration:underline}
       <summary>列设置 ▾</summary>
       <div class="colbox" id="colbox"></div>
     </details>
+    <div class="fld"><label>短名单</label><select id="f-outreach"><option value="">全部</option>
+      <option value="interested">意向</option><option value="tracked">已跟进</option><option value="untracked">未跟进</option></select></div>
+    <div class="fld"><input id="f-tag" placeholder="私人标签（本地服务）"></div>
     <span class="count" id="count"></span>
   </div>
 
@@ -154,14 +159,26 @@ a:hover{text-decoration:underline}
   <div class="foot">数据来自各院系官网原始页面 · 每条字段可在详情页查看出处与抓取日期</div>
 </div>
 <button id="cmpbtn">对比<span class="n">0</span>位导师</button>
+<script src="data.js"></script>
 <script>
-const DATA = {{ payload }};
+const DATA = window.MENTOR_DATA;
 let view = [...DATA], sortK = null, sortAsc = true;
 const el = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const STATUS = {roster:"仅名单", enriched:"已富化", verified:"已核对"};
-const badge = s => `<span class="tag tag-${s}">${STATUS[s]||s}</span>`;
+const badge = s => `<span class="tag tag-${esc(s)}">${esc(STATUS[s]||s)}</span>`;
 const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
 let OUT = {}, API_OK = false;
+let researchSearch = null;
+function loadResearchSearch(){
+  if(!researchSearch) researchSearch = new Promise((resolve, reject)=>{
+    const script = document.createElement("script"); script.src = "search.js";
+    script.onload = resolve;
+    script.onerror = ()=>{researchSearch=null;script.remove();reject(new Error("研究材料加载失败，请刷新后重试"));};
+    document.head.appendChild(script);
+  });
+  return researchSearch;
+}
 async function patchO(id, body){
   const r = await fetch("/api/outreach/" + id, {method:"PATCH",
     headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
@@ -183,7 +200,7 @@ const COLS = [
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
-  hci:"人机交互", bio:"AI+生物医疗"};
+  hci:"人机交互", bio:"AI+生物医疗", _unknown:"方向未标注"};
 let SEL = new Set();
 try { SEL = new Set(JSON.parse(localStorage.getItem("compare_sel")||"[]")); } catch(e) {}
 function updateCmpBtn(){
@@ -301,6 +318,11 @@ function render(){
   const q = el("q").value.trim().toLowerCase(),
         fs = el("f-school").value, fd = el("f-dept").value,
         ft = el("f-title").value, fsup = el("f-sup").value;
+  if(q && !window.MENTOR_SEARCH){
+    el("count").textContent = "正在加载研究材料…";
+    loadResearchSearch().then(render).catch(e=>{el("count").textContent=e.message;});
+    return;
+  }
   view = DATA.filter(p=>{
     if(fs && p.school !== fs) return false;
     if(fd && p.dept !== fd) return false;
@@ -308,10 +330,15 @@ function render(){
     if(fsup && !(p.supervisor||"").includes(fsup)) return false;
     if(facetSel.length){
       const pf = (p.facets||[]).map(x=>x.id);
-      if(!facetSel.some(f => pf.includes(f))) return false;
+      if(!facetSel.some(f => f === "_unknown" ? pf.length === 0 : pf.includes(f))) return false;
     }
-    if(q){const hay=(p.name+" "+(p.email||"")+" "+(p.institutes||[]).join(" ")).toLowerCase();
-      if(!hay.includes(q)) return false;}
+    const follow = OUT[p.page];
+    const os = el("f-outreach").value, tag = el("f-tag").value.trim().toLowerCase();
+    if(os === "interested" && follow?.status !== "interested") return false;
+    if(os === "tracked" && !follow) return false;
+    if(os === "untracked" && follow) return false;
+    if(tag && !(follow?.tags||[]).some(t=>t.toLowerCase().includes(tag))) return false;
+    if(q && !p.search_text.includes(q) && !(window.MENTOR_SEARCH?.[p.page]||"").includes(q)) return false;
     return true;
   });
   if(sortK){const k=sortK;view.sort((a,b)=>{
@@ -323,17 +350,17 @@ function render(){
   const rows = view.slice(start, start + pageSize);
   const cells = p => ({
     sel: `<td style="text-align:center"><input type="checkbox" data-sel="${p.page}" ${SEL.has(p.page)?"checked":""}></td>`,
-    name: `<td class="name-cell" title="${p.name}"><a href="p/${p.page}.html">${p.name}</a></td>`,
-    school: `<td title="${p.school_name}">${p.school_name}</td>`,
-    title: `<td title="${p.title||"官网未提供"}">${p.title||'<span class="missing">官网未提供</span>'}</td>`,
-    sup: `<td>${p.supervisor?`<span class="tag sup">${p.supervisor}</span>`:'<span class="missing">—</span>'}</td>`,
+    name: `<td class="name-cell" title="${esc(p.name)}"><a href="p/${p.page}.html">${esc(p.name)}</a></td>`,
+    school: `<td title="${esc(p.school_name)}">${esc(p.school_name)}</td>`,
+    title: `<td title="${esc(p.title||"官网未提供")}">${p.title?esc(p.title):'<span class="missing">官网未提供</span>'}</td>`,
+    sup: `<td>${p.supervisor?`<span class="tag sup">${esc(p.supervisor)}</span>`:'<span class="missing">—</span>'}</td>`,
     facets: (()=>{
-      const fs=(p.facets||[]).map(x=>`<span class="chip fchip">${FACET_LABELS[x.id]||x.id}</span>`).join("");
+      const fs=(p.facets||[]).map(x=>`<span class="chip fchip">${esc(FACET_LABELS[x.id]||x.id)}</span>`).join("");
       return `<td class="facet-cell">${fs||'<span class="missing">—</span>'}</td>`;})(),
     inst: (()=>{const v=(p.institutes||[]).join("、")||"官网未提供";
-      return `<td class="institute-cell" title="${v}">${v}</td>`;})(),
-    email: `<td class="email-cell" title="${p.email||"官网未提供"}">${p.email||'<span class="missing">官网未提供</span>'}</td>`,
-    dept: `<td title="${p.dept_name||p.dept}">${p.dept_name||p.dept}</td>`,
+      return `<td class="institute-cell" title="${esc(v)}">${esc(v)}</td>`;})(),
+    email: `<td class="email-cell" title="${esc(p.email||"官网未提供")}">${p.email?esc(p.email):'<span class="missing">官网未提供</span>'}</td>`,
+    dept: `<td title="${esc(p.dept_name||p.dept)}">${esc(p.dept_name||p.dept)}</td>`,
     status: `<td>${badge(p.status)}</td>`,
     outreach: (()=>{
       const o = OUT[p.page], st = o && o.status;
@@ -342,7 +369,7 @@ function render(){
       const t = !st ? "标为意向" : (st==="interested" ? "点击移出意向" : "在看板："+OLABEL[st]);
       return `<td class="o-cell"><span class="star ${st?"on":""}" data-star="${p.page}" title="${t}">★</span>${tag}</td>`;
     })(),
-    ext: `<td><a class="ext" href="${p.profile_url||p.detail_url}" target="_blank" title="官网页面">↗</a></td>`,
+    ext: `<td><a class="ext" href="${esc(p.profile_url||p.detail_url)}" target="_blank" title="官网页面">↗</a></td>`,
   });
   document.querySelector("#tbl tbody").innerHTML = rows.map(p=>{
     const c = cells(p);
@@ -354,7 +381,7 @@ function render(){
   el("count").textContent = `${lo}-${hi} / ${DATA.length} 人`;
   el("empty").style.display = view.length ? "none" : "block";
 }
-["q","f-title","f-sup"].forEach(id=>el(id).addEventListener("input", () => { page = 1; render(); }));
+["q","f-title","f-sup","f-outreach","f-tag"].forEach(id=>el(id).addEventListener("input", () => { page = 1; render(); }));
 document.querySelector("#tbl tbody").addEventListener("change", e=>{
   const c = e.target.closest("[data-sel]"); if(!c) return;
   if(c.checked){

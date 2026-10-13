@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-04</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-04</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -129,10 +135,10 @@ a:hover{text-decoration:underline}
 后分别在北京邮电大学和北京师范大学任教。主要从事量子计算和量子人工智能交叉领域的研究工作，至今在
 Light
 :
-Science & Applications,
+Science &amp; Applications,
 Science Bulletin
 ,
-Laser & Photonics Reviews,
+Laser &amp; Photonics Reviews,
 Photonics Research
 等国内外学术期刊上发表SCI论文150余篇，论文被SCI引用5000余次,申请\授权发明专利20项。主持完成国家自然科学基金优青项目，霍英东基金等多项国家级课题。目前承担国家自然科学基金重点项目、联合基金项目，研究成果曾获国家自然科学二等奖、中国通信学会自然科学二等奖等奖励。连续五年入选
 Elsevier
@@ -146,7 +152,7 @@ Elsevier
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>王川</td>
@@ -155,7 +161,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -164,7 +170,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>subjects</td>
       <td>—</td>
@@ -173,7 +179,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>量子计算</td>
@@ -182,7 +188,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/44bb14887b2f4b6dadb895a2ed3641e0.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>wangchuan@bnu.edu.cn</td>
@@ -191,7 +197,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/44bb14887b2f4b6dadb895a2ed3641e0.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>photo_url</td>
       <td>https://ai.bnu.edu.cn/xygk/szdw/zgj/images/2023-10/9f8db5ea459d436a9854cdc90a3cb8d2.png</td>
@@ -200,7 +206,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/44bb14887b2f4b6dadb895a2ed3641e0.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>王川，博士毕业
@@ -211,7 +217,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/44bb14887b2f4b6dadb895a2ed3641e0.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -220,7 +226,7 @@ Elsevier
       <td>2026-09-04</td>
       <td><a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/44bb14887b2f4b6dadb895a2ed3641e0.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -232,6 +238,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -246,7 +255,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -255,7 +264,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

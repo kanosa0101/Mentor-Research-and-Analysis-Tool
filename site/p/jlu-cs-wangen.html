@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>王恩 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">职称：官网未提供</div>
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>博导</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>wangen@jlu.edu.cn</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-04</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-04</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -299,7 +305,7 @@ CCF A
 （1）代表性期刊
 1.
 En Wang
-, Yongjian Yang, Jie Wu, Wenbin Liu, Xingbo Wang "An Efficient Prediction-Based User Recruitment for Mobile Crowdsensing,"
+, Yongjian Yang, Jie Wu, Wenbin Liu, Xingbo Wang &#34;An Efficient Prediction-Based User Recruitment for Mobile Crowdsensing,&#34;
 IEEE Transactions on Mobile Computing
 , 2017, 17 (1): 16-28.
 （
@@ -307,7 +313,7 @@ CCF A, IF: 9.2
 ）
 2. Yongjian Yang, Wenbin Liu,
 En Wang
-*, Jie Wu, "A Prediction-based User Selection Framework for Heterogeneous Mobile CrowdSensing,"
+*, Jie Wu, &#34;A Prediction-based User Selection Framework for Heterogeneous Mobile CrowdSensing,&#34;
 IEEE Transactions on Mobile Computing
 , 2018, 18 (11): 2460-2473.
 （
@@ -315,28 +321,28 @@ CCF A, IF: 9.2
 ）
 3. Wenbin Liu, Yongjian Yang,
 En Wang
-*, Hengzhi Wang, Zihe Wang, Jie Wu, "Dynamic Online User Recruitment With (Non-) Submodular Utility in Mobile CrowdSensing,"
+*, Hengzhi Wang, Zihe Wang, Jie Wu, &#34;Dynamic Online User Recruitment With (Non-) Submodular Utility in Mobile CrowdSensing,&#34;
 IEEE/ACM Transactions on Networking
 , 2021, 29(5): 2156-2169. (CCF A, IF: 3.6)
 4.
 En Wang
-, Hengzhi Wang, Yongjian Yang, Wenbin Liu, "Truthful Incentive Mechanism for Budget-Constrained Online User Selection in Mobile Crowdsensing,"
+, Hengzhi Wang, Yongjian Yang, Wenbin Liu, &#34;Truthful Incentive Mechanism for Budget-Constrained Online User Selection in Mobile Crowdsensing,&#34;
 IEEE Transactions on Mobile Computing
 , 2021, 21(12): 4642-4655. (CCF A, IF: 9.2)
 5. Hengzhi Wang, Yongjian Yang,
 En Wang
-*, Wenbin Liu, Yuanbo Xu, Jie Wu, "Truthful User Recruitment for Cooperative Crowdsensing Task: A Combinatorial Multi-Armed Bandit Approach,"
+*, Wenbin Liu, Yuanbo Xu, Jie Wu, &#34;Truthful User Recruitment for Cooperative Crowdsensing Task: A Combinatorial Multi-Armed Bandit Approach,&#34;
 IEEE Transactions on Mobile Computing
 , 2022, 22(7): 4314-4331. (CCF A, IF: 9.2)
 6. Yuanbo Xu, Yongjian Yang,
 En Wang
-*, Fuzhen Zhuang, Hui Xiong, "Detect Professional Malicious User with Metric Learning in Recommender Systems,"
+*, Fuzhen Zhuang, Hui Xiong, &#34;Detect Professional Malicious User with Metric Learning in Recommender Systems,&#34;
 IEEE Transactions on Knowledge and Data Engineering
 , 2020, 34(9): 4133-4146. (CCF A, IF:
 10.4)
 7. Yuanbo Xu,
 En Wang
-*, Yongjian Yang, Yi Chang, "A Unified Collaborative Representation Learning for Neural-Network based RecommenderSystems,"
+*, Yongjian Yang, Yi Chang, &#34;A Unified Collaborative Representation Learning for Neural-Network based RecommenderSystems,&#34;
 IEEE Transactions on Knowledge and Data Engineering
 , 2022, 34(11):5126-5139.
 （
@@ -364,11 +370,11 @@ IF:
 杨永健
 ,
 李莅
-, "
+, &#34;
 基于动态半马尔可夫路径搜索模型的
 DTN
 分簇路由方法
-,"
+,&#34;
 计算机学报
 , 2015, 38(3): 483-499.
 （国内权威期刊）
@@ -378,9 +384,9 @@ DTN
 杨永健
 ,
 李莅
-, "DTN
+, &#34;DTN
 中基于生命游戏的拥塞控制策略
-,"
+,&#34;
 计算机研究与发展
 , 2014, 51(11): 2393-2407.
 （国内权威期刊）
@@ -775,7 +781,7 @@ CCF-百度松果基金
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>王恩</td>
@@ -784,7 +790,7 @@ CCF-百度松果基金
       <td>2026-09-04</td>
       <td><a href="https://ccst.jlu.edu.cn/szdw/zpzpjs.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>wangen@jlu.edu.cn</td>
@@ -793,7 +799,7 @@ CCF-百度松果基金
       <td>2026-09-04</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1398/20987.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>13756494481</td>
@@ -802,7 +808,7 @@ CCF-百度松果基金
       <td>2026-09-04</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1398/20987.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>个人简介：
@@ -820,7 +826,7 @@ CCF-百度松果基金
       <td>2026-09-04</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1398/20987.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -829,7 +835,7 @@ CCF-百度松果基金
       <td>2026-09-04</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1398/20987.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -841,6 +847,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -855,7 +864,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -864,7 +873,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

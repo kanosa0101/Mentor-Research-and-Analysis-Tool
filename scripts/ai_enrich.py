@@ -29,7 +29,7 @@ import requests
 from crawler import store
 from crawler.ai_util import build_input, fingerprint, parse_llm_json, validate_claims
 
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2-extractive"
 CACHE = ROOT / "cache" / "ai"
 
 SYSTEM = """你是严谨的学术信息整理员。只依据给定材料归纳，禁止使用材料外的知识、
@@ -37,8 +37,9 @@ SYSTEM = """你是严谨的学术信息整理员。只依据给定材料归纳�
 {"research_summary": [{"text": "...", "evidence": ["材料中的逐字片段", ...]}],
  "highlights": [{"text": "...", "evidence": ["..."]}]}
 要求：
-- research_summary 2-4 条，每条 ≤50 字，概括研究对象/问题/方法定位
-- highlights 1-3 条，每条 ≤50 字，只写材料中明确的事实（获奖、头衔、代表性成果）
+- research_summary 2-4 条，每条 ≤50 字，从材料中选取最能表达研究对象/问题/方法的原文
+- highlights 1-3 条，每条 ≤50 字，选取明确的获奖、头衔、代表性成果原文
+- text 必须是 evidence 中的逐字摘录，禁止自由改写；不写材料外的招生名额或可联系判断
 - 每条 evidence 必须是材料中的**逐字片段**（可截取 ≤60 字符），每条断言至少 1 条
 - 材料不足以支撑的断言直接不写；宁缺毋滥
 只输出 JSON，不要多余文字。"""
@@ -62,11 +63,11 @@ def mock_llm(inp: dict) -> str:
     """管线自测用：从真实材料里抠片段当断言与证据，走完整 校验/缓存/落库 流程。"""
     claims = []
     if inp["research_direction_raw"]:
-        claims.append({"text": f"官网自述方向：{inp['research_direction_raw'][:40]}",
+        claims.append({"text": inp['research_direction_raw'][:30],
                        "evidence": [inp["research_direction_raw"][:30]]})
     if inp["bio_raw"]:
         head = inp["bio_raw"][:50]
-        claims.append({"text": f"简介开头：{head[:40]}", "evidence": [head[:30]]})
+        claims.append({"text": head[:30], "evidence": [head[:30]]})
         claims.append({"text": "这条断言材料里没有支撑，应当被丢弃", "evidence": ["材料中不存在的句子"]})
     return json.dumps({"research_summary": claims, "highlights": []}, ensure_ascii=False)
 
@@ -108,14 +109,14 @@ def main():
             n_skip += 1
             continue
         fp = fingerprint(inp, PROMPT_VERSION, cfg["model"])
+        if args.dry:
+            print(f"[dry] {p.slug}: 输入 {sum(len(str(v)) for v in inp.values())} 字符 -> {fp[:10]}")
+            continue
         cp = cache_path(fp)
         if cp.exists() and not args.refresh:
             rec = json.loads(cp.read_text(encoding="utf-8"))
             n_cached += 1
         else:
-            if args.dry:
-                print(f"[dry] {p.slug}: 输入 {sum(len(str(v)) for v in inp.values())} 字符 -> {fp[:10]}")
-                continue
             raw = mock_llm(inp) if args.mock else call_llm(inp, cfg)
             rec = {"fingerprint": fp, "model": cfg["model"], "prompt_version": PROMPT_VERSION,
                    "generated_at": datetime.date.today().isoformat(),
@@ -136,11 +137,16 @@ def main():
                        generated_at=rec["generated_at"],
                        research_summary=[AiClaim(**c) for c in rs],
                        highlights=[AiClaim(**c) for c in hl])
-        store.save_professor(p)
+        if args.mock:
+            target = CACHE / 'mock' / f'{p.school}-{p.dept}-{p.slug}.json'
+            target.parent.mkdir(exist_ok=True)
+            target.write_text(p.ai.model_dump_json(indent=2), encoding='utf-8')
+        else:
+            store.save_professor(p)
         n_saved += 1
     print(f"完成: 缓存命中 {n_cached} | 调用 {n_called} | 落库 {n_saved} | "
           f"无证据丢弃 {n_drop} | 无材料跳过 {n_skip}")
-    print("注意: Professor.ai 属生成数据，如需回滚: git checkout -- data/professors/")
+    print('mock 输出仅存 cache/ai/mock；自动公开层仅接受可逐字回溯的原文片段。')
 
 
 if __name__ == "__main__":

@@ -82,7 +82,7 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>陈伟 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">职称：官网未提供</div>
   <dl class="dl">
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-03</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-03</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -290,8 +296,8 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
 （ 5 ） 交通基础设施数字化工业软件架构及核心技术标准体系, 负责人, 国家任务, 2021-12--2024-11
 （ 6 ） 全场景知识图谱项目, 负责人, 境内委托项目, 2021-04--2022-03
 （ 7 ） 智能化开发运维一体化关键技术研究, 负责人, 其他国际合作项目, 2021-01--2022-01
-（ 8 ）&nbspDocker镜像分析管理系统与知识图谱技术开发, 负责人, 境内委托项目, 2020-01--2021-12
-（ 9 ）&nbspIntelligent Management and Orchestration of Smart Home, 负责人, 境内委托项目, 2019-01--2020-01
+（ 8 ）&amp;nbspDocker镜像分析管理系统与知识图谱技术开发, 负责人, 境内委托项目, 2020-01--2021-12
+（ 9 ）&amp;nbspIntelligent Management and Orchestration of Smart Home, 负责人, 境内委托项目, 2019-01--2020-01
 （ 10 ） 跨界服务设计方法与关键技术, 负责人, 国家任务, 2017-12--2020-11
 （ 11 ） 面向软件开发运维一体化的运行演化智能支撑技术和环境, 参与, 国家任务, 2016-06--2019-06
 （ 12 ） 云应用迁移配置和在线运行管理关键技术研究, 参与, 国家任务, 2016-01--2019-12
@@ -347,7 +353,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>陈伟</td>
@@ -356,7 +362,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-03</td>
       <td><a href="https://is.cas.cn/yjsjy/dsxx/" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>email</td>
       <td>wchen@otcaix.iscas.ac.cn</td>
@@ -365,7 +371,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-02</td>
       <td><a href="https://people.ucas.ac.cn/~wchen" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -374,7 +380,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-03</td>
       <td><a href="https://is.cas.cn/yjsjy/dsxx/" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>subjects</td>
       <td>—</td>
@@ -383,7 +389,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-03</td>
       <td><a href="https://is.cas.cn/yjsjy/dsxx/" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>research_direction_raw</td>
       <td>083500-软件工程、智能软件工程、网络分布式计算、人机物融合泛在计算</td>
@@ -392,7 +398,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-02</td>
       <td><a href="https://people.ucas.ac.cn/~wchen" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>[中文]
@@ -411,7 +417,7 @@ WebRR: self-replay enhanced robust record/replay for web application testing, 2
       <td>2026-09-02</td>
       <td><a href="https://people.ucas.ac.cn/~wchen" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -423,6 +429,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -437,7 +446,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -446,7 +455,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

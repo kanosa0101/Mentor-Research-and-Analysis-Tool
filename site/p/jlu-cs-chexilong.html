@@ -82,13 +82,13 @@ a:hover{text-decoration:underline}
 </header>
 <div class="wrap">
 <div class="card">
-  
+
   <h2>车喜龙 <span class="tag tag-enriched">已富化</span></h2>
   <div style="color:var(--muted);font-size:13.5px">教授</div>
   <dl class="dl">
     <dt>研究所</dt><dd>官网未提供</dd>
     <dt>导师资格</dt><dd>硕导</dd>
-    
+
     <dt>研究方向</dt><dd>官网未提供</dd>
     <dt>邮箱</dt><dd>官网未提供</dd>
     <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
@@ -96,8 +96,9 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-05</span>
-    <span>最近核对：2026-09-06</span>
-    
+    <span>字段来源最晚抓取：2026-09-05</span>
+
+
   </div>
   <div style="clear:both"></div>
 </div>
@@ -119,6 +120,11 @@ a:hover{text-decoration:underline}
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
   <div id="ob-history"></div>
 </div>
 
@@ -189,9 +195,9 @@ IA32
 ”
 (4)
 国家自然科学基金面上项目
-"
+&#34;
 网格应用程序执行性能的实时监控和预报
-"
+&#34;
 (5)
 国家科技支撑计划项目
 “
@@ -199,17 +205,17 @@ IA32
 ”
 (6) 973
 计划项目
-"
+&#34;
 面向特定应用的典型业务仿真技术与网构试验床
-"
+&#34;
 (7) 863
 计划项目
-"CPS
+&#34;CPS
 系统体系结构、平台集成与实验床
-"
+&#34;
 (8)
 国土资源部重大专项子课题
-"
+&#34;
 移动平台地球物理数据处理与集成
 ”
 (9)
@@ -221,9 +227,9 @@ MONICA
 ”
 (10)
 吉林省国际合作项目
-"
+&#34;
 网格资源性能预测
-"
+&#34;
 (11)
 吉林省重大科技攻关项目
 “
@@ -236,9 +242,9 @@ MONICA
 ”
 (13)
 吉林省产业技术研究与开发专项
-"
+&#34;
 控制与转发分离的网络性能建模与高效控制关键技术研究与开发
-"
+&#34;
 (14)
 吉林大学青年教师创新项目
 ”
@@ -295,7 +301,7 @@ MONICA
 ,
 学生一作
 )
-[8] “Framework for replica placement over cooperative edge networks”.   Journal of Ambient Intelligence & Humanized Computing, pp.3011-3021, AUG   2019.SCI Index Number: IL9ZN/000477644300009. EI Index number:   20182805535849.DOI: 10.1007/s12652-018-0776-5. (SCI, CCF-C
+[8] “Framework for replica placement over cooperative edge networks”.   Journal of Ambient Intelligence &amp; Humanized Computing, pp.3011-3021, AUG   2019.SCI Index Number: IL9ZN/000477644300009. EI Index number:   20182805535849.DOI: 10.1007/s12652-018-0776-5. (SCI, CCF-C
 类
 ,
 责任作者
@@ -506,7 +512,7 @@ Top 50 download,
   <h3>字段出处 · PROVENANCE</h3>
   <table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
-    
+
     <tr>
       <td>name</td>
       <td>车喜龙</td>
@@ -515,7 +521,7 @@ Top 50 download,
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/szdw/zpzpjs.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>title</td>
       <td>教授</td>
@@ -524,7 +530,7 @@ Top 50 download,
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/19096.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>phone</td>
       <td>0431-85168716</td>
@@ -533,7 +539,7 @@ Top 50 download,
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/19096.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>bio_raw</td>
       <td>基本情况
@@ -553,7 +559,7 @@ Top 50 download,
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/19096.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
     <tr>
       <td>supervisor</td>
       <td>—</td>
@@ -562,7 +568,7 @@ Top 50 download,
       <td>2026-09-05</td>
       <td><a href="https://ccst.jlu.edu.cn/info/1367/19096.htm" target="_blank">原文 ↗</a></td>
     </tr>
-    
+
   </table>
 </div>
 </div>
@@ -574,6 +580,9 @@ const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;"
 function fill(e){
   $("ob-status").value = (e && e.status) || "";
   $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
   $("ob-remove").style.display = (e && e.status) ? "" : "none";
   $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
@@ -588,7 +597,7 @@ function fill(e){
     if(!r.ok) throw 0;
     const all = await fetch("/api/outreach").then(r=>r.json());
     fill(all[PID]);
-    ["ob-status","ob-notes","ob-save"].forEach(i => $(i).disabled = false);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
     $("ob-hint").style.display = "block";
     return;
@@ -597,7 +606,8 @@ function fill(e){
     $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
     setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
   $("ob-save").addEventListener("click", async ()=>{
-    const body = {notes: $("ob-notes").value};
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
     if($("ob-status").value) body.status = $("ob-status").value;
     try{
       const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",

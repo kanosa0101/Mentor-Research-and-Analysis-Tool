@@ -4,6 +4,27 @@
 
 需求与决策记录见 `REQUIREMENTS.md`（v0.6）；`ARCHITECTURE.md` 是架构文档（组成/数据流/数据模型/站点范式）；**现状、踩坑记录、下一步的权威文档是 `HANDOVER.md`**。
 
+## 2026-10-13 维护与工作流更新
+
+- 名单/辅助 API/浏览器降级继承 `--refresh`；缓存解析日期与来源抓取日期分开。页面不再用“全库核对至”表示单条最新日期。
+- 列表支持方向与简介全文搜索、方向未标注筛选、意向短名单和私人标签筛选。基础载荷共享，简介搜索按需加载，仍支持 `file://`。
+- 详情可填写下一步、计划日期与私人标签；看板显示到期事项，支持跟进 JSON 备份及恢复。恢复前校验并自动保存旧文件到 `data/backups/`，备份不包含学生画像、SOP 或信件，其他材料需另行备份。
+- 官方招生通知试验：清华/北大/上交三个当前栏目页，37 条候选；通知年份、入学年份与截止日期分开，待核验项明确显示未知。
+- AI 自动公开层目前只接受原文摘录；真实 API 质量未验收。mock 只写 `cache/ai/mock/`，`--dry` 不调用 API、不创建缓存、不落库。
+
+安装：`python -m pip install -r requirements.txt`；浏览器检查另运行 `python -m playwright install chromium`。图片邮箱 OCR 为可选依赖：`python -m pip install -r requirements-ocr.txt`。当前环境已验证 Python 3.14；其他环境应运行下列检查再使用。
+
+```powershell
+python -m unittest discover -s tests -v
+python scripts\preflight.py           # 有问题返回非零退出码
+python scripts\ui_check.py            # 自动启动临时服务，真实跟进文件不受影响
+python scripts\monitor_notices.py     # 通知栏目缓存优先
+python scripts\monitor_notices.py --refresh
+python scripts\build_site.py
+```
+
+部署或复制静态站时，必须同时包含 `data.js`、`search.js` 和 `compare-data.js`。服务默认只绑定本机并拒绝跨站私人写入。详见 `IMPLEMENTATION_PLAN.md` 和本轮交付记录 `DELIVERY_2026-10-13.md`。
+
 ## 当前规模
 
 **36 校 42 院系 5649 名导师**，逐字段 provenance（出处/抓取日期），方向 facet 13 类可筛选。全库覆盖率：邮箱 80%、职称 74%、简介 62%、博导硕导 53%。各院系人数与字段覆盖率见 `HANDOVER.md` §3，或本地打开站点直接看。
