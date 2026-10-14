@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>边松 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=buaa-cyber-biansong" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">北京航空航天大学 · 网络空间安全学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=buaa&amp;dept=cyber">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>边松 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>硕导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>sbian@buaa.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://cst.buaa.edu.cn/info/1112/2759.htm" target="_blank">https://cst.buaa.edu.cn/info/1112/2759.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">边松
+Dr. Song Bian, Associate Professor
+职
+称
+副教授
+学
+历
+博士
+电
+话
+办
+公
+室
+第一馆
+50
+9
+南
+系
+别
+网络空间安全学院
+职
+务
+电子信箱
+sbian@buaa.edu.cn
+传
+真
+个人主页
+https://sbian3.github.io/
+u
+学习经历
+§
+2011.09—
+2014
+.05
+美国威斯康辛大学麦迪逊分校学士
+§
+2015.04—201
+9
+.0
+5
+日本京都大学硕士、博士
+u
+工作经历
+§
+2019.06—2021.07
+日本京都大学助理教授
+§
+20
+21
+.0
+9
+—至今
+北京航空航天大学网络空间安全学院副教授
+u
+研究领域
+同态加密、应用密码学、密码软硬件协同设计
+u
+荣誉及奖励
+§
+20
+22
+年
+“金融密码杯”全国密码技术大赛二等奖
+§
+2022
+年中国密码学会密码测评学术会议最佳论文奖
+§
+2023
+年
+中国发明协会发明创业奖创新奖二等奖
+§
+2023
+年
+ACM CCS
+杰出论文奖
+u
+教学及科研成果
+主要研究成果：
+主要研究方向是同态加密、隐私保护计算与密码软硬件协同加速，于
+EUROC
+R
+YPT
+、
+IEEE S&amp;P
+、
+ACM
+CCS
+、
+NDSS
+、
+USENIX Security
+等多个领域的高水平会议及期刊发表论文四十余篇，获
+ACM CCS 2023
+杰出论文奖。主持国家重点研发计划青年科学家、国家自然基金委面上等项目，入选第九届中国科协青年人才托举工程；指导学生参加“金融密码杯”全国密码应用和技术创新大赛，获创新赛道二等奖、优秀领队奖，指导学生参加全国大学生信息安全竞赛获得一等奖，指导学生
+2
+人获北京市优秀毕业生、
+5
+人获校级优秀毕业生、
+5
+人获校级三好学生、
+4
+人获校级学业一等奖学金，协助指导
+1
+名学生获批国家自然科学基金青年学生基础研究项目；担任多个跨领域的国际会议与期刊的程序委员与审稿人
+,
+包括
+ACM CCS
+、
+CVPR
+及
+IEEE TIFS
+等。
+代表性成果：
+1.
+Song Bian
+, Yintai Sun, Zian Zhao, Haowen Pan, Mingzhe Zhang, Zhenyu Guan, Libra: Pattern-Scheduling Co-Optimization for Cross-Scheme FHE Code Generation over GPGPU, USENIX Security Symposium, August 2026.
+2.
+Song Bian
+, Yunhao Fu, Ruiyu Shen, Haowen Pan, Anyu Wang, Zhenyu Guan, High-Precision Functional Bootstrapping for CKKS from Fourier Extension, EUROCRYPT, May 2026.
+3.
+Ran Mao, Zhou Zhang, Zian Zhao, Zhenyu Guan, Peng Yin,
+Song Bian
+,
+SALUS: Large-Scale Homomorphic Circuit Synthesis via Logic-Aware LUT Optimization
+,
+IEEE Transactions on Information Forensics and Security
+(TIFS), January, 2026.
+4.
+Song Bian
+, Haowen Pan, Jiaqi Hu, Zhou Zhang, Yunhao Fu, Jiafeng Hua, Yi Chen, Bo Zhang, Yier Jin, Jin Dong, and Zhenyu Guan, Engorgio: An Arbitrary-Precision Unbounded-Size Hybrid Encrypted Database via Quantized Fully Homomorphic Encryption, USENIX Security Symposium, August 2025.
+5
+.
+Song Bian
+, Zian Zhao, Ruiyu Shen, Zhou Zhang, Ran Mao, Dawei Li, Yizhong Liu, Masaki Waga, Kohei Suenaga, Zhenyu Guan, Jiafeng Hua, Yier Jin, and Jianwei Liu, CHLOE: Loop Transformation over Fully Homomorphic Encryption via Multi-Level Vectorization and Control-Path Reduction, IEEE Symposium on Security and Privacy (S&amp;P), May 2025.
+6
+.
+Song Bian
+, Yunhao Fu, Dong Zhao, Haowen Pan, Yuexiang Jin, Jiayue Sun, Hui Qiao, Zhenyu Guan, FHECAP: An Encrypted Control System With Piecewise Continuous Actuation, IEEE Transactions on Information Forensics and Security (TIFS), April 2025.
+7.
+Z
+henyu
+Guan, Y
+ongqing
+Zhu, L
+uchang
+Lei, H
+ongyang
+Jia, Y
+i
+Chen, B
+o
+Zhang, C
+hangrui
+Ren, J
+in
+Dong
+,
+Song Bian
+,
+MCHEAS: Optimizing Large-Parameter NTT Over Multicluster In-Situ FHE Accelerating System
+,
+IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems
+(TCAD), March 2025.
+8
+. Zhou Zhang,
+Song Bian
+, Zian Zhao, Ran Mao, Haoyi Zhou, Jiafeng Hua, Yier Jin, and Zhenyu Guan, ArcEDB: An Arbitrary-Precision Encrypted Database via (Amortized) Modular Homomorphic Encryption, ACM Conference on Computer and Communications Security (CCS), October 2024.
+9
+.
+Song Bian
+, Zian Zhao, Zhou Zhang, Ran Mao, Kohei Suenaga, Yier Jin, Zhenyu Guan, and Jianwei Liu, HEIR: A Unified Representation for Cross-Scheme Compilation of Fully Homomorphic Computation, Network and Distributed System Security Symposium (NDSS), February 2024.
+10
+.
+Song Bian
+, Zhou Zhang, Haowen Pan, Ran Mao, Zian Zhao, Yier Jin, and Zhenyu Guan, HE3DB: An Efficient and Elastic Encrypted Database Via Arithmetic-And-Logic Fully Homomorphic Encryption, ACM Conference on Computer and Communications Security (CCS), November 2023 (Distinguished Paper Award).
+其他发表论文：见
+https://sbian3.github.io/
+研究团队长期招收密码学、信息安全、计算机体系结构及人工智能安全方向博士、硕士研究生，欢迎本科同学加入团队实习交流。
+u
+学术与社会服务
+§
+CCF
+容错计算专委常务委员
+§
+第二届中国计算机学会芯片大会论坛主席
+§
+CCS/CVPR/
+AAAI
+程序委员会委员
+§
+TIFS/TDSC/TCAD/Journal of Cryptology
+审稿人</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>边松</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/szll/sdjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/szll/sdjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1112/2759.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>sbian@buaa.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1112/2759.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>phone</td>
+      <td>无办公室第一馆509南系别网络空间安全学院职务电子信箱sbian@buaa.edu.cn传真</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1112/2759.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>边松
+Dr. Song Bian, Associate...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1112/2759.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "buaa-cyber-biansong";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

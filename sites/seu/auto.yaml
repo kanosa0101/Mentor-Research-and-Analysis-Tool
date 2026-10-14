@@ -1,0 +1,13 @@
+school: seu
+dept: auto
+dept_name: 自动化学院
+base_url: https://automation.seu.edu.cn
+hook: related_roster
+direct: true
+roster_pending: 官方教师列表为动态接口，本轮请求返回553；未采集名单，不代表没有导师。
+list:
+  urls: [https://automation.seu.edu.cn/32668/list.htm]
+  card_selector: .cols_teacher li
+  name_selector: .name
+  link_selector: a[href]
+  person_href: '/[^/]+/'

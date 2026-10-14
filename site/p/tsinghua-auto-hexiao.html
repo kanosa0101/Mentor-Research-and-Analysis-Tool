@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>何潇 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-hexiao" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>何潇 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1077/3189.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1077/3189.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+2000年09月至2004年06月 北京理工大学电子工程系学习，获学士学位
+2004年09月至2010年01月 清华大学自动化系学习，获博士学位
+工作履历
+2010年01月至2011年11月 清华大学信息技术研究院 博士后
+2011年11月至2014年12月 清华大学自动化系 讲师
+2014年12月至2018年06月 清华大学自动化系 副研究员、教研系列准聘副教授
+2018年06月至2021年12月 清华大学自动化系 长聘副教授
+2021年12月至今        清华大学自动化系 长聘教授
+期间：
+2011年02月至2011年04月 香港大学机械工程系 助理研究员
+2015年11月至2020年02月 清华大学自动化系 主任助理、系研工组长
+2018年05月至2019年05月 清华大学党委研工部 副部长
+2019年12月至2023年05月 清华大学自动化系 副主任
+2023年02月至2024年02月 贵州省工业和信息化厅 党组成员
+2025年11月至今 清华大学具身智能与机器人研究院 副院长
+2026年6月至今 清华大学自动化系 副主任
+学术兼职
+[1] 北京自动化学会, 常务理事 (2020-2026), 监事长 (2026-)
+[2] 中国自动化学会, 理事、副秘书长 (2025-)
+[3] 中国指挥与控制学会具身智能专委会, 副主任 (2025-)
+[4] 中国自动化学会过程控制专业委员会, 常委 (2016-2024)、副主任 (2024-)
+[5] 中国指挥与控制学会智能控制与系统专业委员会, 副主任 (2022-2025)
+[6] IEEE, Senior Member (2020-）
+[7] 清华大学学科专业建设咨询专家 (2020-2021)
+[8] IFAC TC6.4: SAFEPROCESS, 委员 (2018-2021)
+[9] 中国自动化学会技术过程的故障诊断与安全性专业委员会, 秘书长 (2018-)、副主任 (2024-)
+[10] 中国仪器仪表学会物联网工作委员会, 常务理事 (2017-)
+[11] 中国指挥与控制学会云控制与决策专业委员会, 副主任 (2017-)
+[12] Sigma Xi, The Scientific Research Society, Full Member (2013-)
+[13] IEEE Transactions on Automation Science and Engineering, Associate Editor (2024-)
+[14] IEEE Transactions on Neural Networks and Learning Systems, Associate Editor (2024-)
+[15] Journal of Process Control, 客座编辑 (2023)
+[16] 中国科学·信息科学, 客座编辑 (2019)
+[17] Control Engineering Practice, 编委 (2018-)
+[18] Journal of Advanced Computational Intelligence and Intelligent Informatics, 编委 (2018-)
+[19] 控制工程, 编委 (2017-)
+[20] International Journal of Applied Mathematics and Computer Science, 编委 (2016-)
+[21] Systems Science &amp; Control Engineering, 编委 (2012-)
+[22] Journal of The Franklin Institute, 编委 (2013-2017)
+[23] Abstract and Applied Analysis, 客座编辑 (2014-2015)
+[24] Journal of Control Science and Engineering, 编委 (2014-)
+[25] Mathematical Problems in Engineering, 客座编辑 (2013-2014)
+[26] Journal of Engineering, 编委 (2012-)
+研究领域
+[1] 机器人的群智能自主控制
+主要包括旋翼无人机群通信约束下的故障诊断；旋翼无人机群的容错编队；多仿人机器人的协作控制等
+[2] 高速列车信息控制系统的故障诊断
+主要包括面向间歇故障的诊断；闭环系统的鲁棒故障诊断；数据驱动的故障诊断技术等
+[3] 深海载人潜水器的容错控制与自救
+主要包括动态系统的主动故障诊断；微小故障的诊断与识别；人在回路复杂系统的安全性评估等
+研究概况
+[1] 国家自然科学基金青A项目(62525308): 复杂工程系统故障诊断、容错控制与安全性评估, 项目负责人, 2026-2030.
+[2] 国家自然科学基金面上项目(62473223): 协作系统的分布式容错控制, 项目负责人, 2025-2028.
+[3] 北京市自然科学基金联合重点项目(L241016): 面向化工园区的无人机自主救援关键技术研究, 项目负责人, 2024-2027.
+[4] 横向课题(2024QH):基于视频的健康指标判断, 项目负责人, 2024.
+[5] 横向课题(20222001422): 基于多源异构数据相融合的风电机组智能巡检和状态检修平台研究与应用, 项目负责人, 2022-2025.
+[6] 横向课题(20212002255): 轨道交通设备系统故障诊断架构体系标准，项目负责人，2022.
+[7] 工业和信息化部工业互联网平台边缘设备接入管理项目(TC2008031): 基于工业互联网平台的边云协同系统研发与应用, 合作者, 2020-2022.
+[8] 教育部联合基金一般项目(6141A02022380): 无人机综合智能自主定位导航编队及回收控制技术, 项目负责人, 2019-2021
+[9] 国家重点研发计划课题(2017YFA0700302):多能流扰动识别与特征提取, 合作者，2018-2023.
+[10] 国家自然科学基金重点项目(61733009): 深海载人潜水器的精细容错控制与自救技术, 项目负责人, 2018-2022
+[11] 广东省科技创新战略专项资金重点项目: 石化装备闭环非线性系统故障诊断基础研究, 主要合作者, 2018
+[12] 工业和信息化部“智能船舶10研发专项——智能系统总体技术及信息平台开发”子课题, 清华大学负责人, 2017-2019
+[13] 国家自然科学基金优秀青年科学基金项目(61522309): 故障诊断与容错控制, 项目负责人, 2016-2018
+[14] 国家自然科学基金重大项目课题(61490701): 高速列车信息控制系统间歇故障实时诊断理论与方法, 主要参与者, 2015-2019
+[15] 国家自然科学基金面上项目(61473163): 群体自主机器人系统的故障诊断与容错控制, 项目负责人, 2015-2018
+[16] 国家自然科学基金重大项目课题(61290324): 大型高炉非正常工况诊断与安全运行方法及实现技术, 主要参与者, 2013-2017
+[17] 国家自然科学基金重大国际合作项目(61210012): 旋翼无人机群安全编队飞行中的若干关键理论问题研究, 主要参与者, 2013-2017
+[18] 国家自然科学基金面上项目(61074084): 一类非线性网络化系统的鲁棒主动容错控制方法研究, 项目负责人, 2011-2013
+[19] 中国博士后科学基金特别资助项目(201104108): 基于无线网络的故障诊断技术及其硬件实现, 独立承担者, 2011-2012
+[20] 中国博士后科学基金面上项目(20100470294): 随机网络化系统的鲁棒故障检测, 独立承担者, 2010-2012
+[21] Sigma Xi基金会研究资助项目(G2009151295): Fault Detection and Fault-tolerant Control for Networked Systems, 独立承担者, 2010
+奖励与荣誉
+[1] 2023年北京市自然科学二等奖（1/7）
+[2] 2023年中国职业安全健康协会科学技术一等奖（2/15）
+[3] 2022年浙江省科学技术进步一等奖（4/13）
+[4] 2022年山东省自然科学二等奖（2/5）
+[5] 2022年中国自动化学会技术发明一等奖（2/6）
+[6] 2022年中国过程控制会议张钟俊院士优秀论文奖（通讯作者）
+[7] 2022年中国自动化学会优秀博士学位论文导师奖
+[8] 2022年第三届中国城市轨道交通科技创新创业大赛杰出奖（指导教师）
+[9] 2021年广东省科技进步一等奖(8/15)
+[10] 2021年中国自动化学会青年科学家奖
+[11] 2021年CAA SAFEPROCESS方崇智优秀论文奖一等奖（通讯作者）
+[12] 2020年中国自动化学会自然科学一等奖（2/5）
+[13] 2020年清华大学先进工作者
+[14] 2020年中国自动化学会优秀学会工作者
+[15] 2019年麒麟科学技术奖（首都优秀科技创新奖）(1/15)
+[16] 2019年清华大学优秀党建与思想政治工作者
+[17] 2018年清华大学优秀招生教师
+[18] 2018年中国自动化学会优秀博士学位论文导师奖
+[19] 2018年吉林省科技进步一等奖(3/15)
+[20] 2017年中国石油和化工自动化应用协会科技进步一等奖(7/15)
+[21] 2017年清华大学优秀博士学位论文指导教师
+[22] 2016年度清华大学优秀国防生导师
+[23] 2016年度中国自动化学会高等教育教学成果奖二等奖(5/5)
+[24] 2015年中国自动化学会自然科学一等奖(2/4)
+[25] 2015年Systems Science &amp; Control Engineering杰出审稿人
+[26] 2012年IFAC SAFEPROCESS Frank最佳理论论文提名奖(1/4)
+[27] 2011年中国自动化学会自然科学一等奖(4/5)
+[28] 2010年IEEE Transactions on Automatic Control杰出审稿人
+学术成果
+专著
+[1] Qinyuan Liu, Zidong Wang, Xiao He, Stochastic Control and Filtering over Constrained Communication Networks, Springer, 2019 (ISBN 978-3-030-00156-8)
+期刊论文
+[1] Jiahao Song, Zidong Wang, Qinyuan Liu, Xiao He*, Remote state estimation for complex networks under probabilistic bit flips: A transmission power allocation scheme, IEEE Transactions on Automatic Control (Full Paper), online, 2025, DOI: 10.1109/TAC.2024.3525267.
+[2] Pengyu Han, Zeyi Liu, Xiao He*, Steven X Ding, Donghua Zhou, Multi-condition fault diagnosis of dynamic systems: A survey, insights, and prospects, IEEE Transactions on Automation Science and Engineering, accepted.
+[3] Jiao Li, Xiao He*, Fault detection of switched systems based on extended dissipativity with hybrid supply rate, IEEE Transactions on Instrumentation &amp; Measurement, accepted.
+[4] Zeyi Liu, Xiao He*, Contrastive preference-guided active learning approach based on ranking correlation for chunk-level real-time safety assessment, IEEE Transactions on Automation Science and Technology, online, DOI: 10.1109/TASE.2024.3401470.
+[5] Zhao Zhang, Xiao He*, Donghua Zhou, Active fault diagnosis for LPV systems based on constrained zonotopes, IEEE Transactions on Automatic Control, online, 2024. DOI: 10.1109/TAC.2024.3401271.
+[6] Chang Liu, Xiao He*, Minyue Li, Yi Zhang, Zhongjun Ding, Active labeling aided semi-supervised safety assessment with task-related unknown scenarios, IEEE Transactions on Reliability, vol. 73, no. 4, pp. 1792-1804, 2024. DOI: 10.1109/TR.2024.3376601.
+[7] Miao Cai, Xiao He, Donghua Zhou*. Finite-time fault-tolerant control via fully actuated system approaches. IEEE Transactions on Cybernetics, 2024, online, DOI: 10.1109/TCYB.2024.3378208.
+[8] Xiao He, Fanlin Jia*, Active fault-tolerant control for nonlinear systems with nonlogarithmic sensor resolution, IEEE Transactions on Instrumentation and Measurement, vol. 73, ASN: 3503711, 2023.
+[9] Chang Liu, Xiao He*, Donghua Zhou, Biao Huang, Safety assessment for dynamic systems: A survey, Cybernetics and Intelligence, online, pp. 1-13, 2023, DOI: 10.26599/CAI.2024.9390001.
+[10] Jingfei Zhang, Yean Cheng, Xiao He*, Fault diagnosis of energy networks based on improved spatial-temporal graph neural network with massive missing data, IEEE Transactions on Automation Science and Engineering, online, DOI: 10.1109/TASE.2023.3281394, 230427.
+[11] Fanlin Jia, Fangfei Cao, Xiao He*, Active Fault-Tolerant Control Against Intermittent Faults for State-Constrained Nonlinear Systems, IEEE Transactions on Systems, Man, and Cybernetics: Systems, online, DOI: 10.1109/TSMC.2023.3344292.
+[12] Fang Liao, Yanzheng Zhu*, Xiao He, Donghua Zhou, Fault estimation of continuous-time switched affine systems with actuator faults under dwell time constraint, International Journal of Robust and Nonlinear Control, online, DOI: 10.1002/rnc.7040.
+[13] Fanlin Jia, Jie Huang, Xiao He*, Predefined-time fault-tolerant control for a class of nonlinear systems with actuator faults and unknown mismatched disturbances, IEEE Transactions on Automation Science and Engineering, online, DOI:10.1109/TASE.2023.3286663.
+[14] Fanlin Jia, Xiao He*, Adaptive fault-tolerant tracking control for discrete-time nonstrict-feedback nonlinear systems with stochastic noises, IEEE Transactions on Automation Science and Engineering, vol. 21, no. 3, pp. 3344-3356, 2024. DOI: 10.1109/TASE.2023.3278978.
+[15] Jingfei Zhang, Xiao He*, A partial-label U-Net learning method for compound-fault diagnosis with fault-sample class imbalance, IEEE Transactions on Industrial Informatics, vol. 20, no. 2, pp. 1798-1807, 2024. DOI: 10.1109/TII.2023.3281660.
+[16] Jiahao Song, Xiao He*, Estimation of periodically occurring faults for dynamic systems with timing misalignment between faults and observations, IEEE Transactions on Industrial Electronics, online, DOI: 10.1109/TIE.2023.3269485.
+[17] Ming Xu, Tuo Shi, Hao Zhang, Zeyi Liu, Xiao He*, A hierarchical cross-modal spatial fusion network for multimodal emotion recognition, IEEE Transactions on Artificial Intelligence, vol. 6, iss. 5, pp. 1429-1438, 2025. DOI: 10.1109/TAI.2024.3523250.
+[18] Songqiao Hu, Zeyi Liu, Minyue Li, Xiao He*, CADM+: Confusion-based learning framework with drift detection and adaptation for real-time safety assessment, IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 3, pp. 5126-5139, 2025.
+[19] Chang Liu, Xiao He*, Adversarial weighted active domain adaptation for safety assessment in open environments, IEEE Transactions on Industrial Informatics, vol. 21, no. 3, pp. 2501-2509, 2025.
+[20] Xiao He*, Zeyi Liu, Songqiao Hu, Chang Liu, Donghua Zhou. Real-time safety assessment techniques of dynamic systems. Acta Automatica Sinica, vol. 51, no. 2, pp. 249-270, 2025.
+[21] Zeyi Liu, Xiao He*, Dynamic submodular-based learning strategy in imbalanced drifting streams for real-time safety assessment in nonstationary environments, IEEE Transactions on Neural Networks and Learning Systems, vol. 35, no. 3, pp. 3038-3051, 2024. DOI: 10.1109/TNNLS.2023.3294788.
+[22] Zeyi Liu, Xiao He*, Online dynamic hybrid broad learning system for real-time safety assessment of dynamic systems, IEEE Transactions on Knowledge and Data Engineering, vol. 36, no. 12, pp. 8928-8938, Dec. 2024.
+[23] Zeyi Liu, Chen Li, Xiao He*, Evidential ensemble preference-guided learning approach for real-time multi-mode fault diagnosis, IEEE Transactions on Industrial Informatics, vol. 20, no. 4, pp. 5495-5504, 2024.
+[24] Xiao He, Zeyi Liu*, Dynamic model interpretation-guided online active learning scheme for real-time safety assessment, special issue on &#39;&#39;Industrial Metaverse for Smart Manufacturing&#39;&#39; in IEEE Transactions on Cybernetics, vol. 54, no. 5, pp. 2734-2745, 2024. DOI: 10.1109/TCYB.2023.3339242.-
+[25] Zhao Zhang, Xiao He*, Donghua Zhou, Active fault diagnosis for uncertain LPV systems: A zonotopic set-membership approach, IEEE Transactions on Automation Science and Engineering, vol. 21, no. 4, pp. 5110-5120, 2024.
+[26] Zeyi Liu, Jingfei Zhang, Xiao He*, A discrimination-guided active learning method based on marginal representations for industrial compound fault diagnosis, IEEE Transactions on Automation Science and Engineering, vol. 21, no. 4, pp. 6411-6422, 2024. DOI:10.1109/TASE.2023.3325271.
+[27] Fanlin Jia, Xiao He*, Active fault-tolerant control with adaptive estimation error compensation for nonlinear systems: Achieving asymptotic tracking, IEEE Transactions on Industrial Informatics, vol. 20, no. 4, pp. 6612-6621, 2024.
+[28] Chang Liu, Xiao He*, Limin Wang, Active domain adaptation for safety assessment based on improved energy model. Acta Automatica Sinica, vol. 50, no. 10, pp. 1928-1937, 2024. (In Chinese)
+[29] Chen Gao, Zidong Wang, Lifeng Ma, Hongjian Liu, Xiao He*, Private synchronization control of complex networks against eavesdropping attacks: A differential privacy scheme, IEEE Transactions on Network Science and Engineering, vol. 11, no. 3, pp. 3028-3038, 2024.
+[30] Chen Gao, Zidong Wang, Xiao He*, Yang Liu, Dong Yue, Differentially private consensus control for discrete-time multiagent systems: Encoding-decoding schemes, IEEE Transactions on Automatic Control, vol. 69, no. 8, pp. 5554-5561, 2024.
+[31] Fangfei Cao, Xiao He*, Online active fault detection for over-actuated systems with prescribed control performance, IEEE Transactions on Automation Science and Engineering, vol. 21, no. 1, pp. 4-14, 2024.
+[32] Miao Cai, Xiao He, Donghua Zhou*, Self-healing fault-tolerant control for high-order fully actuated systems against sensor faults: A redundancy framework, IEEE Transactions on Cybernetics, vo. 54, no. 4, pp. 2628-2640, 2024.
+[33] Miao Cai, Xiao He, Donghua Zhou*, Low-power fault tolerant control for nonideal high-order fully-actuated systems, IEEE Transactions on Systems, Man and Cybernetics: Systems, vol. 53, no. 8, pp. 3854-3864, 2024.
+[34] Miao Cai, Xiao He, Donghua Zhou, Unknown nonaffine high-order fully actuated systems: Trajectory tracking and fault tolerance, IEEE Transactions on Systems, Man and Cybernetics: Systems, vol. 54, no. 6, pp. 3854-3864, 2024.
+[35] Jingfei Zhang, Xiao He*, Compound-fault diagnosis of integrated energy systems based on graph embedded recurrent neural networks, IEEE Transactions on Industrial Informatics, vol. 20, no. 3, pp. 3478-3486, 2024.
+[36] Yaqi Guo, Qinyuan Liu, Xiao He*, Active fault diagnosis for stochastic systems subject to non-convex input constraints, Automatica, vol. 64, 111631, 2024.
+[37] Fangfei Cao, Fanlin Jia, Xiao He*, Input design for active fault detection: Reconciling system control objectives, IEEE Transactions on Cybernetics, vol. 54, no. 7, pp. 3931-3942, 2024.
+[38] Fangfei Cao, Fanlin Jia, Xiao He*, Sensor fault detection and diagnosis of linear parabolic PDE systems with unknown inputs, IEEE Transactions on Automatic Control, vol. 69, no. 2, pp. 1014-1021, 2024.
+[39] Xiao He*, Chen Li, Zeyi Liu, A real-time adaptive fault diagnosis scheme for dynamic systems with performance degradation, IEEE Transactions on Reliability, vol. 73, no. 2, pp. 1231-1244, 2024.
+[40] Xu Chen, Xiao He*, Joe S. Qin*, Bidirectional dynamic latent variable analysis for closed-loop process monitoring, IEEE Transactions on Industrial Electronics, vol, 71, no. 8, pp. 9823-9833, 2024.
+[41] Yaqi Guo, Xiao He*, Active diagnosis of incipient actuator faults for stochastic systems, IEEE Transactions on Industrial Electronics, vol. 71, no. 1, pp. 996-1005, 2024, DOI: 10.1109/TIE.2023.3247778.
+[42] Miao Cai, Xiao He, Donghua Zhou*, Fault-tolerant tracking control for nonlinear observer extended high-order fully-actuated systems, Journal of the Franklin Institute, vol. 360, no. 1, pp. 136-153, 2023.
+[43] Zeyi Liu, Yi Zhang, Zhongjun Ding, Xiao He*, An online active broad learning approach for real-time safety assessment of dynamic systems in nonstationary environments, IEEE Transactions on Neural Networks and Learning Systems, vol.34, no. 10, pp. 6714-6724, 2023.
+[44] Yubo Shao, Xiao He*, Bangcheng Zhang*, Chao Cheng, Xiaopeng Xi, ES-DLSSVM-based prognostics of rolling element bearings, IEEE Transactions on Reliability, vol. 73, no. 1, pp. 317-327, 2023.
+[45] Fangfei Cao, Chang Liu, Xiao He*, Fault-compensation-based boundary control for hyperbolic PDEs: An adaptive iterative learning scheme, Journal of the Franklin Institute, vol. 360, no. 94, pp: 11271- 11294, 2023.
+[46] Fanlin Jia, Xiao He*, Fault-tolerant control for uncertain nonstrict-feedback stochastic nonlinear systems with output constraints, IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 53, no. 8, pp. 5212-5223, 2023.
+[47] Yaqi Guo, Xiao He*, Active fault diagnosis for stochastic systems within Bayesian minimum risk decision framework, IEEE Transactions on Industrial Informatics, vol. 19, no. 10, pp. 10647-10658, 2023.
+[48] Yaqi Guo, Qinyuan Liu, Zidong Wang, Zhao Zhang, Xiao He*, Active fault diagnosis for linear stochastic systems subject to chance constraints (Regular paper), Automatica, vol. 156, no. 111194, 2023.
+[49] Yujiang Zhong, Guangran Lyu, Xiao He*, Youmin Zhang, Shuzhi Sam Ge, Distributed active fault-tolerant cooperative control for multiagent systems with communication delays and external disturbances, IEEE Transactions on Cybernetics, vol. 53, no. 7, pp. 4642-4652, 2023.
+[50] Fanlin Jia, Fangfei Cao, Guangran Lyu, Xiao He*, A novel framework of cooperative design: Bringing active fault diagnosis into fault-tolerant control, IEEE Transactions on Cybernetics, vol. 53, no. 5, pp. 3301-3310, 2023.
+[51] Yujiang Zhong, Youmin Zhang, Shuzhi Sam Ge, Xiao He*, Robust distributed sensor fault detection and diagnosis within formation control of multiagent systems, IEEE Transactions on Aerospace and Electronic Systems, vol. 59, no. 2, pp. 1340-1353, 2023.
+[52] Zeyi Liu, Jingfei Zhang, Xiao He*, Qinghua Zhang, Guoxi Sun, Donghua Zhou, Fault diagnosis of rotating machinery with limited expert interaction: A multi-criteria active learning approach based on broad learning system, IEEE Transactions on Control Systems Technology, vol. 31, no. 2, pp. 953-960, 2023.
+[53] Zhao Zhang, Xiao He*, Fault detectability analysis for linear systems within a set-based framework, Journal of the Franklin Institute, vol. 360, no. 4, pp. 3389-3406, 2023.
+[54] Chang Liu, Yi Zhang, Zhongjun Ding, Xiao He*, Active incremental learning for health state assessment of dynamic systems with unknown scenarios, IEEE Transactions on Industrial Informatics, vol. 19, no. 2, pp. 1863-1873, 2023.
+[55] Zhao Zhang, Yaqi Guo, Xiao He*, Active fault diagnosis for LPV systems: An index-based approach, IEEE Transactions on Instrumentation and Measurement, vol. 72, ASN: 3503708, 2023.
+[56] Qinyuan Liu, Zidong Wang*, Xiao He, Changjun Jiang, An approximate minimum mean-square error estimator for linear discrete time-varying systems: Handling try-once-discard protocol, Automatica, vol. 147, no. 110656, 9 pages, 2023.
+[57] Zhao Zhang, Xiao He*, Fault detection and isolation for linear parameter-varying systems with time-delays: A geometric approach, SCIENCE CHINA Information Sciences, vol. 66, no. 172202, 15 pages, 2023.
+[58] Ming Xu, Guang Zeng, Yongjun Song, Yue Cao, Zeyi Liu, Xiao He*, Ivrr-PPG: An illumination variation robust remote-PPG algorithm for monitoring heart rate of drivers, IEEE Transactions on Instrumentation and Measurement, vol. 72, no. 3515510, 10 pages, 2023.
+[59] Jiahao Song, Xiao He*, Robust state estimation and fault detection for autonomous underwater vehicles considering hydrodynamic effects, Control Engineering Practice, vol. 135, no. 105497, 10 pages, 2023.
+[60] Zeyi Liu, Xiao He*, Real-time safety assessment for dynamic systems with limited memory and annotations, IEEE Transactions on Intelligent Transportation Systems, vol. 24, no. 9, pp. 10076-10086, 2023.
+[61] Wenjin Wang, Tao Wen*, Xiao He*, Guohua Xu, Path following with prescribed performance for under-actuated autonomous underwater vehicles subjects to unknown actuator dead-zone, IEEE Transactions on Intelligent Transportation Systems, vol. 24, no. 6, pp. 6257-6267, 2023.
+[62] Miao Cai, Xiao He, Donghua Zhou*, An active fault tolerance framework for uncertain nonlinear high-order fully-actuated systems, Automatica(Regular Paper), vol. 152, no. 110969, 2023.
+[63] Wen Yang, Yulian Jiang, Xiao He, Yanzheng Zhu, Shenquan Wang*, Feasibility conditions-free prescribed performance decentralized fault-tolerant neural control of constrained large-scale systems, IEEE Transactions on Systems, Man and Cybernetics: Systems, vol. 53, no. 3, pp. 3152-3164, 2023.
+[64] Xiao He, Zidong Wang, Chen Gao*, Donghua Zhou, Consensus control for multi-agent systems with asymmetric actuator saturations with applications to mobile train lifting jack systems, IEEE Transactions on Industrial Informatics, vol. 19, no. 10, pp. 10224-10232, 2023.
+[65] Fanlin Jia, Fangfei Cao, Xiao He*, Adaptive fault-tolerant tracking control for uncertain nonlinear systems with unknown control directions and limited resolution, IEEE Transactions on Systems, Man and Cybernetics: Systems, vol. 53, no. 3, pp. 1813-1825, 2023.
+[66] Fanlin Jia, Jie Huang, Xiao He*, Adaptive predefined-time tracking control for high-order strict-feedback nonlinear systems with unknown mismatched disturbances, lnternational Journal of Adaptive Control and Signal Processing, vol. 36, no. 11, pp. 2903-2919, 2022.
+[67] Jingfei Zhang, Yean Cheng, Xiao He*, Fault diagnosis of energy networks: A graph embedding learning approach, IEEE Transactions on Instrumentation and Measurement, vol. 71, ASN: 3528611, 2022.
+[68] Chen Gao, Zidong Wang, Jun Hu, Yang Liu, Xiao He*, Consensus-based distributed state estimation over sensor networks with encoding-decoding scheme: Accommodating bandwidth constraints, IEEE Transactions on Network Science and Engineering, vol. 9, no. 6, pp. 4051-4064, 2022.
+[69] Miao Cai, Xiao He, Donghua Zhou*, Performance-improved finite-time fault-tolerant control for linear uncertain systems with intermittent faults: an overshoot suppression strategy, International Journal of Systems Science, vol. 53, no. 15, pp. 3408-3425, 2022.
+[70] Chen Gao, Xiao He*, Hongli Dong, Hongjian Liu, Guangran Lyu, A survey on fault-tolerant consensus control of multi-agent systems: Trends, methodologies and prospects, International Journal of Systems Science, vol. 53, no. 13, pp. 2800-2813, 2022.
+[71] Jie Huang, Chen Gao, Xiao He*, Privacy-preserving state estimation with unreliable channels, ISA Transactions, vol. 127, pp. 4-12, 2022.
+[72] Yamei Ju, Derui Ding*, Xiao He, Qinglong Han, Guoliang Wei, Consensus control of multi-agent systems using fault-estimation-in-the-loop: Dynamic event-triggered case, IEEE/CAA Journal of Automatica Sinica, vol. 9, no. 8, pp. 1440–1451, Aug. 2022.
+[73] Yujiang Zhong, Guangran Lyu, Xiao He*, Youmin Zhang, Shuzhi Sam Ge, Distributed active fault-tolerant cooperative control for multiagent systems with communication delays and external disturbances, IEEE Transactions on Cybernetics, vol. 71, ASN. 3505009, 2022.
+[74] Chen Gao, Zidong Wang, Xiao He*, Qinglong Han, On consensus of second-order multiagent systems with actuator saturations: a generalized-Nyquist-criterion-based approach, IEEE Transactions on Cybernetics, vol. 52, no. 9, pp. 9048-9058, 2022.
+[75] Jiahao Song, Huafeng Li, Xiao He*, A high-precision distributed micro-displacement monitoring system: System design and data processing algorithms, IEEE Transactions on Instrumentation and Measurement, vol. 71, ASN: 3513509, 2022.
+[76] Zhao Zhang, Xiao He*, Active fault diagnosis for linear systems: Within a signal processing framework, IEEE Transactions on Instrumentation and Measurement, vol. 71, no. 3505009, DOI: 10.1109/TIM.2022.3150889, 2022.
+[77] Fangfei Cao, Zhao Zhang, Xiao He*, Active fault isolation of over-actuated systems based on a control allocation approach, IEEE Transactions on Instrumentation and Measurement, vol. 71, ASN: 3513410, 2022. DOI: 10.1109/TIM.2022.3173612.
+[78] Chen Gao, Zidong Wang, Xiao He*, Hongli Dong, Fault-tolerant consensus control for multiagent systems: An encryption-decryption scheme, IEEE Transactions on Automatic Control, vol. 67, no. 5, pp. 2560-2567,2022.
+[79] Ye Zhao, Xiao He*, Lifeng Ma, Hongjian Liu, Estimator-based iterative deviation-free residual generator for fault detection under random access protocol, Neurocomputing, vol. 493, no. 7, pp. 583-591, 2022.
+[80] Junxing Che, Yanzheng Zhu, Donghua Zhou, Xiao He, Active fault tolerant control design using switching LPV controllers with inexact fault-effect parameters, International Journal of Robust and Nonlinear Control, vol. 32, no. 7, pp. 4477-4494, 2022.
+[81] Jiahao Song, Xiao He*, Model-based fault diagnosis of networked systems: A survey, Asian Journal of Control, vol. 24, no. 2, pp. 526-536, 2022. This paper has been ranked the 3rd of Top 20 most highly-downloaded papers published in 2021&amp;2022.
+[82] Fanlin Jia, Fangfei Cao, Yaqi Guo, Xiao He*, Active fault diagnosis for a class of closed-loop systems via parameter estimation, Journal of The Franklin Institute, vol. 359, no. 8, pp. 3979-3999, 2022.
+[83] Yinghong Zhao, Xiao He, Donghua Zhou, Michael G. Pecht, Detection and isolation of wheelset intermittent over-creeps for electric multiple units based on a weighted moving average technique, IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 4, pp. 3392-3405, 2022.
+[84] Chen Gao, Zidong Wang, Xiao He*, Qinglong Han, Consensus control of linear multi-agent systems under actuator imperfection: When saturation meets fault, IEEE Transactions on Systems, Man and Cybernetics - Systems, vol. 52, no. 4, pp. 2651-2663, 2022.
+[85] Ye Zhao, Xiao He, Lifeng Ma, Hongjian Liu, Unbiasedness-constrained least squares state estimation for time-varying systems with missing measurements under round-robin protocol, International Journal of Systems Science, early access, 10.1080/00207721.2022.2031338, 2022.
+[86] Maiying Zhong, Steven X. Ding, Qing-Long Han, Xiao He, Donghua Zhou, A Krein space-based approach to event-triggered H-infinity filtering for linear discrete time-varying systems, Automatica, vol. 135, no. 110001, 2022.
+[87] Yinghong Zhao, Xiao He, Donghua Zhou, Michael G. Pecht, Detection and isolation of wheelset intermittent over-creeps for electric multiple units based on a weighted moving average technique, IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 4, pp. 3392-3405, 2022.
+[88] Chen Gao, Zidong Wang, Xiao He*, Qinglong Han, Consensus control of linear multi-agent systems under actuator imperfection: When saturation meets fault, IEEE Transactions on Systems, Man and Cybernetics - Systems, vol. 52, no. 4, pp. 2651-2663, 2022.
+[89] Ye Zhao, Xiao He, Lifeng Ma, Hongjian Liu, Unbiasedness-constrained least squares state estimation for time-varying systems with missing measurements under round-robin protocol, International Journal of Systems Science, early access, 10.1080/00207721.2022.2031338, 2022.
+[90] Maiying Zhong, Steven X. Ding, Qing-Long Han, Xiao He, Donghua Zhou, A Krein space-based approach to event-triggered H-infinity filtering for linear discrete time-varying systems, Automatica, vol. 135, no. 110001, 2022.
+[91] Zeyi Liu, Yong Deng, Yi Zhang, Zhongjun Ding, Xiao He, Safety assessment of dynamic systems: an evidential group interaction-based fusion design, IEEE Transactions on Instrumentation and Measurement, vol. 70, ASN: 3523014, 2021.
+[92] Chen Gao, Zidong Wang, Xiao He*, Hongli Dong, Encryption-decryption-based consensus control for multi-agent systems: handling actuator faults, Automatica, vol. 134, no. 109908, 2021.
+[93] Chen Gao, Zidong Wang, Xiao He*, Dong Yue, Sampled-data-based fault-tolerant consensus control for multi-agent systems: a data privacy preserving scheme (Regular Paper), Automatica, vol. 133, Art. No. 109847, 2021
+[94] Jingfei Zhang, Qinghua Zhang, Xiao He*, Guoxi Sun, Donghua Zhou, Compound-fault diagnosis of rotating machinery: a fused imbalance learning method, IEEE Transactions on Control Systems Technology, vol. 29, no. 4, pp. 1462-1474, 2021.
+[95] Junfeng Zhang, Panagiotis D. Christofildes, Xiao He, Yinghong Zhao, Zhihao Zhang, Donghua Zhou, Robust detection of intermittent multiplicative sensor fault, Asian Journal of Control, vol. 23, pp. 463-473, 2021
+[96] Zeyi Liu, Xiao He, Yong Deng, Network-based evidential three-way theoretic model for large-scale group decision analysis, Information Science, vol. 547, no. 8, pp. 689-709, 2021.
+[97] Yamei Ju, Yang Liu, Xiao He, Bangcheng Zhang, Finite-horizon H-infinity filtering and fault isolation for a class of time-varying systems with sensor saturation, International Journal of Systems Science, vol.52, no. 2, pp.321-333, 2021.
+[98] Jiao Li, Fanlin Jia, Xiao He, On fault detection of discrete-time switched systems via designing time-varying residual generator, Journal of the Franklin Institute, vol. 358, no. 1, pp. 1122-1135, 2021.
+[99] Yinghong Zhao, Xiao He, Junfeng Zhang, Hongquan Ji, Donghua Zhou, Michael G. Pecht. Detection of intermittent faults based on an optimally weighted moving average T2 control chart with stationary observations. Automatica(regular paper), vol. 123, pp.109298, 2021.
+[100] Chen Gao, Xiao He. Consensus control for multi-agent systems subject to actuator saturations. Acta Aeronautica et Astronautica Sinica, 2020, 41(S1):723760. (In Chinese)
+[101] Xiao He, Yaqi Guo, Zhao Zhang, Fanlin Jia, Donghua Zhou, Active fault diagnosis for dynamic systems. Acta Automatica Sinica, vol. 46, no. 8, pp. 1557-1570, 2020. (In Chinese)
+[102] Yinghong Zhao, Xiao He, Michael G.Pecht, Junfeng Zhang, Donghua Zhou, Detection and detectability of intermittent faults based on moving average T^2 control charts with multiple window lengths, Journal of Process Control, vol. 92, pp. 296-309, 2020.
+[103] Junfeng Zhang, Panagiotis D. Christofides, Xiao He, Zhe Wu, Yinghong Zhao, Donghua Zhou, Robust detection of intermittent sensor faults in stochastic LTV systems, Neurocomputing, vol. 388, pp. 181-187, 2020.
+[104] Junfeng Zhang, Panagiotis D. Christofides, Xiao He, Fahad Albalawi, Yinghong Zhao, Donghua Zhou. Intermittent sensor fault detection for stochastic LTV systems with parameter uncertainty and limited resolution. International Journal of Control, vol. 93, no. 4, pp. 788-796, 2020.
+[105] Junfeng Zhang, Xiao He, Donghua Zhou. Distributed filtering over wireless sensor networks with parameter and topology uncertainties. International Journal of Control, vol. 93, no. 4, pp. 910-921, 2020.
+[106] Donghua Zhou, Yinghong Zhao, Zidong Wang, Xiao He, and Ming Gao, Review on diagnosis techniques for intermittent faults in dynamic systems. IEEE Transactions on Industrial Electronics, vol. 67, no. 3, pp. 2337-2347, 2020.
+[107] Hongyang Li, Junfeng Zhang, Xiao He. Design of data-injection attacks for cyber-physical systems based on Kullback-Leibler divergence, Neurocomputing, vol.361, pp.77-84, 2019.
+[108] Jianxun Zhang, Changhua Hu, Xiao He, Xiaosheng Si, Yang Liu, Donghua Zhou, A novel lifetime estimation method for two-phase degrading systems, IEEE Transactions on Reliability, vol. 68, no. 2, pp. 689-709, 2019.
+[109] Qinyuan Liu, Zidong Wang, Xiao He, Donghua Zhou, Event-based distributed filtering over Markovian switching topologies, IEEE Transactions on Automatic Control, vol. 64, no. 4, pp. 1595-1602, 2019.
+[110] Bangcheng Zhang, Yuankun Sui, Qianying Bu, Xiao He, Remaining useful life estimation for micro switches of railway vehicles, Control Engineering Practice, vol. 84, pp. 82-91, 2019.
+[111] Hongyang Li, Muheng Wei, Jie Huang, Bohua Qiu, Ye Zhao, Wencheng Luo, Xiao He, Xiao He, Survey on cyber-physical systems, Acta Automatica Sinica, vol. 45, no. 1, 2019. (In Chinese)
+[112] Liguo Qin, Xiao He, Rui Yan, Ruiliang Deng, Donghua Zhou, Distributed sensor fault diagnosis for a formation of multi-vehicle systems, Journal of the Franklin Institute-Engineering and Applied Mathmatics, vol. 356, no. 2, pp. 791-818, 2019.
+[113] Donghua Zhou, Liguo Qin, Xiao He, Rui Yan, Ruiliang Deng, Distributed sensor fault diagnosis for a formation system with unknown constant time delays, Science China: Information Science, vol. 61, no. 112205, pp.1-16, 2018.
+[114] Junfeng Zhang, Panagiotis D. Christofides, Xiao He, Zhe Wu, Zhihao Zhang, Donghua Zhou. Event-triggered filtering and intermittent fault detection for time-varying systems with stochastic parameter uncertainty and sensor saturation. International Journal of Robust and Nonlinear Control, vol. 28, no. 16, pp. 4666-4680, 2018.
+[115] Xiao He, Zidong Wang, Zhijie Zhou, Youqing Wang, Qiang Liu, Fault diagnosis and application to modern systems 2018, Journal of Control Science and Engineering, vol. 2018, Article ID 8460541, 3 pages, 2018 (Editorial).
+[116] Hongquan Ji, Xiao He, D. H. Zhou, Diagnosis of sensor precision degradation using Kullback-Leibler divergence, Canadian Journal of Chemical Engineering, vol. 96, no. 138, pp. 343-443, 2018.
+[117] Ye Zhao, Xiao He, Donghua Zhou, Distributed filtering for time-varying networked systems with Sensor gain degradation and energy constraint: a centralized finite-time communication protocol scheme, Science China: Information Sciences, vol. 61, no. 092208, pp. 1-12, 2018.
+[118] Qinyuan Liu, Zidong Wang, Xiao He, Donghua Zhou, On Kalman-consensus filtering with random link failures over sensor networks, IEEE Transactions on Automatic Control, vol. 63, no. 8, pp. 2701-2708, 2018.
+[119] Qinyuan Liu, Zidong Wang, Xiao He, Donghua Zhou, Event-triggered resilient filtering with measurement quantization and random sensor failures: monotonicity and convergence, Automatica, vol. 94, pp.458-464, 2018.
+[120] Donghua Zhou, Hongquan Ji, Xiao He, Jun Shang, Fault detection and isolation of the brake cylinder system for electric multiple units, IEEE Transactions on Control Systems Technology, vol. 26, no. 5, pp.1744-1757, 2018.
+[121] Rongyi Yan, Xiao He, Zidong Wang, Donghua Zhou, Detection, isolation and diagnosability analysis of intermittent faults in stochastic systems, International Journal of Control, vol. 91, no. 2, pp. 480-494, 2018.
+[122] Junfeng Zhang, Xiao He, D. H. Zhou. Filtering for stochastic uncertain systems with non-logarithmic sensor resolution. Automatica, vol. 89, no. 3, pp. 194-200, 2018.
+[123] Hongquan Ji,Xiao He, Jun Shang, Donghua Zhou. Exponential smoothing reconstruction approach for incipient fault isolation. Industrial &amp; Engineering Chemistry Research, vol. 57, no. 18, pp. 6353-6363, 2018.
+[124] Donghua Zhou, Hongquan Ji, Xiao He, Fault diagnosis techniques for the information control system of high-speed trains, Acta Automatica Sinica, vol. 44, no. 7, pp. 1153-1164, 2018. (In Chinese)
+[125] Junfeng Zhang, Xiao He, Donghua Zhou, Robust optimal filtering for linear time-varying systems with stochastic uncertainties, IET Control Theory &amp; Application, vol. 11, no. 18, pp. 3297-3304, 2017.
+[126] Liguo Qin, Xiao He, Donghua Zhou, Distributed proportion-integration-derivation formation control for second-order multi-agent systems with communication time delays, Neurocomputing, vol. 267, pp. 271-282, 2017.
+[127] Jianxun Zhang, Changhua Hu, Xiao He, Xiaosheng Si, Yang Liu Donghua Zhou. Lifetime prognostics for deteriorating systems with time-varying random jumps, Reliability Engineering and System Safety, vol. 167, no. SI, pp. 338-350, 2017.
+[128] Jiantao Shi, Yuhao Yang, Jun Sun, Xiao He, Donghua Zhou, Yisheng Zhong, Fault-tolerant formation control of non-linear multi-vehicle systems with application to quadrotors, IET Control Theory &amp; Applications, vol. 11, no. 17, pp.3179-3190, 2017.
+[129] Liguo Qin, Xiao He, Donghua Zhou, Fault-tolerant cooperative output regulation for multi-vehicle systems with sensor faults, International Journal of Control, vol. 90, no. 10, pp. 2227-2248, 2017.
+[130] Qinyuan Liu, Zidong Wang, Xiao He, Gheorghita Ghinea, Fuad E. Alsaadi, A resilient approach to distributed filter design for time-varying systems under stochastic nonlinearities and sensor degradation, IEEE Transactions on Signal Processing, vol. 65, no. 5, pp. 1300-1309, 2017.
+[131] Jianxun Zhang, Xiao He, Xiaosheng Si, Changhua Hu, Donghua Zhou, A novel multi-phase stochastic model for Lithium-Ion batteries’ degradation with regeneration phenomena, Energies, vol. 10, no. 11, pp. 1-24, 2017.
+[132] Liguo Qin, Xiao He, Rui Yan, Donghua Zhou. Active fault-tolerant control for a quadrotor with sensor faults. Journal of Intelligent &amp; Robotic Systems, vol. 88, no. 2-4, pp. 449-467, 2017.
+[133] Yang Liu, Zidong Wang, Xiao He, Donghua Zhou, Finite-horizon quantized H-infinity filter design for a class of time-varying nonlinear systems under event-triggered transmissions, System &amp; Control Letters, vol. 103, pp. 38-44, 2017.
+[134] Yinghong Zhao, Xiao He, Donghua Zhou, Optimal joint control and triggering strategies against denial of service attacks: a zero-sum game, IET Control Theory &amp; Applications, vol. 11, no. 14, pp. 2352-2360, 2017.
+[135] Xiao He, Zidong Wang, Gang Li, Zhijie Zhou, Youqing Wang, Fault diagnosis and application to modern systems, Journal of Control Science and Engineering, vol. 2017, Article ID: 1026759, 3 pages, 2017 (Editorial).
+[136] Xiao He, Zidong Wang, Yang Liu, Liguo Qin, D. H. Zhou, Fault tolerant control for an Internet-based three-tank system: accommodation to sensor bias faults, IEEE Transactions on Industrial Electronics, vol. 64, no. 3, pp. 2266-2275, 2017.
+[137] Xiao He, Yamei Ju, Yang Liu, Bangcheng Zhang, Cloud-based fault tolerant control for a DC motor system, Journal of Control Science and Engineering, Vol. 2017, Article ID: 5670849, 10 pages, 2017.
+[138] Jie Huang, Xiao He, Detection of intermittent fault for discrete-time systems with output dead-zone: a variant Tobit Kalman filtering approach, Journal of Control Science and Engineering, Article ID 7849841, 9 pages, 2017.
+[139] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou. A class of observer-based fault diagnosis schemes under closed-loop control: Performance evaluation and improvement, IET Control Theory &amp; Applications, vol. 11, no. 1, pp. 135-141, 2017.
+[140] Hongquan Ji, Xiao He, Jun Shang, Donghua Zhou, Incipient fault detection with smoothing techniques in statistical process monitoring, Control Engineering Practice, vol. 62, pp. 11-21, 2017.
+[141] Xiao He, Zidong Wang, Liguo Qin, Donghua Zhou, Active fault tolerant control for an Internet-based networked three-tank system, IEEE Transactions on Control Systems Technology, vol. 24, no. 6, pp. 2150-2157, 2016.
+[142] Yang Liu, Zidong Wang, Xiao He, Donghua Zhou. Minimum-variance recursive filtering over sensor networks with stochastic sensor gain degradation: algorithms and performance analysis, IEEE Transactions on Control of Network Systems, vol. 3, no. 3, pp. 265-274, 2016.
+[143] Yang Liu, Zidong Wang, Xiao He, Donghua Zhou, H-infinity filtering for non-linear systems with stochastic sensor saturations and Markov time-delays: the asymptotic stability in probability, IET Control Theory &amp; Applications, vol. 10, no. 14, pp. 1706-1715, 2016.
+[144] Rongyi Yan, Xiao He, Donghua Zhou, Detection of intermittent faults for stochastic systems subject to time-varying parametric perturbations. IET Control Theory &amp; Applications, vol. 10, no. 8, pp. 903-910, 2016.
+[145] Rongyi Yan, Xiao He, Donghua Zhou, Detecting intermittent sensor faults for linear stochastic systems subject to unknown disturbance, Journal of the Franklin Institute, vol. 353, no. 17, pp. 4737-4753, 2016.
+[146] Junfeng Zhang, Xiao He, Donghua Zhou. Generalised proportional-integral-derivative filter, IET Control Theory &amp; Application, vol. 10, no. 17, pp. 2339-2347, 2016.
+[147] Limin Wang, Xiao He, Donghua Zhou, Average dwell time-based optimal iterative learning control for multi-phase batch processes, Journal of Process Control, vol. 40, pp, 1-12, 2016.
+[148] Hongquan Ji, Xiao He, Donghua Zhou. On the use of reconstruction-based contribution for fault diagnosis. Journal of Process Control, vol. 40, pp. 24-34, 2016.
+[149] Hongquan Ji, Xiao He, Jun Shang, Donghua Zhou, Incipient sensor fault diagnosis using moving window reconstruction-based contribution. Industrial &amp; Engineering Chemistry Research, vol. 55, no. 10, pp. 2746-2759, 2016.
+[150] Jiantao Shi, Xiao He, D. H. Zhou, Iterative learning control for nonlinear stochastic systems with variable pass length, Journal of the Franklin Institute, vol. 353, no.15, pp: 4016-4038, 2016.
+[151] Jiantao Shi, Xiao He, Donghua Zhou, Iterative learning based estimation of periodically occurring faults. IET Control Theory and Applications, vol, 10, no. 2, pp. 244-251, 2016.
+[152] Rongyi Yan, Xiao He, D. H. Zhou, Robust diagnosis of intermittent faults for linear stochastic systems subject to time-varying perturbations, Acta Automatica Sinica, vol. 42, no. 7, pp. 1004-1013, 2016.(In Chinese)
+[153] Qinyuan Liu, Zidong Wang, Xiao He, Donghua Zhou, Event-based H-infinity consensus control of multi-agent systems with relative output feedback: the finite-horizon case. IEEE Transactions on Automatic Control, vol. 60, no. 9, pp. 2553-2558, 2015.
+[154] Qinyuan Liu, Zidong Wang, Xiao He, D. H. Zhou, Event-based recursive distributed filtering over wireless sensor networks, IEEE Transactions on Automatic Control, vol. 60, no. 9, pp.2470-2475, 2015.
+[155] Qinyuan Liu, Zidong Wang, Xiao He, D. H. Zhou, Event-based distributed filtering with stochastic measurement fading, IEEE Transactions on Industrial Informatics, vol. 11, no. 6, pp. 1643-1652, 2015.
+[156] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou, Filtering and fault detection for nonlinear systems with polynomial approximation. Automatica, vol. 54, pp. 348-359, 2015.
+[157] Xiao He, Zidong Wang, Xiaofeng Wang, Donghua Zhou, Networked strong tracking filtering with multiple packet dropouts: algorithms and applications. IEEE Transactions on Industrial Electronics, vol. 61, no. 3, pp. 1454-1463, 2014.
+[158] Yang Liu, Xiao He, Zidong Wang, Donghua Zhou, Optimal filtering for networked systems with stochastic sensor gain degradation. Automatica, vol. 50, no. 5, pp. 1521-1525, 2014.
+[159] Jiantao Shi, Xiao He, Zidong Wang, D. H. Zhou, Distributed fault detection for a class of second-order multi-agent systems: an optimal robust observer approach. IET Control Theory and Applications, vol. 8, no. 12, pp. 1032-1044, 2014.
+[160] Qinyuan Liu, Zidong Wang, Xiao He, Donghua Zhou, A survey of event-based strategies on control and estimation. Systems Science and Control Engineering: An Open Access Journal, vol. 2, no. 1, pp. 90-97, 2014.
+[161] Liguo Qin, Xiao He, Donghua Zhou, A survey of fault diagnosis for swarm systems, Systems Science &amp; Control Engineering, vol.2, no.1, pp.13-23, 2014.
+[162] Yanyan Hu, Xiao He, Lan Zhang, Changyin Sun, IMM fusion estimation with multiple asynchronous sensors. Signal Processing, vol. 102, pp. 46-57, 2014.
+[163] Donghua Zhou, Jiantao Shi, Xiao He, Review of intermittent fault diagnosis techniques for dynamic systems. Acta Automatica Sinica, Vol. 41, No. 2, pp. 161-171, 2014. (In Chinese)
+[164] Jiantao Shi, Xiao He, Zidong Wang, D. H. Zhou, Iterative consensus for a class of second-order multi-agent systems. Journal of Intelligent &amp; Robotic Systems, vol. 73, no. 1-4, pp. 655-664, 2014.
+[165] Xiao He, Yanyan Hu, Kaixiang Peng, Intermittent fault detection for uncertain networked systems. Mathematical Problems in Engineering, article ID 282168, pp. 1-10, 2013.
+[166] Jie Wang, Qun Zong, Xiao He, H. R. Karimi, Adaptive finite-time control for a flexible hypersonic vehicle with actuator fault. Mathematical Problems in Engineering, vol. 2013, article ID 920796, 2013.
+[167] Donghua Zhou, Yang Liu, Xiao He, Review of fault diagnosis techniques for closed-loop systems. Acta Automatica Sinica, in press, 2013. (In Chinese)
+[168] Xiao He, Zidong Wang, Yang Liu, D. H. Zhou, Least-squares fault detection and diagnosis for networked sensing systems using direct state estimation approach. IEEE Transactions on Industrial Informatics, vol. 9, no. 3, pp. 1670-1679, 2013.
+[169] Xiao He, Zidong Wang, Yindong Ji, Donghua Zhou, State estimation for networked systems with randomly occurring quantisations. International Journal of Systems Science, vol. 44, no. 7, pp. 1253-1263, 2013.
+[170] Donghua Zhou, Xiao He, Zidong Wang, Guoping Liu, Yindong Ji, Leakage fault diagnosis for Internet-based three-tank system: an experimental study. IEEE Transactions on Control Systems Technology, vol. 20, no. 4, pp. 857-870, 2012.
+[171] Xiao He, Zidong Wang, D. H. Zhou, Robust fault detection for networked systems with distributed sensors. IEEE Transactions on Aerospace and Electronic Systems, vol. 47, no. 1, pp. 166-177, 2011.
+[172] Xiao He, Zidong Wang, Yindong Ji, Donghua Zhou, Fault detection for discrete-time systems in a networked environment. International Journal of Systems Science, vol. 41, no. 8, pp. 937-945, 2010.
+[173] Xiao He, Zidong Wang, Donghua Zhou, Robust fault detection for networked systems with communication delay and data missing. Automatica, vol. 45, no. 11, pp. 2634-2639, 2009.
+[174] Xiao He, Zidong Wang, Donghua Zhou, Robust H-infinity filtering for time-delay systems with probabilistic sensor faults. IEEE Signal Processing Letters, vol.16, no.5, pp. 442-445, 2009.
+[175] Xiao He, Zidong Wang, Donghua Zhou, Network-based robust fault detection with incomplete measurements. International Journal of Adaptive Control and Signal Processing, vol.23, no.8, pp.737-756, 2009.
+[176] Xiao He, Zidong Wang, Donghua Zhou, Networked fault detection with random communication delays and packet losses. International Journal of Systems Science, vol.39, no.11, pp.1045-1054, 2008.
+[177] Xiao He, Zidong Wang, Donghua Zhou, State estimation for time-delay systems with probabilistic sensor gain reductions. Asia-Pacific Journal of Chemical Engineering, vol.3, no.6, pp.712-716, 2008.
+[178] Xiao He, Zidong Wang, Yindong Ji, Donghua Zhou, Network-based fault detection for discrete-time state-delay systems: a new measurement model. International Journal of Adaptive Control and Signal Processing, vol.22, no.5, pp. 510-528, 2008.
+[179] Xiao He, Zidong Wang, Donghua Zhou, Robust H-infinity filtering for networked systems with multiple state delays. International Journal of Control, vol.80, no.8, pp.1217-1232, 2007.
+会议论文
+[1] Huafeng Li, Lufeng Hao, Xiao He*, A technology for monitoring tunnel settlement, Chinese Process Control Conference (CPCC 2024), Sanya, China. July 25-27, 2024.
+[2] Chang Liu, Xiao He*, Hairong Dong, Pre-training graph neural network for fault diagnosis and safety assessment, 2024 International Conference on Industrial Technology (ICIT), Bristol, UK, March 25-27, 2024.
+[3] Miao Cai, Xiao He, Donghua Zhou, Neural-network-based fault-tolerant control for unknown high-order fully actuated systems, Proceedings of 2024 3rd Conference on Fully Actuated System Theory and Applications (FASTA). Shenzhen, China, IEEE, 2024:529-533.
+[4] Miao Cai*, Xiao He, Donghua Zhou, Sensor fault tolerance for high-order fully-actuated systems, 2023 Conference on Fully Actuated System Theory and Applications (CFASTA2023), Qingdao, China, July 14-16, 2023.
+[5] Zeyi Liu, Songqiao Hu, Xiao He*, Real-time safety assessment of dynamic systems in non-stationary environments: A review of methods and techniques, 13th CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (CAA SAFEPROCESS 2023), Yibin, China, September 22-24, 2023.
+[6] Fanlin Jia, Minyue Li, Xiao He*, Active fault-tolerant control for nonlinear systems with actuator faults and mismatched disturbances, 13th CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (CAA SAFEPROCESS 2023), Yibin, China, September 22-24, 2023.
+[7] Chang Liu, Limin Wang, Minyue Li, Xiao He*, Open set safety assessment with complementary labels, 13th CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (CAA SAFEPROCESS 2023), Yibin, China, September 22-24, 2023.
+[8] Chang Liu, Limin Wang, Minyue Li, Xiao He*, Active domain adaptation for safety assessment with unknown scenarios, 34th Chinese Process Control Conference (CPCC 2023), Guiyang, China. July 21-23, 2023, accepted. Zhongjun Zhang Best paper award.
+[9] Xu Chen, Limin Wang, Minyue Li, Xiao He*, A new nonlinear dynamic latent variable model for process monitoring, 34th Chinese Process Control Conference (CPCC 2023), Guiyang, China. July 21-23, 2023.
+[10] Chen Li, Zeyi Liu, Limin Wang, Minyue Li, Xiao He*, An evidential real-time multi-mode fault diagnosis approach based on broad learning system, 34th Chinese Process Control Conference (CPCC 2023), Guiyang, China. July 21-23, 2023.
+[11] Guangran Lyu, Limin Wang, Minyue Li, Xiao He*, Active fault-tolerant tracking control for quadrotor formation using relative measurements, 34th Chinese Process Control Conference (CPCC 2023), Guiyang, China. July 21-23, 2023.
+[12] S. Joe Qin*, Xu Chen, Xiao He, Two-block latent auto-regressive modeling with applications to closed-loop process monitoring, 62nd IEEE Conference on Decision and Control (CDC 2023), Marina Bay Sands, Singapore, December 13-15, 2023.
+[13] Cai M, He X, Zhou D. High-order fully actuated systems: Tolerating multiplicative actuator faults[C].  Proceedings of 2023 CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (SAFEPROCESS). Yibin, China, IEEE, 2023: 1-6.（EI 收录，检索号20234915143107）
+[14] Cai M, He X, Zhou D. Sensor fault tolerance for high-order fully-actuated systems. Proceedings of 2023 2nd Conference on Fully Actuated System Theory and Applications (CFASTA). Qingdao, China, IEEE, 2023: 403-408.（EI 收录，检索号20234214881084）
+[15] Fangfei Cao, Xiao He, Fault detection based on stochastic resonance noise enhanced signal processing method applied to Three-Tank system, The 37th Youth Academic Annual Conference of Chinese Association of Automation (YAC 2022)
+[16] Xu Chen, Chen Li, Xiao He*. Process monitoring for closed-loop systems based on two-block dynamic latent canonical correlation analysis. The 33rd Chinese Process Control Conference, Urumqi, China, 29-31, July, 2022. Zhongjun Zhang Best Paper Award.
+[17] Mengfei Mao, Zeyi Liu, Xiao He*, A bearing fault diagnosis method based on active learning by  feature interpolation, The 33rd Chinese Process Control Conference, Urumqi, China, 29-31, July, 2022.
+[18] Zhao Zhang*, Xiao He, Geometric approach based fault detection and isolation: A review, 41st Chinese Control Conference (CCC), July 25-27, 2022, Hefei, China. One of the Finalists of the 16th SCIS-CCC Poster Paper Award.
+[19] Jiahao Song, Huafeng Li, Xiao He*, Distributed micro-displacement monitoring system for detecting pier settlements, The 7th International Workshop on Advanced Computational Intelligence and Intelligent Informatics (IWACIII 2021), Beijing China, Oct. 31-Nov. 3, 2021.
+[20] Chang Liu, Yi Zhang, Xiao He, Expert-augmented data-driven safety level assessment scheme with incremental learning, 2021 CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (SAFEPROCESS), 17-18 December 2021, Chengdu, China, 2021. Fang Chong-Zhi Best paper award.
+[21] Xu Chen, Xiao He, Incipient sensor fault detection of closed-loop processes with discriminant analysis of dynamic latent structures, 2021 CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (SAFEPROCESS), 17-18 December 2021, Chengdu, China, 2021.
+[22] Miao Cai, Xiao He, Donghua Zhou, Online adaptive fault compensation control for underwater vehicles with parameter perturbation and intermittent faults, 2021 CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (SAFEPROCESS), 17-18 December 2021, Chengdu, China, 2021.
+[23] Fanlin Jia, Xiao He, Auxiliary input design for active fault detection via deep reinforcement learning, 2021 CAA Symposium on Fault Detection, Supervision, and Safety for Technical Processes (SAFEPROCESS), 17-18 December 2021, Chengdu, China, 2021.
+[24] Zhao Zhang, Muheng Wei, Xiao He, Fault detection, isolation and estimation for linear systems with partial disturbance decoupling, 15th IEEE Conference on Industrial Electronics and Applications (ICIEA), 2020/11/09, Kristiansand, Norway.
+[25] Chen Gao, Xiao He, Semi-global consensus control for multi-agent systems with actuator saturations and faults, The 35th Youth Academic Annual Conference of Chinese Association of Automation (YAC 2020), October 16-18, 2020, Zhanjiang, China. Finalist of the Best Student Paper Award.
+[26] Yinghong Zhao, Xiao He, D.H. Zhou, Detecting intermittent faults with moving average techniques, IEEE 15th International Conference on Automation Science and Engineering (CASE 2019), Vancouver, BC, Canada,1712-1717, 2019.
+[27] Zhao Zhang, Jie Huang, Xiao He, A geometric approach to fault detection and isolation of linear discrete-time systems, 2019 CAA Symposium on Fault Detection, Supervision and Safety for Technical Processes (SAFEPROCESS), Xiamen, China, 2019.
+[28] Chang Liu, Yi Zhang, Xiao He, Safety assessment of the JiaoLong deep-sea manned submersible based on Bayesian network, 2019 CAA Symposium on Fault Detection, Supervision and Safety for Technical Processes (SAFEPROCESS), Xiamen, China, 2019.
+[29] Xu Chen, Xiao He, Design of a fault diagnosis system for the JIAOLONG deep-sea manned vehicle, 2019 CAA Symposium on Fault Detection, Supervision and Safety for Technical Processes (SAFEPROCESS), Xiamen, China, 2019.
+[30] Rongyi Yan, Xia Hui, Liang Tong, Xiao He, Detecting and estimating intermittent actuator faults in linear stochastic systems, 2019 CAA Symposium on Fault Detection, Supervision and Safety for Technical Processes (SAFEPROCESS), Xiamen, China, 2019.
+[31] Yi Zhang, Zhongjun Ding , Chang Liu, Haibin Qi , Qingxin Zhao , Jie Huang, Xiao He, Safety-oriented fault monitoring for manned deep-sea submersibles, 2019 CAA Symposium on Fault Detection, Supervision and Safety for Technical Processes (SAFEPROCESS), Xiamen, China, 2019.
+[32] Hongyang Li, Xiao He, Yufeng Zhang, Wenyuan Guan, Attack detection in cyber-physical systems using particle filter: an illustration on three-tank system, Proceedings of 2018 IEEE 8th Annual International Conference on CYBER Technology in Automation, Control, and Intelligent Systems, July 19-23, 2018, Tianjin, China.
+[33] Junfeng Zhang, Xiao He, Donghua Zhou, Robust filtering and intermittent fault detection for time-varying systems with stochastic parameter uncertainty and sensor saturation. 10th IFAC Symposium on Fault Detection, Supervision and Safety for Technical Processes SAFEPROCESS 2018, Warsaw, Poland, vol. 51, Issue 24, pp. 1324-1329, 29-31 August, 2018.
+[34] Yinghong Zhao, Xiao He, Donghua Zhou, Intermittent fault detection with T2 control chart. 10th IFAC Symposium on Fault Detection, Supervision and Safety for Technical Processes SAFEPROCESS 2018, Warsaw, Poland, vol. 51, Issue 24, pp. 1298-1304, 29-31 August, 2018.
+[35] Liguo Qin, Xiao He, Donghua Zhou, Jian Cui, Fei Li, Guo Wang, A new local-model-based distributed fault diagnosis scheme for multi-agent systems with actuator faults, 10th IFAC Symposium on Fault Detection, Supervision and Safety for Technical Processes SAFEPROCESS 2018, Warsaw, Poland, vol. 51, Issue 24, pp. 292-299, 29-31 August, 2018.
+[36] Chen Gao, Xiao He, Fault-tolerant consensus control for multi-agent systems with actuator saturation, 33rd Youth Academic Annual Conference of Chinese Association of Automation (YAC), May 18-20, 2018, Nanjing, China.
+[37] Ye Zhao, Xiao He, D. H. Zhou, Distributed fault source detection and topology accommodation design of wireless sensor networks. In Proceeding of the IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics Society, Beijing, China, November 29-October 1, 2017, pp. 5529-5534.
+[38] Jianxun Zhang, Changhua Hu, Xiao He, Xiaosheng Si, Donghua Zhou. Lifetime estimation for Battery with the regeneration phenomena in both degradation state and rate, 2017 Prognostics and System Health Management Conference, July, 2017.
+[39] Yinghong Zhao, Xiao He, Donghua Zhou, A comparative study on intermittent fault detection of data-based process monitoring approaches. 28th Chinese Process Control Conference (CPCC), Chongqing, China, July 30-Augest.1, 2017. (In Chinese)
+[40] Jie Huang, Xiao He, Fault detection of nonlinear systems with missing measurements and censored data. In Proceeding of the IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics Society, Beijing, China, November 29-October 1, 2017, pp. 5797-5802.
+[41] Hongyang Li, Xiao He, Fault detection and estimation for Markov jump linear systems with state delays. In Proceeding of the IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics Society, Beijing, China, November 29-October 1, 2017, pp. 7433-7438.
+[42] Jianxun Zhang, Changhua Hu, Xiao He, Xiaosheng Si, Donghua Zhou. Risk evaluation for deteriorating systems with accuracy analysis of parameters estimation, 2016 Prognostics and System Health Management Conference, Chengdu, China, Oct. 19-21, 2016, pp. 1-6.
+[43] Liguo Qin, Xiao He, Yan Zhou, Donghua Zhou, Fault-tolerant control for a quadrotor unmanned helicopter subject to sensor faults, 2016 International Conference on Unmanned Aircraft Systems (ICUAS), Arlington, VA USA, June 7-10, 2016, pp. 1280-1286.
+[44] Rongyi Yan, Xiao He, D. H. Zhou, A diagnosis scheme for intermittent faults in active suspension systems of high speed trains, 12th World Congress on Intelligent Control and Automation, Guilin, China June 12-17, 2016, pp. 1297-1302.
+[45] Hongquan Ji, Xiao He, Gang Li, D. H. Zhou. Determining the optimal kernel parameter in KPCA based on sample reconstruction. Proceedings of the 35th Chinese Control Conference, Chengdu, China, July 27-29, 2016, pp. 6408-6414.
+[46] Hongquan Ji, Xiao He, Huasong Sai, D. H. Zhou. Fault detection of EMU brake cylinder. Proceedings of the 35th Chinese Control Conference, Chengdu, China, July 27-29, 2016, pp. 6668-6672.
+[47] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou. Observer design for systems with unknown inputs and missing measurements, Proceedings of the 35th Chinese Control Conference, Chengdu, China, July 27-29, 2016, pp. 1799-1803.
+[48] Muheng Wei, Bohua Qiu, Yunpeng Jiang, Xiao He, Multi-sensor monitoring based on-line diesel engine anomaly detection with baseline deviation, 2016 Prognostics and System Health Management Conference (PHM-Chengdu), 19-21 Oct. 2016, Chengdu, China.
+[49] Yang Liu, Xiao He, Zidong Wang, Donghua Zhou, Fault detection and diagnosis for a class of nonlinear systems with decentralized event-triggered transmissions. In Proceedings of the 9th IFAC Symposium on Fault Detection, Supervision and Safety of Technical Processes (IFAC SAFEPROESS), Paris, France, September 2-4, 2015, pp. 1134-1139
+[50] Junfeng Zhang, Xiao He, D. H. Zhou, Fault detection for wireless networked systems with compressed measurements. IEEE International Conference on Automation Science and Engineering (CASE), Gothenburg, Sweden, Aug 24-28, 2015, pp. 356-361.
+[51] Qinyuan Liu, Zidong Wang, Xiao He, D. H. Zhou, Event-based filtering with individual triggering thresholds in wireless sensor network: Distributed detectability analysis, 34th Chinese Control Conference, Hangzhou, China, July 28-30, 2015, pp. 1734-1739. (This paper has been selected as a finalist for the IEEE CSS Beijing Chapter Young Author Award)
+[52] Xiao He, Fault detection and diagnosis for networked three-tank systems. Proceeding of the 11th World Congress on Intelligent Control and Automation (WCICA), Shenyang, China, June 29-July 4, 2014, pp.1299-1303.
+[53] Xiao He, Yinghong Zhao, Sensorless speed estimation of permanent magnet synchronous motor. In Proceedings of the 2014 International Conference on Mechatronics and Control (ICMC), Jinzhou, China, July 3-5, 2014, pp. 1142-1147.
+[54] Qinyuan Liu, Zidong Wang, Xiao He, D. H. Zhou, Consensus-based recursive distributed filtering with stochastic nonlinearities over sensor networks. Proceedings of the 33rd Chinese Control Conference (CCC), Nanjing, China, July 28-30, 2014, pp. 310-315.
+[55] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou, Event-triggered fault estimation for nonlinear systems with missing measurements. Proceedings of the 33rd Chinese Control Conference (CCC), Nanjing, China, July 28-30, 2014, pp. 5533-5538.
+[56] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou, Event-triggered fault estimation for nonlinear systems with missing measurements, Proceedings of the 19th IFAC World Congress, Cape Town, South Africa, August 24-29, 2014, pp. 1855-1860.
+[57] Jiantao Shi, Xiao He, Zidong Wang, D. H. Zhou, Consensus control for a class of second-order multi-agent systems: an iterative learning approach. 2013 International Conference on Unmanned Aircraft Systems (ICUAS’13), Atlanta, GA, USA, May 28-31, 2013, pp.885-893.
+[58] Yang Liu, Zidong Wang, Xiao He, D. H. Zhou, Least square fault estimation for a class of sensor networks. In Proceeding of the 25th Chinese Control and Decision Conference, Guiyang, China, May 25-27, 2013, pp.4984-4988. (In Chinese)
+[59] Rongyi Yan, Xiao He, Zidong Wang, D. H. Zhou, Distributed FDI for a class of LPV multi-agent system: a geometric approach. In Proceeding of the 25th Chinese Control and Decision Conference, Guiyang, China, May 25-27, 2013, pp.4379-4384. (In Chinese)
+[60] Liguo Qin, Xiao He, Juan Li, D. H. Zhou, Fault diagnosis for open component capacitor in track circuits. In Proceeding of the 25th Chinese Control and Decision Conference, Guiyang, China, May 25-27, 2013, pp.4869-4873. (In Chinese)
+[61] Jiantao Shi, Xiao He, Zidong Wang, D. H. Zhou, Iterative learning based fault estimation for nonlinear discrete-time systems. In Proceeding of the 25th Chinese Control and Decision Conference, Guiyang, China, May 25-27, 2013, pp.4781-4785. (In Chinese)
+[62] Xiaofeng Wang, Xiao He, Zidong Wang, D. H. Zhou, Sensor fault estimation for a class of nonlinear networked systems. In Proceeding of the 25th Chinese Control and Decision Conference, Guiyang, China, May 25-27, 2013, pp.4967-4972 (In Chinese)
+[63] Xiao He, Zidong Wang, Yindong Ji, D. H. Zhou, Active fault tolerant control for a class of networked systems with partial actuator failures. In Proceeding of the 8th IFAC Symposium on Fault Detection, Supervision and Safety of Technical Processes (SAFEPROCESS 2012), Mexico City, Mexico, August 29-31, 2012, pp. 1299-1304. (Accession number: 20124115544689) (This paper has been selected as a finalist for the Paul Frank Theory Paper Award of the 8th IFAC SAFEPROCESS 2012 Symposium)
+[64] Hongli Dong, Zidong Wang, Jinling Liang, Xiao He, Distributed filtering for a class of nonlinear systems with limited communication capacity. In Proceedings of the 31st Chinese Control Conference (CCC), Hefei, China, July 25-27, 2012, pp.6493-6498.
+[65] Xiaofeng Wang, Xiao He, Zidong Wang, State estimation for a class of nonlinear systems with multi-package transmission. In Proceedings of the 10th World Congress on Intelligent Control and Automation (WCICA), Beijing, China, July 6-8, 2012, pp. 2221-2226.
+[66] Xiao He, Zidong Wang, Yindong Ji, D. H. Zhou, H-infinity filtering for a class of networked systems with randomly occurring quantizations. In Proceeding of the Chinese Control Conference (CCC), Yantai, China, July 22-24, 2011, pp. 4687-4692.
+[67] Weiwei Zhao, Xiao He, Yindong Ji, Robust H-infinity model reduction for a class of nonlinear time-varying systems with time delays. In Proceedings of the 11th International Conference on Control Automation Robotics &amp; Vision (ICARCV 2010), Singapore, Singapore, December, 7-10, 2010, pp. 2391-2397.
+[68] Xiao He, Zidong Wang, D. H. Zhou, LMI-based robust filtering - A survey. In Proceedings of the Chinese Control Conference (CCC), Kunming, China, July 16-18, 2008, pp. 165-169.
+[69] Xiao He, Zidong Wang, D. H. Zhou, Fault detection for networked systems with incomplete measurements. In Proceedings of the 17th World Congress, International Federation of Automatic Control, Seoul, Korea, July 6-11, 2008, pp. 13557-13562.
+专利
+[1] 何潇, 周东华, 王子栋, 吉吟东, 刘洋. 一种网络化三容水箱系统的泄漏故障诊断方法及系统. 授权号: ZL201110089431.6, 2013.7.24
+[2] 周东华, 何潇, 王子栋, 刘洋. 非线性系统的多项式滤波故障检测方法. 授权号: ZL201410095616.1, 2016.9.21
+[3] 周东华, 何潇, 李钢, 纪洪泉. 用于非线性过程监控的核函数参数的获取方法和系统. 授权号: ZL201410218816.1, 2017.1.4.
+[4] 周东华, 何潇, 纪洪泉. 一种动车组制动系统传感器故障的诊断方法. 授权号: ZL201510076002.3, 2017.4.26.
+[5] 周东华, 何潇, 王子栋, 刘洋. 故障和状态的估计方法及装置. 授权号: ZL201310740077.8, 2017.5.24.
+[6] 周东华, 何潇, 鄢镕易. 用于检测与分离列车主动悬架系统间歇故障的方法及系统. 授权号: ZL201510130478.0, 2017.6.13.
+[7] 周东华, 何潇, 张峻峰, 张海峰. 一种异步牵引电机的故障检测方法. 授权号: ZL201510014727.X, 2017.6.16.
+[8] 周东华, 何潇, 鄢镕易. ATO控制的高速列车制动系统间歇故障检测方法及系统. 授权号: ZL201510131743.7, 2017.8.4.
+[9] 周东华, 纪洪泉, 何潇, 卢晓. 一种工业过程微小故障的检测和分离方法及其监测系统. 授权号: ZL201510661060.2, 2017.8.11.
+[10] 周东华, 史建涛, 何潇, 卢晓. 考虑随机扰动的非线性多无人机系统容错编队控制方法. 授权号: ZL201510727798.4, 2017.11.14.
+[11] 周东华, 何潇, 鄢镕易. 一种高速列车受电弓间歇故障检测方法. 授权号: ZL201510130498.8, 2017.12.19.
+[12] 周东华, 何潇, 纪洪泉, 台秀华, 赛华松. 动车组空气制动控制系统传感器故障诊断的方法与系统. 授权号: ZL201510622722.5, 2018.1.12.
+[13] 何潇, 周东华, 秦利国, 张海峰. 一种基于加权残差分量比较的故障分离方法及系统. 授权号: ZL201510473799.0, 2018.02.09.
+[14] 周东华, 张峻峰, 何潇. 基于压缩测量数据检测系统故障的方法及系统. 授权号: ZL201510032994.X, 2018.1.16.
+[15] 周东华, 纪洪泉, 何潇, 台秀华, 赛华松. 动车组制动缸故障监测方法及故障监测系统. 授权号: ZL201610065389.7, 2018.4.20.
+[16] 李华丰, 何潇, 李福亮, 李建锋, 张娟, 李振峰. 激光线阵位移测量装置. 授权号: ZL201721530714.9, 2018.06.08.
+[17] 周东华, 张峻峰, 何潇. 一种高速列车制动系统关键部件的状态监测方法和装置. 授权号: ZL201610896235.2, 2019.1.4.
+[18] 周东华, 张峻峰, 何潇. 一种动车组制动系统关键部件鲁棒滤波方法和系统. 授权号: ZL201610899907.5, 2019.2.22.
+[19] 周东华, 张峻峰, 何潇, 卢晓. 一种动车组制动系统间歇乘性传感器故障的鲁棒检测方法. 授权号: ZL201710554259.4, 2019.3.19.
+[20] 周东华, 纪洪泉, 何潇, 卢晓. 一种工业过程微小故障的分离方法. 授权号: ZL201710532377.5, 2019.5.3.
+[21] 周东华, 秦利国, 何潇, 卢晓. 一种无人机编队系统的分布式速度传感器故障诊断方法. 授权号: ZL201611165665.3, 2019.5.3.
+[22] 周东华, 秦利国, 何潇, 卢晓. 一种时延无人机编队的分布式速度传感器故障诊断方法. 授权号: ZL201710554280.4, 2019.5.10.
+[23] 周东华, 张峻峰, 何潇, 卢晓, 钟麦英, 王建东, 王友清. 考虑事件驱动及输出饱和的动车组鲁棒滤波故障检测方法. 授权号: ZL201810081180.9, 2019.8.9.
+[24] 周东华, 张峻峰, 何潇. 一种无线传感器网络的鲁棒分布式滤波方法和装置. 授权号: ZL201610896232.9, 2019.11.8.
+[25] 何潇, 郜晨. 一种用于架车机组的控制方法. 授权号: ZL 2017 1 0604701.X, 2020.7.20.
+[26] 周东华, 赵英弘, 何潇, 纪洪泉, 钟麦英, 王建东. 高速列车闭环刹车制动系统间歇故障检测方法. 授权号：ZL 2019 10191195.5, 2020.10.9.
+[27] 周东华, 张峻峰, 何潇, 张建勋, 张海峰, 卢晓. 一种基于两阶段随机退化建模的剩余寿命预测方法. 授权号：ZL 201710658819.0, 2020.01.21.
+[28] 周东华，赵英弘，何潇，高明，徐晓滨，纪洪泉. 动车组轮对间歇蠕滑超限检测及分离方法. 授权号：CN111267914B, 2021-08-17.
+[29] 何潇，陈勖. 容错控制方法、装置及容错控制器和存储介质，授权号:CN113595763B，2022-11-25.
+[30] 何潇，陈勖，一种目标系统的安全性评估装置及方法，授权号: CN112836219B，2022-10-25.
+[31] 何潇，郭亚琦，潜水器微小故障诊断方法、装置、计算机设备及存储介质，授权号: CN112861428B, 2022-06-24.
+[32] 何潇，贾繁林，闭环系统的主动故障检测方法、装置、设备及存储介质，授权号: CN112882386B, 2022-04-22.
+[33] 何潇，张召，传感器复合故障检测和分离方法、存储介质及电子设备，授权号: CN113008290B, 2022-04-01.
+承担课程
+动态系统故障诊断与容错控制，春季学期，研究生，独立讲授
+过程控制，春季学期，本科生，合作讲授
+团队人员
+指导博士后7名，已出站6名。博士后就业单位：西北工业大学、北京理工大学、南京理工大学、中科院空间应用中心等。
+指导（合作指导）博士生29名，已毕业17名。博士就业单位：哈德斯菲尔德大学、航天科工、南京工业大学、山东科技大学、火箭军工程大学、同济大学、哈佛大学、基金委、南京理工大学、中科院空间应用中心、清华大学、加拿大阿尔伯塔大学等。
+指导（合作指导）硕士生10名，已毕业9名。硕士就业单位：三一重工、中科院自动化所、中国邮政、比亚迪、中国舰船研究院等。
+指导访问学者6名，来自兰州工业大学、长春工业大学、天津理工大学、海军航空大学、辽宁石油化工大学等单位。</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>何潇</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/kzyjcyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1077/3189.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+2000年09月至2004年06月...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1077/3189.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-hexiao";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

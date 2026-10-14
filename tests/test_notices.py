@@ -28,3 +28,10 @@ class NoticeTests(unittest.TestCase):
                 {'title': '2027年推免通知', 'url': 'https://example.org/b'}]
         self.assertEqual(monitor.signature(rows), monitor.signature(list(reversed(rows))))
         self.assertNotEqual(monitor.signature(rows), monitor.signature(rows[:1]))
+
+    def test_flat_title_and_source_specific_date(self):
+        monitor = script('monitor_notices')
+        cfg = {'school': 'test', 'dept': 'auto', 'url': 'https://example.edu/list', 'selector': 'li a[href]', 'title_selector': 'self', 'date_selector': '.date'}
+        rows = monitor.parse_list('<li><a href="/policy">2027年接收推免报名通知</a><span class="date">2026-07-07</span></li>', cfg)
+        self.assertEqual(rows[0]['title'], '2027年接收推免报名通知')
+        self.assertEqual(rows[0]['publication_date'], '2026-07-07')

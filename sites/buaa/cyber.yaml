@@ -1,0 +1,15 @@
+school: buaa
+dept: cyber
+dept_name: 网络空间安全学院
+base_url: https://cst.buaa.edu.cn
+hook: related_roster
+direct: true
+list:
+  urls:
+  - https://cst.buaa.edu.cn/szll/sdjs.htm
+  supervisor: 硕导
+  person_hosts: [cst.buaa.edu.cn, scse.buaa.edu.cn, shi.buaa.edu.cn]
+  card_selector: li
+  name_selector: a[href]
+  link_selector: a[href]
+  person_href: '/info/\d+/\d+\.htm$|/[^/]+/zh_CN/.*'

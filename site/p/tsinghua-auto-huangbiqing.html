@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黄必清 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-huangbiqing" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>黄必清 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">研究员</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>hbq@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1075/3209.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1075/3209.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1984年9月-1988年7月 大连理工大学 计算机科学与工程系 学士
+1988年9月-1990年9月 武汉理工大学 机械制造系 硕士
+1990年9月-1994年5月 清华大学 计算机科学与技术系 博士
+工作履历
+1995年11月-至今 清华大学自动化系，国家CIMS工程技术研究中心 讲师、副研究员、研究员
+1994年11月-1995年11月 比利时布鲁塞尔自由大学 博士后
+1998年11月-1999年1月 澳门联合国大学 研究员
+2000年1月-2000年12月 美国佐治亚理工学院 项目主管 高级研究科学家
+2001年1月-2002年2月 美国华盛顿大学 项目主管 高级访问教授
+学术兼职
+2008年-现在 教育部科技发展中心 科技奖励评审专家
+2006年7月-至今 国家863计划和国家科技支撑计划 网评专家
+2002年10月-至今 交通部西部项目管理中心 评审专家
+2002年10月-至今 科技部中小企业创新基金 评审专家
+2002年1月-至今 国家自然科学基金委(自动化学科和计算机学科) 通讯评审专家
+1996年1月-至今 计算机集成制造系统、计算机学报、自动化学报、Computers in Industry等 审稿人
+1999年1月-至今 IEEE 会员
+研究领域
+鲁棒、安全可解释第三代人工智能研究，及其在工业和现代服务业的应用
+1. 基于视觉智能的工业表面缺陷检测核心算法
+2. 基于运动轨迹的车间作业合规性监测算法
+3. 数据驱动的工业装备（风电、核电）健康评估与故障诊断
+4. 云边协同（云计算与边缘计算）的算法和任务优化
+5. 智能制造中的工业互联网与智能控制
+6. 医疗领域的人工智能方法
+7. 数据科学与服务科学
+8. 制造业和服务业知识图谱技术
+在以上方向招收：工学博士、创新领军工程博士、工学硕士、深圳研究生院工程硕士、贵州大数据工程硕士
+注：工程博士重点招收方向：人工智能在智能制造、社会治理、健康医疗等领域的落地应用
+研究概况
+1. 基于视觉智能的玻璃表面缺陷检测系统研制，企业横向合作项目，2021.01-2022.12，负责人
+2. 基于人工智能的花边产品缺陷检测系统研制，企业横向合作项目，2021.01-2022.12，负责人
+3. 卷积神经网络在尘肺病可解释分期诊断的研究与应用，重庆市自然基金项目，2020.01-2022.12，清华大学负责人
+4. 大数据驱动的典型工业设备健康管控技术研究(合同号： 2018YFF0214705) ，国家重点研发计划课题，2018.07-2020.12，负责人
+5. 基于大数据的甲肝预测预警模型、算法与系统研发(合同号：2018ZX10201002-004-002)，国家科技重大专项课题，2018.07-2020.12，负责人
+6. 提升高附加值功能化汽车玻璃制造的智能工厂建设，福耀玻璃工业集团股份有限公司，工信部智能制造新模式应用项目，2016.07-2018.12，清华大学负责人
+7. 中小企业云制造服务平台开发与应用(合同号：2015AA042102)，国家863计划主题重大项目课题，2015.01-2016.12，负责人
+8. 大型海上风电场全生命周期的管理决策系统研究(合同号：2012AA051707)，国家863计划主题重大项目课题，2012.04-2014.04，负责人
+9. 中小企业云制造服务平台共性关键技术研究(合同号：2011AA040504)，国家863计划主题重大项目课题，2011.04-2012.09，负责人
+10. 海上风电技术规范体系研究(合同号：20132000059)，企业横向合作项目，2012.10-2014.02，负责人
+11. 计划生育服务系统的业务流程梳理与系统设计(合同号：20102001733)，企业横向合作项目，2010.12-2011.12，负责人
+12. 现代人口生殖健康服务系统的业务流程技术服务(合同号：20102000138)，企业横向合作项目，2010.02-2010.12，负责人
+13. 生殖健康新技术新产品电子服务关键技术研究(合同号： 2008BAH24B03)，国家科技支撑计划重点项目课题，2008.01-2010.12，负责人
+14. 生殖健康公共服务架构设计与信息标准研制(合同号：2008BAH24B01)，国家科技支撑计划重点项目课题，2008.01-2010.12，负责人
+15. 现代服务理论及其在现代物流服务业中的应用研究(合同号：4082017)，北京市自然科学基金项目，2008.01-2010.12，负责人
+16. 现代服务理论与行业应用案例，教育部-IBM部级精品课程建设项目，2008.09-2009.09，负责人
+17. 三峡库区枢纽港经济圈物流服务示范工程(合同号：2006BAH02A20)，国家科技支撑计划重大项目课题，2006.12-2008.12，负责人
+18. 基于SOA架构和语义网的服务系统研究，IBM公司国际合作项目，2006.01-2006.12，负责人
+19. 经纬纺机股份公司十一五信息化规划项目，企业横向合作项目，2006.09-2007.03，负责人
+20. 高等学校仪器设备和优质资源共享系统项目――精品课程子项，教育部项目，2005.10-2006.06，负责人
+21. 2008年奥运会竞赛组织系统(合同号：742SS05005)，国家体育总局基础研究项目，2005.10-2006.09，负责人
+22. 科技奥运之智能比赛――规划、调度与运作管理系统研究(合同号：4031002)，北京市自然科学基金重点项目，2003.01-2005.12，负责人
+23. 网络化制造资源网格系统研究(合同号：2003AA414330)，863前沿探索研究类，2003.10-2005.10，负责人
+24. 第三方物流信息系统(合同号：2003026)，企业横向合作项目，2002.12-2003.12，负责人
+25. 清华大学骨干人才支持计划项目，2002年，负责人
+26. 基于智能Agent的群组决策支持系统及其在BPM中的应用(合同号：69784006)，国家自然科学基金项目，1998.01-2000.12，负责人
+27. 虚拟企业的创建与动态运作研究(合同号：863-511-9841-006)，863应用基础研究项目，1998.09-2000.08，负责人
+28. 支持先进制造与管理模式的决策支持系统(合同号：863-511-9609-001)，863应用基础研究项目，1996.09-1998.08，负责人
+29. 作业调度中的广义时间Petri网(合同号：863-511-9608-001)，863应用基础研究项目，1996.01-1997.12，负责人
+奖励与荣誉
+1. 面向人口生殖健康的一体化服务系统及应用，中国电子学会科学技术奖(科技进步类)二等奖，排名第一，2013年度
+2. 企业资源协同与优化配置理论及方法，中国电子学会科学技术奖(自然科学类)三等奖，排名第二，2012年度
+3. IBM Faculty Award，国际公司奖项，个人奖，2008年度
+4. 2008年奥运会竞赛组织系统研究，国家体育总局项目优秀成果，排名第一，2006.11
+学术成果
+1. Biqing Huang, Chenghai Li, Fei Tao, A chaos control optimal algorithm for QoS-based service composition selection in cloud manufacturing system, Enterprise Information Systems, July 2014, 8(4): 445-463. SCI 000335117600001, EI 20141917704239
+2. Biqing Huang, Chenghai Li, Chao Yin and Xinpei Zhao, Cloud manufacturing service platform for small- and medium-sized enterprises, International Journal of Advanced Manufacturing Technology, April 2013, 65(9-12): 1261-1272. SCI 000316364000006, EI 20133116546476
+3. Biqing Huang, Peng Zhu and Cheng Wu. Customer-centered careflow modeling based on guidelines, Journal of Medical Systems, Oct. 2012, 36(5): 3307-3319. SCI 000307994400059
+4. Biqing Huang, Hongmei Gou, Wenhuang Liu, Yu Li, Min Xie, A framework for virtual enterprise control with the Holonic manufacturing paradigm, Computers in Industry, Dec. 2002, 49(3): 299-310. SCI 000179684200005, EI 2002517277315
+5. Hongmei Gou, Biqing Huang, Wenhuang Liu, Xiu Li, A framework for virtual enterprise operation management, Computers in Industry, April 2003, 50(3): 333-352. SCI 000183148000007, EI 2003217479119
+6. Biqing Huang, Ting Wang and Xiao Xue, Service-selecting approach based on domain-specified QoS model and its application in logistics, The Service Industries Journal, Jul. 2012, 32(9): 1571-1588. SSCI 000304920000010
+7. Biqing Huang, Peng Zhu, Deploying knowledge in healthcare process modeling, International Journal of Psychology, Jul. 2012, 47(SI): 429. SSCI 000307377704438
+8. Biqing Huang, Peng Zhu, Care reminder and knowledge delivery for reproductive families, International Journal of Psychology, Jul. 2012, 47(SI): 342. SSCI 000307377703598
+9. Biqing Huang and Xiao Xue, An application analysis of cluster supply chain – a case study of JCH, Kybernetes, Feb. 2012, 41(1): 254-280. SCI 000304024000022
+10. Biqing Huang, Yang Wang, Zhiyuan Chen and Hongbo Sun, Resource integration framework of logistics resource Grid, Lecture Notes in Computer Science 3818: 288-289, 2005. SCI 000234791200041, EI 2006249935160
+11. 黄必清著，虚拟企业系统的理论与技术。机械工业出版社，北京，2004年1月。
+12. 黄必清主编，奥运赛制基础，人民体育出版社，北京，2006年5月。
+13. 李成海，黄必清，基于属性描述匹配的云制造服务资源搜索方法，计算机集成制造系统，2014年6月，20(6): 1499-1507。
+14. 邓延洁，黄必清，颜波，第三方物流管理模式及其信息系统，计算机集成制造系统，2014年5月，20(5): 1220-1227。EI 20142717894521
+15. 黄必清，张毅，易晓春，海上风电场运行维护系统，清华大学学报(自然科学版)，2014年4月，54(4): 522-529。EI 20143218048459
+16. 黄必清，钟剑辉，张毅，易晓春，基于Petri网的施工进度计划仿真，清华大学学报(自然科学版)，2013年11月，53(11): 1609-1616。EI 20141617586229
+17. 宋庭新，张成雷，李成海，黄必清，中小企业云制造服务平台的研究与开发，计算机集成制造系统，2013年5月，19(5): 1147-1154。EI 20132916508679
+18. Tao Wang, Xiao Xue, Biqing Huang, Clinical trial knowledge management system using ontology, The 2012 Chinese Control and Decision Conference, May 23-25, 2012, Taiyuan, China, 3202-3207. EI 20124015483905 CPCI-S BGS33
+19. 朱鹏，李成海，黄必清，吴澄，吴芸，基于本体的过程融合，清华大学学报(自然科学版)，2012年5月，52(5): 648-654。EI 20122815240464
+20. 黄必清，王涛，朱鹏，薛霄，吴芸，基于本体的临床试验数据语义查询，清华大学学报(自然科学版)，2012年1月，52(1): 47-54。EI 20121814988007
+21. Peng Zhu, Tao Wang, Biqing Huang, Cheng Wu, Patient-centered reproductive healthcare system using ontology, The 2011 Chinese Control and Decision Conference, May 23-25, 2011, Mianyang, China, 4231-4236. EI 20113614294617 CPCI-S BGJ71
+22. 朱鹏, 王涛，黄必清, 吴澄，吴芸，医疗业务系统改造中的逆向工程方法，清华大学学报(自然科学版)，2011年4月，51(4): 554-560。EI 20113214224188
+23. 王涛，薛霄，朱鹏，黄必清，吴芸，基于本体的出生缺陷相关医学知识管理系统，计算机应用研究，2011年3月，2(3): 1007-1011。
+24. 尹超，黄必清，刘飞，闻立杰，王朝坤，黎晓东，杨书评，叶丹，柳先辉，中小企业云制造服务平台共性关键技术体系，计算机集成制造系统，2011年3 月，17(3):495-503。EI 20112013987515
+25. 黄必清，王婷，薛霄，基于扩展QoS模型的物流服务选择方法，清华大学学报(自然科学版)，2011年1月，51(1): 19-24。EI 20111113755324
+26. 朱鹏，黄必清，薛霄，吴澄，吴芸，基于过程挖掘的医疗服务过程建模，计算机集成制造系统，2010年12月，16(12): 2749-2756。EI 20110613651463
+27. Xiao Xue, Biqing Huang, Tao Wang, A systematic analysis of cluster supply chain alliance and its service infrastructures, The 2010 IEEE International Conference on E-Business Engineering, Nov. 10-12, 2010, Shanghai, China, 83-90. EI 20110813692168
+28. 朱鹏, 黄必清, 吴澄，面向用户的逆向服务设计与匹配，计算机集成制造系统，2010年3月，16(3): 462-468。EI 20102112950169
+29. Xiao Xue, Tao Wang, Biqing Huang, The design and implementation of service system for cluster supply chain, The 6th World Congress on Services, July 5-10, 2010, Miami, FL, USA, Services-1: 174-175. EI 20104413350167
+30. Xiao Xue, Tao Wang, Ting Wang, Biqing Huang, Framework of analyzing IT-enabled service system: A case study of cluster supply chain, The 2010 Chinese Control and Decision Conference, May 26-28, 2010, Xuzhou, China, 2400-2405. EI 20103213140135 CPCI-S BUV61
+31. Xiao Xue, Biqing Huang, Tianyuan Xiao, The study of inter-organizational collaboration by cluster supply chain, The 2009 IEEE International Conference on Automation and Logistics, August 5-7, 2009, Shenyang, China, 124-129. EI 20094812517021 CPCI-S BVG93
+32. Peng Zhu, Dongyuan Zhan, Chuanhong Zhu, Dongmin Li, Tingxin Song and Biqing Huang*, A rich internet application based on BPEL services composition for port logistics, The 2008 IEEE Congress on Services, July 6-11, 2008, Honolulu, Hawaii, USA, 120-127. EI 20083811577379 CPCI-S BIL36
+33. Ying Hao, Biqing Huang, Agent-based enterprise information architecture with a 3PL case study, The 2008 World Congress on Intelligent Control and Automation, June 25-27, 2008, Chongqing, China, 8618-8621. EI 20083911601023
+34. 宋庭新，黄必清，邵贝恩，集团型企业业务集成服务平台的研究与应用，计算机集成制造系统，2008年4月，14(4): 696-703。EI 20082311304197
+35. 宋庭新，黄必清，魏春梅，基于语义Web服务的协同物流与集成技术研究，计算机集成制造系统，2008年3月，14(3): 588-594。EI 20081811231551
+36. 陈曦，黄必清，宋庭新，网络化物流服务框架中的语义匹配与过程优化。计算机集成制造系统，2008年3月，14(3): 581-587。EI 20081811231550
+37. 宋庭新，黄必清，熊健民，魏春梅，语义Web服务在业务协同与供应链集成中的应用，中国机械工程，2008年2月，19(4): 410-413。EI 20081311171286
+38. Ting-Xin Song, Bi-Qing Huang, Yao-He Liu, Research on enterprise collaboration and integration in supply chains based on semantic Web services, The 2007 International Conference on Semantic Web and Web Services, June 25-28, 2007, Las Vegas, Nevada, USA, 23-27.
+39. 顾清华，黄必清，陈曦，郝莹，大型综合赛事管理信息系统，清华大学学报(自然科学版)， 2007年4月，47(4): 498-502。EI 20072410652343
+40. Yongheng Jiang, Qinghua Gu, Biqing Huang, Xi Chen, Model transformation and optimization of the Olympics scheduling problem, Acta Automatica Sinica, April 2007, 33(4): 409-413. EI 20072210627620
+41. Bo Yan, Biqing Huang, Hongbo Sun, Chin E. Lin, Cooperative design and development of logistics information system based on simple factory pattern, The 2006 IEEE Asia-Pacific Conference on Services Computing, Dec 12-15, 2006, Guangzhou, China, 118-122. EI 20081011132494 CPCI-S BFR95
+42. 颜波，孙宏波，黄必清，肖田元，数据库表中流水号触发器的研究，计算机工程，2006年6月，32(12): 55-59。EI 2006289997147
+43. 颜波，孙宏波，黄必清，肖田元，粟小荣，第三方物流信息系统运输子系统的设计，交通运输工程学报，2005年9月，5(3): 115-121。EI 2006039644207
+44. 蒲川江，黄必清，李春平，奥运赛程编排约束的语义表示法，计算机应用，2005年8月，25(8): 1870-1873。
+45. 杨昭昭，黄必清，颜波，黄超，基于Web服务的应用网格体系结构研究，计算机应用研究，2005年7月，2005(7): 229-233。
+46. 黄超，黄必清，李春平，物流资源网格环境中资源集成框架的研究，计算机集成制造系统，2005年5月，11(5): 630-635。EI 2005289208150
+47. 孙宏波，颜波，黄必清，郑国勤，面向复杂信息系统的用户管理策略，计算机集成制造系统，2004年12月，10(S1): 105-113。EI 2005139014058
+48. 颜波，黄必清，郑力，肖田元，网格研究现状及其在制造业中的应用，计算机集成制造系统，2004年9月，10(9): 1021-1030。EI 2004538754231
+49. 勾红梅，黄必清，刘文煌，任守榘，面向经营过程的虚拟企业建模与协同运作，高技术通讯，2002年6月，12(6): 43-48。EI 2002407127826
+50. 李瑜，黄必清，刘文煌，吴澄，虚拟企业伙伴选择问题领域的目标本体论，计算机集成制造系统，2002年2月，8(2): 85-90。EI 2002397110107
+51. Hongmei Gou, Biqing Huang, Wenhuang Liu, Yu Li, Shouju Ren, Operation management of Virtual Enterprises, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2046-2051. EI 2002126891940 CPCI-S BU92K
+52. Hongmei Gou, Biqing Huang, Wenhuang Liu, Yu Li, Shouju Ren, Modeling distributed business processes of Virtual Enterprises based on the object-oriented approach and Petri nets, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2052-2057. EI 2002126891941 CPCI-S BU92K
+53. Hongmei Gou, Biqing Huang, Wenhuang Liu, Yu Li, Shouju Ren, Agent-based Virtual Enterprise modeling and operation control, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2058-2063. EI 2002126891942 CPCI-S BU92K
+54. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou and Cheng Wu, An electronic market architecture for Virtual Enterprises, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2028-2033. EI 2002126891937 CPCI-S BU92K
+55. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Ontology for goal management of Virtual Enterprises, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2034-2040. EI 2002126891938 CPCI-S BU92K
+56. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Ontology based decision support system for partner selection of virtual enterprises, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2041-2045. EI 2002126891939 CPCI-S BU92K
+57. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Ontology for modeling and analyzing of enterprise competence, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2941-2946. EI 2002126891607 CPCI-S BU92K
+58. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Ontology and multi-agent based decision support for enterprise bidding, The 2001 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 7-10, 2001, Tucson, Arizona, USA, 2947-2951. EI 2002126891608 CPCI-S BU92K
+59. Hongmei Gou, Biqing Huang, Wenhuang Liu, Shouju Ren, An agent negotiation model for the Virtual Enterprise operation management, 5th World Multi-conference On Systemics, Cybernetics And Informatics (SCI 2001) , July 22 - 25, 2001, Orlando, Florida, USA.
+60. 杨瑞尧，黄必清，刘文煌，UML在虚拟企业集成模型中的应用，计算机工程与应用，2001年7月，37(20): 143-147。
+61. 勾红梅，黄必清，任守榘，基于Agent的成本估算系统，系统工程理论与实践，2001年5月，21(5): 24-30。EI 2001456723054
+62. 李瑜，黄必清，刘文煌，吴澄，基于通用企业能力模型的企业能力管理系统. 计算机工程与应用，2001年2月, 37(6): 104-106, 124。
+63. Hongmei Gou, Biqing Huang, Wenhuang Liu, Shouju Ren and Yu Li, Petri-net-based business process modeling for Virtual Enterprises, The 2000 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 8-11, 2000, Nashville, 3183-3188. EI 2001065457262 CPCI-S BR32T
+64. Hongmei Gou, Biqing Huang, Wenhuang Liu, Shouju Ren and Yu Li, An agent-based approach for workflow management, The 2000 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 8-11, 2000, Nashville, 292-297. EI 2001065457853 CPCI-S BR32T他引1/1
+65. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Knowledge based decision support system for matchmaking of enterprise competence, The 2000 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 8-11, 2000, Nashville, 2023-2027. EI 2001065457611 CPCI-S BR32T
+66. Yu Li, Biqing Huang, Wenhuang Liu, Hongmei Gou, and Cheng Wu, Enterprise competence modeling and management, The 2000 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 8-11, 2000, Nashville, 2121-2126. EI 2001065457628 CPCI-S BR32T
+67. Hongmei Gou, Biqing Huang, Wenhuang Liu, Shouju Ren and Yu Li, A mobile agent based approach for Virtual Enterprise organizing and control, The 16th IFIP WCC2000 International Conference on Intelligent Information Processing, Aug. 21-25, 2000, Beijing, China, 316-319.
+68. Hongmei Gou, Biqing Huang and Shouju Ren, Agent-based business process management in Virtual Enterprises, The 3rd Asian Control Conference, July 4-7, 2000, Shanghai, China, 527-532.
+69. Yu Li, Xin Wang, Biqing Huang, Wenhuang Liu, Cheng Wu, Decision support system for Virtual Enterprise creation, The 2000 International Conference on Artificial Intelligence, Jun. 26-29, 2000, Las Vegas, 807-813. CPCI-S BS04Y
+70. Hongmei Gou, Biqing Huang and Shouju Ren, A UML and Petri nets integrated modeling method for business process in Virtual Enterprises, The AAAI 2000 Spring Symposium Series, Workshop on Bringing Knowledge to Business Processes, March 20-22, 2000, California, USA.
+71. 李瑜，黄必清，吴澄，虚拟企业信息管理系统，高技术通讯，2000年9月，10(9): 69-73。EI 2001015500006
+72. 勾红梅，黄必清，任守渠，UML－PNs集成建模方法及其在虚拟企业经营过程建模中的应用，计算机集成制造系统，2000年5月，6(5): 23-28。EI 2003157433442
+73. 黄必清，刘文煌，奚兵，基于智能Agent的群组决策支持系统及其在经营过程管理中的应用，系统工程理论与实践，2000年4月，20(4): 74-78。
+74. 刘永和，黄必清，刘文煌，虚拟企业集成模型的形式化方法，清华大学学报(自然科学版)，2000年4月，40(4): 84-87。EI 2001115501644
+75. 李瑜，王昕，黄必清，刘文煌，吴澄，基于多AGENT的虚拟企业伙伴选择系统，计算机工程与应用，2000年3月，36(8): 11-15。
+76. 黄必清，刘文煌，刘连臣，黄长宇，勾红梅，李瑜，计算机集成报业系统――体系结构和关键技术研究，计算机集成制造系统，2000年2月，6(1): 45-49。EI 2000455310970
+77. Yu Li, Biqing Huang and Cheng Wu, Virtual enterprise information system, The 1st Asia-Pacific Conference on Intelligent Agent Technology, Dec. 14-17, 1999, Hong Kong, China, 493-497.
+78. Tomasz Janowski, Yonghe Liu and Biqing Huang, Automating partner selection for a virtual organization, IFIP/PRODNET Working Conference on Infrastructures for Industrial Virtual Enterprises, Oct. 27-28, 1999, Porto, Portugal, 433-448. CPCI-S BP67S他引2/2
+79. Yonghe Liu and Biqing Huang, Virtual Enterprise: An agent based approach for decision and control, The 1999 IEEE International Conference on Systems, Man, and Cybernetics, Oct. 12-15, 1999, Tokyo, Japan, 451-456. EI 2000265170859
+80. Feng Wu, Biqing Huang and Wenhuang Liu, Optimal solutions to job planning problems in the assembly shop by timed Petri net, Journal of Systems Engineering and Electronics, 1998, 9(1): 8-14. EI 1998244164934
+81. 黄必清，刘文煌、张钹，动态位级函数在实时调度中的应用，模式识别与人工智能，1997年9月，10(3): 251-258。EI 1998034139685
+82. 黄必清，刘文煌，用成组技术分解调度问题，计算机集成制造系统，1997年8月，3(4): 24-27。 EI 1998164090139</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>黄必清</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/gyznyxtyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3209.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>研究员</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3209.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>hbq@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3209.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1984年9月-1988年7月 大连理工大学 计算机科学与工程系 学士
+1988年9月-1990年9月...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3209.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-huangbiqing";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

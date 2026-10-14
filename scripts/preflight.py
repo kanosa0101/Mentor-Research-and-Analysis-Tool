@@ -190,6 +190,9 @@ if af.exists():
         for key in records:
             school, dept, _ = key.split('/', 2)
             units.setdefault(school, set()).add(dept)
+        for file in (ROOT / 'sites').glob('*/*.yaml'):
+            cfg = load_yaml(file)
+            units.setdefault(cfg['school'], set()).add(cfg['dept'])
         admissions = load_yaml(af)
         admissions_util.validate(admissions, units)
         cf = ROOT / 'data/admissions_checks.json'

@@ -1,7 +1,7 @@
 """公开招生政策摘要校验；来源检查不会修改人工核对记录。"""
 import hashlib
 import re
-from datetime import date
+from datetime import date, datetime
 from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
@@ -31,11 +31,24 @@ def validate(data, units):
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
-        if not isinstance(p, dict) or set(p) != keys:
+        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events'}:
             raise ValueError('政策结构错误')
         if not isinstance(p['id'], str) or not re.fullmatch(r'[a-z0-9_-]+', p['id']) or p['id'] in ids:
             raise ValueError('政策 ID 错误或重复')
         ids.add(p['id'])
+        if p.get('track', 'ordinary') not in ('ordinary', 'special', 'general'):
+            raise ValueError('须区分普通/专项/通用范围')
+        if not isinstance(p.get('events', []), list):
+            raise ValueError('时间事件结构错误')
+        for event in p.get('events', []):
+            if not isinstance(event, dict) or set(event) != {'label', 'kind', 'at', 'quote', 'locator'} or any(not isinstance(v, str) or not v.strip() for v in event.values()) or event['kind'] not in ('deadline', 'exam', 'qualification'):
+                raise ValueError('时间事件须有明确类型与原文定位')
+            if re.fullmatch(r'\d{4}-\d{2}-\d{2}', event['at']):
+                date.fromisoformat(event['at'])
+            else:
+                timestamp = datetime.fromisoformat(event['at'])
+                if timestamp.tzinfo is None:
+                    raise ValueError('精确时间事件须明确时区；仅日期不补时刻')
         if any(not isinstance(p[k], str) for k in ('school', 'dept', 'level', 'degree', 'route', 'source_id')):
             raise ValueError('政策范围须为字符串')
         if p['school'] not in units or (p['dept'] and p['dept'] not in units[p['school']]) or p['level'] not in ('school', 'dept', 'program') or (p['level'] == 'school' and p['dept']) or (p['level'] != 'school' and not p['dept']) or (p['level'] == 'program' and not p['program']):

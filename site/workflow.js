@@ -79,6 +79,7 @@ function reset(prefix){
       el('project-name').value=p.title;el('project-year').value=p.year;
       el('project-school').value=school?.school_name||p.school;el('project-college').value=unit?.dept_name||'';
       el('project-type').value=[{master:'硕士',phd:'博士'}[p.degree],{recommend:'推免',exam:'统考',assessment:'申请考核'}[p.route]].join(' / ');
+      if(p.track==='special')el('project-type').value+=' / 工程硕博士专项';
       el('project-notes').value='政策参考：'+p.title+'\n'+window.ADMISSIONS_DATA.sources[p.source_id].url+'\n摘要核对日期：'+p.reviewed_at+'；提交前需核实完整学校/院系/专业要求，不表示已符合资格。';
     }
   }

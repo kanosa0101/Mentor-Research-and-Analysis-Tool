@@ -26,3 +26,41 @@ targets:
       template: ajax_news_list1_search
     selector: 'a[href*="/bsyjs_zsgz/"]'
     title_selector: .tit
+  - school: buaa
+    dept: cyber
+    name: 北航网络空间安全学院
+    url: https://cst.buaa.edu.cn/yjsjy/zsgz.htm
+    selector: a[href*="/info/1125/"]
+    title_selector: self
+  - school: pku
+    dept: sai
+    name: 北大智能学院
+    url: https://sai.pku.edu.cn/rcpy/yjszs.htm
+    selector: a[href*="/info/"]
+    title_selector: self
+  - school: tsinghua
+    dept: auto
+    name: 清华自动化系
+    url: https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm
+    selector: a[href*="/info/1037/"]
+    title_selector: h4
+  - school: seu
+    dept: auto
+    name: 东南自动化学院
+    url: https://automation.seu.edu.cn/zxtz/list.htm
+    selector: a[href*="/page.htm"]
+    title_selector: self
+  - school: sjtu
+    dept: auto
+    name: 上交自动化与感知学院
+    url: https://sais.sjtu.edu.cn/yjs_zsgz.html
+    selector: a[href*="/yjs_zsgz/"]
+    title_selector: .tit
+    api: https://sais.sjtu.edu.cn/active/ajax_type_list.html
+    post:
+      page: 1
+      cat_code: yjs_zsgz
+      type: ''
+      search: ''
+      extend_id: '39'
+      template: ajax_news_list1_search

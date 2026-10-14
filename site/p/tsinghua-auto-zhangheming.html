@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>张和明 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-zhangheming" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>张和明 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>hmz@mail.tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1075/3207.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1075/3207.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1995 年 12 月毕业于浙江大学，获工学博士学位
+工作履历
+1996年1月-1997年11月 清华大学自动化系，博士后
+1997年12月-1999年6月 清华大学自动化系，讲师
+1999年7月-2011年11月 清华大学自动化系，副教授
+2011年12月-至今 清华大学自动化系，教授
+研究领域
+[1] 智能制造
+[2] 工业智能与大数据
+[3] 复杂系统建模与虚拟仿真
+研究概况
+主要科研项目：
+[1] 智能车环境下分布式联合仿真技术研究，企业委托项目，负责人，2021-2022
+[2] 制造业多价值链协同数据空间知识服务引擎技术与方法，国家重点研发计划课题任务（2020YFB1707803），负责人，2020-2023
+[3] 复杂产品全系统建模与集成技术，国家重点研发计划课题（2018YFB1701602），负责人，2019-2022
+[4] 晶圆级先进封装关键生产工艺的大数据分析，企业委托项目，负责人，2019-2022
+[5] 电声智能工厂管控技术研究，企业委托项目，负责人，2019-2022
+[6] 基于云端的工业机器人集成控制技术及系统，佛山-清华产学研创新课题，负责人，2019-2020
+[7] 红塔集团智慧工厂的大数据分析方法及关键技术，企业委托项目，负责人，2017-2019
+[8] 宁波卷烟厂智慧制造动态能力平台TOC技术开发，企业委托项目，负责人，2018-2020
+[9] 基于CPS的智能装配生产线云服务技术架构，智能制造国家重点实验室基金项目，负责人，2017-2019
+[10] 面向协同仿真的复杂产品多学科耦合建模与计算方法研究，国家自然科学基金项目，负责人，2014-2017
+[11] 面向HLA仿真软件的复杂产品广义多学科统一建模技术，863课题，负责人，2013-2016
+[12] 大功率激光3D打印L-SS平台集成管控技术研究及系统开发，横向项目，负责人，2014-2015
+[13] 面向云仿真的应用服务性能建模及优化方法研究，北京仿真中心合作课题，负责人，2014-2015
+[14] 飞行动力学实时仿真算法研究，航空基金，负责人，2013-2014
+[15] 火电厂大型煤场无线测温系统与数字化监测管理平台研制，横向项目，负责人，2013-2014
+[16] 多学科CAE异构系统的协同理论与技术方法研究，国家自然科学基金项目，负责人，2011-2013
+[17] 多分辨率仿真概念模型推演技术，北京仿真中心合作课题，负责人，2012
+[18] 并行、协同、高效的概念模型建模技术研究，北京仿真中心合作课题，负责人，2011-2012
+[19] 支持400km/h高速检测列车研制的协同仿真平台建设和应用，863项目，主要参与，2010-2012
+[20] 异构CAE系统的协同研究，国防基础理论项目，负责人，2009-2011
+[21] 云仿真平台资源计收费管理系统的研究与开发，北京仿真中心合作课题，负责人，2010-2011
+[22] 多学科协同仿真的适应性算法与模型分析，国防基础科研项目，负责人，2009-2010
+[23] 多学科模型算法体系研究开发，北京仿真中心合作课题，负责人，2009-2010
+[24] 航天虚拟样机多学科协同建模的关键技术研究，国防基础科研项目，负责人，2007-2009
+[25] 北京中丽制机信息化工程总体设计，横向项目，负责人，2008-2009
+[26] 宏华公司产品数字化开发平台总体设计，横向项目，负责人，2007
+[27] 基于Web 、面向服务的复杂产品多学科协同建模与仿真技术研究，武器装备预研基金项目，负责人，2005-2007
+[28] 复杂产品多学科协同设计与仿真融合的理论方法研究，国家自然科学基金项目，负责人，2007-2009
+[29] 江南机器（集团）信息化规划与计算机辅助工艺信息系统总体设计，横向合作，技术负责人，2005-2006
+[30] 虚拟样机环境下复杂产品多领域协同建模方法研究，国家自然科学基金项目，负责人，2003-2005
+[31] 基于协同设计与并行工程的复杂产品虚拟样机技术研究，863项目，负责人，2002-2004
+[32] 中欧网络化制造企业系统集成技术，科技部合作司项目，负责人，2001-2003
+[33] China Europe Network on the Net，欧盟第五框架计划项目，中方负责人，2001-2003
+[34] 航天科工集团“航天CIMS工程”虚拟样机分系统总体设计，横向合作，负责人，2001
+[35] 面向敏捷制造的产品信息全局建模与分布集成技术研究，国家自然科学基金项目，负责人，1999-2001
+奖励与荣誉
+2017年，基于物联网技术的火电厂燃料全过程管理与智能掺烧系统，浙江省科学技术进步二等奖
+2016年，企业信息化交叉学科建设，CAA高等教育教学成果一等奖
+2006年，复杂产品虚拟样机关键技术、协同仿真平台及其工程应用，教育部科技进步二等奖（第一完成人）
+2006年，复杂产品协同仿真平台及其应用，中国电子学会科技进步二等奖（第一完成人）
+2003年，航天并行工程，国防科学技术二等奖
+学术成果
+主要论著：
+[1] Zhang Yi, Peng Peng, Liu Chongdang, Xu Yanyan, Zhang Heming. A sequential resampling approach for imbalanced batch process fault detection in semiconductor manufacturing. Journal of Intelligent Manufacturing, 2020(NOV), DOI:10.1007/s10845-020-01716-5
+[2] Peng Peng, Wenjia Zhang, Yi Zhang, Yanyan Xu, Hongwei Wang, Heming Zhang. Cost Sensitive Active Learning Using Bidirectional Gated Recurrent Neural Networks for Imbalanced Fault Diagnosis. Neurocomputing, 2020, 407(SEP), 232-245
+[3] Jiaxin Zhao, Hongwei Wang, Wenzheng Liu, Heming Zhang. A learning-based multiscale modelling approach to real-time serial manipulator kinematics simulation. Neurocomputing, 2020, 390(May), 280-293
+[4] Jiaxin Zhao, Hongwei Wang, Heming Zhang. A regression-based collaborative filtering recommendation approach to time-stepping multi-solver co-simulation. IEEE Access, 2019, 7(1), 22790-22806
+[5] Yinan Wu, Gongzhuang Peng, Hongwei Wang, Heming Zhang. A Heuristic Algorithm for Optimal Service Composition in Complex Manufacturing Networks. Complexity, 2019, DOI: 10.1155/2019/7819523
+[6] Gongzhuang Peng, Hongwei Wang, Jietao Dong, Zhang Heming. Knowledge-based resource allocation for collaborative development in multi-tenant cloud computing environments. IEEE Transactions on Services Computing, 2018, 11(2), 306-317
+[7] Gongzhuang Peng, Hongwei Wang, Xiao Song, Heming Zhang. Intelligent management of coal stockpiles using improved grey spontaneous combustion forecasting models. Energy, 2017, 132(AUG), 269-279
+[8] Gongzhuang Peng, Hongwei Wang, Heming Zhang. A collaborative system for capturing and reusing in-context design knowledge with an integrated representation model. Advanced Engineering Informatics, 2017, 33(AUG), 314-329
+[9] Gongzhuang Peng, Huachao Mao, Hongwei Wang and Heming Zhang. BOM-based Knowledge Representation and Reasoning for Collaborative Product Development. Journal of Systems Science and Systems Engineering, 2016, 25(2), 159-176
+[10] 彭功状，毛华超，张和明．基于组件的多分辨率动态结构建模与仿真，清华大学学报（自然科学版），2016, 56(9), 974-979
+[11] Hongwei Wang, Huachao Mao, Heming Zhang. A variable-step interaction algorithm for multidisciplinary collaborative simulation. Integrated Computer-Aided Engineering, 2014, 21(3), 263-279
+[12] Hongwei Wang, Heming Zhang. Using collaborative computing technologies to enable the sharing and integration of simulation services for product design. International Journal of Simulation Modeling Practice and Theory, 2012,27, 47-64
+[13] Heming Zhang, Silv Liang, Shiji Song, Hongwei Wang. Truncation Error Computing in Variable Step Collaborative Simulation based on Richardson Extrapolation. Science in China Series F: Information Sciences （中国科学F辑）, 2011, 54(6), 1238-1250
+[14] Silv Liang, Heming Zhang, Hongwei Wang. Combinative Algorithms for the Multidisciplinary Collaborative Simulation of Complex Mechatronic Products Based on Major Step and Convergent Integration Step. Chinese Journal of Mechanical Engineering, 2011, 24(3), 355-363
+[15] Hongwei Wang, Heming Zhang. A distributed and interactive system to integrated design and simulation for collaborative product development. International Journal of Robotics and Computer-Integrated Manufacturing, 2010, 26(6): 778-789
+[16] Heming Zhang, Hongwei Wang, David Chen, Gregory Zacharewicz. A model-driven approach to multidisciplinary collaborative simulation for virtual product development. International Journal of Advanced Engineering Informatics, 2010, 24(2), 167-179
+[17] Hongwei Wang, Aylmer Johnson, Heming Zhang, Silv Liang. Towards a collaborative modeling and simulation platform on the Internet. International Journal of Advanced Engineering Informatics, 2010, 24(2), 208-218
+[18] Zhang Heming. A solution of multidisciplinary collaborative simulation for complex engineering systems in a distributed heterogeneous environment. Science in China Series F: Information Sciences （中国科学F辑）, 2009, 52(10), 1848– 1862
+[19] 王宏伟，张和明．面向广域网环境的协同仿真平台的设计与实现. 计算机集成制造系统, 2009, 15(1), 12-20
+[20] Hongwei Wang, Heming Zhang. An integrated and collaborative approach for complex product development in distributed heterogeneous environment. International Journal of Production Research. 2008, 46(9), 2345-2361
+[21] 张和明，熊光楞．《制造企业的产品生命周期管理》．清华大学出版社，2006年
+讲授课程
+《现代制造技术与生产运作管理》，研究生，32学时</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>张和明</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/gyznyxtyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3207.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>hmz@mail.tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3207.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1995 年 12 月毕业于浙江大学，获工学博士学位
+工作履历
+1996年1月-1997年11月...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3207.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-zhangheming";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

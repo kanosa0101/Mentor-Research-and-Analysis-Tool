@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>游科友 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-youkeyou" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>游科友 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>youky@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1075/3204.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1075/3204.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+2007年8月至2011年6月，新加坡南洋理工大学电气与电子工程学院，获博士学位
+2003年9月至2007年7月，中山大学数计学院， 获学士学位
+工作履历
+2023年7月-今，清华大学自动化系，长聘教授
+2017年1月-2023年6月，清华大学自动化系，（准聘/长聘）副教授
+2012年7月-2016年12月，清华大学自动化系，讲师、助理教授（博士生导师）
+2011年6月至2012年6月，新加坡南洋理工大学，博士后
+2015年7月－2015年8月，意大利都灵理工大学，访问学者
+2014年9月至2014年10月，澳大利亚墨尔本大学，访问学者
+2013年5月至2013年7月，香港科技大学，访问学者
+学术兼职
+1. Associate editor, Automatica, 2022-
+2. Associate editor, IEEE Transactions on Control of Network Systems, 2021-
+3. Associate editor, IEEE Transactions on Cybernetics, 2020-
+4. Associate editor, Systems &amp; Control Letters, 2018-
+5. Associate editor, IEEE Control Systems Letters (2019-2022)
+6. Program Chair, The 15th IEEE International Conference on Control and Automation (ICCA), 2019
+7. Associate editor, Conference Editorial Board, IEEE Control System Society
+8. 国际自动控制联盟《网络化系统》技术委员会成员 (Member of IFAC Technical Committee on Networked Systems);
+9. IEEE 控制系统学会《网络与通信》技术委员会成员(Member of Technical Committee on Networks and Communications, IEEE Control System Society);
+10. 中国自动化学会控制理论专业委员会委员
+11. 中国自动化学会信息物理系统控制与决策专业委员会
+12. 中国人工智能学会工业人工智能专业委员会
+教学情况
+1.开设课程
+•研究生课程《最优滤波理论与应用》，春季学期
+•本科生课程《运筹学》，春季学期
+•研究生课程《复杂网络建模与优化》（非线性规划），秋季学期
+研究领域
+1. 网络化控制系统
+2. 分布式优化与学习
+3. 直接数据驱动控制分析与设计
+研究概况
+主持在研项目（课题）
+1.硬件资源受限下的高效智能控制，科技创新2030--“新一代人工智能”重大项目，2023/03-2026/02
+2.无人系统的高效控制理论与应用, 国家自然科学基金委杰青项目，2024/01-2028/12
+3.超大规模群体智能决策及自主评价与推演，科技创新2030--“新一代人工智能”重大项目课题子任务，2020/11-2024/10
+4.面向重载列车虚拟耦合运行的协同控制理论与方法，国家自然科学基金委重点项目，2021-2025
+主持完成项目（课题）
+1.基于双神经网络的智能MPC及在FPGA芯片上的快速实现，清华大学国强研究院，2021/04-2023/04/29
+2.隧道、港口工程救援辅助机器人研制及应用，国家重点研发计划课题，2017/06-2020/12
+3.基于最少反馈信息的网络化控制系统分析与设计，国家自然科学基金委优青项目，2018/01-2020/12
+4.全海深 ARV 系统基础理论问题研究，国家重点研发计划课题子任务，2016/01-2021/06
+5.缆控采样器的水动力学模型及其运动控制，国家自然科学基金委面上项目，2016/01-2019/12
+6.基于能源指标约束和多工序仿真优化的钢铁行业MES开发及应用，科技部863计划课题，2013/01-2015/12
+7.网络化多自主体系统的分布式优化及其在传感器网络中的应用，国家自然科学基金委青年项目， 2014/01-2016/12
+奖励与荣誉
+1.杰出青年科学基金获得者，2023
+2.教育部自然科学一等奖 (排名6/8)，2022
+3.中国自动化学会自然科学一等奖 （排名 1/4），2021
+4.北京市普通高等学校优秀本科毕设指导教师,  2021
+5.亚洲控制学会Temasek青年教育者奖, 2019
+6.优秀青年科学基金获得者，2017
+7.IBM中国优秀教师奖教金，2014
+8.第29届中国控制会议关肇直最佳论文奖，2010
+学术成果
+著作与章节
+1.Jiaqi Zhang* and Keyou You#, “Distributed optimization in multi-agent networks using one-bit of relative state information”, Systems and Control: Foundations and Applications (ed.Tamer Basar), Birkhäuser, 2018 (Invited)
+2.Tong Zhou, Keyou You and Tao Li, “Estimation and control of large scale networked control systems”, Butterworth-Heinemann, 2018
+3.Keyou You, and Roberto Tempo, “Networked parallel algorithms for robust convex optimization via the scenario approach”, Emerging Applications of Control and Systems Theory-A Festschrift in Honor of Mathukumalli Vidyasagar, pp. 341-354, (eds. R.Tempo, S. Yurkovich, P. Misra, Pradeep), Springer, 2018 (Invited)
+4.Keyou You, Nan Xiao and Lihua Xie, “Analysis and design of networked control systems”, Communications and Control Engineering Series, Springer-Verlag, London, 2015 (A book review by Professor Daniel Liberzon is published on Automatica 68 (2016), 397-398)
+中文发表
+1.赵斐然，游科友，数据驱动的策略优化控制律设计最新研究综述，中国科学-信息科学, 53(6) 2023
+2.李星辰, 赵斐然, 孟庆辉, 游科友,  “面向FPGA便捷部署的智能模型预测控制”,《控制理论与应用》, 2023
+3.张家绮, 游科友, “基于相对状态符号信息的分布式优化算法”,《南京信息工程大学学报:自然科学版》, 第10卷, 第6期，第5-15页,  2018
+4.谢佩, 游科友, 洪奕光, 谢立华, “网络化分布式凸优化算法研究进展”,《控制理论与应用》, 第35卷, 第7期，第918-927页,  2018
+5.游科友, “网络控制系统发展研究”, 2012-2013控制科学与工程学科发展报告, 第60-64页, 2014.
+6.游科友,  谢立华,“镇定网络化线性系统的数据率定理”, 《控制理论与应用》, 第31卷, 第7期, 第930-934页, 2014 (《关肇直奖》设立20周年获奖论文作者特邀专刊).
+7.游科友, 谢立华 ,“网络控制系统的最新研究综述”, 《自动化学报》, 第39卷, 第2期, 第97-114页,  2013 (黄琳院士邀稿, 两次入选中国科学技术信息研究所“领跑者5000-中国精品期刊顶尖学术论文平台(F5000)”项目).
+部分英文期刊列表 ( *独立指导研究生/博士后, **协助指导研究生，# 通信作者)
+1.Feiran Zhao*, Xingyun Fu, Keyou You#, On the sample complexity of stabilizing linear systems via policy gradient methods, IEEE Transactions on Automatic Control, revised, 2023 (full paper)
+2.Yubo Du*, Keyou You#, Distributed adaptive greedy quasi-Newton methods with explicit non-asymptotic convergence bounds, Automatica, conditionally accepted, 2023 (regular paper)
+3.Jiaqi Zhang*, Keyou You#, and Lihua Xie, Innovation compression for communication-efficient distributed optimization with linear convergence”, IEEE Transactions on Automatic Control, vol.68, no.11, pp. 6899 - 6906, 2023
+4.Shubo Kang*, Keyou You#, Minimum input design for direct data-driven property identification of unknown linear systems”, Automatica, vol.156, October 2023, 111130 (regular paper)
+5.Fei Dong*, Xingchen Li*, Keyou You#, Shiji Song, “Standoff tracking using DNN-based MPC with implementation on FPGA”, IEEE Transactions on Control Systems Technology, vol.31, no.5, pp. 1998-2010, 2023
+6.Feiran Zhao*, Keyou You#, Tamer Başar, “Global convergence of policy gradient primal-dual methods for risk-constrained LQRs”, IEEE Transactions on Automatic Control, vol. 68, no.5, pp. 2934-2949, 2023 (full paper)
+7.Feiran Zhao*, Keyou You#, “Data-driven distributionally robust optimal stochastic control using the Wasserstein metric”, Automatica, vol. 149, 110850, 2023
+8.Fei Dong*, Keyou You#, Lihua Xie, Qinglei Hu, “Coordinate-free circumnavigation of a moving target via a PD-like controller &#34;, IEEE Transactions on Aerospace and Electronic Systems, vol.58, no. 3, pp. 2012-2025, 2022
+9.Zhuolin Wang*, Keyou You#, Shiji Song, Yuli Zhang, “Second-order conic programming approach for Wasserstein distributionally robust two-stage linear programs”, IEEE Transactions on Automation Science and Engineering, vol. 19, no. 2, pp. 946-958, 2022
+10.Jiaqi Zhang*, Keyou You#, and Tamer Basar, “Distributed adaptive Newton methods with globally superlinear convergence”, Automatica, vol. 138, 110156, pp. 1-10, 2022 (regular paper)
+11.Xingyu Sha*, Jiaqi Zhang*, Keyou You#, Kaiqing Zhang, Tamer Basar, “Asynchronous policy evaluation in distributed reinforcement learning over networks”, Automatica, vol. 136, 110092, 2022 (regular paper)
+12.Rongping Zhu*, Jiaqi Zhang*, Keyou You#, Tamer Başar, “Asynchronous networked aggregative games”, Automatica, vol. 136, 110054, 2022 (regular paper)
+13.Fei Dong*, Keyou You#, “The isoline tracking in unknown scalar fields with concentration feedback”, Automatica, vol. 133, 109779, 2021
+14.Feiran Zhao*, Keyou You#, Shiji Song, Wenyue Zhang, Laisheng Tong, “Suspension regulation of medium-low-speed maglev trains via deep reinforcement learning”, IEEE Transactions on Artificial Intelligence, vol.2, no.4, pp. 341-351, 2021
+15.Yubo Du*, Keyou You#, “Asynchronous stochastic gradient descent over decentralized datasets”, IEEE Transactions on Control of Network Systems, vol. 8, no. 3, pp. 1212-1224, 2021
+16.Zhuo Li*, Keyou You#, Shiji Song, Anke Xue, “Optimization-based control for bearing-only target search with a mobile vehicle”, IEEE Transactions on Systems, Man and Cybernetics: Systems, vol.51, no.7, pp.4149-4159, 2021
+17.Zhuo Li*, Keyou You#, Shiji Song, “Cooperative field prediction and smoothing via covariance intersection”, IEEE Transactions on Signal Processing, vol. 69, pp. 797-808, 2021
+18.Fei Dong*, Keyou You#, Jiaqi Zhang*, “Flight control for UAV loitering over a ground target with unknown maneuver”, IEEE Transactions on Control Systems Technology, vol. 28, no. 6, pp. 2461-2473 2020
+19.Keyou You#, Qizhu Chen*, Pei Xie*, Shiji Song, “Range-based coordinate alignment for cooperative mobile sensor network localization”, IEEE Transactions on Control of Network Systems, vol. 7, no. 3, pp. 1379-1390, 2020
+20.Jiaqi Zhang*, Keyou You#, “AsySPA: an exact asynchronous algorithm for convex optimization over digraphs”, IEEE Transactions on Automatic Control, vol. 65, no. 6, pp. 2494-2509, 2020 (full paper)
+21.Jiaqi Zhang*, Keyou You#, Kai Cai, “Distributed dual gradient tracking for resource allocation in unbalanced networks”, IEEE Transactions on Signal Processing, vol.68, pp. 2186-2198, 2020
+22.Fei Dong*, Keyou You#, Shiji Song, “Target encirclement with any smooth pattern using range-only measurements”, Automatica, vol. 56, no. 6, 2020
+23.Zhuo Li*, Keyou You#, Shiji Song, “Cooperative source seeking via networked multi-vehicle systems”, Automatica, vol. 56, no. 5, 2020
+24.Zhuolin Wang*, Keyou You#, Shiji Song, Yuli Zhang, “Wasserstein distributionally robust shortest path problem”, European Journal of Operational Research, vol. 284, pp. 31-43, 2020
+25.Jiaqi Zhang*, Keyou You#, and Tamer Basar, “Distributed discrete-time optimization with one bit of relative state information in multi-agent networks”, IEEE Transactions on Automatic Control, vol.64, no.6, pp. 2352-2367, 2019 (full paper)
+26.Keyou You#, Roberto Tempo, and Pei Xie*, “Distributed algorithms for robust convex optimization via the scenario approach&#34;, IEEE Transactions on Automatic Control, vol.64, no.3, pp. 880-895, 2019 (full paper)
+27.Jiaqi Zhang*, Keyou You#, Lihua Xie, “Baysian filtering with unknown sensor measurement losses”, IEEE Transactions on Control of Network Systems, vol. 6, no. 1, pp. 163-175, 2019
+28.Pei Xie*, Keyou You#, Roberto Tempo, Shiji Song, Cheng Wu, “Distributed convex optimization with inequality constraints over time-varying unbalanced digraphs”, IEEE Transactions on Automatic Control, vol. 63, no.12, pp. 4331-4337, 2018
+29.Jianya Ding**, Keyou You#, Shiji Song, Cheng Wu, “Likelihood ratio based scheduler for secure detection in cyber physical systems”, IEEE Transactions on Control of Network Systems, vol.5, no.3, pp. 991-1002, 2018
+30.Jinbiao Lin**, Shiji Song#, Keyou You, Miroslav Krstic, &#34;Stochastic source seeking with forward and angular velocity regulation”, Automatica, vol.83, pp. 378-386, 2017
+31.Keyou You#, Roberto Tempo, Li Qiu, “Distributed algorithms for computation of centrality measures in complex networks&#34;, IEEE Transactions on Automatic Control, vol.62, no.5, pp.2080-2094, 2017 (full paper)
+32.Xiaodong Ai**, Shiji Song, Keyou You#, “Second-order consensus of multi-agent systems under limited interaction ranges&#34;, Automatica, vol. 68, pp.329-333, 2016(#corresponding author)
+33.Chengpu Yu, Keyou You#, Lihua Xie, “Quantized identification of ARMA systems with colored measure-ment noise&#34;, Automatica, vol. 66, pp. 101-106, 2016 (#corresponding author)
+34.Duo Han, Keyou You, Lihua Xie, Junfeng Wu, Ling Shi, “Optimal parameter estimation under controlled communication over sensor networks&#34;, IEEE Transactions on Signal Processing, vol. 63, no. 24, pp. 6473-6485, 2015
+35.Tianju Sui, Keyou You, Minyue Fu#, “Stability conditions for multi-sensor state estimation over a lossy network&#34;, Automatica, vol. 52, pp. 1-9, 2015
+36.Keyou You, “Recursive algorithms for parameter estimation with adaptive quantizer”, Automatica, vol. 52, pp. 192-201, 2015 (regular paper)
+37.Tianju Sui, Keyou You, Minyue Fu#, Damián Marelli, “Stability of MMSE state estimators over lossy networks using linear coding&#34;, Automatica, vol. 51, pp. 167-174, 2015
+38.Keyou You, Zhongkui Li, Lihua Xie#, “Consensus condition for linear multi-agent systems over randomly switching topologies&#34;, Automatica, vol. 49, no. 10, pp. 3125-3132, 2013
+39.Keyou You, Lihua Xie#, Shiji Song, “Asymptotically optimal parameter estimation with scheduled measurements”, IEEE Transactions on Signal Processing, vol. 61, no. 14, pp. 3521-3531, 2013
+40.Keyou You, Lihua Xie#, “Kalman filtering with scheduled measurements,” IEEE Transactions on Signal Processing, vol. 61, no. 6, pp. 1520-1530, 2013
+41.Damian Marelli#, Keyou You, Minyue Fu, “Identification of ARMA models using intermittent and quantized output observations”, Automatica, vol. 49, no. 2, pp. 360-369, 2013 (regular paper)
+42.Kristian Hengster-Movric#, Keyou You, Frank L. Lewis#, Lihua Xie, “Synchronization of discrete-time multi-agent systems on graphs using Riccati design”, Automatica, vol. 49, no. 2, pp. 414-423, 2013 (regular paper)
+43.Keyou You, Minyue Fu, Lihua Xie#, “Mean square stability for Kalman filtering with Markovian packet losses”, Automatica, vol. 47, no. 12, pp. 1247-1257, 2011 (regular paper)
+44.Keyou You, Lihua Xie#, “Network topology and communication data rate for consensusability of discrete-time multi-agent systems”, IEEE Transactions on Automatic Control, vol. 56, no.10, pp. 2262-2275, 2011 (regular paper)
+45.Keyou You, Lihua Xie#, “Minimum data rate for mean square stabilizability of linear systems with Markovian packet losses”, IEEE Transactions on Automatic Control, vol. 56, no.4, pp. 772-785, 2011 (regular paper)
+46.Keyou You, Weizhou Su, Minyue Fu, Lihua Xie#, “Attainability of the minimum data rate for stabilization of linear systems via logarithmic quantization”, Automatica, vol. 47, no.1, pp.170-176, 2011
+47.Keyou You, Lihua Xie#, “Minimum data rate for mean square stabilization of discrete LTI systems over lossy channels”, IEEE Transactions on Automatic Control, vol. 55, no. 10, pp.2373-2378, 2010</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>游科友</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/gyznyxtyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3204.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>youky@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3204.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+2007年8月至2011年6月，新加坡南洋理工大学电气与电子工程学院，获博士学位
+2003年9月至200...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1075/3204.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-youkeyou";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

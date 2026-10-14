@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>王凌 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-wangling" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>王凌 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>wangling@mail.tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1077/3265.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1077/3265.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1990年9月至1995年7月 在清华大学自动化系过程控制专业学习，获学士学位
+1995年9月至1999年10月 在清华大学自动化系控制理论与控制工程专业学习，获博士学位
+工作履历
+1999年10月至2002年11月 清华大学自动化系过程控制工程研究所 讲师
+2002年12月至2008年11月 清华大学自动化系过程控制工程研究所 副教授
+2007年1月至2008年1月 美国密西根大学工业与运作工程系 访问学者
+2008年12月至今 清华大学自动化系过程控制工程研究所 教授 博士生导师
+学术兼职
+[1] 中国仿真学会常务副理事长
+[2] 中国仿真学会智能优化与调度专委会荣誉主任
+[3] 中国人工智能学会自然计算与数字智能城市专委会副主任委员
+[4] 中国运筹学会智能工业数据解析与优化专委会副理事长
+[5] 中国自动化学会过程控制专委会常务委员
+[6] 中国自动化学会控制理论与应用专委会委员
+[7] 中国自动化学会能源互联网专委会常务理事
+[8] 中国人工智能学会智能优化专委会常务理事
+[9] 北京自动化学会常务理事
+[10] Expert Systems with Applications主编
+[11] Swarm and Evolutionary Computation主编
+[12] International Journal of Automation and Control主编
+[13] Complex System Modeling and Simulation执行主编
+[14] IEEE Transactions on Evolutionary Computation副编辑
+[15] Egyptian Informatics Journal副编辑
+[16] Memetic Computing编委
+[17] 《控制理论与应用》编委
+[18] 《控制与决策》编委
+[19] 《控制工程》编委
+[20] 《工业工程》编委
+[21] 《系统工程与电子技术》编委
+[22] 《计算机集成制造系统》编委
+研究领域
+智能优化理论、方法与应用
+复杂生产过程建模、优化与调度
+研究概况
+[1] 国家杰出青年科学基金(61525304)：智能优化调度理论与方法。(负责人) (2016~2020)
+[2] 国家自然科学基金联合重点项目(U24A20273)：面向锡化工生产的全流程建模及学习型智能优化理论与方法。(课题负责人) (2025~2028)
+[3] 国家自然科学基金项目(62273193)：面向车间能效调度的增强智能优化理论与方法。(负责人) (2023~2026)
+[4] 国家自然科学基金项目(61873328)：分布式生产调度的协同群智能优化理论与方法。(负责人) (2019~2022)
+[5] 国家自然科学基金项目(61174189)：复杂资源受限项目调度问题及其混合智能算法研究。(负责人) (2012~2015)
+[6] 国家自然科学基金项目(70871065)：基于学习机制的群智能调度理论与方法研究。(负责人) (2009~2011)
+[7] 国家自然科学基金项目(60774082)：复杂生产系统基于差分进化和量子进化的优化调度理论与方法。(负责人) (2008~2010)
+[8] 国家自然科学基金项目(60374060)：复杂生产系统的智能仿真优化理论与方法研究。(负责人) (2004~2006)
+[9] 国家自然科学基金项目(60204008)：复杂系统基于计算智能的混合优化理论与方法。(负责人) (2003~2005)
+[10] 国家自然科学基金重点项目(60834004)：复杂芯片制造过程实时调度与优化控制理论和算法研究及应用。(课题负责人) (2009~2012)
+[11] 教育部新世纪优秀人才支持计划(NCET-10-0505)。(负责人) (2010~2012)
+[12] 高等学校博士学科点专项科研基金(20130002110057)：基于协同分布估计算法的分布式车间调度研究。(负责人) (2014~2016)
+[13] 高等学校博士学科点专项科研基金(20100002110014)：基于新型混合群智能的资源约束项目调度研究。(负责人) (2011~2013)
+[14] 北京市科技新星计划(2004A41)：混合智能优化调度理论与算法研究。(负责人) (2004~2007)
+[15] 教育部留学回国启动基金：基于混合差分进化的优化调度研究。(负责人) (2009~2010)
+[16] 国家重点研发计划项目(2023YFB3308000)：离散制造业智能工厂制造运营管理平台（MOM）。(课题负责人) (2023~2026)
+[17] 国家重点研发计划(2016YFB0901900)：能源互联网的规划、运行与交易基础理论。(课题负责人) (2016~2020)
+[18] 973计划课题(2013CB329503)：面向脑信息编解码的机器学习方法。(骨干) (2013~2017)
+[19] 973计划课题(2009CB320602)：复杂生产制造全流程基于数据和知识的实时智能运行优化理论和方法研究。(骨干) (2011~2013)
+[20] 973计划课题(2002CB312203)：复杂生产制造过程实时、智能控制与优化理论和方法研究。(骨干) (2002~2008)
+[21] 973计划课题(G1998020310)：混杂电力系统。(骨干) (1998~2003)
+[22] 863计划项目(2007AA04Z155)：流程工业企业生产过程的智能计划与动态优化调度技术。(课题负责人) (2008~2009)
+[23] 国家科技重大专项(2011ZX02504-008)：集成电路生产线智能调度与质量优化控制技术研究。(骨干) (2011~2013)
+[24] 美团合作项目：即时配送场景基于自适应学习机制的鲁棒优化调度。(负责人) (2021~2022)
+[25] 美团合作项目：即时配送多目标鲁棒调度场景的优化问题研究。(负责人) (2019~2020)
+奖励与荣誉
+[1] 2015年度国家杰出青年科学基金
+[2] 2016年度中国自动化学会青年科学家奖
+[3] 2009年度教育部新世纪优秀人才支持计划
+[4] 2009年度清华大学学术新人奖
+[5] 2004年度北京市科技新星
+[6] 2010年度Scopus青年科学之星新人奖
+[7] 2014年度国家自然科学奖二等奖
+[8] 2022年度高等学校科学技术奖自然科学奖二等奖
+[9] 2007年度高等学校科学技术奖自然科学奖二等奖
+[10] 2003年度教育部提名国家自然科学一等奖
+[11] 2022年度湖南省自然科学奖二等奖
+[12] 2021年度湖北省自然科学奖二等奖
+[13] 2017年度云南省自然科学奖三等奖
+[14] 2008年度北京市科学技术奖三等奖
+[15] 2024年度中国仿真学会创新技术奖一等奖
+[16] 2022年度中国仿真学会自然科学奖一等奖
+[17] 2021年度中国仿真学会自然科学奖一等奖
+[18] 2019年度中国仿真学会创新技术奖一等奖
+[19] 2011年度中国电子学会电子信息科学技术奖二等奖
+[20] 2022年度《Tsinghua Science and Technology》 Best Paper Award
+[21] 2022年度《Complex System Modeling and Simulation》 Best Paper Award
+[22] 2017年度《控制与决策》优秀论文奖
+[23] 2016年度《控制理论与应用》优秀论文奖
+[24] 2014年度《自动化学报》优秀论文奖
+[25] 领跑者5000, 中国精品科技期刊顶尖学术论文, 证书编号(13857): S001200812001
+[26] 领跑者5000, 中国精品科技期刊顶尖学术论文, 证书编号(7597): S026201203014
+[27] 领跑者5000, 中国精品科技期刊顶尖学术论文, 证书编号(10418): R060201402004
+[28] 北京地区广受关注学术论文, 2020
+[29] 2005-2010 Engineering Applications of Artificial Intelligence Top Cited Article Awarded by Elsevier
+[30] IEEE TEVC Outstanding Associate Editor
+[31] 《控制理论与应用》优秀编委奖
+[32] 《控制与决策》优秀编委奖
+[33] 2023’ INFORMS Franz Edelman Finalist Award
+[34] 2018’ IEEE ICIC Outstanding Leadership Award
+[35] ICIC’2018 Best Paper Award
+[36] ICHSA’2015 Best Paper Award
+[37] CPCC’2014 Best Poster Award
+[38] IWACIII’2013 Best Paper Award
+[39] ICIC’2011 Best Paper Award
+[40] CCDC’2010 Finalist for Zhang Si-Ying Outstanding Youth Paper Award
+[41] ICMLC’2002 Best Paper Award
+[42] 清华大学优秀博士论文一等奖
+[43] 清华大学优秀教材二等奖 (2004, 2008, 2012, 2016, 2020)
+[44] 清华大学第19届良师益友 (2024)
+[45] 清华大学第18届良师益友 (2022)
+[46] 清华大学第17届良师益友 (2020)
+[47] 清华大学第14届良师益友 (2014)
+[48] 清华大学优秀班主任一等奖 (2004, 2005)
+学术成果
+代表性论著：
+[1] 王凌, 王圣尧, 方晨. 分布估计调度算法. 北京: 清华大学出版社, 2017
+[2] 王凌, 钱斌. 混合差分进化与调度算法. 北京: 清华大学出版社, 2012.
+[3] 王凌, 刘波. 微粒群优化与调度算法. 北京: 清华大学出版社, 2008.
+[4] 王京春, 王凌, 金以慧 (译). 过程的动态特性与控制. 北京: 电子工业出版社, 2006.
+[5] 王凌. 车间调度及其遗传算法. 北京: 清华大学出版社, 2003.
+[6] 王凌. 智能优化算法及其应用. 北京: 清华大学出版社, 2001.
+[7] Wu YT, Wang L, Chen JF. A branch-and-bound enhanced cooperative evolutionary algorithm for the hybrid seru system scheduling considering worker heterogeneity. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[8] Li R, Wang L, Gong WY, Ming F. An evolutionary multitasking memetic algorithm for multiobjective distributed heterogeneous welding flow shop scheduling. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[9] Qi S, Wang R, Zhang T, Huang WX, Qing F, Hu T, Wang L. A Thompson sampling-based sparse evolutionary operator for sparse large-scale multi-objective optimization. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[10] Zhang GH, Wang J, Dang QL, Wang L, Dong CX. Knowledge transfer driven distributed memetic architecture and algorithm for distributed differentiation flowshop integrated scheduling. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[11] Yu H, Gao KZ, Ma ZF, Wang L. Exact and deep Q-network assisted swarm intelligence methods for scheduling multi-objective heterogeneous unmanned surface vehicles. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[12] Wang YJ, Wang GG, Wang L. A tree-based multiobjective evolutionary algorithm for energy-efficient hybrid flow-shop scheduling. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[13] Wang JJ, Han HG, Wang L. A feedback learning-based memetic algorithm for energy-aware distributed flexible job-shop scheduling with transportation constraints. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[14] Pan ZX, Wang L, Wang JJ, Zhang QF. A bi-learning evolutionary algorithm for transportation-constrained and distributed energy-efficient flexible scheduling. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[15] Li GH, Wang ZK, Gao WF, Wang L. Decoupling constraint: Task clone-based multi-tasking optimization for constrained multi-objective optimization. IEEE Transactions on Evolutionary Computation. (Regular Paper).
+[16] Zhao FQ, Yin FM, Wang L, Yu Y. A co-evolution algorithm with dueling reinforcement learning mechanism for the energy-aware distributed heterogeneous flexible flow-shop scheduling problem. IEEE Transactions on Systems, Man, and Cybernetics: Systems. (Regular Paper).
+[17] Yao LZ, Zhang Y, Wang L, Li R, He TT. Natural gas pipeline leak detection based on dual feature drift in acoustic signals. IEEE Transactions on Industrial Informatics. (Regular Paper).
+[18] Li BS, Gao WF, Xie J, Gong MG, Wang L, Li H. Federated multidiscriminators multigenerators for heterogeneous industrial IoT. IEEE Transactions on Industrial Informatics. (Regular Paper).
+[19] Dang QL, Zhang GH, Wang L, Yang S, Zhan T. A generative adversarial networks model based evolutionary algorithm for multimodal multi-objective optimization. IEEE Transactions on Emerging Topics in Computational Intelligence. (Regular Paper).
+[20] Ren YL, Tan M, Su YX, Wang R, Wang L. Two-stage adaptive robust charging scheduling of electric vehicle station based on hybrid demand response. IEEE Transactions on Transportation Electrification. (Regular Paper).
+[21] Wang R, Liu W, Li KW, Zhang T, Wang L, Xu X. Solving orienteering problems by hybridizing evolutionary algorithm and deep reinforcement learning. IEEE Transactions on Artificial Intelligence. (Regular Paper).
+[22] Li WH, Wang R, Heng Y, Zhang T, Wang L. Knowledge-guided evolutionary optimization for large-scale air defense resource allocation. IEEE Transactions on Artificial Intelligence. (Regular Paper).
+[23] Wang JJ, Wang L, Han HG. A knowledge-driven cooperative coevolutionary algorithm for integrated distributed production and transportation scheduling problem. IEEE Transactions on Automation Science and Engineering. (Regular Paper).
+[24] Pan ZX, Wang L, Wang JJ, Yu Y, Li R. Distributed energy-efficient flexible manufacturing with assembly and transportation: A knowledge based bi-hierarchical optimization approach. IEEE Transactions on Automation Science and Engineering. (Regular Paper).
+[25] Liu H, Zhao FQ, Wang L, Xu TP, Dong CX. Evolutionary multitasking memetic algorithm for distributed hybrid flow-shop scheduling problem with deterioration effect. IEEE Transactions on Automation Science and Engineering. (Regular Paper).
+[26] Zhao FQ, Song LS, Jiang T, Wang L, Dong CX. A policy-based meta-heuristic algorithm for energy-aware distributed no-wait flow-shop scheduling in heterogeneous factory systems. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2025, 55(1): 620-634. (Regular Paper).
+[27] Chen JF, Wang L, Liang YL, Yu Y, Feng J, Zhao JX, Ding XT. Order dispatching via GNN-based optimization algorithm for on-demand food delivery. IEEE Transactions on Intelligent Transportation Systems, 2024, 25(10): 13147-13162. (Regular Paper).
+[28] Han YY, Wang YT, Pan QK, Wang L, Tasgetiren MF. Accelerated evaluation of blocking flowshop scheduling with total flow time criteria using a generalized critical machine-based approach. European Journal of Operational Research, 2024, 318(2): 424-441.
+[29] Li R, Wang L, Gong WY, Chen JF, Pan ZX, Wu YT, Yu Y. Evolutionary computation and reinforcement learning integrated algorithm for distributed heterogeneous flowshop scheduling. Engineering Applications of Artificial Intelligence, 2024, 135: 108775.
+[30] Wu YT, Wang L, Li R, Chen JF. A reinforcement learning-driven adaptive decomposition algorithm for multi-objective hybrid seru system scheduling considering worker transfer. Swarm and Evolutionary Computation, 2024, 88: 101602.
+[31] Wu YT, Wang L, Chen JF, Zheng J, Pan ZX. A reinforcement learning driven two-stage evolutionary optimization for hybrid seru system scheduling with worker transfer. International Journal of Production Research, 2024, 62(11): 3952-3971.
+[32] Li R, Gong WY, Wang L, Lu C, Pan ZX, Zhuang XY. Double DQN-based coevolution for green distributed heterogeneous hybrid flowshop scheduling with multiple priorities of jobs. IEEE Transactions on Automation Science and Engineering, 2024, 21(4): 6550-6562. (Regular Paper)
+[33] Liu H, Wu GH, Ji B, Wang L. Multi-objective variable neighborhood descent for heterogeneous multi-UAV coordinated scheduling. IEEE Transactions on Aerospace and Electronic Systems, 2024, 60(2): 1808-1823. (Regular Paper).
+[34] Chen Z, Laili YJ, Zhang L, Wang L. A Trans-Ptr-Nets based transfer optimization method for multi-objective flexible job shop scheduling in IIoT. IEEE Internet of Things Journal, 2024, 11(14): 25382-25393.
+[35] Dang QL, Zhang GH, Wang L, Yang S, Zhan T. Hybrid IoT device selection with knowledge transfer for federated learning. IEEE Internet of Things Journal, 2024, 11(7): 12216-12227.
+[36] Li BS, Gao WF, Xie J, Gong MG, Wang L, Li H. Prototype-based decentralized federated learning for the heterogeneous time-varying IoT systems. IEEE Internet of Things Journal, 2024, 11(4): 6916-6927.
+[37] Pan ZX, Wang L, Dong CX, Chen JF. A knowledge-guided end-to-end optimization framework based on reinforcement learning for flow shop scheduling. IEEE Transactions on Industrial Informatics, 2024, 20(2): 1853-1861. (Regular Paper).
+[38] Yao LZ, Zong X, Wang L, Li R, Yi J. Explicit evolutionary framework with multitasking feature fusion for optimizing operational parameters in aluminum electrolysis process. IEEE Transactions on Cybernetics, 2024, 54(12): 7527-7540. (Regular Paper).
+[39] Zhang GH, Liu B, Wang L, Xing KY. Distributed heterogeneous co-evolutionary algorithm for scheduling a multi-stage fine-manufacturing system with setup constraints. IEEE Transactions on Cybernetics, 2024, 54(3): 1497-1510. (Regular Paper).
+[40] Deng LB, Di YZ, Wang L. A reinforcement-learning-based three-dimensional estimation of distribution algorithm for fuzzy distributed hybrid flow-shop scheduling considering on-time-delivery. IEEE Transactions on Cybernetics, 2024, 54(2): 1024-1036. (Regular Paper).
+[41] Li SJ, Gong WY, Wang L, Gu Q. Evolutionary multitasking via reinforcement learning. IEEE Transactions on Emerging Topics in Computational Intelligence, 2024, 8(1): 762-775. (Regular paper).
+[42] Yao F, Chen YG, Wang L, Chang ZX, Huang PQ, Wang Y. A bilevel evolutionary algorithm for large-scale multiobjective task scheduling in multi-agile earth observation satellite systems. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2024, 54(6): 3512-3524. (Regular Paper).
+[43] Zhao FQ, Zhuang CX, Wang L, Dong CX. An iterative greedy algorithm with Q-learning mechanism for the multiobjective distributed no-idle permutation flowshop scheduling. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2024, 54(5): 3207-3219. (Regular Paper).
+[44] Li WH, Wang R, Huang SJ, Zhang T, Wang L. Large-scale binary matrix optimization for multimicrogrids network structure design. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2024, 54(3): 1633-1644. (Regular Paper).
+[45] Li R, Gong WY, Wang L, Lu C, Dong CX. Co-evolution with deep reinforcement learning for energy aware distributed heterogeneous flexible job shop scheduling. IEEE Transactions on Systems, Man and Cybernetics: Systems, 2024, 54(1): 201-211. (Regular Paper).
+[46] Yu KJ, Zhang DZ, Liang J, Qu BY, Liu MN, Chen K, Yue CT, Wang L. A framework based on historical evolution learning for dynamic multiobjective optimization. IEEE Transactions on Evolutionary Computation, 2024, 28(4): 1127-1140. (Regular Paper).
+[47] Ming F, Gong WY, Wang L, Gao L. Constrained multi-objective optimization problems via multitasking and knowledge transfer. IEEE Transactions on Evolutionary Computation, 2024, 28(1): 77-89. (Regular Paper).
+[48] Dong NJ, Zhang T, Wang R, Liao XK, Wang L. An evolutionary algorithm based on fully connected weight networks for mixed-variable multi-objective optimization. Information Sciences, 2024, 659: 120053.
+[49] Su YX, Zhang T, Xu MY, Tan M, Zhang YZ, Wang R, Wang L. Rough knowledge enhanced dueling deep Q-network for household integrated demand response optimization. Sustainable Cities and Society, 2024, 101: 105065.
+[50] Ming F, Gong WY, Wang L, Jin YC. Constrained multi-objective optimization with deep reinforcement learning assisted operator selection. IEEE/CAA Journal of Automatica Sinica, 2024, 11(4): 919-931.
+[51] Chen JF, Wang L, Pan ZX, Wu YT, Zheng J, Ding XT. A matching algorithm with reinforcement learning and decoupling strategy for order dispatching in on-demand food delivery. Tsinghua Science and Technology, 2024, 29(2): 386-399.
+[52] Wang X, Wang L, Dong CX, Ren H, Xing K. Reinforcement learning-based dynamic order recommendation for on-demand food delivery. Tsinghua Science and Technology, 2024, 29(2): 356-367.
+[53] Tao M, Ren YL, Pan R, Wang L, Chen J. Fair and efficient electric vehicle charging scheduling optimization considering the maximum individual waiting time and operating cost. IEEE Transactions on Vehicular Technology, 2023, 72(8): 9808-9820. (Regular Paper).
+[54] Li WH, Yao XY, Li KW, Wang R, Zhang T, Wang L. Coevolutionary framework for generalized multimodal multi-objective optimization. IEEE/CAA Journal of Automatica Sinica, 2023, 10(7): 1544-1556.
+[55] Wu YT, Wang L, Zhuang XY, Wang JJ, Chen JF, Zheng J. A cooperative coevolutionary algorithm with problem-specific knowledge for energy-efficient scheduling in seru system. Knowledge-Based Systems, 2023, 274: 110663.
+[56] Zhao FQ, Hu XT, Wang L, Xu TP, Zhu NN, Jonrinaldi. A reinforcement learning-driven brain storm optimisation algorithm for multi-objective energy-efficient distributed assembly no-wait flow shop scheduling problem. International Journal of Production Research, 2023, 61(9): 2853-2871.
+[57] Zhao FQ, Zhang H, Wang L. A Pareto-based discrete Jaya algorithm for multiobjective carbon-efficient distributed blocking flow shop scheduling problem. IEEE Transactions on Industrial Informatics, 2023, 19(8): 8588-8599. (Regular Paper).
+[58] Zhao FQ, Jiang T, Wang L. A reinforcement learning driven cooperative meta-heuristic algorithm for energy-efficient distributed no-wait flow-shop scheduling with sequence-dependent setup time. IEEE Transactions on Industrial Informatics, 2023, 19(7): 8427-8440. (Regular Paper).
+[59] Zhao FQ, Xu ZS, Wang L, Zhu NN, Xu TP, Jonrinaldi. A population-based iterated greedy algorithm for distributed assembly no-wait flow-shop scheduling problem. IEEE Transactions on Industrial Informatics, 2023, 19(5): 6692-6705. (Regular Paper).
+[60] Wang XH, Dai YP, Wang L, Jia ZY. Transient analysis and scheduling of Bernoulli serial lines with multi-type products and finite buffers. IEEE Transactions on Automation Science and Engineering, 2023, 20(4): 2367-2382. (Regular Paper).
+[61] Zhao FQ, Wang ZY, Wang L. A reinforcement learning driven artificial bee colony algorithm for distributed heterogeneous no-wait flowshop scheduling problem with sequence-dependent setup times. IEEE Transactions on Automation Science and Engineering, 2023, 20(4): 2305-2320. (Regular Paper).
+[62] Ma ZQ, Wu GH, Ji B, Wang L, Luo QZ, Chen XJ. A novel scattered storage policy considering commodity classification and correlation in robotic mobile fulfillment systems. IEEE Transactions on Automation Science and Engineering, 2023, 20(2): 1020-1033. (Regular Paper).
+[63] Li R, Gong WY, Wang L, Lu C, Zhuang XY. Surprisingly popular-based adaptive memetic algorithm for energy-efficient distributed flexible job shop scheduling. IEEE Transactions on Cybernetics, 2023, 53(12): 8013-8023. (Regular Paper).
+[64] Ming F, Gong WY, Wang L, Gao L. A constrained many-objective optimization evolutionary algorithm with enhanced mating and environmental selections. IEEE Transactions on Cybernetics, 2023, 53(8): 4934-4946. (Regular paper).
+[65] Liang J, Qiao KJ, Yu KJ, Qu BY, Yue CT, Guo WF, Wang L. Utilizing the relationship between unconstrained and constrained Pareto fronts for constrained multi-objective optimization. IEEE Transactions on Cybernetics, 2023, 53(6): 3873-3886. (Regular paper).
+[66] Zhao FQ, Di SL, Wang L. A hyper-heuristic with Q-learning for the multi-objective energy-efficient distributed blocking flow shop scheduling problem. IEEE Transactions on Cybernetics, 2023, 53(5): 3337-3350. (Regular Paper).
+[67] Zhen HX, Gong WY, Wang L, Ming F, Liao ZW. Two-stage data-driven evolutionary optimization for high-dimensional expensive problems. IEEE Transactions on Cybernetics, 2023, 53(4): 2368-2379. (Regular paper).
+[68] Ming F, Gong WY, Wang L, Gao L. A constraint-handling technique for decomposition-based constrained many-objective evolutionary algorithms. IEEE Transactions on Systems, Man and Cybernetics: Systems, 2023, 53(12): 7783-7793. (Regular Paper).
+[69] Zhao FQ, Zhu B, Wang L. An estimation of distribution algorithm-based hyper-heuristic for the distributed assembly mixed no-idle permutation flowshop scheduling problem. IEEE Transactions on Systems, Man and Cybernetics: Systems, 2023, 53(9): 5626-5637. (Regular Paper).
+[70] Zhao FQ*, Zhou G, Wang L. A cooperative scatter search with reinforcement learning mechanism for the distributed permutation flowshop scheduling problem with sequence-dependent setup times. IEEE Transactions on Systems, Man and Cybernetics: Systems, 2023, 53(8): 4899-4911. (Regular Paper).
+[71] Zheng J, Wang L, Wang L, Wang SY, Chen JF, Wang X. Solving stochastic online food delivery problem via iterated greedy algorithm with decomposition-based strategy. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2023, 53(2): 957-969. (Regular Paper).
+[72] Qin HX, Han YY, Chen QD, Wang L, Wang YT, Li JQ, Liu YP. Energy-efficient iterative greedy algorithm for the distributed hybrid flow shop scheduling with blocking constraints. IEEE Transactions on Emerging Topics in Computational Intelligence, 2023, 7(5): 1442-1457. (Regular paper).
+[73] Pan ZX, Wang L, Wang JJ, Lu JW. Deep reinforcement learning based optimization algorithm for permutation flow-shop scheduling. IEEE Transactions on Emerging Topics in Computational Intelligence, 2023, 7(4): 983-994. (Regular Paper).
+[74] Ming F, Gong WY, Wang L, Gao L. Balancing convergence and diversity in objective and decision spaces for multimodal multi-objective optimization. IEEE Transactions on Emerging Topics in Computational Intelligence, 2023, 7(2): 474-486. (Regular Paper).
+[75] Pan ZX, Wang L, Zheng J, Chen JF, Wang X. A learning-based multipopulation evolutionary optimization for flexible job shop scheduling problem with finite transportation resources. IEEE Transactions on Evolutionary Computation, 2023, 27(6): 1590-1603. (Regular Paper).
+[76] Yu KJ, Zhang DZ, Liang J, Chen K, Yue CT, Qiao KJ, Wang L. A correlation-guided layered prediction approach for evolutionary dynamic multiobjective optimization. IEEE Transactions on Evolutionary Computation, 2023, 27(5): 1398-1412. (Regular Paper).
+[77] Ming F, Gong WY, Li DC, Wang L, Gao L. A competitive and cooperative swarm optimizer for constrained multi-objective optimization problems. IEEE Transactions on Evolutionary Computation, 2023, 27(5): 1313-1326. (Regular Paper).
+[78] Zhen HX, Gong WY, Wang L. Evolutionary sampling agent for expensive problems. IEEE Transactions on Evolutionary Computation, 2023, 27(3): 716-727. (Regular Paper).
+[79] Li R, Gong WY, Lu C, Wang L. A learning-based memetic algorithm for energy-efficient flexible job shop scheduling with type-2 fuzzy processing time. IEEE Transactions on Evolutionary Computation, 2023, 27(3): 610-620. (Regular Paper).
+[80] He X, Pan QK, Gao L, Wang L, Suganthan PN. A greedy cooperative co-evolutionary algorithm with problem-specific knowledge for multi-objective flowshop group scheduling problems. IEEE Transactions on Evolutionary Computation, 2023, 27(3): 430-444. (Regular Paper).
+[81] Zheng YJ, Chen X, Song Q, Yang J, Wang L. Evolutionary optimization of COVID-19 vaccine distribution with evolutionary demands. IEEE Transactions on Evolutionary Computation, 2023, 27(1): 141-154. (Regular Paper).
+[82] Li WH, Yao XY, Zhang T, Wang R, Wang L. Hierarchy ranking method for multimodal multi-objective optimization with local Pareto fronts. IEEE Transactions on Evolutionary Computation, 2023, 27(1): 98-110. (Regular Paper).
+[83] Zheng J, Wang L, Chen JF, Pan ZX, Li DH, Liang YL, Ding XT. A predictive-reactive optimization framework with feedback-based knowledge distillation for on-demand food delivery. IEEE Transactions on Intelligent Transportation Systems, 2023, 24(12): 14841-14857. (Regular Paper).
+[84] Luo QZ, Wu GH, Trivedi A, Hong FY, Wang L, Srinivasan D. Multi-objective optimization algorithm with adaptive resource allocation for truck-drone collaborative delivery and pick-up services. IEEE Transactions on Intelligent Transportation Systems, 2023, 24(9): 9642-9657. (Regular Paper).
+[85] Wang X, Wang L, Dong CX, Ren H, Xing K. An online deep reinforcement learning-based order recommendation framework for rider-centered food delivery system. IEEE Transactions on Intelligent Transportation Systems, 2023, 24(5): 5640-5654. (Regular Paper).
+[86] Wang X, Wang L, Wang SY, Pan JZ, Ren H, Zheng J. Recommending-and-grabbing: A crowdsourcing-based order allocation pattern for on-demand food delivery. IEEE Transactions on Intelligent Transportation Systems, 2023, 24(1): 838-853. (Regular Paper).
+[87] Zhao TM, Li W, Qin BY, Wang L, Zomaya A. Pulsed power load coordination in mission and time critical cyber-physical systems. ACM Transactions on Modeling and Performance Evaluation of Computing Systems, 2023, 8(1-2): Article No. 2, pp 1–27.
+[88] Zhao FQ, Wang ZY, Wang L, Xu TP, Zhu NN, Jonrinaldi. An exploratory landscape analysis driven artificial bee colony algorithm with maximum entropic epistasis. Applied Soft Computing, 2023, 137: 110139.
+[89] Wang JJ, Wang L, Xiu X. A cooperative memetic algorithm for energy-aware distributed welding shop scheduling problem. Engineering Applications of Artificial Intelligence, 2023, 120: 105877.
+[90] Zheng J, Wang L, Chen JF, Wang X, Liang YL, Duan HN, Li ZX, Ding XT. Dynamic multi-objective balancing for online food delivery via fuzzy logic system-based supply-demand relationship identification. Computers &amp; Industrial Engineering, 2022, 172: 108609.
+[91] Wang JJ, Wang L. A cooperative memetic algorithm with feedback for the energy-aware distributed flow-shops with flexible assembly scheduling. Computers &amp; Industrial Engineering, 2022, 168: 108126.
+[92] Zheng J, Wang L, Wang SY, Chen JF, Wang X, Duan HN, Liang YL, Ding XT. Modeling stochastic service time for complex on-demand food delivery. Complex &amp; Intelligent Systems, 2022, 8(6): 4939-4953.
+[93] Chen JF, Wang L, Wang SY, Wang X, Ren H. An effective matching algorithm with adaptive tie-breaking strategy for online food delivery problem. Complex &amp; Intelligent Systems, 2022, 8(1): 107-128.
+[94] Chen JF, Wang L, Ren H, Pan JZ, Wang SY, Zheng J, Wang X. An imitation learning-enhanced iterated matching algorithm for on-demand food delivery. IEEE Transactions on Intelligent Transportation Systems, 2022, 23(10): 18603-18619. (Regular Paper).
+[95] Luo QZ, Wu GH, Ji B, Wang L, Suganthan PN. Hybrid multi-objective optimization approach with Pareto local search for collaborative truck drone routing problems considering flexible time windows. IEEE Transactions on Intelligent Transportation Systems, 2022, 23(8): 13011-13025. (Regular paper).
+[96] Li KW, Zhang T, Wang R, Wang YH, Han Y, Wang L. Deep reinforcement learning for combinatorial optimization: covering salesman problems. IEEE Transactions on Cybernetics, 2022, 52(12): 13142-13155. (Regular Paper).
+[97] Zhao FQ, Ma R, Wang L. A self-learning discrete Jaya algorithm for multi-objective energy-efficient distributed no-idle flow-shop scheduling problem in heterogeneous factory system. IEEE Transactions on Cybernetics, 2022, 52(12): 12675-12686. (Regular Paper).
+[98] Li J, Xin B, Chen J, Wang L. S-CoEA: subproblems co-solving evolutionary algorithm for uncertain optimization. IEEE Transactions on Cybernetics, 2022, 52(10): 10123-10136. (Regular Paper).
+[99] Pan QK, Gao L, Wang L. An effective cooperative co-evolutionary algorithm for distributed flowshop group scheduling problems. IEEE Transactions on Cybernetics, 2022, 52(7): 5999-6012. (Regular Paper).
+[100] Pan ZX, Lei DM, Wang L. A knowledge-based two-population optimization algorithm for distributed energy-efficient parallel machines scheduling. IEEE Transactions on Cybernetics, 2022, 52(6): 5051-5063. (Regular Paper).
+[101] Wang K, Gong WY, Liao ZW, Wang L. Hybrid niching-based differential evolution with two archives for nonlinear equations system. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(12): 7469-7481. (Regular Paper).
+[102] Zhang GH, Wang L, Xing KY. Dual-space co-evolutionary memetic algorithm for scheduling hybrid differentiation flowshop with limited buffer constraints. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(11)： 6822-6836. (Regular Paper).
+[103] Ming F, Gong WY, Wang L. A two-stage evolutionary algorithm with balanced convergence and diversity for many-objective optimization. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(10): 6222-6234. (Regular Paper).
+[104] Jing XL, Pan QK, Gao L, Wang L. An effective iterated greedy algorithm for a robust distributed permutation flowshop problem with carryover sequence-dependent setup time. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(9): 5783-5794. (Regular Paper).
+[105] Pan ZX, Lei DM, Wang L. A bi-population evolutionary algorithm with feedback for energy-efficient fuzzy flexible job shop scheduling. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(8): 5295-5307. (Regular paper).
+[106] Liu J, Wang Y, Xin B, Wang L. A biobjective perspective for mixed-integer programming. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(4): 2374-2385. (Regular Paper).
+[107] He YM, Xing LN, Chen YW, Pedrycz W, Wang L, Wu GH. A generic Markov decision process model and reinforcement learning method for scheduling agile earth observation satellites. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2022, 52(3): 1463-1474. (Regular Paper).
+[108] Zhang GH, Liu B, Wang L, Yu DX, Xing KY. Distributed co-evolutionary memetic algorithm for distributed hybrid differentiation flowshop scheduling problem. IEEE Transactions on Evolutionary Computation, 2022, 26(5): 1043-1057. (Regular Paper).
+[109] Li KW, Zhang T, Wang R, Wang L, Ishibuchi H. An evolutionary multi-objective knee-based lower upper bound estimation method for wind speed interval forecast. IEEE Transactions on Evolutionary Computation, 2022, 26(5): 1030-1042. (Regular Paper).
+[110] Wu GH, Wen XP, Wang L, Pedrycz W, Suganthan PN. A voting-mechanism based ensemble framework for constraint handling techniques. IEEE Transactions on Evolutionary Computation, 2022, 26(4): 646-660. (Regular Paper).
+[111] Wang JJ, Wang L. A cooperative memetic algorithm with learning-based agent for energy-aware distributed hybrid flow-shop scheduling. IEEE Transactions on Evolutionary Computation, 2022, 26(3): 461-475. (Regular Paper).
+[112] Zhang GH, Ma XJ, Wang L, Xing KY. Elite archive-assisted adaptive memetic algorithm for a realistic hybrid differentiation flowshop scheduling problem. IEEE Transactions on Evolutionary Computation, 2022, 26(1): 100-114. (Regular Paper).
+[113] Wang JJ, Wang L. A bi-population cooperative memetic algorithm for distributed hybrid flow-shop scheduling. IEEE Transactions on Emerging Topics in Computational Intelligence, 2021, 5(6): 947-961. (Regular Paper).
+[114] Wang L, Pan ZX, Wang JJ. A review of reinforcement learning based intelligent optimization for manufacturing scheduling. Complex System Modeling and Simulation, 2021, 1(4): 257-270.
+[115] Zhao FQ, He X, Wang L. A two-stage cooperative evolutionary algorithm with problem-specific knowledge for energy-efficient scheduling of no-wait flow-shop problem. IEEE Transactions on Cybernetics, 2021, 51(11): 5291-5303. (Regular Paper).
+[116] Zhou SC, Xing LN, Zheng X, Du N, Wang L, Zhang QF. A self-adaptive differential evolution algorithm for scheduling a single batch-processing machine with arbitrary job sizes and release times. IEEE Transactions on Cybernetics, 2021, 51(3): 1430-1442. (Regular Paper).
+[117] Xu BL, Shi J, Lu ML, Cong JL, Wang L, Nener B. An automated cell tracking approach with multi-Bernoulli filtering and ant colony labor division. IEEE/ACM Transactions on Computational Biology and Bioinformatics, 2021, 18(5): 1850-1863. (Regular Paper).
+[118] Wu CG, Li W, Wang L, Zomaya AY. Hybrid evolutionary scheduling for energy-efficient fog-enhanced internet of things. IEEE Transactions on Cloud Computing, 2021, 9(2): 641-653. (Regular Paper).
+[119] Wang X, Wang L, Wang SY, Chen JF, Wu CG. An XGBoost-enhanced fast constructive algorithm for food delivery route planning problem. Computers &amp; Industrial Engineering, 2021, 152: 107029.
+[120] Wu JY, Gong WY, Wang L. A clustering-based differential evolution with different crowding factors for nonlinear equations system. Applied Soft Computing, 2021, 98: 106733.
+[121] Wang R, Ma WB, Tan M, Wu GH, Wang L, Gong DW, Xiong J. Preference-inspired coevolutionary algorithm with active diversity strategy for multi-objective multi-modal optimization. Information Sciences, 2021, 546: 1148-1165.
+[122] Wang JJ, Wang L. A knowledge-based cooperative algorithm for energy-efficient scheduling of distributed flow-shop. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2020, 50(5): 1805-1819. (Regular Paper).
+[123] Li JQ, Song MX, Wang L, Duan PY, Han YY, Sang HY, Pan QK. Hybrid artificial bee colony algorithm for a parallel batching distributed flow shop problem with deteriorating jobs. IEEE Transactions on Cybernetics, 2020, 50(6): 2425-2439. (Regular Paper).
+[124] Chang F, Dong MY, Liu M, Wang L, Duan YQ. A lightweight appearance quality assessment system based on parallel deep learning for painted car-body. IEEE Transactions on Instrumentation &amp; Measurement, 2020, 69(8): 5298-5307. (Regular Paper).
+[125] Chen HK, Tian Y, Pedrycz W, Wu GH, Wang R, Wang L. Hyperplane assisted evolutionary algorithm for many-objective optimization problems. IEEE Transactions on Cybernetics, 2020, 50(7): 3367-3380. (Regular Paper).
+[126] Liu QF, Gehrlein WV, Wang L, Yan Y, Cao YY, Chen W, Li Y. Paradoxes in numerical comparison of optimization algorithms. IEEE Transactions on Evolutionary Computation, 2020, 24(4): 777-791. (Regular Paper).
+[127] Du YH, Wang T, Xin B, Wang L, Chen YG, Xing LN. A data-driven parallel scheduling approach for multiple agile earth observation satellites based on cooperative neuro evolution of augmenting topologies. IEEE Transactions on Evolutionary Computation2020, 24(4): 679-693. (Regular Paper).
+[128] Rong M, Gong DW, Pedrycz W, Wang L. A multi-model prediction method for dynamic multi-objective evolutionary optimization. IEEE Transactions on Evolutionary Computation, 2020, 24(2): 290-304. (Regular Paper).
+[129] Liao ZW, Gong WY, Yan XS, Wang L, Hu CY. Solving nonlinear equations system with dynamic repulsion-based evolutionary algorithms. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2020, 50(4): 1590-1601. (Regular Paper).
+[130] Gong WY, Wang Y, Cai ZH, Wang L. Finding multiple roots of nonlinear equation systems via a repulsion-based adaptive differential evolution. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2020, 50(4): 1499-1513. (Regular Paper).
+[131] Jiang ED, Wang L, Peng ZP. Solving energy-efficient distributed job shop scheduling via multi-objective evolutionary algorithm with decomposition. Swarm and Evolutionary Computation, 2020, 58: 100745.
+[132] Jiang ED, Wang L. Multi-objective optimization based on decomposition for flexible job shop scheduling under time-of-use electricity prices. Knowledge-Based Systems, 2020, 204: 106177.
+[133] Gao KZ, Huang Y, Sadollah A, Wang L. A review of energy-efficient scheduling in intelligent production systems. Complex &amp; Intelligent Systems, 2020, 6(2): 237-249.
+[134] Sun BQ, Wang L, Peng ZP. Bound-guided hybrid estimation of distribution algorithm for energy-efficient robotic assembly line balancing. Computers &amp; Industrial Engineering, 2020, 146: 106604.
+[135] Zheng J, Wang L, Wang JJ. A cooperative coevolution algorithm for multi-objective fuzzy distributed hybrid flow shop. Knowledge-Based Systems, 2020, 194: 105536.
+[136] Li SJ, Gong WY, Wang L, Yan XS, Hu CY. A hybrid adaptive teaching-learning-based optimization and differential evolution for parameter identification of photovoltaic models. Energy Conversion and Management, 2020, 225: 113474.
+[137] Li SJ, Gong WY, Wang L, Yan XS, Hu CY. Optimal power flow by means of improved adaptive differential evolution. Energy, 2020, 198: 117314.
+[138] Wang R, Xiong J, He MF, Gao L, Wang L. Multi-objective optimal design of hybrid renewable energy system under multiple scenarios. Renewable Energy, 2020, 151: 226-237.
+[139] Yan XS, Li PP, Tang K, Gao L, Wang L. Clonal selection based intelligent parameter inversion algorithm for prestack seismic data. Information Sciences, 2020, 517: 86-99.
+[140] Hu CY, Dai LG, Yan XS, Gong WY, Liu XB, Wang L. Modified NSGA-III for sensor placement in water distribution system. Information Sciences, 2020, 509: 488-500.
+[141] Chen JF, Wang L, Peng ZP. A collaborative optimization algorithm for energy-efficient multi-objective distributed no-idle flow-shop scheduling. Swarm and Evolutionary Computation, 2019, 50: 100557.
+[142] Sun BQ, Wang L. A decomposition-based matheuristic for supply chain network design with assembly line balancing. Computers &amp; Industrial Engineering, 2019, 131: 408-417.
+[143] Wang JJ, Wang L. Decoding methods for the flow shop scheduling with peak power consumption constraints. International Journal of Production Research, 2019, 57(10): 3200-3218.
+[144] Xiang S, Xing LN, Wang L, Zou K. Comprehensive learning pigeon-inspired optimization with tabu list. SCIENCE CHINA Information Sciences, 2019, 62(7): 070208.
+[145] Lei DM, Li M, Wang L. A two-phase meta-heuristic for multi-objective flexible job shop scheduling problem with total energy consumption threshold. IEEE Transactions on Cybernetics, 2019, 49(3): 1097-1109. (Regular Paper).
+[146] Wang L, Lu JW. A memetic algorithm with competition for the capacitated green vehicle routing problem. IEEE/CAA Journal of Automatica Sinica, 2019, 6(2): 516-526.
+[147] Jiang ED, Wang L. An improved multi-objective evolutionary algorithm based on decomposition for energy-efficient permutation flow shop scheduling problem with sequence-dependent setup time. International Journal of Production Research, 2019, 57(6): 1756-1771.
+[148] Zhang JW, Wang L, Xing LN. Large-scale medical examination scheduling technology based on intelligent optimization. Journal of Combinatorial Optimization, 2019, 37(1): 385-404.
+[149] Li SJ, Gong WY, Yan XS, Hu CY, Bai DY, Wang L. Parameter estimation of photovoltaic models with memetic adaptive differential evolution. Solar Energy, 2019, 190: 465-474.
+[150] Zheng XL, Wang L. A collaborative multi-objective fruit fly optimization algorithm for the resource constrained unrelated parallel machine green scheduling problem. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2018, 48(5): 790-800. (Regular Paper).
+[151] Wang Y, Shi JM, Wang R, Liu Z, Wang L. Siting and sizing of fast charging stations in highway network with budget constraint. Applied Energy, 2018, 228: 1255-1271.
+[152] Gong WY, Yan XS, Hu CY, Wang L, Gao L. Fast and accurate parameter extraction for different types of fuel cells with decomposition and nature-inspired optimization method. Energy Conversion and Management, 2018, 174: 913-921.
+[153] Wang R, Lai SM, Wu GH, Xing LN, Wang L, Ishibuchi H. Multi-clustering via evolutionary multi-objective optimization. Information Sciences, 2018, 450: 128-140.
+[154] Wu CG, Wang L. A multi-model estimation of distribution algorithm for energy efficient scheduling under cloud computing system. Journal of Parallel and Distributed Computing, 2018, 117: 63-72.
+[155] Wang L, Zheng XL. A knowledge-guided multi-objective fruit fly optimization algorithm for the multi-skill resource constrained project scheduling problem. Swarm and Evolutionary Computation, 2018, 38: 54-63.
+[156] Gao KZ, Wang L, Luo JP, Jiang H, Sadollah A, Pan QK. Discrete harmony search algorithm for scheduling and rescheduling the re-processing problems in remanufacturing: A case study. Engineering Optimization, 2018, 50(6): 965-981.
+[157] Wang R, Li GZ, Ming MJ, Wu GH, Wang L. An efficient multi-objective model and algorithm for sizing a stand-alone hybrid renewable energy system. Energy, 2017, 141: 2288-2299.
+[158] Zheng HY, Wang L, Zheng XL. Teaching-learning-based optimization algorithm for multi-skill resource constrained project scheduling problem. Soft Computing, 2017, 21(6): 1537-1548.
+[159] Deng J, Wang L. A competitive memetic algorithm for multi-objective distributed permutation flow shop scheduling problem. Swarm and Evolutionary Computation, 2017, 32: 121-131.
+[160] Zheng XL, Wang L. A knowledge-guided fruit fly optimization algorithm for dual resource constrained flexible job-shop scheduling problem. International Journal of Production Research, 2016, 54(18): 5554-5566.
+[161] Tian MM, Jiang YH, Gao XY, Wang L, Huang DX. Plantwide scheduling model for the typical polyvinyl chloride production by calcium carbide method. Industrial &amp; Engineering Chemistry Research, 2016, 55(21): 6161-6174.
+[162] Zheng XL, Wang L. A two-stage adaptive fruit fly optimization algorithm for unrelated parallel machine scheduling problem with additional resource constraints. Expert Systems with Applications, 2016, 65: 28-39.
+[163] Wang L, Wang SY, Zheng XL. A hybrid estimation of distribution algorithm for unrelated parallel machine scheduling with sequence-dependent setup times. IEEE/CAA Journal of Automatica Sinica, 2016, 3(3): 235-246.
+[164] Shen JN, Wang L, Zheng HY. A modified teaching-learning-based optimization algorithm for bi-objective re-entrant hybrid flowshop scheduling. International Journal of Production Research, 2016, 54(12): 3622-3639.
+[165] Deng J, Wang L, Wang SY, Zheng XL. A competitive memetic algorithm for the distributed two-stage assembly flow-shop scheduling problem. International Journal of Production Research, 2016, 54(12): 3561-3577.
+[166] Wang SY, Wang L. An estimation of distribution algorithm-based memetic algorithm for the distributed assembly permutation flow-shop scheduling problem. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2016, 46(1): 139-149. (Regular Paper).
+[167] Shi L, Jiang YH, Wang L, Huang DX. Efficient Lagrangian decomposition approach for solving refinery production scheduling problems involving operational transitions of mode switching. Industrial &amp; Engineering Chemistry Research, 2015, 54(25): 6508-6526.
+[168] Zheng HY, Wang L. Reduction of carbon emissions and project makespan by a Pareto-based estimation of distribution algorithm. International Journal of Production Economics, 2015, 164: 421-432.
+[169] Wang SY, Wang L, Liu M, Xu Y. An order-based estimation of distribution algorithm for stochastic hybrid flow-shop scheduling problem. International Journal of Computer Integrated Manufacturing, 2015, 28(3): 307-320.
+[170] Zheng HY, Wang L. An effective teaching-learning-based optimization algorithm for RCPSP with ordinal interval numbers. International Journal of Production Research, 2015, 53(6): 1777-1790.
+[171] Zhang X, Chen MY, Wang L, Peng ZH, Zhou DH. Connection-graph-based event-triggered output consensus in multi-agent systems with time-varying couplings. IET Control Theory and Applications, 2015, 9(1): 1-9.
+[172] Shi L, Jiang YH, Wang L, Huang DX. Refinery production scheduling involving operational transitions of mode switching under predictive control system. Industrial &amp; Engineering Chemistry Research, 2014, 53(19): 8155-8170.
+[173] Pan QK, Wang L, Li JQ, Duan JH. A novel discrete artificial bee colony algorithm for the hybrid flowshop scheduling problem with makespan minimization. OMEGA-International Journal of Management Science, 2014, 45: 42-56.
+[174] Wang L, Fang C, Mu CD, Liu M. A Pareto-archived estimation-of-distribution algorithm for multi-objective resource-constrained project scheduling problem. IEEE Transactions on Engineering Management, 2013, 60(3): 617-626. (Regular Paper).
+[175] Wang SY, Wang L, Liu M, Xu Y. An effective estimation of distribution algorithm for solving the distributed permutation flow-shop scheduling problem. International Journal of Production Economics, 2013, 145(1): 387-396.
+[176] Pan QK, Wang L, Sang HY, Li JQ, Liu M. A high performing memetic algorithm for the flowshop scheduling problem with blocking. IEEE Transactions on Automation Science and Engineering, 2013, 10(3): 741-756. (Regular Paper).
+[177] Wang L, Zhou G, Xu Y, Liu M. A hybrid artificial bee colony algorithm for the fuzzy flexible job-shop scheduling problem. International Journal of Production Research, 2013, 51(12): 3593-3608.
+[178] Wang L, Wang SY, Liu M. A Pareto-based estimation of distribution algorithm for the multi-objective flexible job-shop scheduling problem. International Journal of Production Research, 2013, 51(12): 3574-3592.
+[179] Wang L, Zheng XL, Wang SY. A novel binary fruit fly optimization algorithm for solving the multidimensional knapsack problem. Knowledge-Based Systems, 2013, 48: 17-23.
+[180] Pan QK, Wang L, Mao K, Zhao JH, Zhang M. An effective artificial bee colony algorithm for a real-world hybrid flowshop problem in steelmaking process. IEEE Transactions on Automation Science and Engineering, 2013, 10(2): 307-322. (Regular Paper).
+[181] Wang L, Wang SY, Xu Y, Zhou G, Liu M. A bi-population based estimation of distribution algorithm for the flexible job-shop scheduling problem. Computers &amp; Industrial Engineering, 2012, 62(4): 917-926.
+[182] Fang C, Wang L. An effective shuffled frog-leaping algorithm for resource-constrained project scheduling problem. Computers &amp; Operations Research, 2012, 39(5): 890-901.
+[183] Pan QK, Wang L. Effective heuristics for the blocking flowshop scheduling problem with makespan minimization. OMEGA-International Journal of Management Science, 2012, 40(2): 218-229.
+[184] Wang L, Fang C. An effective estimation of distribution algorithm for the multi-mode resource-constrained project scheduling problem. Computers &amp; Operations Research, 2012, 39(2): 449-460.
+[185] Wang L, Li LP. Fixed-structure H∞ controller synthesis based on differential evolution with level comparison. IEEE Transactions on Evolutionary Computation, 2011, 15(1): 120-129. (Regular paper)
+[186] Wang L, Fang C. An effective shuffled frog-leaping algorithm for multi-mode resource-constrained project scheduling problem. Information Sciences, 2011, 181(20): 4804-4822.
+[187] Liu B, Wang L, Liu Y, Wang SY. A unified framework for population-based metaheuristics. Annals of Operations Research, 2011, 186(1): 231-262.
+[188] Wang L, Pan QK, Tasgetiren MF. A hybrid harmony search algorithm for the blocking permutation flow shop scheduling problem. Computers &amp; Industrial Engineering, 2011, 61(1): 76-83.
+[189] Pan QK, Wang L, Gao L, Li WD. An effective hybrid discrete differential evolution algorithm for the flow shop scheduling with intermediate buffers. Information Sciences, 2011, 181(3): 668-685.
+[190] Pan QK, Suganthan PN, Wang L, Gao L, Mallipeddi R. A differential evolution algorithm with self-adapting strategy and control parameters. Computers &amp; Operations Research, 2011, 38(1): 394-408.
+[191] Wang L, Li LP. An effective differential evolution with level comparison for constrained engineering design. Structural and Multidisciplinary Optimization, 2010, 41(6): 947-963.
+[192] Liu B, Wang L, Liu Y, Qian B, Jin YH. An effective hybrid particle swarm optimization for batch scheduling of polypropylene processes. Computers &amp; Chemical Engineering, 2010, 34(4): 518-528.
+[193] Wang L, Huang FZ. Parameter analysis based on stochastic model for differential evolution algorithm. Applied Mathematics and Computation, 2010, 217(7): 3263-3273.
+[194] Wang L, Pan QK, Suganthan PN, Wang WH, Wang YM. A novel hybrid discrete differential evolution algorithm for blocking flow shop scheduling problems. Computers &amp; Operations Research, 2010, 37(3): 509-520.
+[195] Qian B, Wang L, Hu R, Huang DX, Wang X. A DE-based approach to no-wait flow-shop scheduling. Computers &amp; Industrial Engineering, 2009, 57(3): 787-805.
+[196] Qian B, Wang L, Huang DX, Wang X. Multi-objective no-wait flow-shop scheduling with a memetic algorithm based on differential evolution. Soft Computing, 2009, 13(8-9): 847-869.
+[197] Pan QK, Wang L, Qian B. A novel differential evolution algorithm for bi-criteria no-wait flow shop scheduling problems. Computers &amp; Operations Research, 2009, 36(8): 2498-2511.
+[198] Qian B, Wang L, Huang DX, Wang X. An effective hybrid DE-based algorithm for flow shop scheduling with limited buffers. International Journal of Production Research, 2009, 47(1): 1-24.
+[199] Qian B, Wang L, Huang DX, Wang WL, Wang X. An effective hybrid DE-based algorithm for multi-objective flow shop scheduling with limited buffers. Computers &amp; Operations Research, 2009, 36(1): 209-233.
+[200] Li BB, Wang L, Liu B. An effective PSO-based hybrid algorithm for multi-objective permutation flow shop scheduling. IEEE Transactions on Systems, Man and Cybernetics-Part A: Systems and Humans, 2008, 38(4): 818-831. (Regular paper)
+[201] Liu B, Wang L, Jin YH. An effective hybrid PSO-based algorithm for flow shop scheduling with limited buffers. Computers &amp; Operations Research, 2008, 35(9): 2791-2806.
+[202] Li BB, Wang L. A hybrid quantum-inspired genetic algorithm for multi-objective flow shop scheduling. IEEE Transactions on Systems, Man and Cybernetics-Part B: Cybernetics, 2007, 37(3): 576-591. (Regular paper).
+[203] Liu B, Wang L, Jin YH. An effective PSO-based memetic algorithm for flow shop scheduling. IEEE Transactions on Systems, Man and Cybernetics-Part B: Cybernetics, 2007, 37(1): 18-27. (Regular paper).
+[204] He Q, Wang L. An effective co-evolutionary particle swarm optimization for constrained engineering design problems. Engineering Applications of Artificial Intelligence, 2007, 20(1): 89-99.
+[205] Wang L, Zhang L, Zheng DZ. An effective hybrid genetic algorithm for flow shop scheduling with limited buffers. Computers &amp; Operations Research, 2006, 33(10): 2960-2971.
+[206] Liu B, Wang L, Jin YH, Tang F, Huang DX. Improved particle swarm optimization combined with chaos. Chaos, Solitons and Fractals, 2005, 25(5): 1261-1271.
+[207] Wang L, Zheng DZ. An effective hybrid heuristic for flow shop scheduling. International Journal of Advanced Manufacturing Technology, 2003, 21(1): 38-44.
+[208] Jiang YH, Wang L, Jin YH. Bottleneck analysis for network flow model. Advances in Engineering Software, 2003, 34(10): 641-651.
+[209] Zhou T, Wang L, Sun ZS. Closed-loop model set validation under a stochastic framework. Automatica, 2002, 38(9): 1449-1461.
+[210] Wang L, Zheng DZ. An effective hybrid optimization strategy for job-shop scheduling problems. Computers &amp; Operations Research, 2001, 28(6): 585-596.
+开设课程
+[1] 智能优化算法及其应用 (本科生课程)
+[2] 自动控制原理 (本科生课程) [国家精品课程] [北京市精品课程]
+[3] 生产调度及其智能优化 (研究生课程)
+[4] 人工神经网络 (研究生课程)
+[5] 文献检索与论文写作 (工程硕士课程)
+博士后:
+常志琦、陈靖方 [博新计划、水木学者]
+博士生:
+刘波、钱斌 [清华大学优秀博士论文]、方晨、许烨 [清华大学优秀博士论文, 清华大学优秀博士毕业生, 北京市优秀毕业生]、王圣尧 [清华大学优秀博士论文, 清华大学优秀博士毕业生, 北京市优秀毕业生]、施磊、郑晓龙 [清华大学优秀博士论文, 清华大学优秀博士毕业生]、张旭、沈婧楠、吴楚格、蒋恩达、陈靖方 [北京自动化学会优秀博士生]、王兴、王晶晶 [中国仿真学会优秀博士论文, 清华大学优秀博士论文, 清华大学优秀博士毕业生, 北京市优秀毕业生]、郑洁 [中国仿真学会优秀博士论文, 清华大学优秀博士论文, 清华大学优秀博士毕业生, 北京市优秀毕业生]、潘子肖 [清华大学优秀博士论文, 清华大学优秀博士毕业生, 北京市优秀毕业生, 北京自动化学会优秀博士生]、吴玉婷、堵君懿、李瑞 [北京自动化学会优秀博士生]、徐钰翔
+硕士生:
+张亮 [清华大学优秀硕士论文]、潘晖、李彬彬 [清华大学优秀硕士论文]、何锲 [清华大学优秀硕士论文]、黄付卓、李灵坡 [清华大学优秀硕士论文, 清华大学优秀硕士毕业生]、周刚 [清华大学优秀硕士论文, 清华大学优秀硕士毕业生, 北京市优秀毕业生]、张鹏、郑环宇 [清华大学优秀硕士论文, 清华大学优秀硕士毕业生]、邓瑾 [清华大学优秀硕士论文]、王晶晶 [清华大学优秀硕士论文]、陆佳文 [清华大学优秀硕士论文]、孙斌奇 [清华大学优秀硕士论文, 清华大学优秀硕士毕业生]</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>王凌</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/kzyjcyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1077/3265.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>wangling@mail.tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1077/3265.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1990年9月至1995年7月...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1077/3265.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-wangling";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

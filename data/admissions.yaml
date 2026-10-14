@@ -20,6 +20,22 @@ sources:
     url: https://www.cs.tsinghua.edu.cn/info/1048/7195.htm
     format: html
     selector: .v_news_content
+  buaa_cyber_exam:
+    url: https://cst.buaa.edu.cn/info/1102/5379.htm
+    format: html
+    selector: .v_news_content
+  tsinghua_auto_recommend:
+    url: https://www.au.tsinghua.edu.cn/info/1037/4577.htm
+    format: html
+    selector: .v_news_content
+  seu_auto_recommend:
+    url: https://automation.seu.edu.cn/2026/0707/c24460a575743/page.htm
+    format: html
+    selector: .wp_articlecontent
+  sjtu_auto_recommend:
+    url: https://sais.sjtu.edu.cn/yjs_zsgz/1838.html
+    format: html
+    selector: .xw-cont .txt
 policies:
 - id: tsinghua-2027-master-exam
   school: tsinghua
@@ -136,3 +152,166 @@ policies:
       text: 公告说明自2027招生年度起，计算机系电子信息085400统考初试第四单元改为408计算机学科专业基础，原科目为826；其他科目和名额须看对应年度目录。
       quote: 自2027年招生年度起
       locator: 公告正文第一段
+- id: buaa-cyber-2027-master-exam
+  school: buaa
+  dept: cyber
+  level: dept
+  title: 北航网安2027硕士统考第四单元科目
+  year: 2027
+  degree: master
+  route: exam
+  program: ''
+  program_code: ''
+  published_at: '2026-06-09'
+  reviewed_at: '2026-10-14'
+  source_id: buaa_cyber_exam
+  review_hashes:
+    buaa_cyber_exam: 17261ef7c879e0d7ecdbcfc968133a677690ae6b633df02d3e7b6d75f3ab78c9
+  fields:
+    exams:
+      text: 网安学院2027硕士初试第四单元使用408计算机学科专业基础；其他科目、专业与名额须核对当年目录。
+      quote: '408'
+      locator: 公告正文第一段
+  track: ordinary
+  events: []
+- id: tsinghua-auto-2027-master-recommend
+  school: tsinghua
+  dept: auto
+  level: dept
+  title: 清华自动化2027普通硕士推免考核
+  year: 2027
+  degree: master
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-08-27'
+  reviewed_at: '2026-10-14'
+  source_id: tsinghua_auto_recommend
+  review_hashes:
+    tsinghua_auto_recommend: add42a43854295da15c802023b2db6d91b34952be643f320584e27ed600c4438
+  fields:
+    eligibility:
+      text: 须先通过现场资格审查；本办法不适用于工程硕博士培养改革专项。
+      quote: 不适用于
+      locator: 第二、第五节
+    materials:
+      text: 现场审查需身份证、学生证或在学证明及学籍验证报告、成绩单原件、推免资格证明或承诺书；完整材料以原文为准。
+      quote: 成绩单
+      locator: 第二节
+    exams:
+      text: 现场面试，至少20分钟；综合成绩为综合面试成绩。
+      quote: 现场面试
+      locator: 第三节
+    contact:
+      text: 院系申诉联系：010-62780657；zdhxyjsb@mailoa.tsinghua.edu.cn。
+      quote: 电子邮箱
+      locator: 第六节
+  track: ordinary
+  events:
+  - label: 资格审查窗口结束（14:00—16:00）
+    kind: qualification
+    at: '2026-09-03T16:00:00+08:00'
+    quote: 9月3日
+    locator: 第二节：14:00—16:00
+  - label: 面试日期
+    kind: exam
+    at: '2026-09-04'
+    quote: 9月4日
+    locator: 第三节：日期明确，个人时刻另通知
+- id: seu-auto-2027-master-recommend
+  school: seu
+  dept: auto
+  level: dept
+  title: 东南自动化2027接收推免报名进度
+  year: 2027
+  degree: master
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-07-07'
+  reviewed_at: '2026-10-14'
+  source_id: seu_auto_recommend
+  review_hashes:
+    seu_auto_recommend: aab5975fc34748766f0f17c461516214d0a1c80b03816a164e617bba0995b998
+  fields:
+    timeline:
+      text: 该轮报名7月31日12:00截止；普通硕士（不含菁英班、国际学院）材料初审8月4日完成，后续复审结果需查系统。此页是进度信息，未整理完整资格条件。
+      quote: 报名截止
+      locator: 进度说明第1、3项
+  track: ordinary
+  events:
+  - label: 系统报名截止
+    kind: deadline
+    at: '2026-07-31T12:00:00+08:00'
+    quote: 7月31日12:00
+    locator: 进度说明第1项
+- id: sjtu-auto-2027-phd-recommend
+  school: sjtu
+  dept: auto
+  level: dept
+  title: 上交自动化与感知2027常规直博预推免
+  year: 2027
+  degree: phd
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-09-08'
+  reviewed_at: '2026-10-14'
+  source_id: sjtu_auto_recommend
+  review_hashes:
+    sjtu_auto_recommend: 7cdafc9ba77e603b515e04601a92e2438213ff56addb863d97e1f3325c102253
+  fields:
+    eligibility:
+      text: 要求“双一流”高校及建设学科理工科应届生、推免资格，通常排名前30%；C9及特别优秀者有例外。英语CET6≥425或TOEFL≥90或IELTS≥6.0，考试版本限制及完整条件见原文。
+      quote: 前30%
+      locator: 第一节第3—6项及例外说明
+    materials:
+      text: 按类型提交手签申请表、盖章成绩/排名、英语证明、身份证和学生证及其他证明；复试交纸质材料。
+      quote: 申请材料
+      locator: 第四节
+    timeline:
+      text: 本轮9月12日09:00截止；本公告列常规直博和工程硕博专项，不能将其当成普通直硕的适用规则，需查对应通知。
+      quote: 常规直博招生
+      locator: 第二、第三节
+  track: ordinary
+  events:
+  - label: 本轮报名截止
+    kind: deadline
+    at: '2026-09-12T09:00:00+08:00'
+    quote: 9月12日
+    locator: 第三节：上午9:00
+- id: sjtu-auto-2027-master-special
+  school: sjtu
+  dept: auto
+  level: program
+  title: 上交自动化与感知2027工程硕博专项直硕
+  year: 2027
+  degree: master
+  route: recommend
+  program: 工程硕博士培养改革专项
+  program_code: 085400
+  published_at: '2026-09-08'
+  reviewed_at: '2026-10-14'
+  source_id: sjtu_auto_recommend
+  review_hashes:
+    sjtu_auto_recommend: 7cdafc9ba77e603b515e04601a92e2438213ff56addb863d97e1f3325c102253
+  fields:
+    tuition:
+      text: 专项硕士基本学制3年，第二年起进入联培单位；学费须核对财务处最终公示。
+      quote: 基本学制3年
+      locator: 第二节专项介绍，第六节
+    quota:
+      text: 该公告列出的专项直硕计划5人；联合单位、方向和实践地点可能调整，不代表导师个人名额。
+      quote: 直硕
+      locator: 第二节专项计划表
+    eligibility:
+      text: 要求“双一流”高校及建设学科理工科应届生、推免资格，通常排名前30%；C9及特别优秀者有例外。英语CET6≥425或TOEFL≥90或IELTS≥6.0，考试版本限制及完整条件见原文。
+      quote: 前30%
+      locator: 第一节第3—6项及例外说明
+  track: special
+  events:
+  - label: 本轮报名截止
+    kind: deadline
+    at: '2026-09-12T09:00:00+08:00'
+    quote: 9月12日
+    locator: 第三节：上午9:00

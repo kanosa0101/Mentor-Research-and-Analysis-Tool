@@ -1,5 +1,5 @@
 {
-  "scope": "three-department-current-list-pilot",
+  "scope": "configured-department-current-list-pilot",
   "sources": {
     "tsinghua/cs": {
       "url": "https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm",
@@ -20,6 +20,41 @@
       "fetched_at": "2026-10-13",
       "signature": "c3e29ac5bd559b0fdb4d82f2a9651932a2996d52ab156cce0b729de3379f4b85",
       "count": 9,
+      "error": null
+    },
+    "buaa/cyber": {
+      "url": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "fetched_at": "2026-10-14",
+      "signature": "f9dcdbe99f7cbddfd615856eb1143b2d05ec557ae3fd29d872a9a407c04c4024",
+      "count": 9,
+      "error": null
+    },
+    "pku/sai": {
+      "url": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "fetched_at": "2026-10-14",
+      "signature": "b3b27c2b677906df390407410b7b17ec353808496008b35253909e7bd0ce3208",
+      "count": 15,
+      "error": null
+    },
+    "tsinghua/auto": {
+      "url": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "fetched_at": "2026-10-14",
+      "signature": "97abcb65326f71a6e2a7efff8d35051545efe526df63b76ba067de3d2c571ff4",
+      "count": 4,
+      "error": null
+    },
+    "seu/auto": {
+      "url": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "fetched_at": "2026-10-14",
+      "signature": "15203442c8c94ee7324be721aefda4cc10fd3f6d336ed27a06cff5393aa3f846",
+      "count": 5,
+      "error": null
+    },
+    "sjtu/auto": {
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "fetched_at": "2026-10-14",
+      "signature": "955028f046c518ff1464bd95b4dd70be9cb582a30f72da2b2299f391f036eb22",
+      "count": 8,
       "error": null
     }
   },
@@ -759,6 +794,826 @@
       "reviewed": false,
       "first_seen": "2026-10-13",
       "fetched_at": "2026-10-13",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "333dbc1aa30035f8",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院2026年申请考核博士招生笔试考核结果和复试分组(第二批次）",
+      "url": "https://cst.buaa.edu.cn/info/1125/5363.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "efec314afcbd1c75",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院2026年博士研究生招生第二批师生双选通知",
+      "url": "https://cst.buaa.edu.cn/info/1125/5373.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "c1eb014d18b0eb23",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网安学院2026年博士研究生最终拟录取名单公示",
+      "url": "https://cst.buaa.edu.cn/info/1125/5375.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "9c4288858c5c4bc5",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生（含博士）工作方案",
+      "url": "https://cst.buaa.edu.cn/info/1125/5436.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "dfd7df2ec46dfa37",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生(含博士)拟招生专业及名额",
+      "url": "https://cst.buaa.edu.cn/info/1125/5449.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "a36f86f976fc8992",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生（含博士）复试名单及相关通知",
+      "url": "https://cst.buaa.edu.cn/info/1125/5453.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "04a4ab1c4091a71e",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生（含博士）复试、机试分组及相关工作安排",
+      "url": "https://cst.buaa.edu.cn/info/1125/5456.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "96d72a1e9a9403ac",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生（含博士）综合考核结果公示",
+      "url": "https://cst.buaa.edu.cn/info/1125/5461.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "7a4d0fe666cabdb2",
+      "school": "buaa",
+      "dept": "cyber",
+      "unit": "北航网络空间安全学院",
+      "title": "北航网络空间安全学院接收推荐免试攻读2027年研究生（含博士）拟录取结果",
+      "url": "https://cst.buaa.edu.cn/info/1125/5475.htm",
+      "source": "https://cst.buaa.edu.cn/yjsjy/zsgz.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "b3fb6376d40d6d29",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2026年优秀大学生夏令营入营通知",
+      "url": "https://sai.pku.edu.cn/info/1034/10235.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "夏令营",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "71a4d335371238b8",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2026年优秀大学生夏令营优秀营员通知",
+      "url": "https://sai.pku.edu.cn/info/1034/10775.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "夏令营",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "219cb3929ed7c33c",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2025年“申请-考核制”博士研究生招生说明",
+      "url": "https://sai.pku.edu.cn/info/1034/3149.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2025
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "155f57175f20267a",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2025年港澳台硕士研究生和博士研究生招生说明",
+      "url": "https://sai.pku.edu.cn/info/1034/3178.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2025
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "75764c78009053d6",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2025年“申请-考核制”博士研究生复试工作安排",
+      "url": "https://sai.pku.edu.cn/info/1034/3189.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2025
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "3ec8a9dee7edb52e",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2025年硕士统考考生、港澳台生和留学生复试工作安排",
+      "url": "https://sai.pku.edu.cn/info/1034/3318.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2025
+      ],
+      "route_hint": "统考",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "1cacca261dbb1e14",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2026年招生指南",
+      "url": "https://sai.pku.edu.cn/info/1034/3462.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "4418fdb4ab62475e",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2026年接收推荐免试研究生说明",
+      "url": "https://sai.pku.edu.cn/info/1034/3463.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "bc89d24c1ca4e723",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2026年推荐免试研究生复试安排",
+      "url": "https://sai.pku.edu.cn/info/1034/3478.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "6d525d032e830e81",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2026年“申请-考核制” 博士研究生招生说明",
+      "url": "https://sai.pku.edu.cn/info/1034/8955.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "3061a0f66b277351",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2026年港澳台硕士研究生和博士研究生招生说明",
+      "url": "https://sai.pku.edu.cn/info/1034/9015.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "56cb39f18574b14c",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院2026年 “申请-考核制”博士研究生复试工作安排",
+      "url": "https://sai.pku.edu.cn/info/1034/9105.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "d9c8b42d5909adba",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2026年硕士统考考生、港澳台生和留学生复试工作安排",
+      "url": "https://sai.pku.edu.cn/info/1034/9345.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "统考",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "aa8b6b6bb82a6a3b",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "智能学院2027年招生指南",
+      "url": "https://sai.pku.edu.cn/info/1034/9565.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "5a6e7c5a74e7a31d",
+      "school": "pku",
+      "dept": "sai",
+      "unit": "北大智能学院",
+      "title": "北京大学智能学院关于举办2026年优秀大学生夏令营的通知",
+      "url": "https://sai.pku.edu.cn/info/1034/9575.htm",
+      "source": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
+      "publication_date": null,
+      "title_years": [
+        2026
+      ],
+      "route_hint": "夏令营",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "6ae848e38556660d",
+      "school": "seu",
+      "dept": "auto",
+      "unit": "东南自动化学院",
+      "title": "东南大学自动化学院2027年接收推荐免试研究生报名通知",
+      "url": "https://automation.seu.edu.cn/2026/0707/c24460a575743/page.htm",
+      "source": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "f482e4f8dccd3b8f",
+      "school": "seu",
+      "dept": "auto",
+      "unit": "东南自动化学院",
+      "title": "东南大学自动化学院2027年接收推荐免试研究生考核入选名单",
+      "url": "https://automation.seu.edu.cn/2026/0813/c24460a579164/page.htm",
+      "source": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "8bb5d06ae64563bd",
+      "school": "seu",
+      "dept": "auto",
+      "unit": "东南自动化学院",
+      "title": "自动化学院2027年接收推荐免试研究生考核结果",
+      "url": "https://automation.seu.edu.cn/2026/0901/c24460a581101/page.htm",
+      "source": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "237280ee1049c413",
+      "school": "seu",
+      "dept": "auto",
+      "unit": "东南自动化学院",
+      "title": "2027届自动化学院推荐免试研究生综合成绩公示",
+      "url": "https://automation.seu.edu.cn/2026/0904/c24460a581637/page.htm",
+      "source": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "e4d697753e1988cd",
+      "school": "seu",
+      "dept": "auto",
+      "unit": "东南自动化学院",
+      "title": "自动化学院2027届推荐免试研究生拟录取名单公示",
+      "url": "https://automation.seu.edu.cn/2026/0912/c24460a582969/page.htm",
+      "source": "https://automation.seu.edu.cn/zxtz/list.htm",
+      "publication_date": null,
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "754d2da2d3b2b4bd",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "【9月10日上午10:00截止】上海交通大学自动化与感知学院2026级招收推荐免试直升研究生预推免办法",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1181.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2025-09-06",
+      "title_years": [
+        2026
+      ],
+      "route_hint": "推免",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "17a3e58a1a4e7c7f",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "【9月15日报名截止】上海交通大学自动化与感知学院2026级工程硕博士培养改革专项 推荐免试直升研究生预选拔报名通知",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1183.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2025-09-08",
+      "title_years": [
+        2026
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "b6ccfec2b6a91f8b",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "上海交通大学自动化与感知学院 2026年硕士研究生招生复试方案",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1547.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-03-20",
+      "title_years": [
+        2026
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "009fe7f81d1c1153",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "【2026】自动化与感知学院专业学位上线考生调整研究方向申请表及考生复试诚信承诺书",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1551.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-03-21",
+      "title_years": [
+        2026
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "eba500363e752814",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "上海交大自动化与感知学院2026级第二批全日制博士招生办法（2026春季）",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1654.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-05-11",
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "76f5b879b85e4349",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "上海交通大学自动化与感知学院2026年面向港澳台地区研究生招生工作方案",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1696.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-05-21",
+      "title_years": [
+        2026
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "89423c886804773b",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "上海交通大学自动化与感知学院  2027级接收推荐免试研究生预推免办法（含工程硕博士专项）",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1838.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-09-08",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "推免",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "0c557dab66f29d8d",
+      "school": "sjtu",
+      "dept": "auto",
+      "unit": "上交自动化与感知学院",
+      "title": "2027年自动化与感知学院招收推免生综合考核实施细则",
+      "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1865.html",
+      "source": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
+      "publication_date": "2026-09-18",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "推免",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "284c6ba7f6e33e06",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "“信息、智能与生命”2018年优秀大学生夏令营",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/1895.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2018-05-05",
+      "title_years": [
+        2018
+      ],
+      "route_hint": "夏令营",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "dc34ec98b1bdf4a8",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "2017年清华大学-波士顿大学4+X双学位项目招生简章",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/1898.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2016-07-15",
+      "title_years": [
+        2017
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "bb03a710b4a303a8",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "清华大学自动化系2027年博士研究生招生综合考核及录取办法",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/4569.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2026-08-24",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "e2653bdf11e65c2e",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "清华大学自动化系2027年硕士推免生考核及录取办法",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/4577.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2026-08-27",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "推免",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-10-14",
+      "fetched_at": "2026-10-14",
       "seen_in_latest_list": true
     }
   ]

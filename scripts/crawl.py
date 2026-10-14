@@ -69,6 +69,8 @@ def phase_roster(cfg, hook, refresh):
     url_matched = set()
     name_matched = set()
     for rec in people:
+        record_source = rec.get('roster_source') or list_url(cfg)
+        record_date = rec.get('roster_fetched_at') or fetched_at
         prof = by_url.get((rec["url"], rec["name"]))
         name_only = False
         if prof is None and cfg.get("stable_urls"):
@@ -83,7 +85,7 @@ def phase_roster(cfg, hook, refresh):
                 name_matched.add(prof.slug)
         if prof is None:
             slug = make_slug(rec["name"], used)
-            prov_name = Provenance(source=list_url(cfg), fetched_at=fetched_at)
+            prov_name = Provenance(source=record_source, fetched_at=record_date)
             prof = Professor(slug=slug, name=rec["name"], school=school, dept=dept,
                              detail_url=rec["url"], first_seen=TODAY,
                              provenance={"name": prov_name})
@@ -105,7 +107,7 @@ def phase_roster(cfg, hook, refresh):
         if rec.get("profile_url") and prof.profile_url != rec["profile_url"] \
                 and not name_only:
             prof.profile_url = rec["profile_url"]
-        list_prov = Provenance(source=list_url(cfg), fetched_at=fetched_at)
+        list_prov = Provenance(source=record_source, fetched_at=record_date)
         for key in ("title", "email", "phone", "supervisor", "subjects",
                     "research_direction_raw", "photo_url", "homepage"):
             v = rec.get(key) or rec.get("list_" + key)

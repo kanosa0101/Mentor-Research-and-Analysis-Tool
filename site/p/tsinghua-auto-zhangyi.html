@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>张毅 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-zhangyi" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>张毅 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>zhyi@mail.tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1076/3242.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1986年 清华大学自动化系获工学学士学位
+1988年 清华大学自动化系获工学硕士学位
+1995年 英国Strathclyde大学获博士学位
+工作履历
+1989年3月至今 清华大学自动化系
+学术兼职
+教育部交通运输与工程学科教学指导委员会交通工程教学指导分委员会委员
+中国智能交通协会常务理事
+中国人工智能学会常务理事、智能交通专委会主任委员
+中国公路学会自动驾驶工作委员会副主任委员
+研究领域
+[1] 智能交通
+智能交通群体协同决策与智能控制、智能与自动驾驶技术、智能车路协同关键技术与应用、智能交通控制与管理，交通大数据融合与应用、智能交通系统集成技术与应用等。
+[2] 系统工程
+群决策与群控制、智能交通系统工程、智能网联环境下数据可信交互技术、智慧城市研究与实践、公共大数据技术与应用等。
+[3] 智能系统
+智能系统与决策、智能系统复杂性分析、智能系统与技术测试验证、智能性测评理论与方法等。
+研究概况
+[1] 提出了城市区域交通状态分析的概念并研究形成了体系化理论与方法；
+[2] 提出和建立了我国智能车路协同技术体系，并在此基础上提出了智能具体群体协同决策与智能控制理论与方法；
+[3] 提出和构建了基于车路协同的全新的自动驾驶技术体系与平台；
+[4] 提出了一般智能系统与技术测试验证与评估的机制、技术与规范，形成了智能系统与技术智能性测评体系化理论与方法。
+主持或重点承担国家和部委各类项目20余项。主要包括：
+[1] 清华大学自动化系—上海清鹤科技股份有限公司联合研究中心项目“视频多场景融合技术研究与应用”，2020-2023
+[2] 国家十三五重点研发计划重点专项“综合交通运输与智能交通”的项目“车路协同环境下车辆群体智能控制与测试验证”，2019-2021
+[3] 国家重点基础研究发展计划（973计划）项目“大城市综合交通系统的基础理论与实证研究”的课题“综合交通系统信息感知集成与多式协同出行诱导”，2012-2016
+[4] 国家重点基础研究发展计划（973计划）项目“大城市交通拥堵瓶颈的基础科学问题研究”的课题“城市交通信息融合集成与计算实验”，2006-2010
+[5] 国家“863计划”主题项目“交通状态感知与信息交互关键技术”的课题“面向出行者视角的多维交通状态感知”，2012-2014
+[6] 北京市科技计划项目“绿色校园微循环电动车示范”，2015-2017
+[7] 国家自然科学基金创新团队项目“复杂系统控制与信息处理中的若干关键问题研究与应用”，2007-2013
+[8] 国家自然科学基金重点项目“数据驱动的控制理论及其在大型复杂系统中的应用”，2009-2012
+[9] 国家自然科学基金面上项目“城市道路交通系统复杂性分析方法研究”，2008-2010
+[10] 国家自然科学基金面上项目“基于数据挖掘的网络交通状态分析方法研究”，2004-2006
+[11] 科技部“十五”攻关项目：智能交通系统基础信息采集与融合技术研究，2006-2008
+[12] 交通部跨世纪优秀人才支持项目：智能交通系统的信息组织与协作机制研究，2000-2001
+[13] 重大横向项目“兰州市智能交通管理指挥中心系统设计与集成”，2002-2005
+奖励与荣誉
+享受国务院政府特殊津贴，国家“863计划”先进交通技术领域专家。中国人工智能学会会士。
+1999年入选教育部骨干教师资助计划，2001年入选交通部跨世纪优秀人才，2005年入选科技部“全国智能交通系统专家咨询委员会”委员。
+2023年获教育部科技进步二等奖、日内瓦国际发明展银奖和中国智能交通协会科学技术二等奖，2018年获公安部科学技术一等奖，2017年获中国智能交通协会科学技术一等奖，，2016年教育部自然科学二等奖，2012年获中国智能交通协会科学技术二等奖。
+2023年获教育部国家级教学成果一等奖，2014年获教育部国家级教学成果二等奖，2013年获北京市教学成果一等奖；2004年、2008年、2012年和2014年分别获清华大学教学成果一等奖。
+2007 年获“中国石油和化学工业协会优秀教材”一等奖，并入选教育部面向21世纪课程教材；该教材（第三版）2013年入选北京市高等教育精品教材，2015年入选教育部“十二五”普通高等教育本科国家级规划教材。
+学术成果
+主要论著
+专著：
+[1] 《基于车路协同的智能交通系统体系框架》，2015年，电子工业出版社
+[2] 《绿色园区电动微公交系统与应用》，2020年，化学工业出版社
+[3] 《交通群体协同决策理论及应用》，2022年，人民交通出版社
+[4] 《道路交通信息可信交互安全技术》，2022年，人民交通出版社
+教材：
+[5] 《自动检测技术与仪表控制系统》（第一版、第二版、第三版、第四版），化学工业出版社
+论文
+近年来发表各类论文300余篇，主要代表性论文包括：
+[1] Jingwei Ge, Jiawei Zhang, Cheng Chang, Yi Zhang, Danya Yao, Li Li, “ Task-Driven Controllable Scenario Generation Framework Based on AOG”, IEEE Transactions on Intelligent Transportation Systems, 2024.
+[2] Jingxuan Yang, Haowei Sun, Honglin He, Yi Zhang, Henry X. Liu, Shuo Feng, &#34;Adaptive Safety Evaluation for Connected and Automated Vehicles with Sparse Control Variates&#34;, IEEE Transactions on Intelligent Transportation Systems, pp.1-13, 2023.
+[3] Jingwei Ge, Jiawei Zhang, Yi Zhang, Danya Yao, Zuo Zhang, Rui Zhou, &#34;Autonomous Vehicles Testing Considering Utility-Based Operable Tasks&#34;, Tsinghua Science and Technology, vol. 28, no. 5, pp. 965-975 ,2023.
+[4] Pengshun Li, Mengyan Jiang, Yi Zhang, &#34;Cooperative Optimization of Bus Service and Charging Schedules for a Fast-Charging Battery Electric Bus Network&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 24, no. 5, pp. 5362-5375, 2023.
+[5] Huaxin Pei, Jiawei Zhang, Yi Zhang, Xin Pei, Shuo Feng, Li Li, &#34;Fault-Tolerant cooperative driving at signal-free intersections&#34;, IEEE Transactions on Intelligent Vehicles, vol. 8, no. 1, pp. 121-134, 2023.
+[6] Jingwei Ge, Huile Xu, Jiawei Zhang, Yi Zhang, Danya Yao, Li Li, &#34;Heterogeneous Driver Modeling and Corner Scenarios Sampling for Automated Vehicles Testing&#34;, Journal of Advanced Transportation, vol. 2022, no. 9, 2022.
+[7] Xiangtian Deng, Yi Zhang, Yi Zhang, He Qi, &#34;Towards optimal HVAC control in non-stationary building environments combining active change detection and deep reinforcement learning&#34;, Building and Environment, vol. 211, 2022.
+[8] Mengyan Jiang, Yi Zhang, Yi Zhang, &#34;Electric Bus Scheduling Considering Limited Charging Facility Capacity for Large-Scale Operation&#34;, Journal of Transportation Engineering Part A: Systems, vol. 148, no. 9, 2022.
+[9] Yuhuang Zhang, Xiangtian Deng, Yi Zhang, Yi Zhang, &#34;Generation of sub-item load profiles for public buildings based on the conditional generative adversarial network and moving average method&#34;, Energy and Buildings, vol. 268, 2022.
+[10] Mengyan Jiang, Yi Zhang, Yi Zhang, &#34;A Branch-and-Price Algorithm for Large-Scale Multidepot Electric Bus Scheduling&#34;, IEEE Transactions on Intelligent Transportation Systems, 24(12): 15355-15368, 2022.
+[11] Huile Xu, Wei Xiao, Cassandras Christos G. , Yi Zhang, Li Li, &#34;A General Framework for Decentralized Safe Optimal Control of Connected and Automated Vehicles in Multi-Lane Signal-Free Intersections&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 10, pp. 17382-17396, 2022.
+[12] Huile Xu, Cassandras Christos G. , Li, Li, Yi Zhang, &#34;Comparison of Cooperative Driving Strategies for CAVs at Signal-Free Intersections&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 7, pp. 7614-7627, 2022.
+[13] Shuo Feng, Yiheng Feng, Haowei Sun, Yi Zhang, Henry X. Liu, &#34; Testing Scenario Library Generation for Connected and Automated Vehicles: An Adaptive Framework&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 2, pp. 1213-1222, 2022.
+[14] Mengyan Jiang, Yi Zhang, Yi Zhang, &#34;Multi-depot electric bus scheduling considering operational constraint and partial charging: A case study in Shenzhen, China&#34;, Sustainability (Switzerland), vol. 14, no. 1, 2022.
+[15] Xiangtian Deng, Yi Zhang, Yi Zhang, He Qi, &#34;Towards Smart Multi-Zone HVAC Control by Combining Context-Aware System and Deep Reinforcement Learning&#34;, IEEE Internet of Things Journal, 9(21): 21010-21024, 2022.
+[16] Yuhuang Zhang, Yi Zhang, Yi Zhang, Chengxu Zhang , &#34;Effect of physical, environmental, and social factors on prediction of building energy consumption for public buildings based on real-world big data&#34;, Energy, vol. 261, 2022.
+[17] Yuhuang Zhang, Yi Zhang, Yi Zhang, Bo Huang, Xin Liu ,&#34;A hybrid model for high spatial and temporal resolution population distribution prediction&#34;, International Journal of Digital Earth, vol. 15, no. 1, pp. 2268-2295, 2022.
+[18] Huaxin Pei, Yi Zhang, Qinghua Tao, Shuo Feng, Li Li, &#34;Distributed Cooperative Driving in Multi-Intersection Road Networks,&#34; IEEE Transactions on Vehicular Technology, vol. 70, no. 6, pp. 5390-5403, 2021.
+[19] Huaxin Pei, Yuxiao Zhang, Yi Zhang, Shuo Feng, &#34;Optimal cooperative driving at signal-free intersections with polynomial-time complexity&#34;, IEEE Transactions on Intelligent Transportation Systems, pp. 1-13, 2021.
+[20] Shuo Feng, Yiheng Feng, Chunhui Yu, Yi Zhang and Henry X. Liu, &#34;Testing Scenario Library Generation for Connected and Automated Vehicles, Part I: Methodology&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 22, no. 3, pp. 1573-1582, 2021.
+[21] Shuo Feng, Yiheng Feng, Haowei Sun, Shan Bao, Yi Zhang and Henry X. Liu, &#34;Testing Scenario Library Generation for Connected and Automated Vehicles, Part II: Case Studies&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 22, no. 9, pp. 5635-5647, 2021.
+[22] Shuo Feng, Ziyou Song, Zhaojian Li, Yi Zhang, Li Li, &#34;Robust Platoon Control in Mixed Traffic Flow Based on Tube Model Predictive Control&#34;, IEEE Transactions on Intelligent Vehicles, vol. 6, no. 4, pp. 711-722, 2021.
+[23] Jingwei Ge, Huaxin Pei, Danya Yao, Yi Zhang, &#34;A robust path tracking algorithm for connected and automated vehicles under i-VICS&#34;, Transportation Research Interdisciplinary Perspectives, vol. 9, 2021.
+[24] Weixia Li, Danya Yao, Yi Zhang, Guoyuan Wu, Matthew J. Barth, Kanok Boriboonsomsin, &#34;Stated acceptance and behavioral responses of drivers towards innovative connected vehicle applications&#34;, Accident Analysis and Prevention, vol. 155, 2021.
+[25] Huile Xu, Christos G. Cassandras, Li Li, Yi Zhang, &#34;Comparison of Cooperative Driving Strategies for CAVs at Signal-Free Intersections&#34;, IEEE Transactions on Intelligent Transportation Systems, pp. 1-14, 2021.
+[26] Pengshun Li, Yi Zhang, Yi Zhang, Kai Zhang, Mengyan Jiang, &#34;The effects of dynamic traffic conditions, route characteristics and environmental conditions on trip-based electricity consumption prediction of electric bus&#34;, ENERGY, vol. 218, 2021.
+[27] Pengshun Li, Yuhang Zhang, Yi Zhang, Yi Zhang, Kai Zhang, &#34;Prediction of electric bus energy consumption with stochastic speed profile generation modelling and data driven method based on real-world big data&#34;, Applied Energy, vol. 298, 2021.
+[28] Huile Xu, Yi Zhang, Li Li, Weixia Li, &#34;Cooperative Driving at Unsignalized Intersections Using Tree Search&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 21, no. 11, pp. 4563-4571, 2020.
+[29] Huile Xu, Yi Zhang, Christos Cassandras, Li Li, Shuo Feng, &#34;A Bi-Level Cooperative Driving Strategy Allowing Lane Change&#34;, Transportation Research Part C: Emerging Technologies, vol.120, 2020.
+[30] Shuo Feng, Haowei Sun, Yi Zhang, Jianfeng Zheng, Henry X. Liu, Li Li, &#34;Tube-Based Discrete Controller Design for Vehicle Platoons Subject to Disturbances and Saturation Constraints&#34;, IEEE Transactions on Control Systems Technologies, vol. 28, no. 3, pp. 1066-1073, 2020.
+[31] Jishiyu Ding, Huei Peng, Yi Zhang, Li Li, &#34;Penetration Effect of Connected and Automated Vehicles on Cooperative On-Ramp Merging&#34;, IET Intelligent Transport Systems, vol. 14, no. 1, pp. 56-64, 2020.
+[32] Jiayang Li, Yi Zhang, Mengkai Shi, Qi Liu, Yi Chen, &#34;Collision Avoidance Strategy Supported by LTE-V-Based Vehicle Automation and Communication Systems for Car Following&#34;, Tsinghua Science and Technology, vol. 25, no. 1, pp. 127-139, 2020.
+[33] Mengkai Shi, Yaohan Tang, Xiangyun Zhang, Jun Xu, Yi Zhang, &#34;Modeling and Simulation of Packet Delivery Rate in LTE-V Network Based on Markov Chain&#34;, Tsinghua Science and Technology, vol. 25, no. 3, pp. 357-367, 2020.
+[34] Yanglan Wang, Yi Zhang, Yi Zhang, Jiangshan Ma, &#34;Dynamic Real-Time High-Capacity Ride-Sharing Model with Subsequent Information&#34;, IET Intelligent Transport Systems, vol. 14, no. 7, pp. 742-752, 2020.
+[35] Haofei Liu, Yi Zhang, Yi Zhang, Kai Zhang, &#34;Evaluating Impacts of Intelligent Transit Priority on Intersection Energy and Emissions&#34;, Transportation Research Part D: Transport and Environment, vol. 86, 2020.
+[36] Jishiyu Ding, Li Li, Huei Peng, Yi Zhang, &#34;A Rule-Based Cooperative Merging Strategy for Connected and Automated Vehicles&#34;, IEEE Transactions on Intelligent Transportation Systems, vol. 21, no. 8, pp. 3436-3446, 2020.
+[37] Ziyao Zhao, Yi Zhang, Yi Zhang, &#34;A Comparative Study of Parking Occupancy Prediction Methods Considering Parking Type and Parking Scale&#34;, Journal of Advanced Transportation, vol. 2020, 2020.
+[38] Huile Xu, Shuo Feng, Yi Zhang, Li Li, &#34;A Grouping Based Cooperative Driving Strategy for CAVs Merging Problems&#34;, IEEE Transactions on Vehicular Technology, vol. 68, no. 6, pp. 6125-6136, 2019.
+[39] Huaxin Pei, Shuo Feng, Yi Zhang, Danya Yao, &#34;A Cooperative Driving Strategy for Merging at On-Ramps Based on Dynamic Programming&#34;, IEEE Transactions on Vehicular Technology, vol. 68, no. 12, pp. 11646-11656, 2019.
+[40] Shuo Feng, Yi Zhang, Shengbo Eben Li, Zhong Cao, Henry X. Liu, Li Li, &#34;String Stability for Vehicular Platoon Control: Definitions and Analysis Methods&#34;, Annual Reviews in Control, vol. 47, pp. 81-97, 2019.
+[41] Mengkai Shi, Yi Zhang, Danya Yao, Chang Lu, &#34;Application-oriented performance compar¬ison of 802.11 p and LTE-V in a V2V communication system&#34;, Tsinghua Science and Tech¬nology, vol.24, no.2, pp.123-133, 2018
+[42] Feng Shuo, Wang Xingmin, Sun Haowei, Zhang Yi &amp; Li Li. A better understanding of long-range temporal dependence of traffic flow time series[J]. PHYSICA A-Statistical Mechanics and Its Applications, 2018, 492: 639-650.
+[43] Ding Jishiyu, Zhang Yi &amp; Li Li. Accessibility measure of bus transit networks[J]. IET Intelligent Transport Systems, 2018, 12(7): 682-688.
+[44] Li Weixia, Wu Guoyuan, Zhang Yi &amp; Barth Matthew J. Safety analysis of the eco-approach and departure application at a signalized corridor[J]. Tsinghua Science and Technology, 2018, 23(2): 157-171.
+[45] Li Weixia, Wu Guoyuan, Zhang Yi &amp; Barth Matthew J. A comparative study on data segregation for mesoscopic energy modeling[J]. Transportation Research Part D: Transport and Environment, 2017, 50: 70-82.
+[46] Ding Jishiyu, Feng Shuo, Li Li &amp; Zhang Yi. Campus bus network design and evaluation based on the route property[J]. Tsinghua Science and Technology, 2017, 22(5): 539-550.
+[47] Li Weixia, Wu Guoyuan, Boriboonsomsin Kanok, Barth Matthew J., Rajab Samer, Bai Sue &amp; Zhang Yi. Development and evaluation of high-speed differential warning application using vehicle-to-vehicle communication[J]. Transportation Research Record, 2017, 2621: 81-91.
+[48] Feng Shuo, Ke Ruimin, Wang Xingmin, Zhang Yi &amp; Li Li. Traffic flow data compression considering burst components[J]. IET Intelligent Transport Systems, 2017, 11(9): 572-580.
+[49] Shao Chaoyi, Yang Hai, Zhang Yi &amp; Ke Jintao. A simple reservation and allocation model of shared parking lots[J]. Transportation Research Part C: Emerging Technologies, 2016, 71: 303-312.
+[50] Guo Wei, Zhang Yi, Xu Man, Zhang Zuo &amp; Li Li. Parking Spaces Repurchase Strategy Design via Simulation Optimization[J]. Journal of Intelligent Transportation Systems, 2016, 20(3): 255-269.
+[51] Zheng Yichen, Zhang Yi &amp; Li Li. Reliable path planning for bus networks considering travel time uncertainty[J]. IEEE Intelligent Transportation Systems Magazine, 2016, 8(1): 35-50.
+[52] Guo Wei, Zhang Yi, You Jia-Xuan, Hu Jian-Ming &amp; Pei Xin. Travel modal choice analysis for traffic corridors based on decision-theoretic approaches[J]. Journal of Central South University, 2016, 23(11): 3028-3039.
+[53] Zheng Yichen, Xi Xiangyu, Zhuang Yifan &amp; Zhang Yi. Dynamic parameters cellular automaton model for passengers in subway[J]. Tsinghua Science and Technology, 2015, 20(6): 594-601.
+[54] Li Li, Zhang Qingling, Zhang Yi &amp; Zhu Baoyan. H-infinity Fuzzy Control for Nonlinear Singular Markovian Jump Systems with Time Delay[J]. Mathematical Problems in Engineering, 2015(896515).
+[55] Wang Yizhi, Hu Jianming, Zhang Yi &amp; Xu Chao. Reliability evaluation of IEEE 802.11p-based vehicle-to-vehicle communication in an urban expressway[J]. Tsinghua Science and Technology, 2015, 20(4): 417-428.
+[56] Guo Wei, Zhang Yi &amp; Li Li. The integration of CPS, CPSS, and ITS: A focus on data[J]. Tsinghua Science and Technology, 2015, 20(4): 327-335.
+[57] Wang Yizhi, Hu Jianming, Zhang Yi, Xu Chang. Reliability Evaluation of IEEE 802.11p-Based Vehicle-to-Vehicle Communication in an Urban Expressway, Tsinghua Science and Technology, Vol. 20(4), 2015.
+[58] Guo Wei, Zhang Yi, &amp; Li Li. The integration of CPS, CPSS, and ITS: A focus on data, Tsinghua Science and Technology, 20(4), 327-335 ,2015.
+[59] Zheng Yichen, Xi Xiangyu, Zhang Yi. Dynamic parameters cellular automaton model for passengers in subway. Tsinghua Science and Technology, 20(6), 594-601,2015.
+[60] Zheng Yichen, Zhang Yi, Li Li, Reliable Path Planning for Bus Networks Considering Travel Time Uncertainty, IEEE Intelligent Transportation Systems Magazine, 8(1), 35-50, 2015.
+[61] Zheng Yichen, Guo Wei, Zhang Yi, Hu Jianming. A Generalized Comfort Function of Subway Systems Based on a Nested Logit Model [J]. Tsinghua Science and Technology, Vol. 19, No. 3, 300-306, 2014.
+[62] Zhao Tingting, Nie Yu Marco &amp; Zhang Yi, &#34;Extended spectral envelope method for detecting and analyzing traffic oscillations&#34;, Transportation Research Part B: Methodological, Vol.61, pp.1-16, 2014.
+[63] Hou Lin, Lao Yunteng, Wang Yinhai, Zhang Zuo, Zhang Yi &amp; Li Zhiheng, &#34;Time-varying effects of influential factors on incident clearance time using a non-proportional hazard-based model&#34;, Transportation Research Part A-Policy and Practice, Vol.63, pp.12-24, 2014.
+[64] Tan Jiyuan, Li Zhiheng, Li Li, Zhang Yi &amp; Lu Lu, &#34;Berth assignment planning for multi-line bus stops&#34;, Journal of Advanced Transportation, Vol.48, No.7, pp.750-765, 2014.
+[65] Zhao Ting-ting, Li Zhi-heng, Huang Bing-yan, Mu Bei-peng &amp; Zhang Yi, &#34;Exploring the influence of traveller information on macroscopic fundamental diagrams&#34;, IET Intelligent Transport Systems, Vol.8, No.1, pp.58-67, 2014.
+[66] Wang Yizhi, Hu Jianming, Li Li &amp; Zhang Yi, &#34;Optimal coordination of variable speed limit to eliminate freeway wide moving jams&#34;, International Journal of Modern Physics C, Vol.25, No.14500389, 2014.
+[67] Tan Jiyuan, Li Li, Li Zhiheng &amp; Zhang Yi, &#34;Distribution models for start-up lost time and effective departure flow rate&#34;, Transportation Research Part A-Policy and Practice, Vol.51, pp.1-11, 2013.
+[68] Hou Lin, Lao Yunteng, Wang Yinhai, Zhang Zuo, Zhang Yi &amp; Li Zhiheng, &#34;Modeling freeway incident response time: A mechanism-based approach&#34;, Transportation Research Part C-Emerging Technologies, Vol.28, No.SI, pp.87-100, 2013.
+[69] Yingying Zhang, Danya Yao, Qiu T. Z., Lihui Peng &amp; Yi Zhang, &#34;Pedestrian safety analysis in mixed traffic conditions using video data&#34;, IEEE Transactions on Intelligent Transportation Systems, Vol.13, No.4, pp.1832-1844, 2012.
+[70] Wang Yizhi, Zhang Yi, Hu Jianming &amp; Li Li, &#34;Using variable speed limits to eliminate wide moving jams: a study based on three-phase traffic theory&#34;, International Journal of Modern Physics C, Vol.23, No.9, pp.id.1250060, 2012.
+[71] Jianming HU, Qiang MENG, Qi WANG, Jiajie ZHANG &amp; Yi ZHANG, &#34;Traffic congestion identification based on image processing&#34;, IET Intelligent Transport Systems, Vol.6, No.2, pp.153-160, 2012.
+[72] Chen Xiaobo, Yao Danya, Zhang Yi, Su Yuelong &amp; Zhang Yingying, &#34;Design and implementation of cooperative vehicle and infrastructure system based on IEEE 802.11n&#34;, Transportation Research Record, No.2243, pp.158-166, 2011.
+[73] Chen Xiqun, Li Li &amp; Zhang Yi, &#34;A markov model for headway/spacing distribution of road traffic&#34;, IEEE Transactions on Intelligent Transportation Systems, Vol.11, No.4, pp.773-785, 2010.
+[74] Duan Houli, Li Zhiheng &amp; Zhang Yi, &#34;Multiobjective reinforcement learning for traffic signal control using vehicular ad hoc network&#34;, EURASIP Journal on Advances in Signal Processing, 2010.
+[75] Li Zhiheng, Li Li &amp; Zhang Yi, &#34;IVS 09: Future research in vehicle vision systems&#34;, IEEE Intelligent Systems, Vol.24, No.6, pp.62-65, 2009.
+[76] Yao Danya, Su Yuelong, Zhang Yi, Li Li, Cheng Sihan &amp; Wei Zheng, &#34;Control strategies for transit priority based on queue modeling and surrogate testing&#34;, Journal of Intelligent Transportation Systems, Vol.13, No.3, pp.142-148, 2009.
+[77] Jin Xuexiang, Zhang Yi, Wang Fa, Li Li, Yao Danya, Su Yuelong &amp; Wei Zheng, &#34;Departure headways at signalized intersections: A log-normal distribution model approach&#34;, Transportation Research Part C-Emerging Technologies, Vol.17, No.3, pp.318-327, 2009.
+[78] Chen Yudong, Li Li, Zhang Yi &amp; Hu Jianming, &#34;Fluctuations and pseudo long range dependence in network flows: A non-stationary Poisson process model&#34;, Chinese Physics B, Vol.18, No.4, pp.1373-1379, 2009.
+[79] Li Li, Hu Jianming, Chen Yudong &amp; Zhang Yi, &#34;PCA based hurst exponent estimator for fBm signals under disturbances&#34;, IEEE Transactions on Signal Processing, Vol.57, No.7, pp.2840-2846, 2009.
+[80] Qu Li, Li Li, Zhang Yi &amp; Hu Jianming, &#34;PPCA-based missing data imputation for traffic flow volume: a systematical approach&#34;, IEEE Transactions on Intelligent Transportation Systems, Vol.10, No.3, pp.512-522, 2009.
+[81] Li Zhiheng, Chen Yudong, Li Li &amp; Zhang Yi, &#34;Quantization errors of uniformly quantized fGn and fBm signals&#34;, IEEE Signal Processing Letters, Vol.16, No.12, pp.1059-1062, 2009.
+[82] Chen Yudong, Li Li, Zhang Yi &amp; Jin Xuexiang, &#34;A non-stationary Poisson model for the scaling of urban traffic fluctuations&#34;, Chinese Physics Letters, Vol.25, No.5, pp.1912-1915, 2008.
+[83] Chen Yudong, Li Li, Zhang Yi, Hu Jianming &amp; Jin Xuexiang, &#34;Fluctuations in urban traffic networks&#34;, Modern Physics Letters B, Vol.22, No.2, pp.101-115, 2008.
+[84] Zhang Hesheng, Zhang Yi, Li Zhiheng &amp; Hu Dongcheng, &#34;Spatial-temporal traffic data analysis based on global data management using MAS&#34;, IEEE Transactions on Intelligent Transportation Systems, Vol.5, No.4, pp.267-275, 2004.
+[85] Katebi M.R., Grimble M.J. and Zhang Y., “ H_infinity Robust Control Design for Dynamic Ship Positioning”, IEE Proceedings: Control Theory and Applications, Vol.144, No.2, pp.110-120, March, 1997
+[86] Katebi M.R. and Zhang Y., &#34; H_infinity Control Analysis and Design for Nonlinear Systems&#34;, Inter. J. of Control, Vol.61, No.2, pp.459-474, 1995</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>张毅</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/xtgcyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>zhyi@mail.tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1986年 清华大学自动化系获工学学士学位
+1988年 清华大学自动化系获工学硕士学位
+1995年...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-zhangyi";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

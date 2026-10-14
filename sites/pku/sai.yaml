@@ -1,0 +1,17 @@
+school: pku
+dept: sai
+dept_name: 智能学院
+base_url: https://sai.pku.edu.cn
+hook: related_roster
+direct: true
+list:
+  urls:
+  - https://sai.pku.edu.cn/szdw/zzjs.htm
+  - https://sai.pku.edu.cn/szdw/zzjs/1.htm
+  - https://sai.pku.edu.cn/szdw/zzjs/2.htm
+  - https://sai.pku.edu.cn/szdw/zzjs/3.htm
+  - https://sai.pku.edu.cn/szdw/zzjs/4.htm
+  card_selector: .ltjs_nr
+  name_selector: h3
+  link_selector: a[href]
+  person_href: /info/1362/\d+\.htm$

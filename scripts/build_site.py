@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 from crawler import store
 from crawler import admissions_util
+from crawler.unit_util import groups, GROUPS
 
 SITE = ROOT / "site"
 
@@ -29,11 +30,17 @@ def safe_url(value):
     return value if value and urlsplit(value).scheme in ('http', 'https') else '#'
 
 
+def roster_url(cfg):
+    listing = cfg.get('list', {})
+    source = listing.get('public_url') or listing.get('url') or next(iter(listing.get('urls', [])), '') or next((c['url'] for c in listing.get('channels', [])), '')
+    return safe_url(source) if source else ''
+
+
 def list_record(p):
     keys = ('name', 'school', 'school_name', 'dept', 'dept_name', 'page', 'title',
             'supervisor', 'email', 'phone', 'institutes', 'inst', 'homepage',
             'detail_url', 'profile_url', 'first_seen', 'last_verified', 'source_date',
-            'facets', 'status', 'research_direction_raw')
+            'facets', 'status', 'research_direction_raw', 'unit_groups')
     rec = {k: p[k] for k in keys if k in p}
     rec['search_text'] = ' '.join(str(p.get(k) or '') for k in
                                  ('name', 'school_name', 'dept_name', 'email', 'aliases',
@@ -74,6 +81,7 @@ def main():
         for p in store.load_all(cfg["school"], cfg["dept"]).values():
             rec = p.model_dump(mode="json", exclude_none=True)
             rec["dept_name"] = cfg.get("dept_name", cfg["dept"])
+            rec['unit_groups'] = groups(rec['dept_name'])
             rec["school_name"] = school_names.get(cfg["school"], cfg["school"])
             prov = rec.get("provenance", {})
             rec["institutes"] = rec.get("institutes") or []
@@ -127,16 +135,19 @@ def main():
     admission_file = ROOT / 'data/admissions.yaml'
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
     units = {}
-    for p in profs:
-        units.setdefault(p['school'], set()).add(p['dept'])
+    for cfg in load_cfgs():
+        units.setdefault(cfg['school'], set()).add(cfg['dept'])
     admissions_util.validate(admissions, units)
     checks_file = ROOT / 'data/admissions_checks.json'
     admissions['checks'] = json.loads(checks_file.read_text(encoding='utf-8')) if checks_file.exists() else {}
     admissions_util.validate_checks(admissions['checks'], admissions['sources'])
     notice_cfg = ROOT / 'sites/notices.yaml'
     notice_urls = {(c['school'], c['dept']): safe_url(c['url']) for c in yaml.safe_load(notice_cfg.read_text(encoding='utf-8'))['targets']} if notice_cfg.exists() else {}
-    admissions['units'] = [{'school': s, 'school_name': school_names.get(s, s), 'dept': d, 'dept_name': n,
-                            'count': sum(p['school'] == s and p['dept'] == d for p in profs), 'notice_url': notice_urls.get((s, d), '')} for s, d, n in depts]
+    admissions['groups'] = GROUPS
+    admissions['units'] = [{'school': c['school'], 'school_name': school_names.get(c['school'], c['school']), 'dept': c['dept'], 'dept_name': c.get('dept_name', c['dept']),
+                            'count': sum(p['school'] == c['school'] and p['dept'] == c['dept'] for p in profs), 'notice_url': notice_urls.get((c['school'], c['dept']), ''),
+                            'groups': groups(c.get('dept_name', c['dept'])), 'roster_pending': c.get('roster_pending', ''),
+                            'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())

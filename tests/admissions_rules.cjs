@@ -7,6 +7,11 @@ assert.deepEqual(rules.select([school,dept],{...prefs,dept:'ai'}).map(p=>p.id),[
 assert.equal(rules.select([school,dept],{...prefs,year:2028}).length,0);
 assert.equal(rules.select([school,dept],{...prefs,route:'recommend'}).length,0);
 assert.equal(rules.select([school,dept],{...prefs,school:'other'}).length,0);
+assert.equal(rules.select([{...dept,track:'special'}],{...prefs,track:'ordinary'}).length,0);
+assert.equal(rules.select([school,{...dept,track:'special'}],{...prefs,track:'special'}).length,2);
+assert.equal(rules.eventState({at:'2026-09-12T09:00:00+08:00',kind:'deadline'},'2026-10-14T00:00:00Z'),'past');
+assert.equal(rules.eventState({at:'2026-09-04',kind:'exam'},'2026-09-04T10:00:00Z'),'future');
+assert.equal(rules.eventState({at:'2026-09-04',kind:'exam'},'2026-09-05T00:00:00Z'),'past');
 let observations={s:{status:'ok',hash:'old',last_success:'2026-10-14'}};
 assert.equal(rules.quality(school,observations,'2026-10-14').state,'checked');
 assert.equal(rules.quality(school,{s:{...observations.s,hash:'new'}},'2026-10-14').state,'changed');

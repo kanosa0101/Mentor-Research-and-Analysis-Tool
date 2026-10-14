@@ -6,6 +6,7 @@ main{margin:auto;padding:24px 22px}.intro{max-width:850px;line-height:1.8}.disco
 </style>{% include '_ui_head.html.j2' %}</head><body>{% include '_nav.html.j2' %}<main>
 <h1>找到值得进一步了解的导师</h1><p class="intro muted">先明确想研究什么、申请什么，再看每项条件的依据。研究文字命中、导师资格、招生机会和你的申请资格分别判断；未知信息不会默认变成“不符合”。</p>
 <div id="discovery-message" role="status" aria-live="polite"></div>
+<label>相关院系方向<select id="intent-group"><option value="">全部</option><option value="computer">计算机</option><option value="software">软件</option><option value="ai">人工智能</option><option value="cyber">网络安全</option><option value="control">自动化与控制</option><option value="information">电子信息交叉</option><option value="other">其他相关院系</option></select></label><p class="note">仅按院系名称导航，不等于跨专业报考资格。该临时方向不保存在私人条件中。</p>
 <p id="unit-context" class="note" hidden></p><button id="clear-unit-context" type="button" hidden>清除院系范围</button>
 <div class="discovery-layout"><aside><form id="criteria-form" class="criteria"><h2>我的条件</h2><div class="criteria-fields">
 <label>入学年度<input id="intent-year" type="number" min="2000" max="2100" placeholder="未知可留空"></label>

@@ -46,6 +46,16 @@ class MaintenanceTests(unittest.TestCase):
         self.assertEqual(p.last_fetched, '2026-09-06')
         self.assertEqual(p.last_parsed, self.crawl.TODAY)
 
+    def test_roster_record_keeps_its_own_page_source_and_date(self):
+        class Hook:
+            def iter_roster(self, cfg):
+                return [{'name': '新教师', 'url': 'https://example.org/person2', 'email': 'new@example.org',
+                         'roster_source': 'https://example.org/list2', 'roster_fetched_at': '2026-09-01'}], {'fetched_at': '2026-10-14'}
+        self.crawl.phase_roster({'school': 'test', 'dept': 'cs', 'list': {'url': 'https://example.org/list1'}}, Hook(), False)
+        p = next(p for p in store.load_all('test', 'cs').values() if p.name == '新教师')
+        self.assertEqual(p.provenance['name'].source, 'https://example.org/list2')
+        self.assertEqual(p.provenance['email'].fetched_at, '2026-09-01')
+
     def test_roster_refresh_reaches_auxiliary_http_call(self):
         wp = self.crawl.load_hook({'school': 'test', 'hook': 'wp'})
         url = 'https://example.org/list.htm'

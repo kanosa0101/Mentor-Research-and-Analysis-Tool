@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>汪小我 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-wangxiaowo" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>汪小我 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>xwwang@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1078/3260.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1078/3260.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1999年8月–2003年7月 清华大学，自动化系，自动化专业，学士
+2007年9月–2008年3月 美国冷泉港实验室，访问学生
+2003年9月–2008年7月 清华大学，自动化系，控制科学与工程，博士
+工作履历
+2008年7月–2011年11月 清华大学，自动化系，讲师
+2011年12月–2015年12月 清华大学，自动化系，副教授
+2012年3月–2013年3月 美国加州大学伯克利分校，唐氏杰出学者
+2016年1月–2020年12月 清华大学，自动化系，长聘副教授
+2020年12月–现在 清华大学，自动化系，长聘教授
+学术兼职
+中国人工智能学会生物信息学与人工生命专业委员会副主任
+中国生物工程学会青年工作委员会主任
+中国生物工程学会理事
+中国计算机学会生物信息学专委会常务委员
+中国自动化学会青年工作委员会委员
+Quantitative Biology 编委
+系统科学与数学 编委
+合成生物学 编委
+担任国家自然科学基金项目函评人，以及Nature Biotechnology, PNAS, Genome Biolgy, Bioinformatics、PLoS Computational Biology,《科学通报》、《中国科学》等国内外期刊和会议的审稿人
+研究领域
+1.生物信息学
+2.模式识别与机器学习
+3.人工生物系统的设计与控制
+奖励与荣誉
+国家杰出青年科学基金获得者，2022
+中国自动化学会青年科学家奖，2019
+国家自然科学基金优秀青年基金，2013
+教育部新世纪优秀人才，2013
+全国优秀博士学位论文，2010
+中国自动化学会科学技术进步奖二等奖（排名第二），2013
+国家教学成果二等奖（排名第五），2009
+北京市教学成果一等奖（排名第五），2008
+学术成果
+1.    Ye Wang#, Haochen Wang#, Lei Wei, Shuailin Li, Liyang Liu, Xiaowo Wang*, Synthetic Promoter Design in Escherichia Coli Based on a Deep Generative Network, Nucleic Acids Research. 2020, 48(12):6403-6412
+2.    He H, Xu P, Zhang X, Liao M, Dong Q, Cong T, Tang B, Yang X, Ye M, Chang Y, Liu W, Wang XW, Ju Z, Wang JW*, Aging-induced IL27Ra signaling impairs hematopoietic stem cells. Blood. 2020, 136(2):183-198
+3.    Zhao Z, Dong QY, Liu XH, Wei L, Liu LY, Li YD, Wang XW*, Dynamic transcriptome profiling in DNA damage-induced cellular senescence and transient cell-cycle arrest. Genomics. 2020, 112(2):1309-1317
+4.    颜钱明，张鹏程，乔榕，古槿，汪小我*．基于细胞—计算机交互的细胞控制方法．自动化学报. 2019，https://doi.org/10.16383/j.aas.c190528
+5.    Lei Wei#, Ye Yuan#, Tao Hu, Shuailin Li, Tianrun Cheng, Jinzhi Lei, Zhen Xie, Michael Q. Zhang, Xiaowo Wang*, Regulation by competition: a hidden layer of gene regulatory network, Quantitative Biology, 2019; 7(2): 110–121
+6.    Xiong, Guangbing#; Liu, Chang#; Yang, Gang; Feng, Mengyu; Xu, Jianwei; Zhao, Fangyu; You, Lei; Zhou, Li; Zheng, Lianfang; Hu, Ya; Wang, Xiaowo*; Zhang, Taiping*; Zhao, Yupei*; Long noncoding RNA GSTM3TV2 upregulates LAT2 and OLR1 by competitively sponging let-7 to promote gemcitabine resistance in pancreatic cancer, Journal of Hematology &amp; Oncology, 2019, 12(1):97
+7.    方欢，钟碧溪，魏磊，张祥林，张威，汪小我*；血浆游离DNA全基因组甲基化测序的实用稳定性评估 , 生物工程学报, 2019, 35(12): 2284-2294
+8.    张祥林, 方欢, 汪小我*, 三维基因组数据分析方法进展，《生物化学与生物物理进展》 2018, 45(11): 1093-1105
+9.    胡冠华，王也，魏磊，汪小我*, 通过合成基因线路实现细胞分类，《生命科学》 2018, 30(8): 799-809
+10.   Miao Z, Deng K, Wang X, Zhang X*, DEsingle for detecting three types of differential expression in single-cell RNA-seq data, Bioinformatics, 2018, 34(18):3223-3224
+11.   Yaru Liang#, Chang Liu#, Maoyang Lu, Qiongye Dong, Zimu Wang, Zhuoran Wang,Wenxiang Xiong, Nannan Zhang, Jiawei Zhou, Qingfei Liu, Xiaowo Wang*, Zhao Wang*,Calorie restriction is the most reasonable anti-ageing intervention: a meta-analysis of survival curves, Scientific Reports, 2018, 8:5779, DOI:10.1038/s41598-018-24146-z
+12.   Wei Z#, Zhang W#, Fang H, Li Y, Wang X* esATAC: An Easy-to-use Systematic pipeline for ATAC-seq data analysis. Bioinformatics. 2018, 34(15):2664-2665
+13.   Li Y#, Zheng H#, Wang Q, Zhou C, Wei L, Liu X, Zhang W, Zhang Y, Du Z, Wang X, Xie W*. Genome-wide analyses reveal a role of Polycomb in promoting hypomethylation of DNA methylation valleys. Genome Biol. 2018 Feb 8;19(1):18
+14.   Du Z, Zheng H, Huang B, Ma R, Wu J, Zhang X, He J, Xiang Y, Wang Q, Li Y, Ma J, Zhang X, Zhang K, Wang Y, Zhang MQ, Gao J, Dixon JR, Wang X, Zeng J, Xie W*. Allelic reprogramming of 3D chromatin architecture during early mammalian development. Nature. 2017;547(7662):232-235.
+15.   Dong Q#, Han H#, Liu X#, Wei L, Zhang W, Zhao Z, Zhang MQ, Wang X*, HCSGD: An integrated database of human cellular senescence genes., J Genet Genomics. 2017; 44(5): 227-234
+16.   Honglei Liu, Xiaowo Wang*, Lei S. Qi*, Using CRISPR-ERA Webserver for sgRNA Design, Bio-protocals, 2017, DOI:10.21769/BioProtoc.2522
+17.   魏磊, 袁野, 汪小我*, 合成基因线路规模化设计面临的挑战. 生物工程学报. 2017;33(3):372-385.
+18.   张学工*, 江瑞, 汪小我, 古槿, 陈挺，从生物大数据到知识大发现: 十年进展与未来展望，科学通报，2016, 61(36), 3869-3877
+19.   Chao He#, Guipeng Li#, Diekidel M. Nadhir, Yang Chen*, Xiaowo Wang*, Michael Q. Zhang*, Advances in computational ChIA-PET data analysis, Quantitative Biology, 2016, 4(3): 217-225
+20.   Ye Yuan#, Xinying Ren#, Zhen Xie, Xiaowo Wang*, A quantitative understanding of microRNA-mediated competing endogenous RNA regulation, Quantitative Biology 4 (1), 47-57
+21.   Chao He, Michael Q. Zhang*, Xiaowo Wang*, MICC: an R package for identifying chromatin interactions from ChIA-PET data, Bioinformatics, 2015, 31(23): 3832-4
+22.   Honglei Liu, Zheng Wei, Antonia Dominguez, Yanda Li, Xiaowo Wang*, Lei S. Qi*, CRISPR-ERA: a comprehensive design tool for CRISPR-mediated gene editing, repression and activation, Bioinformatics, 2015, 31(22):3676-8
+23.   梁亚茹#, 刘畅#, 王卓然, 董琼叶, 汪小我*, 王钊*. 抗衰老药物对线虫生存曲线影响的荟萃分析. 中国科学：生命科学, 2015, 45(5): 479-487
+24.   Ye Yuan#, Bing Liu#, Peng Xie, Michael Q. Zhang, Yanda Li, Zhen Xie*, Xiaowo Wang*, Model-guided quantitative analysis of microRNA-mediated regulation on competing endogenous RNAs using a synthetic gene circuit, PNAS. 2015, 112(10):3158-63
+25.   Honglei Liu, Yanda Li, Xiaowo Wang*, OP-Synthetic: identification of optimal genetic manipulations for the overproduction of native and non-native metabolites, Quantitative Biology. 2014, 2(3): 100–109
+26.   Chao He, Xiaowo Wang*, Michael Q. Zhang*, Nucleosome eviction and multiple co-factor binding predict estrogen-receptor-alpha associated long-range interactions, Nucleic Acid Research, 2014, 42(11):6935-44
+27.   Peng Xie#, Yu Liu#, Yan-da Li, Michael Zhang* and Xiaowo Wang*, MIROR: a method for cell-type specific microRNA occupancy rate prediction, Mol. BioSyst. 2014, 10(6):1377-84
+28.   YingXue Li, XueNing Liu, Xiaowo Wang, XueGong Zhang*, Sequence signatures of genes with accompanying antisense transcripts in Saccharomyces cerevisiae, Science China Life Sciences, 2014 Jan;57(1):52-58
+29.   Yong Chen, Yunfeng Ding, Yi Yang, Jinhai Yu, Guiing Liu, Xumin Wang, Shuyan Zhang, Dan Yu, Lai Song, Hangxiao Zhang, Congyan Zhang, Linhe Huo, Chaoxing Huo, Yang Wang, Yalan Du, Huina Zhang, Peng Zhang, Huimin Na, Shimeng Xu, Yaxin Zhu, Zhensheng Xie, Tong He, Yue Zhang, Guoliang Wang, Zhonghua Fan, Honglei Liu, Xiaowo Wang, Xuegong Zhang, Michael Q. Zhang, Yanda Li, Alexander Steinbuchel, Toyoshi Fujimoto, Simon Cichello, Jun Yu, Pingsheng Liu*, Integrated omics study delineates the dynamics of lipid droplets in Rhodococcus opacus PD630, Nucleic Acids Research, 2014, 42(2):1052-64
+30.   Matthew H Larson, Luke A Gilbert, Xiaowo Wang, Wendell A Lim, Jonathan S Weissman, Lei S Qi*, CRISPR interference (CRISPRi) for sequence-specific control of gene expression, Nature Protocols, 2013; 8, 2180–2196
+31.   Ruijuan Li, Weilong Guo, Jin Gu, Michael Q. Zhang, Xiaowo Wang*, Chromatin state and microRNA determine different gene expression dynamics responsive to TNF stimulation, Genomics, 2012 ;100(5):297-302
+32.   Ozlem Aksoy#, Agustin Chicas#, Tianying Zeng, Zhen Zhao, Mila McCurach, Xiaowo Wang, Scott Lowe*, The atypical E2F family member E2F7 couples the p53 and Rb pathways during cellular senescence, Genes Dev. 2012; 26(14):1546-57
+33.   Agustin Chicas#, Avnish Kapoor#, Xiaowo Wang#, Ozlem Aksoy, Adam G. Evertts, Michael Q. Zhang, Benjamin A. Garcia, Emily Bernstein*, Scott Lowe*, H3K4 demethylation by Jarid1a and Jarid1b contributes to retinoblastoma-mediated gene silencing during cellular senescence, PNAS. 2012 ;109(23):8971-6
+34.   Ratnakumar K, Duarte LF, Leroy G, Hasson D, Smeets D, Vardabasso C, Bonisch C, Zeng T, Xiang B, Zhang DY, Li H, Wang X, Hake SB, Schermelleh L, Garcia BA, Bernstein E*, ATRX-mediated chromatin association of histone variant macroH2A1 regulates α-globin expression, Genes Dev. 2012 Mar 1;26(5):433-8.
+35.   Miao He, Yu Liu, Xiaowo Wang, Michael Q. Zhang, Gregory Hannon, Z. Josh Huang*, Cell-type based analysis of microRNA profiles in the mouse brain, Neuron, 2012, 73(1):35-48
+36.   董琼叶，汪小我*，刘平生，张奇伟，脂滴表面蛋白质的预测和分类 中国科技论文在线精品论文, 2012, 5(17): 1667-1673
+37.   Chien Y, Scuoppo C, Wang X, Fang X, Balgley B, Bolden JE, Premsrirut P, Luo W, Chicas A, Lee CS, Kogan SC, Lowe SW, Control of the senescence-associated secretory phenotype by NF-κB promotes senescence and enhances chemosensitivity, Genes Dev.;25(20):2125-36, 2011
+38.   Wang LY, Wang P, Li MJ, Qin J, Wang X, Zhang MQ, Wang J. EpiRegNet: constructing epigenetic regulatory network from high throughput gene expression data for humans. Epigenetics. 2011 Dec 1;6(12):1505-12.
+39.   Likun Wang, Xiaowo Wang, Xi Wang, Yanchun Liang, Xuegong Zhang*, Observations on novel splice junctions from RNA sequencing data, Biochemical and Biophysical Research Communications, 409(2):299-303, 2011
+40.   Agustin Chicas, Xiaowo Wang, Chaolin Zhang, Mila McCurrach, Zhen Zhao, Ozlem Mert, Ross A. Dickins, Masashi Narita, Michael Zhang and Scott W. Lowe*, Dissecting the Unique Role of the Retinoblastoma Tumor Suppressor during Cellular Senescence, Cancer Cell, 17(4): 376-387, 2010
+41.   Xi Wang, Xiaowo Wang, Likun Wang, Zhixing Feng, Xuegong Zhang*, A review on the processing and analysis of next-generation RNA-seq data，Prog. Biochem. Biophys., 37(8):834-846, 2010 (In Chinese)
+42.   Tingting Li, Xueya Zhou, Xiaowo Wang, Dahai Zhu*, Yong Zhang*, Identification and characterization of human snoRNA core promoters, Genomics, 96(1):50-6, 2010
+43.   Likun Wang, Zhixing Feng, Xi Wang, Xiaowo Wang*, Xuegong Zhang*, DEGseq: an R package for identifying differentially expressed genes from RNA-seq data, Bioinformatics, 26(1):136-138 2010 (*co-corresponding Author)
+44.   Xiaowo Wang#, Zhenyu Xuan#, Xiaoyue Zhao, Yanda Li, Michael Q. Zhang*, High-resolution Human Core-promoter prediction with CoreBoost_HM, Genome Research, 19: 266-275 2009
+45.   Tao Peng, Chenghai Xue, Jianning Bi, Tingting Li, Xiaowo Wang, Xuegong Zhang, Yanda Li*, Functional importance of different patterns of correlation between adjacent cassette exons in human and mouse, BMC Genomics, 26;9:191, 2008
+46.   李婷婷，蒋博，汪小我，张学工* 转录因子结合位点的计算分析方法 生物物理学报, 2008, 24(05): 334-347
+47.   Xiaowo Wang, Jin Gu, Michael Q. Zhang and Yanda Li*, Identification of phylogenetically conserved microRNA cis-regulatory elements across 12 Drosophila species, Bioinformatics, 2008, 15;24(2):165-71
+48.   Xiaowo Wang, Xuegong Zhang, Yanda Li*, Complicated evolutionary patterns of miRNAs in vertebrates, Sci China Ser C-Life Sci, 51(6):552-9 2008
+49.   Jian Huang, Pei Hao, Yun-Li Zhang, Fu-Xing Deng, Qing Deng, Yi Hong, Xiaowo Wang, Yun Wang, Ting-Ting Li, Xue-Gong Zhang, Yi-Xue Li, Peng-Yuan Yang, Hong-Yang Wang and Ze-Guang Han*. Discovering multiple transcripts of human hepatocytes using massively parallel signature sequencing (MPSS), BMC Genomics, 8:207,2007
+50.   Jin Gu#, Tao He#, Yunfei Pei, Fei Li, Xiaowo Wang, Jing Zhang, Xuegong Zhang, Yanda Li*, Primary Transcripts and Expressions of Mammal Intergenic MicroRNAs Detected by Mapping ESTs to Their Flanking Sequences. Mamm Genome, 17(10):1033-1041, 2006
+51.   Xiaowo Wang#, Jing Zhang#, Fei Li, Jin Gu , Tao He , Xuegong Zhang and Yanda Li*, MicroRNA identification based on sequence and structure alignment. Bioinformatics, 2005, 21 (18): 3610-4
+人才培养
+主要课程：
+模式识别与机器学习（本科生，2020-今）
+模式识别基础（本科生，2017-2019）
+计算分子生物学引论（研究生， 2009-今）
+交叉项目综合训练A-合成生物学（本科生，2012-今）
+信息论基础（研究生，2010-2016）</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>汪小我</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/xxclyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1078/3260.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>xwwang@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1078/3260.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1999年8月–2003年7月 清华大学，自动化系，自动化专业，学士
+2007年9月–2008年3月...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1078/3260.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-wangxiaowo";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

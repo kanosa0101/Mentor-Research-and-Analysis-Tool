@@ -12,7 +12,7 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 </style>{% include '_ui_head.html.j2' %}</head>
 <body>{% include '_nav.html.j2' %}<main>
 <h1>官方招生通知</h1>
-<p class="hint">这是清华、北大、上交三个院系当前栏目页的监测试验。通知标题中的年份与入学年份分别记录；截止日期未核验时显示未知。请打开官网核实申请路径、资格和日期。栏目更新需运行监测命令并重建站点。</p>
+<p class="hint">这是 {{ sources|length }} 个已接入院系当前栏目页的监测试验；包含计算机、网安、智能和自动化等相关院系。通知标题中的年份与入学年份分别记录；截止日期未核验时显示未知。请打开官网核实申请路径、资格和日期。栏目更新需运行监测命令并重建站点。</p>
 <div class="bar"><select id="school"><option value="">全部院系</option>{% for key, source in sources.items() %}<option value="{{ key }}">{{ key }}</option>{% endfor %}</select><input id="search" placeholder="搜索通知标题"><span id="count"></span></div>
 <p><a id="notice-policy-link" href="admissions.html">核对学校与院系政策 →</a></p>
 <p id="notice-context" class="muted" role="status"></p>

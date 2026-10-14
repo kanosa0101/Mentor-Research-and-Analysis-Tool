@@ -16,7 +16,7 @@ async function apply(){
   el('review-panel').hidden=true;reviewMentor='';
   el('apply-criteria').disabled=true;
   try{if(prefs.topics.length&&!window.MENTOR_SEARCH)await script('search.js');if(!window.MENTOR_COMPARE)await script('compare-data.js');
-    applied=prefs;limit=20;view=DATA.map(p=>({p,result:DiscoveryRules.evaluate(p,prefs,PRIVATE.reviews,window.MENTOR_SEARCH?.[p.page]||'')})).filter(row=>row.result.visible&&(!contextSchool||row.p.school===contextSchool)&&(!contextDept||row.p.dept===contextDept)).sort((a,b)=>b.result.score-a.result.score||a.result.unknown-b.result.unknown);render();
+    applied=prefs;limit=20;view=DATA.map(p=>({p,result:DiscoveryRules.evaluate(p,prefs,PRIVATE.reviews,window.MENTOR_SEARCH?.[p.page]||'')})).filter(row=>row.result.visible&&(!el('intent-group').value||row.p.unit_groups?.includes(el('intent-group').value))&&(!contextSchool||row.p.school===contextSchool)&&(!contextDept||row.p.dept===contextDept)).sort((a,b)=>b.result.score-a.result.score||a.result.unknown-b.result.unknown);render();
   }finally{el('apply-criteria').disabled=false;}
 }
 function render(){
@@ -55,7 +55,9 @@ async function initPrivate(){PRIVATE=await api();API_OK=true;fillCriteria(PRIVAT
 el('intent-schools').innerHTML=[...new Map(DATA.map(p=>[p.school,p.school_name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],'zh')).map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');
 fillCriteria(PRIVATE.preferences);
 el('clear-unit-context').onclick=()=>{contextSchool='';contextDept='';el('unit-context').hidden=true;el('clear-unit-context').hidden=true;apply().catch(e=>message(e.message,true));};
+el('intent-group').onchange=()=>apply().catch(e=>message(e.message,true));
 function incomingCriteria(){
+  if(incoming.has('group')){const value=incoming.get('group');if(!Array.from(el('intent-group').options).some(o=>o.value===value))el('intent-group').add(new Option(value+'（未知）',value));el('intent-group').value=value;}
   if(contextSchool){for(const o of el('intent-schools').options)o.selected=o.value===contextSchool;}
   const year=Number(incoming.get('year'));if(Number.isInteger(year)&&year>=2000&&year<=2100)el('intent-year').value=year;
   if(['master','phd'].includes(incoming.get('degree')))el('intent-degree').value=incoming.get('degree');

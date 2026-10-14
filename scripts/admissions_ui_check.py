@@ -85,7 +85,7 @@ def main():
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
                     assert not errors, errors
                     offline = browser.new_page()
-                    offline.goto((SITE / 'admissions.html').as_uri() + '?school=tsinghua&year=2027')
+                    offline.goto((SITE / 'admissions.html').as_uri() + '?school=tsinghua&dept=cs&year=2027')
                     offline.wait_for_function('window.ADMISSIONS_READY === true')
                     assert offline.locator('[data-policy]').count() == 4
                     print('PASS: layered policies/context/unknown/year/source-change/XSS/project prefill/no auto write/mobile/file mode')

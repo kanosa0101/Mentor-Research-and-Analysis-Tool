@@ -1,0 +1,146 @@
+slug: zoudanping
+name: 邹丹平
+aliases: []
+school: sjtu
+dept: auto
+status: enriched
+title: 研究员
+supervisor: 硕导
+email: dpzou@sjtu.edu.cn
+bio_raw: "研究方向\n- 课题组隶属于\n感知与导航研究所\n，聚焦\n视觉传感驱动\n的\n空间计算与具身智能\n，研究方向主要包括：\n视觉自主定位、\n\
+  3D视觉感知\n轻量化自主协同无人集群\n- 课题组拥有600平米配备亚毫米级高精度动捕系统的无人系统试验场、高端GPU显卡、机械臂、移动底盘、四足机器人等各类实验设备，实验条件优越，长期欢迎科研实习、课题合作研究、竞赛组队，欢迎感兴趣、有激情且动手能力强的同学联系\
+  \ (dpzou@sjtu.edu.cn)。\n- 视觉与智能系统课题组主页：“\nhttps://drone.sjtu.edu.cn\n”\n工作经历\n2013月至今\
+  \ 上海交通大学，先后担任助理研究员/硕士生导师、副教授/博士生导师、研究员/博士生导师\n2010-2013 新加坡国立大学 博士后研究员\n教育背景\n2010年获复旦大学\
+  \ 计算机应用技术博士学位\n2003年获华中科技大学 光信息科学与技术学士学位\n科研项目\n先后主持自然科学基金青年项目、面上等\n国家级科研项目7项\n\
+  ，\n上海市科研项目2项\n，参与国家级项目2项。\n上海交通大学SEIEE·云智人工智能应用创新研究中心\n项目负责人。\n“智在飞翔”无人飞行器智能感知技术竞赛\n\
+  ：\n2014年在徐氏校友基金支持下发起上海交通大学小型无人机技术挑战赛，2017年推广为全国赛事。竞赛的目的是将人工智能技术赋能无人机，实现复杂环境下的自主穿越。赛事信息见网站http://drone.sjtu.edu.cn\
+  \ ,“智在飞翔”微信公众号。\n研究成果\n课题组致力于面向\n资源受限的机器人、XR设备\n等轻量级智能系统的研究，聚焦\n视觉传感驱动的空间计算与具身智能\n\
+  ，重点突破\n视觉自主定位、3D视觉感知、轻量化自主协同无人集群\n等关键技术，代表性成果以第一、通信作者发表于\nNature Machine Intelligence\n\
+  IEEE Trans. on Patten Analysis and Machine Intelligence\nIEEE Trans. on Robotics\n\
+  IEEE RAL\nICCV, CVPR, ICRA, IROS\n等人工智能与机器人权威学术期刊与会议。\n成果归类列表如下：\n-\n视觉自主定位\n面向多机器人群的协同视觉\n\
+  SLAM\n系统\n(CoSLAM)\n[1]\n结构化环境下的视觉\nSLAM\n（\nStructSLAM\n）\n[9] 与\n视觉惯性里程计\n(StructVIO)\n\
+  [7]\n基于文本标识的语义\nSLAM (TextSLAM)\n[2]\n[12]\n面向移动机器人低成本视觉\n-GNSS-\n惯性\n-\n轮速机融合\n\
+  SLAM (Ground-Fusion)\n[13]\n与数据集\n(M2DGR)\n[14]\n轻量化跨视角关键点匹配特征增强器\n(FeatureBooster)\n\
+  [17]\n- 3D\n视觉感知与规划\n双目\n+\n稀疏点云的稠密深度估计\n(Stereo-Lidar Fusion)\n[10]\n[11]\n面向恶劣视觉环境的长波红外双目相机稠密深度估计\n\
+  (ThermoStereoRT)\n[15]\n基于结构先验的单目深度估计\n(StructDepth)\n[18]\n多实例目标点云配准\n(Multi-instance\
+  \ point registration)\n[19]\n全向感知低重叠度多摄像头在线标定\n[16]\n基于单目视觉的主动\n3D\n重建\n(Active\
+  \ 3D image modeling)\n[21]\n基于神经网络的局部规划器\n[22]\n与全局规划器\n[23]\n[24]\n-\n轻量化自主协同无人集群\n\
+  轻量级端到端视觉自主协同高速避障飞行\n[3]\n基于光流的\nFPV\n单目视觉高速避障\n[4]\n无需建图与轨迹生成的\nMPC\n即时避障\n[5]\n\
+  旋翼无人机自主导航仿真器\n[26]\n、面向可微分物理学习的无人机仿真器\n(Visfly)\n[6]\n针对不可微奖励的高效可微分物理训练方法\n(ABPT)\n\
+  [25]\n双目视觉\n+\n超声避障系统\n[27]\n基于旋翼无人机动力学速度状态估计\n[28]\n[29]\n- 代码与数据\nhttps://github.com/SJTU-ViSYS\n\
+  https://github.com/SJTU-ViSYS-team\n(\n新\n)\n- 代表性论文 （第一/通信）：\n[1] \tZou, Danping,\
+  \ and Ping Tan. \"Coslam: Collaborative visual slam in dynamic environments.\" IEEE\
+  \ transactions on Pattern Analysis and Machine Intelligence 35, no. 2 (2012): 354-366.\n\
+  [2] \tLi, Boying, Danping Zou, Yuan Huang, Xinghan Niu, Ling Pei, and Wenxian Yu.\
+  \ \"TextSLAM: Visual SLAM with semantic planar text features.\" IEEE Transactions\
+  \ on Pattern Analysis and Machine Intelligence 46, no. 1 (2023): 593-610.\n[3] \t\
+  Zhang, Yuang, Yu Hu, Yunlong Song, Danping Zou, and Weiyao Lin. \"Learning vision-based\
+  \ agile flight via differentiable physics.\" Nature Machine Intelligence (2025):\
+  \ 1-13.\n[4] \tHu, Yu, Yuang Zhang, Yunlong Song, Yang Deng, Feng Yu, Linzuo Zhang,\
+  \ Weiyao Lin, Danping Zou, and Wenxian Yu. \"Seeing through pixel motion: learning\
+  \ obstacle avoidance from optical flow with one camera.\" IEEE Robotics and Automation\
+  \ Letters (2025).\n[5] \tZhang, Linzuo, Yu Hu, Yang Deng, Feng Yu, and Danping Zou.\
+  \ \"Mapless Collision-Free Flight via MPC using Dual KD-Trees in Cluttered Environments.\"\
+  \ IROS(2025).\n[6] \tLi, Fanxing, Fangyu Sun, Tianbao Zhang, and Danping Zou. \"\
+  Visfly: An efficient and versatile simulator for training vision-based flight.\"\
+  \ ICRA (2024).\n[7] \tZou, Danping, Yuanxin Wu, Ling Pei, Haibin Ling, and Wenxian\
+  \ Yu. \"StructVIO: visual-inertial odometry with structural regularity of man-made\
+  \ environments.\" IEEE Transactions on Robotics 35, no. 4 (2019): 999-1013.\n[8]\
+  \ \tZou, Danping, Ping Tan, and Wenxian Yu. \"Collaborative visual SLAM for multiple\
+  \ agents: A brief survey.\" Virtual Reality & Intelligent Hardware 1, no. 5 (2019):\
+  \ 461-482.\n[9] \tZhou, Huizhong, Danping Zou, Ling Pei, Rendong Ying, Peilin Liu,\
+  \ and Wenxian Yu. \"StructSLAM: Visual SLAM with building structure lines.\" IEEE\
+  \ Transactions on Vehicular Technology 64, no. 4 (2015): 1364-1375.\n[10] \tLi,\
+  \ Ang, Dexin Zuo, Anning Hu, Wenxian Yu, and Danping Zou. \"Sparse-to-Dense Hint\
+  \ Guided Stereo-LiDAR Fusion.\" IEEE Transactions on Circuits and Systems for Video\
+  \ Technology (2025).\n[11] \tLi, Ang, Anning Hu, Wei Xi, Wenxian Yu, and Danping\
+  \ Zou. \"Stereo-lidar depth estimation with deformable propagation and learned disparity-depth\
+  \ conversion.\" In 2024 IEEE International Conference on Robotics and Automation\
+  \ (ICRA), pp. 2729-2736. IEEE, 2024.\n[12] \tLi, Boying, Danping Zou, Daniele Sartori,\
+  \ Ling Pei, and Wenxian Yu. \"Textslam: Visual slam with planar text features.\"\
+  \ In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 2102-2108.\
+  \ IEEE, 2020.\n[13] \tYin, Jie, Ang Li, Wei Xi, Wenxian Yu, and Danping Zou. \"\
+  Ground-fusion: A low-cost ground slam system robust to corner cases.\" In 2024 IEEE\
+  \ International Conference on Robotics and Automation (ICRA), pp. 8603-8609. IEEE,\
+  \ 2024.\n[14] \tYin, Jie, Ang Li, Tao Li, Wenxian Yu, and Danping Zou. \"M2DGR:\
+  \ A Multi-sensor and Multi-scenario SLAM Dataset for Ground Robots.\" IEEE Robotics\
+  \ and Automation Letters 7, no. 2 (2021): 2266-2273.\n[15] \tHu, Anning, Ang Li,\
+  \ Xirui Jin, and Danping Zou. \"ThermoStereoRT: Thermal Stereo Matching in Real\
+  \ Time via Knowledge Distillation and Attention-based Refinement.\" ICRA 2025\n\
+  [16] \tLi, Ang, Danping Zou, and Wenxian Yu. \"Robust initialization of multi-camera\
+  \ slam with limited view overlaps and inaccurate extrinsic calibration.\" In 2021\
+  \ IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp.\
+  \ 3361-3367. IEEE, 2021.\n[17] \tWang, Xinjiang, Zeyu Liu, Yu Hu, Wei Xi, Wenxian\
+  \ Yu, and Danping Zou. \"Featurebooster: Boosting feature descriptors with a lightweight\
+  \ neural network.\" In Proceedings of the IEEE/CVF conference on computer vision\
+  \ and pattern recognition, pp. 7630-7639. 2023.\n[18] \tLi, Boying, Yuan Huang,\
+  \ Zeyu Liu, Danping Zou, and Wenxian Yu. \"StructDepth: Leveraging the structural\
+  \ regularities for self-supervised indoor depth estimation.\" In Proceedings of\
+  \ the IEEE/CVF International Conference on Computer Vision, pp. 12663-12673. 2021.\n\
+  [19] \tTang, Weixuan, and Danping Zou. \"Multi-instance Point Cloud Registration\
+  \ by Efficient Correspondence Clustering.\" In Proceedings of the IEEE Computer\
+  \ Society Conference on Computer Vision and Pattern Recognition, 2022.\n[20] \t\
+  Wang, Rongzhi, Danping Zou, Changqing Xu, Ling Pei, Peilin Liu, and Wenxian Yu.\
+  \ \"An aerodynamic model-aided state estimator for multi-rotor UAVs.\" In 2017 IEEE/RSJ\
+  \ International Conference on Intelligent Robots and Systems (IROS), pp. 2164-2170.\
+  \ IEEE, 2017.\n[21] \tHuang, Rui, Danping Zou, Richard Vaughan, and Ping Tan. \"\
+  Active image-based modeling with a toy drone.\" In 2018 IEEE International Conference\
+  \ on Robotics and Automation (ICRA), pp. 6124-6131. IEEE, 2018.\n[22] \tWu, Feiyang,\
+  \ and Danping Zou. \"Learning Visual Navigation System in Simulation for Autonomous\
+  \ Ground Vehicles in Real World.\" In Proceedings of the 2023 4th International\
+  \ Conference on Artificial Intelligence in Electronics Engineering, pp. 16-23. 2023.\n\
+  [23] \tSartori, Daniele, Danping Zou, Ling Pei, and Wenxian Yu. \"Near-optimal 3D\
+  \ trajectory design in presence of obstacles: A convolutional neural network approach.\"\
+  \ Robotics and Autonomous Systems 167 (2023): 104483.\n[24] \tSartori, Daniele,\
+  \ Danping Zou, Ling Pei, and Wenxian Yu. \"CNN-based path planning on a map.\" In\
+  \ 2021 IEEE International Conference on Robotics and Biomimetics (ROBIO), pp. 1331-1338.\
+  \ IEEE, 2021.\n[25] \tLi, Fanxing, Fangyu Sun, Tianbao Zhang, and Danping Zou. \"\
+  ABPT: Amended Backpropagation through Time with Partially Differentiable Rewards.\"\
+  \ arXiv preprint arXiv:2501.14513 (2025).\n[26] \tYang, Xinglong, Danping Zou, Ling\
+  \ Pei, Daniele Sartori, and Wenxian Yu. \"An efficient simulation platform for testing\
+  \ and validating autonomous navigation algorithms for multi-rotor uavs based on\
+  \ unreal engine.\" In China Satellite Navigation Conference, pp. 527-539. Singapore:\
+  \ Springer Singapore, 2019.\n[27] \tZhou, Qiang, Danping Zou, and Peilin Liu. \"\
+  Hybrid obstacle avoidance system with vision and ultrasonic sensors for multi-rotor\
+  \ MAVs.\" Industrial Robot: An International Journal 45, no. 2 (2018): 227-236.\n\
+  [28] \tWang, Rongzhi, Danping Zou, Changqing Xu, Ling Pei, Peilin Liu, and Wenxian\
+  \ Yu. \"An aerodynamic model-aided state estimator for multi-rotor UAVs.\" In 2017\
+  \ IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp.\
+  \ 2164-2170. IEEE, 2017.\n[29] \tSartori, Daniele, Danping Zou, Ling Pei, and Wenxian\
+  \ Yu. \"A Revisited approach to lateral acceleration modeling for quadrotor UAVs\
+  \ state estimation.\" In 2018 IEEE/RSJ International Conference on Intelligent Robots\
+  \ and Systems (IROS), pp. 5711-5718. IEEE, 2018."
+institutes: []
+detail_url: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+profile_url: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+first_seen: '2026-10-14'
+last_verified: '2026-10-14'
+last_fetched: '2026-10-14'
+last_parsed: '2026-10-14'
+facets: []
+provenance:
+  name:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty.html
+    fetched_at: '2026-10-14'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+    fetched_at: '2026-10-14'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+    fetched_at: '2026-10-14'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+    fetched_at: '2026-10-14'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+    fetched_at: '2026-10-14'
+    confidence: auto

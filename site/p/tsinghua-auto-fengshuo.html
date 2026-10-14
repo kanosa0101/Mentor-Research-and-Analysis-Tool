@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>封硕 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-fengshuo" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>封硕 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>fshuo@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1076/3247.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+2014年-2019年，自动化系，获工学博士学位
+2017年-2019年，美国密西根大学，访问学生
+2010年-2014年，清华大学，自动化系，获工学学士学位
+工作履历
+2025年-至今，清华大学自动化系，副教授
+2022年-2025年，清华大学自动化系，助理教授
+2021年-2022年，美国密西根大学，助理研究员
+2019年-2021年，美国密西根大学，博士后
+学术兼职
+2022年至今，IEEE Transactions on Intelligent Vehicles，Associate Editor
+2021年至今，Automotive Innovation， Academic Editor
+中国人工智能学会智能交通专委会副秘书长
+研究领域
+从事具身智能系统世界模型、测试验证与安全学习研究，围绕高价值数据在高维变量空间中的极端稀疏性问题，提出了物理智能（Physical AI）的“稀疏度灾难（Curse of Rarity, CoR）”理论，并开创了密集强化学习（Dense Deep Reinforcement Learning, D2RL）和密集学习（Dense Learning）解法，实现了从“AI测试AI”到“AI训练AI”的技术路线创新，系统性解决复杂物理智能系统中高价值数据稀疏分布、难以训练的问题，相关成果在自动驾驶汽车、人形机器人等领域得到广泛应用。
+研究概况
+国家重点研发计划项目，项目负责人，中巴无人系统及智能装备联合实验室，2026-2029￿ 国家科技创新专项，项目负责人，雄安数字城市环境下交通世界模型生成与自动驾驶加速测试技术，2025-2028
+国家自然科学基金面上项目，项目负责人，智能安全攸关系统等效加速测试理论与方法研究，2025-2028
+国家重点研发计划项目，子课题负责人，高级别自动驾驶复杂行车环境风险认知、量化评估与安全决策技术，2023-2026
+北京市自然科学基金创新联合基金项目，课题负责人，隐式状态与显式视觉统一的多智能体世界模型关键技术研究，2025-2027
+北京市科技新星计划，项目负责人，面向自动驾驶汽车的大模型安全性研究，2024-2026
+北京市科技新星计划，项目负责人，车路协同环境下自动驾驶汽车自适应等效加速测试方法研究，2023-2026
+奖励及荣誉
+2025年，中国自动化学会青年科技奖
+2024年，达摩院青橙奖
+2024年，清华大学“学术新人奖”
+2024年，MIT TR35（中国区）
+2023年，国家高层次青年人才
+2023年，北京市科技新星
+2023年，世界人工智能大会云帆奖·璀璨明星
+2021年，INFORMS学会智能交通系统年度最佳论文奖
+2020年，IEEE智能交通系统学会最佳博士学位论文奖
+2020年，清华大学优秀博士论文
+2020年，清华大学优秀毕业生
+学术成果
+l Feng, S., Zhu, H., Sun, H., Yan, X., He, L., Yang, J., Su, G., Li, B., Li, S., Wang, L., Shen, S. and Liu, H.X. Breaking through safety performance stagnation in autonomous vehicles with dense learning. Nature Communications (2026).
+https://doi.org/10.1038/s41467-026-69761-x
+l Fan, L., He, L., Ji, H. and Feng, S*. Efficient Safety Verification of Autonomous Vehicles with Neural Network Operator. IFAC World Congress (2026).
+l Lu, Q., Wang, X., Jiang, Y., Zhao, G., Ma, M.* and Feng, S*. OmniTester: Multimodal Large Language Model Driven Scenario Testing for Autonomous Vehicles. Automotive Innovation (2025).
+l Yang, J., Bai, R., Ji, H., Zhang, Y., Hu, J. and Feng, S.* Adaptive testing environment generation for connected and automated vehicles with dense reinforcement learning. IEEE Transactions on Intelligent Transportation Systems (2025).
+https://doi.org/10.1109/TITS.2025.3535866
+l Lu, H., Zhu, M., Lu, C., Feng, S., Wang, X., Wang, Y. and Yang, H. Empowering safer socially sensitive autonomous vehicles using human-plausible cognitive encoding. Proceedings of the National Academy of Sciences 122(21), e2401626122 (2025).
+l Yan, X., Feng, S.*, Sun, H. and Liu, H.X.* Distributionally Consistent Simulation of Naturalistic Driving Environment for Autonomous Vehicle Testing. IEEE Transactions on Intelligent Transportation Systems (2025).
+https://doi.org/10.1109/TITS.2025.3571966
+l Ren, K., Yang, J., Lu, Q., Zhang, Y., Hu, J.* and Feng, S.* Intelligent testing environment generation for autonomous vehicles with implicit distributions of traffic behaviors. Transportation Research Part C: Emerging Technologies (2025).
+https://doi.org/10.1016/j.trc.2025.105106
+l Yang, L., Liu, S., Feng, S.*, Wang, H., Zhao, X., Qu, G. and Fang, S. Generation of critical pedestrian scenarios for autonomous vehicle testing. Accident Analysis &amp; Prevention 214, 107962 (2025).
+l Yan, X., Feng, S.*, LeBlanc, D. J., Flannagan, C. and Liu, H. X*. Evaluation of automated driving system safety metrics with logged vehicle trajectory data. IEEE Transactions on Intelligent Transportation Systems (2024).
+https://doi.org/10.1109/TITS.2024.3397849
+l Liu, H.X.* and Feng, S*. Curse of rarity for autonomous vehicles. Nature Communications 15, 4808 (2024). [Featured Article]
+https://doi.org/10.1038/s41467-024-49194-0
+l Bai, R., Yang, J., Gong, W., Zhang, Y., Lu, Q. and Feng, S.* Accurately Predicting Probabilities of Safety-Critical Rare Events for Intelligent Systems. Proceedings of the 2024 IEEE International Conference on Automation Science and Engineering (CASE), 2024.
+l Feng, S., Sun, H., Yan, X. et al. Dense reinforcement learning for safety validation of autonomous vehicles. Nature 615, 620-627 (2023). [Cover Article] [ESI Highly Cited Paper]
+https://doi.org/10.1038/s41586-023-05732-2
+(Tsinghua Press Release: https://www.tsinghua.edu.cn/info/1175/102314.htm, 光明日报：https://tech.gmw.cn/2023-04/12/content_36491293.htm, Nature News, Nature Podcast, Nature Videos, TechXplore, ScienceDaily, More Media Coverage：https://nature.altmetric.com/details/144188044/news)
+l Yang, J., Sun, H., He, H., Zhang, Y., Liu, H.X. and Feng, S.* Adaptive safety evaluation for connected and automated vehicles with sparse control variates. IEEE Transactions on Intelligent Transportation Systems (2023).
+https://doi.org/10.1109/TITS.2023.3317078
+l Yan, X., Zou, Z., Feng, S., Zhu, H., Sun, H. and Liu, H.X. Learning naturalistic driving environment with statistical realism. Nature Communications 14(1), 2037 (2023). [Featured Article]
+l Feng, S., Song, Z., Li, Z., Zhang, Y. and Li, L. Robust cooperative platoon control in mixed traffic flow based on Tube Model Predictive Control. IEEE Transactions on Intelligent Vehicles 6(4), 711-722 (2021).
+https://doi.org/10.1109/TIV.2021.3060626
+l Pei, H., Zhang, Y., Zhang, Y. and Feng, S.* Optimal cooperative driving at signal-free intersections with polynomial-time complexity. IEEE Transactions on Intelligent Transportation Systems (2021).
+https://doi.org/10.1109/TITS.2021.3118592
+l Feng, S., Yan, X., Sun, H., Feng, Y. and Liu, H.X. Intelligent driving intelligence test for autonomous vehicles with naturalistic and adversarial environment. Nature Communications 12, 748 (2021). [Featured Article] [ITS Outstanding Paper Award] [ESI Highly Cited Paper]
+https://www.nature.com/articles/s41467-021-21007-8
+l Feng, S., Feng, Y., Yu, C., Zhang, Y. and Liu, H.X. Testing scenario library generation for connected and automated vehicles, Part I: Methodology. IEEE Transactions on Intelligent Transportation Systems 22(3), 1573-1582 (2020).
+l Feng, S., Feng, Y., Sun, H., Bao, S., Zhang, Y. and Liu, H.X. Testing scenario library generation for connected and automated vehicles, Part II: Case studies. IEEE Transactions on Intelligent Transportation Systems 22(9), 5635-5647 (2020).
+l Feng, S., Feng, Y., Sun, H., Zhang, Y. and Liu, H.X. Testing scenario library generation for connected and automated vehicles: An adaptive framework. IEEE Transactions on Intelligent Transportation Systems 23(2), 1213-1222 (2020).
+l Feng, S., Feng, Y., Yan, X., Shen, S., Xu, S. and Liu, H.X. Safety assessment of highly automated driving systems in test tracks: A new framework. Accident Analysis &amp; Prevention 144, 105664 (2020).
+l Pei, H., Feng, S.*, Zhang, Y. and Yao, D. A cooperative driving strategy for merging at on-ramps based on dynamic programming. IEEE Transactions on Vehicular Technology 68(12), 11646-11656 (2019).
+l Feng, S., Zhang, Y., Li, S.E., Cao, Z., Liu, H.X. and Li, L. String stability for vehicular platoon control: Definitions and analysis methods. Annual Reviews in Control 47, 81-97 (2019). [ESI Highly Cited Paper]</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>封硕</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/xtgcyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>fshuo@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+2014年-2019年，自动化系，获工学博士学位
+2017年-2019年，美国密西根大学，访问学生
+20...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-fengshuo";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

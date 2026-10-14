@@ -27,14 +27,14 @@ def parse_list(html, cfg):
     soup = BeautifulSoup(html, 'html.parser')
     records = {}
     for a in soup.select(cfg['selector']):
-        title_node = a.select_one(cfg.get('title_selector', 'h4'))
+        title_node = a if cfg.get('title_selector') == 'self' else a.select_one(cfg.get('title_selector', 'h4'))
         title = a.get('title') or (title_node.get_text(' ', strip=True) if title_node else '')
         url = urljoin(cfg['url'], a.get('href', ''))
         if not title or not any(k in title for k in KEYWORDS):
             continue
         if urlsplit(url).scheme not in ('http', 'https') or urlsplit(url).hostname != urlsplit(cfg['url']).hostname:
             continue
-        stamp = a.select_one('.time')
+        stamp = (a.find_parent('li') or a).select_one(cfg['date_selector']) if cfg.get('date_selector') else a.select_one('.time')
         stamp = stamp.get_text(' ', strip=True) if stamp else ''
         published = None
         match = re.search(r'(20\d{2})[.\-/](\d{2})[.\-/](\d{2})', stamp)
@@ -111,7 +111,7 @@ def main():
             sources.setdefault(key, {'url': cfg['url']})['error'] = str(e)
             print(f'{key}: ERROR {e}', file=sys.stderr)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps({'scope': 'three-department-current-list-pilot',
+    args.output.write_text(json.dumps({'scope': 'configured-department-current-list-pilot',
                                       'sources': sources, 'notices': sorted(rows.values(), key=lambda r: (r['school'], r['url']))},
                                      ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'栏目变化 {changes} | 失败 {failed} | 候选通知 {len(rows)}；截止日期与入学年份待人工核验')

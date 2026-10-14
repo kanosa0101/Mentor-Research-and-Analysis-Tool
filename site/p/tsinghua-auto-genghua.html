@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>耿华 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=tsinghua-auto-genghua" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">清华大学 · 自动化系</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=tsinghua&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>耿华 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>genghua@tsinghua.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://www.au.tsinghua.edu.cn/info/1079/3102.htm" target="_blank">https://www.au.tsinghua.edu.cn/info/1079/3102.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">教育背景
+1999-2003，华中科技大学电子与电气工程学院，学士
+2003-2008，清华大学自动化系，博士
+工作履历
+2008-2010加拿大Ryerson大学博士后
+2010- 清华大学自动化系 讲师、副教授、长聘副教授、长聘教授
+学术兼职
+1. IEEE Trans. on Sustainable Energy，主编
+2. IEEE Fellow
+3. IEC SC8A国际标准建模工作组，Convener/召集人
+4. IET Fellow
+5. 中国电源学会，常务理事
+6. 中国电源学会电能质量专委会，副主任
+7. 中国电源学会新能源电能变换技术专委会，副主任
+8. 中国电源学会青年工作委员会，名誉主任
+研究领域
+1 强化学习、大模型理论方法与应用
+2 可再生能源系统优化控制
+3 新型电力系统稳定控制
+4 海上风电机组运维
+5 月面能源系统
+研究概况
+承担国家级、校企等合作项目30余项，包括：
+1. 国家重点研发计划项目：大型海上风电场智能运维关键技术及应用，项目负责人，2025-2028
+2. 国家自然基金委联合重点项目：新能源场站构网/跟网型变流器动态交互机理与配置方法，项目负责人，2025-2028
+2. 中国工程院重大咨询项目：“双碳”背景下天津市能源结构转型升级路径研究，课题负责人，2023-2024
+3. 国家自然基金委重大集成项目：高比例新能源场景下交直流混联电网的暂态稳定分析理论及控制方法，课题负责人，2022-2025
+4. 国家自然科学基金委优秀青年基金项目：风力发电系统柔性并网控制理论及应用，项目负责人，2018-2020
+5. 国家自然科学基金委联合重点项目：大型风电机组弱联运行基础理论及关键技术研究，项目负责人，2016-2019
+奖励与荣誉
+1. 2024年中国电工技术学会科技进步一等奖
+2. 2024年中达学者
+3. 2023年IEEE PELS Sustainable Energy Systems Technical Achievement Award
+4. 2023年中国电源学会科技进步奖（基础研究类）一等奖
+5. 2023年国家级教学成果二等奖
+6. 2022年第十七届中国青年科技奖
+7. 2022年中国电力科学技术进步一等奖
+8. 2021年清华大学优秀博士学位论文指导教师
+9. 2020年国家科技进步二等奖
+10. 2020年浙江省科技进步一等奖
+11. 2020年中国电力创新奖一等奖
+12. 2019年中国自动化学会科技进步特等奖
+学术成果
+论著
+[1] Hua Geng, Feng Liu, Changjun He, etc. Large-disturbance Stability Analysis in Future Power Systems with High-share Renewables and Inverters, Chapter in Encyclopedia of Systems and Control Engineering. Elsevier. 2024.
+[2] 耿华,刘淳,张兴,杨耕. 新能源并网发电系统的低电压故障穿越和控制. 机械工业出版社(“十二五”国家重点图书，电力电子新技术丛书). 2014年6月.
+论文
+期刊论文（近五年）：
+[3] Bozhen Jiang, Yidi Wang, Qin Wang, Hua Geng. A Novel Interpretable Short-term Load Forecasting Method based on Kolmogorov-Arnold Networks. IEEE Trans. on Power Systems, 2024, accepted.
+[4] C. He, H. Geng, K. Rajashekara, and  A. Chandra,  “Analysis and control of frequency stability in low-inertia power systems: A review,” IEEE/CAA J. Autom. Sinica, vol. 11, no. 12, pp. 2363–2383, Dec. 2024.
+[5] Chengzhen Jia, Hua Geng, Yushan Liu, etc. Linear active disturbance rejection control for large onshore wind turbines in full wind speed range, Control Engineering Practice, vol. 151, 2024.
+[6] Wenze Ding, Hua Geng, Bixing Ren, Qiang Li, Rong Sun. Analytical Switching Modelling Method of Grid-Connected Converters for Transient Stability Analysis, IEEE Trans. on Industry Applications, vol. 60, no. 5, pp. 7511-7521, 2024.
+[7] Xiang Zhu, Guangchun Ruan, Hua Geng, Honghai Liu, Mingfei Bai, Chao Peng. Multi-Objective Sizing Optimization Method of Microgrid Considering Cost and Carbon missions, IEEE Trans. on Industry Applications, vol. 60, no. 4, pp. 5565-5576, 2024.
+[8] Bozhen Jiang, Hongyuan Yang,Yidi Wang, Yi Liu, Hua Geng, Huarong Zeng, Jiangqiao Ding. Dynamic Temporal Dependency Model for Multiple Steps Ahead Short-term Load Forecasting, IEEE Trans. on Industry Applications, vol. 60, no. 4, pp. 5244-5254, 2024.
+[9] Jiaqi Li, Hua Geng. Platform Pitch Motion Suppression for Floating Offshore Wind Turbine in Above-Rated Wind Speed Region, IEEE Trans. on Sustainable Energy, vol. 15, no. 3, pp. 1994-2005, 2024.
+[10] Jiaqi Li, Hua Geng. Rotor Speed Control in Above-Rated Wind Speed Region for Floating Offshore Wind Turbine, IEEE Trans. on Sustainable Energy, vol. 15, no. 3, pp. 1640-1651, 2024.
+[11] Mingxue Li, Dongsheng Yu, Samson S. Yu, Hua Geng. Frequency Division Multiplexing-based Power/Signal Synchronous Transmission Strategy for IPOS-DAB DC/DC Converters. Journal of Emerging and Selected Topics in Power Electronics, vol. 12, no. 4, pp. 3290-3301, 2024.
+[12] Yushuang Liu, Hua Geng, Meng Huang, Xiaoming Zha. Dynamic Current Limiting of Grid-forming Converters for Transient Synchronization Stability Enhancement. IEEE Transactions on Industry Applications, vol. 60, no. 2, pp. 2238-2248, 2024.
+[13] Zhiwei Xu, Bing Chu, Hua Geng, Xiaohong Nian, Chenghui Zhang. Model-Guided Learning for Wind Farm Power Optimization. IEEE Trans. on Control Systems Technology, vol. 32, no. 2, pp. 428-439, 2024.
+[14] Yushuang Liu, Hua Geng, Changjun He, Wenze Ding, Chen Shen, and Geng Yang. Equivalent Aggregated Modeling of Multi-VSC System for Transient Synchronization Stability Analysis. IEEE Trans. on Power Systems, vol. 39, no. 2, pp. 4296-4310, 2024.
+[15] Shiyong Wu, Feng Liu, Zhaojian Wang, Jin Lin, Hua Geng. Minimum Energy Demands of Energy Storages for Fast Frequency Response: Formulation, Solution, and Implementation. IEEE Trans. on Power Systems, vol. 39, no. 2, pp. 3615-3630, 2024.
+[16] Wei Chen, Taiying Zheng, Heng Nian, Dejian Yang, Wenbin Yang, Hua Geng. Multi-Objective Adaptive Inertia and Droop Control Method of Wind Turbine Generators. IEEE Transactions on Industry Applications, vol. 59, no. 6, pp. 7789-7799, Nov.-Dec. 2023, doi: 10.1109/TIA.2023.3307368.
+[17] Hengqi Zhang, Hua Geng, Huarong Zeng, Li Jiang. Dynamic risk evaluation and control of electrical personal accidents. Reliability Engineering &amp; System Safety, Vol. 237, 2023.
+[18] Junru Chen, Chenchen Ge, Di Qiang, Hua Geng, Terence O’Donnell, Federico Milano. Impact of Frequency Anti-Windup Limiter on Synchronization Stability of Grid Feeding Converter. CSEE Journal of Power and Energy Systems, vol. 9, no. 5, pp. 1676-1687, September 2023, doi: 10.17775/CSEEJPES.2022.06230.
+[19] Ming Li, Hua Geng, Xing Zhang. Distributed Coordinated Control for Stabilization of Multi-inverter Power Plant. IEEE Trans. on Industrial Electronics, vol. 70, no. 12, pp. 12421-12430, Dec. 2023, doi: 10.1109/TIE.2023. 3237894.
+[20] Bozhen Jiang, Yi Liu, Hua Geng, Yidi Wang, Huarong Zeng, Jiangqiao Ding. A Holistic Feature Selection Method for Enhanced Short-term Load Forecasting of Power System, IEEE Trans. on Instrumentation &amp; Measurement, vol.72, pp. 1-11, 2023.
+[21] Ming Li, Hua Geng, Xing Zhang. Hierarchical Mode-Dispatching Control for Multi-Inverter Power Stations. IEEE Trans. on Industrial Electronics, vol. 70, no. 10, pp. 10044-10054, Oct. 2023, doi: 10.1109/TIE.2022.3220865.
+[22] Hengqi Zhang, Hua Geng. A methodology to identify and assess high-risk causes for electrical personal accidents based on directed weighted CN. Reliability Engineering &amp; System Safety, Vol. 231, 2022, https://doi.org/10.1016/j.ress.2022. 109027.
+[23] Changjun He, Xiuqiang He, Hua Geng, Huadong Sun, Shiyun Xu. Transient Stability of Low-Inertia Power Systems with Inverter-Based Generation. IEEE Trans. on Energy Conversion, vol.37, no.4, pp. 2903-2912, 2022. (Best Paper Award)
+[24] Zhiwei Xu, Bing Chu, Hua Geng, Xiaohong Nian. Distributed Power Optimization of Large Wind Farms Using ADMM for Real-Time Control. IEEE Trans. on Power Systems, vol.27, no.6, pp. 4832-4845, 2022.
+[25] Yifei Guo, Bikash C. Pal, Rabih A. Jabr, Hua Geng. Global Optimality of Inverter Dynamic Voltage Support. IEEE Trans. on Power Systems, vol. 37, no.5, pp. 3947-3957, 2022.
+[26] Junru Chen, Muyang Liu, Hua Geng, Terence O’Donnell, Federico Milano. Impact of PLL frequency limiter on Synchronization Stability of Grid Feeding Converter. IEEE Trans. on Power Systems, vol. 37, no.3, pp. 2487-2490, 2022.
+[27] Xiuqiang He, Changjun He, Hua Geng. Transient Stability of Hybrid Power Systems Dominated by Different Types of Grid-Forming Devices, IEEE Trans. on Energy Conversion, vol. 37, no.2, pp. 868-879, 2022.
+[28] Xiuqiang He, Hua Geng. PLL Synchronization Stability of Grid-Connected Multi-Converter Systems. IEEE Trans. on Industry Application, vol. 58, no.1, pp. 830-842, 2022.
+[29] Xiuqiang He, Changjun He, Sisi Pan, Hua Geng, Feng Liu. Synchronization Instability of Inverter-Based Generation During Asymmetrical Grid Faults, IEEE Trans. on Power Systems, vol.37, no.2, pp. 1018-1031, 2022.
+[30] Xiuqiang He, Hua Geng, Gang Mu. Modeling of wind turbine generators for power system stability studies: A review, Renewable and Sustainable Energy Reviews, vol. 143, pp. 1-17, 2021.
+[31] Zhiwei Xu, Hua Geng, Bing Chu. A Hierarchical Data-driven Wind Farm Power Optimization Approach Using Stochastic Projected Simplex Method. IEEE Trans. on Smart Grid, vol.12, no.4, pp. 3560-3569, 2021.
+[32] Xiuqiang He, Hua Geng, Jiangbei Xi, Josep M. Guerrero. Resynchronization Analysis and Improvement of Grid-Connected VSCs During Grid Faults. Journal of Emerging and Selected Topics in Power Electronics, vol. 9, no. 1, pp. 438-450, Feb. 2021.
+[33] Xiuqiang He, Hua Geng. Transient Stability of Power Systems Integrated with Inverter-Based Generation. IEEE Trans. on Power Systems, vol. 36, no. 1, pp. 553-556, Jan. 2021.
+[34] Jiangbei Xi, Hua Geng. Decoupling Scheme for VSG Controlled Wind Farms to Participate in Inertial Response. Journal of Modern Power Systems and Clean Energy, vol.9, no. 2, pp.347-355, 2020.
+[35] Xiuqiang He, Hua Geng, Ruiqi Li, Geng Yang, Pal C. Bikash. Transient Stability Analysis and Enhancement of Renewable Energy Conversion System During LVRT. IEEE Trans. on Sustainable Energy, vol. 11, no. 3, pp. 1612-1623, July 2020.
+[36] Xiuqiang He, Hua Geng, Shaokang Ma. Transient stability analysis of grid-tied converters considering PLL’s nonlinearity. CPSS Trans. on Power Electronics and Applications, vol. 4, no. 1, pp. 40-49, 2019.
+[37] Jiangbei Xi, Hua Geng. Decoupling Control Scheme for VSG-WPPs to Participate in Grid Frequency Response. IEEE Trans. on Industry Application, vol. 55, no. 6, pp. 6368-6375, Nov.-Dec. 2019.
+[38] Miloud Rezkallah, Sanjeev Singh, Ambrish Chandra, Bhim Singh, Marco Tremblay, Saad Maarouf, Hua Geng. Comprehensive Controller Implementa-tion for Wind-PV-Diesel based Standalone Microgrid. IEEE Trans. on Industry Application, vol. 55, no. 5, pp. 5416-5428, Sept.-Oct. 2019.
+[39] Hua Geng, Zedong Zheng, Tianming Zou, Bing Chu, Ambrish Chandra. Fast repetitive control with harmonic correction loops for shunt active power filter applied in weak grid. IEEE Trans. on Industry Application, vol. 55, no. 3, pp. 3198-3206, May-June 2019.
+[40] 耿华，何长军，刘浴霜等. 新能源电力系统的暂态同步稳定研究综述[J]. 高电压技术，2022,48(09):3367-3383.
+[41] 焦小敏,耿华,马少康,许志伟.基于数据驱动的多风电机组协同控制方法[J].电源学报,2020,18(02):24-31. (2020年学报最佳论文)
+[42] 何秀强,耿华,杨耕,邹欣.接入LCC-HVDC的双馈风电场孤岛启动与并网控制策略[J].电力系统自动化,2019,43(09):99-107+124.
+人才培养
+承担课程
+模拟电子技术基础，秋季学期，本科生，独立讲授
+电能变换原理与系统，秋季学期，本科生，合作讲授
+信息管理最佳工程实践，春季学期，研究生，合作讲授</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>耿华</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/jcydzjsyjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1079/3102.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>genghua@tsinghua.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1079/3102.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>phone</td>
+      <td>010-62770559Fax：010-62786911</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1079/3102.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>教育背景
+1999-2003，华中科技大学电子与电气工程学院，学士
+2003-2008，清华大学自动化系，博士
+工...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://www.au.tsinghua.edu.cn/info/1079/3102.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "tsinghua-auto-genghua";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

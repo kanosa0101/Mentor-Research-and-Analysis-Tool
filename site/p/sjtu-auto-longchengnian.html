@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>龙承念 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=sjtu-auto-longchengnian" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">上海交通大学 · 自动化与感知学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=sjtu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>龙承念 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>longcn@sjtu.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://sais.sjtu.edu.cn/faculty/longchengnian.html" target="_blank">https://sais.sjtu.edu.cn/faculty/longchengnian.html</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">研究方向
+龙承念
+博士，上海交通大学长聘教授，博士生导师，上海交通大学区块链研究中心副主任，上海交通大学智能网联汽车研究中心教授。国际智能交通系统领域顶级期刊《
+IEEE Transactions on Intelligent Transportation Systems
+》编委（区块链方向），
+IEEE
+首本区块链学术期刊《
+IEEE Blockchain Technical Briefs
+》
+创刊编委，
+《
+IET Blockchain
+》
+编委
+, International Conference on Blockchain Technology
+（
+ICBCT
+）
+2020-2024
+会议主席、执行主席；中国计算机学会（
+CCF
+）区块链专委会执行委员，
+IEEE PES
+电力系统通信与网络安全技术委员会（中国）电力信息通信区块链技术分委会常务理事，中国自动化学会区块链专业委员会委员，中国自动化学会工业系统信息安全专业委员会委员，中国创造学会智能制造与服务分会常务理事。主要研究方向为智能网联系统，包括区块链、隐私计算、可信数据空间、智能物联网和分布式自主系统，发表国际期刊与会议论文
+100
+余篇，物联网安全专著一部，研究成果
+SCI
+他人引用
+800
+余次，研究成果先后获国家自然科学奖二等奖、
+3
+次教育部自然科学一等奖、
+CAA
+自然科学二等奖、上海市交通工程学会科学技术一等奖。入选教育部新世纪人才，上海市浦江人才等人才支持计划。
+龙承念教授现为
+自动化与感知学院
+上海交通大学分布式智能系统实验室团队负责人，
+团队研究兴趣主要集中在
+智能网联系统
+(Intelligent Connected Systems, ICS)
+，
+包括
+：
+1)
+智能物联网
+(AIoT)
+：分布式机器学习，联邦学习，云
+/
+边缘计算，面向智能设备（无人机、自动驾驶汽车）的轻量化大模型；
+2
+）
+可信数据空间
+：包括可信人工智能，隐私计算（多方安全计算、同态加密、
+TEE
+），区块链技术，多方智能数据共享系统；
+3
+）
+分布式自主控制决策系统
+：基础模型驱动的智能体，分布式多智能体协同，智能网联系统安全（智能网联汽车、智能电网、低空智能物联网等）。
+工作经历
+2025/04 -
+至今，上海交通大学，自动化与感知学院，长聘教授、博士生导师
+2022/07 – 2025/03
+，上海交通大学，电子信息与电气工程学院，长聘教授、博士生导师
+2021/01 -
+至今，上海交通大学区块链研究中心，副主任
+2019/01 -
+至今，上海交通大学智能网联电动汽车创新中心，兼职教授
+2010/12 - 2022/06
+，上海交通大学，电子信息与电气工程学院自动化系，教授、博士生导师
+2011/08 - 2011/08
+，加拿大维多利亚大学，机械与电子工程系，访问教授
+2010/06 - 2010/08
+，阿尔伯塔大学，电子与计算机工程系，访问教授
+2009/01 - 2010/12
+，上海交通大学，自动化系，副教授
+2007/01 - 2008/12
+，加拿大阿尔伯塔大学，电子与计算机工程系，博士后
+2006/01 - 2006/12
+，香港科技大学，计算机科学系，博士后
+2005/01 - 2008/12
+，燕山大学，自动化系，副教授
+1999/07 - 2004/12
+，燕山大学，自动化系，助教、讲师
+教育背景
+2001/9 - 2004/12，燕山大学，控制理论与控制工程，博士
+1999/9 - 2001/6，燕山大学，控制理论与控制工程，硕士
+1995/9 - 1999/7，燕山大学，自动化，学士
+教学工作
+1. 2021年-至今，检测技术，自动化专业大二学生
+2.2020年-至今，程序设计，大一（医学院）
+3. 2018年-至今，计算机网络，自动化专业大四学生
+4. 2009年-至今，数字程序控制系统，自动化专业大四学生
+科研项目
+1)
+2026.01-2027.12
+基于可信数据空间的无人物流车高阶智驾与运管平台关键技术研发，深圳市科技创新局重点产业研发计划，课题负责人，在研
+2)
+2025.01-2028.12
+隐私保护下的智能微网安全控制与优化调度，国家自然科学基金面上项目，主持，在研
+3)
+2023.08-2025.05
+基于多方安全计算的数据共享使用技术，中央军委共用信息系统装备预研专用技术项目，主持，结题
+4)
+2022.01-2026.12
+基于区块链的可信人工智能验证模型与测试平台，
+国家自然科学基金重点项目
+，主持，在研
+5)
+2021.01-2024.12
+数据驱动的智能配电网协同攻击检测与响应机制，国家自然科学基金面上项目，主持，结题
+研究成果
+代表性论文：
+[1]
+Yuan Li, Jing Wu,
+Chengnian Long*
+, “PI-SAM: Physics-Informed Segment Anything for Infrared Small Target Detection”,
+IEEE Transactions on Geoscience and Remote Sensing
+, March 2026.
+[2]
+Juhao Hu, Yuhan Yang, Jing Wu,
+Chengnian Long*
+, “Trusted Data Spaces for Vehicle-Road-Cloud Collaboration: Architecture, Challenges, and Future Directions”,
+IEEE Network
+, DOI: 10.1109/MNET.2026.3669250, March 2026.
+[3]
+Hongcheng Zhu, Chensheng Liu*, Ming Yang, Xin Wang, Deng Ruilong, Yang Tang, Xiaoming Wu,
+Chengnian Long,
+“
+Planning-Operation Coordinated Mitigation for Load Redistribution Attacks in Optimal Power Flow with Phase Shifting Transformers
+”
+,
+IEEE Transactions on Industrial Informatics
+, DOI:10.1109/TII.2025.3649279, January 2026.
+[4]
+Yuhan Yang, Qian Xu, Huajie Shen, Bo Yu, Wei He, Lijun Wei, Jing Wu,
+Chengnian Long
+, Zhenheng Tang, Xiaowen Chu, “Privacy-Preserving Large-Scale Set Intersection: An Efficient Method with Enhanced Security”,
+IEEE Internet of Things Journal
+, vol. 12, no. 20, pp. 42666 – 42677, October 2025.
+[5]
+Lijun Wei, Xiaoying Tao, Yuhan Yang, Yinan Ma, Jing Wu,
+Chengnian Long*
+, “Trusted Internet of Things-Enabled Intelligent System for Future Smart City: Architecture and Challenges”,
+IEEE Systems, Man, and Cybernetics Magazine
+, vol. 11, no. 4, pp. 11-16, October 2025.
+[6]
+Yuhan Yang, Qian Xu, Wei He, Nandi Shi, Huajie Shen, Bo Yu, Lijun Wei, Jing Wu,
+Chengnian Long*
+, “A Scalable Private Data Alignment Scheme for Arbitrary Participants Using Oblivious PRF”,
+IEEE Internet of Things Journal
+, vol. 12, no. 11, pp. 18086-18097, June 2025.
+[7]
+Arshad Nawaz, Jing Wu, Jun Ye, Yidi Dong,
+Chengnian Long
+, “Circulating current minimization based adaptive droop control for grid-connected DC microgrid”,
+Electric Power Systems Research
+, vol.220, 109260, July 2023.
+[8]
+Min Zhou, Chensheng Liu,
+Amir Abiri Jahromi,
+Deepa Kundur, Jing Wu*, and
+Chengnian Long*
+, “Revealing Vulnerability of N-1 Secure Power Systems to Coordinated Cyber-Physical Attacks”,
+IEEE Transactions on Power Systems
+, vol. 38. no.2, pp. 1044-1057, March 2023.
+[9]
+Yinan Ma, Qi Xu, Yue Wang, Jing Wu,
+Chengnian Long
+*, Yi-Bing Lin, “EOS: An efficient obstacle segmentation for blind guiding”,
+Future Generation Computer Systems
+, vol. 140, pp.
+117-128, March 2023.
+[10]
+Arshad Nawaz, Jing Wu, Jun Ye, Yidi Dong,
+Chengnian Long
+, “Distributed MPC-based energy scheduling for islanded multi-microgrid considering battery degradation and cyclic life deterioration”,
+Applied Energy
+, vol.329, 120168, January 2023.
+[11]
+Yuhan Yang, Jing Wu,
+Chengnian Long*
+, Wei Liang, Yi-Bing Lin, “Blockchain-Enabled Multi-Party Computation Scheme for Privacy Preserving and Public Audit in Industrial IoT”,
+IEEE Transactions on Industrial Informatics
+,
+vol. 18, no. 12, pp. 9259 - 9267, December 2022.
+[12]
+Arshad Nawaz, Min Zhou, Jing Wu,
+Chengnian Long*
+, “
+A Comprehensive Review on Energy Management, Demand Response, and Coordination Schemes Utilization in Multi-Micorgrids Network”,
+Applied Energy
+, volume 323, 119596, October 2022.
+[13]
+Arshad Nawaz, Jing Wu,
+Chengnian Long
+, Distributed optimal energy scheduling for grid connected multi-microgrids with architecturized load characteristics,
+Energy Reports
+, vol. 8, pp. 11259-11270, September 2022.
+[14]
+Min Zhou, Jing Wu*,
+Chengnian Long*
+, Chensheng Liu, and Deepa Kundur, “Dynamic Line Rating-based Robust Corrective Dispatch against Load Redistribution Attacks with Unknown Objectives”,
+IEEE Internet of Things Journal
+,
+vol. 9, no. 18, pp.
+17756 - 17766, September 2022.
+[15]
+Yuhan Yang, Lijun Wei, Jing Wu,
+Chengnian Long*
+, Bo Li, “A Blockchain-based Multi-domain Authentication Scheme for Conditional Privacy Preserving in Vehicular Ad-hoc Network”,
+IEEE Internet of Things Journal
+, vol. 9, no. 11, pp. 8078 - 8090, June 2022.
+[16]
+Lijun Wei, Yuhan Yang, Jing Wu,
+Chengnian Long*
+, Bo Li, “Trust Management for Internet of Things: A Comprehensive Study”,
+IEEE Internet of Things Journal
+, vol. 9, no. 10, pp. 7664-7679, May 2022.
+[17]
+Lijun Wei, Yuhan Yang, Jing Wu,
+Chengnian Long*
+, Yi-Bing Lin, “
+A Bidirectional Trust Model for Service Delegation in Social Internet of Things”,
+Future Internet
+, 14(5), 135, April 2022.
+[18]
+Yinan Ma, Jing Wu,
+Chengnian Long
+*, Yi-Bing Lin, “MobiDIV: A privacy-aware real-time driver identity verification on mobile phone”,
+IEEE Internet of Things Journal
+, vol. 9, no.4, pp.2802-2816, February 2022.
+荣誉奖励
+2025
+年上海市交通工程学会科学技术一等奖，排名第
+2
+（交通可信数据空间关键技术与智慧停车应用示范）
+2023
+年获中国自动化学会自然科学二等奖，排名第
+2/5
+（电力信息物理系统鲁棒安全控制与协同预测优化理论及方法）
+2023
+年获上海市公路学会科学技术一等奖，排名第
+3/
+（基于区块链的城市公共停车智慧管理关键技术及应用）
+2018
+年获
+“
+国家自然科学奖二等奖
+”
+，国务院，排名第
+5/5 (
+网络系统的分布式感知与协同控制基础理论与方法
+)
+2017
+年获
+“
+教育部自然科学一等奖
+”
+，教育部，排名第
+4/6 (
+网络系统的分布式感知与控制基础理论与方法
+)
+2007
+年获
+“
+教育部自然科学一等奖
+”
+，教育部，排名第
+2/4
+（复杂动力学系统的鲁棒控制与应用）
+2004
+年获
+“
+教育部提名国家科学技术奖自然科学奖一等奖
+”
+，教育部，排名第
+4/8
+（控制系统参数化设计方法及应用）
+2011
+年入选教育部
+“
+新世纪优秀人才计划
+”
+，教育部
+2010
+年入选上海交通大学晨星青年学者奖励计划
+“SMC
+优秀青年教师奖（
+B
+类）
+”
+2009
+年入选
+“
+上海市浦江人才
+”
+，上海市
+2007-2008
+获加拿大
+“Killam Postdoctoral Fellowship”
+学术任职
+2022 -
+至今
+IEEE Transactions on Intelligent Transportation Systems
+Editor
+2022 -
+至今
+IET Blockchain
+Associate Editor
+2018 -
+至今
+IEEE Blockchain Technical Briefs Editorial Board
+2010 - 2016 Hans Journal of Wireless Communications
+创刊主编
+2020-
+至今
+IEEE
+高级会员，
+ACM
+会员
+2021-2022 International Conference on Blockchain Technology (ICBCT)
+执行主席
+2020 International Conference on Blockchain Technology (ICBCT)
+会议程序委员会主席
+2021-2022 International Conference on Computing and Big Data (ICCBD)
+程序委员会主席
+2020 -
+至今
+IEEE PES
+电力系统通信与网络安全技术委员会（中国）电力信息通信区块链技术分委会常务理事（
+IEEE PES Power System Communications and Cybersecurity Satellite Committee-China Power Information Communication Blockchain Subcommittee Standing Director
+）
+2020 -
+至今
+中国创造学会智能制造与服务分会常务理事
+2021 -
+至今
+中国计算机学会区块链专委会执行委员
+2018 -
+至今
+中国自动化学会区块链专业委员会委员
+2016 -
+至今
+中国自动化学会工业系统信息安全专业委员会委员</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>龙承念</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/longchengnian.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>longcn@sjtu.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/longchengnian.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>研究方向
+龙承念
+博士，上海交通大学长聘教授，博士生导师，上海交通大学区块链研究中心副主任，上海交通大学智能网联汽...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/longchengnian.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/longchengnian.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "sjtu-auto-longchengnian";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

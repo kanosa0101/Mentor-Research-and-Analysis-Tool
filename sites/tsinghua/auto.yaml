@@ -1,0 +1,25 @@
+school: tsinghua
+dept: auto
+dept_name: 自动化系
+base_url: https://www.au.tsinghua.edu.cn
+hook: related_roster
+direct: true
+detail_fields:
+  name: .fl01 h2
+  title: .fl01 h5, .fl01 h6
+  email: '.fl01 a[href^="mailto:"]'
+bio_selector: .leader_d .fl02
+list:
+  urls:
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/dhykzyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/gyznyxtyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/jcydzjsyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/kzyjcyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/nyrzkxyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/xtgcyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/xxclyjs.htm
+  - https://www.au.tsinghua.edu.cn/szdw/jsdw1/ayjscz/zdhsyjxzx.htm
+  card_selector: li
+  name_selector: h3 big
+  link_selector: a[href]
+  person_href: /info/\d+/\d+\.htm$

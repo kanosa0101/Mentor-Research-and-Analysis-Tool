@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吴跃军 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=sjtu-auto-wuyuejun" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">上海交通大学 · 自动化与感知学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=sjtu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>吴跃军 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">实验师</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>yuejun.wu@sjtu.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://sais.sjtu.edu.cn/faculty/wuyuejun.html" target="_blank">https://sais.sjtu.edu.cn/faculty/wuyuejun.html</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">研究方向
+信息检测及自动控制、智能仪器仪表、人工智能及大数据
+实验系统设计、开发及研制，科研项目产品化及产业化
+工作经历
+2002 -  SMEG上海文广集团技术研发中心
+2004 -  Philips（中国）投资有限公司半导体部
+2008 -  Atmel半导体科技（上海）有限公司
+2011 -  Intel（亚太）研发中心
+2020 -  SJTU上海交通大学
+教育背景
+上海大学--测试计量技术及仪器专业--硕士研究生--(1999-2002)
+浙江丝绸工学院--工业电气自动化专业--大学本科--(1991-1995)
+教学工作
+承担本科教学及指导任务：
+EE1503 -《工程实践与科技创新I》-  实训
+基础
+及嵌入式单片机
+EE0503 -《
+工程实践与科技创新II
+》-  智能感知与PID控制系统设计
+ISE3307 -《现代传感技术》- 实验教学
+IST3311 -《检测技术A》 -
+项目式实践
+课程
+设计
+ISE3315 -《专业实习》-  智能感知工程
+EE4518 -《工程实践与科技创新IV-C》- 嵌入式Linux与边缘AI智能感知
+本科生毕业设计指导
+各类全国大学生科创竞赛指导（包括：TI杯全国大学生电子设计竞赛、全国大学生嵌入式芯片与系统设计竞赛、中国国际大学生创新大赛、“挑战杯”大学生课外学术科技作品竞赛、“英特尔杯”嵌入式AI专题赛等）
+科研项目
+1. 国自然基金委面上项目 - “
+面向垃圾处理中甲烷气体精准检测的放电离子化型电化学气体传感器研究”（排名2）项目编号：62571313
+开始日期：2026-01-25
+项目状态：在研
+2.
+教育部产学合作协同育人项目-“基于边缘AI技术的工科创II实践课程建设”(共同主持) 项目编号：JXXM947733196 开始日期：2023-09-01 结束日期：2025-05-27
+|
+项目来源：教育部
+3.
+教育部产学合作协同育人项目-“工程实践与科技创新：智能小车控制系统设计”(排名2) 项目编号：JXXM364977828 开始日期：2022-10-30 结束日期：2024-11-30
+|
+项目来源：教育部
+4.
+教育部产学合作协同育人项目-“基于STM32L496的国家一流核心专业课程可穿戴创新项目式实验教学平台建设”(共同主持) 项目编号：JXXM711679259 开始日期：2022-09-30 结束日期：2023-06-30
+|
+项目来源：教育部
+5.
+“
+极
+小型芯片的自动烧录设备的识别与控制技术研发“（协作参与）项目编号：21H010102405项目周期：2020-12-05 ~ 2023-07-31|项目来源：横向理科项目
+6.
+“
+轴
+承外观缺陷视觉检测技术的提升和强化“（协作参与）项目编号：20H100000851项目周期：2020-11-11 ~ 2022-12-30|项目来源：横向理科项目
+7.
+“基
+于背景辐射补偿的现场双色红外测温系统研究”（协作参与）项目编号：20H100000584项目周期：2020-07-30 ~ 2023-11-30|项目来源：横向理科项目
+8.
+“基
+于显微结构的纺织智能化系统”（协作参与）项目编号：20H100000465 项目周期：2020-07-22 ~ 2028-12-31|项目来源：横向理科项目
+研究成果
+1
+. 吴跃军
+,陈红勋.PLC在盐官排涝泵站综合自动化系统中开发应用[J].微计算机信息,2001(09):13-14.
+2. 吴跃军
+,陈红勋.大型轴流泵叶片角度随动系统数学建模及其调节器的设计[J].电气传动自动化,2001(06):10-12.
+3. Chen Hongxun, Wang Jian,
+Wu Yuejun
+. DYNAMIC MATHEMATICAL MODELING AND APPLICATION FOR PUMPING SYSTEM PERFORMANCE INTEGRATED EVALUATION[J].Chinese Journal of Mechanical Engineering,2003(03):285-288.
+4. 高如月,
+吴跃军
+,李建勋.基于CAN总线及高速RS232总线的电梯群优化控制系统的设计[J].电气传动自动化,2005(06):45-48.
+5. 楼晓燕,杨东勇,
+吴跃军
+.智能监控系统中基于质心特征模型的动态场景检测[J].计算机测量与控制,2005(12):1345-1347.DOI:10.16526/j.cnki.11-4762/tp.2005.12.016.
+6.
+吴跃军
+,“基于ATMEL公司Cortex-M3核SAM3S微控制器的被动红外摄像头参考设计”[J], IIC China国际集成电路大会会刊, 2011.02.
+7. 吴跃军
+,丁国清*. pA级超微弱电流前置放大电路的电流噪声及等效误差分析方法[J].传感技术学报,2022,35(05):595-599.
+8. 吴跃军
+,代彬*,田社平等.可重构DNA折纸信息加密解密技术的便携式虚拟实验教学系统设计[J].实验室研究与探索,2023, 42(04):123-127+259.DOI:10.19927/j.cnki.syyt.2023.04.024.
+9. Rongjun Shao, Chunxu Ding, Yuan Qu, Linxian Liu, Qiaozhi He,
+Yuejun Wu,
+and Jiamiao Yang*, &#34;Full-polarization angular spectrum modeling of scattered light modulation,&#34; Photon. Res.
+12
+, 485-490 (2024)
+10. Jin, H. U. , Xu, L. , Songlin, Z. , Yudi, Z. ,
+Yuejun, W. U.
+, &amp; Xiang, X. , et al. (2024). Waveguide bragg grating for fault localization in pon.
+ZTE Communications
+(6).
+11. Yuli Xu; Xueyuan Zhang; Jingren Lin;
+Yuejun Wu
+; Nguyen Duc Hoa
+et al
+., &#34;YSZ-Based In
+₂
+O
+₃
+/SnO
+₂
+Electrochemical Sensing Device for Highly Selective Tracking Hexanal,&#34; in
+IEEE Sensors Journal
+, vol. 25, no. 2, pp. 3404-3411, 15 Jan.15, 2025, doi: 10.1109/JSEN.2024.3510102.
+12.
+张燕
+,
+吴跃军*
+,
+金涵
+,
+等
+.
+基于
+YSZ
+气敏传感器的便携式微量气体检测实验装置设计
+[J].
+实验室研究与探索
+,2026,45(4):62-67+76.DOI:10.19927/j.cnki.syyt.2026.04.010.
+13. Shenghao Chen, Xinzhe Li, Rongjun Shao,
+Yuejun Wu
+, Chengjun Duan, Lijun Zhou, Bosen Zhang, and Jiamiao Yang*, &#34;Robust 3D topography measurement of large-range high-aspect-ratio structures based on dual-domain statistical filtering in SD-OCT,&#34; Opt. Express
+34
+, 19364-19381 (2026)
+14.
+一种天窗语音控制器
+ZL202122281540.X
+排名
+2
+15.
+基于国产芯
+GD32F470
+的智能小车实验系统
+V1.0
+软著登字第
+14659443
+号
+排名
+2
+荣誉奖励
+上海交通大学“卓越实验师”
+上海交通大学“学习标兵”
+“中国国际大学生创新大赛”（原“互联网+”大赛）  优秀指导老师
+“TI杯全国大学生电子设计竞赛”  优秀指导老师
+上海交通大学“第六届教师教学创新大赛”
+三等奖</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>吴跃军</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>实验师</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/wuyuejun.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>yuejun.wu@sjtu.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/wuyuejun.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>研究方向
+信息检测及自动控制、智能仪器仪表、人工智能及大数据
+实验系统设计、开发及研制，科研项目产品化及产业化
+工...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/wuyuejun.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "sjtu-auto-wuyuejun";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

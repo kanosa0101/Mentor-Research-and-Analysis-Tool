@@ -81,6 +81,16 @@ class AdmissionsTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 rules.validate_checks({'s': value}, fixture()['sources'])
 
+    def test_special_track_and_timed_events_are_explicit(self):
+        data = fixture()
+        p = data['policies'][0]
+        p['track'] = 'special'
+        p['events'] = [{'label': '报名截止', 'kind': 'deadline', 'at': '2026-09-12T09:00:00+08:00', 'quote': '9月12日', 'locator': '第三节'}]
+        rules.validate(data, {'test': {'cs'}})
+        p['events'][0]['at'] = '2026-09-12T09:00:00'
+        with self.assertRaises(ValueError):
+            rules.validate(data, {'test': {'cs'}})
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>刘若楠 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=sjtu-auto-liuruonan" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">上海交通大学 · 自动化与感知学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=sjtu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>刘若楠 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教轨副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>ruonan.liu@sjtu.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://sais.sjtu.edu.cn/faculty/liuruonan.html" target="_blank">https://sais.sjtu.edu.cn/faculty/liuruonan.html</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">研究方向
+具身智能交互感知、视觉导航
+重大装备智能运维、预测性维护
+世界模型预测推理
+荣誉奖励：
+2021年 IEEE Transactions on Industrial Informatics 最佳论文奖（IF 12.3）
+2021年-至今 全球前2%顶尖科学家（World&#39;s Top 2% Scientists）
+2022年 德国洪堡学者、中国科协青年托举人才
+2024年 IJCAI Runner-up Paper Award、IEEE ARM Best Paper Award Finalist
+2025年 吴文俊人工智能青年科技奖、IROS 2025 Best Paper Finalist*2、Nokov New Generation Star Project
+工作经历
+2024 - 至今    上海交通大学 自动化系  长聘教轨副教授
+2019 - 2024    天津大学 人工智能学院  长聘/英才副教授
+2017 - 2019    卡耐基梅隆大学 计算机科学学院 联合培养博士/博士后研究员
+2009 - 2019    西安交通大学 机械工程  本硕博连读
+科研项目
+主持 国自然面上项目 开放环境连续视觉语言导航及其自主进化研究
+主持 国自然青年项目 小样本下动态图网络的鲁棒学习研究
+主持 天津市应用基础研究项目 知识与数据联合驱动的可解释图神经网络研究
+主持 青年人才托举工程 机器学习
+研究成果
+[49]Li H, Shi J,
+Liu R*
+, Liu F. OriGround: Orientation-Aware Neuro-Symbolic Zero-Shot 3D Visual Grounding[C]. The 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP-F 2026).
+[48]
+Liu Y,
+Liu R*
+, He J, Lin D. Hierarchical Dual-Teacher Distillation for Spatial Reasoning of MLLM-Based Agents in Embodied Tasks[C]. Proceedings of the 34th ACM International Conference on Multimedia (ACM MM 2026).
+(Oral)
+[47]Ding Y, Liu Y, He J, Shi J, Liu L,
+Liu R*
+. SparseNav: Efficient Zero-Shot Object-Goal Navigation with Multi-Layer Sparse Semantic Mapping[C]. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026).
+[46]Peng J, Dong H, Wang X, Lin D, Chen H,
+Liu R*
+, et al. Learning External Point-Set Context for Point Cloud Segmentation[J]. IEEE Transactions on Neural Networks and Learning Systems, 2026.
+[45]Wu W, Xu L,
+Liu R
+, Zhang W. Hierarchical optimal event-triggered framework for robust formation control of underactuated ASVs[J]. Automatica, 2026.
+[44]Jiang Z,
+Liu R*
+, Hu X, et al. SDATNet: Social Diverse Adaptive TrajectorNet for Pedestrian Trajectory Prediction under Long-Tail Behavior Distributions[J]. IEEE Transactions on Intelligent Transportation Systems, 2026.
+[43]Peng J, Lin D, Xu Z, Lu H,
+Liu R*
+, et al. FreeMem: Enhancing Consistency in Long Video Generation via Tuning-Free Memory[C]. The Fortieth AAAI Conference on Artificial Intelligence (AAAI 2026).
+[42]Zhang X, Xu Y, Li J,
+Liu R
+, Hu Z. Agent Journey Beyond RGB: Hierarchical Semantic-Spatial Representation Enrichment for Vision-and-Language Navigation[C]. The Fortieth AAAI Conference on Artificial Intelligence (AAAI 2026).
+[41]Zuo D, Wang L*,
+Liu R*
+, et al. Multi-modal Frequency Decomposition Network for Semantic Scene Completion[C]. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026).
+[40]
+Liu R
+, Hu P, Zhao S, Lin D*, Zhang W. Causal Counterfactual Faithfulness Generation for Open set Fault Diagnosis of Complex Industrial Processes[J]. IEEE Transactions on Industrial Informatics, 2025.
+[39]Dong H, Wang X, Lin D,
+Liu R*
+, et al. NoiseController: Towards Consistent Multi-view Video Generation via Noise Decomposition and Collaboration[C]. International Conference on Computer Vision (ICCV 2025).
+[38]Jiang Z,
+Liu R*
+, Zhou Y, et.al. PhysGCN-DL: Physics-Informed Graph Convolutional Networks with Diversity-Aware Loss Optimization for Multimodal Pedestrian Trajectory Prediction[C]. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025).
+(同时入选两个领域Best Paper Award Finalist)
+[37]
+Liu R
+, Wu S, Lin D*, Zhang W. CVLN-Think: Causal Inference with Counterfactual Style Adaptation for Continuous Vision-and-Language Navigation[C]. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025).
+[36]
+Liu R
+, Hu X, Jiang Z, et al. Survey on heterogeneous aquatic robot systems: communication, perception, navigation, control, decision-making and energy management[J]. Robot Learning, 2025.
+[35]Li Z,
+Liu R*
+, Chen D, et al. OR-Gate Mixup Multi-Scale Spectral Graph Neural Network for Node Anomaly Detection[J]. IEEE Transactions on Neural Networks and Learning Systems, 2025.
+[34]Yang B, Zhang J,
+Liu R*
+, Lin D, et al. Point-to-Set Metric-Gated Mixture of Experts for Multi-Source Domain Adaptation Fault Diagnosis[J]. IEEE Transactions on Neural Networks and Learning Systems, 2025.
+[33]Zhang R, Lin D, Wang X,
+Liu R
+, et al. Temporal-Interim Pose Synthesis and Distillation for Dynamic Human Pose Estimation[J]. IEEE Transactions on Neural Networks and Learning Systems, 2025.
+[32]Wu S,
+Liu R*
+, Xie Z, et al. Map-SemNav: Advancing Zero-Shot Continuous Vision-and-Language Navigation through Visual Semantics and Map Integration[C]. IEEE International Conference on Robotics and Automation (ICRA 2025).
+[31]Kong P,
+Liu R*
+, Xie Z, et al. VLN-KHVR: Knowledge-and-History Aware Visual Representation for Continuous Vision-and-Language Navigation[C]. IEEE International Conference on Robotics and Automation (ICRA 2025).
+[30]
+Liu R
+, Wu S, Liu Q, et al. Rectified Flow-Based Generative Transfer Learning for System Fault Diagnosis[C]. IEEE International Conference on Vision, Image and Signal Processing (ICVISP), 2024.
+(Best Paper Award)
+[29]
+Liu R
+, Zhao S, Pang Z, et al. Out-of-Distribution Fault Diagnosis of Industrial Cyber-physical Systems Based on Orthogonal Anchor Clustering with Adaptive Balance[J]. IEEE Transactions on Industrial Cyber-Physical Systems, 2024.
+[28]Yu W,
+Liu R*
+, Chen D, et. al. Explainability Enhanced Object Detection Transformer with Feature Disentanglement[J]. IEEE Transactions on Image Processing, 2024.
+[27]
+Liu R
+, Wu S, Kong P, et. al. Robust Object Recognition in Open Environments Based on Causal Inference[C]. International
+Conference on Robotics, Control and Automation Engineering (RCAE), 2024.
+(Best Paper Award)
+[26]Wang L, Lin D, Yang K,
+Liu R*
+, Guo Q, et. al. Voxel Proposal Network via Multi-Frame Knowledge Distillation for Semantic Scene Completion[C]. Neural Information Processing Systems (NeurIPS 2024).
+[25]
+Liu R
+, Xie Y, Lin D*, et. al. Information-based Gradient Enhanced Causal Learning Graph Neural Network for Fault Diagnosis of Complex Industrial Processes[J]. Reliability Engineering &amp; System Safety, 2024.
+[24]Zhang X, Hu Z,
+Liu R
+, et al. Fault Detection of Unmanned Surface Vehicles: The Fuzzy Multi-Processor Implementation[J]. IEEE Transactions on Fuzzy Systems, 2024.
+[23]
+Liu R
+, Kong P, Zhang W. Multiple Visual Features in Topological Map for Vision-and-Language Navigation[C]. 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024).
+[22]Jin C, Yang B,
+Liu R
+. Improved VLN-BERT with Reinforcing Endpoint Alignment for Vision-and-Language Navigation[C]. International Joint Conference on Artificial Intelligence (IJCAI 2024).
+(Runner-up Paper Award)
+[21]
+Liu R
+, Kong P, Wu S, Zhang W. RewardVLN: An Improved Agent Navigation Based on Visual-Instruction Alignment[C]. The IEEE International Conference on Advanced Robotics and Mechatronics (IEEE ARM 2024).
+(Best Paper Award Finalist)
+[20]
+Liu R
+, Zhang Q, Lin D*, et al. Causal Disentangled Graph Neural Network for Fault Diagnosis of Complex Industrial Process[J]. IEEE Transactions on Industrial Informatics, 2024.
+[19]
+Liu R
+, Zhang Q, Han T*, et al. Survey on Foundation Models for Prognostics and Health Management in Industrial Cyber-Physical Systems[J]. IEEE Transactions on Industrial Cyber-Physical Systems, 2024.
+[18]
+Liu R
+, Zhang Q, Lin D*, et al. Causal intervention graph neural network for fault diagnosis of complex industrial processes[J]. Reliability Engineering &amp; System Safety, 2024.
+(ESI)
+[17]Cheng P, Ye S,
+Liu R
+, et al. SMC-Based Bounded Consensus Tracking for Multiagent Systems Under Stochastic DoS Attacks With Applications to Multiple DC Motors[J]. IEEE Transactions on Industrial Informatics, 2024.
+[16]
+Liu R
+, Xiao D, Lin D*, et al. Intelligent Bearing Anomaly Detection for Industrial Internet of Things Based on Auto-Encoder Wasserstein Generative Adversarial Network[J]. IEEE Internet of Things Journal, 2024.
+[15]
+Liu R
+, Zhang Q, Wang Y*, et al. Industrial Big Data Analytical System in Industrial Cyber-Physical Systems Based on Coarse-to-Fine Deep Network[J]. IEEE Transactions on Industrial Cyber-Physical Systems, 2023.
+[14] Chen D, Xie Z,
+Liu R*
+, et al. Bayesian hierarchical graph neural networks with uncertainty feedback for trustworthy fault diagnosis of industrial processes[J]. IEEE Transactions on Neural Networks and Learning Systems
+, 2023.
+[13] Wang H,
+Liu R*
+, Ding S X, et al. Causal-Trivial Attention Graph Neural Network for Fault Diagnosis of Complex Industrial Processes[J]. IEEE Transactions on Industrial Informatics, 2023.
+[12] Lin D, Wang X, Shen J, Zhang R,
+Liu R
+, et al. Generative Status Estimation and Information Decoupling for Image Rain Removal[C] //Advances in Neural Information Processing Systems (NeurIPS 2022).
+[11] Chen D,
+Liu R*
+, Hu Q, et al. Interaction-Aware Graph Neural Networks for Fault Diagnosis of Complex Industrial Processes[J]. IEEE Transactions on Neural Networks and Learning Systems, 2021.
+(ESI, Hot Paper)
+[10] Chen H,
+Liu R*
+, Xie Z, et al. Majorities Help Minorities: Hierarchical Structure Guided Transfer Learning for Few-shot Fault Recognition[J]. Pattern Recognition, 2021: 108383
+[9] Hu Y,
+Liu R*
+, Li X, et al. Task-Sequencing Meta Learning for Intelligent Few-Shot Fault Diagnosis with Limited Data[J]. IEEE Transactions on Industrial Informatics, 2021.
+(ESI)
+[8]Wang Y,
+Liu R*
+, Lin D, et al, Coarse-to-Fine: Progressive Knowledge Transfer Based Multi-Task Convolutional Neural Network for Intelligent Large-Scale Fault Diagnosis[J]. IEEE Transactions on Neural Networks and Learning Systems, 2021.
+[7] Wang F,
+Liu R*
+, Hu Q, et al. Cascade convolutional neural network with progressive optimization for motor fault diagnosis under nonstationary conditions[J]. IEEE Transactions on Industrial Informatics, 2020, 17(4): 2511-2521
+[6]
+Liu R
+, Wang F, Yang B*, et al. Multi-scale Kernel based Residual Convolutional Neural Network for Motor Fault Diagnosis Under Non-stationary Conditions[J]. IEEE Transactions on Industrial Informatics, 2019.
+(ESI)
+[5] Yang B,
+Liu R*
+, Zio E. Remaining useful life prediction based on a double-convolutional neural network architecture[J]. IEEE Transactions on Industrial Electronics, 2019, 66(12): 9521-9530.
+(ESI)
+[4]
+Liu R
+, Yang B*, Hauptmann A G. Simultaneous Bearing Fault Recognition and Remaining Useful Life Prediction Using Joint-Loss Convolutional Neural Network[J]. IEEE Transactions on Industrial Informatics, 2019, 16(1): 87-96.
+(ESI, 2021 Outstanding Paper Award in IEEE TII)
+[3]
+Liu R
+, Yang B, Zio E, et al. Artificial intelligence for fault diagnosis of rotating machinery: A review[J]. Mechanical Systems and Signal Processing, 2018, 108: 33-47.
+(ESI, Hot Paper)
+[2]
+Liu R
+, Meng G, Yang B, et al. Dislocated time series convolutional neural architecture: An intelligent fault diagnosis approach for electric machine[J]. IEEE Transactions on Industrial Informatics, 2016, 13(3): 1310-1320.
+(ESI)
+[1]
+Liu R
+, Yang B, Zhang X, et al. Time-frequency atoms-driven support vector machine method for bearings incipient fault diagnosis[J]. Mechanical Systems and Signal Processing, 2016, 75: 345-370.
+(ESI)</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>刘若楠</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教轨副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/liuruonan.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>ruonan.liu@sjtu.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/liuruonan.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>研究方向
+具身智能交互感知、视觉导航
+重大装备智能运维、预测性维护
+世界模型预测推理
+荣誉奖励：
+2021年...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/liuruonan.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "sjtu-auto-liuruonan";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,767 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宁超 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=sjtu-auto-ningchao" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">上海交通大学 · 自动化与感知学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=sjtu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>宁超 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">长聘教轨副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>chao.ning@sjtu.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://sais.sjtu.edu.cn/faculty/ningchao.html" target="_blank">https://sais.sjtu.edu.cn/faculty/ningchao.html</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">研究方向
+人工智能驱动的决策与控制科学
+数据驱动的不确定性优化
+大数据解析，深度学习，人工智能
+绿电-氢-化工耦合系统
+能源化工过程系统工程
+博士生、硕士生
+：欢迎计划明年入学的同学提前联系
+硕士生、本科生
+：长期接收
+未来准备出国深造
+、希望发表论文的同学加入课题组进行研究、做毕业论文。表现优秀者可推荐至国外名校
+研究生培养
+：
+马徐韬（
+国家奖学金
+）
+汪  涵 （
+国家奖学金
+，
+上海市优秀毕业生
+）
+马翱凯（
+国家奖学金
+）
+李龙艳（
+国家奖学金
+，
+小米奖学金
+）
+培养学生毕业去向
+：
+哈佛大学
+Harvard
+博士全奖
+、
+美国加州大学伯克利分校
+UC Berkeley EECS
+博士全奖
+工作经历
+2024年1月-至今，上海交通大学自动化系，长聘教轨副教授
+2021年2月-2023年12月，上海交通大学自动化系，助理教授
+2020年8月-2021年1月，美国康奈尔大学，博士后
+教育背景
+2020年8月，美国康奈尔大学（Cornell University），博士学位
+2015年7月，清华大学，硕士学位
+2012年7月，电子科技大学，学士学位
+教学工作
+AU 7032 Advanced Mathematical Optimization （英文授课）2025学年
+获评 A 档
+AU 3302 Automatic Control Theory (A) （英文授课）2025学年
+获评 A0 档
+科研项目
+国家自然科学基金优青项目（海外）
+国家自然科学基金面上项目
+国家自然科学基金青年项目
+国家科技重大专项子课题
+国家全驱系统理论与应用青年基金
+上海市浦江人才计划项目 A类
+工业控制技术全国重点实验室开放课题
+能源化工过程智能制造教育部重点实验室开放课题
+上海交通大学回国人员科研启动经费项目
+研究成果
+期刊论文
+Ning, C.*
+,
+Wang
+,
+H
+.,
+Li
+,
+L
+.,
+Shi
+,
+Y
+.
+*
+(2026).
+Collaborative-Online-Learning-Enabled Distributionally Robust Motion Control for Multi-Robot Systems
+.
+Automatica
+, 190,
+113102
+.
+Liu, S., Li, L.
+,
+Ning, C.*
+(2026). Integrated Low-Carbon Refinery Planning with Coordinated Electrification and Feedstock Transition: Stochastic Programming Model and Decision-Focused Scenario Reduction Algorithm
+.
+Industrial &amp; Engineering Chemistry Research
+. (
+化工三大刊
+，
+封面论文
+)
+Ning, C.*
+, Ma, A., Ma, X., Li, L., Pan, G., Gu, W., Du, W.
+*
+, Dong, Z., Shahidehpour, M. (202
+6
+). Multi-Stage Distributionally Robust Scheduling with Structured Mixture Ambiguity for Hydrogen-Based Integrated Energy Systems: Finite-Sample Guarantees and Equivalent Reformulations.
+IEEE Transactions on Power Systems
+, 41(2), 1278 - 1293.
+(
+ESI高被引论文
+)
+Li, L.,
+Ning, C.*
+, Qiu, H., Liu, S., Du, W., Shahidehpour, M., Yu, L., Dong, Z. (202
+6
+). Multistage Distributionally Robust Co-Planning of Power Systems and Electric-Hydrogen Hybrid Charging Stations with Competitive Market Share under Decision-Dependent Uncertainty.
+IEEE Transactions on Power Systems
+, 41(2), 1148 - 1162.
+Ma, A.#, Li, L.
+#
+,
+Min
+,
+Z
+.,
+Ning, C.*
+(2026).
+Sustainable Electricity-Hydrogen-Coal Chemical Coupled Systems Scheduling: A Structured Distributionally Robust Optimization Approach
+.
+Industrial &amp; Engineering Chemistry Research
+,
+65 (24): 12780–12797
+.
+(
+化工三大刊
+，
+封面论文
+)
+Li, L., Alshehri, A., Alrashed, M.,
+Ning, C.*
+(202
+6
+). Carbon-Aware Multi-Level Local Electricity-Hydrogen Market Design: A Distributionally Robust Game Framework.
+Journal of Modern Power Systems and Clean Energy
+, 14(2), 669 - 681.
+Ma, X.,
+Ning, C.*
+, Du, W., Shi, Y. (2025). Data-Driven Distributionally Robust Mixed-Integer Control through Lifted Control Policy.
+IEEE Transactions on Automatic Control
+, 70(9), 6268 - 6275
+.
+Li, L.,
+Ning, C.*
+, Pan, G., Zhang, L., Gu, W., Zhao L., Du, W., Shahidehpour, M. (2025). A Risk-Averse Just-In-Time Scheme for Learning Based Operation of Microgrids with Coupled Electricity-Hydrogen-Ammonia under Uncertainties.
+IEEE Transactions on Sustainable Energy
+, 16, 2621-2635.
+Ning, C.*
+, Ma, A., Dong, Z. (2025). Data-Driven Multi-Stage Distributionally Robust Scheduling for Coupled Electricity-Hydrogen-Refinery Systems.
+Applied Energy
+, 401,
+126620.
+Ning, C.*
+, Zhao, J., Wang, H. (2025). Learning-Enabled Stochastic Predictive Control for Nonlinear Discrete-Time Step Backward High-Order Fully Actuated Systems.
+International Journal of Systems Science
+, 1-16.
+Li, L., Liu, S.,
+Ning, C.*
+(2025). Data-Driven Distributionally Robust Planning of Electricity-Heat-Hydrogen-Ammonia Microgrid Considering The Electrothermal-Aging Effect of SOEC.
+Power System Technology
+, 49(1), 22-31. (in Chinese)
+Ma, A.,
+Ning, C.*
+(2025). Adaptive Distributionally Robust Scheduling for Green Electricity-Hydrogen-Ammonia Coupling Systems.
+Clean Coal Technology
+. (Accepted)
+Ma, X.,
+Ning, C.*
+, Li, L., Qiu, H., Gu, W., and Dong, Z. (2024). Bayesian Nonparametric Two-Stage Distributionally Robust Unit Commitment Optimization: From Global Multimodality to Local Trimming-Wasserstein Ambiguity.
+IEEE Transactions on Power Systems
+, 39, 6702-6715.
+Li, L.,
+Ning, C.*
+, Qiu, H., Du, W., Dong, Z. (2024). Online Data-Stream-Driven Distributionally Robust Optimal Energy Management for Hydrogen-Based Multi-Microgrids.
+IEEE Transactions on Industrial Informatics
+, 20, 4370-4384.
+Ning, C.*
+, Ma, X. (2023). Data-Driven Bayesian Nonparametric Wasserstein Distributionally Robust Optimization.
+IEEE Control Systems Letters
+, 7, 3597-3602.
+Ning, C.
+, You, F. (2022). Deep Learning based Distributionally Robust Joint Chance Constrained Economic Dispatch under Wind Power Uncertainty.
+IEEE Transactions on Power Systems
+, 37, 191-203.
+Ning, C.
+, You, F. (2021). Online Learning Based Risk-Averse Stochastic MPC of Constrained Linear Uncertain Systems.
+Automatica
+, 125, 109402.
+Ning, C.
+, You, F. (2020). A Transformation-Proximal Bundle Algorithm for Multistage Adaptive Robust Optimization and Application to Constrained Robust Optimal Control.
+Automatica
+, 113, 108802.
+Ning, C.
+, You, F. (2019). Data-Driven Adaptive Robust Unit Commitment under Wind Power Uncertainty: A Bayesian Nonparametric Approach.
+IEEE Transactions on Power Systems
+, 34, 2409-2418.
+(
+AIChE可持续工程学生
+论文奖
+)
+Ning, C.
+, You, F. (2017). Data-Driven Adaptive Nested Robust Optimization: General Modeling Framework and Efficient Computational Algorithm for Decision Making under Uncertainty.
+AIChE Journal
+, 63, 3790-3817.
+Ning, C.
+, You, F. (2017). A Data-Driven Multistage Adaptive Robust Optimization Framework for Planning and Scheduling under Uncertainty.
+AIChE Journal
+, 63, 4343-4369.
+Ning, C.
+, You, F. (2019). Optimization under Uncertainty in the Era of Big Data and Deep Learning: When Machine Learning Meets Mathematical Programming.
+Computers &amp; Chemical Engineering
+, 125, 434-448. (Review Paper)
+Ning, C.
+, You, F. (2019). Data-Driven Wasserstein Distributionally Robust Optimization for Biomass with Agricultural Waste-to-Energy Network Design under Uncertainty.
+Applied Energy
+, 255, 113857.
+Ning, C.
+, Chen, M., Zhou, D. (2014) Hidden Markov Model-Based Statistics Pattern Analysis for Multimode Process Monitoring: An Index-Switching Scheme.
+Industrial &amp; Engineering Chemistry Research
+, 53, 11084-11095.
+Ning, C.
+, You, F. (2018). Data-Driven Stochastic Robust Optimization: General Computational Framework and Algorithm Leveraging Machine Learning for Optimization under Uncertainty in the Big Data Era.
+Computers &amp; Chemical Engineering
+, 111, 115-133.
+Ning, C.
+, You, F. (2018). Data-Driven Decision Making under Uncertainty Integrating Robust Optimization with Principal Component Analysis and Kernel Smoothing Methods.
+Computers &amp; Chemical Engineering
+, 112, 190-210.
+Ning, C.
+, You, F. (2018). Adaptive Robust Optimization with Minimax Regret Criterion: Multiobjective Optimization Framework and Computational Algorithm for Planning and Scheduling under Uncertainty.
+Computers &amp; Chemical Engineering
+, 108, 425-447.
+Qiu, H., Gu, W.,
+Ning, C.
+, Lu, X., Liu, P., Wu, Z. (2023). Multistage Mixed-Integer Robust Optimization for Power Grid Scheduling: An Efficient Reformulation Algorithm.
+IEEE Transactions on Sustainable Energy
+, 14 (1), 254-271.
+Qiu, H., Wang, L., Gu, W., Pan, G.,
+Ning, C.
+, Wu, Z., Sun, Q. (2022). Multistage Scheduling of Regional Power Grids Against Sequential Outage and Power Uncertainties.
+IEEE Transactions on Smart Grid
+, 13 (6), 4624-4637.
+Deng, H., Yang, B.,
+Ning, C.
+, Chen, C. and Guan, X. (2023). Distributionally Robust Day-Ahead Scheduling for Power-Traffic Network under A Potential Game Framework.
+International Journal of Electrical Power &amp; Energy Systems
+, 147, p.108851.
+Cao, J., Yang, B., Zhu, S.,
+Ning, C.
+, Guan, X. (2021). Day-ahead Chance-Constrained Energy Management of Energy Hub: A Distributionally Robust Approach.
+CSEE Journal of Power and Energy Systems
+.
+Gao, J.,
+Ning, C.
+, You, F. (2019). Data-Driven Distributionally Robust Optimization for Shale Gas Supply Chain Design and Operations under Uncertainty.
+AIChE Journal
+, 3, 947-963.
+Zhao, L.,
+Ning, C.
+, You, F. (2019). Operational Optimization of Industrial Steam Systems under Uncertainty Using Data-Driven Adaptive Robust Optimization.
+AIChE Journal
+, 65, e16500.
+Nicoletti, J.,
+Ning, C.
+, You, F. (2019). Incorporating Agricultural Waste-to-Energy Pathways into Biomass Product and Process Network through Data-Driven Nonlinear Adaptive Robust Optimization.
+Energy
+, 180, 556-571.
+Qiu, H., Veerasamy, V.,
+Ning, C.
+, Sun, Q., Gooi, H.B. (2024). Two-Stage Robust Optimization for Assessment of PV Hosting Capacity Based on Decision-Dependent Uncertainty.
+Journal of Modern Power Systems and Clean Energy
+. DOI: 10.35833/MPCE.2023.000488
+Gao, F., Yang, B.,
+Ning, C.
+, Guan, X. (2025). Virtual Leader-follower based Platooning Under Mixed Traffic: A Data-driven Distributionally Robust MPC Method.
+IEEE Transactions on Vehicular Technology
+. DOI: 10.1109/TVT.2025.3561126
+Zhang, X., Cui, C., Qi, M., Ding, J., Yang, J.,
+Ning, C.
+, He, Y., Liu, Z. (2026). Towards Cost-Reduction And Carbon-Efficient Power-to-SAF Systems through Gas Loop Superstructure Optimization.
+Chemical Engineering Science
+, 329, 123839.
+代表性会议论文
+Wang, H.,
+Ning, C.*
+(2025). Conformal Prediction in The Loop: A Feedback-Based Uncertainty Model for Trajectory Optimization.
+The Thirty-ninth Annual Conference on Neural Information Processing Systems
+(
+NeurIPS
+). (Top conference in AI,
+CCF-A
+)
+Ma, X.,
+Ning, C.*
+, Du, W. (2024). Differentiable Distributionally Robust Optimization Layers.
+International Conference on Machine Learning
+(
+ICML
+). (Top conference in AI,
+CCF-A
+)
+Wang, H.,
+Ning, C.*
+, Li, L., Zhang, W. (2024). Online-Learning-Based Distributionally Robust Motion Control with Collision Avoidance for Mobile Robots.
+IEEE International Conference on Robotics and Automation
+(
+ICRA
+). (
+CAAI-A
+)
+Ning, C.
+, You, F. (2019). Data-Driven Adaptive Robust Optimization Framework for Unit Commitment under Renewable Energy Generation Uncertainty.
+American Control Conference
+(
+ACC
+), 4734-4739. (
+美国控制会议 O. Hugo Schuck 最佳论文奖
+)
+Wang, H.,
+Ning, C.*
+(2024). Online-Learning-Enabled Distributionally Robust Motion Control Via Uncertainty Propagation and Ambiguity Set Compression.
+63rd IEEE Conference on Decision and Control
+(
+CDC
+).(Accepted).
+Wang W.
+, Wang, H.,
+Ning, C.*
+(2026). Online Learning-Based Distributionally Robust Nonlinear Predictive
+Control for High-Order Fully Actuated Systems.
+The 5th Conference on Fully Actuated System Theory and Applications
+(
+FASTA
+)
+.
+(
+最佳海报论文奖
+)
+Wu, J.,
+Ning, C.*
+(2025). Distributionally Robust Model Predictive Control with Mixture of Gaussian Processes. International Conference on Industrial Artificial Intelligence (
+IAI
+). (Accepted).
+Liu, S., Li, L.,
+Ning, C.*
+(2024). Optimal Planning of Multi-Energy Systems for Sustainable Ammonia Production Considering Electrothermal-Aging Effect of SOEC.
+IEEE 22nd International Conference on Industrial Informatics
+(
+IEEE INDIN
+).
+Li, L.,
+Ning, C.*
+(2022). Integrated Power and Hydrogen Trading in Multi-microgrid Coupled with Offsite Hydrogen Refueling Stations.
+IEEE Conference on Energy Internet and Energy System Integration
+(
+IEEE EI2
+), (Accepted).
+Ning, C.*
+, Li, L. (2022). Online Learning Enabled Hierarchical Distributionally Robust Model Predictive Control of Green-Hydrogen Microgrids under Uncertainties.
+IEEE International Electrical and Energy Conference
+（
+CIEEC
+）, 2366-2371.
+(
+最佳论文奖
+)
+Li, L.,
+Ning, C.*
+, Qiu H. (2022). Streaming-Data-Driven Distributionally Robust Joint Operation of Multi-Microgrids and Off-Site Hydrogen Refueling Stations under Uncertainties.
+IEEE International Conference on Innovative Smart Grid Technologies
+(
+IEEE ISGT-Asia
+).
+Ning, C.*
+, Li, L. (2022). Data-Driven Robust Optimization for Energy Chemical Processes under Uncertainties: A Review and Tutorial.
+International Conference on Industrial Artificial Intelligence
+(
+IAI
+).
+(
+最佳论文奖
+)
+Li, L.,
+Ning, C.*
+(2022). Event-Triggered Online Learning Assisted Distributionally Robust Energy Management of Ammonia-Based Multi-Energy Microgrids.
+International Conference on Industrial Artificial Intelligence
+(
+IAI
+) (Accepted).
+Ning, C.
+, You, F. (2021). Data-Driven Ambiguous Joint Chance Constrained Economic Dispatch with Correlated Wind Power Uncertainty.
+American Control Conference
+(
+ACC
+), 1807-1812.
+Ning, C.
+, You, F. (2019). A Transformation-Proximal Bundle Algorithm for Solving Multistage Adaptive Robust Optimization Problems.
+57th IEEE Conference on Decision and Control
+(
+CDC
+), 2018, 2439-2444.
+Ning, C.
+, Chen, M., Zhou, D. (2015) Sparse Contribution Plot for Fault Diagnosis of Multimodal Chemical Process.
+IFAC-PaperOnline
+, 48 (21), 619-626.
+Ning, C.
+, You, F. (2018). Data-Driven Adaptive Robust Optimization Framework Based on Principal Component Analysis.
+American Control Conference
+(
+ACC
+), 3020-3025.
+Ning, C.
+, You, F. (2019). Chemical Process Scheduling under Disjunctive Uncertainty Using Data-Driven Multistage Adaptive Robust Optimization.
+American Control Conference
+(
+ACC
+), 2145-2150.
+Ning, C.
+, You, F. (2016). Data-Driven Robust MILP Model for Scheduling of Multipurpose Batch Processes under Uncertainty. 55th
+IEEE Conference on Decision and Control
+(
+CDC
+), 2016, 6180-6185.
+Ning, C.
+, You, F. (2017). Leveraging Big Data for Adaptive Robust Optimization of Scheduling under Uncertainty.
+American Control Conference
+(
+ACC
+), 3783-3788.
+发明专利
+宁超
+，刘淑娴，李龙艳，基于决策导向场景缩减的低碳炼油厂电气化与原料替代协同调度方法, 2026-7-14, 中国, 202611041735.8
+宁超
+，李龙艳，刘淑娴，基于多阶段分布鲁棒优化的混合电氢交通站规划方法及系统, 2025-1-6, 中国, 2025100155867
+宁超
+，李龙艳，顾峻豪，考虑混合电解槽的离网氨氢微网规划方法、系统及介质, 2024-9-26, 中国, 202411348545.1（已授权）
+宁超
+，赵珺豪，汪涵，基于学习和全驱系统的PEM电解槽温度预测控制方法和设备, 2024-9-24, 中国, 202411328268.8（已授权）
+宁超
+，李龙艳，刘淑娴，一种考虑SOEC电热老化效应的电-热-氢-氨耦合微网规划方法，2024-8-7，中国，202411078365.6
+宁超
+，马翱凯，马徐韬，李龙艳，一种数据驱动的电-氢综合能源系统多阶段分布鲁棒调度方法，2024-4-23，中国，2024104906930
+宁超
+，马徐韬，李龙艳，数据驱动的非参数贝叶斯分布鲁棒机组组合优化方法, 2023-10-27, 中国，2023114096969
+宁超
+，汪涵，李龙艳，一种基于在线协同学习的多机器人分布鲁棒避障控制方法, 2024-1-24, 中国，2024101027734
+周东华，
+宁超
+，陈茂银，基于稀疏贡献图的高炉多工况故障分离方法及系统. 中国发明专利 201410418264.9
+周东华，
+宁超
+，陈茂银，一种基于协方差矩阵范数逼近的多重故障重构方法. 中国发明专利 201310662933.2
+周东华，
+宁超
+，陈茂银. 一种基于监控指标切换的多工况过程监控方法. 中国发明专利 201310675045.4
+荣誉奖励
+国家高层次青年人才计划
+上海市领军人才计划
+上海市浦江人才计划 A类 （2021年）
+小米青年学者项目
+美国控制会议（ACC）最佳论文奖 (2020年 O. Hugo Schuck Award)
+全驱系统理论与应用会议 Best Poster Paper Award （2026年）
+储能创新与应用大会 Excellent Oral Presentation Award (2026年)
+国际工业人工智能会议 (IAI)  Best Paper Award （2022年）
+IEEE 国际电力与能源会议 Best Paper Award （2022年）
+美国化工协会（AIChE）可持续工程（Sustainable Engineering）学生论文奖 （2019年）
+美国自然科学基金（NSF）Travel Grant（2017年）
+康奈尔大学全额奖学金
+清华大学优秀毕业生（2015年）
+北京市优秀毕业生（2015年）
+清华大学优秀硕士毕业论文（2015年）
+国家奖学金（2009, 2010, 2011, 2014年）
+全国大学生数学建模竞赛全国一等奖 （2010年）
+学术任职
+学会会员
+中国自动化学会
+中国人工智能学会
+中国可再生能源学会（氢能专委会）
+中国节能协会（氢能专委会）
+中国系统工程学会（过程系统工程专委会）
+中国电机工程学会
+中国电工技术学会（高级会员）
+美国化学会（ACS, Industrial and Engineering Chemistry Division）
+IEEE（高级会员）
+项目评审
+国家自然科学基金
+教育部人才项目
+瑞士国家科学基金会（SNSF）
+荷兰科学研究组织（NWO）
+Editors/Associate Editors/Chairs/Co-Chairs:
+IFAC World Congress (IFAC-WC) 2026
+IEEE International Conference on Industrial Informatics (INDIN) 2024
+Regular Session of Process Control, Chinese Control Conference (CCC) 2023
+International Conference on Frontiers of Electrical Power &amp; Energy Systems (EPES) 2023
+Special Session of Robotics, Control and Automation Engineering 2023
+International Conference on Industrial Artificial Intelligence (IAI) 2022</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>宁超</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/ningchao.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>长聘教轨副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/ningchao.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>chao.ning@sjtu.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/ningchao.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>研究方向
+人工智能驱动的决策与控制科学
+数据驱动的不确定性优化
+大数据解析，深度学习，人工智能
+绿电-氢-化工耦合...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://sais.sjtu.edu.cn/faculty/ningchao.html" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "sjtu-auto-ningchao";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

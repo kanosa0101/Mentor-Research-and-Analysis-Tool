@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>张扶桑 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=buaa-cyber-zhangfusang" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">北京航空航天大学 · 网络空间安全学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=buaa&amp;dept=cyber">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>张扶桑 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://cst.buaa.edu.cn/info/1060/4326.htm" target="_blank">https://cst.buaa.edu.cn/info/1060/4326.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">张扶桑
+职
+称
+教授
+学
+历
+博士
+电
+话
+15810677371
+办
+公
+室
+4
+03
+系
+别
+职
+务
+电子信箱
+传
+真
+个人主页
+u
+学习经历
+2014-09--2018-01
+中国科学院大学
+工学博士
+2010-09--2013-07
+中国科学院大学
+工学硕士
+2006-09--2010-07
+西安电子科技大学
+工学学士
+u
+工作经历
+2
+025-06~
+至今，北京航空航天大学，教授
+2024-10~2
+025-06
+,
+中国科学院软件研究所
+,
+研究员
+2019-10~2024-10,
+中国科学院软件研究所
+,
+副研究员
+2018-11~2019-05,
+法国国立电信学院
+,
+国家公派博士后
+2016-09~2016-12,
+美国马萨诸塞大学
+,
+研究助理
+2014-04~2014-09,
+香港浸会大学
+,
+研究助理
+u
+研究领域
+智能物联网、移动与普适计算、无线感知与安全、低空感知与安全，主要包括：
+WiFi
+、
+UWB
+、毫米波感知，
+4G
+/5G
+感知，声波感知，量子感知。
+欢迎感兴趣的优秀学子推免或报考硕士、博士研究生，欢迎高年级本科生加入。
+u
+荣誉及奖励
+国家优秀青年基金获得者
+AIoTSys 青年科学家奖
+CCF TPCI最佳论文奖
+北京市科技新星
+吴文俊人工智能优秀青年奖
+ACM SIGMOBILE China 新星奖
+微软亚洲研究院铸星计划青年学者
+Moibcom Best Paper Award Runner-up
+Moibcom Best Community Paper Award Runner-up
+中国科学院软件研究所杰出青年人才
+UBICOMP杰出论文奖 （Distinguish Paper Award）
+IPIN 2021/2022国际室内定位与室内导航（IPIN）大赛冠军
+第十六届全国普适计算学术会议
+(PCC)最佳论文奖
+中国科学院青年创新促进会会员
+中国科学院软件研究所优秀青年人才
+u
+科研成果
+张扶桑，博士、教授、博士生导师，国家优秀青年科学基金获得者，入选北京市科技新星，吴文俊人工智能优秀青年奖，
+ACM SIGMOBILE China新星奖，微软铸星学者，AIoT青年科学家。主要研究方向为智能物联网、智能感知与安全等。在顶级国际期刊/会议发表论文60余篇，包括IEEE JSAC, IEEE TMC, ACM MobiCom, USENIX NSDI，ACM UbiComp, ACM CoNEXT等。研究成果荣获移动计算与网络顶级会议MobiCom最佳论文提名奖，MobiCom最佳社区论文提名奖，UbiComp杰出论文奖，MobiQuitous最佳论文提名奖，CCF TPCI最佳论文奖、HHME PCC会议最佳论文奖。研究成果受到了中国科学报、著名科技新闻媒体《新科学家》等多家媒体的专访报道。主持国家自然科学基金优秀青年科学基金、面上基金、青年基金、北京市自然科学基金-小米创新联合基金、北京市科技新星交叉合作项目、腾讯犀牛鸟专项研究计划。
+2024:
+Zhaoxin Chang,
+Fusang Zhang
+, Jie Xiong, Weiyan Chen, Daqing Zhang. MSense: Boosting Wireless Sensing Capability Under Motion Interference,
+Mobicom
+, 2024.
+(CCF A)
+Yuqi Su,
+Fusang Zhang
+, Kai Niu, Tianben Wang, Beihong Jin, Zhi Wang, Yalan Jiang, Daqing Zhang, Lili Qiu, Jie Xiong, Embracing Distributed Acoustic Sensing in Car Cabin for Children Presence Detection, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2024.
+(CCF A)
+Junqi Ma,
+Fusang Zhang
+, Beihong Jin, Chang Su, Siheng Li, Zhi Wang, Jiazhi Ni, Push the Limit of Highly Accurate Ranging on Commercial UWB Devices, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2024.
+(CCF A)
+Zhaoxin Chang,
+Fusang Zhang
+, Xujun Ma, Pei Wang, Weiyan Chen, Duo Zhang, Badii Jouaber, Daqing Zhang, Mmecare: Enabling fine-grained vital sign monitoring for emergency care with handheld mmwave radars, Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2024.
+(CCF A)
+Siheng Li, Beihong Jin,
+Fusang Zhang
+, Zhi Wang, Junqi Ma, Xiaoyong Ren, Haiqin Liu, Hypnos: A Contactless Sleep Stage Monitoring System Using UWB Signals, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2024.
+(CCF A)
+Duo Zhang, Xusheng Zhang, Yaxiong Xie,
+Fusang Zhang
+, Hongliu Yang, Daqing Zhang. From single-point to multi-point reflection modeling: Robust vital signs monitoring via mmwave sensing.
+IEEE Transactions on Mobile Computing
+, 2024.
+(CCF A)
+Zhi Wang, Beihong Jin, Siheng Li,
+Fusang Zhang
+, Junqi Ma, UWB-enabled Sensing for Fast and Effortless Blood Pressure Monitoring, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2024.
+(CCF A)
+Enze Yi, Dan Wu, Jie Xiong,
+Fusang Zhang
+, Kai Niu, Wenwei Li, Daqing Zhang, BFMSense: WiFi Sensing Using Beamforming Feedback Matrix,
+NSDI
+, 2024.
+(CCF A)
+Duo Zhang, Xusheng Zhang, Yaxiong Xie,
+Fusang Zhang
+, Hongliu Yang, Daqing Zhang, From Single-Point to Multi-Point Reflection Modeling: Robust Vital Signs Monitoring via mmWave Sensing.
+IEEE Transactions on Mobile Computing
+23(12): 14959-14974, 2024.
+(CCF A)
+Xuanzhi Wang, Junzhe Wang, Kai Niu, Jie Xiong,
+Fusang Zhang
+, Enze Yi, Anlan Yu, Zhiyun Yao, Daqing Zhang, Wi2DMeasure: WiFi-based 2D Object Size Measurement,
+SenSys
+2024.
+(CCF B)
+2023:
+Fusang Zhang
+Beihong Jin, Zitong Lan, Zhaoxin Chang, Daqing Zhang, Yuechun Jiao, Meng Shi and Jie Xiong. Quantum Wireless Sensing: Principle, Design and Implementation,
+Mobicom
+, 2023.
+(CCF A)
+Enze Yi,
+Fusang Zhang,
+Jie Xiong, Kai Niu, Zhiyun Yao, Daqing Zhang. Enabling WiFi Sensing on New Generation
+WiFi Cards, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2023.
+(CCF A)
+Duo Zhang, Xusheng Zhang, Yaxiong Xie,
+Fusang Zhang
+, Xuanzhi Wang, Yang Li, Daqing Zhang
+. LoCal: An Automatic Location Attribute Calibration Approach for Large-Scale Deployment of mmWave-based Sensing Systems, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2023.
+(CCF A)
+Weiyan Chen, Hongliu Yang, Xiaoyang Bi, Rong Zheng,
+Fusang Zhang
+, Peng Bao, Zhaoxin Chang, Xujun Ma, and Daqing Zhang. Environment-aware Multi-person Tracking in Indoor Environments with MmWave Radars, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2023.
+(CCF A)
+Jinyi Liu, Wenwei Li, Tao Gu, Ruiyang Gao, Bin Chen,
+Fusang Zhang
+, Dan Wu, Daqing Zhang. Towards a Dynamic Fresnel Zone Model to WiFi-based Human Activity Recognition, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2023.
+(CCF A)
+2022:
+Fusang Zhang
+, Jie Xiong, Zhaoxin
+Chang, Junqi Ma, and Daqing Zhang. Mobi2Sense: Enabling Contactless Sensing with Mobility,
+Mobicom
+, 2022.
+(CCF A Best paper award runner up)
+Jiazhi Ni*,
+Fusang Zhang*
+, Jie Xiong, Qiang Huang, Zhaoxin
+Chang, Junqi Ma, BinBin Xie, Pensen Wang, Guanyu Bian, Xin Li and Chang Liu. Experience: Pushing Indoor Localization from Laboratory to the Wild,
+Mobicom
+, 2022.
+(CCF A Best community paper award runner up)
+Fusang Zhang
+, Zhaoxin
+Chang, Jie Xiong,
+Junqi Ma, Jiazhi Ni, Beihong Jin and Daqing Zhang. Embracing Consumer-level UWB-equipped Devices for Fine-grained Wireless Sensing, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Zhaoxin
+Chang,
+Fusang Zhang
+, Jie Xiong, Junqi Ma, Beihong Jin, and Daqing Zhang. Sensor-free Soil Moisture Sensing Using LoRa Signals, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Weiyan Chen,
+Fusang Zhang
+, Tao Gu, Kexing Zhou, Zixuan Huo, and Daqing Zhang. Constructing Floor Plan through Smoke using Ultra Wideband Radar, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Kai Niu, Xuanzhi Wang,
+Fusang Zhang
+, Rong Zheng, Zhiyun Yao, and Daqing Zhang. Rethinking Doppler Effect for Accurate Velocity Estimation with Commodity WiFi Devices, Journal on selected areas in communication (
+JSAC
+), 2022.
+(CCF A)
+Zhi Wang, Beihong Jin, Siheng Li,
+Fusang Zhang
+, and Wenbo Zhang. ECG-grained Cardiac Monitoring Using UWB Signals, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Lei Wang, Wei Li, Ke Sun,
+Fusang Zhang
+, Tao Gu, Chenren Xu, and Daqing Zhang. LoEar: Push the Range Limit of Acoustic Sensing for Vital Sign Monitoring, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Jialin Liu, Dong Li, Lei Wang,
+Fusang Zhang
+, Jie Xiong. Enabling Contact-free Acoustic Sensing under Device Motion, the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (
+Ubicomp
+/IMWUT), 2022.
+(CCF A)
+Junqi Ma, Zhaoxin Chang,
+Fusang Zhang
+, Jie Xiong, Jiazhi Ni, Beihong Jin, Daqing
+Zhang.
+Involving ultra-wideband in consumer-level devices into the ecosystem
+of wireless sensing,
+Mobicom
+demo, 2022.
+(CCF A)
+Junqi Ma, Zhaoxin Chang,
+Fusang Zhang
+, Jie Xiong, Beihong Jin, Daqing
+Zhang.
+Mobi2Sense: enabling wireless sensing under device motions,
+Mobicom
+demo, 2022.
+(CCF A)
+2021：
+Fusang Zhang
+, Zhaoxin Chang,
+Jie Xiong
+, Rong Zheng, Junqi Ma,
+Kai Niu
+,
+Beihong Jin
+,
+Daqing Zhang
+: Unlocking the Beamforming Potential of LoRa for Long-range Multi-target Respiration Sensing.
+Ubicomp
+/
+IMWUT
+, 2021
+.
+(CCF A)
+Kai Niu,
+Fusang Zhang,
+Xuanzhi Wang, Qin Lv, Haitong Luo, Daqing Zhang. 2021. Understanding WiFi Signal Frequency Features for Position-Independent Gesture Sensing. IEEE Transcations on Mobile Computing, 2021.
+(CCF A)
+2020：
+Fusang Zhang
+, Zhi Wang, Beihong Jin, Jie Xiong, and Daqing Zhang. 2020. Your Smart Speaker Can &#34;Hear&#34; Your Heartbeat!
+Ubicomp
+/
+IMWUT 4(4)
+: 161:1-161:24, 2020.
+(CCF A)
+Fusang Zhang
+, Zhaoxin Chang,
+Kai Niu
+,
+Jie Xiong
+,
+Beihong Jin
+, Qin Lv,
+Daqing Zhang
+: Exploring LoRa for Long-range Through-wall Sensing.
+Ubicomp
+/
+IMWUT 4(2)
+: 68:1-68:27, 2020.
+(CCF A Distinguished paper award)
+Fusang Zhang
+, Kai Niu, Xiaolai Fu, Beihong Jin. AcousticThermo: Temperature Monitoring using Acoustic Pulse Signal. MSN-MSRLA. 2020
+2019：
+Fusang Zhang
+,
+Kai Niu
+,
+Jie Xiong
+,
+Beihong Jin
+,
+Tao Gu
+,
+Yuhang Jiang
+,
+Daqing Zhang
+: Towards a Diffraction-based Sensing Approach on Human Activity Recognition.
+Ubicomp
+/
+IMWUT 3(1)
+:
+33:1-33:25, 2019.
+(CCF A)
+Kai Niu,
+Fusang Zhang
+, Yuhang Jiang, Zhaoxin Chang, Leye Wang, Daqing Zhang: A contactless Morse code text input system using COTS wifi devices.
+UbiComp
+/ISWC Adjunct 2019: 328-331.
+(CCF A)
+Yanling Cui, Beihong Jin,
+Fusang Zhang
+, Xingwu Sun: A deep spatio-temporal attention-based neural network for passenger flow prediction. MobiQuitous 2019: 20-30.
+(Core A)
+Kai Niu,
+Fusang Zhang
+, Yuhang Jiang, Jie Xiong, Qin Lv, Youwei Zeng, Daqing Zhang: WiMorse: A Contactless Morse Code Text Input System Using Ambient WiFi Signals. IEEE Internet of Things Journal 6(6): 9993-10008, 2019.
+(SCI 一区)
+2018：
+Fusang Zhang
+, Daqing Zhang, Jie Xiong, Hao Wang, Kai Niu, Beihong Jin, Yuxiang Wang: From Fresnel Diffraction Model to Fine-grained Human Respiration Sensing with Commodity Wi-Fi Devices.
+Ubicomp
+/IMWUT 2(1): 53:1-53:23, 2018.
+(CCF A)
+Kai Niu,
+Fusang Zhang
+, Jie Xiong, Xiang Li, Enze Yi, Daqing Zhang: Boosting fine-grained activity sensing by embracing wireless multipath effects.
+CoNEXT
+2018:139-151.
+(CCF B)
+Yanling Cui, Beihong Jin,
+Fusang Zhang
+, Tingjian Ge: Towards Adaptive Sensory Data Fusion for Detecting Highway Traffic Conditions in Real Time. DASFAA (2) 2018:336-352.
+(CCF B)
+Kai Niu,
+Fusang Zhang
+, Zhaoxin Chang, Daqing Zhang: A Fresnel Diffraction Model Based Human Respiration Detection System Using COTS Wi-Fi Devices.
+UbiComp
+/ISWC Adjunct 2018: 416-419.
+(CCF A)
+Miao Li, Beihong Jin, Hongyin Tang,
+Fusang Zhang
+: Clutering Large-Scale Origin-Destination Pairs: A Case Study for Public Transit in Beijing. Smart World/UIC 2018: 705-712.
+2017:
+Fusang Zhang
+, Hai Liu, Yiu-Wing Leung, Xiaowen Chu, Beihong Jin. CBS: Community-based Bus System as Routing Backbone for Vehicular Ad Hoc Networks, IEEE Transactions on Mobile Computing, Vol 16, Issue 8, Pages: 2132-2146, 2017.
+(CCF A)
+Yanling Cui, Beihong Jin,
+Fusang Zhang
+, et al. Mining Spatial-temporal Correlation of Sensory Data for Estimating Traffic Volumes on Highways, International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services (Mobiquitous 2017).
+(Core A)
+Zhaoyang Wang, Beihong Jin,
+Fusang Zhang
+, et al. Exploiting Trip Patterns in Passenger Trajectory Streams for Bus Scheduling Optimization in Real Time, the 18th IEEE International Conference on Mobile Data Management (MDM 2017).
+Qiang Ji, Beihong Jin, Yanling Cui,
+Fusang Zhang
+. Using Mobile Signaling Data to Classify Vehicles on Highways in Real Time, the 18th IEEE International Conference on Mobile Data Management (MDM 2017).
+Yanling Cui, Qiang Ji,
+Fusang Zhang
+, Beihong Jin. Leveraging Mobile Signaling Data for Monitoring Vehicles on Highways in Real Time, the 3rd International Conference on Big Data Computing and Communications (BigCom 2017)
+李淼，
+张扶桑
+，金蓓弘
+. 面向大规模OD对轨迹的聚类, 第十三届全国普适计算学术会议PCC, 2017.
+2016:
+Fusang Zhang
+, Beihong Jin, Zhaoyang Wang, et al. On Geocasting over Urban Bus based Networks by Mining Trajectories, IEEE Transactions on Intelligent Transportation Systems, Vol 17, Issue 6, Pages: 1734 – 1747, 2016.
+(
+CCF B
+)
+Fusang Zhang
+, Beihong Jin, Tingjian Ge, et al. Who are My Familiar Strangers? Revealing Hidden Friend Relations and Common Interests from Smart Card Data, the 25th ACM International Conference on Information and Knowledge Management (CIKM 2016).
+(
+CCF B
+)
+Fusang Zhang
+, Beihong Jin, et al. Minimum-Cost Recruitment of Mobile Crowdsensing in Cellular Networks, IEEE Global Communication Conference (GLOBECOM 2016).
+Beihong Jin, Yanling Cui,
+Fusang Zhang
+. Fusing Static and Roving Sensor Data for Detecting Highway Traffic Conditions in Real Time, the 40th IEEE Computer Society International Conference on Computers, Software &amp; Applications (COMPSAC 2016).
+Zhaoyang Wang, Beihong Jin,
+Fusang Zhang
+, et al. Discovering Trip Patterns from Incomplete Passenger Trajectories for Inter-zonal Bus Line Planning, the 13th IFIP International Conference on Network and Parallel Computing (NPC 2016).
+Jiafeng Hu, Beihong Jin,
+Fusang Zhang
+, et al. Towards connectivity-aware deployment and adjustment for roadside units. IJAACS 9: 119-135 (2016).
+崔艳玲，金蓓弘，
+张扶桑
+. 基于数据融合的高速公路交通状况检测, 计算机学报, 2016年.
+杨煜尧，杨宇威，
+张扶桑
+, 金蓓弘. 构造服务质量感知的发布/订阅系统, 计算机系统应用, 2016年01期
+Before 2016:
+Fusang Zhang
+, Hai Liu, Yiu-Wing Leung, Xiaowen Chu, Beihong Jin. Community-based Bus System as Routing Backbone for Vehicular Ad Hoc Networks, the 35th IEEE International Conference on Distributed Computing Systems (ICDCS 2015).
+(
+CCF B
+)
+Fusang Zhang
+, Yuwei Yang, Yuyao Yang, Beihong Jin. Optimizing the Quality of Service for a Pub/Sub System, the 12th IEEE International Conference on Advanced and Trusted Computing (ATC 2015).
+张扶桑
+, 金蓓弘, 汪兆洋等. 基于轨迹挖掘的公交车自组织网络路由机制, 计算机学报, 2015. 3.
+金蓓弘，张扶桑，张利锋
+. 车载自组织网络中的数据传递, 集成技术, 第4卷，第5期, 2015年9月.
+Fusang Zhang
+, Beihong Jin, Wei Zhuo, Zhaoyang Wang, Lifeng Zhang, A Content-Based Publish/Subscribe System for Efficient Event Notification over Vehicular Ad hoc Networks, UIC 2012, the 9th International Conference on Ubiquitous Intelligence, September 04-07, 2012, Fukuoka, Japan.
+Beihong Jin,
+Fusang Zhang
+, Haibin Weng, Exploring an Adaptive Architecture for Service Discovery over MANETs, UIC 2011, the 8th International Conference on Ubiquitous Intelligence, September 02-04, 2011, Banff, Canada.
+Yuwei Yang, Beihong Jin,
+Fusang Zhang
+, Sen Li, Exploiting Content-Based Pub/Sub Systems for Event Detection in Emergency Management, BigEM’2013, First International Workshop on Emergency Management in Big Data Age in conjunction with The 14th International Conference on Web-Age Information Management (WAIM’2013), June 14-16, 2013, Beidaihe, China.
+Lifeng Zhang, Beihong Jin, Keqin Li,
+Fusang Zhang
+, An Adaptive Channel Coordination Mechanism for Vehicular Ad Hoc Networks, LCN 2013, the 38th IEEE Conference on Local Computer Networks, Sydney, Australia, October 21-24, 2013.
+张利锋，金蓓弘，
+张扶桑
+，
+VANET中数据传递的关键技术，计算机科学，第40卷，第8期，2013年
+汪兆洋，金蓓弘，
+张扶桑
+，张利锋，禚伟，车载自组织网络中的数据分发机制研究，软件学报，
+2013，增刊
+汪兆洋，金蓓弘，
+张扶桑
+，张利锋，禚伟，车载自组织网络中的数据分发机制研究，第八届和谐人机环境联合学术会议（
+HHME2012)
+张扶桑
+，翁海斌，金蓓弘，
+MANET下位置感知的服务发现，第六届和谐人机环境联合学术会议（HHME2010)
+u
+学术与社会服务
+ACM IMWUT/
+UBICOMP
+(CCF A) 期刊编委（Editor）
+HHME PCC
+22 程序委员会主席
+程序委员会委员
+: UbiComp
+19-24 (CCF A), SenSys
+22 (CCF B), ICDCS
+24 (CCF B)
+期刊
+JSAC，
+TMC
+，
+TOSN
+，
+TIoT
+，
+IoTJ
+，
+TPCI
+，计算机研究与发展等审稿人
+计算机学会高级会员
+计算机学会普适计算专委会委员
+计算机学会物联网专委会委员
+u
+科研项目
+1.
+国家自然科学基金
+优秀青年基金
+项目
+，
+“
+泛在无线感知理论和关键技术
+”
+2
+.
+国家自然科学基金面上项目
+，
+“
+基于泛在信号的非接触智能感知关键技术研究
+”
+3
+.
+国家自然科学基金青年项目
+，
+“
+无线网络环境下的行为感知理论与关键技术
+”
+4
+.
+北京市自然科学基金
+-
+小米创新联合基金，
+“
+面向泛在场景的非接触式声波智能感知关键技术研究
+”
+5
+.
+中国科学院青年创新促进会项目
+6
+.
+中国科学院软件研究所
+杰出青年人才发展计划
+7
+.
+中国科学院软件研究所优秀青年科技人才计划
+8
+.
+计算机软件新技术国际重点实验室开放课题
+，
+“
+基于射频信号的非接触智能感知关键技术研究
+”
+9
+.
+量子光学与光量子器件国家重点实验室开放课题，
+“量子感知中机器学习算法研究”
+10
+.
+腾讯犀牛鸟基金
+，
+“
+基于泛在信号的智能感知与定位技术研究
+”</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>张扶桑</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/szll/sdjs.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1060/4326.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1060/4326.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>phone</td>
+      <td>15810677371办公室403系别职务电子信箱传真</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1060/4326.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>张扶桑
+职
+称
+教授
+学
+历
+博士
+电
+话
+15810677371
+办
+公
+室
+4
+03
+系
+别
+职
+务
+电子信箱...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://cst.buaa.edu.cn/info/1060/4326.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "buaa-cyber-zhangfusang";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>
