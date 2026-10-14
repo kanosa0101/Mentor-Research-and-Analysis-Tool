@@ -132,6 +132,10 @@ provenance:                # 每字段出处
 
 通知试验由 `sites/notices.yaml` 配置三个官方栏目，`monitor_notices.py` 输出 `data/notices.json` 与栏目变化历史，生成 `site/notices.html`。只监测当前栏目页，标题年份不自动转换成入学年份或截止日期，失败不删除历史通知。
 
+## 6.1 联系闭环（2026-10-14）
+
+2026-10-14 联系闭环：`crawler/contact_util.py` 包装四类基础工作流，提供 v1→v2 内存兼容、targets（project+mentor 唯一）、drafts 和沟通发送快照；基础扫描与记录校验仍由 `workflow_util.py` 承担。`desk.html / desk.js` 为任务入口，项目材料管理保留 `applications.html`。保存、导出草稿和实际发送确认分开；EML 仅由同源本地 API 即时返回，附件正文不写 YAML/静态/Git。回复、目标阶段与可选提醒在锁内同一次原子文件替换提交。备份外层随 workflow 使用 v2，恢复兼容匹配的 v1/v2；GET 不写回升级结果。
+
 ## 7. 关键设计决策
 
 | 决策 | 理由 |

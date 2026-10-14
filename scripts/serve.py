@@ -16,7 +16,8 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler.outreach_util import validate_outreach, validate_patch
-from crawler.workflow_util import empty_workflow, validate_workflow, update_entry, scan_materials
+from crawler.workflow_util import empty_workflow, update_entry, scan_materials
+from crawler import contact_util as contact
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -80,7 +81,12 @@ class Handler(SimpleHTTPRequestHandler):
         except ValueError:
             valid_host = False
         origin = self.headers.get('Origin')
-        if not valid_host or (origin is not None and origin != 'http://' + host):
+        referer = self.headers.get('Referer')
+        cross_site = self.headers.get('Sec-Fetch-Site') in ('cross-site', 'same-site')
+        if referer:
+            ref = urlsplit(referer)
+            cross_site = cross_site or ref.scheme != 'http' or ref.netloc != host
+        if not valid_host or cross_site or (origin is not None and origin != 'http://' + host):
             self._json(403, {'error': '只接受本地同源请求'})
             return False
         if json_body and self.headers.get('Content-Type', '').split(';')[0].strip().lower() != 'application/json':
@@ -196,7 +202,8 @@ class Handler(SimpleHTTPRequestHandler):
         if not self._local_request(json_body=method != 'GET'):
             return
         parts = self.path.split('/')[3:]
-        if method == 'GET' and self.path not in ('/api/workflow', '/api/workflow/backup'):
+        is_eml = len(parts) == 3 and parts[0] == 'drafts' and parts[2] == 'eml'
+        if method == 'GET' and self.path not in ('/api/workflow', '/api/workflow/backup') and not is_eml:
             return self._json(404, {'error': '未知 API'})
         try:
             body = self._body(limit=32_000_000 if parts == ['restore'] else 2_000_000) if method != 'GET' else None
@@ -206,17 +213,34 @@ class Handler(SimpleHTTPRequestHandler):
             try:
                 # 恢复不依赖旧文件有效；新备份校验后保留旧文件原始字节。
                 data = load_outreach(self.workflow) if self.workflow.exists() and parts != ['restore'] else empty_workflow()
-                validate_workflow(data, self._known_ids())
+                data = contact.upgrade(data, self._known_ids())
             except (ValueError, OSError, yaml.YAMLError) as e:
                 return self._json(500, {'error': str(e)})
             if method == 'GET':
-                return self._json(200, {'version': 1, 'workflow': data} if parts == ['backup'] else data)
+                if is_eml:
+                    try:
+                        raw = contact.export_eml(data, parts[1])
+                    except KeyError as e:
+                        return self._json(404, {'error': str(e)})
+                    except (ValueError, OSError) as e:
+                        return self._json(400, {'error': str(e)})
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'message/rfc822')
+                    self.send_header('Content-Disposition', 'attachment; filename="mentor-draft.eml"')
+                    self.send_header('Content-Length', str(len(raw)))
+                    self.send_header('Cache-Control', 'no-store')
+                    self.end_headers()
+                    self.wfile.write(raw)
+                    return
+                return self._json(200, {'version': 2, 'workflow': data} if parts == ['backup'] else data)
             try:
                 if method == 'POST' and parts == ['restore']:
-                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] != 1:
+                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] not in (1, 2):
                         raise ValueError('备份版本或结构错误')
                     data = body['workflow']
-                    validate_workflow(data, self._known_ids())
+                    if not isinstance(data, dict) or data.get('version') != body['version']:
+                        raise ValueError('备份内外版本不一致')
+                    data = contact.upgrade(data, self._known_ids())
                     if self.workflow.exists():
                         backups = self.workflow.parent / 'backups'
                         backups.mkdir(parents=True, exist_ok=True)
@@ -226,10 +250,19 @@ class Handler(SimpleHTTPRequestHandler):
                 elif method == 'POST' and parts == ['scan']:
                     if not isinstance(body, dict) or set(body) != {'root'}:
                         raise ValueError('扫描须指定 root 目录')
-                    data, result = scan_materials(data, body['root'], self._known_ids())
+                    base, result = scan_materials(contact.core_view(data), body['root'], self._known_ids())
+                    data = contact.merge_core(data, base, self._known_ids())
+                elif method == 'POST' and len(parts) == 3 and parts[0] == 'drafts' and parts[2] == 'confirm':
+                    data, result = contact.confirm(data, parts[1], body, self._known_ids())
+                elif method == 'POST' and len(parts) == 3 and parts[0] == 'targets' and parts[2] == 'reply':
+                    data, result = contact.reply(data, parts[1], body, self._known_ids())
                 elif (method == 'POST' and len(parts) == 1) or (method == 'PATCH' and len(parts) == 2):
-                    data, result = update_entry(data, parts[0], body, self._known_ids(),
-                                                parts[1] if method == 'PATCH' else None)
+                    if parts[0] in contact.DEFAULTS:
+                        data, result = contact.update(data, parts[0], body, self._known_ids(), parts[1] if method == 'PATCH' else None)
+                    else:
+                        base, result = update_entry(contact.core_view(data), parts[0], body, self._known_ids(),
+                                                    parts[1] if method == 'PATCH' else None)
+                        data = contact.merge_core(data, base, self._known_ids())
                 else:
                     return self._json(404, {'error': '未知 API'})
                 save_outreach(data, self.workflow)

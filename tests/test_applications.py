@@ -24,7 +24,7 @@ class ApplicationTests(unittest.TestCase):
     def test_empty_workspace_is_independent_and_not_created_on_read(self):
         code, data = self.request('/api/workflow')
         self.assertEqual(code, 200)
-        self.assertEqual(data, {'version': 1, 'projects': {}, 'materials': {}, 'communications': {}, 'reminders': {}})
+        self.assertEqual(data, {'version': 2, 'projects': {}, 'materials': {}, 'communications': {}, 'reminders': {}, 'targets': {}, 'drafts': {}})
         self.assertFalse((self.outreach.parent / 'workflow.yaml').exists())
 
     def test_projects_keep_same_mentor_across_years_and_unknown_year(self):

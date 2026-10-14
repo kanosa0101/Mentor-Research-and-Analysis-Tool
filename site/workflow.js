@@ -9,6 +9,11 @@ let WORKFLOW = {projects:{},materials:{},communications:{},reminders:{}};
 let editing = {project:null,material:null,reminder:null};
 let contextMentor = new URLSearchParams(location.search).get('mentor') || '';
 if(!mentors.has(contextMentor)) contextMentor = '';
+const backQuery=new URLSearchParams({view:'prepare'});
+if(contextMentor)backQuery.set('mentor',contextMentor);
+const returnTarget=new URLSearchParams(location.search).get('target');
+if(returnTarget)backQuery.set('target',returnTarget);
+el('back-desk').href='desk.html?'+backQuery;
 const chosen = {project:[],material:[],communication:[],reminder:[]};
 window.WORKFLOW_READY = false;
 const mentorName = id => {

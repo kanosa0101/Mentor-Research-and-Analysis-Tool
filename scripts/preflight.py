@@ -10,7 +10,7 @@ import yaml
 from crawler.ai_util import validate_ai_block
 from crawler.model import Professor
 from crawler.outreach_util import validate_outreach
-from crawler.workflow_util import validate_workflow
+from crawler.contact_util import upgrade
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
@@ -160,7 +160,7 @@ if 'data/workflow.yaml' not in gitignore:
 if wf.exists():
     try:
         workflow = load_yaml(wf)
-        validate_workflow(workflow, expected_ids)
+        upgrade(workflow, expected_ids)
         print('valid private workflow')
     except (ValueError, OSError, yaml.YAMLError) as e:
         problems.append(f'workflow invalid: {e}')

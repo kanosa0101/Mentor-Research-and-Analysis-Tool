@@ -121,6 +121,7 @@ def main():
         profs=profs, fresh=fresh)
     write_html(SITE / 'board.html', board)
     write_html(SITE / 'applications.html', env.get_template('applications.html.j2').render())
+    write_html(SITE / 'desk.html', env.get_template('desk.html.j2').render())
     # 对比页：同 payload；选人名单在 localStorage，纯静态无服务依赖
     cmp = env.get_template("compare.html.j2").render(
         profs=profs, fresh=fresh)
