@@ -16,6 +16,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler.outreach_util import validate_outreach, validate_patch
+from crawler.workflow_util import empty_workflow, validate_workflow, update_entry, scan_materials
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -43,9 +44,10 @@ def save_outreach(data, path=OUTREACH):
 
 
 class Handler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, site=SITE, outreach=OUTREACH, **kwargs):
+    def __init__(self, *args, site=SITE, outreach=OUTREACH, workflow=None, **kwargs):
         self.site = Path(site)
         self.outreach = Path(outreach)
+        self.workflow = Path(workflow) if workflow is not None else self.outreach.with_name('workflow.yaml')
         super().__init__(*args, directory=str(self.site), **kwargs)
 
     def log_message(self, fmt, *args):
@@ -61,9 +63,9 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def _body(self):
+    def _body(self, limit=2_000_000):
         length = int(self.headers.get('Content-Length') or 0)
-        if length < 0 or length > 2_000_000:
+        if length < 0 or length > limit:
             raise ValueError('请求过大')
         return json.loads(self.rfile.read(length) or b'{}')
 
@@ -93,6 +95,8 @@ class Handler(SimpleHTTPRequestHandler):
         return pid if pid in self._known_ids() else None
 
     def do_GET(self):
+        if self.path == '/api/workflow' or self.path.startswith('/api/workflow/'):
+            return self._workflow_request('GET')
         if self.path == '/api/health':
             return self._json(200, {'ok': True})
         if self.path in ('/api/outreach', '/api/backup'):
@@ -110,6 +114,8 @@ class Handler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_PATCH(self):
+        if self.path.startswith('/api/workflow/'):
+            return self._workflow_request('PATCH')
         if not self._local_request(json_body=True):
             return
         pid = self._pid()
@@ -163,6 +169,8 @@ class Handler(SimpleHTTPRequestHandler):
         return self._json(200, {'cleared': existed is not None})
 
     def do_POST(self):
+        if self.path.startswith('/api/workflow/'):
+            return self._workflow_request('POST')
         if not self._local_request(json_body=True):
             return
         if self.path != '/api/restore':
@@ -184,9 +192,56 @@ class Handler(SimpleHTTPRequestHandler):
             save_outreach(data, self.outreach)
         return self._json(200, {'restored': len(data)})
 
+    def _workflow_request(self, method):
+        if not self._local_request(json_body=method != 'GET'):
+            return
+        parts = self.path.split('/')[3:]
+        if method == 'GET' and self.path not in ('/api/workflow', '/api/workflow/backup'):
+            return self._json(404, {'error': '未知 API'})
+        try:
+            body = self._body(limit=32_000_000 if parts == ['restore'] else 2_000_000) if method != 'GET' else None
+        except (ValueError, UnicodeError) as e:
+            return self._json(400, {'error': str(e)})
+        with _lock:
+            try:
+                # 恢复不依赖旧文件有效；新备份校验后保留旧文件原始字节。
+                data = load_outreach(self.workflow) if self.workflow.exists() and parts != ['restore'] else empty_workflow()
+                validate_workflow(data, self._known_ids())
+            except (ValueError, OSError, yaml.YAMLError) as e:
+                return self._json(500, {'error': str(e)})
+            if method == 'GET':
+                return self._json(200, {'version': 1, 'workflow': data} if parts == ['backup'] else data)
+            try:
+                if method == 'POST' and parts == ['restore']:
+                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] != 1:
+                        raise ValueError('备份版本或结构错误')
+                    data = body['workflow']
+                    validate_workflow(data, self._known_ids())
+                    if self.workflow.exists():
+                        backups = self.workflow.parent / 'backups'
+                        backups.mkdir(parents=True, exist_ok=True)
+                        target = backups / ('workflow-' + datetime.now().strftime('%Y%m%d-%H%M%S-%f') + '.yaml')
+                        target.write_bytes(self.workflow.read_bytes())
+                    result = {'restored': True}
+                elif method == 'POST' and parts == ['scan']:
+                    if not isinstance(body, dict) or set(body) != {'root'}:
+                        raise ValueError('扫描须指定 root 目录')
+                    data, result = scan_materials(data, body['root'], self._known_ids())
+                elif (method == 'POST' and len(parts) == 1) or (method == 'PATCH' and len(parts) == 2):
+                    data, result = update_entry(data, parts[0], body, self._known_ids(),
+                                                parts[1] if method == 'PATCH' else None)
+                else:
+                    return self._json(404, {'error': '未知 API'})
+                save_outreach(data, self.workflow)
+            except KeyError as e:
+                return self._json(404, {'error': str(e)})
+            except (ValueError, UnicodeError, OSError) as e:
+                return self._json(400, {'error': str(e)})
+        return self._json(200, result)
 
-def create_server(site=SITE, outreach=OUTREACH, port=8000):
-    return ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, site=site, outreach=outreach))
+
+def create_server(site=SITE, outreach=OUTREACH, port=8000, workflow=None):
+    return ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, site=site, outreach=outreach, workflow=workflow))
 
 
 def main():
@@ -194,8 +249,9 @@ def main():
     ap.add_argument('--port', type=int, default=8000)
     ap.add_argument('--site', type=Path, default=SITE)
     ap.add_argument('--outreach', type=Path, default=OUTREACH)
+    ap.add_argument('--workflow', type=Path, help='私人申请文件，默认与跟进文件同目录')
     args = ap.parse_args()
-    server = create_server(args.site, args.outreach, args.port)
+    server = create_server(args.site, args.outreach, args.port, args.workflow)
     print(f'http://127.0.0.1:{server.server_port}/board.html  (跟进文件: {args.outreach})')
     try:
         server.serve_forever()

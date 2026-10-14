@@ -10,6 +10,7 @@ import yaml
 from crawler.ai_util import validate_ai_block
 from crawler.model import Professor
 from crawler.outreach_util import validate_outreach
+from crawler.workflow_util import validate_workflow
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
@@ -151,6 +152,20 @@ for key, p in records.items():
     if not validate_ai_block(p.ai.model_dump(mode="json"), mats):
         problems.append(f"ai block invalid (元数据缺失或证据不可回溯): {key}")
 print(f"ai blocks: {n_ai}")
+
+print("== 9. 私人申请工作流 ==")
+wf = ROOT / 'data' / 'workflow.yaml'
+if 'data/workflow.yaml' not in gitignore:
+    problems.append('.gitignore missing: data/workflow.yaml')
+if wf.exists():
+    try:
+        workflow = load_yaml(wf)
+        validate_workflow(workflow, expected_ids)
+        print('valid private workflow')
+    except (ValueError, OSError, yaml.YAMLError) as e:
+        problems.append(f'workflow invalid: {e}')
+else:
+    print('none (尚未创建私人申请记录)')
 
 print("\n== PROBLEMS ==")
 if problems:
