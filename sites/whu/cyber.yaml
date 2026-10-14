@@ -1,0 +1,11 @@
+school: whu
+dept: cyber
+dept_name: 国家网络安全学院
+base_url: https://cse.whu.edu.cn
+hook: cyber_expansion
+direct: true
+explicit_supervisor_only: true
+list:
+  urls:
+    - https://cse.whu.edu.cn/szdw/jsml.htm
+  person_hosts: [cse.whu.edu.cn, jszy.whu.edu.cn]

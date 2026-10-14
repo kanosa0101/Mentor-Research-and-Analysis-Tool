@@ -233,6 +233,11 @@ last_fetched: '2026-10-14'
 last_parsed: '2026-10-14'
 facets: []
 provenance:
+  research_direction_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/caiyunze.html
+    fetched_at: '2026-10-14'
+    confidence: auto
   name:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty.html
@@ -253,3 +258,5 @@ provenance:
     source: https://sais.sjtu.edu.cn/faculty/caiyunze.html
     fetched_at: '2026-10-14'
     confidence: auto
+research_direction_raw: 智能感知和决策优化，包括： 1. 多传感器信息融合，目标检测、定位与跟踪； 2. 多智能体强化学习，博弈对抗； 3.
+  智能控制和协同规划

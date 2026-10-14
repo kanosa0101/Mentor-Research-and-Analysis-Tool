@@ -1,0 +1,19 @@
+school: hust
+dept: cyber
+dept_name: 网络空间安全学院
+base_url: https://cse.hust.edu.cn
+hook: cyber_expansion
+direct: true
+explicit_supervisor_only: true
+list:
+  urls:
+    - https://cse.hust.edu.cn/szdw/wlkjaqx.htm
+    - https://cse.hust.edu.cn/szdw/xxaqx.htm
+    - https://cse.hust.edu.cn/szdw/mmkxyjsx.htm
+    - https://cse.hust.edu.cn/szdw/jcxkpt.htm
+  person_hosts: [cse.hust.edu.cn, faculty.hust.edu.cn]
+  units:
+    https://cse.hust.edu.cn/szdw/wlkjaqx.htm: 网络空间安全系
+    https://cse.hust.edu.cn/szdw/xxaqx.htm: 信息安全系
+    https://cse.hust.edu.cn/szdw/mmkxyjsx.htm: 密码科学与技术系
+    https://cse.hust.edu.cn/szdw/jcxkpt.htm: 交叉学科平台

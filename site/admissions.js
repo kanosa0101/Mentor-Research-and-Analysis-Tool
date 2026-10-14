@@ -7,6 +7,11 @@ function options(select,rows,label,value=''){select.innerHTML=`<option value="">
 function criteria(){return {school:el('policy-school').value,dept:el('policy-dept').value,year:el('policy-year').value,degree:el('policy-degree').value,route:el('policy-route').value,track:el('policy-track').value,group:el('policy-group').value};}
 function depts(value=''){options(el('policy-dept'),ADMISSIONS_DATA.units.filter(u=>u.school===el('policy-school').value&&(!el('policy-group').value||u.groups.includes(el('policy-group').value))).map(u=>[u.dept,u.dept_name]),'全部院系',value);}
 function scopeQuery(prefs){const query=new URLSearchParams();for(const [key,value] of Object.entries(prefs))if(value)query.set(key,value);return query;}
+function unitInfo(u,prefs){
+  const c=u.coverage,d=c.source_dates,query=scopeQuery({...prefs,school:u.school,dept:u.dept});
+  if(!u.count)return `<article class="unit-info" data-unit-info="${esc(u.school+'/'+u.dept)}"><h3>${esc(u.dept_name)}</h3><p>导师名单待补，暂不能统计联系信息。${esc(u.roster_pending)}</p><a href="${esc(u.roster_url)}" target="_blank" rel="noopener">核对官方师资入口 →</a></article>`;
+  return `<article class="unit-info" data-unit-info="${esc(u.school+'/'+u.dept)}"><h3>${esc(u.dept_name)} · ${u.count} 条教师记录</h3>${u.roster_pending?`<p class="quality">采集范围待核对：${esc(u.roster_pending)}</p>`:''}<dl class="unit-metrics">${[['email','公开邮箱'],['research_direction_raw','明确研究方向'],['bio_raw','官网简介'],['supervisor','明确导师资格']].map(([key,label])=>`<div><dt>${label}</dt><dd>${c[key]}<small> / ${u.count} 已知 · ${u.count-c[key]} 待补</small></dd></div>`).join('')}</dl><p class="stats">来源抓取日期：${d.known?esc(d.earliest)+(d.earliest!==d.latest?' 至 '+esc(d.latest):''):'未知'}；${d.unknown} 条日期未知。抓取日期不表示官网内容更新日期。</p><p class="stats">方向未明确标注时可先查简介；导师资格不代表当年有名额。跨院系记录未按姓名合并。</p><a href="discovery.html?${query}">按当前申请目标找导师 →</a></article>`;
+}
 function render(){
   const prefs=criteria();visibleUnits=ADMISSIONS_DATA.units.filter(u=>!prefs.group||u.groups.includes(prefs.group));const units=visibleUnits.filter(u=>(!prefs.school||u.school===prefs.school)&&(!prefs.dept||u.dept===prefs.dept));
   const valid=!invalidYear&&(!prefs.group||Object.hasOwn(ADMISSIONS_DATA.groups,prefs.group))&&(!prefs.track||['ordinary','special'].includes(prefs.track))&&(!prefs.degree||Object.hasOwn(degrees,prefs.degree))&&(!prefs.route||Object.hasOwn(routes,prefs.route))&&(!prefs.school||schools.some(s=>s[0]===prefs.school))&&(!prefs.dept||units.length>0)&&(!prefs.year||Number.isInteger(Number(prefs.year))&&Number(prefs.year)>=2000&&Number(prefs.year)<=2100);
@@ -18,6 +23,7 @@ function render(){
   el('unit-catalog').innerHTML=units.map(u=>`<a href="${esc(u.roster_url)}" target="_blank" rel="noopener">${esc(u.dept_name)}官方师资入口</a>`).join(' · ');
   el('unit-name').textContent=(schools.find(s=>s[0]===prefs.school)?.[1]||'学校与院系')+(prefs.dept?' · '+(units[0]?.dept_name||prefs.dept):'');
   el('unit-description').textContent=valid?`${units.length} 个院系在当前目录范围内。${units.filter(u=>!u.count).length?' 导师名单待补：'+units.filter(u=>!u.count).map(u=>u.roster_pending||u.dept_name).join('；'):''}学校通用规则与院系/专业附加要求须共同核对，不能只看一层。`:'学校/院系或年度未收录或无效；未借用其他单位的规则。';
+  el('unit-readiness').innerHTML=valid&&prefs.school?units.map(u=>unitInfo(u,prefs)).join(''):'<p class="stats">选择学校或院系，查看邮箱、方向、简介及导师资格的信息覆盖，再决定从哪里开始找导师。</p>';
   const entries=[...new Map(units.filter(u=>u.notice_url).map(u=>[u.notice_url,u.dept_name+'官网招生栏目'])).entries()];
   el('unit-entries').innerHTML=entries.map(([url,name])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(name)}</a>`).join('')||'<span class="muted">该范围尚未登记官方招生栏目；可从导师完整资料查院系官网，或使用研招网查招生单位。</span>';
   el('unit-entries').innerHTML+='<a href="https://yz.chsi.com.cn/zsml/index.html" target="_blank" rel="noopener">研招网专业目录</a>';

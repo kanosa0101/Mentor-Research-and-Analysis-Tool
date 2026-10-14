@@ -36,6 +36,15 @@ def roster_url(cfg):
     return safe_url(source) if source else ''
 
 
+def unit_coverage(profs):
+    coverage = {field: sum(bool(p.get(field)) for p in profs)
+                for field in ('email', 'research_direction_raw', 'bio_raw', 'supervisor')}
+    dates = [p['source_date'] for p in profs if p.get('source_date')]
+    coverage['source_dates'] = {'known': len(dates), 'unknown': len(profs) - len(dates),
+                                'earliest': min(dates, default=''), 'latest': max(dates, default='')}
+    return coverage
+
+
 def list_record(p):
     keys = ('name', 'school', 'school_name', 'dept', 'dept_name', 'page', 'title',
             'supervisor', 'email', 'phone', 'institutes', 'inst', 'homepage',
@@ -147,6 +156,7 @@ def main():
     admissions['units'] = [{'school': c['school'], 'school_name': school_names.get(c['school'], c['school']), 'dept': c['dept'], 'dept_name': c.get('dept_name', c['dept']),
                             'count': sum(p['school'] == c['school'] and p['dept'] == c['dept'] for p in profs), 'notice_url': notice_urls.get((c['school'], c['dept']), ''),
                             'groups': groups(c.get('dept_name', c['dept'])), 'roster_pending': c.get('roster_pending', ''),
+                            'coverage': unit_coverage([p for p in profs if p['school'] == c['school'] and p['dept'] == c['dept']]),
                             'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')

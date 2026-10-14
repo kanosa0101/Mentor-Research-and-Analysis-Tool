@@ -2,12 +2,13 @@ school: seu
 dept: auto
 dept_name: 自动化学院
 base_url: https://automation.seu.edu.cn
-hook: related_roster
+hook: seu_auto
 direct: true
-roster_pending: 官方教师列表为动态接口，本轮请求返回553；未采集名单，不代表没有导师。
+explicit_supervisor_only: true
+roster_pending: 官网接口标称114条、两页实际返回100条，本轮仅收录其中明示学术职称或导师资格的条目；计数差异及身份未明条目待核验，导师资格不等于当年有招生名额。
 list:
   urls: [https://automation.seu.edu.cn/32668/list.htm]
-  card_selector: .cols_teacher li
-  name_selector: .name
-  link_selector: a[href]
-  person_href: '/[^/]+/'
+  verified_counts:
+    reported: 114
+    returned: 100
+    pages: 2

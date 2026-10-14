@@ -125,7 +125,7 @@ def phase_roster(cfg, hook, refresh):
             if inst not in prof.institutes:
                 prof.institutes.append(inst)
                 prof.provenance.setdefault(
-                    "institutes", Provenance(source=list_url(cfg), fetched_at=fetched_at))
+                    "institutes", Provenance(source=record_source, fetched_at=record_date))
                 updated += 1
         store.save_professor(prof)
     current_urls = {(r["url"], r["name"]) for r in people}
@@ -176,7 +176,7 @@ def phase_enrich(cfg, hook, refresh):
         rd = d.get("research_directions") or []
         if rd:
             _merge(prof, "research_direction_raw", "、".join(rd), prov, changes)
-        if not prof.supervisor and d.get("bio_raw"):
+        if not cfg.get('explicit_supervisor_only') and not prof.supervisor and d.get("bio_raw"):
             # 导师资格兜底: 简介自述"教授、博士生导师"(职称相邻紧模式, 见
             # supervisor_util)。bio_raw 是简介正文, 站内导航栏目名不混入
             from crawler.supervisor_util import extract_supervisor

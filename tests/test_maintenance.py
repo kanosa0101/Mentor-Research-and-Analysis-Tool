@@ -34,6 +34,22 @@ class MaintenanceTests(unittest.TestCase):
         store.save_professor(self.prof)
         self.crawl = script('crawl')
 
+    def test_explicit_supervisor_only_does_not_infer_from_bio(self):
+        class Hook:
+            def parse_detail(self, *args):
+                return {'bio_raw': '曾任教授、博士生导师'}
+        with patch.object(fetch, 'fetch_text', return_value=('html', {'fetched_at': '2026-10-14'}, True)):
+            self.crawl.phase_enrich({'school': 'test', 'dept': 'cs', 'explicit_supervisor_only': True}, Hook(), False)
+        self.assertIsNone(store.load_all('test', 'cs')['test'].supervisor)
+
+    def test_existing_sites_keep_supervisor_bio_fallback(self):
+        class Hook:
+            def parse_detail(self, *args):
+                return {'bio_raw': '教授、博士生导师'}
+        with patch.object(fetch, 'fetch_text', return_value=('html', {'fetched_at': '2026-10-14'}, True)):
+            self.crawl.phase_enrich({'school': 'test', 'dept': 'cs'}, Hook(), False)
+        self.assertEqual(store.load_all('test', 'cs')['test'].supervisor, '博导')
+
     def test_cached_parse_does_not_advance_verified_date(self):
         class Hook:
             def parse_detail(self, *args):
@@ -50,11 +66,13 @@ class MaintenanceTests(unittest.TestCase):
         class Hook:
             def iter_roster(self, cfg):
                 return [{'name': '新教师', 'url': 'https://example.org/person2', 'email': 'new@example.org',
-                         'roster_source': 'https://example.org/list2', 'roster_fetched_at': '2026-09-01'}], {'fetched_at': '2026-10-14'}
+                         'institutes': ['第二系'], 'roster_source': 'https://example.org/list2', 'roster_fetched_at': '2026-09-01'}], {'fetched_at': '2026-10-14'}
         self.crawl.phase_roster({'school': 'test', 'dept': 'cs', 'list': {'url': 'https://example.org/list1'}}, Hook(), False)
         p = next(p for p in store.load_all('test', 'cs').values() if p.name == '新教师')
         self.assertEqual(p.provenance['name'].source, 'https://example.org/list2')
         self.assertEqual(p.provenance['email'].fetched_at, '2026-09-01')
+        self.assertEqual(p.provenance['institutes'].source, 'https://example.org/list2')
+        self.assertEqual(p.provenance['institutes'].fetched_at, '2026-09-01')
 
     def test_roster_refresh_reaches_auxiliary_http_call(self):
         wp = self.crawl.load_hook({'school': 'test', 'hook': 'wp'})

@@ -20,10 +20,20 @@ def main():
                     page = browser.new_page(viewport={'width': 1440, 'height': 1000})
                     errors = []; page.on('pageerror', lambda e: errors.append(str(e)))
                     page.goto(base + '/admissions.html?group=control', wait_until='networkidle')
+                    assert '选择学校或院系' in page.locator('#unit-readiness').inner_text()
                     assert page.input_value('#policy-group') == 'control'
                     assert page.evaluate('visibleUnits.every(u=>u.groups.includes("control"))')
                     assert '自动化' in page.locator('#unit-directory-list').inner_text()
                     page.select_option('#policy-school', 'sjtu'); page.select_option('#policy-dept', 'auto')
+                    info = page.locator('[data-unit-info="sjtu/auto"]')
+                    assert info.count() == 1
+                    assert all(label in info.inner_text() for label in ['公开邮箱', '明确研究方向', '官网简介', '导师资格', '来源抓取日期'])
+                    assert '信息更新日期' not in info.inner_text()
+                    assert 'school=sjtu' in info.locator('a').first.get_attribute('href')
+                    page.evaluate('ADMISSIONS_DATA.units.find(u=>u.school==="sjtu"&&u.dept==="auto").roster_pending="试点名单范围待核对"; render()')
+                    assert '试点名单范围待核对' in info.inner_text(), '有记录时也要展示名单完整性缺口'
+                    page.evaluate('ADMISSIONS_DATA.units.find(u=>u.school==="sjtu"&&u.dept==="auto").roster_pending=""; render()')
+                    page.locator('#unit-summary').screenshot(path=str(out / 'unit-information-desktop.png'))
                     page.fill('#policy-year', '2027'); page.locator('#policy-year').blur()
                     page.select_option('#policy-degree', 'master'); page.select_option('#policy-route', 'recommend')
                     page.select_option('#policy-track', 'ordinary')
@@ -37,7 +47,10 @@ def main():
                     assert '专项' in page.input_value('#project-type')
                     assert not (private / 'workflow.yaml').exists()
                     page.goto(base + '/admissions.html?school=seu&dept=auto&group=control&year=2027')
-                    assert '待补' in page.locator('#unit-description').inner_text()
+                    if page.evaluate('ADMISSIONS_DATA.units.find(u=>u.school==="seu"&&u.dept==="auto").count') == 0:
+                        assert '待补' in page.locator('#unit-description').inner_text()
+                    else:
+                        assert page.locator('[data-unit-info="seu/auto"]').count() == 1
                     assert page.locator('[data-policy]').count() > 0
                     page.goto(base + '/discovery.html?group=cyber', wait_until='networkidle')
                     page.wait_for_function('window.DISCOVERY_READY === true')
@@ -48,6 +61,7 @@ def main():
                     assert '既往安排' in page.locator('#policy-list').inner_text()
                     assert page.locator('#unit-catalog a').count() > 0
                     page.set_viewport_size({'width': 390, 'height': 844})
+                    page.locator('#unit-summary').screenshot(path=str(out / 'unit-information-mobile.png'))
                     page.screenshot(path=str(out / 'coverage-mobile.png'), full_page=False)
                     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
                     assert not errors, errors

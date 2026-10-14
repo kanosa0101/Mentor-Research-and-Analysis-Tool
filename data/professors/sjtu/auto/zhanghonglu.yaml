@@ -343,6 +343,11 @@ last_fetched: '2026-10-14'
 last_parsed: '2026-10-14'
 facets: []
 provenance:
+  research_direction_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/zhanghonglu.html
+    fetched_at: '2026-10-14'
+    confidence: auto
   name:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty.html
@@ -363,3 +368,4 @@ provenance:
     source: https://sais.sjtu.edu.cn/faculty/zhanghonglu.html
     fetched_at: '2026-10-14'
     confidence: auto
+research_direction_raw: 生物界面感知与分析；生物测量与信息存储；人工智能+

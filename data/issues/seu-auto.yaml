@@ -1,0 +1,16 @@
+- kind: fetch_or_parse_error
+  ref: huangwei
+  message: ValueError('个人页缺少姓名与身份区，不能将空壳当成已富化')
+  first_seen: '2026-10-14'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: roster_count_mismatch
+  ref: https://automation.seu.edu.cn/32668/list.htm
+  message: 公开teacherHome接口标称114条；两页实际返回100条且与rows999返回集合一致，仅接入85条明示学术身份记录，完整名单待核对。
+  first_seen: '2026-10-14'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []

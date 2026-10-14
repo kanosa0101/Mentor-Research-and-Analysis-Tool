@@ -1,0 +1,17 @@
+- kind: fetch_or_parse_error
+  ref: zhoujiaxi
+  message: ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(10054,
+    '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+  first_seen: '2026-10-14'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhouke
+  message: ValueError('详情未识别到明确个人信息，保留名单并登记缺口')
+  first_seen: '2026-10-14'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []

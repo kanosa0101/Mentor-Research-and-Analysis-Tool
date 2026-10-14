@@ -56,6 +56,11 @@ last_fetched: '2026-10-14'
 last_parsed: '2026-10-14'
 facets: []
 provenance:
+  research_direction_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/yugan.html
+    fetched_at: '2026-10-14'
+    confidence: auto
   name:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty.html
@@ -76,3 +81,4 @@ provenance:
     source: https://sais.sjtu.edu.cn/faculty/yugan.html
     fetched_at: '2026-10-14'
     confidence: auto
+research_direction_raw: 空海无人系统自主控制与协同作业，包括不完备信息下的状态估计与鲁棒控制、柔性绳系约束下的协同操控与构型重构，以及动态环境下异构系统的任务协同与自主作业
