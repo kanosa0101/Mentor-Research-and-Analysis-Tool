@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -13,9 +14,32 @@ input,select,textarea{width:100%;min-width:0;max-width:100%;border:1px solid #d7
 fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}h2{font-size:17px;margin:0 0 12px}.actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.primary{background:var(--accent);color:white;border-color:var(--accent)}.primary:hover{background:#2344ab}.list{border-top:1px solid var(--line);margin-top:18px;padding-top:8px;max-height:510px;overflow:auto}article{border-bottom:1px solid var(--line);padding:12px 0;overflow-wrap:anywhere}article:last-child{border:0}article h3{font-size:14px;margin:0 0 7px}article p{margin:6px 0;line-height:1.6;white-space:pre-wrap}.bad,.overdue{color:#b45309}.done{color:#0c8a5b}.tag{display:inline-block;border-radius:5px;background:#eef2ff;padding:3px 7px;margin:3px}.mentor-results{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0}.mentor-results button{text-align:left;font-size:12px;max-width:100%;overflow-wrap:anywhere}.selected{display:flex;gap:5px;flex-wrap:wrap;margin:4px 0}.selected button{padding:1px 5px}.hint{padding:12px;background:#fff7e8;border:1px solid #f2ddb0;border-radius:8px;margin-bottom:14px;line-height:1.7}#message{min-height:28px;white-space:pre-wrap;overflow-wrap:anywhere}#message.error{color:#b42318}.check{display:inline-flex;align-items:center;gap:6px}.check input{width:auto}.toolbar select{width:auto;max-width:260px}.path{font:12px Consolas,monospace;overflow-wrap:anywhere}.empty{color:var(--muted);padding:12px 0}
 @media(max-width:760px){.grid,.fields{grid-template-columns:1fr}.wide{grid-column:auto}.top,main{padding:14px}.panel{padding:14px}.toolbar{gap:8px}.list{max-height:420px}}
 </style>
-</head>
+<link rel="stylesheet" href="ui.css"></head>
 <body>
-<header><div class="top"><h1>申请工作台</h1><a id="back-desk" href="desk.html">返回我的申请</a><a href="index.html">导师库</a><a href="board.html">套磁看板</a><a href="notices.html">招生通知</a></div></header>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="discovery.html" >条件找导师</a>
+
+<a href="index.html" >全量导师</a>
+
+<a href="compare.html" >导师对比</a>
+
+<a href="notices.html" >招生通知</a>
+
+<a href="desk.html"  id="back-desk">我的申请</a>
+
+<a href="applications.html" aria-current="page">项目与材料</a>
+
+<a href="board.html" >旧套磁看板</a>
+
+</nav>
+
+
+</div></header>
+<div class="page-heading"><h1>申请工作台</h1></div>
 <main>
 <p class="intro muted">按申请项目整理材料、沟通和提醒。记录只在本地保存；沟通事件不会自动改变套磁看板状态。材料备份仅包含索引，原文件需另行备份。</p>
 <div id="service-hint" class="hint">请运行 <code>python scripts\serve.py</code> 并从本地服务打开本页。直接打开 HTML 无法读取或保存私人记录。</div>

@@ -1,3 +1,4 @@
+{% set current_page = 'compare' %}
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -52,15 +53,10 @@ a:hover{text-decoration:underline}
 .copybtn:hover{border-color:var(--accent);color:var(--accent)}
 .foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
 </style>
-</head>
+{% include '_ui_head.html.j2' %}</head>
 <body>
-<header class="top">
-  <div class="topin">
-    <div class="brand"><span class="logo"></span><h1>导师对比</h1></div>
-    <a class="navlink" href="index.html">← 导师库</a>
-    <a class="navlink" href="board.html">套磁看板</a>
-  </div>
-</header>
+{% include '_nav.html.j2' %}
+<div class="page-heading"><h1>导师对比</h1></div>
 <div class="wrap">
   <div class="hint" id="hint" style="display:none">
     还没有可对比的导师：回<a href="index.html">导师库</a>勾选 2–5 位（姓名列前的复选框），再点右下角"对比"。

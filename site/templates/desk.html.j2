@@ -1,3 +1,4 @@
+{% set current_page = 'desk' %}
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -15,13 +16,15 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 .prepare-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start}.context{background:var(--soft);border-color:#cddcce}.context h2{font-family:"Songti SC","SimSun",serif;font-size:24px;font-weight:500}.context p{margin:8px 0}.context small{display:block;line-height:1.7}.context .progress{border-top:1px solid #cddcce;padding-top:12px;margin-top:15px}.draft-title{display:flex;justify-content:space-between;align-items:center;gap:12px}.draft-title select{max-width:260px}.attachments{display:flex;flex-direction:column;gap:8px;padding:10px 0}.attachments label{font-size:13px}.attachment-state{color:var(--muted);font-size:12px;margin:0 0 10px;overflow-wrap:anywhere}.send-section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.send-section input[type=date]{width:170px}.send-section .actions{align-items:center}.history-body{white-space:pre-wrap}.event-time{font:11px Consolas,monospace;color:var(--muted)}.footer{padding:24px 0;color:var(--muted);font-size:12px}.target-selected{border-left:3px solid var(--accent);padding-left:12px}
 @media(max-width:800px){main{padding:18px 14px}.header-inner{padding:16px 14px;gap:14px}.hero{align-items:flex-start;flex-direction:column}.columns,.prepare-grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.panel{padding:17px}.list-tools{grid-template-columns:1fr 1fr}.list-tools input{grid-column:1/-1}.stats{gap:8px}.stat{padding:14px 10px}.stat strong{font-size:27px}.stat span{font-size:12px}.draft-title{align-items:flex-start;flex-direction:column}.draft-title select{max-width:100%}.toolbar{gap:6px}.tabs{gap:24px}.context h2{font-size:22px}}
 </style>
-</head>
+{% include '_ui_head.html.j2' %}</head>
 <body>
-<header><div class="header-inner"><a class="brand" href="desk.html">导师库 / 申请</a><a href="index.html">找导师</a><a id="manage-link" href="applications.html">项目与材料</a><a href="notices.html">招生通知</a><span class="version">CONTACT 0.2</span></div></header>
+{% include '_nav.html.j2' %}
+
 <main>
 <div class="hero"><div><span class="eyebrow">Your next step</span><h1>我的申请</h1><p class="muted">把心仪的导师变成有依据的联系，把每一次回复变成下一步。</p></div><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></div>
 <div id="desk-hint" class="hint">请运行 <code>python scripts\serve.py</code> 并从本地服务打开。直接打开 HTML 可浏览导师库，私人联系操作不可用。</div>
 <div id="desk-message" class="message" role="status" aria-live="polite"></div>
+<p id="incoming-goal" class="muted" hidden></p>
 <fieldset id="desk-workspace" disabled>
 <nav class="tabs" aria-label="申请视图"><button data-view="today" aria-selected="true">今日待办</button><button data-view="targets" aria-selected="false">我的导师</button><button data-view="prepare" aria-selected="false">联系准备</button></nav>
 <div id="welcome" class="welcome" hidden><h2>从一个申请项目开始</h2><p>建立申请项目，加入心仪导师，再选择材料、准备联系。暂时没有年度或招生信息，可以先留空。</p><a id="welcome-manage" href="applications.html">建立项目与整理材料 →</a></div>

@@ -1,3 +1,4 @@
+{% set current_page = 'board' %}
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -82,16 +83,10 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .c-date{margin-top:6px;font-size:10.5px;color:#a8b0be}
 .foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
 </style>
-</head>
+{% include '_ui_head.html.j2' %}</head>
 <body>
-<header class="top">
-  <div class="topin">
-    <div class="brand"><span class="logo"></span><h1>套磁看板</h1></div>
-    <a class="navlink" href="index.html">← 导师库</a>
-    <a class="navlink" href="desk.html">我的申请</a>
-    <div class="tstats"><span>跟进中 <b id="tracked">0</b> 人</span></div>
-  </div>
-</header>
+{% include '_nav.html.j2' %}
+<div class="page-heading"><h1>旧套磁看板</h1></div>
 <div class="wrap">
   <div class="hint" id="hint" style="display:none">
     看板需要本地写回服务：运行 <code>python scripts\serve.py</code> 后刷新本页（直接双击打开时为只读模式，无法记录跟进状态）。

@@ -7,6 +7,11 @@ const priorities={high:'优先',normal:'一般',low:'暂缓'};
 const eventLabels={draft:'历史草稿',sent:'已发送',replied:'收到回复',note:'备注 / 阶段变更'};
 const params=new URLSearchParams(location.search);
 const incomingMentor=people.has(params.get('mentor')) ? params.get('mentor') : '';
+const intentYear=Number(params.get('year'));
+const incomingGoal={...(Number.isInteger(intentYear)&&intentYear>=2000&&intentYear<=2100?{year:intentYear}:{}),
+  ...(['master','phd'].includes(params.get('degree'))?{degree:params.get('degree')}:{}),
+  ...(['recommend','exam','assessment'].includes(params.get('route'))?{route:params.get('route')}: {})};
+const goalDegree={master:'硕士',phd:'博士'},goalRoute={recommend:'推免',exam:'统考',assessment:'申请考核'};
 let FLOW={projects:{},materials:{},communications:{},reminders:{},targets:{},drafts:{}};
 let currentTarget=params.get('target')||'', currentDraft='', chosenMentor=incomingMentor, dirty=false, replyDirty=false, loadedTarget='';
 let currentView=['today','targets','prepare'].includes(params.get('view')) ? params.get('view') : incomingMentor ? 'prepare' : 'today';
@@ -26,6 +31,7 @@ function showView(view){
   for(const name of ['today','targets','prepare']) el('view-'+name).hidden=name!==view;
   document.querySelectorAll('.tabs [data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   const query=new URLSearchParams();query.set('view',view);if(incomingMentor)query.set('mentor',incomingMentor);if(currentTarget)query.set('target',currentTarget);
+  for(const [key,value] of Object.entries(incomingGoal))query.set(key,value);
   history.replaceState(null,'',location.pathname+'?'+query);
 }
 function optionList(id,items,emptyLabel){
@@ -35,6 +41,7 @@ function optionList(id,items,emptyLabel){
 function manageUrl(){
   const mentor=target()?.mentor_id||incomingMentor;
   const q=new URLSearchParams({return:'desk'});if(mentor)q.set('mentor',mentor);if(currentTarget)q.set('target',currentTarget);
+  for(const [key,value] of Object.entries(incomingGoal))q.set(key,value);
   return 'applications.html?'+q;
 }
 function targetCard(t,attribute){
@@ -101,7 +108,11 @@ function updateDraftState(){
 async function refresh(){
   FLOW=await api();
   if(!FLOW.targets[currentTarget]){
-    const matches=Object.values(FLOW.targets).filter(t=>!incomingMentor||t.mentor_id===incomingMentor);
+    const matches=Object.values(FLOW.targets).filter(t=>{
+      const p=FLOW.projects[t.project_id];
+      return (!incomingMentor||t.mentor_id===incomingMentor)&&(!incomingGoal.year||p.year===incomingGoal.year)&&
+        (!(incomingGoal.degree||incomingGoal.route)||p.application_type===[goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' / '));
+    });
     currentTarget=(incomingMentor&&matches.length!==1)?'':matches[0]?.id||'';
     if(incomingMentor&&matches.length>1){currentView='targets';el('targets-query').value=personName(incomingMentor);}
   }
@@ -187,6 +198,8 @@ el('desk-restore-file').onchange=async e=>{
   await action(async()=>{await api('/restore',JSON.parse(await file.text()),'POST');loadedTarget='';dirty=false;},'已恢复备份');e.target.value='';
 };
 el('reply-date').value=today();el('sent-date').value=today();renderMentorSearch();showView(currentView);
+el('incoming-goal').hidden=!Object.keys(incomingGoal).length;
+el('incoming-goal').textContent='来自筛选的申请目标：'+[incomingGoal.year,goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' · ')+'。请选择适用项目；这不表示招生已经确认。';
 if(location.protocol==='http:'){
   el('desk-restore').disabled=false;
   refresh().then(()=>{el('desk-workspace').disabled=false;})

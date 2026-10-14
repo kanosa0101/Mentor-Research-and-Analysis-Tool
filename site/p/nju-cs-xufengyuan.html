@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -70,17 +71,32 @@ a:hover{text-decoration:underline}
 .h-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 </style>
-</head>
+<link rel="stylesheet" href="../ui.css"></head>
 <body>
-<header class="top">
-  <div class="topin">
-    <div class="brand"><span class="logo"></span><h1>导师库</h1></div>
-    <a href="../index.html">← 返回列表</a>
-    <a href="../board.html">套磁看板</a>
-    <a href="../desk.html?mentor=nju-cs-xufengyuan">准备联系 / 我的申请</a>
-    <span class="crumb">南京大学 · 计算机科学与技术系</span>
-  </div>
-</header>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=nju-cs-xufengyuan" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">南京大学 · 计算机科学与技术系</span>
+
+</div></header>
+<div class="page-heading"><h1>导师资料</h1></div>
 <div class="wrap">
 <div class="card">
 
@@ -140,7 +156,7 @@ http://cs.nju.edu.cn/fxu
 
 <div class="card">
   <h3>字段出处 · PROVENANCE</h3>
-  <table class="pv">
+  <div class="proof-scroll"><table class="pv">
     <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
 
     <tr>
@@ -197,7 +213,7 @@ http://cs.nju.edu.cn/fxu
       <td><a href="https://cs.nju.edu.cn/6f/7d/c2639a159613/page.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
-  </table>
+  </table></div>
 </div>
 </div>
 <script>

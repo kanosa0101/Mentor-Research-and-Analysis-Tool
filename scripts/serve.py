@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 from crawler.outreach_util import validate_outreach, validate_patch
 from crawler.workflow_util import empty_workflow, update_entry, scan_materials
 from crawler import contact_util as contact
+from crawler import discovery_util as discovery
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -49,6 +50,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.site = Path(site)
         self.outreach = Path(outreach)
         self.workflow = Path(workflow) if workflow is not None else self.outreach.with_name('workflow.yaml')
+        self.discovery = self.outreach.with_name('discovery.yaml')
         super().__init__(*args, directory=str(self.site), **kwargs)
 
     def log_message(self, fmt, *args):
@@ -101,6 +103,8 @@ class Handler(SimpleHTTPRequestHandler):
         return pid if pid in self._known_ids() else None
 
     def do_GET(self):
+        if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):
+            return self._discovery_request('GET')
         if self.path == '/api/workflow' or self.path.startswith('/api/workflow/'):
             return self._workflow_request('GET')
         if self.path == '/api/health':
@@ -175,6 +179,8 @@ class Handler(SimpleHTTPRequestHandler):
         return self._json(200, {'cleared': existed is not None})
 
     def do_POST(self):
+        if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):
+            return self._discovery_request('POST')
         if self.path.startswith('/api/workflow/'):
             return self._workflow_request('POST')
         if not self._local_request(json_body=True):
@@ -269,6 +275,47 @@ class Handler(SimpleHTTPRequestHandler):
             except KeyError as e:
                 return self._json(404, {'error': str(e)})
             except (ValueError, UnicodeError, OSError) as e:
+                return self._json(400, {'error': str(e)})
+        return self._json(200, result)
+
+    def _discovery_request(self, method):
+        if not self._local_request(json_body=method == 'POST'):
+            return
+        path = self.path.removeprefix('/api/discovery')
+        if (method == 'GET' and path not in ('', '/backup')) or (method == 'POST' and path not in ('', '/reviews', '/restore')):
+            return self._json(404, {'error': '未知 API'})
+        try:
+            body = self._body() if method == 'POST' else None
+        except (ValueError, UnicodeError) as e:
+            return self._json(400, {'error': str(e)})
+        with _lock:
+            try:
+                data = load_outreach(self.discovery) if self.discovery.exists() and path != '/restore' else discovery.empty()
+                discovery.validate(data, self._known_ids())
+            except (ValueError, OSError, yaml.YAMLError) as e:
+                return self._json(500, {'error': str(e)})
+            if method == 'GET':
+                return self._json(200, {'version': 1, 'discovery': data} if path == '/backup' else data)
+            try:
+                if path == '/restore':
+                    if not isinstance(body, dict) or set(body) != {'version', 'discovery'} or type(body['version']) is not int or body['version'] != 1:
+                        raise ValueError('无效筛选备份')
+                    data = body['discovery']
+                    discovery.validate(data, self._known_ids())
+                    if self.discovery.exists():
+                        backups = self.discovery.parent / 'backups'
+                        backups.mkdir(parents=True, exist_ok=True)
+                        (backups / ('discovery-' + datetime.now().strftime('%Y%m%d-%H%M%S-%f') + '.yaml')).write_bytes(self.discovery.read_bytes())
+                    result = {'restored': True}
+                elif path == '/reviews':
+                    data, result = discovery.save_review(data, body, self._known_ids())
+                else:
+                    discovery.validate_preferences(body, self._known_ids())
+                    data['preferences'] = body
+                    discovery.validate(data, self._known_ids())
+                    result = body
+                save_outreach(data, self.discovery)
+            except (ValueError, OSError, UnicodeError) as e:
                 return self._json(400, {'error': str(e)})
         return self._json(200, result)
 

@@ -136,6 +136,12 @@ provenance:                # 每字段出处
 
 2026-10-14 联系闭环：`crawler/contact_util.py` 包装四类基础工作流，提供 v1→v2 内存兼容、targets（project+mentor 唯一）、drafts 和沟通发送快照；基础扫描与记录校验仍由 `workflow_util.py` 承担。`desk.html / desk.js` 为任务入口，项目材料管理保留 `applications.html`。保存、导出草稿和实际发送确认分开；EML 仅由同源本地 API 即时返回，附件正文不写 YAML/静态/Git。回复、目标阶段与可选提醒在锁内同一次原子文件替换提交。备份外层随 workflow 使用 v2，恢复兼容匹配的 v1/v2；GET 不写回升级结果。
 
+## 6.2 条件发现与共用 UI（2026-10-14）
+
+`discovery-core.js` 是独立纯规则函数：院校范围、逐字段关键词、对应学位资格、邮箱、人工招生机会/个人资格；硬条件排除，软条件计数排序，未知默认保留。`discovery.js` 负责按需加载来源/简介、证据卡片和目标传递。私人 `discovery.yaml` schema1 由 `discovery_util.py` 与 `/api/discovery` 校验、原子保存与独立备份恢复，GET 不写。核验固定四项上下文、日期和人工出处，与 workflow v2 无迁移关系。
+
+`ui.css`、`_ui_head.html.j2`、`_nav.html.j2` 为八类页面共用视觉/导航入口；原有页面交互IDs保留。通知页查询参数限定院系，未接入时显式提示且不冒用其他院系结果。研究文字匹配和招生资格判断分别展示，不提供录取概率。
+
 ## 7. 关键设计决策
 
 | 决策 | 理由 |

@@ -11,6 +11,7 @@ from crawler.ai_util import validate_ai_block
 from crawler.model import Professor
 from crawler.outreach_util import validate_outreach
 from crawler.contact_util import upgrade
+from crawler.discovery_util import validate as validate_discovery
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
@@ -166,6 +167,19 @@ if wf.exists():
         problems.append(f'workflow invalid: {e}')
 else:
     print('none (尚未创建私人申请记录)')
+
+print('== 10. 私人筛选与招生核验 ==')
+df = ROOT / 'data' / 'discovery.yaml'
+if 'data/discovery.yaml' not in gitignore:
+    problems.append('.gitignore missing: data/discovery.yaml')
+if df.exists():
+    try:
+        validate_discovery(load_yaml(df), expected_ids)
+        print('valid private discovery')
+    except (ValueError, OSError, yaml.YAMLError) as e:
+        problems.append(f'discovery invalid: {e}')
+else:
+    print('none (尚未保存私人筛选与核验)')
 
 print("\n== PROBLEMS ==")
 if problems:

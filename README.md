@@ -54,6 +54,14 @@ python scripts\build_site.py
 
 验证：`python scripts\application_ui_check.py` 使用临时文件验收，不读写真实私人记录。实施依据见 `OPEN_SOURCE_IMPLEMENTATION_REVIEW_2026-10-14.md`，结果见 `DELIVERY_2026-10-14.md`。
 
+## 2026-10-14 条件找导师 0.3
+
+本地服务打开 `http://127.0.0.1:8000/discovery.html`：选择申请年度、学位、渠道、院校和研究关键词，给研究方向、导师资格、邮箱、年度机会、个人资格分别设置必须/偏好/不限制。候选显示逐项依据与待核实状态；关键词是文字检索，排序不是录取概率。
+
+年度机会与个人资格可按官方原文人工核验，绑定导师+年度+学位+渠道，超过30天按待核实处理。私人条件保存在忽略Git的 `data/discovery.yaml`，首次保存才创建，备份恢复与工作流分开。进入联系和项目管理保留申请目标。八类页面已统一导航与视觉基线。
+
+产品分析见 `DISCOVERY_PRODUCT_REVIEW_2026-10-14.md`，验证结果见 `DELIVERY_DISCOVERY_V0.3_2026-10-14.md`。运行 `node tests/discovery_rules.cjs`、`python scripts/discovery_ui_check.py` 验证。
+
 ## 当前规模
 
 **36 校 42 院系 5649 名导师**，逐字段 provenance（出处/抓取日期），方向 facet 13 类可筛选。全库覆盖率：邮箱 80%、职称 74%、简介 62%、博导硕导 53%。各院系人数与字段覆盖率见 `HANDOVER.md` §3，或本地打开站点直接看。

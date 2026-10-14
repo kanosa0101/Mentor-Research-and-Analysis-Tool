@@ -13,6 +13,8 @@ const backQuery=new URLSearchParams({view:'prepare'});
 if(contextMentor)backQuery.set('mentor',contextMentor);
 const returnTarget=new URLSearchParams(location.search).get('target');
 if(returnTarget)backQuery.set('target',returnTarget);
+const incomingGoal=new URLSearchParams(location.search);
+for(const key of ['year','degree','route'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
 el('back-desk').href='desk.html?'+backQuery;
 const chosen = {project:[],material:[],communication:[],reminder:[]};
 window.WORKFLOW_READY = false;
@@ -66,6 +68,12 @@ document.querySelectorAll('[data-mentor-picker]').forEach(box=>{
 });
 function reset(prefix){
   el(prefix+'-form').reset();
+  if(prefix==='project'){
+    const year=Number(incomingGoal.get('year'));
+    if(Number.isInteger(year)&&year>=2000&&year<=2100)el('project-year').value=year;
+    const degree={master:'硕士',phd:'博士'}[incomingGoal.get('degree')],route={recommend:'推免',exam:'统考',assessment:'申请考核'}[incomingGoal.get('route')];
+    if(degree||route)el('project-type').value=[degree,route].filter(Boolean).join(' / ');
+  }
   chosen[prefix]=contextMentor ? [contextMentor] : [];
   renderPicker(prefix);
   if(prefix==='communication') el('communication-date').value=new Date().toLocaleDateString('sv-SE');

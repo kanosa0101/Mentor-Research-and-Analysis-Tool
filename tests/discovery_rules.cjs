@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict');
+const core=require('../site/discovery-core.js');
+const p={page:'test-cs-a',school:'test',research_direction_raw:'图神经网络',supervisor:'博士生导师',email:'',source_date:'2026-10-14'};
+const prefs={year:2027,degree:'master',route:'recommend',topics:['时空预测'],schools:['test'],keep_unknown:true,
+  modes:{research:'hard',qualification:'hard',email:'soft',opportunity:'hard',eligibility:'soft'}};
+let result=core.evaluate(p,prefs,{},'交通时空预测与图模型','2026-10-14');
+assert.equal(result.visible,true);
+assert.equal(result.checks.find(c=>c.key==='research').state,'pass');
+assert.equal(result.checks.find(c=>c.key==='qualification').state,'unknown');
+assert.equal(result.checks.find(c=>c.key==='opportunity').state,'unknown');
+assert.equal(core.evaluate(p,{...prefs,keep_unknown:false},{},'时空预测','2026-10-14').visible,false);
+assert.equal(core.evaluate(p,prefs,{},'无相关关键词','2026-10-14').visible,false);
+assert.equal(core.evaluate(p,{...prefs,modes:{...prefs.modes,research:'soft'}},{},'无相关关键词','2026-10-14').visible,true);
+const review={mentor_id:p.page,year:2027,degree:'master',route:'recommend',opportunity:'pass',eligibility:'unknown',checked_at:'2026-10-14'};
+result=core.evaluate(p,prefs,{a:review},'时空预测','2026-10-14');
+assert.equal(result.checks.find(c=>c.key==='opportunity').state,'pass');
+assert.equal(core.evaluate(p,{...prefs,year:2028},{a:review},'时空预测','2026-10-14').checks.find(c=>c.key==='opportunity').state,'unknown');
+assert.equal(core.evaluate(p,prefs,{a:review},'时空预测','2026-12-14').checks.find(c=>c.key==='opportunity').state,'unknown');
+assert.equal(core.evaluate(p,{...prefs,schools:['other']},{},'时空预测','2026-10-14').visible,false);
+assert.equal(core.evaluate({...p,research_direction_raw:''},prefs,{},'','2026-10-14').checks.find(c=>c.key==='research').state,'unknown');
+assert.equal(core.evaluate({...p,research_direction_raw:'graph'},{...prefs,topics:['graph neural network']},{},'neural network','2026-10-14').visible,false);
+assert.equal(core.evaluate({...p,research_direction_raw:'HTML'},{...prefs,topics:['ml']},{},'','2026-10-14').visible,false);
+console.log('PASS: rule evidence, hard/soft, unknown, no degree inference, review scope/expiry');

@@ -204,6 +204,12 @@
 55. **ui_check 状态残留会让 ⭐ 语义反转**：上轮测试残留的 interested 让下轮 star 点击变成"移出"——ui_check 开跑先 `unlink` data/outreach.yaml（serve 每请求重读文件，删文件即净空）。另：列表页加新默认列要把 localStorage 版本号 bump（adv_cols_v2→v3），否则老用户存的列配置里没有新列
 56. **serve API 测试两坑**：Git Bash 里 `curl -d '{"note":"中文"}'` 进包是 GBK，服务端 json.loads 报 invalid json——用 UTF-8 文件体 `--data-binary @f.json`；headless Chromium 的 clipboard.writeText 默认拒绝——Playwright `new_context(permissions=["clipboard-read","clipboard-write"])` 授权后才能 E2E 验证（页内另有 execCommand 兜底）
 
+## 7.40 条件发现与全站 UI 0.3（2026-10-14）
+
+新增 `discovery.html`，支持申请目标、院校/主题、必须与偏好条件、未知保留和证据卡片；年度机会/个人资格需要用户按官方原文人工核验，四项上下文固定且30天后复核。私人 `data/discovery.yaml` 已忽略Git，读取不写；有独立备份恢复。目标传递到联系和项目创建，旧自由文本项目只在规范类型明确匹配时自动选中。
+
+八类页面统一 `ui.css` 和导航模板；新增条件流程/390px布局验收，旧三类浏览器回归保持。原公开与私人data文件均未修改。详细条件来源、当前覆盖和后续优先级见 `DISCOVERY_PRODUCT_REVIEW_2026-10-14.md`；交付证据见 `DELIVERY_DISCOVERY_V0.3_2026-10-14.md`。
+
 ## 8. 操作手册
 
 ```powershell
