@@ -161,6 +161,22 @@ def phase_enrich(cfg, hook, refresh):
                 d = hook.parse_detail(cfg, html, prof.detail_url)
         except Exception as e:
             store.upsert_issue(issues, "fetch_or_parse_error", prof.slug, repr(e))
+            if cfg.get('hook') == 'related_v7' and (school, dept) in {('hust', 'aia'), ('csu', 'auto')} \
+                    and isinstance(e, getattr(hook, 'IdentityMismatch', ())):
+                for field in ('title', 'supervisor', 'subjects', 'email', 'homepage', 'photo_url',
+                              'phone', 'office_address', 'bio_raw', 'research_direction_raw', 'institutes'):
+                    previous = prof.provenance.get(field)
+                    if previous is None or previous.origin == 'manual' or previous.source != prof.detail_url:
+                        continue
+                    replacement = [] if field == 'institutes' else None
+                    changes.append({'slug': prof.slug, 'field': field, 'old': getattr(prof, field),
+                                    'new': replacement, 'reason': 'detail_identity_mismatch', 'source': prof.detail_url,
+                                    'old_provenance': previous.model_dump(mode='json')})
+                    setattr(prof, field, replacement)
+                    prof.provenance.pop(field)
+                prof.status = 'roster'
+                prof.last_parsed = None
+                store.save_professor(prof)
             failed += 1
             continue
         prov = Provenance(source=prof.detail_url, fetched_at=meta["fetched_at"])

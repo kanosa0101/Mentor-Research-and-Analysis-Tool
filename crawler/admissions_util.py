@@ -21,8 +21,10 @@ def validate(data, units):
     if not isinstance(data, dict) or set(data) != {'version', 'sources', 'policies'} or type(data['version']) is not int or data['version'] != 1 or not isinstance(data['sources'], dict) or not isinstance(data['policies'], list):
         raise ValueError('招生政策结构错误')
     for sid, source in data['sources'].items():
-        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or set(source) != {'url', 'format', 'selector'}:
+        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or not {'url', 'format', 'selector'} <= set(source) or set(source) - {'url', 'format', 'selector', 'label'}:
             raise ValueError('来源结构错误')
+        if 'label' in source and (not isinstance(source['label'], str) or not source['label'].strip()):
+            raise ValueError('来源名称须为非空字符串')
         if not isinstance(source['url'], str):
             raise ValueError('来源 URL 须为字符串')
         link = urlsplit(source['url'])
@@ -41,7 +43,7 @@ def validate(data, units):
         if not isinstance(p.get('events', []), list):
             raise ValueError('时间事件结构错误')
         for event in p.get('events', []):
-            if not isinstance(event, dict) or set(event) != {'label', 'kind', 'at', 'quote', 'locator'} or any(not isinstance(v, str) or not v.strip() for v in event.values()) or event['kind'] not in ('deadline', 'exam', 'qualification'):
+            if not isinstance(event, dict) or not {'label', 'kind', 'at', 'quote', 'locator'} <= set(event) or set(event) - {'label', 'kind', 'at', 'quote', 'locator', 'source_ids'} or any(not isinstance(event[k], str) or not event[k].strip() for k in ('label', 'kind', 'at', 'quote', 'locator')) or event['kind'] not in ('deadline', 'exam', 'qualification'):
                 raise ValueError('时间事件须有明确类型与原文定位')
             if re.fullmatch(r'\d{4}-\d{2}-\d{2}', event['at']):
                 date.fromisoformat(event['at'])
@@ -69,8 +71,12 @@ def validate(data, units):
         if not isinstance(p['fields'], dict) or not p['fields'] or set(p['fields']) - set(FIELDS):
             raise ValueError('政策字段错误')
         for field in p['fields'].values():
-            if not isinstance(field, dict) or set(field) != {'text', 'quote', 'locator'} or any(not isinstance(v, str) or not v.strip() for v in field.values()):
+            if not isinstance(field, dict) or not {'text', 'quote', 'locator'} <= set(field) or set(field) - {'text', 'quote', 'locator', 'source_ids'} or any(not isinstance(field[k], str) or not field[k].strip() for k in ('text', 'quote', 'locator')):
                 raise ValueError('每项摘要须有原文片段与定位')
+        for part in list(p['fields'].values()) + p.get('events', []):
+            refs = part.get('source_ids', [p['source_id']])
+            if not isinstance(refs, list) or not refs or any(not isinstance(s, str) or s not in hashes or s not in data['sources'] for s in refs) or len(refs) != len(set(refs)):
+                raise ValueError('字段/事件来源须为已登记且本政策已核对的非空唯一来源数组')
 
 
 def validate_checks(checks, sources):

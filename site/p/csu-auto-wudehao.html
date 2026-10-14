@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吴德浩 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=csu-auto-wudehao" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">中南大学 · 自动化学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=csu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>吴德浩 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>自动化科学与技术系</dd>
+    <dt>导师资格</dt><dd>博导、硕导</dd>
+
+    <dt>研究方向</dt><dd>[1]  机器学习与工业大数据解析、[2]  复杂工业过程监测与智能制造、[3]  人工智能驱动的系统建模与先进控制</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm" target="_blank">https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人简介
+吴德浩，中南大学副教授，博士生导师，江西赣州人。2016年本科毕业于北京科技大学自动化专业，同年免试进入清华大学自动化系直接攻博；2022年1月获得清华大学工学博士学位，并进入中南大学自动化学院任教。曾获北京市优秀毕业生、清华大学优秀博士学位论文奖、中南大学优秀班导师等荣誉。入选中国科协青年人才托举工程，获得湖南省优秀青年科学基金项目，是全国高校黄大年式教师团队、工业智能与系统教育部重点实验室骨干成员。
+【学术研究】
+主要研究方向包括：（1）机器学习与工业大数据解析；（2）复杂工业过程监测与智能制造；（3）人工智能驱动的系统建模与先进控制
+。在IEEE Trans. Industrial Informatics、IEEE Trans. Neural Networks and Learning Systems、IEEE Trans. Industrial Electronics、IEEE Trans. Control Systems Technology等国际权威期刊上发表高水平论文20余篇，授权国家发明专利10余项。主持国家自然科学基金面上项目/青年科学基金项目、国家重点研发计划项目子课题、工信部工业大模型重大专项子课题、湖南省优秀青年科学基金项目等国家级/省部级项目，作为技术骨干参与国家自然科学基金重大项目/重大研究计划项目、国家重点研发计划项目等。
+【教学与竞赛】
+主讲本科生专业核心课程《人工智能》《数字图像采集与处理》。担任大学生创新创业项目指导老师；获得中南大学优秀班导师荣誉称号。指导学生在全国大学生计算机设计大赛、全国研究生数学建模竞赛、湖南省研究生人工智能创新大赛中获奖。
+【学术兼职】
+担任《Journal of Central South University》《中国有色金属学报》等期刊青年编委，以及IEEE Trans. Industrial Informatics、IEEE Trans. Control Systems Technology、IEEE/CAA Journal of Automatica Sinica等期刊审稿人。兼任中国自动化学会青年工作委员会委员、中国自动化学会技术过程的故障诊断与安全性专委会委员、中国人工智能学会智能融合专业委员会委员等。
+【招生情况】
+每年有3名左右硕士/博士研究生招生指标，以及6名本科生毕业设计指导指标，欢迎数理基础扎实、对学术研究感兴趣的学生来信交流。
+同时，欢迎本科生进入实验室开展科研训练，可推荐优秀学生到国内外高校继续深造。
+联系方式：wudehao@csu.edu.cn
+通信地址：中南大学岳麓山校区（校本部）民主楼216室
+【代表性论文】
+[1] Output-relevant common trend analysis for KPI-related nonstationary process monitoring with applications to thermal power plants.
+IEEE Transactions on Industrial Informatics
+, 2021, 17(10): 6664-6675.
+[2] Probabilistic stationary subspace analysis for monitoring nonstationary industrial processes with uncertainty.
+IEEE Transactions on Industrial Informatics
+, 2022, 18(5): 3114-3125.
+[3] Performance-driven component selection in the framework of PCA for process monitoring: A dynamic selection approach.
+IEEE Transactions on Control Systems Technology
+, 2022, 30(3): 1171-1185.
+[4] EaLDL: Element-aware lifelong dictionary learning for multimode process monitoring.
+IEEE Transactions on Neural Networks and Learning Systems
+, 2025, 36(2): 3744-3757.
+[5] Nonstationary industrial process monitoring based on stationary projective dictionary learning.
+IEEE Transactions on Control Systems Technology
+, 2023, 31(3): 1122-1132.
+[6] Multimodel selflearning predictive control method with industrial application.
+IEEE Transactions on Industrial Electronics
+, 2024, 71(11): 14842-14852.
+[7] A generalized integrated fuzzy-MPC with optimal input excitation for complex systems with industrial applications.
+IEEE Transactions on Fuzzy Systems
+, 2025, 33(5): 1415-1428.
+[8] One network fits all: A self-organizing fuzzy neural network based explicit predictive control method for multimode process.
+IEEE Transactions on Fuzzy Systems
+, 2024, 32(9): 4876-4889.
+[9]
+Dynamic error-triggered adaptive control method and its industrial applications.
+IEEE Transactions on Automation Science and Engineering
+, 2024, 22: 5038-5050.
+[10] Physical informed sparse learning for robust modeling of distributed parameter system and its industrial applications.
+IEEE Transactions on Automation Science and Engineering
+, 2024, 21(3): 4561-4572.
+【科研项目】
+[1] 国家自然科学基金面上项目，锌冶炼焙烧炉动态耦合反应气氛调控与控制性能监测方法研究
+[2] 国家自然科学基金青年科学基金项目，有色冶金焙烧炉异常工况智能监测与自愈控制方法研究
+[3] 国家重点研发计划项目子课题，有色金属生产过程多相多场先进工艺控制与优化软件
+[4] 工信部工业大模型重大专项子课题，面向生产制造环节的生成决策工业大模型
+[5] 中国五矿集团国家技术策源地科技专项，有色冶金数字化标准体系及前沿技术
+[6] 华为技术有限公司校企合作重点项目，基于业务感知的节能优化算法技术研究</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>吴德浩</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>institutes</td>
+      <td>自动化科学与技术系</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>个人简介
+吴德浩，中南大学副教授，博士生导师，江西赣州人。2016年本科毕业于北京科技大学自动化专业，同年免试进入...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>research_direction_raw</td>
+      <td>[1]  机器学习与工业大数据解析、[2]  复杂工业过程监测与智能制造、[3]  人工智能驱动的系统建模与先进控制</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://faculty.csu.edu.cn/wudehao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "csu-auto-wudehao";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

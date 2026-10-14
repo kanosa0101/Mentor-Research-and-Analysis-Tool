@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>谢永芳 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=csu-auto-xieyongfang" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">中南大学 · 自动化学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=csu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>谢永芳 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>自动化科学与技术系</dd>
+    <dt>导师资格</dt><dd>博导、硕导</dd>
+
+    <dt>研究方向</dt><dd>[1]  复杂工业过程建模与优化控制、[2]  工业人工智能、[3]  工业大模型、[4]  智能控制、[5]  分散鲁棒控制、[6]  故障诊断</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm" target="_blank">http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人简介
+谢永芳，男，博士，中南大学二级教授、博士生导师，
+国家杰出青年基金获得者
+，IEEE高级会员。1993、1996、1999年在中南大学信息科学与工程学院分别获工学学士、硕士、博士学位；2003年6月作为引进人才，在中南大学信息科学与工程学院工作，被聘为副教授，2008年被聘为教授， 2007年入选教育部“新世纪优秀人才支持计划”和湖南省高校青年骨干教师培养对象，2017年获国家自然科学基金委杰出青年基金项目资助。曾为《自动化学报》《控制工程》编委，兼任中国自动化学会环境感知与保护自动化专业委员会副主任、中国自动化学会过程控制专委会常务委员、中国指挥与控制学会智能控制与系统专业委员会常务委员、国家自然科学基金创新研究群体“复杂有色冶金过程控制理论、技术与应用”的骨干成员。
+长期从事工业人工智能方法及应用技术研究，先后主持国家自然科学基金委
+杰出青年科学基金项目、
+人工智能应急管理项目、重点项目、国家科技支撑计划、国家重点研发计划课题、863计划、国家高技术产业化示范工程、高校博士点基金及重大厂校横向合作项目等 23项，研究成果应用效果显著，先后
+获国家科技进步二等奖1项，省部级和行业协会一等奖6项、二等奖5项。在IEEE汇刊、IFAC会刊等期刊发表SCI 收录论文180篇，出版学术专著5部，授权国家发明专利36项。
+指导2名博士研究生获
+中国自动化学会优秀博士学位论文奖
+、2名获
+湖南优秀博士学位论文奖
+、1名获
+湖南省优秀硕士论文奖
+，多名研究生获国家奖学金、校长奖学金、校级奖学金等奖励。
+每年招收博士后1名、博士研究生1名、硕士研究生3名，
+研究课题方向：
+工业
+人工智能方法及应用，工业大模型，机器视觉与感知，
+深度学习（图神经网络、知识图谱、深度卷积网络）
+等。有意向请联系，QQ：82420314，邮箱：yfxie@csu.edu.cn。
+读研、读博有疑惑，论文写不出来，创新点不知道如何找：
+【我和优博有个约会】中南大学谢世文副教授：科学研究与工程项目的融合——我的博士科研感悟_哔哩哔哩_bilibili
+课题组优势：
+1. 研究方向属于前沿技术，研究方向不愁；
+2. 课题组氛围好，杰青课题组，属于院士团队，学业不愁；
+3. 多位毕业生在华为、阿里、讯飞等大型企业（可内推），就业不愁；
+4. 与国内外多所高校合作紧密，深造不愁；
+指导研究生发表学术成果：
+近3年指导博士研究生发表IEEE汇刊论文30余篇、IFAC旗舰期刊论文20余篇，指导硕士研究生发表SCI/EI论文20余篇，一硕士研究生获2023YAC最佳应用
+论文奖，获国际会议IAI最佳论文奖，获
+博士生/硕士生国家奖学金、校长奖学金20人次
+。带领研究生到湖北宜昌、福建厦门、重庆、云南昆明、新疆乌鲁木
+齐、黑龙江哈尔滨、安徽合肥等地参加学术会议。
+2026年5月14日，课题组博士生郑徐瀚宇在中科院top期刊IEEE Transactions on Fuzzy Systems(IF=11.9)上发表高水平论文1篇。（图像识别、分类）
+2026年2月27日，课题组博士生阳挺在中科院top期刊IEEE Transactions on Fuzzy Systems(IF=11.9)上发表高水平论文1篇。（大模型）
+2025年12月20日，课题组博士生郑徐瀚宇在IFAC会刊Control Engineering Practice上发表高水平论文1篇。（图神经网络）
+2025年12月1日，课题组在矿物加工领域国际权威期刊Mineral Engineering上发表高水平论文1篇。（图像处理）
+2025年11月21日，课题组在JCR一区期刊Neurocomputing(IF=6.5)上发表高水平论文1篇。（知识图谱）
+2025年11月10日，课题组在中科院top期刊IEEE Transactions on Cybernetics(IF=10.5)上发表高水平论文1篇。（强化学习）
+2025年10月11日，课题组硕士生喻永佳在绿色矿业领域国内期刊Green and Smart Mining Engineering上发表论文1篇。
+2025年9月30日，课题组硕士生喻永佳和博士生原长清分别获研究生国家奖学金、校长创新奖学金。
+2025年9月2日，课题组博士生原长清在中科院top期刊Engineering Applications of Artificial Intelligence(IF=8)上发表高水平论文1篇。（强化学习）
+2025年8月25日，课题组博士生原长清在SCI期刊Pattern Recognition Letters上发表高水平论文1篇。（强化学习）
+2025年8月15日，课题组博士生钱志强在IEEE汇刊IEEE Transactions on Automation Science and Engineering(IF=6.4)上发表高水平论文1篇。（生成式人工智能的MPC）
+2025年7月3日，课题组博士生吴玉明在中科院top期刊Information Fusion(IF=15.5)上发表高水平论文1篇。（多模态融合）
+2025年5月16日，课题组博士生刘凯祥、曾宁俊顺利完成毕业答辩，并分别入职中科院和湖南高校。
+2025年5月3日，课题组博士生刘婷在中科院top期刊IEEE/CAA Journal of Automatica Sinica(IF=19.2)上发表高水平论文1篇。（多智能体）
+2025年2月26日，课题组博士生刘凯祥在中科院top期刊IEEE Transactions on Information Forensics &amp; Security(IF=8)上发表高水平论文1篇。（工控安全）
+2025年2月16日，组开展了年终总结主题研讨会，并举行温馨学术聚餐，席间分享研究进展、畅谈学科交叉灵感，既深化了学术共识，又凝聚了团队向心力，为攻克下一阶段科研难题积蓄能量！
+2025年1月，在课题组老师的推荐下，毕业生宁梓雄成功申请到美国圣母大学（美国25所新常春藤名校之一‌，2025年U.S. News全美综合排名中位列第18名）就读博士学位资格。
+2024年12月，课题组博士生王杰顺利完成毕业答辩，并入职湖南高校。
+2024年11月，课题组博士生原长清在IFAC会刊Journal of process control上发表高水平论文1篇。（神经网络）
+2024年11月，课题组研究生阳挺、柴展博、周子为、刘婷在第五届湖南省研究生人工智能创新大赛中荣获团队一等奖。
+2024年11月，课题组研究生喻永佳、赵星在第五届湖南省研究生人工智能创新大赛中荣获团队二等奖。
+2024年11月，课题组开展了冬季团建活动，全体师生共同参与趣味桌游、户外聚餐、交流讨论等环节。活动寓教于乐，既缓解科研压力，又增进团队协作，凝心聚力再启科研新征程。
+2024年10月，课题组研究生王杰和张彬同学获国家研究生/博士生奖学金。
+2024年9月，课题组研究生张彬在矿物加工领域国际权威期刊Mineral Engineering上发表高水平论文1篇。（图像处理）
+2024年8月，研究生论文“Identification of Superheat Degree for Aluminum Electrolysis based on Feature-guide Deep Variational Autoencoder”获第六届工业人工智能国际学术会议最佳论文奖。
+2024年7月，课题组博士生原长清在中科院top期刊Information Sciences上发表高水平论文1篇。
+2024年5月，课题组本科生喻永佳在IEEE Sensor Journal期刊上发表高水平论文1篇。
+2024年4月，课题组博士生王杰在IEEE Transactions on Instrumentation and Measurement期刊上发表高水平论文1篇。
+2024年3月，课题组博士生钱志强在中科院top期刊Information Sciences上发表高水平论文1篇。
+2023年12月，课题组论文“Multiobjective-based optimization and control for iron removal process under dynamic environment”获湖南省首届自然科学优秀学术论文二等奖。
+2023年11月，课题组博士生王杰在Journal of Intelligent Manufacturing发表高水平论文1篇。
+2023年10月，课题组博士生王杰在IEEE Transactions on Systems, Man, and Cybernetics: Systems发表高水平论文1篇。
+2023年9月，课题组博士生王杰在IEEE Transactions on Industrial Informatics发表高水平论文1篇。
+2023年9月，课题组研究生孙皓琳在IFAC会刊Journal of process control上发表高水平论文1篇。
+2023年9月，课题组研究生朱烨在IFAC会刊Control Engineering Practice上发表高水平论文1篇。
+2023年8月，课题组研究生李伊君论文“Traceability Analysis of Anomalous Production Indexes based on Probabilistic Grey Number Fuzzy Petri Nets”获第38届中国自动化学会青年学术年会最佳应用论文奖。
+课题组毕业生就业情况：
+2026年
+：3人：华为。1人：东风汽车。1人：江苏银行。</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>谢永芳</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>institutes</td>
+      <td>自动化科学与技术系</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>个人简介
+谢永芳，男，博士，中南大学二级教授、博士生导师，
+国家杰出青年基金获得者
+，IEEE高级会员。1993、...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>research_direction_raw</td>
+      <td>[1]  复杂工业过程建模与优化控制、[2]  工业人工智能、[3]  工业大模型、[4]  智能控制、[5]  分散鲁棒控制、[6]  故障诊断</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/xieyongfang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "csu-auto-xieyongfang";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

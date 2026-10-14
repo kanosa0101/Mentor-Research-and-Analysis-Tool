@@ -91,6 +91,71 @@ class AdmissionsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             rules.validate(data, {'test': {'cs'}})
 
+    def test_optional_labels_and_field_event_sources_preserve_legacy(self):
+        data = fixture()
+        rules.validate(data, {'test': {'cs'}})
+        data['sources']['pre'] = dict(data['sources']['s'], label='预报名通知')
+        p = data['policies'][0]
+        p['review_hashes']['pre'] = 'b' * 64
+        p['fields']['materials'] = {'text': '阶段材料', 'quote': '材料', 'locator': '预报名第二条',
+                                    'source_ids': ['pre']}
+        p['events'] = [{'label': '阶段截止', 'kind': 'deadline', 'at': '2026-09-12',
+                        'quote': '9月12日', 'locator': '预报名第三条', 'source_ids': ['s', 'pre']}]
+        rules.validate(data, {'test': {'cs'}})
+        with_label = rules.fingerprint(b'<div class="body">policy</div>', data['sources']['pre'])
+        without_label = rules.fingerprint(b'<div class="body">policy</div>', data['sources']['s'])
+        self.assertEqual(with_label, without_label)
+
+    def test_source_labels_reject_empty_nonstring_and_extra_keys(self):
+        for label in ['', '  ', None, 7]:
+            with self.subTest(label=label):
+                data = fixture()
+                data['sources']['s']['label'] = label
+                with self.assertRaisesRegex(ValueError, '来源名称'):
+                    rules.validate(data, {'test': {'cs'}})
+        data = fixture()
+        data['sources']['s']['name'] = '非约定字段'
+        with self.assertRaises(ValueError):
+            rules.validate(data, {'test': {'cs'}})
+
+    def test_field_event_sources_reject_invalid_or_unreviewed_references(self):
+        invalid = [[], ['s', 's'], ['missing'], ['pre'], [''], [7], [None], 's', None, {}]
+        for event in [False, True]:
+            for source_ids in invalid:
+                with self.subTest(event=event, source_ids=source_ids):
+                    data = fixture()
+                    data['sources']['pre'] = dict(data['sources']['s'])
+                    p = data['policies'][0]
+                    target = p['fields']['eligibility']
+                    if event:
+                        target = {'label': '报名截止', 'kind': 'deadline', 'at': '2026-09-12',
+                                  'quote': '9月12日', 'locator': '第三条'}
+                        p['events'] = [target]
+                    target['source_ids'] = source_ids
+                    with self.assertRaisesRegex(ValueError, '字段/事件来源'):
+                        rules.validate(data, {'test': {'cs'}})
+
+    def test_valid_field_and_event_source_references_without_labels(self):
+        for event in [False, True]:
+            with self.subTest(event=event):
+                data = fixture()
+                p = data['policies'][0]
+                target = p['fields']['eligibility']
+                if event:
+                    target = {'label': '报名截止', 'kind': 'deadline', 'at': '2026-09-12',
+                              'quote': '9月12日', 'locator': '第三条'}
+                    p['events'] = [target]
+                target['source_ids'] = ['s']
+                rules.validate(data, {'test': {'cs'}})
+
+    def test_reviewed_source_must_also_be_registered(self):
+        data = fixture()
+        p = data['policies'][0]
+        p['review_hashes']['missing'] = 'b' * 64
+        p['fields']['eligibility']['source_ids'] = ['missing']
+        with self.assertRaises(ValueError):
+            rules.validate(data, {'test': {'cs'}})
+
 
 if __name__ == '__main__':
     unittest.main()

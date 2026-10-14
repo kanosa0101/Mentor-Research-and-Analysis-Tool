@@ -14,5 +14,20 @@
     if(!Number.isFinite(age(p.reviewed_at))||age(p.reviewed_at)<0||age(p.reviewed_at)>30)return {state:'review',label:'人工摘要超过30天或日期异常，需复核'};
     return {state:'checked',label:'近期检查与核对版本一致；申请前仍需查看官网'};
   }
-  const api={select,quality,eventState};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
+  function checklist(data,prefs,today=new Date().toLocaleDateString('sv-SE'),now=new Date().toISOString()){
+    const required=['school','dept','year','degree','route','track'],missing=required.filter(key=>!prefs[key]);
+    const valid=/^\d{4}$/.test(String(prefs.year))&&Number(prefs.year)>=2000&&Number(prefs.year)<=2100&&
+      ['master','phd'].includes(prefs.degree)&&['recommend','exam','assessment'].includes(prefs.route)&&
+      ['ordinary','special'].includes(prefs.track)&&data.units.some(u=>u.school===prefs.school&&u.dept===prefs.dept);
+    if(missing.length||!valid)return {ready:false,missing,policies:[],items:[],events:[]};
+    const isProgram=p=>p.level==='program'||p.track==='special'&&!!p.program;
+    const policies=select(data.policies,prefs).filter(p=>!isProgram(p)||!prefs.program||programKey(p)===prefs.program);
+    const rows=policies.map(policy=>({policy,quality:quality(policy,data.checks,today),conditional:isProgram(policy)&&!prefs.program}));
+    const items=['eligibility','materials','exams','timeline','tuition','funding','quota','contact'].map(key=>({key,rows:rows.map(row=>({...row,field:row.policy.fields[key]}))}));
+    const events=rows.flatMap(row=>(row.policy.events||[]).map(event=>({...row,event,state:eventState(event,now)})));
+    return {ready:true,missing:[],policies,items,events};
+  }
+  function programKey(p){return (p.program_code||'')+'|'+(p.program||'');}
+  function sourceReferences(policy,item,sources){return (item?.source_ids||[policy.source_id]).map(id=>{const source=sources[id];return {...source,id,label:source.label||(source.format==='pdf'?'PDF原文':'官方原文')};});}
+  const api={select,quality,eventState,checklist,programKey,sourceReferences};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
 })(typeof window!=='undefined'?window:globalThis);

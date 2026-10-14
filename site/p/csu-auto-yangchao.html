@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>杨超 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=csu-auto-yangchao" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">中南大学 · 自动化学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=csu&amp;dept=auto">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>杨超 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>自动化科学与技术系</dd>
+    <dt>导师资格</dt><dd>硕导</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="http://faculty.csu.edu.cn/yangchao/zh_CN/index.htm" target="_blank">http://faculty.csu.edu.cn/yangchao/zh_CN/index.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人简介
+杨超，湖南株洲人，中共党员，工学博士、副教授、硕士研究生导师，中国科协青年人才托举工程入选者，&#34;轨道交通节能控制与安全监测&#34;省重点实验室固定成员，曾获湖南省优秀博士学位论文、中国自动化学会优秀博士学位论文、全国&#34;工程硕士实习实践优秀成果获得者&#34;和教育部科学研究成果奖、
+中国自动化学会技术进步奖
+等荣誉和奖励。
+主要从事轨道交通车辆车载装备/系统故障诊断与优化调控研究，在
+IEEE Trans. Transport. Electrific
+.、
+IEEE Trans. Intell. Transp. Syst.
+、
+IEEE Trans. Power Electron.
+、
+IEEE Trans. Ind. Electron
+.、
+ISA Trans.
+、
+《自动化学报》、《中国科学：信息科学》等自动化控制、交通电气化领域的顶级刊物上发表学术论文
+23
+篇；已申请国家发明专利
+12
+项，其中
+8
+项专利获得授权；参与制定团体标准
+1
+项，企业标准2项。受邀担任教育部学位中心论文评审专家和
+IEEE Trans. Power Electron.
+、
+IEEE Trans. Ind. Informat.
+、
+IEEE
+Trans.
+Neural Netw. Learn. Syst.
+等十余个国际期刊的审稿人。
+目前，主持国家自然科学基金面上项目（
+2026-2029
+年
+），青年项目和湖南自然科学基金青年项目各
+1
+项
+（
+2023-2025
+年）
+，作为主要成员参与国家自然科学基金重点项目
+（
+2023-2027
+年）
+、面上项目
+（
+2022-2025
+年）
+和“十四五”国家重点研发计划项目任务课题
+（
+2022-2026
+年）
+等。曾主持湖南省研究生科研创新（重点）项目
+1
+项，作为项目技术骨干参与了国家自然科学基金重大项目、面上项目，装备预研教育部联合基金一般项目等科研项目
+6
+项。
+拥有高速列车半实物平台、深度学习服务器、动车组车辆TEDS系统、列车混合储能系统实验台等一批实验仪器设备，涉及多物理场建模、多模态融合感知、深度学习、运动控制系统服役性能优化、信息域攻防、嵌入式开发等内容学习，将为学生从事科研工作提供较全面、较好实验条件，每年可招收2-
+3
+名硕士生（欢迎士兵计划、少数民族骨干计划），
+6
+名本科生，欢迎有意从事相关研究工作的同学加入课题组。
+***
+欢迎2027年保研生和考研生咨询联系（chaoyang@csu.edu.cn），
+欢迎士兵计划、少数民族骨干计划考生
+*
+**
+= 站点收藏 =
+[1] ORCID: https://orcid.org/0000-0001-7648-6738
+[2] 研究之门
+Research Gate:
+https://www.researchgate.net/profile/Yang-Chao-18
+[3]
+采访报道:
+https://www.bilibili.com/video/av896225680/?vd_source=900d69d48ae3dce19cc935cae6c88959
+（中南大学
+，2022年
+）
+https://www.bil
+i
+bili.com/video/BV1nv4y1K7df/?spm_id_from=333.999.0.0
+（中南大学
+，2022年
+）
+https://soa.csu.edu.cn/info/1282/8394.htm
+（中南大学，2024年）
+http://www.caa.org.cn/article/198/3728.html
+（中国自动化学会，2023年）
+https://
+www.bilibili.com/video/BV1wV4y1C7Ym
+（中国自动化学会，2023年）
+https://www.bilibili.com/video/BV1Qx4y147t7/?d_source=900d69d48ae3dce19cc935cae6c88959
+（中国自动化学会，2024年）
+https://cjyjjh.swjtu.edu.cn/info/1016/1035.htm
+（
+曹建猷铁道牵引电气化与自动化科技教育基金，2019年
+）
+= 代表性工作 =
+故障建模
+[1]
+MLD-based
+Thermal Behavior Analysis
+of Traction Converters under Faulty Conditions [J].
+IEEE Transactions on Transportation Electrification
+, 2021, 7(3): 1058-1073.
+https://ieeexplore.ieee.org/document/9310303/
+[2]
+Modeling Analysis and Suppression of Demagnetization
+for MTPA-Driven Permanent Magnet Motors with Distributed Windings[J].
+IEEE Transactions on Power Electronics
+, 2024, 39(8): 9430-9445.
+https://ieeexplore.ieee.org/document/10518117
+[3]
+基于有限集模型预测的
+电机模拟器
+故障电流跟踪方法
+[J].
+中南大学学报(自然科学版)
+, 2019,50(5):1098-1104.
+https://www.cnki.com.cn/Article/CJFDTotal-ZNGD201905012.htm
+[4]
+Real-Time Energy Management-based on
+Aging-and Temperature-Conscious
+MPC for Hybrid Electric Trains[J].
+Journal of Energy Storage
+, 2025, 118: 116277.
+https://www.sciencedirect.com/science/article/abs/pii/S2352152X25009909
+[5]
+ZSG-ADR and GSQA: An
+Unseen Fault Data Generation
+and Evaluation Methods for the Traction Motors[J].
+Mechanical Systems and Signal Processing
+, 2024, 210: 111155.
+https://www.sciencedirect.com/science/article/abs/pii/S0888327024000530
+故障诊断
+[1]
+Voltage Difference Residual-based
+Open-Circuit Fault Diagnosis
+Approach for Three-Level Converters in Electric Traction Systems[J].
+IEEE Transactions on Power Electronics
+, 2020,35(3):3012-3028.
+https://ieeexplore.ieee.org/document/8744398/
+[2] A Fractional Steepest Ascent Morlet Wavelet Transform-based
+Transient Fault Diagnosis
+Method for Traction Drive Control System[J].
+IEEE Transactions on Transportation Electrification
+, 2021, 7(1): 147-160.
+https://ieeexplore.ieee.org/document/9091907/
+[3]
+A Data-Driven
+Ground Fault Detection and Isolation
+Method for Main Circuit in Railway Electrical Traction System[J].
+ISA Transactions
+, 2019, 87(4): 264-271.
+https://www.sciencedirect.com/science/article/abs/pii/S0019057818304737?via%3Dihub
+[4] Dynamic Hybrid Observer-Based
+Early Slipping Fault Detection
+for High-Speed Train Wheelsets[J].
+Control Engineering Practice
+, 2024, 142: 105736.
+https://www.sciencedirect.com/science/article/abs/pii/S0967066123003052
+[5] A Novel Fault Diagnosis Method for
+Early Faults
+of PMSMs under
+Multiple Operating Conditions
+[J].
+ISA Transactions
+, 2022, 130: 463-476.
+https://www.sciencedirect.com/science/article/abs/pii/S0019057822001835
+[6] Adversarial Domain Adaptation Network with MixMatch for
+Incipient Fault Diagnosis
+of PMSM under
+Multiple Working Conditions
+[J].
+Knowledge-Based Systems
+, 2024, 284: 111331.
+https://www.sciencedirect.com/science/article/abs/pii/S0950705123010791
+延寿控制
+[1] A Thermal Distribution Estimation-Based
+Thermal Stress Tolerant Control
+Method for Traction Inverters Under Fault Conditions[J].
+IEEE Transactions on Intelligent Transportation Systems
+, 2026, 27(9): 10772-10782.
+https://ieeexplore.ieee.org/document/11503225
+[2]  Electrothermal Performance-based FCS-MPC for
+Dynamic Thermal Balance Control
+of Traction Converters[J].
+IEEE Transactions on Transportation Electrification
+, 2022, 8(1):277-287
+.
+https://ieeexplore.ieee.org/document/9416696
+[3]
+Variable Domain Hybrid Decision- Based
+Friction Optimization Control
+for Train Multi-Wheelsets [J].
+Tribology International
+, 2024, 195: 109638.
+https://www.sciencedirect.com/science/article/abs/pii/S0301679X24003906?via%3Dihub
+[4]  Optimized FCS-MPCC Based on
+Disturbance Feedback Rejection
+for IPMSMs Under Demagnetization Fault in High-Speed Trains[J].
+Control Engineering Practice
+, 2023, 141: 105670.
+https://www.sciencedirect.com/science/article/abs/pii/S0967066123002393?via%3Dihub
+[5]
+计及寿命退化
+的列车车载
+混合储能系统协调功率分配
+[J].
+铁道科学与工程学报
+, 2026, 1-12.
+http://jrse.csu.edu.cn/thesisDetails#10.19713/j.cnki.43-1423/u.T20260182&amp;lang=zh
+故障测试
+[1]
+A Fault-Injection Strategy
+for Traction Drive Control Systems[J].
+IEEE Transactions on Industrial Electronics
+, 2017, 64(8): 6482-6491.
+https://ieeexplore.ieee.org/document/7864338/
+[2]
+高速列车牵引传动系
+统
+故障测试与验证仿真平台
+研
+究
+[J].
+自动化学报
+, 2019, 45(12):2218-2232.
+https://www.aas.net.cn/cn/article/doi/10.16383/j.aas.c190395
+[3]
+高速列车信息控制系
+统
+故障注入
+研究
+进展
+[J].
+中国科学
+:
+信息科学
+, 2020,50(4):465-482.
+https://www.sciengine.com/SSI/doi/10.1360/SSI-2019-0225</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>杨超</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/yangchao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/yangchao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>institutes</td>
+      <td>自动化科学与技术系</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>个人简介
+杨超，湖南株洲人，中共党员，工学博士、副教授、硕士研究生导师，中国科协青年人才托举工程入选者，&#34;轨道交通...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.csu.edu.cn/yangchao/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "csu-auto-yangchao";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

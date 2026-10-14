@@ -140,6 +140,72 @@ class MaintenanceTests(unittest.TestCase):
         self.crawl._merge(self.prof, 'email', 'new@example.org', Provenance(source='https://example.org', fetched_at='2026-10-13'))
         self.assertEqual(self.prof.email, 'manual@example.org')
 
+    def test_related_identity_change_withdraws_only_automatic_detail_values(self):
+        cfg = self.crawl.load_cfg('csu', 'auto')
+        hook = self.crawl.load_hook(cfg)
+        url = 'https://faculty.csu.edu.cn/zhangsan/zh_CN/index.htm'
+        cfg['_roster_names'] = {url: '张三'}
+        detail = Provenance(source=url, fetched_at='2026-09-06')
+        roster = Provenance(source=cfg['list']['urls'][0], fetched_at='2026-09-06')
+        manual = Provenance(origin='manual', source=url, fetched_at='2026-09-06')
+        other = Provenance(source='https://example.org/trusted', fetched_at='2026-09-06')
+        prof = Professor(slug='zhangsan', name='张三', school='csu', dept='auto', detail_url=url,
+                         status='enriched', title='教授', email='other@csu.edu.cn', bio_raw='李四的简介',
+                         research_direction_raw='李四的方向', phone='13800000000', supervisor='硕导',
+                         homepage='https://example.org/home', institutes=['人工智能系'],
+                         provenance={'name': roster, 'title': detail, 'email': detail, 'bio_raw': detail,
+                                     'research_direction_raw': detail, 'phone': manual, 'supervisor': roster,
+                                     'homepage': other, 'institutes': roster})
+        store.save_professor(prof)
+        html = '<title>中南大学 李四</title><div class="name">李四</div><div class="jbqk">职称：教授<p>邮箱：other@csu.edu.cn</p></div>'
+        with patch.object(fetch, 'fetch_text', return_value=(html, {'fetched_at': '2026-10-14'}, False)):
+            stats = self.crawl.phase_enrich(cfg, hook, False)
+        saved = store.load_all('csu', 'auto')['zhangsan']
+        for field in ('title', 'email', 'bio_raw', 'research_direction_raw'):
+            self.assertIsNone(getattr(saved, field))
+            self.assertNotIn(field, saved.provenance)
+        self.assertEqual(saved.status, 'roster')
+        self.assertEqual(saved.phone, prof.phone)
+        self.assertEqual(saved.supervisor, prof.supervisor)
+        self.assertEqual(saved.homepage, prof.homepage)
+        self.assertEqual(saved.institutes, prof.institutes)
+        self.assertEqual(saved.name, '张三')
+        self.assertEqual(stats['failed'], 1)
+        history = [json.loads(line) for line in (self.data / 'changes/csu-auto.jsonl').read_text(encoding='utf-8').splitlines()]
+        self.assertEqual({x['field'] for x in history}, {'title', 'email', 'bio_raw', 'research_direction_raw'})
+        self.assertTrue(all(x['reason'] == 'detail_identity_mismatch' and x['new'] is None for x in history))
+        self.assertEqual(next(x for x in history if x['field'] == 'email')['old'], 'other@csu.edu.cn')
+        self.assertEqual(next(x for x in history if x['field'] == 'email')['old_provenance']['source'], url)
+        build = script('build_site')
+        public = build.list_record(saved.model_dump(mode='json', exclude_none=True))
+        self.assertNotIn('email', public)
+        self.assertNotIn('title', public)
+        self.assertNotIn('other@csu.edu.cn', public['search_text'])
+        self.assertNotIn('李四', build.search_record(saved.model_dump(mode='json')))
+        self.assertFalse(build.compare_record(saved.model_dump(mode='json'))['bio_excerpt'])
+
+    def test_related_missing_identity_and_network_failure_preserve_history(self):
+        cfg = self.crawl.load_cfg('csu', 'auto')
+        hook = self.crawl.load_hook(cfg)
+        url = 'https://faculty.csu.edu.cn/zhangsan/zh_CN/index.htm'
+        cfg['_roster_names'] = {url: '张三'}
+        for failure in ('missing_identity', 'generic_identity', 'timeout'):
+            with self.subTest(failure=failure):
+                prof = Professor(slug='zhangsan', name='张三', school='csu', dept='auto', detail_url=url,
+                                 status='enriched', title='教授', email='old@csu.edu.cn', bio_raw='张三的简介',
+                                 provenance={f: Provenance(source=url, fetched_at='2026-09-06')
+                                             for f in ('title', 'email', 'bio_raw')})
+                store.save_professor(prof)
+                html = '<title>Home</title><div>模板没有姓名</div>' if failure == 'missing_identity' else '<title>中南大学 个人信息</title><div class="name">个人信息</div>'
+                kwargs = {'side_effect': TimeoutError('timeout')} if failure == 'timeout' else {
+                    'return_value': (html, {'fetched_at': '2026-10-14'}, False)}
+                with patch.object(fetch, 'fetch_text', **kwargs):
+                    stats = self.crawl.phase_enrich(cfg, hook, False)
+                saved = store.load_all('csu', 'auto')['zhangsan']
+                self.assertEqual(saved.model_dump(), prof.model_dump())
+                self.assertEqual(stats['failed'], 1)
+                self.assertFalse((self.data / 'changes/csu-auto.jsonl').exists())
+
     def test_manual_institutes_survive_roster_and_detail(self):
         self.prof.institutes = ['人工指定研究所']
         self.prof.provenance['institutes'] = Provenance(origin='manual', source='https://example.org', fetched_at='2026-09-06')

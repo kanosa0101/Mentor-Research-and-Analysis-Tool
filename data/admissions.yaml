@@ -36,6 +36,31 @@ sources:
     url: https://sais.sjtu.edu.cn/yjs_zsgz/1838.html
     format: html
     selector: .xw-cont .txt
+  hust_school_exam_pdf_v7:
+    label: 华科2027硕士招生简章PDF
+    url: https://gszs.hust.edu.cn/__local/9/3F/7D/BB7EE6853FE6E5C6FEBF8620BB7_9D410FAF_497F6.pdf
+    format: pdf
+    selector: ''
+  hust_school_exam_page_v7:
+    label: 华科2027硕士招生简章发布页
+    url: https://gszs.hust.edu.cn/info/1106/4160.htm
+    format: html
+    selector: .v_news_content
+  whu_cyber_recommend_pdf_v7:
+    label: 武大网安2027正式接收细则PDF
+    url: https://cse.whu.edu.cn/__local/7/61/69/C6170A6B13FC436CF387D871291_5E3B52F3_1F664.pdf
+    format: pdf
+    selector: ''
+  whu_cyber_prerecommend_pdf_v7:
+    label: 武大网安2027预报名通知PDF
+    url: https://cse.whu.edu.cn/__local/5/25/DE/51582978060F518921AD789313B_5C9D8C5A_1ECBA.pdf
+    format: pdf
+    selector: ''
+  seu_auto_elite_pdf_v7:
+    label: 东南2027级菁英班选拔方案PDF
+    url: https://automation.seu.edu.cn/_upload/article/files/35/fb/9e9a4b5f44b38208253d26a845e3/0dce9242-75ff-4998-bc7c-b643c84be95f.pdf
+    format: pdf
+    selector: ''
 policies:
 - id: tsinghua-2027-master-exam
   school: tsinghua
@@ -315,3 +340,237 @@ policies:
     at: '2026-09-12T09:00:00+08:00'
     quote: 9月12日
     locator: 第三节：上午9:00
+- id: hust-2027-master-exam
+  school: hust
+  dept: ''
+  level: school
+  title: 华科2027普通硕士统考：学校通用规则
+  year: 2027
+  degree: master
+  route: exam
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-14'
+  source_id: hust_school_exam_pdf_v7
+  review_hashes:
+    hust_school_exam_pdf_v7: a00b540f18e012032503d719e2541c1cb1e2600bf93965a1de04d7ff71369f1f
+    hust_school_exam_page_v7: ce5a0c0370a3f09d81912a140d85501bfbb2c5f3dc407b79c213b8232019f9a3
+  fields:
+    eligibility:
+      text: 普通统考学业条件包括应届本科、本科毕业、符合附加条件的同等学力及已获硕博学历或学位等；应届生须在2027新生入学报到前取得规定学历。专科毕业满2年或本科结业者按同等学力报考还须有8门以上本科主干课程成绩（含外语，理工科还含数学），不能跨专业，且须核对目录是否接收；在读研究生须事先获培养单位同意。健康、诚信等完整条件及特殊专业附加要求见原文，不能以此替代网安专业目录准入或专项规则。
+      quote: 以同等学力身份报考
+      locator: PDF第2—3页，第十三—十五条
+      source_ids:
+      - hust_school_exam_pdf_v7
+    materials:
+      text: 报名须如实提供材料并配合学历/学籍核验；未通过网上校验者须按期限完成核验。考试须准考证及有效居民身份证。4202报考点的认证报告、户籍/居住/社保等材料只适用于其对应考生类别，完整清单仍须核对实际报考点公告。
+      quote: 有效居民身份证
+      locator: PDF第3—5页，第十八、二十、二十一条
+      source_ids:
+      - hust_school_exam_pdf_v7
+    exams:
+      text: 初试均为笔试，具体科目须查2027专业目录，本摘要没有网安科目清单。复试差额比例一般不低于120%，复试总成绩低于60分不录取；同等学力复试另加试两门本科主干课程且加试不合格不录取，思想政治与品德考核不合格也不录取。
+      quote: 初试方式均为笔试
+      locator: PDF第5页，第二十一—二十三条
+      source_ids:
+      - hust_school_exam_pdf_v7
+    timeline:
+      text: 网上报名2026年10月15—24日，每日9:00—22:00，预报名10月9—12日；初试12月19—20日，北京时间。复试一般3月下旬，具体安排另发院系细则，不能据此补出网安复试日期。已被录取的推免生不得再报名当年全国硕士招生考试。
+      quote: 每日 9:00—22:00
+      locator: PDF第4页第十九条、第5页第二十一—二十二条、第3页第十六条
+      source_ids:
+      - hust_school_exam_pdf_v7
+    contact:
+      text: 公开政策、院系细则与报名公告通过华科研招网及院系网站发布；网报入口为https://yz.chsi.com.cn。此项是招生与报名入口，未核验学院咨询电话或导师联系方式。
+      quote: 招生信息公开网址
+      locator: PDF第3页第十八条、第7页第三十二条；官网简章发布页
+      source_ids:
+      - hust_school_exam_pdf_v7
+      - hust_school_exam_page_v7
+  track: ordinary
+  events:
+  - label: 普通硕士统考网上报名截止
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 每日 9:00—22:00
+    locator: PDF第4页第十九条：10月15日至10月24日
+    source_ids: &id001
+    - hust_school_exam_pdf_v7
+  - label: 普通硕士统考初试首日
+    kind: exam
+    at: '2026-12-19'
+    quote: 2026 年 12 月 19 日至 12 月 20 日
+    locator: PDF第5页第二十一条第（二）项：北京时间，未补个人场次时刻
+    source_ids: *id001
+- id: whu-cyber-2027-master-recommend
+  school: whu
+  dept: cyber
+  level: dept
+  title: 武大网安2027普通硕士推免：正式接收及预报名阶段
+  year: 2027
+  degree: master
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-09-19'
+  reviewed_at: '2026-10-14'
+  source_id: whu_cyber_recommend_pdf_v7
+  review_hashes:
+    whu_cyber_recommend_pdf_v7: 2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592
+    whu_cyber_prerecommend_pdf_v7: d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f
+  fields:
+    eligibility:
+      text: 正式接收细则要求取得所在学校推免资格、身心健康，允许跨学科；普通硕士专业列083900网络空间安全、0301J1网络法学、085412网络与信息安全。9月3日预报名通知另列高水平/重点大学或本科所在学科评估靠前、成绩名列前茅、CET6≥425或IELTS≥6.5或TOEFL≥80、无处分、入学前取得本科毕业及学位证等阶段条件，完整条款须分别核对。校设卓工与校企联培国家专项不归入本普通上下文。
+      quote: 允许接收跨学科
+      locator: 正式细则PDF第1页第一、二节；预报名PDF第1页第二节
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+      - whu_cyber_prerecommend_pdf_v7
+    materials:
+      text: 预报名阶段上传成绩单及盖章推免综合排名、英语成绩；奖项和代表性论文/原创成果有则提交。提交论文须申请人第一作者，期刊论文附封面及首页，CCF类别须注明，SCI/EI须注明类别并附检索报告；有科研成果者另填问卷，网络法学申请者无需填写。此为预报名阶段清单，不代表正式接收及报到的全部材料。
+      quote: 报考网络法学的申请人无需填写
+      locator: 预报名PDF第1—2页第三节（一）—（三）
+      source_ids:
+      - whu_cyber_prerecommend_pdf_v7
+    exams:
+      text: 正式复试含素质评估及综合面试；综合面试为专业英语30%+专业面试70%，复试综合成绩为素质评估30%+综合面试70%。心理测评作为录取参考；复试综合成绩不及格或思想政治与品德考核不合格不录取。
+      quote: 复试综合成绩不及格者不能录取
+      locator: 正式细则PDF第2—3页第四节
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+    timeline:
+      text: 预报名阶段只选一个专业志愿（含方向），提交后不可修改，多志愿以第一志愿初审；该轮9月10日12:00截止，计划线下考核9月16—19日，实际安排群内通知；这一历史轮次不代表全年接收已结束。正式系统9月21日9:00起报名，已通过学院预报名者须9月21日14:00前报名。达到预期接收目标即结束接收；待录取通知须按其回应时限确认，逾期视为放弃，接受一个待录取后不能再接受其他待录取。
+      quote: 已通过我院推免预报名考生
+      locator: 正式细则PDF第2页第三节；预报名PDF第1—3页第三节
+      source_ids:
+      - whu_cyber_prerecommend_pdf_v7
+      - whu_cyber_recommend_pdf_v7
+    contact:
+      text: 学院招生咨询：027-68758028（工作时间，刘老师）。预报名入口为https://yz.whu.edu.cn，正式接收须完成全国推免服务系统报名与通知确认；这是招生咨询岗位联系方式，不是已核验教授联系方式。
+      quote: 咨询电话
+      locator: 正式细则PDF第3页第六节；预报名PDF第1页第三节、末页联系人
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+      - whu_cyber_prerecommend_pdf_v7
+    tuition:
+      text: 预报名通知提示2027专业型硕士学费将调整，具体以招生简章公布为准；本轮未核验最终金额，也未将专项3年学制套用普通专业。
+      quote: 学费标准将进行调整
+      locator: 预报名PDF第3页第五节；正式细则PDF第1页专项学制说明
+      source_ids:
+      - whu_cyber_prerecommend_pdf_v7
+      - whu_cyber_recommend_pdf_v7
+  track: ordinary
+  events:
+  - label: 预报名阶段截止（历史轮次）
+    kind: deadline
+    at: '2026-09-10T12:00:00+08:00'
+    quote: 9 月 10 日中午 12:00
+    locator: 预报名PDF第1页第三节（一）第1项，非全年接收截止
+    source_ids:
+    - whu_cyber_prerecommend_pdf_v7
+  - label: 已通过学院预报名者的正式系统报名截止
+    kind: deadline
+    at: '2026-09-21T14:00:00+08:00'
+    quote: 9 月 21 日 14:00 前报名
+    locator: 正式细则PDF第2页第三节（一）第1项，仅该考生类别
+    source_ids:
+    - whu_cyber_recommend_pdf_v7
+- id: whu-cyber-2027-083900-phd-recommend
+  school: whu
+  dept: cyber
+  level: program
+  title: 武大网安2027网络空间安全普通直博推免
+  year: 2027
+  degree: phd
+  route: recommend
+  program: 网络空间安全
+  program_code: 083900
+  published_at: '2026-09-19'
+  reviewed_at: '2026-10-14'
+  source_id: whu_cyber_recommend_pdf_v7
+  review_hashes:
+    whu_cyber_recommend_pdf_v7: 2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592
+    whu_cyber_prerecommend_pdf_v7: d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f
+  fields:
+    eligibility:
+      text: 正式细则列网络空间安全083900学术学位直博，要求推免资格、身心健康，允许跨学科；直博外语另须达到学校博士招生章程普通招考外语免试条件，本轮未核验该章程阈值。9月3日预报名通知的学校背景、英语CET6≥425或IELTS≥6.5或TOEFL≥80、成绩、无处分及毕业学位条件须按阶段核对，不能用预报名英语线替代直博最终条件。网络法学不接收直博；085412直博仅校企联培国家专项，排除在本上下文外。
+      quote: 普通招考外语免试
+      locator: 正式细则PDF第1页第一、二节；预报名PDF第1页第一、二节
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+      - whu_cyber_prerecommend_pdf_v7
+    materials:
+      text: 预报名阶段需成绩单及盖章推免综合排名、英语证明；奖项、论文/原创成果有则提交。有科研成果者须填通知问卷；论文须第一作者，期刊附封面和首页，CCF类别注明，SCI/EI附检索报告。本轮未核验直博最终专家推荐信、研究计划等完整材料要求，不能照搬硕士或其他学校清单。
+      quote: 申报人为论文第一作者
+      locator: 预报名PDF第1—2页第三节（一）—（三）
+      source_ids:
+      - whu_cyber_prerecommend_pdf_v7
+    exams:
+      text: 正式复试含素质评估与综合面试（专业英语30%、专业面试70%），综合成绩为素质评估30%+综合面试70%，考察科研计划等，心理测评作为录取参考；综合成绩不及格或思想政治与品德不合格不录取。本上下文为本科推免直博，不适用博士申请考核渠道。
+      quote: 攻读硕士（博士）学位的目的与科研计划
+      locator: 正式细则PDF第2—3页第四节
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+    timeline:
+      text: 预报名阶段9月10日12:00截止，计划9月16—19日线下考核，实际具体安排另通知；正式系统9月21日9:00开始，已通过学院预报名者9月21日14:00前报名。达到预期接收目标即结束，通知须按各自回应时限确认；历史预报名截止不等于全年直博接收截止。
+      quote: 达到预期接收目标
+      locator: 正式细则PDF第2页第三节；预报名PDF第1—3页第三节
+      source_ids:
+      - whu_cyber_prerecommend_pdf_v7
+      - whu_cyber_recommend_pdf_v7
+    contact:
+      text: 学院招生咨询027-68758028（工作时间，刘老师）；预报名经https://yz.whu.edu.cn，正式接收仍须全国推免服务系统报名与通知确认。此电话不作为导师个人联系方式。
+      quote: 咨询电话
+      locator: 正式细则PDF第3页第六节；预报名PDF第1页第三节
+      source_ids:
+      - whu_cyber_recommend_pdf_v7
+      - whu_cyber_prerecommend_pdf_v7
+  track: ordinary
+  events:
+  - label: 直博预报名阶段截止（历史轮次）
+    kind: deadline
+    at: '2026-09-10T12:00:00+08:00'
+    quote: 9 月 10 日中午 12:00
+    locator: 预报名PDF第1页第三节（一）第1项，非全年直博接收截止
+    source_ids:
+    - whu_cyber_prerecommend_pdf_v7
+  - label: 已通过学院预报名直博者的正式系统报名截止
+    kind: deadline
+    at: '2026-09-21T14:00:00+08:00'
+    quote: 9 月 21 日 14:00 前报名
+    locator: 正式细则PDF第2页第三节（一）第1项，仅该考生类别
+    source_ids:
+    - whu_cyber_recommend_pdf_v7
+- id: seu-auto-2027-master-elite-recommend
+  school: seu
+  dept: auto
+  level: program
+  title: 东南自动化2027创新创业硕士研究生菁英班推免选拔考核
+  year: 2027
+  degree: master
+  route: recommend
+  program: 创新创业硕士研究生菁英班
+  program_code: ''
+  published_at: '2026-08-13'
+  reviewed_at: '2026-10-14'
+  source_id: seu_auto_elite_pdf_v7
+  review_hashes:
+    seu_auto_elite_pdf_v7: 9b0a34530dd96d7f651a50b83263652c828fdf35cd3f7c69a6463bc6f624ad32
+    seu_auto_recommend: aab5975fc34748766f0f17c461516214d0a1c80b03816a164e617bba0995b998
+  fields:
+    exams:
+      text: 本项目对入选者进行2天项目制考核，3—4人自由组队，基于机器人、相机等搭建抓取系统，完成项目实施和项目汇报，每人准备5分钟以内的项目总结PPT。本源只说明菁英班选拔考核，报名资格、完整申请材料、招生专业代码及录取名额未核验，不能套用到普通硕士或工程硕博士培养改革专项。
+      quote: 项目制
+      locator: 选拔方案PDF第1页第1节；接收推免报名通知进度说明第2、3项确认项目渠道
+      source_ids:
+      - seu_auto_elite_pdf_v7
+      - seu_auto_recommend
+    timeline:
+      text: 方案列8月22日8:00—9:00报到、8月22—23日考核，地点李文正楼北405；该日程表未明写公历年份，未补成时间事件。2027入学年度由方案标题明示，不能把8月活动当作2027年活动。报名及确认时限仍须查看对应通知。
+      quote: 时间安排
+      locator: 选拔方案PDF第2页第2节；发布页发布时间2026-08-13
+      source_ids:
+      - seu_auto_elite_pdf_v7
+  track: special
+  events: []

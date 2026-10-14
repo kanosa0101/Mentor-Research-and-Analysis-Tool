@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>邰若晨 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+</style>
+<link rel="stylesheet" href="../ui.css"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >条件找导师</a>
+
+<a href="../index.html" >全量导师</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../admissions.html" >学校与政策</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html?mentor=hust-aia-tairuochen" >我的申请</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</nav>
+<span class="crumb">华中科技大学 · 人工智能与自动化学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=hust&amp;dept=aia">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap">
+<div class="card">
+
+  <h2>邰若晨 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">职称：官网未提供</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>官网未提供</dd>
+    <dt>导师资格</dt><dd>官网未提供</dd>
+
+    <dt>研究方向</dt><dd>官网未提供</dd>
+    <dt>邮箱</dt><dd>官网未提供</dd>
+    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>官网页面</dt><dd><a href="http://faculty.hust.edu.cn/tairuochen/zh_CN/index.htm" target="_blank">http://faculty.hust.edu.cn/tairuochen/zh_CN/index.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+<span>最近解析：2026-10-14</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="card" id="obox">
+  <h3>套磁跟进</h3>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</div>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">个人简介
+Personal Profile
+个人介绍
+邰若晨，教授，博士生导师，国家级青年人才。2016年获得南京理工大学学士学位，2019年获得上海交通大学硕士学位，2023年获得新加坡南洋理工大学博士学位，2023年至2024年期间在新加坡南洋理工大学从事博士后研究工作。研究方向为智能机器人与群体智能系统、安全自主可信的无人系统，主持国基金人才项目、国基金青年科学基金项目（C类）、湖北省重大科技项目课题，参与国家重大科研平台项目。
+近年来在IEEE Transactions on Automatic Control、Automatica、
+IEEE Transactions on Industrial Informatics、
+IEEE/ASME Transactions on Mechatronics、IEEE Control Systems Letters、中国科学·技术科学、IEEE Conference on Decision and Control (CDC)、IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)等重要期刊和会议上发表30余篇学术论文，其中在控制领域顶刊IEEE Transactions on Automatic Control和Automatica发表第一作者论文8篇（常文4篇）。
+获机器人领域国际高水平会议IEEE International Conference on Robotics and Biomimetics (ROBIO)和 IEEE International Conference on Real-time Computing and Robotics (RCAR)最佳论文奖提名；获新加坡南洋理工大学2024年最佳博士论文奖；获New Generation Star Project@IROS 2025（机器人顶会）。
+担任机器人
+领域
+顶会ICRA 2026、ICRA 2027的Associate Editor、
+机器人领域国际高水平期刊
+Robot Learning青年编委、
+18th International Conference on Control, Automation, Robotics and Vision (ICARCV 2024）的Track Co-Chair、2026 IEEE International Conference on Real-time Computing and Robotics (RCAR 2026)的Publicity Chair。
+（作为指导老师）获2026中国机器人大赛暨
+RoboCup机器人世界杯中国赛一等奖（冠军）、
+第七届中国研究生机器人创新设计大
+赛全国
+三等奖、第九届中国（国际）传感器创新创业大赛华中赛区三等奖。
+研究方向
+1. 智能机器人与群体智能系统
+·多无人机—车集群协同与群体智能
+·
+大模型驱动的具身智能
+·
+多移动机械臂协作与智能控制
+·
+灵巧操作与技能学习
+·
+无人机自主感知与任务规划
+·
+软体机器人建模与智能控制
+2.
+安全自主可信的无人系统
+·
+多机器人集群协作安全
+·
+无人系统中的 AI 安全
+·
+无人驾驶系统信息安全
+·
+安全攸关能源场景下无人系统的安全运行与人机协同
+·
+机器人化智能制造系统安全
+·
+无人机感知与驱动安全
+·
+人—机—环境交互安全
+招生信息
+课题组常年招收对以上研究方向感兴趣的优秀本科生、硕士、博士、博士后。欢迎
+勤奋踏实、自驱力强、持之以恒
+的学生联系（详细情况请附带简历发邮件至ruochen_tai@hust.edu.cn）
+博/硕士
+：欢迎有志于
+智能机器人与群体智能系统、安全自主可信的无人系统
+等学术研究的同学加入！
+博士后
+：亟需智能机器人、AI/系统安全等方向的博士后，待遇从优，常年招聘！
+本科生
+：欢迎学有余力的同学加入实验室参加比赛、课题研究、毕业设计等！
+课题组具有多种机器人平台及辅助测试设备（无人机、无人车、四足、机械臂、灵巧手、软体机器人、动捕系统、高精密力传感器等），并聘请了专职行政助理处理日常事务。
+部分代表性论文
+[1]
+R. Tai
+, L. Lin, C. Zhou, R. Su and F. Lin,
+&#34;
+Synthesis of Resilient Supervisors Against Covert Sensor-Actuator Attacks,
+&#34;
+IEEE Transactions on Automatic Control
+, DOI: 10.1109/TAC.2026.3740654, 2026. （常文）
+[2]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+Security Verification Against Covert Learning Attackers,
+&#34;
+Automatica
+, 177, pp. 112344, 2025.
+[3]
+R. Tai
+, L. Lin, Y. Zhu, and R. Su, &#34;Synthesis of Distributed Covert Sensor-Actuator Attacks,&#34;
+IEEE Transactions on Automatic Control
+, 69(8), pp. 4942-4957, 2024.
+（常文）
+[4]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+On Decidability of Existence of Fortified Supervisors Against Covert Actuator Attackers,
+&#34;
+IEEE Transactions on Automatic Control
+, 69(3), pp. 1898-1905, 2024.
+[5]
+R. Tai
+, L. Lin, Y. Zhu, and R. Su,
+&#34;
+Synthesis of the Supremal Covert Attacker Against Unknown Supervisors by Using Observations,
+&#34;
+IEEE Transactions on Automatic Control
+, 68(6), pp. 3453-3468, 2023.
+（常文）
+[6]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+Synthesis of Optimal Covert Sensor–Actuator Attackers for Discrete-Event Systems,
+&#34;
+Automatica
+, 151, pp. 110910, 2023.
+[7]
+R. Tai
+, L. Lin, Y. Zhu, and R. Su,
+&#34;
+Privacy-Preserving Co-Synthesis Against Sensor–Actuator Eavesdropping Intruder,
+&#34;
+Automatica
+, 150, pp. 110860, 2023.
+（常文）
+[8]
+R. Tai
+, L. Lin, Y. Zhu, and R. Su,
+&#34;
+A New Modeling Framework for Networked Discrete-Event Systems,
+&#34;
+Automatica
+, 138, pp. 110139, 2022.
+[9]
+R. Tai
+, L. Lin, R. Su, and S. S. Ge
+&#34;
+Privacy-Preserving Supervisory Control for Data Opacity Enforcement,
+&#34;
+IEEE
+Transactions on Industrial Informatics
+,
+22(2), pp. 660-671
+, 2025.
+[10]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+Identification of System Vulnerability under A Smart Sensor Attack via Attack Model Reduction,
+&#34;
+IEEE Control Systems Letters
+, 6, pp. 2948-2953, 2022.
+[11]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+On Decidability of Existence of Resilient Supervisors Against Covert Sensor-Actuator Attacks
+,
+&#34;
+2024 63rd IEEE Conference on Decision and Control (CDC)
+, accept, 2024.
+[12]
+R. Tai
+, L. Lin, and R. Su,
+&#34;
+Supervisor Fortification Against Covert Actuator Attacks,
+&#34;
+2023 62nd IEEE Conference on Decision and Control (CDC)
+, pp. 7917-7922, 2023.
+[13] Y. Shen, C. Zhou, X. Hu, C. Cheng, X. He,
+R. Tai
+*
+,
+&#34;
+Design of Privacy-Preserving Control Strategy for Data Opacity of Industrial Internet,
+&#34;
+SCIENTIA SINICA Technologica (中国科学·技术科学)
+, 52(1), pp. 138-151, 2022.
+[14] Y. Shen,
+R. Tai*
+, F. Hu, and Z. Liu,
+&#34;
+Hierarchical Collision-Free Configuration Planning for a Soft Manipulator
+,
+&#34;
+2025
+IE
+EE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+, accept, 2025.
+[15] Y. Yao, Y. Shen, and
+R. Tai*
+,
+&#34;
+Image Correction and Enhancement Algorithm for Precise Positioning of Underwater Soft Manipulator,
+&#34;
+2025
+IE
+EE International Conference on Real-time Computing and Robotics (RCAR)
+, accept, 2025.
+(最佳论文奖提名)
+[16] Y. Shen,
+R. Tai
+, J. Zhang, L. Deng, Y. Yuan, R. Su, F. Zhang, and H. Ding,
+&#34;
+Planning and Motion Control for Underwater Bimanual Soft Manipulator in Underwater Grasping Task,
+&#34;
+IEEE/ASME Transactions on Mechatronics
+, 29(4), pp. 2487-2498, 2024.
+[17] Y. Shen, Y. Hong, W. Zhou,
+R. Tai
+, Y. Yuan and H. Ding,
+&#34;
+Manipulability and Robustness Optimization of the Cable-Driven Redundant Soft Manipulator,
+&#34;
+2021
+I
+EEE International Conference on Robotics and Biomimetics (ROBIO)
+, pp. 864-869, 2021.
+(最佳论文奖提名)
+[18]
+R. Tai
+, J. Wang, and W. Chen, &#34;A Prioritized Planning Algorithm of Trajectory Coordination Based on Time Windows for Multiple AGVs with Delay Disturbance,&#34;
+Robotic Intelligence and Automation
+, 39(5), pp. 753-768, 2019.</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>邰若晨</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="https://aia.hust.edu.cn/szdw/xysz/axlb.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>个人简介
+Personal...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-14</td>
+      <td><a href="http://faculty.hust.edu.cn/tairuochen/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const PID = "hust-aia-tairuochen";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

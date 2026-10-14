@@ -74,12 +74,24 @@ function reset(prefix){
     if(Number.isInteger(year)&&year>=2000&&year<=2100)el('project-year').value=year;
     const degree={master:'硕士',phd:'博士'}[incomingGoal.get('degree')],route={recommend:'推免',exam:'统考',assessment:'申请考核'}[incomingGoal.get('route')];
     if(degree||route)el('project-type').value=[degree,route].filter(Boolean).join(' / ');
+    const targetSchool=incomingGoal.get('school'),targetDept=incomingGoal.get('dept');
+    const targetUnit=window.ADMISSIONS_DATA?.units.find(u=>u.school===targetSchool&&u.dept===targetDept);
+    const knownSchool=window.ADMISSIONS_DATA?.units.find(u=>u.school===targetSchool);
+    if(knownSchool)el('project-school').value=knownSchool.school_name;
+    if(targetUnit)el('project-college').value=targetUnit.dept_name;
+    const targetProgram=window.ADMISSIONS_DATA?.policies.find(p=>p.school===targetSchool&&p.dept===targetDept&&p.year===year&&p.degree===incomingGoal.get('degree')&&p.route===incomingGoal.get('route')&&p.track===incomingGoal.get('track')&&(p.program_code||'')+'|'+(p.program||'')===incomingGoal.get('program'));
+    if(incomingGoal.get('track')==='special')el('project-type').value+=' / '+(targetProgram?.program||'专项（具体类型需核对）');
+    if(knownSchool){
+      const policyQuery=new URLSearchParams();
+      for(const key of ['school','dept','year','degree','route','track','program'])if(incomingGoal.get(key))policyQuery.set(key,incomingGoal.get(key));
+      el('project-notes').value='申请目标核对：'+new URL('admissions.html?'+policyQuery,location.href).href+'\n专业/项目'+(incomingGoal.get('program')?'：'+incomingGoal.get('program').replace('|',' · '):'未指定，需核对代码及正式名称')+'；未判断个人资格、导师机会或报名是否开放。';
+    }
     if(incomingPolicy){
       const p=incomingPolicy,unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school&&u.dept===p.dept),school=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school);
       el('project-name').value=p.title;el('project-year').value=p.year;
       el('project-school').value=school?.school_name||p.school;el('project-college').value=unit?.dept_name||'';
       el('project-type').value=[{master:'硕士',phd:'博士'}[p.degree],{recommend:'推免',exam:'统考',assessment:'申请考核'}[p.route]].join(' / ');
-      if(p.track==='special')el('project-type').value+=' / 工程硕博士专项';
+      if(p.track==='special')el('project-type').value+=' / '+(p.program||'专项（具体类型需核对）');
       el('project-notes').value='政策参考：'+p.title+'\n'+window.ADMISSIONS_DATA.sources[p.source_id].url+'\n摘要核对日期：'+p.reviewed_at+'；提交前需核实完整学校/院系/专业要求，不表示已符合资格。';
     }
   }
