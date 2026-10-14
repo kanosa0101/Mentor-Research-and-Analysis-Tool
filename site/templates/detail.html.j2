@@ -74,7 +74,7 @@ a:hover{text-decoration:underline}
 {% include '_ui_head.html.j2' %}</head>
 <body>
 {% include '_nav.html.j2' %}
-<div class="page-heading"><h1>导师资料</h1></div>
+<div class="page-heading"><a href="../admissions.html?school={{ p.school }}&amp;dept={{ p.dept }}">学校与院系招生要求 →</a><h1>导师资料</h1></div>
 <div class="wrap">
 <div class="card">
   {% if p.photo_url %}<img class="photo" src="{{ p.photo_url }}" alt="" onerror="this.style.display='none'">{% endif %}

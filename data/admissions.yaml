@@ -1,0 +1,138 @@
+version: 1
+sources:
+  school_pdf:
+    url: https://yz.tsinghua.edu.cn/__local/0/91/84/E623A07C9896EB168DD345BC2D3_D80BBF73_52A36.pdf
+    format: pdf
+    selector: ''
+  school_page:
+    url: https://yz.tsinghua.edu.cn/info/1024/3266.htm
+    format: html
+    selector: .v_news_content
+  dept_pdf:
+    url: https://www.cs.tsinghua.edu.cn/__local/A/E5/1E/25B0BC7FF958106B573533962A8_2C6CFFD3_1B7E1.pdf
+    format: pdf
+    selector: ''
+  dept_page:
+    url: https://www.cs.tsinghua.edu.cn/info/1048/7259.htm
+    format: html
+    selector: .v_news_content
+  exam_page:
+    url: https://www.cs.tsinghua.edu.cn/info/1048/7195.htm
+    format: html
+    selector: .v_news_content
+policies:
+- id: tsinghua-2027-master-exam
+  school: tsinghua
+  dept: ''
+  level: school
+  title: 清华2027硕士统考：学校通用规则
+  year: 2027
+  degree: master
+  route: exam
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-14'
+  source_id: school_pdf
+  review_hashes:
+    school_pdf: 44923127b8c927782afe8f5b4403eaa6286dd23158feb1c23313746e109cd250
+    school_page: e796ed6b529dd0456390bc31ce0d7e1bf2e6156a0ae3ad19d168b0f16a5dd02b
+  fields:
+    eligibility:
+      text: 普通招考学业条件包括应届本科、本科毕业、达到附加条件的同等学力及已获硕博学历或学位等情形；不同情形须逐条核对，不能仅凭学历标签判断。
+      quote: 学业水平
+      locator: PDF第2—4页，第十—十三条
+    exams:
+      text: 初试采用笔试，科目以专业目录为准；复试为专业综合考核，面试为必要环节。
+      quote: 面试
+      locator: PDF第6页，第十八—十九条
+    contact:
+      text: 简章列出的招生办咨询电话为010-62782192，咨询邮箱为yjszb@mail.tsinghua.edu.cn；报名及院系附加要求还需看对应报名公告。
+      quote: 咨询
+      locator: PDF第8页，第二十三条；第4—5页，第十四条
+- id: tsinghua-2027-master-recommend
+  school: tsinghua
+  dept: ''
+  level: school
+  title: 清华2027硕士推免：学校通用规则
+  year: 2027
+  degree: master
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-14'
+  source_id: school_pdf
+  review_hashes:
+    school_pdf: 44923127b8c927782afe8f5b4403eaa6286dd23158feb1c23313746e109cd250
+    school_page: e796ed6b529dd0456390bc31ce0d7e1bf2e6156a0ae3ad19d168b0f16a5dd02b
+  fields:
+    eligibility:
+      text: 推免申请要求取得当前本科院校的教育部推荐免试资格，并满足研究能力、诚信与健康等条件；取得免试资格不等于已录取。
+      quote: 免试
+      locator: PDF第1页，第六条
+    contact:
+      text: 推免申请先按清华相关通知完成校内申请；获得免试推荐及初步录取资格后，还须按通知完成研招网推免系统的报名与确认。
+      quote: 申请
+      locator: PDF第1—2页，第七条
+    tuition:
+      text: 学校收费并设奖助；具体学费依专业/项目附表核对，基本修业年限依培养方案。本摘要没有把某个专业价格套用到全校。
+      quote: 学费
+      locator: PDF第7页，第二十二条第3项及第8—14页附表
+- id: tsinghua-cs-2027-master-recommend
+  school: tsinghua
+  dept: cs
+  level: dept
+  title: 清华计算机系2027硕士推免考核
+  year: 2027
+  degree: master
+  route: recommend
+  program: ''
+  program_code: ''
+  published_at: '2026-08-27'
+  reviewed_at: '2026-10-14'
+  source_id: dept_pdf
+  review_hashes:
+    dept_pdf: 9e1c9ace7007ae7b410ea6e76e94b686d49dff11c38c8857680646e0036dfce7
+    dept_page: e839bca2c4b3d23f8d9892c44a49e7d77139e87de72976c10cdf9e9590ed9970
+  fields:
+    eligibility:
+      text: 入围综合考核者须先通过现场资格审查；本办法不适用于工程硕博士培养改革专项，专项须查另一办法。
+      quote: 不适用于
+      locator: PDF第1页第二节，第2—3页第五节
+    materials:
+      text: 资格审查时须出示有效居民身份证、学生证并配合核验；这不是完整报名材料清单，其他材料仍需查申请通知。
+      quote: 身份证和学生证
+      locator: PDF第1页，第二节
+    exams:
+      text: 现场上机与综合面试；综合成绩权重为上机20%、综合能力面试5%、专业面试75%。
+      quote: 上机考试
+      locator: PDF第2页，第三节
+    timeline:
+      text: 资格审查与综合考核的具体时间地点另行通知，需关注申请服务系统邮件和短信；本办法未给出可据此填写的申请截止日期。
+      quote: 另行通知
+      locator: PDF第1—2页，第二、三节
+    contact:
+      text: 院系申诉联系方式：010-62783054；jsjxyjsb@mailoa.tsinghua.edu.cn。咨询事项需核对其用途，不能等同导师私人邮箱。
+      quote: 电子邮箱
+      locator: PDF第3页，第六节
+- id: tsinghua-cs-2027-085400-exam
+  school: tsinghua
+  dept: cs
+  level: program
+  title: 清华计算机系电子信息统考科目调整
+  year: 2027
+  degree: master
+  route: exam
+  program: 电子信息
+  program_code: 085400
+  published_at: '2026-06-23'
+  reviewed_at: '2026-10-14'
+  source_id: exam_page
+  review_hashes:
+    exam_page: 0010eed3013904c556c15b3a23fd923b47818287f013c4b5339ffbdbe79cb450
+  fields:
+    exams:
+      text: 公告说明自2027招生年度起，计算机系电子信息085400统考初试第四单元改为408计算机学科专业基础，原科目为826；其他科目和名额须看对应年度目录。
+      quote: 自2027年招生年度起
+      locator: 公告正文第一段

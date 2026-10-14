@@ -62,6 +62,14 @@ python scripts\build_site.py
 
 产品分析见 `DISCOVERY_PRODUCT_REVIEW_2026-10-14.md`，验证结果见 `DELIVERY_DISCOVERY_V0.3_2026-10-14.md`。运行 `node tests/discovery_rules.cjs`、`python scripts/discovery_ui_check.py` 验证。
 
+## 2026-10-14 学校与招生政策0.4
+
+本地服务打开 `http://127.0.0.1:8000/admissions.html`，从学校/院系与申请目标查看学校通用、院系和专业规则。目录36校42院系；当前可核验规则样本是清华1校1院系4条2027硕士上下文，不代表全库政策覆盖。每项摘要有原文/定位、发布时间/核对时间及缺失提示；个人资格和导师名额仍需分别核实。
+
+政策可带范围到导师发现，或预填申请项目及官方参考备注，用户提交才写私人文件。运行 `python scripts/check_admissions.py --refresh` 检查登记原文与PDF落地页，再重建站点；变化/失败/过期分别提示，缓存不会掩盖网络失败。新增入口与全站UI保持一致。
+
+完整信息调研见 `ADMISSIONS_PRODUCT_REVIEW_2026-10-14.md`，交付证据见 `DELIVERY_ADMISSIONS_V0.4_2026-10-14.md`。测试：`node tests/admissions_rules.cjs`、`python scripts/admissions_ui_check.py`。
+
 ## 当前规模
 
 **36 校 42 院系 5649 名导师**，逐字段 provenance（出处/抓取日期），方向 facet 13 类可筛选。全库覆盖率：邮箱 80%、职称 74%、简介 62%、博导硕导 53%。各院系人数与字段覆盖率见 `HANDOVER.md` §3，或本地打开站点直接看。

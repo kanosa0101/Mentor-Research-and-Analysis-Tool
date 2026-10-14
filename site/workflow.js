@@ -14,6 +14,7 @@ if(contextMentor)backQuery.set('mentor',contextMentor);
 const returnTarget=new URLSearchParams(location.search).get('target');
 if(returnTarget)backQuery.set('target',returnTarget);
 const incomingGoal=new URLSearchParams(location.search);
+const incomingPolicy=window.ADMISSIONS_DATA?.policies.find(p=>p.id===incomingGoal.get('policy'));
 for(const key of ['year','degree','route'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
 el('back-desk').href='desk.html?'+backQuery;
 const chosen = {project:[],material:[],communication:[],reminder:[]};
@@ -73,6 +74,13 @@ function reset(prefix){
     if(Number.isInteger(year)&&year>=2000&&year<=2100)el('project-year').value=year;
     const degree={master:'硕士',phd:'博士'}[incomingGoal.get('degree')],route={recommend:'推免',exam:'统考',assessment:'申请考核'}[incomingGoal.get('route')];
     if(degree||route)el('project-type').value=[degree,route].filter(Boolean).join(' / ');
+    if(incomingPolicy){
+      const p=incomingPolicy,unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school&&u.dept===p.dept),school=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school);
+      el('project-name').value=p.title;el('project-year').value=p.year;
+      el('project-school').value=school?.school_name||p.school;el('project-college').value=unit?.dept_name||'';
+      el('project-type').value=[{master:'硕士',phd:'博士'}[p.degree],{recommend:'推免',exam:'统考',assessment:'申请考核'}[p.route]].join(' / ');
+      el('project-notes').value='政策参考：'+p.title+'\n'+window.ADMISSIONS_DATA.sources[p.source_id].url+'\n摘要核对日期：'+p.reviewed_at+'；提交前需核实完整学校/院系/专业要求，不表示已符合资格。';
+    }
   }
   chosen[prefix]=contextMentor ? [contextMentor] : [];
   renderPicker(prefix);

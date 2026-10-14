@@ -90,10 +90,10 @@ def main():
                     assert page.locator('article:visible').count() == 0
                     page.select_option('#school', '')
                     assert page.locator('article:visible').count() > 0
-                    for file in ['discovery.html', 'index.html', 'p/' + pid + '.html', 'compare.html', 'notices.html', 'desk.html', 'applications.html', 'board.html']:
+                    for file in ['discovery.html', 'index.html', 'p/' + pid + '.html', 'compare.html', 'notices.html', 'admissions.html', 'desk.html', 'applications.html', 'board.html']:
                         page.goto(base + '/' + file, wait_until='domcontentloaded')
                         assert page.locator('header.site-header').count() == 1, file
-                        assert page.locator('header.site-header nav a').count() == 7, file
+                        assert page.locator('header.site-header nav a').count() == 8, file
                         assert page.evaluate('getComputedStyle(document.body).backgroundColor') == 'rgb(243, 244, 240)', file
                         page.set_viewport_size({'width': 390, 'height': 844})
                         page.screenshot(path=str(out / ('mobile-' + file.split('/')[0].replace('.html', '') + '.png')), full_page=False)
@@ -107,7 +107,7 @@ def main():
                     offline.wait_for_function('window.DISCOVERY_READY === true')
                     assert offline.locator('#save-criteria').is_disabled()
                     assert offline.locator('[data-candidate]').count() > 0
-                    print('PASS: criteria/evidence/private review/year scope/backup/intent handoff/8 page theme/mobile/file mode')
+                    print('PASS: criteria/evidence/private review/year scope/backup/intent handoff/9 page theme/mobile/file mode')
                 finally:
                     browser.close()
         finally:

@@ -12,6 +12,7 @@ from crawler.model import Professor
 from crawler.outreach_util import validate_outreach
 from crawler.contact_util import upgrade
 from crawler.discovery_util import validate as validate_discovery
+from crawler import admissions_util
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
@@ -180,6 +181,28 @@ if df.exists():
         problems.append(f'discovery invalid: {e}')
 else:
     print('none (尚未保存私人筛选与核验)')
+
+print('== 11. 公开学校/院系招生政策 ==')
+af = ROOT / 'data/admissions.yaml'
+if af.exists():
+    try:
+        units = {}
+        for key in records:
+            school, dept, _ = key.split('/', 2)
+            units.setdefault(school, set()).add(dept)
+        admissions = load_yaml(af)
+        admissions_util.validate(admissions, units)
+        cf = ROOT / 'data/admissions_checks.json'
+        checks = json.loads(cf.read_text(encoding='utf-8')) if cf.exists() else {}
+        admissions_util.validate_checks(checks, admissions['sources'])
+        for page in ('admissions.html', 'admissions-data.js'):
+            if not (ROOT / 'site' / page).exists():
+                problems.append(f'missing policy site: {page}')
+        print(f"{len(admissions['policies'])} scoped policies / {len(admissions['sources'])} sources")
+    except (ValueError, OSError, yaml.YAMLError) as e:
+        problems.append(f'admissions invalid: {e}')
+else:
+    print('none (未接入招生政策样本)')
 
 print("\n== PROBLEMS ==")
 if problems:

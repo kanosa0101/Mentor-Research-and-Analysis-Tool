@@ -21,6 +21,8 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 
 <a href="compare.html" >导师对比</a>
 
+<a href="admissions.html" >学校与政策</a>
+
 <a href="notices.html" aria-current="page">招生通知</a>
 
 <a href="desk.html" >我的申请</a>
@@ -36,6 +38,7 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 <h1>官方招生通知</h1>
 <p class="hint">这是清华、北大、上交三个院系当前栏目页的监测试验。通知标题中的年份与入学年份分别记录；截止日期未核验时显示未知。请打开官网核实申请路径、资格和日期。栏目更新需运行监测命令并重建站点。</p>
 <div class="bar"><select id="school"><option value="">全部院系</option><option value="tsinghua/cs">tsinghua/cs</option><option value="pku/cs">pku/cs</option><option value="sjtu/cs">sjtu/cs</option></select><input id="search" placeholder="搜索通知标题"><span id="count"></span></div>
+<p><a id="notice-policy-link" href="admissions.html">核对学校与院系政策 →</a></p>
 <p id="notice-context" class="muted" role="status"></p>
 <div class="meta"><a href="https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm" target="_blank">tsinghua/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta"><a href="https://cs.pku.edu.cn/zsxx/yjszs.htm" target="_blank">pku/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta"><a href="https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html" target="_blank">sjtu/cs 官方栏目</a> · 最后抓取 2026-10-13</div>
 
@@ -299,7 +302,7 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 </article>
 
 <script>
-function filter(){const school=document.getElementById('school').value,q=document.getElementById('search').value.trim().toLowerCase();let n=0;document.querySelectorAll('article').forEach(a=>{const show=(!school||a.dataset.school===school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});document.getElementById('count').textContent=n+' 条候选通知';}
+function filter(){const school=document.getElementById('school').value,q=document.getElementById('search').value.trim().toLowerCase();let n=0;const parts=school.split('/');document.getElementById('notice-policy-link').href=parts.length===2?'admissions.html?'+new URLSearchParams({school:parts[0],dept:parts[1]}):'admissions.html';document.querySelectorAll('article').forEach(a=>{const show=(!school||a.dataset.school===school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});document.getElementById('count').textContent=n+' 条候选通知';}
 const requested=new URLSearchParams(location.search).get('school'),select=document.getElementById('school'),context=document.getElementById('notice-context');
 if(requested){if(!Array.from(select.options).some(o=>o.value===requested)){select.add(new Option(requested+'（未接入）',requested));context.textContent='该院系尚未接入通知监测，请从导师详情访问官网核实。可切换全部院系查看当前试验范围。';}else{context.textContent='已限定所选院系；候选通知仍需核实申请年度、资格和日期。';}select.value=requested;}
 select.addEventListener('change',()=>{context.textContent='';filter();});document.getElementById('search').addEventListener('input',filter);filter();

@@ -2,7 +2,7 @@
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="{{ prefix }}discovery.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
-{% for key, label, file in [('discovery','条件找导师','discovery.html'),('index','全量导师','index.html'),('compare','导师对比','compare.html'),('notices','招生通知','notices.html'),('desk','我的申请','desk.html'),('applications','项目与材料','applications.html'),('board','旧套磁看板','board.html')] %}
+{% for key, label, file in [('discovery','条件找导师','discovery.html'),('index','全量导师','index.html'),('compare','导师对比','compare.html'),('admissions','学校与政策','admissions.html'),('notices','招生通知','notices.html'),('desk','我的申请','desk.html'),('applications','项目与材料','applications.html'),('board','旧套磁看板','board.html')] %}
 <a href="{{ prefix }}{{ file }}{% if key == 'desk' and current_page == 'detail' %}?mentor={{ p.page }}{% endif %}" {% if current_page == key %}aria-current="page"{% endif %}{% if key == 'applications' and current_page == 'desk' %} id="manage-link"{% endif %}{% if key == 'desk' and current_page == 'applications' %} id="back-desk"{% endif %}>{{ label }}</a>
 {% endfor %}
 </nav>

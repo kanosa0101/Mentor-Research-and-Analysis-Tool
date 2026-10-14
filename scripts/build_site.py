@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from crawler import store
+from crawler import admissions_util
 
 SITE = ROOT / "site"
 
@@ -123,6 +124,22 @@ def main():
     write_html(SITE / 'applications.html', env.get_template('applications.html.j2').render())
     write_html(SITE / 'desk.html', env.get_template('desk.html.j2').render())
     write_html(SITE / 'discovery.html', env.get_template('discovery.html.j2').render())
+    admission_file = ROOT / 'data/admissions.yaml'
+    admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
+    units = {}
+    for p in profs:
+        units.setdefault(p['school'], set()).add(p['dept'])
+    admissions_util.validate(admissions, units)
+    checks_file = ROOT / 'data/admissions_checks.json'
+    admissions['checks'] = json.loads(checks_file.read_text(encoding='utf-8')) if checks_file.exists() else {}
+    admissions_util.validate_checks(admissions['checks'], admissions['sources'])
+    notice_cfg = ROOT / 'sites/notices.yaml'
+    notice_urls = {(c['school'], c['dept']): safe_url(c['url']) for c in yaml.safe_load(notice_cfg.read_text(encoding='utf-8'))['targets']} if notice_cfg.exists() else {}
+    admissions['units'] = [{'school': s, 'school_name': school_names.get(s, s), 'dept': d, 'dept_name': n,
+                            'count': sum(p['school'] == s and p['dept'] == d for p in profs), 'notice_url': notice_urls.get((s, d), '')} for s, d, n in depts]
+    content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
+    write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())
     # 对比页：同 payload；选人名单在 localStorage，纯静态无服务依赖
     cmp = env.get_template("compare.html.j2").render(
         profs=profs, fresh=fresh)

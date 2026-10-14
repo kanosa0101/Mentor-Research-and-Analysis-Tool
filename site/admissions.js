@@ -1,0 +1,36 @@
+const el=id=>document.getElementById(id),esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ADMISSIONS_DATA=window.ADMISSIONS_DATA,labels={school:'学校通用',dept:'院系要求',program:'专业要求'},degrees={master:'硕士',phd:'博士'},routes={recommend:'推免',exam:'统考',assessment:'申请考核'};
+const fields={eligibility:'报名资格',materials:'所需材料',exams:'考核与科目',timeline:'时间安排',tuition:'学费与学制',funding:'奖助政策',quota:'招生计划',contact:'咨询与报名入口'};
+let invalidYear=false;
+const schools=[...new Map(ADMISSIONS_DATA.units.map(u=>[u.school,u.school_name])).entries()];
+function options(select,rows,label,value=''){select.innerHTML=`<option value="">${label}</option>`+rows.map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');if(value&&!rows.some(r=>r[0]===value))select.add(new Option(value+'（未收录）',value));select.value=value;}
+function criteria(){return {school:el('policy-school').value,dept:el('policy-dept').value,year:el('policy-year').value,degree:el('policy-degree').value,route:el('policy-route').value};}
+function depts(value=''){options(el('policy-dept'),ADMISSIONS_DATA.units.filter(u=>u.school===el('policy-school').value).map(u=>[u.dept,u.dept_name]),'全部院系',value);}
+function scopeQuery(prefs){const query=new URLSearchParams();for(const [key,value] of Object.entries(prefs))if(value)query.set(key,value);return query;}
+function render(){
+  const prefs=criteria(),units=ADMISSIONS_DATA.units.filter(u=>(!prefs.school||u.school===prefs.school)&&(!prefs.dept||u.dept===prefs.dept));
+  const valid=!invalidYear&&(!prefs.degree||Object.hasOwn(degrees,prefs.degree))&&(!prefs.route||Object.hasOwn(routes,prefs.route))&&(!prefs.school||schools.some(s=>s[0]===prefs.school))&&(!prefs.dept||units.length>0)&&(!prefs.year||Number.isInteger(Number(prefs.year))&&Number(prefs.year)>=2000&&Number(prefs.year)<=2100);
+  const records=valid?AdmissionsRules.select(ADMISSIONS_DATA.policies,prefs):[];
+  const schoolsCovered=new Set(ADMISSIONS_DATA.policies.map(p=>p.school)).size,unitsCovered=new Set(ADMISSIONS_DATA.policies.filter(p=>p.dept).map(p=>p.school+'/'+p.dept)).size;
+  el('policy-coverage').textContent=`目录 ${schools.length} 校 / ${ADMISSIONS_DATA.units.length} 院系；规则样本 ${schoolsCovered} 校 / ${unitsCovered} 院系 / ${ADMISSIONS_DATA.policies.length} 条。两种覆盖范围不同；不表示全部招生政策已整理。`;
+  el('school-directory').innerHTML=schools.map(([id,name])=>{const rows=ADMISSIONS_DATA.units.filter(u=>u.school===id);return `<button data-school="${esc(id)}" ${prefs.school===id?'aria-current="true"':''}>${esc(name)}<br><small>${rows.length} 院系 · ${rows.reduce((n,u)=>n+u.count,0)} 位本库导师</small></button>`;}).join('');
+  el('unit-name').textContent=(schools.find(s=>s[0]===prefs.school)?.[1]||'学校与院系')+(prefs.dept?' · '+(units[0]?.dept_name||prefs.dept):'');
+  el('unit-description').textContent=valid?`${units.length} 个院系在当前目录范围内。学校通用规则与院系/专业附加要求须共同核对，不能只看一层。`:'学校/院系或年度未收录或无效；未借用其他单位的规则。';
+  const entries=[...new Map(units.filter(u=>u.notice_url).map(u=>[u.notice_url,u.dept_name+'官网招生栏目'])).entries()];
+  el('unit-entries').innerHTML=entries.map(([url,name])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(name)}</a>`).join('')||'<span class="muted">该范围尚未登记官方招生栏目；可从导师完整资料查院系官网，或使用研招网查招生单位。</span>';
+  el('unit-entries').innerHTML+='<a href="https://yz.chsi.com.cn/zsml/index.html" target="_blank" rel="noopener">研招网专业目录</a>';
+  const query=scopeQuery(prefs);el('unit-mentors').href='discovery.html?'+query;el('unit-mentors').hidden=!valid;
+  el('unit-notices').href='notices.html'+(prefs.school&&prefs.dept?'?school='+encodeURIComponent(prefs.school+'/'+prefs.dept):'');el('unit-notices').hidden=!valid||!prefs.school||!prefs.dept;
+  el('policy-count').textContent=`当前目标：${invalidYear?'无效年度，请重新填写':prefs.year||'全部年度'} · ${degrees[prefs.degree]||(prefs.degree?'未知学位':'全部学位')} · ${routes[prefs.route]||(prefs.route?'未知渠道':'全部渠道')}。${records.length} 条规则摘要，未计算个人符合率。`;
+  el('policy-list').innerHTML=records.map(p=>{
+    const source=ADMISSIONS_DATA.sources[p.source_id],quality=AdmissionsRules.quality(p,ADMISSIONS_DATA.checks),school=schools.find(s=>s[0]===p.school)?.[1]||p.school,unit=ADMISSIONS_DATA.units.find(u=>u.school===p.school&&u.dept===p.dept);
+    const project=new URLSearchParams({policy:p.id});
+    return `<article class="policy-card" data-policy="${esc(p.id)}"><span class="scope">${labels[p.level]} · ${esc(school)} ${esc(unit?.dept_name||'')} · ${p.year} · ${degrees[p.degree]} · ${routes[p.route]}${p.program?' · '+esc(p.program)+' '+esc(p.program_code):''}</span><h2>${esc(p.title)}</h2><p class="policy-age">页面发布 ${esc(p.published_at||'未知')} · 摘要人工核对 ${esc(p.reviewed_at)} · 已整理 ${Object.keys(p.fields).length}/8 类摘要，不代表条款完整</p><div class="quality ${quality.state}">${quality.label}</div><div class="policy-fields">${Object.entries(fields).map(([key,label])=>{const f=p.fields[key];return `<section class="policy-field"><h3>${label}</h3>${f?`<p>${esc(f.text)}</p><blockquote>原文短片段：${esc(f.quote)}<br>定位：${esc(f.locator)} · <a href="${esc(source.url)}" target="_blank" rel="noopener">官方原文</a></blockquote>`:'<p class="muted">未整理，需查原文；不能认定没有要求。</p>'}</section>`;}).join('')}</div><p class="policy-age">${Object.keys(p.review_hashes).map(id=>{const s=ADMISSIONS_DATA.sources[id],c=ADMISSIONS_DATA.checks[id];return `<a href="${esc(s.url)}" target="_blank" rel="noopener">${s.format==='pdf'?'PDF原文':'通知正文/附件入口'}</a> · 最近成功检查 ${esc(c?.last_success||'无')} · 最近尝试 ${esc(c?.last_attempt||'无')}${c?.cached?'（缓存读取）':''}`;}).join('<br>')}</p><div class="actions"><a href="applications.html?${project}">建立申请项目 →</a><a href="${esc(source.url)}" target="_blank" rel="noopener">核对完整政策</a></div></article>`;
+  }).join('')||'<p class="empty">当前学校/院系、年度、学位或渠道的规则尚未覆盖。请从官网招生栏目和研招网核实；未覆盖不代表不招生，也不借用往年或其他渠道规则。</p>';
+}
+const incoming=new URLSearchParams(location.search);options(el('policy-school'),schools,'全部学校',incoming.get('school')||'');depts(incoming.get('dept')||'');
+const rawYear=incoming.get('year')||'';invalidYear=!!rawYear&&(!/^\d{4}$/.test(rawYear)||Number(rawYear)<2000||Number(rawYear)>2100);el('policy-year').value=invalidYear?'':rawYear;
+for(const key of ['degree','route']){const select=el('policy-'+key),value=incoming.get(key)||'';if(value&&!Array.from(select.options).some(o=>o.value===value))select.add(new Option(value+'（未知）',value));select.value=value;}
+el('policy-school').onchange=()=>{depts();render();};for(const id of ['policy-dept','policy-year','policy-degree','policy-route'])el(id).onchange=()=>{if(id==='policy-year')invalidYear=false;render();};
+el('school-directory').onclick=event=>{const button=event.target.closest('[data-school]');if(button){el('policy-school').value=button.dataset.school;depts();render();}};
+render();window.ADMISSIONS_READY=true;
