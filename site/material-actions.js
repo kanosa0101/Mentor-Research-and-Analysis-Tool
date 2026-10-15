@@ -12,7 +12,9 @@
     const quality=root.AdmissionsRules.quality(policy,data.checks);
     return `<section class="material-actions"><h3>分阶段材料准备</h3><p>按原文逐项核对适用范围与提交方式；文件存在不表示完成提交。</p><p class="quality ${escape(quality.state)}">${escape(quality.label)}</p>${Object.entries(stages).map(([stage,label])=>{const actions=policy.material_actions.filter(a=>a.stage===stage);return actions.length?`<section><h4>${label}</h4>${actions.map(a=>`<article><h4>${escape(a.label)}</h4>${evidence(a.instruction)}${references(policy,a.instruction,data)}${policy.applies_if?`<p>政策适用条件</p>${evidence(policy.applies_if)}${references(policy,policy.applies_if,data)}`:''}${a.applies_if?`<p>动作适用条件</p>${evidence(a.applies_if)}${references(policy,a.applies_if,data)}`:''}${(a.event_indexes||[]).map(i=>{const e=policy.events[i];return e?`<p>关联事项：${escape(e.label)} · ${escape(e.at)}<br>原文：${escape(e.quote)} · ${escape(e.locator)} · ${references(policy,e,data)}</p>`:'';}).join('')}</article>`).join('')}</section>`:'';}).join('')}</section>`;
   }
-  let workflow={projects:{},materials:{}},data={actions:{},records:{}},project='',dirty=false,serial=0,revision=0,hook=null;
+  let workflow={projects:{},materials:{}},data={actions:{},records:{}},project='',dirty=false,serial=0,revision=0,hook=null,loadedScope='',loadError='';
+  const goalKeys=['school_id','dept_id','year','degree','route','track','program_code','program_name'];
+  const currentScope=()=>JSON.stringify([project,...goalKeys.map(key=>workflow.projects[project]?.[key]??'')]);
   const dirtyForms=new Set(),openActions=new Set();
   const node=id=>document.getElementById(id);
   function feedback(text,error=false){const n=node('preparation-feedback');if(n){n.textContent=text;n.classList.toggle('error',error);}}
@@ -22,10 +24,11 @@
     if(!node('preparation-list'))return;
     workflow=next;
     if(project!==selected){if(dirty)return;project=selected;revision++;}
-    const ticket=++serial,editRevision=revision;
-    if(!dirty)render();
-    try{const result=await request();if(ticket!==serial)return;/* Never replace the basis of visible unsaved inputs with a newer policy fingerprint. */if(!dirty&&editRevision===revision){data=result;render();}else {const changed=JSON.stringify(data.actions?.[project])!==JSON.stringify(result.actions?.[project])||JSON.stringify(data.records)!==JSON.stringify(result.records);feedback(changed?'目标、来源、文件版本或历史检查结果已变化；未保存输入与原指纹已保留。请保存前重新核对清单。':'当前输入已保留；保存时会重新核对目标、来源和文件版本。',changed);}}
-    catch(e){if(ticket===serial){feedback('准备清单暂不可用：'+e.message+' 已有项目、文件与其他记录仍可使用。请重新核对清单后保存。',true);node('preparation-list').querySelectorAll('[type="submit"],[data-material-reminder]').forEach(b=>b.disabled=true);}}
+    const ticket=++serial,editRevision=revision,requestedScope=currentScope(),previousLoadError=loadError;loadError='';
+    if(!dirty){if(previousLoadError)feedback('');render();}
+    else if(loadedScope!==requestedScope){feedback('申请目标已变化；未保存输入与原指纹已保留，请重新核对清单后保存。',true);node('preparation-list').querySelectorAll('[type="submit"],[data-material-reminder]').forEach(b=>b.disabled=true);}
+    try{const result=await request();if(ticket!==serial)return;/* Never replace the basis of visible unsaved inputs with a newer policy fingerprint. */if(!dirty&&editRevision===revision){data=result;loadedScope=requestedScope;render();}else {const changed=loadedScope!==requestedScope||JSON.stringify(data.actions?.[project])!==JSON.stringify(result.actions?.[project])||JSON.stringify(data.records)!==JSON.stringify(result.records);feedback(changed?'目标、来源、文件版本或历史检查结果已变化；未保存输入与原指纹已保留。请保存前重新核对清单。':'当前输入已保留；保存时会重新核对目标、来源和文件版本。',changed);}}
+    catch(e){if(ticket===serial){loadError=e.message;if(!dirty&&loadedScope!==requestedScope)render();feedback('准备清单暂不可用：'+e.message+' 已有项目、文件与其他记录仍可使用。请点击“重新核对清单”重试后保存。',true);node('preparation-list').querySelectorAll('[type="submit"],[data-material-reminder]').forEach(b=>b.disabled=true);}}
   }
   function conditionText(c){return typeof c==='string'?c:c?.evidence?.text||c?.text||'';}
   function policyReturn(p){
@@ -46,10 +49,11 @@
     const list=node('preparation-list');if(!list)return;
     const p=workflow.projects[project];
     if(!p){list.innerHTML='<div class="empty"><h3>先选择一个申请项目</h3><p>准备进度按项目和材料动作分别保存。请在上方选择项目，或先创建项目并明确申请目标。</p><button type="button" data-section="project">创建申请项目</button></div>';return;}
+    if(loadedScope!==currentScope()){list.innerHTML=`<p class="scope-note">${escape(p.name)}</p><p role="status">${loadError?'准备清单暂不可用，请点击“重新核对清单”重试。':'正在读取当前项目清单，请稍候。'}</p>`;return;}
     const rows=data.actions?.[project]||[];
     list.innerHTML=`<p class="scope-note">${escape(p.name)} · 每个动作独立记录；同一文件用于另一项目或动作时，需要分别保存。</p>${policyReturn(p)}<button type="button" data-project-section="material" data-project-id="${escape(project)}">登记 / 管理已有文件</button>${!rows.length?'<p class="empty">当前目标尚无已整理的分阶段动作。请核对完整官方政策；没有清单不表示没有材料要求。</p>':''}`+Object.entries(stages).map(([stage,label])=>{const items=rows.filter(v=>v.action.stage===stage);return items.length?`<section><h3>${label}</h3>${items.map((view)=>{
       const a=view.action,key=rows.indexOf(view),detailKey=project+'|'+view.policy_id+'|'+view.action_id,latest=data.records?.[view.latest_record_id],records=Object.values(data.records||{}).filter(r=>r.project_id===project&&r.policy_id===view.policy_id&&r.action_id===view.action_id).sort((a,b)=>String(b.created_at||'').localeCompare(String(a.created_at||'')));
-      const conditions=view.conditions||[],blocked=view.can_record===false||!!view.program_pending||view.quality?.state!=='checked';
+      const conditions=view.conditions||[],blocked=!!loadError||view.can_record===false||!!view.program_pending||view.quality?.state!=='checked';
       const policy=(root.ADMISSIONS_DATA?.policies||[]).find(p=>p.id===view.policy_id);
       const sourceDates=Object.keys(policy?.review_hashes||{}).map(id=>root.ADMISSIONS_DATA.checks?.[id]?.last_success||'未知');
       const files=Object.values(workflow.materials).filter(m=>(m.project_ids||[]).includes(project));

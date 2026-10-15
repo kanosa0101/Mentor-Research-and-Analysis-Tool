@@ -43,11 +43,13 @@ function syncSchoolPicker(){
   for(const box of el('school-options').querySelectorAll('input'))box.checked=options.some(o=>o.value===box.value&&o.selected);
   el('school-chips').innerHTML=selected.map(o=>`<button type="button" data-remove-school="${esc(o.value)}" aria-label="移除${esc(o.textContent)}">${esc(o.textContent)} <span aria-hidden="true">×</span></button>`).join('');
   el('school-selected-count').textContent=selected.length?`已选 ${selected.length} 所`:'不限学校';el('clear-schools').disabled=!selected.length;
+  const visible=[...el('school-options').children].filter(option=>!option.hidden);
+  el('select-visible-schools').disabled=!visible.some(option=>!option.querySelector('input').checked);
 }
-function changeSchool(id,selected){if(!discardReview())return;closeReview();for(const o of el('intent-schools').options)if(o.value===id||id===null)o.selected=selected;el('intent-schools').dispatchEvent(new Event('change',{bubbles:true}));}
+function changeSchool(id,selected){if(!discardReview()){syncSchoolPicker();return;}closeReview();for(const o of el('intent-schools').options)if(o.value===id||id===null||Array.isArray(id)&&id.includes(o.value))o.selected=selected;el('intent-schools').dispatchEvent(new Event('change',{bubbles:true}));}
 async function api(path='',body,method='GET'){const r=await fetch('/api/discovery'+path,{method,headers:{'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});const d=await r.json();if(!r.ok)throw new Error(d.error||r.status);return d;}
 const lazy=new Map();
-function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-'+(file==='admissions-data.js'?'20':'17');s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
+function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-'+(file==='admissions-data.js'?'21':'17');s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
 let unitCatalogAttempted=false;
 async function loadUnitCatalog(){
   if(!contextSchool||!contextDept||DATA.some(p=>p.school===contextSchool&&p.dept===contextDept)||window.ADMISSIONS_DATA||unitCatalogAttempted)return;
@@ -82,8 +84,8 @@ function render(){
   el('intent-overview').textContent=`${appliedName?'姓名：'+appliedName:'姓名不限'} · ${applied.topics.length?applied.topics.join('、'):'研究关键词不限'} · ${schoolNames.length?schoolNames.join('、'):'学校不限'}${contextDept?' / '+(DATA.find(p=>p.school===contextSchool&&p.dept===contextDept)?.dept_name||contextDept):''} · ${appliedGroup.label} · ${applied.year??'年度未定'} / ${degreeLabels[applied.degree]} / ${routeLabels[applied.route]}`;
   const hardRules=MODES.filter(key=>applied.modes[key]==='hard'&&(key!=='research'||applied.topics.length)&&(key!=='qualification'||applied.degree!=='any')&&!(protectedReview()&&['opportunity','eligibility'].includes(key))).map(key=>ruleLabels[key]);
   el('criteria-explanation-label').textContent=`筛选规则与说明 · 必须：${hardRules.join('、')||'无'} · ${applied.keep_unknown?'保留待核实':'排除必须条件待核实'}`;
-  el('candidate-order').textContent=matchingOrder?'优先符合已设条件，同分时资料更全者优先、同组随机展示。':'资料更全者优先，同组随机展示；本次浏览顺序保持稳定。';
-  el('intent-summary').textContent=`姓名：${appliedName||'不限'}（与其他条件取交集） · 研究：${applied.topics.length?applied.topics.join('、'):'关键词不限'} · 学校：${schoolNames.length?schoolNames.join('、'):'不限'} · 院系方向：${appliedGroup.label}。申请目标：${applied.year??'年度未知'} · ${degreeLabels[applied.degree]} · ${routeLabels[applied.route]}。规则：${rules}。${unknownPolicy}。${protectedReview()?'本项目的招生机会与申请资格不据此排除候选，也不借用旧结论排序。':''}${matchingOrder?'先按已命中规则数量排序。':''}资料完整度依次参考研究原文（其次简介）、公开邮箱、已记录职称、导师资格及来源日期。同组随机排序保持稳定，不表示招生名额、适合程度或录取概率；有日期不等于信息已更新。`;
+  el('candidate-order').textContent=(matchingOrder?'优先符合已设条件，同分时资料更全者优先、同组随机展示。':'资料更全者优先，同组随机展示；本次浏览顺序保持稳定。')+' 资料完整度依据研究方向、有效邮箱、简介与官网资料链接。';
+  el('intent-summary').textContent=`姓名：${appliedName||'不限'}（与其他条件取交集） · 研究：${applied.topics.length?applied.topics.join('、'):'关键词不限'} · 学校：${schoolNames.length?schoolNames.join('、'):'不限'} · 院系方向：${appliedGroup.label}。申请目标：${applied.year??'年度未知'} · ${degreeLabels[applied.degree]} · ${routeLabels[applied.route]}。规则：${rules}。${unknownPolicy}。${protectedReview()?'本项目的招生机会与申请资格不据此排除候选，也不借用旧结论排序。':''}${matchingOrder?'先按已命中规则数量排序。':''}资料完整度按研究方向、有效邮箱、简介与官网资料链接的已有项数分层。同组随机排序保持稳定，不表示招生名额、适合程度或录取概率；有日期不等于信息已更新。`;
   el('candidate-list').innerHTML=view.slice(0,limit).map(({p,result})=>{
     const extra=window.MENTOR_COMPARE?.[p.page]||{},prov=extra.provenance||{};
     const policyGoal=publicScope(p),goal=publicScope(p);goal.set('mentor',p.page);if(selectedProject&&matchesCurrent()&&p.school===currentProject().goal_snapshot.school_id&&p.dept===currentProject().goal_snapshot.dept_id)goal.set('project',selectedProject);
@@ -158,7 +160,9 @@ el('school-options').innerHTML=[...el('intent-schools').options].map(o=>`<label 
 el('school-options').onchange=e=>{if(e.target.matches('input[type=checkbox]'))changeSchool(e.target.value,e.target.checked);};
 el('school-chips').onclick=e=>{const b=e.target.closest('[data-remove-school]');if(!b)return;const id=b.dataset.removeSchool;changeSchool(id,false);const box=el('school-options').querySelector('input[value="'+CSS.escape(id)+'"]');(box&&!box.parentElement.hidden?box:el('school-search')).focus();};
 el('clear-schools').onclick=()=>{changeSchool(null,false);el('school-search').focus();};
-el('school-search').oninput=()=>{const query=el('school-search').value.trim().toLowerCase();let count=0;for(const option of el('school-options').children){option.hidden=!option.textContent.toLowerCase().includes(query)&&!option.querySelector('input').value.toLowerCase().includes(query);if(!option.hidden)count++;}el('school-search-status').textContent=query?`找到 ${count} 所学校；已选学校保持不变。`:'';};
+el('select-visible-schools').onclick=()=>changeSchool([...el('school-options').children].filter(option=>!option.hidden).map(option=>option.querySelector('input').value),true);
+el('clear-school-search').onclick=()=>{el('school-search').value='';el('school-search').dispatchEvent(new Event('input'));el('school-search').focus();};
+el('school-search').oninput=()=>{const query=el('school-search').value.trim().toLowerCase();let count=0;for(const option of el('school-options').children){option.hidden=!option.textContent.toLowerCase().includes(query)&&!option.querySelector('input').value.toLowerCase().includes(query);if(!option.hidden)count++;}el('school-search-status').textContent=query?`找到 ${count} 所学校；已选学校保持不变。`:'';el('clear-school-search').hidden=!query;el('select-visible-schools').textContent=query?'选中搜索结果':'全选学校';syncSchoolPicker();};
 el('school-search').onkeydown=e=>{if(e.key==='Enter')e.preventDefault();};
 fillCriteria(PRIVATE.preferences);
 function clearUnitContext(keepProject=false){

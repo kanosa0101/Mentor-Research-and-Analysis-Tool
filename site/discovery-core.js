@@ -43,9 +43,11 @@
   function projectScoped(prefs){return !!prefs.program||prefs.track==='special';}
   function completeness(p,extra={}){
     const present=value=>typeof value==='string'&&value.trim()&&!/(未知|待补充|未整理)/.test(value);
-    const direction=extra.research_direction_raw||p.research_direction_raw;
-    const field=present(direction)?'research_direction_raw':'bio_raw',source=extra.provenance?.[field];
-    return [present(direction)?2:present(extra.bio_excerpt)?1:0,Number(!!present(p.email)),Number(!!present(p.title)),Number(!!present(p.supervisor)),Number(!!source?.source&&/^https?:/.test(source.source)&&/^\d{4}-\d{2}-\d{2}/.test(source.fetched_at||''))];
+    const direction=Number(!!present(extra.research_direction_raw||p.research_direction_raw));
+    const email=Number(!!present(p.email)&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email.trim()));
+    const bio=Number(!!present(extra.bio_excerpt||p.bio_raw));
+    const profile=Number(/^https?:\/\//i.test(p.profile_url||p.detail_url||''));
+    return [direction+email+bio+profile];
   }
   function randomKey(id,seed){let hash=2166136261;for(const char of seed+'|'+id){hash^=char.charCodeAt(0);hash=Math.imul(hash,16777619);}hash^=hash>>>16;hash=Math.imul(hash,0x85ebca6b);hash^=hash>>>13;return hash>>>0;}
   function rankCandidates(rows,prefs,extra={},seed=''){

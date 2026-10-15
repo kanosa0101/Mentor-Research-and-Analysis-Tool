@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const R=require('../site/discovery-core.js');
+const prefs={topics:[],degree:'any',modes:{research:'hard',qualification:'soft',email:'soft',opportunity:'soft',eligibility:'soft'}};
+const row=(page,p={},score=1)=>({p:{page,...p},result:{score,unknown:0}});
+assert.deepEqual(R.completeness({title:'教授',supervisor:'博导'}),R.completeness({title:'讲师',supervisor:''}),'title and supervisor must not affect data completeness');
+assert.deepEqual(R.completeness({email:'未知@邮箱'}),R.completeness({email:''}),'placeholder email is not valid contact data');
+const rich=row('rich',{email:'a@example.edu.cn',profile_url:'https://faculty.example.edu.cn/a'}),empty=row('empty',{title:'院士',supervisor:'博导'});
+assert.equal(R.rankCandidates([empty,rich],prefs,{},'session').rows[0].p.page,'rich');
+const all=Array.from({length:40},(_,i)=>row('p'+i,{research_direction_raw:'图学习',email:'a@example.edu.cn'}));
+const order=(items,seed)=>R.rankCandidates(items,prefs,{},seed).rows.map(r=>r.p.page);
+assert.deepEqual(order(all,'one'),order(all.toReversed(),'one'));
+assert.notDeepEqual(order(all,'one'),order(all,'two'));
+assert.deepEqual(R.completeness({email:'a@example.edu.cn'}),R.completeness({}, {bio_excerpt:'官网简介'}),'equally complete field counts share a random tier');
+assert.equal(R.rankCandidates([rich,row('match',{},3)],{...prefs,topics:['图学习']},{},'one').rows[0].p.page,'match','explicit matching preferences retain precedence');
+console.log('v21 discovery quality: 8 scenarios passed');
