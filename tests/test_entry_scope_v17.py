@@ -36,7 +36,8 @@ def test_added_unit_entry_scopes_and_unique_keys():
     entries = yaml.safe_load((root/'data/admissions_entries.yaml').read_text(encoding='utf-8'))['entries']
     keys = [(e['school'], e['dept'], e['source_id']) for e in entries]
     assert len(keys) == len(set(keys))
-    additions = entries[76:]
+    # Scope assertions belong to the original v17 batch; later batches may append entries.
+    additions = entries[76:85]
     assert len(additions) == 9
     for entry in additions:
         if entry['school'] == 'nankai':

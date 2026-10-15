@@ -13,6 +13,13 @@ from crawler import admissions_util
 from crawler.admissions_entries import load_catalog, load_entries, source_status
 
 
+def entry_scope(entry, year, degree, route):
+    target = {'year': year, 'degree': degree, 'route': route}
+    if any(value and key in entry and str(entry[key]) != str(value) for key, value in target.items()):
+        return 'other'
+    return 'matching' if all(value and key in entry for key, value in target.items()) else 'unknown'
+
+
 def build_report(schools, units, data, entries, checks, year=2027, degree='master', route='exam', track='ordinary', program='', today=None):
     today = today or date.today().isoformat()
     policies = [p for p in data['policies'] if p['year'] == year and p['degree'] == degree and p['route'] == route
@@ -23,11 +30,16 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
         for dept in ['', *sorted(units.get(sid, set()))]:
             scope = [p for p in policies if p['school'] == sid and (not p['dept'] or p['dept'] == dept)]
             is_program = lambda p: p['level'] == 'program' or p.get('track') == 'special' and bool(p['program'])
-            levels = {level: [p for p in scope if p['level'] == level and not is_program(p)] for level in ('school', 'dept')}
+            levels = {level: [p for p in scope if p['level'] == level and not is_program(p) and not p.get('applies_if')] for level in ('school', 'dept')}
             available = [p for p in scope if is_program(p)]
-            levels['program'] = [p for p in available if program and (p['program_code'] + '|' + p['program']) == program]
-            selected = [p for ps in levels.values() for p in ps]
+            levels['program'] = [p for p in available if program and (p['program_code'] + '|' + p['program']) == program and not p.get('applies_if')]
+            conditional = [p for p in scope if p.get('applies_if') and
+                           (not is_program(p) or program and (p['program_code'] + '|' + p['program']) == program)]
+            selected = [p for ps in levels.values() for p in ps] + conditional
             matching_entries = [e for e in entries if e['school'] == sid and e['dept'] == dept]
+            scoped_entries = [dict(e, scope=entry_scope(e, year, degree, route),
+                                   status=source_status(e, checks.get(e['source_id'], {}), today)) for e in matching_entries]
+            entry_scope_counts = {kind: sum(e['scope'] == kind for e in scoped_entries) for kind in ('matching', 'unknown', 'other')}
             gaps = []
             if not units.get(sid):
                 gaps.append('院系目录待接入')
@@ -41,6 +53,8 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
                 gaps.append('该专业专属条款未整理')
             if not matching_entries:
                 gaps.append('本层官方招生入口未登记')
+            if not entry_scope_counts['matching']:
+                gaps.append('本层年度、学位与渠道明确匹配的招生入口未登记')
             if track == 'special' and levels['school']:
                 gaps.append('学校通用条款对专项的适用仍待核对')
             source_states = {source: source_status({'reviewed_at': today}, checks.get(source, {}), today)['state']
@@ -50,15 +64,16 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
             rows.append({'school': sid, 'school_name': school['name'], 'dept': dept,
                          'year': year, 'degree': degree, 'route': route, 'track': track, 'program': program,
                          **{level + '_policy_ids': [p['id'] for p in ps] for level, ps in levels.items()},
+                         'conditional_policy_ids': [p['id'] for p in conditional],
                          'available_program_policy_ids': [p['id'] for p in available],
                          'fields_by_layer': {level: sorted({f for p in ps for f in p['fields']}) for level, ps in levels.items()},
                          'source_states': source_states, 'summary_review_due': review_due,
-                         'entries': [dict(e, status=source_status(e, checks.get(e['source_id'], {}), today)) for e in matching_entries],
+                         'entries': scoped_entries, 'entry_scope_counts': entry_scope_counts,
                          'gaps': gaps})
     return {'scope': {'year': year, 'degree': degree, 'route': route, 'track': track, 'program': program},
             'generated_at': today,
             'denominators': {'schools': len(schools), 'schools_with_units': sum(bool(u) for u in units.values()), 'units': sum(map(len, units.values()))},
-            'note': '摘要类别与来源状态分别记录；已有八类摘要也不代表条款完整或个人符合资格。', 'rows': rows}
+            'note': '摘要类别、入口年度/学位/渠道范围与来源状态分别记录；范围未知或其他目标的导航不计明确匹配入口，匹配不表示专项/专业适用或来源有效。已有八类摘要不代表条款完整或个人符合资格。', 'rows': rows}
 
 
 def main():

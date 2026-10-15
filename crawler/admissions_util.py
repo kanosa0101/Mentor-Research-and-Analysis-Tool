@@ -43,7 +43,7 @@ def validate(data, units):
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
-        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events'}:
+        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if'}:
             raise ValueError('政策结构错误')
         if not isinstance(p['id'], str) or not re.fullmatch(r'[a-z0-9_-]+', p['id']) or p['id'] in ids:
             raise ValueError('政策 ID 错误或重复')
@@ -80,10 +80,11 @@ def validate(data, units):
             raise ValueError('原文及落地页核对指纹错误')
         if not isinstance(p['fields'], dict) or not p['fields'] or set(p['fields']) - set(FIELDS):
             raise ValueError('政策字段错误')
-        for field in p['fields'].values():
+        evidence = list(p['fields'].values()) + ([p['applies_if']] if 'applies_if' in p else [])
+        for field in evidence:
             if not isinstance(field, dict) or not {'text', 'quote', 'locator'} <= set(field) or set(field) - {'text', 'quote', 'locator', 'source_ids'} or any(not isinstance(field[k], str) or not field[k].strip() for k in ('text', 'quote', 'locator')):
                 raise ValueError('每项摘要须有原文片段与定位')
-        for part in list(p['fields'].values()) + p.get('events', []):
+        for part in evidence + p.get('events', []):
             refs = part.get('source_ids', [p['source_id']])
             if not isinstance(refs, list) or not refs or any(not isinstance(s, str) or s not in hashes or s not in data['sources'] for s in refs) or len(refs) != len(set(refs)):
                 raise ValueError('字段/事件来源须为已登记且本政策已核对的非空唯一来源数组')

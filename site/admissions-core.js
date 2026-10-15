@@ -22,12 +22,13 @@
     if(missing.length||!valid)return {ready:false,missing,policies:[],items:[],events:[]};
     const isProgram=p=>p.level==='program'||p.track==='special'&&!!p.program;
     const policies=select(data.policies,prefs).filter(p=>!isProgram(p)||!prefs.program||programKey(p)===prefs.program);
-    const rows=policies.map(policy=>({policy,quality:quality(policy,data.checks,today),conditional:isProgram(policy)&&!prefs.program}));
+    const rows=policies.map(policy=>({policy,quality:quality(policy,data.checks,today),conditional:!!policy.applies_if||isProgram(policy)&&!prefs.program}));
     const items=['eligibility','materials','exams','timeline','tuition','funding','quota','contact'].map(key=>({key,rows:rows.map(row=>({...row,field:row.policy.fields[key]}))}));
     const events=rows.flatMap(row=>(row.policy.events||[]).map(event=>({...row,event,state:eventState(event,now)})));
     return {ready:true,missing:[],policies,items,events};
   }
   function programKey(p){return (p.program_code||'')+'|'+(p.program||'');}
+  function conditionLabel(policy,conditional=false){return policy.applies_if?'条件性参考：'+policy.applies_if.text+'，需本人确认':conditional?'条件性参考，未确认专业适用':'';}
   function sourceReferences(policy,item,sources){return (item?.source_ids||[policy.source_id]).map(id=>{const source=sources[id];return {...source,id,label:source.label||(source.format==='pdf'?'PDF原文':'官方原文')};});}
-  const api={select,quality,eventState,checklist,programKey,sourceReferences};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
+  const api={select,quality,eventState,checklist,programKey,conditionLabel,sourceReferences};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
 })(typeof window!=='undefined'?window:globalThis);

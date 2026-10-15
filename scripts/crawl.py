@@ -257,6 +257,8 @@ def main():
     ap.add_argument("--refresh", action="store_true")
     args = ap.parse_args()
     cfg = load_cfg(args.school, args.dept)
+    if cfg.get('roster_pending') and not cfg.get('hook'):
+        raise SystemExit('该院系师资采集尚未接入：' + cfg['roster_pending'])
     if cfg.get("direct"):
         fetch.set_direct(True)
     if cfg.get("cdp_fallback"):

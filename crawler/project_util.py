@@ -71,6 +71,8 @@ def structure(entry):
 
 
 def applicable(entry, policy):
+    if policy.get('applies_if'):
+        return False
     if not all(entry[k] for k in ('school_id', 'dept_id', 'year', 'degree', 'route', 'track')):
         return False
     if any(entry[a] != policy[b] for a, b in [('school_id', 'school'), ('year', 'year'), ('degree', 'degree'), ('route', 'route')]):
