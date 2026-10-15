@@ -16,10 +16,12 @@ from scripts.serve import create_server
 def main():
     public=json.loads((ROOT/'site/admissions-data.js').read_text(encoding='utf-8-sig').split('=',1)[1].strip().rstrip(';'))
     selected=[]
+    pilot_ids={'master':'nwpu-school-2027-master-exam-v18',
+               'phd':'tsinghua-cs-2027-phd-assessment-v16pilot'}
     for degree in (sys.argv[1:] or ['master','phd']):
-        candidates=[p for p in public['policies'] if p.get('degree')==degree and p.get('material_actions')]
-        assert candidates,f'Build merged {degree} policies before running integration'
-        selected.append(next((p for p in candidates if p.get('dept') and not p.get('applies_if')),candidates[0]))
+        policy=next((p for p in public['policies'] if p['id']==pilot_ids[degree]),None)
+        assert policy and policy['degree']==degree and policy.get('material_actions'),f'Build original v19 {degree} pilot before running integration'
+        selected.append(policy)
     output=ROOT/'cache/policy_v19/material_frontend';output.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         root=Path(tmp);site=root/'site';site.mkdir()

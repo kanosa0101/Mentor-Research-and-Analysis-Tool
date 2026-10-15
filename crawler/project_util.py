@@ -10,6 +10,8 @@ import yaml
 
 from crawler import workflow_util as core
 
+PUBLIC_YAML_LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
+
 DEFAULTS = dict(school_id='', dept_id='', degree='', route='', track='',
                 program_code='', program_name='', deadlines=[])
 DATE_KEYS = {'label', 'kind', 'at', 'origin', 'policy_id', 'source_ids', 'source_url', 'quote', 'locator'}
@@ -19,13 +21,13 @@ def load_context(root):
     root = Path(root)
     units = {}
     for path in sorted((root / 'sites').glob('*/*.yaml')):
-        cfg = yaml.safe_load(path.read_text(encoding='utf-8'))
+        cfg = yaml.load(path.read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
         if isinstance(cfg, dict) and cfg.get('school') and cfg.get('dept'):
             units.setdefault(cfg['school'], set()).add(cfg['dept'])
-    schools = yaml.safe_load((root / 'data/schools.yaml').read_text(encoding='utf-8'))
+    schools = yaml.load((root / 'data/schools.yaml').read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
     for school in schools['schools']:
         units.setdefault(school['id'], set())
-    admissions = yaml.safe_load((root / 'data/admissions.yaml').read_text(encoding='utf-8'))
+    admissions = yaml.load((root / 'data/admissions.yaml').read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
     return dict(units=units, sources=admissions['sources'], policies=admissions['policies'])
 
 

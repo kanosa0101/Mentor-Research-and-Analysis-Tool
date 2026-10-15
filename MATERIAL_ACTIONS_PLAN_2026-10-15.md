@@ -1,6 +1,6 @@
 # 材料准备动作：实施与继续扩展计划
 
-当前v0.19按合同实现11政策33动作及私人材料进度、历史、备份与提醒，覆盖西工大硕士、清华计算机/国防科大/天津博士。验证与限制以`DELIVERY_MATERIAL_ACTIONS_V0.19_2026-10-15.md`为准。以下六步保留为原实施设计；尚余92条已有政策未结构化，后续扩展优先普通CS本科生申请的院系材料和当前截止。
+当前v0.20已扩至39政策128动作、14校（普通硕士统考动作12校），保留身份/考点/专业条件、官方原文及准确日期。无动作项目现在可直接带完整范围回查政策，公开安全解析提速不缓存旧数据。验证与限制见`DELIVERY_MATERIAL_POLICY_V0.20_2026-10-15.md`。以下六步保留为原设计；其余67条已有政策尚未结构化，普通硕士院系和正式专业要求继续优先。
 
 ## 学生实际要完成的事
 
@@ -19,7 +19,7 @@
 
 ## 数据起点
 
-可复核的事实位于`cache/policy_v18/departments/material_stages.evidence.json`、`cache/policy_v18/charters/material_facts.json`及`cache/policy_v18/product_audit/`。这些是带出处的整理证据，尚不是产品可操作材料清单；正式落库前仍需逐项检查引用与目标范围。
+可复核的事实位于`cache/policy_v18/departments/material_stages.evidence.json`、`cache/policy_v18/charters/material_facts.json`及`cache/policy_v18/product_audit/`。其中一部分已在v0.19/v0.20逐项核对后转为产品动作；其余仍是线索，正式落库仍需核对引用与目标范围。
 
 ## 下一轮明确缺口
 

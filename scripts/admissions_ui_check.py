@@ -10,6 +10,19 @@ from scripts.serve import create_server, SITE
 
 
 def main():
+    exam_ids = {'tsinghua-2027-master-exam', 'tsinghua-cs-2027-085400-exam',
+                'tsinghua-2027-master-registration-v20north'}
+    recommend_ids = {'tsinghua-2027-master-recommend', 'tsinghua-cs-2027-master-recommend'}
+
+    def policy_ids(page):
+        return set(page.locator('[data-policy]').evaluate_all('(nodes) => nodes.map(node => node.dataset.policy)'))
+
+    def assert_conditional_registration(page):
+        assert page.evaluate('''() => {
+            const policy = ADMISSIONS_DATA.policies.find(p => p.id === 'tsinghua-2027-master-registration-v20north');
+            return Boolean(policy && policy.applies_if && policy.applies_if.text && policy.applies_if.quote && policy.applies_if.locator);
+        }'''), '特殊身份材料截止须保留政策级适用条件'
+
     out = Path('cache/admissions_ui')
     out.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
@@ -27,7 +40,8 @@ def main():
                     page.on('pageerror', lambda error: errors.append(str(error)))
                     page.goto(base + '/admissions.html?school=tsinghua&dept=cs&year=2027&degree=master&route=exam', wait_until='networkidle')
                     page.wait_for_function('window.ADMISSIONS_READY === true')
-                    assert page.locator('[data-policy]').count() == 2
+                    assert policy_ids(page) == exam_ids
+                    assert_conditional_registration(page)
                     assert '学校通用' in page.locator('#policy-list').inner_text()
                     assert '085400' in page.locator('#policy-list').inner_text()
                     page.locator('[data-policy="tsinghua-cs-2027-085400-exam"] .policy-body > summary').click()
@@ -47,6 +61,7 @@ def main():
                     assert (private / 'workflow.yaml').exists()
                     page.goto(base + '/admissions.html?school=tsinghua&dept=cs&year=2027&degree=master&route=recommend')
                     assert page.locator('[data-policy]').count() == 2
+                    assert policy_ids(page) == recommend_ids
                     page.locator('#unit-mentors').click()
                     page.wait_for_function('window.DISCOVERY_READY === true')
                     assert page.evaluate('view.every(row=>row.p.school==="tsinghua"&&row.p.dept==="cs")')
@@ -70,7 +85,8 @@ def main():
                     assert '无效年度' in page.locator('#policy-count').inner_text()
                     page.fill('#policy-year', '2027')
                     page.locator('#policy-year').blur()
-                    assert page.locator('[data-policy]').count() == 2
+                    assert policy_ids(page) == exam_ids
+                    assert_conditional_registration(page)
                     page.goto(base + '/admissions.html?school=tsinghua&route=unknown')
                     assert '未知渠道' in page.locator('#policy-count').inner_text()
                     page.goto(base + '/notices.html?school=tsinghua/cs')
@@ -92,7 +108,10 @@ def main():
                     offline = browser.new_page()
                     offline.goto((SITE / 'admissions.html').as_uri() + '?school=tsinghua&dept=cs&year=2027')
                     offline.wait_for_function('window.ADMISSIONS_READY === true')
-                    assert offline.locator('[data-policy]').count() == 6
+                    assert policy_ids(offline) == exam_ids | recommend_ids | {
+                        'tsinghua-2027-phd-assessment-v16pilot',
+                        'tsinghua-cs-2027-phd-assessment-v16pilot'}
+                    assert_conditional_registration(offline)
                     assert offline.locator('[data-policy="tsinghua-2027-phd-assessment-v16pilot"]').count() == 1
                     assert offline.locator('[data-policy="tsinghua-cs-2027-phd-assessment-v16pilot"]').count() == 1
                     print('PASS: layered policies/context/unknown/year/source-change/XSS/project prefill/no auto write/mobile/file mode')

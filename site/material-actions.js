@@ -28,6 +28,13 @@
     catch(e){if(ticket===serial){feedback('准备清单暂不可用：'+e.message+' 已有项目、文件与其他记录仍可使用。请重新核对清单后保存。',true);node('preparation-list').querySelectorAll('[type="submit"],[data-material-reminder]').forEach(b=>b.disabled=true);}}
   }
   function conditionText(c){return typeof c==='string'?c:c?.evidence?.text||c?.text||'';}
+  function policyReturn(p){
+    const scope={school:p.school_id||'',dept:p.dept_id||'',year:p.year,degree:p.degree||'',route:p.route||'',track:p.track||'',program:p.program_name?(p.program_code||'')+'|'+p.program_name:''},query=new URLSearchParams();
+    for(const [key,value] of Object.entries(scope))if(value)query.set(key,value);
+    const ready=root.AdmissionsRules.checklist(root.ADMISSIONS_DATA,scope).ready;
+    const pending=!ready?'申请目标尚未完整或院系尚未确认，请先编辑项目；回查链接仅保留已填范围，未知范围不表示适用。':!p.program_name?'正式专业 / 项目尚未明确；如需核对专业专属要求，请编辑项目补充名称。':'';
+    return `<p><a href="admissions.html?${escape(query.toString())}">核对本项目政策与材料要求</a></p>${pending?`<p class="scope-note">${escape(pending)}</p><button type="button" data-project-section="project" data-project-id="${escape(project)}" data-edit-project="${escape(project)}">编辑项目</button>`:''}`;
+  }
   function recordHtml(record){
     const reasonLabels={project_missing:'项目已不存在',goal_changed:'项目目标已变化',action_changed:'动作或来源已变化',action_unavailable:'当前目标已无此动作',scope_pending:'适用范围尚待核实',source_changed:'来源已变化',source_error:'来源检查失败',source_stale:'来源检查已过期',source_unknown:'来源状态未知',source_review:'摘要需重新核对',conditions_unconfirmed:'适用条件尚未确认',files_changed:'所用文件版本需复核'};
     const fileLabels={unchanged:'与保存版本一致',changed:'文件已变化',missing:'文件缺失',path_changed:'登记路径已变化',unknown_material:'材料索引已不存在',unreadable:'文件无法读取'};
@@ -40,7 +47,7 @@
     const p=workflow.projects[project];
     if(!p){list.innerHTML='<div class="empty"><h3>先选择一个申请项目</h3><p>准备进度按项目和材料动作分别保存。请在上方选择项目，或先创建项目并明确申请目标。</p><button type="button" data-section="project">创建申请项目</button></div>';return;}
     const rows=data.actions?.[project]||[];
-    list.innerHTML=`<p class="scope-note">${escape(p.name)} · 每个动作独立记录；同一文件用于另一项目或动作时，需要分别保存。</p><button type="button" data-project-section="material" data-project-id="${escape(project)}">登记 / 管理已有文件</button>${!rows.length?'<p class="empty">当前目标尚无已整理的分阶段动作。请核对完整官方政策；没有清单不表示没有材料要求。</p>':''}`+Object.entries(stages).map(([stage,label])=>{const items=rows.filter(v=>v.action.stage===stage);return items.length?`<section><h3>${label}</h3>${items.map((view)=>{
+    list.innerHTML=`<p class="scope-note">${escape(p.name)} · 每个动作独立记录；同一文件用于另一项目或动作时，需要分别保存。</p>${policyReturn(p)}<button type="button" data-project-section="material" data-project-id="${escape(project)}">登记 / 管理已有文件</button>${!rows.length?'<p class="empty">当前目标尚无已整理的分阶段动作。请核对完整官方政策；没有清单不表示没有材料要求。</p>':''}`+Object.entries(stages).map(([stage,label])=>{const items=rows.filter(v=>v.action.stage===stage);return items.length?`<section><h3>${label}</h3>${items.map((view)=>{
       const a=view.action,key=rows.indexOf(view),detailKey=project+'|'+view.policy_id+'|'+view.action_id,latest=data.records?.[view.latest_record_id],records=Object.values(data.records||{}).filter(r=>r.project_id===project&&r.policy_id===view.policy_id&&r.action_id===view.action_id).sort((a,b)=>String(b.created_at||'').localeCompare(String(a.created_at||'')));
       const conditions=view.conditions||[],blocked=view.can_record===false||!!view.program_pending||view.quality?.state!=='checked';
       const policy=(root.ADMISSIONS_DATA?.policies||[]).find(p=>p.id===view.policy_id);
