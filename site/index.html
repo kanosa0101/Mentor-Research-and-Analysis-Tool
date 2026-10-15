@@ -139,7 +139,7 @@ a:hover{text-decoration:underline}
 
 
 </div></header>
-<div class="page-heading"><h1>全量导师库</h1></div><div class="site-meta"><span>6527 导师 · 37 校 · 51 院系</span><span>来源最晚抓取 2026-10-14</span><span>来源超过 30 天或未知：5649 人</span></div>
+<div class="page-heading"><h1>全量导师库</h1></div><div class="site-meta"><span>6527 导师 · 37 校 · 51 院系</span><span>来源最晚抓取 2026-10-15</span><span>来源超过 30 天或未知：5649 人</span></div>
 <div class="wrap"><div class="context-actions"><a href="discovery.html">按研究条件找导师</a><a href="compare.html" id="selection-link">查看对比选择</a><span id="selection-summary" class="note"></span></div>
   <div class="bar">
     <div class="fld"><input id="q" placeholder="搜索姓名 / 研究方向 / 简介 / 邮箱…"></div>
@@ -175,7 +175,7 @@ a:hover{text-decoration:underline}
   <div class="foot">数据来自各院系官网原始页面 · 每条字段可在详情页查看出处与抓取日期</div>
 </div>
 <button id="cmpbtn">对比<span class="n">0</span>位导师</button>
-<script src="data.js?v=20261015-10"></script>
+<script src="data.js?v=20261015-14"></script>
 <script>
 const DATA = window.MENTOR_DATA;
 let view = [...DATA], sortK = null, sortAsc = true;
@@ -188,7 +188,7 @@ let OUT = {}, API_OK = false;
 let researchSearch = null;
 function loadResearchSearch(){
   if(!researchSearch) researchSearch = new Promise((resolve, reject)=>{
-    const script = document.createElement("script"); script.src = "search.js?v=20261015-10";
+    const script = document.createElement("script"); script.src = "search.js?v=20261015-14";
     script.onload = resolve;
     script.onerror = ()=>{researchSearch=null;script.remove();reject(new Error("研究材料加载失败，请刷新后重试"));};
     document.head.appendChild(script);

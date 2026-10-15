@@ -1,66 +1,95 @@
-# 官方招生栏目小样本；只监测当前栏目页，非历史全量采集。
+# 官方招生栏目当前页监测，非历史全量。
 targets:
-  - school: tsinghua
-    dept: cs
-    name: 清华计算机系
-    url: https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm
-    selector: 'a[href*="/info/1048/"]'
-    title_selector: h5
-  - school: pku
-    dept: cs
-    name: 北大计算机学院
-    url: https://cs.pku.edu.cn/zsxx/yjszs.htm
-    selector: 'a[href*="/info/1051/"]'
-    title_selector: h4
-  - school: sjtu
-    dept: cs
-    name: 上交计算机学院
-    url: https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html
-    api: https://www.cs.sjtu.edu.cn/active/ajax_type_list.html
-    post:
-      page: 1
-      cat_code: bsyjs_zsgz
-      type: ''
-      search: ''
-      extend_id: '0'
-      template: ajax_news_list1_search
-    selector: 'a[href*="/bsyjs_zsgz/"]'
-    title_selector: .tit
-  - school: buaa
-    dept: cyber
-    name: 北航网络空间安全学院
-    url: https://cst.buaa.edu.cn/yjsjy/zsgz.htm
-    selector: a[href*="/info/1125/"]
-    title_selector: self
-  - school: pku
-    dept: sai
-    name: 北大智能学院
-    url: https://sai.pku.edu.cn/rcpy/yjszs.htm
-    selector: a[href*="/info/"]
-    title_selector: self
-  - school: tsinghua
-    dept: auto
-    name: 清华自动化系
-    url: https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm
-    selector: a[href*="/info/1037/"]
-    title_selector: h4
-  - school: seu
-    dept: auto
-    name: 东南自动化学院
-    url: https://automation.seu.edu.cn/zxtz/list.htm
-    selector: a[href*="/page.htm"]
-    title_selector: self
-  - school: sjtu
-    dept: auto
-    name: 上交自动化与感知学院
-    url: https://sais.sjtu.edu.cn/yjs_zsgz.html
-    selector: a[href*="/yjs_zsgz/"]
-    title_selector: .tit
-    api: https://sais.sjtu.edu.cn/active/ajax_type_list.html
-    post:
-      page: 1
-      cat_code: yjs_zsgz
-      type: ''
-      search: ''
-      extend_id: '39'
-      template: ajax_news_list1_search
+- school: tsinghua
+  dept: cs
+  name: 清华计算机系
+  url: https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm
+  selector: a[href*="/info/1048/"]
+  title_selector: h5
+- school: pku
+  dept: cs
+  name: 北大计算机学院
+  url: https://cs.pku.edu.cn/zsxx/yjszs.htm
+  selector: a[href*="/info/1051/"]
+  title_selector: h4
+- school: sjtu
+  dept: cs
+  name: 上交计算机学院
+  url: https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html
+  api: https://www.cs.sjtu.edu.cn/active/ajax_type_list.html
+  post:
+    page: 1
+    cat_code: bsyjs_zsgz
+    type: ''
+    search: ''
+    extend_id: '0'
+    template: ajax_news_list1_search
+  selector: a[href*="/bsyjs_zsgz/"]
+  title_selector: .tit
+- school: buaa
+  dept: cyber
+  name: 北航网络空间安全学院
+  url: https://cst.buaa.edu.cn/yjsjy/zsgz.htm
+  selector: a[href*="/info/1125/"]
+  title_selector: self
+- school: pku
+  dept: sai
+  name: 北大智能学院
+  url: https://sai.pku.edu.cn/rcpy/yjszs.htm
+  selector: a[href*="/info/"]
+  title_selector: self
+- school: tsinghua
+  dept: auto
+  name: 清华自动化系
+  url: https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm
+  selector: a[href*="/info/1037/"]
+  title_selector: h4
+- school: seu
+  dept: auto
+  name: 东南自动化学院
+  url: https://automation.seu.edu.cn/zxtz/list.htm
+  selector: li a[href*="/page.htm"]
+  title_selector: self
+  date_selector: .Article_PublishDate
+- school: sjtu
+  dept: auto
+  name: 上交自动化与感知学院
+  url: https://sais.sjtu.edu.cn/yjs_zsgz.html
+  selector: a[href*="/yjs_zsgz/"]
+  title_selector: .tit
+  api: https://sais.sjtu.edu.cn/active/ajax_type_list.html
+  post:
+    page: 1
+    cat_code: yjs_zsgz
+    type: ''
+    search: ''
+    extend_id: '39'
+    template: ajax_news_list1_search
+- school: hust
+  dept: cyber
+  name: 华科网络空间安全学院
+  url: https://cse.hust.edu.cn/yjsjy/tzgg.htm
+  selector: li a[href*="/info/1079/"]
+  title_selector: self
+  date_selector: .date
+- school: hust
+  dept: aia
+  name: 华科人工智能与自动化学院
+  url: https://aia.hust.edu.cn/tzgg/yjs.htm
+  selector: li a[href*="/info/1177/"]
+  title_selector: h2
+  date_selector: .date3
+- school: whu
+  dept: cyber
+  name: 武大国家网络安全学院
+  url: https://cse.whu.edu.cn/kjdh/tzgg/jx.htm
+  selector: li a[href*="/info/2521/"]
+  title_selector: self
+  date_selector: .time
+- school: csu
+  dept: auto
+  name: 中南自动化学院
+  url: https://soa.csu.edu.cn/index/tzgg.htm
+  selector: li a[href*="/info/1032/"]
+  title_selector: self
+  date_selector: span

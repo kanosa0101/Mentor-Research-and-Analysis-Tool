@@ -53,7 +53,7 @@ def main():
                         page.screenshot(path=str(output / f'{name}-{width}-full.png'), full_page=True)
                         if name == 'admissions-empty':
                             assert page.locator('.policy-body[open]').count() == 0
-                            assert page.locator('[data-policy]').count() == 13
+                            assert page.locator('[data-policy]').count() == page.evaluate('ADMISSIONS_DATA.policies.length')
                             assert '选择学校与院系' in page.locator('#unit-entries').inner_text()
                         if name == 'admissions-target':
                             assert page.locator('[data-checklist-field]').count() == 8

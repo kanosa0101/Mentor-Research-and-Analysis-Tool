@@ -12,6 +12,7 @@ let materialView='current';
 const formDirty=new Set();
 let editing = {project:null,material:null,reminder:null};
 let projectDates=[];
+let renderedPolicyEvents;
 const goalLabels={master:'硕士',phd:'博士',recommend:'推免',exam:'统考',assessment:'申请考核',ordinary:'普通招生',special:'专项 / 特定项目'};
 const dateLabels={deadline:'报名 / 材料截止',exam:'考试 / 考核安排',qualification:'资格相关时间',plan:'个人计划'};
 const goalKeys={school_id:'school-id',dept_id:'dept-id',degree:'degree',route:'route',track:'track',program_code:'program-code',program_name:'program-name'};
@@ -69,7 +70,8 @@ function renderGoalEditor(){
   el('project-goal-preview').textContent=result.ready?'目标已填写；保存后绑定。专业 / 项目未指定时，其专属要求仅作条件性参考。':'结构化目标尚未完整，保存后也不会借用其他目标政策。';
   el('project-dates').innerHTML=projectDates.map((d,i)=>`<p>${esc(d.origin==='policy'?'官方事件快照':'手动登记')} · ${esc(dateLabels[d.kind])} · ${esc(d.label)} · ${esc(d.at)} · ${esc(dateStatus(d))} <button type="button" data-remove-project-date="${i}">移除</button> ${snapshotLinks(d)}<br><small>${esc(snapshotStatus(d))}</small></p>`).join('')||'<p class="muted">尚未保存项目日期。</p>';
   const events=applicableEvents(p);
-  el('project-policy-dates').innerHTML=events.map((row,i)=>`<p>${esc(dateLabels[row.event.kind])} · ${esc(row.event.label)} · ${esc(row.event.at)} · ${esc(dateStatus({...row.event,origin:"policy"}))} · ${sourceLinks(row.policy,row.event)} <button type="button" data-add-policy-date="${i}">加入项目日期</button><br><small>${esc(row.quality.label)}</small></p>`).join('')||'<p class="muted">当前目标没有可直接加入的官方事件；未知日期仍须查原文。</p>';
+  const eventHtml=events.map((row,i)=>`<p>${esc(dateLabels[row.event.kind])} · ${esc(row.event.label)} · ${esc(row.event.at)} · ${esc(dateStatus({...row.event,origin:"policy"}))} · ${sourceLinks(row.policy,row.event)} <button type="button" data-add-policy-date="${i}">加入项目日期</button><br><small>${esc(row.quality.label)}</small></p>`).join('')||'<p class="muted">当前目标没有可直接加入的官方事件；未知日期仍须查原文。</p>';
+  if(renderedPolicyEvents!==eventHtml){el('project-policy-dates').innerHTML=eventHtml;renderedPolicyEvents=eventHtml;}
 }
 function projectRequirements(p){
   const scope=projectScope(p),result=projectChecklist(p),q=goalQuery(p);

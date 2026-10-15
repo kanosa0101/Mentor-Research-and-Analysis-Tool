@@ -1,9 +1,34 @@
+import copy
 import unittest
 
 from test_maintenance import script
 
 
 class NoticeTests(unittest.TestCase):
+    def test_default_order_prioritizes_current_list_then_publication_date(self):
+        monitor = script('monitor_notices')
+        rows = [
+            {'school': 'a', 'url': '/history', 'publication_date': '2026-10-15', 'seen_in_latest_list': False, 'fetched_at': '2026-10-14'},
+            {'school': 'a', 'url': '/unknown', 'publication_date': None, 'seen_in_latest_list': True},
+            {'school': 'z', 'url': '/new', 'publication_date': '2026-10-15', 'seen_in_latest_list': True},
+            {'school': 'a', 'url': '/old', 'publication_date': '2026-09-01', 'seen_in_latest_list': True},
+            {'school': 'a', 'url': '/history-unknown', 'seen_in_latest_list': False},
+        ]
+        original = copy.deepcopy(rows)
+        ordered = monitor.sort_notices(rows)
+        self.assertEqual([r['url'] for r in ordered], ['/new', '/old', '/unknown', '/history', '/history-unknown'])
+        self.assertEqual(rows, original)
+        self.assertEqual(len(ordered), len(rows))
+        self.assertTrue(all(any(r is old for old in rows) for r in ordered))
+
+    def test_notice_order_has_stable_school_and_url_ties(self):
+        monitor = script('monitor_notices')
+        rows = [{'school': school, 'url': url, 'publication_date': '2026-10-08', 'seen_in_latest_list': True}
+                for school, url in [('z', '/a'), ('a', '/z'), ('a', '/a')]]
+        expected = [('a', '/a'), ('a', '/z'), ('z', '/a')]
+        self.assertEqual([(r['school'], r['url']) for r in monitor.sort_notices(rows)], expected)
+        self.assertEqual([(r['school'], r['url']) for r in monitor.sort_notices(reversed(rows))], expected)
+
     def test_list_ignores_navigation_and_keeps_official_source(self):
         monitor = script('monitor_notices')
         cfg = {'school': 'pku', 'dept': 'cs', 'url': 'https://cs.pku.edu.cn/zsxx/yjszs.htm',

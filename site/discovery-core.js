@@ -30,5 +30,22 @@
       checks,evidence,review,score:active.filter(c=>c.state==='pass').length,unknown:active.filter(c=>c.state==='unknown').length};
   }
   function projectScoped(prefs){return !!prefs.program||prefs.track==='special';}
-  const api={evaluate,projectScoped};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
+  function completeness(p,extra={}){
+    const present=value=>typeof value==='string'&&value.trim()&&!/(未知|待补充|未整理)/.test(value);
+    const direction=extra.research_direction_raw||p.research_direction_raw;
+    const field=present(direction)?'research_direction_raw':'bio_raw',source=extra.provenance?.[field];
+    return [present(direction)?2:present(extra.bio_excerpt)?1:0,Number(!!present(p.email)),Number(!!present(p.title)),Number(!!present(p.supervisor)),Number(!!source?.source&&/^https?:/.test(source.source)&&/^\d{4}-\d{2}-\d{2}/.test(source.fetched_at||''))];
+  }
+  function randomKey(id,seed){let hash=2166136261;for(const char of seed+'|'+id){hash^=char.charCodeAt(0);hash=Math.imul(hash,16777619);}hash^=hash>>>16;hash=Math.imul(hash,0x85ebca6b);hash^=hash>>>13;return hash>>>0;}
+  function rankCandidates(rows,prefs,extra={},seed=''){
+    const matched=!!(prefs.topics.length&&prefs.modes.research!=='off'||prefs.degree!=='any'&&prefs.modes.qualification!=='off'||prefs.year||prefs.route&&prefs.route!=='unknown'||['email','opportunity','eligibility'].some(key=>prefs.modes[key]==='hard')||rows.some(row=>row.result.review));
+    const ranked=rows.map(row=>({...row,completeness:completeness(row.p,extra[row.p.page]),random:randomKey(row.p.page,seed)}));
+    ranked.sort((a,b)=>{
+      if(matched){const match=b.result.score-a.result.score||a.result.unknown-b.result.unknown;if(match)return match;}
+      for(let i=0;i<a.completeness.length;i++){const diff=b.completeness[i]-a.completeness[i];if(diff)return diff;}
+      return a.random-b.random||a.p.page.localeCompare(b.p.page);
+    });
+    return {rows:ranked,matched};
+  }
+  const api={evaluate,projectScoped,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
 })(typeof window!=='undefined'?window:globalThis);

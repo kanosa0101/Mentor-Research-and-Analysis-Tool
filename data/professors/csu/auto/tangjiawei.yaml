@@ -3,13 +3,18 @@ name: 汤嘉伟
 aliases: []
 school: csu
 dept: auto
-status: roster
+status: enriched
 title: 讲师
+bio_raw: 汤嘉伟，人工智能系讲师。2014年本科毕业于曼彻斯特大学电气工程及其自动化学院，2020年10月获曼彻斯特大学电气工程及其自动化博士学位，2021年至2023年在克兰菲尔德大学任职博后。作为技术骨干参与Engineering
+  and Physical Science Research Council 资助的重点研发项目。
 institutes:
 - 人工智能系
 detail_url: http://faculty.csu.edu.cn/tangjiawei/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/tangjiawei/zh_CN/index.htm
 first_seen: '2026-10-14'
+last_verified: '2026-10-15'
+last_fetched: '2026-10-15'
+last_parsed: '2026-10-15'
 facets: []
 provenance:
   name:
@@ -26,4 +31,9 @@ provenance:
     origin: crawled
     source: https://soa.csu.edu.cn/szdw/jcrc.htm
     fetched_at: '2026-10-14'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/tangjiawei/zh_CN/index.htm
+    fetched_at: '2026-10-15'
     confidence: auto

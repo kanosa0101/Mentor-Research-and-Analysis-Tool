@@ -4,15 +4,31 @@ aliases:
 - zx
 school: hust
 dept: aia
-status: roster
+status: enriched
+bio_raw: 人工智能与自动化学院青年教师、多谱信息智能处理技术全国重点实验室青年骨干，主要从事计算机视觉与智能感知计算相关的学术与应用技术研究。主持技术领域基金、联合基金青年人才基金等项目。近5年以通讯作者在IEEE
+  TPAMI、CVPR、ICLR等领域顶级学术期刊或会议上发表A类论文十余篇，获2025年ICME最佳论文/最佳学生论文提名。指导硕士生和本科生组成的团队获2024年“挑战杯”竞赛“揭榜挂帅”专项赛全国特等奖。
 institutes: []
+research_direction_raw: 计算机视觉与智能感知计算
 detail_url: http://faculty.hust.edu.cn/zx
 profile_url: http://faculty.hust.edu.cn/zx
 first_seen: '2026-10-14'
+last_verified: '2026-10-15'
+last_fetched: '2026-10-15'
+last_parsed: '2026-10-15'
 facets: []
 provenance:
   name:
     origin: crawled
     source: https://aia.hust.edu.cn/szdw/xysz/axlb.htm
     fetched_at: '2026-10-14'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/zx
+    fetched_at: '2026-10-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/zx
+    fetched_at: '2026-10-15'
     confidence: auto

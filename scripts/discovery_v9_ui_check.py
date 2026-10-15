@@ -70,6 +70,7 @@ def main():
                 page.click('[data-compare="test-0"]')
                 assert page.locator('#compare-open').is_visible(), 'single selection must be accessible'
                 page.click('#compare-open')
+                page.locator('#card').wait_for(state='visible')
                 assert page.locator('#card').is_visible()
                 def query(selector): return parse_qs(urlparse(page.locator(selector).first.get_attribute('href')).query)
                 def check_scope(q):

@@ -3,13 +3,22 @@ name: 姜霞
 aliases: []
 school: csu
 dept: auto
-status: roster
+status: enriched
 title: 副教授
+bio_raw: 从教 20 多年，一直从事一线基础教学工作，教学获奖 2 9 次，连续十 五 年获评中南大学本科教学质量优秀奖，获得第五届青年教师 “ 三十佳 ”
+  教学竞赛 “ 十佳教案 ” 、第十一届 “ 三十佳 ” 课堂教学竞赛 “ 三十佳 ” 称号， 2017 年荣获 “ 茅以升教学奖 ” ， 2018 年在第二届全国青年教师电子技术、电子线路授课竞赛中获得全国三等奖，
+  2019 年获得第三届全国高等学校青年教师电工学课程教学竞赛全国（总决赛）二等奖， 2020 年获得湖南省电子信息教学案例设计竞赛（省级）一等奖， 2021 年获得湖南省高等院校青年教师电工学课堂教学比赛一等奖
+  ， 2025 年获得钟掘教育优秀教师奖 。教改和科研论文二十余篇，主持教育部产学合作协同育人项目 2 项，主持教改项目 8 项，参与教改项目 二 十余项，主持教材立项
+  1 项 ，获得校级教学成果二等奖 1 项 。主编和参编教材 4 本，主编教材荣获中国电子教育学会 2016 年全国电子信息类和财经类优秀教材评选一等奖。指导本科生大学生创新创业项目和自由探索项目十余项，指导本科生参加学科竞赛获奖
+  二十余项 。
 institutes:
 - 电工电子基础教学中心
 detail_url: https://faculty.csu.edu.cn/jiangxia/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/jiangxia/zh_CN/index.htm
 first_seen: '2026-10-14'
+last_verified: '2026-10-15'
+last_fetched: '2026-10-15'
+last_parsed: '2026-10-15'
 facets: []
 provenance:
   name:
@@ -26,4 +35,9 @@ provenance:
     origin: crawled
     source: https://soa.csu.edu.cn/szdw/jcrc.htm
     fetched_at: '2026-10-14'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/jiangxia/zh_CN/index.htm
+    fetched_at: '2026-10-15'
     confidence: auto

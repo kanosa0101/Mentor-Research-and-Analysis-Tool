@@ -4,12 +4,25 @@ aliases:
 - ZHOUJIAXI
 school: hust
 dept: cyber
-status: roster
+status: enriched
+title: 教授
+supervisor: 博导、硕导
+bio_raw: '个人简介
+
+  Personal profile
+
+  周家喜，男，1980年12月，中共党员，教授，中国青年五四奖章获得者（2013年）。本硕博均就读于中国科学技术大学电子信息工程专业。长期从事卫星通信和信息网络技术研究和型号研制工作，先后参与载人航天等国家重大工程，担任多个项目总设计师。2019年10月任国家“科技创新2030”天地一体化信息网络重大项目副总设计师兼总标准化师。获省部级一等奖1项、三等奖3项。申请国家发明专利54项，已授权45项。
+
+  More+'
 institutes:
 - 网络空间安全系
+research_direction_raw: 空天地一体化信息网络
 detail_url: https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
 profile_url: https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
 first_seen: '2026-10-14'
+last_verified: '2026-10-15'
+last_fetched: '2026-10-15'
+last_parsed: '2026-10-15'
 facets: []
 provenance:
   name:
@@ -21,4 +34,24 @@ provenance:
     origin: crawled
     source: https://cse.hust.edu.cn/szdw/wlkjaqx.htm
     fetched_at: '2026-10-14'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
+    fetched_at: '2026-10-15'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
+    fetched_at: '2026-10-15'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
+    fetched_at: '2026-10-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
+    fetched_at: '2026-10-15'
     confidence: auto

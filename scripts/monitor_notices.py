@@ -56,6 +56,16 @@ def signature(rows):
     return hashlib.sha256(json.dumps(content, ensure_ascii=False).encode()).hexdigest()
 
 
+def sort_notices(rows):
+    """当前栏目在先；组内按公开日期倒序，未标日期在后，保留原记录。"""
+    def key(row):
+        published = row.get('publication_date')
+        return (row.get('seen_in_latest_list') is not True, not bool(published),
+                -int(published.replace('-', '')) if published else 0,
+                row['school'], row['url'])
+    return sorted(rows, key=key)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--refresh', action='store_true')
@@ -112,7 +122,7 @@ def main():
             print(f'{key}: ERROR {e}', file=sys.stderr)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps({'scope': 'configured-department-current-list-pilot',
-                                      'sources': sources, 'notices': sorted(rows.values(), key=lambda r: (r['school'], r['url']))},
+                                      'sources': sources, 'notices': sort_notices(rows.values())},
                                      ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'栏目变化 {changes} | 失败 {failed} | 候选通知 {len(rows)}；截止日期与入学年份待人工核验')
     return 1 if failed else 0

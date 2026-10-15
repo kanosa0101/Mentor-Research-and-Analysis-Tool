@@ -54,6 +54,8 @@ def main():
                     assert page.input_value('#intent-route') == 'recommend'
                     assert '院系' in page.locator('#unit-context').inner_text()
                     page.goto(base + '/admissions.html?school=pku&dept=cs&year=2027&degree=master&route=exam')
+                    assert page.locator('[data-policy="pku-2027-master-exam-v14"]').count() == 1
+                    page.goto(base + '/admissions.html?school=zju&dept=cs&year=2027&degree=master&route=exam')
                     assert page.locator('[data-policy]').count() == 0
                     assert '未覆盖' in page.locator('#policy-list').inner_text()
                     assert page.locator('#unit-entries a').count() > 0

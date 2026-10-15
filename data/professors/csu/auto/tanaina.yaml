@@ -3,13 +3,19 @@ name: 覃爱娜
 aliases: []
 school: csu
 dept: auto
-status: roster
+status: enriched
 title: 教授
+supervisor: 硕导
+bio_raw: 覃爱娜，博士，教授，中南大学自动化学院电工电子教学中心主任，国家线上一流课程、国家精品在线开放课程“数字电子技术”的负责人，中国高校电工电子在线开放课程联盟理事。主要研究方向：数字信息技术、语音信号处理。承担国家863项目、国家自然科学基金面上项目、湖南省自然科学基金项目等。主持教育部产学协同育人项目、湖南省高校教学教改研究项目和中南大学教研教改项目多项。主编出版教材4部，参编教材4部，发表学术论文和教改论文30余篇；曾获全国高校青年教师电子技术电子线路教学竞赛全国二等奖、中南赛区一等奖、湖南省信息化教学竞赛一等奖、湖南省微课大赛三等奖、西南铝奖励金优秀教师奖，校级成果一等奖，指导全国大学生电子设计大赛获全国一等奖等。
 institutes:
 - 电工电子基础教学中心
+research_direction_raw: 数字信息技术、语音信号处理
 detail_url: https://faculty.csu.edu.cn/tanaina/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/tanaina/zh_CN/index.htm
 first_seen: '2026-10-14'
+last_verified: '2026-10-15'
+last_fetched: '2026-10-15'
+last_parsed: '2026-10-15'
 facets: []
 provenance:
   name:
@@ -26,4 +32,19 @@ provenance:
     origin: crawled
     source: https://soa.csu.edu.cn/szdw/jcrc.htm
     fetched_at: '2026-10-14'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/tanaina/zh_CN/index.htm
+    fetched_at: '2026-10-15'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/tanaina/zh_CN/index.htm
+    fetched_at: '2026-10-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/tanaina/zh_CN/index.htm
+    fetched_at: '2026-10-15'
     confidence: auto

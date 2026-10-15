@@ -61,6 +61,101 @@ sources:
     url: https://automation.seu.edu.cn/_upload/article/files/35/fb/9e9a4b5f44b38208253d26a845e3/0dce9242-75ff-4998-bc7c-b643c84be95f.pdf
     format: pdf
     selector: ''
+  bit_2027_master_charter_v14:
+    url: https://grd.bit.edu.cn/zsgz/ssyjs/gzzd_ss/256b73c5ca7d41b5b279b8f34dd39192.htm
+    format: html
+    selector: .gp-article1
+    label: 北理工2027硕士招生章程（2026-10-09）
+  bit_2027_master_registration_v14:
+    url: https://grd.bit.edu.cn/zsgz/ssyjs/tzgg_ss/0c8992c19aba46e283b03565210a8a2c.htm
+    format: html
+    selector: .gp-article1
+    label: 北理工2027硕士招生单位网报公告（2026-10-09）
+  bit_cs_2027_recommend_v14:
+    url: https://cs.bit.edu.cn/tzgg/4d632f0195df4f51b98d27b18a618e3f.htm
+    format: html
+    selector: .article
+    label: 北理工计算机学院2027推免通知（仅智能数字表演、软件工程）
+  pku_2027_charter_v14:
+    url: https://admission.pku.edu.cn/docs/20261008162609970607.pdf
+    format: pdf
+    selector: ''
+    label: 北大2027硕士招生简章（校本部）
+  pku_2027_registration_v14:
+    url: https://admission.pku.edu.cn/docs/20261009151327494248.pdf
+    format: pdf
+    selector: ''
+    label: 北大2027招生单位网报公告
+  pku_2027_1101_materials_v14:
+    url: https://admission.pku.edu.cn/docs/20261009083438232128.pdf
+    format: pdf
+    selector: ''
+    label: 北大1101报考点2027条件材料清单
+  ustc_2027_charter_v14:
+    url: https://yz.ustc.edu.cn/static/upload/article/file/1791419807139/cc09c5357d10427baef869c3b5b43411.pdf
+    format: pdf
+    selector: ''
+    label: 中科大2027硕士招生章程
+  ustc_2027_registration_v14:
+    url: https://yz.ustc.edu.cn/article/2858/182
+    format: html
+    selector: .content-box
+    label: 中科大2027硕士招生网报通告
+  sjtu_2027_charter_v14:
+    url: https://yzb.sjtu.edu.cn/post/3784
+    format: html
+    selector: .mce-content-body
+    label: 上海交大2027硕士招生章程
+  ucas_2027_charter_v14:
+    url: https://admission.ucas.ac.cn/showarticle/Article/1beb211c-ea0d-4c97-b5ce-61efa7addfcd/8166de60-e1d2-43e4-8311-57c196935f89
+    format: html
+    selector: .sanji_content
+    label: 国科大2027硕士招生章程
+  v14_units_csu_school:
+    label: 中南大学2027年硕士研究生招生章程
+    url: https://yz.csu.edu.cn/info/1011/1541.htm
+    format: html
+    selector: .v_news_content
+  v14_units_seu_school:
+    label: 东南大学2027年硕士研究生招生章程
+    url: https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm
+    format: html
+    selector: .wp_articlecontent
+  v14_units_whu_school:
+    label: 武汉大学2027年硕士研究生招生章程
+    url: https://gs.whu.edu.cn/info/2571/108711.htm
+    format: html
+    selector: .v_news_content
+  v14_units_whu_cyber_quota:
+    label: 武大国家网安2027统考分专业计划公告
+    url: https://cse.whu.edu.cn/info/2521/50311.htm
+    format: html
+    selector: .v_news_content
+  v14_units_whu_cyber_dir_pdf:
+    label: 武大国家网安2027专业目录PDF
+    url: https://gs.whu.edu.cn/__local/C/03/A9/08394346A7B627FDFB8B507143F_7521D14D_E4D1.pdf
+    format: pdf
+    selector: ''
+  v14_units_whu_cyber_dir:
+    label: 武大国家网安2027专业目录发布页
+    url: https://gs.whu.edu.cn/info/2581/108871.htm
+    format: html
+    selector: body
+  v14_units_seu_special:
+    label: 东南2027少民硕士专项说明
+    url: https://yzb.seu.edu.cn/2026/1014/c6676a586006/page.htm
+    format: html
+    selector: .wp_articlecontent
+  v14_units_csu_auto:
+    label: 中南自动化2027推免考核录取细则（历史轮次）
+    url: https://soa.csu.edu.cn/info/1032/9784.htm
+    format: html
+    selector: .v_news_content
+  v14_units_hust_cyber_extension:
+    label: 华科网安2027推免预报名延时通知（历史轮次）
+    url: https://cse.hust.edu.cn/info/1079/4531.htm
+    format: html
+    selector: .v_news_content
 policies:
 - id: tsinghua-2027-master-exam
   school: tsinghua
@@ -351,7 +446,7 @@ policies:
   program: ''
   program_code: ''
   published_at: '2026-10-08'
-  reviewed_at: '2026-10-14'
+  reviewed_at: '2026-10-15'
   source_id: hust_school_exam_pdf_v7
   review_hashes:
     hust_school_exam_pdf_v7: a00b540f18e012032503d719e2541c1cb1e2600bf93965a1de04d7ff71369f1f
@@ -574,3 +669,837 @@ policies:
       - seu_auto_elite_pdf_v7
   track: special
   events: []
+- id: bit-2027-master-exam
+  title: 北理工2027硕士统考：报名与学校通用要求
+  school: bit
+  dept: ''
+  level: school
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-09'
+  reviewed_at: '2026-10-15'
+  source_id: bit_2027_master_charter_v14
+  review_hashes:
+    bit_2027_master_charter_v14: f07ef28f8f27614b774e6a1379319e7ba83d72e85d6d60883fbf73c10eff6dbd
+    bit_2027_master_registration_v14: 6909b6eb79578e1f4705082d19c613ba98f213867ad172ba352f0a303897ec1e
+  fields:
+    eligibility:
+      text: 学业条件包括应届本科、已毕业本科、符合年限的专科或本科结业同等学力、已获硕博学历学位等；应届生须在入学前取得规定证书。在校研究生须在报名前征得培养单位同意并出具书面证明；非全日制仅接受定向就业。具体情形须逐条核对。
+      quote: 在校研究生报考须在报名前征得所在培养单位同意，并出具书面证明。
+      locator: 章程四、3（1）—（5）；二、招生类别
+    materials:
+      text: 报名须如实填报信息、提供真实材料并签署诚信承诺书；学历学籍校验未通过者须在复试前完成核验。在校研究生另须培养单位同意的书面证明。考试须准考证及有效身份证；报考点审核的具体材料、补交截止时间须另查所选报考点通知，本公告未给出统一完整清单。
+      quote: 提供真实材料
+      locator: 网报公告二、1及4（2）、三；章程四、3（5）
+      source_ids:
+      - bit_2027_master_registration_v14
+      - bit_2027_master_charter_v14
+    exams:
+      text: 初试2026年12月19—20日；具体科目以招生专业目录为准。复试时间地点科目方式另行公布；同等学力复试加试两门相关本科主干课程，加试不合格不予录取。
+      quote: 初试时间为2026年12月19-20日。
+      locator: 章程三、六、七
+    timeline:
+      text: 正式网报2026年10月15—24日，每日9:00—22:00；预报名10月9—12日已结束。报名后须持续查看所选报考点审核及补材料通知，不能仅填写信息而忽略审核结果。
+      quote: 报名时间为2026年10月15日至10月24日
+      locator: 网报公告二、1
+      source_ids:
+      - bit_2027_master_registration_v14
+    quota:
+      text: 目录人数为全国统考录取人数、不含推免；2027计划尚未下达，目录人数仅供参考，分专业计划可能调整。不能据此判定导师个人名额。
+      quote: 招生人数仅供参考
+      locator: 章程三、招生专业及计划
+    tuition:
+      text: 具体学制与学费在章程附件中，须按专业核对；本摘要未核对附件逐专业收费。全日制工商管理及定向就业部分类型不提供宿舍，须按章程例外核对。
+      quote: 学费标准见附件
+      locator: 章程八—十
+    funding:
+      text: 学校设研究生奖助学金，具体评选条件与要求另见奖助学金实施方案；章程未承诺每位申请者均能获奖。
+      quote: 奖、助学金具体评选条件和要求
+      locator: 章程九
+    contact:
+      text: 报名入口为中国研究生招生信息网 https://yz.chsi.com.cn；招生办010-68912286、yjszb@bit.edu.cn。应届生原则选就读学校所在省报考点，其他考生按工作或户口所在地指定报考点要求办理。
+      quote: yjszb@bit.edu.cn
+      locator: 章程十四；网报公告二、1—2
+      source_ids:
+      - bit_2027_master_charter_v14
+      - bit_2027_master_registration_v14
+  events:
+  - label: 2027硕士统考正式网报截止（每日9:00—22:00）
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 每日9:00—22:00
+    locator: 网报公告二、1；同段明确报名期10月15日至10月24日
+    source_ids:
+    - bit_2027_master_registration_v14
+  - label: 2027硕士统考初试首日（12月19—20日，具体场次见准考证）
+    kind: exam
+    at: '2026-12-19'
+    quote: 初试时间为2026年12月19-20日。
+    locator: 章程六、1
+    source_ids:
+    - bit_2027_master_charter_v14
+- id: bit-2027-master-recommend
+  title: 北理工2027硕士推免：学校通用系统要求
+  school: bit
+  dept: ''
+  level: school
+  year: 2027
+  degree: master
+  route: recommend
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-09'
+  reviewed_at: '2026-10-15'
+  source_id: bit_2027_master_charter_v14
+  review_hashes:
+    bit_2027_master_charter_v14: f07ef28f8f27614b774e6a1379319e7ba83d72e85d6d60883fbf73c10eff6dbd
+  fields:
+    eligibility:
+      text: 具有推免资格者须在教育部规定时间内通过推免系统报考并按学校要求参加复试；最终未被录取者推免资格失效。学院及具体专业选拔要求仍须另外核对。
+      quote: 具有推荐免试生资格的考生
+      locator: 章程五、4（8）
+    contact:
+      text: 正式报考系统 https://yz.chsi.com.cn/tm；已被录取的推免生不得再报名参加当年全国统考。章程没有给出各院系推免报名截止日，本记录不替代院系通知。
+      quote: 已被招生单位录取的推免生，不得再报名参加当年全国统一考试。
+      locator: 章程五、4（8）
+  events: []
+- id: bit-cs-2027-master-recommend-performance
+  title: 北理工计算机2027推免：智能数字表演（本轮已截止）
+  school: bit
+  dept: cs
+  level: program
+  year: 2027
+  degree: master
+  route: recommend
+  track: ordinary
+  program: 智能数字表演
+  program_code: ''
+  published_at: '2026-09-15'
+  reviewed_at: '2026-10-15'
+  source_id: bit_cs_2027_recommend_v14
+  review_hashes:
+    bit_cs_2027_recommend_v14: 7aa0575a16c0d61df864969344b60c58cee9013ad2c1ebb105e4a4ed9c6e82e8
+  fields:
+    eligibility:
+      text: 本通知仅接收智能数字表演及软件工程硕士推免，要求已获所在高校推免资格、优秀应届本科、学习期间未受处分，并满足健康和基础实践创新能力要求。不能外推为计算机学硕、博士或其他专业招生。
+      quote: 已获得所在高校推荐免试资格的优秀应届本科毕业生。
+      locator: 二、申请条件；一、招收类别及专业
+    materials:
+      text: 本轮要求填写问卷并上传资料；正文未列明全部材料名称和格式，须按官方通知所链接问卷要求准备或向学院咨询。正文附件是硕士导师名单，不能当作完整材料清单。
+      quote: 完成以下问卷星填写和资料上传
+      locator: 三、申请程序1、3
+    timeline:
+      text: 本轮资料上传截止2026年9月19日中午12点，现已过期；资格筛选通过后邮件通知复试，未通过不另行通知。后续新增批次需另查学院公告，不能沿用本轮截止时间。
+      quote: 9月19日中午12点前
+      locator: 三、申请程序1—2
+    tuition:
+      text: 智能数字表演学制三年；此通知未公布该专业学费。
+      quote: 智能数字表演（学术学位、学制三年）、软件工程（专业学位，学制两年）。
+      locator: 一、招收类别及专业
+    contact:
+      text: 通知报名资料上传入口 https://v.wjx.cn/vm/r9veRYz.aspx；赵老师010-68914756，zhaoxj@bit.edu.cn。第三方问卷仅作为官网指向的办理入口，本轮已截止。
+      quote: zhaoxj@bit.edu.cn
+      locator: 三、申请程序1；四、联系方式
+  events:
+  - label: 计算机学院智能数字表演硕士推免本轮资料上传截止（已过期）
+    kind: deadline
+    at: '2026-09-19T12:00:00+08:00'
+    quote: 9月19日中午12点前
+    locator: 2026-09-15通知三、申请程序1；年份由通知发布日期确定
+- id: bit-cs-2027-master-recommend-software
+  title: 北理工计算机2027推免：软件工程（本轮已截止）
+  school: bit
+  dept: cs
+  level: program
+  year: 2027
+  degree: master
+  route: recommend
+  track: ordinary
+  program: 软件工程
+  program_code: ''
+  published_at: '2026-09-15'
+  reviewed_at: '2026-10-15'
+  source_id: bit_cs_2027_recommend_v14
+  review_hashes:
+    bit_cs_2027_recommend_v14: 7aa0575a16c0d61df864969344b60c58cee9013ad2c1ebb105e4a4ed9c6e82e8
+  fields:
+    eligibility:
+      text: 本通知仅接收智能数字表演及软件工程硕士推免，要求已获所在高校推免资格、优秀应届本科、学习期间未受处分，并满足健康和基础实践创新能力要求。不能外推为计算机学硕、博士或其他专业招生。
+      quote: 已获得所在高校推荐免试资格的优秀应届本科毕业生。
+      locator: 二、申请条件；一、招收类别及专业
+    materials:
+      text: 本轮要求填写问卷并上传资料；正文未列明全部材料名称和格式，须按官方通知所链接问卷要求准备或向学院咨询。正文附件是硕士导师名单，不能当作完整材料清单。
+      quote: 完成以下问卷星填写和资料上传
+      locator: 三、申请程序1、3
+    timeline:
+      text: 本轮资料上传截止2026年9月19日中午12点，现已过期；资格筛选通过后邮件通知复试，未通过不另行通知。后续新增批次需另查学院公告，不能沿用本轮截止时间。
+      quote: 9月19日中午12点前
+      locator: 三、申请程序1—2
+    tuition:
+      text: 软件工程学制两年；此通知未公布该专业学费。
+      quote: 智能数字表演（学术学位、学制三年）、软件工程（专业学位，学制两年）。
+      locator: 一、招收类别及专业
+    contact:
+      text: 通知报名资料上传入口 https://v.wjx.cn/vm/r9veRYz.aspx；赵老师010-68914756，zhaoxj@bit.edu.cn。第三方问卷仅作为官网指向的办理入口，本轮已截止。
+      quote: zhaoxj@bit.edu.cn
+      locator: 三、申请程序1；四、联系方式
+  events:
+  - label: 计算机学院软件工程硕士推免本轮资料上传截止（已过期）
+    kind: deadline
+    at: '2026-09-19T12:00:00+08:00'
+    quote: 9月19日中午12点前
+    locator: 2026-09-15通知三、申请程序1；年份由通知发布日期确定
+- id: pku-2027-master-exam-v14
+  school: pku
+  dept: ''
+  level: school
+  title: 北大2027硕士统考：校本部资格、网报与条件材料
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: pku_2027_charter_v14
+  review_hashes:
+    pku_2027_charter_v14: b917a1419acbfdb580fcaf39b777c8fd7e3e06ff92f9bc1644f7b93b6a9e8407
+    pku_2027_registration_v14: 131e5e9482f73a3a73b0f70e47a5f95657476dc113f24d2d69ed80dc08c528e9
+    pku_2027_1101_materials_v14: ea0ec90dcdb5b92a3bbe95ccd338a9e535d3877e6d358c071681ed2931a7beff
+  fields:
+    eligibility:
+      text: 本简章适用校本部、燕园/新燕园、软微及深圳研究生院，医学部另行公布。应届本科、已毕业本科、符合条件的同等学力、已获硕博学历学位均须逐条核对；同等学力额外要求在国家核心期刊以第一或第二作者发表至少一篇相关学术论文。在读研究生报名前须培养单位同意，复试通过并退学后方能取得拟录取资格。
+      quote: 须在国家核心期刊上发表一篇
+      locator: 简章PDF第1—2页二（一）
+    materials:
+      text: 所有报考者须填报信息、缴费并按所选报考点上传核验材料；照片通过学信网APP拍摄上传。仅选择北大1101报考点且对应核验失败/身份类型者，按1101清单补身份证正反面、学籍在线验证报告或学历备案/认证报告、必要的户籍社保或在读研究生同意证明等；此清单不能套用其他报考点。具体材料与模板须打开附件逐项核对。
+      quote: 考生直接通过学信网APP在线拍摄并上传本人照片。
+      locator: 网报公告PDF第1—3页二；1101报考点材料清单PDF第1—4页
+      source_ids:
+      - pku_2027_registration_v14
+      - pku_2027_1101_materials_v14
+    exams:
+      text: 初试时间按教育部统一规定，科目依2027专业目录；复试有笔试、面试、实践等，面试必需。须同时达到学校与院系复试要求，同等学力至少加试两门。具体院系科目/附加要求仍需查院系，本记录仅学校通用。
+      quote: 必要环节
+      locator: 简章PDF第4—5页二（三）（四）
+    timeline:
+      text: 正式报名2026年10月15—24日，每日9:00—22:00；10月24日22:00前须上传本人材料并网上支付初试费。预报名已完成填报、缴费、生成报名号者不重复报名。材料审核不通过仍须及时补正，不能只完成填报。
+      quote: 10月24日22:00
+      locator: 网报公告PDF第1—3页二（一）（五）
+      source_ids:
+      - pku_2027_registration_v14
+    quota:
+      text: 院系公布计划含拟接收推免人数，统考人数以院系计划减去实际推免录取人数计算，最终计划仍可能调整；不能把总计划视作统考剩余名额。
+      quote: 全国统一考试招生人数以院系公布的招生计划数减去实际接收的推荐免试生人数为准
+      locator: 简章PDF第9页十（1）
+    tuition:
+      text: 硕士一般2或3年，具体学制以培养方案为准；学费按简章第11—16页附件的具体院系/专业/方式核对。专业学位、非全日制等不安排住宿，软微与深圳研究生院按院系安排；不可把学硕价格或住宿套用全部专业。
+      quote: 学费标准见附件
+      locator: 简章PDF第6—8页四—七，附件第11—16页
+    funding:
+      text: 奖助按研究生院/学生工作部门制度及院系规定核对；人事档案不转入者不提供奖学金、住宿和公费医疗，不能默认所有申请者同样享有。
+      quote: 不提供奖学金
+      locator: 简章PDF第7页五、第8页八
+    contact:
+      text: 报名https://yz.chsi.com.cn；校本部咨询010-62751354，grszsb@pku.edu.cn；院系联系方式见https://admission.pku.edu.cn/lxxx/lxyx/index.htm。
+      quote: grszsb@pku.edu.cn
+      locator: 简章PDF第10页十一
+  events:
+  - label: 北大2027统考填报、材料上传及缴费截止（每日9:00—22:00）
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 10月24日22:00
+    locator: 网报公告PDF第2页二（一）、第3页二（五）
+    source_ids:
+    - pku_2027_registration_v14
+- id: ustc-2027-master-exam-v14
+  school: ustc
+  dept: ''
+  level: school
+  title: 中科大2027硕士统考：报名、校验失败材料与学校要求
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: ustc_2027_charter_v14
+  review_hashes:
+    ustc_2027_charter_v14: 924c6de8a714227a7e38ea99efb7a5998e79575e2e4ce180d2b64285ed3e73cb
+    ustc_2027_registration_v14: 6dbde936f936ee2bc50cdc5d1b50572d3ec6764d38b27c0e867008f3f31cc9bc
+  fields:
+    eligibility:
+      text: 应届本科、具有本科学历、符合学校具体学业要求的专科满两年或本科结业同等学力、已获硕博学历学位须逐条核对；在读研究生报名前须培养单位同意。各专业招生条件必须另查专业目录，不能仅由学校学业分类判定可报。
+      quote: 符合我校提出的具体学业要求
+      locator: 章程PDF第3页十二条、4页十四条
+    materials:
+      text: 网报采集照片、缴费并上传所选报考点要求的核验材料。学籍校验失败的应届生交有效学籍在线验证报告；往届生按毕业年份交学历备案表或学历认证报告，境外学历交留服认证；改名/证件号变更另交公安证明，在读研究生另交培养单位同意证明。此为条件材料，不等于所有人都交全部材料。
+      quote: 学籍学历校验失败的应届考生
+      locator: 网报通告二、2及五、信息校验
+      source_ids:
+      - ustc_2027_registration_v14
+    exams:
+      text: 初试科目见2027专业目录，笔试；学院负责复试实施，可含面试、上机、笔试或实践，面试必需。同等学力须至少加试两门，具体科目不与初试相同；学院具体科目和权重须查学院复试细则。
+      quote: 面试是必要环节
+      locator: 章程PDF第5—6页十七条
+    timeline:
+      text: 正式报名2026年10月15—24日，每日9:00—22:00；逾期不补报、不修改。须按规定采集照片、缴费、上传核验材料，并持续查看报考点审核结论及补交要求。复试线预计2027年3月公布，仅为月份预期，不生成精确截止日。
+      quote: 每日9:00-22:00
+      locator: 网报通告二、1—2及四；章程PDF第6页十七条
+      source_ids:
+      - ustc_2027_registration_v14
+      - ustc_2027_charter_v14
+    quota:
+      text: 专业目录和网报平台人数为基本计划，学校按推免实际招收、统考生源及专项情况动态调整，不代表已确认导师个人名额。
+      quote: 动态调整各学院、专业招生人数
+      locator: 章程PDF第2—3页十条
+    tuition:
+      text: 基本学习年限2—3年，最短2年、最长5年；学费、办学地点依2027专业目录核对，本记录不把某专业价格套到全校。
+      quote: 学费标准、办学地点等详见
+      locator: 章程PDF第8页二十四、二十五条
+    contact:
+      text: 报名https://yz.chsi.com.cn；招生处yzb@ustc.edu.cn，0551-63602924、63602925、63600532、63600270；各学院联系方式在2027专业目录中。
+      quote: yzb@ustc.edu.cn
+      locator: 章程PDF第9页二十七条
+  events:
+  - label: 中科大2027硕士统考网报截止（每日9:00—22:00）
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 每日9:00-22:00
+    locator: 网报通告二、1；同段明确10月15日至10月24日
+    source_ids:
+    - ustc_2027_registration_v14
+- id: sjtu-2027-master-exam-v14
+  school: sjtu
+  dept: ''
+  level: school
+  title: 上海交大2027硕士统考：学校条件、资格审查与网报
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: sjtu_2027_charter_v14
+  review_hashes:
+    sjtu_2027_charter_v14: 6aba3005998f5ff289fcde61fb66d3f0adeac299060f3d7b2deb250d8ef5dc62
+  fields:
+    eligibility:
+      text: 学业类别须逐条核对。同等学力报考须通过英语四级或相当水平、提供教务部门开具的相关专业8门以上本科主干课程成绩，不得跨专业，报考前须学校研招办审核。在读研究生须报名前同意证明，拟录取须退学；院系具体专业条件另查。
+      quote: 不得跨专业报考
+      locator: 第十条（三）
+    materials:
+      text: 网报须真实信息、诚信承诺并按报考点安排补充材料。复试资格审查携二代身份证、学历学籍认证报告、学历学位证书，原件与复印件1份；境外学历另交认证。在读研究生另交同意报考证明，同等学力另交规定课程成绩。此处区分网报与复试阶段，报考点上传清单须另查。
+      quote: 所有材料均需原件和复印件1份
+      locator: 第十条（三）、第十四条8、第十七条
+    exams:
+      text: 初试科目依2027专业目录，笔试；复试由具体院系实施。须达到学校和院系复试线，差额比例不低于120%，面试必需；同等学力至少加试两门。学校规则不代替学院科目/权重细则。
+      quote: 加试不合格者不予录取
+      locator: 第十六条
+    timeline:
+      text: 正式网报2026年10月15—24日，每日9:00—22:00；预报名10月9—12日已结束。学历学籍校验未通过者在学校规定时间内核验，否则不予录取；正文未给出该项确切日期，不能自补截止日。
+      quote: 每日9:00-22:00
+      locator: 第十四条1、3
+    quota:
+      text: 院系计划见2027专业目录；全日制统考分专业计划在推免结束后统一更新，实际人数仍按主管部门计划、需求和生源调整。
+      quote: 统考分专业招生计划将在推免招生工作结束后
+      locator: 第八条
+    tuition:
+      text: 具体收费查学校信息公开网https://gk.sjtu.edu.cn收费栏目，住宿查看所报院系2027推免综合考核细则相关条款；本记录未将统一学费或宿舍承诺套用到全部院系。
+      quote: 学费标准见上海交通大学信息公开网
+      locator: 第二十四、二十五条
+    funding:
+      text: 学校列有国家奖学金、学业奖学金、助学金、三助等，具体条件见研究生院制度；非全日制定向就业不享受奖助学金，不默认人人同额。
+      quote: 不享受奖助学金
+      locator: 第十八条2、第二十四条
+    contact:
+      text: 报名https://yz.chsi.com.cn；校本部招办021-62821069、yzb-ss@sjtu.edu.cn；院系联系人https://yzb.sjtu.edu.cn/post/2551。
+      quote: yzb-ss@sjtu.edu.cn
+      locator: 第二十六条
+  events:
+  - label: 上海交大2027硕士统考正式网报截止（每日9:00—22:00）
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 每日9:00-22:00
+    locator: 第十四条1；同句明确10月15日至10月24日
+- id: ucas-2027-master-exam-v14
+  school: ucas
+  dept: ''
+  level: school
+  title: 国科大2027硕士统考：培养单位选择、材料与学校规则
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: ucas_2027_charter_v14
+  review_hashes:
+    ucas_2027_charter_v14: 629964de8f0b11623f23f15e2f40d51f3ab97c56d125032c03acbf5b0a2ce874
+  fields:
+    eligibility:
+      text: 应届本科、已毕业本科、专科毕业满两年或本科结业同等学力、已获硕博学历学位按对应条件核对；在读研究生报名前须培养单位同意。非全日制专硕仅在职定向就业，填非定向不予准考。具体研究所/专业附加要求仍须查培养单位公告。
+      quote: 在读研究生报考须在报名前征得所在培养单位同意
+      locator: 二、报考条件（一）（三）；十二、其他3
+    materials:
+      text: 填报信息、支付初试费，同时按报考点要求上传核验材料；学信网APP拍摄上传照片。学籍学历校验失败应及时认证；培养单位有疑问可要求权威认证。具体上传清单依所选报考点及培养单位，不能把国科大1188报考点要求套用全国所有考生。
+      quote: 按照报考点要求上传考生材料
+      locator: 三、报名及网报注意事项6
+    exams:
+      text: 初试具体科目依2027专业目录。普通计划复试线至少为一区国家线，培养单位可自主上调；培养单位组织复试、公布时间地点方式和权重。同等学力复试至少加试两门相关本科课程，不能用学校摘要代替研究所细则。
+      quote: 复试由报考的培养单位组织
+      locator: 四、初试；五、复试1—7
+    timeline:
+      text: 正式网报2026年10月15—24日每日9:00—22:00；10月24日22:00前按报考点要求上传材料。预报名信息有效，无需重复填报。具体复试安排由培养单位在复试前公布，无确切日期不生成截止日。
+      quote: 10月24日22:00前
+      locator: 三、报名
+    quota:
+      text: 2027国家计划尚未下达，目录拟招生人数按2026实际人数拟定，仅供参考；实际计划随国家计划、报考情况和政策动态调整，还须留意拟报研究所推免接收情况。
+      quote: 2027年国家招生计划尚未下达
+      locator: 七、录取；十二、其他2
+    tuition:
+      text: 硕士学制2或3年，由培养单位确定。全日制一般8000元/年，非全日制一般10000元/年；另批专业按批复，具体仍查培养单位通知。住宿费按当地核定标准，不能由此推定有宿舍。
+      quote: 全日制硕士研究生的学费标准一般为8000
+      locator: 九、基本学制；十、收费及待遇
+    contact:
+      text: 报名时招生单位所在地区选北京，单位选中国科学院大学，院系所选实际培养单位（例如计算所/软件所等）；考试地点依报考点。咨询010-82649886、82640457，ao@ucas.ac.cn，具体培养单位联系入口见学校网站联系我们。
+      quote: 在“院系所名称”栏中选择要报考的培养单位
+      locator: 三、报名；文末联系部门
+  events:
+  - label: 国科大2027硕士统考网报及报考点材料上传截止（每日9:00—22:00）
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 10月24日22:00前
+    locator: 三、报名
+- id: csu-2027-master-exam
+  school: csu
+  dept: ''
+  level: school
+  title: 中南2027硕士统考：学校报考条件、报名与材料
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_csu_school
+  review_hashes:
+    v14_units_csu_school: 203bb71229cca449b6b39f5cff0b4452a28f6dc8470bfb350923e53b7cf8f993
+  fields:
+    eligibility:
+      text: 应届本科、国家承认的本科毕业学历、已获硕博学历或学位等按原文对应条款报考。自考和网络教育学生须取得本科毕业证后方可报考；除章程列明管理等少数专业外，不接受同等学力，计算机、控制等不能套用其他学校的专科满2年规则。不接收在校硕士、博士报考；健康、诚信及禁止报考情形须一并核对。
+      quote: 专业接收同等学力人员报考
+      locator: 第五部分报考条件（一）第3项及不接受同等学力说明
+      source_ids:
+      - v14_units_csu_school
+    materials:
+      text: 网报填写真实信息、签署诚信承诺、按实际报考点要求提交核验材料；学历学籍需在线校验。考试须准考证及有效居民身份证。2027院系复试具体材料清单仍须等待二级单位通知，不能以此当作院系材料已齐。
+      quote: 真实材料
+      locator: 第六部分报名第3—4项；第七部分初试第1项
+      source_ids:
+      - v14_units_csu_school
+    exams:
+      text: 初试2026年12月19—20日，具体科目查当年专业目录；复试含专业基础、综合素质及能力、外语能力，具体时间和组织安排由学校及院系另行通知。
+      quote: 专业基础测试、综合素质及能力测试、外语能力测试
+      locator: 第七、八部分
+      source_ids:
+      - v14_units_csu_school
+    contact:
+      text: 网报入口https://yz.chsi.com.cn；招生咨询0731-88876806。中南报考点只接受本校应届本科毕业生，其他考生应按所在地报考点规则选择，不能仅因报考中南而选中南考点。
+      quote: 研究生招生咨询电话
+      locator: 第六部分第5项；第十三部分招生咨询
+      source_ids:
+      - v14_units_csu_school
+    timeline:
+      text: 正式报名2026年10月15—24日，每日9:00—22:00；预报名10月9—12日已经结束；初试12月19—20日。复试和院系补充材料期限另查当年细则。
+      quote: 9:00 — 22:00
+      locator: 报名及初试章节，2027入学对应2026年报名考试
+      source_ids:
+      - v14_units_csu_school
+  events:
+  - label: 2027硕士统考正式报名截止
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 9:00 — 22:00
+    locator: 报名章节：2026年10月15日至24日，每日9:00—22:00
+    source_ids:
+    - v14_units_csu_school
+  - label: 2027硕士统考初试首日
+    kind: exam
+    at: '2026-12-19'
+    quote: 2026 年 12 月 19 日至 20 日
+    locator: 初试章节：2026年12月19—20日；个人科目以准考证为准
+    source_ids:
+    - v14_units_csu_school
+- id: seu-2027-master-exam
+  school: seu
+  dept: ''
+  level: school
+  title: 东南2027硕士统考：学校报考条件、报名与材料
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_seu_school
+  review_hashes:
+    v14_units_seu_school: 048666f42c75af15130cc8a3d1007f5f1084fa0380d21d757b8f7513ffd7befe
+  fields:
+    eligibility:
+      text: 应届本科、本科毕业、已获硕博学历学位等按对应条款申请。同等学力须专科满2年或本科结业，另须本科全部必修课证明和成绩、英语四级425或合格证/本科英语学习替代条件，以及第一作者核心期刊相关论文；在读研究生须报名前获得培养单位同意。还须核对专业目录附加要求。
+      quote: 以第一作者在核心期刊发表过与报考专业相关的学术论文
+      locator: 一、报考条件（三）第3项；二、报名（一）
+      source_ids:
+      - v14_units_seu_school
+    materials:
+      text: 网报须真实材料、诚信考试承诺、按核验安排提交补充材料。同等学力课程/英语/论文证明按适用条款准备；实际报考点上传清单和2027学院复试材料仍需对应公告，学校章程不是完整院系材料清单。
+      quote: 积极配合签署《考生诚信考试承诺书》
+      locator: 二、报名（一）；一、报考条件（三）第3项
+      source_ids:
+      - v14_units_seu_school
+    exams:
+      text: 初试12月19—20日，按北京时间；科目以2027目录为准。复试采用差额，原则至少招生计划120%，外语听说在复试进行；院系复试细则另发。
+      quote: 考试时间以北京时间为准
+      locator: 三、初试（二）；四、复试
+      source_ids:
+      - v14_units_seu_school
+    contact:
+      text: 在研招网https://yz.chsi.com.cn报名，持续关注东南研招网及学院官网。选3202报考点者还须满足报考点公告；报考学校与选择考点是两项不同事项。
+      quote: 须严格遵照东南大学报考点
+      locator: 二、报名（三）—（五）；九、信息查询
+      source_ids:
+      - v14_units_seu_school
+    timeline:
+      text: 正式报名2026年10月15—24日，每日9:00—22:00；预报名10月9—12日已经结束；初试12月19—20日。复试和院系补充材料期限另查当年细则。
+      quote: 9:00—22:00
+      locator: 报名及初试章节，2027入学对应2026年报名考试
+      source_ids:
+      - v14_units_seu_school
+  events:
+  - label: 2027硕士统考正式报名截止
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 9:00—22:00
+    locator: 报名章节：2026年10月15日至24日，每日9:00—22:00
+    source_ids:
+    - v14_units_seu_school
+  - label: 2027硕士统考初试首日
+    kind: exam
+    at: '2026-12-19'
+    quote: 2026年12月19日至20日
+    locator: 初试章节：2026年12月19—20日；个人科目以准考证为准
+    source_ids:
+    - v14_units_seu_school
+- id: whu-2027-master-exam
+  school: whu
+  dept: ''
+  level: school
+  title: 武大2027硕士统考：学校报考条件、报名与材料
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_whu_school
+  review_hashes:
+    v14_units_whu_school: b05b64b0fd86bd98ebfea828440345a3adb7aea863eb095aaaf47a38c2e2cebe
+  fields:
+    eligibility:
+      text: 应届本科、本科毕业、已获硕博学历学位及符合条件的同等学力按原文分情形报考；2027部分院系不收同等学力，其中国家网安目录明确不收。在读研究生须培养单位同意并在网报上传同意证明。录取当年入学前须取得规定学历。
+      quote: 须在网上报名时上传所在培养单位同意报考证明材料
+      locator: 四、报考条件（一）第3项；六、报考资格审查
+      source_ids:
+      - v14_units_whu_school
+    materials:
+      text: 2027实行报名和网上确认一体化：完成基本信息、照片、报考信息、缴费后一并提交实际报考点核验材料；关注审核并及时补充。学历学籍未通过校验须补认证报告，在读研究生另上传培养单位同意证明。学院复试材料及个别专业附加要求另查院系。
+      quote: 网上报名和网上确认一体化
+      locator: 五、报名首段；六、报考资格审查
+      source_ids:
+      - v14_units_whu_school
+    exams:
+      text: 初试12月19—20日，具体时段和科目查准考证与目录。复试内容包括学术基础、外语与综合素质；学院专业目录科目优先核对，不能仅凭学校总则判断自己资格。
+      quote: 初试方式均为笔试
+      locator: 七、初试及复试
+      source_ids:
+      - v14_units_whu_school
+    contact:
+      text: 通过https://yz.chsi.com.cn网报，武大研究生院及培养单位官网持续发布信息，研招咨询027-68754125。4201报考点有地域与生源范围要求，实际材料应查所选考点公告。
+      quote: 027﹣68754125
+      locator: 十四、其他说明（三）；五、报名
+      source_ids:
+      - v14_units_whu_school
+    timeline:
+      text: 正式报名2026年10月15—24日，每日9:00—22:00；预报名10月9—12日已经结束；初试12月19—20日。复试和院系补充材料期限另查当年细则。
+      quote: 9:00—22:00
+      locator: 报名及初试章节，2027入学对应2026年报名考试
+      source_ids:
+      - v14_units_whu_school
+  events:
+  - label: 2027硕士统考正式报名截止
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 9:00—22:00
+    locator: 报名章节：2026年10月15日至24日，每日9:00—22:00
+    source_ids:
+    - v14_units_whu_school
+  - label: 2027硕士统考初试首日
+    kind: exam
+    at: '2026-12-19'
+    quote: 2026年 12 月 19 日至 20 日
+    locator: 初试章节：2026年12月19—20日；个人科目以准考证为准
+    source_ids:
+    - v14_units_whu_school
+- id: whu-cyber-2027-master-exam
+  school: whu
+  dept: cyber
+  level: dept
+  title: 武大国家网安2027统考：院系准入与分专业计划
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-10-09'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_whu_cyber_quota
+  review_hashes:
+    v14_units_whu_cyber_quota: 776b484817fb4dcb0dd81abb6b017f26dad01f2b870fdc1992be86ad9ee2aed0
+    v14_units_whu_cyber_dir_pdf: fef1093a5add52220e28eb815075cbec311263dc52931d3a99e01bd60e6d1876
+    v14_units_whu_cyber_dir: 2d07075542d2b7fa49f2fbaca712521deac04042a4685f3d774b954b0dd65992
+  fields:
+    quota:
+      text: 当前计划：网络空间安全083900统考28；网络法学0301J1统考6；网络与信息安全085412统考111（含校设卓工5）。计划仍可能调整；包含专项，不能把111认作纯普通计划或导师空余名额。
+      quote: 111（含校设卓工专项计划5个）
+      locator: 统考计划表，学术/专业学位行
+      source_ids:
+      - v14_units_whu_cyber_quota
+    eligibility:
+      text: 学院2027目录明确不招收同等学力考生。学校章程符合条件仅是第一层，报考本院还必须满足该附加限制。
+      quote: '不招收同等
+
+        学力考生。'
+      locator: 2027目录PDF第1页院系备注
+      source_ids:
+      - v14_units_whu_cyber_dir_pdf
+    contact:
+      text: 学院教学管理办公室027-68758028，liudan@whu.edu.cn（刘老师）。该页公示起止年份有2026/2025矛盾，本次不将其作为申请截止事件。
+      quote: liudan@whu.edu.cn
+      locator: 公告末尾咨询处；公示期年份矛盾保留原文待官方澄清
+      source_ids:
+      - v14_units_whu_cyber_quota
+  events: []
+- id: whu-cyber-2027-083900-exam
+  school: whu
+  dept: cyber
+  level: program
+  title: 武大国家网安2027网络空间安全：专业科目与准入
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: 网络空间安全
+  program_code: 083900
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_whu_cyber_dir_pdf
+  review_hashes:
+    v14_units_whu_cyber_dir_pdf: fef1093a5add52220e28eb815075cbec311263dc52931d3a99e01bd60e6d1876
+    v14_units_whu_cyber_dir: 2d07075542d2b7fa49f2fbaca712521deac04042a4685f3d774b954b0dd65992
+  fields:
+    eligibility:
+      text: 不招收同等学力考生；学校报考条件仍须同时满足。
+      quote: '不招收同等
+
+        学力考生。'
+      locator: PDF第1页院系备注
+      source_ids:
+      - v14_units_whu_cyber_dir_pdf
+    exams:
+      text: 初试：101思想政治理论、201英语一、301数学一、408计算机学科专业基础；复试：信息系统安全、编程能力测试。所列为本专业2027目录，不作为其他院系同名专业要求。
+      quote: '①信息系统安全
+
+        ②编程能力测试'
+      locator: PDF第1页对应083900专业行
+      source_ids:
+      - v14_units_whu_cyber_dir_pdf
+  events: []
+- id: whu-cyber-2027-085412-exam
+  school: whu
+  dept: cyber
+  level: program
+  title: 武大国家网安2027网络与信息安全：专业科目与准入
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: 网络与信息安全
+  program_code: 085412
+  published_at: '2026-10-08'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_whu_cyber_dir_pdf
+  review_hashes:
+    v14_units_whu_cyber_dir_pdf: fef1093a5add52220e28eb815075cbec311263dc52931d3a99e01bd60e6d1876
+    v14_units_whu_cyber_dir: 2d07075542d2b7fa49f2fbaca712521deac04042a4685f3d774b954b0dd65992
+  fields:
+    eligibility:
+      text: 不招收同等学力考生；学校报考条件仍须同时满足。本专业含校设卓工方向，专项另行核对，不能由普通目标自动确认专项资格。
+      quote: '不招收同等
+
+        学力考生。'
+      locator: PDF第1页院系备注
+      source_ids:
+      - v14_units_whu_cyber_dir_pdf
+    exams:
+      text: 初试：101思想政治理论、204英语二、302数学二、408计算机学科专业基础；复试：信息系统安全、编程能力测试。所列为本专业2027目录，不作为其他院系同名专业要求。
+      quote: '①信息系统安全
+
+        ②编程能力测试'
+      locator: PDF第1页对应085412专业行
+      source_ids:
+      - v14_units_whu_cyber_dir_pdf
+  events: []
+- id: seu-2027-master-exam-minority
+  school: seu
+  dept: ''
+  level: school
+  title: 东南2027少民硕士专项：资格平台及报名截止
+  year: 2027
+  degree: master
+  route: exam
+  track: special
+  program: ''
+  program_code: ''
+  published_at: '2026-10-14'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_seu_special
+  review_hashes:
+    v14_units_seu_special: 86f0e15afd172f6f1487792b02089183cb6288c85192963fd18d0b14fac9372c
+  fields:
+    eligibility:
+      text: 少民专项须符合生源地、民族或在当地工作等具体条件并先获生源省级教育部门审核；南疆高校教师专项不受民族/生源地限制、毕业定向南疆。控制081100南疆教师专项计划3个；普通计划资格不能替代专项资格。
+      quote: 经生源地省级教育行政部门在线审核通过后方可报名
+      locator: 二、招生专业；三、招生对象及报考资格审查
+      source_ids:
+      - v14_units_seu_special
+    materials:
+      text: 在https://mz.chsi.com.cn/mzjh/stu/提交专项资格申请并跟踪审核、补充材料；南疆高校教师须填类别；审核通过后还须在研招网完成报名。该页未给全部省级材料清单，须另查生源省要求。
+      quote: 及时查看审核结果，以便补充材料或改报普通研究生计划
+      locator: 三、（二）报考资格审查
+      source_ids:
+      - v14_units_seu_special
+    timeline:
+      text: 专项资格平台10月21日22:00关闭；资格审核通过者正式网报10月24日22:00截止。两个步骤各有期限。
+      quote: 10月21日22:00
+      locator: 三、（二）；四、第2项
+      source_ids:
+      - v14_units_seu_special
+  events:
+  - label: 少民硕士专项资格平台申请截止
+    kind: deadline
+    at: '2026-10-21T22:00:00+08:00'
+    quote: 10月21日22:00
+    locator: 三、（二）资格平台开放时间
+    source_ids:
+    - v14_units_seu_special
+  - label: 审核通过后硕士专项网报截止
+    kind: deadline
+    at: '2026-10-24T22:00:00+08:00'
+    quote: 9：00-22：00
+    locator: 四、其他第2项：2026年10月15日至24日
+    source_ids:
+    - v14_units_seu_special
+- id: csu-auto-2027-master-recommend
+  school: csu
+  dept: auto
+  level: dept
+  title: 中南自动化2027推免：历史轮次材料与考核
+  year: 2027
+  degree: master
+  route: recommend
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-09-06'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_csu_auto
+  review_hashes:
+    v14_units_csu_auto: 9df81e7c03a1c662ba9f72a7c814a40601780798d92a8f1fe2666f39eb2a604e
+  fields:
+    eligibility:
+      text: 2027届优秀本科毕业生且有望取得推免资格、成绩优良、研究能力及健康等符合要求。此轮9月10日已截止，仅供历史材料参考，不代表现在可申请或2028要求。
+      quote: 且有望取得所在学校推荐免试资格
+      locator: 四、申请条件
+      source_ids:
+      - v14_units_csu_auto
+    materials:
+      text: 身份证、学生证、报名表、个人简述、盖章成绩和排名、英语水平、科研成果和荣誉证明、本人签名诚信承诺。合并一个PDF，主题/文件名为推免申请+本科学校名称+姓名，邮件至zidonghua@csu.edu.cn。只适用于本推免历史轮次，不能当统考材料。
+      quote: 本人签名的诚信承诺书
+      locator: 五、资格审查及8项材料清单
+      source_ids:
+      - v14_units_csu_auto
+    timeline:
+      text: 该轮网申与材料邮件截止2026年9月10日18:00；面试9月15—17日，均已过去。
+      quote: '10'
+      locator: 申请时间及五、资格审查、七、面试考核
+      source_ids:
+      - v14_units_csu_auto
+  events:
+  - label: 历史推免轮次网申和材料邮件截止（已过）
+    kind: deadline
+    at: '2026-09-10T18:00:00+08:00'
+    quote: 2026 年 9 月 10 日 18 点
+    locator: 四、申请时间；五、资格审查：2026年9月10日18点前
+    source_ids:
+    - v14_units_csu_auto
+- id: hust-cyber-2027-master-recommend-extension
+  school: hust
+  dept: cyber
+  level: dept
+  title: 华科网安2027推免：历史预报名延后截止
+  year: 2027
+  degree: master
+  route: recommend
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-09-14'
+  reviewed_at: '2026-10-15'
+  source_id: v14_units_hust_cyber_extension
+  review_hashes:
+    v14_units_hust_cyber_extension: 4a97e9e43736e2d044e7ff97808af2118798f53ce113e97210d69b2fe6c8c7cc
+  fields:
+    timeline:
+      text: 原9月14日18:00截止已调整为9月15日12:00，本轮已结束。只保存官方最终时间，不把过期推免当当前开放机会。
+      quote: 调整后截止时间：2026年9月15日（星期二）12:00
+      locator: 正文调整后截止时间
+      source_ids:
+      - v14_units_hust_cyber_extension
+  events:
+  - label: 历史推免预报名最终截止（已过）
+    kind: deadline
+    at: '2026-09-15T12:00:00+08:00'
+    quote: 调整后截止时间：2026年9月15日（星期二）12:00
+    locator: 正文调整后截止时间
+    source_ids:
+    - v14_units_hust_cyber_extension

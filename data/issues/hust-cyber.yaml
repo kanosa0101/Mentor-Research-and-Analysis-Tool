@@ -3,9 +3,9 @@
   message: ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(10054,
     '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
   first_seen: '2026-10-14'
-  resolved: false
+  resolved: true
   reviewed: null
-  review_note: null
+  review_note: 2026-10-15：原HTTP官方个人页实时可访问；确认个人身份后修复英文模板/明确研究方向解析。已补实际简介与明确字段；不解密猜测邮箱。原始HTTP与SHA256见cache/policy_v14/units/hust-gap-repair-audit.json。
   review_history: []
 - kind: fetch_or_parse_error
   ref: zhouke

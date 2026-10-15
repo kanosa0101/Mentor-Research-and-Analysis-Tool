@@ -71,6 +71,12 @@ def parse_detail(cfg, html, url):
         value = re.split(r'[\s（(]', node.get_text(' ', strip=True), maxsplit=1)[0]
         if re.fullmatch(r'[\u4e00-\u9fff·]{2,6}', value) and value not in generic:
             names.append(value)
+    if not names and urlsplit(url).hostname == 'faculty.csu.edu.cn':
+        from sites.csu_profile import identity_names
+        names += identity_names(soup)
+    if not names and urlsplit(url).hostname == 'faculty.hust.edu.cn':
+        from sites.hust_profile import identity_names
+        names += identity_names(soup)
     named_title = re.fullmatch(r'(?:华中科技大学主页平台管理系统|中南大学)\s+([\u4e00-\u9fff·]{2,6})(?:--.*)?', title)
     if expected and ((names and expected not in names) or (named_title and named_title.group(1) not in generic and named_title.group(1) != expected)):
         raise IdentityMismatch('个人页身份明确变为他人：' + str(expected))
@@ -155,6 +161,14 @@ def parse_profile(cfg, html, url):
             email = normalize_email(match.group(1))
             if email:
                 out.setdefault('email', email)
+    if urlsplit(url).hostname == 'faculty.csu.edu.cn':
+        from sites.csu_profile import parse
+        for key, value in parse(soup).items():
+            out.setdefault(key, value)
+    if urlsplit(url).hostname == 'faculty.hust.edu.cn':
+        from sites.hust_profile import parse
+        for key, value in parse(soup).items():
+            out.setdefault(key, value)
     if not out:
         raise ValueError('详情无明确个人字段，保留名单并登记失败')
     return out
