@@ -103,6 +103,7 @@ entries:
 - school: hit
   dept: ''
   source_id: hit_school_entry_v15b
+  degree: master
   reviewed_at: '2026-10-15'
   note: 学校层招生栏目；须继续查看对应年度、渠道及院系附加要求。
 - school: xjtu
@@ -153,6 +154,8 @@ entries:
 - school: uestc
   dept: cs
   source_id: uestc_cs_directory_v15b
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 实际院系招生栏目/2027院系目录入口，不等于院系完整条件已整理；不同招生渠道及旧轮次须分别核对。
 - school: tju
@@ -240,6 +243,8 @@ entries:
 - school: sustech
   dept: ''
   source_id: sustech_api3579_v15c
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 当前学校2027硕士招生章程；院系及专业要求仍需核对。
 - school: scu
@@ -255,86 +260,125 @@ entries:
 - school: tsinghua
   dept: ''
   source_id: school_page
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: tsinghua
   dept: cs
   source_id: dept_page
+  year: 2027
+  degree: master
+  route: recommend
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: tsinghua
   dept: cs
   source_id: exam_page
+  year: 2027
+  degree: master
+  route: exam
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: buaa
   dept: cyber
   source_id: buaa_cyber_exam
+  year: 2027
+  degree: master
+  route: exam
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: tsinghua
   dept: auto
   source_id: tsinghua_auto_recommend
+  year: 2027
+  degree: master
+  route: recommend
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: seu
   dept: auto
   source_id: seu_auto_recommend
+  year: 2027
+  route: recommend
   reviewed_at: '2026-10-14'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: sjtu
   dept: auto
   source_id: sjtu_auto_recommend
+  year: 2027
+  route: recommend
   reviewed_at: '2026-10-14'
   note: 2027入学年度phd/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: hust
   dept: ''
   source_id: hust_school_exam_page_v7
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: bit
   dept: ''
   source_id: bit_2027_master_charter_v14
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: bit
   dept: cs
   source_id: bit_cs_2027_recommend_v14
+  year: 2027
+  degree: master
+  route: recommend
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: ustc
   dept: ''
   source_id: ustc_2027_registration_v14
+  year: 2027
+  degree: master
+  route: exam
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: sjtu
   dept: ''
   source_id: sjtu_2027_charter_v14
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: ucas
   dept: ''
   source_id: ucas_2027_charter_v14
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: csu
   dept: ''
   source_id: v14_units_csu_school
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: seu
   dept: ''
   source_id: v14_units_seu_school
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: whu
   dept: ''
   source_id: v14_units_whu_school
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: whu
   dept: cyber
   source_id: v14_units_whu_cyber_quota
+  year: 2027
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: whu
@@ -345,25 +389,91 @@ entries:
 - school: seu
   dept: ''
   source_id: v14_units_seu_special
+  year: 2027
+  degree: master
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: csu
   dept: auto
   source_id: v14_units_csu_auto
+  year: 2027
+  route: recommend
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: hust
   dept: cyber
   source_id: v14_units_hust_cyber_extension
+  year: 2027
+  route: recommend
   reviewed_at: '2026-10-15'
   note: 2027入学年度master/recommend章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: nankai
   dept: ''
   source_id: nankai_entry_v15extra
   reviewed_at: '2026-10-15'
-  note: 已核验学校硕士栏目；暂无接入院系师资，不虚构院系。
+  note: 已核验学校硕士栏目；学校规则不能替代院系附加要求。
 - school: nudt
   dept: ''
   source_id: nudt_master_entry_v15extra
+  degree: master
   reviewed_at: '2026-10-15'
   note: 实际硕士招生简章专栏；原根URL只是JS重定向，未当成成功正文入口。
+- school: nankai
+  dept: cs
+  source_id: nankai_cs_entry_v17
+  reviewed_at: '2026-10-15'
+  note: 已回源可用的官方研究生招生栏目；栏目存在不等于所有渠道已整理。
+- school: nankai
+  dept: cyber
+  source_id: nankai_cyber_entry_v17
+  reviewed_at: '2026-10-15'
+  note: 已回源可用的官方研究生招生栏目；栏目存在不等于所有渠道已整理。
+- school: nankai
+  dept: software
+  source_id: nankai_software_entry_v17
+  reviewed_at: '2026-10-15'
+  note: 已回源可用的官方研究生招生栏目；栏目存在不等于所有渠道已整理。
+- school: nudt
+  dept: cs
+  source_id: nudt_phd_2027_v17
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: phd
+- school: nudt
+  dept: cs
+  source_id: nudt_pdf_3_v15extra
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: master
+- school: nudt
+  dept: cs
+  source_id: nudt_phd_syllabus_2027_v17
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: phd
+  route: assessment
+- school: nudt
+  dept: ai
+  source_id: nudt_phd_2027_v17
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: phd
+- school: nudt
+  dept: ai
+  source_id: nudt_pdf_3_v15extra
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: master
+- school: nudt
+  dept: ai
+  source_id: nudt_phd_syllabus_2027_v17
+  reviewed_at: '2026-10-15'
+  note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
+  year: 2027
+  degree: phd
+  route: assessment

@@ -1,0 +1,40 @@
+- kind: roster_assignment_pending
+  ref: shared-official-faculty
+  message: 2027统考目录有独立学院代码，但cc与cyber两站名册大量重叠且跨分类存在职称冲突；不能以域名或集合差集归属教师。原文已真实GET留存cache/policy_v17/nankai，尚未建立本单位可确认归属的完整教师名单。
+  first_seen: '2026-10-15'
+  resolved: true
+  reviewed: null
+  review_note: 2026-10-15已核对当前院官网导航，按该学院官方名册收录语义全量采集，不推断独占任职或当年招生资格。
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: kanghong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/kangh'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuweijie
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liyue
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: yangfei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []

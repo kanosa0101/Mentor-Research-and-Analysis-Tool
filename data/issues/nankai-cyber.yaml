@@ -1,0 +1,360 @@
+- kind: roster_assignment_pending
+  ref: shared-official-faculty
+  message: 2027统考目录有独立学院代码，但cc与cyber两站名册大量重叠且跨分类存在职称冲突；不能以域名或集合差集归属教师。原文已真实GET留存cache/policy_v17/nankai，尚未建立本单位可确认归属的完整教师名单。
+  first_seen: '2026-10-15'
+  resolved: true
+  reviewed: null
+  review_note: 2026-10-15已核对当前院官网导航，按该学院官方名册收录语义全量采集，不推断独占任职或当年招生资格。
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: caixiangrui
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/caixiangrui'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: chengwentao
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/chengwt'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: chensen
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/chensen'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: dingdan
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/dingdan'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: dongxiaodong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/dongxd'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: fanlingling
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/fanlingling'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: gaoqi
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/gaoq'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: gongxiaoli
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/gongxl'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: guochunle
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/guochunle'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: guoqing
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/guoqing'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: huangshenwei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/huangsw'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: jiachunfu
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiacf'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: jiangzhizhuo
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiangzhizhuo'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: jiayan
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiayan'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: kanghong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/kangh'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: litong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/litong'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuhan
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuhan'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liujian
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liujian'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuweijie
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuweijie'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuxialei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuxl'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuyun
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuyun'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liuzheli
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuzl'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: lixiang-2
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang123'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: lixiang
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: liyue
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liyue'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: lizhaohui
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lizh'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: lizhongwei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lizw'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: lizhongyi
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lichy'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: luye
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/luye'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: shijianxin
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/shijianxin'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: sunguolei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/sunguolei'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: wangjinwei
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/wjw'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: wangkai
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/wangk'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangjian
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjian'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangjianzhong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjz'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangjin
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjin'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangjiuwu
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjiuwu'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangying
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangying'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhangyu
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangyu'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: fetch_or_parse_error
+  ref: zhaohong
+  message: 'ValueError(''官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhaoh'')'
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: unknown_detail_field
+  ref: luye
+  message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: unknown_detail_field
+  ref: luye-2
+  message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: unknown_detail_field
+  ref: yuanxinjing
+  message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []
+- kind: unknown_detail_field
+  ref: yuanxinjing-2
+  message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
+  first_seen: '2026-10-15'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history: []

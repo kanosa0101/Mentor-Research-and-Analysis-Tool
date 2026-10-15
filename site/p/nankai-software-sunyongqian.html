@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>孙永谦 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+@media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
+</style>
+<link rel="stylesheet" href="../ui.css?v=20261015-10"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >找导师</a>
+
+<a href="../admissions.html" >学校与要求</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html" >我的申请</a>
+
+</nav>
+<details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../index.html" >全量导师目录</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</div></details>
+<span class="crumb">南开大学 · 软件学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=nankai&amp;dept=software">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap"><div class="context-actions"><a class="primary" href="../desk.html?mentor=nankai-software-sunyongqian&amp;school=nankai&amp;dept=software">准备联系 孙永谦</a><button id="detail-compare" type="button">加入对比</button><a href="../compare.html" id="detail-selection">查看对比</a><a href="../discovery.html">继续找导师</a></div>
+<p id="detail-scope-warning" class="note" hidden>此导师不在原项目院系，继续时已清除原专业／专项范围，请重新核对招生要求。</p>
+<div class="card">
+
+  <h2>孙永谦 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">副教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>暂未收录</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>智能运维，人工智能，网络智能管理</dd>
+    <dt>邮箱</dt><dd>sunyongqian@nankai.edu.cn</dd>
+    <dt>个人主页</dt><dd><span class="missing">暂未收录</span></dd>
+    <dt>官网页面</dt><dd><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">https://cs.nankai.edu.cn/info/1121/2581.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-15</span>
+    <span>字段来源最晚抓取：2026-10-15</span>
+<span>最近解析：2026-10-15</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<details class="card" id="obox">
+  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</details>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">孙永谦
+所属部门
+: 软件工程系
+电子邮件
+: sunyongqian(at)nankai.edu.cn
+职 称
+: 副教授（博士生导师）
+学 历
+: 博士
+所学专业
+:
+研究方向
+: 智能运维，人工智能，网络智能管理
+个人主页
+:
+http://nkcs.iops.ai/
+个人简介
+孙永谦(
+Yongqian Sun
+)现为南开大学软件学院副教授, 于2018年获清华大学工学博士学位（计算机科学与技术专业）。博士期间在清华大学计算机科学与技术系
+NetMan
+实验室就读，导师为赵有健教师和
+裴丹
+教授。主攻智能运维方向（AIOps），包括Web应用（搜索引擎、电商网站等）中服务等业务的异常检测、异常定位、告警聚合收敛、故障定位分析等，期待大型互联网企业中的服务运维工作朝着智能化、精准化、高度自治化的方向发展。本人科研中注重科研问题的实际应用价值，追求产学研结合的科研成果。因此，博士在读期间与百度公司合作，通过3.5年的长期实习，挖掘大型Web应用在实际中存在的前沿问题，结合机器学习的算法解决一线运维难题。发表的一些成果已被多家大型互联网企业采用（如 华为、腾讯、百度、蚂蚁金服等）。目前本人仍在 NetMan 实验室担任助理工作，主持或参加与多家企业的项目合作10余项，以期研究问题能在工业应用价值与科研价值中寻求最佳结合点。此外，与清华大学、中科院等联合发起OpenAIOps开放社区（https://www.aiops.cn），作为首席技术负责人举办第二届CCF AIOps挑战赛。2024年获得中国电子学会科技进步一等奖，ISSRE 2024国际会议上同时获得最佳学术论文和最佳工业论文。
+课题组现已与华为、字节跳动、阿里巴巴、腾讯、中兴、eBay、微软、中兴、网商银行、天津云账户等一流IT企业建立了合作关系，解决影响用户服务质量的问题。课题组长期欢迎更多优秀的研究生、本科生加入，共同解决学术价值与工业应用价值兼备的前沿难题，提高广大Web应用用户的体验！
+教育背景
+2012-2018，
+清华大学
+，工学博士，
+计算机科学与技术专业
+（导师：赵有健、
+裴丹
+）
+2008-2012，
+西北工业大学
+，理学学士，应用数学系 统计学专业（现
+数学与统计学院
+应用概率统计系）
+撰写论文、专著等
+1.
+裴丹，张圣林，
+孙永谦
+，裴昶华，大语言模型时代的智能运维，中兴通讯技术，
+2024 年 4 月 第 30 卷第 2 期，
+P56-62
+2. Yilun Liu, Yuhe Ji, Shimin Tao, Minggui He, Weibin Meng, Shenglin Zhang,
+Yongqian Sun
+, Yuming Xie, Boxing Chen, Hao Yang. LogLM: From Task-based to Instruction-based Automated Log Analysis. International Conference on Software Engineering(ICSE), Ontario, Canada, April 27-May 3, 2025 (CCF A)
+3. Shenglin Zhang, Sibo Xia, Wenzhao Fan, Binpeng Shi, Xiao Xiong, Zhenyu Zhong, Minghua Ma,
+Yongqian Sun*
+, Dan Pei. Failure Diagnosis in Microservice Systems: A Comprehensive Survey and Analysis. ACM Transactions on Software Engineering and Methodology (TOSEM), 2025 (CCF A)
+4.
+Yongqian Sun
+, Jiaju Wang, Zhengdan Li, Xiaohui Nie, Minghua Ma, Shenglin Zhang*, Yuhe Ji, Lu Zhang, Wen Long, Yongnan Luo, Hengmao Chen, Dan Pei. AIOpsArena: Scenario-Oriented Evaluation and Leaderboard for AIOps Algorithms in Microservices. IEEE Software Analysis, Evolution and Reengineering (SANER), 2025 (CCF-B)
+5. Shenglin Zhang, Ting Xu, Jun Zhu,
+Yongqian Sun*
+, Pengxiang Jin, Binpeng Shi, Dan Pei. Privacy-preserving MTS anomaly detection for network devices through federated learning[J]. Information Sciences (CCF B, JCR Q1 &amp; CAS Tier 1-Top, IF: 8.1), 2024: 121590.
+6.
+Yongqian Sun
+, Minghan Liang, Shenglin Zhang*, Zeyu Che, Zhiyao Luo, Dongwen Li, Yuzhi Zhang, Dan Pei, Lemeng Pan, and Liping Hou. Efficient Multivariate Time Series Anomaly Detection Through Transfer Learning for Large-Scale Software Systems. ACM Transactions on Software Engineering and Methodology (TOSEM), 2024 (CCF A) .
+7. Shenglin Zhang, Yongxin Zhao, Sibo Xia, Shirui Wei,
+Yongqian Sun*
+,  Chenyu Zhao, Shiyu Ma, Junhua Kuang, Bolin Zhu, Lemeng Pan, Yicheng Guo, Dan Pei. No More Data Silos: UnifiedMicroservice Failure Diagnosis with Temporal Knowledge Graph. IEEE Transactions on Services Computing (TSC), 2024 , 17(6):4013-4026 (CCF A)  .
+8.
+Yongqian Sun
+, Zihan Lin, Binpeng Shi, Shenglin Zhang*, Shiyu Ma, Pengxiang Jin, Zhenyu Zhong, Lemeng Pan, Yicheng Guo, Dan Pei. Interpretable Failure Localization for Microservice Systems Based on Graph Autoencoder. ACM Transactions on Software Engineering and Methodology (TOSEM), , 2024 , 34(2):1-28 (CCF A) .
+9. Yuan Yuan*, Tongqing Zhou*, Xiuhong Tan,
+Yongqian Sun
+, Yuqi Li, Zhixing Li, Zhiping Cai, and Tiejun Li. Exploring Hierarchical Patterns for Alert Aggregation in Supercomputers. 2024 International Symposium on Software Reliability Engineering (ISSRE), Tsukuba, Japan, October 28-31, 2024 (Best Paper Award, CCF B).
+10.
+Yongqian Sun
+, Yang Guo, Minghan Liang, Xidao Wen, Junhua Kuang, Shenglin Zhang*, Hongbo Li, Kaixu Xia, and Dan Pei. Multivariate Time Series Anomaly Detection based on Pre-trained Models with Dual-Attention Mechanism. 2024 International Symposium on Software Reliability Engineering (ISSRE), Tsukuba, Japan, October 28-31, 2024 (CCF B) .
+11. Shenglin Zhang, Zeyu Che, Zhongjie Pan, Xiaohui Nie,
+Yongqian Sun*
+, Lemeng Pan, Dan Pei. LabelEase: A Semi-Automatic Tool for Efficient and Accurate Trace Labeling in Microservices. 2024 International Symposium on Software Reliability Engineering (ISSRE), Tsukuba, Japan, October 28-31, 2024 (CCF B).
+12. Shenglin Zhang, Xiao Xiong, Mengyao Li,
+Yongqian Sun*
+, Yongxin Zhao, Xia Chen, Bowen Deng and Dan Pei. Auto-PIP: Real-time Identification of Critical Performance Inflection Points in Software Stress Testing. 2024 International Symposium on Software Reliability Engineering (ISSRE), Tsukuba, Japan, October 28-31, 2024 (Best Industry Paper Award, CCF B) .
+13. Shenglin Zhang, Pengtian Zhu, Minghua Ma, Jiagang Wang,
+Yongqian Sun*
+, Dongwen Li, Jingyu Wang, Qianying Guo, Xiaolei Hua, Lin Zhu, Dan Pei. Enhanced Fine-Tuning of Lightweight Domain-Specific Q&amp;A model Based on Large Language Models. 2024 International Symposium on Software Reliability Engineering (ISSRE), Tsukuba, Japan, October 28-31, 2024 (CCF B).
+14.
+Yongqian Sun
+, Binpeng Shi, Mingyu Mao, Minghua Ma, Sibo Xia, Shenglin Zhang*, Dan Pei. ART: A Unified Unsupervised Framework for Incident Management in Microservice Systems. 2024 IEEE/ACM Automated Software Engineering Conference (ASE), Sacramento, California, United States, October 27 – November 1, 2024 (CCF A) .
+15. Lei Tao, Shenglin Zhang, Zedong Jia, Jinrui Sun, Minghua Ma, Zhengdan Li*,
+Yongqian Sun
+, Canqun Yang, Yuzhi Zhang, Dan Pei. Giving Every Modality a Voice in Microservice Failure Diagnosis via Multimodal Adaptive Optimization. 2024 IEEE/ACM Automated Software Engineering Conference (ASE), Sacramento, California, United States, October 27 – November 1, 2024 (CCF A) .
+16. Shenglin Zhang, Yuhe Ji, Jiaqi Luan, Xiaohui Nie, Zi`ang Chen, Minghua Ma,
+Yongqian Sun*
+, Dan Pei. End-to-End AutoML for Unsupervised Log Anomaly Detection. 2024 IEEE/ACM Automated Software Engineering Conference (ASE), Sacramento, California, United States, October 27 – November 1, 2024 (CCF A).
+17. Zhe Xie, Shenglin Zhang, Yitong Geng, Yao Zhang, Minghua Ma, Xiaohui Nie, Zhenhe Yao, Longlong Xu,
+Yongqian Sun
+, Wentao Li, Dan Pei. Microservice Root Cause Analysis With Limited Observability Through Intervention Recognition in the Latent Space. 2024 ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (SIGKDD), Barcelona, Spain, August 2024 (CCF A).
+18. Shenglin Zhang, Jun Zhu, Bowen Hao,
+Yongqian Sun*
+, Xiaohui Nie, Jingwen Zhu, Xilin Liu, Xiaoqian Li, Yuchi Ma, Dan Pei. Fault Diagnosis for Test Alarms in Microservices Through Multi-source Data. ACM International Conference on the Foundations of Software Engineering (FSE), Industry Track. Porto de Galinhas, Brazil, July 15-19, 2024 (CCF A) .
+19. Shenglin Zhang, Yongxin Zhao, Xiao Xiong,
+Yongqian Sun*
+, Xiaohui Nie, Jiacheng Zhang, Fenglai Wang, Xian Zheng, Yuzhi Zhang, Dan Pei. Illuminating the Gray Zone: Non-Intrusive Gray Failure Localization in Server Operating Systems. ACM International Conference on the Foundations of Software Engineering (FSE), Industry Track. Porto de Galinhas, Brazil, July 15-19, 2024 (CCF A).
+20. Sibo Xia, Minghua Ma, Pengxiang Jin, Liyue Cui, Shenglin Zhang*, Wa Jin, Yongqian Sun, Dan Pei. Response Time Anomaly Diagnosis for Search Service[J]. Journal of Computer Research and Development, 2024, 61(6): 1573-1584 (in Chinese) [paper].
+21. Shenglin Zhang, Zhongjie Pan, Heng Liu, Pengxiang Jin,
+Yongqian Sun*
+, Qianyu Ouyang, Jiaju Wang, Xueying Jia, Yuzhi Zhang, Hui Yang, Yongqiang Zou, and Dan Pei. Efficient and Robust Trace Anomaly Detection for Large-Scale Microservice Systems. The 34th IEEE International Symposium on Software Reliability Engineering (ISSRE 2023). Florence, Italy, October 2023 (CCF B).
+22. Dongwen Li, Shenglin Zhang,
+Yongqian Sun*
+, Yang Guo, Zeyu Che, Shiqi Chen, Zhenyu Zhong, Minghan Liang, Minyi Shao, Mingjie Li, Shuyang Liu, Yuzhi Zhang, and Dan Pei. An Empirical Analysis of Anomaly Detection Issues for Multivariate Time Series. The 34th IEEE International Symposium on Software Reliability Engineering (ISSRE 2023). Florence, Italy, October 2023 (CCF B).
+23.
+夏思博，马明华，金鹏翔，崔丽月，张圣林，金娃，
+孙永谦
+，裴丹. 搜索服务响应时间异常诊断.《计算机研究与发展》，
+2023 (CCF T1)
+24. Yicheng Sui, Yuzhe Zhang, Jianjun Sun, Ting Xu, Shenglin Zhang*, Zhengdan Li,
+Yongqian Sun
+, Fangrui Guo, Junyu Shen, Yuzhi Zhang, Dan Pei, Xiao Yang, Li Yu. LogKG: Log Failure Diagnosis through Knowledge Graph. IEEE Transactions on Services Computing, 2023 (CCF A).
+25.
+马玲; 樊漆亮; 许婷; 郭冠琛; 张圣林;
+孙永谦
+; 张玉志.
+基于强化学习的在离线混部调度策略
+. 通信学报.
+2023. (CCF T1)
+26. Shenglin Zhang, Pengxiang Jin, Zihan Lin,
+Yongqian Sun*
+, Bicheng Zhang, Sibo Xia, Zhengdan Li, Zhenyu Zhong, Minghua Ma, Wa Jin, Dai Zhang, Zhenyu Zhu, Dan Pei. Robust Failure Diagnosis of Microservice System through Multimodal Data. IEEE Transactions on Services Computing, 2023 (CCF A, accepted, to appear).
+27. Chenyu Zhao, Minghua Ma, Zhenyu Zhong, Shenglin Zhang*, Zhiyuan Tan, Xiao Xiong, Lulu Yu, Jiayi Feng,
+Yongqian Sun
+, Yuzhi Zhang, Dan Pei, Qingwei Lin, Dongmei Zhang. Robust Multimodal Failure Detection for Microservice Systems. THE 29TH ACM SIGKDD Conference on Knowledge Discovery and Data Mining, Long Beach, CA, USA, August 2023 (CCF A).
+28.
+Yongqian Sun
+, Minghan Liang, Zeyu Che, Dongwen Li, Tinghua Zheng, Shenglin Zhang*, Pengtian Zhu, Yuzhi Zhang, Dan Pei. Efficient Multivariate Time Series Anomaly Detection Through Transfer Learning for Large-Scale Web services. The 2023 IEEE International Conference on Web Services, Chicago, USA, July 2023 (CCF B)
+29.
+Yongqian Sun
+, Daguo Cheng, Tiankai Yang, Shenglin Zhang*, Man Zhu, Xiao Xiong, Qiliang Fan, Minghan Liang, Dan Pei, Tianchi Ma, Yu Chen. Efficient and Robust KPI Outlier Detection for Large-Scale Datacenters. IEEE Transactions on Computers, 2023 (CCF A).
+30. Zeyan Li, Junjie Chen, Yihao Chen, Chengyang Luo, Yiwei Zhao,
+Yongqian Sun
+, Kaixin Sui, Xiping Wang, Dapeng Liu, Xing Jin, Qi Wang, Dan Pei. Generic and Robust Root Cause Localization for Multi-Dimensional Data in Online Service Systems, Journal of Systems &amp; Software, 2023, (CCF B)
+31. Yiran Cheng, Bo Cheng, Pengxiang Jin,
+Yongqian Sun*
+, Xiaohui Nie, Nengwen Zhao, Shenglin Zhang, Dan Pei. Effective Attribute Selection for Multi-dimensional Root Cause Analysis. IEEE International Symposium on Software Reliability Engineering (
+ISSRE
+), Charlotte, North Carolina, USA, October 31 – Nov
+ember 3, 2022 (CCF B).
+32. Shenglin Zhang, Zhenyu Zhong, Dongwen Li, Qiliang Fan,
+Yongqian Sun*
+, Man Zhu, Yuzhi Zhang, Dan Pei, Jiyan Sun, Yinlong Liu, Hui Yang, Yongqiang Zou. Efficient KPI Anomaly Detection Through Transfer Learning for Large-Scale Web Services. IEEE Journal on Selected Areas in Communications (
+JSAC
+),
+vol. 40, no. 8, pp. 2440-2455, Aug. 2022.
+(CCF A, SCI Indexed, Impact Factor: 9.144).
+33.
+孙永谦
+，张茹茹，林子涵，张圣林，谭智元，张玉志. KPI异常检测方法评估.
+《
+数据与计算发展前沿
+》
+先进智能计算平台及应用专刊，2022年6月，第4卷第3期，p46-65（CCF T3类期刊）.
+34.
+Yongqian Sun
+, Kunlin Jian, Liyue Cui, Guifei Jiang, Shenglin Zhang*, Yuzhi Zhang, Dan Pei. Online Malicious Domain Name Detection with Partial Labels for Large-Scale Dependable Systems. The Journal of Systems &amp; Software (
+J
+SS
+), 190: 1-12, 2022 (CCF B, SCI中科院2区, Impact Factor: 2.829).
+35.
+Yongqian Sun
+, Daguo Cheng, Pengxiang Jin, Quan Ding, Shenglin Zhang*, Xu Chen, Yuzhi Zhang, Minghan Liang, Dan Pei, Jianyan Zheng, Sen Luo, Xinyu Tang. Robust Anomaly Clue Localization of Multi-dimensional Derived Measure for Online Video Services. IEEE Transactions on Services Computing (
+TSC
+), 2022.  (CCF A, SCI中科院1区, Impact Factor: 8.21).
+36. Shenglin Zhang, Dongwen Li, Zhenyu Zhong, Jun Zhu, Minghan Liang, Jiexi Luo,
+Yongqian Sun*
+, Ya Su, Sibo Xia, Zhongyou Hu, Yuzhi Zhang, Dan Pei, Jiyan Sun and Yinlong Liu. Robust System Instance Clustering for Large-Scale Web Services. The Web Conference (
+WWW
+), Virtual Conference, April 25-29, 2022 (CCF A).
+37.
+李思毅; 马诗雨; 崔丽月; 张圣林;
+孙永谦
+; 张玉志. 微服务架构下的根因定位方法综述.数据与计算发展前沿,
+2022, 4(3): 78-89. (CCF T3)
+38. Shenglin Zhang, Chenyu Zhao, Yicheng Sui, Ya Su*,
+Yongqian Sun
+, Yuzhi Zhang, Dan Pei, Yizhe Wang. “Robust KPI Anomaly Detection for Large-Scale Software Services with Partial Labels”.IEEE International Symposium on Software Reliability Engineering (
+ISSRE
+), October 25-28, 2021, Wuhan, China (CCF B).
+39. Ruming Tang, Cheng Huang, Yanti Zhou, Hanwen Wu, Xianglin Lu,
+Yongqian Sun
+, Qi Li, Jinjin Lin, Weiyao Huang, Siyuan Sun, Dan Pei. &#34;A Practical Machine Learning-Based Framework to Detect DNS Covert Communication in Enterprises&#34;.
+SecureComm 2020
+. Online, October, 2020. (CCF C)
+40.
+苏金树，赵宝康，董德尊，吕高锋，文梅，魏亮，彭伟，李福亮，张圣林，
+孙永谦
+. 新一代数据中心网络技术研究进展.《CCF 2019-2020中国计算机科学技术发展报告》，机械工业出版社，
+2020.10.
+41. Yuan Meng, Shenglin Zhang*,
+Yongqian Sun
+, Ruru Zhang, Zhilong Hu, Yiyin Zhang, Chenyang Jia, Zhaogang Wang, Dan Pei. &#34;Localizing Failure Root Causes in a Microservice through Causality Inference&#34;.  International Symposium on Quality of Service (
+IWQoS
+), Hangzhou, China, June 2020 (CCF B)
+42. Shenglin Zhang, Ying Liu, Weibin Meng, Jiahao Bu, Sen Yang,
+Yongqian Sun*
+, Dan Pei, Jun Xu, Yuzhi Zhang, Lei Song, Ming Zhang. &#34;Efficient and Robust Syslog Parsing for Network Devices in Datacenter Networks&#34;. IEEE Access, Volume 8, pp 30245-30261, February 2020 (JCR Zone 2, SCI Indexed, IF: 4.098)
+43.
+张圣林，林潇霏，
+孙永谦*
+，张玉志，裴丹. 基于深度学习的无监督KPI异常检测. 《
+数据与计算发展前沿
+》,
+2(3): 87-100, 2020.6 （CCF T3
+类期刊
+）
+44.
+张圣林，李东闻，
+孙永谦*
+，孟伟彬，张宇哲，张玉志，刘莹，裴丹. 面向云数据中心多语法日志通用异常检测机制. 《
+计算机研究与发展
+》，57(4):778-790, 2020.（CCF A类 中文）
+45. Ruming Tang, Zheng Yang, Zeyan Li, Weibin Meng, Haixin Wang, Qi Li,
+Yongqian Sun
+, Dan Pei, Tao Wei, Yanfei Xu, Yan Liu. &#34;ZeroWall: Detecting Zero-Day Web Attacks through Encoder-Decoder Recurrent Neural Networks&#34;. IEEE International Conference on Computer Communications (
+INFOCOM
+), Beijing, China, Apr 27-30, 2020 (CCF A)
+46. Zeyan Li, Chengyang Luo, Yiwei Zhao,
+Yongqian Sun*
+, Kaixin Sui, Xiping Wang, Dapeng Liu, Xing Jin, Qi Wang, Dan Pei, &#34;Generic and Robust Localization of Multi-Dimensional Root Causes&#34;，IEEE International Symposium on Software Reliability Engineering (
+ISSRE
+), Berlin, Germany, October 2019 (CCF B)
+47. Yuan Meng,
+Shenglin Zhang*, Zijie
+Ye, Benliang Wang, Zhi Wang,
+Yongqian Sun
+, Qitong Liu, Shuai Wang, Dan Pei. “Causal Analysis of the Unsatisfying Experience in Realtime Mobile Multiplayer Games in the Wild”. IEEE International Conference on Multimedia and Expo (
+ICME
+), Shanghai, China, July 2019 (CCF B)
+48. Dapeng Liu, Youjian Zhao, Haowen Xu,
+Yongqian Sun
+, Dan Pei, Jiao Luo, Xiaowei Jing, Mei Feng, “Opprentice: Towards Practical and Automatic Anomaly Detection Through Machine Learning”, ACM The 2015 Internet Measurement Conference 2015 (
+IMC
+), Tokyo, Japan, Oct 2015. (CCF B 类会议)
+49. Guo Chen, Dan Pei, Youjian Zhao and
+Yongqian Sun
+, “Designing Buffer Capacity of Crosspoint-Queued Switch”,
+The 11th IFIP International Conference on Network and Parallel Computing (
+NPC
+)
+, Ilan, Taiwan, Sep 2014. (CCF C 类会议)
+科研项目、成果、获奖、专利等情况
+主要科研项目
+：
+1. 面向高性能计算数据中心的高效故障诊断方法研究，国家自然科学基金青年项目，2024.1- 2026.12，主持
+2. 全链路压测演练场景下智能辅助性能工程，CCF-华为胡杨林基金软件工程专项，2023-2024，项目负责人
+3. 基于操作系统通用QoS指标特征反映业务状况的研究, 腾讯基础平台技术犀牛鸟专项研究计划，2023-2024，项目负责人
+4. 服务变更评估方法研究开发，云账户技术（天津）有限公司，2023.02-2025.03，项目负责人
+5. 面向多模态数据的大规模云平台故障诊断机制研究，国家自然科学基金面上项目，2023.1-2026.12，主要参与人
+6. 面向复杂异构指标的 Web 服务根因分析研究，天津市自然科学基金，2021.10-2023.9，项目负责人
+7. 基于指标和调用链的异常检测算法研究开发，云账户技术（天津）有限公司，2021.03-2022，项目负责人
+8. 复杂业务场景下的故障智能发现与动态决策系统方法研究，北京达佳互联信息技术有限公司（快手），2021.09-2021.08，项目负责人
+9. 基于强化学习的多维度KPI异常定位机制研究, 腾讯科技（深圳）有限公司，2020.03-2021.02,项目负责人
+10.多维属性KPI的异常定位， 北京字节跳动网络技术有限公司，2019.06-2020.06，项目负责人
+11.监控指标相关分析和挖掘，浙江天猫技术有限公司(阿里巴巴)，2019.02-2020.01，项目负责人
+12.在线视频服务的异常定位研究，广州虎牙信息科技有限公司，2019.03-2020.03，项目负责人
+13.基于大数据分析的互联网服务性能管理体系结构研究，国家自然科学基金面上项目，2015.01-2018.12，参与
+个人曾获奖项
+：
+2024, 国际会议ISSRE (CCF B类) 最佳论文奖、最佳工业论文奖
+2024，中国电子学会 科技进步一等奖
+2022-2023年，南开大学智能基座产教融合协同育人基地 “金课”建设计划教改项目
+2021-2022年，校级“一流课程建设”的教改项目
+2021年，教育部-华为智能基座“栋梁之师”
+2020年，华为云与计算“先锋教师”
+2019，天津市“131”创新型人才培养工程第三层次
+专利
+：
+1. 张圣林,李东闻,
+孙永谦
+,钟震宇,张玉志. 一种基于大规模网络的数据分类方法和装置. 中国发明专利, 202210306441.9, 2022.08.05, 2022-8-5, 已受理
+2. 张圣林,金鹏翔,
+孙永谦
+,张弼铖,林子涵,夏思博,金娃. 基于图卷积神经网络的微服务故障诊断方法、装置及设备. 中国发明专利, 202210736465.8，2022-6-27，已受理
+3.
+孙永谦
+,金鹏翔,张圣林,夏思博,林子涵,张弼铖,金娃. 微服务故障检测方法、装置、存储介质及计算机设备. 中国发明专利, 202210705260.3, 2022-6-21, 已受理
+4.
+孙永谦
+; 张茹茹; 张圣林; 熊潇; 林子涵; 杨晖; 李筱沛; 于洪建; 李晓桐 ; 周期性数据异常的检测方法、装置、电子设备及存储介质, 中国发明专利，202210423200.2，
+2022-4-21, 已受理
+5. 邹永强; 杨晖; 李筱沛; 于洪建; 李晓桐;
+孙永谦
+; 张茹茹; 张圣林; 谭智元; 文雨晨 ; 单指标异常的检测方法、装置、电子设备及可读存储介质 申请人, 中国发明专利, 202210418771.7，
+2022-4-21，已受权
+6.
+孙永谦；
+朱曼；张圣林. 通过AI的方式对软件变更后的健康状态进行评估的方法. 中国发明专利：2022101878107，2022.2,已受理
+7. 张圣林；李东闻；陈锐；
+孙永谦
+；张玉志. 基于迁移学习的日志异常检测方法. 中国发明专利：202010813538X，2020.8，已受理
+8. 陈云；王博；王栋；曲显平；郭宣佑；
+孙永谦
+；万阳沙.系统监控方法和装置. 2018.09.11-2038.09.11, 中国发明专利：CN20161
+0814685.2，
+已授权
+指导学生参与竞赛或项目
+：
+2024-2025，大学生创新创业训练计划，指导2支队伍
+2022-2023，大学生创新创业训练计划，指导2支队伍
+2022
+美国大学生数学建模竞赛，指导1支队伍
+2020美国大学生数学建模竞赛，指导1支队伍
+2019美国大学生数学建模竞赛，指导2支队伍
+讲授课程
+《算法导论》；
+《并行与分布式程序设计》；
+《软件概论》；
+《计算机概论》；
+社会兼职
+CCF
+互联网专委会执行委员
+CCF
+软件工程专委会执行委员
+CCF
+服务计算专委会执行委员
+CCF
+体系结构专委会执行委员
+TPC Member of PRICAI 2023, ICA3PP 2023, HDR-Net 2019/2020, AIOps workshop 2020
+IEEE Member
+ACM Member</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>孙永谦</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/szdw/fjs/1.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>副教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>research_direction_raw</td>
+      <td>智能运维，人工智能，网络智能管理</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>孙永谦
+所属部门
+: 软件工程系
+电子邮件
+: sunyongqian(at)nankai.edu.cn
+职...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>sunyongqian@nankai.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cs.nankai.edu.cn/info/1121/2581.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const detailScope=new URLSearchParams(),detailIncoming=new URLSearchParams(location.search);
+for(const key of ['school','dept','year','degree','route','track','program'])if(detailIncoming.get(key))detailScope.set(key,detailIncoming.get(key));
+const detailSchool="nankai",detailDept="software";
+if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDept){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
+detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
+for(const a of document.querySelectorAll('a[href]')){
+  const path=a.getAttribute('href').split('?')[0];
+  if(['../discovery.html','../compare.html','../desk.html','../admissions.html','../notices.html','../applications.html'].includes(path)){
+    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',"nankai-software-sunyongqian");a.href=path+'?'+q;
+  }
+}
+const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId="nankai-software-sunyongqian";
+let detailSelected=[];try{detailSelected=JSON.parse(localStorage.getItem('compare_sel')||'[]');}catch(e){}
+function showDetailSelection(){detailCompare.textContent=detailSelected.includes(detailId)?'移出对比':'加入对比';detailCompare.setAttribute('aria-pressed',detailSelected.includes(detailId));detailSelection.textContent=`查看对比（${detailSelected.length} / 5）`;}
+detailCompare.onclick=()=>{if(detailSelected.includes(detailId))detailSelected=detailSelected.filter(id=>id!==detailId);else if(detailSelected.length<5)detailSelected.push(detailId);else{detailCompare.textContent='已选5位，请先移除';return;}try{localStorage.setItem('compare_sel',JSON.stringify(detailSelected));showDetailSelection();}catch(e){detailCompare.textContent='浏览器无法保存选择';}};showDetailSelection();
+
+const PID = "nankai-software-sunyongqian";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

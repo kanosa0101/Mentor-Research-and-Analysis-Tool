@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>周宇 · 导师库</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1a202c;--muted:#718096;--line:#e8eaee;
+  --accent:#3b5bdb;--accent-soft:#eef2ff;--ok:#0c8a5b;--warn:#b45309;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:14px}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:0 20px}
+.topin{max-width:980px;margin:0 auto;height:54px;display:flex;align-items:center;gap:14px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+.top a:hover{text-decoration:underline}
+.top .crumb{font-size:12.5px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:9px}
+.logo{width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.brand h1{margin:0;font-size:15px;font-weight:700}
+.wrap{max-width:980px;margin:22px auto;padding:0 20px 50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;
+  box-shadow:0 2px 10px rgba(20,30,60,.04)}
+.card h2{margin:0 0 2px;font-size:21px}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:right;margin-left:18px;border:1px solid var(--line)}
+.dl{display:grid;grid-template-columns:96px 1fr;gap:7px 14px;font-size:13.5px;margin-top:14px}
+.dl dt{color:var(--muted)}.dl dl dd{margin:0}
+.dl dd{margin:0}
+.meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
+.tag-roster{background:#fef4e0;color:var(--warn)}
+.tag-enriched{background:var(--accent-soft);color:var(--accent)}
+.tag-verified{background:#e3f7ef;color:var(--ok)}
+.pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+.o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
+.c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
+.missing{color:#b8bfcc;font-size:12px}
+.bio{font-size:13.5px;white-space:pre-wrap;line-height:1.85;color:#333}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
+.card.ai{border-style:dashed;border-color:#d6c7f5}
+.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
+.ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
+.ai-claims li{margin-bottom:4px}
+.ev{display:inline-block;font-size:11px;color:#7c3aed;background:#f6f1ff;border-radius:5px;
+  padding:0 6px;margin-left:6px;cursor:help}
+.ohint{background:#fff7e8;border:1px solid #f2ddb0;color:#8a5b13;border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
+.ohint code{background:#fbf0d9;border-radius:5px;padding:1px 6px;font-size:12px}
+.obrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.obrow label{font-size:12.5px;color:var(--muted)}
+.obrow select{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:13px;background:#fff}
+#ob-save{border:1px solid var(--accent);color:#fff;background:var(--accent);border-radius:7px;padding:5px 16px;font-size:13px;cursor:pointer}
+#ob-save:disabled{opacity:.4;cursor:default}
+#ob-remove{font-size:12px;color:#d64545;margin-left:2px;cursor:pointer}
+#ob-msg{font-size:12px}
+#ob-notes{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+  font-family:inherit;resize:vertical;background:#fcfcfd}
+#ob-notes:disabled{background:#f4f5f7}
+#ob-history{margin-top:10px}
+.h-item{display:flex;gap:12px;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #f0f2f5}
+.h-item:last-child{border-bottom:none}
+.h-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.h-a{color:var(--accent);font-weight:600;min-width:52px}
+@media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
+</style>
+<link rel="stylesheet" href="../ui.css?v=20261015-10"></head>
+<body>
+
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="../discovery.html" >找导师</a>
+
+<a href="../admissions.html" >学校与要求</a>
+
+<a href="../notices.html" >招生通知</a>
+
+<a href="../desk.html" >我的申请</a>
+
+</nav>
+<details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../index.html" >全量导师目录</a>
+
+<a href="../compare.html" >导师对比</a>
+
+<a href="../applications.html" >项目与材料</a>
+
+<a href="../board.html" >旧套磁看板</a>
+
+</div></details>
+<span class="crumb">南开大学 · 计算机学院</span>
+
+</div></header>
+<div class="page-heading"><a href="../admissions.html?school=nankai&amp;dept=cs">学校与院系招生要求 →</a><h1>导师资料</h1></div>
+<div class="wrap"><div class="context-actions"><a class="primary" href="../desk.html?mentor=nankai-cs-zhouyu&amp;school=nankai&amp;dept=cs">准备联系 周宇</a><button id="detail-compare" type="button">加入对比</button><a href="../compare.html" id="detail-selection">查看对比</a><a href="../discovery.html">继续找导师</a></div>
+<p id="detail-scope-warning" class="note" hidden>此导师不在原项目院系，继续时已清除原专业／专项范围，请重新核对招生要求。</p>
+<div class="card">
+
+  <h2>周宇 <span class="tag tag-enriched">已富化</span></h2>
+  <div style="color:var(--muted);font-size:13.5px">教授</div>
+  <dl class="dl">
+    <dt>研究所</dt><dd>计算机科学与技术系</dd>
+    <dt>导师资格</dt><dd>博导</dd>
+
+    <dt>研究方向</dt><dd>计算机视觉、多模态人工智能、具身智能、大模型、自然语言处理与深度学习等</dd>
+    <dt>邮箱</dt><dd>yzhou@nankai.edu.cn</dd>
+    <dt>个人主页</dt><dd><a href="https://intimelab.github.io" target="_blank">https://intimelab.github.io</a></dd>
+    <dt>官网页面</dt><dd><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm</a></dd>
+  </dl>
+  <div class="meta">
+    <span>首次入库：2026-10-15</span>
+    <span>字段来源最晚抓取：2026-10-15</span>
+<span>最近解析：2026-10-15</span>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+<details class="card" id="obox">
+  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
+  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <span id="ob-remove" style="display:none">移出看板</span>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
+</details>
+
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">周宇
+，南开大学计算机/密网学院教授、博导；北京中关村学院学院导师；中国图象图形学学会文档图像分析与识别专委会副秘书长、常务委员；中国图象图形学会旗舰英文期刊Visual Intelligence副主编，ICLR、NeurIPS、ACM MM、IJCAI等会议领域主席或资深程序委员；哈尔滨工业大学计算机系本硕博（导师
+高文
+院士、
+陈熙霖
+研究员），上海交通大学博士后（导师
+杨小康
+教授）；2012.04-2024.08于中科院信工所先后任助研、副研、硕导、博导、研究员。
+研究方向为计算机视觉、多模态人工智能、具身智能、自然语言处理、大模型及深度学习等，近期聚焦于可视文本处理/检测/识别/理解/安全（OCR）、多模态大模型（含理解与生成）、多模态智能体、终身学习、自监督学习等主题
+。研发的场景文本提取系统、GUI Agent、特定目标检测系统、钓鱼网站检测系统等应用于多个国家部委及企业，发挥关键作用。在国内外高水平会议及期刊如CVPR/ICCV/ECCV/NeurIPS/ICML/ICLR/IJCV/TMM等发表学术论文100余篇，其中
+在CCF(THU)-A类/SCI一区会议期刊发表论文近80篇（一作/通作近60篇、26年度近30篇）
+，获得
+CCF-A类会议ACM MM 2021最佳论文提名奖（5/1942篇）
+、ACCV IWRR 2014最佳论文奖。团队核心技术获得ICDAR 2025复杂版面文档图像端到端机器翻译
+冠军
+、CSIG 2022票据识别与分析挑战赛
+冠军
+、2020年“中国人工智能·多媒体信息识别技术竞赛”手写&amp;印刷文本OCR两项高校组
+冠军
+、ICDAR ReST 2023印章主体文字检测第三名等近10项学术竞赛奖项。主持
+国家重点研发计划课题
+&amp;子课题、
+国家自然科学基金
+面上&amp;青年基金项目、国家部委重大工程课题、中国博士后科学基金、企业委托等项目/课题多项。
+详细信息见个人主页：
+https://intimelab.github.io
+。
+招生：
+【
+博士招生
+】1) 27年入学博士生：1名；2) 中关村学院博士生：在北京中关村学院参与“具身多模态大模型”及“高效神经网络架构设计”两个项目，每周在中关村学院线下工作1~2天，与每位同学至少讨论1次，欢迎对中关村学院感兴趣的同学联系交流；
+【
+硕士招生
+】27年入学硕士生：已招满；
+【
+本科实习
+】欢迎本科生入组实习，但受限于算力瓶颈，每年只能少量接收，如果你自己可以租赁算力，我们可以合作。
+招生详细信息见：
+https://intimelab.github.io/stu
+。
+近期部分论文：
+文档智能
+具身智能
+多模态智能
+持续与开放学习
+自监督学习
+其他工作
+2026
+G Li, P Lyu, C Zhang, H Shen, L Wu, X Wan, G Zeng, H Hu, C Ma,
+Y Zhou*
+. &#34;Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training.&#34;
+CVPR
+, 2026. (
+CCF-A
+,
+PDF
+)
+G Li, C Zhang, Y Liang, H Shen, Y Zhang, P Lyu, W Wang, X Wan, G Zeng, H Hu, C Ma,
+Y Zhou*
+. &#34;MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition–Perception–Reasoning Guided Text-Image Machine Translation.&#34;
+CVPR
+, 2026. (
+CCF-A
+,
+PDF
+)
+Y Liu, H Shen, Y Liu, S Liu, Z Chen,
+Y Zhou*
+. &#34;DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding.&#34;
+CVPR
+, 2026. (
+CCF-A
+,
+PDF
+)
+Z Chen, F Zhao, Y Shu, Y Liu, Y Liu,
+Y Zhou*
+. &#34;StyleTextGen: Style-Conditioned Multilingual Scene Text Generation.&#34;
+CVPR
+, 2026. (
+CCF-A
+,
+PDF
+)
+Y Zeng, H Wang, M Liu,
+Y Zhou
+, C Gao, K Chen, G Huang. &#34;Semantic Audio-Visual Navigation in Continuous Environments.&#34;
+CVPR
+, 2026. (
+CCF-A
+,
+PDF
+)
+A Zhang, D Yang, C Liu, X Hong, C Ma,
+Y Zhou*
+. &#34;Orthogonal Knowledge Refreshing for Domain-Incremental Object Detection.&#34;
+ECCV
+, 2026. (
+THU-A
+,
+PDF
+)
+J Lyu, P Fu, Z Li, S Zhang, J Yang,
+Y Zhou*
+, C Ma, Z Luo, J Luan. &#34;UniTranslator: A Unified Multi-modal framework for End-to-end In-Image Machine Translation.&#34;
+ECCV
+, 2026. (
+THU-A
+,
+PDF
+)
+G Li, S Peng, C Zhang, B Wu, H Feng, W Wang, P Lyu, H Shen, X Wan, Z Tian, H Hu, C Ma,
+Y Zhou*
+. &#34;StrucTab: A Structured Optimization Framework for Table Parsing.&#34;
+ECCV
+, 2026. (
+THU-A
+,
+PDF
+)
+C Yu, Y Liu, D Wu, G Li, Z Chen,
+Y Zhou*
+. &#34;Beyond Detection: A Structure-Aware Framework for Scene Text Tracking.&#34;
+ICML
+, 2026. (
+CCF-A
+,
+PDF
+)
+A Zhang, D Yang, C Liu, X Hong,
+Y Zhou*
+. &#34;Focus, Align, and Sustain: Counteracting Gradient Dilution in Incremental Object Detection.&#34;
+ICML
+, 2026. (
+CCF-A
+,
+PDF
+)
+D Wu, D Yang, S Zhao, C Ma,
+Y Zhou
+. &#34;Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach.&#34;
+ICLR
+, 2026. (
+CCF-A
+,
+PDF
+)
+D Wu, X Zhang, D Yang, J Yao, L Chen, Q Liu, S Zhao, C Ma, Y Kang,
+Y Zhou*
+. &#34;Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning.&#34;
+ICLR
+, 2026. (
+CCF-A
+,
+PDF
+)
+Y Zhang, D Wu, H Shen,
+Y Zhou*
+, C Ma. &#34;Learn where to Click from Yourself: On-Policy Self-Distillation for GUI Grounding.&#34;
+NeurIPS
+, 2026. (
+CCF-A
+,
+PDF
+)
+F Li, J Lyu, K Jiang,
+Y Zhou*
+, J Shi. &#34;Seeing but Not Detecting: Privacy-Preserving Scene Text Attack via Hybrid Adversarial Policy Learning.&#34;
+NeurIPS
+, 2026. (
+CCF-A
+,
+PDF
+)
+S Peng, G Li, X Wan, C Zhang, H Feng, B Wu, H Shen, W Wang, Z Cai, Z Tian, H Hu, C Ma,
+Y Zhou*
+. &#34;ChartArena: Benchmarking Chart Parsing across Languages, Scenarios, and Formats.&#34;
+NeurIPS
+, 2026. (
+CCF-A
+,
+PDF
+)
+S Liu,
+Y Zhou*
+, M Liu, X Guo, L Nie. &#34;Counterfactual Instruction Grounding for Vision-Language-Action Models.&#34;
+NeurIPS
+, 2026. (
+CCF-A
+,
+PDF
+)
+Q Ye, M Liu,
+Y Zhou*
+. &#34;RAO-Nav: Probing Omni-Language Models for Zero-shot Semantic Audio-Visual Navigation.&#34;
+NeurIPS
+, 2026. (
+CCF-A
+,
+PDF
+)
+J Wei, Y Wu, J Yan, Z Li, Z Zu,
+Y Zhou
+, L Zhang, QY Wang. &#34;ST-SAM: Multimodal Scene Text Segmentation with Dense Visual and Sparse Textual Prompts via SAM.&#34;
+AAAI
+, 2026. (
+CCF-A
+,
+PDF
+)
+Q Ye, W Zeng, M Liu, J Zhang, Y Hu, Z Yu,
+Y Zhou
+. &#34;When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?&#34;
+AAAI
+, 2026. (
+CCF-A
+,
+PDF
+)
+Q Ye,
+Y Zhou*
+, L He, J Zhang, X Guo, J Zhang, M Tan, W Xie, Y Sun, T Tan, X Yuan, G Khoriba, Z Yu. &#34;SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition.&#34;
+AAAI
+, 2026. (
+CCF-A, Oral Presentation
+,
+PDF
+)
+L He, M Liu, Q Ye,
+Y Zhou
+, X Deng, G Ding. &#34;Task-Aware 3D Affordance Segmentation via 2D Guidance and Geometric Refinement.&#34;
+AAAI
+, 2026. (
+CCF-A
+,
+PDF
+)
+J Zhang, S Gao, Z Chen, Y Liu,
+Y Zhou*
+. &#34;Open-Set Visual Text Forensics via Sparse-Constraint Rectified Flow.&#34;
+ACM MM
+, 2026. (
+CCF-A
+,
+PDF
+)
+Z Chen, C Yu, F Zhao, Y Liu,
+Y Zhou*
+. &#34;Structure Leads, Semantics Assist: Hallucination-Resistant Diffusion for Scene Text Image Super-Resolution.&#34;
+ACM MM
+, 2026. (
+CCF-A
+,
+PDF
+)
+Y Liu, G Li, M Huang, Z Chen,
+Y Zhou*
+. &#34;WildTab: Decoupling Content and Structure for Robust Multimodal Table Understanding in the Wild.&#34;
+ACM MM
+, 2026. (
+CCF-A
+,
+PDF
+)
+Y Feng, D Yang, A Zhang, Y Liu,
+Y Zhou*
+. &#34;H-Hub: Hierarchical Domain-aware Parameter Adaptation for Continual Test-Time Object Detection.&#34;
+ACM MM
+, 2026. (
+CCF-A
+,
+PDF
+)
+2025
+X Yang, Z Qiao,
+Y Zhou*
+. &#34;IPAD: Iterative, Parallel, and Diffusion-based Network for Scene Text Recognition.&#34;
+IJCV
+, 2025. (
+CCF-A, SCI一区
+,
+PDF
+)
+Hunyuan Vision Team, P Lyu, X Wan, G Li, S Peng, W Wang, L Wu, H Shen,
+Y Zhou
+, C Tang, Q Yang, Q Peng, B Luo, H Yang, X Zhang, J Zhang, H Peng, H Yang, S Xie, L Zhou, G Pei, B Wu, K Wu, J Yang, B Wang, K Liu, J Zhu, J Jiang, Linus, H Hu, C Zhang. &#34;HunyuanOCR Technical Report.&#34; 2025. (
+Github 1.6k stars &amp; 130 forks
+,
+PDF
+)
+Y Zhang, C Liu, J Wei, X Yang,
+Y Zhou*
+, C Ma, X Ji. &#34;Linguistics-aware Masked Image Modeling for Self-supervised Scene Text Recognition.&#34;
+CVPR
+, 2025. (
+CCF-A
+,
+PDF
+)
+G Li, H Shen,
+Y Zhou*
+. &#34;Beyond Cropped Regions: New Benchmark and Corresponding Baseline for Chinese Scene Text Retrieval in Diverse Layouts.&#34;
+ICML
+, 2025. (
+CCF-A
+,
+PDF
+)
+D Wu, D Yang, S Zhao, C Ma,
+Y Zhou*
+. &#34;An Empirical Study on Configuring In-Context Learning Demonstrations for Unleashing MLLMs&#39; Sentimental Perception Capability.&#34;
+ICML
+, 2025. (
+CCF-A
+,
+PDF
+)
+Y Shu, H Lin, Y Liu, Y Zhang, G Zeng, Y Li,
+Y Zhou
+, SN Lim, H Yang, N Sebe. &#34;When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations in Scene Text Spotting and Understanding.&#34;
+NeurIPS
+, 2025. (
+CCF-A
+,
+PDF
+)
+T Cao, J Lyu, W Zeng, W Mu,
+Y Zhou*
+. &#34;The Devil is in Fine-tuning and Long-tailed Problems: A New Benchmark for Scene Text Detection.&#34;
+IJCAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+W Li, D Luo, D Yang, Z Li, W Wang,
+Y Zhou*
+. &#34;The Role of Video Generation in Enhancing Data-Limited Action Understanding.&#34;
+IJCAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+J Lyu, W Wang, D Yang, J Zhong,
+Y Zhou*
+. &#34;Arbitrary Reading Order Scene Text Spotter with Local Semantics Guidance.&#34;
+AAAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+H Shen, G Li, J Zhong,
+Y Zhou*
+. &#34;LDP: Generalizing to Multilingual Visual Information Extraction by Language Decoupled Pretraining.&#34;
+AAAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+Y Zhang, G Zeng, H Shen, D Wu,
+Y Zhou*
+, C Ma. &#34;Track the Answer: Extending TextVQA from Image to Video with Spatio-Temporal Clues.&#34;
+AAAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+A Zhang, D Yang, C Liu, X Hong, M Shang,
+Y Zhou
+. &#34;DCA: Dividing and Conquering Amnesia in Incremental Object Detection.&#34;
+AAAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+A Zhang, D Yang, C Liu, X Hong,
+Y Zhou
+. &#34;Specifying What You Know or Not for Multi-label Class-incremental Learning.&#34;
+AAAI
+, 2025. (
+CCF-A
+,
+PDF
+)
+F Zhao, W Zeng, Z Li, D Yang, B Li, X Bi,
+Y Zhou*
+. &#34;Uni-DocDiff: A Unified Document Restoration Model Based on Diffusion.&#34;
+ACM MM
+, 2025. (
+CCF-A
+,
+PDF
+)
+Y Zhang, G Zeng, D Wu, H Shen, B Li,
+Y Zhou
+, C Ma, X Bi. &#34;Gather and Trace: Rethinking Video TextVQA from an Instance-oriented Perspective.&#34;
+ACM MM
+, 2025. (
+CCF-A
+,
+PDF
+)
+2024
+W Zeng, Y Shu, Z Li, D Yang,
+Y Zhou*
+. &#34;TextCtrl: Diffusion-based Scene Text Editing with Prior Guidance Control.&#34;
+NeurIPS
+, 2024. (
+CCF-A, Spotlight
+,
+PDF
+)
+​​Y Zhang, C Liu,
+Y Zhou*
+, W Wang, Q Ye, X Ji. &#34;Beyond Instance Discrimination: Relation-aware Contrastive Self-supervised Learning.&#34;
+TMM
+, 2024. (
+SCI一区
+,
+CCF-B
+,
+PDF
+)
+G Zeng, Y Zhang, J Wei, D Yang, P Zhang, Y Gao, X Qin,
+Y Zhou
+. &#34;Focus, Distinguish, and Prompt: Unleashing CLIP for Efficient and Flexible Scene Text Retrieval.&#34;
+ACM MM
+, 2024. (
+CCF-A
+,
+PDF
+)
+D Wu, D Yang,
+Y Zhou
+, C Ma. &#34;Bridging Visual Affective Gap: Borrowing Textual Knowledge by Learning from Noisy Image-Text Pairs.&#34;
+ACM MM
+, 2024. (
+CCF-A
+,
+PDF
+)
+D Wu, D Yang,
+Y Zhou
+, C Ma. &#34;Robust Multimodal Sentiment Analysis of Image-Text Pairs by Distribution-Based Feature Recovery and Fusion.&#34;
+ACM MM
+, 2024. (
+CCF-A
+,
+PDF
+)
+2023
+B Fang, W Wu, C Liu,
+Y Zhou*
+, M Yang, Y Song, F Li, W Wang, X Ji, W Ouyang. &#34;UATVR: Uncertainty-adaptive Text-Video Retrieval.&#34;
+ICCV
+, 2023. (
+CCF-A
+,
+PDF
+)
+H Shen, X Gao, J Wei, L Qiao,
+Y Zhou*
+, Q Li, Z Cheng. &#34;Divide Rows and Conquer Cells: Towards Structure Recognition for Large Tables.&#34;
+IJCAI
+, 2023. (
+CCF-A,
+Oral Presentation
+,
+Acceptance Rate 15.0%
+,
+PDF
+)
+D Yang,
+Y Zhou*
+, X Hong, A Zhang, W Wang. &#34;One-shot Replay: Boosting Incremental Object Detection via Retrospecting One Object.&#34;
+AAAI
+, 2023. (
+CCF-A
+,
+Oral Presentation
+, Acceptance Rate 约11.0%
+,
+PDF
+)
+X Qin, P Lyu, C Zhang,
+Y Zhou*
+, K Yao, P Zhang, H Lin, W Wang. &#34;Towards Robust Real-time Scene Text Detection: From Semantic to Instance Representation Learning.&#34;
+ACM MM
+, 2023. (
+CCF-A,
+Oral Presentation
+,
+PDF
+)
+Y Shu, W Wang,
+Y Zhou*
+, S Liu, A Zhang, D Yang, W Wang. &#34;Perceiving Ambiguity and Semantics without Recognition: An Efficient and Effective Ambiguous Scene Text Detector.&#34;
+ACM MM
+, 2023. (
+CCF-A,
+Oral Presentation
+,
+PDF
+)
+G Zeng, Y Zhang,
+Y Zhou*
+, B Fang, G Zhao, X Wei, W Wang. &#34;Filling in the Blank: Rationale-augmented Prompt Tuning for TextVQA.&#34;
+ACM MM
+, 2023. (
+CCF-A,
+Oral Presentation
+,
+PDF
+)
+D Yang,
+Y Zhou*
+, X Hong, A Zhang, X Wei, L Zeng, Z Qiao, W Wang. &#34;Pseudo Object Replay and Mining for Incremental Object Detection.&#34;
+ACM MM
+, 2023. (
+CCF-A,
+Oral Presentation
+,
+PDF
+)
+2022
+B Fang, W Wu, C Liu,
+Y Zhou*
+, D He, W Wang. &#34;MaMiCo: Macro-to-micro Semantic Correspondence for Self-supervised Video Representation Learning.&#34;
+ACM MM
+, 2022. (
+CCF-A
+,
+Oral Presentation, Acceptance Rate 5.0%
+,
+PDF
+)
+W Wang,
+Y Zhou*
+, J Lv, D Wu, G Zhao, N Jiang, W Wang. &#34;TPSNet: Reverse Thinking of Thin Plate Splines for Arbitrary Shape Scene Text Representation.&#34;
+ACM MM
+, 2022. (
+CCF-A
+,
+PDF
+)
+J Wei, Y Zhang,
+Y Zhou*
+, G Zeng, Z Qiao, Y Guo, H Wu, H Wang, W Wang. &#34;TextBlock: Towards Scene Text Spotting without Fine-grained Detection.&#34;
+ACM MM
+, 2022. (
+CCF-A
+,
+PDF
+)
+X Chen, Y Zhou, D Wu, W Zhang,
+Y Zhou
+, B Li, W Wang. &#34;Imagine by Reasoning: A Reasoning-based Implicit Semantic Data Augmentation for Long-tailed Classification.&#34;
+AAAI
+, 2022. (
+CCF-A
+,
+PDF
+)
+2021
+Z Qiao,
+Y Zhou*
+, J Wei, W Wang, Y Zhang, N Jiang, H Wang, W Wang. &#34;PIMNet: A Parallel, Iterative and Mimicking Network for Scene Text Recognition.&#34;
+ACM MM
+, 2021. (
+CCF-A
+,
+Best Paper Candidate [5/1942=2.5‰]
+,
+PDF
+)
+G Zeng, Y Zhang,
+Y Zhou*
+, X Yang. &#34;Beyond OCR + VQA: Involving OCR into the Flow for Robust and Accurate TextVQA.&#34;
+ACM MM
+, 2021. (
+CCF-A
+,
+Oral
+Presentation
+, Acceptance Rate 9.2%
+,
+PDF
+)
+X Li,
+Y Zhou*
+, Y Zhang, A Zhang, W Wang, N Jiang, H Wu, W Wang. &#34;Dense Semantic Contrast for Self-supervised Visual Representation Learning.&#34;
+ACM MM
+, 2021. (
+CCF-A
+,
+Oral Presentation
+,
+Acceptance Rate 9.2%
+,
+PDF
+)
+X Qin,
+Y Zhou*
+, Y Guo, D Wu, Z Tian, N Jiang, H Wang, W Wang. &#34;Mask is All You Need: Rethinking Mask R-CNN for Dense and Arbitrary-shaped Scene Text Detection.&#34;
+ACM MM
+, 2021. (
+CCF-A
+,
+PDF
+)
+W Zhang, D Wu,
+Y Zhou
+, B Li, W Wang, D Meng. &#34;Binary Neural Network Hashing for Image Retrieval.&#34;
+SIGIR
+, 2021. (
+CCF-A
+,
+PDF
+)
+2020
+Z Qiao,
+Y Zhou*
+, D Yang, Y Zhou, W Wang. &#34;SEED: Semantics Enhanced Encoder-decoder Framework for Scene Text Recognition.&#34;
+CVPR
+, 2020. (
+CCF-A
+, Acceptance Rate 22%,
+391 Citations
+,
+PDF
+)
+Y Yao, C Liu, D Luo,
+Y Zhou
+, Q Ye. &#34;Video Playback Rate Perception for Self-supervised Spatio-temporal Representation Learning.&#34;
+CVPR
+, 2020. (
+CCF-A
+, Acceptance Rate 22%,
+225 Citations
+,
+PDF
+)
+D Luo, C Liu,
+Y Zhou*
+, D Yang, C Ma, Q Ye, W Wang. &#34;Video Cloze Procedure for Self-supervised Spatio-temporal Learning.&#34;
+AAAI
+, 2020. (
+CCF-A
+,
+Oral Presentation, Acceptance Rate 5.8%, 194 Citations
+,
+PDF
+)
+W Zhang, D Wu,
+Y Zhou
+, B Li, W Wang, D Meng. &#34;Deep Unsupervised Hybrid-similarity Hadamard Hashing.&#34;
+ACM MM
+, 2020. (
+CCF-A
+,
+PDF
+)
+S Zhao, D Wu, W Zhang,
+Y Zhou
+, B Li, W Wang. &#34;Asymmetric Deep Hashing for Efficient Hash Code Compression.&#34;
+ACM MM
+, 2020. (
+CCF-A
+,
+PDF
+)</div>
+</div>
+
+
+<div class="card">
+  <h3>字段出处 · PROVENANCE</h3>
+  <div class="proof-scroll"><table class="pv">
+    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+
+    <tr>
+      <td>name</td>
+      <td>周宇</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/jswyjy/list.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>title</td>
+      <td>教授</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td>yzhou@nankai.edu.cn</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>research_direction_raw</td>
+      <td>计算机视觉、多模态人工智能、具身智能、大模型、自然语言处理与深度学习等</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>supervisor</td>
+      <td>—</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>homepage</td>
+      <td>https://intimelab.github.io</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>周宇
+，南开大学计算机/密网学院教授、博导；北京中关村学院学院导师；中国图象图形学学会文档图像分析与识别专委会副秘...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>institutes</td>
+      <td>计算机科学与技术系</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-10-15</td>
+      <td><a href="https://cc.nankai.edu.cn/2021/0323/c13619a548854/page.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+  </table></div>
+</div>
+</div>
+<script>
+const detailScope=new URLSearchParams(),detailIncoming=new URLSearchParams(location.search);
+for(const key of ['school','dept','year','degree','route','track','program'])if(detailIncoming.get(key))detailScope.set(key,detailIncoming.get(key));
+const detailSchool="nankai",detailDept="cs";
+if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDept){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
+detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
+for(const a of document.querySelectorAll('a[href]')){
+  const path=a.getAttribute('href').split('?')[0];
+  if(['../discovery.html','../compare.html','../desk.html','../admissions.html','../notices.html','../applications.html'].includes(path)){
+    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',"nankai-cs-zhouyu");a.href=path+'?'+q;
+  }
+}
+const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId="nankai-cs-zhouyu";
+let detailSelected=[];try{detailSelected=JSON.parse(localStorage.getItem('compare_sel')||'[]');}catch(e){}
+function showDetailSelection(){detailCompare.textContent=detailSelected.includes(detailId)?'移出对比':'加入对比';detailCompare.setAttribute('aria-pressed',detailSelected.includes(detailId));detailSelection.textContent=`查看对比（${detailSelected.length} / 5）`;}
+detailCompare.onclick=()=>{if(detailSelected.includes(detailId))detailSelected=detailSelected.filter(id=>id!==detailId);else if(detailSelected.length<5)detailSelected.push(detailId);else{detailCompare.textContent='已选5位，请先移除';return;}try{localStorage.setItem('compare_sel',JSON.stringify(detailSelected));showDetailSelection();}catch(e){detailCompare.textContent='浏览器无法保存选择';}};showDetailSelection();
+
+const PID = "nankai-cs-zhouyu";
+const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fill(e){
+  $("ob-status").value = (e && e.status) || "";
+  $("ob-notes").value = (e && e.notes) || "";
+  $("ob-next").value = e?.next_action || "";
+  $("ob-due").value = e?.due_date || "";
+  $("ob-tags").value = (e?.tags || []).join(", ");
+  $("ob-remove").style.display = (e && e.status) ? "" : "none";
+  $("ob-history").innerHTML = (((e && e.history) || []).slice().reverse()).map(x =>
+    `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
+}
+(async ()=>{
+  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  try{
+    const r = await fetch("/api/health");
+    if(!r.ok) throw 0;
+    const all = await fetch("/api/outreach").then(r=>r.json());
+    fill(all[PID]);
+    ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
+  }catch(e){
+    $("ob-hint").style.display = "block";
+    return;
+  }
+  const msg = (t, ok=true)=>{ $("ob-msg").textContent = t;
+    $("ob-msg").style.color = ok ? "var(--ok)" : "#d64545";
+    setTimeout(()=>{ $("ob-msg").textContent = ""; }, 2200); };
+  $("ob-save").addEventListener("click", async ()=>{
+    const body = {notes: $("ob-notes").value, next_action: $("ob-next").value,
+      due_date: $("ob-due").value, tags: $("ob-tags").value.split(/[,，]/).map(x=>x.trim()).filter(Boolean)};
+    if($("ob-status").value) body.status = $("ob-status").value;
+    try{
+      const r2 = await fetch("/api/outreach/" + PID, {method:"PATCH",
+        headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+      if(!r2.ok) throw new Error("HTTP " + r2.status);
+      fill(await r2.json());
+      msg("已保存");
+    }catch(e2){ msg("保存失败：" + e2.message, false); }
+  });
+  $("ob-remove").addEventListener("click", async ()=>{
+    if(!confirm("移出看板？备注与历史将一并清除。")) return;
+    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    catch(e2){ msg("操作失败：" + e2.message, false); }
+  });
+})();
+</script>
+</body>
+</html>

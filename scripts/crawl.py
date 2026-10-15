@@ -109,7 +109,9 @@ def phase_roster(cfg, hook, refresh):
             prof.profile_url = rec["profile_url"]
         list_prov = Provenance(source=record_source, fetched_at=record_date)
         for key in ("title", "email", "phone", "supervisor", "subjects",
-                    "research_direction_raw", "photo_url", "homepage"):
+                    "research_direction_raw", "photo_url", "homepage", "bio_raw"):
+            if key == "bio_raw" and prof.provenance.get(key) and prof.provenance[key].origin == "manual":
+                continue
             v = rec.get(key) or rec.get("list_" + key)
             if v and not getattr(prof, key, None):
                 if key == "email":

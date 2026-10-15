@@ -24,6 +24,7 @@ def fixture():
     names = {s['id']: s['name'] for s in schools}
     for path in sorted((ROOT / 'sites').glob('*/*.yaml')):
         c = yaml.safe_load(path.read_text(encoding='utf-8'))
+        if c['school'] in ('nankai', 'nudt'): continue  # 保留无单位学校与旧载荷兼容的隔离夹具。
         units.append({'school': c['school'], 'school_name': names[c['school']], 'dept': c['dept'],
                       'dept_name': c['dept_name'], 'groups': [], 'count': 0, 'roster_url': 'https://example.edu/faculty', 'notice_url': '',
                       'coverage': {'source_dates': {'known': 0, 'unknown': 0, 'earliest': '', 'latest': ''}}})

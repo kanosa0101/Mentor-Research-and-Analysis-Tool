@@ -47,7 +47,14 @@ function setProjectGoal(p){setGoalOptions('project-school-id',projectSchools,p.s
 function applicableEvents(p){const result=projectChecklist(p);return result.ready?result.events.filter(row=>!row.conditional&&!(p.track==='special'&&row.policy.level==='school')):[];}
 function policyDate(row){const source_ids=row.event.source_ids||[row.policy.source_id];return {label:row.event.label,kind:row.event.kind,at:row.event.at,origin:'policy',policy_id:row.policy.id,source_ids,source_url:window.ADMISSIONS_DATA.sources[source_ids[0]].url,quote:row.event.quote,locator:row.event.locator};}
 function dateKey(d){return JSON.stringify([d.policy_id,d.kind,d.label,d.at,d.quote,d.locator,d.source_ids,d.source_url]);}
-function dateStatus(d){const state=AdmissionsRules.eventState({at:d.at});return state==='unknown'?'日期状态未知，需核实':state==='past'?(d.origin==='manual'?'计划日期已过':d.kind==='deadline'?'该轮次已截止':'既往安排'):(d.origin==='manual'?'个人计划日期未过':'已知安排，报名是否开放仍须核实');}
+function dateStatus(d){
+  const state=AdmissionsRules.eventState({at:d.at});
+  if(d.origin==='manual')return state==='unknown'?'日期状态未知，需核实':state==='past'?'计划日期已过':'个人计划日期未过';
+  if(state==='unknown')return '日期状态未知，需核实；不表示接受新报名';
+  if(d.kind==='deadline')return state==='past'?'该事项已截止；不表示整轮招生结束':'该事项截止（报名/材料/准考证等）；不表示接受新报名';
+  if(d.kind==='exam')return state==='past'?'既往考核安排；不代表新报名':'考核安排，仅适用已达本轮条件者；不代表新报名';
+  return state==='past'?'既往安排；不代表新报名':'已登记安排；适用条件须核对，不表示接受新报名';
+}
 function reminderDay(at){return /^\d{4}-\d{2}-\d{2}$/.test(at)?at:new Date(at).toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});}
 function snapshotStatus(d){if(d.origin!=='policy')return '个人计划（手动登记，参考来源未核验）';const p=window.ADMISSIONS_DATA.policies.find(p=>p.id===d.policy_id);if(!p||!(p.events||[]).some(event=>dateKey(policyDate({policy:p,event}))===dateKey(d)))return '原政策已变化 / 未找到，日期需重新核对';return AdmissionsRules.quality(p,window.ADMISSIONS_DATA.checks).label;}
 function sourceLinks(policy,item){return AdmissionsRules.sourceReferences(policy,item,window.ADMISSIONS_DATA.sources).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(' · ');}
@@ -282,7 +289,7 @@ document.querySelector('main').addEventListener('click',e=>{
   if(d.addPolicyDate!==undefined){const row=applicableEvents(projectForm())[Number(d.addPolicyDate)];if(row){const date=policyDate(row);if(!projectDates.some(item=>dateKey(item)===dateKey(date)))projectDates.push(date);formDirty.add('project');renderGoalEditor();}}
   if(d.projectReminder){const p=WORKFLOW.projects[d.projectReminder],date=p.deadlines[Number(d.dateIndex)];const due=reminderDay(date.at),title=date.label;
     if(Object.values(WORKFLOW.reminders).some(r=>r.project_id===p.id&&!r.mentor_id&&r.due_date===due&&r.title===title)){message('同名同日项目提醒已存在，未重复添加；可到提醒分区管理。');return;}
-    action(()=>api('/reminders',{title,due_date:due,project_id:p.id,mentor_id:'',notes:[date.origin==='policy'?'官方事件快照；申请前核对原文':'个人计划',dateLabels[date.kind],'原始时间：'+date.at,'日历提醒按北京时间日期；具体截止时刻请查来源',date.source_url,date.quote,date.locator].filter(Boolean).join('\n')},'POST'),'已按北京时间日期设置项目提醒；原始时间与来源保存在备注。');
+    action(()=>api('/reminders',{title,due_date:due,project_id:p.id,mentor_id:'',notes:[date.origin==='policy'?'官方事件快照；申请前核对原文':'个人计划',dateLabels[date.kind],'原始时间：'+date.at,'日历提醒按北京时间日期；具体事项时刻请查来源',date.source_url,date.quote,date.locator].filter(Boolean).join('\n')},'POST'),'已按北京时间日期设置项目提醒；原始时间与来源保存在备注。');
   }
   if(d.linkMaterial){
     const project=el('filter-project').value,m=WORKFLOW.materials[d.linkMaterial];

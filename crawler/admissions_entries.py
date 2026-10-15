@@ -27,7 +27,7 @@ def validate_entries(data, units, sources):
     seen = set()
     for entry in data['entries']:
         required = {'school', 'dept', 'source_id', 'reviewed_at'}
-        if not isinstance(entry, dict) or not required <= set(entry) or set(entry) - required - {'note'}:
+        if not isinstance(entry, dict) or not required <= set(entry) or set(entry) - required - {'note', 'year', 'degree', 'route'}:
             raise ValueError('招生入口字段错误')
         if any(not isinstance(entry[k], str) for k in required):
             raise ValueError('招生入口字段须为字符串')
@@ -37,6 +37,12 @@ def validate_entries(data, units, sources):
             raise ValueError('招生入口来源未登记')
         if 'note' in entry and (not isinstance(entry['note'], str) or not entry['note'].strip()):
             raise ValueError('招生入口范围说明须为非空字符串')
+        if 'year' in entry and (type(entry['year']) is not int or not 2000 <= entry['year'] <= 2100):
+            raise ValueError('招生入口年度须为2000至2100的整数')
+        if 'degree' in entry and entry['degree'] not in ('master', 'phd'):
+            raise ValueError('招生入口学位范围错误')
+        if 'route' in entry and entry['route'] not in ('recommend', 'exam', 'assessment'):
+            raise ValueError('招生入口渠道范围错误')
         valid_date(entry['reviewed_at'])
         key = (entry['school'], entry['dept'], entry['source_id'])
         if key in seen:
