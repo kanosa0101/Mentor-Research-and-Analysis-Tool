@@ -2,12 +2,54 @@ const el=id=>document.getElementById(id),esc=value=>String(value??'').replace(/[
 const ADMISSIONS_DATA=window.ADMISSIONS_DATA,labels={school:'学校通用',dept:'院系要求',program:'专业要求'},degrees={master:'硕士',phd:'博士'},routes={recommend:'推免',exam:'统考',assessment:'申请考核'};
 const fields={eligibility:'报名资格',materials:'所需材料',exams:'考核与科目',timeline:'时间安排',tuition:'学费与学制',funding:'奖助政策',quota:'招生计划',contact:'咨询与报名入口'};
 let invalidYear=false,visibleUnits=[];
-const schools=[...new Map(ADMISSIONS_DATA.units.map(u=>[u.school,u.school_name])).entries()];
+const schools=Array.isArray(ADMISSIONS_DATA.schools)?ADMISSIONS_DATA.schools.map(s=>[s.id,s.name]):[...new Map(ADMISSIONS_DATA.units.map(u=>[u.school,u.school_name])).entries()];
 function options(select,rows,label,value=''){select.innerHTML=`<option value="">${label}</option>`+rows.map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');if(value&&!rows.some(r=>r[0]===value))select.add(new Option(value+'（未收录）',value));select.value=value;}
 function criteria(){return {school:el('policy-school').value,dept:el('policy-dept').value,year:el('policy-year').value,degree:el('policy-degree').value,route:el('policy-route').value,track:el('policy-track').value,group:el('policy-group').value,program:el('policy-program').value};}
 function depts(value=''){options(el('policy-dept'),ADMISSIONS_DATA.units.filter(u=>u.school===el('policy-school').value&&(!el('policy-group').value||u.groups.includes(el('policy-group').value))).map(u=>[u.dept,u.dept_name]),'全部院系',value);}
 function scopeQuery(prefs){const query=new URLSearchParams();for(const [key,value] of Object.entries(prefs))if(value)query.set(key,value);return query;}
+function projectQuery(policy,prefs){
+  const query=new URLSearchParams({policy:policy.id,school:policy.school,year:policy.year,degree:policy.degree,route:policy.route});
+  const unit=ADMISSIONS_DATA.units.find(u=>u.school===policy.school&&u.dept===prefs.dept);
+  const same=prefs.school===policy.school&&unit&&(!policy.dept||policy.dept===prefs.dept)&&Number(prefs.year)===policy.year&&prefs.degree===policy.degree&&prefs.route===policy.route;
+  const generic=!policy.track||policy.track==='general',track=generic?(same?prefs.track:''):policy.track;
+  const dept=policy.dept||(prefs.school===policy.school&&unit?prefs.dept:'');
+  if(dept)query.set('dept',dept);
+  if(track&&track!=='general')query.set('track',track);
+  const program=policy.program?AdmissionsRules.programKey(policy):same&&prefs.track===track?prefs.program:'';
+  if(program)query.set('program',program);
+  return query;
+}
 function sourceLinks(policy,item){return AdmissionsRules.sourceReferences(policy,item,ADMISSIONS_DATA.sources).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(' · ');}
+function entryStatus(entry){
+  const check=ADMISSIONS_DATA.checks[entry.source_id],today=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
+  const age=day=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(day||''))return NaN;const time=Date.parse(day+'T00:00:00Z');return Number.isFinite(time)&&new Date(time).toISOString().slice(0,10)===day?(Date.parse(today+'T00:00:00Z')-time)/86400000:NaN;};
+  const success=Number.isFinite(age(check?.last_success))&&age(check?.last_success)>=0?check.last_success:'';
+  if(check?.status==='error')return {state:'error',label:'最近回源失败，需查官网',success};
+  if(check?.status!=='ok'||!check.hash||!success)return {state:'unknown',label:'尚未检查来源或无有效成功记录',success:''};
+  if(age(success)>7)return {state:'stale',label:'来源超过7天未成功检查，需复核',success};
+  if(!Number.isFinite(age(entry.reviewed_at))||age(entry.reviewed_at)<0||age(entry.reviewed_at)>30)return {state:'review',label:'入口超过30天未核对或日期异常',success};
+  return {state:'checked',label:'近期回源及入口核对有效；申请前仍需查看',success};
+}
+function renderOfficialEntries(prefs,valid){
+  if(!valid||!prefs.school)return '<span class="muted">'+(!valid?'请修正学校或院系后查看对应官方招生入口。':'选择学校与院系，查看对应官方招生入口。')+'</span>';
+  const entries=(ADMISSIONS_DATA.entries||[]).filter(e=>e.school===prefs.school&&(!e.dept||e.dept===prefs.dept)).sort((a,b)=>Number(!!a.dept)-Number(!!b.dept)||a.source_id.localeCompare(b.source_id));
+  let html=entries.map(entry=>{
+    const source=ADMISSIONS_DATA.sources[entry.source_id];if(!source)return '';
+    const status=entryStatus(entry),check=ADMISSIONS_DATA.checks[entry.source_id],unit=ADMISSIONS_DATA.units.find(u=>u.school===entry.school&&u.dept===entry.dept);
+    return `<article class="admission-entry" data-entry-source="${esc(entry.source_id)}"><a href="${esc(source.url)}" target="_blank" rel="noopener">${entry.dept?esc(unit?.dept_name||entry.dept):'学校'} · ${esc(source.label||'官方招生入口')} →</a><p class="checklist-status ${status.state}">${esc(status.label)}</p><p class="policy-age">${status.success?(status.state==='error'?'历史最近成功 ':'最近成功回源 ')+esc(status.success)+' · ':''}最近尝试 ${esc(check?.last_attempt||'尚无记录')} · 入口核对 ${esc(entry.reviewed_at||'未知')}</p>${entry.note?`<p class="stats">${esc(entry.note)}</p>`:''}</article>`;
+  }).join('');
+  if(!html&&!Object.hasOwn(ADMISSIONS_DATA,'entries'))html=ADMISSIONS_DATA.units.filter(u=>u.school===prefs.school&&(!prefs.dept||u.dept===prefs.dept)&&u.notice_url).map(u=>`<article class="admission-entry"><a href="${esc(u.notice_url)}" target="_blank" rel="noopener">${esc(u.dept_name)}官网招生栏目 →</a><p class="stats">旧栏目入口，尚无独立来源检查记录；申请前请核对官网。</p></article>`).join('');
+  return (html||'<span class="muted">该范围官方招生入口尚未登记，请先查询学校研招网或研招网专业目录；未登记不代表不招生。</span>')+'<a href="https://yz.chsi.com.cn/zsml/index.html" target="_blank" rel="noopener">研招网专业目录</a>';
+}
+function renderLayerCoverage(prefs,valid,records){
+  const box=el('policy-layer-coverage');if(!box)return;
+  if(!valid){box.innerHTML='<h2>当前目标的规则覆盖</h2><p>学校、院系或目标条件未收录/无效；院系未收录时不借用学校规则。</p>';return;}
+  if(!prefs.school||!prefs.year||!prefs.degree||!prefs.route||!prefs.track){box.innerHTML='<h2>当前目标的规则覆盖</h2><p class="stats">补全学校、年度、学位、渠道和招生范围后，分别核对学校、院系与专业。下方仍可浏览官方入口和规则。</p>';return;}
+  const isProgram=p=>p.level==='program'||p.track==='special'&&!!p.program;
+  const schoolRows=records.filter(p=>p.level==='school'&&!isProgram(p)),deptRows=records.filter(p=>p.level==='dept'&&!isProgram(p)&&prefs.dept&&p.dept===prefs.dept),programRows=records.filter(p=>isProgram(p)&&prefs.program&&AdmissionsRules.programKey(p)===prefs.program);
+  const unitKnown=ADMISSIONS_DATA.units.some(u=>u.school===prefs.school),reviewDue=records.filter(p=>AdmissionsRules.quality(p,ADMISSIONS_DATA.checks).state!=='checked').length;
+  box.innerHTML=`<h2>当前目标的规则覆盖</h2><div class="layer-coverage-grid"><section><h3>学校规则</h3><p>${schoolRows.length?'学校规则已整理 · '+schoolRows.length+' 条摘要':'学校规则未整理，需查官方章程'}</p></section><section><h3>院系附加要求</h3><p>${!unitKnown?'院系目录待接入，附加要求待查':!prefs.dept?'院系尚未选择，不能判断院系覆盖':deptRows.length?'院系附加规则已整理 · '+deptRows.length+' 条摘要':'院系附加要求未整理，学校总则不能替代'}</p></section><section><h3>专业专属条款</h3><p>${!prefs.program?'专业未指定，专属条款不计覆盖':programRows.length?'专业专属规则已整理 · '+programRows.length+' 条摘要':'所选专业专属条款未整理，需查当年目录'}</p></section></div><p class="stats">已有摘要不代表条款齐全；报考点材料须按实际考点另行核对。${reviewDue?' '+reviewDue+' 条摘要来源或核对记录需复核。':''}</p>${prefs.track==='special'&&schoolRows.length?'<p class="quality">学校通用规则对专项适用仍待核实，须同时核对专项专属条件。</p>':''}`;
+}
 function policyTiming(policy){
   const states=(policy.events||[]).filter(e=>e.kind==='deadline').map(e=>AdmissionsRules.eventState(e));
   if(states.includes('future'))return {group:0,label:'有尚未过去的已登记截止时间；是否开放须查官网'};
@@ -50,26 +92,27 @@ function renderChecklist(prefs,valid){
 function render(){
   const prefs=criteria();visibleUnits=ADMISSIONS_DATA.units.filter(u=>!prefs.group||u.groups.includes(prefs.group));const units=visibleUnits.filter(u=>(!prefs.school||u.school===prefs.school)&&(!prefs.dept||u.dept===prefs.dept));
   const valid=!invalidYear&&(!prefs.group||Object.hasOwn(ADMISSIONS_DATA.groups,prefs.group))&&(!prefs.track||['ordinary','special'].includes(prefs.track))&&(!prefs.degree||Object.hasOwn(degrees,prefs.degree))&&(!prefs.route||Object.hasOwn(routes,prefs.route))&&(!prefs.school||schools.some(s=>s[0]===prefs.school))&&(!prefs.dept||units.length>0)&&(!prefs.year||Number.isInteger(Number(prefs.year))&&Number(prefs.year)>=2000&&Number(prefs.year)<=2100);
-  const records=valid?AdmissionsRules.select(ADMISSIONS_DATA.policies,prefs).filter(p=>!prefs.group||visibleUnits.some(u=>u.school===p.school&&(!p.dept||u.dept===p.dept))).sort((a,b)=>policyTiming(a).group-policyTiming(b).group||b.year-a.year||String(b.reviewed_at||'').localeCompare(a.reviewed_at||'')||a.id.localeCompare(b.id)):[];
-  options(el('policy-program'),[...new Map(records.filter(p=>p.level==='program'||p.track==='special'&&p.program).map(p=>[AdmissionsRules.programKey(p),p.program+' '+p.program_code])).entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-CN')),'未指定（专业要求待核对）',prefs.program);
+  const isProgram=p=>p.level==='program'||p.track==='special'&&!!p.program;
+  const matching=valid?AdmissionsRules.select(ADMISSIONS_DATA.policies,prefs).filter(p=>!prefs.group||visibleUnits.some(u=>u.school===p.school&&(!p.dept||u.dept===p.dept))).sort((a,b)=>policyTiming(a).group-policyTiming(b).group||b.year-a.year||String(b.reviewed_at||'').localeCompare(a.reviewed_at||'')||a.id.localeCompare(b.id)):[];
+  options(el('policy-program'),[...new Map(matching.filter(isProgram).map(p=>[AdmissionsRules.programKey(p),p.program+' '+p.program_code])).entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-CN')),'未指定（专业要求待核对）',prefs.program);
+  const records=matching.filter(p=>!prefs.program||!isProgram(p)||AdmissionsRules.programKey(p)===prefs.program);
   renderChecklist(prefs,valid);
+  renderLayerCoverage(prefs,valid,records);
   const schoolsCovered=new Set(ADMISSIONS_DATA.policies.map(p=>p.school)).size,unitsCovered=new Set(ADMISSIONS_DATA.policies.filter(p=>p.dept).map(p=>p.school+'/'+p.dept)).size;
-  el('policy-coverage').textContent=`目录 ${schools.length} 校 / ${ADMISSIONS_DATA.units.length} 院系；规则样本 ${schoolsCovered} 校 / ${unitsCovered} 院系 / ${ADMISSIONS_DATA.policies.length} 条。两种覆盖范围不同；不表示全部招生政策已整理。`;
-  el('school-directory').innerHTML=schools.filter(([id])=>visibleUnits.some(u=>u.school===id)).map(([id,name])=>{const rows=visibleUnits.filter(u=>u.school===id);return `<button data-school="${esc(id)}" ${prefs.school===id?'aria-current="true"':''}>${esc(name)}<br><small>${rows.length} 院系 · ${rows.reduce((n,u)=>n+u.count,0)} 位本库导师</small></button>`;}).join('');
+  el('policy-coverage').textContent=`配置目标 ${schools.length} 校，${new Set(ADMISSIONS_DATA.units.map(u=>u.school)).size} 校已接入 ${ADMISSIONS_DATA.units.length} 个院系；规则摘要 ${schoolsCovered} 校 / ${unitsCovered} 院系 / ${ADMISSIONS_DATA.policies.length} 条。已接入单位、已整理规则与来源可用是不同范围，不表示招生政策完整。`;
+  el('school-directory').innerHTML=schools.filter(([id])=>!prefs.group||visibleUnits.some(u=>u.school===id)).map(([id,name])=>{const rows=visibleUnits.filter(u=>u.school===id);return `<button data-school="${esc(id)}" ${prefs.school===id?'aria-current="true"':''}>${esc(name)}<br><small>${rows.length?rows.length+' 院系 · '+rows.reduce((n,u)=>n+(u.count||0),0)+' 位本库导师':'院系目录待接入'}</small></button>`;}).join('');
   el('unit-directory-list').innerHTML=units.map(u=>`<button data-unit-school="${esc(u.school)}" data-unit-dept="${esc(u.dept)}">${esc(u.dept_name)}<br><small>导师记录 ${u.count||'待补'} · 通知${u.notice_url?'已接入':'待补'} · 人工规则 ${ADMISSIONS_DATA.policies.filter(p=>p.school===u.school&&p.dept===u.dept).length}</small></button>`).join('');
   el('unit-catalog').innerHTML=(prefs.school?units:[]).map(u=>`<a href="${esc(u.roster_url)}" target="_blank" rel="noopener">${esc(u.dept_name)}官方师资入口</a>`).join(' · ');
   el('unit-name').textContent=(schools.find(s=>s[0]===prefs.school)?.[1]||'学校与院系')+(prefs.dept?' · '+(units[0]?.dept_name||prefs.dept):'');
-  el('unit-description').textContent=valid?`${units.length} 个院系在当前目录范围内。${units.filter(u=>!u.count).length?' 导师名单待补：'+units.filter(u=>!u.count).map(u=>u.roster_pending||u.dept_name).join('；'):''}学校通用规则与院系/专业附加要求须共同核对，不能只看一层。`:'学校/院系或年度未收录或无效；未借用其他单位的规则。';
+  el('unit-description').textContent=valid?(prefs.school&&!ADMISSIONS_DATA.units.some(u=>u.school===prefs.school)?'院系目录待接入；已整理的学校规则仍可浏览，院系附加要求需继续查官方招生信息。':`${units.length} 个院系在当前目录范围内。${units.filter(u=>!u.count).length?' 导师名单待补：'+units.filter(u=>!u.count).map(u=>u.roster_pending||u.dept_name).join('；'):''}学校通用规则与院系/专业附加要求须共同核对，不能只看一层。`):'学校/院系或年度未收录或无效；未借用其他单位的规则。';
   el('unit-readiness').innerHTML=valid&&prefs.school?units.map(u=>unitInfo(u,prefs)).join(''):'<p class="stats">选择学校或院系，查看邮箱、方向、简介及导师资格的信息覆盖，再决定从哪里开始找导师。</p>';
-  const entries=[...new Map((prefs.school?units:[]).filter(u=>u.notice_url).map(u=>[u.notice_url,u.dept_name+'官网招生栏目'])).entries()];
-  el('unit-entries').innerHTML=entries.map(([url,name])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(name)}</a>`).join('')||(prefs.school?'<span class="muted">该范围尚未登记官方招生栏目；可从导师完整资料查院系官网，或使用研招网查招生单位。</span>':'<span class="muted">选择学校与院系，查看对应官方招生入口。</span>');
-  el('unit-entries').innerHTML+='<a href="https://yz.chsi.com.cn/zsml/index.html" target="_blank" rel="noopener">研招网专业目录</a>';
-  const query=scopeQuery(prefs);if(invalidYear)query.set('year',incoming.get('year'));history.replaceState(null,'',location.pathname+(query.size?'?'+query:'')+location.hash);for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+'?'+query;}el('unit-mentors').href='discovery.html?'+query;el('unit-mentors').hidden=!valid;
+  el('unit-entries').innerHTML=renderOfficialEntries(prefs,valid);
+  const query=scopeQuery(prefs);if(invalidYear)query.set('year',incoming.get('year'));history.replaceState(null,'',location.pathname+(query.size?'?'+query:'')+location.hash);for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+'?'+query;}el('unit-mentors').href='discovery.html?'+query;el('unit-mentors').hidden=!valid||!units.length;
   el('unit-notices').href='notices.html?'+query;el('unit-notices').hidden=!valid||!prefs.school||!prefs.dept;
   el('policy-count').textContent=`当前目标：${invalidYear?'无效年度，请重新填写':prefs.year||'全部年度'} · ${degrees[prefs.degree]||(prefs.degree?'未知学位':'全部学位')} · ${routes[prefs.route]||(prefs.route?'未知渠道':'全部渠道')}。${records.length} 条规则摘要，未计算个人符合率。优先展示有尚未过去的截止时间，其次截止未完整整理，最后已登记截止均已过的政策。`;
   el('policy-list').innerHTML=records.map(p=>{
     const source=ADMISSIONS_DATA.sources[p.source_id],quality=AdmissionsRules.quality(p,ADMISSIONS_DATA.checks),school=schools.find(s=>s[0]===p.school)?.[1]||p.school,unit=ADMISSIONS_DATA.units.find(u=>u.school===p.school&&u.dept===p.dept);
-    const project=new URLSearchParams({policy:p.id});
+    const project=projectQuery(p,prefs);
     return `<article class="policy-card" id="policy-${esc(p.id)}" data-policy="${esc(p.id)}"><span class="scope">${labels[p.level]} · ${esc(school)} ${esc(unit?.dept_name||'')} · ${p.year} · ${degrees[p.degree]} · ${routes[p.route]}${p.program?' · '+esc(p.program)+' '+esc(p.program_code):''}</span><h2>${esc(p.title)}</h2><p class="policy-timing">${esc(policyTiming(p).label)}</p><p class="scope">范围：${p.track==='special'?(esc(p.program)||'专项（具体类型需核对）'):p.level==='school'?'学校通用，专项仍须核实适用':'普通招生'}</p>${(p.events||[]).map(e=>`<p class="quality">${esc(e.label)} · ${esc(e.at)} · ${AdmissionsRules.eventState(e)==='past'?(e.kind==='deadline'?'该轮次已截止':'既往安排'):'已知安排，申请前核实'}<br><small>原文：${esc(e.quote)} · ${esc(e.locator)} · ${sourceLinks(p,e)}</small></p>`).join('')}<p class="policy-age">官方发布 ${esc(p.published_at||'未知')} · 最近成功回源 ${esc(successfulSourceDate(p))} · 摘要核对 ${esc(p.reviewed_at||'未知')} · 已整理 ${Object.keys(p.fields).length}/8 类摘要；其余要求待查，不代表条款完整</p><div class="quality ${quality.state}">${quality.label}</div><details class="policy-body"><summary>查看八类要求与原文</summary><div class="policy-fields">${Object.entries(fields).map(([key,label])=>{const f=p.fields[key];return `<section class="policy-field"><h3>${label}</h3>${f?`<p>${esc(f.text)}</p><blockquote>原文短片段：${esc(f.quote)}<br>定位：${esc(f.locator)} · ${sourceLinks(p,f)}</blockquote>`:'<p class="muted">未整理，需查原文；不能认定没有要求。</p>'}</section>`;}).join('')}</div><p class="policy-age">${Object.keys(p.review_hashes).map(id=>{const s=ADMISSIONS_DATA.sources[id],c=ADMISSIONS_DATA.checks[id];return `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label||(s.format==='pdf'?'PDF原文':'通知正文/附件入口'))}</a> · 最近成功检查 ${esc(c?.last_success||'无')} · 最近尝试 ${esc(c?.last_attempt||'无')}${c?.cached?'（缓存读取）':''}`;}).join('<br>')}</p><div class="actions"><a href="applications.html?${project}">建立申请项目 →</a><a href="${esc(source.url)}" target="_blank" rel="noopener">核对完整政策</a></div></details></article>`;
   }).join('')||'<p class="empty">当前学校/院系、年度、学位或渠道的规则尚未覆盖。请从官网招生栏目和研招网核实；未覆盖不代表不招生，也不借用往年或其他渠道规则。</p>';
 }

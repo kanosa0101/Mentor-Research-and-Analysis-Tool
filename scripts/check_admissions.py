@@ -10,6 +10,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import admissions_util as admissions, fetch
+from crawler.admissions_entries import load_catalog, load_entries
 
 
 def main():
@@ -19,11 +20,9 @@ def main():
     parser.add_argument('--refresh', action='store_true')
     args = parser.parse_args()
     data = yaml.safe_load(args.input.read_text(encoding='utf-8'))
-    units = {}
-    for cfg in (ROOT / 'sites').glob('*/*.yaml'):
-        unit = yaml.safe_load(cfg.read_text(encoding='utf-8'))
-        units.setdefault(unit['school'], set()).add(unit['dept'])
+    _, units = load_catalog(ROOT)
     admissions.validate(data, units)
+    load_entries(ROOT, units, data['sources'])
     old = json.loads(args.output.read_text(encoding='utf-8')) if args.output.exists() else {}
     admissions.validate_checks(old, data['sources'])
     observations = {}

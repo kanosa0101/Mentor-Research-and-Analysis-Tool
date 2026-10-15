@@ -101,7 +101,8 @@ def main():
                 page.click('[data-edit-project="' + legacy['id'] + '"]')
                 assert page.input_value('#project-school-id') == fields['school_id']
                 assert page.input_value('#project-dept-id') == fields['dept_id']
-                assert '目录未收录，需核对' in page.locator('#project-school-id option:checked').inner_text()
+                assert '目录未收录，需核对' not in page.locator('#project-school-id option:checked').inner_text(), '学校目录独立于院系列表'
+                assert '目录未收录，需核对' in page.locator('#project-dept-id option:checked').inner_text()
                 page.click('#project-save')
                 page.wait_for_function('document.querySelector("#project-save").textContent==="新增项目"')
                 page.wait_for_function('!document.querySelector("#workspace").disabled')

@@ -56,6 +56,8 @@ def main():
                     page.goto(base + '/admissions.html?school=pku&dept=cs&year=2027&degree=master&route=exam')
                     assert page.locator('[data-policy="pku-2027-master-exam-v14"]').count() == 1
                     page.goto(base + '/admissions.html?school=zju&dept=cs&year=2027&degree=master&route=exam')
+                    assert page.locator('[data-policy="zju_2027_master_exam_v15a"]').count() == 1
+                    page.goto(base + '/admissions.html?school=bupt&dept=cs&year=2027&degree=master&route=exam')
                     assert page.locator('[data-policy]').count() == 0
                     assert '未覆盖' in page.locator('#policy-list').inner_text()
                     assert page.locator('#unit-entries a').count() > 0

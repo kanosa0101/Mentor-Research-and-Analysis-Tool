@@ -1,5 +1,6 @@
 """公开招生政策摘要校验；来源检查不会修改人工核对记录。"""
 import hashlib
+import json
 import re
 from datetime import date, datetime
 from urllib.parse import urlsplit
@@ -21,15 +22,24 @@ def validate(data, units):
     if not isinstance(data, dict) or set(data) != {'version', 'sources', 'policies'} or type(data['version']) is not int or data['version'] != 1 or not isinstance(data['sources'], dict) or not isinstance(data['policies'], list):
         raise ValueError('招生政策结构错误')
     for sid, source in data['sources'].items():
-        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or not {'url', 'format', 'selector'} <= set(source) or set(source) - {'url', 'format', 'selector', 'label'}:
+        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or not {'url', 'format', 'selector'} <= set(source) or set(source) - {'url', 'format', 'selector', 'label', 'api'}:
             raise ValueError('来源结构错误')
         if 'label' in source and (not isinstance(source['label'], str) or not source['label'].strip()):
             raise ValueError('来源名称须为非空字符串')
         if not isinstance(source['url'], str):
             raise ValueError('来源 URL 须为字符串')
         link = urlsplit(source['url'])
-        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
+        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf', 'json') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
             raise ValueError('须登记 HTTP(S) 原文和正文选择器')
+        if source['format'] == 'json':
+            if not isinstance(source.get('api'), str) or not source['api'] or not source['selector'].startswith('/') or re.search(r'~(?:[^01]|$)', source['selector']):
+                raise ValueError('JSON 来源须登记同源 API 和有效非空 JSON Pointer')
+            api = urlsplit(source['api'])
+            origin = lambda url: (url.scheme, url.hostname, url.port or (443 if url.scheme == 'https' else 80))
+            if api.scheme not in ('http', 'https') or not api.hostname or api.username or api.password or origin(api) != origin(link):
+                raise ValueError('JSON API 须与可阅读原文同源且不含凭据')
+        elif 'api' in source:
+            raise ValueError('只有 JSON 来源可登记 API')
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
@@ -100,8 +110,29 @@ def fingerprint(body, source):
             raise ValueError('来源未返回 PDF')
         content = body
     else:
-        soup = BeautifulSoup(body, 'html.parser')
-        node = soup.select_one(source['selector'])
+        if source['format'] == 'json':
+            try:
+                value = json.loads(body)
+                if isinstance(value, dict) and value.get('error'):
+                    raise ValueError('JSON 接口返回错误')
+                for token in source['selector'].split('/')[1:]:
+                    token = token.replace('~1', '/').replace('~0', '~')
+                    if isinstance(value, list):
+                        if not re.fullmatch(r'0|[1-9]\d*', token):
+                            raise ValueError('JSON Pointer 数组下标错误')
+                        value = value[int(token)]
+                    else:
+                        value = value[token]
+                if not isinstance(value, str) or not value.strip():
+                    raise ValueError('JSON 正文须为非空 HTML 字符串')
+            except (ValueError, KeyError, IndexError, TypeError) as error:
+                raise ValueError('未取得 JSON Pointer 指定的有效正文') from error
+            soup = BeautifulSoup('<div></div>', 'html.parser')
+            node = soup.div
+            node.append(BeautifulSoup(value, 'html.parser'))
+        else:
+            soup = BeautifulSoup(body, 'html.parser')
+            node = soup.select_one(source['selector'])
         if node is None:
             raise ValueError('未找到原文正文，不接受登录/拦截页面')
         for child in node.select('script, style'):
@@ -116,7 +147,7 @@ def fingerprint(body, source):
 def check_source(source, previous, refresh, today):
     result = dict(previous, last_attempt=today)
     try:
-        body, meta, hit = fetch.fetch('GET', source['url'], refresh=refresh)
+        body, meta, hit = fetch.fetch('GET', source['api'] if source['format'] == 'json' else source['url'], refresh=refresh)
         failed_live = hit and previous.get('status') == 'error'
         result.update(hash=fingerprint(body, source), last_success=meta['fetched_at'], cached=hit,
                       status='error' if failed_live else 'ok', error=previous.get('error') if failed_live else None)

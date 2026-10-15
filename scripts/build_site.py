@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 from crawler import store
 from crawler import admissions_util
+from crawler.admissions_entries import load_catalog, load_entries
 from crawler.unit_util import groups, GROUPS
 
 SITE = ROOT / "site"
@@ -143,13 +144,13 @@ def main():
     write_html(SITE / 'discovery.html', env.get_template('discovery.html.j2').render())
     admission_file = ROOT / 'data/admissions.yaml'
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
-    units = {}
-    for cfg in load_cfgs():
-        units.setdefault(cfg['school'], set()).add(cfg['dept'])
+    configured_schools, units = load_catalog(ROOT)
     admissions_util.validate(admissions, units)
     checks_file = ROOT / 'data/admissions_checks.json'
     admissions['checks'] = json.loads(checks_file.read_text(encoding='utf-8')) if checks_file.exists() else {}
     admissions_util.validate_checks(admissions['checks'], admissions['sources'])
+    admissions['schools'] = configured_schools
+    admissions['entries'] = load_entries(ROOT, units, admissions['sources'])
     notice_cfg = ROOT / 'sites/notices.yaml'
     notice_urls = {(c['school'], c['dept']): safe_url(c['url']) for c in yaml.safe_load(notice_cfg.read_text(encoding='utf-8'))['targets']} if notice_cfg.exists() else {}
     admissions['groups'] = GROUPS
