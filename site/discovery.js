@@ -4,12 +4,12 @@ const incoming=new URLSearchParams(location.search);
 const contextTrack=incoming.get('track')||'',contextProgram=incoming.get('program')||'',projectScoped=DiscoveryRules.projectScoped({track:contextTrack,program:contextProgram});
 let contextSchool=incoming.get('school')||'',contextDept=incoming.get('dept')||'';
 let PRIVATE={preferences:{year:null,degree:'any',route:'unknown',topics:[],schools:[],keep_unknown:true,modes:{research:'hard',qualification:'soft',email:'soft',opportunity:'soft',eligibility:'soft'}},reviews:{}},API_OK=false,view=[],limit=20,reviewMentor='',applied=null,appliedGroup={value:'',label:'全部'};
-let appliedName='';
+let appliedName='',originalSchools=[],schoolSelectionChanged=false;
 function publicScope(p){
   const q=new URLSearchParams();
   for(const k of ['year','degree','route'])if(applied?.[k]&& !['any','unknown'].includes(applied[k]))q.set(k,applied[k]);
-  if(contextSchool)q.set('school',contextSchool);if(contextDept)q.set('dept',contextDept);
-  if(contextTrack)q.set('track',contextTrack);if(contextProgram)q.set('program',contextProgram);
+  const school=contextSchool||(applied?.schools.length===1?applied.schools[0]:'');if(school)q.set('school',school);if(contextDept)q.set('dept',contextDept);
+  if(contextSchool&&contextDept){if(contextTrack)q.set('track',contextTrack);if(contextProgram)q.set('program',contextProgram);}
   if(p){if(q.get('school')!==p.school||q.get('dept')!==p.dept){q.delete('track');q.delete('program');}q.set('school',p.school);q.set('dept',p.dept);}
   return q;
 }
@@ -31,7 +31,7 @@ async function apply(){
 }
 let compareSelection=[];
 try{compareSelection=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(id=>DATA.some(p=>p.page===id)).slice(0,5);}catch(e){}
-function renderSelection(){for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html'].includes(path))a.href=path+'?'+publicScope();}el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent=`已选 ${compareSelection.length} 位导师`;el('compare-open').hidden=!compareSelection.length;el('compare-open').href='compare.html?'+publicScope();el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
+function renderSelection(){for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+'?'+publicScope();}el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent=`已选 ${compareSelection.length} 位导师`;el('compare-open').hidden=!compareSelection.length;el('compare-open').href='compare.html?'+publicScope();el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
 function render(){
   renderSelection();
   el('discovery-count').textContent=`${view.length} 位候选 · 当前显示 ${Math.min(limit,view.length)} 位`;
@@ -105,12 +105,14 @@ el('discovery-file').onchange=async e=>{const file=e.target.files[0];if(!file)re
 async function initPrivate(){PRIVATE=await api();API_OK=true;fillCriteria(PRIVATE.preferences);for(const id of ['save-criteria','review-save','discovery-backup'])el(id).disabled=id==='review-save'&&projectScoped;el('private-hint').textContent='筛选与核验记录仅保存在本机。';}
 el('intent-schools').innerHTML=[...new Map(DATA.map(p=>[p.school,p.school_name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],'zh')).map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');
 fillCriteria(PRIVATE.preferences);
-el('clear-unit-context').onclick=()=>{contextSchool='';contextDept='';el('unit-context').hidden=true;el('clear-unit-context').hidden=true;apply().catch(e=>message(e.message,true));};
+el('intent-schools').addEventListener('change',()=>{schoolSelectionChanged=true;});
+el('clear-unit-context').onclick=()=>{if(!schoolSelectionChanged)for(const o of el('intent-schools').options)o.selected=originalSchools.includes(o.value);contextSchool='';contextDept='';const q=new URLSearchParams(location.search);for(const key of ['school','dept','track','program','project','target','notes'])q.delete(key);history.replaceState(null,'',location.pathname+(q.size?'?'+q:''));el('unit-context').hidden=true;el('clear-unit-context').hidden=true;if(projectScoped){el('project-context').textContent='已清除院系及跨页项目范围；本页仍保留原核验保护，招生机会与资格不借用旧结论。刷新或继续导航后进入通用范围，请重新核对申请目标。';message('院系范围已清除；本页保留核验保护，后续导航不沿用原专业／专项。');}apply().catch(e=>message(e.message,true));};
 el('intent-group').onchange=()=>apply().catch(e=>message(e.message,true));
 function incomingCriteria(){
   if(projectScoped){el('project-context').textContent='当前临时范围：'+(contextTrack==='special'?'专项/特定项目':contextTrack==='ordinary'?'普通招生':'招生范围未指定')+' · '+(contextProgram?contextProgram.replace('|',' · '):'具体项目未指定')+'。核验尚未区分该项目，需对照原文。招生机会和个人申请资格保持待核实，不借用旧结论排序或排除候选，也暂不能保存旧核验记录。清除学校/院系不会退出此项目范围；保存或备份通用条件不包含此临时项目。';el('project-context').hidden=false;el('generic-context').hidden=false;el('project-filter-hint').textContent='本项目的招生机会和个人申请资格尚不能核验。这两项的存量设置暂不生效，即使取消保留待核实候选也不会据此排除；待核实不表示已经满足。其他筛选条件仍正常生效。';el('project-filter-hint').hidden=false;for(const id of ['mode-opportunity','mode-eligibility'])el(id).disabled=true;}
 
   if(incoming.has('group')){const value=incoming.get('group');if(!Array.from(el('intent-group').options).some(o=>o.value===value))el('intent-group').add(new Option(value+'（未知）',value));el('intent-group').value=value;}
+  originalSchools=[...el('intent-schools').selectedOptions].map(o=>o.value);
   if(contextSchool){for(const o of el('intent-schools').options)o.selected=o.value===contextSchool;}
   const year=Number(incoming.get('year'));if(Number.isInteger(year)&&year>=2000&&year<=2100)el('intent-year').value=year;
   if(['master','phd'].includes(incoming.get('degree')))el('intent-degree').value=incoming.get('degree');

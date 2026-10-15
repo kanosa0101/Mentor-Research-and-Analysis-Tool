@@ -1,5 +1,6 @@
 """本地静态站及私人跟进 API；默认只绑定 127.0.0.1。"""
 import argparse
+import errno
 import json
 import os
 import sys
@@ -337,8 +338,19 @@ def main():
     ap.add_argument('--outreach', type=Path, default=OUTREACH)
     ap.add_argument('--workflow', type=Path, help='私人申请文件，默认与跟进文件同目录')
     args = ap.parse_args()
-    server = create_server(args.site, args.outreach, args.port, args.workflow)
-    print(f'http://127.0.0.1:{server.server_port}/board.html  (跟进文件: {args.outreach})')
+    try:
+        server = create_server(args.site, args.outreach, args.port, args.workflow)
+    except OSError as e:
+        # Windows may report access denied for a port held by an exclusive listener.
+        if e.errno == errno.EADDRINUSE or getattr(e, 'winerror', None) in (10048, 10013):
+            print(f'本地端口 {args.port} 已被占用或系统不允许绑定。'
+                  '请关闭该端口的旧服务，或用 --port 8001 选择其他端口。', file=sys.stderr)
+            raise SystemExit(1) from None
+        raise
+    base = f'http://127.0.0.1:{server.server_port}'
+    print(f'找导师：{base}/discovery.html')
+    print(f'我的申请与联系：{base}/desk.html')
+    print(f'项目、材料与提醒：{base}/applications.html')
     try:
         server.serve_forever()
     except KeyboardInterrupt:

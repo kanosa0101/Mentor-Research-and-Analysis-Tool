@@ -224,7 +224,7 @@ if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDep
 detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
 for(const a of document.querySelectorAll('a[href]')){
   const path=a.getAttribute('href').split('?')[0];
-  if(['../discovery.html','../compare.html','../desk.html','../admissions.html'].includes(path)){
+  if(['../discovery.html','../compare.html','../desk.html','../admissions.html','../notices.html','../applications.html'].includes(path)){
     const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',"ucas-ict-wumeng");a.href=path+'?'+q;
   }
 }

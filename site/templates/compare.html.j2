@@ -82,7 +82,7 @@ function publicScope(p){
   return q;
 }
 const detailUrl=p=>'p/'+encodeURIComponent(p.page)+'.html?'+publicScope(p);
-for(const a of document.querySelectorAll('a[href="discovery.html"],a[href="compare.html"]'))a.href=a.getAttribute('href')+'?'+publicScope();
+for(const a of document.querySelectorAll('.site-header a[href="discovery.html"],.site-header a[href="compare.html"],.site-header a[href="admissions.html"],.site-header a[href="notices.html"],.site-header a[href="desk.html"],.site-header a[href="applications.html"],.context-actions a[href="discovery.html"],#hint a[href="discovery.html"]'))a.href=a.getAttribute('href')+'?'+publicScope();
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",

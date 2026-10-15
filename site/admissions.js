@@ -52,7 +52,7 @@ function render(){
   const entries=[...new Map((prefs.school?units:[]).filter(u=>u.notice_url).map(u=>[u.notice_url,u.dept_name+'官网招生栏目'])).entries()];
   el('unit-entries').innerHTML=entries.map(([url,name])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(name)}</a>`).join('')||(prefs.school?'<span class="muted">该范围尚未登记官方招生栏目；可从导师完整资料查院系官网，或使用研招网查招生单位。</span>':'<span class="muted">选择学校与院系，查看对应官方招生入口。</span>');
   el('unit-entries').innerHTML+='<a href="https://yz.chsi.com.cn/zsml/index.html" target="_blank" rel="noopener">研招网专业目录</a>';
-  const query=scopeQuery(prefs);el('unit-mentors').href='discovery.html?'+query;el('unit-mentors').hidden=!valid;
+  const query=scopeQuery(prefs);if(invalidYear)query.set('year',incoming.get('year'));history.replaceState(null,'',location.pathname+(query.size?'?'+query:'')+location.hash);for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+'?'+query;}el('unit-mentors').href='discovery.html?'+query;el('unit-mentors').hidden=!valid;
   el('unit-notices').href='notices.html?'+query;el('unit-notices').hidden=!valid||!prefs.school||!prefs.dept;
   el('policy-count').textContent=`当前目标：${invalidYear?'无效年度，请重新填写':prefs.year||'全部年度'} · ${degrees[prefs.degree]||(prefs.degree?'未知学位':'全部学位')} · ${routes[prefs.route]||(prefs.route?'未知渠道':'全部渠道')}。${records.length} 条规则摘要，未计算个人符合率。`;
   el('policy-list').innerHTML=records.map(p=>{
@@ -66,7 +66,8 @@ const rawYear=incoming.get('year')||'';invalidYear=!!rawYear&&(!/^\d{4}$/.test(r
 options(el('policy-group'),Object.entries(ADMISSIONS_DATA.groups),'全部相关院系',incoming.get('group')||'');options(el('policy-track'),[['ordinary','普通招生'],['special','专项/特定项目']],'全部范围',incoming.get('track')||'');depts(incoming.get('dept')||'');
 options(el('policy-program'),[],'未指定（专业要求待核对）',incoming.get('program')||'');
 for(const key of ['degree','route']){const select=el('policy-'+key),value=incoming.get(key)||'';if(value&&!Array.from(select.options).some(o=>o.value===value))select.add(new Option(value+'（未知）',value));select.value=value;}
-el('policy-school').onchange=()=>{depts();el('policy-program').value='';render();};for(const id of ['policy-dept','policy-year','policy-degree','policy-route','policy-track','policy-program'])el(id).onchange=()=>{if(id==='policy-year')invalidYear=false;if(id!=='policy-program')el('policy-program').value='';render();};
-el('school-directory').onclick=event=>{const button=event.target.closest('[data-school]');if(button){el('policy-school').value=button.dataset.school;depts();el('policy-program').value='';render();}};
-el('policy-group').onchange=()=>{el('policy-school').value='';depts();el('policy-program').value='';render();};el('unit-directory-list').onclick=event=>{const b=event.target.closest('[data-unit-school]');if(b){el('policy-school').value=b.dataset.unitSchool;depts(b.dataset.unitDept);el('policy-program').value='';render();}};
+function clearUnitProject(){el('policy-program').value='';if(el('policy-track').value==='special')el('policy-track').value='';}
+el('policy-school').onchange=()=>{depts();clearUnitProject();render();};for(const id of ['policy-dept','policy-year','policy-degree','policy-route','policy-track','policy-program'])el(id).onchange=()=>{if(id==='policy-year')invalidYear=false;if(id!=='policy-program')el('policy-program').value='';if(id==='policy-dept')clearUnitProject();render();};
+el('school-directory').onclick=event=>{const button=event.target.closest('[data-school]');if(button){el('policy-school').value=button.dataset.school;depts();clearUnitProject();render();}};
+el('policy-group').onchange=()=>{el('policy-school').value='';depts();clearUnitProject();render();};el('unit-directory-list').onclick=event=>{const b=event.target.closest('[data-unit-school]');if(b){el('policy-school').value=b.dataset.unitSchool;depts(b.dataset.unitDept);clearUnitProject();render();}};
 render();window.ADMISSIONS_READY=true;

@@ -624,7 +624,9 @@ function filter(){
   for(const key of scopeKeys)if(incoming.get(key))query.set(key,incoming.get(key));
   if(school)query.set('school',parts[0]);
   if(parts.length===2)query.set('dept',parts[1]);
+  history.replaceState(null,'',location.pathname+(query.size?'?'+query:'')+location.hash);
   document.getElementById('notice-policy-link').href='admissions.html'+(query.size?'?'+query:'');
+  for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+(query.size?'?'+query:'');}
   for(const warning of document.querySelectorAll('[data-source-error]')){warning.hidden=!inScope(warning.dataset.sourceError,school);warning.querySelector('span').textContent=nameFor(warning.dataset.sourceError);}
   let n=0;document.querySelectorAll('article').forEach(a=>{const show=inScope(a.dataset.school,school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});
   document.getElementById('count').textContent=n+' 条候选通知';document.getElementById('notice-empty').hidden=n!==0;
@@ -634,6 +636,6 @@ function filter(){
   context.textContent=(school?nameFor(school)+(knownSchool(school)?' · 全校已接入的 '+sourceCount+' 个院系栏目（不是全校全部通知）':connected?'':' · 尚未接入通知监测'):'全部已接入院系')+(scope?'。申请目标：'+scope+'。年度、渠道等仅保留为返回目标，不据此排除未知通知。':'');
   officialLink(document.getElementById('current-source'),school);officialLink(document.getElementById('empty-source'),school);
 }
-select.addEventListener('change',()=>{incoming.delete('program');incoming.delete('group');filter();});document.getElementById('search').addEventListener('input',filter);
+select.addEventListener('change',()=>{incoming.delete('program');incoming.delete('group');if(incoming.get('track')==='special')incoming.delete('track');filter();});document.getElementById('search').addEventListener('input',filter);
 document.getElementById('clear-search').onclick=()=>{document.getElementById('search').value='';filter();document.getElementById('search').focus();};filter();
 </script></main></body></html>

@@ -170,7 +170,7 @@ function reset(prefix){
   if(prefix==='material')for(const o of el('material-projects').options)o.selected=o.value===project;
   if(prefix==='reminder'||prefix==='communication')el(prefix+'-project').value=project;
   renderPicker(prefix);
-  if(prefix==='communication') el('communication-date').value=new Date().toLocaleDateString('sv-SE');
+  if(prefix==='communication') el('communication-date').value=reminderDay(new Date().toISOString());
   else{
     editing[prefix]=null;
     el(prefix+'-save').textContent={project:'新增项目',material:'登记文件',reminder:'新增提醒'}[prefix];
@@ -194,6 +194,7 @@ function render(){
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
   const list=(id,rows)=>el(id).innerHTML=rows.join('') || '<div class="empty">暂无记录</div>';
   list('project-list',Object.values(WORKFLOW.projects).filter(p=>(!projectFilter || p.id===projectFilter) && (!contextMentor || p.mentor_ids.includes(contextMentor))).map(projectCard));
+  if(!el('project-list').querySelector('article'))el('project-list').innerHTML='<div class="empty">'+(Object.keys(WORKFLOW.projects).length?'当前范围暂无申请项目；可切换项目或查看全部导师。':'先在下方填写项目名称并保存，学校与招生目标可以随后补充；再添加心仪导师、材料与提醒。')+'</div>';
   const materials=Object.values(WORKFLOW.materials);
   const scopedMaterials=materials.filter(m=>linked(m.mentor_ids,m.project_ids));
   const unassigned=materials.filter(m=>!m.project_ids.length);
@@ -264,18 +265,8 @@ document.querySelector('main').addEventListener('click',e=>{
   const button=e.target.closest('button'); if(!button) return;
   const d=button.dataset;
   if(d.projectSection){
-    if(!discardChanges())return;
-    returnTarget=null;returnProject=d.projectId;incomingPolicy=null;
-    for(const key of [...incomingGoal.keys()])incomingGoal.delete(key);
     el('filter-project').value=d.projectId;
     if(!el('filter-project').onchange())return;
-    const q=new URLSearchParams({project:d.projectId});
-    if(contextMentor)q.set('mentor',contextMentor);else q.delete('mentor');
-    history.replaceState(null,'',location.pathname+'?'+q);
-    for(const key of [...backQuery.keys()])backQuery.delete(key);
-    backQuery.set('view','prepare');backQuery.set('project',d.projectId);
-    if(contextMentor)backQuery.set('mentor',contextMentor);else backQuery.delete('mentor');
-    el('back-desk').href='desk.html?'+backQuery;
     showSection(d.projectSection);
     el('section-'+d.projectSection).scrollIntoView({block:'start'});
   }
@@ -310,17 +301,30 @@ document.querySelector('main').addEventListener('click',e=>{
     el(prefix+'-form').scrollIntoView({behavior:'smooth',block:'center'});
   }
 });
+function syncProjectContext(){
+  const project=el('filter-project').value,p=WORKFLOW.projects[project];
+  returnTarget=null;returnProject=project;incomingPolicy=null;
+  for(const key of [...incomingGoal.keys()])incomingGoal.delete(key);
+  if(!p||(contextMentor&&!p.mentor_ids.includes(contextMentor)))contextMentor='';
+  const q=new URLSearchParams({section:currentSection});
+  if(project)q.set('project',project);
+  if(contextMentor)q.set('mentor',contextMentor);
+  history.replaceState(null,'',location.pathname+'?'+q);
+  for(const key of [...backQuery.keys()])backQuery.delete(key);
+  backQuery.set('view',project?'prepare':'today');
+  if(project)backQuery.set('project',project);
+  if(contextMentor)backQuery.set('mentor',contextMentor);
+  el('back-desk').href='desk.html?'+backQuery;
+}
 el('filter-project').onchange=()=>{
   if(!discardChanges()){el('filter-project').value=lastProject;return false;}
   lastProject=el('filter-project').value;
-  materialView='current';
-  const p=WORKFLOW.projects[lastProject];
-  if(contextMentor&&p&&!p.mentor_ids.includes(contextMentor))contextMentor='';
+  materialView='current';syncProjectContext();
   for(const key of Object.keys(chosen))reset(key);render();
   return true;
 };
 el('only-pending').onchange=render;
-el('clear-context').onclick=()=>{if(!discardChanges())return;contextMentor='';for(const key of Object.keys(chosen))reset(key);el('back-desk').href='desk.html';history.replaceState(null,'',location.pathname+'?section='+currentSection);render();};
+el('clear-context').onclick=()=>{if(!discardChanges())return;contextMentor='';syncProjectContext();for(const key of Object.keys(chosen))reset(key);render();};
 el('workflow-backup').onclick=()=>action(async()=>{
   const blob=new Blob([JSON.stringify(await api('/backup'),null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob), a=document.createElement('a');

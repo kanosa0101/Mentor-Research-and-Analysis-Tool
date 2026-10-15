@@ -20,7 +20,7 @@ let currentView=['today','targets','prepare'].includes(params.get('view')) ? par
 let currentPanel=['mail','tasks','reply','history'].includes(params.get('panel'))?params.get('panel'):'mail';
 let taskDirty=false,editingTask='',statusArea='';
 window.CONTACT_READY=false;
-const today=()=>new Date().toLocaleDateString('sv-SE');
+const today=()=>new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
 const personName=id=>people.get(id)?.name||id;
 const personLabel=id=>{const p=people.get(id);return p ? `${p.name} · ${p.school_name||p.school} · ${p.dept_name||p.dept}` : id;};
 const projectLabel=id=>{const p=FLOW.projects[id];return p ? `${p.name} · ${p.year??'年度未知'}` : '';};
