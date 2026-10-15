@@ -535,3 +535,19 @@ entries:
   source_id: bupt_admissions_home_v20gap
   reviewed_at: '2026-10-15'
   note: 北京邮电大学官方研究生招生入口；本轮请求返回HTTP 412，未核得2027招生规则。年度、学位及渠道范围未知，仅供导航；不能据此判断未发布或不招生。
+- school: tsinghua
+  dept: auto
+  source_id: tsinghua_auto_phd_v22
+  year: 2027
+  degree: phd
+  route: assessment
+  reviewed_at: '2026-10-15'
+  note: 正式2027普通博士简章，2026年7月秋季申请已截止；未核得新冬季批次。
+- school: sdu
+  dept: cs
+  source_id: sdu_cs_directory_post_v22
+  reviewed_at: '2026-10-15'
+  year: 2027
+  degree: master
+  route: exam
+  note: 当前2027目录047计算机学院两专业，初试与同等学力要求已核；校级一般章程、材料和统一截止仍有缺口。目录下标变化会触发来源变化，须重新核学校/学院/专业。

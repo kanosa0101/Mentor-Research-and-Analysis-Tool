@@ -40,9 +40,11 @@ def _throttle():
     _last[0] = time.time()
 
 
-def fetch(method, url, data=None, refresh=False):
+def fetch(method, url, data=None, refresh=False, *, json_data=None):
+    if data is not None and json_data is not None:
+        raise ValueError('不能同时提供表单和 JSON 请求体')
     refresh = refresh or _refresh.get()
-    key = _key(method, url, data)
+    key = _key(method + ':json', url, json_data) if json_data is not None else _key(method, url, data)
     body_p = CACHE / (key + ".body")
     meta_p = CACHE / (key + ".meta.json")
     if body_p.exists() and not refresh:
@@ -52,7 +54,8 @@ def fetch(method, url, data=None, refresh=False):
     last_err = None
     for attempt in range(3):
         try:
-            r = _request(method, url, data=data, timeout=30,
+            payload = {'json': json_data} if json_data is not None else {'data': data}
+            r = _request(method, url, **payload, timeout=30,
                          headers={"User-Agent": "Mozilla/5.0 (advisor-research local tool)"})
             break
         except requests.RequestException as e:
@@ -66,15 +69,15 @@ def fetch(method, url, data=None, refresh=False):
     except requests.HTTPError as e:
         # WAF 质询页(瑞数 412/网防 403 等)自动降级走 CDP 真实浏览器
         if (_cdp_fallback and e.response is not None
-                and e.response.status_code in (403, 412, 503) and not data):
+                and e.response.status_code in (403, 412, 503) and not data and json_data is None):
             text, meta, hit = fetch_cdp(url, refresh=refresh)
             return text.encode("utf-8"), meta, hit
         raise
-    if _cdp_fallback and r.status_code == 202 and len(r.content) < 10000:
+    if _cdp_fallback and json_data is None and r.status_code == 202 and len(r.content) < 10000:
         # 网防(wengine)质询页走 202 短响应, requests 视为成功——按特征降级
         text, meta, hit = fetch_cdp(url, refresh=refresh)
         return text.encode("utf-8"), meta, hit
-    if _cdp_fallback and len(r.content) < 3000 and b"frms-fingerprint" in r.content:
+    if _cdp_fallback and json_data is None and len(r.content) < 3000 and b"frms-fingerprint" in r.content:
         # 瑞数 200 指纹壳(浙大 person 等)——正文只有 JS 探针, CDP 执行质询后才有内容
         text, meta, hit = fetch_cdp(url, refresh=refresh)
         return text.encode("utf-8"), meta, hit
@@ -87,6 +90,8 @@ def fetch(method, url, data=None, refresh=False):
         "status": r.status_code,
         "fetched_at": time.strftime("%Y-%m-%d"),
     }
+    if json_data is not None:
+        meta['json'] = json_data
     meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     return r.content, meta, False
 

@@ -22,7 +22,7 @@ def validate(data, units):
     if not isinstance(data, dict) or set(data) != {'version', 'sources', 'policies'} or type(data['version']) is not int or data['version'] != 1 or not isinstance(data['sources'], dict) or not isinstance(data['policies'], list):
         raise ValueError('招生政策结构错误')
     for sid, source in data['sources'].items():
-        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or not {'url', 'format', 'selector'} <= set(source) or set(source) - {'url', 'format', 'selector', 'label', 'api'}:
+        if not isinstance(sid, str) or not re.fullmatch(r'[a-z0-9_-]+', sid) or not isinstance(source, dict) or not {'url', 'format', 'selector'} <= set(source) or set(source) - {'url', 'format', 'selector', 'label', 'api', 'method', 'json', 'json_content'}:
             raise ValueError('来源结构错误')
         if 'label' in source and (not isinstance(source['label'], str) or not source['label'].strip()):
             raise ValueError('来源名称须为非空字符串')
@@ -38,7 +38,13 @@ def validate(data, units):
             origin = lambda url: (url.scheme, url.hostname, url.port or (443 if url.scheme == 'https' else 80))
             if api.scheme not in ('http', 'https') or not api.hostname or api.username or api.password or origin(api) != origin(link):
                 raise ValueError('JSON API 须与可阅读原文同源且不含凭据')
-        elif 'api' in source:
+            if source.get('json_content', 'html') not in ('html', 'structured'):
+                raise ValueError('JSON 正文类型错误')
+            if 'method' in source or 'json' in source:
+                payload = source.get('json')
+                if source.get('method') != 'POST' or source.get('json_content') != 'structured' or not isinstance(payload, dict) or not payload or any(not isinstance(k, str) or not k.strip() or not (v is None or type(v) in (str, int, bool)) for k, v in payload.items()):
+                    raise ValueError('公开 JSON POST 来源须明确方法和非空标量参数')
+        elif set(source) & {'api', 'method', 'json', 'json_content'}:
             raise ValueError('只有 JSON 来源可登记 API')
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
@@ -134,6 +140,8 @@ def fingerprint(body, source):
                 value = json.loads(body)
                 if isinstance(value, dict) and value.get('error'):
                     raise ValueError('JSON 接口返回错误')
+                if source.get('json_content') == 'structured' and isinstance(value, dict) and 'code' in value and value['code'] not in (0, '0', 200, '200'):
+                    raise ValueError('JSON 接口返回业务错误')
                 for token in source['selector'].split('/')[1:]:
                     token = token.replace('~1', '/').replace('~0', '~')
                     if isinstance(value, list):
@@ -142,6 +150,13 @@ def fingerprint(body, source):
                         value = value[int(token)]
                     else:
                         value = value[token]
+                if source.get('json_content') == 'structured':
+                    if not isinstance(value, (dict, list)) or not value:
+                        raise ValueError('结构化 JSON 正文须为非空对象或数组')
+                    bound = dict(api=source['api'], method=source.get('method', 'GET'),
+                                 json=source.get('json'), selector=source['selector'], content=value)
+                    content = json.dumps(bound, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False).encode('utf8')
+                    return hashlib.sha256(content).hexdigest()
                 if not isinstance(value, str) or not value.strip():
                     raise ValueError('JSON 正文须为非空 HTML 字符串')
             except (ValueError, KeyError, IndexError, TypeError) as error:
@@ -166,7 +181,10 @@ def fingerprint(body, source):
 def check_source(source, previous, refresh, today):
     result = dict(previous, last_attempt=today)
     try:
-        body, meta, hit = fetch.fetch('GET', source['api'] if source['format'] == 'json' else source['url'], refresh=refresh)
+        if source.get('method') == 'POST':
+            body, meta, hit = fetch.fetch('POST', source['api'], json_data=source['json'], refresh=refresh)
+        else:
+            body, meta, hit = fetch.fetch('GET', source['api'] if source['format'] == 'json' else source['url'], refresh=refresh)
         failed_live = hit and previous.get('status') == 'error'
         result.update(hash=fingerprint(body, source), last_success=meta['fetched_at'], cached=hit,
                       status='error' if failed_live else 'ok', error=previous.get('error') if failed_live else None)

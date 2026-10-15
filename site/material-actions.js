@@ -14,6 +14,7 @@
   }
   let workflow={projects:{},materials:{}},data={actions:{},records:{}},project='',dirty=false,serial=0,revision=0,hook=null,loadedScope='',loadError='';
   const goalKeys=['school_id','dept_id','year','degree','route','track','program_code','program_name'];
+  let filterScope='',stageFilter='',statusFilter='';
   const currentScope=()=>JSON.stringify([project,...goalKeys.map(key=>workflow.projects[project]?.[key]??'')]);
   const dirtyForms=new Set(),openActions=new Set();
   const node=id=>document.getElementById(id);
@@ -45,13 +46,20 @@
     const goal=record.goal_snapshot||{},action=record.action||{};
     return `<article><h4>${escape(statuses[record.status]||record.status)} · ${escape(record.created_at||'保存时间待核对')}</h4>${reasons.length?`<p class="bad">需复核：${reasons.map(escape).join('；')}</p>`:''}<p>${escape(record.notes)}</p><details><summary>保存时的目标、动作、来源与文件版本</summary><p>目标：${Object.values(goal).filter(Boolean).map(escape).join(' · ')}</p><p>${escape(record.policy_title)} · ${escape(action.label)}</p>${evidence(action.instruction)}${(record.source_snapshot?.conditions||[]).map(c=>`<p>保存时适用条件${record.confirmed_conditions?'（已人工确认）':'（未确认）'}</p>${evidence(c.evidence)}`).join('')}${Object.entries(record.source_snapshot?.sources||{}).map(([id,source])=>`<p>登记时来源 ${escape(id)}：${source.url?`<a href="${escape(source.url)}" target="_blank" rel="noopener">官方原文</a>`:''}<small class="path">${escape(source.hash||source.review_hash||'')}</small></p>`).join('')}${files.map(f=>`<p><strong>${escape(f.title)}</strong> · ${escape(fileLabels[f.state]||'保存时的版本')}<br><span class="path">${escape(f.path)}</span><br><small>保存时 ${escape(f.size)} 字节 · 修改时间 ${escape(f.mtime)}<br>内容指纹 ${escape(f.sha256)}</small></p>`).join('')||'<p>本次未选择文件。</p>'}</details></article>`;
   }
+  function registrationState(view){
+    const latest=data.records?.[view.latest_record_id];
+    if(!latest||latest.review_required||latest.applicable===false||view.can_record===false||view.program_pending||view.quality?.state!=='checked')return 'pending';
+    return latest.status==='prepared'||latest.status==='submitted'?latest.status:'pending';
+  }
   function render(){
     const list=node('preparation-list');if(!list)return;
+    if(filterScope!==currentScope()){filterScope=currentScope();stageFilter='';statusFilter='';}
     const p=workflow.projects[project];
     if(!p){list.innerHTML='<div class="empty"><h3>先选择一个申请项目</h3><p>准备进度按项目和材料动作分别保存。请在上方选择项目，或先创建项目并明确申请目标。</p><button type="button" data-section="project">创建申请项目</button></div>';return;}
     if(loadedScope!==currentScope()){list.innerHTML=`<p class="scope-note">${escape(p.name)}</p><p role="status">${loadError?'准备清单暂不可用，请点击“重新核对清单”重试。':'正在读取当前项目清单，请稍候。'}</p>`;return;}
     const rows=data.actions?.[project]||[];
-    list.innerHTML=`<p class="scope-note">${escape(p.name)} · 每个动作独立记录；同一文件用于另一项目或动作时，需要分别保存。</p>${policyReturn(p)}<button type="button" data-project-section="material" data-project-id="${escape(project)}">登记 / 管理已有文件</button>${!rows.length?'<p class="empty">当前目标尚无已整理的分阶段动作。请核对完整官方政策；没有清单不表示没有材料要求。</p>':''}`+Object.entries(stages).map(([stage,label])=>{const items=rows.filter(v=>v.action.stage===stage);return items.length?`<section><h3>${label}</h3>${items.map((view)=>{
+    const visible=rows.filter(view=>(!stageFilter||view.action.stage===stageFilter)&&(!statusFilter||registrationState(view)===statusFilter));
+    list.innerHTML=`<p class="scope-note">${escape(p.name)} · 每个动作独立记录；同一文件用于另一项目或动作时，需要分别保存。</p>${policyReturn(p)}<button type="button" data-project-section="material" data-project-id="${escape(project)}">登记 / 管理已有文件</button><div class="actions"><label>阶段<select id="preparation-stage-filter" name="preparation_stage"><option value="">全部阶段</option>${Object.entries(stages).map(([key,label])=>`<option value="${key}"${stageFilter===key?' selected':''}>${label}</option>`).join('')}</select></label><label>登记状态<select id="preparation-status-filter" name="preparation_status">${Object.entries({'':'全部登记状态',pending:'待处理',prepared:'已准备',submitted:'已登记提交'}).map(([key,label])=>`<option value="${key}"${statusFilter===key?' selected':''}>${label}</option>`).join('')}</select></label></div><p role="status">显示${visible.length}/${rows.length}项已整理事项，条件事项须核对适用</p>${!rows.length?'<p class="empty">当前目标尚无已整理的分阶段动作。请核对完整官方政策；没有清单不表示没有材料要求。</p>':!visible.length?'<p class="empty">当前筛选下没有已整理事项。<button type="button" data-preparation-clear>清除筛选，查看全部已整理事项</button>；请继续核对完整官方政策与适用条件。</p>':''}`+Object.entries(stages).map(([stage,label])=>{const items=visible.filter(v=>v.action.stage===stage);return items.length?`<section><h3>${label}</h3>${items.map((view)=>{
       const a=view.action,key=rows.indexOf(view),detailKey=project+'|'+view.policy_id+'|'+view.action_id,latest=data.records?.[view.latest_record_id],records=Object.values(data.records||{}).filter(r=>r.project_id===project&&r.policy_id===view.policy_id&&r.action_id===view.action_id).sort((a,b)=>String(b.created_at||'').localeCompare(String(a.created_at||'')));
       const conditions=view.conditions||[],blocked=!!loadError||view.can_record===false||!!view.program_pending||view.quality?.state!=='checked';
       const policy=(root.ADMISSIONS_DATA?.policies||[]).find(p=>p.id===view.policy_id);
@@ -69,6 +77,13 @@
     node('preparation-reload').onclick=()=>{if(discard())refresh(workflow,project);};
     node('preparation-list').addEventListener('toggle',e=>{const key=e.target.dataset.prepareDetail;if(key){if(e.target.open)openActions.add(key);else openActions.delete(key);}},true);
     node('preparation-list').addEventListener('input',e=>{const form=e.target.closest('[data-material-action]');if(form){dirtyForms.add(form.dataset.materialAction);dirty=true;revision++;}});
+    node('preparation-list').addEventListener('change',e=>{
+      const stage=e.target.id==='preparation-stage-filter',status=e.target.id==='preparation-status-filter';if(!stage&&!status)return;
+      const value=e.target.value;e.target.value=stage?stageFilter:statusFilter;
+      if(!discard())return;
+      if(stage)stageFilter=value;else statusFilter=value;
+      render();
+    });
     node('preparation-list').addEventListener('submit',async e=>{
       const form=e.target.closest('[data-material-action]');if(!form)return;e.preventDefault();
       const view=data.actions?.[project]?.[Number(form.dataset.materialAction)];if(!view){feedback('动作已变化，请重新载入后核对。',true);return;}
@@ -80,6 +95,7 @@
       finally{if(button.isConnected)button.disabled=false;}
     });
     node('preparation-list').addEventListener('click',async e=>{
+      if(e.target.closest('[data-preparation-clear]')){if(discard()){stageFilter='';statusFilter='';render();}return;}
       const b=e.target.closest('[data-material-reminder]');if(!b)return;
       const view=data.actions?.[project]?.[Number(b.dataset.actionIndex)];if(!view)return;
       b.disabled=true;

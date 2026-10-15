@@ -65,7 +65,7 @@ def main():
     pending.pop(0).fulfill(json=payload('Current action'));page.wait_for_selector('.preparation-action')
     assert 'Current action' in page.locator('#preparation-list').inner_text() and 'Stale action' not in page.locator('#preparation-list').inner_text()
     assert not writes and not errors,(writes,errors)
-    page.locator('[data-prepare-detail] > summary').first.click();page.fill('[name="notes"]','explicit fixture save');page.click('[type="submit"]');page.wait_for_timeout(80)
+    page.locator('[data-prepare-detail]').first.evaluate('e=>e.open=true');page.fill('[name="notes"]','explicit fixture save');page.click('[type="submit"]');page.wait_for_timeout(80)
     assert writes==['POST'] and len(pending)==1
     assert '已保存' in page.locator('#preparation-feedback').inner_text()
     pending.pop(0).fulfill(json=payload('Current action'));page.wait_for_timeout(80)

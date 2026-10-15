@@ -894,6 +894,21 @@ sources:
     format: pdf
     selector: ''
     label: 国防科技大学2027硕士招生简章（2026-10-15落地页新增PDF）
+  tsinghua_auto_phd_v22:
+    url: https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/e16d784f-403e-4ac4-98ff-15fd79e051a4?yxsdm=025
+    format: html
+    selector: .article-content .content
+    label: 清华大学自动化系2027年博士研究生招生简章
+  sdu_cs_directory_post_v22:
+    url: https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index
+    api: https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/x2JE5818xNoSDuSl/zsxxfb/list/zymlxqV2
+    format: json
+    selector: /data/37
+    method: POST
+    json:
+      zsndId: '2027021779688418502'
+    json_content: structured
+    label: 山东大学2027硕士专业目录047计算机科学与技术学院（公开JSON POST）
 policies:
 - id: tsinghua-2027-master-exam
   school: tsinghua
@@ -8241,6 +8256,90 @@ policies:
       quote: 010-62782192
       locator: 九、信息查询、申诉、联系方式3
   events: []
+  material_actions:
+  - id: submit-core-electronic-package
+    label: 在院系申请批次内提交并确认电子材料
+    stage: application
+    instruction:
+      text: 普通招考申请人在清华研究生申请服务系统填报、缴费确认后，提交身份证明、本硕成绩单、学士及硕士学位（学历）证书、考生承诺书、报名申请表和院系要求的其他电子材料，并确认完成。院系秋季批次2026-07-28 15:00已截止；计算机系、五道口金融学院、网络研究院冬季为11-01
+        10:00至11-30 15:00，其他院系仅在另行公告冬季招生时适用；非全日制专业博士按项目简章。
+      quote: 4 ） 提交材料： 申请人在申请服务系统开放时间内，填写报名信息并缴费确认后，按规定将身份证明、本科和硕士阶段成绩单、学士和硕士学位（学历）证书、考生承诺书、报名申请表、申请院系招生简章要求的其他材料等以电子文档形式在申请服务系统内提交并确认
+        ,完成“ 提交材料 ”环节方为报名完成 。 秋季 招生院系申请人材料需在申请服务系统内提交的截止时间为7月28日15：00，特殊要求的见各院系及项目招生简章。
+      locator: 二、申请2（2）4及1；普通招考，秋冬分院系
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: online-two-expert-references
+    label: 邀请两位专家在线填写上传推荐信
+    stage: application
+    instruction:
+      text: 普通招考申请人在系统邀请两位所申请学科领域副教授或相当专业技术职称以上专家；专家在系统规定时间填写、上传推荐信，并保存原件。专家提交时限按系统，不把纸质原件寄送期限等同申请截止。
+      quote: 注1：提交材料阶段，申请人需在线邀请 两位所申请学科专业领域内 的相关的副教授（或相当专业技术职称）以上职称专家在 线填写推荐信。推荐专家按申请服务系统要求，在规定的时间内填写、上传专家推荐信，同时请专家协助妥善保存推荐信原件，待后续接收通知将书面版寄至申请人所申请院系的研究生教学办公室，或在线完成推荐书后将书面版密封（在密封信封的封口骑缝处签字）交申请人寄至所申请院系的研究生教学办公室。
+      locator: 二、申请2（2）注1
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: post-reference-originals
+    label: 收到后续通知后寄送推荐信原件
+    stage: other
+    instruction:
+      text: 推荐专家保存原件，待后续接收通知寄至申请院系研究生教学办公室；或在线推荐后把纸质推荐书密封并在封口骑缝签字，交申请人寄送。原文未给统一邮寄截止。
+      quote: 同时请专家协助妥善保存推荐信原件，待后续接收通知将书面版寄至申请人所申请院系的研究生教学办公室，或在线完成推荐书后将书面版密封（在密封信封的封口骑缝处签字）交申请人寄至所申请院系的研究生教学办公室。
+      locator: 二、申请2（2）注1后半
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: equivalent-course-proof
+    label: 同等学力者准备硕士课程成绩证明
+    stage: application
+    instruction:
+      text: 同等学力申请者须提供授课单位的硕士学位课程及选修课程合格成绩证明，并同时满足学士后工作年限和科研成果等原文条件；未给单独提交渠道或截止，按院系通知核实。
+      quote: 已修完所申请专业的硕士学位课程及选修课程且成绩合格（须提供授课单位的成绩证明）；
+      locator: 一、申请条件7（2）
+      source_ids:
+      - tsinghua_school_v16phd
+    applies_if:
+      text: 仅以同等学力身份申请人员
+      quote: 对以同等学力身份申请的人员
+      locator: 一、申请条件7
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: overseas-degree-verification
+    label: 境外学位者提交留服认证报告
+    stage: admission
+    instruction:
+      text: 持国（境）外获得学位证书的申请人须在发放录取通知书前提交教育部留学服务中心认证报告；具体接收渠道按院系安排，原文未给日历日期。
+      quote: 持国（境）外获得的学位证书申请人，须在发放录取通知书前，提交教育部留学服务中心认证报告。
+      locator: 八、说明5
+      source_ids:
+      - tsinghua_school_v16phd
+    applies_if:
+      text: 仅持国（境）外获得学位证书申请人
+      quote: 持国（境）外获得的学位证书申请人
+      locator: 八、说明5
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: directional-agreement
+    label: 定向就业者录取前签订协议
+    stage: admission
+    instruction:
+      text: 定向就业博士生须在录取前签订定向就业协议书；接收方和日历日期未给，按学校和院系后续通知办理。
+      quote: 定向就业博士生，须在录取前签订定向就业协议书；
+      locator: 七、录取
+      source_ids:
+      - tsinghua_school_v16phd
+    applies_if:
+      text: 仅定向就业博士生
+      quote: 定向就业博士生
+      locator: 七、录取
+      source_ids:
+      - tsinghua_school_v16phd
+  - id: enrollment-original-certificates
+    label: 报到携带录取通知书和学历学位原件
+    stage: enrollment
+    instruction:
+      text: 2027年秋季新生报到时携带本人录取通知书及全部申请条件所需学位（学历）证书原件；同等学力申请人带学士学位证书原件。报到具体日期另查，不补造时刻。
+      quote: 录取申请人于2027年秋季入学，在 我校研究生新生入学报到日 须携带本人录取通知书和全部申请条件所需学位（学历）证书原件（直博生和 同等学力申请人带学士学位 证书原件）。
+      locator: 七、录取第二段
+      source_ids:
+      - tsinghua_school_v16phd
 - id: zju-2027-phd-assessment-v16pilot
   school: zju
   dept: ''
@@ -8296,6 +8395,126 @@ policies:
     at: '2026-11-20T20:00:00+08:00'
     quote: '2026 年 10 月 20 日 9 : 00-2026 年 11 月 20 日 20:00'
     locator: 三（三）1；第二轮非全日制及专项不可混用
+  material_actions:
+  - id: written-expert-references
+    label: 取得至少两位专家书面推荐意见
+    stage: application
+    instruction:
+      text: 取得至少两名报考学科领域副教授及以上或相当专业职称专家的书面推荐意见，并按报考院系简章递交。校级原文未规定推荐书上传、邮寄或密封方式，也未给独立推荐书截止。
+      quote: 有至少两名报考学科专业领域内副教授及以上职称专家（或相当专业职称的专家）的书面推荐意见。
+      locator: 二、报考条件（五）
+      source_ids:
+      - zju_school_v16phd
+  - id: department-application-materials
+    label: 按院系简章递交普通招考材料
+    stage: application
+    instruction:
+      text: 普通招考须完成浙江大学博士生报名系统网报并向招生学院（系）递交报考材料；材料清单、递交方式及材料截止须按院系2027简章。首轮网报10-20 09:00至11-20 20:00适用全日制非定向及章程列明专项；报名阶段只填院系、专业、方向，无需选择导师。本动作不把网报截止当作院系材料截止。
+      quote: （三）普通招考 普通招考考生须登录“浙江大学博士研究生报名系统”进行网上报名，报名阶段只需填报学院（系）、专业、方向，无需选择导师。向招生学院（系）递交报考材料，具体要求详见各学院（系）发布的招生简章。
+      locator: 三、报名时间（三）普通招考
+      source_ids:
+      - zju_school_v16phd
+  - id: current-phd-permission
+    label: 在读博士报名截止前交同意报考证明
+    stage: application
+    instruction:
+      text: 现已在读博士须在所适用报名截止日前提交培养单位同意报考证明；首轮报名者为2026-11-20 20:00，其他批次按其报名通知。递交渠道按招生院系通知。
+      quote: （六） 现已在读的博士研究生，报名截止日前须提交所在培养单位“同意报考”的证明，并于 2027 年 5 月 31 日前递交离校（或退学）证明。
+      locator: 二、报考条件（六）
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅现已在读博士研究生
+      quote: 现已在读的博士研究生
+      locator: 二、报考条件（六）
+      source_ids:
+      - zju_school_v16phd
+  - id: current-phd-exit-proof
+    label: 在读博士于5月31日前递交离校证明
+    stage: admission
+    instruction:
+      text: 现已在读博士须于2027-05-31前递交离校或退学证明；原文未写具体时刻或渠道。
+      quote: （六） 现已在读的博士研究生，报名截止日前须提交所在培养单位“同意报考”的证明，并于 2027 年 5 月 31 日前递交离校（或退学）证明。
+      locator: 二、报考条件（六）
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅现已在读博士研究生
+      quote: 现已在读的博士研究生
+      locator: 二、报考条件（六）
+      source_ids:
+      - zju_school_v16phd
+  - id: equivalent-current-master-exit
+    label: 同等学力在读硕士递交离校证明
+    stage: admission
+    instruction:
+      text: 以学士后六年及以上同等学力身份报考非全日制博士的在读硕士，须于2027-05-31前递交离校或退学证明。本条件位于非全日制同等学力分支，不能作为所有全日制应届硕士要求。
+      quote: 已获得国家承认的学士学位六年及以上（从获得学士学位之日起至博士研究生入学之日），在相关行业或领域具有工作经历，且达到与硕士研究生毕业同等学力，在报考的学科专业具有丰富实践成果和经验的在职人员可报考非全日制博士研究生，但须加试（笔试）思想政治理论和一门报考学科专业硕士学位主干课程。如为在读硕士研究生须于
+        2027 年 5 月 31 日前递交离校（或退学）证明。教育部规定不允许研究生同时有两个及以上学籍，否则录取资格无效。
+      locator: 二、报考条件（四）3非全日制同等学力段
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅本段同等学力报考非全日制博士且仍为在读硕士者
+      quote: 已获得国家承认的学士学位六年及以上（从获得学士学位之日起至博士研究生入学之日），在相关行业或领域具有工作经历，且达到与硕士研究生毕业同等学力，在报考的学科专业具有丰富实践成果和经验的在职人员可报考非全日制博士研究生，但须加试（笔试）思想政治理论和一门报考学科专业硕士学位主干课程。如为在读硕士研究生须于
+        2027 年 5 月 31 日前递交离校（或退学）证明。教育部规定不允许研究生同时有两个及以上学籍，否则录取资格无效。
+      locator: 二、报考条件（四）3
+      source_ids:
+      - zju_school_v16phd
+  - id: overseas-awarded-verification
+    label: 已获境外学历学位者报名提交留服认证
+    stage: application
+    instruction:
+      text: 已获得国（境）外学历学位证书的考生报名时提交教育部留服认证书；递交渠道按报名及院系通知。应届毕业生最迟入学前提交，见另项，不把其宽限套用于已获证人员。
+      quote: （七） 已获得 国（境）外学历学位证书的考生，报名时须提交教育部留学服务中心出具的《国（境）外学历学位认证书》（其中应届毕业生最迟须在入学前提交，否则录取资格无效）。
+      locator: 二、报考条件（七）
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅已获国（境）外学历学位证书者
+      quote: 已获得 国（境）外学历学位证书的考生
+      locator: 二、报考条件（七）
+      source_ids:
+      - zju_school_v16phd
+  - id: overseas-graduating-verification
+    label: 境外应届毕业生入学前提交留服认证
+    stage: enrollment
+    instruction:
+      text: 国（境）外应届毕业生最迟须在入学前提交教育部留服学历学位认证书，否则录取资格无效；具体渠道及入学日期另查。
+      quote: （七） 已获得 国（境）外学历学位证书的考生，报名时须提交教育部留学服务中心出具的《国（境）外学历学位认证书》（其中应届毕业生最迟须在入学前提交，否则录取资格无效）。
+      locator: 二、报考条件（七）应届例外
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅国（境）外应届毕业生适用认证提交宽限
+      quote: （七） 已获得 国（境）外学历学位证书的考生，报名时须提交教育部留学服务中心出具的《国（境）外学历学位认证书》（其中应届毕业生最迟须在入学前提交，否则录取资格无效）。
+      locator: 二、报考条件（七）
+      source_ids:
+      - zju_school_v16phd
+  - id: political-review-stamped-records
+    label: 拟录取后配合函调档案和盖章表现材料
+    stage: admission
+    instruction:
+      text: 拟录取名单确定后，按招生学院函调要求办理人事档案或档案审查意见及现实表现材料；现实表现材料须由本人档案单位或工作单位人事、政工部门盖章。原文未给统一截止。
+      quote: 拟录取名单确定后，各学院（系）向考生所在单位函调人事档案（或档案审查意见）和本人现实表现等材料，全面考查其思想政治素质和品德情况。函调的现实表现材料，须由考生本人档案所在单位或工作单位的人事、政工部门加盖印章。政治审查不合格者取消拟录取资格。
+      locator: 六、政审与录取
+      source_ids:
+      - zju_school_v16phd
+  - id: directional-contracts
+    label: 定向就业者录取前分别签订合同
+    stage: admission
+    instruction:
+      text: 定向就业考生被录取前须与招生单位、用人单位分别签订定向就业合同；具体渠道和日历日期按后续通知。
+      quote: 定向就业的考生应当在被录取前与招生单位、用人单位分别签订定向就业合同。
+      locator: 六、政审与录取
+      source_ids:
+      - zju_school_v16phd
+    applies_if:
+      text: 仅定向就业考生
+      quote: 定向就业的考生
+      locator: 六、政审与录取
+      source_ids:
+      - zju_school_v16phd
 - id: tsinghua-cs-2027-phd-assessment-v16pilot
   school: tsinghua
   dept: cs
@@ -11956,4 +12175,204 @@ policies:
       locator: 八、联系方式
       source_ids:
       - ucas_ia_charter_v21
+  events: []
+- id: tsinghua-auto-2027-phd-assessment-v22
+  school: tsinghua
+  dept: auto
+  level: dept
+  title: 清华自动化系2027普通博士秋季申请（2026年7月已截止）
+  year: 2027
+  degree: phd
+  route: assessment
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-06-30'
+  reviewed_at: '2026-10-15'
+  source_id: tsinghua_auto_phd_v22
+  review_hashes:
+    tsinghua_auto_phd_v22: 3fbd27893811b926da15ca9397230afe39f2b5eec149e83f8346f41685ffa25a
+    tsinghua_school_v16phd: 21b11577384b672985dff14cb706daf0d604a62808fe4cdf838241867d027d6e
+  fields:
+    eligibility:
+      text: 普通招考须符合学校条件；081100面向海外高校中国籍优秀本科毕业生的GPA原则3.5/4仅限该分支。
+      quote: 1．申请条件 符合《清华大学2027年博士研究生招生简章》及其相关的实施细则中的报考条件。 其中：2027年我系控制科学与工程专业（专业代码：081100）面向海外高校招收中国籍优秀本科毕业生攻读博士学位研究生。申请条件为：本科毕业于海外一流高校；本科阶段学业成绩的总绩点原则上不低于3.5分（按满分为4分核算）。
+      locator: 一（三）1
+      source_ids:
+      - tsinghua_auto_phd_v22
+    materials:
+      text: 普通招考需身份证、外语证明、本硕成绩和学历学位验证、两封专家推荐、承诺及登记表、科研证明、含研究计划的本人自述和两页内简历；应届提供在学证明。
+      quote: 3.材料提交 申请人将以下材料在申请时间内通过我校研究生申请服务系统（yzbm.tsinghua.edu.cn）进行提交，逾期不予受理。 （1）有效身份证明 （2）外语水平证明（如有TOEFL、IELTS、GRE、四、六级成绩请提供）
+        （3）本科及硕士研究生学业成绩单 （4）本科学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、学士学位证书（须附学信网《中国高等教育学位在线验证报告》）、硕士研究生学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、硕士学位证书（须附学信网《中国高等教育学位在线验证报告》），其中应届生需提供在学证明）
+        （5）两封与报考专业相关的职称为副教授(或相当职称)或以上的专家推荐信 （6）清华大学研究生招生考生诚信承诺书 （7）《申请攻读博士学位研究生报名登记表》 （8）其他可证明科研水平和能力的材料 （9）本人自述（攻读博士学位目的，参与的科研项目，论文发表及获奖情况，研究计划）
+        （10）个人简历（包括个人基本信息，科研活动及实习经历，外语水平，论文发表及获奖情况，特长及爱好等，限两页内）
+      locator: 一（三）3（1）至（10）
+      source_ids:
+      - tsinghua_auto_phd_v22
+    timeline:
+      text: 仅申请时间1：2026-07-01 10:00至07-28 15:00，现已截止；所有专项后期不开放，未核得本系冬季新批次，不表示当前可以申请。
+      quote: 2.申请时间 我系在申请时间1内进行招生报名，请申请人登录清华大学研究生申请服务系统（https://yzbm.tsinghua.edu.cn）按相关要求完成网上报名手续。 申请时间1： 2026年7月1日10:00—2026年7月28日15:00
+        注：我系所有专项计划仅在申请时间1招生报名，后期不再开放专项计划的申请通道。
+      locator: 一（三）2
+      source_ids:
+      - tsinghua_auto_phd_v22
+    exams:
+      text: 普通招考含专业基础笔试和约30分钟综合面试；笔试1小时，考基础数学与英语；同等学力另加试两门课程。
+      quote: 综合考核： 综合考核由综合专业基础考试（笔试）和综合面试组成。 综合专业基础考试：笔试科目为《专业基础综合》。笔试时间为1小时，满分100分。笔试考查基础数学知识与英语水平。笔试成绩将作为综合考核的重要参考。对于同等学力申请人将加试两门本专业硕士学位主干课程。对于应届本科推荐免试攻读博士生、硕博连读申请人综合考核阶段可免综合专业基础笔试环节，只参加综合面试。
+        综合面试： 应届本科推荐免试申请人 约20分钟，普通招考、硕博连读申请人约30分钟，满分100分。面试重点考查申请人在本学科攻读博士学位的基本素养、学术能力、学术志趣等。
+      locator: 二、综合考核
+      source_ids:
+      - tsinghua_auto_phd_v22
+    quota:
+      text: 按材料审查成绩，依据计划1:1.5至1:2确定入围；并非导师余量或招生人数。
+      quote: 材料审查： 每位申请人的申请材料至少由5位专家进行审查，审查方式采用百分制评分，申请人材料审查成绩为其所在组全部材料评审专家评分的平均分。如有分组将对各组间成绩进行标准化。按照材料审查成绩由高到低，依据招生计划的 1：1.5
+        - 1：2 比例确定入围综合考核名单。
+      locator: 二、材料审查
+      source_ids:
+      - tsinghua_auto_phd_v22
+    contact:
+      text: 自动化系研究生办公室010-62780657、zdhxyjsb@mailoa.tsinghua.edu.cn；具体更新查自动化系官网。
+      quote: 联系电话：010-62780657 电子邮箱：zdhxyjsb@mailoa.tsinghua.edu.cn
+      locator: 五、联系方式
+      source_ids:
+      - tsinghua_auto_phd_v22
+  events:
+  - label: 自动化系2027普通博士秋季申请截止（历史已过期）
+    kind: deadline
+    at: '2026-07-28T15:00:00+08:00'
+    quote: 2026年7月1日10:00—2026年7月28日15:00
+    locator: 一（三）2申请时间1
+    source_ids:
+    - tsinghua_auto_phd_v22
+  material_actions:
+  - id: historical-core-package
+    label: 秋季批次提交普通招考电子材料（已截止）
+    stage: application
+    instruction:
+      text: 本轮2026-07-28 15:00已截止。原要求通过清华申请系统提交身份证、外语证明、本硕成绩单、学历学位及学信验证材料、诚信承诺、报名表及科研能力证明；应届硕士提供在学证明。外语证明如有TOEFL、IELTS、GRE、四、六级请提供，原文未列统一分数线。
+      quote: 3.材料提交 申请人将以下材料在申请时间内通过我校研究生申请服务系统（yzbm.tsinghua.edu.cn）进行提交，逾期不予受理。 （1）有效身份证明 （2）外语水平证明（如有TOEFL、IELTS、GRE、四、六级成绩请提供）
+        （3）本科及硕士研究生学业成绩单 （4）本科学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、学士学位证书（须附学信网《中国高等教育学位在线验证报告》）、硕士研究生学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、硕士学位证书（须附学信网《中国高等教育学位在线验证报告》），其中应届生需提供在学证明）
+        （5）两封与报考专业相关的职称为副教授(或相当职称)或以上的专家推荐信 （6）清华大学研究生招生考生诚信承诺书 （7）《申请攻读博士学位研究生报名登记表》 （8）其他可证明科研水平和能力的材料 （9）本人自述（攻读博士学位目的，参与的科研项目，论文发表及获奖情况，研究计划）
+        （10）个人简历（包括个人基本信息，科研活动及实习经历，外语水平，论文发表及获奖情况，特长及爱好等，限两页内）
+      locator: 一（三）3（1）至（10）
+      source_ids:
+      - tsinghua_auto_phd_v22
+    event_indexes:
+    - 0
+  - id: statement-research-plan
+    label: 提交含研究计划的本人自述（秋季已截止）
+    stage: application
+    instruction:
+      text: 原秋季批次须在申请系统提交本人自述，包含攻读博士目的、科研项目、论文和获奖及研究计划；本轮已截止，不迁用为冬季开放。
+      quote: （9）本人自述（攻读博士学位目的，参与的科研项目，论文发表及获奖情况，研究计划）
+      locator: 一（三）3（9）
+      source_ids:
+      - tsinghua_auto_phd_v22
+    event_indexes:
+    - 0
+  - id: two-page-cv
+    label: 提交两页内个人简历（秋季已截止）
+    stage: application
+    instruction:
+      text: 原秋季批次须提交限两页内简历，含基本信息、科研及实习、外语、论文获奖、特长爱好；本轮2026-07-28已截止。
+      quote: （10）个人简历（包括个人基本信息，科研活动及实习经历，外语水平，论文发表及获奖情况，特长及爱好等，限两页内）
+      locator: 一（三）3（10）
+      source_ids:
+      - tsinghua_auto_phd_v22
+    event_indexes:
+    - 0
+  - id: expert-references-no-proposed-supervisor
+    label: 邀请两位专家在线推荐，避开申请导师
+    stage: application
+    instruction:
+      text: 原秋季批次邀请两位相关专业副教授或相当职称以上专家在线填写上传推荐信，申请导师不能作为推荐专家；专家按系统规定时间提交并保存原件。该秋季申请已截止，未核得新增冬季批次。
+      quote: 注1：申请人在线邀请两位与报考专业相关的职称为副教授（或相当职称）或以上的专家在线填写推荐信。申请人申请的导师不能作为专家推荐信的推荐专家。推荐专家根据申请服务系统要求，在规定的时间内填写、上传专家推荐信，同时请专家协助妥善保存推荐信原件。待后续接收通知将纸质版寄达至申请人所申请院系的研究生教学办公室、或在线完成推荐后将纸质版密封（在密封信封的封口骑缝处签字）交申请人寄达至所申请院系的研究生教学办公室（具体地址以后续通知为准）。
+      locator: 一（三）3注1
+      source_ids:
+      - tsinghua_auto_phd_v22
+  - id: sealed-reference-originals
+    label: 接后续通知寄送密封推荐原件
+    stage: other
+    instruction:
+      text: 专家保存原件，后续接收通知要求寄达申请院系研究生教学办公室；或在线推荐后封口骑缝签字密封交申请人寄达，具体地址另通知。未给邮寄日期，不用已过网上申请截止代替。
+      quote: 同时请专家协助妥善保存推荐信原件。待后续接收通知将纸质版寄达至申请人所申请院系的研究生教学办公室、或在线完成推荐后将纸质版密封（在密封信封的封口骑缝处签字）交申请人寄达至所申请院系的研究生教学办公室（具体地址以后续通知为准）。
+      locator: 一（三）3注1后半
+      source_ids:
+      - tsinghua_auto_phd_v22
+  - id: overseas-verification
+    label: 境外学历学位者提交留服认证（原秋季要求）
+    stage: application
+    instruction:
+      text: 持境外学历学位申请人原秋季批次须向申请系统提交教育部留服认证报告；原秋季网上申请已截止。
+      quote: 注2：持国（境）外教育机构学历学位者，须提交中国教育部留学服务中心开具的认证报告。
+      locator: 一（三）3注2
+      source_ids:
+      - tsinghua_auto_phd_v22
+    applies_if:
+      text: 仅持境外学历学位者
+      quote: 持国（境）外教育机构学历学位者
+      locator: 一（三）3注2
+      source_ids:
+      - tsinghua_auto_phd_v22
+    event_indexes:
+    - 0
+- id: sdu-cs-081200-2027-exam-v22
+  school: sdu
+  dept: cs
+  level: program
+  title: 山东大学计算机学院2027年081200计算机科学与技术统考目录（一般章程与材料待补）
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: 计算机科学与技术
+  program_code: 081200
+  published_at: null
+  reviewed_at: '2026-10-15'
+  source_id: sdu_cs_directory_post_v22
+  review_hashes:
+    sdu_cs_directory_post_v22: 705108f72aa254142bed7b3c3f054556c1052058aecbcf7dd232fa910c61cb72
+  fields:
+    eligibility:
+      text: 047计算机科学与技术学院081200计算机科学与技术不招收同等学力考生；这不等于其他资格条件已完整。
+      quote: 不招收
+      locator: 2027硕士专业目录 → 047计算机科学与技术学院 → 081200 → 是否招收同等学力；2027目录 /data/37/zsxxList/0/sfzstdxl_name（047计算机科学与技术学院）
+      source_ids:
+      - sdu_cs_directory_post_v22
+    exams:
+      text: 初试科目：①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础。具体复试组织与材料以当年正式通知为准，目录未提供统一材料清单或截止。
+      quote: ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础
+      locator: 2027硕士专业目录 → 047计算机科学与技术学院 → 081200 → 初试考试科目；2027目录 /data/37/zsxxList/0/cskm（047计算机科学与技术学院）
+      source_ids:
+      - sdu_cs_directory_post_v22
+  events: []
+- id: sdu-cs-085404-2027-exam-v22
+  school: sdu
+  dept: cs
+  level: program
+  title: 山东大学计算机学院2027年085404计算机技术统考目录（一般章程与材料待补）
+  year: 2027
+  degree: master
+  route: exam
+  track: ordinary
+  program: 计算机技术
+  program_code: 085404
+  published_at: null
+  reviewed_at: '2026-10-15'
+  source_id: sdu_cs_directory_post_v22
+  review_hashes:
+    sdu_cs_directory_post_v22: 705108f72aa254142bed7b3c3f054556c1052058aecbcf7dd232fa910c61cb72
+  fields:
+    eligibility:
+      text: 047计算机科学与技术学院085404计算机技术不招收同等学力考生；这不等于其他资格条件已完整。
+      quote: 不招收
+      locator: 2027硕士专业目录 → 047计算机科学与技术学院 → 085404 → 是否招收同等学力；2027目录 /data/37/zsxxList/11/sfzstdxl_name（047计算机科学与技术学院）
+      source_ids:
+      - sdu_cs_directory_post_v22
+    exams:
+      text: 初试科目：①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④408 计算机学科专业基础。具体复试组织与材料以当年正式通知为准，目录未提供统一材料清单或截止。
+      quote: ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④408 计算机学科专业基础
+      locator: 2027硕士专业目录 → 047计算机科学与技术学院 → 085404 → 初试考试科目；2027目录 /data/37/zsxxList/11/cskm（047计算机科学与技术学院）
+      source_ids:
+      - sdu_cs_directory_post_v22
   events: []
