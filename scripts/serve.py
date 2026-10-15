@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 from crawler.outreach_util import validate_outreach, validate_patch
 from crawler.workflow_util import empty_workflow, update_entry, scan_materials
 from crawler import contact_util as contact
+from crawler import project_util as projects
 from crawler import discovery_util as discovery
 
 SITE = ROOT / 'site'
@@ -219,7 +220,8 @@ class Handler(SimpleHTTPRequestHandler):
             try:
                 # 恢复不依赖旧文件有效；新备份校验后保留旧文件原始字节。
                 data = load_outreach(self.workflow) if self.workflow.exists() and parts != ['restore'] else empty_workflow()
-                data = contact.upgrade(data, self._known_ids())
+                context = projects.load_context(ROOT)
+                data = projects.upgrade(data, self._known_ids(), context)
             except (ValueError, OSError, yaml.YAMLError) as e:
                 return self._json(500, {'error': str(e)})
             if method == 'GET':
@@ -238,15 +240,15 @@ class Handler(SimpleHTTPRequestHandler):
                     self.end_headers()
                     self.wfile.write(raw)
                     return
-                return self._json(200, {'version': 2, 'workflow': data} if parts == ['backup'] else data)
+                return self._json(200, {'version': 3, 'workflow': data} if parts == ['backup'] else data)
             try:
                 if method == 'POST' and parts == ['restore']:
-                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] not in (1, 2):
+                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] not in (1, 2, 3):
                         raise ValueError('备份版本或结构错误')
                     data = body['workflow']
                     if not isinstance(data, dict) or data.get('version') != body['version']:
                         raise ValueError('备份内外版本不一致')
-                    data = contact.upgrade(data, self._known_ids())
+                    data = projects.upgrade(data, self._known_ids(), context)
                     if self.workflow.exists():
                         backups = self.workflow.parent / 'backups'
                         backups.mkdir(parents=True, exist_ok=True)
@@ -263,7 +265,10 @@ class Handler(SimpleHTTPRequestHandler):
                 elif method == 'POST' and len(parts) == 3 and parts[0] == 'targets' and parts[2] == 'reply':
                     data, result = contact.reply(data, parts[1], body, self._known_ids())
                 elif (method == 'POST' and len(parts) == 1) or (method == 'PATCH' and len(parts) == 2):
-                    if parts[0] in contact.DEFAULTS:
+                    if parts[0] == 'projects':
+                        data, result = projects.update(data, body, self._known_ids(), context,
+                                                       parts[1] if method == 'PATCH' else None)
+                    elif parts[0] in contact.DEFAULTS:
                         data, result = contact.update(data, parts[0], body, self._known_ids(), parts[1] if method == 'PATCH' else None)
                     else:
                         base, result = update_entry(contact.core_view(data), parts[0], body, self._known_ids(),
@@ -271,6 +276,7 @@ class Handler(SimpleHTTPRequestHandler):
                         data = contact.merge_core(data, base, self._known_ids())
                 else:
                     return self._json(404, {'error': '未知 API'})
+                projects.validate(data, context)
                 save_outreach(data, self.workflow)
             except KeyError as e:
                 return self._json(404, {'error': str(e)})

@@ -6,6 +6,7 @@ const stages={research:'待调研',preparing:'准备联系',waiting:'等待回�
 const priorities={high:'优先',normal:'一般',low:'暂缓'};
 const eventLabels={draft:'历史草稿',sent:'已发送',replied:'收到回复',note:'备注 / 阶段变更'};
 const params=new URLSearchParams(location.search);
+let projectContext=params.get('project')||'',projectContextReady=false;
 const incomingMentor=people.has(params.get('mentor')) ? params.get('mentor') : '';
 const intentYear=Number(params.get('year'));
 const incomingGoal={...(Number.isInteger(intentYear)&&intentYear>=2000&&intentYear<=2100?{year:intentYear}:{}),
@@ -24,7 +25,9 @@ const personName=id=>people.get(id)?.name||id;
 const personLabel=id=>{const p=people.get(id);return p ? `${p.name} · ${p.school_name||p.school} · ${p.dept_name||p.dept}` : id;};
 const projectLabel=id=>{const p=FLOW.projects[id];return p ? `${p.name} · ${p.year??'年度未知'}` : '';};
 const target=()=>FLOW.targets[currentTarget];
+function savedGoal(){const p=FLOW.projects[target()?.project_id||projectContext];return p?.school_id&&p.dept_id&&p.year&&p.degree&&p.route&&p.track?{school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,...(p.program_name?{program:(p.program_code||'')+'|'+p.program_name}:{})}:null;}
 function forwardedGoal(){
+  if(savedGoal())return savedGoal();
   const goal={...incomingGoal},p=people.get(target()?.mentor_id||incomingMentor);
   if(p){
     if(target()||goal.school!==p.school||goal.dept!==p.dept){delete goal.track;delete goal.program;}
@@ -33,6 +36,13 @@ function forwardedGoal(){
   return goal;
 }
 function renderGoal(){
+  const saved=savedGoal();
+  if(saved){
+    const p=people.get(target()?.mentor_id||incomingMentor),mismatch=p&&(p.school!==saved.school||p.dept!==saved.dept);
+    el('incoming-goal').hidden=false;
+    el('incoming-goal').textContent='已保存项目目标：'+[saved.school,saved.dept,saved.year,goalDegree[saved.degree],goalRoute[saved.route],saved.track==='special'?'专项 / 特定项目':'普通招生',saved.program?.replace('|',' · ')].filter(Boolean).join(' · ')+'。'+(mismatch?'当前导师与项目目标单位不同，项目政策不能据此认定适用于该导师；请核实跨院系招生关系。':'项目目标用于带范围核对政策，不表示个人符合资格或导师有名额。');
+    return;
+  }
   const scoped=!!(incomingGoal.track||incomingGoal.program),goal=forwardedGoal();
   const intent=[incomingGoal.year,goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' · ');
   el('incoming-goal').hidden=!Object.keys(incomingGoal).length;
@@ -52,6 +62,7 @@ function showView(view){
   for(const name of ['today','targets','prepare']) el('view-'+name).hidden=name!==view;
   document.querySelectorAll('.tabs [data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   const query=new URLSearchParams();query.set('view',view);query.set('panel',currentPanel);if(target()?.mentor_id||incomingMentor)query.set('mentor',target()?.mentor_id||incomingMentor);if(currentTarget)query.set('target',currentTarget);
+  if(FLOW.projects[target()?.project_id||projectContext])query.set('project',target()?.project_id||projectContext);
   for(const [key,value] of Object.entries(forwardedGoal()))query.set(key,value);
   history.replaceState(null,'',location.pathname+'?'+query);
 }
@@ -62,6 +73,7 @@ function optionList(id,items,emptyLabel){
 function manageUrl(){
   const mentor=target()?.mentor_id||incomingMentor;
   const q=new URLSearchParams({return:'desk',panel:currentPanel});if(mentor)q.set('mentor',mentor);if(currentTarget)q.set('target',currentTarget);
+  if(FLOW.projects[target()?.project_id||projectContext])q.set('project',target()?.project_id||projectContext);
   for(const [key,value] of Object.entries(forwardedGoal()))q.set(key,value);
   return 'applications.html?'+q;
 }
@@ -75,6 +87,7 @@ function render(){
   for(const id of ['manage-link','welcome-manage','target-manage','draft-manage'])el(id).href=manageUrl();
   const projectItems=Object.values(FLOW.projects).map(p=>[p.id,projectLabel(p.id)]);
   optionList('target-project',projectItems,'选择申请项目');optionList('targets-project',projectItems,'全部项目');
+  if(!projectContextReady){const id=target()?.project_id||projectContext;if(FLOW.projects[id]){el('target-project').value=id;el('targets-project').value=id;}projectContextReady=true;}
   const stageItems=Object.entries(stages);optionList('targets-stage',stageItems,'全部阶段');
   optionList('context-stage-edit',stageItems);optionList('reply-stage',stageItems);
   if(!el('reply-stage').dataset.initialized){el('reply-stage').value='replied';el('reply-stage').dataset.initialized='true';}
@@ -150,11 +163,15 @@ async function refresh(){
   if(FLOW.targets[currentTarget])chosenMentor=FLOW.targets[currentTarget].mentor_id;
   if(!FLOW.targets[currentTarget]){
     const matches=Object.values(FLOW.targets).filter(t=>{
+      if(projectContext&&!FLOW.projects[projectContext])return false;
+      if(FLOW.projects[projectContext]&&t.project_id!==projectContext)return false;
       const p=FLOW.projects[t.project_id];
+      if(p.school_id&&p.dept_id){const scope={school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,program:p.program_name?(p.program_code||'')+'|'+p.program_name:''};return (!incomingMentor||t.mentor_id===incomingMentor)&&Object.entries(incomingGoal).every(([key,value])=>String(scope[key]||'')===String(value));}
       return (!incomingMentor||t.mentor_id===incomingMentor)&&(!incomingGoal.year||p.year===incomingGoal.year)&&
         (!(incomingGoal.degree||incomingGoal.route)||p.application_type===[goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' / '));
     });
-    currentTarget=(incomingGoal.track||incomingGoal.program||(incomingMentor&&matches.length!==1))?'':matches[0]?.id||'';
+    const precise=matches.length===1&&FLOW.projects[matches[0].project_id]?.school_id&&FLOW.projects[matches[0].project_id]?.dept_id;
+    currentTarget=((incomingGoal.track||incomingGoal.program)&&!precise||(incomingMentor&&matches.length!==1))?'':matches[0]?.id||'';
     if(!incomingMentor&&matches.length>1)currentTarget='';
     if(incomingMentor&&matches.length>1){currentView='targets';el('targets-query').value=personName(incomingMentor);}
   }

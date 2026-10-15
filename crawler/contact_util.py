@@ -11,6 +11,7 @@ from pathlib import Path
 from uuid import uuid4, uuid5, NAMESPACE_URL
 
 from crawler import workflow_util as core
+from crawler import project_util as projects
 
 STAGES = ('research', 'preparing', 'waiting', 'replied', 'materials', 'meeting', 'closed')
 PRIORITIES = ('high', 'normal', 'low')
@@ -24,6 +25,12 @@ ATTACHMENT_LIMIT = 20_000_000
 
 def core_view(data):
     result = {'version': 1, **{k: copy.deepcopy(data[k]) for k in core.KINDS}}
+    if data.get('version') == 3:
+        for entry in result['projects'].values():
+            if not isinstance(entry, dict):
+                raise ValueError('申请项目须为对象')
+            for key in projects.DEFAULTS:
+                entry.pop(key, None)
     for entry in result['communications'].values():
         if not isinstance(entry, dict):
             raise ValueError('沟通记录须为对象')
@@ -69,11 +76,16 @@ def upgrade(data, known_ids):
 
 
 def validate(data, known_ids):
-    if not isinstance(data, dict) or set(data) != {'version', *core.KINDS, *DEFAULTS} or type(data['version']) is not int or data['version'] != 2:
+    if not isinstance(data, dict) or set(data) != {'version', *core.KINDS, *DEFAULTS} or type(data['version']) is not int or data['version'] not in (2, 3):
         raise ValueError('联系工作流版本或结构错误')
     if any(not isinstance(data[k], dict) for k in (*core.KINDS, *DEFAULTS)):
         raise ValueError('工作流集合须为对象')
     core.validate_workflow(core_view(data), known_ids)
+    if data['version'] == 3:
+        for entry in data['projects'].values():
+            if set(entry) != {*core.DEFAULTS['projects'], *projects.DEFAULTS, 'id', 'created_at', 'updated_at'}:
+                raise ValueError('申请项目结构错误')
+            projects.structure(entry)
     pairs = set()
     for kind in DEFAULTS:
         for key, entry in data[kind].items():
@@ -143,10 +155,15 @@ def validate_attachments(items, data):
 def merge_core(data, result, known_ids):
     data = copy.deepcopy(data)
     old_events = data['communications']
+    old_projects = data['projects']
     for kind in core.KINDS:
         data[kind] = result[kind]
     for key, event in data['communications'].items():
         event.update(copy.deepcopy({field: old_events.get(key, EXTRA).get(field, default) for field, default in EXTRA.items()}))
+    if data['version'] == 3:
+        for key, entry in data['projects'].items():
+            entry.update(copy.deepcopy({field: old_projects.get(key, {}).get(field, default)
+                                        for field, default in projects.DEFAULTS.items()}))
     sync_targets(data)
     validate(data, known_ids)
     return data

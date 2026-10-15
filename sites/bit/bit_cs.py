@@ -14,6 +14,20 @@ _HASH_HREF = re.compile(r"[0-9a-f]{32}\.htm$")
 _LINE_LABEL = re.compile(
     r"^(职\s*称|电\s*话|联系电话|E\s*-\s*mail|电子邮件|邮箱|通信地址|办公地址|个人主页)\s*[:：]\s*(.*)$", re.I)
 _SUP_RE = re.compile(r"(博导|博士生导师|硕导|硕士生导师)")
+_RESEARCH_HEADING = re.compile(r"(?m)^科研方向[ \t]*\r?$")
+_NEXT_HEADING = re.compile(r"(?m)^(代表性学术成果|承担科研情况|所获奖励|社会兼职|备注)[ \t]*\r?$")
+
+
+def extract_research_direction(bio):
+    """Return an exact, bounded section from the BIT article text, or None."""
+    starts = list(_RESEARCH_HEADING.finditer(bio or ''))
+    if len(starts) != 1:
+        return None
+    end = _NEXT_HEADING.search(bio, starts[0].end())
+    if end is None:
+        return None
+    section = bio[starts[0].end():end.start()].strip()
+    return section if section and section not in ('无', '暂无', '待更新', '略') else None
 
 
 def iter_roster(cfg):
@@ -59,6 +73,9 @@ def parse_detail(cfg, html, url):
     art = soup.select_one(".article")
     if art is not None and len(art.get_text(strip=True)) > 60:
         out.setdefault("bio_raw", art.get_text("\n", strip=True))
+        direction = extract_research_direction(out['bio_raw'])
+        if direction:
+            out['research_direction_raw'] = direction
         m = _SUP_RE.search(art.get_text()[:120])
         if m:
             sup = sorted({("博导" if "博" in s else "硕导") for s in m.groups() if s})

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>申请工作台 · 导师库</title>
 <style>
-[hidden]{display:none!important}.section-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.section-tabs button[aria-selected="true"]{background:var(--accent);color:white}.section-status{min-height:24px;overflow-wrap:anywhere}.section-status.error{color:#b42318} .grid{display:block!important}.scope-note{padding:12px;background:#e8f0e9;border-radius:6px}
+[hidden]{display:none!important}#project-list{max-height:none;overflow:visible}.section-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.section-tabs button[aria-selected="true"]{background:var(--accent);color:white}.section-status{min-height:24px;overflow-wrap:anywhere}.section-status.error{color:#b42318} .grid{display:block!important}.scope-note{padding:12px;background:#e8f0e9;border-radius:6px}
 :root{--ink:#171e2b;--muted:#6b7280;--line:#e6e9ef;--accent:#2f54c8}
 *{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:var(--ink);font:14px -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 header{background:white;border-bottom:1px solid var(--line)}.top,main{max-width:1280px;margin:auto;padding:18px 20px}.top{display:flex;gap:18px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
@@ -32,15 +32,29 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </div>
 <p id="project-context" class="scope-note"></p><nav class="section-tabs" aria-label="项目工作分区"><button type="button" data-section="project" aria-selected="false">申请项目</button><button type="button" data-section="material" aria-selected="false">材料</button><button type="button" data-section="communication" aria-selected="false">沟通补录</button><button type="button" data-section="reminder" aria-selected="false">提醒</button></nav><div class="grid">
 <section class="panel" id="section-project"><h2>申请项目</h2>
+<div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="project-list"></div>
+<h3>新增 / 编辑项目</h3>
 <form id="project-form"><div class="fields">
 <label class="wide">项目名称<input id="project-name" required placeholder="例如：某校计算机学院夏令营"></label>
-<label>学校<input id="project-school"></label><label>院系<input id="project-college"></label>
-<label>申请类型<input id="project-type" placeholder="夏令营 / 预推免 / 统考"></label><label>入学年度<input id="project-year" type="number" min="2000" max="2100" placeholder="留空表示未知"></label>
+<div class="wide scope-note">结构化申请目标：请明确选择，留空表示未知。保存后目标才绑定项目；旧说明不参与政策匹配。</div>
+<label>入学年度<input id="project-year" type="number" min="2000" max="2100" placeholder="留空表示未知"></label>
+<label>目标学校<select id="project-school-id"></select></label><label>目标院系<select id="project-dept-id"></select></label>
+<label>学位<select id="project-degree"><option value="">未知</option><option value="master">硕士</option><option value="phd">博士</option></select></label>
+<label>招生渠道<select id="project-route"><option value="">未知</option><option value="recommend">推免</option><option value="exam">统考</option><option value="assessment">申请考核</option></select></label>
+<label>招生类别<select id="project-track"><option value="">未知</option><option value="ordinary">普通招生</option><option value="special">专项 / 特定项目</option></select></label>
+<label>正式专业 / 项目代码<input id="project-program-code" placeholder="未知可留空，勿填研究方向"></label>
+<label class="wide">正式专业 / 项目名称<input id="project-program-name" placeholder="按当年官方目录填写；未知可留空"></label>
+<details class="wide"><summary>旧说明 / 补充信息（不参与政策匹配）</summary><div class="fields"><label>学校说明<input id="project-school"></label><label>院系说明<input id="project-college"></label><label class="wide">申请类型说明<input id="project-type" placeholder="夏令营 / 预推免 / 统考"></label></div></details>
+<div class="wide" id="project-goal-preview"></div>
+<div class="wide"><h3>项目日期</h3><p class="muted">官方日期按原事件类型保存。考试、资格取得时间与个人计划分别显示；不自动转为报名截止或提醒。</p><div id="project-dates"></div></div>
+<label>个人计划名称<input id="project-date-label" placeholder="例如：个人计划：核对材料"></label><label>个人计划日期<input id="project-date-at" type="date"></label>
+<details class="wide"><summary>个人计划参考来源（可选，未经核验）</summary><label>参考链接<input id="project-date-source" type="url" placeholder="https://..."></label><label>参考原文<textarea id="project-date-quote"></textarea></label><label>原文定位<input id="project-date-locator"></label></details>
+<div class="wide"><button type="button" id="project-add-date">加入个人计划日期</button><div id="project-policy-dates"></div><p id="project-date-feedback" class="muted" role="status"></p></div>
 <label>申请状态<select id="project-status"><option value="planned">准备中</option><option value="submitted">已提交</option><option value="interview">面试中</option><option value="accepted">已录取</option><option value="rejected">未录取</option><option value="archived">归档</option></select></label>
 <div class="wide" data-mentor-picker="project" data-multiple="true"></div>
 <label class="wide">备注<textarea id="project-notes"></textarea></label></div>
 <div class="actions"><button class="primary" id="project-save">新增项目</button><button type="button" id="project-reset">清空表单</button></div></form>
-<div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="project-list"></div></section>
+</section>
 <section class="panel" id="section-material"><h2>材料与关联</h2>
 <p id="material-summary" class="scope-note"></p>
 <div class="actions"><button type="button" id="material-current">查看当前范围材料</button><button type="button" id="material-unassigned">查看未关联项目材料</button></div>
@@ -80,8 +94,9 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </div>
 </fieldset>
 </main>
-<script src="data.js?v=20261015-9"></script>
-<script src="admissions-data.js?v=20261015-9"></script>
-<script src="workflow.js?v=20261015-9"></script>
+<script src="data.js?v=20261015-10"></script>
+<script src="admissions-data.js?v=20261015-10"></script>
+<script src="admissions-core.js?v=20261015-10"></script>
+<script src="workflow.js?v=20261015-10"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@ function readCriteria(){return {year:el('intent-year').value?Number(el('intent-y
 function fillCriteria(p){el('intent-year').value=p.year??'';el('intent-degree').value=p.degree;el('intent-route').value=p.route;el('intent-topics').value=p.topics.join(', ');el('keep-unknown').checked=p.keep_unknown;for(const o of el('intent-schools').options)o.selected=p.schools.includes(o.value);for(const k of MODES)el('mode-'+k).value=p.modes[k];}
 async function api(path='',body,method='GET'){const r=await fetch('/api/discovery'+path,{method,headers:{'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});const d=await r.json();if(!r.ok)throw new Error(d.error||r.status);return d;}
 const lazy=new Map();
-function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-9';s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
+function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-10';s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
 async function apply(){
   const prefs=readCriteria(),group={value:el('intent-group').value,label:el('intent-group').selectedOptions[0].textContent};if(prefs.year!==null&&(!Number.isInteger(prefs.year)||prefs.year<2000||prefs.year>2100))throw new Error('请填写有效年度');
   el('review-panel').hidden=true;reviewMentor='';
@@ -39,16 +39,43 @@ function render(){
   const ruleLabels={research:'研究关键词',qualification:'导师资格',email:'公开邮箱',opportunity:'招生机会',eligibility:'申请资格'},modeLabels={hard:'必须',soft:'偏好',off:'不限制'};
   const rules=MODES.map(key=>`${ruleLabels[key]}：${projectScoped&&['opportunity','eligibility'].includes(key)?'待核实（项目范围暂不应用规则）':modeLabels[applied.modes[key]]}`).join('；');
   const unknownPolicy=applied.keep_unknown?'保留必须条件待核实的候选':'不保留必须条件待核实的候选';
+  el('intent-overview').textContent=`${appliedName?'姓名：'+appliedName:'姓名不限'} · ${applied.topics.length?applied.topics.join('、'):'研究关键词不限'} · ${schoolNames.length?schoolNames.join('、'):'学校不限'}${contextDept?' / '+(DATA.find(p=>p.school===contextSchool&&p.dept===contextDept)?.dept_name||contextDept):''} · ${appliedGroup.label} · ${applied.year??'年度未定'} / ${degreeLabels[applied.degree]} / ${routeLabels[applied.route]}`;
+  const hardRules=MODES.filter(key=>applied.modes[key]==='hard'&&(key!=='research'||applied.topics.length)&&(key!=='qualification'||applied.degree!=='any')&&!(projectScoped&&['opportunity','eligibility'].includes(key))).map(key=>ruleLabels[key]);
+  el('criteria-explanation-label').textContent=`筛选规则与说明 · 必须：${hardRules.join('、')||'无'} · ${applied.keep_unknown?'保留待核实':'排除必须条件待核实'}`;
   el('intent-summary').textContent=`姓名：${appliedName||'不限'}（与其他条件取交集） · 研究：${applied.topics.length?applied.topics.join('、'):'关键词不限'} · 学校：${schoolNames.length?schoolNames.join('、'):'不限'} · 院系方向：${appliedGroup.label}。申请目标：${applied.year??'年度未知'} · ${degreeLabels[applied.degree]} · ${routeLabels[applied.route]}。规则：${rules}。${unknownPolicy}。${projectScoped?'本项目的招生机会与申请资格不据此排除候选，也不借用旧结论排序。':''}按已命中规则数量排序，不表示录取概率。`;
   el('candidate-list').innerHTML=view.slice(0,limit).map(({p,result})=>{
-    const prov=window.MENTOR_COMPARE?.[p.page]?.provenance||{};
-    const proof=field=>prov[field]?.source&&/^https?:/.test(prov[field].source)?`<a href="${esc(prov[field].source)}" target="_blank" rel="noopener">字段出处</a> · ${esc(prov[field].fetched_at)}`:`<a href="${esc(detailUrl)}">查看官网资料</a>`;
+    const extra=window.MENTOR_COMPARE?.[p.page]||{},prov=extra.provenance||{};
     const policyGoal=publicScope(p),goal=publicScope(p);goal.set('mentor',p.page);
     const detailUrl='p/'+encodeURIComponent(p.page)+'.html?'+publicScope(p);
+    const proof=field=>{
+      const source=prov[field]?.source||p.detail_url||p.profile_url;
+      const origin=prov[field]?.origin,dateLabel=origin==='manual'?'人工录入于 ':origin==='crawled'?'采集于 ':'记录于 ';
+      return `${source&&/^https?:/.test(source)?`<a href="${esc(source)}" target="_blank" rel="noopener">官网来源</a>`:'官网来源未记录'} · ${prov[field]?.fetched_at?dateLabel+esc(prov[field].fetched_at):'采集日期未知'}`;
+    };
     const scopeCleared=(contextTrack||contextProgram)&&(contextSchool!==p.school||contextDept!==p.dept);
     const direction=window.MENTOR_COMPARE?.[p.page]?.research_direction_raw||p.research_direction_raw||'';
-    const shortDirection=direction.length>220?direction.slice(0,220)+'…':direction;
-    return `<article class="results-card" data-candidate="${esc(p.page)}"><h2><a href="${esc(detailUrl)}">${esc(p.name)}</a></h2><span class="badge">${esc(p.school_name)} · ${esc(p.dept_name)} · ${esc(p.title||'职称未知')}</span><p class="research-preview"><strong>研究方向</strong> · ${direction?esc(shortDirection):'暂未整理明确研究方向，可查看官网'}</p><div class="compact-checks"><span class="state">${esc(p.supervisor||'导师资格待查')}</span>${result.checks.some(c=>c.key==='email'&&c.mode!=='off')?'':`<span class="state">${p.email?'有公开邮箱':'邮箱待查'}</span>`}${result.checks.filter(c=>c.mode!=='off').map(c=>`<span class="state ${c.state}">${esc(c.label)}：${{pass:'命中',fail:'未命中',unknown:'待核实'}[c.state]}</span>`).join('')}</div><details class="candidate-proof"><summary>匹配依据与官方出处</summary>${direction?`<div class="evidence">官网研究方向：${esc(direction)}<br>${proof('research_direction_raw')}</div>`:''}<ul class="checks">${result.checks.filter(c=>c.mode!=='off').map(c=>`<li><span class="state ${c.state}">${{pass:'命中',fail:'未命中',unknown:'待核实'}[c.state]}</span>${esc(c.label)}${c.mode==='hard'?'（必须）':'（偏好）'}：${esc(c.detail)}${c.key==='qualification'?` · ${proof('supervisor')}`:c.key==='email'?` · ${proof('email')}`:''}</li>`).join('')}</ul>${result.evidence.map(e=>`<div class="evidence">${e.field==='bio_raw'?'简介检索片段（已转小写）':'官网研究方向'}：${esc(e.snippet)}<br>${proof(e.field)}</div>`).join('')}${result.review?`<p class="note">人工核验 ${esc(result.review.checked_at)}：${esc(result.review.quote)} ${/^https?:/.test(result.review.source_url)?`<a href="${esc(result.review.source_url)}" target="_blank" rel="noopener">核验来源</a>`:''}</p>`:''}</details>${scopeCleared?'<p class="note">此导师不在原项目院系，继续时会清除原专业／专项范围，请重新核对招生要求。</p>':''}<div class="actions"><a href="desk.html?${esc(goal.toString())}">准备联系 →</a><a href="${esc(detailUrl)}">完整资料</a><a href="admissions.html?${esc(policyGoal.toString())}">学校与招生要求</a><a href="notices.html?${esc(policyGoal.toString())}">查招生通知</a><button type="button" data-compare="${esc(p.page)}" aria-pressed="${compareSelection.includes(p.page)}">${compareSelection.includes(p.page)?'移出对比':'加入对比'}</button><button data-review="${esc(p.page)}" ${API_OK&&!projectScoped?'':'disabled'}>核验申请机会</button></div></article>`;
+    const preview=direction||extra.bio_excerpt||'',previewField=direction?'research_direction_raw':'bio_raw';
+    const shortPreview=preview.length>220?preview.slice(0,220)+'…':preview;
+    const checks=result.checks.filter(c=>c.mode!=='off');
+    return `<article class="results-card" data-candidate="${esc(p.page)}">
+      <h2><a href="${esc(detailUrl)}">${esc(p.name)}</a></h2>
+      <p class="badge">${esc(p.school_name)} · ${esc(p.dept_name)} · ${esc(p.title||'职称未知')}${p.supervisor?' · '+esc(p.supervisor):''}</p>
+      <p class="research-preview">${preview?`<strong>${direction?'研究方向':'官网简介摘录'}</strong><br>${esc(shortPreview)}`:'资料待补充，可查看导师资料与官网。'}</p>
+      <p class="preview-source note">${proof(previewField)}</p>
+      ${p.email?`<p class="public-email"><span class="muted">公开邮箱</span> ${esc(p.email)}</p>`:''}
+      <div class="actions card-primary-actions"><a href="${esc(detailUrl)}">查看资料 →</a><button type="button" data-compare="${esc(p.page)}" aria-pressed="${compareSelection.includes(p.page)}">${compareSelection.includes(p.page)?'移出对比':'加入对比'}</button></div>
+      <details class="candidate-proof"><summary>筛选依据与来源</summary>
+        ${direction?`<div class="evidence">官网研究方向：${esc(direction)}<br>${proof('research_direction_raw')}</div>`:''}
+        ${checks.length?`<ul class="checks">${checks.map(c=>`<li><strong>${esc(c.label)}${c.mode==='hard'?'（必须）':'（偏好）'}</strong> · ${{pass:'命中',fail:'未命中',unknown:'待核实'}[c.state]}<br>${esc(c.detail)}${c.key==='qualification'?`<br>${proof('supervisor')}`:c.key==='email'?`<br>${proof('email')}`:''}</li>`).join('')}</ul>`:'<p class="note">当前未启用筛选规则。</p>'}
+        ${result.evidence.map(e=>`<div class="evidence">${e.field==='bio_raw'?'简介检索片段（已转小写）':'官网研究方向'}：${esc(e.snippet)}<br>${proof(e.field)}</div>`).join('')}
+        ${result.review?`<p class="note">人工核验 ${esc(result.review.checked_at)}：${esc(result.review.quote)} ${/^https?:/.test(result.review.source_url)?`<a href="${esc(result.review.source_url)}" target="_blank" rel="noopener">核验来源</a>`:''}</p>`:''}
+      </details>
+      <details class="candidate-application"><summary>联系与申请</summary>
+        ${scopeCleared?'<p class="note">此导师不在原项目院系，继续时会清除原专业／专项范围，请重新核对招生要求。</p>':''}
+        <p class="note">招生信息请到具体项目核对。</p>
+        <div class="actions"><a href="desk.html?${esc(goal.toString())}">准备联系 →</a><a href="admissions.html?${esc(policyGoal.toString())}">学校与招生要求</a><a href="notices.html?${esc(policyGoal.toString())}">查招生通知</a><button data-review="${esc(p.page)}" ${API_OK&&!projectScoped?'':'disabled'}>核验申请机会</button></div>
+      </details>
+    </article>`;
   }).join('')||'<div class="empty">暂无候选。姓名与研究关键词、学校及其他条件取交集；可清除姓名或研究关键词。也可以放宽必须条件、保留待核实记录，或修改研究关键词。文字未命中不代表真实研究不适合。</div>';
   el('more-candidates').hidden=limit>=view.length;
 }

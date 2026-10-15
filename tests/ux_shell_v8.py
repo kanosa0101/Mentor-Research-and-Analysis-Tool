@@ -12,6 +12,7 @@ with sync_playwright() as pw:
  if '--baseline' not in sys.argv:
   page.route('**/discovery.html*',lambda r:r.fulfill(body=env.get_template('discovery.html.j2').render(),content_type='text/html'))
  page.goto(BASE+'/discovery.html');page.wait_for_function('window.DISCOVERY_READY')
+ page.locator('#criteria-explanation summary').click()
  box=page.locator('#apply-criteria').bounding_box()
  assert box['y']+box['height']<844, f'Primary action below viewport: {box}'
  assert page.locator('.site-header nav > a').count()==4
@@ -43,6 +44,7 @@ with sync_playwright() as pw:
  page.evaluate("document.querySelector('#intent-group').value='computer';render()")
  assert page.locator('#intent-summary').inner_text()==applied_summary
  page.goto(BASE+'/discovery.html');page.wait_for_function('window.DISCOVERY_READY')
+ page.locator('#criteria-explanation summary').click()
  summary=page.locator('#intent-summary').inner_text()
  page.locator('#intent-topics').fill('graph')
  assert page.locator('#intent-summary').inner_text()==summary
@@ -66,6 +68,7 @@ with sync_playwright() as pw:
  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
  page.screenshot(path='cache/ux_v8/shell/discovery-after-390.png')
  page.set_viewport_size({'width':1440,'height':900});page.goto(BASE+'/discovery.html');page.wait_for_function('window.DISCOVERY_READY')
+ page.locator('#criteria-explanation summary').click()
  assert page.locator('#apply-criteria').bounding_box()['y']<900
  page.screenshot(path='cache/ux_v8/shell/discovery-after-1440.png')
  # All API traffic is mocked; tests never touch real private records.
@@ -99,6 +102,7 @@ with sync_playwright() as pw:
  # Unsupported scope retains unknown and never allows review POST.
  page.goto(BASE+'/discovery.html?school=bit&dept=cs&year=2027&degree=master&route=exam&track=special&program=085400%7Ctest')
  page.wait_for_function('window.DISCOVERY_READY')
+ page.locator('#criteria-explanation summary').click()
  href=page.locator('.results-card .actions a').first.get_attribute('href')
  assert all(key in href for key in ['school=bit','dept=cs','year=2027','track=special','program='])
  assert page.locator('[data-review]').first.is_disabled()
@@ -111,6 +115,7 @@ with sync_playwright() as pw:
   for file in ['data.js','compare-data.js','search.js','discovery.js','discovery-core.js','ui.css']:shutil.copyfile(Path('site')/file,folder/file)
   (folder/'discovery.html').write_text(env.get_template('discovery.html.j2').render(),encoding='utf8')
   page.goto((folder/'discovery.html').as_uri());page.wait_for_function('window.DISCOVERY_READY')
+  page.locator('#criteria-explanation summary').click()
   assert page.locator('#save-criteria').is_disabled()
   assert page.locator('#apply-criteria').is_enabled()
   assert page.locator('.results-card').count()>0

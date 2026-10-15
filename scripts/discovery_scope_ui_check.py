@@ -92,6 +92,7 @@ def main():
                     page.wait_for_function('window.DISCOVERY_READY === true')
                     assert page.locator('[data-candidate]').count() == 1
                     assert page.locator('[data-review]').first.is_enabled()
+                    page.locator('.candidate-application summary').first.click()
                     page.locator('[data-review]').first.click()
                     page.fill('#review-quote', '更新通用范围结论')
                     page.locator('#review-confirmed').check()

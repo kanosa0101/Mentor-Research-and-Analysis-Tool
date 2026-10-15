@@ -1,5 +1,7 @@
 # 架构文档（ARCHITECTURE）
 
+> 2026-10-15 当前申请工作流为v3：保留旧自由文本与ID/关联，增加结构化申请目标和带来源的时间项；v1/v2 GET仅在内存兼容，不自动改写真实私人文件。契约见 [PROJECT_MODEL_V0.10_2026-10-15.md](PROJECT_MODEL_V0.10_2026-10-15.md)，交付状态与验证边界见 [DELIVERY_PROJECT_TARGET_V0.10_2026-10-15.md](DELIVERY_PROJECT_TARGET_V0.10_2026-10-15.md)。下文早期架构用于历史说明。
+
 > 系统组成、数据流、数据模型、抓取框架、站点范式与设计不变量。
 > 配套：`REQUIREMENTS.md`（需求与决策）、`HANDOVER.md`（开发手册：现状/踩坑/操作）。代码级踩坑细节都在 HANDOVER §10。
 

@@ -17,7 +17,7 @@ from scripts.serve import create_server
 def render_test_site(root):
     site = root / 'site'
     site.mkdir()
-    for name in ('data.js', 'admissions-data.js', 'ui.css', 'desk.js', 'workflow.js'):
+    for name in ('data.js', 'admissions-data.js', 'admissions-core.js', 'ui.css', 'desk.js', 'workflow.js'):
         shutil.copyfile(ROOT / 'site' / name, site / name)
     env = Environment(loader=FileSystemLoader(ROOT / 'site/templates'))
     for name in ('desk', 'applications'):

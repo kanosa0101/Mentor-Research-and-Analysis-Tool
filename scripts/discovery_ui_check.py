@@ -39,6 +39,7 @@ def main():
                     page.wait_for_function('document.querySelector("#discovery-message").textContent.includes("已保存")')
                     assert page.locator('[data-candidate]').count() > 0
                     pid = page.locator('[data-candidate]').first.get_attribute('data-candidate')
+                    page.locator('.candidate-application summary').first.click()
                     page.locator('[data-review]').first.click()
                     page.select_option('#review-opportunity', 'pass')
                     page.fill('#review-source', 'https://example.edu/notice/2027')
@@ -71,6 +72,7 @@ def main():
                     page.locator('#keep-unknown').uncheck()
                     page.click('#apply-criteria')
                     page.wait_for_function('view.length === 1')
+                    page.locator('.candidate-application summary').first.click()
                     page.locator('[data-candidate] a').filter(has_text='准备联系').click()
                     page.wait_for_url('**/desk.html?*')
                     page.wait_for_function('window.CONTACT_READY === true')
@@ -79,14 +81,29 @@ def main():
                     page.click('#manage-link')
                     page.wait_for_url('**/applications.html?*')
                     assert page.input_value('#project-year') == '2027'
+                    assert page.input_value('#project-degree') == 'master' and page.input_value('#project-route') == 'recommend'
                     assert '硕士' in page.input_value('#project-type') and '推免' in page.input_value('#project-type')
+                    page.locator('#project-form details').filter(has=page.locator('#project-type')).locator('summary').click()
                     page.fill('#project-name', '临时非推免项目')
                     page.fill('#project-type', '硕士 / 统考（非推免）')
                     page.click('#project-save')
                     page.wait_for_function('Object.keys(WORKFLOW.projects).length === 1')
+                    project = page.evaluate('Object.keys(WORKFLOW.projects)[0]')
+                    assert page.evaluate('(id)=>WORKFLOW.projects[id].route', project) == 'recommend', '旧文本不能反推结构化渠道'
+                    page.locator('[data-edit-project="' + project + '"]').click()
+                    page.select_option('#project-route', 'exam')
+                    page.select_option('#project-track', 'ordinary')
+                    page.click('#project-save')
+                    page.wait_for_function('(id)=>WORKFLOW.projects[id].route === "exam"', arg=project)
+                    page.locator('[data-project-requirements="' + project + '"]').click()
+                    project_contact = page.locator('article').filter(has=page.locator('[data-project-requirements="' + project + '"]')).get_by_role('link', name='到联系人工作台').get_attribute('href')
                     page.click('#back-desk')
                     page.wait_for_function('window.CONTACT_READY === true')
-                    assert page.evaluate('currentTarget') == '', '非推免项目不能自动匹配推免目标'
+                    assert page.evaluate('currentTarget') == '', '无显式项目时，推免来访不能自动认领统考目标'
+                    page.goto(base + '/' + project_contact, wait_until='networkidle')
+                    page.wait_for_function('window.CONTACT_READY === true')
+                    assert page.evaluate('(id)=>!target() || target().project_id === id', project), '显式项目不得借用其他项目目标'
+                    assert page.evaluate('forwardedGoal().route') == 'exam', '保存的结构化渠道须随显式项目延续'
                     page.goto(base + '/notices.html?school=unknown/cs')
                     assert page.input_value('#school') == 'unknown/cs'
                     assert '未接入' in page.locator('#notice-context').inner_text()

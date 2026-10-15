@@ -112,6 +112,8 @@ def main():
                     assert page.locator('#reply-content').input_value() == '只属于第一位目标的回复'
                     page.once('dialog', lambda d: d.accept())
                     page.click('[data-view="targets"]')
+                    # The return URL binds project A; explicitly show all projects before switching.
+                    page.select_option('#targets-project', '')
                     page.locator('[data-target="' + other_target + '"]').click()
                     assert page.locator('#reply-content').input_value() == ''
                     page.click('[data-view="targets"]')
@@ -157,7 +159,7 @@ def main():
                         page.click('#desk-backup')
                     backup = root / 'backup.json'
                     download.value.save_as(str(backup))
-                    assert json.loads(backup.read_text(encoding='utf-8'))['version'] == 2
+                    assert json.loads(backup.read_text(encoding='utf-8'))['version'] == 3
                     (private / 'workflow.yaml').write_text('broken: [', encoding='utf-8')
                     page.reload(wait_until='networkidle')
                     page.wait_for_function('document.querySelector("#desk-message").textContent.includes("无法读取")')

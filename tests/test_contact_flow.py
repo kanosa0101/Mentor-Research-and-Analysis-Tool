@@ -37,7 +37,7 @@ class ContactFlowTests(unittest.TestCase):
         before = self.outreach.with_name('workflow.yaml').read_bytes()
         code, data = self.request('/api/workflow')
         self.assertEqual(code, 200)
-        self.assertEqual(data['version'], 2)
+        self.assertEqual(data['version'], 3)
         self.assertEqual(len(data['targets']), 1)
         self.assertEqual(next(iter(data['targets'].values()))['project_id'], project['id'])
         self.assertEqual(before, self.outreach.with_name('workflow.yaml').read_bytes())
@@ -153,7 +153,7 @@ class ContactFlowTests(unittest.TestCase):
         self.assertEqual(self.request('/api/workflow/restore', {'version': 1, 'workflow': core}, 'POST')[0], 200)
         self.draft()
         backup = self.request('/api/workflow/backup')[1]
-        self.assertEqual(backup['version'], 2)
+        self.assertEqual(backup['version'], 3)
         before = self.outreach.with_name('workflow.yaml').read_bytes()
         self.assertEqual(self.request('/api/workflow/restore', backup, 'POST')[0], 200)
         self.assertEqual(before, self.outreach.with_name('workflow.yaml').read_bytes())

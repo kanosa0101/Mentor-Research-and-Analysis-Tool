@@ -109,7 +109,7 @@ a:hover{text-decoration:underline}
 .foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
 @media(max-width:800px){ #cmpbtn{right:14px;bottom:14px;padding:10px 16px}.tblcard table{min-width:1050px}}
 </style>
-<link rel="stylesheet" href="ui.css?v=20261015-9"></head>
+<link rel="stylesheet" href="ui.css?v=20261015-10"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
@@ -175,7 +175,7 @@ a:hover{text-decoration:underline}
   <div class="foot">数据来自各院系官网原始页面 · 每条字段可在详情页查看出处与抓取日期</div>
 </div>
 <button id="cmpbtn">对比<span class="n">0</span>位导师</button>
-<script src="data.js?v=20261015-9"></script>
+<script src="data.js?v=20261015-10"></script>
 <script>
 const DATA = window.MENTOR_DATA;
 let view = [...DATA], sortK = null, sortAsc = true;
@@ -188,7 +188,7 @@ let OUT = {}, API_OK = false;
 let researchSearch = null;
 function loadResearchSearch(){
   if(!researchSearch) researchSearch = new Promise((resolve, reject)=>{
-    const script = document.createElement("script"); script.src = "search.js?v=20261015-9";
+    const script = document.createElement("script"); script.src = "search.js?v=20261015-10";
     script.onload = resolve;
     script.onerror = ()=>{researchSearch=null;script.remove();reject(new Error("研究材料加载失败，请刷新后重试"));};
     document.head.appendChild(script);

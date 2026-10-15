@@ -6,7 +6,7 @@ main{margin:auto;padding:24px 22px}.intro{max-width:850px;line-height:1.8}.disco
 
 #discovery-message:empty{display:none}.intro{margin-bottom:20px}.criteria h2{margin-top:0}.criteria>label:first-of-type{margin-top:0}#advanced-criteria{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}#advanced-criteria summary,.candidate-proof summary{cursor:pointer;color:var(--accent);line-height:1.7}#discovery-results{scroll-margin-top:115px}.research-preview{line-height:1.75;margin:12px 0}.compact-checks{display:flex;flex-wrap:wrap;gap:6px}.compact-checks .state{margin:0}.candidate-proof{margin-top:12px}.candidate-proof .checks{margin-top:8px}.results-card .actions{margin-bottom:0}.results-card h2 a{text-decoration:none}.results-card .actions>a:first-child{font-weight:600}#criteria-dirty{background:#fbf0dc;padding:8px;border-radius:5px}.results-card .badge{display:block;line-height:1.6}.criteria .actions{margin-top:12px}.compare-chosen{background:var(--soft)}
 @media(max-width:850px){main{padding-top:14px}main>h1{font-size:25px;margin:14px 0 10px}.intro{font-size:13px;line-height:1.7;margin-top:0}.discovery-layout{gap:18px}.criteria>h2{font-size:18px}.results-card .actions{gap:10px}.results-bar .toolbar{font-size:12px}.toolbar button{padding:6px 8px}}
-</style><link rel="stylesheet" href="ui.css?v=20261015-9"></head><body>
+#criteria-explanation{font-size:12px;line-height:1.7;margin:0 0 16px;color:var(--muted)}#criteria-explanation summary{cursor:pointer}.candidate-application{margin-top:8px}.candidate-application summary{cursor:pointer;color:var(--accent);line-height:1.7}.preview-source{margin:6px 0}.public-email{font-size:13px;line-height:1.7;margin:8px 0}.results-card .badge{margin:0}.results-card .card-primary-actions{margin:14px 0}.candidate-proof .checks li{border-bottom:1px solid var(--line);padding:9px 0}.candidate-proof .checks li:last-child{border-bottom:0}</style><link rel="stylesheet" href="ui.css?v=20261015-10"></head><body>
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="discovery.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
@@ -34,7 +34,7 @@ main{margin:auto;padding:24px 22px}.intro{max-width:850px;line-height:1.8}.disco
 
 
 </div></header><main>
-<h1>找到值得了解的导师</h1><p class="intro muted">输入导师姓名或研究关键词，查看方向原文与匹配依据。招生机会和申请资格仍需核实。</p>
+<h1>找到值得了解的导师</h1><p class="intro muted">输入导师姓名或研究关键词，先了解研究与官网资料，再对比值得继续联系的导师。招生信息请到具体项目核对。</p>
 <div id="discovery-message" role="status" aria-live="polite"></div>
 <p id="unit-context" class="note" hidden></p><button id="clear-unit-context" type="button" hidden>清除院系范围</button>
 <div id="project-context" class="evidence" hidden></div><p id="generic-context" class="note" hidden><a id="generic-discovery" href="discovery.html">重新打开通用找导师 →</a>（明确退出当前专业／项目范围）</p>
@@ -55,6 +55,6 @@ main{margin:auto;padding:24px 22px}.intro{max-width:850px;line-height:1.8}.disco
 <label>官方来源 URL<input id="review-source" type="url" placeholder="https://..."></label><label>支持结论的原文 / 条件说明<textarea id="review-quote"></textarea></label>
 <label class="check"><input id="review-confirmed" type="checkbox" required>我已核对适用年度/渠道，确认上述记录与原文一致</label><div class="actions"><button class="primary" id="review-save" disabled>保存核验记录</button></div></form></section>
 </aside><section id="discovery-results" tabindex="-1"><div id="compare-selection" class="context-actions" hidden><span id="compare-count"></span><a id="compare-open" href="compare.html">查看对比</a><span class="note">已选导师可随时查看；2–5 位并排对比</span></div><div class="results-bar"><strong id="discovery-count"></strong><div class="toolbar"><button id="discovery-backup" disabled>条件与核验备份</button><button id="discovery-restore" disabled>恢复备份</button><input id="discovery-file" type="file" accept=".json" hidden></div></div>
-<p id="intent-summary" class="note"></p><div id="candidate-list"></div><div class="actions"><button id="more-candidates" hidden>再显示20位</button><a href="index.html">查看全量表 →</a></div></section></div>
+<p id="intent-overview" class="note"></p><details id="criteria-explanation"><summary id="criteria-explanation-label">筛选规则与说明</summary><p id="intent-summary" class="note"></p></details><div id="candidate-list"></div><div class="actions"><button id="more-candidates" hidden>再显示20位</button><a href="index.html">查看全量表 →</a></div></section></div>
 <p class="note">地区/校区、经费、指导风格及详细报名条件尚未统一核验，暂不作为自动过滤字段。可在联系时明确询问；导师资格不等于当前名额。</p>
-</main><script src="data.js?v=20261015-9"></script><script src="discovery-core.js?v=20261015-9"></script><script src="discovery.js?v=20261015-9"></script></body></html>
+</main><script src="data.js?v=20261015-10"></script><script src="discovery-core.js?v=20261015-10"></script><script src="discovery.js?v=20261015-10"></script></body></html>

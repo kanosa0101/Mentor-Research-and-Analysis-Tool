@@ -41,6 +41,7 @@ def main():
                         page.fill('#' + prefix + '-mentor-query', pid)
                         page.locator('#' + prefix + '-mentor-results button').first.click()
                     page.fill('#project-name', '浏览器验收项目')
+                    page.locator('#project-form details').filter(has=page.locator('#project-school')).locator('summary').click()
                     page.fill('#project-school', '测试学校')
                     page.fill('#project-year', '2027')
                     choose_mentor('project')
