@@ -107,12 +107,13 @@ a:hover{text-decoration:underline}
 .pager select{border:1px solid var(--line);border-radius:6px;padding:4px 6px;font-size:12.5px;background:#fff}
 .pager .info{margin-right:auto}
 .foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
+@media(max-width:800px){ #cmpbtn{right:14px;bottom:14px;padding:10px 16px}.tblcard table{min-width:1050px}}
 </style>
 {% include '_ui_head.html.j2' %}</head>
 <body>
 {% include '_nav.html.j2' %}
 <div class="page-heading"><h1>全量导师库</h1></div><div class="site-meta"><span>{{ profs|length }} 导师 · {{ schools|length }} 校 · {{ depts|length }} 院系</span><span>来源最晚抓取 {{ fresh or '未知' }}</span><span>来源超过 30 天或未知：{{ stale }} 人</span></div>
-<div class="wrap">
+<div class="wrap"><div class="context-actions"><a href="discovery.html">按研究条件找导师</a><a href="compare.html" id="selection-link">查看对比选择</a><span id="selection-summary" class="note"></span></div>
   <div class="bar">
     <div class="fld"><input id="q" placeholder="搜索姓名 / 研究方向 / 简介 / 邮箱…"></div>
     <div class="fld"><label>学校</label><select id="f-school"><option value="">全部</option>
@@ -136,7 +137,7 @@ a:hover{text-decoration:underline}
     <span class="count" id="count"></span>
   </div>
 
-  <div class="tblcard">
+  <p class="table-hint">勾选姓名前的复选框，选择 2–5 位导师对比。窄屏可在表格内左右滑动。</p><div class="tblcard" tabindex="0" aria-label="导师目录，可左右滚动">
   <table id="tbl">
     <thead><tr id="thead-row"></tr></thead>
     <tbody></tbody>
@@ -147,7 +148,7 @@ a:hover{text-decoration:underline}
   <div class="foot">数据来自各院系官网原始页面 · 每条字段可在详情页查看出处与抓取日期</div>
 </div>
 <button id="cmpbtn">对比<span class="n">0</span>位导师</button>
-<script src="data.js"></script>
+<script src="data.js?v=20261015-8"></script>
 <script>
 const DATA = window.MENTOR_DATA;
 let view = [...DATA], sortK = null, sortAsc = true;
@@ -160,7 +161,7 @@ let OUT = {}, API_OK = false;
 let researchSearch = null;
 function loadResearchSearch(){
   if(!researchSearch) researchSearch = new Promise((resolve, reject)=>{
-    const script = document.createElement("script"); script.src = "search.js";
+    const script = document.createElement("script"); script.src = "search.js?v=20261015-8";
     script.onload = resolve;
     script.onerror = ()=>{researchSearch=null;script.remove();reject(new Error("研究材料加载失败，请刷新后重试"));};
     document.head.appendChild(script);
@@ -195,6 +196,7 @@ function updateCmpBtn(){
   const b = el("cmpbtn");
   b.style.display = SEL.size ? "flex" : "none";
   b.querySelector(".n").textContent = SEL.size;
+  el("selection-summary").textContent = SEL.size ? `已选 ${SEL.size} 位导师${SEL.size<2?'，再选一位即可对比':''}` : "尚未选择导师";
   b.disabled = SEL.size < 2;
   b.title = SEL.size < 2 ? "再勾选至少一位（最多 5 位）" : "并排对比所选导师";
 }
@@ -337,7 +339,7 @@ function render(){
   const start = (page - 1) * pageSize;
   const rows = view.slice(start, start + pageSize);
   const cells = p => ({
-    sel: `<td style="text-align:center"><input type="checkbox" data-sel="${p.page}" ${SEL.has(p.page)?"checked":""}></td>`,
+    sel: `<td style="text-align:center"><input type="checkbox" aria-label="选择${esc(p.name)}加入对比" data-sel="${p.page}" ${SEL.has(p.page)?"checked":""}></td>`,
     name: `<td class="name-cell" title="${esc(p.name)}"><a href="p/${p.page}.html">${esc(p.name)}</a></td>`,
     school: `<td title="${esc(p.school_name)}">${esc(p.school_name)}</td>`,
     title: `<td title="${esc(p.title||"官网未提供")}">${p.title?esc(p.title):'<span class="missing">官网未提供</span>'}</td>`,

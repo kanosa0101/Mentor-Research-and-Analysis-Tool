@@ -7,11 +7,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from playwright.sync_api import sync_playwright
-from scripts.serve import SITE, create_server
+from scripts.serve import create_server
+from scripts.workflow_v8_ui_check import render_test_site
 
 
 def main():
-    out = Path('cache/application_ui')
+    out = Path('cache/ux_v8/workflow/application')
     out.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
@@ -20,7 +21,8 @@ def main():
         file = materials / 'letter.md'
         file.write_text('私有材料原文', encoding='utf-8')
         private = root / 'private'
-        server = create_server(outreach=private / 'outreach.yaml', port=0)
+        test_site = render_test_site(root)
+        server = create_server(site=test_site, outreach=private / 'outreach.yaml', port=0)
         worker = threading.Thread(target=server.serve_forever, daemon=True)
         worker.start()
         base = 'http://127.0.0.1:' + str(server.server_port)
@@ -49,6 +51,7 @@ def main():
                     page.select_option('#project-status', 'submitted')
                     page.click('#project-save')
                     page.wait_for_function('(id) => WORKFLOW.projects[id].status === "submitted"', arg=project)
+                    page.click('[data-section="material"]')
                     page.fill('#scan-root', str(materials))
                     page.click('#scan-save')
                     page.wait_for_function('Object.keys(WORKFLOW.materials).length === 1')
@@ -62,6 +65,7 @@ def main():
                     page.wait_for_function('(Object.values(WORKFLOW.materials)[0].project_ids || []).length === 1')
                     assert page.locator('#material-list script').count() == 0
                     assert '<script>关联草稿</script>' in page.locator('#material-list').inner_text()
+                    page.click('[data-section="communication"]')
                     choose_mentor('communication')
                     page.select_option('#communication-project', project)
                     page.select_option('#communication-materials', mid)
@@ -70,12 +74,14 @@ def main():
                     page.select_option('#communication-kind', 'draft')
                     page.click('#communication-save')
                     page.wait_for_function('Object.keys(WORKFLOW.communications).length === 1')
+                    page.click('[data-section="communication"]')
                     choose_mentor('communication')
                     page.fill('#communication-subject', '实际发送记录')
                     page.select_option('#communication-kind', 'sent')
                     page.click('#communication-save')
                     page.wait_for_function('Object.keys(WORKFLOW.communications).length === 2')
                     assert page.locator('#communication-list img').count() == 0
+                    page.click('[data-section="reminder"]')
                     for title in ('准备材料', '后续联系'):
                         page.fill('#reminder-title', title)
                         page.fill('#reminder-due', '2026-01-01')
@@ -99,6 +105,7 @@ def main():
                     page.wait_for_function('window.WORKFLOW_READY === true')
                     assert page.locator('#communication-list article').count() == 2
                     file.unlink()
+                    page.click('[data-section="material"]')
                     page.fill('#scan-root', str(materials))
                     page.click('#scan-save')
                     page.wait_for_function('Object.values(WORKFLOW.materials)[0].missing === true')
@@ -111,13 +118,14 @@ def main():
                     assert len(data['workflow']['communications']) == 2
                     page.on('dialog', lambda d: d.accept())
                     page.locator('#workflow-restore-file').set_input_files(str(backup))
-                    page.wait_for_function('document.querySelector("#message").textContent.includes("已恢复")')
+                    page.wait_for_function('document.body.textContent.includes("已恢复工作台备份")')
                     page.set_viewport_size({'width': 390, 'height': 844})
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), '手机页面横向溢出'
                     page.screenshot(path=str(out / 'mobile.png'), full_page=True)
-                    page.goto(base + '/applications.html?mentor=' + pid, wait_until='networkidle')
+                    page.goto(base + '/applications.html?mentor=' + pid + '&panel=history', wait_until='networkidle')
                     page.wait_for_function('window.WORKFLOW_READY === true')
                     assert page.locator('#context-mentor').inner_text()
+                    assert 'panel=history' in page.locator('#back-desk').get_attribute('href')
                     assert page.locator('#communication-list article').count() == 2
                     assert not (private / 'outreach.yaml').exists(), '不应隐式修改套磁状态'
                     (private / 'workflow.yaml').write_text('version: [broken]\n', encoding='utf-8')
@@ -125,11 +133,11 @@ def main():
                     page.wait_for_function('document.querySelector("#message").textContent.includes("无法读取")')
                     assert page.locator('#workflow-restore').is_enabled(), '索引损坏时仍应允许恢复'
                     page.locator('#workflow-restore-file').set_input_files(str(backup))
-                    page.wait_for_function('document.querySelector("#message").textContent.includes("已恢复")')
+                    page.wait_for_function('document.body.textContent.includes("已恢复工作台备份")')
                     assert page.locator('#communication-list article').count() == 2
                     assert not errors, errors
                     offline = browser.new_page()
-                    offline.goto((SITE / 'applications.html').as_uri())
+                    offline.goto((test_site / 'applications.html').as_uri())
                     assert offline.locator('#service-hint').is_visible()
                     assert offline.locator('#project-save').is_disabled()
                     print('PASS: projects/material links/append history/multiple reminders/persistence/backup/mobile/file mode')

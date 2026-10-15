@@ -28,6 +28,7 @@ def main():
                     page.on('pageerror', lambda e: errors.append(str(e)))
                     page.goto(base + '/discovery.html', wait_until='networkidle')
                     page.wait_for_function('window.DISCOVERY_READY === true')
+                    page.locator('#advanced-criteria summary').click()
                     assert not (private / 'discovery.yaml').exists()
                     page.fill('#intent-year', '2027')
                     page.select_option('#intent-degree', 'master')
@@ -64,6 +65,7 @@ def main():
                     download.value.save_as(str(backup))
                     page.reload(wait_until='networkidle')
                     page.wait_for_function('window.DISCOVERY_READY === true')
+                    page.locator('#advanced-criteria summary').click()
                     assert page.input_value('#intent-year') == '2027'
                     assert page.evaluate('Object.keys(PRIVATE.reviews).length') == 1
                     page.locator('#keep-unknown').uncheck()
@@ -73,6 +75,7 @@ def main():
                     page.wait_for_url('**/desk.html?*')
                     page.wait_for_function('window.CONTACT_READY === true')
                     assert page.evaluate('new URLSearchParams(location.search).get("year")') == '2027'
+                    page.locator('.site-tools summary').click()
                     page.click('#manage-link')
                     page.wait_for_url('**/applications.html?*')
                     assert page.input_value('#project-year') == '2027'
@@ -93,7 +96,12 @@ def main():
                     for file in ['discovery.html', 'index.html', 'p/' + pid + '.html', 'compare.html', 'notices.html', 'admissions.html', 'desk.html', 'applications.html', 'board.html']:
                         page.goto(base + '/' + file, wait_until='domcontentloaded')
                         assert page.locator('header.site-header').count() == 1, file
-                        assert page.locator('header.site-header nav a').count() == 8, file
+                        assert page.locator('header.site-header nav > a').count() == 4, file
+                        assert page.locator('.site-tools-menu a').count() == 4, file
+                        if file == 'desk.html':
+                            assert page.locator('#manage-link').count() == 1
+                        if file == 'applications.html':
+                            assert page.locator('#back-desk').count() == 1
                         assert page.evaluate('getComputedStyle(document.body).backgroundColor') == 'rgb(243, 244, 240)', file
                         page.set_viewport_size({'width': 390, 'height': 844})
                         page.screenshot(path=str(out / ('mobile-' + file.split('/')[0].replace('.html', '') + '.png')), full_page=False)

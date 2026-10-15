@@ -61,6 +61,7 @@ def main():
                     material = page.locator('[data-checklist-field="materials"] [data-checklist-policy="tsinghua-cs-2027-085400-exam"]')
                     assert material.locator('a[target="_blank"]').all_text_contents() == ['预报名材料PDF']
                     assert material.locator('a[target="_blank"]').get_attribute('href') == secondary_url
+                    page.locator('[data-policy="tsinghua-cs-2027-085400-exam"] .policy-body > summary').click()
                     policy_material = page.locator('[data-policy="tsinghua-cs-2027-085400-exam"] .policy-field').filter(has=page.get_by_role('heading', name='所需材料', exact=True))
                     assert policy_material.locator('a').get_attribute('href') == secondary_url
                     assert policy_material.locator('a').inner_text() == '预报名材料PDF'
@@ -87,7 +88,7 @@ def main():
                     page.locator('#application-checklist').screenshot(path=str(out / 'checklist-desktop-panel.png'))
                     discovery = page.locator('#checklist-mentors').get_attribute('href')
                     assert all(value in discovery for value in ['school=tsinghua', 'dept=cs', 'year=2027', 'route=exam', 'track=ordinary'])
-                    assert 'school=tsinghua%2Fcs' in page.locator('#checklist-notices').get_attribute('href')
+                    assert all(value in page.locator('#checklist-notices').get_attribute('href') for value in ['school=tsinghua', 'dept=cs'])
                     assert 'year=2027' in page.locator('#checklist-notices').get_attribute('href')
                     assert 'track=ordinary' in page.locator('#checklist-notices').get_attribute('href')
                     page.locator('#checklist-project').click()

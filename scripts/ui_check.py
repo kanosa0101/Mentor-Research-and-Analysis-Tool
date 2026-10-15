@@ -95,6 +95,7 @@ def check(BASE, OUT):
         page.goto(BASE + f"/p/{star_id}.html", wait_until="domcontentloaded")
         page.wait_for_timeout(1200)
         print("detail crumb:", page.locator(".crumb").inner_text())
+        page.locator("#obox summary").click()
         assert page.locator("#ob-hint").is_hidden(), "serve 在线时详情页不应显示只读提示"
         page.select_option("#ob-status", "replied")
         page.fill("#ob-notes", "ui_check 测试备注")
@@ -125,6 +126,7 @@ def check(BASE, OUT):
         assert page.locator('#tbl tbody tr').count() == 1
         page.goto(BASE + f'/p/{star_id}.html', wait_until='domcontentloaded')
         page.wait_for_timeout(800)
+        page.locator('#obox summary').click()
         assert page.input_value('#ob-next') == '阅读代表作'
         print('private tags + next step + due filter + browser backup/restore ok')
         # 移出（清理 + 断言）

@@ -65,6 +65,7 @@ def main():
                         assert page.locator('#review-save').is_disabled()
                         assert page.locator('#mode-opportunity').is_disabled()
                         assert page.locator('#mode-eligibility').is_disabled()
+                        page.locator('#advanced-criteria summary').click()
                         assert '即使取消保留' in page.locator('#project-filter-hint').inner_text()
                         policy = page.locator('[data-candidate] a').filter(has_text='学校与招生要求').first.get_attribute('href')
                         assert ('track=special' if 'track=special' in scope else 'track=ordinary') in policy

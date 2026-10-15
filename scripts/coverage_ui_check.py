@@ -20,6 +20,8 @@ def main():
                     page = browser.new_page(viewport={'width': 1440, 'height': 1000})
                     errors = []; page.on('pageerror', lambda e: errors.append(str(e)))
                     page.goto(base + '/admissions.html?group=control', wait_until='networkidle')
+                    page.locator('#unit-summary .policy-help > summary').click()
+                    page.locator('.policy-directory > summary').click()
                     assert '选择学校或院系' in page.locator('#unit-readiness').inner_text()
                     assert page.input_value('#policy-group') == 'control'
                     assert page.evaluate('visibleUnits.every(u=>u.groups.includes("control"))')
@@ -42,6 +44,7 @@ def main():
                     assert page.locator('[data-policy]').count() == 1
                     assert '该轮次已截止' in page.locator('#policy-list').inner_text()
                     assert '专项' in page.locator('#policy-list').inner_text()
+                    page.locator('[data-policy] .policy-body > summary').click()
                     page.locator('[data-policy] a').filter(has_text='建立申请项目').click()
                     page.wait_for_function('window.WORKFLOW_READY === true')
                     assert '专项' in page.input_value('#project-type')

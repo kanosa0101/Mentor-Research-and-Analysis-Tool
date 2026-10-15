@@ -70,23 +70,24 @@ a:hover{text-decoration:underline}
 .h-item:last-child{border-bottom:none}
 .h-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
+@media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
 {% include '_ui_head.html.j2' %}</head>
 <body>
 {% include '_nav.html.j2' %}
 <div class="page-heading"><a href="../admissions.html?school={{ p.school }}&amp;dept={{ p.dept }}">学校与院系招生要求 →</a><h1>导师资料</h1></div>
-<div class="wrap">
+<div class="wrap"><div class="context-actions"><a class="primary" href="../desk.html?mentor={{ p.page }}&amp;school={{ p.school }}&amp;dept={{ p.dept }}">准备联系 {{ p.name }}</a><button id="detail-compare" type="button">加入对比</button><a href="../compare.html" id="detail-selection">查看对比</a><a href="../discovery.html">继续找导师</a></div>
 <div class="card">
   {% if p.photo_url %}<img class="photo" src="{{ p.photo_url }}" alt="" onerror="this.style.display='none'">{% endif %}
   <h2>{{ p.name }} <span class="tag tag-{{ p.status }}">{{ {"roster":"仅名单","enriched":"已富化","verified":"已核对"}[p.status] or p.status }}</span></h2>
-  <div style="color:var(--muted);font-size:13.5px">{{ p.title or "职称：官网未提供" }}</div>
+  <div style="color:var(--muted);font-size:13.5px">{{ p.title or "职称：暂未收录" }}</div>
   <dl class="dl">
-    <dt>研究所</dt><dd>{{ p.institutes|join("、") or "官网未提供" }}</dd>
-    <dt>导师资格</dt><dd>{{ p.supervisor or "官网未提供" }}</dd>
+    <dt>研究所</dt><dd>{{ p.institutes|join("、") or "暂未收录" }}</dd>
+    <dt>导师资格</dt><dd>{{ p.supervisor or "暂未收录" }}</dd>
     {% if p.subjects %}<dt>招生学科</dt><dd>{{ p.subjects }}</dd>{% endif %}
-    <dt>研究方向</dt><dd>{{ p.research_direction_raw or "官网未提供" }}</dd>
-    <dt>邮箱</dt><dd>{{ p.email or "官网未提供" }}</dd>
-    <dt>个人主页</dt><dd>{% if p.homepage %}<a href="{{ p.homepage }}" target="_blank">{{ p.homepage }}</a>{% else %}<span class="missing">官网未提供</span>{% endif %}</dd>
+    <dt>研究方向</dt><dd>{{ p.research_direction_raw or "暂未收录" }}</dd>
+    <dt>邮箱</dt><dd>{{ p.email or "暂未收录" }}</dd>
+    <dt>个人主页</dt><dd>{% if p.homepage %}<a href="{{ p.homepage }}" target="_blank">{{ p.homepage }}</a>{% else %}<span class="missing">暂未收录</span>{% endif %}</dd>
     <dt>官网页面</dt><dd><a href="{{ p.profile_url or p.detail_url }}" target="_blank">{{ p.profile_url or p.detail_url }}</a></dd>
   </dl>
   <div class="meta">
@@ -97,8 +98,8 @@ a:hover{text-decoration:underline}
   </div>
   <div style="clear:both"></div>
 </div>
-<div class="card" id="obox">
-  <h3>套磁跟进</h3>
+<details class="card" id="obox">
+  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
   <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
   <div class="obrow">
     <label>状态</label>
@@ -121,7 +122,7 @@ a:hover{text-decoration:underline}
     <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
   </div>
   <div id="ob-history"></div>
-</div>
+</details>
 {% if p.bio_raw %}
 <div class="card">
   <h3>个人简介（官网原文）</h3>
@@ -161,6 +162,11 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 <script>
+const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId={{ p.page|tojson }};
+let detailSelected=[];try{detailSelected=JSON.parse(localStorage.getItem('compare_sel')||'[]');}catch(e){}
+function showDetailSelection(){detailCompare.textContent=detailSelected.includes(detailId)?'移出对比':'加入对比';detailCompare.setAttribute('aria-pressed',detailSelected.includes(detailId));detailSelection.textContent=`查看对比（${detailSelected.length} / 5）`;}
+detailCompare.onclick=()=>{if(detailSelected.includes(detailId))detailSelected=detailSelected.filter(id=>id!==detailId);else if(detailSelected.length<5)detailSelected.push(detailId);else{detailCompare.textContent='已选5位，请先移除';return;}try{localStorage.setItem('compare_sel',JSON.stringify(detailSelected));showDetailSelection();}catch(e){detailCompare.textContent='浏览器无法保存选择';}};showDetailSelection();
+
 const PID = {{ p.page|tojson }};
 const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
 const $ = id => document.getElementById(id);

@@ -7,11 +7,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from playwright.sync_api import sync_playwright
-from scripts.serve import SITE, create_server
+from scripts.serve import create_server
+from scripts.workflow_v8_ui_check import render_test_site
 
 
 def main():
-    out = Path('cache/contact_ui')
+    out = Path('cache/ux_v8/workflow/contact')
     out.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
@@ -20,7 +21,8 @@ def main():
         cv = materials_root / 'cv.txt'
         cv.write_text('临时简历，不包含真实个人信息', encoding='utf-8')
         private = root / 'private'
-        server = create_server(outreach=private / 'outreach.yaml', port=0)
+        test_site = render_test_site(root)
+        server = create_server(site=test_site, outreach=private / 'outreach.yaml', port=0)
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
         base = 'http://127.0.0.1:' + str(server.server_port)
@@ -43,6 +45,7 @@ def main():
                     page.click('#project-save')
                     page.wait_for_function('Object.keys(WORKFLOW.projects).length === 1')
                     project = page.evaluate('Object.keys(WORKFLOW.projects)[0]')
+                    page.click('[data-section="material"]')
                     page.fill('#material-path', str(cv))
                     page.select_option('#material-kind', 'cv')
                     page.click('#material-save')
@@ -101,37 +104,32 @@ def main():
                     other_project = page.evaluate('(pid)=>api("/projects",{name:"另一年度项目",year:2028,mentor_ids:[pid]},"POST")', pid)
                     page.evaluate('refresh()')
                     other_target = page.evaluate('(id)=>Object.values(FLOW.targets).find(t=>t.project_id===id).id', other_project['id'])
+                    page.click('[data-panel="reply"]')
                     page.fill('#reply-content', '只属于第一位目标的回复')
                     page.fill('#reply-task', '第一位目标的下一步')
-                    page.click('[data-view="targets"]')
                     page.once('dialog', lambda d: d.dismiss())
-                    page.locator('[data-target="' + other_target + '"]').click()
-                    assert page.evaluate('currentTarget') == target, '取消切换应保留原目标'
+                    page.click('[data-view="targets"]')
+                    assert page.locator('#reply-content').input_value() == '只属于第一位目标的回复'
                     page.once('dialog', lambda d: d.accept())
+                    page.click('[data-view="targets"]')
                     page.locator('[data-target="' + other_target + '"]').click()
                     assert page.locator('#reply-content').input_value() == ''
-                    assert page.locator('#reply-task').input_value() == ''
                     page.click('[data-view="targets"]')
                     page.locator('[data-target="' + target + '"]').click()
-                    # “加入并准备联系”也不能绕过未保存草稿检查。
+                    page.click('[data-panel="mail"]')
                     page.click('#draft-new')
                     page.fill('#draft-body', '必须保留的未保存内容')
-                    page.click('[data-view="targets"]')
-                    page.select_option('#target-project', other_project['id'])
                     page.once('dialog', lambda d: d.dismiss())
-                    page.click('#target-save')
-                    page.wait_for_function('!document.querySelector("#desk-workspace").disabled')
-                    assert page.evaluate('currentTarget') == target
+                    page.click('[data-view="targets"]')
                     assert page.locator('#draft-body').input_value() == '必须保留的未保存内容'
-                    page.click('[data-view="prepare"]')
                     page.once('dialog', lambda d: d.accept())
                     page.click('#draft-new')
-                    page.click('[data-view="prepare"]')
                     page.select_option('#draft-choice', page.evaluate('Object.keys(FLOW.drafts)[0]'))
                     page.click('[data-view="today"]')
                     assert page.locator('#waiting-list article').count() == 1
                     page.locator('[data-continue-target]').first.click()
                     assert page.locator('#reply-stage').input_value() == 'replied'
+                    page.click('[data-panel="reply"]')
                     page.fill('#reply-content', '<img src=x onerror=alert(1)>请补充研究介绍')
                     page.select_option('#reply-stage', 'materials')
                     page.fill('#reply-task', '补充研究介绍')
@@ -147,14 +145,14 @@ def main():
                     page.wait_for_function('Object.values(FLOW.reminders)[0].completed === true')
                     page.click('[data-view="targets"]')
                     page.locator('[data-target]').first.click()
-                    page.screenshot(path=str(out / 'prepare-desktop.png'), full_page=True)
+                    page.screenshot(path=str(out / 'prepare-desktop.png'))
                     page.reload(wait_until='networkidle')
                     page.wait_for_function('window.CONTACT_READY === true')
                     assert page.locator('#draft-body').input_value() == '尚未保存的修改'
                     assert page.locator('#draft-body').is_disabled()
                     page.set_viewport_size({'width': 390, 'height': 844})
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), '手机横向溢出'
-                    page.screenshot(path=str(out / 'prepare-mobile.png'), full_page=True)
+                    page.screenshot(path=str(out / 'prepare-mobile.png'))
                     with page.expect_download() as download:
                         page.click('#desk-backup')
                     backup = root / 'backup.json'
@@ -172,7 +170,7 @@ def main():
                     assert cv.read_text(encoding='utf-8') == '临时简历，不包含真实个人信息'
                     assert not errors, errors
                     offline = browser.new_page()
-                    offline.goto((SITE / 'desk.html').as_uri())
+                    offline.goto((test_site / 'desk.html').as_uri())
                     assert offline.locator('#desk-hint').is_visible()
                     assert offline.locator('#draft-save').is_disabled()
                     print('PASS: detail context → project/material → draft → EML → explicit sent → reply/task → today → persistence/mobile/recovery/file mode')

@@ -9,38 +9,45 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 .hint{padding:12px;background:#fff7e8;border:1px solid #f2ddb0;border-radius:8px;line-height:1.7}
 .bar{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}select,input{padding:8px;border:1px solid #e6e9ef;border-radius:6px}
 .card{background:white;border:1px solid #e6e9ef;border-radius:8px;padding:14px;margin:10px 0}.meta{color:#6b7280;font-size:12px;line-height:1.8}.title{font-size:15px;font-weight:600}.error{color:#b45309}
-</style><link rel="stylesheet" href="ui.css"></head>
+.intro{line-height:1.8;max-width:760px}.bar label{display:grid;gap:7px;flex:1 1 220px}.bar select,.bar input{width:100%;max-width:100%;box-sizing:border-box}.notice-sources{margin:18px 0;line-height:1.8}.notice-sources summary{cursor:pointer;color:var(--accent)}#notice-context{line-height:1.8}#current-source,#empty-source{line-height:1.8;overflow-wrap:anywhere}.card{padding:18px}.card .title{line-height:1.7}.card .meta{margin-top:6px}.bar{max-width:780px}.hint button{min-height:44px}@media(max-width:600px){.bar{gap:14px}.bar label{flex-basis:100%}main{padding:0 16px}.card{padding:16px}}
+</style><link rel="stylesheet" href="ui.css?v=20261015-8"></head>
 <body>
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="discovery.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
 
-<a href="discovery.html" >条件找导师</a>
+<a href="discovery.html" >找导师</a>
 
-<a href="index.html" >全量导师</a>
-
-<a href="compare.html" >导师对比</a>
-
-<a href="admissions.html" >学校与政策</a>
+<a href="admissions.html" >学校与要求</a>
 
 <a href="notices.html" aria-current="page">招生通知</a>
 
 <a href="desk.html" >我的申请</a>
 
+</nav>
+<details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="index.html" >全量导师目录</a>
+
+<a href="compare.html" >导师对比</a>
+
 <a href="applications.html" >项目与材料</a>
 
 <a href="board.html" >旧套磁看板</a>
 
-</nav>
+</div></details>
 
 
 </div></header><main>
 <h1>官方招生通知</h1>
-<p class="hint">这是 8 个已接入院系当前栏目页的监测试验；包含计算机、网安、智能和自动化等相关院系。通知标题中的年份与入学年份分别记录；截止日期未核验时显示未知。请打开官网核实申请路径、资格和日期。栏目更新需运行监测命令并重建站点。</p>
-<div class="bar"><select id="school"><option value="">全部院系</option><option value="tsinghua/cs">tsinghua/cs</option><option value="pku/cs">pku/cs</option><option value="sjtu/cs">sjtu/cs</option><option value="buaa/cyber">buaa/cyber</option><option value="pku/sai">pku/sai</option><option value="tsinghua/auto">tsinghua/auto</option><option value="seu/auto">seu/auto</option><option value="sjtu/auto">sjtu/auto</option></select><input id="search" placeholder="搜索通知标题"><span id="count"></span></div>
-<p><a id="notice-policy-link" href="admissions.html">核对学校与院系政策 →</a></p>
-<p id="notice-context" class="muted" role="status"></p>
-<div class="meta"><a href="https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm" target="_blank">tsinghua/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta"><a href="https://cs.pku.edu.cn/zsxx/yjszs.htm" target="_blank">pku/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta"><a href="https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html" target="_blank">sjtu/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta"><a href="https://cst.buaa.edu.cn/yjsjy/zsgz.htm" target="_blank">buaa/cyber 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta"><a href="https://sai.pku.edu.cn/rcpy/yjszs.htm" target="_blank">pku/sai 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta"><a href="https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm" target="_blank">tsinghua/auto 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta"><a href="https://automation.seu.edu.cn/zxtz/list.htm" target="_blank">seu/auto 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta"><a href="https://sais.sjtu.edu.cn/yjs_zsgz.html" target="_blank">sjtu/auto 官方栏目</a> · 最后抓取 2026-10-14</div>
+<p class="intro">查看院系发布的招生线索，再到官网核对资格与日期。候选通知尚未核验，不表示报名开放。</p>
+<div class="bar"><label>学校与院系<select id="school"><option value="">全部院系</option><option value="tsinghua/cs">tsinghua/cs</option><option value="pku/cs">pku/cs</option><option value="sjtu/cs">sjtu/cs</option><option value="buaa/cyber">buaa/cyber</option><option value="pku/sai">pku/sai</option><option value="tsinghua/auto">tsinghua/auto</option><option value="seu/auto">seu/auto</option><option value="sjtu/auto">sjtu/auto</option></select></label><label>搜索标题<input id="search" placeholder="关键词或年份"></label></div>
+<p id="notice-context" class="muted" role="status"></p><p><a id="notice-policy-link" href="admissions.html">核对学校与院系要求 →</a></p>
+<div id="current-source"></div><p id="count" role="status" aria-live="polite"></p>
+<div id="notice-empty" class="hint" hidden><p>没有找到符合条件的候选通知。未收录不代表没有招生安排。</p><button id="clear-search" type="button">清除标题搜索</button><p id="empty-source"></p></div>
+<details class="notice-sources"><summary>通知范围与来源检查</summary><p class="meta">已接入 8 个院系当前栏目；不保证覆盖全部招生通知。标题年份与入学年份分别记录，截止日期未核验时显示待核验。栏目更新需运行监测并重建站点。</p>
+<div class="meta" data-source="tsinghua/cs"><a href="https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm" target="_blank" rel="noopener">tsinghua/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta" data-source="pku/cs"><a href="https://cs.pku.edu.cn/zsxx/yjszs.htm" target="_blank" rel="noopener">pku/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta" data-source="sjtu/cs"><a href="https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html" target="_blank" rel="noopener">sjtu/cs 官方栏目</a> · 最后抓取 2026-10-13</div><div class="meta" data-source="buaa/cyber"><a href="https://cst.buaa.edu.cn/yjsjy/zsgz.htm" target="_blank" rel="noopener">buaa/cyber 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta" data-source="pku/sai"><a href="https://sai.pku.edu.cn/rcpy/yjszs.htm" target="_blank" rel="noopener">pku/sai 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta" data-source="tsinghua/auto"><a href="https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm" target="_blank" rel="noopener">tsinghua/auto 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta" data-source="seu/auto"><a href="https://automation.seu.edu.cn/zxtz/list.htm" target="_blank" rel="noopener">seu/auto 官方栏目</a> · 最后抓取 2026-10-14</div><div class="meta" data-source="sjtu/auto"><a href="https://sais.sjtu.edu.cn/yjs_zsgz.html" target="_blank" rel="noopener">sjtu/auto 官方栏目</a> · 最后抓取 2026-10-14</div></details>
+
 
 <article class="card" data-school="pku/cs" data-title="计算机学院2025年港澳台生复试工作安排">
 <a class="title" href="https://cs.pku.edu.cn/info/1051/3651.htm" target="_blank">计算机学院2025年港澳台生复试工作安排</a>
@@ -588,9 +595,45 @@ main{max-width:1100px;margin:24px auto;padding:0 20px}a{color:#2f54c8}h1{font-si
 <div class="meta">候选通知，申请条件和日期尚未核验 · <a href="https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm" target="_blank">列表来源</a></div>
 </article>
 
-<script>
-function filter(){const school=document.getElementById('school').value,q=document.getElementById('search').value.trim().toLowerCase();let n=0;const parts=school.split('/');document.getElementById('notice-policy-link').href=parts.length===2?'admissions.html?'+new URLSearchParams({school:parts[0],dept:parts[1]}):'admissions.html';document.querySelectorAll('article').forEach(a=>{const show=(!school||a.dataset.school===school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});document.getElementById('count').textContent=n+' 条候选通知';}
-const requested=new URLSearchParams(location.search).get('school'),select=document.getElementById('school'),context=document.getElementById('notice-context');
-if(requested){if(!Array.from(select.options).some(o=>o.value===requested)){select.add(new Option(requested+'（未接入）',requested));context.textContent='该院系尚未接入通知监测，请从导师详情访问官网核实。可切换全部院系查看当前试验范围。';}else{context.textContent='已限定所选院系；候选通知仍需核实申请年度、资格和日期。';}select.value=requested;}
-select.addEventListener('change',()=>{context.textContent='';filter();});document.getElementById('search').addEventListener('input',filter);filter();
+<script src="admissions-data.js?v=20261015-8"></script><script>
+const incoming=new URLSearchParams(location.search),select=document.getElementById('school'),context=document.getElementById('notice-context');
+const units=window.ADMISSIONS_DATA?.units||[],scopeKeys=['year','degree','route','track','program','group'];
+const knownSchool=key=>!key.includes('/')&&units.some(u=>u.school===key);
+const inScope=(unitKey,key)=>!key||unitKey===key||(knownSchool(key)&&unitKey.startsWith(key+'/'));
+const nameFor=key=>{const u=units.find(u=>u.school+'/'+u.dept===key);return u?u.school_name+' · '+u.dept_name:units.find(u=>u.school===key)?.school_name||key;};
+const rawSchool=incoming.get('school')||'',requested=rawSchool&&!rawSchool.includes('/')&&incoming.get('dept')?rawSchool+'/'+incoming.get('dept'):rawSchool;
+if(requested&&!Array.from(select.options).some(o=>o.value===requested))select.add(new Option(nameFor(requested),requested));
+for(const option of select.options)if(option.value)option.textContent=nameFor(option.value)+(knownSchool(option.value)?'（全校已接入院系）':document.querySelector('[data-source="'+CSS.escape(option.value)+'"]')?'':'（未接入）');
+select.value=requested;
+for(const source of document.querySelectorAll('[data-source]'))source.querySelector('a').textContent=nameFor(source.dataset.source)+' 官方栏目';
+function officialLink(container,key){
+  container.replaceChildren();
+  if(knownSchool(key)){
+    const sources=Array.from(document.querySelectorAll('[data-source]')).filter(e=>inScope(e.dataset.source,key));
+    if(sources.length){for(const source of sources){const p=document.createElement('p');p.append(source.querySelector('a').cloneNode(true));container.append(p);}return;}
+    container.textContent='该校尚未接入通知监测。请返回学校与要求页查看已登记的院系官方入口。';return;
+  }
+  const source=Array.from(document.querySelectorAll('[data-source]')).find(e=>e.dataset.source===key),unit=units.find(u=>u.school+'/'+u.dept===key);
+  const url=source?.querySelector('a').href||unit?.notice_url||unit?.roster_url;
+  if(url){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=nameFor(key)+(source||unit?.notice_url?' · 官方招生栏目 →':' · 官方院系师资入口 →');container.append(a);}
+  else container.textContent=key?'该院系未登记官方入口。请返回学校与要求页核对目录。':'选择院系后可查看已登记的官方入口。';
+  if(source?.classList.contains('error'))container.append(document.createTextNode(' 来源抓取失败，历史记录仍可查看；最新安排请查官网。'));
+}
+function filter(){
+  const school=select.value,q=document.getElementById('search').value.trim().toLowerCase(),parts=school.split('/'),query=new URLSearchParams();
+  for(const key of scopeKeys)if(incoming.get(key))query.set(key,incoming.get(key));
+  if(school)query.set('school',parts[0]);
+  if(parts.length===2)query.set('dept',parts[1]);
+  document.getElementById('notice-policy-link').href='admissions.html'+(query.size?'?'+query:'');
+  for(const warning of document.querySelectorAll('[data-source-error]')){warning.hidden=!inScope(warning.dataset.sourceError,school);warning.querySelector('span').textContent=nameFor(warning.dataset.sourceError);}
+  let n=0;document.querySelectorAll('article').forEach(a=>{const show=inScope(a.dataset.school,school)&&a.dataset.title.toLowerCase().includes(q);a.hidden=!show;if(show)n++;});
+  document.getElementById('count').textContent=n+' 条候选通知';document.getElementById('notice-empty').hidden=n!==0;
+  const scope=[incoming.get('year')?incoming.get('year')+'入学':'',({master:'硕士',phd:'博士'})[incoming.get('degree')]||'',({recommend:'推免',exam:'统考',assessment:'申请考核'})[incoming.get('route')]||'',({ordinary:'普通招生',special:'专项/特定项目'})[incoming.get('track')]||'',incoming.get('program')?.replace('|',' · ')||''].filter(Boolean).join(' · ');
+  const sourceCount=Array.from(document.querySelectorAll('[data-source]')).filter(e=>inScope(e.dataset.source,school)).length;
+  const connected=sourceCount>0;
+  context.textContent=(school?nameFor(school)+(knownSchool(school)?' · 全校已接入的 '+sourceCount+' 个院系栏目（不是全校全部通知）':connected?'':' · 尚未接入通知监测'):'全部已接入院系')+(scope?'。申请目标：'+scope+'。年度、渠道等仅保留为返回目标，不据此排除未知通知。':'');
+  officialLink(document.getElementById('current-source'),school);officialLink(document.getElementById('empty-source'),school);
+}
+select.addEventListener('change',()=>{incoming.delete('program');incoming.delete('group');filter();});document.getElementById('search').addEventListener('input',filter);
+document.getElementById('clear-search').onclick=()=>{document.getElementById('search').value='';filter();document.getElementById('search').focus();};filter();
 </script></main></body></html>

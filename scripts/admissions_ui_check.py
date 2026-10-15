@@ -30,6 +30,7 @@ def main():
                     assert page.locator('[data-policy]').count() == 2
                     assert '学校通用' in page.locator('#policy-list').inner_text()
                     assert '085400' in page.locator('#policy-list').inner_text()
+                    page.locator('[data-policy="tsinghua-cs-2027-085400-exam"] .policy-body > summary').click()
                     assert '未整理' in page.locator('#policy-list').inner_text()
                     assert not (private / 'workflow.yaml').exists()
                     page.screenshot(path=str(out / 'admissions-desktop.png'), full_page=True)

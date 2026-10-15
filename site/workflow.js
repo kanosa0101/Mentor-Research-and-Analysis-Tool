@@ -6,6 +6,9 @@ const projectLabels = {planned:'准备中',submitted:'已提交',interview:'面�
 const materialLabels = {paper:'论文',letter:'信件',cv:'简历',application:'申请材料',other:'其他'};
 const communicationLabels = {draft:'草稿',sent:'已发送',replied:'收到回复',note:'备注 / 更正'};
 let WORKFLOW = {projects:{},materials:{},communications:{},reminders:{}};
+let currentSection=['project','material','communication','reminder'].includes(new URLSearchParams(location.search).get('section')) ? new URLSearchParams(location.search).get('section') : 'project';
+let contextReady=false;
+const formDirty=new Set();
 let editing = {project:null,material:null,reminder:null};
 let contextMentor = new URLSearchParams(location.search).get('mentor') || '';
 if(!mentors.has(contextMentor)) contextMentor = '';
@@ -15,7 +18,7 @@ const returnTarget=new URLSearchParams(location.search).get('target');
 if(returnTarget)backQuery.set('target',returnTarget);
 const incomingGoal=new URLSearchParams(location.search);
 const incomingPolicy=window.ADMISSIONS_DATA?.policies.find(p=>p.id===incomingGoal.get('policy'));
-for(const key of ['year','degree','route'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
+for(const key of ['year','degree','route','school','dept','track','program','panel'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
 el('back-desk').href='desk.html?'+backQuery;
 const chosen = {project:[],material:[],communication:[],reminder:[]};
 window.WORKFLOW_READY = false;
@@ -26,7 +29,7 @@ const mentorName = id => {
 const mentorLinks = ids => ids.map(id=>`<a href="p/${encodeURIComponent(id)}.html">${esc(mentorName(id))}</a>`).join('；');
 const projectName = id => WORKFLOW.projects[id]?.name || '';
 const selected = id => [...el(id).selectedOptions].map(o=>o.value);
-function message(text, error=false){el('message').textContent=text; el('message').classList.toggle('error',error);}
+function message(text, error=false){const node=window.WORKFLOW_READY ? el(currentSection+'-feedback') : el('message');node.textContent=text;node.classList.toggle('error',error);}
 async function api(path='', body, method='GET'){
   const r = await fetch('/api/workflow' + path, {method, headers:{'Content-Type':'application/json'},
     ...(body === undefined ? {} : {body:JSON.stringify(body)})});
@@ -34,7 +37,15 @@ async function api(path='', body, method='GET'){
   if(!r.ok) throw new Error(data.error || `请求失败：${r.status}`);
   return data;
 }
-async function refresh(){WORKFLOW=await api(); render(); el('service-hint').hidden=true; window.WORKFLOW_READY=true;}
+async function refresh(){
+  WORKFLOW=await api();render();
+  if(!contextReady){
+    const t=WORKFLOW.targets?.[returnTarget];
+    if(t){contextMentor=t.mentor_id;el('filter-project').value=t.project_id;backQuery.set('mentor',t.mentor_id);el('back-desk').href='desk.html?'+backQuery;}
+    contextReady=true;for(const key of Object.keys(chosen))reset(key);render();
+  }
+  showSection(currentSection);el('service-hint').hidden=true;window.WORKFLOW_READY=true;
+}
 async function action(task, success){
   el('workspace').disabled=true;
   el('workflow-restore').disabled=true;
@@ -68,8 +79,9 @@ document.querySelectorAll('[data-mentor-picker]').forEach(box=>{
   };
 });
 function reset(prefix){
+  formDirty.delete(prefix);
   el(prefix+'-form').reset();
-  if(prefix==='project'){
+  if(prefix==='project'&&!WORKFLOW.targets?.[returnTarget]){
     const year=Number(incomingGoal.get('year'));
     if(Number.isInteger(year)&&year>=2000&&year<=2100)el('project-year').value=year;
     const degree={master:'硕士',phd:'博士'}[incomingGoal.get('degree')],route={recommend:'推免',exam:'统考',assessment:'申请考核'}[incomingGoal.get('route')];
@@ -96,6 +108,9 @@ function reset(prefix){
     }
   }
   chosen[prefix]=contextMentor ? [contextMentor] : [];
+  const project=el('filter-project').value;
+  if(prefix==='material')for(const o of el('material-projects').options)o.selected=o.value===project;
+  if(prefix==='reminder'||prefix==='communication')el(prefix+'-project').value=project;
   renderPicker(prefix);
   if(prefix==='communication') el('communication-date').value=new Date().toLocaleDateString('sv-SE');
   else{
@@ -114,6 +129,7 @@ function render(){
   el('context-mentor').textContent=contextMentor ? '当前导师：'+mentorName(contextMentor) : '';
   el('clear-context').hidden=!contextMentor;
   const projectFilter=el('filter-project').value;
+  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。新材料、沟通与提醒默认关联此项目。' : '当前显示全部项目。新增记录时请选择关联项目。';
   const relatedProject=id=>!!id && (!projectFilter || id===projectFilter) && (!contextMentor || WORKFLOW.projects[id]?.mentor_ids.includes(contextMentor));
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
@@ -161,7 +177,7 @@ el('scan-form').onsubmit=e=>{
 document.querySelector('main').addEventListener('click',e=>{
   const button=e.target.closest('button'); if(!button) return;
   const d=button.dataset;
-  if(d.focusProject){el('filter-project').value=d.focusProject; render();}
+  if(d.focusProject){el('filter-project').value=d.focusProject;el('filter-project').onchange();}
   if(d.toggleReminder){const r=WORKFLOW.reminders[d.toggleReminder]; action(()=>api('/reminders/'+r.id,{completed:!r.completed},'PATCH'),'提醒已更新');}
   for(const prefix of ['project','material','reminder']){
     const key=d['edit'+prefix[0].toUpperCase()+prefix.slice(1)]; if(!key) continue;
@@ -180,9 +196,15 @@ document.querySelector('main').addEventListener('click',e=>{
     el(prefix+'-form').scrollIntoView({behavior:'smooth',block:'center'});
   }
 });
-el('filter-project').onchange=render;
+el('filter-project').onchange=()=>{
+  if(!discardChanges()){el('filter-project').value=lastProject;return;}
+  lastProject=el('filter-project').value;
+  const p=WORKFLOW.projects[lastProject];
+  if(contextMentor&&p&&!p.mentor_ids.includes(contextMentor))contextMentor='';
+  for(const key of Object.keys(chosen))reset(key);render();
+};
 el('only-pending').onchange=render;
-el('clear-context').onclick=()=>{contextMentor='';history.replaceState(null,'',location.pathname);render();};
+el('clear-context').onclick=()=>{if(!discardChanges())return;contextMentor='';for(const key of Object.keys(chosen))reset(key);el('back-desk').href='desk.html';history.replaceState(null,'',location.pathname+'?section='+currentSection);render();};
 el('workflow-backup').onclick=()=>action(async()=>{
   const blob=new Blob([JSON.stringify(await api('/backup'),null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob), a=document.createElement('a');
@@ -194,10 +216,34 @@ el('workflow-restore-file').onchange=async e=>{
   if(!confirm('恢复将替换工作台全部记录，服务会先保留旧索引。原材料文件不受影响。')){e.target.value='';return;}
   await action(async()=>{
     await api('/restore',JSON.parse(await file.text()),'POST');
-    for(const prefix of Object.keys(chosen)) reset(prefix);
+for(const prefix of Object.keys(chosen)) reset(prefix);
   },'已恢复工作台备份');
   e.target.value='';
 };
+let lastProject='';
+function showSection(section){
+  currentSection=section;
+  for(const key of Object.keys(chosen))el('section-'+key).hidden=key!==section;
+  document.querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.section===section)));
+  const q=new URLSearchParams(location.search);q.set('section',section);history.replaceState(null,'',location.pathname+'?'+q);
+  lastProject=el('filter-project').value;
+}
+function discardChanges(){
+  if(!formDirty.size)return true;
+  if(!confirm('表单尚未保存，继续会放弃修改。继续？'))return false;
+  for(const key of [...formDirty])reset(key);return true;
+}
+for(const key of Object.keys(chosen))el(key+'-form').addEventListener('input',()=>formDirty.add(key));
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.section){if(discardChanges())showSection(b.dataset.section);return;}
+  if(b.dataset.editProject||b.dataset.editMaterial||b.dataset.editReminder||b.id.endsWith('-reset')){
+    if(!discardChanges()){e.preventDefault();e.stopImmediatePropagation();}
+  }
+  if(b.dataset.addMentor||b.dataset.removeMentor){const box=b.closest('[data-mentor-picker]');if(box)formDirty.add(box.dataset.mentorPicker);}
+},true);
+window.addEventListener('beforeunload',e=>{if(formDirty.size){e.preventDefault();e.returnValue='';}});
+showSection(currentSection);
 for(const prefix of Object.keys(chosen)) reset(prefix);
 if(location.protocol==='http:'){
   el('workflow-restore').disabled=false;

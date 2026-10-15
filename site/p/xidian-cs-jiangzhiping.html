@@ -70,36 +70,40 @@ a:hover{text-decoration:underline}
 .h-item:last-child{border-bottom:none}
 .h-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
+@media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css"></head>
+<link rel="stylesheet" href="../ui.css?v=20261015-8"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
 
-<a href="../discovery.html" >条件找导师</a>
+<a href="../discovery.html" >找导师</a>
 
-<a href="../index.html" >全量导师</a>
-
-<a href="../compare.html" >导师对比</a>
-
-<a href="../admissions.html" >学校与政策</a>
+<a href="../admissions.html" >学校与要求</a>
 
 <a href="../notices.html" >招生通知</a>
 
-<a href="../desk.html?mentor=xidian-cs-jiangzhiping" >我的申请</a>
+<a href="../desk.html" >我的申请</a>
+
+</nav>
+<details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../index.html" >全量导师目录</a>
+
+<a href="../compare.html" >导师对比</a>
 
 <a href="../applications.html" >项目与材料</a>
 
 <a href="../board.html" >旧套磁看板</a>
 
-</nav>
+</div></details>
 <span class="crumb">西安电子科技大学 · 计算机科学与技术学院</span>
 
 </div></header>
 <div class="page-heading"><a href="../admissions.html?school=xidian&amp;dept=cs">学校与院系招生要求 →</a><h1>导师资料</h1></div>
-<div class="wrap">
+<div class="wrap"><div class="context-actions"><a class="primary" href="../desk.html?mentor=xidian-cs-jiangzhiping&amp;school=xidian&amp;dept=cs">准备联系 蒋志平</a><button id="detail-compare" type="button">加入对比</button><a href="../compare.html" id="detail-selection">查看对比</a><a href="../discovery.html">继续找导师</a></div>
 <div class="card">
 
   <h2>蒋志平 <span class="tag tag-enriched">已富化</span></h2>
@@ -110,7 +114,7 @@ a:hover{text-decoration:underline}
     <dt>招生学科</dt><dd>软件工程</dd>
     <dt>研究方向</dt><dd>研究方向、Research Focus、社会兼职、Social Affiliations、围绕PicoScenes平台的相关研发、高性能OFDM基带系统、Wi-Fi 集成通信与感知 (Wi-Fi ISAC)、暂无内容</dd>
     <dt>邮箱</dt><dd>zpj@xidian.edu.cn</dd>
-    <dt>个人主页</dt><dd><span class="missing">官网未提供</span></dd>
+    <dt>个人主页</dt><dd><span class="missing">暂未收录</span></dd>
     <dt>官网页面</dt><dd><a href="https://faculty.xidian.edu.cn/zpj/zh_CN/index.htm" target="_blank">https://faculty.xidian.edu.cn/zpj/zh_CN/index.htm</a></dd>
   </dl>
   <div class="meta">
@@ -121,8 +125,8 @@ a:hover{text-decoration:underline}
   </div>
   <div style="clear:both"></div>
 </div>
-<div class="card" id="obox">
-  <h3>套磁跟进</h3>
+<details class="card" id="obox">
+  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
   <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
   <div class="obrow">
     <label>状态</label>
@@ -145,7 +149,7 @@ a:hover{text-decoration:underline}
     <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
   </div>
   <div id="ob-history"></div>
-</div>
+</details>
 
 <div class="card">
   <h3>个人简介（官网原文）</h3>
@@ -315,6 +319,11 @@ Personal...</td>
 </div>
 </div>
 <script>
+const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId="xidian-cs-jiangzhiping";
+let detailSelected=[];try{detailSelected=JSON.parse(localStorage.getItem('compare_sel')||'[]');}catch(e){}
+function showDetailSelection(){detailCompare.textContent=detailSelected.includes(detailId)?'移出对比':'加入对比';detailCompare.setAttribute('aria-pressed',detailSelected.includes(detailId));detailSelection.textContent=`查看对比（${detailSelected.length} / 5）`;}
+detailCompare.onclick=()=>{if(detailSelected.includes(detailId))detailSelected=detailSelected.filter(id=>id!==detailId);else if(detailSelected.length<5)detailSelected.push(detailId);else{detailCompare.textContent='已选5位，请先移除';return;}try{localStorage.setItem('compare_sel',JSON.stringify(detailSelected));showDetailSelection();}catch(e){detailCompare.textContent='浏览器无法保存选择';}};showDetailSelection();
+
 const PID = "xidian-cs-jiangzhiping";
 const OLABEL = {interested:"意向", emailed:"已发信", replied:"已回复", meeting:"推进中", archived:"归档"};
 const $ = id => document.getElementById(id);
