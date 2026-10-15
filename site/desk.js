@@ -77,6 +77,12 @@ function manageUrl(){
   for(const [key,value] of Object.entries(forwardedGoal()))q.set(key,value);
   return 'applications.html?'+q;
 }
+function reminderManageUrl(reminder){
+  const q=new URLSearchParams({return:'desk',section:'reminder'});
+  if(FLOW.projects[reminder.project_id])q.set('project',reminder.project_id);
+  if(people.has(reminder.mentor_id))q.set('mentor',reminder.mentor_id);
+  return 'applications.html?'+q;
+}
 function targetCard(t,attribute){
   const latest=Object.values(FLOW.communications).filter(e=>e.target_id===t.id&&e.kind==='sent').sort((a,b)=>b.date.localeCompare(a.date))[0];
   const next=Object.values(FLOW.reminders).filter(r=>!r.completed&&r.project_id===t.project_id&&r.mentor_id===t.mentor_id).sort((a,b)=>a.due_date.localeCompare(b.due_date))[0];
@@ -98,7 +104,7 @@ function render(){
   el('stat-waiting').textContent=waiting.length;el('stat-preparing').textContent=preparing.length;
   const taskCards=pending.map(r=>{
     const t=Object.values(FLOW.targets).find(t=>t.project_id===r.project_id&&t.mentor_id===r.mentor_id);
-    return `<article><h3>${esc(r.title)}</h3><span class="${r.due_date<=today()?'overdue':'muted'}">${r.due_date<=today()?'已到期':'计划日期'} · ${esc(r.due_date)}</span><p>${esc(projectLabel(r.project_id))} ${esc(r.mentor_id?personName(r.mentor_id):'')}</p><p>${esc(r.notes)}</p><div class="article-actions"><button data-complete-task="${r.id}">完成</button>${t?`<button data-continue-target="${t.id}">继续该导师</button>`:`<a href="${esc(manageUrl())}">管理任务</a>`}</div></article>`;
+    return `<article><h3>${esc(r.title)}</h3><span class="${r.due_date<=today()?'overdue':'muted'}">${r.due_date<=today()?'已到期':'计划日期'} · ${esc(r.due_date)}</span><p>${esc(projectLabel(r.project_id))} ${esc(r.mentor_id?personName(r.mentor_id):'')}</p><p>${esc(r.notes)}</p><div class="article-actions"><button data-complete-task="${r.id}">完成</button>${t?`<button data-continue-target="${t.id}">继续该导师</button>`:`<a href="${esc(reminderManageUrl(r))}">管理任务</a>`}</div></article>`;
   });
   el('task-list').innerHTML=taskCards.filter((_,i)=>pending[i].due_date<=today()).join('')||'<div class="empty">今日没有到期事项。可从目标导师安排下一步。</div>';
   el('future-task-list').innerHTML=taskCards.filter((_,i)=>pending[i].due_date>today()).join('')||'<div class="empty">暂无未来计划。</div>';
