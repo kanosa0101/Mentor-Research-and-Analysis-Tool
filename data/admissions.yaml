@@ -687,6 +687,26 @@ sources:
     url: https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33
     format: html
     selector: body
+  tsinghua_school_v16phd:
+    url: https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/1ceee112-93f3-400d-bd92-c1bfce260b0f
+    format: html
+    selector: .article-content .content
+    label: 清华大学2027年博士研究生招生简章
+  zju_school_v16phd:
+    url: http://www.grs.zju.edu.cn/yjszs/2026/1009/c28499a3212071/page.htm
+    format: html
+    selector: .wp_articlecontent
+    label: 浙江大学2027年博士研究生招生简章
+  tsinghua_cs_brochure_v16phd:
+    url: https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/df93bde9-53c9-40dc-8fe1-b160d8b4be9f?yxsdm=024
+    format: html
+    selector: .article-content .content
+    label: 清华大学计算机系2027年博士研究生招生简章
+  tsinghua_cs_pdf_v16phd:
+    url: https://www.cs.tsinghua.edu.cn/__local/8/81/36/0CAC8F3B73B4569D2DD877F9699_6AEEB73A_1F4CB.pdf
+    format: pdf
+    selector: ''
+    label: 清华计算机系2027博士综合考核及录取办法（2026-08-27发布）
 policies:
 - id: tsinghua-2027-master-exam
   school: tsinghua
@@ -4417,3 +4437,160 @@ policies:
     locator: 报考公告二（一）报名时间；同段明确2026年10月15日至24日及每日9:00—22:00
     source_ids:
     - nudt_registration_new_v15extra
+- id: tsinghua-2027-phd-assessment-v16pilot
+  school: tsinghua
+  dept: ''
+  level: school
+  title: 清华大学2027年博士普通招考学校规则（院系分秋冬季）
+  year: 2027
+  degree: phd
+  route: assessment
+  track: general
+  program: ''
+  program_code: ''
+  published_at: '2026-06-30'
+  reviewed_at: '2026-10-15'
+  source_id: tsinghua_school_v16phd
+  review_hashes:
+    tsinghua_school_v16phd: 21b11577384b672985dff14cb706daf0d604a62808fe4cdf838241867d027d6e
+  fields:
+    eligibility:
+      text: 普通博士面向硕士毕业、已获硕士学位或入学前毕业/获学位的应届硕士；其他类型另有条件。
+      quote: 硕士研究生毕业或已获硕士学位的人员、应届硕士毕业生（最迟须在入学前毕业或取得硕士学位）可申请普通博士生
+      locator: 一、申请条件2
+    materials:
+      text: 普通招考与硕博连读须完成登记、缴费、提交电子材料三步，具体材料须同时核对院系。
+      quote: 报名申请环节包含三个步骤：报名登记、在线交费、提交材料。三个步骤均完成后表示报名申请成功，缺一不可。
+      locator: 二、申请2（2）普通招考及硕博连读
+    timeline:
+      text: 计算机系、五道口金融学院和网络研究院普通招考属冬季；其他院系普通招考通常秋季，部分剩余计划另开冬季。具体院系核实，专项仅秋季。
+      quote: 适用于 计 算机科学与技术系、五道口金融学院、网络科学与网络空间研究院的普通招考博士生申请人
+      locator: 二、申请1（2）冬季
+    exams:
+      text: 各院系组织综合考核；同等学力另加试两门本专业硕士主干课程。
+      quote: 对同等学力申请人在综合考核阶段须加试（笔试）两门本专业硕士学位主干课程。
+      locator: 六、考核
+    tuition:
+      text: 学术型博士学费1万元/学年，其他类别按附表，不按学术型一律套用。
+      quote: 所有学术型专业 - 1万元/生学年 按学期交
+      locator: 附：学费标准
+    funding:
+      text: 计划内全日制博士（有固定工资收入者除外）发放学校基本奖助金，标准须查奖助实施办法。
+      quote: 向全国研究生招生计划内的全日制博士研究生（有固定工资收入的除外）发放学校基本奖助金
+      locator: 八、说明2
+    quota:
+      text: 部分院系秋季未完成计划，冬季申请前将另行公布人数及对外招生导师；目前本摘要不能证明个人导师有名额。
+      quote: 部分院系秋季如未完成招生计划，可能在后期继续招生
+      locator: 八、说明3
+    contact:
+      text: 研招咨询010-62782192；具体专业、导师和目录备注须咨询申请院系。
+      quote: 010-62782192
+      locator: 九、信息查询、申诉、联系方式3
+  events: []
+- id: zju-2027-phd-assessment-v16pilot
+  school: zju
+  dept: ''
+  level: school
+  title: 浙江大学2027年博士普通招考学校规则（首轮全日制；院系细则另查）
+  year: 2027
+  degree: phd
+  route: assessment
+  track: general
+  program: ''
+  program_code: ''
+  published_at: '2026-10-12'
+  reviewed_at: '2026-10-15'
+  source_id: zju_school_v16phd
+  review_hashes:
+    zju_school_v16phd: 361e58c18637811c7a1c0e5d3f0b590edbc4832163b6213525d5eda6f1249c3b
+  fields:
+    eligibility:
+      text: 普通全日制申请人须已获硕/博士学历或学位，或应届硕士入学前取得硕士毕业/学位证；非全日制与同等学力另有要求。
+      quote: 已获得国家承认的硕士（博士）研究生学历或学位的人员，以及应届硕士毕业生（最迟须在入学前获得硕士研究生毕业证书或学位证书）。
+      locator: 二、报考条件（四）3
+    materials:
+      text: 向申请院系提交材料，详细清单与方式按院系2027简章；学校规则不是院系材料已齐。
+      quote: 向招生学院（系）递交报考材料，具体要求详见各学院（系）发布的招生简章。
+      locator: 三、报名时间（三）普通招考
+    timeline:
+      text: 第一次普通招考网上报名2026-10-20 09:00至11-20 20:00，全日制非定向及文中专项须此阶段报名；第二次预计2027年4月上旬，面向所列非全日制/专项，不是普通全日制统一补报名。
+      quote: '2026 年 10 月 20 日 9 : 00-2026 年 11 月 20 日 20:00'
+      locator: 三、报名时间（三）1
+    exams:
+      text: 具体考核程序与办法按各院系博士申请考核实施细则；不把校级规则当作CS考核细则。
+      quote: 年博士研究生招生具体考核办法和程序详见各学院（系）博士研究生“申请 - 考核”招生选拔机制实施细则。
+      locator: 四、考核办法
+    tuition:
+      text: 各专业学制及收费标准须查院系博士招生简章；学校此章程未给统一学费金额。
+      quote: 各专业的学费收费标准查阅招生学院（系）博士研究生招生简章。
+      locator: 八、学费与奖助学金（一）
+    funding:
+      text: 奖学金含国家/专项等奖项；助学金含基础、科研、学业优秀及勤工等，按学校文件执行，不是人人固定获奖。
+      quote: 助学金：包括基础助学金、科研助学金、学业优秀奖助金、勤工助学金等，具体根据学校资助管理文件执行。
+      locator: 八、学费与奖助学金（二）2
+    quota:
+      text: 学校按招生计划与审核/考核等择优录取；本文没有CS院系或导师确定名额。
+      quote: 根据学校招生计划、考核录取办法以及考生材料审核和综合考核成绩、思想政治素质和品德考核结果以及身心健康状况等择优确定拟录取名单。
+      locator: 六、政审与录取
+    contact:
+      text: 研招处咨询0571-87951349、yjsy-zsb2@zju.edu.cn；专业问题联系申请院系研究生科。
+      quote: 0571-87951349 邮箱： yjsy-zsb2@zju.edu.cn
+      locator: 九、联系方式（一）
+  events:
+  - label: 普通招考首轮网上报名截止（全日制非定向及章程列明专项）
+    kind: deadline
+    at: '2026-11-20T20:00:00+08:00'
+    quote: '2026 年 10 月 20 日 9 : 00-2026 年 11 月 20 日 20:00'
+    locator: 三（三）1；第二轮非全日制及专项不可混用
+- id: tsinghua-cs-2027-phd-assessment-v16pilot
+  school: tsinghua
+  dept: cs
+  level: dept
+  title: 清华计算机系2027普通博士冬季申请：材料与考核
+  year: 2027
+  degree: phd
+  route: assessment
+  track: ordinary
+  program: ''
+  program_code: ''
+  published_at: '2026-06-30'
+  reviewed_at: '2026-10-15'
+  source_id: tsinghua_cs_brochure_v16phd
+  review_hashes:
+    tsinghua_cs_brochure_v16phd: a081ff955e96c015fced9944bab2df33017b16d7e461bfcd3c3dea7e6ff8e560
+    tsinghua_school_v16phd: 21b11577384b672985dff14cb706daf0d604a62808fe4cdf838241867d027d6e
+  fields:
+    eligibility:
+      text: 须满足学校2027普通博士条件；中国籍海外本科直博另限081200且要求海外一流高校、GPA原则不低于3.5/4，不作为所有普通博士GPA门槛。
+      quote: 本科毕业于海外一流高校；本科阶段的总绩点原则上不低于3.5（按满分为4分核算）。
+      locator: 一（三）1；此前句限定海外中国籍本科、081200
+      source_ids:
+      - tsinghua_cs_brochure_v16phd
+      - tsinghua_school_v16phd
+    materials:
+      text: 普通申请需身份证、外语证明、本硕成绩单、学历学位及学信/境外认证、两名副教授以上专家推荐、诚信承诺、报名登记及科研能力材料；应届硕士提供在学证明。
+      quote: （1）有效身份证明 （2）外语水平证明 （3）本科及硕士研究生学业成绩单 （4）本科学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、学士学位证书（须附学信网《中国高等教育学位在线验证报告》）、硕士研究生学历证书（须附学信网《教育部学历证书电子注册备案表》或《教育部学籍在线验证报告》）、硕士学位证书（须附学信网《中国高等教育学位在线验证报告》），其中应届生需提供在学证明）
+        （5）两封与报考专业相关的职称为副教授(或相当职称)或以上的专家推荐信 （6）清华大学研究生招生考生诚信承诺书 （7）《申请攻读博士学位研究生报名登记表》 （8）其他可证明科研水平和能力的材料
+      locator: 一（三）3材料提交1-8；应届及境外分条件
+    timeline:
+      text: 非专项普通申请在第二申请时间：2026-11-01 10:00至11-30 15:00；全部专项仅第一时间且已过，不开放第二时间。
+      quote: 申请时间2：2026年11月1日10:00——11月30日15:00
+      locator: 一（三）2
+    exams:
+      text: 普通招考含上机与专业/综合能力面试，面试不少于30分钟；具体春季时间及办法另发通知，须核实后续公告。
+      quote: 综合考核包括上机考试和综合面试（专业面试+综合能力面试）。具体时间及办法将在春季
+      locator: 二、材料审查与综合考核（三）普通招考
+    quota:
+      text: 根据审查成绩按招生计划1:1.5至1:4入围；这只是考核比例，不是导师余量或确定招生人数。
+      quote: 依据招生计划的1：1.5-1：4比例确定入围综合考核名单。
+      locator: 二、材料审查
+    contact:
+      text: 计算机系研究生办公室：010-62783054，jsjxyjsb@mailoa.tsinghua.edu.cn；核对后续考核通知。
+      quote: 联系电话：010-62783054 电子邮箱：jsjxyjsb@mailoa.tsinghua.edu.cn
+      locator: 五、联系方式
+  events:
+  - label: 计算机系非专项普通博士冬季申请截止
+    kind: deadline
+    at: '2026-11-30T15:00:00+08:00'
+    quote: 申请时间2：2026年11月1日10:00——11月30日15:00
+    locator: 一（三）2：非专项招生申请时间2；专项不适用

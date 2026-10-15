@@ -61,13 +61,21 @@ def review_id(entry):
 
 
 def validate(data, known_ids):
-    if not isinstance(data, dict) or set(data) != {'version', 'preferences', 'reviews'} or type(data['version']) is not int or data['version'] != 1 or not isinstance(data['reviews'], dict):
+    if not isinstance(data, dict) or type(data.get('version')) is not int or data['version'] not in (1, 2) or set(data) != {'version', 'preferences', 'reviews'} | ({'project_reviews'} if data['version'] == 2 else set()) or not isinstance(data['reviews'], dict):
         raise ValueError('筛选备份结构错误')
     validate_preferences(data['preferences'], known_ids)
     for key, entry in data['reviews'].items():
         validate_review(entry, known_ids, stored=True)
         if key != entry['id']:
             raise ValueError('核验键不匹配')
+    if data['version'] == 2:
+        from crawler.project_review_util import validate_stored
+        if not isinstance(data['project_reviews'], dict):
+            raise ValueError('项目核验须为对象')
+        for key, entry in data['project_reviews'].items():
+            validate_stored(entry)
+            if key != entry['id']:
+                raise ValueError('项目核验键不匹配')
     if len(json.dumps(data, ensure_ascii=False).encode()) > 1_000_000:
         raise ValueError('筛选与核验记录最多 1 MB')
 

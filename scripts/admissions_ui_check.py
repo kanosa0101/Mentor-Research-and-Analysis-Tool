@@ -92,7 +92,9 @@ def main():
                     offline = browser.new_page()
                     offline.goto((SITE / 'admissions.html').as_uri() + '?school=tsinghua&dept=cs&year=2027')
                     offline.wait_for_function('window.ADMISSIONS_READY === true')
-                    assert offline.locator('[data-policy]').count() == 4
+                    assert offline.locator('[data-policy]').count() == 6
+                    assert offline.locator('[data-policy="tsinghua-2027-phd-assessment-v16pilot"]').count() == 1
+                    assert offline.locator('[data-policy="tsinghua-cs-2027-phd-assessment-v16pilot"]').count() == 1
                     print('PASS: layered policies/context/unknown/year/source-change/XSS/project prefill/no auto write/mobile/file mode')
                 finally:
                     browser.close()

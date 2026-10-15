@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 
@@ -39,11 +40,20 @@ def parse_list(html, cfg):
         published = None
         match = re.search(r'(20\d{2})[.\-/](\d{2})[.\-/](\d{2})', stamp)
         reverse = re.fullmatch(r'(\d{1,2})\s+(20\d{2})-(\d{2})', stamp)
+        split_day = re.fullmatch(r'(20\d{2})-(\d{2})\s+(\d{1,2})', stamp)
         if match:
             published = '-'.join(match.groups())
         elif reverse:
             day, year, month = reverse.groups()
             published = f'{year}-{month}-{int(day):02d}'
+        elif split_day:
+            year, month, day = split_day.groups()
+            published = f'{year}-{month}-{int(day):02d}'
+        if published:
+            try:
+                date.fromisoformat(published)
+            except ValueError:
+                published = None
         records[url] = {'id': hashlib.sha256(url.encode()).hexdigest()[:16],
                         'school': cfg['school'], 'dept': cfg['dept'], 'unit': cfg.get('name', cfg['school']),
                         'title': title, 'url': url, 'source': cfg['url'],

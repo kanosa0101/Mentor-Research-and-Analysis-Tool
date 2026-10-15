@@ -21,6 +21,7 @@ from crawler.workflow_util import empty_workflow, update_entry, scan_materials
 from crawler import contact_util as contact
 from crawler import project_util as projects
 from crawler import discovery_util as discovery
+from crawler import project_review_util as project_reviews
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -289,7 +290,7 @@ class Handler(SimpleHTTPRequestHandler):
         if not self._local_request(json_body=method == 'POST'):
             return
         path = self.path.removeprefix('/api/discovery')
-        if (method == 'GET' and path not in ('', '/backup')) or (method == 'POST' and path not in ('', '/reviews', '/restore')):
+        if (method == 'GET' and path not in ('', '/backup', '/project-reviews')) or (method == 'POST' and path not in ('', '/reviews', '/restore', '/project-reviews')):
             return self._json(404, {'error': '未知 API'})
         try:
             body = self._body() if method == 'POST' else None
@@ -299,15 +300,39 @@ class Handler(SimpleHTTPRequestHandler):
             try:
                 data = load_outreach(self.discovery) if self.discovery.exists() and path != '/restore' else discovery.empty()
                 discovery.validate(data, self._known_ids())
+                if path == '/project-reviews':
+                    context = projects.load_context(ROOT)
+                    checks_path = ROOT / 'data' / 'admissions_checks.json'
+                    context['checks'] = json.loads(checks_path.read_text(encoding='utf-8')) if checks_path.exists() else {}
+                    if not isinstance(context['checks'], dict):
+                        raise ValueError('来源检查记录须为对象')
+                    workflow = projects.upgrade(load_outreach(self.workflow) if self.workflow.exists() else empty_workflow(), self._known_ids(), context)
+                    ids = {e['mentor_id'] for e in data.get('project_reviews', {}).values()}
+                    if isinstance(body, dict) and isinstance(body.get('mentor_id'), str):
+                        ids.add(body['mentor_id'])
+                    mentors = {}
+                    for mentor_id in ids & self._known_ids():
+                        parts = mentor_id.split('-', 2)
+                        if len(parts) != 3 or any(part in ('', '.', '..') or '/' in part or '\\' in part for part in parts):
+                            continue
+                        mentor_path = ROOT / 'data' / 'professors' / parts[0] / parts[1] / (parts[2] + '.yaml')
+                        if mentor_path.exists():
+                            mentor = yaml.safe_load(mentor_path.read_text(encoding='utf-8'))
+                            if isinstance(mentor, dict):
+                                mentors[mentor_id] = mentor
             except (ValueError, OSError, yaml.YAMLError) as e:
                 return self._json(500, {'error': str(e)})
             if method == 'GET':
-                return self._json(200, {'version': 1, 'discovery': data} if path == '/backup' else data)
+                if path == '/project-reviews':
+                    return self._json(200, project_reviews.view(data, workflow, mentors, context))
+                return self._json(200, {'version': data['version'], 'discovery': data} if path == '/backup' else data)
             try:
                 if path == '/restore':
-                    if not isinstance(body, dict) or set(body) != {'version', 'discovery'} or type(body['version']) is not int or body['version'] != 1:
+                    if not isinstance(body, dict) or set(body) != {'version', 'discovery'} or type(body['version']) is not int or body['version'] not in (1, 2):
                         raise ValueError('无效筛选备份')
                     data = body['discovery']
+                    if not isinstance(data, dict) or data.get('version') != body['version']:
+                        raise ValueError('备份内外版本不一致')
                     discovery.validate(data, self._known_ids())
                     if self.discovery.exists():
                         backups = self.discovery.parent / 'backups'
@@ -316,12 +341,16 @@ class Handler(SimpleHTTPRequestHandler):
                     result = {'restored': True}
                 elif path == '/reviews':
                     data, result = discovery.save_review(data, body, self._known_ids())
+                elif path == '/project-reviews':
+                    data, result = project_reviews.save(data, body, workflow, mentors, context)
                 else:
                     discovery.validate_preferences(body, self._known_ids())
                     data['preferences'] = body
                     discovery.validate(data, self._known_ids())
                     result = body
                 save_outreach(data, self.discovery)
+            except project_reviews.GoalChanged as e:
+                return self._json(409, {'error': str(e)})
             except (ValueError, OSError, UnicodeError) as e:
                 return self._json(400, {'error': str(e)})
         return self._json(200, result)

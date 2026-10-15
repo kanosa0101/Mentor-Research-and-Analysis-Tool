@@ -4,7 +4,7 @@
     if(/^[a-z0-9 ._-]+$/i.test(term))return new RegExp('(^|[^a-z0-9])'+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'($|[^a-z0-9])','i').test(text);
     return text.toLowerCase().includes(term.toLowerCase());
   };
-  function evaluate(p,prefs,reviews,corpus='',today=new Date().toLocaleDateString('sv-SE')){
+  function evaluate(p,prefs,reviews,corpus='',today=new Date().toLocaleDateString('sv-SE'),context=null){
     const checks=[],evidence=[];
     const add=(key,state,detail)=>checks.push({key,state,detail,mode:prefs.modes[key],label:modes[key]});
     if(prefs.schools.length&&!prefs.schools.includes(p.school))return {visible:false,checks:[{key:'school',state:'fail',detail:'不在允许院校内'}],score:0,evidence};
@@ -20,15 +20,26 @@
       add('qualification',found?'pass':'unknown',found?'官网导师资格：'+value:'该学位导师资格未明确；其他学位资格不自动推断');
     }
     add('email',p.email?'pass':'unknown',p.email?'官网提供邮箱，使用前仍需核对':'官网库未提供邮箱，需查主页或咨询院系');
-    const scoped=projectScoped(prefs);
-    let review=scoped?undefined:Object.values(reviews).find(r=>r.mentor_id===p.page&&r.year===prefs.year&&r.degree===prefs.degree&&r.route===prefs.route);
+    const scoped=projectScoped(prefs)||!!context?.project||!!context?.projectIntent;
+    const project=context?.project, goal=project?.goal_snapshot;
+    const current=projectMatches(project,prefs)&&p.school===goal.school_id&&p.dept===goal.dept_id;
+    let review=project?(current?Object.values(context.project_reviews||{}).find(r=>r.project_id===project.id&&r.mentor_id===p.page&&sameGoal(r.goal_snapshot,goal)):undefined):scoped?undefined:Object.values(reviews).find(r=>r.mentor_id===p.page&&r.year===prefs.year&&r.degree===prefs.degree&&r.route===prefs.route);
     const age=review?(Date.parse(today+'T00:00:00Z')-Date.parse(review.checked_at+'T00:00:00Z'))/86400000:Infinity;
     const valid=review&&age>=0&&age<=30;
-    for(const key of ['opportunity','eligibility'])add(key,valid?review[key]:'unknown',scoped?'核验尚未区分该项目，需对照原文':valid?'人工核验于 '+review.checked_at:review?'核验超过30天或日期异常，请复核':'没有对应年度/学位/渠道的核验记录');
+    for(const key of ['opportunity','eligibility']){
+      const state=project?(current&&valid&&review.applicable?review[key+'_status']||'unknown':'unknown'):valid?review[key]:'unknown';
+      const reasons=review?[...(review.reasons||[]),...(review[key+'_reasons']||[])]:[];
+      add(key,state,project?(!current?'浏览条件与申请目标不一致，请重新选择项目':review?('我的核对记录 '+review.checked_at+(reasons.length?' · '+[...new Set(reasons)].map(reviewReason).join('；'):'')):'当前项目及目标尚无核对记录'):scoped?'核验尚未区分该项目，需对照原文':valid?'人工核验于 '+review.checked_at:review?'核验超过30天或日期异常，请复核':'没有对应年度/学位/渠道的核验记录');
+    }
+    const protectedScope=scoped&&!current;
     const active=checks.filter(c=>c.mode!=='off');
-    return {visible:!active.some(c=>c.mode==='hard'&&(c.state==='fail'||(!prefs.keep_unknown&&c.state==='unknown'&&!(scoped&&['opportunity','eligibility'].includes(c.key))))),
+    return {visible:!active.some(c=>c.mode==='hard'&&(c.state==='fail'||(!prefs.keep_unknown&&c.state==='unknown'&&!(protectedScope&&['opportunity','eligibility'].includes(c.key))))),
       checks,evidence,review,score:active.filter(c=>c.state==='pass').length,unknown:active.filter(c=>c.state==='unknown').length};
   }
+  const goalKeys=['school_id','dept_id','year','degree','route','track','program_code','program_name'];
+  function sameGoal(a,b){return !!a&&!!b&&goalKeys.every(k=>(a[k]??'')===(b[k]??''));}
+  function projectMatches(project,prefs){const g=project?.goal_snapshot;return !!project?.complete&&!!g&&(!prefs.goal_snapshot||sameGoal(prefs.goal_snapshot,g))&&prefs.schools.length===1&&prefs.schools[0]===g.school_id&&prefs.year===g.year&&prefs.degree===g.degree&&prefs.route===g.route;}
+  function reviewReason(code){return ({goal_changed:'项目目标已变更',project_missing:'项目已不存在',goal_incomplete:'项目目标未完整',mentor_mismatch:'导师登记单位与项目不一致',expired:'超过30天，请复核',evidence_missing:'证据已缺失',evidence_changed:'回复内容已变更',source_unavailable:'登记来源当前不可用或检查已过期',source_missing:'登记来源已缺失',source_changed:'来源内容已变更',source_registered:'此来源现已登记监测，请重新核对原文后保存',source_unmonitored:'来源未登记监测，请自行回查'})[code]||code;}
   function projectScoped(prefs){return !!prefs.program||prefs.track==='special';}
   function completeness(p,extra={}){
     const present=value=>typeof value==='string'&&value.trim()&&!/(未知|待补充|未整理)/.test(value);
@@ -47,5 +58,5 @@
     });
     return {rows:ranked,matched};
   }
-  const api={evaluate,projectScoped,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
+  const api={evaluate,projectScoped,projectMatches,sameGoal,reviewReason,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
 })(typeof window!=='undefined'?window:globalThis);

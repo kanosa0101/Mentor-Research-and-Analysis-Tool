@@ -4,6 +4,7 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 from playwright.sync_api import sync_playwright
 
@@ -134,7 +135,14 @@ def main():
                 page.locator('[data-project-requirements]').first.click()
                 desk_link = page.locator('#project-list a[href*="desk.html"]').get_attribute('href')
                 assert 'project=' + other['id'] in desk_link
-                assert all(other['id'] not in href for href in page.locator('#project-list a[href*="admissions.html"], #project-list a[href*="discovery.html"]').evaluate_all('(nodes)=>nodes.map(n=>n.href)'))
+                assert all(other['id'] not in href for href in page.locator('#project-list a[href*="admissions.html"]').evaluate_all('(nodes)=>nodes.map(n=>n.href)'))
+                discovery_links = page.locator('#project-list a[href*="discovery.html"]').evaluate_all('(nodes)=>nodes.map(n=>n.href)')
+                assert discovery_links
+                for href in discovery_links:
+                    query = parse_qs(urlsplit(href).query)
+                    assert query.get('project') == [other['id']]
+                    assert set(query) <= {'project', 'school', 'dept', 'year', 'degree', 'route', 'track', 'program_code', 'program_name'}
+                    assert other['name'] not in href and 'notes' not in query
                 page.goto(base + '/' + desk_link.replace('year=2027', 'year=2029') + '&mentor=' + mentor)
                 page.wait_for_function('window.CONTACT_READY')
                 assert page.input_value('#target-project') == other['id']
