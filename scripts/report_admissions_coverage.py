@@ -36,6 +36,9 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
             conditional = [p for p in scope if p.get('applies_if') and
                            (not is_program(p) or program and (p['program_code'] + '|' + p['program']) == program)]
             selected = [p for ps in levels.values() for p in ps] + conditional
+            material_actions = [{'policy_id': p['id'], 'action_id': action['id'], 'stage': action['stage'],
+                                 'conditional': bool(p.get('applies_if') or action.get('applies_if'))}
+                                for p in selected for action in p.get('material_actions', [])]
             matching_entries = [e for e in entries if e['school'] == sid and e['dept'] == dept]
             scoped_entries = [dict(e, scope=entry_scope(e, year, degree, route),
                                    status=source_status(e, checks.get(e['source_id'], {}), today)) for e in matching_entries]
@@ -55,6 +58,10 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
                 gaps.append('本层官方招生入口未登记')
             if not entry_scope_counts['matching']:
                 gaps.append('本层年度、学位与渠道明确匹配的招生入口未登记')
+            if not material_actions:
+                gaps.append('分阶段材料动作未整理')
+            elif all(action['conditional'] for action in material_actions):
+                gaps.append('已整理材料动作均为条件性参考')
             if track == 'special' and levels['school']:
                 gaps.append('学校通用条款对专项的适用仍待核对')
             source_states = {source: source_status({'reviewed_at': today}, checks.get(source, {}), today)['state']
@@ -65,6 +72,7 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
                          'year': year, 'degree': degree, 'route': route, 'track': track, 'program': program,
                          **{level + '_policy_ids': [p['id'] for p in ps] for level, ps in levels.items()},
                          'conditional_policy_ids': [p['id'] for p in conditional],
+                         'material_actions': material_actions,
                          'available_program_policy_ids': [p['id'] for p in available],
                          'fields_by_layer': {level: sorted({f for p in ps for f in p['fields']}) for level, ps in levels.items()},
                          'source_states': source_states, 'summary_review_due': review_due,
@@ -73,7 +81,7 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
     return {'scope': {'year': year, 'degree': degree, 'route': route, 'track': track, 'program': program},
             'generated_at': today,
             'denominators': {'schools': len(schools), 'schools_with_units': sum(bool(u) for u in units.values()), 'units': sum(map(len, units.values()))},
-            'note': '摘要类别、入口年度/学位/渠道范围与来源状态分别记录；范围未知或其他目标的导航不计明确匹配入口，匹配不表示专项/专业适用或来源有效。已有八类摘要不代表条款完整或个人符合资格。', 'rows': rows}
+            'note': '摘要类别、入口年度/学位/渠道范围与来源状态分别记录；范围未知或其他目标的导航不计明确匹配入口，匹配不表示专项/专业适用或来源有效。已有八类摘要或材料动作不代表材料清单完整、个人完成度或符合资格。', 'rows': rows}
 
 
 def main():

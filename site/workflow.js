@@ -6,7 +6,7 @@ const projectLabels = {planned:'准备中',submitted:'已提交',interview:'面�
 const materialLabels = {paper:'论文',letter:'信件',cv:'简历',application:'申请材料',other:'其他'};
 const communicationLabels = {draft:'草稿',sent:'已发送',replied:'收到回复',note:'备注 / 更正'};
 let WORKFLOW = {projects:{},materials:{},communications:{},reminders:{}};
-let currentSection=['project','material','communication','reminder'].includes(new URLSearchParams(location.search).get('section')) ? new URLSearchParams(location.search).get('section') : 'project';
+let currentSection=['project','preparation','material','communication','reminder'].includes(new URLSearchParams(location.search).get('section')) ? new URLSearchParams(location.search).get('section') : 'project';
 let contextReady=false;
 let materialView='current';
 const formDirty=new Set();
@@ -73,7 +73,7 @@ function projectRecentActions(p){
   const date=sameDay[0];
   return `<div class="project-next-actions"><h4>${p.status==='archived'?'归档记录':'近期行动'}</h4>${p.status==='archived'?'<p class="muted">项目已归档；保留的未完成提醒仍可管理。</p>':''}<p><strong>未完成提醒${pending.length?' · '+pending.length+' 项':''}</strong>${reminder?`<br><span class="${reminder.due_date<reminderDay(now)?'overdue':''}">${esc(reminderStatus(reminder,reminderDay(now)))} · ${esc(reminder.due_date)}</span> · ${esc(reminder.title)}<br>${reminder.mentor_id?'导师事项：'+esc(mentorName(reminder.mentor_id)):'项目事项'}`:'<br><span class="muted">暂无未完成提醒。</span>'}</p><button type="button" data-project-section="reminder" data-project-id="${esc(p.id)}">查看此项目提醒</button><p><strong>后续安排</strong>${date?`<br>${esc(date.origin==='policy'?'官方事件快照':'个人计划')} · ${esc(dateLabels[date.kind])} · ${esc(date.label)}<br>${esc(date.at)} · ${esc(dateStatus(date))}${date.origin==='policy'?`<br><small>${esc(snapshotStatus(date))}；申请前核对原文。</small>`:''}${sameDay.length>1?`<br><small>同日另有 ${sameDay.length-1} 条安排${dateOnly?'，因日期精度不同或未注明时刻，先后未确定':''}；完整安排请展开目标与要求。</small>`:/^\d{4}-\d{2}-\d{2}$/.test(date.at)?'<br><small>仅登记日期，未注明具体时刻。</small>':''}`:'<br><span class="muted">尚未登记后续安排；不表示没有申请截止时间。</span>'}</p></div>`;
 }
-function projectCard(p){return `<article><h3>${esc(p.name)} <span class="tag">${esc(projectLabels[p.status])}</span></h3><p>${esc(goalTitle(p))}</p>${p.school||p.college||p.application_type?`<details><summary>旧说明（不参与政策匹配）</summary><p>${esc([p.school,p.college,p.application_type].filter(Boolean).join(' · '))}</p></details>`:''}<p>${mentorLinks(p.mentor_ids)}</p><p>${esc(p.notes)}</p>${projectRecentActions(p)}${projectRequirements(p)}<button type="button" data-edit-project="${p.id}">编辑项目</button> <button type="button" data-focus-project="${p.id}">查看关联记录</button></article>`;}
+function projectCard(p){return `<article><h3>${esc(p.name)} <span class="tag">${esc(projectLabels[p.status])}</span></h3><p>${esc(goalTitle(p))}</p>${p.school||p.college||p.application_type?`<details><summary>旧说明（不参与政策匹配）</summary><p>${esc([p.school,p.college,p.application_type].filter(Boolean).join(' · '))}</p></details>`:''}<p>${mentorLinks(p.mentor_ids)}</p><p>${esc(p.notes)}</p>${projectRecentActions(p)}${projectRequirements(p)}<button type="button" data-project-section="preparation" data-project-id="${esc(p.id)}">准备材料</button> <button type="button" data-edit-project="${p.id}">编辑项目</button> <button type="button" data-focus-project="${p.id}">查看关联记录</button></article>`;}
 function renderGoalEditor(){
   const p=projectForm(),result=projectChecklist(p);
   el('project-goal-preview').textContent=result.ready?'目标已填写；保存后绑定。专业 / 项目未指定时，其专属要求仅作条件性参考。':'结构化目标尚未完整，保存后也不会借用其他目标政策。';
@@ -194,6 +194,7 @@ function reset(prefix){
   if(prefix==='project')renderGoalEditor();
 }
 function render(){
+  window.MaterialPreparation?.refresh(WORKFLOW,el('filter-project').value);
   const projectOptions=Object.values(WORKFLOW.projects).map(p=>[p.id,`${p.name} · ${p.year ?? '年度未知'}`]);
   options('filter-project',projectOptions,'全部项目');
   options('material-projects',projectOptions);
@@ -358,12 +359,13 @@ for(const prefix of Object.keys(chosen)) reset(prefix);
 let lastProject='';
 function showSection(section){
   currentSection=section;
-  for(const key of Object.keys(chosen))el('section-'+key).hidden=key!==section;
+  for(const key of [...Object.keys(chosen),'preparation'])el('section-'+key).hidden=key!==section;
   document.querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.section===section)));
   const q=new URLSearchParams(location.search);q.set('section',section);history.replaceState(null,'',location.pathname+'?'+q);
   lastProject=el('filter-project').value;
 }
 function discardChanges(){
+  if(window.MaterialPreparation&&!window.MaterialPreparation.discard())return false;
   if(!formDirty.size)return true;
   if(!confirm('表单尚未保存，继续会放弃修改。继续？'))return false;
   for(const key of [...formDirty])reset(key);return true;
@@ -378,6 +380,7 @@ document.addEventListener('click',e=>{
   if(b.dataset.addMentor||b.dataset.removeMentor){const box=b.closest('[data-mentor-picker]');if(box)formDirty.add(box.dataset.mentorPicker);}
 },true);
 window.addEventListener('beforeunload',e=>{if(formDirty.size){e.preventDefault();e.returnValue='';}});
+window.MaterialPreparation?.init({reload:refresh});
 showSection(currentSection);
 for(const prefix of Object.keys(chosen)) reset(prefix);
 if(location.protocol==='http:'){

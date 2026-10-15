@@ -22,6 +22,7 @@ from crawler import contact_util as contact
 from crawler import project_util as projects
 from crawler import discovery_util as discovery
 from crawler import project_review_util as project_reviews
+from crawler import material_task_util as material_tasks
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -212,7 +213,7 @@ class Handler(SimpleHTTPRequestHandler):
             return
         parts = self.path.split('/')[3:]
         is_eml = len(parts) == 3 and parts[0] == 'drafts' and parts[2] == 'eml'
-        if method == 'GET' and self.path not in ('/api/workflow', '/api/workflow/backup') and not is_eml:
+        if method == 'GET' and self.path not in ('/api/workflow', '/api/workflow/backup', '/api/workflow/material-tasks') and not is_eml:
             return self._json(404, {'error': '未知 API'})
         try:
             body = self._body(limit=32_000_000 if parts == ['restore'] else 2_000_000) if method != 'GET' else None
@@ -223,7 +224,14 @@ class Handler(SimpleHTTPRequestHandler):
                 # 恢复不依赖旧文件有效；新备份校验后保留旧文件原始字节。
                 data = load_outreach(self.workflow) if self.workflow.exists() and parts != ['restore'] else empty_workflow()
                 context = projects.load_context(ROOT)
-                data = projects.upgrade(data, self._known_ids(), context)
+                data = material_tasks.upgrade(data, self._known_ids(), context)
+                stored = data
+                data = material_tasks.project(data)
+                if parts and parts[0] == 'material-tasks':
+                    checks_path = ROOT / 'data' / 'admissions_checks.json'
+                    context['checks'] = json.loads(checks_path.read_text(encoding='utf-8')) if checks_path.exists() else {}
+                    if not isinstance(context['checks'], dict):
+                        raise ValueError('来源检查记录须为对象')
             except (ValueError, OSError, yaml.YAMLError) as e:
                 return self._json(500, {'error': str(e)})
             if method == 'GET':
@@ -242,21 +250,30 @@ class Handler(SimpleHTTPRequestHandler):
                     self.end_headers()
                     self.wfile.write(raw)
                     return
-                return self._json(200, {'version': 3, 'workflow': data} if parts == ['backup'] else data)
+                if parts == ['material-tasks']:
+                    try:
+                        return self._json(200, material_tasks.view(stored, context))
+                    except (ValueError, OSError) as e:
+                        return self._json(400, {'error': str(e)})
+                return self._json(200, {'version': stored['version'], 'workflow': stored} if parts == ['backup'] else data)
             try:
                 if method == 'POST' and parts == ['restore']:
-                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] not in (1, 2, 3):
+                    if not isinstance(body, dict) or set(body) != {'version', 'workflow'} or type(body['version']) is not int or body['version'] not in (1, 2, 3, 4):
                         raise ValueError('备份版本或结构错误')
                     data = body['workflow']
                     if not isinstance(data, dict) or data.get('version') != body['version']:
                         raise ValueError('备份内外版本不一致')
-                    data = projects.upgrade(data, self._known_ids(), context)
+                    data = material_tasks.upgrade(data, self._known_ids(), context)
                     if self.workflow.exists():
                         backups = self.workflow.parent / 'backups'
                         backups.mkdir(parents=True, exist_ok=True)
                         target = backups / ('workflow-' + datetime.now().strftime('%Y%m%d-%H%M%S-%f') + '.yaml')
                         target.write_bytes(self.workflow.read_bytes())
                     result = {'restored': True}
+                elif method == 'POST' and parts == ['material-tasks']:
+                    data, result = material_tasks.save(stored, body, self._known_ids(), context)
+                elif method == 'POST' and len(parts) == 3 and parts[0] == 'material-tasks' and parts[2] == 'reminders':
+                    data, result = material_tasks.reminder(stored, parts[1], body, self._known_ids(), context)
                 elif method == 'POST' and parts == ['scan']:
                     if not isinstance(body, dict) or set(body) != {'root'}:
                         raise ValueError('扫描须指定 root 目录')
@@ -278,8 +295,12 @@ class Handler(SimpleHTTPRequestHandler):
                         data = contact.merge_core(data, base, self._known_ids())
                 else:
                     return self._json(404, {'error': '未知 API'})
-                projects.validate(data, context)
+                if parts != ['restore'] and (not parts or parts[0] != 'material-tasks'):
+                    data = material_tasks.merge(stored, data)
+                material_tasks.validate(data, self._known_ids(), context)
                 save_outreach(data, self.workflow)
+            except material_tasks.Conflict as e:
+                return self._json(409, {'error': str(e)})
             except KeyError as e:
                 return self._json(404, {'error': str(e)})
             except (ValueError, UnicodeError, OSError) as e:
@@ -306,7 +327,7 @@ class Handler(SimpleHTTPRequestHandler):
                     context['checks'] = json.loads(checks_path.read_text(encoding='utf-8')) if checks_path.exists() else {}
                     if not isinstance(context['checks'], dict):
                         raise ValueError('来源检查记录须为对象')
-                    workflow = projects.upgrade(load_outreach(self.workflow) if self.workflow.exists() else empty_workflow(), self._known_ids(), context)
+                    workflow = material_tasks.project(material_tasks.upgrade(load_outreach(self.workflow) if self.workflow.exists() else empty_workflow(), self._known_ids(), context))
                     ids = {e['mentor_id'] for e in data.get('project_reviews', {}).values()}
                     if isinstance(body, dict) and isinstance(body.get('mentor_id'), str):
                         ids.add(body['mentor_id'])

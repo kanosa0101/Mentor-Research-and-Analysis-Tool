@@ -43,7 +43,7 @@ def validate(data, units):
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
-        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if'}:
+        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if', 'material_actions'}:
             raise ValueError('政策结构错误')
         if not isinstance(p['id'], str) or not re.fullmatch(r'[a-z0-9_-]+', p['id']) or p['id'] in ids:
             raise ValueError('政策 ID 错误或重复')
@@ -81,6 +81,24 @@ def validate(data, units):
         if not isinstance(p['fields'], dict) or not p['fields'] or set(p['fields']) - set(FIELDS):
             raise ValueError('政策字段错误')
         evidence = list(p['fields'].values()) + ([p['applies_if']] if 'applies_if' in p else [])
+        actions = p.get('material_actions', [])
+        if not isinstance(actions, list):
+            raise ValueError('材料动作须为数组')
+        action_ids = set()
+        for action in actions:
+            if not isinstance(action, dict) or not {'id', 'label', 'stage', 'instruction'} <= set(action) or set(action) - {'id', 'label', 'stage', 'instruction', 'applies_if', 'event_indexes'}:
+                raise ValueError('材料动作结构错误')
+            if not isinstance(action['id'], str) or not re.fullmatch(r'[a-z0-9_-]+', action['id']) or action['id'] in action_ids or not isinstance(action['label'], str) or not action['label'].strip():
+                raise ValueError('材料动作 ID 或名称错误或重复')
+            action_ids.add(action['id'])
+            if action['stage'] not in ('application', 'screening', 'interview', 'admission', 'enrollment', 'other'):
+                raise ValueError('材料动作阶段错误')
+            indexes = action.get('event_indexes', [])
+            if not isinstance(indexes, list) or any(type(i) is not int or not 0 <= i < len(p.get('events', [])) for i in indexes) or len(indexes) != len(set(indexes)):
+                raise ValueError('材料动作须引用本政策有效且唯一的整数事件索引')
+            evidence.append(action['instruction'])
+            if 'applies_if' in action:
+                evidence.append(action['applies_if'])
         for field in evidence:
             if not isinstance(field, dict) or not {'text', 'quote', 'locator'} <= set(field) or set(field) - {'text', 'quote', 'locator', 'source_ids'} or any(not isinstance(field[k], str) or not field[k].strip() for k in ('text', 'quote', 'locator')):
                 raise ValueError('每项摘要须有原文片段与定位')

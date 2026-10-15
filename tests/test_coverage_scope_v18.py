@@ -57,6 +57,20 @@ class CoverageScopeTests(unittest.TestCase):
             self.assertEqual(row['conditional_policy_ids'], ['point'])
             self.assertIn('学校规则未整理', row['gaps'])
 
+    def test_material_actions_keep_conditional_and_program_scope_visible(self):
+        policy = dict(id='school', school='s', dept='', level='school', year=2027,
+                      degree='master', route='exam', track='ordinary', program='', program_code='',
+                      reviewed_at='2026-10-15', review_hashes={}, fields={'materials': {'text': '材料'}},
+                      material_actions=[{'id': 'upload', 'stage': 'application'},
+                                        {'id': 'check', 'stage': 'enrollment', 'applies_if': {'text': '应届生'}}])
+        specific = dict(policy, id='specific', dept='cs', level='program', program='计算机技术', program_code='085404')
+        rows = self.report.build_report([{'id': 's', 'name': '学校'}], {'s': {'cs'}},
+                                        {'policies': [policy, specific]}, [], {}, today='2026-10-15')['rows']
+        self.assertEqual(rows[1]['material_actions'], [
+            {'policy_id': 'school', 'action_id': 'upload', 'stage': 'application', 'conditional': False},
+            {'policy_id': 'school', 'action_id': 'check', 'stage': 'enrollment', 'conditional': True}])
+        self.assertNotIn('分阶段材料动作未整理', rows[1]['gaps'])
+
 
 if __name__ == '__main__':
     unittest.main()
