@@ -60,20 +60,29 @@ a:hover{text-decoration:underline}
 <div class="page-heading"><h1>导师对比</h1></div>
 <div class="wrap"><div class="context-actions"><a href="discovery.html">继续找导师</a><a href="index.html">从全量目录添加</a><span id="selection-summary" class="muted"></span><button id="clear-selection" type="button">清空选择</button></div>
   <div class="hint" id="hint" style="display:none">
-    请选择 2–5 位导师再比较。可以在<a href="discovery.html">找导师</a>卡片点击“加入对比”，或在<a href="index.html">全量目录</a>勾选姓名前的复选框。
+    尚未选择导师。选择 1 位可查看和联系，2–5 位可并排比较。可以在<a href="discovery.html">找导师</a>卡片点击“加入对比”，或在<a href="index.html">全量目录</a>勾选姓名前的复选框。
   </div>
   <div class="tblcard" tabindex="0" aria-label="导师对比，可左右滚动" id="card" style="display:none">
     <p class="table-hint">窄屏请在表格内左右滑动，对比后可从导师列准备联系。</p><table id="cmp"><thead><tr id="thead-row"></tr></thead><tbody></tbody></table>
   </div>
   <div class="foot">字段旁 ↗ 为官网出处（悬停看抓取日期） · 缺失字段显示"暂未收录"</div>
 </div>
-<script src="data.js?v=20261015-8"></script>
-<script src="compare-data.js?v=20261015-8"></script>
+<script src="data.js?v=20261015-9"></script>
+<script src="compare-data.js?v=20261015-9"></script>
 <script>
 const DATA = window.MENTOR_DATA;
 DATA.forEach(p => Object.assign(p, window.MENTOR_COMPARE[p.page]));
 const byId = {}; DATA.forEach(p => byId[p.page] = p);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const scopeInput=new URLSearchParams(location.search);
+function publicScope(p){
+  const q=new URLSearchParams();
+  for(const k of ['school','dept','year','degree','route','track','program'])if(scopeInput.get(k))q.set(k,scopeInput.get(k));
+  if(p){if(q.get('school')!==p.school||q.get('dept')!==p.dept){q.delete('track');q.delete('program');}q.set('school',p.school);q.set('dept',p.dept);}
+  return q;
+}
+const detailUrl=p=>'p/'+encodeURIComponent(p.page)+'.html?'+publicScope(p);
+for(const a of document.querySelectorAll('a[href="discovery.html"],a[href="compare.html"]'))a.href=a.getAttribute('href')+'?'+publicScope();
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
@@ -86,7 +95,7 @@ const MIS = '<span class="missing">暂未收录</span>';
 const chips = p => (p.facets||[]).map(f => `<span class="chip">${esc(FACET_LABELS[f.id]||f.id)}</span>`).join("");
 // prov: 有出处时在值旁挂 ↗（悬停显示抓取日期）
 const ROWS = [
-  {label:"姓名", f:p=>`<a href="p/${p.page}.html">${esc(p.name)}</a>`},
+  {label:"姓名", f:p=>`<a href="${esc(detailUrl(p))}">${esc(p.name)}</a>`},
   {label:"学校", f:p=>esc(p.school_name)},
   {label:"院系", f:p=>esc(p.dept_name||p.dept)},
   {label:"职称", f:p=>p.title?esc(p.title):MIS, prov:"title"},
@@ -109,18 +118,20 @@ function render(){
   document.getElementById("clear-selection").hidden=!SEL.length;
   document.getElementById("selection-summary").textContent=`当前选择 ${SEL.length} / 5 位`;
   document.getElementById("cmp").style.minWidth=(96+SEL.length*260)+"px";
-  if(SEL.length < 2){
+  if(!SEL.length){
     document.getElementById("hint").style.display = "block";
     document.getElementById("card").style.display = "none";
     return;
   }
   document.getElementById("hint").style.display = "none";
+  document.querySelector('.table-hint').textContent=SEL.length===1?'已保留 1 位导师，可查看资料或准备联系；继续添加导师即可并排比较。':'窄屏请在表格内左右滑动，对比后可从导师列准备联系。';
   document.getElementById("card").style.display = "block";
   document.getElementById("thead-row").innerHTML = `<th class="lb">字段</th>` + SEL.map(id=>{
-    const p = byId[id];
+    const p = byId[id],goal=publicScope(p);goal.set('mentor',id);
+    const cleared=(scopeInput.get('track')||scopeInput.get('program'))&&(scopeInput.get('school')!==p.school||scopeInput.get('dept')!==p.dept);
     return `<th class="pcol"><button class="rm" data-rm="${id}" aria-label="移出${esc(p.name)}" title="移出对比">×</button>
-      <div class="pn"><a href="p/${id}.html">${esc(p.name)}</a></div>
-      <div class="ps">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div><a class="compare-contact" href="desk.html?mentor=${encodeURIComponent(id)}&amp;school=${encodeURIComponent(p.school)}&amp;dept=${encodeURIComponent(p.dept)}">准备联系 →</a></th>`;
+      <div class="pn"><a href="${esc(detailUrl(p))}">${esc(p.name)}</a></div>
+      <div class="ps">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div><a class="compare-contact" href="desk.html?${esc(goal.toString())}">准备联系 →</a>${cleared?'<p class="muted">不在原项目院系，继续时清除原专业／专项范围，请重新核对。</p>':''}</th>`;
   }).join("");
   document.querySelector("#cmp tbody").innerHTML = ROWS.map(r =>
     `<tr><td class="lb">${r.label}</td>` + SEL.map(id=>{

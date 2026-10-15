@@ -8,6 +8,7 @@ const communicationLabels = {draft:'草稿',sent:'已发送',replied:'收到回�
 let WORKFLOW = {projects:{},materials:{},communications:{},reminders:{}};
 let currentSection=['project','material','communication','reminder'].includes(new URLSearchParams(location.search).get('section')) ? new URLSearchParams(location.search).get('section') : 'project';
 let contextReady=false;
+let materialView='current';
 const formDirty=new Set();
 let editing = {project:null,material:null,reminder:null};
 let contextMentor = new URLSearchParams(location.search).get('mentor') || '';
@@ -129,15 +130,24 @@ function render(){
   el('context-mentor').textContent=contextMentor ? '当前导师：'+mentorName(contextMentor) : '';
   el('clear-context').hidden=!contextMentor;
   const projectFilter=el('filter-project').value;
-  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。新材料、沟通与提醒默认关联此项目。' : '当前显示全部项目。新增记录时请选择关联项目。';
+  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。手动登记材料、沟通与提醒默认关联此项目；扫描仅登记文件，不自动关联项目。' : '当前显示全部项目。新增记录时请选择关联项目。';
   const relatedProject=id=>!!id && (!projectFilter || id===projectFilter) && (!contextMentor || WORKFLOW.projects[id]?.mentor_ids.includes(contextMentor));
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
   const list=(id,rows)=>el(id).innerHTML=rows.join('') || '<div class="empty">暂无记录</div>';
   list('project-list',Object.values(WORKFLOW.projects).filter(p=>(!projectFilter || p.id===projectFilter) && (!contextMentor || p.mentor_ids.includes(contextMentor))).map(p=>
     `<article><h3>${esc(p.name)} <span class="tag">${esc(projectLabels[p.status])}</span></h3><p>${esc(p.school)} · ${esc(p.college)} · ${esc(p.application_type)} · ${p.year ?? '年度未知'}</p><p>${mentorLinks(p.mentor_ids)}</p><p>${esc(p.notes)}</p><button type="button" data-edit-project="${p.id}">编辑项目</button> <button type="button" data-focus-project="${p.id}">查看关联记录</button></article>`));
-  list('material-list',Object.values(WORKFLOW.materials).filter(m=>linked(m.mentor_ids,m.project_ids)).map(m=>
-    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span> ${m.missing ? '<span class="bad">文件缺失</span>' : ''}</h3><p class="path">${esc(m.path)}</p><small>${m.size} 字节 · 文件修改：${esc(m.mtime)}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button></article>`));
+  const materials=Object.values(WORKFLOW.materials);
+  const scopedMaterials=materials.filter(m=>linked(m.mentor_ids,m.project_ids));
+  const unassigned=materials.filter(m=>!m.project_ids.length);
+  el('material-summary').textContent=`当前范围已登记 ${scopedMaterials.length} 个文件，索引标记缺失 ${scopedMaterials.filter(m=>m.missing).length} 个；全部记录中未关联任何项目 ${unassigned.length} 个。登记及文件存在性不代表申请要求齐全，请另行核对官方要求。`;
+  el('material-current').setAttribute('aria-pressed',String(materialView==='current'));
+  el('material-unassigned').setAttribute('aria-pressed',String(materialView==='unassigned'));
+  el('material-scope').textContent=materialView==='unassigned' ? `正在查看全部未关联任何项目的材料（不按导师筛选）。${projectFilter ? '点击关联将加入项目：'+projectName(projectFilter)+'。' : '请先选择目标项目，再逐条关联。'}` : `正在按当前项目与导师范围查看材料。${projectFilter ? '当前项目：'+projectName(projectFilter)+'。' : ''}`;
+  const visibleMaterials=materialView==='unassigned' ? unassigned : scopedMaterials;
+  list('material-list',visibleMaterials.map(m=>
+    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span> ${m.missing ? '<span class="bad">文件缺失</span>' : ''}</h3><p class="path">${esc(m.path)}</p><small>${m.size} 字节 · 文件修改：${esc(m.mtime)}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button>${projectFilter&&!m.project_ids.includes(projectFilter) ? ` <button type="button" data-link-material="${m.id}">关联到项目：${esc(projectName(projectFilter))}</button>` : ''}</article>`));
+  if(!visibleMaterials.length)el('material-list').innerHTML=`<div class="empty">${!materials.length ? '尚未登记材料。可以扫描目录或登记单个文件，再关联项目。' : materialView==='unassigned' ? '暂无未关联项目的材料。' : '当前范围暂无关联材料。扫描的新文件不会自动归入项目，可查看未关联项目材料并逐条关联。'}</div>`;
   list('communication-list',Object.values(WORKFLOW.communications).filter(c=>(!projectFilter || c.project_id===projectFilter) && (!contextMentor || c.mentor_id===contextMentor)).sort((a,b)=>b.date.localeCompare(a.date) || b.created_at.localeCompare(a.created_at)).map(c=>
     `<article><h3>${esc(c.subject)} <span class="tag">${esc(communicationLabels[c.kind])}</span></h3><small>${esc(c.date)} · ${mentorLinks([c.mentor_id])} · ${esc(projectName(c.project_id))}</small><p>${esc(c.content)}</p><p>材料：${esc(c.material_ids.map(id=>WORKFLOW.materials[id].title).join('；')) || '未关联'}</p></article>`));
   const today=new Date().toLocaleDateString('sv-SE');
@@ -172,11 +182,17 @@ el('scan-form').onsubmit=e=>{
   e.preventDefault();
   let summary;
   action(async()=>{summary=await api('/scan',{root:el('scan-root').value},'POST');},
-    ()=>`扫描 ${summary.scanned} 个文件，新增 ${summary.added}，缺失 ${summary.missing}`);
+    ()=>`扫描 ${summary.scanned} 个文件，新增 ${summary.added}，缺失 ${summary.missing}。扫描不自动关联项目；未关联任何项目的文件可通过“查看未关联项目材料”找到并逐条关联。`);
 };
+for(const view of ['current','unassigned'])el('material-'+view).onclick=()=>{materialView=view;render();el('material-list').focus({preventScroll:true});el('material-list').scrollIntoView({block:'center'});};
 document.querySelector('main').addEventListener('click',e=>{
   const button=e.target.closest('button'); if(!button) return;
   const d=button.dataset;
+  if(d.linkMaterial){
+    const project=el('filter-project').value,m=WORKFLOW.materials[d.linkMaterial];
+    if(!project||!m)return;
+    action(()=>api('/materials/'+m.id,{project_ids:[...new Set([...m.project_ids,project])]},'PATCH'),'已关联到项目：'+projectName(project));
+  }
   if(d.focusProject){el('filter-project').value=d.focusProject;el('filter-project').onchange();}
   if(d.toggleReminder){const r=WORKFLOW.reminders[d.toggleReminder]; action(()=>api('/reminders/'+r.id,{completed:!r.completed},'PATCH'),'提醒已更新');}
   for(const prefix of ['project','material','reminder']){
@@ -199,6 +215,7 @@ document.querySelector('main').addEventListener('click',e=>{
 el('filter-project').onchange=()=>{
   if(!discardChanges()){el('filter-project').value=lastProject;return;}
   lastProject=el('filter-project').value;
+  materialView='current';
   const p=WORKFLOW.projects[lastProject];
   if(contextMentor&&p&&!p.mentor_ids.includes(contextMentor))contextMentor='';
   for(const key of Object.keys(chosen))reset(key);render();
@@ -237,7 +254,7 @@ for(const key of Object.keys(chosen))el(key+'-form').addEventListener('input',()
 document.addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.section){if(discardChanges())showSection(b.dataset.section);return;}
-  if(b.dataset.editProject||b.dataset.editMaterial||b.dataset.editReminder||b.id.endsWith('-reset')){
+  if(b.dataset.editProject||b.dataset.editMaterial||b.dataset.editReminder||b.dataset.linkMaterial||['material-current','material-unassigned'].includes(b.id)||b.id.endsWith('-reset')){
     if(!discardChanges()){e.preventDefault();e.stopImmediatePropagation();}
   }
   if(b.dataset.addMentor||b.dataset.removeMentor){const box=b.closest('[data-mentor-picker]');if(box)formDirty.add(box.dataset.mentorPicker);}

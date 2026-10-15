@@ -1,4 +1,4 @@
-"""Reuse one browser context with warm v0.7 asset caches before loading v0.8 templates."""
+"""Reuse one browser context with warm v0.8 asset caches before loading v0.9 templates."""
 import json,re,shutil,tempfile,threading
 from pathlib import Path
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
@@ -6,13 +6,13 @@ from urllib.parse import urlsplit
 from jinja2 import Environment,FileSystemLoader
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent.parent
-OUT=ROOT/'cache/ux_v8/shell';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'cache/ux_v9/integration';OUT.mkdir(parents=True,exist_ok=True)
 env=Environment(loader=FileSystemLoader(ROOT/'site/templates'),autoescape=True)
 for template in (ROOT/'site/templates').glob('*.j2'):
  for asset in re.findall(r'<script src="([^"]+)"',template.read_text(encoding='utf8')):
-  assert asset.endswith('?v=20261015-8'),(template.name,asset)
-assert 'ui.css?v=20261015-8' in (ROOT/'site/templates/_ui_head.html.j2').read_text(encoding='utf8')
-assert 'search.js?v=20261015-8' in (ROOT/'site/templates/index.html.j2').read_text(encoding='utf8')
+  assert asset.endswith('?v=20261015-9'),(template.name,asset)
+assert 'ui.css?v=20261015-9' in (ROOT/'site/templates/_ui_head.html.j2').read_text(encoding='utf8')
+assert 'search.js?v=20261015-9' in (ROOT/'site/templates/index.html.j2').read_text(encoding='utf8')
 prefs={'year':None,'degree':'any','route':'unknown','topics':[],'schools':[],'keep_unknown':True,'modes':{'research':'hard','qualification':'soft','email':'soft','opportunity':'soft','eligibility':'soft'}}
 with tempfile.TemporaryDirectory(prefix='mentor-cache-upgrade-') as tmp:
  folder=Path(tmp)
@@ -20,7 +20,7 @@ with tempfile.TemporaryDirectory(prefix='mentor-cache-upgrade-') as tmp:
  shutil.copyfile(ROOT/'site/ui.css',folder/'ui.css')
  (folder/'discovery.html').write_text(env.get_template('discovery.html.j2').render(),encoding='utf8')
  scripts=['data.js','discovery-core.js','discovery.js','search.js','compare-data.js','admissions-data.js','admissions-core.js','admissions.js','desk.js','workflow.js']
- (folder/'warm.html').write_text('<link rel="stylesheet" href="ui.css">'+''.join(f'<script src="{name}"></script>' for name in scripts),encoding='utf8')
+ (folder/'warm.html').write_text('<link rel="stylesheet" href="ui.css?v=20261015-8">'+''.join(f'<script src="{name}?v=20261015-8"></script>' for name in scripts),encoding='utf8')
  state={'old':True};requests=[]
  class Handler(SimpleHTTPRequestHandler):
   def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(folder),**kwargs)

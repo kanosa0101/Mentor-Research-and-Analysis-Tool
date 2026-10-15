@@ -1,7 +1,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json,sys,tempfile,shutil
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qs
 from jinja2 import Environment,FileSystemLoader
 BASE='http://127.0.0.1:18768'
 env=Environment(loader=FileSystemLoader('site/templates'),autoescape=True)
@@ -56,7 +56,9 @@ with sync_playwright() as pw:
  assert page.locator('#compare-selection').is_visible()
  page.locator('[data-compare]').nth(1).click()
  assert '2' in page.locator('#compare-selection').inner_text()
- assert page.locator('#compare-open').get_attribute('href')=='compare.html'
+ compare_url=urlsplit(page.locator('#compare-open').get_attribute('href'))
+ assert compare_url.path=='compare.html'
+ assert parse_qs(compare_url.query)=={}, 'unknown degree/route must not become public scope'
  page.locator('[data-compare]').first.click()
  assert len(page.evaluate("JSON.parse(localStorage.getItem('compare_sel'))"))==1
  for i in range(2,7):page.locator('[data-compare]').nth(i).click()

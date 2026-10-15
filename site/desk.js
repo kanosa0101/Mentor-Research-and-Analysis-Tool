@@ -24,6 +24,24 @@ const personName=id=>people.get(id)?.name||id;
 const personLabel=id=>{const p=people.get(id);return p ? `${p.name} · ${p.school_name||p.school} · ${p.dept_name||p.dept}` : id;};
 const projectLabel=id=>{const p=FLOW.projects[id];return p ? `${p.name} · ${p.year??'年度未知'}` : '';};
 const target=()=>FLOW.targets[currentTarget];
+function forwardedGoal(){
+  const goal={...incomingGoal},p=people.get(target()?.mentor_id||incomingMentor);
+  if(p){
+    if(target()||goal.school!==p.school||goal.dept!==p.dept){delete goal.track;delete goal.program;}
+    goal.school=p.school;goal.dept=p.dept;
+  }
+  return goal;
+}
+function renderGoal(){
+  const scoped=!!(incomingGoal.track||incomingGoal.program),goal=forwardedGoal();
+  const intent=[incomingGoal.year,goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' · ');
+  el('incoming-goal').hidden=!Object.keys(incomingGoal).length;
+  el('incoming-goal').textContent=(intent?'来访申请意向：'+intent+'。':'')+
+    '来访招生范围仅供核对，尚未绑定该申请项目；不表示招生已确认，也不代表项目字段。'+
+    (scoped?(target()?'已按你选择的目标继续；链接已移除未绑定的类别 / 专业。':!goal.track&&!goal.program?
+      ((!incomingGoal.school||!incomingGoal.dept)?'来访单位信息不完整，无法确定适用院系，已移除类别 / 专业。':'来访单位与当前导师不符，已移除类别 / 专业，请重新核对。'):
+      '请选择适用申请项目，系统不会按类别 / 专业自动匹配私人项目。'):'');
+}
 function message(text,error=false){const node=el(statusArea)||el('desk-message');node.textContent=text;node.classList.toggle('error',error);}
 async function api(path='',body,method='GET'){
   const response=await fetch('/api/workflow'+path,{method,headers:{'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});
@@ -34,7 +52,7 @@ function showView(view){
   for(const name of ['today','targets','prepare']) el('view-'+name).hidden=name!==view;
   document.querySelectorAll('.tabs [data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   const query=new URLSearchParams();query.set('view',view);query.set('panel',currentPanel);if(target()?.mentor_id||incomingMentor)query.set('mentor',target()?.mentor_id||incomingMentor);if(currentTarget)query.set('target',currentTarget);
-  for(const [key,value] of Object.entries(incomingGoal))query.set(key,value);
+  for(const [key,value] of Object.entries(forwardedGoal()))query.set(key,value);
   history.replaceState(null,'',location.pathname+'?'+query);
 }
 function optionList(id,items,emptyLabel){
@@ -44,7 +62,7 @@ function optionList(id,items,emptyLabel){
 function manageUrl(){
   const mentor=target()?.mentor_id||incomingMentor;
   const q=new URLSearchParams({return:'desk',panel:currentPanel});if(mentor)q.set('mentor',mentor);if(currentTarget)q.set('target',currentTarget);
-  for(const [key,value] of Object.entries(incomingGoal))q.set(key,value);
+  for(const [key,value] of Object.entries(forwardedGoal()))q.set(key,value);
   return 'applications.html?'+q;
 }
 function targetCard(t,attribute){
@@ -73,10 +91,12 @@ function render(){
   el('future-task-list').innerHTML=taskCards.filter((_,i)=>pending[i].due_date>today()).join('')||'<div class="empty">暂无未来计划。</div>';
   el('waiting-list').innerHTML=waiting.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">暂无等待回复的目标。</div>';
   el('preparing-list').innerHTML=preparing.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">暂无待准备的目标。</div>';
+  const unplanned=Object.values(FLOW.targets).filter(t=>['replied','materials','meeting'].includes(t.stage)&&!pending.some(r=>r.project_id===t.project_id&&r.mentor_id===t.mentor_id));
+  el('unplanned-list').innerHTML=unplanned.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">已回复、需补材料或约谈的导师均已安排下一步，或暂无这类目标。</div>';
   const q=el('targets-query').value.toLowerCase().trim(),project=el('targets-project').value,stage=el('targets-stage').value;
   el('target-list').innerHTML=Object.values(FLOW.targets).filter(t=>(!project||t.project_id===project)&&(!stage||t.stage===stage)&&(!q||`${personLabel(t.mentor_id)} ${t.reason}`.toLowerCase().includes(q))).sort((a,b)=>['high','normal','low'].indexOf(a.priority)-['high','normal','low'].indexOf(b.priority)).map(t=>targetCard(t,'data-target')).join('')||'<div class="empty">暂无符合条件的目标。选择项目和导师即可加入。</div>';
   renderContext();renderIncoming();showPanel(currentPanel);showView(currentView);
-  el('incoming-goal').hidden=!!target()||!Object.keys(incomingGoal).length;renderMentorSearch();
+  renderGoal();renderMentorSearch();
   el('draft-manage').href=manageUrl()+'&section=material';
 }
 function renderContext(){
@@ -97,6 +117,7 @@ function renderContext(){
 }
 function loadDraft(id=''){
   currentDraft=id;dirty=false;const d=FLOW.drafts[id],t=target();if(!t)return;
+  el('draft-status').textContent='';
   const p=people.get(t.mentor_id);const fields={recipient:d?.recipient||((p?.email&&!/[;,，；\s]/.test(p.email))?p.email:''),subject:d?.subject||'',body:d?.body||'',basis:d?.basis||''};
   for(const [key,value]of Object.entries(fields))el('draft-'+key).value=value;
   const eligible=Object.values(FLOW.materials).filter(m=>m.mentor_ids.includes(t.mentor_id)||m.project_ids.includes(t.project_id)||(!m.mentor_ids.length&&!m.project_ids.length)||(d?.material_ids||[]).includes(m.id));
@@ -106,10 +127,21 @@ function loadDraft(id=''){
 }
 function updateDraftState(){
   const sent=Object.values(FLOW.communications).find(e=>e.draft_id&&e.draft_id===currentDraft);
+  const issues=[];
+  const recipient=el('draft-recipient').value.trim(),subject=el('draft-subject').value,body=el('draft-body').value;
+  if(!/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+$/.test(recipient))issues.push('单个有效收件邮箱');
+  for(const [key,label]of [['subject','邮件主题'],['body','邮件正文'],['basis','联系依据']])if(!el('draft-'+key).value.trim())issues.push(label);
+  if(/[\r\n]/.test(subject))issues.push('主题不可换行');
+  if(/【[^】]*】/.test(subject+body))issues.push('替换主题或正文中的占位内容');
+  if(target()?.stage==='closed')issues.push('目标已结束，需先更新联系阶段');
+  if([...el('draft-materials').querySelectorAll('input:checked')].some(i=>FLOW.materials[i.value]?.missing))issues.push('已选附件文件缺失，请恢复文件或取消选择并保存');
+  el('draft-readiness').textContent=sent ? '此版本已记录实际发送并锁定。再次联系请新建草稿。' :
+    (issues.length?'还需处理：'+issues.join('；')+'。':'基本填写项已齐全；导出时仍会检查附件文件与版本。')+
+    (dirty?' 当前修改或附件选择尚未保存。':!currentDraft?' 请先保存草稿。':'');
   el('draft-fields').disabled=!!sent;
-  el('draft-export').disabled=!currentDraft||dirty||!!sent;
-  el('sent-confirmed').disabled=!currentDraft||dirty||!!sent;
-  el('draft-confirm').disabled=!currentDraft||dirty||!!sent||!el('sent-confirmed').checked;
+  el('draft-export').disabled=!currentDraft||dirty||!!sent||issues.length>0;
+  el('sent-confirmed').disabled=!currentDraft||dirty||!!sent||issues.length>0;
+  el('draft-confirm').disabled=!currentDraft||dirty||!!sent||issues.length>0||!el('sent-confirmed').checked;
   el('sent-date').disabled=!!sent;
   el('sent-state').textContent=sent ? `已确认发送于 ${sent.date}。此版本已锁定，需要再次联系时请新建草稿。` : dirty ? '草稿有未保存的修改，请先保存。' : '草稿和导出不会计为已发送。';
 }
@@ -122,7 +154,7 @@ async function refresh(){
       return (!incomingMentor||t.mentor_id===incomingMentor)&&(!incomingGoal.year||p.year===incomingGoal.year)&&
         (!(incomingGoal.degree||incomingGoal.route)||p.application_type===[goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' / '));
     });
-    currentTarget=(incomingMentor&&matches.length!==1)?'':matches[0]?.id||'';
+    currentTarget=(incomingGoal.track||incomingGoal.program||(incomingMentor&&matches.length!==1))?'':matches[0]?.id||'';
     if(!incomingMentor&&matches.length>1)currentTarget='';
     if(incomingMentor&&matches.length>1){currentView='targets';el('targets-query').value=personName(incomingMentor);}
   }
@@ -192,13 +224,14 @@ el('draft-confirm').onclick=()=>action(()=>api('/drafts/'+currentDraft+'/confirm
 el('stage-save').onclick=()=>action(()=>api('/targets/'+currentTarget,{stage:el('context-stage-edit').value},'PATCH'),'联系阶段已更新并留痕');
 el('reply-form').onsubmit=e=>{
   statusArea='reply-status';
+  const hasTask=!!el('reply-task').value.trim();
   e.preventDefault();action(async()=>{
     const task=el('reply-task').value.trim(),due=el('reply-due').value;
     if(!task&&due)throw new Error('填写计划日期时也请填写下一步内容');
     await api('/targets/'+currentTarget+'/reply',{content:el('reply-content').value,date:el('reply-date').value,stage:el('reply-stage').value,
       ...(task?{task:{title:task,due_date:due}}:{})},'POST');
     resetReply();
-  },'回复已记录，下一步已同步到待办');
+  },hasTask?'回复已记录，下一步已同步到待办':'回复已记录；本次未新增下一步，可到“下一步”安排提醒');
 };
 el('reply-form').addEventListener('input',()=>{replyDirty=true;});
 window.addEventListener('beforeunload',e=>{if(dirty||replyDirty||taskDirty){e.preventDefault();e.returnValue='';}});
@@ -241,8 +274,7 @@ el('target-task-list').onclick=e=>{const b=e.target.closest('button');if(!b)retu
 };
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.closest('#draft-form')||b.id==='draft-confirm'||b.id==='draft-export')statusArea='draft-status';else if(b.closest('#reply-form'))statusArea='reply-status';else if(b.closest('#task-form')||b.closest('#target-task-list'))statusArea='task-status';else statusArea='';},true);
 el('reply-date').value=today();el('sent-date').value=today();renderMentorSearch();showPanel(currentPanel);showView(currentView);
-el('incoming-goal').hidden=!Object.keys(incomingGoal).length;
-el('incoming-goal').textContent='来自筛选的申请目标：'+[incomingGoal.year,goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' · ')+'。请选择适用项目；这不表示招生已经确认。';
+renderGoal();
 if(location.protocol==='http:'){
   el('desk-restore').disabled=false;
   refresh().then(()=>{el('desk-workspace').disabled=false;})

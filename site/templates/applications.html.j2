@@ -42,8 +42,12 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <div class="actions"><button class="primary" id="project-save">新增项目</button><button type="button" id="project-reset">清空表单</button></div></form>
 <div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="project-list"></div></section>
 <section class="panel" id="section-material"><h2>材料与关联</h2>
+<p id="material-summary" class="scope-note"></p>
+<div class="actions"><button type="button" id="material-current">查看当前范围材料</button><button type="button" id="material-unassigned">查看未关联项目材料</button></div>
+<p id="material-scope" class="muted"></p>
+<div id="material-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="material-list" tabindex="-1" aria-label="材料查询结果"></div>
 <form id="scan-form"><label>扫描材料目录（绝对路径）<input id="scan-root" required placeholder="E:\申请材料"></label><div class="actions"><button id="scan-save">扫描 / 复查目录</button></div></form>
-<p class="muted">每次最多 1000 个文件；仅登记元数据。重扫保留人工关联，文件缺失保留索引。</p>
+<p class="muted">每次最多 1000 个文件；仅登记元数据，不自动关联项目。扫描后可查看“未关联项目材料”并逐条关联。未关联指无项目关联，可能已有导师关联。重扫保留人工关联，文件缺失保留索引。</p>
 <form id="material-form"><div class="fields">
 <label class="wide">文件绝对路径<input id="material-path" required placeholder="E:\申请材料\简历.pdf"></label>
 <label>材料标题<input id="material-title" placeholder="留空使用文件名"></label>
@@ -52,7 +56,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <div class="wide" data-mentor-picker="material" data-multiple="true"></div>
 <label class="wide">备注<textarea id="material-notes"></textarea></label></div>
 <div class="actions"><button class="primary" id="material-save">登记文件</button><button type="button" id="material-reset">清空表单</button></div></form>
-<div id="material-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="material-list"></div></section>
+</section>
 <section class="panel" id="section-communication"><h2>历史沟通补录</h2>
 <p class="muted">补录已发生的沟通或旧草稿；准备新邮件请回“我的申请”。更正记录时追加说明，保留原历史。</p>
 <form id="communication-form"><div class="fields">
@@ -76,8 +80,8 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </div>
 </fieldset>
 </main>
-<script src="data.js?v=20261015-8"></script>
-<script src="admissions-data.js?v=20261015-8"></script>
-<script src="workflow.js?v=20261015-8"></script>
+<script src="data.js?v=20261015-9"></script>
+<script src="admissions-data.js?v=20261015-9"></script>
+<script src="workflow.js?v=20261015-9"></script>
 </body>
 </html>

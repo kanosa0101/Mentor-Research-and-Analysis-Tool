@@ -72,7 +72,7 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261015-8"></head>
+<link rel="stylesheet" href="../ui.css?v=20261015-9"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
@@ -104,6 +104,7 @@ a:hover{text-decoration:underline}
 </div></header>
 <div class="page-heading"><a href="../admissions.html?school=scu&amp;dept=cs">学校与院系招生要求 →</a><h1>导师资料</h1></div>
 <div class="wrap"><div class="context-actions"><a class="primary" href="../desk.html?mentor=scu-cs-maohua&amp;school=scu&amp;dept=cs">准备联系 毛华</a><button id="detail-compare" type="button">加入对比</button><a href="../compare.html" id="detail-selection">查看对比</a><a href="../discovery.html">继续找导师</a></div>
+<p id="detail-scope-warning" class="note" hidden>此导师不在原项目院系，继续时已清除原专业／专项范围，请重新核对招生要求。</p>
 <div class="card">
 
   <h2>毛华 <span class="tag tag-enriched">已富化</span></h2>
@@ -198,6 +199,17 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 <script>
+const detailScope=new URLSearchParams(),detailIncoming=new URLSearchParams(location.search);
+for(const key of ['school','dept','year','degree','route','track','program'])if(detailIncoming.get(key))detailScope.set(key,detailIncoming.get(key));
+const detailSchool="scu",detailDept="cs";
+if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDept){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
+detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
+for(const a of document.querySelectorAll('a[href]')){
+  const path=a.getAttribute('href').split('?')[0];
+  if(['../discovery.html','../compare.html','../desk.html','../admissions.html'].includes(path)){
+    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',"scu-cs-maohua");a.href=path+'?'+q;
+  }
+}
 const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId="scu-cs-maohua";
 let detailSelected=[];try{detailSelected=JSON.parse(localStorage.getItem('compare_sel')||'[]');}catch(e){}
 function showDetailSelection(){detailCompare.textContent=detailSelected.includes(detailId)?'移出对比':'加入对比';detailCompare.setAttribute('aria-pressed',detailSelected.includes(detailId));detailSelection.textContent=`查看对比（${detailSelected.length} / 5）`;}

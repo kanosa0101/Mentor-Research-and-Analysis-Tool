@@ -4,6 +4,7 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
+from urllib.parse import urlencode, urlsplit, parse_qs
 
 from jinja2 import Environment, FileSystemLoader
 from playwright.sync_api import sync_playwright
@@ -47,10 +48,13 @@ def main():
                 page.wait_for_function('window.WORKFLOW_READY')
                 pid = page.evaluate('MENTOR_DATA[0].page')
                 other_pid = page.evaluate('MENTOR_DATA[1].page')
-                page.goto(base + '/desk.html?mentor=' + pid + '&track=special&program=0854%7Ctest', wait_until='networkidle')
+                mentor_scope = page.evaluate('({school: MENTOR_DATA[0].school, dept: MENTOR_DATA[0].dept})')
+                page.goto(base + '/desk.html?' + urlencode(dict(mentor=pid, track='special', program='0854|test', **mentor_scope)), wait_until='networkidle')
                 page.wait_for_function('window.CONTACT_READY')
                 assert page.locator('#prepare-empty a').count() == 1
-                assert 'program=' in page.locator('#prepare-empty a').get_attribute('href')
+                scope_query = parse_qs(urlsplit(page.locator('#prepare-empty a').get_attribute('href')).query)
+                assert scope_query['program'] == ['0854|test'] and scope_query['track'] == ['special']
+                assert scope_query['school'] == [mentor_scope['school']] and scope_query['dept'] == [mentor_scope['dept']]
                 page.click('#prepare-empty a')
                 page.wait_for_function('window.WORKFLOW_READY')
                 project = page.evaluate('(pid)=>api("/projects", {name:"2027 回归项目",year:2027,mentor_ids:[pid]}, "POST")', pid)

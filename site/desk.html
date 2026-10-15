@@ -18,7 +18,7 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 .prepare-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start}.context{background:var(--soft);border-color:#cddcce}.context h2{font-family:"Songti SC","SimSun",serif;font-size:24px;font-weight:500}.context p{margin:8px 0}.context small{display:block;line-height:1.7}.context .progress{border-top:1px solid #cddcce;padding-top:12px;margin-top:15px}.draft-title{display:flex;justify-content:space-between;align-items:center;gap:12px}.draft-title select{max-width:260px}.attachments{display:flex;flex-direction:column;gap:8px;padding:10px 0}.attachments label{font-size:13px}.attachment-state{color:var(--muted);font-size:12px;margin:0 0 10px;overflow-wrap:anywhere}.send-section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.send-section input[type=date]{width:170px}.send-section .actions{align-items:center}.history-body{white-space:pre-wrap}.event-time{font:11px Consolas,monospace;color:var(--muted)}.footer{padding:24px 0;color:var(--muted);font-size:12px}.target-selected{border-left:3px solid var(--accent);padding-left:12px}
 @media(max-width:800px){.context>.eyebrow{display:none}.context.panel{padding:12px 14px}.context p{margin:4px 0}.context details{margin-top:6px}main{padding:18px 14px}.header-inner{padding:16px 14px;gap:14px}.hero{align-items:flex-start;flex-direction:column}.columns,.prepare-grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.panel{padding:17px}.list-tools{grid-template-columns:1fr 1fr}.list-tools input{grid-column:1/-1}.stats{gap:8px}.stat{padding:14px 10px}.stat strong{font-size:27px}.stat span{font-size:12px}.draft-title{align-items:flex-start;flex-direction:column}.draft-title select{max-width:100%}.toolbar{gap:6px}.tabs{gap:24px}.context h2{font-size:22px}}
 </style>
-<link rel="stylesheet" href="ui.css?v=20261015-8"></head>
+<link rel="stylesheet" href="ui.css?v=20261015-9"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
@@ -59,7 +59,7 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 <div id="welcome" class="welcome" hidden><h2>从一个申请项目开始</h2><p>建立申请项目，加入心仪导师，再选择材料、准备联系。暂时没有年度或招生信息，可以先留空。</p><a id="welcome-manage" href="applications.html">建立项目与整理材料 →</a></div>
 <section id="view-today">
 <div class="stats"><div class="stat"><strong id="stat-due">0</strong><span>今日 / 逾期待办</span></div><div class="stat"><strong id="stat-waiting">0</strong><span>等待导师回复</span></div><div class="stat"><strong id="stat-preparing">0</strong><span>需要调研或准备</span></div></div>
-<div class="columns"><section class="panel"><h2>下一步先做这些</h2><div id="task-list"></div><h3>未来计划</h3><div id="future-task-list"></div></section><div><section class="panel"><h2>等待回复</h2><div id="waiting-list"></div></section><section class="panel"><h2>继续准备</h2><div id="preparing-list"></div></section></div></div>
+<div class="columns"><section class="panel"><h2>下一步先做这些</h2><div id="task-list"></div><h3>待安排下一步</h3><p class="muted">已回复、需补材料或约谈中，尚无未完成的导师提醒。</p><div id="unplanned-list"></div><h3>未来计划</h3><div id="future-task-list"></div></section><div><section class="panel"><h2>等待回复</h2><div id="waiting-list"></div></section><section class="panel"><h2>继续准备</h2><div id="preparing-list"></div></section></div></div>
 </section>
 <section id="view-targets" hidden>
 <div class="list-tools"><select id="targets-project" aria-label="筛选项目"></select><select id="targets-stage" aria-label="筛选阶段"><option value="">全部阶段</option></select><input id="targets-query" placeholder="搜索导师 / 学校 / 选择理由" aria-label="搜索目标导师"></div>
@@ -72,11 +72,11 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 <section id="view-prepare" hidden>
 <div id="prepare-empty" class="welcome"><h2>先选择一位目标导师</h2><p>从“我的导师”进入，也可以从导师详情页直接开始。</p><button data-view="targets">选择目标导师 →</button></div>
 <div id="prepare-detail" class="prepare-grid" hidden>
-<aside class="panel context"><span class="eyebrow">Current target</span><h2 id="context-name"></h2><p id="context-project"></p><p><span id="context-stage" class="badge"></span><span id="context-priority" class="badge"></span></p><details><summary>背景与阶段管理</summary><small id="context-reason"></small><p><a id="context-profile" href="#">查看官网信息与出处 →</a></p><div class="progress"><small id="context-research"></small><p><small id="context-next"></small></p><label>联系阶段<select id="context-stage-edit"></select></label><div class="actions"><button id="stage-save">更新阶段</button></div><small>正式申请状态在项目管理中单独维护。</small></div></details></aside>
+<aside class="panel context"><span class="eyebrow">Current target</span><h2 id="context-name"></h2><p id="context-project"></p><p><span id="context-stage" class="badge"></span><span id="context-priority" class="badge"></span></p><p><small id="context-next"></small></p><button type="button" id="context-task-link" data-panel="tasks">安排 / 查看下一步 →</button><details><summary>背景与阶段管理</summary><small id="context-reason"></small><p><a id="context-profile" href="#">查看官网信息与出处 →</a></p><div class="progress"><small id="context-research"></small><label>联系阶段<select id="context-stage-edit"></select></label><div class="actions"><button id="stage-save">更新阶段</button></div><small>正式申请状态在项目管理中单独维护。</small></div></details></aside>
 <div class="prepare-panels">
 <nav class="prepare-links" aria-label="联系操作"><button type="button" data-panel="mail" aria-selected="false">写邮件</button><button type="button" data-panel="tasks" aria-selected="false">下一步</button><button type="button" data-panel="reply" aria-selected="false">记回复</button><button type="button" data-panel="history" aria-selected="false">历史</button></nav><section class="panel" id="prepare-tasks" hidden><h2>下一步与提醒</h2><div id="target-task-list"></div><form id="task-form"><div class="fields"><label>提醒内容<input id="task-title" required placeholder="例如：核对报名截止、整理简历"></label><label>计划日期<input id="task-due" type="date" required></label></div><div class="actions"><button id="task-save" class="primary">新增提醒</button><button id="task-reset" type="button">取消编辑 / 清空</button></div><div id="task-status" role="status" aria-live="polite"></div></form></section>
 <section class="panel" id="prepare-mail"><div class="draft-title"><h2>准备这一次联系</h2><select id="draft-choice" aria-label="选择历史草稿"></select></div><p class="muted">先核实联系依据，再写邮件。导出 EML 包含所选附件，由你在邮件客户端检查并发送。</p>
-<form id="draft-form"><fieldset id="draft-fields"><div class="fields">
+<p id="draft-readiness" class="muted" role="status" aria-live="polite"></p><form id="draft-form"><fieldset id="draft-fields"><div class="fields">
 <label class="wide">收件邮箱<input id="draft-recipient" placeholder="单个邮箱；有多个候选时请自行核实选择"></label>
 <label class="wide">邮件主题<input id="draft-subject"></label>
 <label class="wide">联系依据<textarea id="draft-basis" placeholder="导师的具体研究 / 论文与自己的真实项目有什么关联"></textarea></label>
@@ -94,5 +94,5 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 </section>
 </fieldset>
 <div class="footer">私人记录仅在本地保存 · 备份不包含附件原文件</div>
-</main><script src="data.js?v=20261015-8"></script><script src="desk.js?v=20261015-8"></script>
+</main><script src="data.js?v=20261015-9"></script><script src="desk.js?v=20261015-9"></script>
 </body></html>
