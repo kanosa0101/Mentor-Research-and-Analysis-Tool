@@ -38,7 +38,8 @@ def main():
         (private/'discovery.yaml').write_text(yaml.safe_dump(data,allow_unicode=True),encoding='utf8');before=(private/'discovery.yaml').read_bytes()
         server=create_server(site=site,outreach=private/'outreach.yaml',port=0)
         threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}'
-        scope='school=bit&dept=cs&year=2027&degree=master&route=recommend&track=special&program=0854%7Ctest&project=secret&target=secret&notes=secret'
+        scope='school=bit&dept=cs&year=2027&degree=master&route=recommend&track=special&program=0854%7Ctest'
+        private_scope=scope+'&project=secret&target=secret&notes=secret'
         try:
             with sync_playwright() as pw:
                 browser=pw.chromium.launch(headless=True)
@@ -55,7 +56,15 @@ def main():
                             value=q('.site-header nav a[href*="'+dest+'.html"]')
                             assert all(value.get(k)==[v] for k,v in expected.items()),(dest,value,expected)
                             assert not {'project','target','notes'}&value.keys(),value
+                    # A missing private project must not establish precise public scope.
+                    visit('/discovery.html?'+private_scope,'window.DISCOVERY_READY')
+                    assert page.evaluate('selectedProject === "secret" && protectedReview()')
+                    nav_scope({'school':'bit','dept':'cs','year':'2027','degree':'master','route':'recommend'})
+                    for dest in ['discovery','admissions','notices','desk']:
+                        assert not {'track','program'}&q('.site-header nav a[href*="'+dest+'.html"]').keys()
+                    # An ordinary public scoped URL has no private project to validate.
                     visit('/discovery.html?'+scope,'window.DISCOVERY_READY')
+                    nav_scope({'school':'bit','dept':'cs','year':'2027','degree':'master','route':'recommend','track':'special','program':'0854|test'})
                     page.click('#clear-unit-context');page.wait_for_function('!document.querySelector("#apply-criteria").disabled')
                     assert page.locator('#intent-schools').evaluate('(s)=>[...s.selectedOptions].map(o=>o.value)')==['pku'],'clear must restore original private school filter'
                     assert page.locator('[data-candidate="pku-cs-b"]').count()==1
@@ -76,11 +85,11 @@ def main():
                     page.click('#apply-criteria');page.wait_for_function('!document.querySelector("#apply-criteria").disabled');nav_scope({'year':'2028'})
                     page.click('[data-compare="bit-cs-a"]');page.click('#compare-open');page.wait_for_load_state('domcontentloaded');nav_scope({'school':'bit','dept':'cs','year':'2028'})
                     page.locator('.pcol .pn a').click();page.wait_for_load_state('domcontentloaded');nav_scope({'school':'bit','dept':'cs','year':'2028'})
-                    visit('/p/pku-cs-b.html?'+scope);nav_scope({'school':'pku','dept':'cs','year':'2027'});assert 'program' not in q('.site-header nav a[href*="notices.html"]')
-                    visit('/admissions.html?'+scope,'window.ADMISSIONS_READY');nav_scope({'school':'bit','dept':'cs','year':'2027','track':'special'})
+                    visit('/p/pku-cs-b.html?'+private_scope);nav_scope({'school':'pku','dept':'cs','year':'2027'});assert 'program' not in q('.site-header nav a[href*="notices.html"]')
+                    visit('/admissions.html?'+private_scope,'window.ADMISSIONS_READY');nav_scope({'school':'bit','dept':'cs','year':'2027','track':'special'})
                     assert '尚未覆盖' in page.locator('#policy-list').inner_text()
                     page.select_option('#policy-school','pku');nav_scope({'school':'pku','year':'2027'});assert 'program' not in q('.site-header nav a[href*="notices.html"]');assert 'track' not in q('.site-header nav a[href*="notices.html"]');page.reload(wait_until='domcontentloaded');page.wait_for_function('window.ADMISSIONS_READY');assert page.locator('#policy-school').input_value()=='pku' and page.locator('#policy-track').input_value()==''
-                    visit('/notices.html?'+scope);page.wait_for_function('document.querySelector("#count").textContent.includes("条候选通知")');nav_scope({'school':'bit','dept':'cs','year':'2027','track':'special'});page.select_option('#school','pku/cs');nav_scope({'school':'pku','dept':'cs','year':'2027'});assert 'track' not in q('#notice-policy-link') and 'program' not in q('#notice-policy-link');page.reload(wait_until='domcontentloaded');page.wait_for_function('document.querySelector("#count").textContent.includes("条候选通知")');assert page.locator('#school').input_value()=='pku/cs' and 'track' not in q('#notice-policy-link')
+                    visit('/notices.html?'+private_scope);page.wait_for_function('document.querySelector("#count").textContent.includes("条候选通知")');nav_scope({'school':'bit','dept':'cs','year':'2027','track':'special'});page.select_option('#school','pku/cs');nav_scope({'school':'pku','dept':'cs','year':'2027'});assert 'track' not in q('#notice-policy-link') and 'program' not in q('#notice-policy-link');page.reload(wait_until='domcontentloaded');page.wait_for_function('document.querySelector("#count").textContent.includes("条候选通知")');assert page.locator('#school').input_value()=='pku/cs' and 'track' not in q('#notice-policy-link')
                     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),width
                     visit('/admissions.html?school=bit&dept=cs&year=invalid#policy-list','window.ADMISSIONS_READY');assert parse_qs(urlparse(page.url).query).get('year')==['invalid'] and urlparse(page.url).fragment=='policy-list';page.reload(wait_until='domcontentloaded');page.wait_for_function('window.ADMISSIONS_READY');assert '无效年度' in page.locator('#policy-count').inner_text()
                     page.screenshot(path=str(out/f'public-flow-{width}.png'),full_page=True)

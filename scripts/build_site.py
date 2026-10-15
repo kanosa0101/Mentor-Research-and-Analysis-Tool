@@ -162,6 +162,16 @@ def main():
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())
+    release_file = ROOT / 'release.json'
+    if release_file.exists():
+        release = json.loads(release_file.read_text(encoding='utf-8'))
+        write_html(SITE / 'release.html', env.get_template('release.html.j2').render(
+            release=release, school_count=len(configured_schools), unit_count=sum(len(v) for v in units.values()),
+            record_unit_count=len({(p['school'], p['dept']) for p in profs}), professor_count=len(profs),
+            policy_count=len(admissions['policies']), source_count=len(admissions['sources']),
+            entry_count=len(admissions['entries']), action_count=sum(len(p.get('material_actions', [])) for p in admissions['policies']),
+            source_ok=sum(c.get('status') == 'ok' for c in admissions['checks'].values()),
+            source_error=sum(c.get('status') == 'error' for c in admissions['checks'].values()), stale_count=stale_count))
     # 对比页：同 payload；选人名单在 localStorage，纯静态无服务依赖
     cmp = env.get_template("compare.html.j2").render(
         profs=profs, fresh=fresh)

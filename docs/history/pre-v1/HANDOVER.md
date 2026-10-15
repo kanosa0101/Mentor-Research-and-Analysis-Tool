@@ -1,0 +1,279 @@
+# 项目交接文档（HANDOVER）
+
+2026-10-15 当前推进 v0.22：39校、59单位、7173条师资；111政策、183来源/检查、96官方入口，69份政策有310项分阶段材料动作。本轮补22项清华/浙江博士材料、清华自动化历史秋季政策及山东CS两份正式专业目录。公开来源支持明确的结构化JSON POST与请求绑定指纹，山东专业要求独立展示；准备清单可按阶段和人工登记状态筛选。313项Python全套、86项最终定向、9组Node及桌面/手机真实申请流程通过；预检仍原7组师资缺口。北邮、山东校章和部分院系/批次要求仍待核实，导师资料未全量刷新。详见 [v0.22交付记录](DELIVERY_REQUIREMENTS_V0.22_2026-10-15.md)。全面目标继续，仅本地提交、不推送。
+
+> 历史0.13（2026-10-15）：公开申请范围跨页与刷新连续性、私人项目切换和北京时间提醒已修复；README顶部快速开始及当前三个服务入口可用。140项Python、构建、21组UI、四套Node共12项规则、资源URL缓存升级和6527详情精确导航差异审计通过，结果见 DELIVERY_SYSTEM_V0.13_2026-10-15.md。公开载荷、资料来源和真实私人文件保持不变，原五组11项预检缺口保留。本机手动联系辅助版，只本地提交、不推送。
+
+> 历史0.12（2026-10-15）：项目卡以本项目最早未完成提醒和最近尚未过去的日期替换原前三条日期，显示导师/项目归属、官方快照/个人计划及来源复核状态。日期边界统一按北京时间；日期当天不算逾期，不给未知时刻补值，同日混合精度保留登记顺序并说明先后未知。历史仍在详情；提醒入口提升到摘要，沿用项目上下文与未保存保护。workflow.js引用定向升20261015-12，desk.js保留11，其余保留10。五组相关UI、独立日期规则/不变性检查、构建通过；6723保护项、真实private3项、4公开载荷无变化，预检原五组11项不变。正式证据和范围见 `DELIVERY_PROJECT_RECENT_ACTIONS_V0.12_2026-10-15.md`，计划见 `PROJECT_RECENT_ACTIONS_PLAN_2026-10-15.md`。只本地提交，不推送。
+
+> 历史0.11（2026-10-15）：项目要求区可直接管理材料与提醒，展示直接关联文件及索引缺失状态；操作同步项目筛选、URL和返回链接，并保护未保存输入。联系工作台提醒管理按提醒自身项目/导师进入提醒分区，修复旧目标串项目。workflow.js、desk.js引用定向升20261015-11，其余资源保留v10；无需全站同版本。后端/schema、公开源和真实私人记录不变。正式验证、保护审计与限制见 `DELIVERY_PROJECT_ACTIONS_V0.11_2026-10-15.md`；计划见 `PROJECT_ACTIONS_RELEASE_PLAN_2026-10-15.md`。只本地提交，不推送。
+
+> 历史0.10（2026-10-15）：导师卡片信息分层、BIT CS 135条旧简介研究方向提取、workflow v3结构化申请目标/时间、按项目政策与材料要求已实现。135条仍为2026-09-05历史快照，当前官网仅核对3个样本。GET兼容旧v1/v2而不落盘；真实私人数据不自动迁移。公开6527/37/51及政策13/来源14/检查14不变，静态资源20261015-10；Python138、Node12、16组UI与两缓存升级通过，预检原五组11项缺口未新增，真实private3项清单和哈希不变。正式验证与限制见 `DELIVERY_PROJECT_TARGET_V0.10_2026-10-15.md`；契约见 `PROJECT_MODEL_V0.10_2026-10-15.md`；计划见 `PROJECT_TARGET_RELEASE_PLAN_2026-10-15.md`。只本地提交，不推送。
+
+> 写给下一个接手的 agent / 开发者。读完这篇应该能不问人直接干活。
+> 历史0.9（2026-10-15）：独立姓名搜索、单人候选管理、公开范围跨页延续与跨单位清除、扫描材料发现及显式关联、邮件基本缺项提示和回复后待安排列表已实现。公开库6527/37/51与政策13/14/14不变。最终Python122、四Node12项、原11+新增3共14组UI及额外8→9缓存升级通过；默认pytest已用testpaths=tests隔离历史缓存脚本。静态资源统一?v=20261015-9，6663保护文件哈希不变；preflight仍仅原五组11项缺口。18768恢复为隐藏服务，实际五页1440/390只读截图与10个HTTP/磁盘资源比对通过。最终记录 `DELIVERY_USER_FLOW_V0.9_2026-10-15.md`；计划 `USER_FLOW_RELEASE_PLAN_2026-10-15.md`。仅本地提交，不推送。
+> 历史0.8（2026-10-15）：四主导航、发现页研究信息/比较/完整已应用摘要、学校要求与通知范围往返、联系准备四面板、独立提醒、项目关联和未保存保护已实现。公开数据仍6527教师/37校/51院系、13政策/14来源/14检查，后端和私人schema未改。最终pytest122、四Node12项、11组UI（原8+新3）及额外同浏览器缓存升级回归通过；所有静态资源引用统一?v=20261015-8，后续内容更新须统一递增并重建。6663个保护文件哈希不变，以 `DELIVERY_UX_V0.8_2026-10-15.md` 为最终记录。preflight仍仅五组11项保留缺口。三模块报告为 `UX_*_V0.8_2026-10-15.md`，计划为 `UX_RELEASE_PLAN_2026-10-15.md`。
+> 历史0.7（2026-10-14）：6527条教师记录、37校、51个有名单院系/51个目录院系；华科人工智能与自动化125条、中南自动化114条为新增公开子集，233条安全详情、6条仅可信名单。申请前清单支持六项目标、可选专业代码与正式项目名、八类摘要与未知／来源异常、阶段独立时间提示及准确多来源引用。13政策/14源/14检查；原6288教师及旧9政策/源/检查对象保持不变。最终pytest122／unittest111、四Node、唯一八组UI通过；preflight退出1仅五组11项保留缺口。本机18768已恢复只读预览。完整证据见 `DELIVERY_CHECKLIST_V0.7_2026-10-14.md`，三个0.7子报告和 `CHECKLIST_RELEASE_PLAN_2026-10-14.md`。
+> 历史0.6（2026-10-14）：6288条教师记录、37校、49个有名单院系/49个目录院系；东南自动化85条、华中科大网安85条、武大国家网安68条，旧清华/上交自动化40条只补原空明确方向及来源。学校与政策页新增院系信息卡及发现页范围入口。104项Python测试、两组Node规则与六组UI检查通过；preflight退出1，三个新院系共5项已记录缺口，结构与载荷一致性无错误。原政策9条/9源与通知8源78候选未改。见 `DELIVERY_PARALLEL_V0.6_2026-10-14.md`、三个子任务报告和 `PRODUCT_ARCHITECTURE_2026-10-14.md`。
+> 0.7生成物包含首页、学校与政策页、导师发现页及公共汇总载荷；新增239详情，旧6288详情无diff。具体项目／专项进入发现页时，旧机会／个人资格核验保持未知且禁止跨范围保存；身份明确错配只撤回新两院系当前详情源的非人工自动字段，保留名单与人工值。
+> 0.6接手边界：root负责产品、架构、需求及来源决策；扩充、实现、测试与集成收尾由subagent执行。东南接口114/100/2页是本次核验的特定差异，不得扩大为接受未知缩水；名单有记录与资格字段有值均不等于当年可以申请。跨院系身份不按姓名自动合并，原有资格解析规则仍待逐站迁移。
+> 历史0.5（2026-10-14）：6050条教师记录、36校、46个有名单院系/47个目录院系；75项测试通过，东南当时HTTP553。本轮公开接口恢复后按实测部分接入。见 `DELIVERY_COVERAGE_V0.5_2026-10-14.md` 与 `CS_RELATED_COVERAGE_REVIEW_2026-10-14.md`。下方旧规模与数据专项均为历史记录。
+> 2026-10-14 联系闭环 0.2 增量见 `DELIVERY_CONTACT_V0.2_2026-10-14.md`：desk.html 为新的“我的申请”入口；项目内目标、草稿/含附件 EML、明确发送确认、回复+提醒原子写入、今日待办已实现。workflows v1 只读兼容，写入存 v2；旧套磁文件不自动迁移。实际邮件客户端与真实联系尚未验收。
+> 2026-10-14 增量见 `DELIVERY_2026-10-14.md`：申请项目、私人材料索引、追加沟通历史与多个提醒已实现；入口 `applications.html`，私人文件 `data/workflow.yaml`。本批测试只用临时材料，尚未导入用户真实申请记录。
+> 2026-10-13 增量见 `DELIVERY_2026-10-13.md`：A 维护修复、B 本地申请工作流、C 三院系通知试验已推进；下方 09-06 数据专项是历史记录。真实 AI 与论文绑定尚未验收。
+> 历史数据专项最后更新：2026-09-06（晚），数据基线 36 校 42 院系 5649 人（`audit.py` 实测；脏记录清理后 -5 人）。
+> 配套阅读：`REQUIREMENTS.md`（需求与决策）、`ARCHITECTURE.md`（架构与数据模型）、`README.md`（用户视角速览）。
+> 架构、数据模型、七种站点范式、目录结构 → 全部在 ARCHITECTURE.md，本篇只讲**现状、踩坑、操作**。
+
+---
+
+## 1. 这个项目是什么
+
+**一句话**：把国内目标院校 CS 相关院系官网上的师资信息，抓成一张全量、可浏览、可筛选、逐字段可溯源的导师表，最终服务于"给导师写套磁信"这件事。
+
+**用户场景**：用户在准备 2027 年入学的研究生申请（推免/考研/申请考核），需要在数百所学校的上千名导师里找到"方向对得上、今年有名额"的人，然后逐一联系。工具的核心价值：**汇聚（全量名单）→ 筛选（方向/职称/博导）→ 溯源（每个字段点回官网原文）→ 未来再补（联系状态跟踪、信件草稿）**。
+
+**明确的边界**（需求 v0.6 §8 有完整决策记录）：
+- 不爬口碑内容（知乎/一亩三分地），不批量群发，不编造数据
+- 状态写回看板与对比页已实现；AI 摘录骨架已实现但真实 API 未验收；学术数据层（DBLP/OpenAlex）及画像驱动匹配/信件仍待真实短名单、身份核验与素材验收。
+- 原则：只记录官网明确提供的字段；未采到或未成功解析保持未知并记录缺口，不推断信息不存在，绝不猜测填充
+
+## 2. 当前状态（2026-09-06 实测）
+
+- **36 校 42 院系 5649 人**，全量 YAML 落盘 + 静态网站可浏览
+- 全库字段覆盖：**邮箱 4550（80%）、职称 4212（74%）、博导硕导 3025（53%）、简介 3539（62%）**
+  ——supervisor 专项（09-06）从 40%/2267 拉到 53%/3025（+758，全库三级提取管线 `crawler/supervisor_util.py`）
+- 各院系明细见 §3；各院系人数与覆盖率随时可跑 `audit.py` 复核
+- git：`main` 分支，远端 `https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool`，已推送
+- preflight 绿（0 PROBLEM）；open issues 均已人工复验标 `reviewed`（官网死链/外部主页被墙/官网字段确缺），如实留痕；**Issue 模型现含 reviewed/review_note 字段，save 不再丢标记**
+- 环境：Windows + Python 3.14（anaconda），依赖 requests/pyyaml/jinja2/pydantic/bs4/pypinyin/playwright+chromium/openpyxl（浙大 xlsx 用）、**rapidocr-onnxruntime（图片邮箱 OCR，jlu_cs）**；**CDP 真实 Chrome 后端（crawler/fetch.py，破瑞数/网防）**
+- **邮箱是最关键字段（仅次于姓名，用户明确要求）**。获取手段已六类齐备：① tsites 密文解密接口 ② WP meta description 字段兜底 ③ sudy generalQuery POST 接口 ④ 页面明文/简介正则 + tsites 明文四形态兜底（§7.30）⑤ CDP 真实浏览器穿透 WAF 后的明文字段（北邮 80%/重大 88%/电子科大 97%）⑥ **详情页图片邮箱 rapidocr 识别**（吉大 43→74%，§7.43）+ **标签窗口扫描形态⑤**（xjtu 陈衡 span 分裂、ruc `(@)` 混淆 §7.47）
+  邮箱 <95% 的院系均已逐页核验：确认真缺失的留痕（csu/dlut 站点侧问题——dlut 解密接口已复测为挂死、hnu 70% 官网字段空白、scut 73% meta 截断、bupt 80% 主页无邮箱字段、neu 40 人/tongji 52 人正文确无邮箱）；仍有提升空间的（ruc/ai 已 100%✅、xjtu 73%）在 §9 列为下一步
+
+## 3. 数据现状：已接入 36 个院系（audit.py 实测，2026-09-06 晚）
+
+| 院系 | hook | 人数 | 职称 | 邮箱 | 博导硕导 | 简介 | facets |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| sjtu/cs | sjtu_cs | 289 | 100% | 98% | 34% | 85% | 0 |
+| sjtu/ai | sjtu_ai | 1 | 100% | 0 | 0 | 100% | 100% |
+| tsinghua/cs | wp | 134 | 100% | 100% | 5% | 99% | 82% |
+| pku/cs | pku_cs | 119 | 100% | 99% | 16% | 71% | 100% |
+| ucas/ict | ucas_ict | 283 | 100% | 93% | 75% | 98% | 60% |
+| ucas/ia | ucas_ia | 345 | 99% | 99% | 14% | 100% | 0 |
+| ucas/iscas | ucas_iscas | 182 | 0 | 98% | 100% | 63% | 98% |
+| ucas/iie | ucas_iie(iie_cs) | 283 | 1% | 96% | 52% | 0 | 69% |
+| ustc/cs | wp | 72 | 100% | 98% | 45% | 98% | 0 |
+| nju/cs | wp | 102 | 100% | 88% | 66% | 81% | 0 |
+| whu/cs | simple_list | 109 | 89% | 88% | 55% | 91% | 0 |
+| tongji/cs | wp | 156 | 100% | 66% | 38% | 78% | 0 |
+| sdu/cs | simple_list | 13 | 92% | 84% | 15% | 100% | 0 |
+| sysu/cs | sysu_cs(渲染) | 112 | 98% | 97% | 0 | 0 | 96% |
+| neu/cs | neu_cs(委托wp) | 147 | 72% | 74% | 48% | 89% | 0 |
+| jlu/cs | jlu_cs(simple_list+图片邮箱OCR) | 185 | 95% | 74% | 35% | 97% | 0 |
+| ecnu/cs | ecnu_cs(改造wp) | 70 | 98% | 100% | 25% | 98% | 0 |
+| nwpu/cs | simple_list | 23 | 0 | 0 | 0 | 0 | 0 |
+| csu/cs | tsites | 108 | 85% | 72% | 82% | 80% | 52% |
+| ruc/ai | simple_list | 30 | 100% | 100% | 46% | 40% | 0 |
+| xidian/cs | xidian_cs(委托tsites) | 155 | 94% | 93% | 74% | 99% | 62% |
+| bnu/ai | bnu_ai | 72 | 79% | 73% | 79% | 61% | 69% |
+| xjtu/cs | xjtu_cs | 75 | 62% | 73% | 84% | 13% | 22% |
+| scu/cs | scu_cs(委托tsites) | 166 | 71% | 90% | 9% | 65% | 42% |
+| zju/cs | zju_cs(名录+xlsx+CDP person, stable_urls) | 438 | 37% | 33% | 99% | 35% | 38% |
+| sustech/cs | sustech_cs | 39 | 100% | 100% | 7% | 28% | 0 |
+| shanghaitech/cs | sist_cs | 149 | 65% | 98% | 78% | 0 | 59% |
+| seu/cs | seu_cs | 128 | 100% | 85% | 86% | 67% | 97% |
+| fudan/cs | fudan_cs(generalQuery) | 189 | 99% | 99% | 67% | 0 | 39% |
+| xmu/cs | xmu_cs | 51 | 98% | 7% | 5% | 9% | 1% |
+| dlut/cs | dlut_cs(委托tsites) | 12 | 100% | 16% | 83% | 83% | 100% |
+| dlut/ss | dlut_cs(委托tsites) | 12 | 100% | 16% | 66% | 66% | 75% |
+| buaa/cs | buaa_cs(卡片+目录翻页) | 82 | 100% | 97% | 74% | 98% | 0 |
+| tju/cs | tju_cs(名录锚文字+wp) | 114 | 99% | 99% | 82% | 98% | 0 |
+| bit/cs | bit_cs(渲染名录+summary) | 151 | 81% | 88% | 100% | 90% | 0 |
+| ruc/info | ruc_info(hash名录+.content) | 67 | 94% | 95% | 49% | 62% | 0 |
+| hnu/cs | hnu_cs(卡片表+people详情) | 187 | 94% | 70% | 40% | 82% | 0 |
+| scut/cs | scut_cs(职称三栏目+meta) | 76 | 100% | 73% | 28% | 67% | 0 |
+| bupt/cs | bupt_cs(CDP名录+tsites明文+jsxx子页) | 217 | 35% | 80% | 28% | 0 | 0 |
+| cqu/cs | cqu_cs(CDP导师名单+faculty子页) | 77 | 68% | 89% | 100% | 85% | 0 |
+| uestc/cs | uestc_cs(CDP筛选列表+info文章) | 189 | 100% | 97% | 5% | 62% | 0 |
+| hit/cs | hit_cs(jsml+CDP导师名单) | 240 | 0 | 0 | 70% | 0 | 0 |
+| **合计** | | **5649** | | | | | |
+
+要点：
+- hit 详情无源已定论（教师主页是内网穿透地址外网 404），但博导/硕导名单页（cs.hit.edu.cn/22195/22196，CDP 渲染）已补 supervisor 168/240；nwpu 是纯名单（roster 级，无详情）；ucas/iie 是导师名单文章（姓名+博导+研究室+邮箱来自文章表格）；zju 438 人中 374 人为 xlsx 名录级（只有姓名+导师资格+学科），person.zju.edu.cn 主页 CDP 已可抓（66 人名录链接者已富化 59 邮箱）；**门户搜索接口已逆向（§7.41）**：/server/api/front/psons/search 全校 5841 人可拉，计算机学院 169 人匹配入库 103 人 detail_url 修正为 person 主页（CDP 富化），邮箱 13→33%、职称 14→37%；剩余 271 名 xlsx 导师接口无记录（无 person 主页），拼音猜测全 404。**zju 配置已加 stable_urls: true（§7.52）**：重跑时 xlsx 锚点 URL 按姓名回退匹配存量，避免 API 富化过的 person 主页记录被重复入库
+- xidian/川大邮箱经 tsites 解密接口还原 + 明文四形态兜底；上科大/复旦走 generalQuery POST 接口；复旦 bio 经核实官网侧无源（generalQuery 无简介字段、exField5"个人主页"文章页是空壳），homepage 链接已入库（107 人）
+- xmu 43 条详情死链是官网本身 404（已逐一留痕并 reviewed）；dlut tsites 解密接口已复测为**服务端挂死**（requests/CDP 三路超时，浏览器也显示为空），属站点侧故障、23 人留痕（§7.45）；tju 1 条官网死链留痕
+- **supervisor 全库专项（2026-09-06 完成，§7.49）**：全库扫描证明"结构化博导标注漏抓"不存在，缺口的真实构成是源缺失+简介自述未提取。落地 `crawler/supervisor_util.py` 三级提取（结构化标签→头部徽标行→简介职称相邻自述），接线 wp 正文容器 / jlu 是否博导 / iie 徽标行 / hnu·sist·ruc_ai·sustech·tsites 全页紧模式 / crawl bio_raw 兜底。战果：sjtu 0→34%、hnu 0→40%、ucas/iie 0→52%、neu 2→48%、tongji 6→38%、jlu 11→35%、buaa 8→74%、pku 3→16%、shanghaitech 59→78%、ustc 0→45%、ruc/ai 0→46%、ecnu 0→25%、scut 14→28%、xidian 69→74%、sdu 0→15%、scu 0→9%；全库 40%→53%（2267→3025）。**ustc 站内导航"兼职教授/博导"是栏目名不是自述——只在 bio_raw/正文容器内跑提取，绝不跑全页**
+- **职称数据质量专项（2026-09-06 完成，§7.50）**：全库 65 种职称值盘点出三类问题——①粘连值 74 条（fudan `教授、博导` x33 等，normalize_title 上线前存量）已重跑 normalize_title 拆分（`scripts/fix_titles.py` 一次性迁移，变更进 changes JSONL）②解析垃圾 8 条清空（xmu `E-mail：Homepage：`、xjtu 实验室主任助理混入、`教师、博导`→博导、`博导/硕导`→纯导师资格置空等）③官网原生特殊词保留（`副高级`/`正高级`/`教辅系列`/`晨晖学者`/`弘深青年教师`/`研究实习员`等，词表已扩充收录）。职称 75%→74% 是垃圾值诚实置空的正常回落
+- **存量低覆盖专项（2026-09-06 完成）**：scu 职称 23→71%（tsites bs 信息块"职务：教授"标签扫描，§tsites.py）；jlu 邮箱 43→71%（**图片邮箱 OCR** 52 人全目检，§7.43）；neu 邮箱 53→72%（简介正文标签变体搜索 +29 人，页脚公邮陷阱 40 人留痕，§7.44）；tongji 邮箱 58→66%（wp @ 扫描粘连修复 +13 人，52 人留痕，§7.44）；dlut 解密接口挂死定论（§7.45）
+- **邮箱第三轮（2026-09-06 晚）**：ruc/ai 67→**100%**（`(@)` 混淆 + 简介自述邮箱行，§7.47；顺带清除"中文"脏记录——语言切换链接误入库）；xjtu 68→73%（tsites 形态⑤标签窗口扫描 + 解密串味修复，20 人确缺）；sdu 64→84%（顺带）、xidian 90→93%、jlu 71→74%、neu 72→74%、dlut 0/8→16%、ucas/ict 92→93%
+- **脏数据清理（2026-09-06）**：sdu 名单页卡片布局同一 URL 有姓名/职称/方向多个锚点，`title` 属性滥用产生"教授/副教授/副研究员/嵌入式系统"4 条假人记录——simple_list 加职称词排除 + 同 URL 择优（§7.51），17→13 人；ruc/ai"中文"语言链接同款（§7.51）
+- **phone 垃圾修复（2026-09-06，§7.50 附）**：862a548f 的 wp meta 标签切分让 phone 首次被切出，但暴露两坑——北大 meta 带 CMS 截断省略号（`86-10-62765825...`/纯`...`）、同济信息表"联系电话："空值时取下一行"通讯地址…"整段粘连（31 条）。_meta_fields 尾点剥除+纯点拒收、wp 电话分支要求数字形态；全库 junk phone 清零
+- bit 邮箱 88%/职称 81%：抽查确认 summary 卡片"职称：/E-mail："为空 = 官网没填；csu 剩余 31 人无邮箱经 tsites 主页+子页两轮核实为官网无邮箱字段
+- **hnu（09-05 接入）**：域名是 **csee.hnu.edu.cn**（cs.hnu.edu.cn 是阻断主因——域名错了）；卡片表名录 6 页（按职称分类频道）+ /people/<id> 详情表；邮箱 70% 抽查确认为官网"电子邮件"字段真空白（页脚 xiaoban@hnu.edu.cn 是公邮，勿录）
+- **scut（09-05 接入）**：www2.scut.edu.cn/cs；师资按职称分三栏目（22284 教授/22285 副教授/22286 讲师），栏目名即 roster 级职称；正文只有介绍图片的页面字段全靠 meta description（§7.35），面包屑兜底职称；专职研究人员栏目（zzyjry）是 AJAX 空壳未接
+- **CDP 三连（09-05 接入，§7.39）**：北邮 217（scs 名录 → teacher.bupt tsites 主页，邮箱明文、无密文 span，职称 30%=主页只有职务）；重大 77（cs.cqu.edu.cn 渲染导师名单 → faculty.cqu.edu.cn 个人信息在 yjgk 子页，导师资格 roster 级 100%）；电子科大 189（js_sz.jsp GET 筛选 FirstLetter+A-Z → info 文章页，职称 roster 级 100%、邮箱 97%）
+
+## 4. 网站
+
+- **列表页**：搜索、学校→院系级联、职称/导师资格/方向（多选 facet）筛选、全列排序、列显示开关（localStorage `adv_cols_v3`）、分页（每页 50 可调 20/50/100/500）、**跟进列（⭐ 标意向 + 状态徽标）**
+- **详情页**：字段卡片 + **套磁跟进卡片（状态下拉/备注/历史时间线）** + 简介原文 + provenance 出处表（每个字段点回官网原文）+ 新鲜度（first_seen/last_verified/官网 updatedAt）
+- **对比页 compare.html**：列表页勾选 2–5 人 → 右下角浮动"对比"按钮；字段×导师矩阵（13 行：姓名/学校/院系/职称/导师资格/方向/邮箱复制/电话/研究所/主页/官网页/简介摘录/入库核对），逐字段挂官网出处↗，选人名单存 localStorage（compare_sel），纯静态无服务依赖
+- **看板页 board.html**：5 列拖拽看板（意向→已发信→已回复→推进中→归档）+ 搜索加人 + 邮箱一键复制（clipboard API + execCommand 兜底）
+- **跟进数据流**：只经 `scripts/serve.py` 的 `/api/outreach`（GET/PATCH/DELETE，标准库实现）读写 `data/outreach.yaml`——**不进任何生成文件**（仓库公开，隐私分界）；页面加载探测 `/api/health` 动态拉取，改状态无需重建站点；file:// 直开由 `location.protocol` 门控降级只读（不发 fetch）
+- 表头表体由同一份 `HEADERS` 数组生成——**这是两次错位事故后的铁律，别改回两套**
+- 零构建：Jinja2 模板 `site/templates/` → `build_site.py` 生成；UI 风格：白底紧凑工具栏（CSRankings/Linear 风），用户明确否决渐变横幅
+
+## 5. 工具脚本
+
+| 脚本 | 用途 | 何时跑 |
+| ---- | ---- | ---- |
+| scripts/crawl.py | 抓取入口（--school --dept [--phase roster/enrich] [--refresh]） | 加新校/更新数据 |
+| scripts/serve.py | 本地服务：静态托管 + /api/outreach 写回（--port 默认 8000，只绑 127.0.0.1） | 日常浏览+套磁跟进 |
+| scripts/build_site.py | 重建静态站（自动清理失效详情页） | 每次数据变化后 |
+| scripts/audit.py | 覆盖率审计（各院系字段覆盖%） | 每轮迭代后 |
+| scripts/preflight.py | 发布前体检（schema/邮箱/站点一致性/issues） | 提交前 |
+| scripts/tag_facets.py | 重算方向 facet（13 类关键词规则） | 改规则后 |
+| scripts/retest_direct.py | 重测"连不上"学校的直连连通性 | 网络环境变化后 |
+| scripts/probe_direct_render.py | 对通了的学校直接看名录渲染结构 | retest 通过后 |
+| scripts/verify_site.py | 站点抽查（页面数/关键内容/server） | build 后 |
+| scripts/email_spotcheck.py / title_survey.py | 邮箱/职称抽查工具 | 回归排查 |
+| scripts/fix_titles.py | 职称一次性迁移（normalize_title 重跑+垃圾清空） | 词表改动后 |
+| scripts/ai_enrich.py | AI 归纳（缓存优先+evidence 硬校验；需 AI_API_BASE/KEY/MODEL 环境变量；--mock 自测 --dry 预览） | 配好 key 后按院系跑 |
+| scripts/probe_*.py | 一次性探针（历史调试用，可不看） | - |
+
+## 6. 未接入的学校与剩余难点
+
+已接入 36 校（清单见 §3）。范围内**未接入**的只剩：
+
+- **华科**：09-06 复测直连+代理均 ConnectTimeout（TCP 层不通，纯网络阻断）——网络稳定后复测，通了可试 CDP
+- **南开**：09-06 复测 cc/cs 两域直连+代理均 ConnectTimeout（TCP 层不通）——网络稳定后复测
+- **放弃**（1 所）：国防科大（军队院校，用户明确不考虑）
+
+**WAF 阻断组已全部攻克（2026-09-05，CDP 真实浏览器后端 §7.39）**：北邮（瑞数 412）→ 217 人、重大（瑞数 412 + JS 壳列表）→ 77 人、电子科大（网防 202）→ 189 人。原理：瑞数/网防拦的是客户端指纹，CDP 连本机真实 Chrome（真实插件/字体/历史 cookie）即放行；服务端代读通道曾证明内容可读但不可管线化，CDP 是管线化的正解。浙大 person.zju（瑞数）、哈工大教师系统也可用同一路径富化（§9）。
+
+**重要**：此前一批"连不上"的学校其实是**官网域名用错了**（如北邮是 scs 不是 scse、西电是 cs 不是 computer、南科大是 cse 不是 cs、中南是 cse 不是 sca、**湖大是 csee 不是 cs（09-05 已验证接入）**、**华南理工是 www2（09-05 已验证接入）**、上科大是 sist 无 cs 前缀、人大是 ai.ruc.edu.cn、**浙大计算机是 www.cs.zju.edu.cn 且真实站点在 /csen/ 路径下**）。且"网络阻断"结论会过期——**北航/北理工/天大/人大信息学院 09-05 复测突然就通了**。接新校前先 websearch 核实官方域名 + 跑 retest 复测。
+
+## 7. 踩坑记录（每条都是真金白银的时间，接手前必读）
+
+**解析层**
+1. 锚点的 `title` 属性和内文**都可能被官网滥用**：哈工大姓名在 title、中南职称在 title——先 dump 卡片原始 HTML 再决定取哪个，别凭感觉
+2. 列表数据可能藏在 `<script>` 模板字符串里（中科院 casasypage、上交 AJAX、川大 ImageScale 调用），BeautifulSoup 看不到，要对 raw html 正则提
+3. 同一人可能有多条历史 URL（计算所 sourcedb 按日期多版本）——按**姓名**去重、保留 URL 日期目录最新的
+4. 官网名单链接可能是裸相对路径（`ALL/9.htm`、`9.htm` 两种都见过），翻页正则要兼容
+5. tsites（教师主页系统）的列表页 ajax 动态加载，渲染后也只有导航——需逆向其 XHR，别硬解析
+6. 官网邮箱混淆格式大全：`bulei # nju.edu.cn`、`yangxubo [AT] sjtu.edu.cn`、`1051065502 AT QQ DOT COM`、`changwen(at)iscas.ac.cn`、标签和值跨行、span 碎片、`▇` 代替 @、分号双邮箱。`email_util.normalize_email` 全覆盖，**新混淆格式出现时在 normalize_email 加分支，并在 crawl 的 _merge 保证无效值不覆盖有效值**
+7. pydantic 正则注意 `re.A`：`\w` 默认匹配中文，邮箱校验不放开
+
+**工程层**
+8. PowerShell 里写内联 `python -c "..."` 引号必炸——**一律写脚本文件再跑**（Git Bash 里 `python -c` 单引号包住可用）
+9. Windows 控制台中文乱码是显示问题：命令前加 `$env:PYTHONIOENCODING='utf-8'`
+10. `Set-Content` 写文件会带 BOM（曾毁过 crawl.py）；`nul` 是 Windows 保留设备名，glob 出来是假象
+11. **表头表体必须同一份 HEADERS 数组生成**——两套来源两次错位事故。列表页表头/表体的过滤条件现已抽成共享函数 `rowCols()`（index.html.j2），**新加列只改 HEADERS + cells()，别再写第三份过滤**（对比页 checkbox 列首日就靠这个抓出表体漏改）
+12. UI 验证的正确姿势：Playwright 打开页面抓 console/pageerror + 读 DOM 断言；`#count` 永远显示全库总数，**过滤效果看 pager 的 `.info`（共 X 人）**
+13. git push 大包经代理 408：`git config http.version HTTP/1.1` 已配置，别删
+14. 代理在 `127.0.0.1:10808`，"连不上"先区分：域名错（websearch 核实）vs 代理拦截（direct 模式）vs 真阻断（直连也重置）
+
+**tsites 家族与近年战役（2026-09-04 ~ 09-05）**
+15. **tsites 邮箱/电话密文可直接解**：页面里 `<span _tsites_encrypt_field>` 存密文，前端请求 `/system/resource/tsites/tsitesencrypt.jsp?id=..&content=..&mode=..` 服务端解密——直接调同一接口即可还原。已用于中南/西电/川大。实现见 `sites/tsites.py: decrypt_encrypted_fields`（注意：标签载体容器必须恰好只含一个密文 span，否则会串味——安莹邮箱被邮编污染过）
+16. tsites 详情页有 4+ 种模板变体（字段块 h4/jbqk/data、散落行、`职务：X` 替代 `职称：`、标题带英文后缀 `<span>Personal Profile`），`_section_text` 匹配标题时要先剥掉英文字母
+17. **西交**：列表页 requestUrl 是 http 混合内容，浏览器/渲染都加载不出；逆向 `getsitecontentlist.js` 得到 `getsitelistcontent.jsp` 数据接口，collegeId/treeid/siteOwner/viewid 参数从页面 `load_p` JS 对象里抄
+18. **川大**：教师名单内嵌在列表页 `<script>` 的 `ImageScale(...).addimg(照片,主页URL,姓名,uid)` 调用里，raw html 正则提取
+19. **浙大**：www.cs.zju.edu.cn 根路径只是引导壳，真实站点在 **/csen/** 路径下；教师名录页是 JS 渲染的表格；博导硕导直接用官方 xlsx 附件（418 人，openpyxl 解析）；person.zju.edu.cn 的简介在瑞数(frms-fingerprint)反爬后，如实留空——**但简介栏目可通过"同 Session 先取页再取 apiColumn 新鲜签名"绕过**（fetch.py 每次 new Session 会丢 cookie，必须在一个钩子函数里用 requests.Session 连着做）
+20. **crawl.py 别名 bug**：`url.rsplit("/",1)[1][:-5]` 把 index.htm/page.htm 截成 inde/pag/lis/te 垃圾别名（全库 315 条已清理）；已改为剥真实扩展名 + 文件名无信息量时回退上一级目录名
+21. **build_site.py 孤儿页**：slug 变更后旧详情页残留（中南事故 100 个）——重建时按当前名单清理失效页面，已修
+22. 北师大列表形态：博导/硕导频道是**文章列表**（每学科一篇文章、表格按方向分组），不是教师列表；师资 zgj/fgj/zj 频道才是静态名单
+23. **WP meta description 兜底**：很多 WP 站把 姓名/职称/电话/Email 压进 `<meta name="description">`（标签间无分隔符、全角空格），按已知标签切位置取值（`sites/wp.py: _meta_fields`）——吉大职称 80→95%、山大 0→94% 靠它。标签清单要含"联系电话/学科/导师类型/通讯地址"等无值边界，否则切片会串到下一字段
+24. **sudy WP 通用查询接口**：上科大/复旦 `/_wp3services/generalQuery?queryObj=teacherHome` 是 **POST** 表单（siteId/conditions(exField8=分类)/returnInfos/rows=999），GET 会 500；请求须 trust_env=False + X-Requested-With 头。上科字段：title=姓名、exField1=职称+博导、exField4=方向、exField5=研究中心；复旦字段：exField1=职称+博导、exField4=方向、exField5=faculty 主页、exField8=博导硕导
+25. **"SPA"结论要复检**：南科大被记为"JS 卡片加载"，实际是服务端渲染卡片（.teacherlist）——旧结论是渲染没等够/选择器没匹配上的误报。复旦"登录墙"也是错的（站点改名"计算与智能创新学院"，公开）。接手时先重新核实再信文档
+26. 东南师资三频道（按职称/按方向/按系别）是纯文本名单（h2 + div.ry-md>p.ry-xm），无教师链接——三页按姓名合并出 职称/方向/系别；师资博士后（ry-bz 标注）不入库；博导库（dsxx）链接 cs.seu.edu.cn/<py>/main.htm 主页，详页有邮箱/职称/方向
+27. **邮箱回归（2026-09-05 两轮，用户指正驱动）**：低覆盖院系必须抽查页面验证，不能凭解析结果断言"官网没有"。第一轮误判教训：北师大/同济/中科大的邮箱明明在页面里（电子邮箱变体/同行多字段/E-Mail 带空格/mailto 编码双邮箱/meta 无冒号标签），解析器没吃到。修复后 bnu 32→73%、ustc 64→97%、tongji 30→58%、sdu 52→64%、jlu 34→43%、fudan 0→99%、iie 0→96%、ecnu 100%。**确认真缺失的**：hit（jsml 无链接且教师系统网络不可达）、seu 名单页（主页有但未全接）、xjtu（页面无密文 span）、zju（瑞数）。**neu 注意**：页脚邮箱 neucse@cse.neu.edu.cn 是学院公邮（neu_cs 钩子已排除），本人邮箱在简介"电子邮件 xxx"句式里（53% 上限）
+28. **职称归一化**：`crawler/title_util.py` 的 `normalize_title` 统一处理（括号导师资格拆进 supervisor、"、"分段、副高→副高级、前缀词表）；管线在 `_merge` 自动接入；存量 297 处已修。新职称词出现时在词表加一行
+29. **preflight 的 payload↔data 一致性**：site/p/ 里残留孤儿页会报错——build_site.py 已自动清理，但手改 site/ 后要重跑 build
+
+**2026-09-05 下午新增（四所新校 + tsites 二轮）**
+30. **正则量词边界坑（两连）**：`电子?邮箱` 解析为"电(必选)+子(可选)+邮箱"，纯"邮箱"开头的行反而匹配不上——量词要括起来 `(?:电子)?邮箱`。北航 `电子邮箱`（先"电话"后"邮箱"交替都不命中开头"电"）同理。**写标签正则先拿真实样本验证**，别脑补
+31. **tsites 明文邮箱四形态**（`sites/tsites.py` 兜底，全部只在 email 缺失时触发）：① 裸 `<p>xxx@yy</p>` 无任何标签（西交 gr.xjtu）→ 全页唯一邮箱才采用，多个时取与站点同校域的（官方域 vs QQ/163 并存）② `电子邮箱：` 标签行 + 值在下一个兄弟元素（西电 web.xidian 跨 `<p>`）③ mailto href 是明文但锚文本混淆（"hchgao AT xidian.edu.cn"）④ span id 即语义（`_tsites_encryp_tsteacher_tsemail`，父容器无标签文字）；另 `Email:`（无连字符）是 `E-mail` 之外的高频变体。战果：xjtu 29→68%、xidian 53→90%、csu 56→71%（csu 剩余经主页+子页两轮核实为官网无邮箱字段）
+32. **VSB CMS 三级跳转**（天大/人大信院）：栏目首页是 807B 的 `window.location.href` 跳转壳，真实列表在 `azc/zgj/1.htm` 这类三层路径下，翻页是 `/N.htm` 目录形态；人大信院落地页是 hash 链接（32位hex.htm）+ index2.htm 翻页，锚文字粘连"姓名研究方向…讲授课程…"，姓名取开头汉字段即可
+33. **北理工名录是渲染后注入**：原始 HTML 和渲染早期都没有人员链接，`fetch_rendered(wait_ms=6000, scroll=True)` 后出现（32 位 hash 链接）；详情页却是服务端渲染（直接 requests 可解析）。**渲染失败先怀疑等待不够**，别急着下"SPA"结论（§7.25 同款教训）。另外钩子返回的 url 必须 urljoin 成绝对路径——crawl.py 的别名提取 `rsplit("/",1)[1]` 对无斜杠相对路径会 IndexError
+34. **crawl.py roster 拷贝字段**：`phase_roster` 只拷贝 title/email/phone/supervisor/subjects/research_direction_raw/photo_url/**homepage**——给 rec 塞其他字段（如 homepage 曾被静默丢弃）要先核对这个列表
+35. **WP meta description 标签变体又添一例（华南理工）**：meta 里写的是 `E-mail：`（带连字符），`_meta_fields` 的 labels 只有 `Email` 匹配不上——labels 清单现已含 `E-mail`。**WP meta 标签拼写无穷变体，新站接入先 dump meta description 全文核对**。华南理工正文只有一张介绍图片（`wp_articlecontent` 空壳、无 `v_news_content`），字段全靠 meta；`box is None` 分支已改为 meta 兜底 + bio_raw
+36. **WP 站师资按职称分栏目 = roster 级职称白送（华南理工）**：`22284/list.htm`（教授）、`22285`（副教授）、`22286`（讲师/助理教授）是三个栏目——只抓第一个会漏 57% 的人（华南理工 33→76 人、职称 57%→100%）。channel 带 `cat:` 字段进 `list_title`。**接 WP 站先翻全站导航找师资栏目树**。面包屑"师资队伍 > 教授"是详情页职称兜底信号（scut_cs 的 `_BREADCRUMB_TITLE`）
+37. **页脚公共邮箱陷阱（湖大/华南理工）**：湖大详情页"电子邮件"字段为空但页脚备案区有 `xiaoban@hnu.edu.cn`，华南理工页脚有 `x2js@scut.edu.cn`——全页正则会吃到，**必须排除页脚/备案区，绝不能把学院公邮录成教师邮箱**（宁可缺）。湖大 55 人无邮箱经抽查为官网"电子邮件"字段真空白
+38. **preflight issue 的 reviewed 语义**：官网死链（xmu 43 条 404、tju/bnu 各 1-2 条）和外部主页被墙（sustech scholar.google 403）是**如实记录**，不该删；preflight 只对未复验的 open issue 报 PROBLEM，人工复验后在 issue 条目加 `reviewed: true`。**"网络抖动"类 issue 先重跑再判**：sustech 两条 ConnectionError 复测时已恢复
+39. **CDP 真实浏览器后端（破瑞数/网防的定论方案，crawler/fetch.py）**：① `_ensure_chrome_debug()` 启动本机真实 Chrome（独立 profile `cache/chrome-profile`，不动用户日常会话）监听 9222，playwright `connect_over_cdp` 接管，用默认上下文（保留指纹/cookie）新开页抓完即关 ② `fetch()` 对 **412/403/503** 抛错时自动降级 `fetch_cdp`；**网防 wengine 走 202 短响应（requests 视为成功）**，按 `status==202 且 body<10KB` 特征降级 ③ 两个大坑：**环境变量 http_proxy 是 SOCKS（127.0.0.1:10808）时 `proxies={"http":None}` 不禁用代理反而回退环境设置，探测回环 9222 必须 `trust_env=False`**；Chrome 启动要 15-30s，等待循环别设 10s ④ **两个爬虫进程不得同时用 CDP**（EPIPE：playwright driver 管道崩）——串行跑 ⑤ 列表页 requests 返回 200 的 JS 壳（重大）不会触发降级，hook 里必须**显式 `fetch_cdp(wait_ms=5000, scroll=True)`** ⑥ Chrome 走系统代理出口，瑞数照样放行（指纹优先于 IP）
+41. **浙大 person 门户 API 逆向（appkey/sign 签名）**：前端 emitAjax 三件套——`appkey = Base64→Hex(反转的Base64串)`、`sign = MD5(salt + path + sorted_kv(data) + timestamp + " " + salt)`（salt 也是 Base64→Hex 固定串）、`timestamp` 毫秒。请求走 `/server/api/front/psons/search?size=100&page=N`（**/server 前缀**，不带它 403/Access denied——那是前端代理路径），返回 JSON（totalElements=5841 全校）。API 本身不被瑞数拦（裸 requests 也能调，缺签名头才 400），**页面内 fetch/XHR 反而 403**（瑞数 4 对 XHR 注动态 token，但应用层签名缺了照样 403——两层签名别混淆）。UI 路线注意：SPA 是 history 路由，服务端真实路径带 `/index` 前缀（/index/search），直接 goto 可渲染
+42. **北邮 tsites 的 jsxx 子页才有 职称/导师资格**（主页只有职务/单位/邮箱/办公地点），链接形态 `/<py>/zh_CN/jsxx/<id>/jsxx/jsxx.htm`，字段标签与值常分两行（"职称：
+教授"）——职称正则要带下一行兜底
+43. **详情页"邮箱值是防爬 PNG 图片"（吉大）→ rapidocr 本地 OCR 管线（sites/jlu/jlu_cs.py）**：`<td>Email：</td><td><img …>` 值列是 18px 高的小图，rapidocr 的 **det 模型对细长低对比单行图会丢前段**——直接调 `ocr.text_recognizer(整行放大6x图)` 整行识别才稳。识别结果常把 @ 后域名拆碎/漏字，**修复策略是只信 @ 前的 local part + 已知域名重组**（该院邮箱域固定）；混淆形态"xxx at yyy/[AT]"在去空格前先还原为 @。**OCR 结果必须目检**：52 张图拼成大图逐一核对，揪出 l/1、l/I、c/e 字符级混淆 2 例（已改 manual origin 覆盖）。另注意 vsb CMS 的 img 真实路径在 **vurl 属性**（src 可能是丢目录的相对名），且 vurl 有 `/_vsl/…` 缩略图形态（OCR 必败），要 vurl→src 依次回退
+44. **wp 邮箱提取两处新坑（同济/东北暴露）**：① `box.get_text("", strip=True)` 无分隔拼接会把中文标签和邮箱粘成一个 token（"系方式：a@b.c"），normalize 的 ASCII `\w` 拒收——@ 扫描窗口内先用正则剥出纯邮箱再归一；② 邮箱正则 TLD `[A-Za-z]{2,}` 会把后续标签词吞进域名（"jlu.edu.cnWechat"）——**右边界前瞻挡不住纯字母**，解法是标签切分处按"WeChat/QQ/Tel…+冒号"预截断 + `email_util._tld_ok` 尾标签长度/白名单校验兜底。东北正文邮箱标签变体多（电子邮件/电子邮箱/联系方式/邮件联系），且常被 span 隔断——**在 get_text 纯文本上按变体搜**（neu_cs），页脚公邮 neucse 由过滤兜底
+45. **dlut tsites 解密接口挂死实锤（复测 2026-09-06）**：tsitesencrypt.jsp 在 requests 直连/代理/CDP 真浏览器三路下均 >20s 无响应挂起（页面本身 0.6s 可达），浏览器渲染同样空——**站点侧故障，唯一邮箱来源不可用**；英文版页面亦整体超时。23 人按 `email_missing_source_side` 留痕 reviewed，等站点恢复后 `crawl --refresh` 重跑即可
+46. **重大 tsites 是"成果展示型"**：faculty.cqu.edu.cn 的 index.htm 只有论文/专利栏目，**个人信息（职称/导师/邮箱）在 yjgk 子页**（栏目 ID 每人不同，从主页导航正则找）；邮箱标签是"联系方式："不是"电子邮箱"。北邮 tsites 相反——无密文 span，邮箱明文在 `div#gerenxinxi`。电子科大师资卡片 `span.name` 第二个就是职称（roster 级白送）；列表分页参数是 **`&fromWenCountNo=99`**（GET 生效）
+47. **tsites 明文形态⑤"标签窗口扫描"（`sites/tsites.py`）+ 解密两坑（xjtu/ruc 第三轮暴露）**：① 密文标签载体**上溯容器过大必串味**——桂小林 jbqk 整块里空的"电子邮箱："把隔壁"联系方式"密文分类成 email，Tel/Fax 解密值入库；修法=容器文本超 80 字弃用标签 + email 字段解密值必须过 normalize_email ② 明文值跨节点分裂（`Email：<span>hengchen</span>@xjtu.edu.cn`、`xlgui AT mail.xjtu.edu.c`+`n` 跨 span）——get_text(" ") 会插空格拆散邮箱，修法=取标签所在容器块 get_text("") 不插分隔符 + AT 还原 + 去空白再扫 ③ ruc 的 `(@)` ASCII 括号混淆 email_util 不认；"yi.zeng (@)ruc.edu.cn" 分词后左括号被 _clean_token 剥掉只剩 "@)"，需孤儿括号兜底 sub
+48. **`电子?邮箱` 量词坑第三次出现（§7.30 同款）**：ruc_ai 标签扫描 `(?:电子?邮箱|...)[：:]` 匹配不上纯"邮箱："行——"电"是必选。全库已统一替换为 `(?:电子)?邮箱`。写标签正则先拿真实样本验证，三令五申
+49. **supervisor 全库三级提取（`crawler/supervisor_util.py`）**：① 结构化标签（jlu"是否博导：是"、tongji"导师类型 博／硕导"）② 头部徽标行（people.ucas"曹亚男 女 博导 单位"——raw html 里是 `&nbsp;` 实体，必须 get_text 后再正则）③ 简介职称相邻自述（"长聘教轨副教授、博士生导师"，允许"博士"垫词）。**提取只在 bio_raw/正文容器内跑**：ustc 站内导航"兼职教授/博导 本科生教育"是栏目名，全页跑必假阳性（dry-run 实测 72 条全是导航）。"是否博导：否"绝不取值。接入点：wp box 内 / jlu_cs / iie_cs / hnu_cs / sist_cs / ruc_ai / sustech_cs / tsites 全页（tsites 已验证无导航污染）/ crawl.py bio_raw 兜底
+50. **wp meta CMS 截断省略号污染 phone（北大）**：meta description 尾部带 `...`（`电话：86-10-62765825...`、纯 `...`），862a548f 的标签切分修复让 phone 首次被切出后整批入库。`v()` 现剥尾点+纯点拒收。**同济信息表"联系电话："空值时下一行是"通讯地址…"**，`v or nxt` 把地址+简介整段粘成电话（31 条）——电话分支现要求数字形态。教训：**给解析加能力时必须回归全库既有值**（本次 field_changes 一批退化，靠 changes JSONL 逐条审出）
+51. **simple_list 卡片布局同 URL 多锚点（sdu）**：js.htm 每人卡片有 姓名/职称/研究方向 三个 `<a>` 指向同一详情页，`title` 属性滥用（§7.1）+"职称"匹配中文人名正则 → "教授/副教授/嵌入式系统"4 条假人。修法=职称词黑名单 + 同 URL 按姓名质量择优（2-4 字规范人名 > 5 字方向/实验室名）。ruc/ai"中文"语言切换链接同款，语言词黑名单一起加了
+52. **phase_roster 的 stable_urls（zju）**：zju xlsx 导师 roster URL 是目录文章页`#姓名`锚点，上一会话经门户 API 把 103 人 detail_url 改成 person.zju 主页后，**重跑 roster 必然 URL 不匹配 → 重复入库 -2 假人**（本次实爆 103 条）。修法=配置 `stable_urls: true` 时按姓名回退匹配存量、保留既有 URL，并把这类匹配算作"仍在名单"（防 missing_in_list 误报）。**同名多人（zhangwei-2）场景下回退只匹配一次，多余同名 rec 仍走新建——属正确行为**
+53. **Issue 模型必须含 reviewed 字段**：此前 reviewed/review_note 只是 YAML 里的额外键，pydantic 加载即丢，save_issues 重写文件后标记蒸发（本次 tongji/neu/dlut 等 120 条被批量重跑抹掉，preflight 全红）。模型已加 `reviewed/review_note` 字段持久化。另：上会话写入的 issue 用了 `detail/created` 键名（schema 是 `message/first_seen`）导致 crawl 直接崩——**手写 issue 条目必须走 Issue 模型同款键名**
+
+**产品层（2026-09-06 ~）**
+54. **详情页 UI 验证禁用 networkidle**：详情页照片是官网外链，networkidle 会被拖到 30s 超时——goto 用 `domcontentloaded` + wait。file:// 下 fetch 直接抛 console error（"URL scheme file not supported"）——页面用 `location.protocol === "file:"` 门控不发请求，别只靠 try/catch
+55. **ui_check 状态残留会让 ⭐ 语义反转**：上轮测试残留的 interested 让下轮 star 点击变成"移出"——ui_check 开跑先 `unlink` data/outreach.yaml（serve 每请求重读文件，删文件即净空）。另：列表页加新默认列要把 localStorage 版本号 bump（adv_cols_v2→v3），否则老用户存的列配置里没有新列
+56. **serve API 测试两坑**：Git Bash 里 `curl -d '{"note":"中文"}'` 进包是 GBK，服务端 json.loads 报 invalid json——用 UTF-8 文件体 `--data-binary @f.json`；headless Chromium 的 clipboard.writeText 默认拒绝——Playwright `new_context(permissions=["clipboard-read","clipboard-write"])` 授权后才能 E2E 验证（页内另有 execCommand 兜底）
+
+## 7.40 条件发现与全站 UI 0.3（2026-10-14）
+
+新增 `discovery.html`，支持申请目标、院校/主题、必须与偏好条件、未知保留和证据卡片；年度机会/个人资格需要用户按官方原文人工核验，四项上下文固定且30天后复核。私人 `data/discovery.yaml` 已忽略Git，读取不写；有独立备份恢复。目标传递到联系和项目创建，旧自由文本项目只在规范类型明确匹配时自动选中。
+
+八类页面统一 `ui.css` 和导航模板；新增条件流程/390px布局验收，旧三类浏览器回归保持。原公开与私人data文件均未修改。详细条件来源、当前覆盖和后续优先级见 `DISCOVERY_PRODUCT_REVIEW_2026-10-14.md`；交付证据见 `DELIVERY_DISCOVERY_V0.3_2026-10-14.md`。
+
+## 7.41 学校与招生政策0.4（2026-10-14）
+
+新增 `admissions.html`，学校/院系目录36校42院系，结构化人工规则为清华1校1院系4条2027硕士上下文、5个官方原文/PDF落地页。摘要与未知并列、学校/院系/专业范围不覆盖；政策链接通往对应导师发现及申请项目预填。真实私人文件不写，只有用户主动提交项目才写。
+
+`check_admissions.py --refresh` 主动回源检查，默认缓存优先；失败不能被随后缓存读取消除，原文/附件变化先待复核，重建后页面显示观测。没有后台常驻检查，没有全库政策完整性承诺。产品调研与扩充方向见 `ADMISSIONS_PRODUCT_REVIEW_2026-10-14.md`，66项测试和完整验收见 `DELIVERY_ADMISSIONS_V0.4_2026-10-14.md`。
+
+## 8. 操作手册
+
+```powershell
+# 日常
+python scripts\crawl.py --school <s> --dept <d>            # 抓取（缓存优先）
+python scripts\crawl.py --school <s> --dept <d> --refresh  # 强制回源（检测官网变化）
+python scripts\build_site.py                               # 重建静态站
+python -m http.server 8000 --directory site                # 本地预览 :8000
+
+# 质量与检查
+python scripts\audit.py        # 覆盖率审计
+python scripts\preflight.py    # 提交前体检
+python scripts\tag_facets.py   # 重算方向标签（改规则后）
+
+# 扩展新校（先 websearch 核实官方域名！）
+# 1) sites/<school>/<dept>.yaml  2) 钩子（或复用 wp/simple_list/tsites）  3) crawl → build_site
+```
+
+## 9. 后续计划（2026-09-05 制定，按价值排序）
+
+**阶段一：远程渲染后端（✅ 已完成）**
+- CDP 真实浏览器后端已上线（§7.39），北邮 217/重大 77/电子科大 189 三校接入，全库 33→36 校
+
+**阶段二：CDP 红利扩收 + 存量第三轮补全（✅ 2026-09-06 基本收官）**
+1. ~~浙大~~ ✅（API 已逆向，271 名 xlsx 导师接口无记录已定论）
+2. ~~哈工大 supervisor~~ ✅ 168/240
+3. ~~北邮职称 30% → 子页挖掘~~ ✅ jsxx 子页（35%）
+4. ~~scu/jlu/neu/tongji/dlut 专项~~ ✅ 09-06 完成；~~xjtu/ruc-ai 邮箱~~ ✅ 09-06 晚完成（xjtu 73% 剩余 20 人确缺、ruc/ai 100%）
+5. ~~supervisor 全库 36% 排查~~ ✅ 09-06 完成（40%→53%，§7.49）；剩余大头：tsinghua 5%/pku 16%/ucas-ia 14%/uestc 5%（官网无结构化源，仅 bio 自述，已吃到能吃的）
+6. verified 人工核对启动：每校抽 10 人核对 provenance（需用户参与）
+7. 华科/南开复测（~~09-06 直连+代理均 TCP 阻断~~ 已复测定论不变，等网络环境）
+
+**阶段三：产品层（计划 PRODUCT_PLAN.md，2026-09-06 用户审定"确认开始"）**
+顺序：~~① 状态写回+套磁看板~~ ✅ 09-06（serve.py + board.html）→ ~~② 对比页~~ ✅ 09-06（compare.html + 列表勾选/浮动按钮 + ui_check 对比流全绿）→ ③ 学生画像+SOP（骨架已搭好 data/student.yaml + data/student_sop.md，**等用户填素材**）→ ④ AI 归纳层（**骨架✅ 09-06**：model.AiBlock/AiClaim + crawler/ai_util.py evidence 校验 + scripts/ai_enrich.py 缓存优先/mock 可测 + 详情页 AI 区块 + preflight §8 证据回溯校验；**实跑等用户给 AI_API_BASE/KEY/MODEL**，OpenAI 兼容接口）→ ⑤ 信件草稿。**隐私分界已落地：仓库公开，data/outreach.yaml、data/student*.yaml、data/student_sop.md、data/letters/ 均已 gitignore，outreach/AI 匹配点不进任何生成文件**；设计细节见 PRODUCT_PLAN.md
+
+**运维常态**：月度 `crawl --refresh` 全量 + audit + preflight；CDP 后端注意 §7.39 的坑（串行、SOCKS 回环、启动等待）
+
+**决策点**：① CDP 需要本机 Chrome（已自动化启动，无需用户配合）② AI 层需要 LLM API key ③ 阶段三内部顺序由用户按套磁工作流定
+
+## 10. 给下一个 agent 的三句话
+
+1. **先跑 `preflight.py` 和 `audit.py`，再动任何代码**——它们绿了才说明你理解的数据状态和真实状态一致
+2. **接新校先 websearch 官方域名，再 dump 原始 HTML 找数据真实位置**（锚点属性/内文/script 变量/ajax 三选一），九连败的教训全在 §7
+3. **所有 UI 改动用 Playwright 打开页面验证 console 无错 + DOM 断言**，`#count` 是全库总数不是筛选数

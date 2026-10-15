@@ -10,7 +10,7 @@
 {% for key,label,file in [('index','全量导师目录','index.html'),('compare','导师对比','compare.html'),('applications','项目与材料','applications.html'),('board','旧套磁看板','board.html')] %}
 <a href="{{ prefix }}{{ file }}" {% if current_page == key %}aria-current="page"{% endif %}{% if key == 'applications' and current_page == 'desk' %} id="manage-link"{% endif %}>{{ label }}</a>
 {% endfor %}
-</div></details>
+{% if current_page != 'detail' %}<a href="release.html"{% if current_page == 'release' %} aria-current="page"{% endif %}>版本与使用说明</a>{% endif %}</div></details>
 {% if current_page == 'detail' %}<span class="crumb">{{ p.school_name or p.school }} · {{ p.dept_name or p.dept }}</span>{% endif %}
 {% if current_page == 'board' %}<span class="muted">跟进中 <b id="tracked">0</b> 人</span>{% endif %}
 </div></header>
