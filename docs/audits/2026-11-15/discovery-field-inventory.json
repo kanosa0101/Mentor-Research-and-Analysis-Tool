@@ -1,0 +1,445 @@
+{
+  "records": 7173,
+  "email_nonempty": 5668,
+  "email_valid": 5639,
+  "email_missing": 1505,
+  "email_invalid_nonempty": 29,
+  "email_invalid_samples": [
+    {
+      "id": "hnu-cs-cailijun",
+      "email": "ljcai@hnu.edu.cn0731-88821513"
+    },
+    {
+      "id": "hnu-cs-chenhaowen",
+      "email": "hwchen@hnu.edu.cn18932430631"
+    },
+    {
+      "id": "hnu-cs-hujun",
+      "email": "hujun_111@hnu.edu.cn15116118063"
+    },
+    {
+      "id": "hnu-cs-huyikun",
+      "email": "yikunhu@hnu.edu.cn13873160076"
+    },
+    {
+      "id": "hnu-cs-lihuan",
+      "email": "13755199943@139.com13755199943"
+    },
+    {
+      "id": "hnu-cs-likenli",
+      "email": "lkl@hnu.edu.cn0731-88664161"
+    },
+    {
+      "id": "hnu-cs-linhongli",
+      "email": "hllin@hnu.edu.cn18692263239"
+    },
+    {
+      "id": "hnu-cs-liuqin",
+      "email": "gracelq628@hnu.edu.cn13548577157"
+    },
+    {
+      "id": "hnu-cs-liwei",
+      "email": "rj_wli@hnu.edu.cn18900795910"
+    },
+    {
+      "id": "hnu-cs-qinyuliang",
+      "email": "youngqin@126.com13875830149"
+    },
+    {
+      "id": "hnu-cs-ronghuigui",
+      "email": "ronghg@hnu.edu.cn0731-88821974"
+    },
+    {
+      "id": "hnu-cs-shejingke",
+      "email": "shejingke@hnu.edu.cn0731-88821907"
+    },
+    {
+      "id": "hnu-cs-tanguanghua",
+      "email": "guanghuatan@hnu.edu.cn18684798169"
+    },
+    {
+      "id": "hnu-cs-tianzean",
+      "email": "tianzean@hnu.edu.cn13974843579"
+    },
+    {
+      "id": "hnu-cs-wangshulin",
+      "email": "books@hnu.edu.cn13787125196"
+    }
+  ],
+  "schools_with_valid_email": 37,
+  "units_with_valid_email": 52,
+  "supervisor_all": {
+    "(空)": 3204,
+    "博导": 1943,
+    "硕导": 1423,
+    "博导、硕导": 601,
+    "硕导、博导": 2
+  },
+  "supervisor_email_valid": {
+    "(空)": 2587,
+    "博导": 1679,
+    "硕导": 1086,
+    "博导、硕导": 285,
+    "硕导、博导": 2
+  },
+  "title_all": {
+    "(空)": 1960,
+    "教授": 1633,
+    "副教授": 1304,
+    "副研究员": 423,
+    "研究员": 334,
+    "讲师": 311,
+    "助理教授": 151,
+    "副高级": 145,
+    "高级工程师": 143,
+    "助理研究员": 120,
+    "正高级": 101,
+    "长聘教轨副教授": 98,
+    "长聘副教授": 66,
+    "长聘教授": 57,
+    "工程师": 51,
+    "特聘教授": 36,
+    "中级": 25,
+    "正高级工程师": 24,
+    "特聘研究员": 20,
+    "讲席教授": 20,
+    "实验师": 15,
+    "预聘助理教授": 14,
+    "特聘副教授": 12,
+    "研究实习员": 12,
+    "准聘教授": 10,
+    "高级实验师": 8,
+    "教辅系列": 8,
+    "预聘副教授": 7,
+    "博士后": 7,
+    "准聘副教授": 7,
+    "兼职教授": 7,
+    "院士": 6,
+    "特聘副研究员": 5,
+    "青年副研究员": 4,
+    "助理工程师": 3,
+    "助教": 3,
+    "教授（研究员）": 3,
+    "教授级高级工程师": 2,
+    "晨晖学者": 2,
+    "青年研究员": 2,
+    "长聘教轨助理教授": 2,
+    "正高级实验师": 2,
+    "副高级研究员": 2,
+    "弘深青年教师": 1,
+    "馆员": 1,
+    "管理员": 1,
+    "长聘研究员": 1,
+    "讲席研究员": 1,
+    "正高级研究员": 1,
+    "博士后学历学位：博士": 1,
+    "智能网络与网络安全教育部重点实验室主任助理": 1
+  },
+  "title_email_valid": {
+    "教授": 1335,
+    "(空)": 1202,
+    "副教授": 1072,
+    "副研究员": 398,
+    "研究员": 314,
+    "讲师": 222,
+    "副高级": 139,
+    "助理教授": 135,
+    "高级工程师": 131,
+    "助理研究员": 114,
+    "正高级": 95,
+    "长聘教轨副教授": 94,
+    "长聘副教授": 63,
+    "长聘教授": 57,
+    "工程师": 43,
+    "特聘教授": 34,
+    "正高级工程师": 22,
+    "讲席教授": 20,
+    "中级": 16,
+    "实验师": 15,
+    "特聘研究员": 14,
+    "研究实习员": 12,
+    "准聘教授": 8,
+    "预聘助理教授": 8,
+    "高级实验师": 8,
+    "预聘副教授": 7,
+    "准聘副教授": 7,
+    "博士后": 6,
+    "特聘副教授": 5,
+    "院士": 5,
+    "青年副研究员": 4,
+    "特聘副研究员": 3,
+    "助理工程师": 3,
+    "助教": 3,
+    "教授（研究员）": 3,
+    "教授级高级工程师": 2,
+    "晨晖学者": 2,
+    "青年研究员": 2,
+    "长聘教轨助理教授": 2,
+    "正高级实验师": 2,
+    "教辅系列": 2,
+    "副高级研究员": 2,
+    "弘深青年教师": 1,
+    "馆员": 1,
+    "管理员": 1,
+    "长聘研究员": 1,
+    "讲席研究员": 1,
+    "正高级研究员": 1,
+    "博士后学历学位：博士": 1,
+    "智能网络与网络安全教育部重点实验室主任助理": 1
+  },
+  "qualification_email_valid": {
+    "phd": 1966,
+    "master": 1373,
+    "both": 287,
+    "neither": 2587
+  },
+  "valid_email_no_direction": 2969,
+  "valid_email_no_bio_excerpt": 1368,
+  "source_dates_valid_email": {
+    "2026-09-05": 1734,
+    "2026-09-03": 1031,
+    "2026-11-15": 885,
+    "2026-09-02": 653,
+    "2026-09-04": 597,
+    "2026-10-14": 453,
+    "2026-10-15": 190,
+    "2026-09-06": 96
+  },
+  "per_school": {
+    "bit": {
+      "records": 151,
+      "valid_email": 133
+    },
+    "bnu": {
+      "records": 72,
+      "valid_email": 53
+    },
+    "buaa": {
+      "records": 134,
+      "valid_email": 128
+    },
+    "bupt": {
+      "records": 217,
+      "valid_email": 175
+    },
+    "cqu": {
+      "records": 77,
+      "valid_email": 69
+    },
+    "csu": {
+      "records": 222,
+      "valid_email": 78
+    },
+    "dlut": {
+      "records": 24,
+      "valid_email": 4
+    },
+    "ecnu": {
+      "records": 70,
+      "valid_email": 70
+    },
+    "fudan": {
+      "records": 189,
+      "valid_email": 188
+    },
+    "hit": {
+      "records": 240,
+      "valid_email": 0
+    },
+    "hnu": {
+      "records": 187,
+      "valid_email": 106
+    },
+    "hust": {
+      "records": 210,
+      "valid_email": 36
+    },
+    "jlu": {
+      "records": 185,
+      "valid_email": 137
+    },
+    "nankai": {
+      "records": 219,
+      "valid_email": 213
+    },
+    "neu": {
+      "records": 147,
+      "valid_email": 109
+    },
+    "nju": {
+      "records": 102,
+      "valid_email": 90
+    },
+    "nudt": {
+      "records": 427,
+      "valid_email": 399
+    },
+    "nwpu": {
+      "records": 23,
+      "valid_email": 0
+    },
+    "pku": {
+      "records": 155,
+      "valid_email": 154
+    },
+    "ruc": {
+      "records": 97,
+      "valid_email": 94
+    },
+    "scu": {
+      "records": 166,
+      "valid_email": 151
+    },
+    "scut": {
+      "records": 76,
+      "valid_email": 56
+    },
+    "sdu": {
+      "records": 13,
+      "valid_email": 11
+    },
+    "seu": {
+      "records": 213,
+      "valid_email": 193
+    },
+    "shanghaitech": {
+      "records": 149,
+      "valid_email": 147
+    },
+    "sjtu": {
+      "records": 493,
+      "valid_email": 484
+    },
+    "sustech": {
+      "records": 39,
+      "valid_email": 39
+    },
+    "sysu": {
+      "records": 112,
+      "valid_email": 109
+    },
+    "tju": {
+      "records": 114,
+      "valid_email": 113
+    },
+    "tongji": {
+      "records": 156,
+      "valid_email": 104
+    },
+    "tsinghua": {
+      "records": 244,
+      "valid_email": 232
+    },
+    "ucas": {
+      "records": 1093,
+      "valid_email": 1057
+    },
+    "uestc": {
+      "records": 189,
+      "valid_email": 185
+    },
+    "ustc": {
+      "records": 72,
+      "valid_email": 71
+    },
+    "whu": {
+      "records": 177,
+      "valid_email": 101
+    },
+    "xidian": {
+      "records": 155,
+      "valid_email": 145
+    },
+    "xjtu": {
+      "records": 75,
+      "valid_email": 55
+    },
+    "xmu": {
+      "records": 51,
+      "valid_email": 4
+    },
+    "zju": {
+      "records": 438,
+      "valid_email": 146
+    }
+  },
+  "raw_yaml_records": 7173,
+  "raw_vs_public_field_mismatches": [],
+  "public_api_probes": [
+    {
+      "case": "default",
+      "total": 7173,
+      "first_page": 20,
+      "milliseconds": 341.1
+    },
+    {
+      "case": "degree_phd_default",
+      "total": 7173,
+      "first_page": 20,
+      "milliseconds": 216.9
+    },
+    {
+      "case": "degree_phd_hard_keep_unknown",
+      "total": 7173,
+      "first_page": 20,
+      "milliseconds": 207.7
+    },
+    {
+      "case": "email_hard_keep_unknown",
+      "total": 7173,
+      "first_page": 20,
+      "milliseconds": 207.1
+    },
+    {
+      "case": "email_hard_unknown_off",
+      "total": 5639,
+      "first_page": 20,
+      "milliseconds": 206.3
+    },
+    {
+      "case": "multi_school",
+      "total": 306,
+      "first_page": 20,
+      "milliseconds": 17.0
+    },
+    {
+      "case": "nonexistent_name",
+      "total": 0,
+      "first_page": 0,
+      "milliseconds": 3.5
+    }
+  ],
+  "deterministic_pagination": "same seed yields same first page; first 20 and next 20 disjoint",
+  "valid_email_provenance_present": 5639,
+  "valid_email_with_whitespace": 0,
+  "title_distinct_nonempty": 50,
+  "zero_contact_school_ids": [
+    "hit",
+    "nwpu"
+  ],
+  "invalid_email_by_school": {
+    "hnu": 26,
+    "jlu": 1,
+    "whu": 2
+  },
+  "email_source_audit": {
+    "counts": {
+      "valid_email": 5639,
+      "traceable_http_source": 5639,
+      "fetched_at_present": 5639,
+      "education_or_academic_cn_domain": 5214,
+      "missing_traceable_source": 0
+    },
+    "origins": {
+      "crawled": 5637,
+      "manual": 2
+    },
+    "other_hosts": {
+      "zhangyuqun.github.io": 1,
+      "mingkai-zheng.github.io": 1,
+      "ia.cas.cn": 342,
+      "ict.cas.cn": 10,
+      "is.cas.cn": 71
+    }
+  }
+}

@@ -1,0 +1,1398 @@
+{
+  "audit_date": "2026-11-15",
+  "status": "read_only_recommendations_not_migrated",
+  "scope": "全部18条已登记机会与来源链；不增加或修改产品记录，不部署。",
+  "source_signatures_before": {
+    "data/opportunities.json": "7de7df2fbbad5167977b8d590687cb085d00014d3694902a4a1ed6b44a2418ab",
+    "sites/opportunities.yaml": "18db6916b8e7f318f5924a83382dfac0c39197f0c5248e71246e1c7c82e69a6a",
+    "data/opportunities_research_2026-11-15.json": "3745742548143b42117e048281b6260ba1f07116291cbc6057d348aac51dc236",
+    "site/data.js": "0b14ec46290e2bf702fabc9defb87f9f9e687f44bc0f63629783a2907801744a",
+    "crawler/model.py": "dc11dbee2b9ccee76b13e302a3bee1de9383c56087439e9f35fbdaf6e4e0a0c2",
+    "scripts/build_site.py": "606978e88ab4a2f827ff8189ed057ff00b0d74da0f66ae74a0583705fefe530f",
+    "site/discovery-core.js": "9295e5984dbacc4df09043821ab316f43bbf3bae10e83529ef62527790738c5c"
+  },
+  "summary": {
+    "pending": 3,
+    "activity_page": 9,
+    "mentor_tag": 6
+  },
+  "source_hash_coverage": {
+    "matched": 17,
+    "total": 18
+  },
+  "items": [
+    {
+      "id": "ihep-winter-2027",
+      "title": "高能所2027年全国大学生冬令营",
+      "registered_unit": "中国科学院高能物理研究所",
+      "registered_kind": "winter_camp",
+      "organizer_level": "unconfirmed_institute",
+      "activity_type": "winter_camp",
+      "recommended_destination": "pending",
+      "destination_label": "待核验线索；核验后进入活动页",
+      "reason": "登记单位为高能所，但现有证据仅搜索索引，正文未安全取得；不能根据标题确认主办或当前开放。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "unavailable",
+        "published_at": "2026-11-06",
+        "verified_at": "2026-11-15",
+        "checked_at": "",
+        "registration_start": "2026-11-06",
+        "deadline": "2026-12-31",
+        "deadline_note": "索引正文写即日起，绑定其显示发布日期；尚待原文复核 ",
+        "camp_year": 2027,
+        "graduation_year": 2028,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://www.ihep.cas.cn/edu/bks/xly/202611/t20261106_8304185.html",
+        "registered_source_sha256": "",
+        "registered_source_note": "2026-11-15复查：搜索索引可读，www官方正文因证书过期无法安全取得；非www同路径返回404，官方栏目未列出该条。报名条件、材料和日期均保留为待复核线索，不能确认报名开放。",
+        "registered_evidence": [
+          "搜索索引：三、申请流程／1、报名时间：即日起至2026年12月31日。"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 22,
+            "name": "中国科学院高能物理研究所",
+            "url": "https://ihep.cas.cn/edu/bks/xly/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "ihep",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#ihep-winter-2027",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "bnu-ai-research-autumn-2026",
+      "title": "北师大人工智能学院2026—2027学年秋季本科生科研实习",
+      "registered_unit": "北京师范大学人工智能学院",
+      "registered_kind": "research_program",
+      "organizer_level": "school_department",
+      "activity_type": "coordinated_internship_management",
+      "recommended_destination": "pending",
+      "destination_label": "待定：学院统筹科研项目；不能拆成未经证实的导师标签",
+      "reason": "学院统一管理、分期申请及备案，可作为院系项目的候选；本文是招募管理建议而非已发布导师岗位清单，外校范围未知。需明确产品是否纳入学院内部科研实习管理通知。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "2026-11-13",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "2026-11-24",
+        "deadline": "2026-12-06",
+        "deadline_note": "学生申请11月24日至12月6日；11月13日至23日是导师报名阶段，12月7日至9日是审核后学院备案阶段。具体截止时刻未注明；年份由2026年11月13日发布的本学年秋季通知确定。",
+        "camp_year": 2026,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+        "registered_source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+        "registered_source_note": "已取得并核对学院官网正文；当前是导师征集阶段，学生申请尚未开始。原文称“各课题组、全体本科生”，未明确外校学生范围，不宣称面向全国开放。",
+        "registered_evidence": [
+          "二、工作安排：导师报名2026年11月13日至23日；学生申请11月24日至12月6日；学院备案12月7日至9日。",
+          "一、申请要求：学生必修课无挂科，实习原则上至少3个月、每周至少20小时。",
+          "联系方式：张老师，010-5880 7938。",
+          "https://ai.bnu.edu.cn/docs/2026-11/e30c0717c5ec4ae58e2024ea250ce351.docx",
+          "https://ai.bnu.edu.cn/docs/2026-11/1574318ca54e44ce90d277d904dd0297.docx"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 31,
+            "name": "北京师范大学人工智能学院",
+            "url": "https://ai.bnu.edu.cn/ggjxz/tzgg/index.htm",
+            "mode": "listing",
+            "school": "bnu",
+            "dept": "ai",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [
+          "https://ai.bnu.edu.cn/docs/2026-11/1574318ca54e44ce90d277d904dd0297.docx",
+          "https://ai.bnu.edu.cn/docs/2026-11/e30c0717c5ec4ae58e2024ea250ce351.docx"
+        ],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v16/sources/f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1.body",
+            "sha256_matches_registered": true,
+            "document_title": "北京师范大学人工智能学院"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#bnu-ai-research-autumn-2026",
+        "this_audit_live_check": "本轮官方网页核对：学院招募管理通知、分阶段流程、学院落款；未明确外校资格。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "iscas-research-2026",
+      "title": "软件所2026年大学生创新实践训练计划（科创计划）",
+      "registered_unit": "中国科学院软件研究所",
+      "registered_kind": "research_program",
+      "organizer_level": "research_institute",
+      "activity_type": "institute_research_program",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：院所科研计划",
+      "reason": "软件所研究生部统一发起、部门初选、系统立项并统一结题，属于院所级项目例外；附件联系人不是自动等同于导师。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "2026-10-28",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "2026-10-28",
+        "deadline": "",
+        "deadline_note": "官方受理至2027年1月，未注明具体日或时刻；请联系对应部门确认，不能将1月31日作为官方截止。",
+        "camp_year": 2026,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+        "registered_source_sha256": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+        "registered_source_note": "已核对官方正文与招募研究方向附件。受理截至月份明确，具体截止日未公布；毕业届次和研究生入学年份未明确，不由年级推断。",
+        "registered_evidence": [
+          "2026年“科创计划”报名时间为即日起至2027年1月。",
+          "国内各高校计算机科学与技术、软件工程、网络空间安全、数学及其相近专业的在校优秀二年级、三年级本科生；",
+          "品学兼优，心身健康，学习成绩专业或年级排名在前20％；",
+          "将上述材料合成一个PDF文件，发送到对应部门联系人老师邮箱进行初选。",
+          "项目周期一般为6个月，周期内会对学生提供经费资助。"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 26,
+            "name": "中国科学院软件研究所",
+            "url": "https://www.iscas.ac.cn/yjsjy/zsxx/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "iscas",
+            "required_text": null,
+            "relationship": "review_log_listing"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 3,
+        "last_review": {
+          "reviewer": "Codex official-source review v1.7",
+          "reviewed_at": "2026-11-15T10:22:51+00:00",
+          "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+          "listing_url": "https://www.iscas.ac.cn/yjsjy/zsxx/",
+          "content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11"
+        },
+        "linked_official_evidence_urls": [
+          "https://www.iscas.ac.cn/yjsjy/zsxx/202610/P020261028618405519532.xlsx"
+        ],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/extraction_v13/opportunity_evidence/af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121.html",
+            "sha256_matches_registered": true,
+            "document_title": "中国科学院软件研究所2026年“大学生创新实践训练计划”<br/>（科创计划）报名公告----中国科学院软件研究所"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#iscas-research-2026",
+        "this_audit_live_check": "本轮官方网页核对：所研究生部组织、系统立项及统一结题，截止只到月份。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "air-winter-2026",
+      "title": "清华AIR WINTER@AIR 2026冬令营",
+      "registered_unit": "清华大学智能产业研究院",
+      "registered_kind": "winter_camp",
+      "organizer_level": "university_research_institute",
+      "activity_type": "winter_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史冬令营",
+      "reason": "研究院统一组织冬令营；包含线下工作要求也不应因此改为个人导师招募。历史2026活动，不可换算成2027/2028当期。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2025-12-04",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": " 2026冬季；正文要求至少1—2个月线下工作，未给具体日期",
+        "camp_year": 2026,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://air.tsinghua.edu.cn/info/1007/2476.htm",
+        "registered_source_sha256": "75fc4e70998830b3331413f87c670c11564c8b4680ba1dd0dbdce3ae06672d89",
+        "registered_source_note": "2025年发布的2026冬令营，仅历史参考；不等于正式保研录取。报名日期、材料与活动确切日期待核查。",
+        "registered_evidence": [
+          "我们希望你／第3项：冬令营期间至少保证有1-2个月的线下工作时间"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/air-winter-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "WINTER@AIR｜2026冬令营开始报名啦！-清华大学智能产业研究院"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#air-winter-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "pku-ai4s-winter-2026",
+      "title": "北京大学科学智能学院2026冬令营",
+      "registered_unit": "北京大学深圳研究生院科学智能学院",
+      "registered_kind": "winter_camp",
+      "organizer_level": "school_department",
+      "activity_type": "winter_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史冬令营",
+      "reason": "学院组织；同篇公告另有拔尖培养计划，不能把两个不同事项混为同一报名窗口。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2025-12-18",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "2025-12-19",
+        "deadline": "2026-01-04",
+        "deadline_note": " ",
+        "camp_year": 2026,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://ai4s.pkusz.edu.cn/info/1007/1335.htm",
+        "registered_source_sha256": "9bd0b68ac16f27734f75d45b39d71a9142cd9180756f8c2ce47163a70726b40f",
+        "registered_source_note": "日期年份由2025年发布及2026年活动上下文确定；此条只记录冬令营，不把同文拔尖计划混成同一活动。",
+        "registered_evidence": [
+          "四、报名申请／（1）：报名时间：12月19日至1月4日"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 18,
+            "name": "北京大学深圳研究生院科学智能学院",
+            "url": "https://ai4s.pkusz.edu.cn/xydt/tzgg1.htm",
+            "mode": "listing",
+            "school": "pku",
+            "dept": "ai4s",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          },
+          {
+            "config_index": 55,
+            "name": "北京大学科学智能学院招生信息",
+            "url": "https://ai4s.pkusz.edu.cn/zspy/zsxx.htm",
+            "mode": "listing",
+            "school": "pku",
+            "dept": "ai4s",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/pku-ai4s-winter-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "北京大学深圳研究生院科学智能学院2026年冬令营及“博雅AI4S拔尖人才培养计划”项目招生说明-北京大学深圳研究生院科学智能学院"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#pku-ai4s-winter-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "sia-winter-2026",
+      "title": "沈阳自动化所2026智慧赋能·创领未来冬令营",
+      "registered_unit": "中国科学院沈阳自动化研究所",
+      "registered_kind": "winter_camp",
+      "organizer_level": "research_institute",
+      "activity_type": "winter_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史冬令营",
+      "reason": "沈阳自动化所主办的机构级冬令营；日期为既有历史轮次，预计营期不能提升为已确定。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2025-12-15",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-01-15",
+        "deadline_note": " ",
+        "camp_year": 2026,
+        "graduation_year": 2027,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/202512/t20251215_8027511.html",
+        "registered_source_sha256": "b5b3fbbea6069cbdf2f155ecb0e91e52f50bf6f8bd593b71f0ba5588c0ffad30",
+        "registered_source_note": "活动日期为原通知预计日期；截止原文为1月15日之前，未给具体时刻。",
+        "registered_evidence": [
+          "六、申请办法及时间要求／2（2）：报名时不需要提供申请材料"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 19,
+            "name": "中国科学院沈阳自动化研究所",
+            "url": "https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "sia",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/sia-winter-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "中国科学院沈阳自动化研究所关于举办2026年“智慧赋能·创领未来”优秀大学生冬令营通知--中国科学院沈阳自动化研究所"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#sia-winter-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "ict-summer-2026",
+      "title": "计算所2026计算未来暑期研修班",
+      "registered_unit": "中国科学院计算技术研究所",
+      "registered_kind": "summer_camp",
+      "organizer_level": "research_institute",
+      "activity_type": "summer_training",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史暑期研修",
+      "reason": "计算所统一暑期研修班；后续推免选拔是不同事项，入营不是研究生录取。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2026-07-02",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-07-15T14:00:00+08:00",
+        "deadline_note": " ",
+        "camp_year": 2026,
+        "graduation_year": 2027,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://www.ict.ac.cn/yjsjy/zsxx/sszs/202607/t20260702_8237097.html",
+        "registered_source_sha256": "837fb48fc1a979e1ccae61e332cf3879c011f74bce9492b7592101e4b7f343ca",
+        "registered_source_note": "暑期班和8月20—21日推免选拔为不同事项；本文不把入营等同录取。发布日期经官方通知列表确认。",
+        "registered_evidence": [
+          "四、报名方式及流程／1：至7月15日（周三）14:00"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 21,
+            "name": "中国科学院计算技术研究所",
+            "url": "https://www.ict.ac.cn/yjsjy/zsxx/sszs/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "ict",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/ict-summer-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "中国科学院计算技术研究所2026年“计算未来”全国大学生计算技术暑期研修班招生简章--中国科学院计算技术研究所"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#ict-summer-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "iscas-summer-2026",
+      "title": "软件所2026软件与网络夏令营",
+      "registered_unit": "中国科学院软件研究所",
+      "registered_kind": "summer_camp",
+      "organizer_level": "research_institute",
+      "activity_type": "summer_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史夏令营",
+      "reason": "软件所统一营，实验室安排科研实践不改变机构级主办；纸质材料是入营提交而非在线报名附件。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2026-05-28",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-06-22",
+        "deadline_note": " 2026年7月中下旬；实验室另行安排科研实践",
+        "camp_year": 2026,
+        "graduation_year": 2027,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202607/t20260716_8250354.html",
+        "registered_source_sha256": "feceddebdce9215d8bd35b952dc1b9d1b51bed1179398c9c1cc35694941a9516",
+        "registered_source_note": "URL路径为7月但页面明确来源时间及落款5月28日，采用正文日期；具体活动日期未公布，不推断起止日。",
+        "registered_evidence": [
+          "三、报名方式／1：即日起至6月22日",
+          "四、申请材料：纸质材料在线下入营时提交，无需提前寄送；科研证明为自愿提交。",
+          "六、夏令营形式及其他：线下营员须购买短期意外保险并在报到时提供凭证。"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 26,
+            "name": "中国科学院软件研究所",
+            "url": "https://www.iscas.ac.cn/yjsjy/zsxx/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "iscas",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/iscas-summer-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "中国科学院软件研究所2026年全国大学生“软件与网络”夏令营网报公告----中国科学院软件研究所"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#iscas-summer-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "cnic-summer-2026",
+      "title": "计算机网络信息中心2026智能与网络夏令营",
+      "registered_unit": "中国科学院计算机网络信息中心",
+      "registered_kind": "summer_camp",
+      "organizer_level": "research_institute",
+      "activity_type": "summer_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史夏令营",
+      "reason": "计算机网络信息中心统一营；网报与入选后材料截止不同，必须保留阶段。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2026-05-27",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-06-29",
+        "deadline_note": " ",
+        "camp_year": 2026,
+        "graduation_year": 2027,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://cnic.cas.cn/yjsjy/tzgg/202605/t20260527_8209811.html",
+        "registered_source_sha256": "c8331ba0ce3aadab95aa1cf7707bca10d33a774416a1a0d1441e86587ef0f8f6",
+        "registered_source_note": "网上报名截止与入选后材料提交截止不同，不合并成一个截止。",
+        "registered_evidence": [
+          "三、申请流程／1：即日起至6月29日"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 20,
+            "name": "中国科学院计算机网络信息中心",
+            "url": "https://cnic.cas.cn/yjsjy/tzgg/",
+            "mode": "listing",
+            "school": "ucas",
+            "dept": "cnic",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/current_opportunities_v12/cnic-summer-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "2026年中国科学院计算机网络信息中心“智能与网络”夏令营通知--中国科学院计算机网络信息中心"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#cnic-summer-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "sjtu-cs-summer-2026",
+      "title": "上海交大计算机学院2026优秀大学生夏令营",
+      "registered_unit": "上海交通大学计算机学院（网络空间安全学院、密码学院）",
+      "registered_kind": "summer_camp",
+      "organizer_level": "school_department",
+      "activity_type": "summer_camp",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：历史夏令营",
+      "reason": "计算机学院统一夏令营；不能视为某一导师个人实习招募。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2026-06-26",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-07-10T11:00:00+08:00",
+        "deadline_note": " 2026年7月下旬",
+        "camp_year": 2026,
+        "graduation_year": 2027,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://cs.sjtu.edu.cn/bsyjs_zsgz/1748.html",
+        "registered_source_sha256": "a64aa8456d9ecb5a7c53a43b4622934fa11de9d0c1f4510567cfb772648301db",
+        "registered_source_note": "校内学生成绩单与排名证明有单独安排。仅历史参考；营期以入围通知为准。",
+        "registered_evidence": [
+          "三、报名办法／1：即日起至2026年7月10日11:00"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 2,
+            "name": "上交计算机学院",
+            "url": "https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html",
+            "mode": "listing",
+            "school": "sjtu",
+            "dept": "cs",
+            "required_text": null,
+            "relationship": "same_host_candidate_not_proven_parent"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 0,
+        "last_review": null,
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/winter_20261115/sjtu-cs-summer-2026.html",
+            "sha256_matches_registered": true,
+            "document_title": "上海交通大学计算机学院2026年全国优秀大学生暑期夏令营活动通知-上海交通大学计算机学院（网络空间安全学院、密码学院）"
+          }
+        ],
+        "supplementary_research_record": "data/opportunities_research_2026-11-15.json#sjtu-cs-summer-2026",
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "tongji-ee-recommend-2027",
+      "title": "电子与信息工程学院2027年接收推荐免试研究生（含直接攻博）预报名通知",
+      "registered_unit": "同济大学电子与信息工程学院",
+      "registered_kind": "recommend",
+      "organizer_level": "school_department",
+      "activity_type": "formal_recommendation_application",
+      "recommended_destination": "pending",
+      "destination_label": "建议招生通知／学校与要求历史轮次，不属导师标签",
+      "reason": "正式2027入学推免预报名，不是夏冬令营等体验活动。若活动页严格按新边界，应归招生通知及政策；是否保留独立预推免类别由产品决定。",
+      "current_registration_state": {
+        "cycle": "historical",
+        "source_state": "verified",
+        "published_at": "2026-07-24",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "2026-08-25T12:00:00+08:00",
+        "deadline_note": "历史轮次：2027年入学推免，预报名于2026年8月25日12:00截止；不能作为2028届当前机会。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": 2027
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://see.tongji.edu.cn/info/1173/14903.htm",
+        "registered_source_sha256": "1217f9a6b0f237f6bbb918308c814f6909b10cc9567c8eaa04681f91996ead6f",
+        "registered_source_note": "已核验官方PDF第1—5页及其文件版本；仅供历年申请要求参考，不代表新一轮要求或名额。",
+        "registered_evidence": [
+          "PDF第1页申请对象、直博外语条件；第1—2页材料和提交阶段。",
+          "PDF第2页预报名截止精确至12:00；第3页申请系统；第4页2027招生专业目录及全国推免确认；第5页联系人和落款。"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 35,
+            "name": "同济大学电子与信息工程学院",
+            "url": "https://see.tongji.edu.cn/jxgz/yjsjx/zsgz.htm",
+            "mode": "listing",
+            "school": "tongji",
+            "dept": "ee",
+            "required_text": null,
+            "relationship": "review_log_listing"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "Codex官方原文逐页核验",
+          "reviewed_at": "2026-11-15T04:55:06+00:00",
+          "source_url": "https://see.tongji.edu.cn/info/1173/14903.htm",
+          "listing_url": "https://see.tongji.edu.cn/jxgz/yjsjx/zsgz.htm",
+          "content_sha256": "4c1e367cda5907cf862e1e20f752fc546090506b5261b82e0d79d496f140b1b8"
+        },
+        "linked_official_evidence_urls": [
+          "https://see.tongji.edu.cn/__local/0/CA/40/80ACF42AA9C448546B4B52A25D2_433060EA_4F2DE.pdf"
+        ],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/extraction_v13/opportunity_evidence/1217f9a6b0f237f6bbb918308c814f6909b10cc9567c8eaa04681f91996ead6f.html",
+            "sha256_matches_registered": true,
+            "document_title": "电子与信息工程学院2027年接收推荐免试研究生（含直接攻博）预报名通知-电子与信息工程学院"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "本轮官方网页核对：学院官网标题与发布日期确认正式推免预报名；本轮未重新逐页下载PDF，字段沿用登记证据。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    },
+    {
+      "id": "activity-d6cf0d3b78a48e8ce493",
+      "title": "复旦大学张帆团队本科科研实习联系",
+      "registered_unit": "大数据研究院张帆团队",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_team",
+      "activity_type": "undergraduate_research_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：长期招募本科科研实习",
+      "reason": "公告为张帆个人教师介绍中的团队招募，不因托管于大数据研究院官网就变成研究院统一活动。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "2026-05-08",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+        "registered_source_sha256": "7adcbde5292886f7f1fed22fd6709346e7065eecadbc2a6fbc122c42bc1ecc98",
+        "registered_source_note": "未公布本科实习具体时长、费用或住宿；每年研究生招生数量不视为当前本科实习名额；未明确2028届资格",
+        "registered_evidence": [
+          "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 51,
+            "name": "大数据研究院张帆团队",
+            "url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+            "mode": "direct_page",
+            "school": "fudan",
+            "dept": "ibd",
+            "required_text": "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "v17-official-research-a",
+          "reviewed_at": "2026-11-15T10:16:07+00:00",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "listing_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "content_sha256": "75a442a7dc9f703d45f5d9c9abd0c03dc5fa3674fe73276843bd45cf3a026944"
+        },
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_a/opportunity_evidence/7adcbde5292886f7f1fed22fd6709346e7065eecadbc2a6fbc122c42bc1ecc98.html",
+            "sha256_matches_registered": true,
+            "document_title": "张帆"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "张帆",
+        "person_email_in_source": "ffzhang@fudan.edu.cn",
+        "same_name_candidates": [
+          {
+            "name": "张帆",
+            "page": "csu-auto-zhangfan",
+            "school": "csu",
+            "dept": "auto",
+            "email": null,
+            "detail_url": "https://faculty.csu.edu.cn/zhangfan/zh_CN/index.htm"
+          },
+          {
+            "name": "张帆",
+            "page": "zju-cs-zhangfan",
+            "school": "zju",
+            "dept": "cs",
+            "email": null,
+            "detail_url": "https://person.zju.edu.cn/fanzhang"
+          }
+        ],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": null,
+        "requires_identity_review": true,
+        "note": "尚无同校姓名及官方身份一致的现有导师记录；不得只凭姓名绑定或创造导师ID。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "activity-ebd85b5bcea64ce072c2",
+      "title": "上海交通大学洪亮团队AI与生物方向长期实习",
+      "registered_unit": "洪亮团队／张江高等研究院",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_team",
+      "activity_type": "research_internship_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：长期科研实习招募",
+      "reason": "洪亮团队加入我们页面；联系地点张江高等研究院不能证明研究院统一组织。邮箱是招募联系人，不能把其姓名当导师。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+        "registered_source_sha256": "71ff651c962c834fbc63ffe531fbdd333c924529c15f24b66f2f73bc664df8de",
+        "registered_source_note": "未公布固定截止、实习时长或届别限制；待遇原文为详情面谈，没有金额承诺；表现优异可进一步申请学位，不代表保研录取",
+        "registered_evidence": [
+          "课题组长期招收计算机/生物工程方向实习生"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 52,
+            "name": "洪亮团队／张江高等研究院",
+            "url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+            "mode": "direct_page",
+            "school": "sjtu",
+            "dept": "ins",
+            "required_text": "课题组长期招收计算机/生物工程方向实习生",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "v17-official-research-a",
+          "reviewed_at": "2026-11-15T10:16:07+00:00",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "listing_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "content_sha256": "d4c095a6c66765ba398461bfc9d7d22f7894ffac7873080095f08b1251c5909a"
+        },
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_a/opportunity_evidence/71ff651c962c834fbc63ffe531fbdd333c924529c15f24b66f2f73bc664df8de.html",
+            "sha256_matches_registered": true,
+            "document_title": "开源研究"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "洪亮",
+        "person_email_in_source": null,
+        "same_name_candidates": [],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": null,
+        "requires_identity_review": true,
+        "note": "尚无同校姓名及官方身份一致的现有导师记录；不得只凭姓名绑定或创造导师ID。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "activity-03f42b3a3c32a4c22d97",
+      "title": "中国科大胡奇强实验室本科机器人科研联系",
+      "registered_unit": "胡奇强实验室／人形机器人研究院",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_lab",
+      "activity_type": "undergraduate_research_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：可联系本科科研",
+      "reason": "胡奇强教师主页的实验室本科生招募；同页27级研究生名额已满，不能提升成保研有名额。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+        "registered_source_sha256": "4d3fa8e052ac9805f6b405a43b597957ac9c72fb927ba333e8efdd3ab2fadd80",
+        "registered_source_note": "同页27级保研研究生名额明确已满，本条仅为本科科研长期招募；不把研究生或国际学生材料要求套给本科生；外校接收、经费和时长未明示",
+        "registered_evidence": [
+          "长期招收，有意向者请联系：qqhu@ustc.edu.cn"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 53,
+            "name": "胡奇强实验室／人形机器人研究院",
+            "url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+            "mode": "direct_page",
+            "school": "ustc",
+            "dept": "robotics",
+            "required_text": "长期招收，有意向者请联系：qqhu@ustc.edu.cn",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "v17-official-research-a",
+          "reviewed_at": "2026-11-15T10:16:08+00:00",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "listing_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "content_sha256": "c3b9abfbfd87f5276eebd907f6a62faee5e25424845c9dec49a1fbabc730a5f9"
+        },
+        "linked_official_evidence_urls": [
+          "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029914/list/index.htm"
+        ],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_a/opportunity_evidence/4d3fa8e052ac9805f6b405a43b597957ac9c72fb927ba333e8efdd3ab2fadd80.html",
+            "sha256_matches_registered": true,
+            "document_title": "中国科学技术大学 胡奇强--中文主页--招生信息"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "胡奇强",
+        "person_email_in_source": "qqhu@ustc.edu.cn",
+        "same_name_candidates": [],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": null,
+        "requires_identity_review": true,
+        "note": "尚无同校姓名及官方身份一致的现有导师记录；不得只凭姓名绑定或创造导师ID。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "activity-ffaa8dc527fe9b19b72d",
+      "title": "西湖大学丁士超实验室访问学生联系",
+      "registered_unit": "网络化生物电子系统实验室",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_lab",
+      "activity_type": "visiting_student_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：访问学生招募，资格须联系确认",
+      "reason": "丁士超实验室岗位招募，访问学生未明确本科限制；不是西湖大学统一科研营，招满即止不能声称始终有名额。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://shichaoding.lab.westlake.edu.cn/",
+        "registered_source_sha256": "75648601c1cf00dc1354ca96dfe7ab17b12afe2f058d6af8c7d6ba9326e12114",
+        "registered_source_note": "岗位招满即止，未获导师确认前不能承诺有名额；访问生未明确限定本科或应届年级，需联系确认；官网有2026年11月外校访问学生加入记录，仍不推定所有学校无条件可申请；未公开费用、待遇或访学时长",
+        "registered_evidence": [
+          "招聘启事在岗位招满前长期有效。"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 54,
+            "name": "网络化生物电子系统实验室",
+            "url": "https://shichaoding.lab.westlake.edu.cn/",
+            "mode": "direct_page",
+            "school": "westlake",
+            "dept": "bioelectronics",
+            "required_text": "招聘启事在岗位招满前长期有效。",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "v17-official-research-a",
+          "reviewed_at": "2026-11-15T10:16:09+00:00",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "listing_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "content_sha256": "b6116099575c4b46ab52eb29983a625ff2da6ee4d416c28757cd0c898fdef205"
+        },
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_a/opportunity_evidence/75648601c1cf00dc1354ca96dfe7ab17b12afe2f058d6af8c7d6ba9326e12114.html",
+            "sha256_matches_registered": true,
+            "document_title": "网络化生物电子系统实验室"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "丁士超",
+        "person_email_in_source": "dingshichao@westlake.edu.cn",
+        "same_name_candidates": [],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": null,
+        "requires_identity_review": true,
+        "note": "尚无同校姓名及官方身份一致的现有导师记录；不得只凭姓名绑定或创造导师ID。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "buaa-xiejiahao-research-rolling",
+      "title": "北航解佳豪课题组本科生科研实习",
+      "registered_unit": "北京航空航天大学解佳豪课题组",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_team",
+      "activity_type": "undergraduate_research_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：长期科研实习招募",
+      "reason": "解佳豪个人教师主页明确长期招收实习生，非北航统一项目；不得推断所属院系、2028届限制或名额。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "明确长期招收科研实习生；未公布具体开始日或截止日，联系导师确认当期接收安排。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+        "registered_source_sha256": "152832292c753e77c3721e84c3fe4778e21d76d834cd5ce4179e637ae44df37a",
+        "registered_source_note": "北航官方教师主页明确长期招收科研实习生。是否仍有位置及线下/线上安排需导师确认；不标成2028届专属。",
+        "registered_evidence": [
+          "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。",
+          "请在邮件中附上简历、成绩单、研究成果或项目经历等相关材料。",
+          "研究方向为基础模型、多模态理解与生成、具身智能。",
+          "jiahaoxie@buaa.edu.cn"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 59,
+            "name": "北京航空航天大学解佳豪课题组",
+            "url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+            "mode": "direct_page",
+            "school": "buaa",
+            "dept": "",
+            "required_text": "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "Codex official-source review v1.7",
+          "reviewed_at": "2026-11-15T10:22:52+00:00",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "listing_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "content_sha256": "6376ee0d18b08a659b0a798e8338aad1d3514755a662f55d0c2f959dc22bc229"
+        },
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_b/opportunity_evidence/152832292c753e77c3721e84c3fe4778e21d76d834cd5ce4179e637ae44df37a.html",
+            "sha256_matches_registered": true,
+            "document_title": "北京航空航天大学主页平台系统 Jiahao Xie--Home--Student Information"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "解佳豪",
+        "person_email_in_source": "jiahaoxie@buaa.edu.cn",
+        "same_name_candidates": [],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": null,
+        "requires_identity_review": true,
+        "note": "尚无同校姓名及官方身份一致的现有导师记录；不得只凭姓名绑定或创造导师ID。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "ruc-dongjinhao-research-contact",
+      "title": "人大董谨豪课题组科研实习联系",
+      "registered_unit": "信息学院·数据工程与知识工程教育部重点实验室",
+      "registered_kind": "research_program",
+      "organizer_level": "individual_team",
+      "activity_type": "research_internship_recruitment",
+      "recommended_destination": "mentor_tag",
+      "destination_label": "导师标签：长期科研实习招募",
+      "reason": "官方实验室教师页中董谨豪课题组招募；官方实验室站点是发布平台，不代表全实验室统一报名项目。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "2026-07-20",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "",
+        "deadline": "",
+        "deadline_note": "官网明确长期开放，但未公布统一报名流程与截止。",
+        "camp_year": null,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+        "registered_source_sha256": "3dd000dd3633b7222d2a523cf8b0ddfebd09bfef54e30c7a80277ea2c9cf3e3b",
+        "registered_source_note": "官方实验室教师页明确长期面向本科生和研究生开放科研实习。未公布材料、年级、排名、时长、待遇和校内外边界。",
+        "registered_evidence": [
+          "课题组长期面向优秀本科生和研究生开放科研实习机会",
+          "dongjinhao@ruc.edu.cn"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 60,
+            "name": "信息学院·数据工程与知识工程教育部重点实验室",
+            "url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+            "mode": "direct_page",
+            "school": "ruc",
+            "dept": "cs",
+            "required_text": "课题组长期面向优秀本科生和研究生开放科研实习机会",
+            "relationship": "direct_exact_url"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "Codex official-source review v1.7",
+          "reviewed_at": "2026-11-15T10:22:52+00:00",
+          "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "listing_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "content_sha256": "3affb975ff5a5b33262210bc41e09758f6b9755950013f5a2f2764562ea3be70"
+        },
+        "linked_official_evidence_urls": [],
+        "source_attachments": [],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_b/opportunity_evidence/3dd000dd3633b7222d2a523cf8b0ddfebd09bfef54e30c7a80277ea2c9cf3e3b.html",
+            "sha256_matches_registered": true,
+            "document_title": "董谨豪  讲师-专职人员-数据工程与知识工程教育部重点实验室"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": {
+        "person_name_in_source": "董谨豪",
+        "person_email_in_source": "dongjinhao@ruc.edu.cn",
+        "same_name_candidates": [
+          {
+            "name": "董谨豪",
+            "page": "ruc-info-dongjinhao",
+            "school": "ruc",
+            "dept": "info",
+            "email": "dongjinhao@ruc.edu.cn",
+            "detail_url": "http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/c8a4143fee2041c092d4c56b657af351.htm"
+          }
+        ],
+        "existing_verified_binding": null,
+        "proposed_identity_candidate": "ruc-info-dongjinhao",
+        "requires_identity_review": true,
+        "note": "同校姓名和公开邮箱一致，可进入人工身份核对；机会dept=cs与现有导师dept=info不一致，不能自动改院系。"
+      },
+      "changed_product_record": false
+    },
+    {
+      "id": "cibr-winter-training-2027",
+      "title": "北京脑所2027年冬季培训班",
+      "registered_unit": "北京脑科学与类脑研究所",
+      "registered_kind": "winter_camp",
+      "organizer_level": "research_institute",
+      "activity_type": "winter_training",
+      "recommended_destination": "activity_page",
+      "destination_label": "活动页：院所冬季培训",
+      "reason": "北京脑所统一培训、统一材料与选拔安排，机构级项目；本科与硕士分层条件不转换成单一毕业届别。",
+      "current_registration_state": {
+        "cycle": "current",
+        "source_state": "verified",
+        "published_at": "2026-11-02",
+        "verified_at": "2026-11-15",
+        "checked_at": "2026-11-15",
+        "registration_start": "2026-11-02",
+        "deadline": "2026-11-30T17:00:00+08:00",
+        "deadline_note": "北京时间11月30日17:00。开始日由正文“即日起”绑定官方发布日期11月2日。",
+        "camp_year": 2027,
+        "graduation_year": null,
+        "admission_year": null
+      },
+      "source_chain": {
+        "record": "data/opportunities.json",
+        "official_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+        "registered_source_sha256": "82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6",
+        "registered_source_note": "官方HTML及两份DOCX模板均直接取回。培训不收费、提供食宿及保险，交通自理。",
+        "registered_evidence": [
+          "报名时间：即日起至2026年11月30日17：00。",
+          "时间：2027年1月10日-14日",
+          "欢迎对神经和认知科学有浓厚兴趣的生物学、计算机、医学、数学、物理、化学、药学、电子信息、材料学等相关专业在读本科生（二年级及以上）或硕士研究生（二、三年级）积极报名。",
+          "冬季培训班不向学生收取任何培训费用，交通费用将由学生自行承担，我所将为培训班的同学购买保险并提供食宿。",
+          "（缺少填报问卷或未提交电子材料均不得进入选拔环节）"
+        ],
+        "monitor_config": "sites/opportunities.yaml",
+        "monitor_matches": [
+          {
+            "config_index": 57,
+            "name": "北京脑所培训实习",
+            "url": "https://cibr.ac.cn/cibrPersonnel/admissions",
+            "mode": "listing",
+            "school": "cibr",
+            "dept": "",
+            "required_text": null,
+            "relationship": "review_log_listing"
+          },
+          {
+            "config_index": 58,
+            "name": "北京脑所培训实习",
+            "url": "https://cibr.ac.cn/cibrPersonnel/admissions",
+            "mode": "listing",
+            "school": "cibr",
+            "dept": "",
+            "required_text": null,
+            "relationship": "review_log_listing"
+          }
+        ],
+        "monitor_match_limit": "同域及www别名匹配仅用于发现候选监测入口，不证明列表确实包含本条。",
+        "review_log_count": 1,
+        "last_review": {
+          "reviewer": "Codex official-source review v1.7",
+          "reviewed_at": "2026-11-15T10:27:54+00:00",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+          "listing_url": "https://cibr.ac.cn/cibrPersonnel/admissions",
+          "content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b"
+        },
+        "linked_official_evidence_urls": [
+          "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+          "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5"
+        ],
+        "source_attachments": [
+          {
+            "url": "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5",
+            "sha256": "8e7a54fc88ea8c325eb8cae62d0aea8e73248e0b1c2faec9939a45afdc67ca12",
+            "checked_at": "2026-11-15",
+            "field_evidence": {
+              "materials": {
+                "quote": "申请人签名：（请使用电子签）",
+                "locator": "DOCX申请人签名处"
+              }
+            }
+          },
+          {
+            "url": "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+            "sha256": "73c44d0f084a72b36a65b9e8065d3175b5c607be77dc891058fed4adf3c1707f",
+            "checked_at": "2026-11-15",
+            "field_evidence": {
+              "materials": {
+                "quote": "请用2000字以内的文字介绍你的学术背景、科研兴趣方向以及对今后学习研究工作的设想和计划等。个人陈述应由申请人独立完成，如发现是由他人或AI协助完成，将取消申请人资格。",
+                "locator": "DOCX个人陈述说明"
+              }
+            }
+          }
+        ],
+        "local_hash_checked_snapshots": [
+          {
+            "path": "cache/v17/publication_b/opportunity_evidence/82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6.html",
+            "sha256_matches_registered": true,
+            "document_title": "北京脑科学与类脑研究所"
+          }
+        ],
+        "supplementary_research_record": null,
+        "this_audit_live_check": "未在本轮重新联网；只读已登记证据及本地原文快照。"
+      },
+      "mentor_linkage": null,
+      "changed_product_record": false
+    }
+  ],
+  "mentor_schema_audit": [
+    {
+      "field": "Professor.supervisor",
+      "present": true,
+      "use": "硕导/博导资格，找导师资格筛选使用。",
+      "gap": "静态任教资格不是当前招生名额，也不是科研实习招募，不得复用存招募标签。",
+      "code": "crawler/model.py:42; site/discovery-core.js:25"
+    },
+    {
+      "field": "Professor.facets",
+      "present": true,
+      "use": "id/origin/confidence/evidence可作有出处标签基础。",
+      "gap": "缺招募类型、导师关联、适用对象、时间精度、名额状态、原文URL及定位和复核日期；list_record仅输出id，discovery_record未输出facets，不能直接稳定呈现新招募标签。",
+      "code": "crawler/model.py:13; scripts/build_site.py:72,98"
+    },
+    {
+      "field": "Professor.provenance",
+      "present": true,
+      "use": "每字段origin/source/fetched_at/confidence。",
+      "gap": "抓取日期不等于核验日期；不足以独立表达一条招募声明的附件、原句定位、过期/撤回状态。",
+      "code": "crawler/model.py:6; site/templates/detail.html.j2:145"
+    },
+    {
+      "field": "Professor.research_direction_raw/email/homepage/institutes",
+      "present": true,
+      "use": "研究匹配、公开联系方式、原主页与团队信息。",
+      "gap": "没有recruitment或活动引用结构；团队联系人不保证是导师本人。",
+      "code": "crawler/model.py:44-60"
+    },
+    {
+      "field": "私人project_reviews.opportunity/eligibility",
+      "present": true,
+      "use": "用户具体项目、年/学位/渠道范围下的本人核对；超过30天或不匹配回到unknown。",
+      "gap": "私人主观/已核对申请状态不能当公共招募事实，也不能由实习公告自动赋pass。",
+      "code": "site/discovery-core.js:31-43"
+    },
+    {
+      "field": "公共招募声明与导师的显式关联",
+      "present": false,
+      "use": "建议新增独立、可复核招募记录，并由mentor_id引用。",
+      "gap": "18条均未登记mentor_ids。6条转标签候选只有董谨豪找到同校同邮箱的身份候选，仍有dept不一致；其余须新增/补核导师资料，不能丢掉招募记录。",
+      "code": "data/opportunities.json; site/data.js"
+    }
+  ],
+  "proposed_rules": [
+    "活动页默认只展示学校/学院/研究院/研究所统一组织的营、培训、研修和正式院所科研计划；公告在.edu.cn或.ac.cn上，不自动说明是机构统一活动。",
+    "个人教师/实验室/课题组实习或访问学生招募归导师重要标签。标签展开显示研究方向、对象、申请材料、联系人角色、时间/名额不确定项、官方原文及核验时间。",
+    "导师尚未入库时保留待关联招募池和证据，不假造mentor_id，不丢公告，不挪用同名其他学校导师。",
+    "机构计划可关联已核验导师，但软件所附件部门联系人不能直接转为导师；机构级主记录仍保留活动页。",
+    "正式推免/考研申请通知与科研体验活动分类型；同济历史预报名建议进入招生通知与学校要求，不放到个人标签。",
+    "来源不可用保持待核验；历史条目只在历史参考中出现；原文未给具体截止日、毕业届别或当前名额时必须保留未知。",
+    "来源展示需要同时区分发布机构、组织者、官方详情、报名入口、附件与字段定位、网页发布时间、系统核验时间；内部抓取/hash日志放详情。",
+    "来源列表也要有organizer_level/content_type及分发目的地；6个direct_page仍应监测但分发到导师招募，不继续混入活动池。"
+  ],
+  "live_official_pages_checked": [
+    {
+      "id": "bnu-ai-research-autumn-2026",
+      "url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "result": "本轮官方网页核对：学院招募管理通知、分阶段流程、学院落款；未明确外校资格。"
+    },
+    {
+      "id": "iscas-research-2026",
+      "url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+      "result": "本轮官方网页核对：所研究生部组织、系统立项及统一结题，截止只到月份。"
+    },
+    {
+      "id": "tongji-ee-recommend-2027",
+      "url": "https://see.tongji.edu.cn/info/1173/14903.htm",
+      "result": "本轮官方网页核对：学院官网标题与发布日期确认正式推免预报名；本轮未重新逐页下载PDF，字段沿用登记证据。"
+    }
+  ],
+  "source_signatures_unchanged": true
+}
