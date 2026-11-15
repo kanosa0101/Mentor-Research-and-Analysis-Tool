@@ -29,7 +29,7 @@ def core_view(data):
         for entry in result['projects'].values():
             if not isinstance(entry, dict):
                 raise ValueError('申请项目须为对象')
-            for key in projects.DEFAULTS:
+            for key in (*projects.DEFAULTS, *projects.OPTIONAL):
                 entry.pop(key, None)
     for entry in result['communications'].values():
         if not isinstance(entry, dict):
@@ -83,7 +83,7 @@ def validate(data, known_ids):
     core.validate_workflow(core_view(data), known_ids)
     if data['version'] == 3:
         for entry in data['projects'].values():
-            if set(entry) != {*core.DEFAULTS['projects'], *projects.DEFAULTS, 'id', 'created_at', 'updated_at'}:
+            if set(entry) - projects.OPTIONAL != {*core.DEFAULTS['projects'], *projects.DEFAULTS, 'id', 'created_at', 'updated_at'}:
                 raise ValueError('申请项目结构错误')
             projects.structure(entry)
     pairs = set()
@@ -164,6 +164,8 @@ def merge_core(data, result, known_ids):
         for key, entry in data['projects'].items():
             entry.update(copy.deepcopy({field: old_projects.get(key, {}).get(field, default)
                                         for field, default in projects.DEFAULTS.items()}))
+            entry.update(copy.deepcopy({field: old_projects[key][field] for field in projects.OPTIONAL
+                                        if field in old_projects.get(key, {})}))
     sync_targets(data)
     validate(data, known_ids)
     return data

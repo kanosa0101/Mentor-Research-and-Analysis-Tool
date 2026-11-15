@@ -1,0 +1,32 @@
+[Unit]
+Description=Mentor Assistant public read-only website
+After=network.target
+
+[Service]
+Type=simple
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+Environment=TZ=UTC
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_public.py --host 0.0.0.0 --port 80
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

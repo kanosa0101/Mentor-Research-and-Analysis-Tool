@@ -1,0 +1,8 @@
+[Unit]
+Description=Check short-lived certificate renewal twice daily
+[Timer]
+OnBootSec=5min
+OnCalendar=*-*-* 00,12:00:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

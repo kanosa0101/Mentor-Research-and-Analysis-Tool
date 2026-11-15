@@ -1,0 +1,1150 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-15",
+  "scope": "CS及相关院系大学生科研体验与保研准备活动；有意排除中小学生营、收费海外游学、国际生文化交流和就业招聘营",
+  "items": [
+    {
+      "id": "ihep-winter-2027",
+      "title": "高能所2027年全国大学生冬令营",
+      "school_id": "ucas",
+      "dept_id": "",
+      "unit_label": "中国科学院高能物理研究所",
+      "kind": "winter_camp",
+      "camp_year": 2027,
+      "graduation_years": [
+        2028
+      ],
+      "admission_year": null,
+      "published_at": "2026-11-06",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://www.ihep.cas.cn/edu/bks/xly/202611/t20261106_8304185.html",
+      "source_state": "unavailable",
+      "review_status": "needs_review",
+      "time_status": "needs_review",
+      "registration_start": "2026-11-06",
+      "registration_deadline": "2026-12-31",
+      "event_start": "2027-01-17",
+      "event_end": "2027-01-20",
+      "event_date_text": "",
+      "eligibility": [
+        "面向全日制2028届本科生，预期有推免资格者优先",
+        "专业范围包括计算机技术、电子信息等；需对装置相关研究有兴趣"
+      ],
+      "materials": [
+        {
+          "label": "国科大系统申请表（签字）",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "高能所申请表（签字）",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "推荐信1封（签字）",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "盖章成绩单",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "英语水平证明",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "身份证复印件",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "科研或获奖证明",
+          "stage": "application",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "在国科大系统选择高能所及对应冬令营",
+        "另行上传合并PDF；入选后报到时交纸质材料"
+      ],
+      "application_url": "https://zxsq.ucas.ac.cn/SummerAccount/index",
+      "location": "东莞中国散裂中子源园区",
+      "costs": "索引显示食宿免费，并按高铁二等座标准给予交通补助",
+      "contact": "zhangxiao@ihep.ac.cn；kexh@ihep.ac.cn",
+      "notes": "2026-11-15复查：搜索索引可读，www官方正文因证书过期无法安全取得；非www同路径返回404，官方栏目未列出该条。报名条件、材料和日期均保留为待复核线索，不能确认报名开放。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "即日起至2026年12月31日。",
+          "locator": "搜索索引：三、申请流程／1、报名时间",
+          "provenance": "search_index"
+        }
+      ],
+      "source_sha256": null,
+      "evidence_path": "cache/winter_20261115/ihep_search_evidence.json",
+      "registration_start_basis": "索引正文写即日起，绑定其显示发布日期；尚待原文复核",
+      "material_upload_url": "https://ihepbox.ihep.ac.cn/ihepbox/index.php/s/an8QjjKwHqPgEsm",
+      "material_packaging": "按原通知顺序合并为1份PDF，文件名：2027年冬令营+姓名+报名专业"
+    },
+    {
+      "id": "iscas-research-2026",
+      "title": "软件所2026年大学生创新实践训练计划（科创计划）",
+      "school_id": "ucas",
+      "dept_id": "iscas",
+      "unit_label": "中国科学院软件研究所",
+      "kind": "research_program",
+      "camp_year": 2026,
+      "graduation_years": [],
+      "admission_year": null,
+      "published_at": "2026-10-28",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "deadline_day_unknown",
+      "registration_start": "2026-10-28",
+      "registration_deadline": null,
+      "registration_deadline_text": "即日起至2027年1月",
+      "registration_deadline_precision": "month",
+      "event_start": null,
+      "event_end": null,
+      "event_date_text": "项目周期一般为6个月，部门安排具体科研实践",
+      "eligibility": [
+        "国内高校计算机、软件工程、网络空间安全、数学及相近专业的在校大二、大三本科生",
+        "品学兼优、身心健康，专业或年级排名前20%",
+        "有科研兴趣、创新意识及扎实的基础理论知识"
+      ],
+      "materials": [
+        {
+          "label": "个人简历",
+          "stage": "initial_email",
+          "required": true
+        },
+        {
+          "label": "现阶段本科成绩单",
+          "stage": "initial_email",
+          "required": true
+        },
+        {
+          "label": "英语水平证明，如四/六级、TOEFL、IELTS或GRE成绩",
+          "stage": "initial_email",
+          "required": null
+        },
+        {
+          "label": "论文、主要获奖证书等科研能力证明",
+          "stage": "initial_email",
+          "required": false
+        },
+        {
+          "label": "系统生成申请表，经本校或学院签章后邮寄给指导教师",
+          "stage": "after_selection",
+          "required": true
+        },
+        {
+          "label": "结题报告",
+          "stage": "completion",
+          "required": true
+        }
+      ],
+      "application_steps": [
+        "先查官方附件的研究方向与对应部门邮箱，将简历、成绩单及自愿补充材料合为一个PDF发给部门联系人初选。通过初选并与指导教师沟通后，由教师创建系统项目，再填报申请并邮寄经本校签章的申请表；等待审核立项邮件。"
+      ],
+      "application_url": "",
+      "location": "",
+      "costs": "项目周期内提供经费资助，公告未说明金额",
+      "contact": "招生咨询：李老师，010-62661032，likai21@iscas.ac.cn。初选材料须发给所选研究方向的部门联系人，具体邮箱见官方公告附件。",
+      "notes": "已核对官方正文与招募研究方向附件。受理截至月份明确，具体截止日未公布；毕业届次和研究生入学年份未明确，不由年级推断。",
+      "evidence": [
+        {
+          "field": "eligibility",
+          "quote": "二年级、三年级本科生",
+          "locator": "一、申请条件／1"
+        },
+        {
+          "field": "registration_deadline",
+          "quote": "即日起至2027年1月",
+          "locator": "三、报名与受理（原文数字间存在排版空格）"
+        },
+        {
+          "field": "materials.stage",
+          "quote": "发送到对应部门联系人老师邮箱进行初选",
+          "locator": "二、报名方式／1"
+        }
+      ],
+      "source_sha256": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+      "evidence_path": "cache/current_opportunities_v12/iscas-research-2026.html",
+      "research_directions": [
+        {
+          "department": "基础软件与系统重点实验室",
+          "direction": "1、基础软件形式化验证",
+          "funding_places_group": 5,
+          "contact": "李明煜",
+          "email": "limingyu@ios.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A3:E3"
+        },
+        {
+          "department": "基础软件与系统重点实验室",
+          "direction": "2、量子软件",
+          "funding_places_group": 5,
+          "contact": "李明煜",
+          "email": "limingyu@ios.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A4:E4"
+        },
+        {
+          "department": "可信计算与信息保障实验室",
+          "direction": "1、前向安全TLS 0-RTT 协议研究",
+          "funding_places_group": 1,
+          "contact": "陈隆",
+          "email": "chenlong@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A5:E5"
+        },
+        {
+          "department": "并行软件与计算科学实验室",
+          "direction": "1、面向多跳问答的知识图谱验证及推理",
+          "funding_places_group": 5,
+          "contact": "赵慧",
+          "email": "zhaohui2016@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A6:E6"
+        },
+        {
+          "department": "并行软件与计算科学实验室",
+          "direction": "2、超智融合高性能计算系统科学计算软件研制与优化",
+          "funding_places_group": 5,
+          "contact": "赵慧",
+          "email": "zhaohui2016@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A7:E7"
+        },
+        {
+          "department": "人机交互技术与智能信息处理实验室",
+          "direction": "1、自然人机交互",
+          "funding_places_group": 10,
+          "contact": "高杨悦",
+          "email": "yangyue@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A8:E8"
+        },
+        {
+          "department": "人机交互技术与智能信息处理实验室",
+          "direction": "2、实时人工智能",
+          "funding_places_group": 10,
+          "contact": "高杨悦",
+          "email": "yangyue@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A9:E9"
+        },
+        {
+          "department": "人机交互技术与智能信息处理实验室",
+          "direction": "3、具身智能交互",
+          "funding_places_group": 10,
+          "contact": "高杨悦",
+          "email": "yangyue@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A10:E10"
+        },
+        {
+          "department": "智能博弈重点实验室",
+          "direction": "1、基于大模型的形式化知识推理可解释性研究",
+          "funding_places_group": 2,
+          "contact": "任涛",
+          "email": "rentao22@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A11:E11"
+        },
+        {
+          "department": "智能博弈重点实验室",
+          "direction": "2、面向符号知识的大模型推理可靠性增强方法研究",
+          "funding_places_group": 2,
+          "contact": "任涛",
+          "email": "rentao22@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A12:E12"
+        },
+        {
+          "department": "智能博弈重点实验室",
+          "direction": "3、基于大模型的神经符号协同推理技术",
+          "funding_places_group": 1,
+          "contact": "胡军",
+          "email": "hujun@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A13:E13"
+        },
+        {
+          "department": "软件工程技术研发中心",
+          "direction": "1、新型智能体软件软件架构及可信开发方法",
+          "funding_places_group": 10,
+          "contact": "叶丹",
+          "email": "yedan@otcaix.iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A14:E14"
+        },
+        {
+          "department": "软件工程技术研发中心",
+          "direction": "2、基于大模型的软件智能化分析与测试方法",
+          "funding_places_group": 10,
+          "contact": "叶丹",
+          "email": "yedan@otcaix.iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A15:E15"
+        },
+        {
+          "department": "软件工程技术研发中心",
+          "direction": "3、智能系统的软硬件资源协同管理与自主运维",
+          "funding_places_group": 10,
+          "contact": "叶丹",
+          "email": "yedan@otcaix.iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A16:E16"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "1、多模态智能信息处理",
+          "funding_places_group": 3,
+          "contact": "李江梦",
+          "email": "jiangmeng2019@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A17:E17"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "2、图强化学习驱动的具身智能关系感知决策",
+          "funding_places_group": 2,
+          "contact": "吴凤鸽",
+          "email": "fengge@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A18:E18"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "3、基于关系图表征的具身交互强化学习方法",
+          "funding_places_group": 2,
+          "contact": "吴凤鸽",
+          "email": "fengge@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A19:E19"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "4、物理机理与数据协同驱动的计算成像",
+          "funding_places_group": 3,
+          "contact": "唐熊忻",
+          "email": "xiongxin@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A20:E20"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "5、物理仿真驱动的视觉感知泛化",
+          "funding_places_group": 3,
+          "contact": "唐熊忻",
+          "email": "xiongxin@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A21:E21"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "6、物理先验引导的可信多模态融合",
+          "funding_places_group": 3,
+          "contact": "唐熊忻",
+          "email": "xiongxin@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A22:E22"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "7、复杂系统演进技术",
+          "funding_places_group": 2,
+          "contact": "夏玉立",
+          "email": "xiayuli@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A23:E23"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "8、因果世界动作模型",
+          "funding_places_group": 2,
+          "contact": "强文文",
+          "email": "qiangwenwen@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A24:E24"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "9、海洋气象智能预报",
+          "funding_places_group": 6,
+          "contact": "司凌宇、董洪伟、沈星辰",
+          "email": "donghongwei@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A25:E25"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "10、遥感信息智能处理",
+          "funding_places_group": 6,
+          "contact": "司凌宇、董洪伟、沈星辰",
+          "email": "donghongwei@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A26:E26"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "11、海上智能决策大模型",
+          "funding_places_group": 6,
+          "contact": "司凌宇、董洪伟、沈星辰",
+          "email": "donghongwei@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A27:E27"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "12、智能人机物融合系统的设计与分析",
+          "funding_places_group": 4,
+          "contact": "安杰",
+          "email": "anjie@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A28:E28"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "13、多智能体可信保障",
+          "funding_places_group": 4,
+          "contact": "安杰",
+          "email": "anjie@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A29:E29"
+        },
+        {
+          "department": "天基综合信息系统全国重点实验室",
+          "direction": "14、具身智能体可信控制生成",
+          "funding_places_group": 4,
+          "contact": "安杰",
+          "email": "anjie@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A30:E30"
+        },
+        {
+          "department": "时空数据管理与数据科学研究中心",
+          "direction": "1、基于符号逻辑的可解释恶意域名智能检测技术研究",
+          "funding_places_group": 1,
+          "contact": "关贝",
+          "email": "guanbei@iscas.ac.cn",
+          "source_sheet": "Sheet1",
+          "source_range": "A31:E31"
+        }
+      ],
+      "research_directions_source": {
+        "url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/P020261028618405519532.xlsx",
+        "status": 200,
+        "sha256": "62e4f54a0da7f3279432390beb546488a964c9087bbb8b7983a53ff4a17391eb",
+        "bytes": 14360
+      }
+    },
+    {
+      "id": "air-winter-2026",
+      "title": "清华AIR WINTER@AIR 2026冬令营",
+      "school_id": "tsinghua",
+      "dept_id": "",
+      "unit_label": "清华大学智能产业研究院",
+      "kind": "winter_camp",
+      "camp_year": 2026,
+      "graduation_years": [],
+      "admission_year": null,
+      "published_at": "2025-12-04",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://air.tsinghua.edu.cn/info/1007/2476.htm",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": null,
+      "event_start": null,
+      "event_end": null,
+      "event_date_text": "2026冬季；正文要求至少1—2个月线下工作，未给具体日期",
+      "eligibility": [
+        "本科高年级或研究生，需有科研兴趣和实践能力",
+        "需安排1至2个月线下研究；计算机、自动化、人机交互等相关专业"
+      ],
+      "materials": [],
+      "application_steps": [
+        "具体报名渠道及材料未在本次可读正文中取得，查官方原文"
+      ],
+      "application_url": null,
+      "location": "",
+      "costs": "",
+      "contact": "",
+      "notes": "2025年发布的2026冬令营，仅历史参考；不等于正式保研录取。报名日期、材料与活动确切日期待核查。",
+      "evidence": [
+        {
+          "field": "eligibility",
+          "quote": "冬令营期间至少保证有1-2个月的线下工作时间",
+          "locator": "我们希望你／第3项"
+        }
+      ],
+      "source_sha256": "75fc4e70998830b3331413f87c670c11564c8b4680ba1dd0dbdce3ae06672d89",
+      "evidence_path": "cache/winter_20261115/air-winter-2026.html"
+    },
+    {
+      "id": "pku-ai4s-winter-2026",
+      "title": "北京大学科学智能学院2026冬令营",
+      "school_id": "pku",
+      "dept_id": "",
+      "unit_label": "北京大学深圳研究生院科学智能学院",
+      "kind": "winter_camp",
+      "camp_year": 2026,
+      "graduation_years": [],
+      "admission_year": null,
+      "published_at": "2025-12-18",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://ai4s.pkusz.edu.cn/info/1007/1335.htm",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": "2025-12-19",
+      "registration_deadline": "2026-01-04",
+      "event_start": "2026-01-12",
+      "event_end": "2026-01-16",
+      "event_date_text": "",
+      "eligibility": [
+        "仅面向北京大学、清华大学大一至大四本科生",
+        "经项目组审核择优入营"
+      ],
+      "materials": [
+        {
+          "label": "申请表",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "成绩单",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "个人陈述",
+          "stage": "application",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "将材料合并成PDF发送至指定招生邮箱",
+        "等待录取确认邮件"
+      ],
+      "application_url": null,
+      "location": "深圳",
+      "costs": "不收费；提供北京至深圳单程交通与深圳住宿支持",
+      "contact": "ai4s-admissions@pku.edu.cn",
+      "notes": "日期年份由2025年发布及2026年活动上下文确定；此条只记录冬令营，不把同文拔尖计划混成同一活动。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "报名时间：12月19日至1月4日",
+          "locator": "四、报名申请／（1）"
+        }
+      ],
+      "source_sha256": "9bd0b68ac16f27734f75d45b39d71a9142cd9180756f8c2ce47163a70726b40f",
+      "evidence_path": "cache/winter_20261115/pku-ai4s-winter-2026.html"
+    },
+    {
+      "id": "sia-winter-2026",
+      "title": "沈阳自动化所2026智慧赋能·创领未来冬令营",
+      "school_id": "ucas",
+      "dept_id": "",
+      "unit_label": "中国科学院沈阳自动化研究所",
+      "kind": "winter_camp",
+      "camp_year": 2026,
+      "graduation_years": [
+        2027
+      ],
+      "admission_year": null,
+      "published_at": "2025-12-15",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/202512/t20251215_8027511.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": "2026-01-15",
+      "event_start": "2026-01-27",
+      "event_end": "2026-01-30",
+      "event_date_text": "",
+      "eligibility": [
+        "2027届机械、自动化、计算机、人工智能等相关专业本科生",
+        "要求通过英语四级，无重修或补考记录"
+      ],
+      "materials": [
+        {
+          "label": "冬令营申请表",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "2封副教授或相当以上职称推荐信",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "盖章成绩单与排名证明",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "政治审查表",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "安全责任协议",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "科研获奖和英语证明",
+          "stage": "after_selection",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "先完成国科大网上报名",
+        "取得入营资格后再提交材料，方式另行通知"
+      ],
+      "application_url": "http://kjxt.ucas.ac.cn/",
+      "location": "沈阳",
+      "costs": "在沈食宿及符合标准的单程路费支持；返程补助附后续录取条件",
+      "contact": "zs@sia.cn",
+      "notes": "活动日期为原通知预计日期；截止原文为1月15日之前，未给具体时刻。",
+      "evidence": [
+        {
+          "field": "material_stage",
+          "quote": "报名时不需要提供申请材料",
+          "locator": "六、申请办法及时间要求／2（2）"
+        }
+      ],
+      "source_sha256": "b5b3fbbea6069cbdf2f155ecb0e91e52f50bf6f8bd593b71f0ba5588c0ffad30",
+      "evidence_path": "cache/winter_20261115/sia-winter-2026.html"
+    },
+    {
+      "id": "ict-summer-2026",
+      "title": "计算所2026计算未来暑期研修班",
+      "school_id": "ucas",
+      "dept_id": "ict",
+      "unit_label": "中国科学院计算技术研究所",
+      "kind": "summer_camp",
+      "camp_year": 2026,
+      "graduation_years": [
+        2027
+      ],
+      "admission_year": null,
+      "published_at": "2026-07-02",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://www.ict.ac.cn/yjsjy/zsxx/sszs/202607/t20260702_8237097.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": "2026-07-15T14:00:00+08:00",
+      "event_start": "2026-08-16",
+      "event_end": "2026-08-19",
+      "event_date_text": "",
+      "eligibility": [
+        "2027届计算机、数学、电子、物理、通信等相关专业本科生",
+        "成绩与英语良好，预计取得本校推免资格"
+      ],
+      "materials": [
+        {
+          "label": "身份证",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "学生证或在学证明",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "系统生成申请表",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "成绩单与排名证明",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "英语证明",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "2封教授或相当以上职称推荐信",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "科研工程能力证明",
+          "stage": "application",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "国科大系统报名",
+        "通过通知指定表单填报意向导师并提交合并材料"
+      ],
+      "application_url": "http://zxsq.ucas.ac.cn/login/index/cs",
+      "location": "北京",
+      "costs": "不收费用，优先给京外营员安排住宿；具体安排待通知",
+      "contact": "zhaosheng@ict.ac.cn",
+      "notes": "暑期班和8月20—21日推免选拔为不同事项；本文不把入营等同录取。发布日期经官方通知列表确认。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "至7月15日（周三）14:00",
+          "locator": "四、报名方式及流程／1"
+        }
+      ],
+      "source_sha256": "837fb48fc1a979e1ccae61e332cf3879c011f74bce9492b7592101e4b7f343ca",
+      "evidence_path": "cache/winter_20261115/ict-summer-2026.html"
+    },
+    {
+      "id": "iscas-summer-2026",
+      "title": "软件所2026软件与网络夏令营",
+      "school_id": "ucas",
+      "dept_id": "iscas",
+      "unit_label": "中国科学院软件研究所",
+      "kind": "summer_camp",
+      "camp_year": 2026,
+      "graduation_years": [
+        2027
+      ],
+      "admission_year": null,
+      "published_at": "2026-05-28",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202607/t20260716_8250354.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": "2026-06-22",
+      "event_start": null,
+      "event_end": null,
+      "event_date_text": "2026年7月中下旬；实验室另行安排科研实践",
+      "eligibility": [
+        "2027届计算机、软件、网安、数学等相关专业本科生",
+        "原则上专业或年级前20%，特别突出者可例外；英语六级或替代成绩"
+      ],
+      "materials": [
+        {
+          "label": "国科大申请表",
+          "stage": "check_in",
+          "required": null
+        },
+        {
+          "label": "身份证与学生证",
+          "stage": "check_in",
+          "required": null
+        },
+        {
+          "label": "盖章成绩单及排名证明",
+          "stage": "check_in",
+          "required": null
+        },
+        {
+          "label": "英语证明",
+          "stage": "check_in",
+          "required": null
+        },
+        {
+          "label": "科研获奖材料",
+          "stage": "check_in",
+          "required": false
+        },
+        {
+          "label": "软件所申请表",
+          "stage": "check_in",
+          "required": null
+        },
+        {
+          "label": "短期意外保险凭证（线下营员须自行购买）",
+          "stage": "check_in",
+          "required": true
+        }
+      ],
+      "application_steps": [
+        "先在国科大系统报名并备注意向实验室",
+        "入选后按顺序整理纸质申请材料，在线下入营时提交，无需提前寄送",
+        "线下入营前购买短期意外保险，报到时提供凭证"
+      ],
+      "application_url": "http://kjxt.ucas.ac.cn/index.php/zh",
+      "location": "",
+      "costs": "交通住宿自理；优秀表现营员可获符合标准的交通补助；需购买意外保险",
+      "contact": "likai21@iscas.ac.cn",
+      "notes": "URL路径为7月但页面明确来源时间及落款5月28日，采用正文日期；具体活动日期未公布，不推断起止日。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "即日起至6月22日",
+          "locator": "三、报名方式／1"
+        },
+        {
+          "field": "materials.stage",
+          "quote": "在参加线下入营时提交（不需提前寄送）",
+          "locator": "四、申请材料／材料清单后"
+        },
+        {
+          "field": "materials.optional",
+          "quote": "本人自愿提交的能体现本人科研素质与能力的其他材料",
+          "locator": "四、申请材料／5"
+        },
+        {
+          "field": "materials.insurance",
+          "quote": "线下入营学生须购买短期意外保险，报到时提供保险凭证",
+          "locator": "六、夏令营形式及其他"
+        }
+      ],
+      "source_sha256": "feceddebdce9215d8bd35b952dc1b9d1b51bed1179398c9c1cc35694941a9516",
+      "evidence_path": "cache/current_opportunities_v12/iscas-summer-2026.html"
+    },
+    {
+      "id": "cnic-summer-2026",
+      "title": "计算机网络信息中心2026智能与网络夏令营",
+      "school_id": "ucas",
+      "dept_id": "",
+      "unit_label": "中国科学院计算机网络信息中心",
+      "kind": "summer_camp",
+      "camp_year": 2026,
+      "graduation_years": [
+        2027
+      ],
+      "admission_year": null,
+      "published_at": "2026-05-27",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://cnic.cas.cn/yjsjy/tzgg/202605/t20260527_8209811.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": "2026-06-29",
+      "event_start": "2026-07-14",
+      "event_end": "2026-07-17",
+      "event_date_text": "",
+      "eligibility": [
+        "2027届计算机、网安及相关专业本科生",
+        "原则上具有推免资格"
+      ],
+      "materials": [
+        {
+          "label": "签字申请表",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "成绩单与排名证明原件",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "英语证明",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "自愿提交科研竞赛证明",
+          "stage": "after_selection",
+          "required": null
+        },
+        {
+          "label": "签字安全协议",
+          "stage": "after_selection",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "国科大系统报名",
+        "入选后按序合并PDF，于7月7日前邮件提交，报到时提交原件"
+      ],
+      "application_url": "http://kjxt.ucas.ac.cn",
+      "location": "",
+      "costs": "免报名费；非京区住宿、用餐补助与保险按原文执行",
+      "contact": "edu@cnic.cn",
+      "notes": "网上报名截止与入选后材料提交截止不同，不合并成一个截止。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "即日起至6月29日",
+          "locator": "三、申请流程／1"
+        }
+      ],
+      "source_sha256": "c8331ba0ce3aadab95aa1cf7707bca10d33a774416a1a0d1441e86587ef0f8f6",
+      "evidence_path": "cache/winter_20261115/cnic-summer-2026.html",
+      "additional_deadlines": [
+        {
+          "label": "入选营员邮件材料提交",
+          "at": "2026-07-07",
+          "condition": "已经入选"
+        }
+      ]
+    },
+    {
+      "id": "sjtu-cs-summer-2026",
+      "title": "上海交大计算机学院2026优秀大学生夏令营",
+      "school_id": "sjtu",
+      "dept_id": "cs",
+      "unit_label": "上海交通大学计算机学院（网络空间安全学院、密码学院）",
+      "kind": "summer_camp",
+      "camp_year": 2026,
+      "graduation_years": [
+        2027
+      ],
+      "admission_year": null,
+      "published_at": "2026-06-26",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://cs.sjtu.edu.cn/bsyjs_zsgz/1748.html",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "historical",
+      "registration_start": null,
+      "registration_deadline": "2026-07-10T11:00:00+08:00",
+      "event_start": null,
+      "event_end": null,
+      "event_date_text": "2026年7月下旬",
+      "eligibility": [
+        "2027届理工科本科生，计算机、AI、软件、信息安全相关专业优先",
+        "原则上双一流高校/学科、排名前20%；部分优秀申请者可放宽",
+        "原则上CET6≥425、TOEFL≥90或IELTS≥6.0"
+      ],
+      "materials": [
+        {
+          "label": "手写签名申请表",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "盖章成绩单",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "盖章排名证明",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "英语成绩",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "身份证和学生证",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "科研获奖材料",
+          "stage": "application",
+          "required": null
+        },
+        {
+          "label": "2页以内简历",
+          "stage": "application",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "完成研究生招生系统报名",
+        "同步填写学院问卷，两步均需完成"
+      ],
+      "application_url": "https://ga.sjtu.edu.cn/zsgl/xlygl/default.aspx",
+      "location": "上海交大闵行校区",
+      "costs": "交通住宿自理",
+      "contact": "scs-yjs@sjtu.edu.cn",
+      "notes": "校内学生成绩单与排名证明有单独安排。仅历史参考；营期以入围通知为准。",
+      "evidence": [
+        {
+          "field": "registration_deadline",
+          "quote": "即日起至2026年7月10日11:00",
+          "locator": "三、报名办法／1"
+        }
+      ],
+      "source_sha256": "a64aa8456d9ecb5a7c53a43b4622934fa11de9d0c1f4510567cfb772648301db",
+      "evidence_path": "cache/winter_20261115/sjtu-cs-summer-2026.html"
+    },
+    {
+      "id": "bnu-ai-research-autumn-2026",
+      "title": "北师大人工智能学院2026—2027学年秋季本科生科研实习",
+      "school_id": "bnu",
+      "dept_id": "ai",
+      "unit_label": "北京师范大学人工智能学院",
+      "kind": "research_program",
+      "camp_year": 2026,
+      "graduation_years": [],
+      "admission_year": null,
+      "published_at": "2026-11-13",
+      "publication_precision": "day",
+      "checked_at": "2026-11-15",
+      "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "source_state": "checked",
+      "review_status": "reviewed",
+      "time_status": "upcoming",
+      "registration_start": "2026-11-24",
+      "registration_deadline": "2026-12-06",
+      "eligibility": [
+        "学院本科科研实习通知；是否接收外校学生未明确，须先咨询学院",
+        "满足所选导师科研项目要求的专业背景与基础知识；身体和心理健康",
+        "申请前所有必修课程已完成且无挂科记录",
+        "实习原则上不少于3个月，每周不少于20小时；食宿与个人安全由本人负责"
+      ],
+      "materials": [
+        {
+          "label": "学生申请阶段：个人简历和成绩单，发送给所选导师",
+          "stage": "see_label",
+          "required": null
+        },
+        {
+          "label": "导师审核通过后：科研实习生申请表、师生签订的培养协议",
+          "stage": "see_label",
+          "required": null
+        },
+        {
+          "label": "学院备案阶段：申请表一份、培养协议两份，交电子楼301学工办",
+          "stage": "see_label",
+          "required": null
+        },
+        {
+          "label": "实习结束：总结报告并接受导师考核；跨学期继续实习需重新备案",
+          "stage": "see_label",
+          "required": null
+        }
+      ],
+      "application_steps": [
+        "先等待学院导师招募需求发布；学生于11月24日至12月6日把个人简历及成绩单发给所选导师。导师审核通过后签订培养协议，12月7日至9日向学工办备案。通知中的 bnu_aixg@bnu.edu.cn 为导师提交招募需求的邮箱，不作为学生材料投递地址。"
+      ],
+      "application_url": "",
+      "contact": "学院咨询：张老师，010-58807938。学生材料发给所选导师；本通知尚未提供具体导师需求清单和个人邮箱。",
+      "notes": "已取得并核对学院官网正文；当前是导师征集阶段，学生申请尚未开始。原文称“各课题组、全体本科生”，未明确外校学生范围，不宣称面向全国开放。",
+      "evidence": [
+        {
+          "field": "registration_window",
+          "quote": "学生申请阶段：11月24日-12月6日",
+          "locator": "二、工作安排／2"
+        },
+        {
+          "field": "eligibility",
+          "quote": "完成申请日期前的所有必修课程，无挂科记录",
+          "locator": "一、学生条件／3"
+        }
+      ],
+      "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "evidence_path": "cache/opportunity_expansion_v13/bnu-ai-internship.html"
+    }
+  ],
+  "coverage": {
+    "current_verified_open": 0,
+    "current_needs_review": 1,
+    "historical": 7,
+    "method": "官方域名检索、官方正文读取和字节SHA留存；非全网穷尽检索",
+    "queries": [
+      "2026 2027 计算机 冬令营 报名 site:edu.cn",
+      "2027 冬令营 大学生 site:cas.cn",
+      "2026 冬令营 计算机 site:ac.cn",
+      "2027 冬令营 保研",
+      "冬令营 2026 site:ict.ac.cn",
+      "冬令营 2026 site:sia.cas.cn",
+      "冬令营 2026 site:ia.cas.cn",
+      "冬令营 2026-11 招生"
+    ],
+    "exclusions": [
+      {
+        "url": "https://sie.xjtu.edu.cn/info/1366/5622.htm",
+        "reason": "BridgeAI面向持外国护照的国际学生，收费交流，非本产品国内保研机会"
+      },
+      {
+        "url": "https://dutdice.dlut.edu.cn/info/1007/21780.htm",
+        "reason": "亚琛收费短期访学，非国内推免招生"
+      },
+      {
+        "url": "https://pet.tju.edu.cn/a/gkxm/2327.html",
+        "reason": "非学历继续教育营，不以研究生招生为目的"
+      },
+      {
+        "url": "https://career.hebut.edu.cn/home/correcruit/content/id/82287.html",
+        "reason": "企业就业招聘活动，不是学术保研营"
+      },
+      {
+        "url": "https://indico.ihep.ac.cn/event/31088/",
+        "reason": "主要面向研究生及博士后的收费学术学校，本科生条件性参加；不混入本科保研/科研申请目录。"
+      },
+      {
+        "url": "https://www.slai.edu.cn/zh-hans/article/667",
+        "reason": "深瞳计划第四期已于2026-11-13截止，仅接入栏目监测下期，不新增当前报名机会。"
+      },
+      {
+        "url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/31673026d275416492d499a3a574febc",
+        "reason": "2026本科科研训练已于2026-11-12截止，不作为当前申请机会。"
+      }
+    ],
+    "limitations": [
+      "检索未取得其他当期机会，不能推断院校未发布。",
+      "当前高能所仅搜索索引可读，官方回源失败，必须显示待复核。",
+      "材料要求为来源事实摘要，条件项required保持null，不能无条件全标必交。",
+      "活动年度、毕业届次与入学年度分开；全部admission_year保持null。",
+      "软件所科创计划面向大二、大三；不把年级推断为特定毕业届次，截止月份不伪造为月末日期。"
+    ],
+    "followup_2026_11_15": {
+      "queries": [
+        "2027 冬令营 推免",
+        "冬令营 2026年11月 大学生",
+        "2027 冬令营 计算机 site:edu.cn",
+        "2027 冬令营 site:cas.cn",
+        "冬令营 报名 site:air.tsinghua.edu.cn",
+        "冬令营 报名 site:ai4s.pkusz.edu.cn",
+        "冬令营 报名 site:sia.cas.cn",
+        "冬令营 报名 site:siat.ac.cn",
+        "2027 冬令营 计算所",
+        "2027 冬令营 软件所",
+        "2027 冬令营 自动化所"
+      ],
+      "result": "新增1条官方科研实践受理公告，截止只精确到2027年1月；未新增可核对具体起止日的当前开放冬夏令营。",
+      "fetch_manifest": "cache/current_opportunities_v12/catalog_fetch.json",
+      "ihep_checks": "cache/current_opportunities_v12/ihep_fetch.json",
+      "correction": "软件所六项申请材料原误标报名时，本次按官方正文改为线下入营报到时；科研证明自愿，另需保险凭证。",
+      "excluded": [
+        {
+          "url": "https://pet.tju.edu.cn/a/gkxm/2327.html",
+          "reason": "非学历收费继续教育，不是研究生申请活动"
+        },
+        {
+          "url": "https://sie.tju.edu.cn/lxtd/dqxm/202611/t20261110_324832.html",
+          "reason": "面向非中国籍学生的语言文化交流"
+        },
+        {
+          "url": "https://dutdice.dlut.edu.cn/info/1007/21780.htm",
+          "reason": "境外收费短期访学，不是国内推免招生"
+        },
+        {
+          "url": "https://www.cngef.org.cn/article/item-2609.html",
+          "reason": "冬令营会务供应商招募，不是学生报名"
+        }
+      ]
+    },
+    "current_deadline_day_unknown": 1,
+    "current_upcoming": 1,
+    "current_date_unknown": 1
+  }
+}

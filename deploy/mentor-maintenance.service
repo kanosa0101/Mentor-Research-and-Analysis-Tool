@@ -1,0 +1,20 @@
+[Unit]
+Description=Rotate old public mentor and policy sources and rebuild public pages
+After=network-online.target mentor-monitor.service
+
+[Service]
+Type=oneshot
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=TZ=Asia/Shanghai
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/maintain_public.py
+SuccessExitStatus=1
+TimeoutStartSec=45min
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/mentor-assistant/data /opt/mentor-assistant/cache /opt/mentor-assistant/site
+ProtectHome=true
+PrivateTmp=true
+UMask=0002

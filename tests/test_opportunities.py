@@ -1,0 +1,124 @@
+import copy
+from datetime import timedelta
+from unittest.mock import patch
+import unittest
+import json
+import tempfile
+from pathlib import Path
+
+import test_applications
+from crawler import opportunity_util as opportunities
+
+
+class OpportunityTests(unittest.TestCase):
+    setUp = test_applications.ApplicationTests.setUp
+    close_server = test_applications.ApplicationTests.close_server
+    request = test_applications.ApplicationTests.request
+
+    def catalog(self):
+        item = copy.deepcopy(opportunities.load(self.serve.ROOT)['opportunities'][0])
+        item.update(source_state='verified', cycle='current', checked_at=opportunities.today().isoformat(),
+                    verified_at=opportunities.today().isoformat(), registration_start=opportunities.today().isoformat(),
+                    deadline=(opportunities.today()+timedelta(days=10)).isoformat())
+        return {'version': 1, 'opportunities': [item]}
+
+    def test_atomic_save_snapshot_reminder_duplicate_backup_and_later_edit(self):
+        catalog=self.catalog();item=catalog['opportunities'][0]
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            body=dict(opportunity_id=item['id'],name='我的冬令营',reminder_date=opportunities.today().isoformat())
+            code,result=self.request('/api/workflow/opportunities',body,'POST')
+            self.assertEqual(code,200,result)
+            pid=result['project_id'];data=self.request('/api/workflow')[1]
+            self.assertEqual(data['projects'][pid]['opportunity'],item)
+            self.assertIsNone(data['projects'][pid]['year'])
+            self.assertEqual(data['projects'][pid]['route'],'')
+            self.assertEqual(len(data['reminders']),1)
+            self.assertTrue(self.request('/api/workflow/opportunities',body,'POST')[1]['duplicate'])
+            self.assertEqual(len(self.request('/api/workflow')[1]['reminders']),1)
+            self.assertEqual(self.request('/api/workflow/projects/'+pid,{'notes':'个人备注'},'PATCH')[0],200)
+            self.assertEqual(self.request('/api/workflow')[1]['projects'][pid]['opportunity'],item)
+            backup=self.request('/api/workflow/backup')[1]
+            self.assertEqual(self.request('/api/workflow/restore',backup,'POST')[0],200)
+            self.assertEqual(self.request('/api/workflow')[1]['projects'][pid]['opportunity'],item)
+
+    def test_invalid_date_cannot_leave_half_created_project(self):
+        catalog=self.catalog();item=catalog['opportunities'][0]
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            code,_=self.request('/api/workflow/opportunities',dict(opportunity_id=item['id'],name='冬令营',reminder_date='2000-01-01'),'POST')
+            self.assertEqual(code,400)
+            self.assertFalse(self.outreach.with_name('workflow.yaml').exists())
+            self.assertEqual(self.request('/api/workflow')[1]['projects'],{})
+
+    def test_pdf_evidence_survives_project_save_backup_and_restore(self):
+        catalog=self.catalog();item=catalog['opportunities'][0]
+        item['source_documents']=[dict(url='https://example.edu.cn/requirements.pdf',sha256='a'*64,
+            page_count=2,checked_at=opportunities.today().isoformat(),
+            field_evidence={'eligibility':{'quote':'申请对象为本科生','pages':[1]}})]
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            code,result=self.request('/api/workflow/opportunities',dict(opportunity_id=item['id'],name='PDF来源项目',reminder_date=''),'POST')
+            self.assertEqual(code,200,result)
+            backup=self.request('/api/workflow/backup')[1]
+            self.assertEqual(self.request('/api/workflow/restore',backup,'POST')[0],200)
+            saved=self.request('/api/workflow')[1]['projects'][result['project_id']]['opportunity']
+            self.assertEqual(saved['source_documents'],item['source_documents'])
+
+    def test_unverified_candidate_is_not_open_and_can_save_personal_review_reminder(self):
+        catalog=self.catalog();item=catalog['opportunities'][0];item['source_state']='unavailable'
+        self.assertEqual(opportunities.state(item),'review')
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            code,result=self.request('/api/workflow/opportunities',dict(opportunity_id=item['id'],name='待核对活动',reminder_date=opportunities.today().isoformat()),'POST')
+            self.assertEqual(code,200,result)
+            reminder=next(iter(self.request('/api/workflow')[1]['reminders'].values()))
+            self.assertTrue(reminder['title'].startswith('核对活动信息'))
+
+    def test_forged_snapshot_and_invalid_restore_rejected(self):
+        item=self.catalog()['opportunities'][0]
+        code,_=self.request('/api/workflow/projects',{'name':'伪造','opportunity':item},'POST')
+        self.assertEqual(code,400)
+        self.assertFalse(self.outreach.with_name('workflow.yaml').exists())
+
+    def test_state_expires_and_history_stays_history(self):
+        item=self.catalog()['opportunities'][0]
+        self.assertEqual(opportunities.state(item),'open')
+        item['checked_at']=(opportunities.today()-timedelta(days=8)).isoformat()
+        self.assertEqual(opportunities.state(item),'review')
+        item['cycle']='historical'
+        self.assertEqual(opportunities.state(item),'closed')
+
+    def test_remote_feed_preserves_local_mode_and_caches_only_public_data(self):
+        catalog=self.catalog()
+        with tempfile.TemporaryDirectory() as directory, patch.object(opportunities.requests,'Session') as factory:
+            response=factory.return_value.__enter__.return_value.get.return_value
+            response.json.return_value=dict(catalog, mode='public', monitoring=None)
+            result=opportunities.remote_catalog(directory,'http://example.org/api/opportunities')
+            self.assertEqual(result['mode'],'local')
+            self.assertEqual(result['opportunities'],catalog['opportunities'])
+            opportunities.remote_catalog(directory,'http://example.org/api/opportunities')
+            self.assertEqual(factory.call_count,1)
+            self.assertFalse((Path(directory)/'data/workflow.yaml').exists())
+
+    def test_feed_failure_never_claims_cached_snapshot_is_current(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir()
+            (root/'data/opportunities.json').write_text(json.dumps(self.catalog()),encoding='utf-8')
+            (root/'data/opportunity_feed.json').write_text(json.dumps({'enabled':True,'url':'http://example.org/api/opportunities'}),encoding='utf-8')
+            with patch.object(opportunities,'remote_catalog',side_effect=ValueError('invalid response')):
+                result=opportunities.observed(root)
+            self.assertIn('feed_error',result)
+            self.assertEqual(opportunities.state(result['opportunities'][0]),'review')
+
+    def test_stopped_monitor_cannot_keep_claiming_registration_is_current(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir();(root/'cache').mkdir()
+            catalog=self.catalog();item=catalog['opportunities'][0]
+            (root/'data/opportunities.json').write_text(json.dumps(catalog),encoding='utf-8')
+            (root/'cache/opportunities_live.json').write_text(json.dumps({
+                'next_check_at':'2000-01-01T00:00:00+00:00',
+                'opportunity_checks':{item['id']:{'status':'unchanged','last_success':item['checked_at']}}
+            }),encoding='utf-8')
+            result=opportunities.observed(root)
+            self.assertEqual(opportunities.state(result['opportunities'][0]),'review')
+            self.assertEqual(opportunities.load(root)['opportunities'][0]['source_state'],'verified')
+
+
+if __name__=='__main__':unittest.main()

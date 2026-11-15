@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict'),rules=require('../site/opportunities-core.js');
+const now='2026-11-15T12:00:00+08:00',base={id:'camp',kind:'winter_camp',title:'计算机冬令营',unit:'计算机学院',school_name:'学校',eligibility:[],cycle:'current',source_state:'verified',checked_at:'2026-11-15',verified_at:'2026-11-15',registration_start:'2026-11-01',deadline:'2026-11-15',graduation_year:2028};
+assert.equal(rules.state(base,now),'open');
+assert.equal(rules.state({...base,deadline:'2026-11-15T11:00:00+08:00'},now),'closed');
+assert.equal(rules.state({...base,source_state:'unavailable'},now),'review');
+assert.equal(rules.state({...base,checked_at:'2026-11-01'},now),'review');
+assert.equal(rules.state({...base,cycle:'historical'},now),'closed');
+assert.equal(rules.state({...base,registration_start:'',deadline:''},now),'unknown');
+assert.equal(rules.select([base,{...base,id:'unknown-year',graduation_year:null}],{year:'2028',status:'current'},now).length,2);
+assert.equal(rules.select([{...base,cycle:'historical'}],{status:'current'},now).length,0);
+console.log('opportunity date, scope, unknown and history rules passed');
+const saved={...base,materials:['入营时交成绩单']};
+assert.deepEqual(rules.changes(saved,{...saved,checked_at:'2026-11-16'}),[]);
+assert.deepEqual(rules.changes(saved,{...saved,deadline:'2026-11-17',materials:['报名时交成绩单']}).map(c=>c.key),['deadline','materials']);
+assert.deepEqual(rules.changes(saved,null),[]);
+assert.equal(rules.changes(saved,{...saved,deadline:'2026-11-17'})[0].before,'2026-11-15');
+assert.equal(saved.deadline,'2026-11-15');
+console.log('saved opportunity changes preserve original dates and material stages');

@@ -60,7 +60,7 @@ function snapshotStatus(d){if(d.origin!=='policy')return '个人计划（手动�
 function sourceLinks(policy,item){return AdmissionsRules.sourceReferences(policy,item,window.ADMISSIONS_DATA.sources).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(' · ');}
 function snapshotLinks(d){const refs=d.source_ids.map(id=>window.ADMISSIONS_DATA.sources[id]).filter(Boolean),current=refs.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label||'官方原文')}</a>`).join(' · ');return current+(d.source_url&&(!refs.length||refs[0].url!==d.source_url)?`${current?' · ':''}<a href="${esc(d.source_url)}" target="_blank" rel="noopener">${d.origin==='manual'?'手动参考来源':'登记时来源'}</a>`:'');}
 function goalQuery(p){const q=new URLSearchParams();for(const [key,value] of Object.entries(projectScope(p)))if(value)q.set(key,value);return q;}
-function goalTitle(p){const unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school_id&&u.dept===p.dept_id);return [schoolName(p.school_id)||'学校待补',unit?.dept_name||p.dept_id||'院系待补',p.year||'年度未知',goalLabels[p.degree]||'学位待补',goalLabels[p.route]||'渠道待补',goalLabels[p.track]||'类别待补',p.program_name?(p.program_code||'')+' '+p.program_name:'正式专业 / 项目未知'].join(' · ');}
+function goalTitle(p){if(p.opportunity)return '活动准备 · '+p.opportunity.unit+' · '+(p.opportunity.graduation_year?p.opportunity.graduation_year+'届':'届别未明确')+'；正式招生目标可后续补充';const unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school_id&&u.dept===p.dept_id);return [schoolName(p.school_id)||'学校待补',unit?.dept_name||p.dept_id||'院系待补',p.year||'年度未知',goalLabels[p.degree]||'学位待补',goalLabels[p.route]||'渠道待补',goalLabels[p.track]||'类别待补',p.program_name?(p.program_code||'')+' '+p.program_name:'正式专业 / 项目未知'].join(' · ');}
 function reminderStatus(r,today=reminderDay(new Date().toISOString())){return r.completed?'已完成':r.due_date<today?'逾期未完成':r.due_date===today?'今天':'待办';}
 function projectRecentActions(p){
   const pending=Object.values(WORKFLOW.reminders).filter(r=>r.project_id===p.id&&!r.completed).sort((a,b)=>a.due_date.localeCompare(b.due_date));
@@ -82,7 +82,30 @@ function renderGoalEditor(){
   const eventHtml=events.map((row,i)=>`<p>${esc(dateLabels[row.event.kind])} · ${esc(row.event.label)} · ${esc(row.event.at)} · ${esc(dateStatus({...row.event,origin:"policy"}))} · ${sourceLinks(row.policy,row.event)} <button type="button" data-add-policy-date="${i}">加入项目日期</button><br><small>${esc(row.quality.label)}</small></p>`).join('')||'<p class="muted">当前目标没有可直接加入的官方事件；未知日期仍须查原文。</p>';
   if(renderedPolicyEvents!==eventHtml){el('project-policy-dates').innerHTML=eventHtml;renderedPolicyEvents=eventHtml;}
 }
+let opportunityCheckRunning=false;
+async function refreshOpportunityChanges(){
+  if(opportunityCheckRunning||!Object.values(WORKFLOW.projects).some(p=>p.opportunity))return;
+  opportunityCheckRunning=true;
+  try{
+    const response=await fetch('/api/opportunities');if(!response.ok)throw new Error();
+    const catalog=await response.json();
+    for(const node of document.querySelectorAll('[data-opportunity-changes]')){
+      const saved=WORKFLOW.projects[node.dataset.opportunityChanges]?.opportunity;if(!saved)continue;
+      const current=catalog.opportunities.find(o=>o.id===saved.id),changes=OpportunityRules.changes(saved,current);
+      const value=v=>Array.isArray(v)?v.map(x=>typeof x==='object'?[x.department,x.direction,x.contact,x.email].filter(Boolean).join(' · '):x).join('；'):String(v??'未明确')||'未明确';
+      node.innerHTML=(!current?'<p class="hint">当前目录未找到此活动，请核对官方通知。原申请记录保留。</p>':
+        `<p class="hint">当前活动状态：${esc(OpportunityRules.labels[OpportunityRules.state(current)])}。${catalog.feed_error?'更新服务暂不可用，以下比较基于本机资料。':''}${changes.length?'发现 '+changes.length+' 项与保存时不同，请检查材料与个人提醒。':'与保存快照相比，申请条件、材料与时间未发现差异；仍需核对当前报名状态。'}</p>`)+
+        (changes.length?'<details open><summary>查看变更，不覆盖原记录</summary>'+changes.map(c=>`<p><strong>${esc(c.label)}</strong><br>保存时：${esc(value(c.before))}<br>当前记录：${esc(value(c.after))}</p>`).join('')+'<p>个人准备进度和提醒日期未自动修改，请按核实后的要求调整。</p></details>':'');
+    }
+  }catch(error){for(const node of document.querySelectorAll('[data-opportunity-changes]'))node.textContent='暂时无法检查活动更新；保存记录仍可使用，请通过官方通知核对。';}
+  finally{opportunityCheckRunning=false;}
+}
 function projectRequirements(p){
+  if(p.opportunity){
+    const o=p.opportunity,files=Object.values(WORKFLOW.materials).filter(m=>m.project_ids.includes(p.id));
+    const list=values=>values.length?'<ul>'+values.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>':'<p>尚未取得明确清单，请查原文。</p>';
+    return `<details open><summary>活动条件与准备材料 · 关联文件 ${files.length}</summary><div data-opportunity-changes="${esc(p.id)}" role="status">正在核对活动更新…</div><p>${esc(o.unit)} · 面向 ${o.graduation_year?esc(o.graduation_year)+' 届':'届别未明确'} · 活动年份 ${o.camp_year||'未明确'}</p><p>登记的报名截止：${esc(o.deadline||'未明确')} · 活动时间：${esc(o.event_start||'待核对')}${o.event_end?' 至 '+esc(o.event_end):''}</p><p class="hint">保存时快照，核查于 ${esc(o.verified_at)}。${esc(o.source_note)} 活动不是正式录取；当前更新请回活动页核对。</p><a href="opportunities.html?id=${encodeURIComponent(o.id)}">查看活动最新记录 →</a> · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">官方原文 ↗</a><h4>申请条件</h4>${list(o.eligibility)}<h4>材料与提交阶段</h4>${list(o.materials)}<p>${esc(o.application_method)}</p><p>${esc(o.admission_note)}</p><h4>我的关联材料</h4>${files.length?'<ul>'+files.map(m=>'<li>'+esc(m.title)+(m.missing?' · 文件缺失':' · 已登记文件，不代表已提交')+'</li>').join('')+'</ul>':'<p>尚未关联材料。先登记本机文件，再关联到此项目。</p>'}<button type="button" data-project-section="material" data-project-id="${esc(p.id)}">关联本机材料</button></details>`;
+  }
   const scope=projectScope(p),result=projectChecklist(p),q=goalQuery(p);
   const materials=Object.values(WORKFLOW.materials).filter(m=>m.project_ids.includes(p.id));
   const materialRows=materials.map(m=>`<li><strong>${esc(m.title)}</strong> · ${esc(materialLabels[m.kind])} · ${m.missing?'<span class="bad">索引标记文件缺失</span>':'已登记文件'} <button type="button" data-project-section="material" data-project-id="${esc(p.id)}" data-edit-material="${esc(m.id)}">编辑材料关联</button></li>`).join('');
@@ -227,6 +250,7 @@ function render(){
   const today=reminderDay(new Date().toISOString());
   list('reminder-list',Object.values(WORKFLOW.reminders).filter(r=>(!el('only-pending').checked || !r.completed) && linked(r.mentor_id ? [r.mentor_id] : [],r.project_id ? [r.project_id] : [])).sort((a,b)=>Number(a.completed)-Number(b.completed) || a.due_date.localeCompare(b.due_date)).map(r=>
     `<article><h3>${esc(r.title)}</h3><span class="${r.completed ? 'done' : r.due_date<today ? 'overdue' : ''}">${esc(reminderStatus(r,today))} · ${esc(r.due_date)}</span><p>${mentorLinks(r.mentor_id ? [r.mentor_id] : [])} ${esc(projectName(r.project_id))}</p><p>${esc(r.notes)}</p><button type="button" data-toggle-reminder="${r.id}">${r.completed ? '重新打开' : '完成'}</button> <button type="button" data-edit-reminder="${r.id}">编辑提醒</button></article>`));
+  refreshOpportunityChanges();
 }
 function bindSubmit(prefix, collection, body){
   el(prefix+'-form').onsubmit=e=>{

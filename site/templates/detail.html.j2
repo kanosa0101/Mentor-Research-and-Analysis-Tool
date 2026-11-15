@@ -200,8 +200,11 @@ function fill(e){
   }
   try{
     const r = await fetch("/api/health");
-    if(!r.ok) throw 0;
-    const all = await fetch("/api/outreach").then(r=>r.json());
+    const health = await r.json();
+    if(!r.ok || health.mode === 'public') throw 0;
+    const response = await fetch("/api/outreach");
+    if(!response.ok) throw 0;
+    const all = await response.json();
     fill(all[PID]);
     ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
@@ -230,5 +233,5 @@ function fill(e){
   });
 })();
 </script>
-</body>
+<script src="../browser-library-core.js?v=20261115-5"></script><script src="../browser-library.js?v=20261115-5"></script></body>
 </html>

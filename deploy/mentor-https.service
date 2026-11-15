@@ -1,0 +1,24 @@
+[Unit]
+Description=Mentor Assistant HTTPS and opt-in browser notifications
+After=network.target
+
+[Service]
+Type=simple
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_public.py --host 0.0.0.0 --port 8443 --cert /opt/mentor-assistant/var/tls/fullchain.pem --key /opt/mentor-assistant/var/tls/privkey.pem
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/mentor-assistant/var/push
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

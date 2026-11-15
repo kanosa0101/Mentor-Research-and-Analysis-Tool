@@ -14,6 +14,7 @@ PUBLIC_YAML_LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
 
 DEFAULTS = dict(school_id='', dept_id='', degree='', route='', track='',
                 program_code='', program_name='', deadlines=[])
+OPTIONAL = {'opportunity'}
 DATE_KEYS = {'label', 'kind', 'at', 'origin', 'policy_id', 'source_ids', 'source_url', 'quote', 'locator'}
 
 
@@ -32,6 +33,9 @@ def load_context(root):
 
 
 def structure(entry):
+    if 'opportunity' in entry:
+        from crawler.opportunity_util import validate
+        validate(entry['opportunity'])
     for key, default in DEFAULTS.items():
         if key not in entry or isinstance(default, str) and not isinstance(entry[key], str):
             raise ValueError('申请目标结构错误')
@@ -94,6 +98,9 @@ def validate(data, context):
 
 
 def validate_imports(entry, previous, context):
+    if 'opportunity' in entry and (previous is None or entry['opportunity'] != previous.get('opportunity')):
+        if entry['opportunity'] not in context.get('opportunities', []):
+            raise ValueError('活动快照须来自当前已核对目录')
     scope_changed = previous is None or any(entry[k] != previous[k] for k in (*DEFAULTS.keys() - {'deadlines'}, 'year'))
     if scope_changed:
         if entry['school_id'] and entry['school_id'] not in context['units']:
@@ -133,12 +140,12 @@ def upgrade(data, known_ids, context):
 
 def update(data, body, known_ids, context, record_id=None):
     from crawler import contact_util as contact
-    if not isinstance(body, dict) or set(body) - {*core.DEFAULTS['projects'], *DEFAULTS}:
+    if not isinstance(body, dict) or set(body) - {*core.DEFAULTS['projects'], *DEFAULTS, *OPTIONAL}:
         raise ValueError('包含未知或不可修改字段')
-    base, entry = core.update_entry(contact.core_view(data), 'projects', {k: v for k, v in body.items() if k not in DEFAULTS}, known_ids, record_id)
+    base, entry = core.update_entry(contact.core_view(data), 'projects', {k: v for k, v in body.items() if k not in DEFAULTS and k not in OPTIONAL}, known_ids, record_id)
     result = contact.merge_core(data, base, known_ids)
     entry = result['projects'][entry['id']]
-    entry.update(copy.deepcopy({k: v for k, v in body.items() if k in DEFAULTS}))
+    entry.update(copy.deepcopy({k: v for k, v in body.items() if k in DEFAULTS or k in OPTIONAL}))
     contact.validate(result, known_ids)
     validate(result, context)
     validate_imports(entry, data['projects'].get(record_id), context)

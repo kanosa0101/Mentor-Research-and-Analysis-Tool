@@ -1,0 +1,36 @@
+
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>在本机管理申请 · 导师库</title><link rel="stylesheet" href="ui.css?v=20261115-1"><style>main{max-width:800px;margin:40px auto;padding:0 20px}section{background:white;padding:24px;border:1px solid var(--line);border-radius:8px;line-height:1.9}code{overflow-wrap:anywhere}h1{font-size:26px}</style></head><body>
+<header class="top site-header"><div class="site-header-inner">
+<a class="site-brand" href="start.html">◈ 导师库 · 申请助手</a>
+<nav aria-label="主导航">
+
+<a href="start.html" >申请导航</a>
+
+<a href="discovery.html" >找导师</a>
+
+<a href="opportunities.html" >保研机会</a>
+
+<a href="admissions.html" >学校与要求</a>
+
+<a href="desk.html" aria-current="page">我的申请</a>
+
+</nav>
+<details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="notices.html" >招生通知</a>
+
+<a href="index.html" >全量导师目录</a>
+
+<a href="compare.html" >导师对比</a>
+
+<a href="applications.html"  id="manage-link">项目与材料</a>
+
+<a href="board.html" >旧套磁看板</a>
+
+<a href="release.html">版本与使用说明</a></div></details>
+
+
+</div></header><main><h1>先收藏规划，再到本机准备正式申请</h1><section><p>公开站提供导师资料、学校要求和保研机会，也可以直接保存浏览器关注目标、收藏与待办。它们只保存在当前浏览器、当前站点，不上传、不跨设备同步；可导出浏览器备份。</p><p><a href="start.html#library">打开浏览器收藏与待办 →</a></p><p>正式申请项目、材料文件路径、邮件草稿与沟通记录仍由本机版管理，不会上传到公开站。浏览器收藏不会自动变成正式申请项目。</p><p>已有本机版：在项目目录运行 <code>python scripts/serve.py</code>，再打开本机页面保存申请、关联材料和设置提醒。</p><p><a id="open-local" href="http://127.0.0.1:8000/start.html">打开已启动的本机版 →</a></p><p class="muted">需要先在自己的电脑启动服务；这里没有远程账户或自动跨设备同步。</p><p><a href="opportunities.html">继续查看保研机会 →</a> · <a href="discovery.html">继续找导师 →</a></p></section></main><script>
+const activity=new URLSearchParams(location.search).get('id');
+if(activity){const link=document.getElementById('open-local'),url=new URL(link.href);url.pathname='/opportunities.html';url.searchParams.set('id',activity);link.href=url.href;link.textContent='在已启动的本机版打开这项活动 →';}
+</script></body></html>

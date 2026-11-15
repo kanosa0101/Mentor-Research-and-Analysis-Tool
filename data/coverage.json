@@ -1,0 +1,1154 @@
+{
+  "version": 1,
+  "checked_at": "2026-11-15",
+  "scope": "2027统考/2028推免准备，15单位证据覆盖矩阵；学校章程不代表院系完整，导师计数为现有公开资料快照。",
+  "units": [
+    {
+      "school": "uestc",
+      "dept": "cs",
+      "name": "计算机科学与工程学院（网络空间安全学院）",
+      "official_url": "https://www.scse.uestc.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "电子科大硕士招生简章栏目",
+          "url": "https://yz.uestc.edu.cn/sszs/zsjz.htm",
+          "source_id": "uestc_school_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "uestc-school-2027-exam-v15b",
+          "title": "电子科大2027硕士招生章程（学校通用，院系附加要求另查）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yz.uestc.edu.cn/info/1081/5968.htm"
+        },
+        {
+          "id": "uestc-cs-cs-directory-2027-exam-v15b",
+          "title": "电子科大计算机学院2027硕士目录（人数含推免与专项，仅作参考）",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzbm.uestc.edu.cn/zsml/sszsml/zsmlZy/2027/008"
+        }
+      ],
+      "programs": [
+        {
+          "name": "学院目录列出081200、083900、085400、085404、145200；拟招生人数含推免生和各类专项，仅作参考，不是统考净剩余名额，也不代表某导师招生。",
+          "code": "",
+          "policy_id": "uestc-cs-cs-directory-2027-exam-v15b",
+          "source_url": "https://yzbm.uestc.edu.cn/zsml/sszsml/zsmlZy/2027/008"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "学校研究生招生办公室：028-61830152、028-61830153；学院咨询应使用学院联系方式，不能当作导师邮箱。",
+          "quote": "电话：028-61830152、028-61830153 传真：028",
+          "scope": "school",
+          "source_url": "https://yz.uestc.edu.cn/info/1081/5968.htm",
+          "reviewed_at": "2026-11-15"
+        },
+        {
+          "text": "计算机科学与工程学院招生咨询：曾老师，028-61831209，清水河主楼B1-513B；非导师邮箱。",
+          "quote": "008 计算机科学与工程 学院 曾老师 [清]主楼B1-513B 028-61831209 009 信息与软件工程学院 周老师 [",
+          "scope": "dept",
+          "source_url": "https://yz.uestc.edu.cn/lxwm.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 189,
+        "with_research": 0,
+        "with_contact": 185,
+        "source_urls": [
+          "https://www.scse.uestc.edu.cn/js_sz.jsp?urltype=tree.TreeTempUrl&wbtreeid=1081"
+        ],
+        "last_reviewed_at": "2026-09-05",
+        "oldest_record_reviewed_at": "2026-09-05",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-09-05",
+        "oldest_source_at": "2026-09-05"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。"
+      ]
+    },
+    {
+      "school": "nankai",
+      "dept": "cs",
+      "name": "计算机学院",
+      "official_url": "https://cc.nankai.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "南开大学硕士招生栏目",
+          "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+          "source_id": "nankai_entry_v15extra",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "南开cs研究生招生栏目",
+          "url": "https://cc.nankai.edu.cn/_s234/13297/list.psp",
+          "source_id": "nankai_cs_entry_v17",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "nankai-2027-master-exam-v15extra",
+          "title": "南开2027硕士统考：学校条件、材料、费用住宿与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf"
+        },
+        {
+          "id": "nankai-cs-2027-master-directory-v17",
+          "title": "计算机学院2027硕士统考目录",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "programs": [
+        {
+          "name": "035计算机学院：全日制081200计算机科学与技术初试101、201、301、408；全日制085400电子信息01计算机技术方向初试101、204、302、408。以上为专业目录科目，不代表个人资格、当前名额或复试安排已经核验。",
+          "code": "",
+          "policy_id": "nankai-cs-2027-master-directory-v17",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "南开研招办022-23505940，官方章程登记邮箱nkuyzb@163.com；各招生学院咨询电话和官网见https://yzb.nankai.edu.cn/2557/list.htm。学校政策不能当作院系条件已齐。",
+          "quote": "nkuyzb@163.com",
+          "scope": "school",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 99,
+        "with_research": 97,
+        "with_contact": 96,
+        "source_urls": [
+          "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "https://cc.nankai.edu.cn/js/list.htm"
+        ],
+        "last_reviewed_at": "2026-10-15",
+        "oldest_record_reviewed_at": "2026-10-15",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-10-15"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。"
+      ]
+    },
+    {
+      "school": "nankai",
+      "dept": "cyber",
+      "name": "密码与网络空间安全学院",
+      "official_url": "https://cyber.nankai.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "南开大学硕士招生栏目",
+          "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+          "source_id": "nankai_entry_v15extra",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "南开cyber研究生招生栏目",
+          "url": "https://cyber.nankai.edu.cn/13348/list.htm",
+          "source_id": "nankai_cyber_entry_v17",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "nankai-2027-master-exam-v15extra",
+          "title": "南开2027硕士统考：学校条件、材料、费用住宿与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf"
+        },
+        {
+          "id": "nankai-cyber-2027-master-directory-v17",
+          "title": "密码与网络空间安全学院2027硕士统考目录",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "programs": [
+        {
+          "name": "037网络空间安全学院：全日制083900网络空间安全初试101、201、301、408；全日制085400电子信息01网络与信息安全方向及145200密码初试101、204、302、408。以上为专业目录科目，不代表个人资格、当前名额或复试安排已经核验。",
+          "code": "",
+          "policy_id": "nankai-cyber-2027-master-directory-v17",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "南开研招办022-23505940，官方章程登记邮箱nkuyzb@163.com；各招生学院咨询电话和官网见https://yzb.nankai.edu.cn/2557/list.htm。学校政策不能当作院系条件已齐。",
+          "quote": "nkuyzb@163.com",
+          "scope": "school",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 85,
+        "with_research": 83,
+        "with_contact": 82,
+        "source_urls": [
+          "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "https://cyber.nankai.edu.cn/js/list.htm"
+        ],
+        "last_reviewed_at": "2026-10-15",
+        "oldest_record_reviewed_at": "2026-10-15",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-10-15"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。"
+      ]
+    },
+    {
+      "school": "nankai",
+      "dept": "software",
+      "name": "软件学院",
+      "official_url": "https://cs.nankai.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "南开大学硕士招生栏目",
+          "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+          "source_id": "nankai_entry_v15extra",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "南开software研究生招生栏目",
+          "url": "https://cs.nankai.edu.cn/index/yjszs.htm",
+          "source_id": "nankai_software_entry_v17",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "nankai-2027-master-exam-v15extra",
+          "title": "南开2027硕士统考：学校条件、材料、费用住宿与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf"
+        },
+        {
+          "id": "nankai-software-2027-master-directory-v17",
+          "title": "软件学院2027硕士统考目录",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "programs": [
+        {
+          "name": "038软件学院：全日制083500软件工程初试101、201、301、408；085400电子信息01软件工程方向初试101、204、302、408，目录分别列全日制和非全日制。以上为专业目录科目，不代表个人资格、当前名额或复试安排已经核验。",
+          "code": "",
+          "policy_id": "nankai-software-2027-master-directory-v17",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/b6/06/7f20fc4644de808f280c78c70df0/c2aba7d0-ab05-47cb-8b2f-602563307d6c.pdf"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "南开研招办022-23505940，官方章程登记邮箱nkuyzb@163.com；各招生学院咨询电话和官网见https://yzb.nankai.edu.cn/2557/list.htm。学校政策不能当作院系条件已齐。",
+          "quote": "nkuyzb@163.com",
+          "scope": "school",
+          "source_url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/2314c19a-7a5c-422b-97d5-d8c8c48143bd.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 35,
+        "with_research": 35,
+        "with_contact": 35,
+        "source_urls": [
+          "https://cs.nankai.edu.cn/szdw/js.htm",
+          "https://cs.nankai.edu.cn/szdw/fjs.htm",
+          "https://cs.nankai.edu.cn/szdw/js2.htm",
+          "https://cs.nankai.edu.cn/szdw/tpyjy.htm",
+          "https://cs.nankai.edu.cn/szdw/sys.htm",
+          "https://cs.nankai.edu.cn/szdw/bsh.htm"
+        ],
+        "last_reviewed_at": "2026-10-15",
+        "oldest_record_reviewed_at": "2026-10-15",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-10-15"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。"
+      ]
+    },
+    {
+      "school": "nudt",
+      "dept": "cs",
+      "name": "计算机学院",
+      "official_url": "https://www.nudt.edu.cn/yssz/jsjxy/",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "国防科技大学硕士招生简章栏目",
+          "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+          "source_id": "nudt_master_entry_v15extra",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "nudt-2027-master-exam-v15extra",
+          "title": "国防科大2027地方无军籍硕士统考：身份、材料与报名",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yjszs.nudt.edu.cn/attached/file/20261015/20261015180152_597.pdf"
+        },
+        {
+          "id": "nudt-cs-2027-master-v17",
+          "title": "计算机学院2027硕士正式目录与咨询（不替代复试办法）",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf"
+        }
+      ],
+      "programs": [
+        {
+          "name": "计算机学院目录列081200、083500、083900、087300、085400；初试101/201/301/408，复试F0201至F0205任选一，仍须核对报考专业对应行与2027后续复试办法。",
+          "code": "",
+          "policy_id": "nudt-cs-2027-master-v17",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "学校研招咨询0731-87023061，gfkdyzc@nudt.edu.cn；目录列计算机学院0731-87002026。前者为校级咨询、后者为学院咨询，不是导师邮箱；军人、地方考生须分别核对适用目录及资格。",
+          "quote": "gfkdyzc@nudt.edu.cn",
+          "scope": "school",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261015/20261015180152_597.pdf",
+          "reviewed_at": "2026-11-15"
+        },
+        {
+          "text": "计算机学院硕士招生咨询路老师，0731-87002026；目录逐专业列科目和限制。地方/军人及参军专项须核学校条件、计划类型及目录备注，院系相关性不等于本人资格。",
+          "quote": "电话：（0731）87002026",
+          "scope": "dept",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 244,
+        "with_research": 53,
+        "with_contact": 208,
+        "source_urls": [
+          "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+          "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/list.json"
+        ],
+        "last_reviewed_at": null,
+        "oldest_record_reviewed_at": null,
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。该名单接口不支持详情解析，需官方详情来源或人工复核。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-10-15",
+        "oldest_source_at": "2026-10-15"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。"
+      ]
+    },
+    {
+      "school": "nudt",
+      "dept": "ai",
+      "name": "智能科学学院",
+      "official_url": "https://www.nudt.edu.cn/yssz/znkxxy/",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "国防科技大学硕士招生简章栏目",
+          "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+          "source_id": "nudt_master_entry_v15extra",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "nudt-2027-master-exam-v15extra",
+          "title": "国防科大2027地方无军籍硕士统考：身份、材料与报名",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yjszs.nudt.edu.cn/attached/file/20261015/20261015180152_597.pdf"
+        },
+        {
+          "id": "nudt-ai-2027-master-v17",
+          "title": "智能科学学院2027硕士正式目录与咨询（不替代复试办法）",
+          "year": 2027,
+          "route": "exam",
+          "level": "dept",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf"
+        }
+      ],
+      "programs": [
+        {
+          "name": "智能学院控制科学081100和电子信息085400初试101/201/301/851；机械/仪器采用不同专业课，不能一律按851。军事智能111100明确仅招军队生；该限制也不应套给所有专业。",
+          "code": "",
+          "policy_id": "nudt-ai-2027-master-v17",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "学校研招咨询0731-87023061，gfkdyzc@nudt.edu.cn；目录列计算机学院0731-87002026。前者为校级咨询、后者为学院咨询，不是导师邮箱；军人、地方考生须分别核对适用目录及资格。",
+          "quote": "gfkdyzc@nudt.edu.cn",
+          "scope": "school",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261015/20261015180152_597.pdf",
+          "reviewed_at": "2026-11-15"
+        },
+        {
+          "text": "智能科学学院硕士招生咨询吕老师、殷老师，0731-87005031；目录逐专业列科目和限制。地方/军人及参军专项须核学校条件、计划类型及目录备注，院系相关性不等于本人资格。",
+          "quote": "电话：（0731）87005031",
+          "scope": "dept",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 183,
+        "with_research": 12,
+        "with_contact": 183,
+        "source_urls": [
+          "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+          "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/list.json"
+        ],
+        "last_reviewed_at": null,
+        "oldest_record_reviewed_at": null,
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。该名单接口不支持详情解析，需官方详情来源或人工复核。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-10-15",
+        "oldest_source_at": "2026-10-15"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。"
+      ]
+    },
+    {
+      "school": "scut",
+      "dept": "cs",
+      "name": "计算机科学与工程学院",
+      "official_url": "https://www2.scut.edu.cn/cs",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "华南理工大学硕士招生栏目",
+          "url": "https://yz.scut.edu.cn/sszs/list.htm",
+          "source_id": "scut_entries_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "华南理工大学计算机学院硕士招生栏目",
+          "url": "https://www2.scut.edu.cn/cs/sszs/list.htm",
+          "source_id": "scut_cs_entry_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "scut-2027-master-exam-v15c",
+          "title": "华南理工2027硕士统考：学校条件、报名材料与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yz.scut.edu.cn/2026/0930/c30108a636831/page.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "学校研招办020-87113401，adyzb@scut.edu.cn；研究生招生官方平台https://yz.scut.edu.cn/，各院系具体咨询须查其官网。",
+          "quote": "adyzb@scut.edu.cn",
+          "scope": "school",
+          "source_url": "https://yz.scut.edu.cn/2026/0930/c30108a636831/page.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 76,
+        "with_research": 7,
+        "with_contact": 56,
+        "source_urls": [
+          "https://www2.scut.edu.cn/cs/22284/list.htm",
+          "https://www2.scut.edu.cn/cs/22285/list.htm",
+          "https://www2.scut.edu.cn/cs/22286/list.htm"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-05"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "hust",
+      "dept": "cyber",
+      "name": "网络空间安全学院",
+      "official_url": "https://cse.hust.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [],
+      "policies": [
+        {
+          "id": "hust-2027-master-exam",
+          "title": "华科2027普通硕士统考：学校通用规则",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://gszs.hust.edu.cn/__local/9/3F/7D/BB7EE6853FE6E5C6FEBF8620BB7_9D410FAF_497F6.pdf"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "公开政策、院系细则与报名公告通过华科研招网及院系网站发布；网报入口为https://yz.chsi.com.cn。此项是招生与报名入口，未核验学院咨询电话或导师联系方式。",
+          "quote": "招生信息公开网址",
+          "scope": "school",
+          "source_url": "https://gszs.hust.edu.cn/__local/9/3F/7D/BB7EE6853FE6E5C6FEBF8620BB7_9D410FAF_497F6.pdf",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 85,
+        "with_research": 30,
+        "with_contact": 5,
+        "source_urls": [
+          "https://cse.hust.edu.cn/szdw/wlkjaqx.htm",
+          "https://cse.hust.edu.cn/szdw/xxaqx.htm",
+          "https://cse.hust.edu.cn/szdw/mmkxyjsx.htm",
+          "https://cse.hust.edu.cn/szdw/jcxkpt.htm"
+        ],
+        "last_reviewed_at": "2026-10-15",
+        "oldest_record_reviewed_at": "2026-10-14",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-10-14"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "hit",
+      "dept": "cs",
+      "name": "计算学部·计算机科学与技术学院",
+      "official_url": "http://www.cs.hit.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "哈工大硕士招生简章栏目",
+          "url": "https://yzb.hit.edu.cn/22281/list.htm",
+          "source_id": "hit_school_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-11-15"
+        },
+        {
+          "label": "哈工大计算学部研究生招生栏目",
+          "url": "http://www.cs.hit.edu.cn/11474/list.htm",
+          "source_id": "hit_cs_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "hit-school-2027-exam-v15b",
+          "title": "哈工大2027硕士招生章程（学校通用，院系附加要求另查）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.hit.edu.cn/2026/0930/c22281a402325/page.htm"
+        },
+        {
+          "id": "hit-webreg-2027-exam-v15b",
+          "title": "哈工大2027硕士网报一般流程（2301考点专属说明另查）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.hit.edu.cn/2026/1008/c22272a402442/page.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "校研招硕士咨询0451-86416113，邮箱hityz@hit.edu.cn；院系要求继续查计算学部研究生招生栏目。",
+          "quote": "咨询电话（硕） 0451-86416113 咨询电话（博） 0451-86414004 传 真 0451-86415167 邮 箱 hityz@hit.edu.cn 关注我们 扫描二维码，在哈工大全媒",
+          "scope": "school",
+          "source_url": "https://yzb.hit.edu.cn/22281/list.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 240,
+        "with_research": 0,
+        "with_contact": 0,
+        "source_urls": [
+          "http://www.cs.hit.edu.cn/jsml/list.htm"
+        ],
+        "last_reviewed_at": "2026-09-03",
+        "oldest_record_reviewed_at": "2026-09-03",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-09-05",
+        "oldest_source_at": "2026-09-03"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "hnu",
+      "dept": "cs",
+      "name": "信息科学与工程学院(计算机)",
+      "official_url": "https://csee.hnu.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "湖南大学硕士招生栏目",
+          "url": "https://gra.hnu.edu.cn/zsxx/sszs.htm",
+          "source_id": "hnu_entries_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "湖南大学计算机相关硕士招生栏目",
+          "url": "https://csee.hnu.edu.cn/zsjy/sszs.htm",
+          "source_id": "hnu_cs_entry_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "hnu-2027-master-exam-v15c",
+          "title": "湖南2027硕士统考：学校条件、报名材料与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://gra.hnu.edu.cn/info/1075/10621.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "学校研招办0731-88822856；院系咨询电话见学校公布的各学院研究生招生联系方式。",
+          "quote": "0731-88822856",
+          "scope": "school",
+          "source_url": "https://gra.hnu.edu.cn/info/1075/10621.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 187,
+        "with_research": 155,
+        "with_contact": 132,
+        "source_urls": [
+          "http://csee.hnu.edu.cn/teacher/syjs/1",
+          "http://csee.hnu.edu.cn/teacher/syjs/2",
+          "http://csee.hnu.edu.cn/teacher/syjs/3",
+          "http://csee.hnu.edu.cn/teacher/syjs/4",
+          "http://csee.hnu.edu.cn/teacher/syjs/5",
+          "http://csee.hnu.edu.cn/teacher/syjs/6"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-05"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "sdu",
+      "dept": "cs",
+      "name": "计算机科学与技术学院",
+      "official_url": "https://www.cs.sdu.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "山大硕士招生简章栏目（当前仍列2026章程）",
+          "url": "https://www.yz.sdu.edu.cn/sszs/zsjz.htm",
+          "source_id": "sdu_master_list_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "山大计算机学院研究生教育通知栏目",
+          "url": "https://www.cs.sdu.edu.cn/yjsjy.htm",
+          "source_id": "sdu_cs_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "sdu-directory-2027-exam-v15b",
+          "title": "山大2027硕士统考专业目录说明（仅目录公布范围；一般报名条件与材料待补）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://www.yz.sdu.edu.cn/info/1022/1491.htm"
+        },
+        {
+          "id": "sdu-cs-081200-2027-exam-v22",
+          "title": "山东大学计算机学院2027年081200计算机科学与技术统考目录（一般章程与材料待补）",
+          "year": 2027,
+          "route": "exam",
+          "level": "program",
+          "reviewed_at": "2026-11-15",
+          "url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index"
+        },
+        {
+          "id": "sdu-cs-085404-2027-exam-v22",
+          "title": "山东大学计算机学院2027年085404计算机技术统考目录（一般章程与材料待补）",
+          "year": 2027,
+          "route": "exam",
+          "level": "program",
+          "reviewed_at": "2026-11-15",
+          "url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index"
+        }
+      ],
+      "programs": [
+        {
+          "name": "计算机科学与技术",
+          "code": "081200",
+          "policy_id": "sdu-cs-081200-2027-exam-v22",
+          "source_url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index"
+        },
+        {
+          "name": "计算机技术",
+          "code": "085404",
+          "policy_id": "sdu-cs-085404-2027-exam-v22",
+          "source_url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index"
+        }
+      ],
+      "contacts": [
+        {
+          "text": "专业目录及考试大纲、校院咨询入口在官方目录说明页链接中；当前成功取得的是目录和学费说明，未借用2026章程填充2027条件。",
+          "quote": "报考过程中如有问题，请及时与我们联系。学校研究生招生办公室和各学院（中心、所）联系方式，请 点击此处 查询。",
+          "scope": "school",
+          "source_url": "https://www.yz.sdu.edu.cn/info/1022/1491.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 13,
+        "with_research": 4,
+        "with_contact": 11,
+        "source_urls": [
+          "https://www.cs.sdu.edu.cn/szdw1/js.htm",
+          "https://www.cs.sdu.edu.cn/szdw1/yjy.htm",
+          "https://www.cs.sdu.edu.cn/szdw1/fjs.htm",
+          "https://www.cs.sdu.edu.cn/szdw1/fyjy.htm",
+          "https://www.cs.sdu.edu.cn/szdw1/zljs.htm"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-03"
+      },
+      "gaps": [
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。"
+      ]
+    },
+    {
+      "school": "xidian",
+      "dept": "cs",
+      "name": "计算机科学与技术学院",
+      "official_url": "https://cs.xidian.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "西安电子科技大学硕士招生栏目",
+          "url": "https://gr.xidian.edu.cn/yjsy/yjszs.htm",
+          "source_id": "xidian_entries_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "西安电子科技大学计算机学院招生栏目",
+          "url": "https://cs.xidian.edu.cn/yjsjy/zsxx.htm",
+          "source_id": "xidian_cs_entry_v15c",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "xidian-2027-master-exam-v15c",
+          "title": "西安电子科技2027硕士统考：学校条件、报名材料与时间",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=F7609AC14331B39717714BF77A249A54"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "学校研招办029-81891244，yzb@xidian.edu.cn；计算机学院咨询029-81891304，长安校区网安大楼A1-209，见简章末页院系表。",
+          "quote": "yzb@xidian.edu.cn",
+          "scope": "school",
+          "source_url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=F7609AC14331B39717714BF77A249A54",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 155,
+        "with_research": 97,
+        "with_contact": 145,
+        "source_urls": [
+          "https://cs.xidian.edu.cn/szdw/dsjs.htm"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-04"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "csu",
+      "dept": "cs",
+      "name": "计算机学院",
+      "official_url": "https://cse.csu.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [],
+      "policies": [
+        {
+          "id": "csu-2027-master-exam",
+          "title": "中南2027硕士统考：学校报考条件、报名与材料",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yz.csu.edu.cn/info/1011/1541.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "网报入口https://yz.chsi.com.cn；招生咨询0731-88876806。中南报考点只接受本校应届本科毕业生，其他考生应按所在地报考点规则选择，不能仅因报考中南而选中南考点。",
+          "quote": "研究生招生咨询电话",
+          "scope": "school",
+          "source_url": "https://yz.csu.edu.cn/info/1011/1541.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 108,
+        "with_research": 57,
+        "with_contact": 78,
+        "source_urls": [
+          "https://cse.csu.edu.cn/szdw/jsml.htm"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-04"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "tju",
+      "dept": "cs",
+      "name": "计算机科学与技术学院",
+      "official_url": "https://cs.tju.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "天大统考硕士栏目",
+          "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/",
+          "source_id": "tju_school_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "天大计算机学院招生信息栏目",
+          "url": "https://cs.tju.edu.cn/jyjx/zsxx.htm",
+          "source_id": "tju_cs_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "天津大学计算机科学与技术学院",
+          "url": "https://cs.tju.edu.cn/",
+          "source_id": "tju_cs_home_v18",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "tju-school-2027-exam-v15b",
+          "title": "天大2027硕士招生简章（学校通用，院系附加要求另查）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202610/t20261007_324742.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "学校研招办022-27406405，邮箱yzb@tju.edu.cn；学院及不同校区联系方式按章程附表分别核对。",
+          "quote": "十一、联系方式 联系部门： 天津大学研究生招生办公室 电子 邮箱： yzb@tju.edu.cn 联系 电话 ： 022-27406405",
+          "scope": "school",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202610/t20261007_324742.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 114,
+        "with_research": 7,
+        "with_contact": 113,
+        "source_urls": [
+          "https://cs.tju.edu.cn/faculty/jzgml/azc/zgj.htm",
+          "https://cs.tju.edu.cn/faculty/jzgml/azc/fgj.htm",
+          "https://cs.tju.edu.cn/faculty/jzgml/azc/zj.htm",
+          "https://cs.tju.edu.cn/faculty/jzgml/azc/cj.htm",
+          "https://cic.tju.edu.cn/jyjx/yjsjy/yjsdsml.htm"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-05"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    },
+    {
+      "school": "dlut",
+      "dept": "cs",
+      "name": "计算机科学与技术学院",
+      "official_url": "http://faculty.dlut.edu.cn",
+      "checked_at": "2026-11-15",
+      "columns": [
+        {
+          "label": "大工硕士招生政策栏目",
+          "url": "https://gs.dlut.edu.cn/yjszs/zcwj1/ssyjs.htm",
+          "source_id": "dlut_school_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "大工计算机学院研究生招生信息栏目",
+          "url": "https://cs.dlut.edu.cn/yjsgz/zsxx.htm",
+          "source_id": "dlut_cs_entry_v15b",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        },
+        {
+          "label": "大连理工大学计算机科学与技术学院公示公告",
+          "url": "https://cs.dlut.edu.cn/yjsgz/gsgg.htm",
+          "source_id": "dlut_cs_announcements_v18",
+          "status": "ok",
+          "checked_at": "2026-11-15",
+          "reviewed_at": "2026-10-15"
+        }
+      ],
+      "policies": [
+        {
+          "id": "dlut-school-2027-exam-v15b",
+          "title": "大工2027硕士招生章程（学校通用，院系附加要求另查）",
+          "year": 2027,
+          "route": "exam",
+          "level": "school",
+          "reviewed_at": "2026-11-15",
+          "url": "https://info.dlut.edu.cn/info/1163/14336.htm"
+        }
+      ],
+      "programs": [],
+      "contacts": [
+        {
+          "text": "研究生招生办公室0411-84706395；邮箱miaoqing@dlut.edu.cn、jiangwenzhuang@dlut.edu.cn；这是学校咨询渠道，不是导师联系邮箱。",
+          "quote": "联系电话： 0411-84706395 联系邮箱： miaoqing@dlut.edu.cn jiangwenzhuang@dlut.edu.cn 通讯地址：辽宁省大连市甘井子区凌工路 2号大连理工大",
+          "scope": "school",
+          "source_url": "https://info.dlut.edu.cn/info/1163/14336.htm",
+          "reviewed_at": "2026-11-15"
+        }
+      ],
+      "mentors": {
+        "count": 12,
+        "with_research": 12,
+        "with_contact": 2,
+        "source_urls": [
+          "http://faculty.dlut.edu.cn/xyjslb.jsp?urltype=tsites.CollegeTeacherList&wbtreeid=1003&st=0&id=1220&lang=zh_CN"
+        ],
+        "last_reviewed_at": "2026-09-06",
+        "oldest_record_reviewed_at": "2026-09-06",
+        "status": "2026-11-15同步公开导师记录后的本地统计；本批未逐位人工复核。last_reviewed_at为记录原有last_verified，资料抓取日期见last_source_at；两者均不代表当前招生名额。",
+        "counted_at": "2026-11-15",
+        "last_source_at": "2026-11-15",
+        "oldest_source_at": "2026-09-05"
+      },
+      "gaps": [
+        "本单位缺已复核2027专业目录/院系政策；仅有学校通用章程，不能判断院系条件齐全。",
+        "2028届推免资格、名额与截止未在本批核验，须查看当前机会及后续官方通知。",
+        "2027院系复试细则、补充材料与时间仍需后续公告核对。",
+        "导师研究方向与联系方式仍有缺项；导师资格不等于当前招生名额。",
+        "缺经本轮复核的院系招生联系人；学校咨询渠道不等于导师联系方式。",
+        "尚无已核验的本单位2027专业代码清单，不依据院系名称推断招生专业。"
+      ]
+    }
+  ]
+}

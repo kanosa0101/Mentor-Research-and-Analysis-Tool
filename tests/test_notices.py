@@ -1,10 +1,44 @@
 import copy
 import unittest
+import json
+import tempfile
+from pathlib import Path
 
 from test_maintenance import script
 
 
 class NoticeTests(unittest.TestCase):
+    def test_refresh_preserves_failed_source_and_invalidates_changed_title_review(self):
+        monitor = script('monitor_notices')
+        configs = [dict(school=s, dept='cs', url=f'https://{s}.edu.cn/list',
+                        selector='a', title_selector='self') for s in ('ok', 'failed')]
+        old = {'notices': [dict(url=f'https://{s}.edu.cn/info', title='2027年推免通知',
+                    school=s, dept='cs', reviewed=True, admission_year=2027,
+                    deadline='2026-09-20', seen_in_latest_list=True) for s in ('ok', 'failed')],
+               'sources': {'failed/cs': {'url':configs[1]['url'], 'fetched_at':'2026-10-01'}}}
+        def source(cfg):
+            if cfg['school'] == 'failed':
+                raise ValueError('source offline')
+            return '<a href="/info">2027年统考初试安排</a>', {'fetched_at':'2026-11-15'}, False
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'notices.json'
+            path.write_text(json.dumps(old), encoding='utf-8')
+            result = monitor.collect(configs, path, refresh=True, fetcher=source)
+            rows = {r['school']: r for r in result['notices']}
+            self.assertFalse(rows['ok']['reviewed'])
+            self.assertIsNone(rows['ok']['admission_year'])
+            self.assertIsNone(rows['ok']['deadline'])
+            self.assertEqual(rows['failed'], old['notices'][1])
+            self.assertEqual(result['sources']['failed/cs']['fetched_at'], '2026-10-01')
+            self.assertEqual(result['summary']['sources_error'], 1)
+            self.assertEqual(json.loads(path.read_text(encoding='utf-8')), result)
+
+    def test_confirmation_and_exam_notices_are_collected(self):
+        monitor = script('monitor_notices')
+        cfg = dict(school='a',dept='cs',url='https://a.edu.cn/list',selector='a',title_selector='self')
+        rows = monitor.parse_list('<a href="/confirm">2027年硕士网上确认</a><a href="/exam">2027年初试科目调整</a>',cfg)
+        self.assertEqual(len(rows),2)
+
     def test_default_order_prioritizes_current_list_then_publication_date(self):
         monitor = script('monitor_notices')
         rows = [

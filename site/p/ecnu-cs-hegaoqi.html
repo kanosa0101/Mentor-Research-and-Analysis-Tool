@@ -72,23 +72,27 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261015-10"></head>
+<link rel="stylesheet" href="../ui.css?v=20261115-1"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
-<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<a class="site-brand" href="../start.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
+
+<a href="../start.html" >申请导航</a>
 
 <a href="../discovery.html" >找导师</a>
 
-<a href="../admissions.html" >学校与要求</a>
+<a href="../opportunities.html" >保研机会</a>
 
-<a href="../notices.html" >招生通知</a>
+<a href="../admissions.html" >学校与要求</a>
 
 <a href="../desk.html" >我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../notices.html" >招生通知</a>
 
 <a href="../index.html" >全量导师目录</a>
 
@@ -120,8 +124,8 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-09-04</span>
-    <span>字段来源最晚抓取：2026-09-05</span>
-
+    <span>字段来源最晚抓取：2026-11-15</span>
+<span>最近解析：2026-11-15</span>
 
   </div>
   <div style="clear:both"></div>
@@ -160,25 +164,27 @@ a:hover{text-decoration:underline}
 [3] 曾任SCI检索期刊Frontier of Computer Science的青年Associate Editor、上海计算机学会理事和上海计算机学会青工委副主任。
 [4] CCF YOCSEF上海荣誉委员。
 研究方向
-主要研究领域是计算机视觉、计算机图形学和AI4Science，与心理学、物理学开展深度交叉研究。具体包括：
+主要研究领域是计算机视觉、计算机图形学和具身智能，与心理学、物理学开展深度交叉研究。具体包括：
 （1）多模态场景智能理解；
-（2）大数据
+（2）
 交互可视分析
 和
 混合现实
 ；
-（3）知识驱动的场景仿真与数字孪生；
+（3）具身理解和协同；
 （4）可控情感数字人生成；
-（5）面向工业和科学计算的大模型。
-欢迎具有
-扎实的数学基础、较强的编程能力、能够静下心来从事科学研究
-的学生加入我们的团队！特别欢迎对计算机图形学感兴趣的本科生、研究生联系我！
+（5）面向工业和科学计算的智能体。
 招生与培养
+目前课题组包括全日制博士5人，硕士10人，已建立
+智能图形与具身协同校企联合实验室
+。欢迎具有
+扎实的数学基础、较强的编程能力、良好团队精神
+的学生加入我们的团队！特别欢迎对计算机图形学感兴趣的本科生、研究生联系我！欢迎同学申请直博生。
 开授课程
 本科生：
 算法分析与设计；专业英语；写作与表达
 研究生：
-计算机图形学的深度学习</div>
+图形和视觉前沿技术</div>
 </div>
 
 
@@ -201,7 +207,7 @@ a:hover{text-decoration:underline}
       <td>gqhe@cs.ecnu.edu.cn</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-09-04</td>
+      <td>2026-11-15</td>
       <td><a href="https://cs.ecnu.edu.cn/_redirect?siteId=499&amp;columnId=24531&amp;articleId=247721" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -221,7 +227,7 @@ a:hover{text-decoration:underline}
 [2]...</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-09-04</td>
+      <td>2026-11-15</td>
       <td><a href="https://cs.ecnu.edu.cn/_redirect?siteId=499&amp;columnId=24531&amp;articleId=247721" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -275,8 +281,11 @@ function fill(e){
   }
   try{
     const r = await fetch("/api/health");
-    if(!r.ok) throw 0;
-    const all = await fetch("/api/outreach").then(r=>r.json());
+    const health = await r.json();
+    if(!r.ok || health.mode === 'public') throw 0;
+    const response = await fetch("/api/outreach");
+    if(!response.ok) throw 0;
+    const all = await response.json();
     fill(all[PID]);
     ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
@@ -305,5 +314,5 @@ function fill(e){
   });
 })();
 </script>
-</body>
+<script src="../browser-library-core.js?v=20261115-5"></script><script src="../browser-library.js?v=20261115-5"></script></body>
 </html>

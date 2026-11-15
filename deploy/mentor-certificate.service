@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew Mentor Assistant IP certificate
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/mentor-assistant/.venv/bin/certbot renew --non-interactive --config-dir /opt/mentor-assistant/var/certbot --work-dir /opt/mentor-assistant/var/certbot-work --logs-dir /opt/mentor-assistant/var/certbot-logs --deploy-hook /opt/mentor-assistant/deploy/install_certificate.sh
+TimeoutStartSec=10min

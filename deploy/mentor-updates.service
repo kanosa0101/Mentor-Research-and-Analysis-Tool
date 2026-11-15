@@ -1,0 +1,18 @@
+[Unit]
+Description=Build public opportunity updates and deliver subscribed notifications
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/dispatch_updates.py
+TimeoutStartSec=30min
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/mentor-assistant/var/push
+ProtectHome=true
+PrivateTmp=true
+UMask=0077

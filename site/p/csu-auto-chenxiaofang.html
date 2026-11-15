@@ -72,23 +72,27 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261015-10"></head>
+<link rel="stylesheet" href="../ui.css?v=20261115-1"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
-<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<a class="site-brand" href="../start.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
+
+<a href="../start.html" >申请导航</a>
 
 <a href="../discovery.html" >找导师</a>
 
-<a href="../admissions.html" >学校与要求</a>
+<a href="../opportunities.html" >保研机会</a>
 
-<a href="../notices.html" >招生通知</a>
+<a href="../admissions.html" >学校与要求</a>
 
 <a href="../desk.html" >我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../notices.html" >招生通知</a>
 
 <a href="../index.html" >全量导师目录</a>
 
@@ -120,8 +124,8 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-10-14</span>
-    <span>字段来源最晚抓取：2026-10-14</span>
-<span>最近解析：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-11-15</span>
+<span>最近解析：2026-11-15</span>
 
   </div>
   <div style="clear:both"></div>
@@ -152,6 +156,11 @@ a:hover{text-decoration:underline}
   <div id="ob-history"></div>
 </details>
 
+<div class="card">
+  <h3>个人简介（官网原文）</h3>
+  <div class="bio">陈晓方，中南大学自动化学院三级教授，博士生导师，副院长。现为思源人工智能协同创新联盟理事会理事，中国自动化学会过程控制专委会委员和大数据专委会委员，中国有色金属学会自动化学术委员会委员，国家自然科学基金创新研究群体、湖南省优秀研究生导师团队和湖南省科技创新团队骨干成员。长期从事流程工业智能优化制造、知识自动化、工业大数据分析等方面研究，近年来主持国家自然科学基金重点项目1项，面上项目2项，参与国家自然科学基金创新研究群体、基础科学中心等多项国家重大重点项目。获得国家科技进步二等奖1项，湖南省自然科学一等奖1项，湖南省优秀研究生导师团队奖1项，湖南省创新团队奖1项，中国有色金属科学技术一等奖1项，其它省部级科技进步奖5项。发表SCI、EI和国内权威期刊高水平论文70余篇，授权发明专利16项，为工信部、中国工程院、有色金属工业学会等撰写战略技术咨询报告5份。</div>
+</div>
+
 
 <div class="card">
   <h3>字段出处 · PROVENANCE</h3>
@@ -172,7 +181,7 @@ a:hover{text-decoration:underline}
       <td>教授</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
+      <td>2026-11-15</td>
       <td><a href="http://faculty.csu.edu.cn/chenxiaofang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -183,6 +192,15 @@ a:hover{text-decoration:underline}
       <td class="c-auto">auto</td>
       <td>2026-10-14</td>
       <td><a href="https://soa.csu.edu.cn/szdw/jcrc.htm" target="_blank">原文 ↗</a></td>
+    </tr>
+
+    <tr>
+      <td>bio_raw</td>
+      <td>陈晓方，中南大学自动化学院三级教授，博士生导师，副院长。现为思源人工智能协同创新联盟理事会理事，中国自动化学会过程...</td>
+      <td class="o-crawled">crawled</td>
+      <td class="c-auto">auto</td>
+      <td>2026-11-15</td>
+      <td><a href="http://faculty.csu.edu.cn/chenxiaofang/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
   </table></div>
@@ -226,8 +244,11 @@ function fill(e){
   }
   try{
     const r = await fetch("/api/health");
-    if(!r.ok) throw 0;
-    const all = await fetch("/api/outreach").then(r=>r.json());
+    const health = await r.json();
+    if(!r.ok || health.mode === 'public') throw 0;
+    const response = await fetch("/api/outreach");
+    if(!response.ok) throw 0;
+    const all = await response.json();
     fill(all[PID]);
     ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
@@ -256,5 +277,5 @@ function fill(e){
   });
 })();
 </script>
-</body>
+<script src="../browser-library-core.js?v=20261115-5"></script><script src="../browser-library.js?v=20261115-5"></script></body>
 </html>

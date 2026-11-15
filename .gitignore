@@ -2,6 +2,8 @@ cache/
 __pycache__/
 *.pyc
 dist/
+var/
+/data/*.lock
 
 # 个人工作流数据(仓库公开, 不进 git)
 data/outreach.yaml

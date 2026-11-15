@@ -72,23 +72,27 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261015-10"></head>
+<link rel="stylesheet" href="../ui.css?v=20261115-1"></head>
 <body>
 
 <header class="top site-header"><div class="site-header-inner">
-<a class="site-brand" href="../discovery.html">◈ 导师库 · 申请助手</a>
+<a class="site-brand" href="../start.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
+
+<a href="../start.html" >申请导航</a>
 
 <a href="../discovery.html" >找导师</a>
 
-<a href="../admissions.html" >学校与要求</a>
+<a href="../opportunities.html" >保研机会</a>
 
-<a href="../notices.html" >招生通知</a>
+<a href="../admissions.html" >学校与要求</a>
 
 <a href="../desk.html" >我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+
+<a href="../notices.html" >招生通知</a>
 
 <a href="../index.html" >全量导师目录</a>
 
@@ -120,8 +124,8 @@ a:hover{text-decoration:underline}
   </dl>
   <div class="meta">
     <span>首次入库：2026-10-14</span>
-    <span>字段来源最晚抓取：2026-10-14</span>
-<span>最近解析：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-11-15</span>
+<span>最近解析：2026-11-15</span>
 
   </div>
   <div style="clear:both"></div>
@@ -180,8 +184,8 @@ More+</div>
       <td>信息安全系、网络空间安全学院</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
-      <td><a href="https://cse.hust.edu.cn/szdw/xxaqx.htm" target="_blank">原文 ↗</a></td>
+      <td>2026-11-15</td>
+      <td><a href="http://faculty.hust.edu.cn/DENGXIANJUN/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
     <tr>
@@ -189,7 +193,7 @@ More+</div>
       <td>—</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
+      <td>2026-11-15</td>
       <td><a href="http://faculty.hust.edu.cn/DENGXIANJUN/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -199,7 +203,7 @@ More+</div>
 Personal...</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
+      <td>2026-11-15</td>
       <td><a href="http://faculty.hust.edu.cn/DENGXIANJUN/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -208,7 +212,7 @@ Personal...</td>
       <td>—</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
+      <td>2026-11-15</td>
       <td><a href="http://faculty.hust.edu.cn/DENGXIANJUN/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -217,7 +221,7 @@ Personal...</td>
       <td>物联网安全，社交网络安全，网络攻击检测与防御，隐私保护与可信推荐，网络可靠性</td>
       <td class="o-crawled">crawled</td>
       <td class="c-auto">auto</td>
-      <td>2026-10-14</td>
+      <td>2026-11-15</td>
       <td><a href="http://faculty.hust.edu.cn/DENGXIANJUN/zh_CN/index.htm" target="_blank">原文 ↗</a></td>
     </tr>
 
@@ -262,8 +266,11 @@ function fill(e){
   }
   try{
     const r = await fetch("/api/health");
-    if(!r.ok) throw 0;
-    const all = await fetch("/api/outreach").then(r=>r.json());
+    const health = await r.json();
+    if(!r.ok || health.mode === 'public') throw 0;
+    const response = await fetch("/api/outreach");
+    if(!response.ok) throw 0;
+    const all = await response.json();
     fill(all[PID]);
     ["ob-status","ob-notes","ob-save","ob-next","ob-due","ob-tags"].forEach(i => $(i).disabled = false);
   }catch(e){
@@ -292,5 +299,5 @@ function fill(e){
   });
 })();
 </script>
-</body>
+<script src="../browser-library-core.js?v=20261115-5"></script><script src="../browser-library.js?v=20261115-5"></script></body>
 </html>

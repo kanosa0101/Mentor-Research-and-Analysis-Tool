@@ -8,3 +8,6 @@ pypinyin>=0.55,<1
 playwright>=1.40,<2
 openpyxl>=3.1,<4
 # 图片邮箱 OCR 仅维护采集时可选，不属本机运行必需。
+
+# Official PDF announcement text extraction.
+pypdf>=5,<8

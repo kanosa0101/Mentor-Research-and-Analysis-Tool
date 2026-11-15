@@ -18,13 +18,24 @@ FIXED = {
     'docs/DATA_SNAPSHOT.json', 'scripts/serve.py', 'scripts/build_site.py',
     'scripts/package_release.py', 'sites/notices.yaml', 'data/schools.yaml',
     'data/admissions.yaml', 'data/admissions_entries.yaml',
-    'data/admissions_checks.json', 'data/notices.json',
+    'data/admissions_checks.json', 'data/notices.json', 'data/opportunities.json',
+    'scripts/monitor_opportunities.py', 'scripts/monitor_notices.py', '启动信息监测.cmd', 'sites/opportunities.yaml', 'data/opportunity_feed.json',
+    'scripts/review_opportunities.py', 'scripts/refresh_legacy.py',
+    'deploy/DELIVERY_V1.2_2026-11-15.md',
+    'deploy/DELIVERY_V1.3_2026-11-15.md',
+    'deploy/DELIVERY_V1.4_2026-11-15.md',
+    'deploy/DELIVERY_V1.5_2026-11-15.md', 'data/coverage.json',
+    'scripts/serve_review.py',
 }
 PATTERNS = (
-    'crawler/*.py', 'sites/*/*.yaml', 'site/*.html', 'site/*.js', 'site/*.css',
+    'crawler/*.py', 'sites/*/*.yaml', 'sites/*.py', 'sites/*/*.py', 'site/*.html', 'site/*.js', 'site/*.css',
     'site/templates/*.j2', 'site/p/*.html', 'data/professors/*/*/*.yaml',
+    'docs/history/pre-v1.5/*.md', 'docs/history/pre-v1.5/*.json',
+    'docs/history/pre-v1/*.md',
 )
 REQUIRED_SITE = {
+    'site/start.html', 'site/coverage.html', 'site/start.js',
+    'site/browser-library-core.js', 'site/browser-library.js', 'site/public-data.js',
     'site/release.html', 'site/index.html', 'site/discovery.html',
     'site/admissions.html', 'site/applications.html', 'site/desk.html',
     'site/board.html', 'site/compare.html', 'site/notices.html', 'site/data.js',

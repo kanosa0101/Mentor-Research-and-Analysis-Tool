@@ -1,0 +1,8 @@
+[Unit]
+Description=Refresh bounded public mentor and policy batches hourly
+[Timer]
+OnBootSec=10min
+OnCalendar=*-*-* *:20:00
+Persistent=true
+[Install]
+WantedBy=timers.target

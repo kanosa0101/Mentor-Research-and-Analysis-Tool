@@ -39,35 +39,43 @@ bio_raw: '个人简介
   of bluetooth low energy[J]. Journal of Computer Science and Technology, 2023, 38(5):
   1132-1148. （CCF-B）
 
-  [5] An Z, Zhang C, Zhao Y, et al. MixPincer: A Discrepancy-Based Adversarial Learning
+  [5] Yu J, Wang Y, Cao P, et al. TAME: A Deep Learning-based Blind Side-Channel Analysis
+  Framework[J]. IACR Transactions on Cryptographic Hardware and Embedded Systems,
+  2026, 2026(4): 632-655.（CCF-B, 密码工程领域顶会）
+
+  [6] An Z, Zhang C, Zhao Y, et al. MixPincer: A Discrepancy-Based Adversarial Learning
   Framework for Cross-Device Profiled Side-Channel Analysis[C]. European Symposium
   on Research in Computer Security (ESORICS), 2026. (CCF-B)
 
-  [6] Wang Y, Yu J, Cao P, et al. CAPE: Cross-Block Deep Learning Framework for Non-Profiled
+  [7] Wang Y, Yu J, Cao P, et al. CAPE: Cross-Block Deep Learning Framework for Non-Profiled
   Side-Channel Analysis[C]. European Symposium on Research in Computer Security (ESORICS),
   2026. (CCF-B)
 
-  [7] Zhang N, Wang T, Chen C, et al. A Holistic PS-PL-AIE Co-Design for ML-KEM and
+  [8] Zhang N, Wang T, Chen C, et al. A Holistic PS-PL-AIE Co-Design for ML-KEM and
   ML-DSA on Versal AI Platforms[C]. The 28th International Conference on Information
   and Communications Security (ICICS), 2026. (CCF-C)
 
-  [8] Yu J, Wang Y, Qu S, et al. Efficient End-to-End Non-Profiled Side-Channel Analysis
+  [9] Wang X, Cao P, Zhang C,  Gu D and Ji J. PIPE-SCD: Pipeline-Aware Side-Channel
+  Disassembly of Multi-Instruction Power Traces[C]. The 28th International Conference
+  on Information and Communications Security (ICICS), 2026. (CCF-C)
+
+  [10] Yu J, Wang Y, Qu S, et al. Efficient End-to-End Non-Profiled Side-Channel Analysis
   on Long Raw Traces[C]. European Symposium on Research in Computer Security (ESORICS),
   2025. (CCF-B)
 
-  [9] Wang T, Zhang C, Zhang X, et al. Optimized Hardware-Software Co-Design for Kyber
-  and Dilithium on RISC-V SoC FPGA[J]. IACR Transactions on Cryptographic Hardware
+  [11] Wang T, Zhang C, Zhang X, et al. Optimized Hardware-Software Co-Design for
+  Kyber and Dilithium on RISC-V SoC FPGA[J]. IACR Transactions on Cryptographic Hardware
   and Embedded Systems, 2024, 2024(3): 99-135. （CCF-B, 密码工程领域顶会）
 
-  [10] Zhang C, Lu X, Cao P, et al. A nonprofiled side-channel analysis based on variational
+  [12] Zhang C, Lu X, Cao P, et al. A nonprofiled side-channel analysis based on variational
   lower bound related to mutual information[J]. Science China Information Sciences,
   2023, 66(1): 112302. （CCF-A）
 
-  [11] Lu X, Zhang C, Cao P, et al. Pay attention to raw traces: A deep learning architecture
+  [13] Lu X, Zhang C, Cao P, et al. Pay attention to raw traces: A deep learning architecture
   for end-to-end profiling attacks[J]. IACR Transactions on Cryptographic Hardware
   and Embedded Systems, 2021: 235-274. （CCF-B, 密码工程领域顶会）
 
-  [12] Wang T, Zhang C, Cao P, et al. Efficient implementation of dilithium signature
+  [14] Wang T, Zhang C, Cao P, et al. Efficient implementation of dilithium signature
   scheme on FPGA SoC platform[J]. IEEE Transactions on Very Large Scale Integration
   (VLSI) Systems, 2022, 30(9): 1158-1171. （CCF-B）
 
@@ -110,26 +118,28 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/caopei.html
+    fetched_at: '2026-11-15'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/caopei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-15'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/caopei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-15'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/caopei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-15'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/caopei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

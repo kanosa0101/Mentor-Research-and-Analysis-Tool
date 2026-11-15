@@ -1,0 +1,205 @@
+"""Bounded public-data refresh; source access never rewrites a human review date."""
+import copy
+import hashlib
+import importlib.util
+import itertools
+import json
+import os
+import tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+import requests
+import yaml
+from bs4 import BeautifulSoup, UnicodeDammit
+
+from crawler import admissions_util
+from crawler.email_util import normalize_email
+from crawler.model import Professor
+from crawler.opportunity_monitor import atomic_json, output_lock
+from crawler.title_util import normalize_title
+
+FIELDS = ('title', 'supervisor', 'subjects', 'email', 'homepage', 'photo_url',
+          'phone', 'office_address', 'bio_raw', 'research_direction_raw', 'institutes')
+
+
+def fetch_source(source, timeout=20):
+    with requests.Session() as session:
+        session.trust_env = False
+        response = session.request(source.get('method', 'GET'), source.get('api') or source['url'],
+                                   json=source.get('json'), timeout=timeout,
+                                   headers={'User-Agent': 'Mozilla/5.0 (public data refresh)'})
+        response.raise_for_status()
+        if response.status_code != 200:
+            raise ValueError('Source did not return HTTP 200')
+        return response.content
+
+
+def write_yaml(path, data):
+    fd, name = tempfile.mkstemp(dir=path.parent, suffix='.tmp')
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+            yaml.safe_dump(data, stream, allow_unicode=True, sort_keys=False)
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+def merge_profile(original, parsed, body, day):
+    text = ''.join(BeautifulSoup(body, 'html.parser').get_text().split())
+    if ''.join(original['name'].split()) not in text:
+        raise ValueError('导师姓名未出现在返回正文，保留旧记录')
+    parsed = dict(parsed)
+    if not parsed.get('research_direction_raw') and parsed.get('research_directions'):
+        parsed['research_direction_raw'] = '、'.join(parsed['research_directions'])
+    if parsed.get('institute_from_detail'):
+        parsed['institutes'] = list(dict.fromkeys(original.get('institutes', []) + parsed['institute_from_detail']))
+    if parsed.get('email'):
+        parsed['email'] = normalize_email(parsed['email'])
+    if parsed.get('title'):
+        parsed['title'], _ = normalize_title(parsed['title'])
+    if not any(parsed.get(k) for k in FIELDS):
+        raise ValueError('未解析出可用详情字段，保留旧记录')
+    result = copy.deepcopy(original)
+    provenance = result.setdefault('provenance', {})
+    changed = []
+    checked = []
+    for field in FIELDS:
+        value = parsed.get(field)
+        if not value or provenance.get(field, {}).get('origin') == 'manual':
+            continue
+        if result.get(field) != value:
+            changed.append(field)
+        result[field] = value
+        provenance[field] = dict(origin='crawled', source=original['detail_url'], fetched_at=day, confidence='auto')
+        checked.append(field)
+    if not checked:
+        raise ValueError('可解析字段均为人工维护，本轮不改来源日期')
+    result['last_fetched'] = day
+    result['last_parsed'] = day
+    if result.get('status') != 'verified':
+        result['status'] = 'enriched'
+    # last_verified is a separate historical assertion, not the transport timestamp.
+    Professor.model_validate(result)
+    return result, changed, checked
+
+
+def load_hook(root, cfg):
+    for directory in (root / 'sites' / cfg['school'], root / 'sites'):
+        path = directory / (cfg['hook'] + '.py')
+        if path.exists():
+            spec = importlib.util.spec_from_file_location('legacy_' + cfg['hook'], path)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            return module
+    raise ValueError('未找到详情解析器')
+
+
+def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=False, fetcher=None, now=None, priority_units=()):
+    root = Path(root)
+    now = now or datetime.now(timezone.utc)
+    stamp = now.isoformat(timespec='seconds')
+    day = now.astimezone(timezone(timedelta(hours=8))).date().isoformat()
+    cache = root / 'cache/legacy_refresh'
+    state_path = cache / 'state.json'
+    fetcher = fetcher or (lambda source: fetch_source(source, timeout))
+    with output_lock(state_path):
+        state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {'version': 1, 'records': {}}
+        records = state['records']
+        results = []
+
+        def due(key):
+            if records.get(key, {}).get('status') == 'manual_required' and not retry:
+                return False
+            attempted = records.get(key, {}).get('last_attempt')
+            return retry or not attempted or (now - datetime.fromisoformat(attempted)).total_seconds() >= 86400
+
+        def record(key, value):
+            records[key] = dict(records.get(key, {}), **value, last_attempt=stamp)
+            results.append(dict(id=key, **records[key]))
+            atomic_json(state_path, state)
+
+        def evidence(key, raw):
+            digest = hashlib.sha256(raw).hexdigest()
+            folder = cache / 'evidence'
+            folder.mkdir(parents=True, exist_ok=True)
+            (folder / (digest + '.body')).write_bytes(raw)
+            return digest
+
+        if kind in ('all', 'policies'):
+            data = yaml.safe_load((root / 'data/admissions.yaml').read_text(encoding='utf-8'))
+            path = root / 'data/admissions_checks.json'
+            checks = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+            sources = sorted(data['sources'].items(), key=lambda pair: (
+                0 if retry and records.get('policy/' + pair[0], {}).get('status') == 'error' else 1,
+                records.get('policy/' + pair[0], {}).get('last_attempt', ''), pair[0]))
+            if units:
+                allowed = {sid for p in data['policies'] if p['school'] + '/' + p['dept'] in units for sid in p['review_hashes']}
+                sources = [(sid, src) for sid, src in sources if sid in allowed]
+            selected = [(sid, src) for sid, src in sources if due('policy/' + sid)][:limit]
+            def check(pair):
+                sid, src = pair
+                result = dict(checks.get(sid, {}), last_attempt=day)
+                try:
+                    raw = fetcher(src)
+                    digest = admissions_util.fingerprint(raw, src)
+                    raw_hash = evidence(sid, raw)
+                    result.update(status='ok', hash=digest, last_success=day, cached=False, error=None)
+                    return sid, result, {'status': 'ok', 'source_url': src['url'], 'last_success': stamp, 'raw_sha256': raw_hash, 'content_sha256': digest}
+                except Exception as error:
+                    result.update(status='error', error=str(error)[:500])
+                    return sid, result, {'status': 'error', 'source_url': src['url'], 'error': str(error)[:500]}
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for future in as_completed([pool.submit(check, pair) for pair in selected]):
+                    sid, observation, report = future.result()
+                    checks[sid] = observation
+                    admissions_util.validate_checks(checks, data['sources'])
+                    atomic_json(path, checks)
+                    record('policy/' + sid, report)
+
+        if kind in ('all', 'professors'):
+            folders = sorted((root / 'data/professors').glob('*/*'))
+            batches = [sorted(folder.glob('*.yaml')) for folder in folders
+                       if not units or '/'.join(folder.parts[-2:]) in units]
+            paths = [path for group in itertools.zip_longest(*batches) for path in group if path]
+            paths.sort(key=lambda path: (
+                0 if retry and records.get('professor/' + '/'.join(path.parts[-3:]), {}).get('status') in ('error', 'manual_required') else 1,
+                records.get('professor/' + '/'.join(path.parts[-3:]), {}).get('last_attempt', '')))
+            pending = [path for path in paths if due('professor/' + '/'.join(path.parts[-3:]))]
+            # Reserve at most half the batch for current applications; keep a fair full-library rotation.
+            priority = [path for path in pending if '/'.join(path.parts[-3:-1]) in priority_units][:limit // 2]
+            selected = priority + [path for path in pending if path not in priority][:limit-len(priority)]
+            hooks = {}
+            for path in selected:
+                key = 'professor/' + '/'.join(path.parts[-3:])
+                original = yaml.safe_load(path.read_text(encoding='utf-8'))
+                try:
+                    unit = original['school'] + '/' + original['dept']
+                    if unit not in hooks:
+                        cfg = yaml.safe_load((root / 'sites' / original['school'] / (original['dept'] + '.yaml')).read_text(encoding='utf-8'))
+                        hooks[unit] = cfg, None if cfg.get('roster_only') else load_hook(root, cfg)
+                    cfg, hook = hooks[unit]
+                    if cfg.get('roster_only') or not callable(getattr(hook, 'parse_detail', None)):
+                        record(key, {'status': 'manual_required', 'source_url': original['detail_url'],
+                                     'reason': '当前配置仅支持名单或未提供详情解析器；需维护者处理，修复后用 --retry 复检。',
+                                     'error': None})
+                        continue
+                    raw = fetcher({'url': original['detail_url']})
+                    raw_hash = evidence(key, raw)
+                    html = UnicodeDammit(raw).unicode_markup
+                    if not html:
+                        raise ValueError('无法解码导师正文')
+                    parsed = hook.parse_detail(cfg, html, original['detail_url'])
+                    updated, changed, checked = merge_profile(original, parsed, raw, day)
+                    write_yaml(path, updated)
+                    record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
+                                 'raw_sha256': raw_hash, 'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
+                except Exception as error:
+                    record(key, {'status': 'error', 'source_url': original['detail_url'], 'error': str(error)[:500]})
+        report = {'version': 1, 'completed_at': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'kind': kind,
+                  'attempted': len(results), 'ok': sum(r['status'] == 'ok' for r in results),
+                  'error': sum(r['status'] == 'error' for r in results),
+                  'manual_required': sum(r['status'] == 'manual_required' for r in results), 'results': results}
+        atomic_json(cache / 'latest.json', report)
+        return report

@@ -1,0 +1,31 @@
+[Unit]
+Description=Check official mentor application opportunities
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+Environment=TZ=UTC
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/monitor_opportunities.py --config /opt/mentor-assistant/sites/opportunities.yaml --opportunities /opt/mentor-assistant/data/opportunities.json --output /opt/mentor-assistant/cache/opportunities_live.json
+ExecStartPost=/opt/mentor-assistant/.venv/bin/python scripts/review_opportunities.py sync
+SuccessExitStatus=1
+TimeoutStartSec=45min
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/mentor-assistant/cache
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+UMask=0077
+StandardOutput=journal
+StandardError=journal

@@ -1,4 +1,4 @@
-# 官方招生栏目当前页监测，非历史全量。
+# 招生通知官方栏目，覆盖统考、推免与科研活动；与机会监测共享已核对的栏目入口。
 targets:
 - school: tsinghua
   dept: cs
@@ -29,9 +29,11 @@ targets:
 - school: buaa
   dept: cyber
   name: 北航网络空间安全学院
-  url: https://cst.buaa.edu.cn/yjsjy/zsgz.htm
-  selector: a[href*="/info/1125/"]
-  title_selector: self
+  url: https://cst.buaa.edu.cn/rcpy/yjsjy1/zsgz.htm
+  selector: li a[href*="/info/1137/"]
+  title_selector: h3
+  date_selector: span
+  source_note: 2026-11-15修复官网栏目迁移；原yjsjy/zsgz.htm返回404。
 - school: pku
   dept: sai
   name: 北大智能学院
@@ -135,3 +137,145 @@ targets:
   selector: li.news .news_title a[href*="/page.htm"]
   title_selector: self
   date_selector: .news_meta
+- school: pku
+  dept: ai4s
+  name: 北京大学深圳研究生院科学智能学院
+  url: https://ai4s.pkusz.edu.cn/xydt/tzgg1.htm
+  selector: li a[href*="/info/1007/"]
+  title_selector: p.line1
+  date_selector: .data
+  source_note: 栏目含博士后等非本科申请通知；人工核对对象。日期格式为MM-DD YYYY，旧解析器保留未知。
+- school: ucas
+  dept: sia
+  name: 中国科学院沈阳自动化研究所
+  url: https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/
+  selector: li a[href*="/t20"]
+  title_selector: self
+  date_selector: span.right
+- school: ucas
+  dept: cnic
+  name: 中国科学院计算机网络信息中心
+  url: https://cnic.cas.cn/yjsjy/tzgg/
+  selector: a.title-s
+  title_selector: self
+  date_selector: .date-s
+  source_note: 日期在a同级div.box-s内，旧解析器未取日期时保留未知。
+- school: ucas
+  dept: ict
+  name: 中国科学院计算技术研究所
+  url: https://www.ict.ac.cn/yjsjy/zsxx/sszs/
+  selector: li a[href*="/t20"]
+  title_selector: self
+  date_selector: span.pull-right
+  source_note: 同域候选；国科大招生目录等跨域链接不自动收录。
+- school: ucas
+  dept: ihep
+  name: 中国科学院高能物理研究所
+  url: https://ihep.cas.cn/edu/bks/xly/
+  selector: li.li a[href*="/t20"]
+  title_selector: self
+  date_selector: span
+  source_note: 无www官方目录可访问，当前页仅2026夏令营；未见2027冬令营不代表未发布，冬令营正文仍待回源核验。
+- school: bit
+  dept: cs
+  name: 北京理工大学计算机学院
+  url: https://cs.bit.edu.cn/tzgg/
+  selector: li a.item[href$=".htm"]
+  title_selector: .title
+  date_selector: .time_box
+  source_note: 综合通知栏目；日期按官网YYYY MM.DD分行格式解析，不从标题年份推断。
+- school: nju
+  dept: cs
+  name: 南京大学计算机学院
+  url: https://cs.nju.edu.cn/1702/list.htm
+  selector: li.news .news_title a[href*="/page.htm"]
+  title_selector: self
+  date_selector: .news_meta
+- school: ucas
+  dept: ia
+  name: 中国科学院自动化研究所
+  url: https://ia.cas.cn/yjsjy/zs/sszs/
+  selector: li a[href*="/t20"]
+  title_selector: self
+  date_selector: .data-s
+- school: ucas
+  dept: iscas
+  name: 中国科学院软件研究所
+  url: https://www.iscas.ac.cn/yjsjy/zsxx/
+  selector: li a[href*="/t20"]
+  title_selector: self
+  date_selector: .date
+  source_note: 使用TLS验证通过的iscas.ac.cn官方域名，与已核验活动正文统一；iscas.cas.cn、is.cas.cn别名亦经栏目内容核对。
+- school: ucas
+  dept: iie
+  name: 中国科学院信息工程研究所
+  url: https://iie.cas.cn/xsjy/zxtz/
+  selector: li a[href*="/t20"]
+  title_selector: dt
+  date_selector: dd
+  source_note: xsjy根页为JavaScript跳转，使用跳转后的最新通知栏目；同域候选，跨栏目绝对官方链接仍收录。
+- school: ustc
+  dept: cs
+  name: 中国科学技术大学计算机科学与技术学院
+  url: https://cs.ustc.edu.cn/20160/list.htm
+  selector: li.news .news_title a[href*="/page.htm"]
+  title_selector: self
+  date_selector: .news_meta
+  source_note: 活动使用暑期科学营命名；跨域研究生院入口不自动作为候选。
+- school: buaa
+  dept: cs
+  name: 北京航空航天大学计算机学院
+  url: https://scse.buaa.edu.cn/xwdt/gggs.htm
+  selector: li a[href*="/info/1093/"]
+  title_selector: h3
+  date_selector: span
+  source_note: 官网改版后旧研究生招生栏目返回404，当前招生通知发布于公告公示。
+- school: buaa
+  dept: software
+  name: 北京航空航天大学软件学院
+  url: https://soft.buaa.edu.cn/xwdt/gggs/tzgg.htm
+  selector: li a[href*="/info/1095/"]
+  title_selector: h3
+  date_selector: span
+  source_note: 栏目包含MEM等非本科申请通知；发现后仍需核对招生对象，不自动视为保研活动。
+- school: bnu
+  dept: ai
+  name: 北京师范大学人工智能学院
+  url: https://ai.bnu.edu.cn/ggjxz/tzgg/index.htm
+  selector: li a:has(.tz-txt)
+  title_selector: .tz-txt p
+  date_selector: .tz-date
+  source_note: 学院科研实习与研究生通知并列；校内通知不能自动解释为面向外校。日期为日+YYYY.MM。
+- school: uestc
+  dept: admissions
+  name: 电子科技大学研究生招生（硕士通知）
+  url: https://yz.uestc.edu.cn/sszs/tzgg.htm
+  selector: li a[href*="info/1007/"]
+  title_selector: self
+  date_selector: .date
+  source_note: 学校级入口，包含各学院汇总，不等于独立新增院系或当前保研开放。
+- school: uestc
+  dept: camps
+  name: 电子科技大学各学院夏令营汇总
+  url: https://yz.uestc.edu.cn/zsxc1/xly.htm
+  selector: li a[href*="info/1064/"]
+  title_selector: self
+  date_selector: .date
+  source_note: 汇总入口页面标题年与官方发布日期可能不同；不由标题推断发布或申请年份。
+- school: slai
+  dept: admissions
+  name: 深圳河套学院招生资讯
+  url: https://www.slai.edu.cn/zh-hans/taxonomy/term/104
+  selector: .card-title a[href*="/article/"]
+  title_selector: self
+  date_parent_selector: .card-1-5
+  date_selector: .card-date
+  source_note: 包含深瞳本科科研训练与博士联培资讯；第四期已于2026-11-13截止，未来新批次需重新核验。
+- school: tongji
+  dept: ee
+  name: 同济大学电子与信息工程学院
+  url: https://see.tongji.edu.cn/jxgz/yjsjx/zsgz.htm
+  selector: li a[href*="info/1173/"]
+  title_selector: self
+  date_selector: span
+  source_note: 控制、电子信息等CS相关招生；复试成绩和公示不是新报名入口。

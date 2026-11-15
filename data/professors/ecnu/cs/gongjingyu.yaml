@@ -81,10 +81,18 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/gjy2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-15'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/gjy2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/gjy2/main.psp
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 计算机三维视觉、计算机图形学，围绕三维场景重建、感知、理解以及数字人物建模与驱动等问题开展技术探索
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

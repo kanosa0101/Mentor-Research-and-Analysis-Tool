@@ -12,6 +12,8 @@ sys.path.insert(0, str(ROOT))
 
 from crawler import store
 from crawler import admissions_util
+from crawler import opportunity_util
+from crawler.notice_util import annotate_notices
 from crawler.admissions_entries import load_catalog, load_entries
 from crawler.unit_util import groups, GROUPS
 
@@ -142,6 +144,19 @@ def main():
     write_html(SITE / 'applications.html', env.get_template('applications.html.j2').render())
     write_html(SITE / 'desk.html', env.get_template('desk.html.j2').render())
     write_html(SITE / 'discovery.html', env.get_template('discovery.html.j2').render())
+    opportunities = opportunity_util.load(ROOT)
+    payload = json.dumps(opportunities, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
+    write_html(SITE / 'opportunities.html', env.get_template('opportunities.html.j2').render())
+    write_html(SITE / 'local.html', env.get_template('local.html.j2').render())
+    write_html(SITE / 'start.html', env.get_template('start.html.j2').render())
+    coverage_path = ROOT / 'data/coverage.json'
+    if coverage_path.exists():
+        coverage = json.loads(coverage_path.read_text(encoding='utf-8'))
+        school_names = {s['id']: s['name'] for s in yaml.safe_load((ROOT / 'data/schools.yaml').read_text(encoding='utf-8'))['schools']}
+        for unit in coverage['units']:
+            unit['school_name'] = school_names.get(unit['school'], unit['school'])
+        write_html(SITE / 'coverage.html', env.get_template('coverage.html.j2').render(coverage=coverage, safe_url=safe_url))
     admission_file = ROOT / 'data/admissions.yaml'
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
     configured_schools, units = load_catalog(ROOT)
@@ -179,7 +194,9 @@ def main():
     nf = ROOT / 'data/notices.json'
     if nf.exists():
         notices = json.loads(nf.read_text(encoding='utf-8'))
-        html = env.get_template('notices.html.j2').render(notices=notices['notices'], sources=notices['sources'])
+        html = env.get_template('notices.html.j2').render(
+            notices=annotate_notices(notices['notices'], opportunities=opportunity_util.load(ROOT)['opportunities']),
+            sources=notices['sources'])
         write_html(SITE / 'notices.html', html)
     for r in profs:
         html = env.get_template("detail.html.j2").render(p=r)

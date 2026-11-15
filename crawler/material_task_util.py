@@ -225,7 +225,7 @@ def action_view(pid, goal, policy, action, context, records):
     return dict(policy_id=policy['id'], policy_title=policy['title'], action_id=action['id'], action=copy.deepcopy(action),
                 action_fingerprint=fingerprint, goal_snapshot=copy.deepcopy(goal), conditions=conditions, program_pending=pending,
                 quality=q, events=events, latest_record_id=latest, applicable=applicable, applicability_reasons=reasons,
-                can_record=applicable and q['state'] == 'checked'), dict(source_id=policy['source_id'], sources=sources, scope=scope, conditions=conditions)
+                can_record=applicable and q['state'] in ('checked', 'stale', 'review')), dict(source_id=policy['source_id'], sources=sources, scope=scope, conditions=conditions)
 
 
 def actions(data, context):
@@ -301,7 +301,7 @@ def view(data, context):
     return {'version': 1, 'actions': rows, 'records': {key: record_view(entry, data, rows) for key, entry in data.get('material_tasks', {}).items()}}
 
 
-def checked_action(data, context, pid, expected_goal, policy_id, action_id, expected_action):
+def checked_action(data, context, pid, expected_goal, policy_id, action_id, expected_action, *, require_current=False):
     reviews.validate_goal(expected_goal)
     if pid not in data['projects']:
         raise KeyError('未知申请项目')
@@ -310,6 +310,8 @@ def checked_action(data, context, pid, expected_goal, policy_id, action_id, expe
     row = next((r for r in actions(data, context)[pid] if r['policy_id'] == policy_id and r['action_id'] == action_id), None)
     if row is None or row['action_fingerprint'] != expected_action or not row['can_record']:
         raise Conflict('材料动作、适用范围或来源已改变或待核对，请刷新后重新核对')
+    if require_current and row['quality']['state'] != 'checked':
+        raise Conflict('官方事项来源需重新核对，暂不能据此创建提醒；个人准备记录仍可保存')
     policy = next(p for p in context['policies'] if p['id'] == policy_id)
     _, sources = action_view(pid, expected_goal, policy, row['action'], context, data.get('material_tasks', {}))
     return row, sources
@@ -348,7 +350,7 @@ def reminder(data, key, body, known_ids, context):
     if key not in data.get('material_tasks', {}):
         raise KeyError('未知材料进度记录')
     entry = data['material_tasks'][key]
-    row, _ = checked_action(data, context, entry['project_id'], body['expected_goal'], entry['policy_id'], entry['action_id'], body['expected_action'])
+    row, _ = checked_action(data, context, entry['project_id'], body['expected_goal'], entry['policy_id'], entry['action_id'], body['expected_action'], require_current=True)
     if entry['goal_snapshot'] != row['goal_snapshot'] or entry['action_fingerprint'] != row['action_fingerprint']:
         raise Conflict('材料进度快照已失效，请重新登记')
     if row['conditions'] and not entry['confirmed_conditions']:

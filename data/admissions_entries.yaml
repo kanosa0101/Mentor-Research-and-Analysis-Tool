@@ -93,18 +93,18 @@ entries:
 - school: buaa
   dept: cs
   source_id: buaa_cs_entry_v15a
-  reviewed_at: '2026-10-15'
-  note: 当前栏目含2027推免；统考附加科目及复试材料仍须2027目录/后续细则
+  reviewed_at: '2026-11-15'
+  note: 官网栏目已迁移，本次已核对新入口；具体年度、资格、材料与日期以对应官方公告为准。
 - school: buaa
   dept: cyber
   source_id: buaa_cyber_entry_v15a
-  reviewed_at: '2026-10-15'
-  note: 当前学院招生栏目；2027第四单元408公告另已实时核对
+  reviewed_at: '2026-11-15'
+  note: 官网栏目已迁移，本次已核对新入口；具体年度、资格、材料与日期以对应官方公告为准。
 - school: hit
   dept: ''
   source_id: hit_school_entry_v15b
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 学校层招生栏目；须继续查看对应年度、渠道及院系附加要求。
 - school: xjtu
   dept: ''
@@ -156,7 +156,7 @@ entries:
   source_id: uestc_cs_directory_v15b
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 实际院系招生栏目/2027院系目录入口，不等于院系完整条件已整理；不同招生渠道及旧轮次须分别核对。
 - school: tju
   dept: cs
@@ -245,8 +245,8 @@ entries:
   source_id: sustech_api3579_v15c
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
-  note: 当前学校2027硕士招生章程；院系及专业要求仍需核对。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: scu
   dept: cs
   source_id: scu_units_v15c
@@ -262,8 +262,8 @@ entries:
   source_id: school_page
   year: 2027
   degree: master
-  reviewed_at: '2026-10-14'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: tsinghua
   dept: cs
   source_id: dept_page
@@ -278,16 +278,16 @@ entries:
   year: 2027
   degree: master
   route: exam
-  reviewed_at: '2026-10-14'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: buaa
   dept: cyber
   source_id: buaa_cyber_exam
   year: 2027
   degree: master
   route: exam
-  reviewed_at: '2026-10-14'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15核实官网迁移后的2027硕士408考试科目公告；仅确认考试科目，不是招生报名入口。
 - school: tsinghua
   dept: auto
   source_id: tsinghua_auto_recommend
@@ -315,7 +315,7 @@ entries:
   source_id: hust_school_exam_page_v7
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: bit
   dept: ''
@@ -338,60 +338,60 @@ entries:
   year: 2027
   degree: master
   route: exam
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: sjtu
   dept: ''
   source_id: sjtu_2027_charter_v14
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: ucas
   dept: ''
   source_id: ucas_2027_charter_v14
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: csu
   dept: ''
   source_id: v14_units_csu_school
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: seu
   dept: ''
   source_id: v14_units_seu_school
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: whu
   dept: ''
   source_id: v14_units_whu_school
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: whu
   dept: cyber
   source_id: v14_units_whu_cyber_quota
   year: 2027
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: whu
   dept: cyber
   source_id: v14_units_whu_cyber_dir
-  reviewed_at: '2026-10-15'
-  note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
+  reviewed_at: '2026-11-15'
+  note: 2026-11-15已回源复核对应2027硕士统考章程、目录或报名细则；报名期已过，现用于备考及资格材料核对，不代表2028推免政策或完整院系覆盖。
 - school: seu
   dept: ''
   source_id: v14_units_seu_special
   year: 2027
   degree: master
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027入学年度master/exam章程或细则原文发布入口；沿用原政策核对日，不代表最新招生栏目或全部年度政策覆盖。
 - school: csu
   dept: auto
@@ -443,7 +443,7 @@ entries:
 - school: nudt
   dept: cs
   source_id: nudt_pdf_3_v15extra
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
   year: 2027
   degree: master
@@ -465,7 +465,7 @@ entries:
 - school: nudt
   dept: ai
   source_id: nudt_pdf_3_v15extra
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 正式2027目录/大纲入口；需按本院专业和身份阅读，不等于院系细则齐全。
   year: 2027
   degree: master
@@ -480,14 +480,14 @@ entries:
 - school: nwpu
   dept: cs
   source_id: nwpu_2027_master_charter_v18
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027硕士学校总则/网报公开原文；非院系完整细则，6112点材料仅选该点者适用。
   year: 2027
   degree: master
 - school: nwpu
   dept: cs
   source_id: nwpu_2027_master_registration_v18
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   note: 2027硕士学校总则/网报公开原文；非院系完整细则，6112点材料仅选该点者适用。
   year: 2027
   degree: master
@@ -546,8 +546,8 @@ entries:
 - school: sdu
   dept: cs
   source_id: sdu_cs_directory_post_v22
-  reviewed_at: '2026-10-15'
+  reviewed_at: '2026-11-15'
   year: 2027
   degree: master
   route: exam
-  note: 当前2027目录047计算机学院两专业，初试与同等学力要求已核；校级一般章程、材料和统一截止仍有缺口。目录下标变化会触发来源变化，须重新核学校/学院/专业。
+  note: 2026-11-15回源复核2027目录047计算机学院两专业的初试、复试科目与同等学力限制；校级一般章程、材料和统一截止仍有缺口。目录下标变化须重新核对学校、学院和专业。

@@ -2,7 +2,7 @@ import copy
 import json
 import os
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from unittest.mock import patch
 from urllib.request import Request
 from urllib.error import HTTPError
@@ -207,6 +207,63 @@ class MaterialTaskApiTests(unittest.TestCase):
         historical = self.request('/api/workflow/material-tasks')[1]['records'][record['id']]
         self.assertIn('action_unavailable', historical['review_reasons'])
         self.assertEqual(historical['status'], 'prepared')
+
+    def test_aged_sources_allow_personal_progress_but_not_official_reminders(self):
+        context = self.setup_context()
+        project = self.project()
+        checks = self.root / 'data' / 'admissions_checks.json'
+        for days in [7, 8, 30, 60]:
+            with self.subTest(days=days):
+                checked_at = (date.today() - timedelta(days=days)).isoformat()
+                checks.write_text(json.dumps({'s': dict(status='ok', hash='a'*64, last_success=checked_at)}), encoding='utf-8')
+                row = self.row(project)
+                self.assertTrue(row['can_record'])
+                self.assertEqual(row['quality']['state'], 'checked' if days == 7 else 'stale')
+                record = self.saved(project, status='prepared')
+                self.assertEqual(record['status'], 'prepared')
+                self.assertEqual(record['review_required'], days > 7)
+                self.assertEqual(record['applicable'], days == 7)
+                self.assertEqual(self.row(project)['latest_record_id'], record['id'])
+                reminder = dict(expected_goal=record['goal_snapshot'], expected_action=record['action_fingerprint'], event_index=0)
+                self.assertEqual(self.request('/api/workflow/material-tasks/' + record['id'] + '/reminders', reminder, 'POST')[0], 200 if days == 7 else 409)
+        backup = self.request('/api/workflow/backup')[1]
+        self.assertEqual(len(backup['workflow']['material_tasks']), 4)
+        self.assertEqual(self.request('/api/workflow/restore', backup, 'POST')[0], 200)
+        restored = self.request('/api/workflow/material-tasks')[1]['records'][record['id']]
+        self.assertIn('source_stale', restored['review_reasons'])
+        self.assertEqual(restored['status'], 'prepared')
+
+    def test_old_summary_personal_progress_stays_unverified_until_reviewed(self):
+        context = self.setup_context()
+        project = self.project()
+        context['policies'][0]['reviewed_at'] = (date.today() - timedelta(days=31)).isoformat()
+        self.assertEqual(self.row(project)['quality']['state'], 'review')
+        record = self.saved(project, status='submitted')
+        self.assertIn('source_review', record['review_reasons'])
+        self.assertFalse(record['applicable'])
+        reminder = dict(expected_goal=record['goal_snapshot'], expected_action=record['action_fingerprint'], event_index=0)
+        self.assertEqual(self.request('/api/workflow/material-tasks/' + record['id'] + '/reminders', reminder, 'POST')[0], 409)
+        context['policies'][0]['reviewed_at'] = date.today().isoformat()
+        reviewed = self.request('/api/workflow/material-tasks')[1]['records'][record['id']]
+        self.assertFalse(reviewed['review_required'])
+        self.assertEqual(reviewed['status'], 'submitted')
+
+    def test_changed_failed_or_missing_source_still_blocks_personal_record(self):
+        self.setup_context()
+        project = self.project()
+        body = self.body(project)
+        checks = self.root / 'data' / 'admissions_checks.json'
+        for state, observation in [
+            ('changed', dict(status='ok', hash='b'*64, last_success=date.today().isoformat())),
+            ('error', dict(status='error', hash='a'*64, last_success=date.today().isoformat())),
+            ('unknown', {})
+        ]:
+            with self.subTest(state=state):
+                checks.write_text(json.dumps({'s': observation}), encoding='utf-8')
+                self.assertEqual(self.row(project)['quality']['state'], state)
+                self.assertFalse(self.row(project)['can_record'])
+                self.assertEqual(self.request('/api/workflow/material-tasks', body, 'POST')[0], 409)
+        self.assertEqual(self.request('/api/workflow/material-tasks')[1]['records'], {})
 
     def test_scope_matrix_rejects_policy_borrowing_and_actions_independent(self):
         context = self.setup_context()

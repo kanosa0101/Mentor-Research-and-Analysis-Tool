@@ -1,5 +1,11 @@
 (function(root){
   const modes={research:'研究关键词',qualification:'导师资格',email:'公开邮箱',opportunity:'本年度招生机会',eligibility:'我的申请资格'};
+  function researchText(value){
+    return String(value||'').split(/[、,，;；\n]+/).map(part=>part.trim()).filter(part=>part&&!/^(研究方向|Research Focus|社会兼职|Social Affiliations|暂无内容|暂无|待补充|未整理|未知)[：:]?$/i.test(part)).join('、');
+  }
+  function validEmail(value){
+    return typeof value==='string'&&/^[^\s@<>，；;,]+@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,63}$/i.test(value.trim());
+  }
   const includes=(text,term)=>{
     if(/^[a-z0-9 ._-]+$/i.test(term))return new RegExp('(^|[^a-z0-9])'+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'($|[^a-z0-9])','i').test(text);
     return text.toLowerCase().includes(term.toLowerCase());
@@ -9,7 +15,7 @@
     const add=(key,state,detail)=>checks.push({key,state,detail,mode:prefs.modes[key],label:modes[key]});
     if(prefs.schools.length&&!prefs.schools.includes(p.school))return {visible:false,checks:[{key:'school',state:'fail',detail:'不在允许院校内'}],score:0,evidence};
     if(prefs.topics.length){
-      const direction=p.research_direction_raw||'',text=direction+' '+corpus;
+      const direction=researchText(p.research_direction_raw),text=direction+' '+corpus;
       const hits=prefs.topics.filter(term=>includes(direction,term)||includes(corpus,term));
       add('research',hits.length?'pass':text.trim()?'fail':'unknown',hits.length?'关键词任一命中：'+hits.join('、'):text.trim()?'资料文字未命中所选关键词，不代表真实研究不适合':'缺少可检索研究材料');
       for(const term of hits){const field=includes(direction,term)?'research_direction_raw':'bio_raw',raw=field==='bio_raw'?corpus:direction,index=raw.toLowerCase().indexOf(term.toLowerCase());evidence.push({field,term,snippet:raw.slice(Math.max(0,index-25),index+term.length+70)});}
@@ -19,7 +25,7 @@
       const found=value.includes(wanted)&&!/(无|非|不|未具备)/.test(value);
       add('qualification',found?'pass':'unknown',found?'官网导师资格：'+value:'该学位导师资格未明确；其他学位资格不自动推断');
     }
-    add('email',p.email?'pass':'unknown',p.email?'官网提供邮箱，使用前仍需核对':'官网库未提供邮箱，需查主页或咨询院系');
+    add('email',validEmail(p.email)?'pass':'unknown',validEmail(p.email)?'官网提供邮箱，使用前仍需核对':p.email?'邮箱记录格式异常，请回官网核对':'官网库未提供邮箱，需查主页或咨询院系');
     const scoped=projectScoped(prefs)||!!context?.project||!!context?.projectIntent;
     const project=context?.project, goal=project?.goal_snapshot;
     const current=projectMatches(project,prefs)&&p.school===goal.school_id&&p.dept===goal.dept_id;
@@ -43,8 +49,8 @@
   function projectScoped(prefs){return !!prefs.program||prefs.track==='special';}
   function completeness(p,extra={}){
     const present=value=>typeof value==='string'&&value.trim()&&!/(未知|待补充|未整理)/.test(value);
-    const direction=Number(!!present(extra.research_direction_raw||p.research_direction_raw));
-    const email=Number(!!present(p.email)&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email.trim()));
+    const direction=Number(!!present(researchText(extra.research_direction_raw||p.research_direction_raw)));
+    const email=Number(validEmail(p.email));
     const bio=Number(!!present(extra.bio_excerpt||p.bio_raw));
     const profile=Number(/^https?:\/\//i.test(p.profile_url||p.detail_url||''));
     return [direction+email+bio+profile];
@@ -60,5 +66,5 @@
     });
     return {rows:ranked,matched};
   }
-  const api={evaluate,projectScoped,projectMatches,sameGoal,reviewReason,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
+  const api={evaluate,projectScoped,projectMatches,sameGoal,reviewReason,researchText,validEmail,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
 })(typeof window!=='undefined'?window:globalThis);

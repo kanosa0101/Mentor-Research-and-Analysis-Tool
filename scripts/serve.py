@@ -23,10 +23,14 @@ from crawler import project_util as projects
 from crawler import discovery_util as discovery
 from crawler import project_review_util as project_reviews
 from crawler import material_task_util as material_tasks
+from crawler import opportunity_util as opportunities
+from crawler import public_update
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
 _lock = threading.Lock()
+_public_update = {'busy': False, 'message': '', 'result': None}
+_update_guard = threading.Lock()
 
 
 def load_outreach(path=OUTREACH):
@@ -107,6 +111,29 @@ class Handler(SimpleHTTPRequestHandler):
         return pid if pid in self._known_ids() else None
 
     def do_GET(self):
+        if self.path == '/api/public-data':
+            if not self._local_request():
+                return
+            installed = ROOT / 'cache/public-data-installed.json'
+            return self._json(200, dict(_public_update, mode='local',
+                installed=json.loads(installed.read_text()) if installed.exists() else None))
+        if _public_update['busy'] and self.path != '/api/health':
+            return self._json(503, {'error': '正在更新公共资料，请完成后刷新；私人记录保持不变'})
+        if self.path in ('/api/push/config', '/api/updates'):
+            if not self._local_request():
+                return
+            if self.path == '/api/updates':
+                return self._json(200, {'events': []})
+            feed = ROOT / 'data/opportunity_feed.json'
+            settings = json.loads(feed.read_text(encoding='utf-8')) if feed.exists() else {}
+            return self._json(200, {'enabled': False, 'mode': 'local', 'origin': settings.get('notification_origin')})
+        if self.path == '/api/opportunities':
+            if not self._local_request():
+                return
+            try:
+                return self._json(200, opportunities.observed(ROOT))
+            except (OSError, ValueError) as error:
+                return self._json(500, {'error': str(error)})
         if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):
             return self._discovery_request('GET')
         if self.path == '/api/workflow' or self.path.startswith('/api/workflow/'):
@@ -128,6 +155,8 @@ class Handler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_PATCH(self):
+        if _public_update['busy']:
+            return self._json(503, {'error': '公共资料更新中，请稍后再保存'})
         if self.path.startswith('/api/workflow/'):
             return self._workflow_request('PATCH')
         if not self._local_request(json_body=True):
@@ -167,6 +196,8 @@ class Handler(SimpleHTTPRequestHandler):
         return self._json(200, data.get(pid, {}))
 
     def do_DELETE(self):
+        if _public_update['busy']:
+            return self._json(503, {'error': '公共资料更新中，请稍后再保存'})
         if not self._local_request():
             return
         pid = self._pid()
@@ -183,6 +214,36 @@ class Handler(SimpleHTTPRequestHandler):
         return self._json(200, {'cleared': existed is not None})
 
     def do_POST(self):
+        if self.path in ('/api/public-data/check', '/api/public-data/update'):
+            if not self._local_request(json_body=True):
+                return
+            try:
+                body = self._body(2000)
+                if not isinstance(body, dict) or set(body) - {'id'}:
+                    raise ValueError('更新参数错误')
+                if self.path.endswith('/check'):
+                    return self._json(200, public_update.check(ROOT))
+                with _update_guard:
+                    if _public_update['busy']:
+                        return self._json(409, {'error': '公共资料更新正在进行'})
+                    if not isinstance(body.get('id'), str):
+                        raise ValueError('请先检查公共资料版本')
+                    _public_update.update(busy=True, message='正在下载、校验和构建公共资料，请保持本机服务运行。', result=None)
+                def run_update():
+                    try:
+                        with _lock:
+                            result = public_update.update(ROOT, body['id'])
+                        _public_update.update(result=result, message='公共资料已更新，私人项目和原有快照保留。请刷新页面。')
+                    except Exception as error:
+                        _public_update.update(message='更新未完成：' + str(error))
+                    finally:
+                        _public_update['busy'] = False
+                threading.Thread(target=run_update, daemon=False).start()
+                return self._json(202, dict(_public_update))
+            except (OSError, ValueError, public_update.requests.RequestException) as error:
+                return self._json(400, {'error': str(error)})
+        if _public_update['busy']:
+            return self._json(503, {'error': '公共资料更新中，暂不接受保存；请稍后重试'})
         if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):
             return self._discovery_request('POST')
         if self.path.startswith('/api/workflow/'):
@@ -274,6 +335,8 @@ class Handler(SimpleHTTPRequestHandler):
                     data, result = material_tasks.save(stored, body, self._known_ids(), context)
                 elif method == 'POST' and len(parts) == 3 and parts[0] == 'material-tasks' and parts[2] == 'reminders':
                     data, result = material_tasks.reminder(stored, parts[1], body, self._known_ids(), context)
+                elif method == 'POST' and parts == ['opportunities']:
+                    data, result = opportunities.save(data, body, self._known_ids(), context, opportunities.observed(ROOT))
                 elif method == 'POST' and parts == ['scan']:
                     if not isinstance(body, dict) or set(body) != {'root'}:
                         raise ValueError('扫描须指定 root 目录')
@@ -398,6 +461,7 @@ def main():
             raise SystemExit(1) from None
         raise
     base = f'http://127.0.0.1:{server.server_port}'
+    print(f'申请导航：{base}/start.html')
     print(f'找导师：{base}/discovery.html')
     print(f'我的申请与联系：{base}/desk.html')
     print(f'项目、材料与提醒：{base}/applications.html')
