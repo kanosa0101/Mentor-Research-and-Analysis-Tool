@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "version": "1.6.0",
+    "version": "1.7.0",
     "as_of": "2026-11-15",
-    "generated_at": "2026-11-15T09:23:54.187975+00:00",
+    "generated_at": "2026-11-15T10:29:24.173355+00:00",
     "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
-    "method": "Current public-file inventory after server public mentor synchronization; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
+    "method": "Current public-file inventory after v1.7 public-data merge; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
     "warning": "统计表示已登记资料与核验状态，不等于官方完整覆盖、当前招生名额、个人申请资格或材料完成。last_fetched/抓取出处日期与人工内容复核日期分别统计。",
-    "previous_snapshot_sha256": "24e1e36188b7ae63a1751025521bc65ef93c384ad7a3692df7ac591fb6642673"
+    "previous_snapshot_sha256": "e894ce25d4bcccda5389ba896f7f4ed7088452e56459c4e1fe667e279c773d3a"
   },
   "counts": {
     "professors": 7173,
@@ -27,7 +27,8 @@
     "official_entries": 96,
     "policies_with_material_actions": 69,
     "material_actions": 310,
-    "policies_without_material_actions": 42
+    "policies_without_material_actions": 42,
+    "opportunities": 18
   },
   "professors": {
     "records": 7173,
@@ -36,7 +37,7 @@
       "title": 5213,
       "supervisor": 3969,
       "bio_raw": 4942,
-      "research_direction_raw": 3058,
+      "research_direction_raw": 3059,
       "homepage": 668,
       "institutes": 2862
     },
@@ -46,16 +47,16 @@
     },
     "source_dates": {
       "2026-09-02": 676,
-      "2026-09-03": 1166,
-      "2026-09-04": 1028,
-      "2026-09-05": 2239,
+      "2026-09-03": 1163,
+      "2026-09-04": 1023,
+      "2026-09-05": 2231,
       "2026-09-06": 121,
-      "2026-10-14": 789,
-      "2026-10-15": 204,
-      "2026-11-15": 950
+      "2026-10-14": 781,
+      "2026-10-15": 203,
+      "2026-11-15": 975
     },
     "unknown_source_date": 0,
-    "source_older_than_30_days": 6223,
+    "source_older_than_30_days": 6198,
     "source_date_rule": "last_fetched, else latest crawled provenance fetched_at; mirrors scripts/build_site.py; last_verified excluded",
     "unreviewed_unresolved_issue_groups": [
       {
@@ -183,11 +184,11 @@
           "enriched": 151
         },
         "source_dates": {
-          "2026-09-05": 145,
-          "2026-11-15": 6
+          "2026-09-05": 144,
+          "2026-11-15": 7
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 145
+        "source_older_than_30_days": 144
       },
       {
         "school": "bnu",
@@ -208,11 +209,11 @@
           "roster": 2
         },
         "source_dates": {
-          "2026-09-04": 61,
-          "2026-11-15": 11
+          "2026-09-04": 60,
+          "2026-11-15": 12
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 61
+        "source_older_than_30_days": 60
       },
       {
         "school": "buaa",
@@ -301,11 +302,11 @@
           "enriched": 77
         },
         "source_dates": {
-          "2026-09-05": 70,
-          "2026-11-15": 7
+          "2026-09-05": 69,
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 70
+        "source_older_than_30_days": 69
       },
       {
         "school": "csu",
@@ -325,12 +326,12 @@
           "enriched": 114
         },
         "source_dates": {
-          "2026-10-14": 101,
+          "2026-10-14": 100,
           "2026-10-15": 4,
-          "2026-11-15": 9
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 105
+        "source_older_than_30_days": 104
       },
       {
         "school": "csu",
@@ -350,11 +351,11 @@
           "enriched": 108
         },
         "source_dates": {
-          "2026-09-04": 100,
-          "2026-11-15": 8
+          "2026-09-04": 99,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 100
+        "source_older_than_30_days": 99
       },
       {
         "school": "dlut",
@@ -374,11 +375,11 @@
           "enriched": 12
         },
         "source_dates": {
-          "2026-09-05": 3,
-          "2026-11-15": 9
+          "2026-09-05": 2,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 3
+        "source_older_than_30_days": 2
       },
       {
         "school": "dlut",
@@ -398,11 +399,11 @@
           "enriched": 12
         },
         "source_dates": {
-          "2026-09-05": 3,
-          "2026-11-15": 9
+          "2026-09-05": 2,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 3
+        "source_older_than_30_days": 2
       },
       {
         "school": "ecnu",
@@ -423,11 +424,11 @@
         },
         "source_dates": {
           "2026-09-04": 3,
-          "2026-09-05": 58,
-          "2026-11-15": 9
+          "2026-09-05": 57,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 61
+        "source_older_than_30_days": 60
       },
       {
         "school": "fudan",
@@ -494,11 +495,11 @@
           "enriched": 187
         },
         "source_dates": {
-          "2026-09-05": 179,
-          "2026-11-15": 8
+          "2026-09-05": 178,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 179
+        "source_older_than_30_days": 178
       },
       {
         "school": "hust",
@@ -518,12 +519,12 @@
           "enriched": 125
         },
         "source_dates": {
-          "2026-10-14": 111,
+          "2026-10-14": 110,
           "2026-10-15": 2,
-          "2026-11-15": 12
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 113
+        "source_older_than_30_days": 112
       },
       {
         "school": "hust",
@@ -544,12 +545,12 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 75,
+          "2026-10-14": 74,
           "2026-10-15": 1,
-          "2026-11-15": 9
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 76
+        "source_older_than_30_days": 75
       },
       {
         "school": "jlu",
@@ -561,7 +562,7 @@
           "title": 177,
           "supervisor": 65,
           "bio_raw": 185,
-          "research_direction_raw": 4,
+          "research_direction_raw": 5,
           "homepage": 2,
           "institutes": 0
         },
@@ -569,13 +570,13 @@
           "enriched": 185
         },
         "source_dates": {
-          "2026-09-04": 32,
+          "2026-09-04": 31,
           "2026-09-05": 134,
           "2026-09-06": 12,
-          "2026-11-15": 7
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 178
+        "source_older_than_30_days": 177
       },
       {
         "school": "nankai",
@@ -596,11 +597,11 @@
           "roster": 4
         },
         "source_dates": {
-          "2026-10-15": 90,
-          "2026-11-15": 9
+          "2026-10-15": 89,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 90
+        "source_older_than_30_days": 89
       },
       {
         "school": "nankai",
@@ -787,11 +788,11 @@
           "enriched": 119
         },
         "source_dates": {
-          "2026-09-03": 107,
-          "2026-11-15": 12
+          "2026-09-03": 106,
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 107
+        "source_older_than_30_days": 106
       },
       {
         "school": "pku",
@@ -811,11 +812,11 @@
           "enriched": 36
         },
         "source_dates": {
-          "2026-10-14": 24,
-          "2026-11-15": 12
+          "2026-10-14": 23,
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 24
+        "source_older_than_30_days": 23
       },
       {
         "school": "ruc",
@@ -1004,11 +1005,11 @@
           "enriched": 149
         },
         "source_dates": {
-          "2026-09-05": 140,
-          "2026-11-15": 9
+          "2026-09-05": 139,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 140
+        "source_older_than_30_days": 139
       },
       {
         "school": "sjtu",
@@ -1051,11 +1052,11 @@
           "enriched": 203
         },
         "source_dates": {
-          "2026-10-14": 192,
-          "2026-11-15": 11
+          "2026-10-14": 190,
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 192
+        "source_older_than_30_days": 190
       },
       {
         "school": "sjtu",
@@ -1100,11 +1101,11 @@
           "roster": 2
         },
         "source_dates": {
-          "2026-09-05": 34,
-          "2026-11-15": 5
+          "2026-09-05": 33,
+          "2026-11-15": 6
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 34
+        "source_older_than_30_days": 33
       },
       {
         "school": "sysu",
@@ -1303,11 +1304,11 @@
         },
         "source_dates": {
           "2026-09-02": 3,
-          "2026-09-03": 331,
-          "2026-11-15": 11
+          "2026-09-03": 329,
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 334
+        "source_older_than_30_days": 332
       },
       {
         "school": "ucas",
@@ -1471,11 +1472,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 57,
-          "2026-11-15": 11
+          "2026-10-14": 55,
+          "2026-11-15": 13
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 57
+        "source_older_than_30_days": 55
       },
       {
         "school": "xidian",
@@ -1495,11 +1496,11 @@
           "enriched": 155
         },
         "source_dates": {
-          "2026-09-04": 147,
-          "2026-11-15": 8
+          "2026-09-04": 146,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 147
+        "source_older_than_30_days": 146
       },
       {
         "school": "xjtu",
@@ -1519,12 +1520,12 @@
           "enriched": 75
         },
         "source_dates": {
-          "2026-09-04": 66,
+          "2026-09-04": 65,
           "2026-09-06": 1,
-          "2026-11-15": 8
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 67
+        "source_older_than_30_days": 66
       },
       {
         "school": "xmu",
@@ -1590,7 +1591,7 @@
         "dept": "software"
       }
     ],
-    "public_records_manifest_sha256": "4bda08d835db264b877c94162444678c2b879bc760ef22f9b4566dfe7572f155"
+    "public_records_manifest_sha256": "045fe2f99825984a19c8b430681fba9bcea16e73c127917ea2f601a2d36ab260"
   },
   "admissions": {
     "source_check_states": {
@@ -1997,7 +1998,7 @@
       "claim_audit_sha256": "d7cf17b7d69c860ee23d6f7557e61be21e72633d54a89ae05608a091e4fd2bb5",
       "claims": 142,
       "reference": "cache/v16/policy-claim-audit.json",
-      "scope_note": "12条当前政策逐项复核已有字段；另30条历史政策仅核验周期、原文可达性，不宣称补齐未公布条件。"
+      "scope_note": "沿用v1.6政策字段审计作为历史证据，未因本次快照统计而重新核准。当前质量仍由实际数据与核验日期计算。"
     }
   },
   "notices": {
@@ -2059,7 +2060,9 @@
     "data/notices.json": "249aeea288aff07f298b7bd6e73f863960fdd8b1ac340696b4205803d8627261",
     "data/schools.yaml": "13066230f287d189f1815f3ab3e51f709164595ef799dd787e7fc73e646a963c",
     "data/coverage.json": "1ecb172bb65b90c4d6a6dc7025dbb2e031618edaca5cb4ad0438d6c113dd796d",
-    "data/source_coverage.json": "ef533a3da14c9891ce619427d96daf5e2d50ccc3ae561597782a32704ddf947b"
+    "data/source_coverage.json": "ef533a3da14c9891ce619427d96daf5e2d50ccc3ae561597782a32704ddf947b",
+    "data/opportunities.json": "7de7df2fbbad5167977b8d590687cb085d00014d3694902a4a1ed6b44a2418ab",
+    "sites/opportunities.yaml": "18db6916b8e7f318f5924a83382dfac0c39197f0c5248e71246e1c7c82e69a6a"
   },
   "source_coverage": {
     "checked_at": "2026-11-15T09:16:25+00:00",
@@ -3432,6 +3435,7 @@
     ]
   },
   "information_audit": {
+    "audit_version": "1.6.0",
     "checked_at": "2026-11-15T09:17:31+00:00",
     "summary": {
       "candidates": {
@@ -3471,5 +3475,350 @@
     },
     "audit_sha256": "507e274d3a9464b5a64f4b01f787b171b921cca5ecdd88e9ac91ffe36151c0f3",
     "reference": "cache/v16/information-audit.json：维护证据，不随运行包分发。"
+  },
+  "opportunities": {
+    "items": 18,
+    "states": {
+      "closed": 8,
+      "open": 1,
+      "open_month": 1,
+      "review": 1,
+      "rolling": 6,
+      "upcoming": 1
+    },
+    "kinds": {
+      "recommend": 1,
+      "research_program": 8,
+      "summer_camp": 4,
+      "winter_camp": 5
+    },
+    "cycles": {
+      "current": 10,
+      "historical": 8
+    },
+    "source_states": {
+      "unavailable": 1,
+      "verified": 17
+    },
+    "windows": {
+      "exact_or_unspecified": 11,
+      "month": 1,
+      "rolling": 6
+    },
+    "graduation_years": {
+      "2027": 5,
+      "2028": 1,
+      "unknown": 12
+    },
+    "admission_years": {
+      "2027": 1,
+      "unknown": 17
+    },
+    "activity_years": {
+      "2026": 9,
+      "2027": 2,
+      "unknown": 7
+    },
+    "verified_dates": {
+      "2026-11-15": 18
+    },
+    "checked_dates": {
+      "": 1,
+      "2026-11-15": 17
+    },
+    "with_directions": 8,
+    "with_contact": 17,
+    "with_pdf": 1,
+    "with_docx": 1,
+    "pdf_documents": 1,
+    "docx_attachments": 2,
+    "review_log_entries": 11,
+    "by_id": [
+      {
+        "id": "ihep-winter-2027",
+        "title": "高能所2027年全国大学生冬令营",
+        "state": "review",
+        "kind": "winter_camp",
+        "cycle": "current",
+        "window_mode": null,
+        "source_url": "https://www.ihep.cas.cn/edu/bks/xly/202611/t20261106_8304185.html",
+        "source_sha256": "",
+        "source_content_sha256": null,
+        "graduation_year": 2028,
+        "admission_year": null,
+        "checked_at": "",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "bnu-ai-research-autumn-2026",
+        "title": "北师大人工智能学院2026—2027学年秋季本科生科研实习",
+        "state": "upcoming",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": null,
+        "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+        "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+        "source_content_sha256": null,
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "iscas-research-2026",
+        "title": "软件所2026年大学生创新实践训练计划（科创计划）",
+        "state": "open_month",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "month",
+        "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+        "source_sha256": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+        "source_content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "air-winter-2026",
+        "title": "清华AIR WINTER@AIR 2026冬令营",
+        "state": "closed",
+        "kind": "winter_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://air.tsinghua.edu.cn/info/1007/2476.htm",
+        "source_sha256": "75fc4e70998830b3331413f87c670c11564c8b4680ba1dd0dbdce3ae06672d89",
+        "source_content_sha256": null,
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "pku-ai4s-winter-2026",
+        "title": "北京大学科学智能学院2026冬令营",
+        "state": "closed",
+        "kind": "winter_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://ai4s.pkusz.edu.cn/info/1007/1335.htm",
+        "source_sha256": "9bd0b68ac16f27734f75d45b39d71a9142cd9180756f8c2ce47163a70726b40f",
+        "source_content_sha256": null,
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "sia-winter-2026",
+        "title": "沈阳自动化所2026智慧赋能·创领未来冬令营",
+        "state": "closed",
+        "kind": "winter_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/202512/t20251215_8027511.html",
+        "source_sha256": "b5b3fbbea6069cbdf2f155ecb0e91e52f50bf6f8bd593b71f0ba5588c0ffad30",
+        "source_content_sha256": null,
+        "graduation_year": 2027,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "ict-summer-2026",
+        "title": "计算所2026计算未来暑期研修班",
+        "state": "closed",
+        "kind": "summer_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://www.ict.ac.cn/yjsjy/zsxx/sszs/202607/t20260702_8237097.html",
+        "source_sha256": "837fb48fc1a979e1ccae61e332cf3879c011f74bce9492b7592101e4b7f343ca",
+        "source_content_sha256": null,
+        "graduation_year": 2027,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "iscas-summer-2026",
+        "title": "软件所2026软件与网络夏令营",
+        "state": "closed",
+        "kind": "summer_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202607/t20260716_8250354.html",
+        "source_sha256": "feceddebdce9215d8bd35b952dc1b9d1b51bed1179398c9c1cc35694941a9516",
+        "source_content_sha256": null,
+        "graduation_year": 2027,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "cnic-summer-2026",
+        "title": "计算机网络信息中心2026智能与网络夏令营",
+        "state": "closed",
+        "kind": "summer_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://cnic.cas.cn/yjsjy/tzgg/202605/t20260527_8209811.html",
+        "source_sha256": "c8331ba0ce3aadab95aa1cf7707bca10d33a774416a1a0d1441e86587ef0f8f6",
+        "source_content_sha256": null,
+        "graduation_year": 2027,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "sjtu-cs-summer-2026",
+        "title": "上海交大计算机学院2026优秀大学生夏令营",
+        "state": "closed",
+        "kind": "summer_camp",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://cs.sjtu.edu.cn/bsyjs_zsgz/1748.html",
+        "source_sha256": "a64aa8456d9ecb5a7c53a43b4622934fa11de9d0c1f4510567cfb772648301db",
+        "source_content_sha256": null,
+        "graduation_year": 2027,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "tongji-ee-recommend-2027",
+        "title": "电子与信息工程学院2027年接收推荐免试研究生（含直接攻博）预报名通知",
+        "state": "closed",
+        "kind": "recommend",
+        "cycle": "historical",
+        "window_mode": null,
+        "source_url": "https://see.tongji.edu.cn/info/1173/14903.htm",
+        "source_sha256": "1217f9a6b0f237f6bbb918308c814f6909b10cc9567c8eaa04681f91996ead6f",
+        "source_content_sha256": "4c1e367cda5907cf862e1e20f752fc546090506b5261b82e0d79d496f140b1b8",
+        "graduation_year": null,
+        "admission_year": 2027,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "activity-d6cf0d3b78a48e8ce493",
+        "title": "复旦大学张帆团队本科科研实习联系",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+        "source_sha256": "7adcbde5292886f7f1fed22fd6709346e7065eecadbc2a6fbc122c42bc1ecc98",
+        "source_content_sha256": "75a442a7dc9f703d45f5d9c9abd0c03dc5fa3674fe73276843bd45cf3a026944",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "activity-ebd85b5bcea64ce072c2",
+        "title": "上海交通大学洪亮团队AI与生物方向长期实习",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+        "source_sha256": "71ff651c962c834fbc63ffe531fbdd333c924529c15f24b66f2f73bc664df8de",
+        "source_content_sha256": "d4c095a6c66765ba398461bfc9d7d22f7894ffac7873080095f08b1251c5909a",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "activity-03f42b3a3c32a4c22d97",
+        "title": "中国科大胡奇强实验室本科机器人科研联系",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+        "source_sha256": "4d3fa8e052ac9805f6b405a43b597957ac9c72fb927ba333e8efdd3ab2fadd80",
+        "source_content_sha256": "c3b9abfbfd87f5276eebd907f6a62faee5e25424845c9dec49a1fbabc730a5f9",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "activity-ffaa8dc527fe9b19b72d",
+        "title": "西湖大学丁士超实验室访问学生联系",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+        "source_sha256": "75648601c1cf00dc1354ca96dfe7ab17b12afe2f058d6af8c7d6ba9326e12114",
+        "source_content_sha256": "b6116099575c4b46ab52eb29983a625ff2da6ee4d416c28757cd0c898fdef205",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "buaa-xiejiahao-research-rolling",
+        "title": "北航解佳豪课题组本科生科研实习",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+        "source_sha256": "152832292c753e77c3721e84c3fe4778e21d76d834cd5ce4179e637ae44df37a",
+        "source_content_sha256": "6376ee0d18b08a659b0a798e8338aad1d3514755a662f55d0c2f959dc22bc229",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "ruc-dongjinhao-research-contact",
+        "title": "人大董谨豪课题组科研实习联系",
+        "state": "rolling",
+        "kind": "research_program",
+        "cycle": "current",
+        "window_mode": "rolling",
+        "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+        "source_sha256": "3dd000dd3633b7222d2a523cf8b0ddfebd09bfef54e30c7a80277ea2c9cf3e3b",
+        "source_content_sha256": "3affb975ff5a5b33262210bc41e09758f6b9755950013f5a2f2764562ea3be70",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      },
+      {
+        "id": "cibr-winter-training-2027",
+        "title": "北京脑所2027年冬季培训班",
+        "state": "open",
+        "kind": "winter_camp",
+        "cycle": "current",
+        "window_mode": null,
+        "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+        "source_sha256": "82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6",
+        "source_content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b",
+        "graduation_year": null,
+        "admission_year": null,
+        "checked_at": "2026-11-15",
+        "verified_at": "2026-11-15"
+      }
+    ],
+    "counting_note": "rolling为持续招募，open_month为尚未进入截止月的月份窗口，open为明确日期窗口；不合并成正在报名冬令营。未知毕业届别保持未知；本科二年级及以上不自动推成2028届。状态按本地已发布文件及当日规则计算，不表示已验证线上服务。"
+  },
+  "opportunity_sources": {
+    "configured": 61,
+    "modes": {
+      "api": 4,
+      "direct_page": 6,
+      "list": 51
+    },
+    "priorities": {
+      "current": 8,
+      "historical": 1,
+      "normal": 52
+    },
+    "note": "配置项及模式统计，不等于本次所有来源成功检查。实际来源运行状态见监测记录。"
   }
 }

@@ -139,11 +139,11 @@
         "项目结题时：结题报告"
       ],
       "evidence": [
-        "一、申请条件：面向计算机等相关专业大二、大三本科生，排名要求为前20%。",
-        "二、报名方式：先发送合并PDF给对应部门初选，通过初选后再由导师创建系统项目。",
-        "三、报名与受理：自公告发布日起受理至2027年1月，未列具体截止日。",
-        "附件1：8个部门、29条研究方向及对应联系人邮箱；各合并单元格的拟资助人数为组别人数，不能逐行重复相加。",
-        "https://www.iscas.ac.cn/yjsjy/zsxx/202610/P020261028618405519532.xlsx"
+        "2026年“科创计划”报名时间为即日起至2027年1月。",
+        "国内各高校计算机科学与技术、软件工程、网络空间安全、数学及其相近专业的在校优秀二年级、三年级本科生；",
+        "品学兼优，心身健康，学习成绩专业或年级排名在前20％；",
+        "将上述材料合成一个PDF文件，发送到对应部门联系人老师邮箱进行初选。",
+        "项目周期一般为6个月，周期内会对学生提供经费资助。"
       ],
       "research_directions": [
         {
@@ -408,7 +408,12 @@
           "verified_at": "2026-11-15"
         }
       ],
-      "source_content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11"
+      "source_content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11",
+      "application_window": {
+        "mode": "month",
+        "end_month": "2027-01",
+        "quote": "2026年“科创计划”报名时间为即日起至2027年1月。"
+      }
     },
     {
       "id": "air-winter-2026",
@@ -809,6 +814,555 @@
           }
         }
       ]
+    },
+    {
+      "dept_id": "ibd",
+      "kind": "research_program",
+      "admission_note": "科研实习/访问联系，不等于获得研究生录取资格；未明确毕业或入学届别。",
+      "cycle": "current",
+      "application_method": "邮件联系并附个人简历和成绩单；可联系张帆或公告所列尚老师。",
+      "checked_at": "2026-11-15",
+      "registration_start": "",
+      "deadline": "",
+      "title": "复旦大学张帆团队本科科研实习联系",
+      "school_id": "fudan",
+      "event_end": "",
+      "application_url": "",
+      "source_state": "verified",
+      "verified_at": "2026-11-15",
+      "school_name": "复旦大学",
+      "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+      "id": "activity-d6cf0d3b78a48e8ce493",
+      "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+      "source_sha256": "7adcbde5292886f7f1fed22fd6709346e7065eecadbc2a6fbc122c42bc1ecc98",
+      "unit": "大数据研究院张帆团队",
+      "event_start": "",
+      "published_at": "2026-05-08",
+      "contact": "张帆 ffzhang@fudan.edu.cn；招生联系人尚老师 ibd_fudan@fudan.edu.cn",
+      "source_note": "未公布本科实习具体时长、费用或住宿；每年研究生招生数量不视为当前本科实习名额；未明确2028届资格",
+      "source_content_sha256": "75a442a7dc9f703d45f5d9c9abd0c03dc5fa3674fe73276843bd45cf3a026944",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "欢迎有科研兴趣的优秀本科生；原文未列年级、GPA或外校硬性门槛"
+      ],
+      "materials": [
+        "个人简历",
+        "成绩单"
+      ],
+      "evidence": [
+        "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】"
+      ],
+      "research_directions": [
+        {
+          "department": "大数据研究院张帆团队",
+          "direction": "领域专用软硬件协同计算（拟态计算MC）",
+          "contact": "张帆 ffzhang@fudan.edu.cn",
+          "email": "ffzhang@fudan.edu.cn",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "大数据研究院张帆团队",
+          "direction": "内生安全（拟态防御CMD）",
+          "contact": "张帆 ffzhang@fudan.edu.cn",
+          "email": "ffzhang@fudan.edu.cn",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "大数据研究院张帆团队",
+          "direction": "软件定义晶上系统（SDSoW）",
+          "contact": "张帆 ffzhang@fudan.edu.cn",
+          "email": "ffzhang@fudan.edu.cn",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】"
+      }
+    },
+    {
+      "dept_id": "ins",
+      "kind": "research_program",
+      "admission_note": "科研实习/访问联系，不等于获得研究生录取资格；未明确毕业或入学届别。",
+      "cycle": "current",
+      "application_method": "将简历与自我陈述发至tanyang.august@sjtu.edu.cn；邮件标题与附件注明申请类型、方向、姓名、学校。",
+      "checked_at": "2026-11-15",
+      "registration_start": "",
+      "deadline": "",
+      "title": "上海交通大学洪亮团队AI与生物方向长期实习",
+      "school_id": "sjtu",
+      "event_end": "",
+      "application_url": "",
+      "source_state": "verified",
+      "verified_at": "2026-11-15",
+      "school_name": "上海交通大学",
+      "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+      "id": "activity-ebd85b5bcea64ce072c2",
+      "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+      "source_sha256": "71ff651c962c834fbc63ffe531fbdd333c924529c15f24b66f2f73bc664df8de",
+      "unit": "洪亮团队／张江高等研究院",
+      "event_start": "",
+      "published_at": "",
+      "contact": "招募邮箱 tanyang.august@sjtu.edu.cn",
+      "source_note": "未公布固定截止、实习时长或届别限制；待遇原文为详情面谈，没有金额承诺；表现优异可进一步申请学位，不代表保研录取",
+      "source_content_sha256": "d4c095a6c66765ba398461bfc9d7d22f7894ffac7873080095f08b1251c5909a",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "欢迎计算机、生物工程、药物设计、生物信息学等方向本科生或研究生",
+        "计算机方向需掌握深度学习、机器学习、自然语言处理基础及常用模型，熟悉Transformer、BERT、GPT实现，对AI生物应用有兴趣"
+      ],
+      "materials": [
+        "简历",
+        "自我陈述（在校成绩单、项目经历等）"
+      ],
+      "evidence": [
+        "课题组长期招收计算机/生物工程方向实习生"
+      ],
+      "research_directions": [
+        {
+          "department": "洪亮团队／张江高等研究院",
+          "direction": "人工智能蛋白质定向进化",
+          "contact": "招募邮箱 tanyang.august@sjtu.edu.cn",
+          "email": "tanyang.august@sjtu.edu.cn",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "洪亮团队／张江高等研究院",
+          "direction": "酶挖掘与代谢通路设计",
+          "contact": "招募邮箱 tanyang.august@sjtu.edu.cn",
+          "email": "tanyang.august@sjtu.edu.cn",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "洪亮团队／张江高等研究院",
+          "direction": "蛋白质重头设计",
+          "contact": "招募邮箱 tanyang.august@sjtu.edu.cn",
+          "email": "tanyang.august@sjtu.edu.cn",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "课题组长期招收计算机/生物工程方向实习生"
+      }
+    },
+    {
+      "dept_id": "robotics",
+      "kind": "research_program",
+      "admission_note": "科研实习/访问联系，不等于获得研究生录取资格；未明确毕业或入学届别。",
+      "cycle": "current",
+      "application_method": "向qqhu@ustc.edu.cn联系本科科研项目、大学生研究计划或毕业设计；本科生段未单列必须提交的材料。",
+      "checked_at": "2026-11-15",
+      "registration_start": "",
+      "deadline": "",
+      "title": "中国科大胡奇强实验室本科机器人科研联系",
+      "school_id": "ustc",
+      "event_end": "",
+      "application_url": "",
+      "source_state": "verified",
+      "verified_at": "2026-11-15",
+      "school_name": "中国科学技术大学",
+      "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+      "id": "activity-03f42b3a3c32a4c22d97",
+      "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+      "source_sha256": "4d3fa8e052ac9805f6b405a43b597957ac9c72fb927ba333e8efdd3ab2fadd80",
+      "unit": "胡奇强实验室／人形机器人研究院",
+      "event_start": "",
+      "published_at": "",
+      "contact": "胡奇强 qqhu@ustc.edu.cn",
+      "source_note": "同页27级保研研究生名额明确已满，本条仅为本科科研长期招募；不把研究生或国际学生材料要求套给本科生；外校接收、经费和时长未明示",
+      "source_content_sha256": "c3b9abfbfd87f5276eebd907f6a62faee5e25424845c9dec49a1fbabc730a5f9",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "本科生段列机器人工程、机械、力学、控制等相关专业；CS学生应先确认交叉背景是否适合"
+      ],
+      "materials": [],
+      "evidence": [
+        "长期招收，有意向者请联系：qqhu@ustc.edu.cn"
+      ],
+      "research_directions": [
+        {
+          "department": "胡奇强实验室／人形机器人研究院",
+          "direction": "高性能形状记忆合金人工肌肉驱动器",
+          "contact": "胡奇强 qqhu@ustc.edu.cn",
+          "email": "qqhu@ustc.edu.cn",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029914/list/index.htm",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "胡奇强实验室／人形机器人研究院",
+          "direction": "大变形折纸超结构与柔性机器人",
+          "contact": "胡奇强 qqhu@ustc.edu.cn",
+          "email": "qqhu@ustc.edu.cn",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029914/list/index.htm",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "长期招收，有意向者请联系：qqhu@ustc.edu.cn"
+      }
+    },
+    {
+      "dept_id": "bioelectronics",
+      "kind": "research_program",
+      "admission_note": "科研实习/访问联系，不等于获得研究生录取资格；未明确毕业或入学届别。",
+      "cycle": "current",
+      "application_method": "材料合并PDF发至dingshichao@westlake.edu.cn；标题注明“访问学生申请 + 本人姓名 + 研究方向”。",
+      "checked_at": "2026-11-15",
+      "registration_start": "",
+      "deadline": "",
+      "title": "西湖大学丁士超实验室访问学生联系",
+      "school_id": "westlake",
+      "event_end": "",
+      "application_url": "",
+      "source_state": "verified",
+      "verified_at": "2026-11-15",
+      "school_name": "西湖大学",
+      "deadline_note": "官方明确长期招募；未公布固定截止日期，是否还有位置需联系确认。",
+      "id": "activity-ffaa8dc527fe9b19b72d",
+      "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+      "source_sha256": "75648601c1cf00dc1354ca96dfe7ab17b12afe2f058d6af8c7d6ba9326e12114",
+      "unit": "网络化生物电子系统实验室",
+      "event_start": "",
+      "published_at": "",
+      "contact": "丁士超 dingshichao@westlake.edu.cn",
+      "source_note": "岗位招满即止，未获导师确认前不能承诺有名额；访问生未明确限定本科或应届年级，需联系确认；官网有2026年11月外校访问学生加入记录，仍不推定所有学校无条件可申请；未公开费用、待遇或访学时长",
+      "source_content_sha256": "b6116099575c4b46ab52eb29983a625ff2da6ee4d416c28757cd0c898fdef205",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "招募访问学生；生物传感、可穿戴系统或柔性器件/系统集成方向至少匹配其一",
+        "访问学生学历和年级门槛未单列，须邮件确认；不套用同页博士英语要求"
+      ],
+      "materials": [
+        "个人简历（教育经历、研究经历、代表成果与科研技能）；材料合并为一个PDF"
+      ],
+      "evidence": [
+        "招聘启事在岗位招满前长期有效。"
+      ],
+      "research_directions": [
+        {
+          "department": "网络化生物电子系统实验室",
+          "direction": "可穿戴系统与生物电子",
+          "contact": "丁士超 dingshichao@westlake.edu.cn",
+          "email": "dingshichao@westlake.edu.cn",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "网络化生物电子系统实验室",
+          "direction": "柔性器件与电子系统集成",
+          "contact": "丁士超 dingshichao@westlake.edu.cn",
+          "email": "dingshichao@westlake.edu.cn",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "网络化生物电子系统实验室",
+          "direction": "多模态可穿戴传感",
+          "contact": "丁士超 dingshichao@westlake.edu.cn",
+          "email": "dingshichao@westlake.edu.cn",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "source_locator": "研究方向/科学研究",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "招聘启事在岗位招满前长期有效。"
+      }
+    },
+    {
+      "admission_note": "本条只整理长期本科科研实习；同页2027/2028年9月硕博招生为导师招生意向，须结合学校院系正式招生政策确认，不等于已获推免资格或当前名额。",
+      "application_url": "",
+      "event_start": "",
+      "source_sha256": "152832292c753e77c3721e84c3fe4778e21d76d834cd5ce4179e637ae44df37a",
+      "registration_start": "",
+      "source_note": "北航官方教师主页明确长期招收科研实习生。是否仍有位置及线下/线上安排需导师确认；不标成2028届专属。",
+      "id": "buaa-xiejiahao-research-rolling",
+      "verified_at": "2026-11-15",
+      "event_end": "",
+      "application_method": "联系jiahaoxie@buaa.edu.cn，主题“实习生申请-学校-姓名”，附简历、成绩单、研究成果或项目经历。",
+      "dept_id": "",
+      "school_id": "buaa",
+      "unit": "北京航空航天大学解佳豪课题组",
+      "cycle": "current",
+      "source_state": "verified",
+      "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+      "deadline": "",
+      "kind": "research_program",
+      "checked_at": "2026-11-15",
+      "school_name": "北京航空航天大学",
+      "title": "北航解佳豪课题组本科生科研实习",
+      "published_at": "",
+      "deadline_note": "明确长期招收科研实习生；未公布具体开始日或截止日，联系导师确认当期接收安排。",
+      "contact": "解佳豪；jiahaoxie@buaa.edu.cn",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "欢迎优秀本科生，具有基础模型、多模态或具身智能研究兴趣",
+        "具备较强代码能力及一定研究基础；顶会论文或算法竞赛获奖为加分项",
+        "自驱、积极沟通，良好表达能力"
+      ],
+      "materials": [
+        "简历",
+        "成绩单",
+        "研究成果或项目经历等相关材料"
+      ],
+      "evidence": [
+        "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。",
+        "请在邮件中附上简历、成绩单、研究成果或项目经历等相关材料。",
+        "研究方向为基础模型、多模态理解与生成、具身智能。",
+        "jiahaoxie@buaa.edu.cn"
+      ],
+      "research_directions": [
+        {
+          "department": "解佳豪课题组",
+          "direction": "基础模型",
+          "contact": "解佳豪",
+          "email": "jiahaoxie@buaa.edu.cn",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "source_locator": "研究方向；联系方式",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "解佳豪课题组",
+          "direction": "多模态理解与生成",
+          "contact": "解佳豪",
+          "email": "jiahaoxie@buaa.edu.cn",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "source_locator": "研究方向；联系方式",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "解佳豪课题组",
+          "direction": "具身智能",
+          "contact": "解佳豪",
+          "email": "jiahaoxie@buaa.edu.cn",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "source_locator": "研究方向；联系方式",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。"
+      },
+      "source_content_sha256": "6376ee0d18b08a659b0a798e8338aad1d3514755a662f55d0c2f959dc22bc229"
+    },
+    {
+      "admission_note": "科研实习联系入口，非研究生招生/推免录取；同页企业实习另属企业项目，不能混为人大招生。",
+      "application_url": "",
+      "event_start": "",
+      "source_sha256": "3dd000dd3633b7222d2a523cf8b0ddfebd09bfef54e30c7a80277ea2c9cf3e3b",
+      "registration_start": "",
+      "source_note": "官方实验室教师页明确长期面向本科生和研究生开放科研实习。未公布材料、年级、排名、时长、待遇和校内外边界。",
+      "id": "ruc-dongjinhao-research-contact",
+      "verified_at": "2026-11-15",
+      "event_end": "",
+      "application_method": "向dongjinhao@ruc.edu.cn联系课题组科研实习，先确认具体材料、时间和接收安排；本条不代拟未公开要求。",
+      "dept_id": "cs",
+      "school_id": "ruc",
+      "unit": "信息学院·数据工程与知识工程教育部重点实验室",
+      "cycle": "current",
+      "source_state": "verified",
+      "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+      "deadline": "",
+      "kind": "research_program",
+      "checked_at": "2026-11-15",
+      "school_name": "中国人民大学",
+      "title": "人大董谨豪课题组科研实习联系",
+      "published_at": "2026-07-20",
+      "deadline_note": "官网明确长期开放，但未公布统一报名流程与截止。",
+      "contact": "董谨豪；dongjinhao@ruc.edu.cn",
+      "camp_year": null,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "优秀本科生和研究生；具体年级、专业和考核要求请先联系确认"
+      ],
+      "materials": [],
+      "evidence": [
+        "课题组长期面向优秀本科生和研究生开放科研实习机会",
+        "dongjinhao@ruc.edu.cn"
+      ],
+      "research_directions": [
+        {
+          "department": "董谨豪课题组",
+          "direction": "代码大模型与Code Agent",
+          "contact": "董谨豪",
+          "email": "dongjinhao@ruc.edu.cn",
+          "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "source_locator": "研究方向",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "董谨豪课题组",
+          "direction": "大模型智能体",
+          "contact": "董谨豪",
+          "email": "dongjinhao@ruc.edu.cn",
+          "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "source_locator": "研究方向",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "董谨豪课题组",
+          "direction": "大模型基础设施",
+          "contact": "董谨豪",
+          "email": "dongjinhao@ruc.edu.cn",
+          "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "source_locator": "研究方向",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "application_window": {
+        "mode": "rolling",
+        "end_month": "",
+        "quote": "课题组长期面向优秀本科生和研究生开放科研实习机会"
+      },
+      "source_content_sha256": "3affb975ff5a5b33262210bc41e09758f6b9755950013f5a2f2764562ea3be70"
+    },
+    {
+      "admission_note": "脑科学入门培训与参观，非推免考核或录取承诺；CS学生适合以计算与脑科学交叉为兴趣者。未明确毕业届次，不能硬标2028。",
+      "application_url": "https://wj.qq.com/s2/28488862/va6k/",
+      "event_start": "2027-01-10",
+      "source_sha256": "82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6",
+      "registration_start": "2026-11-02",
+      "source_note": "官方HTML及两份DOCX模板均直接取回。培训不收费、提供食宿及保险，交通自理。",
+      "id": "cibr-winter-training-2027",
+      "verified_at": "2026-11-15",
+      "event_end": "2027-01-14",
+      "application_method": "先填写官方指定问卷，再将申请材料按顺序合并为一份PDF发送至cibrstudent-apply@cibr.ac.cn；邮件与附件名均为“2027年冬季培训班申请材料-学生姓名-所在院校”。两步缺一不可。",
+      "dept_id": "",
+      "school_id": "cibr",
+      "unit": "北京脑科学与类脑研究所",
+      "cycle": "current",
+      "source_state": "verified",
+      "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+      "deadline": "2026-11-30T17:00:00+08:00",
+      "kind": "winter_camp",
+      "checked_at": "2026-11-15",
+      "school_name": "北京脑科学与类脑研究所",
+      "title": "北京脑所2027年冬季培训班",
+      "published_at": "2026-11-02",
+      "deadline_note": "北京时间11月30日17:00。开始日由正文“即日起”绑定官方发布日期11月2日。",
+      "contact": "010-81912671；cibrstudent-apply@cibr.ac.cn",
+      "camp_year": 2027,
+      "graduation_year": null,
+      "admission_year": null,
+      "eligibility": [
+        "对神经和认知科学有浓厚兴趣，相关专业包含计算机、数学、电子信息等",
+        "在读本科生二年级及以上，或硕士二、三年级；公告未限定本校或北京地区"
+      ],
+      "materials": [
+        "必交：冬季培训班申请表（附件1，须电子签名）",
+        "必交：身份证及学生证复印件",
+        "必交：个人陈述（附件2，2000字以内，必须独立完成，不得由他人或AI协助）",
+        "必交：本科及硕士阶段（如有）成绩单，加盖教务公章",
+        "必交：英语水平证明复印件",
+        "如有：学术成果、奖项、志愿证明等",
+        "按清单顺序合并一个PDF；另须填写信息收集问卷"
+      ],
+      "evidence": [
+        "报名时间：即日起至2026年11月30日17：00。",
+        "时间：2027年1月10日-14日",
+        "欢迎对神经和认知科学有浓厚兴趣的生物学、计算机、医学、数学、物理、化学、药学、电子信息、材料学等相关专业在读本科生（二年级及以上）或硕士研究生（二、三年级）积极报名。",
+        "冬季培训班不向学生收取任何培训费用，交通费用将由学生自行承担，我所将为培训班的同学购买保险并提供食宿。",
+        "（缺少填报问卷或未提交电子材料均不得进入选拔环节）"
+      ],
+      "research_directions": [
+        {
+          "department": "北京脑所",
+          "direction": "脑认知原理解析",
+          "contact": "招生与培训咨询",
+          "email": "cibrstudent-apply@cibr.ac.cn",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+          "source_locator": "研究所简介；五、联系方式",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "北京脑所",
+          "direction": "脑重大疾病",
+          "contact": "招生与培训咨询",
+          "email": "cibrstudent-apply@cibr.ac.cn",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+          "source_locator": "研究所简介；五、联系方式",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "北京脑所",
+          "direction": "神经科学新技术",
+          "contact": "招生与培训咨询",
+          "email": "cibrstudent-apply@cibr.ac.cn",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+          "source_locator": "研究所简介；五、联系方式",
+          "verified_at": "2026-11-15"
+        },
+        {
+          "department": "北京脑所",
+          "direction": "神经工程",
+          "contact": "招生与培训咨询",
+          "email": "cibrstudent-apply@cibr.ac.cn",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+          "source_locator": "研究所简介；五、联系方式",
+          "verified_at": "2026-11-15"
+        }
+      ],
+      "source_attachments": [
+        {
+          "url": "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5",
+          "sha256": "8e7a54fc88ea8c325eb8cae62d0aea8e73248e0b1c2faec9939a45afdc67ca12",
+          "checked_at": "2026-11-15",
+          "field_evidence": {
+            "materials": {
+              "quote": "申请人签名：（请使用电子签）",
+              "locator": "DOCX申请人签名处"
+            }
+          }
+        },
+        {
+          "url": "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+          "sha256": "73c44d0f084a72b36a65b9e8065d3175b5c607be77dc891058fed4adf3c1707f",
+          "checked_at": "2026-11-15",
+          "field_evidence": {
+            "materials": {
+              "quote": "请用2000字以内的文字介绍你的学术背景、科研兴趣方向以及对今后学习研究工作的设想和计划等。个人陈述应由申请人独立完成，如发现是由他人或AI协助完成，将取消申请人资格。",
+              "locator": "DOCX个人陈述说明"
+            }
+          }
+        }
+      ],
+      "source_content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b"
     }
   ],
   "review_log": [
@@ -997,6 +1551,386 @@
           }
         }
       ]
+    },
+    {
+      "draft_id": "d6cf0d3b78a48e8ce493",
+      "opportunity_id": "activity-d6cf0d3b78a48e8ce493",
+      "reviewer": "v17-official-research-a",
+      "note": "逐字段核验当前官方HTML、长期招募原文、适用本科/访问范围、材料与公开邮箱；无截止不虚构日期，科研联系不等于研究生录取。额外方向出处另存additional_source_review。",
+      "reviewed_at": "2026-11-15T10:16:07+00:00",
+      "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+      "listing_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+      "first_seen": "2026-11-15T10:15:56+00:00",
+      "source_sha256": "7adcbde5292886f7f1fed22fd6709346e7065eecadbc2a6fbc122c42bc1ecc98",
+      "content_sha256": "75a442a7dc9f703d45f5d9c9abd0c03dc5fa3674fe73276843bd45cf3a026944",
+      "item_sha256": "b7adbe5cf58f6b1725277584ac9e849c86e9bbbc45a259677630bcde32994ed7",
+      "quotes": [
+        "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】",
+        "同时，热烈欢迎优秀的本科生加入研究团队",
+        "【欢迎感兴趣的同学邮件联系，请附个人简历&成绩单】",
+        "领域专用软硬件协同计算（拟态计算MC）、内生安全（拟态防御CMD）、软件定义晶上系统（SDSoW）",
+        "ffzhang@fudan.edu.cn",
+        "ibd_fudan@fudan.edu.cn",
+        "发布时间：2026-05-08"
+      ],
+      "field_evidence": {
+        "application_window": {
+          "quote": "【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "招生/加入我们/本科生段"
+        },
+        "eligibility": {
+          "quote": "同时，热烈欢迎优秀的本科生加入研究团队",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "关于招生与人才培养"
+        },
+        "materials": {
+          "quote": "【欢迎感兴趣的同学邮件联系，请附个人简历&成绩单】",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "关于招生与人才培养"
+        },
+        "research_directions": {
+          "quote": "领域专用软硬件协同计算（拟态计算MC）、内生安全（拟态防御CMD）、软件定义晶上系统（SDSoW）",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "研究方向"
+        },
+        "contact": {
+          "quote": "ibd_fudan@fudan.edu.cn",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "联系我们"
+        },
+        "published_at": {
+          "quote": "发布时间：2026-05-08",
+          "source_url": "https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm",
+          "locator": "标题下发布日期"
+        }
+      },
+      "published_at": "2026-11-15T10:16:07+00:00"
+    },
+    {
+      "draft_id": "ebd85b5bcea64ce072c2",
+      "opportunity_id": "activity-ebd85b5bcea64ce072c2",
+      "reviewer": "v17-official-research-a",
+      "note": "逐字段核验当前官方HTML、长期招募原文、适用本科/访问范围、材料与公开邮箱；无截止不虚构日期，科研联系不等于研究生录取。额外方向出处另存additional_source_review。",
+      "reviewed_at": "2026-11-15T10:16:07+00:00",
+      "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+      "listing_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+      "first_seen": "2026-11-15T10:15:56+00:00",
+      "source_sha256": "71ff651c962c834fbc63ffe531fbdd333c924529c15f24b66f2f73bc664df8de",
+      "content_sha256": "d4c095a6c66765ba398461bfc9d7d22f7894ffac7873080095f08b1251c5909a",
+      "item_sha256": "f4f558e59805d9e61c4768d98a8d06bdec04acee66418d82b97de0fec7d05a1a",
+      "quotes": [
+        "课题组长期招收计算机/生物工程方向实习生",
+        "我们欢迎对计算机科学与技术、生物工程、药物设计、生物信息学等专业感兴趣的本科生或研究生加入我们",
+        "熟练掌握深度学习、机器学习、自然语言处理的基础知识，熟悉常用模型的原理、特点及应用；2. 熟悉Transformer、BERT、GPT等典型深度学习模型的原理和实现；3. 对AI在生物问题上的应用攻坚有兴趣和热情。",
+        "请发送简历与自我陈述（在校成绩单、项目经历等）至 tanyang.august@sjtu.edu.cn",
+        "基于人工智能技术的蛋白质定向进化、酶挖掘、代谢通路设计和蛋白质重头设计等",
+        "联系地点：上海交通大学张江高等研究院"
+      ],
+      "field_evidence": {
+        "application_window": {
+          "quote": "课题组长期招收计算机/生物工程方向实习生",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "locator": "招生/加入我们/本科生段"
+        },
+        "eligibility": {
+          "quote": "熟练掌握深度学习、机器学习、自然语言处理的基础知识，熟悉常用模型的原理、特点及应用；2. 熟悉Transformer、BERT、GPT等典型深度学习模型的原理和实现；3. 对AI在生物问题上的应用攻坚有兴趣和热情。",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "locator": "计算机科学与技术要求"
+        },
+        "materials": {
+          "quote": "请发送简历与自我陈述（在校成绩单、项目经历等）至 tanyang.august@sjtu.edu.cn",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "locator": "联系方式"
+        },
+        "research_directions": {
+          "quote": "基于人工智能技术的蛋白质定向进化、酶挖掘、代谢通路设计和蛋白质重头设计等",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "locator": "代表论文前研究描述"
+        },
+        "location": {
+          "quote": "联系地点：上海交通大学张江高等研究院",
+          "source_url": "https://ins.sjtu.edu.cn/people/lhong/join-us.html",
+          "locator": "联系方式"
+        }
+      },
+      "published_at": "2026-11-15T10:16:07+00:00"
+    },
+    {
+      "draft_id": "03f42b3a3c32a4c22d97",
+      "opportunity_id": "activity-03f42b3a3c32a4c22d97",
+      "reviewer": "v17-official-research-a",
+      "note": "逐字段核验当前官方HTML、长期招募原文、适用本科/访问范围、材料与公开邮箱；无截止不虚构日期，科研联系不等于研究生录取。额外方向出处另存additional_source_review。",
+      "reviewed_at": "2026-11-15T10:16:08+00:00",
+      "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+      "listing_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+      "first_seen": "2026-11-15T10:15:56+00:00",
+      "source_sha256": "4d3fa8e052ac9805f6b405a43b597957ac9c72fb927ba333e8efdd3ab2fadd80",
+      "content_sha256": "c3b9abfbfd87f5276eebd907f6a62faee5e25424845c9dec49a1fbabc730a5f9",
+      "item_sha256": "e23f213bc164cb5f7c5b058debc8bf4f1ff7cc173aa76ba5b16264b381313b86",
+      "quotes": [
+        "长期招收，有意向者请联系：qqhu@ustc.edu.cn",
+        "实验室也欢迎机器人工程、机械、力学、控制等相关专业的本科生加入",
+        "名额已满",
+        "位于中国科大高新校区3号学科楼"
+      ],
+      "field_evidence": {
+        "application_window": {
+          "quote": "长期招收，有意向者请联系：qqhu@ustc.edu.cn",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "locator": "招生/加入我们/本科生段"
+        },
+        "eligibility": {
+          "quote": "实验室也欢迎机器人工程、机械、力学、控制等相关专业的本科生加入",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "locator": "本科生"
+        },
+        "admission_note": {
+          "quote": "名额已满",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "locator": "研究生／27级保研段"
+        },
+        "location": {
+          "quote": "位于中国科大高新校区3号学科楼",
+          "source_url": "https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm",
+          "locator": "实验室介绍"
+        }
+      },
+      "published_at": "2026-11-15T10:16:08+00:00"
+    },
+    {
+      "draft_id": "ffaa8dc527fe9b19b72d",
+      "opportunity_id": "activity-ffaa8dc527fe9b19b72d",
+      "reviewer": "v17-official-research-a",
+      "note": "逐字段核验当前官方HTML、长期招募原文、适用本科/访问范围、材料与公开邮箱；无截止不虚构日期，科研联系不等于研究生录取。额外方向出处另存additional_source_review。",
+      "reviewed_at": "2026-11-15T10:16:09+00:00",
+      "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+      "listing_url": "https://shichaoding.lab.westlake.edu.cn/",
+      "first_seen": "2026-11-15T10:15:56+00:00",
+      "source_sha256": "75648601c1cf00dc1354ca96dfe7ab17b12afe2f058d6af8c7d6ba9326e12114",
+      "content_sha256": "b6116099575c4b46ab52eb29983a625ff2da6ee4d416c28757cd0c898fdef205",
+      "item_sha256": "a91016618dcdb22d3e7cc788b6c39b561b77e2dc82021f923a53e73bf319b8d4",
+      "quotes": [
+        "招聘启事在岗位招满前长期有效。",
+        "博士后、博士生、科研助理、访问学生",
+        "汗液/体液传感、多模态可穿戴传感、人体或动物实验、生物医学器件等",
+        "个人简历（含教育经历、研究经历、代表性论文/成果与主要科研技能）",
+        "请将申请材料合并为一个 PDF 文件发送至：dingshichao@westlake.edu.cn"
+      ],
+      "field_evidence": {
+        "application_window": {
+          "quote": "招聘启事在岗位招满前长期有效。",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "locator": "招生/加入我们/本科生段"
+        },
+        "eligibility": {
+          "quote": "博士后、博士生、科研助理、访问学生",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "locator": "招聘岗位"
+        },
+        "research_directions": {
+          "quote": "汗液/体液传感、多模态可穿戴传感、人体或动物实验、生物医学器件等",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "locator": "研究方向2"
+        },
+        "materials": {
+          "quote": "个人简历（含教育经历、研究经历、代表性论文/成果与主要科研技能）",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "locator": "应聘方式"
+        },
+        "contact": {
+          "quote": "请将申请材料合并为一个 PDF 文件发送至：dingshichao@westlake.edu.cn",
+          "source_url": "https://shichaoding.lab.westlake.edu.cn/",
+          "locator": "应聘方式"
+        }
+      },
+      "published_at": "2026-11-15T10:16:09+00:00"
+    },
+    {
+      "draft_id": "434d4a0472cbac5fe5a8",
+      "opportunity_id": "iscas-research-2026",
+      "reviewer": "Codex official-source review v1.7",
+      "note": "逐项核对公开官方正文及附件；届别/申请期分开，月精度不补具体截止日，长期实习不等于研究生录取；仅隔离目录发布验收",
+      "reviewed_at": "2026-11-15T10:22:51+00:00",
+      "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+      "listing_url": "https://www.iscas.ac.cn/yjsjy/zsxx/",
+      "first_seen": "2026-11-15T10:20:40+00:00",
+      "source_sha256": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+      "content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11",
+      "item_sha256": "f8adf929f4e7a634b48b76580f84daded13827cfc2babffa57be574e0781ff13",
+      "quotes": [
+        "2026年“科创计划”报名时间为即日起至2027年1月。",
+        "国内各高校计算机科学与技术、软件工程、网络空间安全、数学及其相近专业的在校优秀二年级、三年级本科生；",
+        "品学兼优，心身健康，学习成绩专业或年级排名在前20％；",
+        "将上述材料合成一个PDF文件，发送到对应部门联系人老师邮箱进行初选。",
+        "项目周期一般为6个月，周期内会对学生提供经费资助。"
+      ],
+      "field_evidence": {
+        "eligibility": {
+          "quote": "1． 国内各高校计算机科学与技术、软件工程、网络空间安全、数学及其相近专业的在校优秀 二年级、三年级本科生 ；\n2． 品学兼优，心身健康，学习成绩专业或年级排名在前20％；\n3． 需要具有一定的创新意识和科研探索精神，具有浓厚科研兴趣和扎实的基础理论知识。",
+          "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+          "locator": "官方公告正文",
+          "precision": "text",
+          "content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11"
+        },
+        "materials": {
+          "quote": "1． 查询《软件所“科创计划”招募研究方向》（附件1），选择自己感兴趣的方向，准备个人申请材料，个人申请材料清单如下：\n（1） 个人简历；\n（2） 现阶段本科成绩单；\n（3） 若有能说明自己英文水平的证明材料可提交，如英语四级、英语六级、TOEFL、IELTS或GRE成绩等；\n（4） 自愿提交的能体现本人科研素质与能力的其他材料（如已发表的论文、主要获奖证书等）；\n将上述材料合成一个PDF文件，发送到对应部门联系人老师邮箱进行初选。\n2． 经初选后，学生需与项目指导教师进行充分沟通后，会为确认参加的 学生 在“科创计划”系统中创建项目，并通知 学生 进行填报申请。\n3． 学生 在该系统进行项目填报申请后，需下载并打印申请表，请学籍所在学校（或学院）签字盖章后联系 部门 联系人，并邮寄申请表给项目指导教师审核签字。\n4． 项目指导教师签字后，会交由软件所研究生部审核盖章后，对 学生 在系统内的项目申请进行审核并立项。\n5． 系统维护中立项后，学生将自动收到项目立项的邮件通知。",
+          "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+          "locator": "官方公告正文",
+          "precision": "text",
+          "content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11",
+          "additional_quotes": [
+            "学生完成项目后，需提交结题报告。研究生部将组织评选优秀。研究生部将为通过结题者，出具相关证明材料；为获得优秀者，颁发证书。"
+          ]
+        },
+        "registration_start": {
+          "quote": "2026年10月28日",
+          "locator": "公告落款日期，结合三、报名与受理的即日起",
+          "source_url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html"
+        }
+      },
+      "published_at": "2026-11-15T10:22:51+00:00"
+    },
+    {
+      "draft_id": "33ef6c514947aaf3390e",
+      "opportunity_id": "buaa-xiejiahao-research-rolling",
+      "reviewer": "Codex official-source review v1.7",
+      "note": "逐项核对公开官方正文及附件；届别/申请期分开，月精度不补具体截止日，长期实习不等于研究生录取；仅隔离目录发布验收",
+      "reviewed_at": "2026-11-15T10:22:52+00:00",
+      "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+      "listing_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+      "first_seen": "2026-11-15T10:20:40+00:00",
+      "source_sha256": "152832292c753e77c3721e84c3fe4778e21d76d834cd5ce4179e637ae44df37a",
+      "content_sha256": "6376ee0d18b08a659b0a798e8338aad1d3514755a662f55d0c2f959dc22bc229",
+      "item_sha256": "bf962cac08b839d16575d6d64332557a21748e9c162f517ba886f5512a97253c",
+      "quotes": [
+        "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。",
+        "请在邮件中附上简历、成绩单、研究成果或项目经历等相关材料。",
+        "研究方向为基础模型、多模态理解与生成、具身智能。",
+        "jiahaoxie@buaa.edu.cn"
+      ],
+      "field_evidence": {
+        "eligibility": {
+          "quote": "同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。 【希望你】 •  自驱力强 ： 对基础模型、多模态、具身智能有浓厚兴趣，乐于探索。 •  基础扎实： 具备较强的代码能力和一定的相关研究基础，有顶会论文/算法相关竞赛获奖是加分项。 •  善于表达： 具备良好的表达与沟通能力，心态积极，乐观向上。 ",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "locator": "招生计划与希望你"
+        },
+        "materials": {
+          "quote": "请在邮件中附上简历、成绩单、研究成果或项目经历等相关材料。",
+          "source_url": "https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm",
+          "locator": "正文"
+        }
+      },
+      "published_at": "2026-11-15T10:22:52+00:00"
+    },
+    {
+      "draft_id": "4257226b961853496fae",
+      "opportunity_id": "ruc-dongjinhao-research-contact",
+      "reviewer": "Codex official-source review v1.7",
+      "note": "逐项核对公开官方正文及附件；届别/申请期分开，月精度不补具体截止日，长期实习不等于研究生录取；仅隔离目录发布验收",
+      "reviewed_at": "2026-11-15T10:22:52+00:00",
+      "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+      "listing_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+      "first_seen": "2026-11-15T10:20:40+00:00",
+      "source_sha256": "3dd000dd3633b7222d2a523cf8b0ddfebd09bfef54e30c7a80277ea2c9cf3e3b",
+      "content_sha256": "3affb975ff5a5b33262210bc41e09758f6b9755950013f5a2f2764562ea3be70",
+      "item_sha256": "0b8a352229f2e69db86187356a91934aca6213d3413c96f1de9992044f934dc0",
+      "quotes": [
+        "课题组长期面向优秀本科生和研究生开放科研实习机会",
+        "dongjinhao@ruc.edu.cn"
+      ],
+      "field_evidence": {
+        "eligibility": {
+          "quote": "课题组长期面向优秀本科生和研究生开放科研实习机会",
+          "source_url": "https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm",
+          "locator": "研究机会"
+        }
+      },
+      "published_at": "2026-11-15T10:22:52+00:00"
+    },
+    {
+      "draft_id": "f05c76ddf0d9082646f9",
+      "opportunity_id": "cibr-winter-training-2027",
+      "reviewer": "Codex official-source review v1.7",
+      "note": "逐项核对公开官方正文及附件；届别/申请期分开，月精度不补具体截止日，长期实习不等于研究生录取；CIBR显式确认正文链接与两DOCX组合版本，只容许浏览量变化；仅隔离目录发布验收",
+      "reviewed_at": "2026-11-15T10:27:54+00:00",
+      "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+      "listing_url": "https://cibr.ac.cn/cibrPersonnel/admissions",
+      "first_seen": "2026-11-15T10:20:40+00:00",
+      "source_sha256": "82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6",
+      "content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b",
+      "item_sha256": "066750a84899b32acb8952dff199ad1573d257cc8c895d439d8d0c04c82ad65a",
+      "quotes": [
+        "报名时间：即日起至2026年11月30日17：00。",
+        "时间：2027年1月10日-14日",
+        "欢迎对神经和认知科学有浓厚兴趣的生物学、计算机、医学、数学、物理、化学、药学、电子信息、材料学等相关专业在读本科生（二年级及以上）或硕士研究生（二、三年级）积极报名。",
+        "冬季培训班不向学生收取任何培训费用，交通费用将由学生自行承担，我所将为培训班的同学购买保险并提供食宿。",
+        "（缺少填报问卷或未提交电子材料均不得进入选拔环节）"
+      ],
+      "field_evidence": {
+        "eligibility": {
+          "quote": "欢迎对神经和认知科学有浓厚兴趣的生物学、计算机、医学、数学、物理、化学、药学、电子信息、材料学等相关专业在读本科生（二年级及以上）或硕士研究生（二、三年级）积极报名。",
+          "locator": "正文",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        },
+        "materials": {
+          "quote": "①北京脑科学与类脑研究所2027年冬季培训班申请表1份（附件一）； ②身份证及学生证复印件； ③个人陈述（关于个人学术背景、曾经做过的研究工作以及未来学习和研究的计划、目标等）1份（附件二）； ④本科阶段及硕士阶段（如有）阶段成绩单（加盖教务部门公章）1份； ⑤英语水平证明，如国家英语四、六级考试、或托福、雅思与GRE考试等成绩的复印件； ⑥学术证明材料（如有），如学位论文首页及摘要页、体现自身学术水平的代表性学术论文或其他原创性工作成果首页； ⑦其他证明材料（如有），如获奖证书、志愿证明等。",
+          "locator": "二、报名材料清单；附件另列source_attachments",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        },
+        "deadline": {
+          "quote": "报名时间：即日起至2026年11月30日17：00。",
+          "locator": "正文",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        },
+        "event_start": {
+          "quote": "时间：2027年1月10日-14日",
+          "locator": "正文",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        },
+        "event_end": {
+          "quote": "时间：2027年1月10日-14日",
+          "locator": "正文",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        },
+        "registration_start": {
+          "quote": "2026-11-02",
+          "locator": "公告标题下发布日期，结合二、2报名时间的即日起",
+          "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd"
+        }
+      },
+      "source_attachments": [
+        {
+          "url": "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5",
+          "sha256": "8e7a54fc88ea8c325eb8cae62d0aea8e73248e0b1c2faec9939a45afdc67ca12",
+          "checked_at": "2026-11-15",
+          "field_evidence": {
+            "materials": {
+              "quote": "申请人签名：（请使用电子签）",
+              "locator": "DOCX申请人签名处"
+            }
+          }
+        },
+        {
+          "url": "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+          "sha256": "73c44d0f084a72b36a65b9e8065d3175b5c607be77dc891058fed4adf3c1707f",
+          "checked_at": "2026-11-15",
+          "field_evidence": {
+            "materials": {
+              "quote": "请用2000字以内的文字介绍你的学术背景、科研兴趣方向以及对今后学习研究工作的设想和计划等。个人陈述应由申请人独立完成，如发现是由他人或AI协助完成，将取消申请人资格。",
+              "locator": "DOCX个人陈述说明"
+            }
+          }
+        }
+      ],
+      "version_confirmation": {
+        "mode": "explicit_normalized_content",
+        "acknowledged_raw_sha256": "144941490e378f06127ebaa5065c26b61ba67e53a732d5c79fabf307ea738b43",
+        "current_raw_sha256": "82bf351c4c3ff3f0a9b37c7c7ce7ef949e9c870d322c0f94dcd74e5518c83dc6",
+        "content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b",
+        "basis": "维护者显式确认此前正文、链接和全部已核验附件的组合版本；实时取证一致"
+      },
+      "published_at": "2026-11-15T10:27:54+00:00"
     }
   ]
 }

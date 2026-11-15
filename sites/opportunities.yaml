@@ -1,4 +1,3 @@
-# 保研与冬夏令营官方栏目；新增与迁移核验见cache/source_coverage_v12。
 targets:
 - school: tsinghua
   dept: cs
@@ -279,8 +278,6 @@ targets:
   title_selector: self
   date_selector: span
   source_note: 控制、电子信息等CS相关招生；复试成绩和公示不是新报名入口。
-
-# v1.6：实际官方栏目解析核验，2026-11-15。
 - school: uestc
   dept: cs
   name: 计算机科学与工程学院（网络空间安全学院）（学校通用招生栏目）
@@ -421,3 +418,118 @@ targets:
   source_id: dlut-cs-graduate
   source_scope: school
   source_note: 学校通用通知，不代表院系附加要求或导师个人名额。 2026-11-15实际抓取验证招生详情链接，不以栏目可达代替有效解析。
+- source_id: fudan-ibd-zhangfan
+  school: fudan
+  dept: ibd
+  name: 大数据研究院张帆团队
+  url: https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm
+  mode: direct_page
+  title: 复旦大学张帆团队本科科研实习联系
+  required_text: 【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】
+  priority: current
+  interval_hours: 24
+- source_id: sjtu-ins-hongliang
+  school: sjtu
+  dept: ins
+  name: 洪亮团队／张江高等研究院
+  url: https://ins.sjtu.edu.cn/people/lhong/join-us.html
+  mode: direct_page
+  title: 上海交通大学洪亮团队AI与生物方向长期实习
+  required_text: 课题组长期招收计算机/生物工程方向实习生
+  priority: current
+  interval_hours: 24
+- source_id: ustc-robotics-huqiqiang
+  school: ustc
+  dept: robotics
+  name: 胡奇强实验室／人形机器人研究院
+  url: https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm
+  mode: direct_page
+  title: 中国科大胡奇强实验室本科机器人科研联系
+  required_text: 长期招收，有意向者请联系：qqhu@ustc.edu.cn
+  priority: current
+  interval_hours: 24
+- source_id: westlake-bioelectronics-dingshichao
+  school: westlake
+  dept: bioelectronics
+  name: 网络化生物电子系统实验室
+  url: https://shichaoding.lab.westlake.edu.cn/
+  mode: direct_page
+  title: 西湖大学丁士超实验室访问学生联系
+  required_text: 招聘启事在岗位招满前长期有效。
+  priority: current
+  interval_hours: 24
+- source_id: pku-ai4s-recruit
+  school: pku
+  dept: ai4s
+  name: 北京大学科学智能学院招生信息
+  url: https://ai4s.pkusz.edu.cn/zspy/zsxx.htm
+  selector: a[href*="/info/"]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+- source_id: siat-iait-recruit
+  school: ucas
+  dept: siat-iait
+  name: 深圳先进院集成技术研究所招生专栏
+  url: https://siait.siat.ac.cn/siat/iait/rczp/index.html
+  selector: a[href*="/rczp/2"]
+  title_selector: .title
+  date_selector: .date
+  priority: historical
+  interval_hours: 24
+- source_id: cibr-training-api-summer
+  school: cibr
+  dept: ''
+  name: 北京脑所培训实习
+  url: https://cibr.ac.cn/cibrPersonnel/admissions
+  api: https://cibr.ac.cn/api/article/list
+  api_format: cibr_articles
+  post:
+    page: '{"current":0,"pageSize":999}'
+    search: '""'
+    menuId: 17f21a2bc8214830902d4b9c603e1a5b
+    type: summer
+    language: zh
+  selector: li a
+  title_selector: self
+  date_selector: .date
+  priority: current
+  interval_hours: 6
+- source_id: cibr-training-api-winter
+  school: cibr
+  dept: ''
+  name: 北京脑所培训实习
+  url: https://cibr.ac.cn/cibrPersonnel/admissions
+  api: https://cibr.ac.cn/api/article/list
+  api_format: cibr_articles
+  post:
+    page: '{"current":0,"pageSize":999}'
+    search: '""'
+    menuId: 17f21a2bc8214830902d4b9c603e1a5b
+    type: winter
+    language: zh
+  selector: li a
+  title_selector: self
+  date_selector: .date
+  priority: current
+  interval_hours: 6
+- source_id: buaa-xiejiahao-research-rolling
+  school: buaa
+  dept: ''
+  name: 北京航空航天大学解佳豪课题组
+  url: https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm
+  mode: direct_page
+  title: 北航解佳豪课题组本科生科研实习
+  required_text: 同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。
+  priority: current
+  interval_hours: 24
+- source_id: ruc-dongjinhao-research-contact
+  school: ruc
+  dept: cs
+  name: 信息学院·数据工程与知识工程教育部重点实验室
+  url: https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm
+  mode: direct_page
+  title: 人大董谨豪课题组科研实习联系
+  required_text: 课题组长期面向优秀本科生和研究生开放科研实习机会
+  priority: current
+  interval_hours: 24

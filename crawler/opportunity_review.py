@@ -17,6 +17,7 @@ import requests
 
 from crawler import opportunity_util as opportunities
 from crawler import opportunity_extract as extraction
+from crawler import opportunity_attachments as attachments
 from crawler.opportunity_monitor import atomic_json, output_lock
 
 
@@ -127,7 +128,7 @@ def fetch_pdf(url, source_url):
         raise ValueError('PDF重定向次数过多')
 
 
-def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf):
+def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, docx_fetcher=None):
     timestamp = (now or datetime.now(timezone.utc)).isoformat(timespec='seconds')
     previous = draft.get('fetch', {})
     try:
@@ -141,6 +142,15 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf):
         path = folder / (digest + '.html')
         path.write_bytes(raw)
         previous = dict(previous, sha256=digest, evidence_file=str(path.resolve()))
+        attachment_records = draft['item'].get('source_attachments', [])
+        attachments.validate_links(attachment_records, raw, draft['source_url'])
+        def saved_docx(url, source_url):
+            if hasattr(fetcher, 'wait'):
+                fetcher.wait(url)
+            content = (docx_fetcher or attachments.fetch_docx)(url, source_url)
+            (folder / (hashlib.sha256(content).hexdigest() + '.docx')).write_bytes(content)
+            return content
+        verified_attachments = attachments.verify(attachment_records, draft['source_url'], saved_docx)
         pdf_urls = extraction.embedded_pdf_urls(raw, draft['source_url'])
         try:
             if pdf_urls:
@@ -164,8 +174,8 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf):
                 pdf_path.write_bytes(pdf_raw)
                 pdfs.append(dict(url=url, sha256=pdf_hash, evidence_file=str(pdf_path.resolve()), **parsed))
             draft['fetch'] = dict(status='pdf_review', checked_at=timestamp, sha256=digest,
-                                  content_sha256=extraction.pdf_source_version(raw, draft['source_url'], pdfs),
-                                  evidence_file=str(path.resolve()), pdfs=pdfs, error=None)
+                                  content_sha256=attachments.source_version(extraction.pdf_source_version(raw, draft['source_url'], pdfs), attachment_records),
+                                  evidence_file=str(path.resolve()), pdfs=pdfs, attachments=verified_attachments, error=None)
             if len(pdfs) == 1:
                 for key in ('suggestions', 'field_evidence', 'classification'):
                     draft[key] = copy.deepcopy(pdfs[0].get(key, {} if key != 'classification' else 'pending_review'))
@@ -174,7 +184,8 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf):
             draft['warnings'] = ['正文包含PDF，须确认每个PDF版本及逐字段页码证据后发布；规则建议不代表已核验。'] + [warning for pdf in pdfs for warning in pdf.get('warnings', [])]
             return raw
         draft['fetch'] = dict(status='ok', checked_at=timestamp, sha256=digest,
-                              content_sha256=extracted['content_sha256'], evidence_file=str(path.resolve()), error=None)
+                              content_sha256=attachments.source_version(extracted['content_sha256'], attachment_records),
+                              evidence_file=str(path.resolve()), attachments=verified_attachments, error=None)
         draft.update(extracted)
         return raw
     except (OSError, ValueError, requests.RequestException) as error:
@@ -298,6 +309,21 @@ def validate_field_evidence(draft, item, text):
     normalize = extraction.compact
     mappings = draft.get('reviewed_fields', {})
     quotes = draft.get('quotes', [])
+    window = item.get('application_window')
+    if window:
+        quote = normalize(window.get('quote', ''))
+        if not quote or quote not in normalize(text):
+            raise ValueError('申请窗口须有当前官方正文中的原文摘录')
+        if window['mode'] == 'rolling' and not re.search(r'(?:全年|长期|常年|滚动).{0,80}(?:接受|接收|招收|招募|招聘|申请|报名|开放)|(?:接受|接收|招收|招募|招聘|申请|报名|开放).{0,80}(?:全年|长期|常年|滚动)', quote):
+            raise ValueError('滚动申请须有长期接受申请或招募的明确原文')
+        if window['mode'] == 'month':
+            year, month = map(int, window['end_month'].split('-'))
+            if not re.search(rf'{year}(?:年|[-/])0?{month}(?:月|\b)', quote) or not re.search(r'报名|受理|申请', quote):
+                raise ValueError('月精度截止缺少对应受理年月原文')
+            mapped = mappings.get('registration_start', {})
+            if item.get('registration_start') and not re.search(r'报名|受理|开始|启动', normalize(mapped.get('quote', ''))):
+                if '即日起' not in quote or '即日起' not in mapped.get('locator', ''):
+                    raise ValueError('以发布日期作为开始日须单独映射即日起依据')
     critical = ('deadline', 'registration_start', 'event_start', 'event_end', 'eligibility', 'materials')
     for field in critical:
         value = item.get(field)
@@ -305,11 +331,21 @@ def validate_field_evidence(draft, item, text):
             continue
         mapped = mappings.get(field, {})
         quote = mapped.get('quote', '') if isinstance(mapped, dict) else ''
-        if quote and normalize(quote) in normalize(text):
+        field_text = text
+        if isinstance(mapped, dict) and mapped.get('source_url') != item.get('source_url'):
+            for attachment in item.get('source_attachments', []):
+                evidence = attachment['field_evidence'].get(field, {})
+                if attachment['url'] == mapped.get('source_url') and normalize(quote) == normalize(evidence.get('quote', '')):
+                    field_text = evidence['quote']  # Already re-fetched and verified before publication.
+                    break
+        if quote and normalize(quote) in normalize(field_text):
+            if field == 'registration_start' and value == item.get('published_at') and not re.search(r'报名|受理|开始|启动', normalize(quote)):
+                if '即日起' not in normalize(text) or '即日起' not in mapped.get('locator', ''):
+                    raise ValueError('以发布日期作为开始日须单独映射即日起依据')
             # A reviewer may paraphrase conditions, but dates must be present in evidence.
             if field in ('eligibility', 'materials'):
                 continue
-            dates = {extraction.date_value(m, normalize(quote), with_time=field == 'deadline') for m in extraction.DATE.finditer(normalize(quote))}
+            dates = extraction.explicit_date_values(quote, with_time=field == 'deadline')
             comparable = datetime.fromisoformat(value).isoformat() if 'T' in str(value) else value
             if comparable in dates:
                 continue
@@ -320,7 +356,7 @@ def validate_field_evidence(draft, item, text):
             labels = {'deadline': r'(?:报名|申请|受理).*(?:截止|截至|至)',
                       'registration_start': r'(?:报名|受理).*(?:开始|启动)',
                       'event_start': r'活动时间|营期|举办时间', 'event_end': r'活动时间|营期|举办时间'}
-            dates = {extraction.date_value(m, normalize(q), with_time=field == 'deadline') for q in quotes if re.search(labels[field], normalize(q)) for m in extraction.DATE.finditer(normalize(q))}
+            dates = {value for q in quotes if re.search(labels[field], normalize(q)) for value in extraction.explicit_date_values(q, with_time=field == 'deadline')}
             comparable = datetime.fromisoformat(value).isoformat() if 'T' in str(value) else value
             if comparable in dates:
                 continue
@@ -362,7 +398,8 @@ def pdf_review_evidence(draft, acknowledged_pdf_hashes):
 
 
 def publish(queue_path, draft_id, root, configs, *, acknowledged_hash, reviewer, note, fetcher=fetch_source,
-            pdf_fetcher=fetch_pdf, acknowledged_pdf_hashes=None, expected_revision=None):
+            pdf_fetcher=fetch_pdf, acknowledged_pdf_hashes=None, expected_revision=None, docx_fetcher=None,
+            acknowledged_content_hash=None):
     """Recheck source, validate one item, atomically replace the catalog with audit.
 
 catalog.review_log is the authoritative audit if a crash interrupts the later
@@ -380,7 +417,8 @@ second item. External edits should not run concurrently with this command.
         if expected_revision is not None and item_hash(draft) != expected_revision:
             raise ValueError('草稿已被其他操作更新，请重新打开后核验')
         check_source(draft, configs)
-        raw = fetch_evidence(draft, queue_path, fetcher, pdf_fetcher=pdf_fetcher)
+        acknowledged_fetch = copy.deepcopy(draft.get('fetch', {}))
+        raw = fetch_evidence(draft, queue_path, fetcher, pdf_fetcher=pdf_fetcher, docx_fetcher=docx_fetcher)
         atomic_json(queue_path, queue)
         if raw is None:
             raise ValueError('原文当前获取失败，未发布')
@@ -390,7 +428,16 @@ second item. External edits should not run concurrently with this command.
         else:
             source_text = extraction.document(raw, draft['source_url'])['text']
         digest = draft['fetch']['sha256']
-        if acknowledged_hash != digest:
+        content_confirmed = False
+        if acknowledged_content_hash is not None:
+            content_confirmed = (isinstance(acknowledged_content_hash, str) and
+                                 re.fullmatch(r'[a-f0-9]{64}', acknowledged_content_hash) and
+                                 acknowledged_fetch.get('status') == draft['fetch']['status'] == 'ok' and
+                                 acknowledged_fetch.get('sha256') == acknowledged_hash and
+                                 acknowledged_fetch.get('content_sha256') == acknowledged_content_hash == draft['fetch']['content_sha256'])
+            if not content_confirmed:
+                raise ValueError('正文、链接或附件组合 SHA 与显式确认的既有证据不一致，未发布')
+        if acknowledged_hash != digest and not content_confirmed:
             raise ValueError('原文与已核对 SHA 不一致，请重新核验；未发布')
         quotes = draft.get('quotes', [])
         normalize = lambda text: ''.join(text.split())
@@ -423,6 +470,13 @@ second item. External edits should not run concurrently with this command.
                       field_evidence=copy.deepcopy(draft.get('reviewed_fields', {})))
         if documents:
             review['source_documents'] = copy.deepcopy(documents)
+        if item.get('source_attachments'):
+            review['source_attachments'] = copy.deepcopy(item['source_attachments'])
+        if content_confirmed:
+            review['version_confirmation'] = dict(mode='explicit_normalized_content',
+                acknowledged_raw_sha256=acknowledged_hash, current_raw_sha256=digest,
+                content_sha256=acknowledged_content_hash,
+                basis='维护者显式确认此前正文、链接和全部已核验附件的组合版本；实时取证一致')
         review['published_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds')
         catalog['opportunities'] = [item if i['id'] == item['id'] else i for i in catalog['opportunities']]
         if existing is None:

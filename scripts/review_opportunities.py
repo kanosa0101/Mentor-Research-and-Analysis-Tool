@@ -39,6 +39,7 @@ def main(argv=None):
     publish = commands.add_parser('publish', help='重新抓取原文，通过核验后原子写入活动目录')
     publish.add_argument('id')
     publish.add_argument('--sha256', required=True, help='维护者已阅读并核验的原文 SHA')
+    publish.add_argument('--content-sha256', help='显式确认既有HTML正文、链接及附件组合SHA；仅在实时组合SHA相同时允许浏览量等整页变化，默认不启用')
     publish.add_argument('--pdf-sha256', action='append', default=[], help='已核验PDF的SHA；每个文件重复提供一次，并填写草稿逐字段pages证据')
     publish.add_argument('--reviewer', required=True)
     publish.add_argument('--note', required=True)
@@ -61,7 +62,8 @@ def main(argv=None):
             configs = yaml.safe_load(args.config.read_text(encoding='utf-8'))['targets']
             if args.command == 'publish':
                 item = review.publish(args.queue, args.id, args.root, configs, acknowledged_hash=args.sha256,
-                                      reviewer=args.reviewer, note=args.note, acknowledged_pdf_hashes=args.pdf_sha256)
+                                      reviewer=args.reviewer, note=args.note, acknowledged_pdf_hashes=args.pdf_sha256,
+                                      acknowledged_content_hash=args.content_sha256)
                 print(f"已核验发布 {item['id']}；未自动部署或发送通知。")
                 return 0
             monitoring = json.loads(args.monitoring.read_text(encoding='utf-8'))
@@ -76,6 +78,7 @@ def main(argv=None):
                 queue['renewed'] = renewed
         rows = [dict(id=d['id'], status=review.status(d), title=d['item'].get('title'),
                      source_url=d['source_url'], sha256=d.get('fetch', {}).get('sha256'),
+                     content_sha256=d.get('fetch', {}).get('content_sha256'),
                      error=d.get('fetch', {}).get('error')) for d in queue['drafts']]
         for row, draft in zip(rows, queue['drafts']):
             row.update(classification=draft.get('classification'), suggestions=draft.get('suggestions', {}),

@@ -106,7 +106,7 @@ if(requested.length){
  try{const response=await fetch('/api/mentors?ids='+encodeURIComponent(requested.join(',')));if(!response.ok)throw new Error('服务不可用');DATA=(await response.json()).mentors;}
  catch(error){
   const load=file=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=file;script.onload=resolve;script.onerror=reject;document.head.append(script);});
-  await load('data.js?v=20261115-6');await load('compare-data.js?v=20261115-6');
+  await load('data.js?v=20261115-7');await load('compare-data.js?v=20261115-7');
   DATA=window.MENTOR_DATA.filter(p=>requested.includes(p.page)).map(p=>Object.assign(p,window.MENTOR_COMPARE[p.page]));
  }
 }

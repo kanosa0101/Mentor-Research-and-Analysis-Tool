@@ -300,6 +300,32 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(review.renew(self.queue, self.root), [])
         self.assertEqual(opportunities.load(self.root)['opportunities'][0], after)
 
+    def test_counter_only_publication_requires_explicit_existing_content_confirmation(self):
+        self.raw = '<article><p>本次活动面向2028届本科毕业生，报名截止2026年12月31日。</p><span class="views">123</span></article>'.encode()
+        draft = self.ready()
+        original_queue = self.queue.read_bytes()
+        changed = self.raw.replace(b'123', b'456')
+        with self.assertRaisesRegex(ValueError, 'SHA'):
+            self.publish(draft, changed)
+        self.queue.write_bytes(original_queue)
+        self.publish(draft, changed, acknowledged_content_hash=draft['fetch']['content_sha256'])
+        audit = opportunities.load(self.root)['review_log'][-1]['version_confirmation']
+        self.assertEqual(audit['acknowledged_raw_sha256'], hashlib.sha256(self.raw).hexdigest())
+        self.assertEqual(audit['current_raw_sha256'], hashlib.sha256(changed).hexdigest())
+        self.assertEqual(audit['content_sha256'], draft['fetch']['content_sha256'])
+
+    def test_explicit_content_confirmation_rejects_text_link_or_stale_hash_changes(self):
+        self.raw = '<article><p>本次活动面向2028届本科毕业生，报名截止2026年12月31日。</p><a href="/apply">报名入口</a><span class="views">123</span></article>'.encode()
+        draft = self.ready()
+        original_queue = self.queue.read_bytes()
+        for raw, content_hash in [(self.raw.replace(b'31', b'30'), draft['fetch']['content_sha256']),
+                                  (self.raw.replace(b'/apply', b'/changed'), draft['fetch']['content_sha256']),
+                                  (self.raw, 'a' * 64)]:
+            self.queue.write_bytes(original_queue)
+            with self.subTest(raw=raw), self.assertRaisesRegex(ValueError, 'SHA'):
+                self.publish(draft, raw, acknowledged_content_hash=content_hash)
+        self.assertFalse(self.catalog.exists())
+
     def test_embedded_pdf_preserves_html_hash_and_never_passes_html_publication(self):
         from pypdf import PdfWriter
         stream = io.BytesIO();writer = PdfWriter();writer.add_blank_page(width=100,height=100);writer.write(stream)

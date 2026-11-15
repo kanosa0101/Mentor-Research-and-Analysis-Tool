@@ -16,6 +16,7 @@ from crawler import opportunity_util, push_util
 from crawler import public_snapshot
 from crawler.static_assets import AssetCache, send as send_asset
 from crawler.public_catalog import selected as selected_mentors, search as search_mentors
+from crawler.public_discovery import candidates as mentor_candidates
 
 CONTENT_TYPES = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
                  '.css': 'text/css; charset=utf-8'}
@@ -84,6 +85,11 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(404, {'error': 'Not found'})
         if path in ('/health', '/api/health'):
             return self.json(200, {'ok': True, 'mode': 'public'})
+        if path == '/api/mentor-candidates':
+            try:
+                return self.json(200, mentor_candidates(self.root, parse_qs(raw.query, keep_blank_values=True)))
+            except (OSError, ValueError, KeyError, TypeError):
+                return self.json(400, {'error': '导师筛选请求无效，请检查条件后重试'})
         if path == '/api/mentors':
             try:
                 ids = parse_qs(raw.query).get('ids', [''])[0]

@@ -28,6 +28,7 @@ from crawler import public_update
 from crawler import plan_transfer
 from crawler.static_assets import AssetCache, send as send_asset
 from crawler.public_catalog import selected as selected_mentors, search as search_mentors
+from crawler.public_discovery import candidates as mentor_candidates
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -135,6 +136,14 @@ class Handler(SimpleHTTPRequestHandler):
                 installed=json.loads(installed.read_text()) if installed.exists() else None))
         if _public_update['busy'] and self.path != '/api/health':
             return self._json(503, {'error': '正在更新公共资料，请完成后刷新；私人记录保持不变'})
+        if urlsplit(self.path).path == '/api/mentor-candidates':
+            if not self._local_request():
+                return
+            try:
+                return self._json(200, mentor_candidates(self.site.parent,
+                    parse_qs(urlsplit(self.path).query, keep_blank_values=True)))
+            except (OSError, ValueError, KeyError, TypeError):
+                return self._json(400, {'error': '导师筛选请求无效，请检查条件后重试'})
         if urlsplit(self.path).path == '/api/mentors':
             if not self._local_request():
                 return

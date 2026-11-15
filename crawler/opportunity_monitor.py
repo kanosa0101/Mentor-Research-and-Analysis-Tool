@@ -1,6 +1,7 @@
 """Discover official activity links without promoting them to reviewed opportunities."""
 import copy
 import hashlib
+import html
 import json
 import os
 import tempfile
@@ -12,10 +13,10 @@ from urllib.parse import urlsplit
 
 import requests
 
-from scripts.monitor_notices import parse_list
+from scripts.monitor_notices import parse_list, notice_hints
 
-ACTIVITIES = ('冬令营', '夏令营', '预推免', '推免预报名', '暑期研修', '科研实践', '科研实习', '春闱计划', '科创计划', '深瞳计划', '创新实践', '暑期科学营')
-EXCLUDED = ('中学生', '中小学', '青少年', '奥林匹克', '出国', '境外', '访学', '海外', '名单', '公示', '考核结果', '录取结果', '复试成绩公布', '活动总结')
+ACTIVITIES = ('冬令营', '冬季培训班', '夏令营', '预推免', '推免预报名', '暑期研修', '科研实践', '科研实习', '科研训练', '春闱计划', '科创计划', '深瞳计划', '创新实践', '暑期科学营')
+EXCLUDED = ('中学生', '中小学', '青少年', '奥林匹克', '出国', '境外', '访学', '海外', '名单', '公示', '考核结果', '录取结果', '复试成绩公布', '活动总结', '圆满落幕')
 
 
 def activity_title(title):
@@ -29,17 +30,49 @@ def fetch_source(config, timeout=25):
         session.trust_env = False
         response = session.request('POST' if config.get('api') else 'GET',
                                    config.get('api') or config['url'],
-                                   data=config.get('post'), timeout=timeout,
+                                   data=None if config.get('api_format') == 'cibr_articles' else config.get('post'),
+                                   json=config.get('post') if config.get('api_format') == 'cibr_articles' else None, timeout=timeout,
                                    headers={'User-Agent': 'Mozilla/5.0 (local admissions monitor)'})
         response.raise_for_status()
         if response.status_code != 200:
             raise ValueError(f'Expected HTTP 200, received {response.status_code}')
         if config.get('api'):
+            if config.get('api_format') == 'cibr_articles':
+                return cibr_list(response.json())
             content = response.json().get('content')
             if not isinstance(content, str) or not content.strip():
                 raise ValueError('Official API did not return list HTML')
             return content.encode('utf-8')
         return response.content
+
+
+def cibr_list(payload):
+    """Adapt the public CIBR training endpoint; its internal type is not a cohort."""
+    result_map = payload.get('retMap') if isinstance(payload, dict) else None
+    rows = result_map.get('articleList') if isinstance(result_map, dict) else None
+    if not isinstance(payload, dict) or payload.get('code') != 'success' or not isinstance(rows, list):
+        raise ValueError('CIBR官方API未返回有效公告列表')
+    import re
+    result = []
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get('id'), str) or not re.fullmatch('[a-f0-9]{32}', row['id']) or not isinstance(row.get('title'), str):
+            raise ValueError('CIBR官方公告字段无效')
+        result.append('<li><a href="https://cibr.ac.cn/detail/cibrPersonneladmissions/' + row['id'] + '">' +
+                      html.escape(row['title']) + '</a><span class="date">' + html.escape(str(row.get('createTime', ''))[:10]) + '</span></li>')
+    return ('<ul>' + ''.join(result) + '</ul>').encode()
+
+
+def direct_notice(raw, config):
+    from crawler.opportunity_extract import document, compact
+    required, title = config.get('required_text'), config.get('title')
+    if not isinstance(required, str) or not required.strip() or not isinstance(title, str) or not title.strip():
+        raise ValueError('单页招募来源须配置title和required_text')
+    text = document(raw, config['url'])['text']
+    if compact(required) not in compact(text):
+        raise ValueError('官方单页未匹配已登记招募原文，保留旧记录等待复核')
+    return [dict(id=hashlib.sha256(config['url'].encode()).hexdigest()[:16], school=config['school'],
+                 dept=config['dept'], unit=config.get('name', config['school']), title=title,
+                 url=config['url'], source=config['url'], publication_date=None, **notice_hints(title))]
 
 
 @contextmanager
@@ -134,13 +167,13 @@ class DomainThrottle:
         self.last[host] = self.clock()
 
 
-def run_once(configs, output, opportunities=None, *, fetcher=fetch_source, pdf_fetcher=None, now=None, interval_hours=6, lock=True, scheduled=False, domain_interval=0):
+def run_once(configs, output, opportunities=None, *, fetcher=fetch_source, pdf_fetcher=None, docx_fetcher=None, now=None, interval_hours=6, lock=True, scheduled=False, domain_interval=0):
     """Refresh atomically. lock=False is reserved for a caller holding output_lock."""
     with output_lock(output) if lock else nullcontext():
-        return _run(configs, output, opportunities or [], DomainThrottle(fetcher, domain_interval), now, interval_hours, pdf_fetcher, scheduled)
+        return _run(configs, output, opportunities or [], DomainThrottle(fetcher, domain_interval), now, interval_hours, pdf_fetcher, scheduled, docx_fetcher)
 
 
-def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetcher, scheduled):
+def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetcher, scheduled, docx_fetcher):
     previous = read_previous(output)
     moment = now or datetime.now(timezone.utc)
     timestamp = moment.isoformat(timespec='seconds')
@@ -166,12 +199,13 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
         if old.get('url') and old['url'] != cfg['url']:
             source.update(last_success=None, count=0)
         try:
-            notices = parse_list(fetcher(cfg), cfg)
+            raw = fetcher(cfg)
+            notices = direct_notice(raw, cfg) if cfg.get('mode') == 'direct_page' else parse_list(raw, cfg)
             if not notices:
                 raise ValueError('未解析出通知，可能是栏目变化或访问受限；保留上次候选。')
             if not baseline and old.get('parsed_count', 0) >= 10 and len(notices) < old['parsed_count'] * .25:
                 raise ValueError('栏目解析数量下降超过75%；保留上次候选并等待核验选择器或栏目分页。')
-            found = [row for row in notices if activity_title(row['title'])]
+            found = notices if cfg.get('mode') == 'direct_page' else [row for row in notices if activity_title(row['title'])]
             current_urls = {row['url'] for row in found}
             for row in rows.values():
                 if row['source'] == cfg['url']:
@@ -218,6 +252,15 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
             digest = hashlib.sha256(raw.encode('utf-8') if isinstance(raw, str) else raw).hexdigest()
             same_content = False
             documents = opportunity.get('source_documents', [])
+            source_attachments = opportunity.get('source_attachments', [])
+            if source_attachments:
+                from crawler import opportunity_attachments as attachments
+                attachments.validate_links(source_attachments, raw, opportunity['source_url'])
+                def load_docx(url, source_url):
+                    fetcher.wait(url)
+                    return (docx_fetcher or attachments.fetch_docx)(url, source_url)
+                verified = attachments.verify(source_attachments, opportunity['source_url'], load_docx)
+                check['source_attachments'] = [dict(url=a['url'], sha256=a['sha256']) for a in verified]
             if documents:
                 from crawler.opportunity_extract import embedded_pdf_urls, pdf_source_version
                 from crawler.opportunity_review import fetch_pdf
@@ -233,17 +276,24 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                     fetcher.wait(doc['url'])
                     versions.append(dict(url=doc['url'], sha256=hashlib.sha256((pdf_fetcher or fetch_pdf)(doc['url'], opportunity['source_url'])).hexdigest()))
                 content = pdf_source_version(raw, opportunity['source_url'], versions)
+                if source_attachments:
+                    content = attachments.source_version(content, source_attachments)
                 same_content = content == opportunity.get('source_content_sha256')
                 check.update(content_sha256=content, source_documents=versions)
             elif opportunity.get('source_content_sha256'):
                 from crawler.opportunity_extract import document
                 content = document(raw, opportunity['source_url'])['content_sha256']
+                if source_attachments:
+                    content = attachments.source_version(content, source_attachments)
                 same_content = content == opportunity['source_content_sha256']
                 check['content_sha256'] = content
             check.update(status='unbased' if not expected else 'unchanged' if same_content or (not documents and expected == digest) else 'changed',
                          hash=digest, last_success=timestamp, error=None)
         except (requests.RequestException, ValueError, KeyError, TypeError) as error:
             check.update(status='error', error=str(error)[:500])
+            from crawler.opportunity_attachments import AttachmentChanged
+            if isinstance(error, AttachmentChanged):
+                check.update(status='changed', hash=digest, last_success=timestamp, document_change=str(error))
             check.setdefault('last_success', None)
         check['consecutive_failures'] = old.get('consecutive_failures', 0) + 1 if check['status'] == 'error' else 0
         hours = 1 if opportunity.get('cycle') == 'current' else 24

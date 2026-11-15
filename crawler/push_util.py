@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 from crawler import opportunity_util
 
 FIELDS = ('title', 'eligibility', 'materials', 'deadline', 'deadline_note', 'registration_start',
-          'application_url', 'application_method', 'contact', 'research_directions')
+          'application_url', 'application_method', 'contact', 'research_directions', 'application_window')
 
 
 def semantic(value):

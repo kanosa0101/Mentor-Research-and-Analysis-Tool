@@ -28,6 +28,7 @@ FIXED = {
     'scripts/serve_review.py',
     'scripts/assist_opportunity.py', 'data/source_coverage.json',
     'deploy/DELIVERY_V1.6_2026-11-15.md',
+    'deploy/DELIVERY_V1.7_2026-11-15.md',
 }
 PATTERNS = (
     'crawler/*.py', 'sites/*/*.yaml', 'sites/*.py', 'sites/*/*.py', 'site/*.html', 'site/*.js', 'site/*.css',
@@ -35,12 +36,13 @@ PATTERNS = (
     'docs/history/pre-v1.5/*.md', 'docs/history/pre-v1.5/*.json',
     'docs/history/pre-v1/*.md',
     'docs/history/pre-v1.6/*.md', 'docs/history/pre-v1.6/*.json',
+    'docs/history/pre-v1.7/*.md', 'docs/history/pre-v1.7/*.json',
 )
 REQUIRED_SITE = {
     'site/start.html', 'site/coverage.html', 'site/start.js',
     'site/browser-library-core.js', 'site/browser-library.js', 'site/public-data.js',
     'site/plan-transfer.js', 'site/school-catalog.js', 'site/discovery-data.js',
-    'site/release.html', 'site/index.html', 'site/discovery.html',
+    'site/release.html', 'site/index.html', 'site/discovery.html', 'site/discovery-entry.js',
     'site/admissions.html', 'site/applications.html', 'site/desk.html',
     'site/board.html', 'site/compare.html', 'site/notices.html', 'site/data.js',
     'site/search.js', 'site/compare-data.js', 'site/admissions-data.js',

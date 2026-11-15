@@ -137,6 +137,21 @@ def date_value(match, text, with_time=False):
     return day
 
 
+def explicit_date_values(text, with_time=False):
+    """Full dates plus unambiguous same-month ranges such as 2027年1月10日-14日."""
+    text = compact(text)
+    values = {date_value(match, text, with_time) for match in DATE.finditer(text)}
+    for match in re.finditer(r'(20\d{2})年(\d{1,2})月(\d{1,2})日?[-—–至~](\d{1,2})日', text):
+        try:
+            start = date(*map(int, match.groups()[:3]))
+            end = date(int(match[1]), int(match[2]), int(match[4]))
+            if end >= start:
+                values.update((start.isoformat(), end.isoformat()))
+        except ValueError:
+            continue
+    return values - {None}
+
+
 def extract(raw, source_url, title='', today=None):
     doc = document(raw, source_url)
     suggestions, evidence, warnings = {}, {}, []

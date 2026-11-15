@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import date
 import sys
 from pathlib import Path
@@ -27,6 +28,27 @@ def template_environment():
 def write_html(path, html):
     # 仅规范生成文件行尾；官网原文仍保存在 YAML，不改源数据。
     path.write_text('\n'.join(line.rstrip() for line in html.splitlines()) + '\n', encoding='utf-8', newline='\n')
+
+
+def build_discovery_entry(site=None):
+    site = SITE if site is None else Path(site)
+    files = [site / 'school-catalog.js']
+    files.extend(site / name if (site / name).is_file() else ROOT / 'site' / name
+                 for name in ('discovery-core.js', 'discovery.js'))
+    (site / 'discovery-entry.js').write_text('\n;\n'.join(
+        path.read_text(encoding='utf-8') for path in files), encoding='utf-8', newline='\n')
+
+
+def render_discovery_page(site=None, env=None):
+    site = SITE if site is None else Path(site)
+    files = [site / 'school-catalog.js']
+    files.extend(site / name if (site / name).is_file() else ROOT / 'site' / name
+                 for name in ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js'))
+    javascript = '\n;\n'.join(path.read_text(encoding='utf-8') for path in files)
+    javascript = re.sub(r'</script', lambda match: '<\\/' + match.group(0)[2:], javascript, flags=re.I)
+    css = site / 'ui.css' if (site / 'ui.css').is_file() else ROOT / 'site' / 'ui.css'
+    return (env or template_environment()).get_template('discovery.html.j2').render(
+        discovery_js=javascript, discovery_css=css.read_text(encoding='utf-8'))
 
 
 def safe_url(value):
@@ -156,7 +178,6 @@ def main():
     write_html(SITE / 'board.html', board)
     write_html(SITE / 'applications.html', env.get_template('applications.html.j2').render())
     write_html(SITE / 'desk.html', env.get_template('desk.html.j2').render())
-    write_html(SITE / 'discovery.html', env.get_template('discovery.html.j2').render())
     opportunities = opportunity_util.load(ROOT)
     payload = json.dumps(opportunities, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
@@ -193,6 +214,8 @@ def main():
                             'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
     catalog = {'schools': configured_schools, 'units': [{k: v for k, v in unit.items() if k != 'coverage'} for unit in admissions['units']]}
     (SITE / 'school-catalog.js').write_text('window.SCHOOL_CATALOG = ' + json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n', encoding='utf-8')
+    build_discovery_entry()
+    write_html(SITE / 'discovery.html', render_discovery_page(env=env))
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())

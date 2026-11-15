@@ -1,6 +1,6 @@
-# 维护交接 · v1.6.0
+# 维护交接 · v1.7.0
 
-版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.6 交付记录](deploy/DELIVERY_V1.6_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
+版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.7 交付记录](deploy/DELIVERY_V1.7_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
 
 ## 运行边界
 
@@ -42,11 +42,23 @@ python scripts/serve_review.py
 
 默认队列 `cache/opportunity_review.json`，证据在同目录的 `opportunity_evidence`。`sync --refresh` 强制回源；普通同步取回新或到期证据，失败证据指数退避 2–48 小时，历史/无关分流的成功证据按 7 天复查，普通成功证据按 24 小时复查，保留人工字段。
 
-维护台按当前轮次线索、截止、失败和等待时间处理。阅读原文、PDF 页码和版本差异，明确勾选采纳；随后核对完整项目和字段证据，保存草稿。发布填写核验人、说明并确认，重新抓取通过后才写公开活动目录。发布不自动部署。
+维护台按当前轮次线索、截止、失败和等待时间处理。阅读原文、PDF 页码、DOCX 字段定位和版本差异，明确勾选采纳；随后核对完整项目和字段证据，保存草稿。发布填写核验人、说明并确认，重新抓取通过后才写公开活动目录。发布不自动部署。
 
 兼容 CLI：`python scripts/review_opportunities.py publish ID --sha256 HTML_SHA --reviewer NAME --note NOTE`；PDF 每个文件额外提供一次 `--pdf-sha256 PDF_SHA`，草稿必须保留对应原文与页码。HTML SHA 与 PDF SHA 不可互代。扫描件、失效来源、错页和版本变化不能放行；`renew` 仅续检原已核验且未变化的记录，不批准新条件。
 
+DOCX 证据使用 `source_attachments`：URL、当前文件 SHA、检查日期和字段摘录/定位；附件必须出现在当前官方公告中并属于同机构 HTTPS 来源。发布时重新下载并核对，不能只确认 HTML。正文与附件共同绑定内容版本；附件链接集合、文件内容或来源可读性改变时停止自动续检并降为待复核。旧 DOC、扫描图或无可核对文本的文档不能伪造 DOCX 证据。PDF 仍使用独立页码和 SHA 确认流程。
+
+`application_window` 的 `rolling` 必须保留明确长期招募原文；`month` 保留截止年月与原文，不填月末日期。进入截止月后状态不再按月份窗口判定为可申请；报名资格、年级和国籍必须从对应招募段获取。研究生、国际学生和本科实习条件不得跨段套用。DOCX 与窗口目前通过结构化草稿登记，维护台尚无专门编辑器；登记后仍须执行同一 `review.publish` 重新取证与发布门禁，不得直接改公开目录冒充审核完成。
+
 本机维护台仅白名单静态资源及 `/api/review`，写操作要求同源、CSRF 和队列锁内的 `expected_revision`。不能通过修改受管理字段伪造来源状态。源 HTML 按文本展示，不执行其脚本。
+
+## 来源模式与分页服务
+
+新增来源先实际取回并解析，再写 `sites/opportunities.yaml`，不要只登记可达 URL。列表源继续使用 `selector`、`title_selector` 等；公开 JSON API 仅使用代码已支持的适配器，例如 CIBR 的 `api_format: cibr_articles`，不执行远端脚本。
+
+持续科研招募正文可用 `mode: direct_page`，必须同时配置 `title` 与当前正文可逐字匹配的 `required_text`。为每个实验室使用独立 `source_id`（如 `fudan-ibd-zhangfan`），`url` 即原文地址。用 `opportunity_monitor.direct_notice` 验证真实 HTML，并验证招募语句撤下时会报错。单页可发现候选不代表自动核验发布；无长期原文的普通联系人介绍不能硬设为滚动招募。
+
+导师分页由本机与公开服务的 `/api/mentor-candidates` 提供；普通首屏和追加请求各取 20 位，对完整公开索引排序后分页。部署须配套更新服务代码、生成索引和页面。验收响应 revision、筛选及排序一致性、追加不重复、资料更新重置，以及项目/私人核验参与时的本机回退。缺少新 API 时允许提示后载入完整公开资料，不可将回退误报为分页已生效。
 
 ## 自动维护与告警
 
@@ -82,8 +94,10 @@ python scripts/assist_opportunity.py DRAFT_ID --root . --queue cache/opportunity
 
 各源刷新、政策逐条处置、候选分流和新增院系结果以本版交付记录、覆盖页及维护输出为准。必须区分本轮成功抓取与人工复核、历史参考与当前报名、未核验线索与明确开放；不沿用旧版成功数字或声称全库更新完成。
 
+2026-11-15 主数据合并后的快照为 18 条机会，状态 `open=1/open_month=1/rolling=6/upcoming=1/review=1/closed=8`；61 个监测来源由 51 个列表、4 个 API 和 6 个单页招募组成。导师数据为 7173 条、39 校、59 个配置院系（56 个有记录）；政策登记 111 条，不能据快照生成时间宣称政策或导师整库重新人工核验。以 `docs/DATA_SNAPSHOT.json` 的公开文件摘要和运行规则统计复验，来源成功率、定时器和部署完成时间查看本版交付记录。
+
 ## 发布与历史保护
 
 运行包通过 `scripts/package_release.py` 白名单生成并带逐文件摘要。新加入的维护台、公共版本模块、申请导航和浏览器资料模块应进入必要白名单；维护证据缓存、原材料、私人文件与 Git 历史不分发。重建后检查实际 HTTP 页面和数据版本，写操作验证使用隔离目录。
 
-`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。`docs/DATA_SNAPSHOT.json` 由本版发布流程更新，须核对其版本与时间，v1.5 快照保存在 `docs/history/pre-v1.6/DATA_SNAPSHOT.json`，更早快照在 `docs/history/pre-v1.5/DATA_SNAPSHOT.json`。v1.5 六份主文档原字节保存在 `docs/history/pre-v1.6/` 并附 SHA256 清单；更早六份主文档在 `docs/history/pre-v1.5/`，更早主文档在 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。
+`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。主公开资料合并并经发布负责人确认后，执行 `python cache/v17/update_data_snapshot.py --write` 生成 `docs/DATA_SNAPSHOT.json`，核对其版本与时间，不提前填写最终机会数。该脚本是源码维护工具，不随运行包分发。v1.6 快照及六份现行文档已按原字节保存在 `docs/history/pre-v1.7/`，附 SHA256 清单；v1.5 快照与文档在 `docs/history/pre-v1.6/`，更早资料在 `docs/history/pre-v1.5/` 和 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。

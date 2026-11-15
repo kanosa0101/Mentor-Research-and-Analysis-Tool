@@ -19,7 +19,8 @@ TEXT = {'id', 'title', 'school_id', 'school_name', 'dept_id', 'unit', 'kind',
         'admission_note', 'contact', 'source_state', 'source_note', 'cycle', 'source_sha256', 'checked_at'}
 YEARS = {'camp_year', 'graduation_year', 'admission_year'}
 LISTS = {'eligibility', 'materials', 'evidence'}
-OPTIONAL = {'research_directions', 'source_content_sha256', 'source_documents'}
+OPTIONAL = {'research_directions', 'source_content_sha256', 'source_documents',
+            'application_window', 'source_attachments'}
 
 
 def today():
@@ -56,6 +57,22 @@ def validate(item):
         raise ValueError('活动来源状态错误')
     if item['cycle'] not in ('current', 'historical'):
         raise ValueError('活动轮次状态错误')
+    window = item.get('application_window')
+    if window is not None:
+        if (not isinstance(window, dict) or set(window) != {'mode', 'end_month', 'quote'} or
+                any(not isinstance(value, str) for value in window.values()) or
+                window['mode'] not in ('rolling', 'month') or not window['quote'].strip() or item['deadline']):
+            raise ValueError('持续申请或月份截止须有独立的官方原文依据，不能与具体截止混用')
+        if window['mode'] == 'rolling' and window['end_month']:
+            raise ValueError('长期招募不得臆造截止月份')
+        if window['mode'] == 'month':
+            if not re.fullmatch(r'(?:20\d{2}|2100)-(?:0[1-9]|1[0-2])', window['end_month']) or not item['registration_start']:
+                raise ValueError('月份截止须明确年月与开始日期')
+            if item['registration_start'][:7] > window['end_month']:
+                raise ValueError('申请开始不能晚于截止月份')
+    if 'source_attachments' in item:
+        from crawler.opportunity_attachments import validate_metadata
+        validate_metadata(item['source_attachments'], item['source_url'])
     if 'source_content_sha256' in item and not re.fullmatch(r'[a-f0-9]{64}', item['source_content_sha256']):
         raise ValueError('正文核验摘要错误')
     documents = item.get('source_documents', [])
@@ -193,14 +210,21 @@ def state(item, day=None):
         return 'closed'
     deadline = item['deadline']
     if deadline and (date.fromisoformat(deadline[:10]) < day or
-                     len(deadline) > 10 and datetime.fromisoformat(deadline) < datetime.now(timezone.utc())):
+                     len(deadline) > 10 and datetime.fromisoformat(deadline) < datetime.now(timezone.utc)):
         return 'closed'
-    if not deadline and item['event_end'] and date.fromisoformat(item['event_end']) < day:
+    if item['event_end'] and date.fromisoformat(item['event_end']) < day:
+        return 'closed'
+    window = item.get('application_window', {})
+    if not deadline and window.get('mode') == 'month' and day.isoformat()[:7] > window['end_month']:
         return 'closed'
     if item['source_state'] != 'verified' or not item['checked_at'] or not 0 <= (day - date.fromisoformat(item['checked_at'])).days <= 7 or not 0 <= (day - date.fromisoformat(item['verified_at'])).days <= 30:
         return 'review'
     if item['registration_start'] and date.fromisoformat(item['registration_start']) > day:
         return 'upcoming'
+    if not deadline and window.get('mode') == 'rolling':
+        return 'rolling'
+    if not deadline and window.get('mode') == 'month' and item['registration_start'] and day.isoformat()[:7] < window['end_month']:
+        return 'open_month'
     return 'open' if deadline and item['registration_start'] else 'unknown'
 
 

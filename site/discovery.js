@@ -1,6 +1,10 @@
 const el=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const DATA=window.MENTOR_DATA,MODES=['research','qualification','email','opportunity','eligibility'];
+const MODES=['research','qualification','email','opportunity','eligibility'];
+let DATA=window.MENTOR_DATA||[],fullDataLoaded=!!window.MENTOR_DATA;
 window.MENTOR_COMPARE=Object.fromEntries(DATA.map(p=>[p.page,{bio_excerpt:p.bio_excerpt,provenance:p.provenance}]));
+const catalogUnit=(school,dept)=>(window.SCHOOL_CATALOG||window.ADMISSIONS_DATA)?.units.find(u=>u.school===school&&u.dept===dept);
+const schoolName=id=>(window.SCHOOL_CATALOG||window.ADMISSIONS_DATA)?.schools.find(s=>s.id===id)?.name||DATA.find(p=>p.school===id)?.school_name||id;
+let publicAvailable=location.protocol!=='file:',paged=false,candidateTotal=0,candidateRevision='',candidateQuery='',applySerial=0,loadingMore=false;
 const discoveryToday=new Date().toLocaleDateString('sv-SE');
 const viewKey='mentor-discovery-view:'+location.search;
 function saveView(){try{sessionStorage.setItem(viewKey,JSON.stringify({prefs:readCriteria(),name:el('intent-name').value,group:el('intent-group').value}));}catch(e){}}
@@ -17,7 +21,7 @@ const matchesCurrent=(prefs=readCriteria())=>DiscoveryRules.projectMatches(curre
 const protectedReview=()=>projectScoped&&!matchesCurrent();
 function discardReview(){return !reviewDirty||confirm('核对表单尚未保存。放弃修改并切换？');}
 function closeReview(){reviewRevision++;reviewDirty=false;reviewMentor='';el('review-panel').hidden=true;}
-function projectGoalText(p){const g=p.goal_snapshot,u=window.ADMISSIONS_DATA?.units.find(u=>u.school===g.school_id&&u.dept===g.dept_id);return [u?.school_name||DATA.find(m=>m.school===g.school_id)?.school_name||g.school_id||'学校待补',u?.dept_name||DATA.find(m=>m.school===g.school_id&&m.dept===g.dept_id)?.dept_name||g.dept_id||'院系待补',g.year||'年度待补',degreeLabels[g.degree]||'学位待补',routeLabels[g.route]||'渠道待补',{ordinary:'普通招生',special:'专项'}[g.track]||'招生范围待补',g.program_code,g.program_name||'正式专业未指定'].filter(Boolean).join(' · ');}
+function projectGoalText(p){const g=p.goal_snapshot,u=catalogUnit(g.school_id,g.dept_id);return [u?.school_name||schoolName(g.school_id)||'学校待补',u?.dept_name||DATA.find(m=>m.school===g.school_id&&m.dept===g.dept_id)?.dept_name||g.dept_id||'院系待补',g.year||'年度待补',degreeLabels[g.degree]||'学位待补',routeLabels[g.route]||'渠道待补',{ordinary:'普通招生',special:'专项'}[g.track]||'招生范围待补',g.program_code,g.program_name||'正式专业未指定'].filter(Boolean).join(' · ');}
 function renderProjectCreate(){
   const prefs=readCriteria(),q=publicScope(),school=prefs.schools.length===1?prefs.schools[0]:'';
   if(q.get('school')!==school)for(const key of ['dept','track','program'])q.delete(key);
@@ -54,7 +58,34 @@ function syncSchoolPicker(){
 function changeSchool(id,selected){if(!discardReview()){syncSchoolPicker();return;}closeReview();for(const o of el('intent-schools').options)if(o.value===id||id===null||Array.isArray(id)&&id.includes(o.value))o.selected=selected;el('intent-schools').dispatchEvent(new Event('change',{bubbles:true}));}
 async function api(path='',body,method='GET'){const r=await fetch('/api/discovery'+path,{method,headers:{'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});const d=await r.json();if(!r.ok)throw new Error(d.error||r.status);return d;}
 const lazy=new Map();
-function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-'+(file==='admissions-data.js'?'22':'17');s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
+function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261115-7';s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
+async function fullCatalog(){
+  if(fullDataLoaded)return;
+  await script('discovery-data.js');DATA=window.MENTOR_DATA;fullDataLoaded=true;
+  window.MENTOR_COMPARE=Object.fromEntries(DATA.map(p=>[p.page,{bio_excerpt:p.bio_excerpt,provenance:p.provenance}]));
+}
+function publicQuery(prefs,name,group){
+  const query=new URLSearchParams({name,topics:JSON.stringify(prefs.topics),group,degree:prefs.degree,route:prefs.route,keep_unknown:prefs.keep_unknown?'1':'0',seed:orderSeed});
+  for(const school of prefs.schools)query.append('school',school);
+  if(contextSchool)query.set('context_school',contextSchool);
+  if(contextDept)query.set('dept',contextDept);
+  if(prefs.year!==null)query.set('year',prefs.year);
+  for(const mode of MODES)query.set('mode_'+mode,prefs.modes[mode]);
+  return query.toString();
+}
+async function publicCandidates(query,offset=0){
+  const response=await fetch('/api/mentor-candidates?'+query+'&offset='+offset+'&limit=20');
+  if(response.status===400){const error=await response.json();throw Object.assign(new Error(error.error||'请检查筛选条件'),{invalidCriteria:true});}
+  if(!response.ok)throw new Error('暂时无法读取候选');
+  const result=await response.json();
+  if(result.version!==1||!Array.isArray(result.rows)||!Number.isInteger(result.total)||typeof result.revision!=='string')throw new Error('当前服务不支持分页查找');
+  return result;
+}
+function usePublicRows(result,append=false){
+  view=append?view.concat(result.rows):result.rows;candidateTotal=result.total;candidateRevision=result.revision;matchingOrder=result.matched;paged=true;limit=view.length;
+  if(!fullDataLoaded)DATA=view.map(row=>row.p);
+  for(const {p} of result.rows)window.MENTOR_COMPARE[p.page]={bio_excerpt:p.bio_excerpt,provenance:p.provenance};
+}
 let unitCatalogAttempted=false;
 const researchCache=new Map();
 async function researchCorpus(prefs){
@@ -70,37 +101,60 @@ async function researchCorpus(prefs){
   }catch(error){if(!window.MENTOR_SEARCH)await script('search.js');return window.MENTOR_SEARCH;}
 }
 async function loadUnitCatalog(){
-  if(!contextSchool||!contextDept||DATA.some(p=>p.school===contextSchool&&p.dept===contextDept)||window.ADMISSIONS_DATA||unitCatalogAttempted)return;
+  if(window.SCHOOL_CATALOG||!contextSchool||!contextDept||DATA.some(p=>p.school===contextSchool&&p.dept===contextDept)||window.ADMISSIONS_DATA||unitCatalogAttempted)return;
   unitCatalogAttempted=true;
   try{await script('admissions-data.js');}catch(e){/* 目录失败不阻断已有导师浏览；院系提示保留待核对。 */}
 }
 async function apply(preserveReview=false,refresh=true){
   if(!preserveReview&&!discardReview())return;
-  el('apply-criteria').disabled=true;
+  const serial=++applySerial;
+  let fallback=false;
+  el('apply-criteria').disabled=true;el('more-candidates').disabled=true;
   try{
   await loadUnitCatalog();
   if(PROJECT_API&&refresh)try{await loadProjects();}catch(e){PROJECTS.project_reviews={};message('无法刷新项目核对，当前判断已撤下：'+e.message,true);}
+  if(serial!==applySerial)return;
   const prefs=readCriteria(),group={value:el('intent-group').value,label:el('intent-group').selectedOptions[0].textContent};if(prefs.year!==null&&(!Number.isInteger(prefs.year)||prefs.year<2000||prefs.year>2100))throw new Error('请填写有效年度');
   if(!preserveReview)closeReview();
-  const corpus=await researchCorpus(prefs);
-    applied=prefs;appliedName=el('intent-name').value.trim().toLowerCase();appliedGroup=group;el('criteria-dirty').hidden=true;limit=20;
+  const name=el('intent-name').value.trim().toLowerCase();
+  if(publicAvailable&&!projectScoped&&!Object.keys(PRIVATE.reviews).length&&!Object.keys(PROJECTS.project_reviews).length){
+    const query=publicQuery(prefs,name,group.value);
+    try{
+      const result=await publicCandidates(query);if(serial!==applySerial)return;
+      applied=prefs;appliedName=name;appliedGroup=group;candidateQuery=query;el('criteria-dirty').hidden=true;
+      usePublicRows(result);render();saveView();return;
+    }catch(error){if(serial!==applySerial)return;if(error.invalidCriteria)throw error;publicAvailable=false;fallback=true;message('分页查找暂不可用，正在载入本地筛选资料。');}
+  }
+  await fullCatalog();const corpus=await researchCorpus(prefs);if(serial!==applySerial)return;
+    paged=false;applied=prefs;appliedName=name;appliedGroup=group;el('criteria-dirty').hidden=true;limit=20;
     const criteria={...prefs,track:contextTrack,program:contextProgram,goal_snapshot:selectionGoal},context=projectContext();
     const rows=DATA.map(p=>({p,result:DiscoveryRules.evaluate(p,criteria,PRIVATE.reviews,corpus[p.page]||'',discoveryToday,context)})).filter(row=>row.result.visible&&(!appliedName||row.p.name.toLowerCase().includes(appliedName))&&(!group.value||row.p.unit_groups?.includes(group.value))&&(!contextSchool||row.p.school===contextSchool)&&(!contextDept||row.p.dept===contextDept));
-    const ranked=DiscoveryRules.rankCandidates(rows,prefs,window.MENTOR_COMPARE||{},orderSeed);view=ranked.rows;matchingOrder=ranked.matched;render();saveView();
-  }finally{el('apply-criteria').disabled=false;}
+    const ranked=DiscoveryRules.rankCandidates(rows,prefs,window.MENTOR_COMPARE||{},orderSeed);view=ranked.rows;matchingOrder=ranked.matched;render();saveView();if(fallback)message('分页查找暂不可用，已切换到本地资料筛选。');
+  }finally{if(serial===applySerial){el('apply-criteria').disabled=false;el('more-candidates').disabled=false;}}
+}
+async function moreCandidates(){
+  if(loadingMore||el('apply-criteria').disabled)return;
+  if(!paged){limit+=20;render();return;}
+  const serial=applySerial,query=candidateQuery;loadingMore=true;el('more-candidates').disabled=true;
+  try{
+    const result=await publicCandidates(query,view.length);if(serial!==applySerial)return;
+    if(result.revision!==candidateRevision){await apply(false,false);message('公开资料已更新，已重新显示首20位候选，避免翻页重复或遗漏。');return;}
+    usePublicRows(result,true);render();
+  }catch(error){if(serial===applySerial)message('下一批导师未能加载，已保留当前结果，请重试。'+error.message,true);}
+  finally{loadingMore=false;if(serial===applySerial)el('more-candidates').disabled=false;}
 }
 let compareSelection=[];
-try{compareSelection=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(id=>DATA.some(p=>p.page===id)).slice(0,5);}catch(e){}
+try{compareSelection=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(id=>typeof id==='string'&&id.length>0&&id.length<=256&&!/[\\/\u0000-\u001f]/.test(id)&&!id.includes('..')).slice(0,5);}catch(e){}
 function renderSelection(){for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','compare.html','admissions.html','notices.html','desk.html','applications.html'].includes(path))a.href=path+'?'+publicScope();}el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent=`已选 ${compareSelection.length} 位导师`;el('compare-open').hidden=!compareSelection.length;el('compare-open').href='compare.html?'+publicScope();el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
 function render(){
   renderProjectCreate();
   renderSelection();
-  el('discovery-count').textContent=`${view.length} 位候选 · 当前显示 ${Math.min(limit,view.length)} 位`;
-  const schoolNames=applied.schools.map(id=>DATA.find(p=>p.school===id)?.school_name||id);
+  el('discovery-count').textContent=`${paged?candidateTotal:view.length} 位候选 · 当前显示 ${Math.min(limit,view.length)} 位`;
+  const schoolNames=applied.schools.map(schoolName);
   const ruleLabels={research:'研究关键词',qualification:'导师资格',email:'公开邮箱',opportunity:'招生机会',eligibility:'申请资格'},modeLabels={hard:'必须',soft:'偏好',off:'不限制'};
   const rules=MODES.map(key=>`${ruleLabels[key]}：${protectedReview()&&['opportunity','eligibility'].includes(key)?'待核实（项目范围暂不应用规则）':modeLabels[applied.modes[key]]}`).join('；');
   const unknownPolicy=applied.keep_unknown?'保留必须条件待核实的候选':'不保留必须条件待核实的候选';
-  el('intent-overview').textContent=`${appliedName?'姓名：'+appliedName:'姓名不限'} · ${applied.topics.length?applied.topics.join('、'):'研究关键词不限'} · ${schoolNames.length?schoolNames.join('、'):'学校不限'}${contextDept?' / '+(DATA.find(p=>p.school===contextSchool&&p.dept===contextDept)?.dept_name||contextDept):''} · ${appliedGroup.label} · ${applied.year??'年度未定'} / ${degreeLabels[applied.degree]} / ${routeLabels[applied.route]}`;
+  el('intent-overview').textContent=`${appliedName?'姓名：'+appliedName:'姓名不限'} · ${applied.topics.length?applied.topics.join('、'):'研究关键词不限'} · ${schoolNames.length?schoolNames.join('、'):'学校不限'}${contextDept?' / '+(catalogUnit(contextSchool,contextDept)?.dept_name||DATA.find(p=>p.school===contextSchool&&p.dept===contextDept)?.dept_name||contextDept):''} · ${appliedGroup.label} · ${applied.year??'年度未定'} / ${degreeLabels[applied.degree]} / ${routeLabels[applied.route]}`;
   const hardRules=MODES.filter(key=>applied.modes[key]==='hard'&&(key!=='research'||applied.topics.length)&&(key!=='qualification'||applied.degree!=='any')&&!(protectedReview()&&['opportunity','eligibility'].includes(key))).map(key=>ruleLabels[key]);
   el('criteria-explanation-label').textContent=`筛选规则与说明 · 必须：${hardRules.join('、')||'无'} · ${applied.keep_unknown?'保留待核实':'排除必须条件待核实'}`;
   el('candidate-order').textContent=(matchingOrder?'优先符合已设条件，同分时资料更全者优先、同组随机展示。':'资料更全者优先，同组随机展示；本次浏览顺序保持稳定。')+' 资料完整度依据研究方向、有效邮箱、简介与官网资料链接。';
@@ -140,14 +194,14 @@ function render(){
       </details>
     </article>`;
   }).join('')||`<div class="empty">当前库或筛选暂无候选。姓名与研究关键词、学校及其他条件取交集；可清除姓名或研究关键词。也可以放宽必须条件、保留待核实记录，或修改研究关键词。文字未命中不代表真实研究不适合。${publicScope().has('school')&&publicScope().has('dept')?`<p><a id="empty-unit-official" href="admissions.html?${esc(publicScope().toString())}">查看院系与官方师资入口 →</a></p>`:''}</div>`;
-  el('more-candidates').hidden=limit>=view.length;
+  el('more-candidates').hidden=limit>=(paged?candidateTotal:view.length);
 }
 el('filter-options').open=!matchMedia('(max-width:850px)').matches;
 if(projectScoped)el('project-options').open=true;
 el('criteria-form').onsubmit=e=>{e.preventDefault();apply().then(()=>{if(matchMedia('(max-width:850px)').matches)el('discovery-results').scrollIntoView({block:'start'});}).catch(e=>message(e.message,true));};
 el('criteria-form').addEventListener('input',e=>{if(!['intent-group','school-search'].includes(e.target.id))el('criteria-dirty').hidden=false;});
 el('criteria-form').addEventListener('change',e=>{if(!['intent-group','school-search'].includes(e.target.id))el('criteria-dirty').hidden=false;});
-el('more-candidates').onclick=()=>{limit+=20;render();};
+el('more-candidates').onclick=moreCandidates;
 el('save-criteria').onclick=async()=>{try{PRIVATE.preferences=await api('',readCriteria(),'POST');await apply();message('私人条件已保存');}catch(e){message(e.message,true);}};
 el('candidate-list').onclick=e=>{const cmp=e.target.closest('[data-compare]');if(cmp){const id=cmp.dataset.compare;if(compareSelection.includes(id))compareSelection=compareSelection.filter(x=>x!==id);else if(compareSelection.length<5)compareSelection.push(id);else{message('最多对比5位导师，请先移出一位');return;}try{localStorage.setItem('compare_sel',JSON.stringify(compareSelection));}catch(e){message('浏览器无法保存对比选择',true);return;}renderSelection();cmp.textContent=compareSelection.includes(id)?'移出对比':'加入对比';cmp.setAttribute('aria-pressed',compareSelection.includes(id));return;}const b=e.target.closest('[data-review]');if(!b)return;if(!discardReview())return;if(protectedReview()){message('请选择目标完整、与浏览条件一致的申请项目。',true);return;}if(readCriteria().year!==applied.year||readCriteria().degree!==applied.degree||readCriteria().route!==applied.route){message('申请目标已改变，请先重新查看候选',true);return;}
   if(!applied.year||applied.degree==='any'||applied.route==='unknown'){message('核验前请明确年度、学位和渠道，再查看候选',true);return;}
@@ -176,8 +230,11 @@ el('discovery-backup').onclick=()=>api('/backup').then(d=>download(d,'discovery-
 el('discovery-restore').onclick=()=>el('discovery-file').click();
 el('discovery-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;if(!confirm('恢复将替换私人筛选条件与核验记录，服务会保留旧副本。继续？'))return;try{await api('/restore',JSON.parse(await file.text()),'POST');await initPrivate();await apply();message('条件与核验已恢复');}catch(e){message(e.message,true);}finally{e.target.value='';}};
 async function initPrivate(){PRIVATE=await api();API_OK=true;fillCriteria(PRIVATE.preferences);for(const id of ['save-criteria','discovery-backup'])el(id).disabled=false;el('private-hint').textContent='筛选与核验记录仅保存在本机。';}
-el('intent-schools').innerHTML=[...new Map(DATA.map(p=>[p.school,p.school_name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],'zh')).map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');
-el('school-options').innerHTML=[...el('intent-schools').options].map(o=>`<label class="school-option"><input type="checkbox" value="${esc(o.value)}"> <span>${esc(o.textContent)}</span></label>`).join('');
+function populateSchools(){
+  el('intent-schools').innerHTML=[...new Map((window.SCHOOL_CATALOG?.schools||DATA.map(p=>({id:p.school,name:p.school_name}))).map(s=>[s.id,s.name])).entries()].sort((a,b)=>a[1].localeCompare(b[1],'zh')).map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');
+  el('school-options').innerHTML=[...el('intent-schools').options].map(o=>`<label class="school-option"><input type="checkbox" value="${esc(o.value)}"> <span>${esc(o.textContent)}</span></label>`).join('');
+}
+populateSchools();
 el('school-options').onchange=e=>{if(e.target.matches('input[type=checkbox]'))changeSchool(e.target.value,e.target.checked);};
 el('school-chips').onclick=e=>{const b=e.target.closest('[data-remove-school]');if(!b)return;const id=b.dataset.removeSchool;changeSchool(id,false);const box=el('school-options').querySelector('input[value="'+CSS.escape(id)+'"]');(box&&!box.parentElement.hidden?box:el('school-search')).focus();};
 el('clear-schools').onclick=()=>{changeSchool(null,false);el('school-search').focus();};
@@ -207,14 +264,14 @@ function incomingCriteria(){
   if(['master','phd'].includes(incoming.get('degree')))el('intent-degree').value=incoming.get('degree');
   if(['recommend','exam','assessment'].includes(incoming.get('route')))el('intent-route').value=incoming.get('route');
   if(contextSchool||contextDept){
-    const p=DATA.find(p=>p.school===contextSchool&&(!contextDept||p.dept===contextDept)),u=window.ADMISSIONS_DATA?.units.find(u=>u.school===contextSchool&&u.dept===contextDept);
-    const label=u?u.school_name+' · '+u.dept_name+'；'+(u.roster_pending||'当前导师库暂无该单位记录，师资信息待核对'):p?p.school_name+' · '+(contextDept?p.dept_name:'全校'):'当前导师库暂无该单位记录'+(!window.ADMISSIONS_DATA?'；公开院系目录未能载入，接入状态待核对':'；院系范围仍须核对官方信息');
+    const p=DATA.find(p=>p.school===contextSchool&&(!contextDept||p.dept===contextDept)),u=catalogUnit(contextSchool,contextDept),hasRoster=!!p||u?.count>0;
+    const label=u?u.school_name+' · '+u.dept_name+(hasRoster?'':'；'+(u.roster_pending||'当前导师库暂无该单位记录，师资信息待核对')):p?p.school_name+' · '+(contextDept?p.dept_name:'全校'):!contextDept&&contextSchool?schoolName(contextSchool)+' · 全校':'当前导师库暂无该单位记录'+(!window.SCHOOL_CATALOG&&!window.ADMISSIONS_DATA?'；公开院系目录未能载入，接入状态待核对':'；院系范围仍须核对官方信息');
     const q=new URLSearchParams();for(const key of ['school','dept','year','degree','route','track','program'])if(incoming.get(key))q.set(key,incoming.get(key));
-    const rosterLink=!p&&u?.roster_url&&/^https?:\/\//.test(u.roster_url)?' · <a id="unit-roster-direct" href="'+esc(u.roster_url)+'" target="_blank" rel="noopener">查看学院官方师资名录 →</a>':'';
-    el('unit-context').innerHTML='来自学校政策的院系范围：'+esc(label)+'。此临时范围不保存到私人条件。'+(!p?' <a href="admissions.html?'+esc(q.toString())+'">回查院系招生要求与官方入口 →</a>':'')+rosterLink;el('unit-context').hidden=false;el('clear-unit-context').hidden=false;
+    const rosterLink=!hasRoster&&u?.roster_url&&/^https?:\/\//.test(u.roster_url)?' · <a id="unit-roster-direct" href="'+esc(u.roster_url)+'" target="_blank" rel="noopener">查看学院官方师资名录 →</a>':'';
+    el('unit-context').innerHTML='来自学校政策的院系范围：'+esc(label)+'。此临时范围不保存到私人条件。'+(!hasRoster?' <a href="admissions.html?'+esc(q.toString())+'">回查院系招生要求与官方入口 →</a>':'')+rosterLink;el('unit-context').hidden=false;el('clear-unit-context').hidden=false;
   }
 }
-(async()=>{if(location.protocol==='http:'){el('discovery-restore').disabled=false;try{await initPrivate();}catch(e){message('无法读取私人条件，可继续筛选或恢复备份：'+e.message,true);}}await loadUnitCatalog();incomingCriteria();restoreView();if(API_OK){try{await loadProjects();const id=incoming.get('project');if(id&&PROJECTS.projects[id])selectProject(id);else if(id){selectedProject=id;projectScoped=true;message('申请项目不存在或不可读取，未应用任何项目核对。',true);}}catch(e){if(incoming.has('project')){projectScoped=true;selectedProject=incoming.get('project');}el('review-project-api').textContent='本机服务不可用，仍可浏览；未保存任何核对：'+e.message;}}renderProject();await apply();window.DISCOVERY_READY=true;})().catch(e=>message(e.message,true));
+(async()=>{if(!window.SCHOOL_CATALOG){await fullCatalog();populateSchools();fillCriteria(PRIVATE.preferences);}if(location.protocol==='http:'){el('discovery-restore').disabled=false;try{await initPrivate();}catch(e){message('无法读取私人条件，可继续筛选或恢复备份：'+e.message,true);}}await loadUnitCatalog();incomingCriteria();restoreView();if(API_OK){try{await loadProjects();const id=incoming.get('project');if(id&&PROJECTS.projects[id])selectProject(id);else if(id){selectedProject=id;projectScoped=true;message('申请项目不存在或不可读取，未应用任何项目核对。',true);}}catch(e){if(incoming.has('project')){projectScoped=true;selectedProject=incoming.get('project');}el('review-project-api').textContent='本机服务不可用，仍可浏览；未保存任何核对：'+e.message;}}renderProject();await apply();window.DISCOVERY_READY=true;})().catch(e=>message(e.message,true));
 
 function syncEvidence(key){const reply=el(key+'-evidence-kind').value==='reply';el(key+'-evidence-url').parentElement.hidden=reply;el(key+'-evidence-reply').parentElement.hidden=!reply;}
 for(const key of ['opportunity','eligibility'])el(key+'-evidence-kind').onchange=()=>syncEvidence(key);
