@@ -62,7 +62,7 @@ class PlanTransferTests(unittest.TestCase):
         self.assertTrue(any(t['project_id']==p['id'] and t['mentor_id']=='pku-cs-test' for t in data['targets'].values()))
 
     def test_opportunity_uses_catalog_snapshot_and_original_entry_year(self):
-        item=self.catalog['opportunities'][0];body=self.body();body.update(kind='bookmark',target=None,school_id='',todos=[],item=dict(id='b',kind='opportunity',title='browser title',url='opportunities.html?id='+item['id'],created_at='2026-11-15'))
+        item=next(row for row in self.catalog['opportunities'] if opportunity_util.content_scope(row)=='institutional_activity');body=self.body();body.update(kind='bookmark',target=None,school_id='',todos=[],item=dict(id='b',kind='opportunity',title='browser title',url='opportunities.html?id='+item['id'],created_at='2026-11-15'))
         data,result=self.save(self.data(),body);p=data['projects'][result['project_id']]
         self.assertEqual(p['opportunity'],item);self.assertEqual(p['year'],item['admission_year'])
         same,again=self.save(data,body);self.assertTrue(again['duplicate']);self.assertEqual(same,data)

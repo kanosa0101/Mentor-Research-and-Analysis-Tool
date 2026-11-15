@@ -8,7 +8,7 @@ import sys
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote, urlsplit, parse_qs
+from urllib.parse import unquote, urlsplit, parse_qs, urlencode
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -137,7 +137,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(409, {'error': '该资料版本已更新，请重新检查'})
         if path == '/api/opportunities':
             try:
-                payload = opportunity_util.observed(self.root)
+                payload = opportunity_util.public_catalog(opportunity_util.observed(self.root))
             except (OSError, ValueError, KeyError, TypeError):
                 return self.json(503, {'error': '公开活动资料暂不可用', 'mode': 'public'})
             return self.json(200, dict(payload, mode='public'))
@@ -148,7 +148,15 @@ class Handler(BaseHTTPRequestHandler):
         if path in ('/review.html', '/review.js', '/review-worker.js'):
             return self.json(404, {'error': 'Maintenance console is local only'})
         if path in ('/desk.html', '/applications.html', '/board.html'):
-            return self.reply(302, headers={'Location': '/local.html'})
+            incoming = parse_qs(raw.query)
+            context = {key: values[0] for key, values in incoming.items()
+                       if key in ('mentor', 'school', 'dept', 'year', 'degree', 'route', 'track', 'program', 'discovery_return')
+                       and len(values) == 1 and len(values[0]) <= 2000
+                       and not re.search(r'[\x00-\x1f\x7f]', values[0])}
+            if context:
+                context['page'] = path[1:-5]
+            destination = '/local.html' + ('?' + urlencode(context) if context else '')
+            return self.reply(302, headers={'Location': destination})
         parts = path[1:].split('/')
         if any(not part or part.startswith('.') for part in parts):
             return self.json(404, {'error': 'Not found'})

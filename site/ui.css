@@ -82,6 +82,14 @@ body.page .site-tools>summary{font-size:var(--text-small);padding:8px;margin:0}
 .site-tools-menu a{display:block;padding:10px 12px;font-size:var(--text-control);text-decoration:none}
 .site-tools-menu a:hover,.site-tools-menu a[aria-current]{background:var(--soft)}
 body.page .site-header .crumb{font-size:var(--text-small);color:var(--muted)}
+/* Compact summaries share typography; full evidence remains in the detail disclosure. */
+body.page-discovery .card-primary-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+body.page-discovery .candidate-bookmark button{font-size:var(--text-small)}
+body.page .opportunity-primary{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid var(--accent);border-radius:7px;background:var(--accent);color:#fff;text-decoration:none;font-size:var(--text-control)}
+body.page .opportunity-primary:hover{background:var(--accent-hover)}
+body.page :is(.opportunity-meta,.opportunity-facts){overflow-wrap:anywhere}
+body.page .mentor-recruitment article+article{border-top:1px solid var(--line);margin-top:16px;padding-top:16px}
+body.page .mentor-recruitment h3{margin:0 0 8px}
 @media(max-width:760px){
  html:root{--heading-page:24px;--space-page:16px;--space-card:16px}
  body.page :is(main,.wrap){margin-top:20px;margin-bottom:36px}

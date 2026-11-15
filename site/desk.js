@@ -6,6 +6,8 @@ const stages={research:'待调研',preparing:'准备联系',waiting:'等待回�
 const priorities={high:'优先',normal:'一般',low:'暂缓'};
 const eventLabels={draft:'历史草稿',sent:'已发送',replied:'收到回复',note:'备注 / 阶段变更'};
 const params=new URLSearchParams(location.search);
+const discoveryReturn=(()=>{const value=params.get('discovery_return')||'';try{if(!/^discovery\.html(?:\?[^#]*)?$/.test(value)||/[\\\u0000-\u0020\u007f]/.test(value)||/[\\\u0000-\u001f\u007f]/.test(decodeURIComponent(value)))return '';const url=new URL(value,location.href);return url.origin===location.origin&&url.pathname.endsWith('/discovery.html')?value:'';}catch(e){return '';}})();
+function mentorProfileUrl(id){const q=new URLSearchParams();if(discoveryReturn)q.set('discovery_return',discoveryReturn);return 'p/'+encodeURIComponent(id)+'.html'+(q.size?'?'+q:'');}
 let projectContext=params.get('project')||'',projectContextReady=false;
 const incomingMentor=people.has(params.get('mentor')) ? params.get('mentor') : '';
 const intentYear=Number(params.get('year'));
@@ -64,6 +66,8 @@ function showView(view){
   const query=new URLSearchParams();query.set('view',view);query.set('panel',currentPanel);if(target()?.mentor_id||incomingMentor)query.set('mentor',target()?.mentor_id||incomingMentor);if(currentTarget)query.set('target',currentTarget);
   if(FLOW.projects[target()?.project_id||projectContext])query.set('project',target()?.project_id||projectContext);
   for(const [key,value] of Object.entries(forwardedGoal()))query.set(key,value);
+  if(discoveryReturn)query.set('discovery_return',discoveryReturn);
+  if(discoveryReturn)for(const link of document.querySelectorAll('a[href]'))if(link.getAttribute('href').split('?')[0]==='discovery.html')link.href=discoveryReturn;
   history.replaceState(null,'',location.pathname+'?'+query);
 }
 function optionList(id,items,emptyLabel){
@@ -75,10 +79,12 @@ function manageUrl(){
   const q=new URLSearchParams({return:'desk',panel:currentPanel});if(mentor)q.set('mentor',mentor);if(currentTarget)q.set('target',currentTarget);
   if(FLOW.projects[target()?.project_id||projectContext])q.set('project',target()?.project_id||projectContext);
   for(const [key,value] of Object.entries(forwardedGoal()))q.set(key,value);
+  if(discoveryReturn)q.set('discovery_return',discoveryReturn);
   return 'applications.html?'+q;
 }
 function reminderManageUrl(reminder){
   const q=new URLSearchParams({return:'desk',section:'reminder'});
+  if(discoveryReturn)q.set('discovery_return',discoveryReturn);
   if(FLOW.projects[reminder.project_id])q.set('project',reminder.project_id);
   if(people.has(reminder.mentor_id))q.set('mentor',reminder.mentor_id);
   return 'applications.html?'+q;
@@ -86,7 +92,7 @@ function reminderManageUrl(reminder){
 function targetCard(t,attribute){
   const latest=Object.values(FLOW.communications).filter(e=>e.target_id===t.id&&e.kind==='sent').sort((a,b)=>b.date.localeCompare(a.date))[0];
   const next=Object.values(FLOW.reminders).filter(r=>!r.completed&&r.project_id===t.project_id&&r.mentor_id===t.mentor_id).sort((a,b)=>a.due_date.localeCompare(b.due_date))[0];
-  return `<article><h3>${esc(personLabel(t.mentor_id))}</h3><small>${esc(projectLabel(t.project_id))}</small><p><span class="badge">${esc(stages[t.stage])}</span><span class="badge">${esc(priorities[t.priority])}</span></p>${t.reason?`<p>${esc(t.reason)}</p>`:''}${latest?`<small>最近发送：${esc(latest.date)}</small>`:''}${next?`<p>下一步：${esc(next.title)} · ${esc(next.due_date)}</p>`:''}<div class="article-actions"><button ${attribute}="${t.id}">继续推进 →</button><a href="p/${encodeURIComponent(t.mentor_id)}.html">查看导师</a></div></article>`;
+  return `<article><h3>${esc(personLabel(t.mentor_id))}</h3><small>${esc(projectLabel(t.project_id))}</small><p><span class="badge">${esc(stages[t.stage])}</span><span class="badge">${esc(priorities[t.priority])}</span></p>${t.reason?`<p>${esc(t.reason)}</p>`:''}${latest?`<small>最近发送：${esc(latest.date)}</small>`:''}${next?`<p>下一步：${esc(next.title)} · ${esc(next.due_date)}</p>`:''}<div class="article-actions"><button ${attribute}="${t.id}">继续推进 →</button><a href="${esc(mentorProfileUrl(t.mentor_id))}">查看导师</a></div></article>`;
 }
 function render(){
   el('welcome').hidden=Object.keys(FLOW.projects).length>0;
@@ -125,7 +131,7 @@ function renderContext(){
   const p=people.get(t.mentor_id);
   el('context-name').textContent=personName(t.mentor_id);el('context-project').textContent=projectLabel(t.project_id);
   el('context-stage').textContent=stages[t.stage];el('context-priority').textContent=priorities[t.priority];el('context-reason').textContent=t.reason||'尚未记录选择理由';
-  el('context-profile').href='p/'+encodeURIComponent(t.mentor_id)+'.html';el('context-research').textContent=p?.research_direction_raw ? '官网方向：'+p.research_direction_raw : '暂未整理明确研究方向，请查看官网核实。';
+  el('context-profile').href=mentorProfileUrl(t.mentor_id);el('context-research').textContent=p?.research_direction_raw ? '官网方向：'+p.research_direction_raw : '暂未整理明确研究方向，请查看官网核实。';
   const next=Object.values(FLOW.reminders).filter(r=>!r.completed&&r.mentor_id===t.mentor_id&&r.project_id===t.project_id).sort((a,b)=>a.due_date.localeCompare(b.due_date))[0];
   renderTargetTasks();
   el('context-next').textContent=next ? '下一步：'+next.title+' · '+next.due_date : '尚未安排下一步';

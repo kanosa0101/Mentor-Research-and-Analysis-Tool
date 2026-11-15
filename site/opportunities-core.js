@@ -1,6 +1,14 @@
 (function(root){
   const labels={open:'明确日期 · 报名时间内',open_month:'受理期内 · 截止仅公布月份',rolling:'长期 / 滚动受理',upcoming:'尚未开始',review:'待复核',unknown:'报名时间待核实',closed:'已截止 / 历史参考'};
-  const kinds={winter_camp:'冬令营',summer_camp:'夏令营',recommend:'预推免',research_program:'科研实践'};
+  const kinds={winter_camp:'冬令营',summer_camp:'夏令营',recommend:'正式推免通知',research_program:'院所科研项目'};
+  function classification(o,now=new Date().toISOString()){
+    const c=o.content_classification;
+    const keys=['scope','organizer_level','organizer_name','source_url','quote','verified_at'];
+    if(!c||Object.keys(c).length!==keys.length||!keys.every(k=>typeof c[k]==='string'&&c[k].trim())||!['institutional_activity','mentor_recruitment','admission_notice','pending'].includes(c.scope)||c.source_url!==o.source_url||!/^https?:\/\//.test(c.source_url))return 'pending';
+    const date=c.verified_at;if(!/^\d{4}-\d{2}-\d{2}$/.test(date||'')||!Number.isFinite(Date.parse(date))||new Date(date).toISOString().slice(0,10)!==date||date>dayOf(now))return 'pending';
+    if(['institutional_activity','admission_notice'].includes(c.scope)&&!['school_department','research_institute','university_research_institute'].includes(c.organizer_level)||c.scope==='institutional_activity'&&o.kind==='recommend'||c.scope==='mentor_recruitment'&&!['individual_team','individual_lab'].includes(c.organizer_level))return 'pending';
+    return c.scope;
+  }
   const dayOf=now=>new Date(now).toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
   function formatDate(value){
     if(!value)return '';
@@ -25,7 +33,7 @@
   }
   function select(rows,filter,now=new Date().toISOString()){
     const q=(filter.query||'').trim().toLowerCase();
-    return rows.filter(o=>(!filter.kind||o.kind===filter.kind)&&(!filter.school||o.school_name===filter.school)&&
+    return rows.filter(o=>classification(o,now)==='institutional_activity'&&(!filter.kind||o.kind===filter.kind)&&(!filter.school||o.school_name===filter.school)&&
       (!filter.year||!o.graduation_year||o.graduation_year===Number(filter.year))&&
       (!q||[o.title,o.unit,o.school_name,...o.eligibility,...(o.research_directions||[]).flatMap(r=>[r.department,r.direction,r.contact,r.email])].join(' ').toLowerCase().includes(q))&&
       (filter.status==='all'||(filter.status==='current'?state(o,now)!=='closed':state(o,now)===filter.status)))
@@ -37,5 +45,5 @@
     const fields={research_directions:'研究方向与联系人',graduation_year:'面向届别',registration_start:'报名开始',deadline:'报名截止',deadline_note:'截止说明',application_window:'受理方式与截止月份',event_start:'活动开始',event_end:'活动结束',eligibility:'申请条件',materials:'材料与提交阶段',application_method:'报名方式',application_url:'报名入口',contact:'联系方式',admission_note:'招生说明',source_url:'官方来源',source_attachments:'官方申请表与核验依据'};
     return Object.entries(fields).filter(([key])=>JSON.stringify(saved[key])!==JSON.stringify(current[key])).map(([key,label])=>({key,label,before:saved[key],after:current[key]}));
   }
-  const api={state,select,kinds,labels,dayOf,changes,formatDate};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
+  const api={state,select,kinds,labels,dayOf,changes,formatDate,classification};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
 })(typeof window!=='undefined'?window:globalThis);

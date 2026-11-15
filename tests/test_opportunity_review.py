@@ -25,7 +25,7 @@ class ReviewTests(unittest.TestCase):
         self.url = 'https://cs.example.edu.cn/info/123.htm'
         self.listing = 'https://cs.example.edu.cn/admissions.htm'
         self.configs = [{'url': self.listing}]
-        self.raw = '<html><meta charset="utf-8"><p>本次活动面向2028届本科毕业生，报名截止2026年12月31日。</p></html>'.encode('utf-8')
+        self.raw = '<html><meta charset="utf-8"><p>主办单位：示例计算机学院</p><p>本次活动面向2028届本科毕业生，报名截止2026年12月31日。</p></html>'.encode('utf-8')
         self.monitoring = {'candidates': [dict(url=self.url, source=self.listing, school='example', dept='cs',
                                              unit='示例计算机学院', title='2027年冬令营',
                                              first_seen='2026-11-15T00:00:00+00:00', last_seen='2026-11-15T00:00:00+00:00')]}
@@ -34,10 +34,14 @@ class ReviewTests(unittest.TestCase):
         return review.sync(self.monitoring, self.queue, self.configs, fetcher=lambda _: raw or self.raw)
 
     def ready(self):
+        if '主办单位：示例计算机学院'.encode() not in self.raw:
+            self.raw = self.raw.replace(b'<p>', '<p>主办单位：示例计算机学院</p><p>'.encode(), 1)
         queue = self.sync()
         draft = queue['drafts'][0]
         draft['item'].update(kind='winter_camp', cycle='current', school_name='示例大学',
                              eligibility=['面向2028届本科毕业生'], evidence=['原文明示面向2028届毕业生'])
+        draft['item']['content_classification'] = dict(scope='institutional_activity', organizer_level='school_department',
+            organizer_name='示例计算机学院', source_url=self.url, quote='主办单位：示例计算机学院', verified_at='2026-11-15')
         draft['quotes'] = ['本次活动面向2028届本科毕业生，报名截止2026年12月31日。']
         review.atomic_json(self.queue, queue)
         return draft
@@ -70,6 +74,7 @@ class ReviewTests(unittest.TestCase):
         catalog = opportunities.load(self.root)
         other = copy.deepcopy(item)
         other.update(id='other', source_url='https://cs.example.edu.cn/other.htm')
+        other['content_classification']['source_url'] = other['source_url']
         catalog['opportunities'].append(other)
         review.atomic_json(self.catalog, catalog)
         self.publish(draft)
@@ -374,7 +379,7 @@ class ReviewTests(unittest.TestCase):
         self.pdf_raw = b'%PDF-1.7 reviewed version'
         self.pdf_url = 'https://cs.example.edu.cn/camp.pdf'
         self.raw = b'<article><script>showVsbpdfIframe("/camp.pdf");</script><span class="views">1</span></article>'
-        self.pdf_text = '本次活动面向2028届本科毕业生，报名截止2026年12月31日。'
+        self.pdf_text = '主办单位：示例计算机学院。本次活动面向2028届本科毕业生，报名截止2026年12月31日。'
         parsed = dict(pages=[dict(page=1, text=self.pdf_text), dict(page=2, text='申请材料：本科成绩单。')],
                       page_count=2, text_status='readable', suggestions={}, field_evidence={}, warnings=[])
         patcher = patch.object(review.extraction, 'pdf_document', return_value=parsed)
@@ -384,6 +389,8 @@ class ReviewTests(unittest.TestCase):
         draft = queue['drafts'][0]
         draft['item'].update(kind='winter_camp', cycle='current', school_name='示例大学', deadline='2026-12-31',
                              eligibility=['面向2028届本科毕业生'], materials=['本科成绩单'], evidence=['PDF第1、2页逐项核验'])
+        draft['item']['content_classification'] = dict(scope='institutional_activity', organizer_level='school_department',
+            organizer_name='示例计算机学院', source_url=self.url, quote='主办单位：示例计算机学院', verified_at='2026-11-15')
         draft['quotes'] = [self.pdf_text, '申请材料：本科成绩单。']
         draft['reviewed_fields'] = {field:dict(quote=quote, source_url=self.pdf_url, pages=[page]) for field,quote,page in
                                    [('deadline',self.pdf_text,1),('eligibility',self.pdf_text,1),('materials','申请材料：本科成绩单。',2)]}

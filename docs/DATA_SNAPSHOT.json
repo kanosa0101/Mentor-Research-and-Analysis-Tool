@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "1.9.0",
+    "version": "1.10.0",
     "as_of": "2026-11-15",
     "generated_at": "2026-11-15T11:49:47.580987+00:00",
     "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
@@ -11,6 +11,18 @@
       "version": "1.9.0",
       "released_on": "2026-11-15",
       "note": "UI-only release metadata; inventory counts, generated_at, as_of, source dates and review dates retain the v1.8 snapshot. This is not a fresh collection or content verification."
+    },
+    "curation_release": {
+      "version": "1.10.0",
+      "reviewed_on": "2026-11-15",
+      "scope": "18 existing items classified; 29 email parsing errors repaired using stored evidence; no full recrawl",
+      "mentor_records": 7173,
+      "traceable_valid_emails": 5668,
+      "institutional_activities": 9,
+      "mentor_recruitments": 6,
+      "admission_notices": 1,
+      "pending_contents": 2,
+      "linked_recruitments": 1
     }
   },
   "counts": {

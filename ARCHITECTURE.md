@@ -1,6 +1,6 @@
-# 架构 · v1.9.0
+# 架构 · v1.10.0
 
-> 本文描述v1.9已实现架构。2026-11-15新的产品边界见[项目地图](PROJECT_MAP.md)、[内容规则](docs/CONTENT_RULES.md)与[实施计划](IMPLEMENTATION_PLAN.md)。主办层级归类、个人招募分流、独立导师资格/职称筛选尚未接入；不能把既有证据门禁当作新的活动准入门禁。
+> v1.10 已实现活动内容分类门禁、导师招募关联及独立导师目录筛选。产品边界见[项目地图](PROJECT_MAP.md)与[内容规则](docs/CONTENT_RULES.md)，验证和部署状态见[交付记录](deploy/DELIVERY_V1.10_2026-11-15.md)。
 
 系统分为公开资料、浏览器个人记录、本机正式申请、维护核验四个边界。公开站不读取本机私人工作流，公共资料更新不承担私人记录迁移。
 
@@ -27,7 +27,7 @@ flowchart TD
 
 ## 页面呈现规范
 
-页面层级、字体、控件及响应式规则集中在 [UI 与交互规范](docs/UI_GUIDELINES.md)，共享样式位于 `site/ui.css`。导师列表与学校要求通过摘要、详情和证据三层展示；本轮只调整呈现及操作入口，不改变公开与私人数据边界。
+页面层级、字体、控件及响应式规则集中在 [UI 与交互规范](docs/UI_GUIDELINES.md)，共享样式位于 `site/ui.css`。导师列表与学校要求通过摘要、详情和证据三层展示；本轮同时修正内容分发与导师过滤语义，不改变公开与私人数据边界。
 
 ## 入口与路径
 
@@ -41,9 +41,9 @@ flowchart TD
 
 `data/professors` 保存导师与出处；`admissions.yaml` 保存政策、适用范围、摘要、条件、材料动作和证据定位，`admissions_checks.json` 单独保存来源检查，`admissions_entries.yaml` 保存官方入口。来源访问成功不等于人工摘要已更新，入口也不等于已覆盖具体政策。
 
-`notices.json` 是官方通知候选及其届别、渠道和阶段线索。`opportunities.json` 是明确核验的活动目录；失效或待核验来源保留状态，不能默认转为开放报名。`data/coverage.json` 与 `coverage.html` 公开已整理单位及缺口。
+`notices.json` 是官方通知候选及其届别、渠道和阶段线索。`opportunities.json` 保留原有内容稳定ID，并以 `content_classification` 区分机构活动、导师招募、正式通知和待核验；`public_catalog` 只将机构活动放入公开列表的 `opportunities`，其他记录在 `other_contents` 保持旧链接可解析。`mentor_ids` 必须有身份依据，不能按同名绑定。分类门禁与原文、时效门禁共同决定发布；失效或待核验来源保留状态，不能默认转为开放报名。`data/coverage.json` 与 `coverage.html` 公开已整理单位及缺口。
 
-`build_site.py` 从公开资料生成页面与分用途载荷：学校选择使用 `school-catalog.js`，普通导师浏览通过 `/api/mentor-candidates` 对完整公开索引查询、筛选和排序，首批及每次追加 20 位；对比通过 `/api/mentors` 按选中的 ID 取回至多五位。公共资源使用 ETag、最长 300 秒缓存与 HTML 重验证，服务保持连接复用；切页不再统一加载完整导师及对比数据。分页响应包含目录 revision，翻页发现版本变化即重新加载首批；过期请求不覆盖新筛选结果。项目范围或私人核验参与判断时，回到本机 `discovery-core.js` 及完整公开资料计算；分页不可用也允许显式提示后回退。公共查询不包含项目 ID、材料路径或私人核验记录。`discovery-data.js`、完整搜索与对比载荷按所需流程延迟加载，网页、索引、导师详情及数据载荷应配套分发。字段未知、来源失败、内容变化与历史参考分别表达，不补默认资格或名额。
+`build_site.py` 从公开资料生成页面与分用途载荷：学校选择使用 `school-catalog.js`，普通导师浏览通过 `/api/mentor-candidates` 对完整公开索引查询、筛选和排序，首批及每次追加 20 位；对比通过 `/api/mentors` 按选中的 ID 取回至多五位。公共资源使用 ETag、最长 300 秒缓存与 HTML 重验证，服务保持连接复用；切页不再统一加载完整导师及对比数据。分页响应包含目录 revision，翻页发现版本变化即重新加载首批；过期请求不覆盖新筛选结果。导师目录 API v2 与本地回退共用一致的资格、职称及公开邮箱语义；旧项目目标和私人核验不参与过滤、排序。分页不可用时提示后回退。`email_source`/`email_source_date` 保留邮箱出处，`recruitment_labels` 从已确认身份关联派生。公共查询不包含项目 ID、材料路径或私人核验记录。`discovery-data.js`、完整搜索与对比载荷按所需流程延迟加载，网页、索引、导师详情及数据载荷应配套分发。字段未知、来源失败、内容变化与历史参考分别表达，不补默认资格或名额。
 
 v1.7 基线数据登记 18 条机会，运行规则状态为 `open:1`、`open_month:1`、`rolling:6`、`upcoming:1`、`review:1`、`closed:8`。监测配置 61 项：列表 51、API 4、招募单页 6；已登记机会中 1 条绑定 DOCX、1 条绑定 PDF。数量由 `docs/DATA_SNAPSHOT.json` 从公开文件重算，不用配置数量替代来源请求成功数。
 
@@ -93,4 +93,4 @@ EML 由用户在外部邮件客户端实际发送后再登记；人工准备/提
 
 运行包通过白名单分发公开资料、网页、必要代码和说明，Python 与依赖另装；不包含真实私人资料、原材料、维护缓存或 Git 历史。程序升级采用新目录及独立备份恢复，不能用旧 `data` 整目录覆盖新版公共资料。
 
-本版验证和部署事实统一见 [v1.9 交付记录](deploy/DELIVERY_V1.9_2026-11-15.md)。旧架构原文位于 [pre-v1.9 历史备份](docs/history/pre-v1.9/ARCHITECTURE.md)。
+本版验证和部署事实统一见 [v1.10 交付记录](deploy/DELIVERY_V1.10_2026-11-15.md)。旧架构原文位于 [pre-v1.9 历史备份](docs/history/pre-v1.9/ARCHITECTURE.md)。

@@ -18,7 +18,7 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 .prepare-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start}.context{background:var(--soft);border-color:#cddcce}.context h2{font-family:"Songti SC","SimSun",serif;font-size:24px;font-weight:500}.context p{margin:8px 0}.context small{display:block;line-height:1.7}.context .progress{border-top:1px solid #cddcce;padding-top:12px;margin-top:15px}.draft-title{display:flex;justify-content:space-between;align-items:center;gap:12px}.draft-title select{max-width:260px}.attachments{display:flex;flex-direction:column;gap:8px;padding:10px 0}.attachments label{font-size:13px}.attachment-state{color:var(--muted);font-size:12px;margin:0 0 10px;overflow-wrap:anywhere}.send-section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.send-section input[type=date]{width:170px}.send-section .actions{align-items:center}.history-body{white-space:pre-wrap}.event-time{font:11px Consolas,monospace;color:var(--muted)}.footer{padding:24px 0;color:var(--muted);font-size:12px}.target-selected{border-left:3px solid var(--accent);padding-left:12px}
 @media(max-width:800px){.context>.eyebrow{display:none}.context.panel{padding:12px 14px}.context p{margin:4px 0}.context details{margin-top:6px}main{padding:18px 14px}.header-inner{padding:16px 14px;gap:14px}.hero{align-items:flex-start;flex-direction:column}.columns,.prepare-grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.panel{padding:17px}.list-tools{grid-template-columns:1fr 1fr}.list-tools input{grid-column:1/-1}.stats{gap:8px}.stat{padding:14px 10px}.stat strong{font-size:27px}.stat span{font-size:12px}.draft-title{align-items:flex-start;flex-direction:column}.draft-title select{max-width:100%}.toolbar{gap:6px}.tabs{gap:24px}.context h2{font-size:22px}}
 </style>
-<link rel="stylesheet" href="ui.css?v=20261115-19"></head>
+<link rel="stylesheet" href="ui.css?v=20261115-20"></head>
 <body class="page page-desk">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -29,9 +29,9 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 
 <a href="discovery.html" >找导师</a>
 
-<a href="opportunities.html" >保研机会</a>
+<a href="opportunities.html" >院校活动</a>
 
-<a href="admissions.html" >学校与要求</a>
+<a href="admissions.html" >学校要求</a>
 
 <a href="desk.html" aria-current="page">我的申请</a>
 
@@ -46,15 +46,13 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 
 <a href="applications.html"  id="manage-link">项目与材料</a>
 
-<a href="board.html" >旧套磁看板</a>
-
-<a href="release.html">版本与使用说明</a></div></details>
+<a href="release.html">版本与使用说明</a><details><summary>历史记录</summary><a href="board.html">旧套磁看板</a></details></div></details>
 
 
 </div></header>
 
 <main>
-<div class="hero"><div><span class="eyebrow">Your next step</span><h1>我的申请</h1><p class="muted">把心仪的导师变成有依据的联系，把每一次回复变成下一步。</p></div><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></div>
+<div class="hero"><div><h1>我的申请</h1><p class="muted">在这里联系导师、记录回复与下一步；申请目标和材料在“项目与材料”中管理。</p></div><details><summary>备份与恢复</summary><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></details></div>
 <div id="desk-hint" class="hint">请运行 <code>python scripts\serve.py</code> 并从本地服务打开。直接打开 HTML 可浏览导师库，私人联系操作不可用。</div>
 <div id="desk-message" class="message" role="status" aria-live="polite"></div>
 <p id="incoming-goal" class="muted" hidden></p>
@@ -98,5 +96,5 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 </section>
 </fieldset>
 <div class="footer">私人记录仅在本地保存 · 备份不包含附件原文件</div>
-</main><script src="data.js?v=20261115-7"></script><script src="desk.js?v=20261115-7"></script>
+</main><script src="data.js?v=20261115-7"></script><script src="desk.js?v=20261115-20"></script>
 </body></html>

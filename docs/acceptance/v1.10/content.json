@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope_counts": {
+    "pending": 2,
+    "institutional_activity": 9,
+    "admission_notice": 1,
+    "mentor_recruitment": 6
+  },
+  "public_activity_count": 9,
+  "relocated_count": 9,
+  "linked_mentor_ids": [
+    [
+      "ruc-info-dongjinhao"
+    ]
+  ],
+  "unlinked_recruitment_count": 5,
+  "migration_repeated_changes": [],
+  "migration_repeated_source_changes": [],
+  "migration_repeated_queue_changes": [],
+  "migration_skips": [],
+  "tests": {
+    "related_tests": "91 passed; cache/v20/content/related-tests.log",
+    "scope_latest": "16 passed; cache/v20/content/scope-final.log",
+    "opportunities_and_monitor": "25 passed (36 total including then-current11 scope tests); cache/v20/content/scope-tests.log",
+    "snapshot_extract": "22 passed; cache/v20/content/snapshot-extract.log"
+  },
+  "no_production_deployment": true,
+  "private_records_modified": false,
+  "known_limits": [
+    "Five personal recruitment records remain unlinked; no fake directory identities were added.",
+    "IHEP and BNU remain pending.",
+    "Only current institution activities can create new activity projects; existing duplicate IDs return the unchanged old project.",
+    "Source migration patches only missing routing hints and appends the reviewed AIR official page; arbitrary newer server records/config remain unchanged.",
+    "Untouched exact-version review items can receive migration metadata; changed/manual drafts are preserved for re-review."
+  ]
+}

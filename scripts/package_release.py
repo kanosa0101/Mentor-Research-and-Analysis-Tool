@@ -31,6 +31,10 @@ FIXED = {
     'deploy/DELIVERY_V1.7_2026-11-15.md',
     'deploy/DELIVERY_V1.8_2026-11-15.md', 'docs/AUTOMATIC_REVIEW.md',
     'deploy/DELIVERY_V1.9_2026-11-15.md',
+    'deploy/DELIVERY_V1.10_2026-11-15.md', 'PROJECT_MAP.md', 'IMPLEMENTATION_PLAN.md', 'PRODUCT_PLAN.md',
+    'docs/USE_CASES.md', 'docs/CONTENT_RULES.md', 'docs/PRODUCT_AUDIT_2026-11-15.md',
+    'scripts/migrate_opportunity_content.py', 'scripts/repair_email_v20.py',
+    'data/migrations/opportunity-content-v20.json', 'data/migrations/email_repairs_v20.json',
     'scripts/run_review_pipeline.py', 'scripts/process_reviews.py',
     'scripts/discover_sources.py', 'scripts/maintain_public.py',
 }
@@ -43,6 +47,10 @@ PATTERNS = (
     'docs/history/pre-v1.7/*.md', 'docs/history/pre-v1.7/*.json',
     'docs/history/pre-v1.8/*.md', 'docs/history/pre-v1.8/*.json',
     'docs/history/pre-v1.9/*.md', 'docs/history/pre-v1.9/*.json',
+    'docs/history/pre-ux-reset-20261115/*.md', 'docs/history/pre-ux-reset-20261115/*.json',
+    'docs/history/pre-ux-reset-20261115/docs/*.md',
+    'docs/audits/2026-11-15/*.md', 'docs/audits/2026-11-15/*.json',
+    'docs/acceptance/v1.10/*.md', 'docs/acceptance/v1.10/*.json', 'docs/acceptance/v1.10/*.png',
 )
 REQUIRED_SITE = {
     'site/start.html', 'site/coverage.html', 'site/start.js',

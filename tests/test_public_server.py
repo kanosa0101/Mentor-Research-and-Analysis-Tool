@@ -6,6 +6,7 @@ import threading
 import unittest
 from contextlib import closing
 from pathlib import Path
+from urllib.parse import urlsplit, parse_qs
 from unittest.mock import patch
 
 from scripts import serve_public
@@ -72,6 +73,20 @@ class PublicServerTests(unittest.TestCase):
         self.assertEqual(result['monitoring']['status'], 'partial')
         self.assertEqual(headers['Cache-Control'], 'no-store')
         self.assertNotIn(b'private-secret', body)
+
+    def test_local_handoff_preserves_public_target_only(self):
+        code, headers, _ = self.request('/desk.html?mentor=ruc-info-dongjinhao&school=ruc&dept=info&year=2027&degree=master&project=private&material_path=private&discovery_return=discovery.html%3Fschool%3Druc')
+        target = urlsplit(headers['Location'])
+        self.assertEqual(code, 302)
+        self.assertEqual(target.path, '/local.html')
+        query = parse_qs(target.query)
+        self.assertEqual(query['mentor'], ['ruc-info-dongjinhao'])
+        self.assertEqual(query['degree'], ['master'])
+        self.assertEqual(query['page'], ['desk'])
+        self.assertEqual(query['discovery_return'], ['discovery.html?school=ruc'])
+        self.assertNotIn('project', query)
+        self.assertNotIn('material_path', query)
+        self.assertEqual(self.request('/desk.html')[1]['Location'], '/local.html')
 
     def test_gzip_negotiation_and_head_length(self):
         original = ('window.DATA="导师资料";\n' * 1000).encode('utf-8')

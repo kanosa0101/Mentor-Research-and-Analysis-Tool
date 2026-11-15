@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 from crawler import ai_evidence, ai_review, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-POLICY_VERSION = 'v1.8-extractive-1'
+POLICY_VERSION = 'v2.0-content-scope-1'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
@@ -75,7 +75,8 @@ def inspect_source(raw, source_url):
 
 
 def fields_for_existing(draft, item, text):
-    fields = {}
+    util.validate_classification(item, text, require_publishable=True)
+    fields = {'content_classification': dict(value=item['content_classification'], quote=item['content_classification']['quote'])}
     for key in ('eligibility', 'materials', 'application_method', 'contact'):
         value = item.get(key)
         if not value:
@@ -119,6 +120,19 @@ def prepare_new(root, draft, doc, now):
         ('科研实践', 'research_program'), ('科研实习', 'research_program'), ('科创计划', 'research_program')] if label in title), None)
     if kind is None:
         raise NeedsHuman('活动类别不在自动发布范围；正式推免或学位招生需人工核对')
+    # A domain/title is not organizer evidence. Only an explicit official organizer line
+    # matching the registered institution can enter automatic institution publication.
+    unit = item['unit'].strip()
+    organizer = next((line for line in doc['lines'] if re.fullmatch(
+        r'(?:主办单位|组织单位)\s*[:：]\s*' + re.escape(unit) + r'[。；;]?', line.strip())), None)
+    level = ('research_institute' if unit.endswith('研究所') else
+             'university_research_institute' if unit.endswith('研究院') else
+             'school_department' if unit.endswith(('学院', '大学', '学系')) else None)
+    if not organizer or not level or re.search(r'课题组.{0,12}(?:长期|招收|招募)|导师.{0,8}个人招募', text):
+        raise NeedsHuman('缺少明确机构统一主办依据；个人招募或组织层级不明须归类核验')
+    item['content_classification'] = dict(scope='institutional_activity', organizer_level=level,
+        organizer_name=unit, source_url=item['source_url'], quote=organizer,
+        verified_at=now.astimezone(CST).date().isoformat())
     parts = sections(doc['lines'])
     if any(not parts.get(key) for key in ('eligibility', 'materials', 'application_method', 'contact', 'window')):
         raise NeedsHuman('缺少独立且完整的申请对象、材料、方式、联系人或报名时间栏目')
@@ -139,7 +153,7 @@ def prepare_new(root, draft, doc, now):
     item.update(school_name=school, kind=kind, cycle='current', source_state='verified',
                 checked_at=now.astimezone(CST).date().isoformat(), verified_at=now.astimezone(CST).date().isoformat(),
                 source_sha256=draft['fetch']['sha256'], source_content_sha256=doc['content_sha256'])
-    fields = {}
+    fields = {'content_classification': dict(value=item['content_classification'], quote=organizer)}
     activity_year = re.findall(r'(20\d{2})年(?:计算机)?(?:冬令营|夏令营|科研实践|科研实习|科创计划)', title)
     if activity_year:
         year = int(activity_year[0])
@@ -179,6 +193,7 @@ def prepare_new(root, draft, doc, now):
     draft.update(item=item, quotes=item['evidence'], reviewed_fields={key: dict(quote=f['quote'], source_url=item['source_url'],
                  locator='官方公告完整栏目；自动证据核验', content_sha256=doc['content_sha256']) for key, f in fields.items()})
     util.validate(item)
+    util.validate_classification(item, text, require_publishable=True)
     review.validate_field_evidence(draft, item, text)
     return fields
 

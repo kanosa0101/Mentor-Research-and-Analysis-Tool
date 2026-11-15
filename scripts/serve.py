@@ -172,7 +172,7 @@ class Handler(SimpleHTTPRequestHandler):
             if not self._local_request():
                 return
             try:
-                return self._json(200, opportunities.observed(ROOT))
+                return self._json(200, opportunities.public_catalog(opportunities.observed(ROOT)))
             except (OSError, ValueError) as error:
                 return self._json(500, {'error': str(error)})
         if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):

@@ -101,9 +101,27 @@ def discovery_record(p):
             'research_direction_raw', 'unit_groups')
     rec = {k: p[k] for k in keys if k in p}
     rec['bio_excerpt'] = (p.get('bio_raw') or '')[:130]
+    email_provenance = p.get('provenance', {}).get('email', {})
+    rec['email_source'] = email_provenance.get('source', '')
+    rec['email_source_date'] = email_provenance.get('fetched_at', '')
+    host = urlsplit(rec['email_source']).hostname or ''
+    rec['source_label'] = (p.get('name', '') + ' · 个人主页' if host.endswith('github.io')
+                           else p.get('school_name', '') + ' · 公开资料')
+    rec['recruitment_labels'] = p.get('recruitment_labels', [])
     field = 'research_direction_raw' if p.get('research_direction_raw') else 'bio_raw'
     rec['provenance'] = {field: p['provenance'][field]} if field in p.get('provenance', {}) else {}
     return rec
+
+
+def mentor_recruitment(catalog):
+    """Link explicit, reviewed identities only; recruitment does not imply supervisor status."""
+    out = {}
+    for item in catalog.get('opportunities', []):
+        if opportunity_util.content_scope(item) != 'mentor_recruitment':
+            continue
+        for mentor_id in item.get('mentor_ids', []):
+            out.setdefault(mentor_id, []).append(item)
+    return out
 
 
 def load_cfgs():
@@ -115,6 +133,8 @@ def load_cfgs():
 
 def main():
     env = template_environment()
+    all_opportunities = opportunity_util.load(ROOT)
+    recruitment = mentor_recruitment(all_opportunities)
     school_names = {}
     sf = ROOT / "data" / "schools.yaml"
     if sf.exists():
@@ -134,6 +154,8 @@ def main():
                              for f in rec.get("facets") or []]
             rec["inst"] = "、".join(rec["institutes"])
             rec["page"] = f"{cfg['school']}-{cfg['dept']}-{p.slug}"
+            rec['recruitment'] = recruitment.get(rec['page'], [])
+            rec['recruitment_labels'] = ['科研实习招募记录'] if rec['recruitment'] else []
             rec['source_date'] = p.last_fetched or max(
                 (v.fetched_at for v in p.provenance.values() if v.origin == 'crawled'), default=None)
             for key in ('homepage', 'photo_url', 'detail_url', 'profile_url'):
@@ -178,7 +200,7 @@ def main():
     write_html(SITE / 'board.html', board)
     write_html(SITE / 'applications.html', env.get_template('applications.html.j2').render())
     write_html(SITE / 'desk.html', env.get_template('desk.html.j2').render())
-    opportunities = opportunity_util.load(ROOT)
+    opportunities = opportunity_util.public_catalog(all_opportunities)
     payload = json.dumps(opportunities, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
     write_html(SITE / 'opportunities.html', env.get_template('opportunities.html.j2').render())

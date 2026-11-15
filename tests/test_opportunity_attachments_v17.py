@@ -29,7 +29,7 @@ class AttachmentTests(unittest.TestCase):
         self.url = 'https://cs.example.edu.cn/camp'
         self.raw = docx()
         self.records = [dict(url='https://cs.example.edu.cn/form.docx', sha256=hashlib.sha256(self.raw).hexdigest(), checked_at='2026-11-15', field_evidence={'materials': dict(quote='申请人独立完成，不得由AI协助。', locator='申请说明')})]
-        self.html = '<html><meta charset="utf-8"><p>本科生冬令营报名。申请要求由申请人独立完成，请准备报名材料与成绩单。</p><a href="/form.docx">申请表</a></html>'.encode()
+        self.html = '<html><meta charset="utf-8"><p>主办单位：计算机学院</p><p>本科生冬令营报名。申请要求由申请人独立完成，请准备报名材料与成绩单。</p><a href="/form.docx">申请表</a></html>'.encode()
 
     def test_actual_docx_quote_and_version_are_verified(self):
         result = attachments.verify(self.records, self.url, lambda *_: self.raw)
@@ -110,6 +110,8 @@ class AttachmentTests(unittest.TestCase):
             data = review.sync({'candidates': [dict(url=self.url, source=listing, school='example', dept='cs', unit='计算机学院', title='本科生冬令营', first_seen='2026-11-15T00:00:00+00:00', last_seen='2026-11-15T00:00:00+00:00')]}, queue, configs, fetcher=lambda _: self.html)
             draft = data['drafts'][0]
             draft['item'].update(school_name='示例大学', kind='winter_camp', cycle='current', evidence=['官方公告'], source_attachments=self.records, materials=['须独立完成，不得由AI协助'])
+            draft['item']['content_classification'] = dict(scope='institutional_activity', organizer_level='school_department',
+                organizer_name='计算机学院', source_url=self.url, quote='主办单位：计算机学院', verified_at='2026-11-15')
             draft['quotes'] = ['本科生冬令营报名。']
             draft['reviewed_fields'] = {'materials': dict(self.records[0]['field_evidence']['materials'], source_url=self.records[0]['url'])}
             review.atomic_json(queue, data)

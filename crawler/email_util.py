@@ -7,7 +7,7 @@ _LONG_TLDS = {"info", "online", "site", "club", "tech", "cloud", "email", "name"
 
 def _tld_ok(s):
     last = s.rsplit(".", 1)[-1].lower()
-    return len(last) <= 3 or last in _LONG_TLDS
+    return last.isalpha() and (len(last) <= 3 or last in _LONG_TLDS)
 
 
 def _clean_token(tok):
@@ -23,6 +23,11 @@ def normalize_email(raw):
     if not raw:
         return None
     for chunk in re.split(r"[;；,，/、]+", raw.strip()):
+        # Preserve text-node boundaries: a following phone/date is not part of an address.
+        for token in chunk.split():
+            candidate = _tokens(token)
+            if VALID.fullmatch(candidate) and _tld_ok(candidate):
+                return candidate
         s = _tokens(chunk)
         if VALID.match(s) and _tld_ok(s):
             return s
@@ -42,6 +47,7 @@ def _tokens(raw):
             parts.append(c)
     s = "".join(parts)
     s = s.replace("＠", "@")
+    s = re.sub(r"_\.dot\._", ".", s, flags=re.I)
     # 括号包裹的 @ 混淆: "(at)"、"（＠）"、人大 AI 学院 "(@)"(ASCII @ 也算)
     s = re.sub(r"[(（【\[{]\s*(?:at|＠|@)\s*[)）\]}】]", "@", s, flags=re.I)
     # 孤儿括号残留: "yi.zeng (@)ruc.edu.cn" 分词后左括号被 _clean_token 剥掉,

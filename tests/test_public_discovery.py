@@ -15,7 +15,7 @@ class PublicDiscoveryTests(unittest.TestCase):
         self.rows = [dict(page=f'demo-cs-{i}', name=f'导师{i}', school='demo', dept='cs',
                           school_name='示例大学', dept_name='计算机', unit_groups=['cs'],
                           detail_url='https://demo.edu.cn/' + str(i), bio_excerpt='研究简介',
-                          email='mentor@demo.edu.cn', supervisor='博导', research_direction_raw='计算机视觉')
+                          email='mentor@demo.edu.cn', email_source='https://demo.edu.cn/profile', title='教授', supervisor='博导', research_direction_raw='计算机视觉')
                      for i in range(45)]
         self.rows.append(dict(page='other-ai-unknown', name='未知资料', school='other', dept='ai'))
         self.write('discovery-data.js', self.rows)
@@ -39,8 +39,8 @@ class PublicDiscoveryTests(unittest.TestCase):
         query = {'topics': ['["AI"]'], 'keep_unknown': ['0']}
         self.assertEqual(candidates(self.root, query)['total'], 45)
         self.assertEqual(candidates(self.root, dict(query, topics=['["ain"]']))['total'], 0)
-        self.assertEqual(candidates(self.root, dict(query, topics=['["missing"]'], keep_unknown=['1']))['total'], 1)
-        self.assertEqual(candidates(self.root, {'mode_opportunity': ['hard'], 'keep_unknown': ['0']})['total'], 0)
+        self.assertEqual(candidates(self.root, dict(query, topics=['["missing"]'], keep_unknown=['1']))['total'], 0)
+        self.assertEqual(candidates(self.root, {'mode_opportunity': ['hard'], 'keep_unknown': ['0']})['total'], 45)
 
     def test_scope_and_complete_profiles_precede_unknowns(self):
         first = candidates(self.root, {'seed': ['one']})
@@ -52,7 +52,7 @@ class PublicDiscoveryTests(unittest.TestCase):
         for query in ({'reviews': ['{}']}, {'project': ['private']}, {'limit': ['999']},
                       {'offset': ['-1']}, {'topics': ['{}']}, {'seed': ['x' * 101]},
                       {'topics': [json.dumps(['x' + str(i) for i in range(21)])]},
-                      {'school': ['missing']}, {'name': ['a', 'b']}, {'year': ['2030.5']}):
+                      {'school': ['missing']}, {'name': ['a', 'b']}, {'qualifications': ['unknown']}, {'titles': ['invalid']}, {'include_missing_email': ['2']}):
             with self.subTest(query=query), self.assertRaises((ValueError, TypeError)):
                 candidates(self.root, query)
 

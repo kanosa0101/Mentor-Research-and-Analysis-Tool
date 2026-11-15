@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "width": 1440,
+      "public_scope_preserved": true,
+      "private_parameters_removed": true,
+      "mentor_and_goal_recognized": true,
+      "project_roundtrip_and_return": true,
+      "private_writes": 1
+    },
+    {
+      "width": 390,
+      "public_scope_preserved": true,
+      "private_parameters_removed": true,
+      "mentor_and_goal_recognized": true,
+      "project_roundtrip_and_return": true,
+      "private_writes": 1
+    }
+  ],
+  "malicious_return_cases": 5,
+  "legacy_activity_id_preserved": true,
+  "user_private_hashes_unchanged": true,
+  "local_default_port_intercepted_to_isolated_server": true,
+  "cross_origin_session_storage_transfer_claimed": false
+}

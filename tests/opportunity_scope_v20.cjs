@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),rules=require('../site/opportunities-core.js');
+const rows=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../data/opportunities.json'),'utf8')).opportunities;
+const now='2026-11-15T20:00:00+08:00',all=rules.select(rows,{status:'all'},now);
+assert.equal(rows.length,18);
+assert.equal(all.length,9);
+assert.ok(all.every(o=>o.content_classification.scope==='institutional_activity'&&o.kind!=='recommend'));
+assert.equal(rows.filter(o=>rules.classification(o,now)==='mentor_recruitment').length,6);
+assert.equal(rows.filter(o=>rules.classification(o,now)==='admission_notice').length,1);
+assert.equal(rows.filter(o=>rules.classification(o,now)==='pending').length,2);
+const good=all[0],classify=patch=>rules.classification({...good,content_classification:{...good.content_classification,...patch}},now);
+for(const patch of [{source_url:'https://different.edu/a'},{organizer_level:'individual_lab'},{quote:''},{verified_at:'2026-02-30'},{verified_at:'2026-11-16'}])assert.equal(classify(patch),'pending');
+assert.equal(rules.classification({...good,content_classification:undefined},now),'pending');
+assert.equal(rules.classification({...good,kind:'recommend'},now),'pending');
+assert.equal(rules.select([{...good,content_classification:undefined}],{status:'all'},now).length,0);
+console.log('18 original IDs retained; only 9 evidenced institutional activities enter filters; personal/formal/pending and invalid evidence fail closed.');

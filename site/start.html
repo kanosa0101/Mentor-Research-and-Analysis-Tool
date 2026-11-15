@@ -3,7 +3,7 @@
 <style>
 main{max-width:1100px;margin:28px auto;padding:0 20px}.start-intro{max-width:760px;line-height:1.8}.start-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.start-card{background:var(--card,#fff);border:1px solid var(--line,#dbe3de);border-radius:10px;padding:20px;margin:16px 0}.start-card h2{margin-top:0}.start-path{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:16px;cursor:pointer}.start-path:has(input:checked){border-color:var(--accent);background:var(--soft)}.start-path strong,.start-path small{display:block;line-height:1.7}.start-path input{margin-top:5px;flex:none}.start-fields{display:grid;grid-template-columns:1fr 2fr;gap:14px;margin:18px 0}.start-fields label,.todo-form label{display:grid;gap:7px}input[type=text],input[type=search],input[type=number],input[type=date],select{width:100%;min-width:0;padding:10px;border:1px solid var(--line);border-radius:6px;background:white}.start-actions,.library-tabs,.school-chips{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.start-actions a{padding:9px 12px;border:1px solid var(--line);border-radius:6px;text-decoration:none}.start-actions button,.library-tabs button,.school-chips button{min-height:40px}.start-note{font-size:13px;color:var(--muted);line-height:1.8}.start-status{line-height:1.8;color:var(--accent);overflow-wrap:anywhere}.school-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:260px;overflow:auto;margin:12px 0}.school-options label{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--line);border-radius:6px}.school-options input{flex:none}.school-options span{overflow-wrap:anywhere}.school-chips{margin:10px 0}.school-chips button{font-size:12px}.school-directory summary{cursor:pointer;line-height:1.8}.school-directory input[type=search]{margin-top:12px}.start-step{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.start-step p{margin:4px 0;line-height:1.7}.start-step button{flex:none}.entry-school{padding:12px 0;border-bottom:1px solid var(--line)}.entry-school h3{font-size:16px;margin:0 0 10px}.library-tabs button[aria-selected=true]{background:var(--accent);color:white}.library-item{padding:16px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.library-item p{line-height:1.7}.todo-form{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin:18px 0}.todo-form button{justify-self:start}.todo-title{display:flex;align-items:flex-start;gap:10px;line-height:1.7}.todo-title input{margin-top:6px}.todo-done .todo-text{text-decoration:line-through;color:var(--muted)}.due-overdue{color:#9a4e12}.backup-row{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}#import-preview{padding:14px;border:1px solid var(--line);margin:12px 0}button{cursor:pointer}#library{scroll-margin-top:110px}
 @media(max-width:650px){main{margin:20px auto;padding:0 14px}.start-grid,.start-fields,.todo-form{grid-template-columns:1fr}.start-card{padding:16px}.school-options{grid-template-columns:1fr}.start-step{align-items:flex-start;flex-direction:column;gap:8px}.start-actions a{font-size:13px}.start-path{padding:12px}.start-grid{gap:10px}.library-tabs{gap:6px}.library-tabs button{font-size:13px;padding:9px}}
-</style><link rel="stylesheet" href="ui.css?v=20261115-19"></head><body class="page page-start">
+</style><link rel="stylesheet" href="ui.css?v=20261115-20"></head><body class="page page-start">
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="start.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
@@ -12,9 +12,9 @@ main{max-width:1100px;margin:28px auto;padding:0 20px}.start-intro{max-width:760
 
 <a href="discovery.html" >找导师</a>
 
-<a href="opportunities.html" >保研机会</a>
+<a href="opportunities.html" >院校活动</a>
 
-<a href="admissions.html" >学校与要求</a>
+<a href="admissions.html" >学校要求</a>
 
 <a href="desk.html" >我的申请</a>
 
@@ -29,9 +29,7 @@ main{max-width:1100px;margin:28px auto;padding:0 20px}.start-intro{max-width:760
 
 <a href="applications.html" >项目与材料</a>
 
-<a href="board.html" >旧套磁看板</a>
-
-<a href="release.html">版本与使用说明</a></div></details>
+<a href="release.html">版本与使用说明</a><details><summary>历史记录</summary><a href="board.html">旧套磁看板</a></details></div></details>
 
 
 </div></header><main>
@@ -42,7 +40,7 @@ main{max-width:1100px;margin:28px auto;padding:0 20px}.start-intro{max-width:760
 <div class="start-fields"><label><span id="target-year-label">本科毕业届别</span><input id="target-year" type="number" min="2000" max="2100" required></label><label>研究兴趣（可选）<input id="target-interest" type="text" maxlength="200" placeholder="例如：计算机视觉、网络安全、机器人"></label></div>
 <details class="school-directory"><summary id="school-selection-label">学校（可多选，未选择时跨校探索）</summary><label for="start-school-search" class="start-note">搜索学校名称或代码</label><input id="start-school-search" type="search" placeholder="例如：北京、同济、pku"><div class="start-actions"><button id="clear-target-schools" type="button">清空已选学校</button></div><div id="start-school-options" class="school-options" role="group" aria-label="关注学校"></div><p id="school-search-status" class="start-note" role="status"></p></details><div id="target-school-chips" class="school-chips"></div>
 <p class="start-note">下方入口随选择更新。点击保存后才写入此浏览器；这份关注目标不同于本机版的正式申请项目。</p><button class="primary" type="submit">保存为关注目标</button></form><p id="target-status" class="start-status" role="status" aria-live="polite"></p></section>
-<section class="start-card" aria-labelledby="actions-heading"><h2 id="actions-heading">2. 现在可以做什么</h2><p id="path-context" class="start-note"></p><div id="current-actions"></div><h3>按学校继续查找</h3><div id="target-entries"></div><p class="start-note">未知条件不会当作符合。方向匹配不代表招生名额；通知年份也不等于面向你的毕业届别，请以官方原文为准。</p></section>
+<section class="start-card" aria-labelledby="actions-heading"><h2 id="actions-heading">2. 按目标继续查找</h2><div id="target-entries"></div><details><summary>这条申请路径需要准备什么？</summary><p id="path-context" class="start-note"></p><div id="current-actions"></div><p class="start-note">方向匹配不代表招生名额；通知年份不等于毕业届别，请核对官方原文中的申请对象。</p></details></section>
 <section id="library" class="start-card" aria-labelledby="library-heading"><h2 id="library-heading">3. 我的浏览器收藏与待办</h2><p class="start-note">只保存在当前浏览器、当前站点，不上传。换设备、HTTP / HTTPS 切换、隐私模式或清除浏览器数据可能无法继续看到，请定期导出备份。本机正式申请、材料和沟通历史仍在<a href="desk.html">我的申请</a>。</p>
 <div class="library-tabs" role="tablist" aria-label="浏览器记录"><button id="tab-targets" type="button" role="tab" data-library-tab="targets" aria-controls="panel-targets">关注目标</button><button id="tab-bookmarks" type="button" role="tab" data-library-tab="bookmarks" aria-controls="panel-bookmarks">收藏</button><button id="tab-todos" type="button" role="tab" data-library-tab="todos" aria-controls="panel-todos">待办</button></div>
 <div id="panel-targets" role="tabpanel" aria-labelledby="tab-targets" hidden></div><div id="panel-bookmarks" role="tabpanel" aria-labelledby="tab-bookmarks"></div><div id="panel-todos" role="tabpanel" aria-labelledby="tab-todos" hidden><form id="todo-form" class="todo-form"><label>要做的事<input id="todo-title" type="text" maxlength="300" required placeholder="例如：核对冬令营成绩单要求"></label><label>计划日期（可选）<input id="todo-date" type="date"></label><label>关联关注目标（可选）<select id="todo-target"><option value="">不关联</option></select></label><button type="submit">添加待办</button></form><p class="start-note">计划日期仅用于在这里排序和标记，不会发送后台提醒，也不是官方截止日期。</p><div id="todo-list"></div></div>

@@ -20,7 +20,81 @@ TEXT = {'id', 'title', 'school_id', 'school_name', 'dept_id', 'unit', 'kind',
 YEARS = {'camp_year', 'graduation_year', 'admission_year'}
 LISTS = {'eligibility', 'materials', 'evidence'}
 OPTIONAL = {'research_directions', 'source_content_sha256', 'source_documents',
-            'application_window', 'source_attachments'}
+            'application_window', 'source_attachments', 'content_classification',
+            'mentor_ids', 'mentor_identity_evidence'}
+CONTENT_SCOPES = {'institutional_activity', 'mentor_recruitment', 'admission_notice', 'pending'}
+INSTITUTIONS = {'school_department', 'research_institute', 'university_research_institute'}
+PERSONAL = {'individual_team', 'individual_lab'}
+
+
+def content_scope(item):
+    """One public admission gate; absent or invalid classification always fails closed."""
+    try:
+        validate_classification(item)
+    except (ValueError, TypeError, KeyError):
+        return 'pending'
+    return item.get('content_classification', {}).get('scope', 'pending')
+
+
+def validate_classification(item, source_text=None, require_publishable=False):
+    classification = item.get('content_classification')
+    if classification is None:
+        if require_publishable:
+            raise ValueError('须先核对内容归类、实际组织者及官方依据，未发布')
+        return
+    keys = {'scope', 'organizer_level', 'organizer_name', 'source_url', 'quote', 'verified_at'}
+    if not isinstance(classification, dict) or set(classification) != keys or any(not isinstance(v, str) for v in classification.values()):
+        raise ValueError('内容归类字段不完整')
+    scope, level = classification['scope'], classification['organizer_level']
+    if scope not in CONTENT_SCOPES or level not in INSTITUTIONS | PERSONAL | {'unknown'}:
+        raise ValueError('内容归类或组织层级无效')
+    if scope == 'pending':
+        if require_publishable:
+            raise ValueError('内容仍待核验，不能发布为活动或导师招募')
+        return
+    if (not all(classification[k].strip() for k in keys) or classification['source_url'] != item.get('source_url') or
+            scope in ('institutional_activity', 'admission_notice') and level not in INSTITUTIONS or
+            scope == 'mentor_recruitment' and level not in PERSONAL):
+        raise ValueError('内容归类与实际组织者或原文依据不一致')
+    if scope == 'institutional_activity' and item.get('kind') == 'recommend':
+        raise ValueError('正式招生通知不能归为营或机构活动')
+    if date.fromisoformat(classification['verified_at']) > today():
+        raise ValueError('归类核验日期不能在未来')
+    if source_text is not None and ''.join(classification['quote'].split()) not in ''.join(source_text.split()):
+        raise ValueError('内容归类依据不能在当前官方正文中定位')
+
+
+def public_catalog(catalog):
+    """Keep stable IDs reachable while only institution activities enter activity results."""
+    result = copy.deepcopy(catalog)
+    records = {item['id']: item for item in result.get('opportunities', []) + result.get('other_contents', [])}
+    result['opportunities'] = [item for item in records.values() if content_scope(item) == 'institutional_activity']
+    result['other_contents'] = [item for item in records.values() if content_scope(item) != 'institutional_activity']
+    result['content_scope_version'] = 1
+    monitoring = result.get('monitoring')
+    if isinstance(monitoring, dict):
+        # Unreviewed discoveries remain maintenance leads, never counted as activity opportunities.
+        monitoring['candidates'] = [c for c in monitoring.get('candidates', []) if content_scope(c) == 'institutional_activity']
+    return result
+
+
+def validate_mentor_links(root, item, source_text):
+    """Publishing a personal tag requires the actual directory identity, never a name match alone."""
+    import yaml
+    for evidence in item.get('mentor_identity_evidence', []):
+        parts = evidence['mentor_id'].split('-', 2)
+        if len(parts) != 3:
+            raise ValueError('导师关联ID无法定位现有目录')
+        path = Path(root) / 'data/professors' / parts[0] / parts[1] / (parts[2] + '.yaml')
+        if not path.is_file():
+            raise ValueError('关联导师尚未入库，保留待关联招募')
+        mentor = yaml.safe_load(path.read_text(encoding='utf-8'))
+        quote = ''.join(evidence['quote'].split())
+        if (evidence['source_url'] != item['source_url'] or quote not in ''.join(source_text.split()) or
+                mentor.get('school') != item['school_id'] or mentor.get('dept') != item['dept_id'] or
+                not mentor.get('name') or not mentor.get('email') or
+                any(''.join(value.split()) not in quote for value in (mentor['name'], mentor['email'], item['school_name']))):
+            raise ValueError('导师身份须有同校、院系、姓名及本人公开邮箱的当前原文依据')
 
 
 def today():
@@ -57,6 +131,21 @@ def validate(item):
         raise ValueError('活动来源状态错误')
     if item['cycle'] not in ('current', 'historical'):
         raise ValueError('活动轮次状态错误')
+    validate_classification(item)
+    ids, identities = item.get('mentor_ids', []), item.get('mentor_identity_evidence', [])
+    if (not isinstance(ids, list) or
+            any(not isinstance(v, str) or not re.fullmatch(r'[a-z0-9_-]+', v) for v in ids) or len(ids) != len(set(ids)) or
+            not isinstance(identities, list)):
+        raise ValueError('导师关联字段无效')
+    if any(not isinstance(v, dict) or set(v) != {'mentor_id', 'source_url', 'quote', 'verified_at'} or
+           any(not isinstance(s, str) or not s.strip() for s in v.values()) for v in identities):
+        raise ValueError('导师关联须保留官方身份依据')
+    if set(ids) != {v['mentor_id'] for v in identities} or len(ids) != len(identities):
+        raise ValueError('导师关联与身份依据不一致')
+    for evidence in identities:
+        if urlsplit(evidence['source_url']).scheme not in ('https', 'http'):
+            raise ValueError('导师身份来源无效')
+        date.fromisoformat(evidence['verified_at'])
     window = item.get('application_window')
     if window is not None:
         if (not isinstance(window, dict) or set(window) != {'mode', 'end_month', 'quote'} or
@@ -185,7 +274,7 @@ def remote_catalog(root, url):
             data = response.json()
         if not isinstance(data, dict) or data.get('version') != 1 or not isinstance(data.get('opportunities'), list):
             raise ValueError('更新服务资料结构错误')
-        for item in data['opportunities']:
+        for item in data['opportunities'] + data.get('other_contents', []):
             validate(item)
         # Only retain public links in the discovery queue; never execute URL schemes.
         monitoring = data.get('monitoring')
@@ -201,7 +290,10 @@ def remote_catalog(root, url):
             os.replace(name, cache)
         finally:
             Path(name).unlink(missing_ok=True)
-    return dict(data, mode='local', feed_url=url)
+    # Public feeds separate display destinations; local saves still resolve every stable ID.
+    merged = dict(data, opportunities=data['opportunities'] + data.get('other_contents', []), mode='local', feed_url=url)
+    merged.pop('other_contents', None)
+    return merged
 
 
 def state(item, day=None):
@@ -245,6 +337,8 @@ def save(data, body, known_ids, context, catalog):
     existing = next((p for p in data['projects'].values() if p.get('opportunity', {}).get('id') == item['id']), None)
     if existing:
         return data, {'project_id': existing['id'], 'duplicate': True}
+    if content_scope(item) != 'institutional_activity':
+        raise ValueError('此记录已归入导师招募、招生通知或待核验线索，请先查看新去向；已有申请记录保持不变')
     school = item['school_id'] if item['school_id'] in context['units'] else ''
     dept = item['dept_id'] if school and item['dept_id'] in context['units'][school] else ''
     # A camp is an activity, not proof of formal degree/route eligibility.

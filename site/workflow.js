@@ -26,6 +26,9 @@ let returnTarget=new URLSearchParams(location.search).get('target');
 let returnProject=new URLSearchParams(location.search).get('project');
 if(returnTarget)backQuery.set('target',returnTarget);
 const incomingGoal=new URLSearchParams(location.search);
+const discoveryReturn=incomingGoal.get('discovery_return')||'';
+const validDiscoveryReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(discoveryReturn);
+if(validDiscoveryReturn){backQuery.set('discovery_return',discoveryReturn);for(const a of document.querySelectorAll('a[href="discovery.html"]'))a.href=discoveryReturn;}
 let incomingPolicy=window.ADMISSIONS_DATA?.policies.find(p=>p.id===incomingGoal.get('policy'));
 for(const key of ['year','degree','route','school','dept','track','program','panel'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
 el('back-desk').href='desk.html?'+backQuery;
@@ -349,11 +352,13 @@ function syncProjectContext(){
   for(const key of [...incomingGoal.keys()])incomingGoal.delete(key);
   if(!p||(contextMentor&&!p.mentor_ids.includes(contextMentor)))contextMentor='';
   const q=new URLSearchParams({section:currentSection});
+  if(validDiscoveryReturn)q.set('discovery_return',discoveryReturn);
   if(project)q.set('project',project);
   if(contextMentor)q.set('mentor',contextMentor);
   history.replaceState(null,'',location.pathname+'?'+q);
   for(const key of [...backQuery.keys()])backQuery.delete(key);
   backQuery.set('view',project?'prepare':'today');
+  if(validDiscoveryReturn)backQuery.set('discovery_return',discoveryReturn);
   if(project)backQuery.set('project',project);
   if(contextMentor)backQuery.set('mentor',contextMentor);
   el('back-desk').href='desk.html?'+backQuery;

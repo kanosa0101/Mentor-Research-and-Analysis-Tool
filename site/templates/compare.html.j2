@@ -69,6 +69,11 @@ a:hover{text-decoration:underline}
 </div>
 <script>
 (async()=>{
+const scopeInput=new URLSearchParams(location.search);
+const discoveryReturn=scopeInput.get('discovery_return')||'';
+const validDiscoveryReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(discoveryReturn);
+// Returning to the directory must work even before selected mentor data arrives.
+if(validDiscoveryReturn)for(const a of document.querySelectorAll('a[href="discovery.html"]'))a.href=discoveryReturn;
 let requested=[];try{requested=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(x=>typeof x==='string').slice(0,5);}catch(e){}
 let DATA=[];
 if(requested.length){
@@ -81,15 +86,16 @@ if(requested.length){
 }
 const byId = {}; DATA.forEach(p => byId[p.page] = p);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const scopeInput=new URLSearchParams(location.search);
 function publicScope(p){
   const q=new URLSearchParams();
   for(const k of ['school','dept','year','degree','route','track','program'])if(scopeInput.get(k))q.set(k,scopeInput.get(k));
+  if(validDiscoveryReturn)q.set('discovery_return',discoveryReturn);
   if(p){if(q.get('school')!==p.school||q.get('dept')!==p.dept){q.delete('track');q.delete('program');}q.set('school',p.school);q.set('dept',p.dept);}
   return q;
 }
 const detailUrl=p=>'p/'+encodeURIComponent(p.page)+'.html?'+publicScope(p);
 for(const a of document.querySelectorAll('.site-header a[href="discovery.html"],.site-header a[href="compare.html"],.site-header a[href="admissions.html"],.site-header a[href="notices.html"],.site-header a[href="desk.html"],.site-header a[href="applications.html"],.context-actions a[href="discovery.html"],#hint a[href="discovery.html"]'))a.href=a.getAttribute('href')+'?'+publicScope();
+if(validDiscoveryReturn)for(const a of document.querySelectorAll('a[href^="discovery.html"]'))a.href=discoveryReturn;
 const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器学习",
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",

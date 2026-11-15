@@ -1,5 +1,7 @@
 const assert=require('node:assert/strict'),rules=require('../site/opportunities-core.js');
 const now='2026-11-15T12:00:00+08:00',base={id:'camp',kind:'winter_camp',title:'计算机冬令营',unit:'计算机学院',school_name:'学校',eligibility:[],cycle:'current',source_state:'verified',checked_at:'2026-11-15',verified_at:'2026-11-15',registration_start:'2026-11-01',deadline:'2026-11-15',graduation_year:2028};
+base.source_url='https://example.edu/camp';
+base.content_classification={scope:'institutional_activity',organizer_level:'school_department',organizer_name:'计算机学院',source_url:base.source_url,quote:'学院组织冬令营',verified_at:'2026-11-15'};
 assert.equal(rules.state(base,now),'open');
 assert.equal(rules.state({...base,deadline:'2026-11-15T11:00:00+08:00'},now),'closed');
 assert.equal(rules.state({...base,source_state:'unavailable'},now),'review');

@@ -16,7 +16,7 @@ from crawler import review_queue, source_discovery
 LABELS = {'pending_review': '待核验', 'needs_pdf_review': '待核验PDF', 'source_error': '来源获取失败',
           'source_changed': '来源已变化', 'published': '已发布'}
 MANAGED = {'source_url', 'source_sha256', 'source_content_sha256', 'source_documents', 'source_state', 'checked_at', 'verified_at'}
-EDITABLE = (util.TEXT | util.YEARS | util.LISTS) - MANAGED
+EDITABLE = ((util.TEXT | util.YEARS | util.LISTS) - MANAGED) | {'content_classification'}
 
 
 class Dashboard:
@@ -48,6 +48,8 @@ class Dashboard:
 
     def blockers(self, draft):
         errors = []
+        if util.content_scope(draft.get('item', {})) == 'pending':
+            errors.append('请先填写内容归类、实际主办方及官方原句；待核验内容不能发布到活动或导师招募。')
         fetch = draft.get('fetch', {})
         if fetch.get('status') not in ('ok', 'pdf_review'):
             return ['官方原文未成功取得，请重新抓取；不能使用旧缓存发布。']
@@ -61,6 +63,8 @@ class Dashboard:
                 _, text = review.pdf_review_evidence(draft, [p['sha256'] for p in fetch['pdfs']])
             else:
                 text = extract.document(raw, draft['source_url'])['text']
+            util.validate_classification(item, text, require_publishable=True)
+            util.validate_mentor_links(self.root, item, text)
             quotes = draft.get('quotes', [])
             if not quotes or any(not isinstance(q, str) or not q.strip() or extract.compact(q) not in extract.compact(text) for q in quotes):
                 errors.append('核验摘录为空或未匹配当前原文，请检查逐字段引用及总摘录。')
@@ -179,6 +183,8 @@ class Dashboard:
                 except (OSError, ValueError, KeyError, TypeError):
                     pdf['difference'] = '旧PDF文本证据不可读取，请直接核对当前官方文件；不能认定为未变化。'
         return dict(**self.summary(d), item=d['item'], source_url=d['source_url'],
+                    classification_template=dict(scope='pending', organizer_level='unknown', organizer_name=d['item'].get('unit', ''),
+                        source_url=d['source_url'], quote='', verified_at=util.today().isoformat()),
                     ai_suggestions=d.get('ai_suggestions'),
                     listing_url=d['listing_url'], suggestions=d.get('suggestions', {}), field_evidence=d.get('field_evidence', {}),
                     reviewed_fields=d.get('reviewed_fields', {}), quotes=d.get('quotes', []), warnings=d.get('warnings', []),
@@ -223,6 +229,8 @@ class Dashboard:
                     for key,value in patch.items():
                         if key in util.TEXT and not isinstance(value, str) or key in util.YEARS and value is not None and (type(value) is not int or not 2000 <= value <= 2100) or key in util.LISTS and (not isinstance(value, list) or any(not isinstance(v, str) for v in value)):
                             raise ValueError(f'{key}字段格式错误')
+                    if 'content_classification' in patch:
+                        util.validate_classification(dict(draft['item'], **patch))
                     quotes, mappings = body.get('quotes', []), body.get('reviewed_fields', {})
                     existing_mappings = draft.get('reviewed_fields', {})
                     if not isinstance(quotes, list) or any(not isinstance(v, str) or not v.strip() for v in quotes) or not isinstance(mappings, dict) or set(mappings)-(EDITABLE | set(existing_mappings)):

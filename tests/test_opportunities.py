@@ -16,7 +16,8 @@ class OpportunityTests(unittest.TestCase):
     request = test_applications.ApplicationTests.request
 
     def catalog(self):
-        item = copy.deepcopy(opportunities.load(self.serve.ROOT)['opportunities'][0])
+        item = copy.deepcopy(next(row for row in opportunities.load(self.serve.ROOT)['opportunities']
+            if opportunities.content_scope(row) == 'institutional_activity' and row['kind'] == 'winter_camp' and row['cycle'] == 'current'))
         item.update(source_state='verified', cycle='current', checked_at=opportunities.today().isoformat(),
                     verified_at=opportunities.today().isoformat(), registration_start=opportunities.today().isoformat(),
                     deadline=(opportunities.today()+timedelta(days=10)).isoformat())

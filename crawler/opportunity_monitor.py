@@ -217,6 +217,8 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                                  seen_in_latest_list=True, source_state='ok',
                                  monitor_source_id=key,
                                  discovery_status=old_row.get('discovery_status', 'initial_snapshot' if baseline else 'discovered_later'))
+                # Routing hint is not proof of the organizer and never passes public admission.
+                candidate['content_scope_hint'] = cfg.get('content_scope_hint', 'pending')
                 # Parse output is always unreviewed; title years are not admission years.
                 rows[candidate['url']] = candidate
                 if is_new and baseline:

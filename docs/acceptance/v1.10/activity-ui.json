@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "viewport": "1440",
+      "passed": true,
+      "legacy_ids_checked": 9,
+      "active_cards": 2
+    },
+    {
+      "viewport": "390",
+      "passed": true,
+      "legacy_ids_checked": 9,
+      "active_cards": 2
+    },
+    {
+      "viewport": "320",
+      "passed": true,
+      "legacy_ids_checked": 9,
+      "active_cards": 2
+    },
+    {
+      "viewport": "768",
+      "passed": true,
+      "legacy_ids_checked": 9,
+      "active_cards": 2
+    },
+    {
+      "viewport": "1440-zoom200-equivalent",
+      "passed": true,
+      "legacy_ids_checked": 9,
+      "active_cards": 2
+    }
+  ],
+  "writes": [],
+  "page_errors": [],
+  "screenshots_reviewed": false,
+  "passed": true,
+  "zoom_note": "720 CSS px at deviceScaleFactor 2 models 1440 physical pixels at 200% layout zoom; native browser toolbar zoom not exercised."
+}

@@ -16,6 +16,7 @@ URL = 'https://cs.example.edu.cn/camp.htm'
 CONFIGS = [dict(url='https://cs.example.edu.cn/admissions.htm', school='example', dept='cs')]
 HTML = '''<html><meta charset="utf-8"><title>2027年计算机冬令营</title><article>
 <h1>2027年计算机冬令营</h1>
+<p>主办单位：示例计算机学院</p>
 <h2>一、申请条件</h2><p>计算机相关专业本科生可申请。</p><p>仅限本校学生，不接受已毕业申请人。</p>
 <h2>二、申请材料</h2><p>须提交个人简历、加盖公章的成绩单和英语证明。</p>
 <h2>三、报名方式</h2><p>请将全部申请材料合并PDF发送至 camp@example.edu.cn。</p>

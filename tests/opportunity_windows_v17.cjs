@@ -1,6 +1,8 @@
 const assert=require('node:assert/strict'),rules=require('../site/opportunities-core.js');
 const now='2026-11-15T12:00:00+08:00';
 const base={id:'fixture',kind:'research_program',title:'科研实践',unit:'校内项目',school_name:'学校',eligibility:['仅限本校学生'],cycle:'current',source_state:'verified',checked_at:'2026-11-15',verified_at:'2026-11-15',registration_start:'2026-11-01',deadline:'',published_at:'2026-11-01'};
+base.source_url='https://example.edu/project';
+base.content_classification={scope:'institutional_activity',organizer_level:'research_institute',organizer_name:'学校',source_url:base.source_url,quote:'学校组织科研实践',verified_at:'2026-11-15'};
 const rolling={...base,application_window:{mode:'rolling',end_month:'',quote:'长期接受申请'}};
 const month={...base,application_window:{mode:'month',end_month:'2026-12',quote:'受理申请至2026年12月'}};
 const cases=[

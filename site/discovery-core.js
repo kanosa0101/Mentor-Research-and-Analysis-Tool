@@ -68,5 +68,16 @@
     });
     return {rows:ranked,matched};
   }
-  const api={evaluate,projectScoped,projectMatches,sameGoal,reviewReason,researchText,validEmail,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
+  const titleGroups={"professor":["教授","长聘教授","特聘教授","讲席教授","准聘教授","兼职教授","教授（研究员）"],"associate_professor":["副教授","长聘教轨副教授","长聘副教授","特聘副教授","预聘副教授","准聘副教授"],"assistant_professor":["助理教授","预聘助理教授","长聘教轨助理教授"],"lecturer":["讲师"],"researcher":["研究员","特聘研究员","青年研究员","长聘研究员","讲席研究员","正高级研究员"],"associate_researcher":["副研究员","特聘副研究员","青年副研究员","副高级研究员"],"assistant_researcher":["助理研究员"],"other":["副高级","正高级","中级","高级工程师","工程师","正高级工程师","实验师","研究实习员","高级实验师","教辅系列","助理工程师","助教","教授级高级工程师","正高级实验师","馆员"]};
+  function titleGroup(value){return Object.keys(titleGroups).find(key=>titleGroups[key].includes((value||'').trim()))||'unknown';}
+  function contactable(p){const source=p.email_source||p.provenance?.email?.source;try{const url=new URL(source);return validEmail(p.email)&&['http:','https:'].includes(url.protocol)&&!!url.hostname;}catch(e){return false;}}
+  function directoryMatch(p,criteria,corpus=''){
+    if(!criteria.include_missing_email&&!contactable(p))return false;
+    if(criteria.qualifications?.length){const value=p.supervisor||'';if(/(无|非|不|未具备)/.test(value)||!criteria.qualifications.some(key=>value.includes(key==='phd'?'博':'硕')))return false;}
+    if(criteria.titles?.length&&!criteria.titles.includes(titleGroup(p.title)))return false;
+    const text=typeof corpus==='object'?(corpus.text||''):corpus;
+    return !criteria.topics?.length||criteria.topics.some(term=>includes(researchText(p.research_direction_raw),term)||includes(text,term));
+  }
+  function directoryRank(rows,seed){return rows.slice().sort((a,b)=>completeness(b,{bio_excerpt:b.bio_excerpt})[0]-completeness(a,{bio_excerpt:a.bio_excerpt})[0]||randomKey(a.page,seed)-randomKey(b.page,seed)||(a.page<b.page?-1:a.page>b.page?1:0));}
+  const api={titleGroups,titleGroup,contactable,directoryMatch,directoryRank,evaluate,projectScoped,projectMatches,sameGoal,reviewReason,researchText,validEmail,completeness,rankCandidates};if(typeof module!=='undefined')module.exports=api;else root.DiscoveryRules=api;
 })(typeof window!=='undefined'?window:globalThis);

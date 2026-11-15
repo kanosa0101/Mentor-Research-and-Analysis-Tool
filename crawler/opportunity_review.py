@@ -221,6 +221,7 @@ def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=f
                 except ValueError:
                     pass  # An untrusted replacement cannot erase the previous provenance.
             drafts[url]['last_seen'] = candidate['last_seen']
+            drafts[url]['content_scope_hint'] = candidate.get('content_scope_hint', 'pending')
         for draft in drafts.values():
             try:
                 check_source(draft, configs)
@@ -457,6 +458,8 @@ second item. External edits should not run concurrently with this command.
         else:
             item.pop('source_documents', None)
         opportunities.validate(item)
+        opportunities.validate_classification(item, source_text, require_publishable=True)
+        opportunities.validate_mentor_links(root, item, source_text)
         validate_field_evidence(draft, item, source_text)
         catalog = opportunities.load(root)
         existing = next((i for i in catalog['opportunities'] if i['id'] == item['id']), None)
@@ -469,6 +472,7 @@ second item. External edits should not run concurrently with this command.
                       source_url=draft['source_url'], listing_url=draft['listing_url'], first_seen=draft['first_seen'],
                       source_sha256=digest, content_sha256=draft['fetch']['content_sha256'],
                       item_sha256=item_hash(item), quotes=copy.deepcopy(quotes),
+                      content_classification=copy.deepcopy(item['content_classification']),
                       field_evidence=copy.deepcopy(draft.get('reviewed_fields', {})))
         if documents:
             review['source_documents'] = copy.deepcopy(documents)

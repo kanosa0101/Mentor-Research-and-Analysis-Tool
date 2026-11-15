@@ -120,7 +120,9 @@ def recent(root):
         return []
     db=sqlite3.connect('file:'+(Path(root)/'var/push/alerts.sqlite').as_posix()+'?mode=ro',uri=True)
     try:
-        return [json.loads(row[0]) for row in db.execute('SELECT body FROM events ORDER BY id DESC LIMIT 50')]
+        allowed = {item['id'] for item in opportunity_util.public_catalog(opportunity_util.load(root))['opportunities']}
+        return [event for row in db.execute('SELECT body FROM events ORDER BY id DESC LIMIT 200')
+                if (event := json.loads(row[0])).get('opportunity_id') in allowed][:50]
     finally:
         db.close()
 
@@ -132,6 +134,8 @@ def record(root, catalog, monitoring=None, day=None):
     reviews = {r.get('opportunity_id'):r for r in catalog.get('review_log', [])}
     with database(root) as db:
         initial = db.execute("SELECT 1 FROM snapshots WHERE key='initialized'").fetchone() is None
+        # Existing installations baseline the scope migration once; reclassification is not a launch.
+        scope_baseline = db.execute("SELECT 1 FROM snapshots WHERE key='content_scope_v1'").fetchone() is None
         def event(key, kind, title, item, changes=None):
             nonlocal added
             body = dict(id=key, kind=kind, title=title, opportunity_id=item.get('id'),
@@ -144,20 +148,22 @@ def record(root, catalog, monitoring=None, day=None):
                         timeline={k:reviews.get(item.get('id'), {}).get(k) for k in ('first_seen','reviewed_at','published_at')},
                         url='/opportunities.html?id='+item['id'] if kind != 'discovered' else '/opportunities.html?candidate='+item['id']+'#monitor-candidates',
                         created_at=datetime.now(timezone.utc).isoformat(timespec='seconds'))
+            body['content_scope'] = opportunity_util.content_scope(item)
             added += db.execute('INSERT OR IGNORE INTO events(key,body) VALUES (?,?)', (key, json.dumps(body, ensure_ascii=False))).rowcount
         for item in catalog['opportunities']:
+            activity = opportunity_util.content_scope(item) == 'institutional_activity'
             key = 'item:' + item['id']
             previous = db.execute('SELECT body FROM snapshots WHERE key=?', (key,)).fetchone()
             snapshot = {k: item.get(k) for k in (*FIELDS, 'source_state', 'cycle')}
             changed = [k for k in FIELDS if previous and semantic(json.loads(previous['body']).get(k)) != semantic(snapshot[k])]
-            if not initial and item['cycle'] == 'current' and item['source_state'] == 'verified':
+            if not initial and not scope_baseline and activity and item['cycle'] == 'current' and item['source_state'] == 'verified':
                 fingerprint = hashlib.sha256(json.dumps(semantic(snapshot), sort_keys=True).encode()).hexdigest()[:20]
                 if not previous or json.loads(previous['body']).get('source_state') != 'verified' or json.loads(previous['body']).get('cycle') != 'current':
                     event('published:'+item['id']+':'+fingerprint, 'published', '已核验机会：'+item['title'], item)
                 elif changed:
                     event('changed:'+item['id']+':'+fingerprint, 'changed', '申请信息有变化：'+item['title'], item, changed)
             db.execute('INSERT OR REPLACE INTO snapshots VALUES (?,?)', (key, json.dumps(snapshot)))
-            if not initial and opportunity_util.state(item, day) == 'open' and item.get('deadline'):
+            if not initial and not scope_baseline and activity and opportunity_util.state(item, day) == 'open' and item.get('deadline'):
                 days = (datetime.fromisoformat(item['deadline'][:10]).date() - day).days
                 if days in (0, 1, 3):
                     event(f'deadline:{item["id"]}:{item["deadline"]}:{days}', 'deadline',
@@ -166,13 +172,17 @@ def record(root, catalog, monitoring=None, day=None):
             key = 'candidate:' + candidate['url']
             previous = db.execute('SELECT 1 FROM snapshots WHERE key=?', (key,)).fetchone()
             published = candidate.get('publication_date')
-            if not initial and not previous and candidate.get('discovery_status') == 'discovered_later' and published and 0 <= (day-datetime.fromisoformat(published).date()).days <= 30:
+            if (not initial and not scope_baseline and not previous and
+                opportunity_util.content_scope(candidate) == 'institutional_activity' and
+                candidate.get('discovery_status') == 'discovered_later' and published and
+                0 <= (day-datetime.fromisoformat(published).date()).days <= 30):
                 school = next((o['school_name'] for o in catalog['opportunities'] if o['school_id'] == candidate['school']), candidate['unit'])
                 kind = next((key for word,key in (('冬令营','winter_camp'),('夏令营','summer_camp'),('推免','recommend'),('科创计划','research_program')) if word in candidate['title']), '')
                 item = dict(id=candidate['id'], title=candidate['title'], unit=candidate['unit'], source_url=candidate['url'], school_name=school, kind=kind)
                 event(key, 'discovered', '待核验公告：'+candidate['title'], item)
             db.execute('INSERT OR IGNORE INTO snapshots VALUES (?,?)', (key, '{}'))
         db.execute("INSERT OR IGNORE INTO snapshots VALUES ('initialized','{}')")
+        db.execute("INSERT OR IGNORE INTO snapshots VALUES ('content_scope_v1','{}')")
     return added
 
 
@@ -208,6 +218,7 @@ def send(root, subscription, payload):
 def dispatch(root, sender=None):
     sender = sender or (lambda subscription, payload: send(root, subscription, payload))
     result = dict(sent=0, failed=0, expired=0, attempted_at=datetime.now(timezone.utc).isoformat(timespec='seconds'), max_successful_event_age_seconds=None, max_publish_to_send_seconds=None)
+    allowed = {item['id'] for item in opportunity_util.public_catalog(opportunity_util.load(root))['opportunities']}
     with database(root) as db:
         subscribers = db.execute('SELECT * FROM subscriptions').fetchall()
     for sub in subscribers:
@@ -217,7 +228,7 @@ def dispatch(root, sender=None):
             event = json.loads(row['body'])
             with database(root) as db:
                 if not db.execute('SELECT 1 FROM subscriptions WHERE id=?',(sub['id'],)).fetchone():break
-                if not matches(event,json.loads(sub['filters'])):
+                if event.get('opportunity_id') not in allowed or not matches(event,json.loads(sub['filters'])):
                     db.execute('INSERT OR REPLACE INTO deliveries VALUES (?,?,0,1)',(sub['id'],row['id']))
                     continue
             code = 0

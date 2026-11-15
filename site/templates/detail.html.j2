@@ -83,6 +83,7 @@ a:hover{text-decoration:underline}
     {% if p.subjects %}<dt>招生学科</dt><dd>{{ p.subjects }}</dd>{% endif %}
     <dt>研究方向</dt><dd>{{ p.research_direction_raw or "暂未收录" }}</dd>
     <dt>公开邮箱</dt><dd>{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% else %}暂未收录，可查看官网联系渠道{% endif %}</dd>
+    {% if p.provenance.get('email') and p.email %}<dt>邮箱出处</dt><dd><a href="{{ p.provenance.email.source }}" target="_blank" rel="noopener">查看公开来源 ↗</a><span class="note"> · 收录于 {{ p.provenance.email.fetched_at }}</span></dd>{% endif %}
     {% if p.phone %}<dt>公开电话</dt><dd>{{ p.phone }}</dd>{% endif %}
     {% if p.homepage %}<dt>个人主页</dt><dd><a href="{{ p.homepage }}" target="_blank" rel="noopener">打开个人主页 ↗</a></dd>{% endif %}
     {% if p.profile_url or p.detail_url %}<dt>官方资料</dt><dd><a href="{{ p.profile_url or p.detail_url }}" target="_blank" rel="noopener">查看学校官网资料 ↗</a></dd>{% endif %}
@@ -90,6 +91,26 @@ a:hover{text-decoration:underline}
   <p class="note">导师资格不代表当前招生名额，联系前请核对当年招生安排。</p>
   <div style="clear:both"></div>
 </div>
+{% if p.recruitment %}
+<section class="card mentor-recruitment" id="recruitment">
+  <h2>科研实习招募</h2>
+  <p class="note">以下为导师或课题组发布的招募记录。当前是否接收、具体时间与安排，请直接联系确认。</p>
+  {% for item in p.recruitment %}
+  <article>
+    <h3>{{ item.title }}</h3>
+    {% if item.research_directions %}<p><strong>研究方向：</strong>{% for direction in item.research_directions %}{{ direction.direction }}{% if not loop.last %}；{% endif %}{% endfor %}</p>{% endif %}
+    <p><strong>联系：</strong>{{ item.contact or '请查看原文中的联系说明' }}</p>
+    <p><strong>时间：</strong>{{ item.deadline or item.deadline_note or '未明确截止时间，请联系确认' }}</p>
+    <p class="note"><a href="{{ item.source_url }}" target="_blank" rel="noopener">{{ item.content_classification.organizer_name }} · 招募原文 ↗</a> · 整理于 {{ item.content_classification.verified_at }}</p>
+    <details><summary>申请条件与准备材料</summary>
+      {% if item.eligibility %}<h4>适用条件</h4><ul>{% for entry in item.eligibility %}<li>{{ entry }}</li>{% endfor %}</ul>{% endif %}
+      {% if item.materials %}<h4>准备材料</h4><ul>{% for entry in item.materials %}<li>{{ entry }}</li>{% endfor %}</ul>{% endif %}
+      {% if item.application_method %}<p>{{ item.application_method }}</p>{% endif %}
+    </details>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
 <details class="card" id="obox">
   <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
   <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
@@ -163,6 +184,8 @@ a:hover{text-decoration:underline}
 </div>
 <script>
 const detailScope=new URLSearchParams(),detailIncoming=new URLSearchParams(location.search);
+const detailReturn=detailIncoming.get('discovery_return')||'';
+const validDetailReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(detailReturn);
 for(const key of ['school','dept','year','degree','route','track','program'])if(detailIncoming.get(key))detailScope.set(key,detailIncoming.get(key));
 const detailSchool={{ p.school|tojson }},detailDept={{ p.dept|tojson }};
 if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDept){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
@@ -170,7 +193,9 @@ detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
 for(const a of document.querySelectorAll('a[href]')){
   const path=a.getAttribute('href').split('?')[0];
   if(['../discovery.html','../compare.html','../desk.html','../admissions.html','../notices.html','../applications.html'].includes(path)){
-    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',{{ p.page|tojson }});a.href=path+'?'+q;
+    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',{{ p.page|tojson }});
+    if(validDetailReturn&&['../compare.html','../desk.html'].includes(path))q.set('discovery_return',detailReturn);
+    a.href=validDetailReturn&&path==='../discovery.html'?'../'+detailReturn:path+'?'+q;
   }
 }
 const detailCompare=document.getElementById('detail-compare'), detailSelection=document.getElementById('detail-selection'), detailId={{ p.page|tojson }};

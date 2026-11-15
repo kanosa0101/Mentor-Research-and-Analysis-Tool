@@ -23,7 +23,7 @@ class DashboardTests(unittest.TestCase):
         self.queue = self.root/'cache/opportunity_review.json'
         self.url = 'https://cs.example.edu.cn/camp.htm'
         self.listing = 'https://cs.example.edu.cn/list.htm'
-        self.raw = '<article><p>2027年冬令营面向2028届本科毕业生，报名截止2026年12月31日。</p></article>'.encode()
+        self.raw = '<article><p>主办单位：示例大学计算机学院</p><p>2027年冬令营面向2028届本科毕业生，报名截止2026年12月31日。</p></article>'.encode()
         self.configs = [dict(url=self.listing)]
         (self.root/'sites').mkdir()
         (self.root/'sites/opportunities.yaml').write_text(yaml.safe_dump(dict(targets=self.configs)),encoding='utf-8')
@@ -31,6 +31,8 @@ class DashboardTests(unittest.TestCase):
         q = review.sync(dict(candidates=[candidate]),self.queue,self.configs,fetcher=lambda _:self.raw)
         d = q['drafts'][0]
         d['item'].update(kind='winter_camp',cycle='current',school_name='示例大学',eligibility=['面向2028届本科毕业生'],evidence=['官方原文逐项核验'])
+        d['item']['content_classification'] = dict(scope='institutional_activity', organizer_level='school_department',
+            organizer_name='示例大学计算机学院', source_url=self.url, quote='主办单位：示例大学计算机学院', verified_at='2026-11-15')
         d['quotes']=['2027年冬令营面向2028届本科毕业生，报名截止2026年12月31日。']
         review.atomic_json(self.queue,q)
         self.id=d['id'];self.dashboard=Dashboard(self.root)
@@ -46,6 +48,25 @@ class DashboardTests(unittest.TestCase):
         self.assertNotIn('evidence_file',json.dumps(d))
         self.assertNotIn(str(self.root),json.dumps(d))
         self.assertIn('deadline',d['suggested_fields'])
+
+    def test_classification_can_be_completed_without_mentor_link_or_automatic_publication(self):
+        queue=review.read_queue(self.queue);classification=queue['drafts'][0]['item'].pop('content_classification')
+        review.atomic_json(self.queue,queue)
+        detail=self.dashboard.detail(self.id)
+        self.assertIn('content_classification',detail['editable_fields'])
+        self.assertEqual(detail['classification_template']['scope'],'pending')
+        self.assertTrue(any('内容归类' in message for message in detail['blockers']))
+        saved=self.dashboard.mutate(self.id,'save',self.body(item={'content_classification':classification},quotes=detail['quotes'],reviewed_fields={}))
+        self.assertEqual(saved['item']['content_classification'],classification)
+        self.assertEqual(saved['blockers'],[])
+        self.assertNotIn('mentor_ids',saved['item'])
+        self.assertFalse((self.root/'data/opportunities.json').exists())
+        invalid=dict(classification,quote='未在本篇公告出现的主办方')
+        saved=self.dashboard.mutate(self.id,'save',self.body(item={'content_classification':invalid},quotes=detail['quotes'],reviewed_fields={}))
+        self.assertTrue(any('当前官方正文' in message for message in saved['blockers']))
+        with patch.object(review,'fetch_source',return_value=self.raw),self.assertRaisesRegex(ValueError,'当前官方正文'):
+            self.dashboard.mutate(self.id,'publish',self.body(confirmed=True,sha256=saved['source_sha256'],reviewer='测试',note='不能绕过正文门禁'))
+        self.assertFalse((self.root/'data/opportunities.json').exists())
 
     def test_explicit_save_accept_publish_and_stale_edit_are_separate(self):
         original=self.dashboard.detail(self.id)

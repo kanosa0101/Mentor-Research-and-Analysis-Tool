@@ -1,6 +1,7 @@
 """Push acceptance tests: temporary databases and fake delivery only."""
 import base64
 import hashlib
+import json
 import tempfile
 import unittest
 from datetime import date, timedelta
@@ -8,6 +9,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from crawler import push_util as push
+from crawler import opportunity_util as util
 
 
 DAY = date(2026, 11, 15)
@@ -28,6 +30,8 @@ def activity(**changes):
                 registration_start='2026-11-01', event_end='', application_url='',
                 application_method='按官方要求申请', contact='官方联系人', research_directions=[])
     item.update(changes)
+    item['content_classification'] = dict(scope='institutional_activity', organizer_level='school_department',
+        organizer_name=item['unit'], source_url=item['source_url'], quote='测试大学计算机学院统一冬令营', verified_at='2026-11-15')
     return item
 
 
@@ -49,6 +53,17 @@ class PushTests(unittest.TestCase):
                                          'filters': values})
 
     def record(self, *items, day=DAY, monitoring=None):
+        # Dispatch rechecks the current public catalog, not only a queued event's old label.
+        records = []
+        for item in items:
+            complete = {key: '' for key in util.TEXT}
+            complete.update({key: None for key in util.YEARS})
+            complete.update({key: [] for key in util.LISTS})
+            complete.update({key: value for key, value in item.items() if key in util.TEXT | util.YEARS | util.LISTS | util.OPTIONAL})
+            complete['evidence'] = ['测试学院统一组织活动']
+            records.append(complete)
+        (self.root / 'data').mkdir(exist_ok=True)
+        (self.root / 'data/opportunities.json').write_text(json.dumps({'version': 1, 'opportunities': records}), encoding='utf-8')
         return push.record(self.root, {'opportunities': list(items)}, monitoring=monitoring, day=day)
 
     def sender(self, sub, payload):
@@ -137,17 +152,17 @@ class PushTests(unittest.TestCase):
         self.assertEqual(push.dispatch(self.root, self.sender)['sent'], 1)
         self.assertTrue(self.calls[0][0]['endpoint'].endswith('test-device'))
 
-    def test_discovery_alert_is_opt_in_and_not_historical(self):
+    def test_unclassified_discoveries_do_not_broadcast_even_when_opted_in(self):
         old = dict(id='old', url='https://example.edu.cn/old', title='旧冬令营', unit='计算机学院',
                    discovery_status='discovered_later', publication_date='2025-11-01')
         self.record(monitoring={'candidates': [old]})
         self.register()
         self.register('https://fcm.googleapis.com/fcm/send/discoveries', discoveries=True)
         new = dict(old, id='new', url='https://example.edu.cn/new', title='新冬令营', publication_date='2026-11-15')
-        self.assertEqual(self.record(monitoring={'candidates': [old, new]}), 1)
         self.assertEqual(self.record(monitoring={'candidates': [old, new]}), 0)
-        self.assertEqual(push.dispatch(self.root, self.sender)['sent'], 1)
-        self.assertTrue(self.calls[0][0]['endpoint'].endswith('/discoveries'))
+        self.assertEqual(self.record(monitoring={'candidates': [old, new]}), 0)
+        self.assertEqual(push.dispatch(self.root, self.sender)['sent'], 0)
+        self.assertEqual(self.calls, [])
 
     def test_failed_delivery_retries_and_success_stops_retries(self):
         self.record()

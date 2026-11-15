@@ -424,6 +424,7 @@ targets:
   name: 大数据研究院张帆团队
   url: https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 复旦大学张帆团队本科科研实习联系
   required_text: 【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】
   priority: current
@@ -434,6 +435,7 @@ targets:
   name: 洪亮团队／张江高等研究院
   url: https://ins.sjtu.edu.cn/people/lhong/join-us.html
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 上海交通大学洪亮团队AI与生物方向长期实习
   required_text: 课题组长期招收计算机/生物工程方向实习生
   priority: current
@@ -444,6 +446,7 @@ targets:
   name: 胡奇强实验室／人形机器人研究院
   url: https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 中国科大胡奇强实验室本科机器人科研联系
   required_text: 长期招收，有意向者请联系：qqhu@ustc.edu.cn
   priority: current
@@ -454,6 +457,7 @@ targets:
   name: 网络化生物电子系统实验室
   url: https://shichaoding.lab.westlake.edu.cn/
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 西湖大学丁士超实验室访问学生联系
   required_text: 招聘启事在岗位招满前长期有效。
   priority: current
@@ -519,6 +523,7 @@ targets:
   name: 北京航空航天大学解佳豪课题组
   url: https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 北航解佳豪课题组本科生科研实习
   required_text: 同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。
   priority: current
@@ -529,7 +534,17 @@ targets:
   name: 信息学院·数据工程与知识工程教育部重点实验室
   url: https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm
   mode: direct_page
+  content_scope_hint: mentor_recruitment
   title: 人大董谨豪课题组科研实习联系
   required_text: 课题组长期面向优秀本科生和研究生开放科研实习机会
   priority: current
   interval_hours: 24
+- school: tsinghua
+  dept: air
+  name: 清华AIR已登记冬令营官方公告
+  url: https://air.tsinghua.edu.cn/info/1007/2476.htm
+  mode: direct_page
+  content_scope_hint: institutional_activity
+  title: WINTER@AIR｜2026冬令营开始报名啦！
+  required_text: 清华大学智能产业研究院（AIR）2026冬令营开启报名
+  source_note: 2026-11-15回查既有官方详情，补此历史活动正文监测；并非伪称由栏目列表发现，也不扩展采集其他院系。

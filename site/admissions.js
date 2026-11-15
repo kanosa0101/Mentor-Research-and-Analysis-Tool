@@ -93,12 +93,12 @@ function checklistScope(row,prefs){
   const p=row.policy;
   return labels[p.level]+(p.program?' · '+p.program+' '+p.program_code:'')+(row.conditional?' · '+AdmissionsRules.conditionLabel(p,true)+'（不计当前目标覆盖）':'')+(prefs.track==='special'&&p.level==='school'?' · 专项适用性仍待核实':'');
 }
-function previewText(text,max=110){const value=String(text||'').replace(/\s+/g,' ').trim();return value.length>max?value.slice(0,max)+'…':value;}
 function qualityShort(q){return q.state==='checked'?'摘要版本已核对':'摘要需复核';}
 function checklistItem(item,prefs,events=[]){
   const known=item.rows.filter(row=>row.field),unknown=item.rows.filter(row=>!row.field);
   const first=known.find(row=>!row.conditional)||known[0],warnings=item.rows.some(row=>row.quality.state!=='checked');
-  const preview=first?`<p class="checklist-scope">${esc(checklistScope(first,prefs))}</p><p class="checklist-preview">${esc(previewText(first.field.text))}</p>${known.length>1?`<p class="checklist-scope">另有 ${known.length-1} 条相关要求，展开核对。</p>`:''}`:'<p class="checklist-preview muted">尚无明确摘要，请查官方原文。</p>';
+  const previewRows=item.key==='eligibility'?known:first?[first]:[];
+  const preview=previewRows.length?previewRows.map(row=>`<p class="checklist-scope">${esc(checklistScope(row,prefs))}</p><p class="checklist-preview">${esc(row.field.text)}</p>`).join('')+(item.key!=='eligibility'&&known.length>1?`<p class="checklist-scope">另有 ${known.length-1} 条相关要求，展开核对；不同材料阶段不可互代。</p>`:''):'<p class="checklist-preview muted">尚无明确摘要，请查官方原文。</p>';
   const pending=unknown.length?`<p class="checklist-scope">${unknown.length} 项政策未整理此项，不代表没有要求。</p>`:'';
   const evidence=item.rows.map(row=>{const p=row.policy,f=row.field;return `<div class="checklist-row" data-checklist-policy="${esc(p.id)}"><p class="scope">${esc(checklistScope(row,prefs))} · <a href="#policy-${esc(p.id)}">查看政策摘要</a></p>${f?`<p>${esc(f.text)}</p><blockquote>原文短片段：${esc(f.quote)}<br>定位：${esc(f.locator)}</blockquote>`:'<p class="muted">本层未整理，待查原文。</p>'}${sourceLinks(p,f)}<p class="checklist-status ${row.quality.state}">${esc(row.quality.label)}</p></div>`;}).join('');
   const ordered=[...events].sort((a,b)=>Number(a.state!=='future')-Number(b.state!=='future')||String(a.event.at).localeCompare(String(b.event.at)));
