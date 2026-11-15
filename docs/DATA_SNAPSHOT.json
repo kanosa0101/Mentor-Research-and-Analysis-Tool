@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "version": "1.7.0",
+    "version": "1.8.0",
     "as_of": "2026-11-15",
-    "generated_at": "2026-11-15T10:29:24.173355+00:00",
+    "generated_at": "2026-11-15T11:49:47.580987+00:00",
     "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
-    "method": "Current public-file inventory after v1.7 public-data merge; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
+    "method": "Current public-file inventory after v1.8 public-data merge; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
     "warning": "统计表示已登记资料与核验状态，不等于官方完整覆盖、当前招生名额、个人申请资格或材料完成。last_fetched/抓取出处日期与人工内容复核日期分别统计。",
-    "previous_snapshot_sha256": "e894ce25d4bcccda5389ba896f7f4ed7088452e56459c4e1fe667e279c773d3a"
+    "previous_snapshot_sha256": "37858c7a963ad439250b307bd1f6e1b805deab97ca9dea599bf43c5b53b8a68c"
   },
   "counts": {
     "professors": 7173,
@@ -37,7 +37,7 @@
       "title": 5213,
       "supervisor": 3969,
       "bio_raw": 4942,
-      "research_direction_raw": 3059,
+      "research_direction_raw": 3061,
       "homepage": 668,
       "institutes": 2862
     },
@@ -46,17 +46,17 @@
       "roster": 118
     },
     "source_dates": {
-      "2026-09-02": 676,
-      "2026-09-03": 1163,
-      "2026-09-04": 1023,
-      "2026-09-05": 2231,
+      "2026-09-02": 674,
+      "2026-09-03": 1159,
+      "2026-09-04": 1019,
+      "2026-09-05": 2225,
       "2026-09-06": 121,
-      "2026-10-14": 781,
-      "2026-10-15": 203,
-      "2026-11-15": 975
+      "2026-10-14": 772,
+      "2026-10-15": 202,
+      "2026-11-15": 1001
     },
     "unknown_source_date": 0,
-    "source_older_than_30_days": 6198,
+    "source_older_than_30_days": 6172,
     "source_date_rule": "last_fetched, else latest crawled provenance fetched_at; mirrors scripts/build_site.py; last_verified excluded",
     "unreviewed_unresolved_issue_groups": [
       {
@@ -209,11 +209,11 @@
           "roster": 2
         },
         "source_dates": {
-          "2026-09-04": 60,
-          "2026-11-15": 12
+          "2026-09-04": 58,
+          "2026-11-15": 14
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 60
+        "source_older_than_30_days": 58
       },
       {
         "school": "buaa",
@@ -519,12 +519,12 @@
           "enriched": 125
         },
         "source_dates": {
-          "2026-10-14": 110,
+          "2026-10-14": 108,
           "2026-10-15": 2,
-          "2026-11-15": 13
+          "2026-11-15": 15
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 112
+        "source_older_than_30_days": 110
       },
       {
         "school": "hust",
@@ -646,11 +646,11 @@
           "enriched": 35
         },
         "source_dates": {
-          "2026-10-15": 26,
-          "2026-11-15": 9
+          "2026-10-15": 25,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 26
+        "source_older_than_30_days": 25
       },
       {
         "school": "neu",
@@ -670,12 +670,12 @@
           "enriched": 147
         },
         "source_dates": {
-          "2026-09-04": 138,
+          "2026-09-04": 137,
           "2026-09-06": 1,
-          "2026-11-15": 8
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 139
+        "source_older_than_30_days": 138
       },
       {
         "school": "nju",
@@ -788,11 +788,11 @@
           "enriched": 119
         },
         "source_dates": {
-          "2026-09-03": 106,
-          "2026-11-15": 13
+          "2026-09-03": 104,
+          "2026-11-15": 15
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 106
+        "source_older_than_30_days": 104
       },
       {
         "school": "pku",
@@ -812,11 +812,11 @@
           "enriched": 36
         },
         "source_dates": {
-          "2026-10-14": 23,
-          "2026-11-15": 13
+          "2026-10-14": 21,
+          "2026-11-15": 15
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 23
+        "source_older_than_30_days": 21
       },
       {
         "school": "ruc",
@@ -859,11 +859,11 @@
           "enriched": 67
         },
         "source_dates": {
-          "2026-09-05": 58,
-          "2026-11-15": 9
+          "2026-09-05": 57,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 58
+        "source_older_than_30_days": 57
       },
       {
         "school": "scu",
@@ -883,11 +883,11 @@
           "enriched": 166
         },
         "source_dates": {
-          "2026-09-04": 157,
-          "2026-11-15": 9
+          "2026-09-04": 156,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 157
+        "source_older_than_30_days": 156
       },
       {
         "school": "scut",
@@ -923,7 +923,7 @@
           "title": 12,
           "supervisor": 2,
           "bio_raw": 13,
-          "research_direction_raw": 6,
+          "research_direction_raw": 7,
           "homepage": 0,
           "institutes": 0
         },
@@ -932,11 +932,11 @@
         },
         "source_dates": {
           "2026-09-03": 1,
-          "2026-09-05": 3,
-          "2026-11-15": 9
+          "2026-09-05": 2,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 4
+        "source_older_than_30_days": 3
       },
       {
         "school": "seu",
@@ -957,11 +957,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 76,
-          "2026-11-15": 9
+          "2026-10-14": 75,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 76
+        "source_older_than_30_days": 75
       },
       {
         "school": "seu",
@@ -981,11 +981,11 @@
           "enriched": 128
         },
         "source_dates": {
-          "2026-09-05": 119,
-          "2026-11-15": 9
+          "2026-09-05": 118,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 119
+        "source_older_than_30_days": 118
       },
       {
         "school": "shanghaitech",
@@ -1005,11 +1005,11 @@
           "enriched": 149
         },
         "source_dates": {
-          "2026-09-05": 139,
-          "2026-11-15": 10
+          "2026-09-05": 137,
+          "2026-11-15": 12
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 139
+        "source_older_than_30_days": 137
       },
       {
         "school": "sjtu",
@@ -1052,11 +1052,11 @@
           "enriched": 203
         },
         "source_dates": {
-          "2026-10-14": 190,
-          "2026-11-15": 13
+          "2026-10-14": 188,
+          "2026-11-15": 15
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 190
+        "source_older_than_30_days": 188
       },
       {
         "school": "sjtu",
@@ -1076,11 +1076,11 @@
           "enriched": 289
         },
         "source_dates": {
-          "2026-09-02": 280,
-          "2026-11-15": 9
+          "2026-09-02": 279,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 280
+        "source_older_than_30_days": 279
       },
       {
         "school": "sustech",
@@ -1255,11 +1255,11 @@
           "enriched": 110
         },
         "source_dates": {
-          "2026-10-14": 101,
-          "2026-11-15": 9
+          "2026-10-14": 100,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 101
+        "source_older_than_30_days": 100
       },
       {
         "school": "tsinghua",
@@ -1279,11 +1279,11 @@
           "enriched": 134
         },
         "source_dates": {
-          "2026-09-02": 126,
-          "2026-11-15": 8
+          "2026-09-02": 125,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 126
+        "source_older_than_30_days": 125
       },
       {
         "school": "ucas",
@@ -1304,11 +1304,11 @@
         },
         "source_dates": {
           "2026-09-02": 3,
-          "2026-09-03": 329,
-          "2026-11-15": 13
+          "2026-09-03": 328,
+          "2026-11-15": 14
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 332
+        "source_older_than_30_days": 331
       },
       {
         "school": "ucas",
@@ -1352,11 +1352,11 @@
           "enriched": 283
         },
         "source_dates": {
-          "2026-09-05": 274,
-          "2026-11-15": 9
+          "2026-09-05": 273,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 274
+        "source_older_than_30_days": 273
       },
       {
         "school": "ucas",
@@ -1376,11 +1376,11 @@
           "enriched": 182
         },
         "source_dates": {
-          "2026-09-03": 173,
-          "2026-11-15": 9
+          "2026-09-03": 172,
+          "2026-11-15": 10
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 173
+        "source_older_than_30_days": 172
       },
       {
         "school": "uestc",
@@ -1463,7 +1463,7 @@
           "title": 62,
           "supervisor": 24,
           "bio_raw": 67,
-          "research_direction_raw": 36,
+          "research_direction_raw": 37,
           "homepage": 5,
           "institutes": 68
         },
@@ -1472,11 +1472,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 55,
-          "2026-11-15": 13
+          "2026-10-14": 54,
+          "2026-11-15": 14
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 55
+        "source_older_than_30_days": 54
       },
       {
         "school": "xidian",
@@ -1591,7 +1591,7 @@
         "dept": "software"
       }
     ],
-    "public_records_manifest_sha256": "045fe2f99825984a19c8b430681fba9bcea16e73c127917ea2f601a2d36ab260"
+    "public_records_manifest_sha256": "263862a0796a6d84228c61dd2b0e7bf6f700ad640c5514362b7104c291651cb5"
   },
   "admissions": {
     "source_check_states": {
@@ -2057,7 +2057,7 @@
     "data/admissions.yaml": "ed3219793ce720635a828d5cc122289987a34f02dc77bdc18b11a47e61561dd0",
     "data/admissions_entries.yaml": "6ddccd632fec940f8720d8eb57698f23b8e4881262fe82c688d05ce2df3f23f6",
     "data/admissions_checks.json": "ebe44a274582b01e85c8eb6c8e4702fa248d3be1d0191bb3676526e833be2654",
-    "data/notices.json": "249aeea288aff07f298b7bd6e73f863960fdd8b1ac340696b4205803d8627261",
+    "data/notices.json": "09e4bec6ec69f1574745408fb5129f20809516308d68585562349cad8dec9f74",
     "data/schools.yaml": "13066230f287d189f1815f3ab3e51f709164595ef799dd787e7fc73e646a963c",
     "data/coverage.json": "1ecb172bb65b90c4d6a6dc7025dbb2e031618edaca5cb4ad0438d6c113dd796d",
     "data/source_coverage.json": "ef533a3da14c9891ce619427d96daf5e2d50ccc3ae561597782a32704ddf947b",

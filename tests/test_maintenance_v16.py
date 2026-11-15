@@ -120,7 +120,7 @@ class AISuggestionTests(unittest.TestCase):
             settings=Path(folder)/'var/ai/config.json';settings.parent.mkdir(parents=True);settings.write_text('{"daily_limit":1}')
             with patch.object(ai.requests,'Session') as factory:
                 client=factory.return_value;response=client.post.return_value
-                response.status_code=200;response.content=b'{}';response.json.return_value={'choices':[{'message':{'content':'{"suggestions":[]}'}}]}
+                response.status_code=200;response.content=b'{}';response.json.return_value={'choices':[{'finish_reason':'stop','message':{'content':'{"suggestions":[]}'}}]}
                 result=ai.suggest(folder,'https://demo.edu.cn/a','公开正文'*10000)
                 call=client.post.call_args.kwargs
                 self.assertEqual(call['json']['max_tokens'],2000);self.assertFalse(call['allow_redirects']);self.assertEqual(call['timeout'],(10,120))

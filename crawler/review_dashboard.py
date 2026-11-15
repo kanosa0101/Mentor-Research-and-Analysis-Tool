@@ -2,14 +2,16 @@
 import copy
 import difflib
 import hashlib
+import json
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
 
 from crawler import opportunity_extract as extract, opportunity_review as review, opportunity_util as util
 from crawler.pipeline_metrics import summarize as pipeline_metrics
+from crawler import review_queue, source_discovery
 
 LABELS = {'pending_review': '待核验', 'needs_pdf_review': '待核验PDF', 'source_error': '来源获取失败',
           'source_changed': '来源已变化', 'published': '已发布'}
@@ -82,27 +84,69 @@ class Dashboard:
         # A title year never becomes an applicant graduation year.
         target_year = day.year + (2 if day.month >= 9 else 1)
         current = not historical and (year == target_year or draft.get('classification') == 'current_pending_review' or triage.get('classification') == 'current')
-        urgent = bool(deadline and day.isoformat() <= deadline[:10] <= (day + timedelta(days=30)).isoformat())
-        priority = 5 if triage.get('classification') == 'irrelevant' else 0 if current and urgent else 1 if current else 2 if status in ('source_error', 'source_changed') else 4 if historical or status == 'published' else 3
+        priority = review_queue.evaluate(draft, root=self.root)
         missing = [name for key,name in [('kind','活动类型'),('cycle','申请轮次'),('evidence','核验摘要')] if not item.get(key)]
         reasons = ['官方来源获取失败，需重新抓取'] if status == 'source_error' else ['官方原文或PDF版本变化，须重新核验'] if status == 'source_changed' else []
         if missing:
             reasons.append('待补齐：' + '、'.join(missing))
         if status == 'needs_pdf_review':
             reasons.append('待确认PDF版本及逐字段页码')
-        return dict(id=draft['id'], title=item.get('title', ''), unit=item.get('unit', ''), status=status,
+        return dict(id=draft['id'], title=item.get('title', ''), unit=item.get('unit', ''), school_name=item.get('school_name', ''), status=status,
                     status_label=LABELS[status], deadline=deadline, graduation_year=year,
-                    current_cycle=current, historical=historical, waiting_days=waiting, priority=priority,
+                    current_cycle=current, historical=historical, waiting_days=waiting, priority=priority['priority'],
                     triage=triage,
+                    queue=priority, automatic_review=draft.get('automatic_review'),
+                    revision=review.item_hash(draft),
                     first_seen=draft.get('first_seen'), checked_at=draft.get('fetch', {}).get('checked_at'), blocking_reasons=reasons)
 
     def listing(self):
         queue = review.read_queue(self.queue)
         rows = [self.summary(d) for d in queue['drafts']]
-        rows.sort(key=lambda r: (r['priority'], r['deadline'] or '9999', -r['waiting_days'], r['id']))
+        rows.sort(key=lambda r: (r['queue']['priority'], r['queue'].get('due_at') or '9999', r['first_seen'] or '9999', r['id']))
         return dict(drafts=rows, labels=LABELS, checked_at=util.today().isoformat(),
                     metrics=pipeline_metrics(self.root, queue),
+                    automation=self.automation(), pipeline=self.pipeline(), alerts=self.alerts(), sources=self.sources(),
                     note='优先级仅用于维护排序；当前轮次线索和规则建议不等于已核验报名机会。')
+
+    def automation(self):
+        path = self.root / 'cache/automatic-review.json'
+        if not path.exists():
+            return {'available': False, 'note': '尚无自动处理运行记录；不能据此认定AI已核验。'}
+        data = json.loads(path.read_text(encoding='utf-8'))
+        return dict(available=True, **{key: data.get(key) for key in ('version', 'started_at', 'completed_at', 'mode', 'counts', 'errors')})
+
+    def pipeline(self):
+        path = self.root / 'cache/review-pipeline.json'
+        if not path.exists():
+            return None
+        data = json.loads(path.read_text(encoding='utf-8'))
+        return {key: data.get(key) for key in ('started_at', 'completed_at', 'mode', 'status', 'failures')}
+
+    def alerts(self):
+        path = self.root / 'cache/review-alerts.json'
+        if not path.exists():
+            return {'active': [], 'events': [], 'checked_at': None}
+        data = json.loads(path.read_text(encoding='utf-8'))
+        return {key: data.get(key) for key in ('active', 'events', 'checked_at', 'summary')}
+
+    def sources(self):
+        data = source_discovery.read(self.root)
+        return dict(checked_at=data.get('checked_at'), status=data.get('status'), next_check_at=data.get('next_check_at'), candidates=[
+            {key: candidate.get(key) for key in ('id', 'url', 'label', 'school', 'dept', 'unit', 'parent_url',
+              'parent_label', 'first_seen', 'checked_at', 'status', 'kind', 'parsed_count', 'activity_count',
+              'evidence', 'source_sha256', 'reason')}
+            for candidate in data.get('candidates', [])])
+
+    def source_action(self, source_id, body):
+        if self.config.resolve() != (self.root / 'sites/opportunities.yaml').resolve():
+            raise ValueError('来源接入仅支持当前项目的默认监测配置')
+        if body.get('confirmed') is not True or body.get('action') not in ('approve', 'reject'):
+            raise ValueError('请明确核准或拒绝该来源候选')
+        digest = body.get('sha256')
+        if body['action'] == 'approve' and (not isinstance(digest, str) or not re.fullmatch(r'[a-f0-9]{64}', digest)):
+            raise ValueError('来源版本不完整，请刷新候选后处理')
+        source_discovery.decide(self.root, source_id, body['action'], expected_sha256=digest)
+        return self.sources()
 
     def detail(self, draft_id):
         d = self.find(draft_id)
@@ -134,7 +178,7 @@ class Dashboard:
                     pdf['difference'] = '\n'.join(difflib.unified_diff(before.splitlines(), after.splitlines(), fromfile='上次核验PDF', tofile='当前PDF', lineterm='')) or 'PDF字节版本变化，提取文本相同；仍须确认新版本。'
                 except (OSError, ValueError, KeyError, TypeError):
                     pdf['difference'] = '旧PDF文本证据不可读取，请直接核对当前官方文件；不能认定为未变化。'
-        return dict(**self.summary(d), revision=review.item_hash(d), item=d['item'], source_url=d['source_url'],
+        return dict(**self.summary(d), item=d['item'], source_url=d['source_url'],
                     ai_suggestions=d.get('ai_suggestions'),
                     listing_url=d['listing_url'], suggestions=d.get('suggestions', {}), field_evidence=d.get('field_evidence', {}),
                     reviewed_fields=d.get('reviewed_fields', {}), quotes=d.get('quotes', []), warnings=d.get('warnings', []),
@@ -180,8 +224,14 @@ class Dashboard:
                         if key in util.TEXT and not isinstance(value, str) or key in util.YEARS and value is not None and (type(value) is not int or not 2000 <= value <= 2100) or key in util.LISTS and (not isinstance(value, list) or any(not isinstance(v, str) for v in value)):
                             raise ValueError(f'{key}字段格式错误')
                     quotes, mappings = body.get('quotes', []), body.get('reviewed_fields', {})
-                    if not isinstance(quotes, list) or any(not isinstance(v, str) or not v.strip() for v in quotes) or not isinstance(mappings, dict) or set(mappings)-EDITABLE:
+                    existing_mappings = draft.get('reviewed_fields', {})
+                    if not isinstance(quotes, list) or any(not isinstance(v, str) or not v.strip() for v in quotes) or not isinstance(mappings, dict) or set(mappings)-(EDITABLE | set(existing_mappings)):
                         raise ValueError('核验摘录格式错误')
+                    for field, evidence in existing_mappings.items():
+                        if field not in EDITABLE:
+                            if field in mappings and mappings[field] != evidence:
+                                raise ValueError('此界面不能修改未开放编辑的证据字段')
+                            mappings[field] = copy.deepcopy(evidence)
                     for field,evidence in mappings.items():
                         if not isinstance(evidence, dict) or set(evidence)-{'quote','source_url','pages','locator','precision','content_sha256'} or not isinstance(evidence.get('quote'), str) or not isinstance(evidence.get('source_url'), str):
                             raise ValueError(f'{field}证据格式错误')
@@ -189,6 +239,7 @@ class Dashboard:
                             raise ValueError(f'{field}页码格式错误')
                     draft['item'].update(copy.deepcopy(patch))
                     draft.update(quotes=quotes, reviewed_fields=mappings)
+                    draft['manual_edit'] = dict(at=datetime.now(timezone.utc).isoformat(timespec='seconds'), action='save')
                 review.atomic_json(self.queue, queue)
         else:
             raise ValueError('不支持的核验操作')

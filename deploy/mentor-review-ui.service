@@ -1,0 +1,20 @@
+[Unit]
+Description=Loopback-only opportunity maintenance workbench
+After=network.target
+
+[Service]
+User=mentor-assistant
+Group=mentor-assistant
+WorkingDirectory=/opt/mentor-assistant
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_review.py --port 18769
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/mentor-assistant/data /opt/mentor-assistant/cache /opt/mentor-assistant/sites /opt/mentor-assistant/var/review-notifications
+ProtectHome=true
+PrivateTmp=true
+UMask=0002
+
+[Install]
+WantedBy=multi-user.target

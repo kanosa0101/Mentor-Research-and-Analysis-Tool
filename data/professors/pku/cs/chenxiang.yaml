@@ -52,7 +52,12 @@ bio_raw: '个人主页： https://if-lab-pku.github.io/
 institutes:
 - 网络与高能效计算研究所
 homepage: https://if-lab-pku.github.io/
-research_direction_raw: 移动智能计算系统
+research_direction_raw: '高能效移动边缘计算系统 高性能分布式与大规模人工智能系统 新型移动人工智能应用 主要科研项目 高能效人工智能计算，研究针对人工智能软硬件的加速算法和计算体系结构优化，并实现电子设计自动化（EDA）的协同创新
+  高性能分布式和大规模计算系统，研究和设计面向移动边缘终端的大规模人工智能部署和计算系统优化技术； 新型移动智能应用，结合人工智能和高性能系统，探索多模态计算，泛用智能交互等新型交互智能应用。
+  论文代表作 [MLSys22][最佳论文奖] J. Mao, X. Chen, K. Nixon, C. Krieger, and Y. Chen. “MoDNN:
+  Local Distributed Mobile Computing System for Deep Neural Network,” in Procee dings
+  of the International Conference on Design Automation and Test in Europe, pp. 1396∼1401,
+  2017. [DAC21] Z. Xu, F. Yu, J. Xiong, and X. '
 detail_url: https://cs.pku.edu.cn/info/1062/2863.htm
 profile_url: https://cs.pku.edu.cn/info/1062/2863.htm
 first_seen: '2026-09-03'
@@ -91,8 +96,8 @@ provenance:
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
-    fetched_at: '2026-09-03'
+    source: https://cs.pku.edu.cn/info/1062/2863.htm
+    fetched_at: '2026-11-15'
     confidence: auto
   institutes:
     origin: crawled
@@ -102,10 +107,12 @@ provenance:
   homepage:
     origin: crawled
     source: https://cs.pku.edu.cn/info/1062/2863.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-15'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://cs.pku.edu.cn/info/1062/2863.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

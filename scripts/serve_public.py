@@ -145,7 +145,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(404, {'error': 'Public server has no private workspace API', 'mode': 'public'})
         if path == '/':
             return self.reply(302, headers={'Location': '/start.html'})
-        if path in ('/review.html', '/review.js'):
+        if path in ('/review.html', '/review.js', '/review-worker.js'):
             return self.json(404, {'error': 'Maintenance console is local only'})
         if path in ('/desk.html', '/applications.html', '/board.html'):
             return self.reply(302, headers={'Location': '/local.html'})

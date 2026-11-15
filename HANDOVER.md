@@ -1,6 +1,6 @@
-# 维护交接 · v1.7.0
+# 维护交接 · v1.8.0
 
-版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.7 交付记录](deploy/DELIVERY_V1.7_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
+版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.8 交付记录](deploy/DELIVERY_V1.8_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
 
 ## 运行边界
 
@@ -82,22 +82,18 @@ python scripts/review_opportunities.py --queue cache/opportunity_review.json tri
 
 浏览器公共更新推送定时器每 15 分钟运行（相对监测错开 5 分钟）；字段比较忽略空白和独立列表顺序变化。定时器文件只是期望配置，是否载入须核对服务器实际状态。
 
-AI 辅助默认关闭，只处理已存档并校验 SHA 的公开官方 HTML，PDF 保持人工页码核验。密钥仅放服务器 `var/ai/config.json`（限制文件权限）或环境变量 `MENTOR_AI_API_KEY`；启用用 `MENTOR_AI_ENABLED=true`，可选 `MENTOR_AI_BASE_URL`、`MENTOR_AI_MODEL`。私有配置支持 `enabled`、`api_key`、`base_url`、`model`、`daily_limit`；默认地址 `https://api.ai.50x.energy/v1`、模型 `deepseek-ai/DeepSeek-V4.1-Flash-1017`，默认每日 10 次，上限 30 次。
+v1.8 在原有只读摘录建议之外增加受限自动核验与发布。模式边界、完整命令、15 分钟调度、UTC 日预算、失败重试、14 天续核、来源准入和审核 SLA 以[自动核验维护说明](docs/AUTOMATIC_REVIEW.md)为准。不要把仅生成建议或 `eligible` 状态当作已发布，也不要将当前活动自动流程解释为全量政策自动更新。
 
-```powershell
-python scripts/assist_opportunity.py DRAFT_ID --root . --queue cache/opportunity_review.json
-```
-
-输入最多 18,000 字符，输出最多 2,000 tokens，连接 10 秒、读取 120 秒超时，无自动重试；失败请求也计入每日预算 `cache/ai-evidence-usage.json`。最多 6 项建议，每项 value/quote 各不超过 300 字，达到输出长度上限则拒绝不完整结果。只允许条件、材料、联系人、申请方式四类逐字摘录，值和证据须匹配原文。结果保存在 `ai_suggestions`，核验台只读展示；不修改批准字段、不发布、不发送私人材料。来源变化或草稿并发修改则拒绝写入。不得将配置、密钥或供应商完整错误响应写进发行包和日志。 服务容量不足（例如 HTTP 503）时仅记录辅助请求失败，保留预算消耗；稍后由维护者在预算内明确重试。此状态不表示官方内容核验失败，不能触发自动放行或以空结果替代原有证据。
+AI 仍只读取公开官方原文。服务端私有配置不随运行包分发；systemd 使用 `LoadCredential` 与 `MENTOR_AI_CONFIG_FILE` 注入配置，核验工作台本身不需要 AI 密钥。人工编辑、附件和明确届别等阻断原因在工作台可见，不通过增加置信度阈值绕过。
 
 ## 当前资料账面状态
 
 各源刷新、政策逐条处置、候选分流和新增院系结果以本版交付记录、覆盖页及维护输出为准。必须区分本轮成功抓取与人工复核、历史参考与当前报名、未核验线索与明确开放；不沿用旧版成功数字或声称全库更新完成。
 
-2026-11-15 主数据合并后的快照为 18 条机会，状态 `open=1/open_month=1/rolling=6/upcoming=1/review=1/closed=8`；61 个监测来源由 51 个列表、4 个 API 和 6 个单页招募组成。导师数据为 7173 条、39 校、59 个配置院系（56 个有记录）；政策登记 111 条，不能据快照生成时间宣称政策或导师整库重新人工核验。以 `docs/DATA_SNAPSHOT.json` 的公开文件摘要和运行规则统计复验，来源成功率、定时器和部署完成时间查看本版交付记录。
+v1.7 在 2026-11-15 的基线快照为 18 条机会，状态 `open=1/open_month=1/rolling=6/upcoming=1/review=1/closed=8`；61 个监测来源由 51 个列表、4 个 API 和 6 个单页招募组成。导师数据为 7173 条、39 校、59 个配置院系（56 个有记录）；政策登记 111 条，不能据快照生成时间宣称政策或导师整库重新人工核验。以 `docs/DATA_SNAPSHOT.json` 的公开文件摘要和运行规则统计复验，来源成功率、定时器和部署完成时间查看本版交付记录。
 
 ## 发布与历史保护
 
 运行包通过 `scripts/package_release.py` 白名单生成并带逐文件摘要。新加入的维护台、公共版本模块、申请导航和浏览器资料模块应进入必要白名单；维护证据缓存、原材料、私人文件与 Git 历史不分发。重建后检查实际 HTTP 页面和数据版本，写操作验证使用隔离目录。
 
-`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。主公开资料合并并经发布负责人确认后，执行 `python cache/v17/update_data_snapshot.py --write` 生成 `docs/DATA_SNAPSHOT.json`，核对其版本与时间，不提前填写最终机会数。该脚本是源码维护工具，不随运行包分发。v1.6 快照及六份现行文档已按原字节保存在 `docs/history/pre-v1.7/`，附 SHA256 清单；v1.5 快照与文档在 `docs/history/pre-v1.6/`，更早资料在 `docs/history/pre-v1.5/` 和 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。
+`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。主公开资料合并并经发布负责人确认后，由发布负责人使用经核对的本版快照脚本生成 `docs/DATA_SNAPSHOT.json`，核对其版本与时间，不提前填写最终机会数。该脚本是源码维护工具，不随运行包分发。v1.7 快照及六份现行文档已按原字节保存在 `docs/history/pre-v1.8/`，v1.6 原件保留于 `docs/history/pre-v1.7/`，附 SHA256 清单；v1.5 快照与文档在 `docs/history/pre-v1.6/`，更早资料在 `docs/history/pre-v1.5/` 和 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。

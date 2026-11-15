@@ -300,6 +300,8 @@ def accept(queue_path, draft_id, fields=None, replace=False, expected_revision=N
             if quote and quote not in draft['quotes']:
                 draft['quotes'].append(quote)
             accepted.append(field)
+        if accepted:
+            draft['manual_edit'] = dict(at=datetime.now(timezone.utc).isoformat(timespec='seconds'), action='accept')
         atomic_json(queue_path, queue)
         return sorted(accepted)
 

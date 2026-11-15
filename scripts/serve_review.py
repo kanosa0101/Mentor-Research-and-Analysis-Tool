@@ -76,7 +76,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply(404, {'error': '不存在的地址'})
         path = parsed.path
         try:
-            if path in ('/', '/review.html', '/review.js', '/ui.css'):
+            if path in ('/', '/review.html', '/review.js', '/review-worker.js', '/ui.css'):
                 name = 'review.html' if path == '/' else path[1:]
                 file = self.dashboard.root / 'site' / name
                 if file.is_symlink():
@@ -88,6 +88,11 @@ class Handler(BaseHTTPRequestHandler):
             if path == '/api/review/detail':
                 draft_id = parse_qs(parsed.query).get('id', [''])[0]
                 return self.reply(200, self.dashboard.detail(draft_id))
+            if path == '/api/review/sources':
+                return self.reply(200, self.dashboard.sources())
+            if path == '/api/review/notifications':
+                from crawler import maintenance_push
+                return self.reply(200, maintenance_push.settings(self.dashboard.root))
             return self.reply(404, {'error': '不存在的资源；本服务不提供私人申请或磁盘浏览接口'})
         except (ValueError, KeyError, TypeError) as error:
             self.reply(400, {'error': str(error) if isinstance(error, ValueError) else '队列格式不完整，请检查本机维护资料。'})
@@ -97,7 +102,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if not self.local(writing=True):
             return
-        if self.path != '/api/review/action':
+        if self.path not in ('/api/review/action', '/api/review/source-action'):
             self.discard_body()
             self.close_connection = True
             return self.reply(404, {'error': '不支持的操作'})
@@ -110,7 +115,16 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(size))
             if not isinstance(body, dict) or not isinstance(body.get('id'), str):
                 raise ValueError('操作内容不完整')
-            result = self.dashboard.mutate(body['id'], body.get('action'), body)
+            if self.path == '/api/review/action' and body['id'] == 'notifications':
+                from crawler import maintenance_push
+                actions = {'notifications_subscribe': maintenance_push.subscribe,
+                           'notifications_unsubscribe': maintenance_push.unsubscribe,
+                           'notifications_test': maintenance_push.test_notification}
+                if body.get('action') not in actions or not isinstance(body.get('payload'), dict):
+                    raise ValueError('维护提醒操作不完整')
+                return self.reply(200, actions[body['action']](self.dashboard.root, body['payload']))
+            result = (self.dashboard.source_action(body['id'], body) if self.path.endswith('/source-action')
+                      else self.dashboard.mutate(body['id'], body.get('action'), body))
             return self.reply(200, result)
         except (ValueError, RuntimeError, KeyError, TypeError) as error:
             message = str(error) if isinstance(error, (ValueError, RuntimeError)) else '字段格式不完整，请检查后重试。'

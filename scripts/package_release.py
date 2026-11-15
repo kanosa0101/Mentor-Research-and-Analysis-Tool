@@ -29,6 +29,9 @@ FIXED = {
     'scripts/assist_opportunity.py', 'data/source_coverage.json',
     'deploy/DELIVERY_V1.6_2026-11-15.md',
     'deploy/DELIVERY_V1.7_2026-11-15.md',
+    'deploy/DELIVERY_V1.8_2026-11-15.md', 'docs/AUTOMATIC_REVIEW.md',
+    'scripts/run_review_pipeline.py', 'scripts/process_reviews.py',
+    'scripts/discover_sources.py', 'scripts/maintain_public.py',
 }
 PATTERNS = (
     'crawler/*.py', 'sites/*/*.yaml', 'sites/*.py', 'sites/*/*.py', 'site/*.html', 'site/*.js', 'site/*.css',
@@ -37,6 +40,7 @@ PATTERNS = (
     'docs/history/pre-v1/*.md',
     'docs/history/pre-v1.6/*.md', 'docs/history/pre-v1.6/*.json',
     'docs/history/pre-v1.7/*.md', 'docs/history/pre-v1.7/*.json',
+    'docs/history/pre-v1.8/*.md', 'docs/history/pre-v1.8/*.json',
 )
 REQUIRED_SITE = {
     'site/start.html', 'site/coverage.html', 'site/start.js',

@@ -244,8 +244,10 @@ class ReviewTests(unittest.TestCase):
         saved = review.read_queue(self.queue)['drafts'][0]
         self.assertEqual(saved['item']['deadline'], '2026-12-31')
         self.assertEqual(saved['reviewed_fields']['deadline']['source_url'], self.url)
+        self.assertEqual(saved['manual_edit']['action'], 'accept')
         self.assertFalse(self.catalog.exists())
         self.assertEqual(review.accept(self.queue, draft['id'], ['deadline']), [])
+        self.assertEqual(review.read_queue(self.queue)['drafts'][0]['manual_edit'], saved['manual_edit'])
 
     def test_unsupported_inferred_day_and_unmapped_claim_cannot_publish(self):
         draft = self.ready()
