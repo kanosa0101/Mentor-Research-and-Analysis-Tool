@@ -1,9 +1,9 @@
 [Unit]
-Description=Check official opportunities every six hours (UTC)
+Description=Wake due official opportunity sources every fifteen minutes
 
 [Timer]
 OnBootSec=2min
-OnCalendar=*-*-* 00,06,12,18:00:00 UTC
+OnCalendar=*-*-* *:00,15,30,45:00 UTC
 Persistent=true
 AccuracySec=1min
 Unit=mentor-monitor.service

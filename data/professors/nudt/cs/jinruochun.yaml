@@ -3,7 +3,7 @@ name: 靳若春
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 计算机科学与技术
 email: jinrc@nudt.edu.cn
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25925
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25925
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -50,5 +50,7 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25925
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

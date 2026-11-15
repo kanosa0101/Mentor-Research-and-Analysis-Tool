@@ -11,13 +11,15 @@
     return text.toLowerCase().includes(term.toLowerCase());
   };
   function evaluate(p,prefs,reviews,corpus='',today=new Date().toLocaleDateString('sv-SE'),context=null){
+    const knownCorpus=typeof corpus==='object'?!!corpus.known:!!corpus;
+    corpus=typeof corpus==='object'?(corpus.text||''):corpus;
     const checks=[],evidence=[];
     const add=(key,state,detail)=>checks.push({key,state,detail,mode:prefs.modes[key],label:modes[key]});
     if(prefs.schools.length&&!prefs.schools.includes(p.school))return {visible:false,checks:[{key:'school',state:'fail',detail:'不在允许院校内'}],score:0,evidence};
     if(prefs.topics.length){
       const direction=researchText(p.research_direction_raw),text=direction+' '+corpus;
       const hits=prefs.topics.filter(term=>includes(direction,term)||includes(corpus,term));
-      add('research',hits.length?'pass':text.trim()?'fail':'unknown',hits.length?'关键词任一命中：'+hits.join('、'):text.trim()?'资料文字未命中所选关键词，不代表真实研究不适合':'缺少可检索研究材料');
+      add('research',hits.length?'pass':text.trim()||knownCorpus?'fail':'unknown',hits.length?'关键词任一命中：'+hits.join('、'):text.trim()||knownCorpus?'资料文字未命中所选关键词，不代表真实研究不适合':'缺少可检索研究材料');
       for(const term of hits){const field=includes(direction,term)?'research_direction_raw':'bio_raw',raw=field==='bio_raw'?corpus:direction,index=raw.toLowerCase().indexOf(term.toLowerCase());evidence.push({field,term,snippet:raw.slice(Math.max(0,index-25),index+term.length+70)});}
     }
     if(prefs.degree!=='any'){

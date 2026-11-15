@@ -3,7 +3,7 @@ name: 宋辞
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：机械工程、机械
 email: songci@nudt.edu.cn
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26698
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26698
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,14 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26698
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26698
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 光学超精密加工技术研究，负责国防重大专项、国家自然科学基金、中科院先导专项、xxx重大工程专项等项目10余项，面向光刻物镜、空间相机、惯约装置、激光装置等国家重大任务开展核心技术攻关，创新提出时空共融调控的光学加工新理论，先后发表SCI论文40余篇，授权专利20余项，代表性成果在nature子刊Light系列期刊Light：Advanced
+  Manufacturing（LAM）上发表
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

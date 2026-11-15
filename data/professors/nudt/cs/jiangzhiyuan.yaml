@@ -3,7 +3,7 @@ name: 姜植元
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 网络空间安全
 email: jzy@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26037
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26037
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26037
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26037
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 软件与系统安全研究，包括漏洞挖掘、漏洞分析、漏洞可利用性判定，在CCS、NDSS、ISSTA等高水学术会议上发表论文20余篇
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -3,7 +3,7 @@ name: 胡星辰
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 电子信息
 email: xingchenhu@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25923
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25923
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25923
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25923
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 智能数据融合分析、可解释机器学习、大模型感知决策等研究工作，主持国自科青年、面上项目等国家和省部级项目8项，作为核心骨干成员参与10余项，获得湖南省青A（原杰青）、优青、湖南省优秀博士后等人才项目资助
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

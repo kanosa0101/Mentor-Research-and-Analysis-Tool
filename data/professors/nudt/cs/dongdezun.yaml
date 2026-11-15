@@ -3,7 +3,7 @@ name: 董德尊
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术、电子信息
 bio_raw: 男,国家级高层次人才特聘教授、全国百篇优秀博士论文获得者、军队高层次卓青人才、湖南省杰青，全国黄大年式教师团队骨干成员，长沙从事国产高性能计算机系统研制工作，高性能互连与体系结构（HiNA）课题组负责人，主要研究计算机体系结构、高性能与智能计算、并行与分布式系统，带领团队先后主持/参与重大/重点科研任务攻关20余项，荣立军队个人二等功一次，近十年以主要完成人获教育部、湖南省、中国计算机学会（CCF）、中国电子学会、中国通信学会的科技成果一等奖3项（排2、2、3）、二等奖3项（排1、1、2），省教学成果特等奖1项，以通信作者在ISCA、MICRO、HPCA、PPoPP、SC、FSE、ICSE、ICS、PACT、IPDPS、ICPP、INFOCOM、TACO、TPDS、TC等CCF推荐国际刊物发表论文100余篇，担任《Fundamental
@@ -23,7 +23,7 @@ provenance:
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25944
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -38,5 +38,14 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25944
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25944
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 国产高性能计算机系统研制工作，高性能互连与体系结构（HiNA）课题组负责人，主要研究计算机体系结构、高性能与智能计算、并行与分布式系统，带领团队先后主持/参与重大/重点科研任务攻关20余项，荣立军队个人二等功一次，近十年以主要完成人获教育部、湖南省、中国计算机学会（CCF）、中国电子学会、中国通信学会的科技成果一等奖3项（排2、2、3）、二等奖3项（排1、1、2），省教学成果特等奖1项，以通信作者在ISCA、MICRO、HPCA、PPoPP、SC、FSE、ICSE、ICS、PACT、IPDPS、ICPP、INFOCOM、TACO、TPDS、TC等CCF推荐国际刊物发表论文100余篇，担任《Fundamental
+  Research》、《国防科技大学学报》、《计算机工程与科学》等期刊编委，CCF体系结构专委常委、分布式计算与系统专委常委
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -10,6 +10,41 @@ API = 'https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/list.json'
 VIEW = 'https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId='
 
 
+def parse_detail(cfg, html, url):
+    """Official public mentor detail fields; registration is not a current vacancy."""
+    if not url.startswith(VIEW):
+        raise ValueError('不是已登记的国防科大公开导师详情入口')
+    lines = BeautifulSoup(html, 'html.parser').get_text('\n', strip=True).splitlines()
+    labels = {'姓名', '学院', '学科', '导师层次', '基本情况'}
+    values, current = {}, None
+    for line in lines:
+        line = line.strip()
+        label = line.rstrip('：:')
+        if label in labels:
+            current = label
+            values[current] = []
+        elif current and line:
+            values[current].append(line)
+    fields = {key: ' '.join(value).strip() for key, value in values.items()}
+    if cfg['dept_name'] not in re.split(r'[、,，;；|]', fields.get('学院', '')):
+        raise ValueError('公开导师详情的学院归属与配置不符')
+    name, bio = fields.get('姓名'), fields.get('基本情况', '')
+    if not name or not bio:
+        raise ValueError('公开导师详情缺少姓名或基本情况')
+    out = {'name': name, 'bio_raw': bio}
+    if fields.get('导师层次') in ('博导', '硕导'):
+        out['supervisor'] = fields['导师层次']
+    match = re.search(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', bio)
+    if match:
+        out['email'] = normalize_email(match.group())
+    directions = re.findall(r'(?:主要研究方向|研究方向)\s*[:：]\s*([^。！？\n]+)', bio)
+    if not directions:
+        directions = re.findall(r'(?:主要从事|长期从事|主要研究|从事)([^。！？\n]*(?:研究|设计|开发)[^。！？\n]*)', bio)
+    if directions:
+        out['research_direction_raw'] = '；'.join(directions)[:500]
+    return out
+
+
 def record(row, unit, fetched_at):
     if unit not in re.split(r'[、,，;；|]', row.get('unit') or ''):
         raise ValueError('导师登记归属不匹配')

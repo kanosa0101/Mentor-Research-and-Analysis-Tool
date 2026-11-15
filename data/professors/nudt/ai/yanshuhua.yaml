@@ -3,7 +3,7 @@ name: 颜树华
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 博导
 subjects: '硕士：仪器科学与技术、电子信息
 
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26555
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26555
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -45,5 +45,7 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26555
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

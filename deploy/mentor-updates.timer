@@ -1,8 +1,8 @@
 [Unit]
-Description=Check subscribed opportunity updates hourly
+Description=Dispatch reviewed public opportunity updates every fifteen minutes
 [Timer]
 OnBootSec=3min
-OnCalendar=hourly
+OnCalendar=*-*-* *:05,20,35,50:00 UTC
 Persistent=true
 [Install]
 WantedBy=timers.target

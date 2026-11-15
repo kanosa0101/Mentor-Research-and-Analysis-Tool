@@ -9,6 +9,7 @@ from pathlib import Path
 import yaml
 
 from crawler import opportunity_extract as extract, opportunity_review as review, opportunity_util as util
+from crawler.pipeline_metrics import summarize as pipeline_metrics
 
 LABELS = {'pending_review': '待核验', 'needs_pdf_review': '待核验PDF', 'source_error': '来源获取失败',
           'source_changed': '来源已变化', 'published': '已发布'}
@@ -75,13 +76,14 @@ class Dashboard:
             waiting = max(0, (datetime.now(timezone.utc) - datetime.fromisoformat(draft['first_seen'])).days)
         except (ValueError, KeyError, TypeError):
             waiting = 0
-        historical = item.get('cycle') == 'historical' or draft.get('classification') == 'historical'
+        triage = review.triage(draft)
+        historical = item.get('cycle') == 'historical' or draft.get('classification') == 'historical' or triage.get('classification') == 'historical'
         year = item.get('graduation_year') or suggestions.get('graduation_year')
         # A title year never becomes an applicant graduation year.
         target_year = day.year + (2 if day.month >= 9 else 1)
-        current = not historical and (year == target_year or draft.get('classification') == 'current_pending_review')
+        current = not historical and (year == target_year or draft.get('classification') == 'current_pending_review' or triage.get('classification') == 'current')
         urgent = bool(deadline and day.isoformat() <= deadline[:10] <= (day + timedelta(days=30)).isoformat())
-        priority = 0 if current and urgent else 1 if current else 2 if status in ('source_error', 'source_changed') else 4 if historical or status == 'published' else 3
+        priority = 5 if triage.get('classification') == 'irrelevant' else 0 if current and urgent else 1 if current else 2 if status in ('source_error', 'source_changed') else 4 if historical or status == 'published' else 3
         missing = [name for key,name in [('kind','活动类型'),('cycle','申请轮次'),('evidence','核验摘要')] if not item.get(key)]
         reasons = ['官方来源获取失败，需重新抓取'] if status == 'source_error' else ['官方原文或PDF版本变化，须重新核验'] if status == 'source_changed' else []
         if missing:
@@ -91,12 +93,15 @@ class Dashboard:
         return dict(id=draft['id'], title=item.get('title', ''), unit=item.get('unit', ''), status=status,
                     status_label=LABELS[status], deadline=deadline, graduation_year=year,
                     current_cycle=current, historical=historical, waiting_days=waiting, priority=priority,
+                    triage=triage,
                     first_seen=draft.get('first_seen'), checked_at=draft.get('fetch', {}).get('checked_at'), blocking_reasons=reasons)
 
     def listing(self):
-        rows = [self.summary(d) for d in review.read_queue(self.queue)['drafts']]
+        queue = review.read_queue(self.queue)
+        rows = [self.summary(d) for d in queue['drafts']]
         rows.sort(key=lambda r: (r['priority'], r['deadline'] or '9999', -r['waiting_days'], r['id']))
         return dict(drafts=rows, labels=LABELS, checked_at=util.today().isoformat(),
+                    metrics=pipeline_metrics(self.root, queue),
                     note='优先级仅用于维护排序；当前轮次线索和规则建议不等于已核验报名机会。')
 
     def detail(self, draft_id):
@@ -130,6 +135,7 @@ class Dashboard:
                 except (OSError, ValueError, KeyError, TypeError):
                     pdf['difference'] = '旧PDF文本证据不可读取，请直接核对当前官方文件；不能认定为未变化。'
         return dict(**self.summary(d), revision=review.item_hash(d), item=d['item'], source_url=d['source_url'],
+                    ai_suggestions=d.get('ai_suggestions'),
                     listing_url=d['listing_url'], suggestions=d.get('suggestions', {}), field_evidence=d.get('field_evidence', {}),
                     reviewed_fields=d.get('reviewed_fields', {}), quotes=d.get('quotes', []), warnings=d.get('warnings', []),
                     source_sha256=fetch.get('sha256'), content_sha256=fetch.get('content_sha256'),

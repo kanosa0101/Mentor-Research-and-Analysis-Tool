@@ -3,7 +3,7 @@ name: 冯国虎
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：控制科学与工程、电子信息
 email: yantai_fgh@126.com
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26538
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26538
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26538
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26538
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 惯性基组合导航、多源数据快速融合、无人机目标定位等研究，紧贴装备实际需求，主持装备预研、军内科研、装备维改、军口横向项目多项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -3,7 +3,7 @@ name: 丛一睿
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：控制科学与工程
 email: congyirui11@nudt.edu.cn
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26617
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26617
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,14 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26617
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26617
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 无人机集群控制、导航与通信一体化研究，发表控制顶刊IEEE TAC长文、Automatica长文、通信顶刊IEEE
+  TWC等论文40余篇（培养方式和质量与世界名校接轨，指导学生发表TAC长文、短文各1篇，学生均为一作）
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

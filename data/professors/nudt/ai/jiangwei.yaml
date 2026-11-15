@@ -3,7 +3,7 @@ name: 蒋薇
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：电子信息
 email: weijiang@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26654
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26654
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26654
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26654
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 无人系统智能侦测与对抗领域教学科研工作，主要围绕分布式协同侦察、多源数据智能融合的态势感知与对抗等开展研究
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -10,7 +10,7 @@ from datetime import date, datetime
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, parse_qs
 
 import yaml
 
@@ -25,6 +25,9 @@ from crawler import project_review_util as project_reviews
 from crawler import material_task_util as material_tasks
 from crawler import opportunity_util as opportunities
 from crawler import public_update
+from crawler import plan_transfer
+from crawler.static_assets import AssetCache, send as send_asset
+from crawler.public_catalog import selected as selected_mentors, search as search_mentors
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
@@ -83,6 +86,19 @@ class Handler(SimpleHTTPRequestHandler):
     def _known_ids(self):
         return {p.stem for p in (self.site / 'p').glob('*.html')}
 
+    def _reject_local(self, code, message):
+        # A small unread body can reset the rejection response on Windows.
+        # Never drain a large or unbounded body before rejecting authorization.
+        try:
+            size = int(self.headers.get('Content-Length', '0'))
+            if 0 < size <= 16384:
+                self.connection.settimeout(1)
+                self.rfile.read(size)
+        except (ValueError, OSError):
+            pass
+        self.close_connection = True
+        self._json(code, {'error': message})
+
     def _local_request(self, json_body=False):
         host = self.headers.get('Host', '')
         try:
@@ -97,10 +113,10 @@ class Handler(SimpleHTTPRequestHandler):
             ref = urlsplit(referer)
             cross_site = cross_site or ref.scheme != 'http' or ref.netloc != host
         if not valid_host or cross_site or (origin is not None and origin != 'http://' + host):
-            self._json(403, {'error': '只接受本地同源请求'})
+            self._reject_local(403, '只接受本地同源请求')
             return False
         if json_body and self.headers.get('Content-Type', '').split(';')[0].strip().lower() != 'application/json':
-            self._json(415, {'error': 'Content-Type 须为 application/json'})
+            self._reject_local(415, 'Content-Type 须为 application/json')
             return False
         return True
 
@@ -119,6 +135,22 @@ class Handler(SimpleHTTPRequestHandler):
                 installed=json.loads(installed.read_text()) if installed.exists() else None))
         if _public_update['busy'] and self.path != '/api/health':
             return self._json(503, {'error': '正在更新公共资料，请完成后刷新；私人记录保持不变'})
+        if urlsplit(self.path).path == '/api/mentors':
+            if not self._local_request():
+                return
+            try:
+                ids = parse_qs(urlsplit(self.path).query).get('ids', [''])[0]
+                return self._json(200, {'mentors': selected_mentors(self.site.parent, ids.split(',') if ids else [])})
+            except (OSError, ValueError, KeyError):
+                return self._json(400, {'error': '无法读取所选导师资料，请重试'})
+        if urlsplit(self.path).path == '/api/mentor-search':
+            if not self._local_request():
+                return
+            try:
+                params=parse_qs(urlsplit(self.path).query)
+                return self._json(200, search_mentors(self.site.parent,json.loads(params.get('terms',['[]'])[0]),params.get('school',[])))
+            except (OSError, ValueError, KeyError, TypeError):
+                return self._json(400, {'error':'研究资料查询失败，请重试'})
         if self.path in ('/api/push/config', '/api/updates'):
             if not self._local_request():
                 return
@@ -152,18 +184,21 @@ class Handler(SimpleHTTPRequestHandler):
                 if self.path == '/api/backup':
                     return self._json(200, {'version': 1, 'outreach': data})
                 return self._json(200, data)
+        candidate = Path(self.translate_path(self.path))
+        if candidate.suffix in ('.html', '.js', '.css') and candidate.is_file() and candidate.resolve().is_relative_to(self.site.resolve()):
+            return send_asset(self, candidate, self.guess_type(str(candidate)), self.server.asset_cache, max_age=0)
         return super().do_GET()
 
     def do_PATCH(self):
         if _public_update['busy']:
-            return self._json(503, {'error': '公共资料更新中，请稍后再保存'})
+            return self._reject_local(503, '公共资料更新中，请稍后再保存')
         if self.path.startswith('/api/workflow/'):
             return self._workflow_request('PATCH')
         if not self._local_request(json_body=True):
             return
         pid = self._pid()
         if pid is None:
-            return self._json(404, {'error': '未知导师或 API'})
+            return self._reject_local(404, '未知导师或 API')
         try:
             body = self._body()
             validate_patch(body)
@@ -197,12 +232,12 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_DELETE(self):
         if _public_update['busy']:
-            return self._json(503, {'error': '公共资料更新中，请稍后再保存'})
+            return self._reject_local(503, '公共资料更新中，请稍后再保存')
         if not self._local_request():
             return
         pid = self._pid()
         if pid is None:
-            return self._json(404, {'error': '未知导师或 API'})
+            return self._reject_local(404, '未知导师或 API')
         with _lock:
             try:
                 data = load_outreach(self.outreach)
@@ -243,7 +278,7 @@ class Handler(SimpleHTTPRequestHandler):
             except (OSError, ValueError, public_update.requests.RequestException) as error:
                 return self._json(400, {'error': str(error)})
         if _public_update['busy']:
-            return self._json(503, {'error': '公共资料更新中，暂不接受保存；请稍后重试'})
+            return self._reject_local(503, '公共资料更新中，暂不接受保存；请稍后重试')
         if self.path == '/api/discovery' or self.path.startswith('/api/discovery/'):
             return self._discovery_request('POST')
         if self.path.startswith('/api/workflow/'):
@@ -251,7 +286,7 @@ class Handler(SimpleHTTPRequestHandler):
         if not self._local_request(json_body=True):
             return
         if self.path != '/api/restore':
-            return self._json(404, {'error': '未知 API'})
+            return self._reject_local(404, '未知 API')
         try:
             body = self._body()
             if not isinstance(body, dict) or body.get('version') != 1:
@@ -337,6 +372,8 @@ class Handler(SimpleHTTPRequestHandler):
                     data, result = material_tasks.reminder(stored, parts[1], body, self._known_ids(), context)
                 elif method == 'POST' and parts == ['opportunities']:
                     data, result = opportunities.save(data, body, self._known_ids(), context, opportunities.observed(ROOT))
+                elif method == 'POST' and parts == ['browser-transfer']:
+                    data, result = plan_transfer.save(data, body, self._known_ids(), context, opportunities.observed(ROOT))
                 elif method == 'POST' and parts == ['scan']:
                     if not isinstance(body, dict) or set(body) != {'root'}:
                         raise ValueError('扫描须指定 root 目录')
@@ -375,6 +412,8 @@ class Handler(SimpleHTTPRequestHandler):
             return
         path = self.path.removeprefix('/api/discovery')
         if (method == 'GET' and path not in ('', '/backup', '/project-reviews')) or (method == 'POST' and path not in ('', '/reviews', '/restore', '/project-reviews')):
+            if method == 'POST':
+                return self._reject_local(404, '未知 API')
             return self._json(404, {'error': '未知 API'})
         try:
             body = self._body() if method == 'POST' else None
@@ -441,7 +480,9 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 def create_server(site=SITE, outreach=OUTREACH, port=8000, workflow=None):
-    return ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, site=site, outreach=outreach, workflow=workflow))
+    server = ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, site=site, outreach=outreach, workflow=workflow))
+    server.asset_cache = AssetCache()
+    return server
 
 
 def main():

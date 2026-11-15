@@ -73,6 +73,17 @@ def compare_record(p):
     return rec
 
 
+def discovery_record(p):
+    keys = ('name', 'school', 'school_name', 'dept', 'dept_name', 'page', 'title',
+            'supervisor', 'email', 'detail_url', 'profile_url', 'source_date',
+            'research_direction_raw', 'unit_groups')
+    rec = {k: p[k] for k in keys if k in p}
+    rec['bio_excerpt'] = (p.get('bio_raw') or '')[:130]
+    field = 'research_direction_raw' if p.get('research_direction_raw') else 'bio_raw'
+    rec['provenance'] = {field: p['provenance'][field]} if field in p.get('provenance', {}) else {}
+    return rec
+
+
 def load_cfgs():
     out = []
     for f in sorted((ROOT / "sites").glob("*/*.yaml")):
@@ -124,6 +135,8 @@ def main():
     live_pages = {r["page"] for r in profs}
     payload = json.dumps([list_record(p) for p in profs], ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'data.js').write_text('window.MENTOR_DATA = ' + payload + ';\n', encoding='utf-8')
+    lean = json.dumps([discovery_record(p) for p in profs], ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    (SITE / 'discovery-data.js').write_text('window.MENTOR_DATA = ' + lean + ';\n', encoding='utf-8')
     for filename, variable, make_record in (('search.js', 'MENTOR_SEARCH', search_record),
                                             ('compare-data.js', 'MENTOR_COMPARE', compare_record)):
         extra = json.dumps({p['page']: make_record(p) for p in profs}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
@@ -156,7 +169,11 @@ def main():
         school_names = {s['id']: s['name'] for s in yaml.safe_load((ROOT / 'data/schools.yaml').read_text(encoding='utf-8'))['schools']}
         for unit in coverage['units']:
             unit['school_name'] = school_names.get(unit['school'], unit['school'])
-        write_html(SITE / 'coverage.html', env.get_template('coverage.html.j2').render(coverage=coverage, safe_url=safe_url))
+        source_coverage_path = ROOT / 'data/source_coverage.json'
+        source_coverage = json.loads(source_coverage_path.read_text(encoding='utf-8')) if source_coverage_path.exists() else {}
+        source_units = {(u['school'], u['dept']): u for u in source_coverage.get('units', [])}
+        write_html(SITE / 'coverage.html', env.get_template('coverage.html.j2').render(
+            coverage=coverage, safe_url=safe_url, source_coverage=source_coverage, source_units=source_units))
     admission_file = ROOT / 'data/admissions.yaml'
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
     configured_schools, units = load_catalog(ROOT)
@@ -174,6 +191,8 @@ def main():
                             'groups': groups(c.get('dept_name', c['dept'])), 'roster_pending': c.get('roster_pending', ''),
                             'coverage': unit_coverage([p for p in profs if p['school'] == c['school'] and p['dept'] == c['dept']]),
                             'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
+    catalog = {'schools': configured_schools, 'units': [{k: v for k, v in unit.items() if k != 'coverage'} for unit in admissions['units']]}
+    (SITE / 'school-catalog.js').write_text('window.SCHOOL_CATALOG = ' + json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n', encoding='utf-8')
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())

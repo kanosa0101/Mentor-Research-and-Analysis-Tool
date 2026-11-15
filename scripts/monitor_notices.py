@@ -33,7 +33,17 @@ def parse_list(html, cfg):
         title = a.get('title') or (title_node.get_text(' ', strip=True) if title_node else '')
         if '<' in title:
             title = BeautifulSoup(title, 'html.parser').get_text(' ', strip=True)
-        url = urljoin(cfg['url'], a.get('href', ''))
+        link_attr = cfg.get('link_attr', 'href')
+        link = a.get(link_attr, '')
+        if link_attr == 'onclick':
+            # Some official columns use table-row navigation; never evaluate JS.
+            assignment = re.fullmatch(r"\s*window\.location\.href\s*=\s*(['\"])([^'\"\r\n\\]+)\1\s*;?\s*", link)
+            if not assignment:
+                continue
+            link = assignment.group(2)
+        if not link:
+            continue
+        url = urljoin(cfg['url'], link)
         if not title or not any(k in title for k in KEYWORDS):
             continue
         if urlsplit(url).scheme not in ('http', 'https') or urlsplit(url).hostname != urlsplit(cfg['url']).hostname:

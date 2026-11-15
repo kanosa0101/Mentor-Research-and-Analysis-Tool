@@ -8,6 +8,20 @@ from test_maintenance import script
 
 
 class NoticeTests(unittest.TestCase):
+    def test_static_row_navigation_rejects_executable_or_external_links(self):
+        monitor = script('monitor_notices')
+        cfg = dict(school='nankai', dept='cs', url='https://cc.nankai.edu.cn/list',
+                   selector='tr[onclick]', link_attr='onclick',
+                   title_selector='.text-align-title', date_selector='td:nth-child(4)')
+        rows = []
+        for action in ("window.location.href='/2026/page.htm';", "window.location.href='https://evil.example/a'",
+                       "window.location.href='/x'; alert(1)", "go('/x')", "window.location.href='javascript:alert(1)'"):
+            html = '<tr onclick="' + action + '"><td></td><td class="text-align-title">2027年硕士招生通知</td><td></td><td>2026-11-12</td></tr>'
+            rows.extend(monitor.parse_list(html, cfg))
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['url'], 'https://cc.nankai.edu.cn/2026/page.htm')
+        self.assertEqual(rows[0]['publication_date'], '2026-11-12')
+
     def test_refresh_preserves_failed_source_and_invalidates_changed_title_review(self):
         monitor = script('monitor_notices')
         configs = [dict(school=s, dept='cs', url=f'https://{s}.edu.cn/list',

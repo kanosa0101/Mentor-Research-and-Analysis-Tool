@@ -1,0 +1,1819 @@
+{
+  "metadata": {
+    "version": "1.5.0",
+    "as_of": "2026-11-15",
+    "generated_at": "2026-11-15T08:07:23.700105+00:00",
+    "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
+    "method": "Current public-file inventory after server public mentor synchronization; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
+    "warning": "统计表示已登记资料与核验状态，不等于官方完整覆盖、当前招生名额、个人申请资格或材料完成。last_fetched/抓取出处日期与人工内容复核日期分别统计。",
+    "previous_snapshot_sha256": "ba5cb993c7938b60bf17317b41243bcb0e53462af04bfde17298c7c9d83da932"
+  },
+  "counts": {
+    "professors": 7173,
+    "schools": 39,
+    "units": 59,
+    "policies": 111,
+    "sources": 183,
+    "checks": 183,
+    "entries": 96,
+    "notices": 360,
+    "configured_schools": 39,
+    "schools_with_configured_units": 39,
+    "configured_units": 59,
+    "units_with_records": 56,
+    "schools_with_records": 39,
+    "professor_records": 7173,
+    "source_checks": 183,
+    "official_entries": 96,
+    "policies_with_material_actions": 69,
+    "material_actions": 310,
+    "policies_without_material_actions": 42
+  },
+  "professors": {
+    "records": 7173,
+    "known_fields": {
+      "email": 5660,
+      "title": 5213,
+      "supervisor": 3969,
+      "bio_raw": 4942,
+      "research_direction_raw": 2629,
+      "homepage": 668,
+      "institutes": 2862
+    },
+    "states": {
+      "enriched": 6628,
+      "roster": 545
+    },
+    "source_dates": {
+      "2026-09-02": 678,
+      "2026-09-03": 1180,
+      "2026-09-04": 1035,
+      "2026-09-05": 2408,
+      "2026-09-06": 121,
+      "2026-10-14": 807,
+      "2026-10-15": 634,
+      "2026-11-15": 310
+    },
+    "unknown_source_date": 0,
+    "source_older_than_30_days": 6863,
+    "source_date_rule": "last_fetched, else latest crawled provenance fetched_at; mirrors scripts/build_site.py; last_verified excluded",
+    "unreviewed_unresolved_issue_groups": [
+      {
+        "file": "data/issues/hust-cyber.yaml",
+        "count": 1,
+        "kinds": {
+          "fetch_or_parse_error": 1
+        }
+      },
+      {
+        "file": "data/issues/nankai-cs.yaml",
+        "count": 4,
+        "kinds": {
+          "fetch_or_parse_error": 4
+        }
+      },
+      {
+        "file": "data/issues/nankai-cyber.yaml",
+        "count": 44,
+        "kinds": {
+          "fetch_or_parse_error": 40,
+          "unknown_detail_field": 4
+        }
+      },
+      {
+        "file": "data/issues/nudt-ai.yaml",
+        "count": 1,
+        "kinds": {
+          "duplicate_public_registration": 1
+        }
+      },
+      {
+        "file": "data/issues/nudt-cs.yaml",
+        "count": 14,
+        "kinds": {
+          "duplicate_public_registration": 6,
+          "shared_public_contact": 8
+        }
+      },
+      {
+        "file": "data/issues/seu-auto.yaml",
+        "count": 2,
+        "kinds": {
+          "fetch_or_parse_error": 1,
+          "roster_count_mismatch": 1
+        }
+      },
+      {
+        "file": "data/issues/whu-cyber.yaml",
+        "count": 1,
+        "kinds": {
+          "fetch_or_parse_error": 1
+        }
+      }
+    ],
+    "unreviewed_unresolved_issue_count": 67,
+    "roster_pending_units": [
+      {
+        "school": "bnu",
+        "dept": "ai",
+        "count": 2
+      },
+      {
+        "school": "hust",
+        "dept": "cyber",
+        "count": 1
+      },
+      {
+        "school": "nankai",
+        "dept": "cs",
+        "count": 4
+      },
+      {
+        "school": "nankai",
+        "dept": "cyber",
+        "count": 40
+      },
+      {
+        "school": "nudt",
+        "dept": "ai",
+        "count": 183
+      },
+      {
+        "school": "nudt",
+        "dept": "cs",
+        "count": 244
+      },
+      {
+        "school": "nwpu",
+        "dept": "cs",
+        "count": 23
+      },
+      {
+        "school": "seu",
+        "dept": "auto",
+        "count": 1
+      },
+      {
+        "school": "sustech",
+        "dept": "cs",
+        "count": 2
+      },
+      {
+        "school": "tju",
+        "dept": "cs",
+        "count": 1
+      },
+      {
+        "school": "whu",
+        "dept": "cyber",
+        "count": 1
+      },
+      {
+        "school": "xmu",
+        "dept": "cs",
+        "count": 43
+      }
+    ],
+    "by_unit": [
+      {
+        "school": "bit",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 151,
+        "known_fields": {
+          "email": 133,
+          "title": 123,
+          "supervisor": 151,
+          "bio_raw": 136,
+          "research_direction_raw": 135,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 151
+        },
+        "source_dates": {
+          "2026-09-05": 146,
+          "2026-11-15": 5
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 146
+      },
+      {
+        "school": "bnu",
+        "dept": "ai",
+        "name": "人工智能学院",
+        "records": 72,
+        "known_fields": {
+          "email": 53,
+          "title": 57,
+          "supervisor": 57,
+          "bio_raw": 44,
+          "research_direction_raw": 50,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 70,
+          "roster": 2
+        },
+        "source_dates": {
+          "2026-09-04": 65,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 65
+      },
+      {
+        "school": "buaa",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 82,
+        "known_fields": {
+          "email": 80,
+          "title": 82,
+          "supervisor": 61,
+          "bio_raw": 82,
+          "research_direction_raw": 0,
+          "homepage": 22,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 82
+        },
+        "source_dates": {
+          "2026-09-05": 82
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 82
+      },
+      {
+        "school": "buaa",
+        "dept": "cyber",
+        "name": "网络空间安全学院",
+        "records": 52,
+        "known_fields": {
+          "email": 48,
+          "title": 51,
+          "supervisor": 52,
+          "bio_raw": 52,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 52
+        },
+        "source_dates": {
+          "2026-10-14": 52
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 52
+      },
+      {
+        "school": "bupt",
+        "dept": "cs",
+        "name": "计算机学院（国家示范性软件学院）",
+        "records": 217,
+        "known_fields": {
+          "email": 175,
+          "title": 77,
+          "supervisor": 62,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 175
+        },
+        "states": {
+          "enriched": 217
+        },
+        "source_dates": {
+          "2026-09-05": 217
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 217
+      },
+      {
+        "school": "cqu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 77,
+        "known_fields": {
+          "email": 69,
+          "title": 53,
+          "supervisor": 77,
+          "bio_raw": 66,
+          "research_direction_raw": 50,
+          "homepage": 0,
+          "institutes": 54
+        },
+        "states": {
+          "enriched": 77
+        },
+        "source_dates": {
+          "2026-09-05": 70,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 70
+      },
+      {
+        "school": "csu",
+        "dept": "auto",
+        "name": "自动化学院",
+        "records": 114,
+        "known_fields": {
+          "email": 0,
+          "title": 110,
+          "supervisor": 92,
+          "bio_raw": 90,
+          "research_direction_raw": 55,
+          "homepage": 0,
+          "institutes": 114
+        },
+        "states": {
+          "enriched": 114
+        },
+        "source_dates": {
+          "2026-10-14": 102,
+          "2026-10-15": 4,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 106
+      },
+      {
+        "school": "csu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 108,
+        "known_fields": {
+          "email": 78,
+          "title": 92,
+          "supervisor": 89,
+          "bio_raw": 87,
+          "research_direction_raw": 57,
+          "homepage": 0,
+          "institutes": 95
+        },
+        "states": {
+          "enriched": 108
+        },
+        "source_dates": {
+          "2026-09-04": 101,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 101
+      },
+      {
+        "school": "dlut",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 12,
+        "known_fields": {
+          "email": 2,
+          "title": 12,
+          "supervisor": 10,
+          "bio_raw": 10,
+          "research_direction_raw": 12,
+          "homepage": 0,
+          "institutes": 12
+        },
+        "states": {
+          "enriched": 12
+        },
+        "source_dates": {
+          "2026-09-05": 4,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 4
+      },
+      {
+        "school": "dlut",
+        "dept": "ss",
+        "name": "国家示范性软件学院",
+        "records": 12,
+        "known_fields": {
+          "email": 2,
+          "title": 12,
+          "supervisor": 8,
+          "bio_raw": 8,
+          "research_direction_raw": 9,
+          "homepage": 0,
+          "institutes": 10
+        },
+        "states": {
+          "enriched": 12
+        },
+        "source_dates": {
+          "2026-09-05": 4,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 4
+      },
+      {
+        "school": "ecnu",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 70,
+        "known_fields": {
+          "email": 70,
+          "title": 69,
+          "supervisor": 18,
+          "bio_raw": 70,
+          "research_direction_raw": 4,
+          "homepage": 2,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 70
+        },
+        "source_dates": {
+          "2026-09-04": 3,
+          "2026-09-05": 59,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 62
+      },
+      {
+        "school": "fudan",
+        "dept": "cs",
+        "name": "计算与智能创新学院",
+        "records": 189,
+        "known_fields": {
+          "email": 188,
+          "title": 188,
+          "supervisor": 127,
+          "bio_raw": 0,
+          "research_direction_raw": 74,
+          "homepage": 107,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 189
+        },
+        "source_dates": {
+          "2026-09-05": 189
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 189
+      },
+      {
+        "school": "hit",
+        "dept": "cs",
+        "name": "计算学部·计算机科学与技术学院",
+        "records": 240,
+        "known_fields": {
+          "email": 0,
+          "title": 0,
+          "supervisor": 168,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 240
+        },
+        "states": {
+          "enriched": 240
+        },
+        "source_dates": {
+          "2026-09-03": 72,
+          "2026-09-05": 168
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 240
+      },
+      {
+        "school": "hnu",
+        "dept": "cs",
+        "name": "信息科学与工程学院(计算机)",
+        "records": 187,
+        "known_fields": {
+          "email": 132,
+          "title": 177,
+          "supervisor": 75,
+          "bio_raw": 154,
+          "research_direction_raw": 155,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 187
+        },
+        "source_dates": {
+          "2026-09-05": 180,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 180
+      },
+      {
+        "school": "hust",
+        "dept": "aia",
+        "name": "人工智能与自动化学院",
+        "records": 125,
+        "known_fields": {
+          "email": 31,
+          "title": 105,
+          "supervisor": 77,
+          "bio_raw": 118,
+          "research_direction_raw": 69,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 125
+        },
+        "source_dates": {
+          "2026-10-14": 115,
+          "2026-10-15": 2,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 117
+      },
+      {
+        "school": "hust",
+        "dept": "cyber",
+        "name": "网络空间安全学院",
+        "records": 85,
+        "known_fields": {
+          "email": 5,
+          "title": 62,
+          "supervisor": 68,
+          "bio_raw": 80,
+          "research_direction_raw": 30,
+          "homepage": 0,
+          "institutes": 85
+        },
+        "states": {
+          "enriched": 84,
+          "roster": 1
+        },
+        "source_dates": {
+          "2026-10-14": 76,
+          "2026-10-15": 1,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 77
+      },
+      {
+        "school": "jlu",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 185,
+        "known_fields": {
+          "email": 138,
+          "title": 177,
+          "supervisor": 65,
+          "bio_raw": 185,
+          "research_direction_raw": 3,
+          "homepage": 2,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 185
+        },
+        "source_dates": {
+          "2026-09-04": 32,
+          "2026-09-05": 135,
+          "2026-09-06": 12,
+          "2026-11-15": 6
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 179
+      },
+      {
+        "school": "nankai",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 99,
+        "known_fields": {
+          "email": 96,
+          "title": 99,
+          "supervisor": 39,
+          "bio_raw": 86,
+          "research_direction_raw": 97,
+          "homepage": 20,
+          "institutes": 95
+        },
+        "states": {
+          "enriched": 95,
+          "roster": 4
+        },
+        "source_dates": {
+          "2026-10-15": 91,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 91
+      },
+      {
+        "school": "nankai",
+        "dept": "cyber",
+        "name": "密码与网络空间安全学院",
+        "records": 85,
+        "known_fields": {
+          "email": 82,
+          "title": 81,
+          "supervisor": 13,
+          "bio_raw": 39,
+          "research_direction_raw": 83,
+          "homepage": 11,
+          "institutes": 45
+        },
+        "states": {
+          "enriched": 45,
+          "roster": 40
+        },
+        "source_dates": {
+          "2026-10-15": 82,
+          "2026-11-15": 3
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 82
+      },
+      {
+        "school": "nankai",
+        "dept": "software",
+        "name": "软件学院",
+        "records": 35,
+        "known_fields": {
+          "email": 35,
+          "title": 35,
+          "supervisor": 18,
+          "bio_raw": 35,
+          "research_direction_raw": 35,
+          "homepage": 4,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 35
+        },
+        "source_dates": {
+          "2026-10-15": 27,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 27
+      },
+      {
+        "school": "neu",
+        "dept": "cs",
+        "name": "计算机科学与工程学院",
+        "records": 147,
+        "known_fields": {
+          "email": 109,
+          "title": 107,
+          "supervisor": 72,
+          "bio_raw": 133,
+          "research_direction_raw": 4,
+          "homepage": 38,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 147
+        },
+        "source_dates": {
+          "2026-09-04": 139,
+          "2026-09-06": 1,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 140
+      },
+      {
+        "school": "nju",
+        "dept": "cs",
+        "name": "计算机科学与技术系",
+        "records": 102,
+        "known_fields": {
+          "email": 90,
+          "title": 102,
+          "supervisor": 68,
+          "bio_raw": 92,
+          "research_direction_raw": 1,
+          "homepage": 63,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 102
+        },
+        "source_dates": {
+          "2026-09-03": 94,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 94
+      },
+      {
+        "school": "nudt",
+        "dept": "ai",
+        "name": "智能科学学院",
+        "records": 183,
+        "known_fields": {
+          "email": 183,
+          "title": 0,
+          "supervisor": 183,
+          "bio_raw": 183,
+          "research_direction_raw": 12,
+          "homepage": 0,
+          "institutes": 183
+        },
+        "states": {
+          "roster": 183
+        },
+        "source_dates": {
+          "2026-10-15": 183
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 183
+      },
+      {
+        "school": "nudt",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 244,
+        "known_fields": {
+          "email": 208,
+          "title": 0,
+          "supervisor": 244,
+          "bio_raw": 244,
+          "research_direction_raw": 53,
+          "homepage": 0,
+          "institutes": 244
+        },
+        "states": {
+          "roster": 244
+        },
+        "source_dates": {
+          "2026-10-15": 244
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 244
+      },
+      {
+        "school": "nwpu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 23,
+        "known_fields": {
+          "email": 0,
+          "title": 0,
+          "supervisor": 0,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "roster": 23
+        },
+        "source_dates": {
+          "2026-09-04": 23
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 23
+      },
+      {
+        "school": "pku",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 119,
+        "known_fields": {
+          "email": 118,
+          "title": 119,
+          "supervisor": 20,
+          "bio_raw": 119,
+          "research_direction_raw": 119,
+          "homepage": 64,
+          "institutes": 119
+        },
+        "states": {
+          "enriched": 119
+        },
+        "source_dates": {
+          "2026-09-03": 111,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 111
+      },
+      {
+        "school": "pku",
+        "dept": "sai",
+        "name": "智能学院",
+        "records": 36,
+        "known_fields": {
+          "email": 36,
+          "title": 36,
+          "supervisor": 6,
+          "bio_raw": 36,
+          "research_direction_raw": 36,
+          "homepage": 15,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 36
+        },
+        "source_dates": {
+          "2026-10-14": 28,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 28
+      },
+      {
+        "school": "ruc",
+        "dept": "ai",
+        "name": "高瓴人工智能学院",
+        "records": 30,
+        "known_fields": {
+          "email": 30,
+          "title": 30,
+          "supervisor": 14,
+          "bio_raw": 12,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 30
+        },
+        "source_dates": {
+          "2026-09-04": 30
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 30
+      },
+      {
+        "school": "ruc",
+        "dept": "info",
+        "name": "信息学院",
+        "records": 67,
+        "known_fields": {
+          "email": 64,
+          "title": 63,
+          "supervisor": 33,
+          "bio_raw": 48,
+          "research_direction_raw": 0,
+          "homepage": 11,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 67
+        },
+        "source_dates": {
+          "2026-09-05": 59,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 59
+      },
+      {
+        "school": "scu",
+        "dept": "cs",
+        "name": "计算机学院（软件学院、智能科学与技术学院）",
+        "records": 166,
+        "known_fields": {
+          "email": 151,
+          "title": 118,
+          "supervisor": 16,
+          "bio_raw": 109,
+          "research_direction_raw": 70,
+          "homepage": 0,
+          "institutes": 39
+        },
+        "states": {
+          "enriched": 166
+        },
+        "source_dates": {
+          "2026-09-04": 158,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 158
+      },
+      {
+        "school": "scut",
+        "dept": "cs",
+        "name": "计算机科学与工程学院",
+        "records": 76,
+        "known_fields": {
+          "email": 56,
+          "title": 76,
+          "supervisor": 22,
+          "bio_raw": 52,
+          "research_direction_raw": 7,
+          "homepage": 4,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 76
+        },
+        "source_dates": {
+          "2026-09-05": 68,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 68
+      },
+      {
+        "school": "sdu",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 13,
+        "known_fields": {
+          "email": 11,
+          "title": 12,
+          "supervisor": 2,
+          "bio_raw": 13,
+          "research_direction_raw": 4,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 13
+        },
+        "source_dates": {
+          "2026-09-03": 2,
+          "2026-09-05": 3,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 5
+      },
+      {
+        "school": "seu",
+        "dept": "auto",
+        "name": "自动化学院",
+        "records": 85,
+        "known_fields": {
+          "email": 83,
+          "title": 52,
+          "supervisor": 85,
+          "bio_raw": 81,
+          "research_direction_raw": 46,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 84,
+          "roster": 1
+        },
+        "source_dates": {
+          "2026-10-14": 77,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 77
+      },
+      {
+        "school": "seu",
+        "dept": "cs",
+        "name": "计算机科学与工程学院",
+        "records": 128,
+        "known_fields": {
+          "email": 110,
+          "title": 128,
+          "supervisor": 111,
+          "bio_raw": 87,
+          "research_direction_raw": 125,
+          "homepage": 0,
+          "institutes": 125
+        },
+        "states": {
+          "enriched": 128
+        },
+        "source_dates": {
+          "2026-09-05": 120,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 120
+      },
+      {
+        "school": "shanghaitech",
+        "dept": "cs",
+        "name": "信息科学与技术学院",
+        "records": 149,
+        "known_fields": {
+          "email": 147,
+          "title": 97,
+          "supervisor": 117,
+          "bio_raw": 0,
+          "research_direction_raw": 89,
+          "homepage": 0,
+          "institutes": 149
+        },
+        "states": {
+          "enriched": 149
+        },
+        "source_dates": {
+          "2026-09-05": 143,
+          "2026-11-15": 6
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 143
+      },
+      {
+        "school": "sjtu",
+        "dept": "ai",
+        "name": "人工智能研究院",
+        "records": 1,
+        "known_fields": {
+          "email": 0,
+          "title": 1,
+          "supervisor": 0,
+          "bio_raw": 1,
+          "research_direction_raw": 1,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 1
+        },
+        "source_dates": {
+          "2026-11-15": 1
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 0
+      },
+      {
+        "school": "sjtu",
+        "dept": "auto",
+        "name": "自动化与感知学院",
+        "records": 203,
+        "known_fields": {
+          "email": 199,
+          "title": 200,
+          "supervisor": 29,
+          "bio_raw": 196,
+          "research_direction_raw": 20,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 203
+        },
+        "source_dates": {
+          "2026-10-14": 195,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 195
+      },
+      {
+        "school": "sjtu",
+        "dept": "cs",
+        "name": "计算机学院（网络空间安全学院、密码学院）",
+        "records": 289,
+        "known_fields": {
+          "email": 285,
+          "title": 289,
+          "supervisor": 101,
+          "bio_raw": 249,
+          "research_direction_raw": 0,
+          "homepage": 134,
+          "institutes": 289
+        },
+        "states": {
+          "enriched": 289
+        },
+        "source_dates": {
+          "2026-09-02": 281,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 281
+      },
+      {
+        "school": "sustech",
+        "dept": "cs",
+        "name": "计算机科学与工程系",
+        "records": 39,
+        "known_fields": {
+          "email": 39,
+          "title": 39,
+          "supervisor": 3,
+          "bio_raw": 11,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 37,
+          "roster": 2
+        },
+        "source_dates": {
+          "2026-09-05": 36,
+          "2026-11-15": 3
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 36
+      },
+      {
+        "school": "sysu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 112,
+        "known_fields": {
+          "email": 109,
+          "title": 110,
+          "supervisor": 0,
+          "bio_raw": 0,
+          "research_direction_raw": 108,
+          "homepage": 0,
+          "institutes": 112
+        },
+        "states": {
+          "enriched": 112
+        },
+        "source_dates": {
+          "2026-09-03": 112
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 112
+      },
+      {
+        "school": "tju",
+        "dept": "ai",
+        "name": "人工智能学院",
+        "records": 0,
+        "known_fields": {
+          "email": 0,
+          "title": 0,
+          "supervisor": 0,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {},
+        "source_dates": {},
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 0
+      },
+      {
+        "school": "tju",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 114,
+        "known_fields": {
+          "email": 113,
+          "title": 113,
+          "supervisor": 94,
+          "bio_raw": 113,
+          "research_direction_raw": 7,
+          "homepage": 84,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 113,
+          "roster": 1
+        },
+        "source_dates": {
+          "2026-09-05": 107,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 107
+      },
+      {
+        "school": "tju",
+        "dept": "cyber",
+        "name": "网络安全学院",
+        "records": 0,
+        "known_fields": {
+          "email": 0,
+          "title": 0,
+          "supervisor": 0,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {},
+        "source_dates": {},
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 0
+      },
+      {
+        "school": "tju",
+        "dept": "software",
+        "name": "软件学院",
+        "records": 0,
+        "known_fields": {
+          "email": 0,
+          "title": 0,
+          "supervisor": 0,
+          "bio_raw": 0,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {},
+        "source_dates": {},
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 0
+      },
+      {
+        "school": "tongji",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 156,
+        "known_fields": {
+          "email": 104,
+          "title": 156,
+          "supervisor": 60,
+          "bio_raw": 156,
+          "research_direction_raw": 0,
+          "homepage": 18,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 156
+        },
+        "source_dates": {
+          "2026-09-03": 113,
+          "2026-09-05": 39,
+          "2026-09-06": 4
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 156
+      },
+      {
+        "school": "tsinghua",
+        "dept": "auto",
+        "name": "自动化系",
+        "records": 110,
+        "known_fields": {
+          "email": 98,
+          "title": 108,
+          "supervisor": 14,
+          "bio_raw": 101,
+          "research_direction_raw": 20,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 110
+        },
+        "source_dates": {
+          "2026-10-14": 102,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 102
+      },
+      {
+        "school": "tsinghua",
+        "dept": "cs",
+        "name": "计算机科学与技术系",
+        "records": 134,
+        "known_fields": {
+          "email": 134,
+          "title": 134,
+          "supervisor": 7,
+          "bio_raw": 134,
+          "research_direction_raw": 111,
+          "homepage": 0,
+          "institutes": 134
+        },
+        "states": {
+          "enriched": 134
+        },
+        "source_dates": {
+          "2026-09-02": 127,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 127
+      },
+      {
+        "school": "ucas",
+        "dept": "ia",
+        "name": "自动化研究所",
+        "records": 345,
+        "known_fields": {
+          "email": 342,
+          "title": 343,
+          "supervisor": 49,
+          "bio_raw": 345,
+          "research_direction_raw": 0,
+          "homepage": 6,
+          "institutes": 262
+        },
+        "states": {
+          "enriched": 345
+        },
+        "source_dates": {
+          "2026-09-02": 3,
+          "2026-09-03": 334,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 337
+      },
+      {
+        "school": "ucas",
+        "dept": "ict",
+        "name": "计算技术研究所",
+        "records": 283,
+        "known_fields": {
+          "email": 264,
+          "title": 283,
+          "supervisor": 214,
+          "bio_raw": 279,
+          "research_direction_raw": 171,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 283
+        },
+        "source_dates": {
+          "2026-09-02": 267,
+          "2026-11-15": 16
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 267
+      },
+      {
+        "school": "ucas",
+        "dept": "iie",
+        "name": "信息工程研究所",
+        "records": 283,
+        "known_fields": {
+          "email": 272,
+          "title": 4,
+          "supervisor": 149,
+          "bio_raw": 0,
+          "research_direction_raw": 196,
+          "homepage": 0,
+          "institutes": 39
+        },
+        "states": {
+          "enriched": 283
+        },
+        "source_dates": {
+          "2026-09-05": 275,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 275
+      },
+      {
+        "school": "ucas",
+        "dept": "iscas",
+        "name": "软件研究所",
+        "records": 182,
+        "known_fields": {
+          "email": 179,
+          "title": 0,
+          "supervisor": 182,
+          "bio_raw": 115,
+          "research_direction_raw": 180,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 182
+        },
+        "source_dates": {
+          "2026-09-03": 176,
+          "2026-11-15": 6
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 176
+      },
+      {
+        "school": "uestc",
+        "dept": "cs",
+        "name": "计算机科学与工程学院（网络空间安全学院）",
+        "records": 189,
+        "known_fields": {
+          "email": 185,
+          "title": 189,
+          "supervisor": 11,
+          "bio_raw": 119,
+          "research_direction_raw": 0,
+          "homepage": 0,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 189
+        },
+        "source_dates": {
+          "2026-09-05": 189
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 189
+      },
+      {
+        "school": "ustc",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 72,
+        "known_fields": {
+          "email": 71,
+          "title": 72,
+          "supervisor": 33,
+          "bio_raw": 71,
+          "research_direction_raw": 7,
+          "homepage": 44,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 72
+        },
+        "source_dates": {
+          "2026-09-03": 64,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 64
+      },
+      {
+        "school": "whu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "records": 109,
+        "known_fields": {
+          "email": 97,
+          "title": 98,
+          "supervisor": 61,
+          "bio_raw": 108,
+          "research_direction_raw": 6,
+          "homepage": 14,
+          "institutes": 0
+        },
+        "states": {
+          "enriched": 109
+        },
+        "source_dates": {
+          "2026-09-03": 102,
+          "2026-11-15": 7
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 102
+      },
+      {
+        "school": "whu",
+        "dept": "cyber",
+        "name": "国家网络安全学院",
+        "records": 68,
+        "known_fields": {
+          "email": 6,
+          "title": 62,
+          "supervisor": 24,
+          "bio_raw": 67,
+          "research_direction_raw": 36,
+          "homepage": 5,
+          "institutes": 68
+        },
+        "states": {
+          "enriched": 67,
+          "roster": 1
+        },
+        "source_dates": {
+          "2026-10-14": 60,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 60
+      },
+      {
+        "school": "xidian",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 155,
+        "known_fields": {
+          "email": 145,
+          "title": 147,
+          "supervisor": 116,
+          "bio_raw": 154,
+          "research_direction_raw": 97,
+          "homepage": 0,
+          "institutes": 92
+        },
+        "states": {
+          "enriched": 155
+        },
+        "source_dates": {
+          "2026-09-04": 147,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 147
+      },
+      {
+        "school": "xjtu",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 75,
+        "known_fields": {
+          "email": 55,
+          "title": 47,
+          "supervisor": 63,
+          "bio_raw": 10,
+          "research_direction_raw": 17,
+          "homepage": 0,
+          "institutes": 75
+        },
+        "states": {
+          "enriched": 75
+        },
+        "source_dates": {
+          "2026-09-04": 66,
+          "2026-09-06": 1,
+          "2026-11-15": 8
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 67
+      },
+      {
+        "school": "xmu",
+        "dept": "cs",
+        "name": "计算机科学与技术系（信息学院）",
+        "records": 51,
+        "known_fields": {
+          "email": 4,
+          "title": 50,
+          "supervisor": 3,
+          "bio_raw": 5,
+          "research_direction_raw": 1,
+          "homepage": 0,
+          "institutes": 3
+        },
+        "states": {
+          "enriched": 8,
+          "roster": 43
+        },
+        "source_dates": {
+          "2026-09-05": 51
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 51
+      },
+      {
+        "school": "zju",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "records": 438,
+        "known_fields": {
+          "email": 146,
+          "title": 166,
+          "supervisor": 436,
+          "bio_raw": 157,
+          "research_direction_raw": 167,
+          "homepage": 0,
+          "institutes": 4
+        },
+        "states": {
+          "enriched": 438
+        },
+        "source_dates": {
+          "2026-09-04": 271,
+          "2026-09-05": 64,
+          "2026-09-06": 103
+        },
+        "unknown_source_date": 0,
+        "source_older_than_30_days": 438
+      }
+    ],
+    "configured_units_without_records": [
+      {
+        "school": "tju",
+        "dept": "ai"
+      },
+      {
+        "school": "tju",
+        "dept": "cyber"
+      },
+      {
+        "school": "tju",
+        "dept": "software"
+      }
+    ],
+    "public_records_manifest_sha256": "7c3b41b80c451b9d2eff3d4381c511a75cfb8cc66c9098bf1b097a252d2f14c5"
+  },
+  "admissions": {
+    "source_check_states": {
+      "error": 2,
+      "ok": 181
+    },
+    "last_success_dates": {
+      "2026-10-15": 1,
+      "2026-11-15": 181
+    },
+    "last_attempt_dates": {
+      "2026-11-15": 183
+    },
+    "policy_review_dates": {
+      "2026-10-14": 8,
+      "2026-10-15": 34,
+      "2026-11-15": 69
+    },
+    "policy_quality_states": {
+      "changed": 5,
+      "checked": 69,
+      "review": 37
+    },
+    "policy_quality_by_id": {
+      "tsinghua-2027-master-exam": "checked",
+      "tsinghua-2027-master-recommend": "review",
+      "tsinghua-cs-2027-master-recommend": "checked",
+      "tsinghua-cs-2027-085400-exam": "checked",
+      "buaa-cyber-2027-master-exam": "checked",
+      "tsinghua-auto-2027-master-recommend": "review",
+      "seu-auto-2027-master-recommend": "review",
+      "sjtu-auto-2027-phd-recommend": "review",
+      "sjtu-auto-2027-master-special": "review",
+      "hust-2027-master-exam": "checked",
+      "whu-cyber-2027-master-recommend": "review",
+      "whu-cyber-2027-083900-phd-recommend": "review",
+      "seu-auto-2027-master-elite-recommend": "review",
+      "bit-2027-master-exam": "checked",
+      "bit-2027-master-recommend": "review",
+      "bit-cs-2027-master-recommend-performance": "review",
+      "bit-cs-2027-master-recommend-software": "review",
+      "pku-2027-master-exam-v14": "checked",
+      "ustc-2027-master-exam-v14": "checked",
+      "sjtu-2027-master-exam-v14": "checked",
+      "ucas-2027-master-exam-v14": "checked",
+      "csu-2027-master-exam": "checked",
+      "seu-2027-master-exam": "checked",
+      "whu-2027-master-exam": "checked",
+      "whu-cyber-2027-master-exam": "checked",
+      "whu-cyber-2027-083900-exam": "checked",
+      "whu-cyber-2027-085412-exam": "checked",
+      "seu-2027-master-exam-minority": "checked",
+      "csu-auto-2027-master-recommend": "review",
+      "hust-cyber-2027-master-recommend-extension": "review",
+      "fudan_2027_master_exam_v15a": "checked",
+      "zju_2027_master_exam_v15a": "checked",
+      "nju_2027_master_exam_v15a": "checked",
+      "tongji_2027_master_exam_v15a": "checked",
+      "ecnu_2027_master_exam_v15a": "checked",
+      "shanghaitech_2027_master_exam_v15a": "checked",
+      "ruc_2027_master_exam_v15a": "checked",
+      "bnu_2027_master_exam_v15a": "checked",
+      "buaa_2027_master_exam_v15a": "checked",
+      "shanghaitech_cs_2027_master_exam_v15a": "checked",
+      "hit-school-2027-exam-v15b": "checked",
+      "tju-school-2027-exam-v15b": "checked",
+      "uestc-school-2027-exam-v15b": "checked",
+      "jlu-school-2027-exam-v15b": "checked",
+      "dlut-school-2027-exam-v15b": "checked",
+      "neu-school-2027-exam-v15b": "checked",
+      "xjtu-webreg-pdf-2027-exam-v15b": "checked",
+      "sdu-directory-2027-exam-v15b": "checked",
+      "uestc-cs-cs-directory-2027-exam-v15b": "checked",
+      "neu-webreg-2027-exam-v15b": "checked",
+      "hit-webreg-2027-exam-v15b": "checked",
+      "sysu-2027-master-exam-v15c": "checked",
+      "xmu-2027-master-exam-v15c": "checked",
+      "hnu-2027-master-exam-v15c": "checked",
+      "cqu-2027-master-exam-v15c": "checked",
+      "scu-2027-master-exam-v15c": "checked",
+      "scut-2027-master-exam-v15c": "checked",
+      "xidian-2027-master-exam-v15c": "checked",
+      "sustech-2027-master-exam-v15c": "checked",
+      "sysu-cs-2027-085404-exam-v15c": "checked",
+      "sysu-cs-2027-085410-exam-v15c": "checked",
+      "nankai-2027-master-exam-v15extra": "checked",
+      "nudt-2027-master-exam-v15extra": "checked",
+      "tsinghua-2027-phd-assessment-v16pilot": "review",
+      "zju-2027-phd-assessment-v16pilot": "review",
+      "tsinghua-cs-2027-phd-assessment-v16pilot": "review",
+      "nankai-cs-2027-master-recommend-v17": "review",
+      "nankai-cs-2027-phd-recommend-v17": "review",
+      "nankai-cs-2027-master-directory-v17": "checked",
+      "nankai-cyber-2027-master-recommend-v17": "review",
+      "nankai-cyber-2027-phd-recommend-v17": "review",
+      "nankai-cyber-2027-master-directory-v17": "checked",
+      "nankai-software-2027-master-recommend-v17": "review",
+      "nankai-software-2027-phd-recommend-v17": "review",
+      "nankai-software-2027-master-directory-v17": "checked",
+      "nankai-software-2027-master-prerecommend-v17": "review",
+      "nankai-software-2027-phd-prerecommend-v17": "review",
+      "nudt-school-2027-phd-v17": "review",
+      "nudt-cs-2027-phd-v17": "review",
+      "nudt-cs-2027-master-v17": "checked",
+      "nudt-ai-2027-phd-v17": "review",
+      "nudt-ai-2027-master-v17": "checked",
+      "nudt-ai-2027-phd-review-progress-v17": "review",
+      "nwpu-school-2027-master-exam-v18": "checked",
+      "nwpu-school-2027-master-6112-point-v18": "checked",
+      "nwpu-school-2027-master-equivalent-review-v18": "checked",
+      "sdu-cs-2027-master-recommend-v18": "review",
+      "sdu-cs-2027-phd-recommend-v18": "review",
+      "tju-cs-2027-master-recommend-v18": "review",
+      "tju-cs-2027-phd-recommend-v18": "review",
+      "dlut-cs-2027-master-recommend-v18": "checked",
+      "dlut-cs-2027-phd-recommend-v18": "checked",
+      "dlut-ss-2027-master-recommend-v18": "checked",
+      "dlut-ss-2027-phd-recommend-v18": "checked",
+      "tju-school-2027-phd-assessment-v18": "changed",
+      "tju-cs-2027-phd-assessment-v18": "changed",
+      "tju-software-2027-phd-assessment-v18": "changed",
+      "tju-cyber-2027-phd-assessment-v18": "changed",
+      "tju-ai-2027-phd-assessment-v18": "changed",
+      "dlut-cs-2027-master-recommend-post-admission-v18": "review",
+      "dlut-cs-2027-phd-recommend-post-admission-v18": "review",
+      "dlut-ss-2027-master-recommend-post-admission-v18": "review",
+      "dlut-ss-2027-phd-recommend-post-admission-v18": "review",
+      "tsinghua-2027-master-registration-v20north": "checked",
+      "bit-2027-master-testcenter1107-v20north": "checked",
+      "buaa-2027-master-testcenter1106-v20north": "checked",
+      "ucas-ict-2027-master-charter-v21": "checked",
+      "ucas-ia-2027-master-charter-v21": "checked",
+      "tsinghua-auto-2027-phd-assessment-v22": "review",
+      "sdu-cs-081200-2027-exam-v22": "checked",
+      "sdu-cs-085404-2027-exam-v22": "checked"
+    },
+    "scope_counts": {
+      "2027/master/exam": 64,
+      "2027/master/recommend": 22,
+      "2027/phd/assessment": 13,
+      "2027/phd/recommend": 12
+    },
+    "level_counts": {
+      "dept": 43,
+      "program": 16,
+      "school": 52
+    },
+    "actions_by_stage": {
+      "admission": 63,
+      "application": 105,
+      "enrollment": 20,
+      "interview": 57,
+      "other": 3,
+      "screening": 62
+    },
+    "events": 114,
+    "entries_with_explicit_year_degree_route": 13,
+    "sources_post": {
+      "sdu_cs_directory_post_v22": {
+        "url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index",
+        "api": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/x2JE5818xNoSDuSl/zsxxfb/list/zymlxqV2",
+        "format": "json",
+        "selector": "/data/37",
+        "method": "POST",
+        "json": {
+          "zsndId": "2027021779688418502"
+        },
+        "json_content": "structured",
+        "label": "山东大学2027硕士专业目录047计算机科学与技术学院（公开JSON POST）"
+      }
+    },
+    "failed_sources": [
+      {
+        "source_id": "nankai_pdf_2_v15extra",
+        "url": "https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/043d8711-97c0-4201-8259-9e0961b8bc88.pdf",
+        "status": "error",
+        "last_attempt": "2026-11-15",
+        "last_success": "2026-10-15",
+        "cached": false,
+        "hash": "8208f67fddbb49c3ebbab68b5298da187a71a82e88a1679fb86df3143646d1eb",
+        "error": "404 Client Error: Not Found for url: https://yzb.nankai.edu.cn/_upload/article/files/01/6c/d892bd534a2b8c0503164c8ba795/043d8711-97c0-4201-8259-9e0961b8bc88.pdf"
+      },
+      {
+        "source_id": "bupt_admissions_home_v20gap",
+        "url": "https://yzb.bupt.edu.cn/",
+        "status": "error",
+        "last_attempt": "2026-11-15",
+        "error": "412 Client Error: Precondition Failed for url: https://yzb.bupt.edu.cn/",
+        "cached": false
+      }
+    ],
+    "scope_gap_report_reference": "data/coverage.json：15重点院系逐项缺口；不沿用v1.0旧范围行明细。",
+    "manual_review_evidence": [
+      "cache/v14/policy-validation.json",
+      "cache/v15/policy-validation.json"
+    ]
+  },
+  "notices": {
+    "scope": "configured-official-columns",
+    "sources": 36,
+    "items": 360,
+    "reviewed": 0,
+    "source_errors": {},
+    "source_fetched_dates": {
+      "2026-11-15": 36
+    }
+  },
+  "public_data_sha256": {
+    "data/admissions.yaml": "d8343a8481332d9ad3ef0145f96740776db026acaa7f4a16b0fbe63f1b910baf",
+    "data/admissions_entries.yaml": "6ddccd632fec940f8720d8eb57698f23b8e4881262fe82c688d05ce2df3f23f6",
+    "data/admissions_checks.json": "a127beb6e9449e487489f8867bc9987810086244f5c3f3a00b398db4c0caca8e",
+    "data/notices.json": "67374b6a083eb24850b31ad0d6f3cf2ca4616a69a5b258737adff5eecfd07f7b",
+    "data/schools.yaml": "13066230f287d189f1815f3ab3e51f709164595ef799dd787e7fc73e646a963c",
+    "data/coverage.json": "a704df57f6a7dc95f7be8094cd0a0af5568e98d6fec9420756d07e3cb6a5ed4e"
+  }
+}

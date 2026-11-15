@@ -124,6 +124,33 @@ def _meta_fields(soup, out):
         out["research_direction_raw"] = v("研究方向")[:200]
 
 
+def _research_section(lines):
+    """Read explicit research fields without losing DOM fragments or the next field."""
+    heading = re.compile(r'^(?:主要)?研究(方向|领域)(?:[/／]领域)?\s*[:：]?\s*(.*)$')
+    boundary = re.compile(r'^(?:姓\s*名|职\s*称|导师类型|所在系别|所在团队|主讲课程|'
+                          r'主要研究领域|研究领域|研究方向|个人主页|个人简介|个人简历|'
+                          r'教育经历|工作经历|科研项目|研究项目|主要业绩|研究成果|教学情况|科研情况|'
+                          r'代表论文|学术论文|论文发表|科研论文|学术兼职|联系方式|'
+                          r'电子邮件|办公邮箱|电子邮箱|联系邮箱|邮箱|电话|办公电话|'
+                          r'办公室电话|通讯地址|办公地址|招生信息|招生要求|'
+                          r'E-?mail|Email)(?:\s*[:：]|\s*$)', re.I)
+    candidates = []
+    for i, line in enumerate(lines):
+        match = heading.match(line)
+        if not match:
+            continue
+        parts = [match.group(2).strip()] if match.group(2).strip() else []
+        for following in lines[i + 1:]:
+            if boundary.match(following) or len(' '.join(parts)) >= 500:
+                break
+            parts.append(following)
+        value = re.sub(r'\s+', ' ', ' '.join(parts)).strip(' ：:')
+        value = re.split(r'个人简介|个人简历|教学情况|科研情况|个人主页|联系方式|电子邮件|办公邮箱', value)[0].rstrip(' ；;')
+        if value:
+            candidates.append((match.group(1) == '方向', value[:500]))
+    return max(candidates, key=lambda row: (row[0], len(row[1])))[1] if candidates else None
+
+
 def parse_wp_detail(cfg, html, url):
     from crawler.email_util import normalize_email
 
@@ -223,6 +250,9 @@ def parse_wp_detail(cfg, html, url):
                 out["email"] = e
                 break
     out["bio_raw"] = "\n".join(lines) or None
+    research = _research_section(lines)
+    if research:
+        out['research_direction_raw'] = research
     _meta_fields(soup, out)
     if "email" not in out and out.get("bio_raw"):
         # 简介里的"E-Mail：xxx"碎片形态(华南理工: E / -mail： / 值 跨三行)——剥空白后按标签取

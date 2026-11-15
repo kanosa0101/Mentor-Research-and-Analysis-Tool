@@ -3,7 +3,7 @@ name: 杨翼
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：机械工程、机械
 email: turbineyy@163.com
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26680
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26680
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26680
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26680
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 装备状态感知与健康管理研究，主持国家自然科学基金面上项目、青年基金项目、装备预研项目课题等项目/课题十余项，提出了装备机电系统多层级损伤建模、状态感知与故障诊断方法，相关成果应用于多型装备的健康状态监测与诊断
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

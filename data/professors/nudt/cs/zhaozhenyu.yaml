@@ -3,7 +3,7 @@ name: 赵振宇
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 集成电路科学与工程、计算机科学与技术、电子信息
 email: zyzhao@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26080
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26080
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26080
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26080
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 高性能微处理器、AI加速EDA、3D多芯粒集成设计等研究
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

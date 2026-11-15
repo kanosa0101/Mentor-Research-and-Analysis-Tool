@@ -3,7 +3,7 @@ name: 张礼廉
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 博导
 subjects: '硕士：控制科学与工程、电子信息
 
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26522
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26522
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -45,5 +45,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26522
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26522
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 导航、制导与控制方面的研究工作，湖南省自动化学会秘书长，中国惯性技术学会仿生传感与导航专委会副主任委员，全国黄大年式教师团队骨干，中国自动化学会自动化与人工智能创新团队成员，首批国防科技大学高层次创新人才卓越青年人才培养对象
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

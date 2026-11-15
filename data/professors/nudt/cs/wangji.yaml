@@ -3,7 +3,7 @@ name: 王戟
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术、软件工程、电子信息
 email: wj@nudt.edu.cn
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25919
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25919
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25919
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25919
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 可信、智能、新兴软件研究
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

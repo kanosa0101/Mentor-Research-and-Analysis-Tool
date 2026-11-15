@@ -4,9 +4,11 @@ import hashlib
 import json
 import os
 import tempfile
+import time
 from contextlib import contextmanager, nullcontext
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import requests
 
@@ -95,25 +97,70 @@ def read_previous(output):
     return value
 
 
-def run_once(configs, output, opportunities=None, *, fetcher=fetch_source, pdf_fetcher=None, now=None, interval_hours=6, lock=True):
+def source_key(config):
+    return config.get('source_id') or config['school'] + '/' + config['dept']
+
+
+def source_interval(config, opportunities, default=6):
+    current = any(o.get('cycle') == 'current' and o.get('school_id') == config['school'] and o.get('dept_id') == config['dept'] for o in opportunities)
+    hours = config.get('interval_hours', 1 if config.get('priority') == 'current' or current else 24 if config.get('priority') == 'historical' else default)
+    if not isinstance(hours, (int, float)) or not 1 <= hours <= 168:
+        raise ValueError('来源检查间隔须为1至168小时')
+    return hours
+
+
+def due(source, now):
+    try:
+        return datetime.fromisoformat(source['next_check_at']) <= now
+    except (KeyError, ValueError, TypeError):
+        return True
+
+
+class DomainThrottle:
+    """A run is sequential; limit repeated requests to the same official host."""
+    def __init__(self, fetcher, seconds=1, clock=time.monotonic, sleep=time.sleep):
+        self.fetcher, self.seconds, self.clock, self.sleep = fetcher, seconds, clock, sleep
+        self.last = {}
+
+    def __call__(self, config):
+        self.wait(config.get('api') or config['url'])
+        return self.fetcher(config)
+
+    def wait(self, url):
+        host = urlsplit(url).hostname
+        delay = self.seconds - (self.clock() - self.last.get(host, -self.seconds))
+        if delay > 0:
+            self.sleep(delay)
+        self.last[host] = self.clock()
+
+
+def run_once(configs, output, opportunities=None, *, fetcher=fetch_source, pdf_fetcher=None, now=None, interval_hours=6, lock=True, scheduled=False, domain_interval=0):
     """Refresh atomically. lock=False is reserved for a caller holding output_lock."""
     with output_lock(output) if lock else nullcontext():
-        return _run(configs, output, opportunities or [], fetcher, now, interval_hours, pdf_fetcher)
+        return _run(configs, output, opportunities or [], DomainThrottle(fetcher, domain_interval), now, interval_hours, pdf_fetcher, scheduled)
 
 
-def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetcher):
+def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetcher, scheduled):
     previous = read_previous(output)
-    timestamp = (now or datetime.now(timezone.utc)).isoformat(timespec='seconds')
+    moment = now or datetime.now(timezone.utc)
+    timestamp = moment.isoformat(timespec='seconds')
     rows = {row['url']: copy.deepcopy(row) for row in previous['candidates']}
     sources = copy.deepcopy(previous['sources'])
-    active = {cfg['school'] + '/' + cfg['dept'] for cfg in configs}
+    active = {source_key(cfg) for cfg in configs}
+    if len(active) != len(configs):
+        raise ValueError('来源标识重复；同院系多个栏目须分别配置source_id')
     for key, source in sources.items():
         if key not in active:
             source['status'] = 'removed'
-    new_count = baseline_count = 0
+    new_count = baseline_count = attempted = skipped = 0
     for cfg in configs:
-        key = cfg['school'] + '/' + cfg['dept']
+        key = source_key(cfg)
         old = sources.get(key, {})
+        hours = source_interval(cfg, opportunities, interval_hours)
+        if scheduled and old.get('url') == cfg['url'] and not due(old, moment):
+            skipped += 1
+            continue
+        attempted += 1
         source = dict(old, url=cfg['url'], unit=cfg.get('name', key), last_attempt=timestamp, new_count=0)
         baseline = not old.get('last_success') or old.get('url') != cfg['url']
         if old.get('url') and old['url'] != cfg['url']:
@@ -122,6 +169,8 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
             notices = parse_list(fetcher(cfg), cfg)
             if not notices:
                 raise ValueError('未解析出通知，可能是栏目变化或访问受限；保留上次候选。')
+            if not baseline and old.get('parsed_count', 0) >= 10 and len(notices) < old['parsed_count'] * .25:
+                raise ValueError('栏目解析数量下降超过75%；保留上次候选并等待核验选择器或栏目分页。')
             found = [row for row in notices if activity_title(row['title'])]
             current_urls = {row['url'] for row in found}
             for row in rows.values():
@@ -132,6 +181,7 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                 is_new = not old_row
                 candidate.update(first_seen=old_row.get('first_seen', timestamp), last_seen=timestamp,
                                  seen_in_latest_list=True, source_state='ok',
+                                 monitor_source_id=key,
                                  discovery_status=old_row.get('discovery_status', 'initial_snapshot' if baseline else 'discovered_later'))
                 # Parse output is always unreviewed; title years are not admission years.
                 rows[candidate['url']] = candidate
@@ -140,14 +190,17 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                 elif is_new:
                     new_count += 1
                     source['new_count'] += 1
-            source.update(status='ok', error=None, last_success=timestamp, count=len(found))
+            source.update(status='ok', error=None, last_success=timestamp, count=len(found), parsed_count=len(notices), consecutive_failures=0)
         except (requests.RequestException, ValueError, KeyError, TypeError) as error:
             source.update(status='error', error=str(error)[:500])
             source.setdefault('last_success', None)
             source.setdefault('count', 0)
+            source['consecutive_failures'] = old.get('consecutive_failures', 0) + 1
+        delay = min(48, hours * 2 ** min(source.get('consecutive_failures', 0), 5))
+        source.update(interval_hours=hours, next_check_at=(moment + timedelta(hours=delay)).isoformat(timespec='seconds'))
         sources[key] = source
     for row in rows.values():
-        source = sources.get(row['school'] + '/' + row['dept'], {})
+        source = sources.get(row.get('monitor_source_id', row['school'] + '/' + row['dept']), {})
         row['source_state'] = source.get('status', 'removed') if row['source'] == source.get('url') else 'removed'
     checks = {}
     for opportunity in opportunities:
@@ -155,6 +208,9 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
             continue
         key = opportunity['id']
         old = previous.get('opportunity_checks', {}).get(key, {})
+        if scheduled and old.get('url') == opportunity['source_url'] and not due(old, moment):
+            checks[key] = old
+            continue
         expected = opportunity.get('source_sha256') or None
         check = dict(old, url=opportunity['source_url'], last_attempt=timestamp, expected_hash=expected)
         try:
@@ -170,8 +226,12 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                     check.update(status='changed', hash=digest, last_success=timestamp, error=None,
                                  document_change='PDF链接列表变化，须重新核验')
                     checks[key] = check
+                    check['next_check_at'] = (moment + timedelta(hours=1 if opportunity.get('cycle') == 'current' else 24)).isoformat(timespec='seconds')
                     continue
-                versions = [dict(url=doc['url'], sha256=hashlib.sha256((pdf_fetcher or fetch_pdf)(doc['url'], opportunity['source_url'])).hexdigest()) for doc in documents]
+                versions = []
+                for doc in documents:
+                    fetcher.wait(doc['url'])
+                    versions.append(dict(url=doc['url'], sha256=hashlib.sha256((pdf_fetcher or fetch_pdf)(doc['url'], opportunity['source_url'])).hexdigest()))
                 content = pdf_source_version(raw, opportunity['source_url'], versions)
                 same_content = content == opportunity.get('source_content_sha256')
                 check.update(content_sha256=content, source_documents=versions)
@@ -185,6 +245,9 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
         except (requests.RequestException, ValueError, KeyError, TypeError) as error:
             check.update(status='error', error=str(error)[:500])
             check.setdefault('last_success', None)
+        check['consecutive_failures'] = old.get('consecutive_failures', 0) + 1 if check['status'] == 'error' else 0
+        hours = 1 if opportunity.get('cycle') == 'current' else 24
+        check['next_check_at'] = (moment + timedelta(hours=min(48, hours * 2 ** min(check['consecutive_failures'], 5)))).isoformat(timespec='seconds')
         checks[key] = check
     completed = now or datetime.now(timezone.utc)
     errors = sum(sources[key]['status'] == 'error' for key in active)
@@ -192,8 +255,12 @@ def _run(configs, output, opportunities, fetcher, now, interval_hours, pdf_fetch
                    candidate_count=len(rows), new_count=new_count, baseline_count=baseline_count,
                    changed_count=sum(check['status'] == 'changed' for check in checks.values()),
                    opportunity_errors=sum(check['status'] == 'error' for check in checks.values()))
+    summary.update(sources_attempted=attempted, sources_skipped=skipped,
+                   overdue_sources=sum(due(sources[key], completed) for key in active))
+    next_checks = [datetime.fromisoformat(s['next_check_at']) for s in [*(sources[k] for k in active), *checks.values()] if s.get('next_check_at')]
     result = dict(version=1, checked_at=timestamp, completed_at=completed.isoformat(timespec='seconds'),
-                  next_check_at=(completed + timedelta(hours=interval_hours)).isoformat(timespec='seconds'),
+                  last_fetch_at=max((s.get('last_attempt', '') for s in [*(sources[k] for k in active), *checks.values()]), default=None),
+                  next_check_at=(min(next_checks) if scheduled and next_checks else completed + timedelta(hours=interval_hours)).isoformat(timespec='seconds'),
                   interval_hours=interval_hours,
                   status='error' if active and errors == len(active) else 'partial' if errors or summary['opportunity_errors'] else 'ok',
                   candidates=sorted(rows.values(), key=lambda row: (row['first_seen'], row['url']), reverse=True),

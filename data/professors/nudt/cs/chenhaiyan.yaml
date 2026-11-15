@@ -3,7 +3,7 @@ name: 陈海燕
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 集成电路科学与工程、电子信息
 email: hychen608@163.com
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25974
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25974
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25974
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25974
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 高性能微处理器体系结构、VLSI设计与验证等方向的研究，主持、参与多项微处理器设计相关的重点科研项目
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

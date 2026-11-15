@@ -3,7 +3,7 @@ name: 赵宝康
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息
 email: bkzhao@139.com
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26085
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26085
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26085
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26085
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 智能网络、空天网络、网络安全大数据分析、无人系统、算网融合等方面研究，主持国家自然科学基金重点/面上、国家重点研发等课题十余项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

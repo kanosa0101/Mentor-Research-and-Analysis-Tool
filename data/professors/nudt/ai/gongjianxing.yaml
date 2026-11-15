@@ -3,7 +3,7 @@ name: 龚建兴
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：控制科学与工程、电子信息
 email: fj_gjx@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26640
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26640
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26640
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26640
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 作战仿真、任务规划、态势智能认知和智能体建模、智能无人作战试验训练等研究,发表学术论文30余篇，指导学员参加全国计算机仿真大奖赛获优秀指导老师称号
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

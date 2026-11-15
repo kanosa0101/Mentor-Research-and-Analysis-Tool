@@ -36,6 +36,9 @@ class BrowserLibraryTests(unittest.TestCase):
     def test_safe_internal_links_are_canonical(self):
         self.run_js("for(const url of ['p/pku-cs-test.html','opportunities.html?id=camp','notices.html?notice_cycle=all&q=%E6%B5%8B%E8%AF%95','start.html#library'])assert.equal(c.safeUrl(url),url);")
 
+    def test_encoded_unicode_mentor_names_work_but_encoded_separators_do_not(self):
+        self.run_js("const url='p/'+encodeURIComponent('tsinghua-cs-yang（兼职）')+'.html';assert.equal(c.safeUrl(url),url);for(const bad of ['p/a%2fb.html','p/%252e%252e.html','p/a%5cb.html'])assert.throws(()=>c.safeUrl(bad));")
+
     def test_import_validates_every_entry_before_writing(self):
         self.run_js("let stored='original';const storage={setItem:(k,v)=>stored=v};const data=sample();data.bookmarks.push({id:'b',kind:'notice',title:'bad',url:'javascript:alert(1)',created_at:'2026-11-15'});assert.throws(()=>c.write(storage,data));assert.equal(stored,'original');")
 

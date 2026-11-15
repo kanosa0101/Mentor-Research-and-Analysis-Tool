@@ -3,14 +3,14 @@ name: 陆洪毅
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息
 email: hylu@nudt.edu.cn
 bio_raw: 男,主要研究方向为高性能微处理器设计、超大规模集成电路设计以及嵌入式系统。培养硕研究生10余名。hylu@nudt.edu.cn
 institutes:
 - 官方导师登记归属：计算机学院
-research_direction_raw: 男,主要研究方向为高性能微处理器设计、超大规模集成电路设计以及嵌入式系统。
+research_direction_raw: 方向为高性能微处理器设计、超大规模集成电路设计以及嵌入式系统
 detail_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
 profile_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
 first_seen: '2026-10-15'
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -39,7 +39,7 @@ provenance:
   research_direction_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   institutes:
     origin: crawled
@@ -49,5 +49,7 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25898
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -1,5 +1,10 @@
 const el=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const DATA=window.MENTOR_DATA,MODES=['research','qualification','email','opportunity','eligibility'];
+window.MENTOR_COMPARE=Object.fromEntries(DATA.map(p=>[p.page,{bio_excerpt:p.bio_excerpt,provenance:p.provenance}]));
+const discoveryToday=new Date().toLocaleDateString('sv-SE');
+const viewKey='mentor-discovery-view:'+location.search;
+function saveView(){try{sessionStorage.setItem(viewKey,JSON.stringify({prefs:readCriteria(),name:el('intent-name').value,group:el('intent-group').value}));}catch(e){}}
+function restoreView(){try{const value=JSON.parse(sessionStorage.getItem(viewKey)||'null');if(!value||projectScoped)return;fillCriteria(value.prefs);el('intent-name').value=value.name||'';el('intent-group').value=value.group||'';}catch(e){}}
 const incoming=new URLSearchParams(location.search);
 let contextTrack=incoming.get('track')||'',contextProgram=incoming.get('program')||'',projectScoped=incoming.has('project')||DiscoveryRules.projectScoped({track:contextTrack,program:contextProgram});
 let contextSchool=incoming.get('school')||'',contextDept=incoming.get('dept')||'';
@@ -51,6 +56,19 @@ async function api(path='',body,method='GET'){const r=await fetch('/api/discover
 const lazy=new Map();
 function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=file+'?v=20261015-'+(file==='admissions-data.js'?'22':'17');s.onload=resolve;s.onerror=()=>{lazy.delete(file);s.remove();reject(new Error('无法加载 '+file+'，请确认静态文件完整'));};document.head.appendChild(s);}));return lazy.get(file);}
 let unitCatalogAttempted=false;
+const researchCache=new Map();
+async function researchCorpus(prefs){
+  if(!prefs.topics.length)return {};
+  const key=JSON.stringify([prefs.topics,prefs.schools]);
+  if(researchCache.has(key))return researchCache.get(key);
+  try{
+    const query=new URLSearchParams({terms:JSON.stringify(prefs.topics)});for(const school of prefs.schools)query.append('school',school);
+    const response=await fetch('/api/mentor-search?'+query);if(!response.ok)throw new Error();
+    const result=await response.json(),corpus=Object.fromEntries(result.known_ids.map(id=>[id,{known:true,text:result.matches[id]||''}]));
+    if(researchCache.size>=10)researchCache.delete(researchCache.keys().next().value);
+    researchCache.set(key,corpus);return corpus;
+  }catch(error){if(!window.MENTOR_SEARCH)await script('search.js');return window.MENTOR_SEARCH;}
+}
 async function loadUnitCatalog(){
   if(!contextSchool||!contextDept||DATA.some(p=>p.school===contextSchool&&p.dept===contextDept)||window.ADMISSIONS_DATA||unitCatalogAttempted)return;
   unitCatalogAttempted=true;
@@ -64,10 +82,11 @@ async function apply(preserveReview=false,refresh=true){
   if(PROJECT_API&&refresh)try{await loadProjects();}catch(e){PROJECTS.project_reviews={};message('无法刷新项目核对，当前判断已撤下：'+e.message,true);}
   const prefs=readCriteria(),group={value:el('intent-group').value,label:el('intent-group').selectedOptions[0].textContent};if(prefs.year!==null&&(!Number.isInteger(prefs.year)||prefs.year<2000||prefs.year>2100))throw new Error('请填写有效年度');
   if(!preserveReview)closeReview();
-  if(prefs.topics.length&&!window.MENTOR_SEARCH)await script('search.js');if(!window.MENTOR_COMPARE)await script('compare-data.js');
+  const corpus=await researchCorpus(prefs);
     applied=prefs;appliedName=el('intent-name').value.trim().toLowerCase();appliedGroup=group;el('criteria-dirty').hidden=true;limit=20;
-    const rows=DATA.map(p=>({p,result:DiscoveryRules.evaluate(p,{...prefs,track:contextTrack,program:contextProgram,goal_snapshot:selectionGoal},PRIVATE.reviews,window.MENTOR_SEARCH?.[p.page]||'',undefined,projectContext())})).filter(row=>row.result.visible&&(!appliedName||row.p.name.toLowerCase().includes(appliedName))&&(!group.value||row.p.unit_groups?.includes(group.value))&&(!contextSchool||row.p.school===contextSchool)&&(!contextDept||row.p.dept===contextDept));
-    const ranked=DiscoveryRules.rankCandidates(rows,prefs,window.MENTOR_COMPARE||{},orderSeed);view=ranked.rows;matchingOrder=ranked.matched;render();
+    const criteria={...prefs,track:contextTrack,program:contextProgram,goal_snapshot:selectionGoal},context=projectContext();
+    const rows=DATA.map(p=>({p,result:DiscoveryRules.evaluate(p,criteria,PRIVATE.reviews,corpus[p.page]||'',discoveryToday,context)})).filter(row=>row.result.visible&&(!appliedName||row.p.name.toLowerCase().includes(appliedName))&&(!group.value||row.p.unit_groups?.includes(group.value))&&(!contextSchool||row.p.school===contextSchool)&&(!contextDept||row.p.dept===contextDept));
+    const ranked=DiscoveryRules.rankCandidates(rows,prefs,window.MENTOR_COMPARE||{},orderSeed);view=ranked.rows;matchingOrder=ranked.matched;render();saveView();
   }finally{el('apply-criteria').disabled=false;}
 }
 let compareSelection=[];
@@ -195,7 +214,7 @@ function incomingCriteria(){
     el('unit-context').innerHTML='来自学校政策的院系范围：'+esc(label)+'。此临时范围不保存到私人条件。'+(!p?' <a href="admissions.html?'+esc(q.toString())+'">回查院系招生要求与官方入口 →</a>':'')+rosterLink;el('unit-context').hidden=false;el('clear-unit-context').hidden=false;
   }
 }
-(async()=>{if(location.protocol==='http:'){el('discovery-restore').disabled=false;try{await initPrivate();}catch(e){message('无法读取私人条件，可继续筛选或恢复备份：'+e.message,true);}}await loadUnitCatalog();incomingCriteria();if(API_OK){try{await loadProjects();const id=incoming.get('project');if(id&&PROJECTS.projects[id])selectProject(id);else if(id){selectedProject=id;projectScoped=true;message('申请项目不存在或不可读取，未应用任何项目核对。',true);}}catch(e){if(incoming.has('project')){projectScoped=true;selectedProject=incoming.get('project');}el('review-project-api').textContent='本机服务不可用，仍可浏览；未保存任何核对：'+e.message;}}renderProject();await apply();window.DISCOVERY_READY=true;})().catch(e=>message(e.message,true));
+(async()=>{if(location.protocol==='http:'){el('discovery-restore').disabled=false;try{await initPrivate();}catch(e){message('无法读取私人条件，可继续筛选或恢复备份：'+e.message,true);}}await loadUnitCatalog();incomingCriteria();restoreView();if(API_OK){try{await loadProjects();const id=incoming.get('project');if(id&&PROJECTS.projects[id])selectProject(id);else if(id){selectedProject=id;projectScoped=true;message('申请项目不存在或不可读取，未应用任何项目核对。',true);}}catch(e){if(incoming.has('project')){projectScoped=true;selectedProject=incoming.get('project');}el('review-project-api').textContent='本机服务不可用，仍可浏览；未保存任何核对：'+e.message;}}renderProject();await apply();window.DISCOVERY_READY=true;})().catch(e=>message(e.message,true));
 
 function syncEvidence(key){const reply=el(key+'-evidence-kind').value==='reply';el(key+'-evidence-url').parentElement.hidden=reply;el(key+'-evidence-reply').parentElement.hidden=!reply;}
 for(const key of ['opportunity','eligibility'])el(key+'-evidence-kind').onchange=()=>syncEvidence(key);

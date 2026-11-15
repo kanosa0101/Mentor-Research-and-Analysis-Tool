@@ -3,7 +3,7 @@ name: 熊泽宇
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 电子信息
 bio_raw: 男,从事高性能计算机互连网络、自然语言处理等方向的研究。发表论文10余篇，获授权专利10余项，主持和参与多项国家和军队重点科研项目。13873146138
@@ -22,7 +22,7 @@ provenance:
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25950
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -37,5 +37,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25950
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25950
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 高性能计算机互连网络、自然语言处理等方向的研究
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

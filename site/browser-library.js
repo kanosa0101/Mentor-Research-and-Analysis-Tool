@@ -16,15 +16,15 @@
   }
   function refreshButtons(){
     for(const card of document.querySelectorAll('[data-candidate]')){
-      const title=card.querySelector('h2')?.textContent.trim();if(title)add(card,{kind:'mentor',title,url:'p/'+encodeURIComponent(card.dataset.candidate)+'.html'});
+      const title=card.querySelector('h2')?.textContent.trim();if(title)add(card,{kind:'mentor',title,url:card.querySelector('h2 a')?.getAttribute('href')||'p/'+encodeURIComponent(card.dataset.candidate)+'.html'});
     }
     for(const card of document.querySelectorAll('[data-opportunity]')){
       const title=card.querySelector('h2')?.textContent.trim();if(title)add(card,{kind:'opportunity',title,url:'opportunities.html?id='+encodeURIComponent(card.dataset.opportunity)});
     }
     for(const card of document.querySelectorAll('[data-notice-id]')){
-      const title=card.querySelector('a.title')?.textContent.trim();if(title)add(card,{kind:'notice',title,url:'notices.html?notice_cycle=all&q='+encodeURIComponent(title)});
+      const title=card.querySelector('a.title')?.textContent.trim(),[school,dept]=(card.dataset.school||'').split('/');if(title){const query=new URLSearchParams({notice_cycle:'all',q:title});if(school)query.set('school',school);if(dept)query.set('dept',dept);add(card,{kind:'notice',title,url:'notices.html?'+query});}
     }
-    if(prefix){const heading=document.querySelector('.wrap .card h2')||document.querySelector('h1');if(heading){const name=heading.cloneNode(true);name.querySelectorAll('.tag').forEach(tag=>tag.remove());add(document.querySelector('.context-actions')||heading.parentElement,{kind:'mentor',title:name.textContent.trim(),url:'p/'+location.pathname.split('/').pop()});}}
+    if(prefix){const heading=document.querySelector('.wrap .card h2')||document.querySelector('h1');if(heading){const name=heading.cloneNode(true);name.querySelectorAll('.tag').forEach(tag=>tag.remove());add(document.querySelector('.context-actions')||heading.parentElement,{kind:'mentor',title:name.textContent.trim(),url:'p/'+location.pathname.split('/').pop()+location.search});}}
   }
   const style=document.createElement('style');style.textContent='.browser-library-action{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}.browser-library-action button{min-height:40px}.browser-library-action span{line-height:1.7;overflow-wrap:anywhere}';document.head.append(style);
   let scheduled=false;

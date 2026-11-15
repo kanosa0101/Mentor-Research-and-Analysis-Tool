@@ -1,4 +1,4 @@
-"""Discover unreviewed activity links once, or every six hours with --watch."""
+"""Discover due official sources; current units hourly, ordinary sources every six hours."""
 import argparse
 import json
 import sys
@@ -19,7 +19,8 @@ def main(argv=None):
     parser.add_argument('--output', type=Path, default=ROOT / 'cache/opportunities_live.json')
     parser.add_argument('--opportunities', type=Path, default=ROOT / 'data/opportunities.json')
     parser.add_argument('--timeout', type=float, default=25)
-    parser.add_argument('--watch', action='store_true', help='每6小时检查，Ctrl+C退出；不安装定时任务')
+    parser.add_argument('--watch', action='store_true', help='按来源到期时间检查，Ctrl+C退出；不安装定时任务')
+    parser.add_argument('--force', action='store_true', help='明确忽略调度与退避，重新检查全部来源')
     args = parser.parse_args(argv)
     if not 1 <= args.timeout <= 120:
         parser.error('--timeout must be between 1 and 120 seconds')
@@ -31,7 +32,8 @@ def main(argv=None):
                 opportunities = document.get('opportunities', document.get('items', []))
                 print('正在检查官方栏目；仅发现待核验线索，不自动确认报名开放。', flush=True)
                 result = run_once(configs, args.output, opportunities,
-                                  fetcher=lambda config: fetch_source(config, args.timeout), lock=False)
+                                  fetcher=lambda config: fetch_source(config, args.timeout), lock=False,
+                                  scheduled=not args.force, domain_interval=1)
                 summary = result['summary']
                 print(f"最近检查：{result['checked_at']}；下次应检：{result['next_check_at']}\n"
                       f"候选 {summary['candidate_count']}，本次新发现 {summary['new_count']}，首次基线 {summary['baseline_count']}；"

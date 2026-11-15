@@ -3,7 +3,7 @@ name: 王广
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 集成电路科学与工程
 email: wangguang@nudt.edu.cn
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26116
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26116
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26116
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26116
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 新型半导体材料与物理、低维物理与纳米器件、量子调控与光电探测等方面研究，主持国家自然科学基金重点项目课题、面上项目、自主创新科学基金重点项目等科研项目20余项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

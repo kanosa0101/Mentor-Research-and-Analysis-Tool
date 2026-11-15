@@ -3,7 +3,7 @@ name: 毛军
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：控制科学与工程、电子信息
 email: maojun12@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26541
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26541
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26541
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26541
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 视觉/惯性组合导航、仿生智能导航和协同导航等方面的研究，主持国家自然科学基金项目等4项，参与在研国家/军队级项目10余项，授权专利10项，发表高水平论文20余篇，出版专著1部，获军队教学成果奖1项maojun12@nudt.edu.cn
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

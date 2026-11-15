@@ -15,6 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import opportunity_review as review
+from crawler.opportunity_monitor import DomainThrottle
 
 
 def main(argv=None):
@@ -28,6 +29,8 @@ def main(argv=None):
     sync.add_argument('--refresh', action='store_true', help='强制重新抓取全部正文证据')
     sync.add_argument('--renew', action='store_true', help='续检既有已核验且正文/字段均未变化的记录；不发布新草稿')
     commands.add_parser('list', help='列出草稿状态、SHA 与来源')
+    triage = commands.add_parser('triage', help='明确应用公开来源分流审计；不改人工草稿或发布状态')
+    triage.add_argument('--audit', type=Path, required=True)
     accept = commands.add_parser('accept', help='明确采纳规则建议至草稿，不发布；默认只填空字段')
     accept.add_argument('id')
     accept.add_argument('--fields', nargs='+', help='仅采纳这些字段，省略则采纳受支持的建议字段')
@@ -41,6 +44,10 @@ def main(argv=None):
     publish.add_argument('--note', required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == 'triage':
+            count = review.apply_triage(args.queue, json.loads(args.audit.read_text(encoding='utf-8')))
+            print(json.dumps({'classified': count, 'published': False}))
+            return 0
         if args.command == 'accept':
             fields = review.accept(args.queue, args.id, args.fields, args.replace)
             print(json.dumps({'accepted_fields': fields, 'published': False}, ensure_ascii=False))
@@ -58,7 +65,11 @@ def main(argv=None):
                 print(f"已核验发布 {item['id']}；未自动部署或发送通知。")
                 return 0
             monitoring = json.loads(args.monitoring.read_text(encoding='utf-8'))
-            queue = review.sync(monitoring, args.queue, configs, refresh=args.refresh)
+            throttle = DomainThrottle(review.fetch_source, 1)
+            def fetch_pdf(url, source_url):
+                throttle.wait(url)
+                return review.fetch_pdf(url, source_url)
+            queue = review.sync(monitoring, args.queue, configs, refresh=args.refresh, fetcher=throttle, pdf_fetcher=fetch_pdf)
             if args.renew:
                 renewed = review.renew(args.queue, args.root)
                 queue = review.read_queue(args.queue)

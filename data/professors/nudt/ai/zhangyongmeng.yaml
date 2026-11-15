@@ -3,7 +3,7 @@ name: 张勇猛
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 博导
 subjects: '硕士：机械工程、机械
 
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26563
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26563
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -45,5 +45,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26563
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26563
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 高性能谐振陀螺的设计、精密测控电路、误差处理技术研究，主持1XX工程课题、基础加强重点项目课题、国家自然科学基金等科研项目10余项，发表SCI/EI检索论文30余篇
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -3,7 +3,7 @@ name: 罗章
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 电子信息
 bio_raw: 男,长期从事光电融合交叉方向技术研究，高性能计算团队核心成员，全军优秀博士学位论文作者，主持重点研发、装备预研等多项国家和军队级项目，获省级科技进步特等奖等各级奖励3项。依托“天河”超算研制平台，在光电混合互连网络架构、前沿光计算及与超算融合、高速信号处理等方向有深入研究。发表论文40余篇，获授权专利20余项。指导博士生5人，硕生10余人，指导学生在TCAS-I、JLT、OE、QIT等SCI一区期刊发表论文10余篇。《计算机工程与科学》青年编委，OL、TSP、OE、TCCN、DCN等期刊审稿人。13548602049
@@ -22,7 +22,7 @@ provenance:
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25951
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -37,5 +37,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25951
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25951
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 光电融合交叉方向技术研究，高性能计算团队核心成员，全军优秀博士学位论文作者，主持重点研发、装备预研等多项国家和军队级项目，获省级科技进步特等奖等各级奖励3项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

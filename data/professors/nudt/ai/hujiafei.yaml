@@ -3,7 +3,7 @@ name: 胡佳飞
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 博导
 subjects: '硕士：仪器科学与技术、电子信息
 
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26559
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26559
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -45,5 +45,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26559
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26559
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 高灵敏磁传感芯片、高性能磁场/电场传感器、柔性复合传感器、地磁矢量测量、生物磁测量以及水下目标预警探测等研究
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

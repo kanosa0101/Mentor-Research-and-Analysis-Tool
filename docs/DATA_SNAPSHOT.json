@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "as_of": "2026-11-15",
-    "generated_at": "2026-11-15T08:07:23.700105+00:00",
+    "generated_at": "2026-11-15T09:23:54.187975+00:00",
     "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
     "method": "Current public-file inventory after server public mentor synchronization; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
     "warning": "统计表示已登记资料与核验状态，不等于官方完整覆盖、当前招生名额、个人申请资格或材料完成。last_fetched/抓取出处日期与人工内容复核日期分别统计。",
-    "previous_snapshot_sha256": "ba5cb993c7938b60bf17317b41243bcb0e53462af04bfde17298c7c9d83da932"
+    "previous_snapshot_sha256": "24e1e36188b7ae63a1751025521bc65ef93c384ad7a3692df7ac591fb6642673"
   },
   "counts": {
     "professors": 7173,
@@ -32,30 +32,30 @@
   "professors": {
     "records": 7173,
     "known_fields": {
-      "email": 5660,
+      "email": 5668,
       "title": 5213,
       "supervisor": 3969,
       "bio_raw": 4942,
-      "research_direction_raw": 2629,
+      "research_direction_raw": 3058,
       "homepage": 668,
       "institutes": 2862
     },
     "states": {
-      "enriched": 6628,
-      "roster": 545
+      "enriched": 7055,
+      "roster": 118
     },
     "source_dates": {
-      "2026-09-02": 678,
-      "2026-09-03": 1180,
-      "2026-09-04": 1035,
-      "2026-09-05": 2408,
+      "2026-09-02": 676,
+      "2026-09-03": 1166,
+      "2026-09-04": 1028,
+      "2026-09-05": 2239,
       "2026-09-06": 121,
-      "2026-10-14": 807,
-      "2026-10-15": 634,
-      "2026-11-15": 310
+      "2026-10-14": 789,
+      "2026-10-15": 204,
+      "2026-11-15": 950
     },
     "unknown_source_date": 0,
-    "source_older_than_30_days": 6863,
+    "source_older_than_30_days": 6223,
     "source_date_rule": "last_fetched, else latest crawled provenance fetched_at; mirrors scripts/build_site.py; last_verified excluded",
     "unreviewed_unresolved_issue_groups": [
       {
@@ -134,16 +134,6 @@
         "count": 40
       },
       {
-        "school": "nudt",
-        "dept": "ai",
-        "count": 183
-      },
-      {
-        "school": "nudt",
-        "dept": "cs",
-        "count": 244
-      },
-      {
         "school": "nwpu",
         "dept": "cs",
         "count": 23
@@ -193,11 +183,11 @@
           "enriched": 151
         },
         "source_dates": {
-          "2026-09-05": 146,
-          "2026-11-15": 5
+          "2026-09-05": 145,
+          "2026-11-15": 6
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 146
+        "source_older_than_30_days": 145
       },
       {
         "school": "bnu",
@@ -218,11 +208,11 @@
           "roster": 2
         },
         "source_dates": {
-          "2026-09-04": 65,
-          "2026-11-15": 7
+          "2026-09-04": 61,
+          "2026-11-15": 11
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 65
+        "source_older_than_30_days": 61
       },
       {
         "school": "buaa",
@@ -335,12 +325,12 @@
           "enriched": 114
         },
         "source_dates": {
-          "2026-10-14": 102,
+          "2026-10-14": 101,
           "2026-10-15": 4,
-          "2026-11-15": 8
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 106
+        "source_older_than_30_days": 105
       },
       {
         "school": "csu",
@@ -360,11 +350,11 @@
           "enriched": 108
         },
         "source_dates": {
-          "2026-09-04": 101,
-          "2026-11-15": 7
+          "2026-09-04": 100,
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 101
+        "source_older_than_30_days": 100
       },
       {
         "school": "dlut",
@@ -384,11 +374,11 @@
           "enriched": 12
         },
         "source_dates": {
-          "2026-09-05": 4,
-          "2026-11-15": 8
+          "2026-09-05": 3,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 4
+        "source_older_than_30_days": 3
       },
       {
         "school": "dlut",
@@ -408,11 +398,11 @@
           "enriched": 12
         },
         "source_dates": {
-          "2026-09-05": 4,
-          "2026-11-15": 8
+          "2026-09-05": 3,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 4
+        "source_older_than_30_days": 3
       },
       {
         "school": "ecnu",
@@ -424,7 +414,7 @@
           "title": 69,
           "supervisor": 18,
           "bio_raw": 70,
-          "research_direction_raw": 4,
+          "research_direction_raw": 5,
           "homepage": 2,
           "institutes": 0
         },
@@ -433,11 +423,11 @@
         },
         "source_dates": {
           "2026-09-04": 3,
-          "2026-09-05": 59,
-          "2026-11-15": 8
+          "2026-09-05": 58,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 62
+        "source_older_than_30_days": 61
       },
       {
         "school": "fudan",
@@ -504,11 +494,11 @@
           "enriched": 187
         },
         "source_dates": {
-          "2026-09-05": 180,
-          "2026-11-15": 7
+          "2026-09-05": 179,
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 180
+        "source_older_than_30_days": 179
       },
       {
         "school": "hust",
@@ -528,12 +518,12 @@
           "enriched": 125
         },
         "source_dates": {
-          "2026-10-14": 115,
+          "2026-10-14": 111,
           "2026-10-15": 2,
-          "2026-11-15": 8
+          "2026-11-15": 12
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 117
+        "source_older_than_30_days": 113
       },
       {
         "school": "hust",
@@ -554,12 +544,12 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 76,
+          "2026-10-14": 75,
           "2026-10-15": 1,
-          "2026-11-15": 8
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 77
+        "source_older_than_30_days": 76
       },
       {
         "school": "jlu",
@@ -571,7 +561,7 @@
           "title": 177,
           "supervisor": 65,
           "bio_raw": 185,
-          "research_direction_raw": 3,
+          "research_direction_raw": 4,
           "homepage": 2,
           "institutes": 0
         },
@@ -580,12 +570,12 @@
         },
         "source_dates": {
           "2026-09-04": 32,
-          "2026-09-05": 135,
+          "2026-09-05": 134,
           "2026-09-06": 12,
-          "2026-11-15": 6
+          "2026-11-15": 7
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 179
+        "source_older_than_30_days": 178
       },
       {
         "school": "nankai",
@@ -606,11 +596,11 @@
           "roster": 4
         },
         "source_dates": {
-          "2026-10-15": 91,
-          "2026-11-15": 8
+          "2026-10-15": 90,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 91
+        "source_older_than_30_days": 90
       },
       {
         "school": "nankai",
@@ -631,11 +621,11 @@
           "roster": 40
         },
         "source_dates": {
-          "2026-10-15": 82,
-          "2026-11-15": 3
+          "2026-10-15": 81,
+          "2026-11-15": 4
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 82
+        "source_older_than_30_days": 81
       },
       {
         "school": "nankai",
@@ -655,11 +645,11 @@
           "enriched": 35
         },
         "source_dates": {
-          "2026-10-15": 27,
-          "2026-11-15": 8
+          "2026-10-15": 26,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 27
+        "source_older_than_30_days": 26
       },
       {
         "school": "neu",
@@ -679,12 +669,12 @@
           "enriched": 147
         },
         "source_dates": {
-          "2026-09-04": 139,
+          "2026-09-04": 138,
           "2026-09-06": 1,
-          "2026-11-15": 7
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 140
+        "source_older_than_30_days": 139
       },
       {
         "school": "nju",
@@ -704,11 +694,11 @@
           "enriched": 102
         },
         "source_dates": {
-          "2026-09-03": 94,
-          "2026-11-15": 8
+          "2026-09-03": 93,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 94
+        "source_older_than_30_days": 93
       },
       {
         "school": "nudt",
@@ -720,18 +710,18 @@
           "title": 0,
           "supervisor": 183,
           "bio_raw": 183,
-          "research_direction_raw": 12,
+          "research_direction_raw": 126,
           "homepage": 0,
           "institutes": 183
         },
         "states": {
-          "roster": 183
+          "enriched": 183
         },
         "source_dates": {
-          "2026-10-15": 183
+          "2026-11-15": 183
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 183
+        "source_older_than_30_days": 0
       },
       {
         "school": "nudt",
@@ -739,22 +729,22 @@
         "name": "计算机学院",
         "records": 244,
         "known_fields": {
-          "email": 208,
+          "email": 216,
           "title": 0,
           "supervisor": 244,
           "bio_raw": 244,
-          "research_direction_raw": 53,
+          "research_direction_raw": 212,
           "homepage": 0,
           "institutes": 244
         },
         "states": {
-          "roster": 244
+          "enriched": 244
         },
         "source_dates": {
-          "2026-10-15": 244
+          "2026-11-15": 244
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 244
+        "source_older_than_30_days": 0
       },
       {
         "school": "nwpu",
@@ -797,11 +787,11 @@
           "enriched": 119
         },
         "source_dates": {
-          "2026-09-03": 111,
-          "2026-11-15": 8
+          "2026-09-03": 107,
+          "2026-11-15": 12
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 111
+        "source_older_than_30_days": 107
       },
       {
         "school": "pku",
@@ -821,11 +811,11 @@
           "enriched": 36
         },
         "source_dates": {
-          "2026-10-14": 28,
-          "2026-11-15": 8
+          "2026-10-14": 24,
+          "2026-11-15": 12
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 28
+        "source_older_than_30_days": 24
       },
       {
         "school": "ruc",
@@ -868,11 +858,11 @@
           "enriched": 67
         },
         "source_dates": {
-          "2026-09-05": 59,
-          "2026-11-15": 8
+          "2026-09-05": 58,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 59
+        "source_older_than_30_days": 58
       },
       {
         "school": "scu",
@@ -892,11 +882,11 @@
           "enriched": 166
         },
         "source_dates": {
-          "2026-09-04": 158,
-          "2026-11-15": 8
+          "2026-09-04": 157,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 158
+        "source_older_than_30_days": 157
       },
       {
         "school": "scut",
@@ -908,7 +898,7 @@
           "title": 76,
           "supervisor": 22,
           "bio_raw": 52,
-          "research_direction_raw": 7,
+          "research_direction_raw": 55,
           "homepage": 4,
           "institutes": 0
         },
@@ -916,11 +906,11 @@
           "enriched": 76
         },
         "source_dates": {
-          "2026-09-05": 68,
-          "2026-11-15": 8
+          "2026-09-05": 16,
+          "2026-11-15": 60
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 68
+        "source_older_than_30_days": 16
       },
       {
         "school": "sdu",
@@ -932,7 +922,7 @@
           "title": 12,
           "supervisor": 2,
           "bio_raw": 13,
-          "research_direction_raw": 4,
+          "research_direction_raw": 6,
           "homepage": 0,
           "institutes": 0
         },
@@ -940,12 +930,12 @@
           "enriched": 13
         },
         "source_dates": {
-          "2026-09-03": 2,
+          "2026-09-03": 1,
           "2026-09-05": 3,
-          "2026-11-15": 8
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 5
+        "source_older_than_30_days": 4
       },
       {
         "school": "seu",
@@ -966,11 +956,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 77,
-          "2026-11-15": 8
+          "2026-10-14": 76,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 77
+        "source_older_than_30_days": 76
       },
       {
         "school": "seu",
@@ -990,11 +980,11 @@
           "enriched": 128
         },
         "source_dates": {
-          "2026-09-05": 120,
-          "2026-11-15": 8
+          "2026-09-05": 119,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 120
+        "source_older_than_30_days": 119
       },
       {
         "school": "shanghaitech",
@@ -1014,11 +1004,11 @@
           "enriched": 149
         },
         "source_dates": {
-          "2026-09-05": 143,
-          "2026-11-15": 6
+          "2026-09-05": 140,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 143
+        "source_older_than_30_days": 140
       },
       {
         "school": "sjtu",
@@ -1061,11 +1051,11 @@
           "enriched": 203
         },
         "source_dates": {
-          "2026-10-14": 195,
-          "2026-11-15": 8
+          "2026-10-14": 192,
+          "2026-11-15": 11
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 195
+        "source_older_than_30_days": 192
       },
       {
         "school": "sjtu",
@@ -1085,11 +1075,11 @@
           "enriched": 289
         },
         "source_dates": {
-          "2026-09-02": 281,
-          "2026-11-15": 8
+          "2026-09-02": 280,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 281
+        "source_older_than_30_days": 280
       },
       {
         "school": "sustech",
@@ -1110,11 +1100,11 @@
           "roster": 2
         },
         "source_dates": {
-          "2026-09-05": 36,
-          "2026-11-15": 3
+          "2026-09-05": 34,
+          "2026-11-15": 5
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 36
+        "source_older_than_30_days": 34
       },
       {
         "school": "sysu",
@@ -1168,7 +1158,7 @@
           "title": 113,
           "supervisor": 94,
           "bio_raw": 113,
-          "research_direction_raw": 7,
+          "research_direction_raw": 109,
           "homepage": 84,
           "institutes": 0
         },
@@ -1177,11 +1167,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-09-05": 107,
-          "2026-11-15": 7
+          "2026-09-05": 4,
+          "2026-11-15": 110
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 107
+        "source_older_than_30_days": 4
       },
       {
         "school": "tju",
@@ -1264,11 +1254,11 @@
           "enriched": 110
         },
         "source_dates": {
-          "2026-10-14": 102,
-          "2026-11-15": 8
+          "2026-10-14": 101,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 102
+        "source_older_than_30_days": 101
       },
       {
         "school": "tsinghua",
@@ -1288,11 +1278,11 @@
           "enriched": 134
         },
         "source_dates": {
-          "2026-09-02": 127,
-          "2026-11-15": 7
+          "2026-09-02": 126,
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 127
+        "source_older_than_30_days": 126
       },
       {
         "school": "ucas",
@@ -1313,11 +1303,11 @@
         },
         "source_dates": {
           "2026-09-02": 3,
-          "2026-09-03": 334,
-          "2026-11-15": 8
+          "2026-09-03": 331,
+          "2026-11-15": 11
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 337
+        "source_older_than_30_days": 334
       },
       {
         "school": "ucas",
@@ -1361,11 +1351,11 @@
           "enriched": 283
         },
         "source_dates": {
-          "2026-09-05": 275,
-          "2026-11-15": 8
+          "2026-09-05": 274,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 275
+        "source_older_than_30_days": 274
       },
       {
         "school": "ucas",
@@ -1385,11 +1375,11 @@
           "enriched": 182
         },
         "source_dates": {
-          "2026-09-03": 176,
-          "2026-11-15": 6
+          "2026-09-03": 173,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 176
+        "source_older_than_30_days": 173
       },
       {
         "school": "uestc",
@@ -1424,7 +1414,7 @@
           "title": 72,
           "supervisor": 33,
           "bio_raw": 71,
-          "research_direction_raw": 7,
+          "research_direction_raw": 8,
           "homepage": 44,
           "institutes": 0
         },
@@ -1432,11 +1422,11 @@
           "enriched": 72
         },
         "source_dates": {
-          "2026-09-03": 64,
-          "2026-11-15": 8
+          "2026-09-03": 63,
+          "2026-11-15": 9
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 64
+        "source_older_than_30_days": 63
       },
       {
         "school": "whu",
@@ -1448,7 +1438,7 @@
           "title": 98,
           "supervisor": 61,
           "bio_raw": 108,
-          "research_direction_raw": 6,
+          "research_direction_raw": 7,
           "homepage": 14,
           "institutes": 0
         },
@@ -1456,11 +1446,11 @@
           "enriched": 109
         },
         "source_dates": {
-          "2026-09-03": 102,
-          "2026-11-15": 7
+          "2026-09-03": 101,
+          "2026-11-15": 8
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 102
+        "source_older_than_30_days": 101
       },
       {
         "school": "whu",
@@ -1481,11 +1471,11 @@
           "roster": 1
         },
         "source_dates": {
-          "2026-10-14": 60,
-          "2026-11-15": 8
+          "2026-10-14": 57,
+          "2026-11-15": 11
         },
         "unknown_source_date": 0,
-        "source_older_than_30_days": 60
+        "source_older_than_30_days": 57
       },
       {
         "school": "xidian",
@@ -1600,7 +1590,7 @@
         "dept": "software"
       }
     ],
-    "public_records_manifest_sha256": "7c3b41b80c451b9d2eff3d4381c511a75cfb8cc66c9098bf1b097a252d2f14c5"
+    "public_records_manifest_sha256": "4bda08d835db264b877c94162444678c2b879bc760ef22f9b4566dfe7572f155"
   },
   "admissions": {
     "source_check_states": {
@@ -1616,13 +1606,12 @@
     },
     "policy_review_dates": {
       "2026-10-14": 8,
-      "2026-10-15": 34,
-      "2026-11-15": 69
+      "2026-10-15": 22,
+      "2026-11-15": 81
     },
     "policy_quality_states": {
-      "changed": 5,
-      "checked": 69,
-      "review": 37
+      "checked": 81,
+      "review": 30
     },
     "policy_quality_by_id": {
       "tsinghua-2027-master-exam": "checked",
@@ -1688,9 +1677,9 @@
       "sysu-cs-2027-085410-exam-v15c": "checked",
       "nankai-2027-master-exam-v15extra": "checked",
       "nudt-2027-master-exam-v15extra": "checked",
-      "tsinghua-2027-phd-assessment-v16pilot": "review",
-      "zju-2027-phd-assessment-v16pilot": "review",
-      "tsinghua-cs-2027-phd-assessment-v16pilot": "review",
+      "tsinghua-2027-phd-assessment-v16pilot": "checked",
+      "zju-2027-phd-assessment-v16pilot": "checked",
+      "tsinghua-cs-2027-phd-assessment-v16pilot": "checked",
       "nankai-cs-2027-master-recommend-v17": "review",
       "nankai-cs-2027-phd-recommend-v17": "review",
       "nankai-cs-2027-master-directory-v17": "checked",
@@ -1702,12 +1691,12 @@
       "nankai-software-2027-master-directory-v17": "checked",
       "nankai-software-2027-master-prerecommend-v17": "review",
       "nankai-software-2027-phd-prerecommend-v17": "review",
-      "nudt-school-2027-phd-v17": "review",
-      "nudt-cs-2027-phd-v17": "review",
+      "nudt-school-2027-phd-v17": "checked",
+      "nudt-cs-2027-phd-v17": "checked",
       "nudt-cs-2027-master-v17": "checked",
-      "nudt-ai-2027-phd-v17": "review",
+      "nudt-ai-2027-phd-v17": "checked",
       "nudt-ai-2027-master-v17": "checked",
-      "nudt-ai-2027-phd-review-progress-v17": "review",
+      "nudt-ai-2027-phd-review-progress-v17": "checked",
       "nwpu-school-2027-master-exam-v18": "checked",
       "nwpu-school-2027-master-6112-point-v18": "checked",
       "nwpu-school-2027-master-equivalent-review-v18": "checked",
@@ -1719,11 +1708,11 @@
       "dlut-cs-2027-phd-recommend-v18": "checked",
       "dlut-ss-2027-master-recommend-v18": "checked",
       "dlut-ss-2027-phd-recommend-v18": "checked",
-      "tju-school-2027-phd-assessment-v18": "changed",
-      "tju-cs-2027-phd-assessment-v18": "changed",
-      "tju-software-2027-phd-assessment-v18": "changed",
-      "tju-cyber-2027-phd-assessment-v18": "changed",
-      "tju-ai-2027-phd-assessment-v18": "changed",
+      "tju-school-2027-phd-assessment-v18": "checked",
+      "tju-cs-2027-phd-assessment-v18": "checked",
+      "tju-software-2027-phd-assessment-v18": "checked",
+      "tju-cyber-2027-phd-assessment-v18": "checked",
+      "tju-ai-2027-phd-assessment-v18": "checked",
       "dlut-cs-2027-master-recommend-post-admission-v18": "review",
       "dlut-cs-2027-phd-recommend-post-admission-v18": "review",
       "dlut-ss-2027-master-recommend-post-admission-v18": "review",
@@ -1795,25 +1784,1692 @@
     "scope_gap_report_reference": "data/coverage.json：15重点院系逐项缺口；不沿用v1.0旧范围行明细。",
     "manual_review_evidence": [
       "cache/v14/policy-validation.json",
-      "cache/v15/policy-validation.json"
-    ]
+      "cache/v15/policy-validation.json",
+      "cache/v16/policy-claim-audit.json"
+    ],
+    "current_field_review_evidence": {
+      "count": 12,
+      "reviews": [
+        {
+          "id": "tsinghua-2027-phd-assessment-v16pilot",
+          "title": "清华大学2027年博士普通招考学校规则（院系分秋冬季）",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/1ceee112-93f3-400d-bd92-c1bfce260b0f",
+          "fetch_status": "ok",
+          "evidence_sha256": "c90c4f8d4ad08297f34c7cc49361489c92ab1f05efe8ec3c4bd99b73ad97f93f",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "zju-2027-phd-assessment-v16pilot",
+          "title": "浙江大学2027年博士普通招考学校规则（首轮全日制；院系细则另查）",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "http://www.grs.zju.edu.cn/yjszs/2026/1009/c28499a3212071/page.htm",
+          "fetch_status": "ok",
+          "evidence_sha256": "7dd304c0ed249759e3c27b7f2b7a7d6e1b847affb7ae7849be9640d46c5c262c",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "tsinghua-cs-2027-phd-assessment-v16pilot",
+          "title": "清华计算机系2027普通博士冬季申请：材料与考核",
+          "disposition": "current",
+          "reason": "当前非专项普通博士冬季窗口；专项计划仅申请时间1开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/df93bde9-53c9-40dc-8fe1-b160d8b4be9f?yxsdm=024",
+          "fetch_status": "ok",
+          "evidence_sha256": "662111a3e422dadc4793cdbbc74d295d65c23e3aa0be5c4201be994ed190dec0",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "application_state": "window_verified",
+          "evidence_quote": "申请时间2：2026年11月1日10:00——11月30日15:00",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "nudt-school-2027-phd-v17",
+          "title": "国防科大2027普通博士申请考核学校规则（报名已结束；军地条件分列）",
+          "disposition": "current",
+          "reason": "2027博士已报名者后续流程仍相关；普通报名9月24日已截止，不能作为新的报名机会。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "a3e64810c269b8bcade7b5052a9112e869fd839033012020ff6aee6c4c83e944",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "application_state": "closed",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "nudt-cs-2027-phd-v17",
+          "title": "计算机学院2027普通博士目录与咨询（院系补充细则仍待核对）",
+          "disposition": "current",
+          "reason": "2027博士已报名者后续流程仍相关；普通报名9月24日已截止，不能作为新的报名机会。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "a3e64810c269b8bcade7b5052a9112e869fd839033012020ff6aee6c4c83e944",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "application_state": "closed",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "nudt-ai-2027-phd-v17",
+          "title": "智能科学学院2027普通博士目录与咨询（院系补充细则仍待核对）",
+          "disposition": "current",
+          "reason": "2027博士已报名者后续流程仍相关；普通报名9月24日已截止，不能作为新的报名机会。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "a3e64810c269b8bcade7b5052a9112e869fd839033012020ff6aee6c4c83e944",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "application_state": "closed",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "nudt-ai-2027-phd-review-progress-v17",
+          "title": "智能科学学院2027博士材料审核后准考证与考试注意事项",
+          "disposition": "current",
+          "reason": "2027博士已报名者后续流程仍相关；普通报名9月24日已截止，不能作为新的报名机会。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14974",
+          "fetch_status": "ok",
+          "evidence_sha256": "acfd07ea2e877262ed1545444d76918bcbd79002bd972c040813ee4611506006",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "application_state": "closed",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json"
+        },
+        {
+          "id": "tju-school-2027-phd-assessment-v18",
+          "title": "天津大学2027普通学术博士申请审核学校简章",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/t20261008_324747.htm",
+          "fetch_status": "ok",
+          "evidence_sha256": "8313e7e7f4b8e8e4ddb64f14e7daee31f9139097e2aa0d6aec4bbf593f7f9e24",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json",
+          "change_note": "学校章程更新放弃拟录取规则并新增其他院系链接；已更新学校摘要。4份院系PDF哈希未变，日期/费用/考核/联系人及材料条款已复核。"
+        },
+        {
+          "id": "tju-cs-2027-phd-assessment-v18",
+          "title": "天津大学计算机学院2027普通学术博士申请审核办法",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/W020261008598876300678.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "f09c35ef57b76a89505f80ccd6e4cc3e57abe238b3d6f8a22a45cbde8e4583e0",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json",
+          "change_note": "学校章程更新放弃拟录取规则并新增其他院系链接；已更新学校摘要。4份院系PDF哈希未变，日期/费用/考核/联系人及材料条款已复核。"
+        },
+        {
+          "id": "tju-software-2027-phd-assessment-v18",
+          "title": "天津大学软件学院2027普通学术博士申请审核办法",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/W020261012333710220378.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "8776de67ce9cb4ec9acdc64c22979c84d758fde738db9698c5d53fcc0cc003a7",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json",
+          "change_note": "学校章程更新放弃拟录取规则并新增其他院系链接；已更新学校摘要。4份院系PDF哈希未变，日期/费用/考核/联系人及材料条款已复核。"
+        },
+        {
+          "id": "tju-cyber-2027-phd-assessment-v18",
+          "title": "天津大学网络安全学院2027普通学术博士申请审核办法",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/W020261009488093422578.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "cd2ba18ee3dd933c009a9f7af70575993f13c70f59f4a30380e6551388211b7c",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json",
+          "change_note": "学校章程更新放弃拟录取规则并新增其他院系链接；已更新学校摘要。4份院系PDF哈希未变，日期/费用/考核/联系人及材料条款已复核。"
+        },
+        {
+          "id": "tju-ai-2027-phd-assessment-v18",
+          "title": "天津大学人工智能学院2027普通学术博士申请审核办法",
+          "disposition": "current",
+          "reason": "2027博士入学当前周期相关政策；是否可新报名须按学校和院系具体窗口，不以政策当前有效推断报名开放。",
+          "reviewed_at": "2026-11-15",
+          "original_reviewed_at": "2026-10-15",
+          "source_url": "https://yzb.tju.edu.cn/xwzx/tkbs_xw/202610/W020261008588699738504.pdf",
+          "fetch_status": "ok",
+          "evidence_sha256": "f74e6d910e8bbc8b1e6c2bd0fc66762ba4e6a89636b739ea2edf72f6b73f716b",
+          "review_scope": "已逐项复核现有资格、材料、时间事件、考核、费用、联系方式及材料操作的原文证据；未声称补齐官方未公布的内容",
+          "classification": "current",
+          "field_review_status": "verified",
+          "field_reviewed_at": "2026-11-15",
+          "field_audit": "cache/v16/policy-claim-audit.json",
+          "change_note": "学校章程更新放弃拟录取规则并新增其他院系链接；已更新学校摘要。4份院系PDF哈希未变，日期/费用/考核/联系人及材料条款已复核。"
+        }
+      ],
+      "claim_audit_sha256": "d7cf17b7d69c860ee23d6f7557e61be21e72633d54a89ae05608a091e4fd2bb5",
+      "claims": 142,
+      "reference": "cache/v16/policy-claim-audit.json",
+      "scope_note": "12条当前政策逐项复核已有字段；另30条历史政策仅核验周期、原文可达性，不宣称补齐未公布条件。"
+    }
   },
   "notices": {
     "scope": "configured-official-columns",
     "sources": 36,
     "items": 360,
-    "reviewed": 0,
+    "reviewed": 20,
     "source_errors": {},
     "source_fetched_dates": {
       "2026-11-15": 36
-    }
+    },
+    "cycles": {
+      "current": 26,
+      "historical": 175,
+      "unknown": 159
+    },
+    "stages": {
+      "activity": 19,
+      "application": 69,
+      "assessment": 95,
+      "exam_arrangement": 6,
+      "exam_registration": 3,
+      "mixed": 1,
+      "policy": 49,
+      "qualification": 1,
+      "results": 112,
+      "unknown": 5
+    },
+    "admission_years": {
+      "2021": 1,
+      "2022": 2,
+      "2023": 6,
+      "2024": 8,
+      "2025": 19,
+      "2026": 120,
+      "2027": 107,
+      "unknown": 97
+    },
+    "graduation_years": {
+      "2026": 1,
+      "2027": 7,
+      "unknown": 352
+    },
+    "activity_years": {
+      "2018": 1,
+      "2020": 2,
+      "2021": 1,
+      "2024": 1,
+      "2025": 4,
+      "2026": 24,
+      "unknown": 327
+    },
+    "cohort_method": "crawler.notice_util.classify_notice：入学年、毕业届别和活动年分别统计；标题分类不是人工核验或报名开放证明。"
   },
   "public_data_sha256": {
-    "data/admissions.yaml": "d8343a8481332d9ad3ef0145f96740776db026acaa7f4a16b0fbe63f1b910baf",
+    "data/admissions.yaml": "ed3219793ce720635a828d5cc122289987a34f02dc77bdc18b11a47e61561dd0",
     "data/admissions_entries.yaml": "6ddccd632fec940f8720d8eb57698f23b8e4881262fe82c688d05ce2df3f23f6",
-    "data/admissions_checks.json": "a127beb6e9449e487489f8867bc9987810086244f5c3f3a00b398db4c0caca8e",
-    "data/notices.json": "67374b6a083eb24850b31ad0d6f3cf2ca4616a69a5b258737adff5eecfd07f7b",
+    "data/admissions_checks.json": "ebe44a274582b01e85c8eb6c8e4702fa248d3be1d0191bb3676526e833be2654",
+    "data/notices.json": "249aeea288aff07f298b7bd6e73f863960fdd8b1ac340696b4205803d8627261",
     "data/schools.yaml": "13066230f287d189f1815f3ab3e51f709164595ef799dd787e7fc73e646a963c",
-    "data/coverage.json": "a704df57f6a7dc95f7be8094cd0a0af5568e98d6fec9420756d07e3cb6a5ed4e"
+    "data/coverage.json": "1ecb172bb65b90c4d6a6dc7025dbb2e031618edaca5cb4ad0438d6c113dd796d",
+    "data/source_coverage.json": "ef533a3da14c9891ce619427d96daf5e2d50ccc3ae561597782a32704ddf947b"
+  },
+  "source_coverage": {
+    "checked_at": "2026-11-15T09:16:25+00:00",
+    "scope": "15个重点单位的官方入口与可解析栏目台账；栏目可达、正文抓取和申请条件人工核验分开记录，不能据此推断报名开放或招生名额。",
+    "units": 15,
+    "source_statuses": {
+      "blocked": 3,
+      "empty_redirect": 1,
+      "historical_only": 1,
+      "ok": 91,
+      "post_required": 2
+    },
+    "parsed_monitor_columns": 18,
+    "parsed_title_occurrences": 179,
+    "counts_note": "共享校级栏目按院系映射计数，标题出现次数不等于独立通知，更不等于当前可报名机会。",
+    "by_unit": [
+      {
+        "school": "uestc",
+        "dept": "cs",
+        "name": "计算机科学与工程学院（网络空间安全学院）",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://www.scse.uestc.edu.cn",
+            "label": "官方单位入口",
+            "status": "blocked",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "error": "HTTP 202",
+            "checked_from": "deployment_server"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yz.uestc.edu.cn/sszs/zsjz.htm",
+            "label": "电子科大硕士招生简章栏目",
+            "final_url": "https://yz.uestc.edu.cn/sszs/zsjz.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "97e1556f982ba08ae30dcd1bf1f218a7bf48dea9a4922413aa184c574b98c252",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 8,
+            "source_id": "uestc-cs-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yzbm.uestc.edu.cn/zsml/sszsml/zsmlZy/2027/008",
+            "label": "电子科大2027计算机学院专业目录",
+            "final_url": "https://yzbm.uestc.edu.cn/zsml/sszsml/zsmlZy/2027/008",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "9c021bd6853af5990f9553dce7c1b046c44987d82a7507e148def9f4650e3cd4",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.scse.uestc.edu.cn/js_sz.jsp?urltype=tree.TreeTempUrl&wbtreeid=1081",
+            "label": "官方师资目录",
+            "status": "blocked",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "error": "HTTP 202",
+            "checked_from": "deployment_server"
+          }
+        ],
+        "mentors": {
+          "count": 189,
+          "with_research": 0,
+          "with_contact": 185,
+          "refetched_this_batch": 0
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "当前监测主要为学校通用招生入口，院系独立的保研/冬令营报名栏目仍有缺口。",
+          "189位导师仍无明确可提取的公开研究方向。",
+          "4位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "nankai",
+        "dept": "cs",
+        "name": "计算机学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cc.nankai.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cc.nankai.edu.cn/",
+            "sha256": "aa4d128f97315868df8d725da7591df128e7bdc75d9bfcc8c0dd903a7be8a0fd",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "label": "南开大学硕士招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "sha256": "3caaef625b5da43dd2d18285c2dda1b1786d598372933e9db9111a35bfcc2753",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cc.nankai.edu.cn/_s234/13297/list.psp",
+            "label": "南开cs研究生招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cc.nankai.edu.cn/_s234/13297/list.psp",
+            "sha256": "0eee2d42ec2ce2b65f867999180394edcaf17328485bee2117b13c148638d7ec",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 13,
+            "source_id": "nankai/cs",
+            "scope": "department"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+            "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+            "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cc.nankai.edu.cn/js/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cc.nankai.edu.cn/js/list.htm",
+            "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 99,
+          "with_research": 97,
+          "with_contact": 96,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "2位导师仍无明确可提取的公开研究方向。",
+          "3位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "nankai",
+        "dept": "cyber",
+        "name": "密码与网络空间安全学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cyber.nankai.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cyber.nankai.edu.cn/",
+            "sha256": "1a34a31f0b2b7699e7e61ee45a907d45ef50c9cf1ed6f73cd32d7b8682909ac7",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "label": "南开大学硕士招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "sha256": "3caaef625b5da43dd2d18285c2dda1b1786d598372933e9db9111a35bfcc2753",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cyber.nankai.edu.cn/13348/list.htm",
+            "label": "南开cyber研究生招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cyber.nankai.edu.cn/13348/list.htm",
+            "sha256": "0f681f1821cdfe19735c66bf09299fe8bed7f00d86a6e54abf70cbad3c142ea2",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 13,
+            "source_id": "nankai/cyber",
+            "scope": "department"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+            "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+            "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cyber.nankai.edu.cn/js/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cyber.nankai.edu.cn/js/list.htm",
+            "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 85,
+          "with_research": 83,
+          "with_contact": 82,
+          "refetched_this_batch": 3
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "2位导师仍无明确可提取的公开研究方向。",
+          "3位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "nankai",
+        "dept": "software",
+        "name": "软件学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cs.nankai.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/",
+            "sha256": "c450eb57d5e98daae763701338589289cea8b7606717a9dfd9c55c20da265f03",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "label": "南开大学硕士招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://yzb.nankai.edu.cn/5509/list.htm",
+            "sha256": "3caaef625b5da43dd2d18285c2dda1b1786d598372933e9db9111a35bfcc2753",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.nankai.edu.cn/index/yjszs.htm",
+            "label": "南开software研究生招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/index/yjszs.htm",
+            "sha256": "4f647a650042df951f27516f4ca1832edcef7551f03601ee624bbc793b1a9682",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 6,
+            "source_id": "nankai/software",
+            "scope": "department"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/js.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/js.htm",
+            "sha256": "d82af30f3593ae7642e6f6d83d56fe6afe1551fed059c1af0842f0a19382107c",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/fjs.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/fjs.htm",
+            "sha256": "cf30067d380d77a7ff2b4c9b35647843b77ff9b3e89e4f853bd0200ac9a8c18f",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/js2.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/js2.htm",
+            "sha256": "d90960426f85ca00b4f8281a9e62b92310d77fb61a27f2fa5e582cde36bc7c0a",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/tpyjy.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/tpyjy.htm",
+            "sha256": "50493913d810d095196279296097de89a63a698e8828f90dd61ee9443f41e2c8",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/sys.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/sys.htm",
+            "sha256": "565ab3cd69959f03f3ee6a78f3cd9d2c53841801e7de9d922f34a69853aebff2",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.nankai.edu.cn/szdw/bsh.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cs.nankai.edu.cn/szdw/bsh.htm",
+            "sha256": "64f1dcbf46c66fc6982936c3acf18ce633a60f01a303784d7c034591619f8ab2",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 35,
+          "with_research": 35,
+          "with_contact": 35,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。"
+        ]
+      },
+      {
+        "school": "nudt",
+        "dept": "cs",
+        "name": "计算机学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://www.nudt.edu.cn/yssz/jsjxy/",
+            "label": "官方单位入口",
+            "final_url": "https://www.nudt.edu.cn/yssz/jsjxy/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "d4498b60b1673177f2dd4bc08d8c70c2caa18ce66a147df8dd6b0d0a0c76eb20",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+            "label": "国防科技大学硕士招生简章栏目",
+            "final_url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "a499b2dd78fe716ad4d8a745c725c452fd20267538adea7a4992d43ac7081829",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 3,
+            "source_id": "nudt-cs-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+            "label": "国防科技大学2027年博士研究生招生简章（2026-10-13发布）",
+            "final_url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "a3e64810c269b8bcade7b5052a9112e869fd839033012020ff6aee6c4c83e944",
+            "kind": "pdf"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+            "label": "国防科技大学2027硕士招生简章PDF（当前可见附件）",
+            "final_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "dc3a27b49fe60d1d4b8b72a40e7329711e67bb5f605ba8eb6d99490edb0c920f",
+            "kind": "pdf"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14931",
+            "label": "2027博士申请考核专业基础笔试考试大纲（2026-08-05）",
+            "final_url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14931",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "a5eb7eacc0b1947722613f29226516aa05cfb43b52d6d6d41e27d460cb712664",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+            "label": "官方师资目录",
+            "final_url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "748e2b5daf54afa3e3b5bf3b9e5a015134446b2afc0a77d35b2d7b614f409142",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/list.json",
+            "label": "官方师资目录",
+            "status": "post_required",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "error": null,
+            "checked_from": "deployment_server",
+            "method": "POST",
+            "note": "师资分页接口使用POST；GET失败不代表导师详情不可用。本轮已逐位读取两院427份公开详情。"
+          }
+        ],
+        "mentors": {
+          "count": 244,
+          "with_research": 212,
+          "with_contact": 216,
+          "refetched_this_batch": 244
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "当前监测主要为学校通用招生入口，院系独立的保研/冬令营报名栏目仍有缺口。",
+          "32位导师仍无明确可提取的公开研究方向。",
+          "28位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "nudt",
+        "dept": "ai",
+        "name": "智能科学学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://www.nudt.edu.cn/yssz/znkxxy/",
+            "label": "官方单位入口",
+            "final_url": "https://www.nudt.edu.cn/yssz/znkxxy/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "6571ca17e02b18f3175f0d51763d83e1664e0b07ce558964179065028d7972aa",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+            "label": "国防科技大学硕士招生简章栏目",
+            "final_url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/newRecruitStudents.view?keyId=33",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "a499b2dd78fe716ad4d8a745c725c452fd20267538adea7a4992d43ac7081829",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 3,
+            "source_id": "nudt-ai-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+            "label": "国防科技大学2027年博士研究生招生简章（2026-10-13发布）",
+            "final_url": "https://yjszs.nudt.edu.cn/attached/file/20261013/20261013222853_652.pdf",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "a3e64810c269b8bcade7b5052a9112e869fd839033012020ff6aee6c4c83e944",
+            "kind": "pdf"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+            "label": "国防科技大学2027硕士招生简章PDF（当前可见附件）",
+            "final_url": "https://yjszs.nudt.edu.cn/attached/file/20261014/20261014154252_413.pdf",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "dc3a27b49fe60d1d4b8b72a40e7329711e67bb5f605ba8eb6d99490edb0c920f",
+            "kind": "pdf"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14931",
+            "label": "2027博士申请考核专业基础笔试考试大纲（2026-08-05）",
+            "final_url": "https://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14931",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "a5eb7eacc0b1947722613f29226516aa05cfb43b52d6d6d41e27d460cb712664",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+            "label": "官方师资目录",
+            "final_url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/teacherlist.view",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "748e2b5daf54afa3e3b5bf3b9e5a015134446b2afc0a77d35b2d7b614f409142",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/list.json",
+            "label": "官方师资目录",
+            "status": "post_required",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "error": null,
+            "checked_from": "deployment_server",
+            "method": "POST",
+            "note": "师资分页接口使用POST；GET失败不代表导师详情不可用。本轮已逐位读取两院427份公开详情。"
+          }
+        ],
+        "mentors": {
+          "count": 183,
+          "with_research": 126,
+          "with_contact": 183,
+          "refetched_this_batch": 183
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "当前监测主要为学校通用招生入口，院系独立的保研/冬令营报名栏目仍有缺口。",
+          "57位导师仍无明确可提取的公开研究方向。"
+        ]
+      },
+      {
+        "school": "scut",
+        "dept": "cs",
+        "name": "计算机科学与工程学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://www2.scut.edu.cn/cs",
+            "label": "官方单位入口",
+            "final_url": "https://www2.scut.edu.cn/cs/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "9b1b09596cd1226dd163225be2bb2f23a3e8070c339a078bfb933c5bd874845e",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yz.scut.edu.cn/sszs/list.htm",
+            "label": "华南理工大学硕士招生栏目",
+            "final_url": "https://yz.scut.edu.cn/sszs/list.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "4e934fe01cbb0361c9e1a05aca1068fbe525c9f63e86b421daa6b45dc5f721bc",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://www2.scut.edu.cn/cs/sszs/list.htm",
+            "label": "华南理工大学计算机学院硕士招生栏目",
+            "final_url": "https://www2.scut.edu.cn/cs/sszs/list.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "86b5168c2d8f630d0c5cd2561a804d49d2b776402c5f87360228c72dfb159d29",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 6
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www2.scut.edu.cn/cs/22284/list.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www2.scut.edu.cn/cs/22284/list.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "61dc525bc5c3e964f6982a8584882ad22701e09ed217fda3487e7278ab4dc272",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www2.scut.edu.cn/cs/22285/list.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www2.scut.edu.cn/cs/22285/list.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "5f1bff832b934ac49610162adc70cf502c66728873fd2de8f41d21abad176536",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www2.scut.edu.cn/cs/22286/list.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www2.scut.edu.cn/cs/22286/list.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "e52bda9aebbd9c68ab47fe247ad7c53dcb168220eb9058378d27af99d65d9fbd",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 76,
+          "with_research": 55,
+          "with_contact": 56,
+          "refetched_this_batch": 60
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "21位导师仍无明确可提取的公开研究方向。",
+          "20位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "hust",
+        "dept": "cyber",
+        "name": "网络空间安全学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cse.hust.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/",
+            "sha256": "a840d473c90478b8cf4582a7d3cda8b863a70666d9f309e335f954c9cf8bfe58",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://gszs.hust.edu.cn/info/1106/4160.htm",
+            "label": "华科2027硕士招生简章发布页",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://gszs.hust.edu.cn/info/1106/4160.htm",
+            "sha256": "5d158c1c186aa009c2ae4393c868c5e2e7b60de0e5188554027269369167aff1",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cse.hust.edu.cn/info/1079/4531.htm",
+            "label": "华科网安2027推免预报名延时通知（历史轮次）",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/info/1079/4531.htm",
+            "sha256": "8ebd1e11bf7af6dabb43a4f7b98a455c935509912e53d9cc119526888eae111f",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cse.hust.edu.cn/yjsjy/tzgg.htm",
+            "label": "华科网络空间安全学院",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/yjsjy/tzgg.htm",
+            "sha256": "0afa29c6373eae8a0f21accca6201c9388a510307dc3c2512febe5255ee00022",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 15
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cse.hust.edu.cn/szdw/wlkjaqx.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/szdw/wlkjaqx.htm",
+            "sha256": "454ddb7ad1bbf4249a7c384497c1b804b7943de635641df6e86804a3c871a11c",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cse.hust.edu.cn/szdw/xxaqx.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/szdw/xxaqx.htm",
+            "sha256": "dc024105f531529256a84fec4b4673bc17dfac4ce808b17e6e2abc65fb1a7fb5",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cse.hust.edu.cn/szdw/mmkxyjsx.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/szdw/mmkxyjsx.htm",
+            "sha256": "5bdfcb74827872368f31d9addf99dd5674d1a4332694d38bf68d553a55d58f62",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cse.hust.edu.cn/szdw/jcxkpt.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://cse.hust.edu.cn/szdw/jcxkpt.htm",
+            "sha256": "50fb79ee82e9400b753c68c9661c587e60eedc84feaabe5e59c0e7d69ce25b1b",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 85,
+          "with_research": 30,
+          "with_contact": 5,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "55位导师仍无明确可提取的公开研究方向。",
+          "80位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "hit",
+        "dept": "cs",
+        "name": "计算学部·计算机科学与技术学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "http://www.cs.hit.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "http://www.cs.hit.edu.cn/",
+            "sha256": "52c9471c1774cf0fdbbe89da994bbaae0fcd0f62b58edb727bf4c70f13f614ed",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yzb.hit.edu.cn/22281/list.htm",
+            "label": "哈工大硕士招生简章栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://yzb.hit.edu.cn/22281/list.htm",
+            "sha256": "83742bca5ae6df53f5a76a7bf1ccb582f28055a3f1941db011c0e9a378c2770c",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "http://www.cs.hit.edu.cn/11474/list.htm",
+            "label": "哈工大计算学部研究生招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "http://www.cs.hit.edu.cn/11474/list.htm",
+            "sha256": "57e24385e9219608038f03d32ddd0070ade99b70e362f3c738d11cacebcb5c76",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 2,
+            "source_id": "hit/cs",
+            "scope": "department"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://www.cs.hit.edu.cn/jsml/list.htm",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "http://www.cs.hit.edu.cn/jsml/list.htm",
+            "sha256": "83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 240,
+          "with_research": 0,
+          "with_contact": 0,
+          "refetched_this_batch": 0
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "240位导师仍无明确可提取的公开研究方向。",
+          "240位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "hnu",
+        "dept": "cs",
+        "name": "信息科学与工程学院(计算机)",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://csee.hnu.edu.cn",
+            "label": "官方单位入口",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/",
+            "sha256": "add4d01319ef23cc5935fc3b3772a00b930677e1175824b51c889fed223d6662",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://gra.hnu.edu.cn/zsxx/sszs.htm",
+            "label": "湖南大学硕士招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://gra.hnu.edu.cn/zsxx/sszs.htm",
+            "sha256": "d2bbadc1845c00d30693a3ffe4f5259f560aa4ad4eec57ff3262fabe04cefa3d",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://csee.hnu.edu.cn/zsjy/sszs.htm",
+            "label": "湖南大学计算机相关硕士招生栏目",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/zsjy/sszs.htm",
+            "sha256": "73808f41f9820d1a73a8ae74c29749cf127f148f4987b3693c091f789f07284a",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 19
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/1",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/teacher/syjs/1",
+            "sha256": "8655124cfc2806608e80e25828e246ef9bef19a03e74f5ae1910baceefc3b6c9",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/2",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/teacher/syjs/2",
+            "sha256": "b866cb3e58dc0932ed1f5f24de2d3c5ddddfdf3df871b98de335aa73847064b8",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/3",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/teacher/syjs/3",
+            "sha256": "fda0944b55a4b280ec3c5a83922800e8c2d42147fdf9fb300502b7db3ff7f325",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/4",
+            "label": "官方师资目录",
+            "status": "blocked",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "error": "HTTPConnectionPool(host='csee.hnu.edu.cn', port=80): Max retries exceeded with url: /teacher/syjs/4 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002240B9008A0>, 'Connection to csee.hnu.edu.cn timed out. (connect timeout=16)'))",
+            "checked_from": "deployment_server"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/5",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/teacher/syjs/5",
+            "sha256": "7f3593841fef7c7d5a7cfcf2b9bae28197c6f37f7fedb08797a721d82ea169f0",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://csee.hnu.edu.cn/teacher/syjs/6",
+            "label": "官方师资目录",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "checked_from": "deployment_server",
+            "final_url": "https://csee.hnu.edu.cn/teacher/syjs/6",
+            "sha256": "4fe10f4a2e0ee35ad640c073cdd4a0c634b6ac96130c736c408d3d06e7791495",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 187,
+          "with_research": 155,
+          "with_contact": 132,
+          "refetched_this_batch": 7
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "32位导师仍无明确可提取的公开研究方向。",
+          "55位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "sdu",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://www.cs.sdu.edu.cn",
+            "label": "官方单位入口",
+            "final_url": "https://www.cs.sdu.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "3722f433a6ee908ea6a4f7a8d8206d24be37221a829d5187db1cde366bbeab90",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://www.yz.sdu.edu.cn/sszs/zsjz.htm",
+            "label": "山大硕士招生简章栏目（当前仍列2026章程）",
+            "final_url": "https://www.yz.sdu.edu.cn/sszs/zsjz.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "65ffeb233197313dca8f574cd46ba793fd22b2875a2cdd2875dd6306c1413b60",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://www.cs.sdu.edu.cn/yjsjy.htm",
+            "label": "山大计算机学院研究生教育通知栏目",
+            "final_url": "https://www.cs.sdu.edu.cn/yjsjy.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "5900312a305afa79a2df9a763b57aaa763e24e71a9402c85985e92cfc75e52e7",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 15,
+            "source_id": "sdu/cs",
+            "scope": "department"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index",
+            "label": "山东大学2027硕士专业目录047计算机科学与技术学院（公开JSON POST）",
+            "final_url": "https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "40c96bd97e77316d69d9ac82bafe7ea7d6b2c38303fc38028900c5ca3686f588",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.cs.sdu.edu.cn/szdw1/js.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www.cs.sdu.edu.cn/szdw1/js.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "63782e25b7c5f8bff0d86cb13c0fdc4d78b358db0f19fbf8abd9b8a724c610d5",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.cs.sdu.edu.cn/szdw1/yjy.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www.cs.sdu.edu.cn/szdw1/yjy.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "dd12cbc8c53dfa776441e58e18bcf266aeb68e570bb750d4a50affdddf52ac0a",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.cs.sdu.edu.cn/szdw1/fjs.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www.cs.sdu.edu.cn/szdw1/fjs.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "ad7057cbe0b916fe12ff3bd157d1e8fc336837843728ce50ec344a7e3026e53b",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.cs.sdu.edu.cn/szdw1/fyjy.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www.cs.sdu.edu.cn/szdw1/fyjy.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "93aa3fb74b70e3e4ba7083b6e98278f606c8abc80e143a0dc3c47b3883e0ec76",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://www.cs.sdu.edu.cn/szdw1/zljs.htm",
+            "label": "官方师资目录",
+            "final_url": "https://www.cs.sdu.edu.cn/szdw1/zljs.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "66f17a9c1208de7d30653a0d1c2046ab8fc47a4c88b1b674ffb2df16b38a891c",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 13,
+          "with_research": 6,
+          "with_contact": 11,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "7位导师仍无明确可提取的公开研究方向。",
+          "2位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "xidian",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cs.xidian.edu.cn",
+            "label": "官方单位入口",
+            "final_url": "https://cs.xidian.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "26e70136ee0bc1a71e000d43b99e0db4e07e447d71990cde33a9dc283bd620ae",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 6,
+            "source_id": "xidian/cs",
+            "scope": "department"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://gr.xidian.edu.cn/yjsy/yjszs.htm",
+            "label": "西安电子科技大学硕士招生栏目",
+            "final_url": "https://gr.xidian.edu.cn/yjsy/yjszs.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:42+00:00",
+            "sha256": "a4018873fc27b3b924fe5535b8869cfcaba6982f6dfce300df7673fb73d31c38",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 18,
+            "source_id": "xidian-cs-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.xidian.edu.cn/yjsjy/zsxx.htm",
+            "label": "西安电子科技大学计算机学院招生栏目",
+            "final_url": "https://cs.xidian.edu.cn/yjsjy/zsxx.htm",
+            "status": "historical_only",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "9dc3f289842731c790fde3e15a3b566dc638a95cb7bdb91d161efe3bb8900d84",
+            "kind": "html",
+            "note": "正文栏目只含2018-2019旧通知；已改为监测首页最新招生区和研究生院栏目。"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.xidian.edu.cn/szdw/dsjs.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cs.xidian.edu.cn/szdw/dsjs.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "12ff595378532f781c3c773a9cba63903f812208fcfeb2a004eb847fb68486e3",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 155,
+          "with_research": 97,
+          "with_contact": 145,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "58位导师仍无明确可提取的公开研究方向。",
+          "10位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "csu",
+        "dept": "cs",
+        "name": "计算机学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cse.csu.edu.cn",
+            "label": "官方单位入口",
+            "final_url": "https://cse.csu.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "937e98f65f9383ffa6073bd6cb563ee0bc2ee5f9a5db43e885d155ce051e3042",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yz.csu.edu.cn/info/1011/1541.htm",
+            "label": "中南大学2027年硕士研究生招生章程",
+            "final_url": "https://yz.csu.edu.cn/info/1011/1541.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "f70879d19f9f1fffe72bac95d0c0f4c7a6f21a84147ee33446be3f89ede52886",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cse.csu.edu.cn/szdw/jsml.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cse.csu.edu.cn/szdw/jsml.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "d3019ce87a98a884e3b157815d8a3c957b296cafb8b67af93d7a2a65a0402d5d",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cse.csu.edu.cn/rcpy/yjsjy/zsxx.htm",
+            "label": "计算机学院",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:43+00:00",
+            "sha256": "486c75d7e5905e98f5911f27280c03138db127e4a5f642e00881dee6ec5f08b8",
+            "monitor_status": "parsed",
+            "notice_count": 12,
+            "source_id": "csu/cs",
+            "scope": "department"
+          }
+        ],
+        "mentors": {
+          "count": 108,
+          "with_research": 57,
+          "with_contact": 78,
+          "refetched_this_batch": 7
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "51位导师仍无明确可提取的公开研究方向。",
+          "30位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "tju",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "https://cs.tju.edu.cn",
+            "label": "官方单位入口",
+            "final_url": "https://cs.tju.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "5e79df3ccd327c10a94eb97f15173b13748f725049952b60343999a1afd3d248",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/",
+            "label": "天大统考硕士栏目",
+            "final_url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:43+00:00",
+            "sha256": "bfe482cdb10752ec71cab5b07c5012ba7018e6e3ad2d8af3d70e756c81799178",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 14,
+            "source_id": "tju-cs-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.tju.edu.cn/jyjx/zsxx.htm",
+            "label": "天大计算机学院招生信息栏目",
+            "final_url": "https://cs.tju.edu.cn/jyjx/zsxx.htm",
+            "status": "empty_redirect",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "3282d940e044dacbc0e9a9a6d30193811928d22385bf0416c4ec1fd1a3770646",
+            "kind": "html",
+            "note": "返回脚本跳转页，没有招生详情链接，已更换通知公告入口。"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.tju.edu.cn/",
+            "label": "天津大学计算机科学与技术学院",
+            "final_url": "https://cs.tju.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "5e79df3ccd327c10a94eb97f15173b13748f725049952b60343999a1afd3d248",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.tju.edu.cn/faculty/jzgml/azc/zgj.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cs.tju.edu.cn/faculty/jzgml/azc/zgj.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "ae143ccbeaaa90ec85acbf8c268f0c33d494ba4f8ad2d21e817f73e47b757512",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.tju.edu.cn/faculty/jzgml/azc/fgj.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cs.tju.edu.cn/faculty/jzgml/azc/fgj.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "3ce8986b90665ca6f1ef2c429b2cca3c9d6511c55e7d789f7c6dc537f6c5e44f",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.tju.edu.cn/faculty/jzgml/azc/zj.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cs.tju.edu.cn/faculty/jzgml/azc/zj.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "e4d72e827c926ddf901addff409b04729ee2d1039f419b173a546dd92b6aab13",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cs.tju.edu.cn/faculty/jzgml/azc/cj.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cs.tju.edu.cn/faculty/jzgml/azc/cj.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "4cbe5dedee8043d6d9dc86b45354856c320f2c63aabfdb3d886b966bfc731458",
+            "kind": "html"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "https://cic.tju.edu.cn/jyjx/yjsjy/yjsdsml.htm",
+            "label": "官方师资目录",
+            "final_url": "https://cic.tju.edu.cn/jyjx/yjsjy/yjsdsml.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "e0c4cc6fdd95b55885d95d1d59316630c93557480d363549fda6a5b40b6bf8ad",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.tju.edu.cn/xwgg/notices.htm",
+            "label": "计算机科学与技术学院",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:43+00:00",
+            "sha256": "40ce734f6c26570181de488892005e95173664d99e5eb91b4340e661e229993c",
+            "monitor_status": "parsed",
+            "notice_count": 4,
+            "source_id": "tju/cs",
+            "scope": "department"
+          }
+        ],
+        "mentors": {
+          "count": 114,
+          "with_research": 109,
+          "with_contact": 113,
+          "refetched_this_batch": 110
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "5位导师仍无明确可提取的公开研究方向。",
+          "1位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      },
+      {
+        "school": "dlut",
+        "dept": "cs",
+        "name": "计算机科学与技术学院",
+        "sources": [
+          {
+            "role": "unit_home",
+            "url": "http://faculty.dlut.edu.cn",
+            "label": "官方单位入口",
+            "final_url": "https://faculty.dlut.edu.cn/",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "be85d97e2f11c7403e57e0b4a3849bcd08a878b0a9e0edf49a242cc92ae3e355",
+            "kind": "html"
+          },
+          {
+            "role": "graduate_admissions",
+            "url": "https://gs.dlut.edu.cn/yjszs/zcwj1/ssyjs.htm",
+            "label": "大工硕士招生政策栏目",
+            "final_url": "https://gs.dlut.edu.cn/yjszs/zcwj1/ssyjs.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:43+00:00",
+            "sha256": "f472d4764c082292497d0ede2417e2b62dd0b6ab57e861b3891eb522bbb523b2",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 12,
+            "source_id": "dlut-cs-graduate",
+            "scope": "school"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.dlut.edu.cn/yjsgz/zsxx.htm",
+            "label": "大工计算机学院研究生招生信息栏目",
+            "final_url": "https://cs.dlut.edu.cn/yjsgz/zsxx.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "419380bf50133fcf1bbb24bec33db5f7eeeebb4a3e97963d62bdeaac52510dce",
+            "kind": "html"
+          },
+          {
+            "role": "department_admissions",
+            "url": "https://cs.dlut.edu.cn/yjsgz/gsgg.htm",
+            "label": "大连理工大学计算机科学与技术学院公示公告",
+            "final_url": "https://cs.dlut.edu.cn/yjsgz/gsgg.htm",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:06:43+00:00",
+            "sha256": "15e1c886687478285c09d56a7cb602e6444a65840db3c8902fecdc84dffcd656",
+            "kind": "html",
+            "monitor_status": "parsed",
+            "notice_count": 10,
+            "source_id": "dlut/cs",
+            "scope": "department"
+          },
+          {
+            "role": "faculty_directory",
+            "url": "http://faculty.dlut.edu.cn/xyjslb.jsp?urltype=tsites.CollegeTeacherList&wbtreeid=1003&st=0&id=1220&lang=zh_CN",
+            "label": "官方师资目录",
+            "final_url": "https://faculty.dlut.edu.cn/xyjslb.jsp?urltype=tsites.CollegeTeacherList&wbtreeid=1003&st=0&id=1220&lang=zh_CN",
+            "status": "ok",
+            "checked_at": "2026-11-15T09:16:25+00:00",
+            "sha256": "993d05e16f57269a7c7a552aedf6099cb8a86fe33c3d02e324b3567bac138c68",
+            "kind": "html"
+          }
+        ],
+        "mentors": {
+          "count": 12,
+          "with_research": 12,
+          "with_contact": 2,
+          "refetched_this_batch": 8
+        },
+        "gaps": [
+          "实验室独立招生栏目尚未逐一登记核验；学院栏目覆盖不代表全部团队覆盖。",
+          "10位导师仍无个人公开邮箱；不猜测地址。"
+        ]
+      }
+    ]
+  },
+  "information_audit": {
+    "checked_at": "2026-11-15T09:17:31+00:00",
+    "summary": {
+      "candidates": {
+        "irrelevant": 7,
+        "current": 2,
+        "historical": 77
+      },
+      "policies": {
+        "historical": 30,
+        "current": 12
+      },
+      "refresh_failures": {
+        "http_404": 45,
+        "fetch_or_parse": 87,
+        "tls": 1,
+        "timeout": 1,
+        "manual_parser": 15
+      },
+      "unknown_notices": {
+        "current": 8,
+        "irrelevant": 3,
+        "historical": 14,
+        "unknown": 151
+      },
+      "unknown_notice_bodies_checked": 25,
+      "current_policy_field_reviews": 12,
+      "manual_required_resolution": {
+        "recovered": 10,
+        "blocked": 5
+      },
+      "profile_batch": {
+        "unique_attempted": 672,
+        "unique_success": 637,
+        "remaining_error": 35,
+        "deployment_network_recovered": 21
+      }
+    },
+    "audit_sha256": "507e274d3a9464b5a64f4b01f787b171b921cca5ecdd88e9ac91ffe36151c0f3",
+    "reference": "cache/v16/information-audit.json：维护证据，不随运行包分发。"
   }
 }

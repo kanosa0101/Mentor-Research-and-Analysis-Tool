@@ -3,7 +3,7 @@ name: 孙涛
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术
 email: nudtsuntao@163.com
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26056
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26056
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -44,5 +44,14 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26056
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26056
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 机器学习训练算法研究，学术论文共计被引用1000余次，引用单位包括MIT、Stanford、普林斯顿大学和清华大学等一流研究机构，在国内外同行中形成了一定的学术影响力，以第一作者身份发表CCF-A类论文15篇、IEEE
+  Transactions和CCF-B类论文8篇，研究工作受国家自然科学基金、中国科协青年人才托举工程、湖南省杰出青年科学基金资助
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

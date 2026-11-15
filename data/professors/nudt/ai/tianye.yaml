@@ -3,7 +3,7 @@ name: 田野
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：机械工程、机械
 email: tianyecomeon@sina.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26700
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26700
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26700
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26700
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 智能光学精密工程研究，负责国家重点研发计划引力波专项课题、国防预研、国家自然科学基金等13项国家/军队课题，国内首创研制频域可控离子束技术，实现宏观尺度上的逐层原子剥离，应用于激光聚变、同步辐射等国家重大工程
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

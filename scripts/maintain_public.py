@@ -16,6 +16,7 @@ from scripts import build_site
 from scripts.monitor_notices import collect as collect_notices
 from crawler.public_snapshot import build as build_snapshot
 from crawler.notice_util import classify_notice
+from crawler.pipeline_metrics import summarize as pipeline_metrics
 import yaml
 
 
@@ -81,8 +82,13 @@ def main():
         if 'pages_updated' not in result['failures']:
             task('public_snapshot', lambda: build_snapshot(ROOT))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
+        warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', 'error', 'manual_required', 'sources_error')}
+                    for name in ('policies', 'professors', 'notices')
+                    if result[name].get('error', 0) or result[name].get('manual_required', 0) or result[name].get('sources_error', 0)}
+        result['source_warnings'] = warnings
         atomic_json(ROOT / 'cache/public-maintenance.json', result)
-        atomic_json(ROOT / 'cache/maintenance-alerts.json', {'checked_at': result['completed_at'], 'failures': result['failures']})
+        atomic_json(ROOT / 'cache/maintenance-alerts.json', {'checked_at': result['completed_at'], 'failures': result['failures'], 'source_warnings': warnings})
+        atomic_json(ROOT / 'cache/pipeline-metrics.json', pipeline_metrics(ROOT))
         print(json.dumps(result, ensure_ascii=False))
         return int(bool(result['failures']) or result['policies'].get('error', 0) > 0 or
                    result['professors'].get('error', 0) > 0 or result['notices'].get('sources_error', 0) > 0)

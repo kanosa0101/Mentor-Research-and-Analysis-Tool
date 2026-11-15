@@ -10,7 +10,7 @@ from crawler.opportunity_monitor import atomic_json, output_lock
 FIXED = {'data/schools.yaml', 'data/admissions.yaml', 'data/admissions_entries.yaml',
          'data/admissions_checks.json', 'data/notices.json', 'data/opportunities.json',
          'sites/notices.yaml', 'sites/opportunities.yaml'}
-OPTIONAL = {'data/coverage.json'}
+OPTIONAL = {'data/coverage.json', 'data/source_coverage.json'}
 
 
 def allowed(name):

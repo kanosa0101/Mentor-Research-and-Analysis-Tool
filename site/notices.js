@@ -1,6 +1,6 @@
 
 const incoming=new URLSearchParams(location.search),select=document.getElementById('school'),context=document.getElementById('notice-context');
-const units=window.ADMISSIONS_DATA?.units||[],scopeKeys=['year','degree','route','track','program','group'];
+const units=(window.SCHOOL_CATALOG||window.ADMISSIONS_DATA)?.units||[],scopeKeys=['year','degree','route','track','program','group'];
 const noticeRows=JSON.parse(document.getElementById('notice-data').textContent),noticeById=new Map(noticeRows.map(n=>[n.id,n]));
 const noticeControls={cycle:'notice-cycle',route:'notice-route',admission_year:'notice-admission-year',graduation_year:'notice-graduation-year',activity_year:'notice-activity-year'};
 for(const key of ['admission_year','graduation_year','activity_year']){

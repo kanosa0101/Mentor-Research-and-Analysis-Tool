@@ -3,7 +3,7 @@ name: 陈荣茂
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 网络空间安全、计算机科学与技术（硕士）、电子信息（硕士）
 email: www.rongmaochen.netchromao@nudt.edu.cn
@@ -25,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26027
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26027
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -45,5 +45,15 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26027
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26027
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 公钥密码、抗量子密码、隐私计算、网络安全等方面的研究，先后解决多个密码学领域国际公开问题，在国际密码学三大顶级会议、IEEE
+  TIFS/TDSC /TSC等CCF/CACR A类期刊/会议等发表学术论文50余篇，专利10余项，担任CCF/CACR A类国际会议ASIACRYPT、ACM
+  CCS等多个国际会议PC以及CCF A类国际期刊IEEE TDSC等国际期刊编委等
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

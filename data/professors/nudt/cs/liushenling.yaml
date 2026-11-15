@@ -3,7 +3,7 @@ name: 刘甚灵
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息
 email: liushenling@gfkd.mtn
@@ -11,8 +11,7 @@ bio_raw: 男,军队学位与研究生教育中心副主任、副研究员，是�
   for science（人工智能驱动的科学研究方法，面向军事教育大数据的智能分析与应用技术），主持或参与国家军队重点项目研发10余项，成果在多个单位广泛应用，获军队科技进步二等奖1项、湖南省教学成果二等奖1项，荣立三等功1次。申请专利3项，发表论文10余篇，协助指导博士生2人，协助指导硕生5人。liushenling@gfkd.mtn
 institutes:
 - 官方导师登记归属：计算机学院
-research_direction_raw: 男,军队学位与研究生教育中心副主任、副研究员，是面向军事教育领域的智能文本处理系统及军事教育大数据智能分析应用的主要技术负责人之一，主要研究方向为海量文本分析（包括文本挖掘与语义理解技术，以及面向军事教育领域的智能文本处理系统设计与实现）和AI
-  for science（人工智能驱动的科学研究方法，面向军事教育大数据的智能分析与应用技术），主持或参与国家军队重点项目研发10余项，成果在多个单位广泛应用，获军队科技进步二等奖1项、湖南省教学成果二等奖1项，荣立三等功1次。
+research_direction_raw: 方向为海量文本分析（包括文本挖掘与语义理解技术，以及面向军事教育领域的智能文本处理系统设计与实现）和AI for science（人工智能驱动的科学研究方法，面向军事教育大数据的智能分析与应用技术），主持或参与国家军队重点项目研发10余项，成果在多个单位广泛应用，获军队科技进步二等奖1项、湖南省教学成果二等奖1项，荣立三等功1次
 detail_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
 profile_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
 first_seen: '2026-10-15'
@@ -26,12 +25,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -41,7 +40,7 @@ provenance:
   research_direction_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   institutes:
     origin: crawled
@@ -51,5 +50,7 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26104
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

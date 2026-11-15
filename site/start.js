@@ -2,9 +2,9 @@
   'use strict';
   const core=window.BrowserLibraryCore,$=id=>document.getElementById(id),today=core.day();
   const [calendarYear,month]=today.split('-').map(Number),defaults={exam:calendarYear+(month>=9?1:0),recommend:calendarYear+(month>=11?2:1)};
-  const schoolMap=new Map((window.ADMISSIONS_DATA?.units||[]).map(u=>[u.school,{id:u.school,name:u.school_name}]));
+  const schoolMap=new Map((window.SCHOOL_CATALOG?.units||window.ADMISSIONS_DATA?.units||[]).map(u=>[u.school,{id:u.school,name:u.school_name}]));
   const schools=[...schoolMap.values()].sort((a,b)=>a.name.localeCompare(b.name,'zh-CN'));
-  let selectedSchools=new Map(),activeTab='bookmarks',pendingImport=null;
+  let selectedSchools=new Map(),activeTab='bookmarks',pendingImport=null,restoring=true;
   const label=target=>target.path==='exam'?target.year+' 年入学统考':target.year+' 届本科生保研准备';
   const element=(tag,text,className)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;};
   const button=(text,action)=>{const node=element('button',text);node.type='button';node.onclick=action;return node;};
@@ -48,6 +48,7 @@
   }
   function plan(){
     let target;try{target=draft();}catch(error){$('target-status').textContent=error.message;$('current-actions').replaceChildren();$('target-entries').replaceChildren(element('p','请先填写有效年份，再查看相应入口。'));return;}
+    if(!restoring)try{sessionStorage.setItem('mentor-start-draft-v1',JSON.stringify(target));}catch(error){}
     $('target-status').textContent='';
     $('target-year-label').textContent=target.path==='exam'?'计划研究生入学年份':'本人本科毕业届别';
     $('path-context').textContent='按 '+today+' 的日历周期整理 · '+label(target)+'。'+(target.path==='exam'?'先确认本人报考和确认状态，再查考试安排与后续通知；这里不会显示为已报名或已具备资格。':'先向本校核实推免资格；再核对目标院校要求。毕业届别不自动填成研究生入学年，活动是否适用于你以官方说明为准。');
@@ -71,10 +72,10 @@
     let data;try{data=core.read(localStorage);}catch(error){status('浏览器记录暂不可读取：'+error.message+'。未覆盖原有记录。',true);return;}
     for(const [key,title] of [['targets','关注目标'],['bookmarks','收藏'],['todos','待办']])$('tab-'+key).textContent=title+' '+data[key].length;
     const targetPanel=$('panel-targets');targetPanel.replaceChildren();
-    for(const target of data.targets){const row=element('div',undefined,'library-item'),actions=element('div',undefined,'start-actions');row.append(element('strong',label(target)),element('p',[target.schools.map(s=>s.name).join('、')||'跨校探索',target.interest].filter(Boolean).join(' · '),'start-note'));actions.append(button('应用此目标',()=>{document.querySelector('[name="path"][value="'+target.path+'"]').checked=true;$('target-year').value=target.year;$('target-interest').value=target.interest;selectedSchools=new Map(target.schools.map(s=>[s.id,s]));schoolPicker();plan();$('target-form').scrollIntoView({block:'start'});$('target-status').textContent='已应用保存的关注目标；更改后可另存新目标。';}),button('删除目标',()=>commit(data=>core.remove(data,'targets',target.id),'已删除关注目标；关联待办保留为独立待办。')));row.append(actions);targetPanel.append(row);}
+    for(const target of data.targets){const row=element('div',undefined,'library-item'),actions=element('div',undefined,'start-actions');row.dataset.planKind='target';row.dataset.planId=target.id;row.append(element('strong',label(target)),element('p',[target.schools.map(s=>s.name).join('、')||'跨校探索',target.interest].filter(Boolean).join(' · '),'start-note'));actions.append(button('应用此目标',()=>{document.querySelector('[name="path"][value="'+target.path+'"]').checked=true;$('target-year').value=target.year;$('target-interest').value=target.interest;selectedSchools=new Map(target.schools.map(s=>[s.id,s]));schoolPicker();plan();$('target-form').scrollIntoView({block:'start'});$('target-status').textContent='已应用保存的关注目标；更改后可另存新目标。';}),button('删除目标',()=>commit(data=>core.remove(data,'targets',target.id),'已删除关注目标；关联待办保留为独立待办。')));row.append(actions);targetPanel.append(row);}
     if(!data.targets.length)targetPanel.append(element('p','尚无关注目标。在上方选择路径、学校和兴趣后，点击“保存为关注目标”。','start-note'));
     const bookmarkPanel=$('panel-bookmarks');bookmarkPanel.replaceChildren();
-    for(const item of data.bookmarks){const row=element('div',undefined,'library-item'),a=element('a',item.title),actions=element('div',undefined,'start-actions');a.href=core.safeUrl(item.url);row.append(element('p',({mentor:'导师',notice:'招生通知',opportunity:'保研 / 科研机会'})[item.kind]+' · 收藏于 '+item.created_at,'start-note'),a);actions.append(button('添加跟进待办',()=>addTodo('查看并核对：'+item.title)),button('删除收藏',()=>commit(data=>core.remove(data,'bookmarks',item.id),'已删除此浏览器中的收藏。')));row.append(actions);bookmarkPanel.append(row);}
+    for(const item of data.bookmarks){const row=element('div',undefined,'library-item'),a=element('a',item.title),actions=element('div',undefined,'start-actions');a.href=core.safeUrl(item.url);row.dataset.planKind='bookmark';row.dataset.planId=item.id;row.append(element('p',({mentor:'导师',notice:'招生通知',opportunity:'保研 / 科研机会'})[item.kind]+' · 收藏于 '+item.created_at,'start-note'),a);actions.append(button('添加跟进待办',()=>addTodo('查看并核对：'+item.title)),button('删除收藏',()=>commit(data=>core.remove(data,'bookmarks',item.id),'已删除此浏览器中的收藏。')));row.append(actions);bookmarkPanel.append(row);}
     if(!data.bookmarks.length){const empty=element('p','尚无收藏。在导师、招生通知或机会卡片上点击“收藏到此浏览器”，再回到这里。','start-note');bookmarkPanel.append(empty);}
     const targetSelect=$('todo-target'),previous=targetSelect.value;targetSelect.replaceChildren(new Option('不关联',''));for(const target of data.targets)targetSelect.add(new Option(label(target)+(target.schools.length?' · '+target.schools.map(s=>s.name).join('、'):''),target.id));targetSelect.value=data.targets.some(t=>t.id===previous)?previous:'';
     const todos=$('todo-list');todos.replaceChildren();
@@ -84,7 +85,7 @@
       row.append(button('删除待办',()=>commit(data=>core.remove(data,'todos',item.id),'已删除待办。')));todos.append(row);
     }
     if(!data.todos.length)todos.append(element('p','还没有待办。可以直接填写，或把上方当前行动加入待办。','start-note'));
-    selectTab(activeTab);
+    selectTab(activeTab);window.PlanTransfer?.refresh();
   }
   $('exam-path-title').textContent=defaults.exam+' 年入学统考';$('recommend-path-title').textContent=defaults.recommend+' 届本科生保研准备';$('target-year').value=defaults.recommend;
   for(const input of document.querySelectorAll('[name="path"]'))input.onchange=()=>{$('target-year').value=defaults[input.value];plan();};
@@ -103,5 +104,6 @@
   $('library-import-cancel').onclick=()=>{pendingImport=null;$('import-preview').hidden=true;status('已取消导入，记录未改变。');};
   $('library-import-confirm').onclick=()=>{if(!pendingImport)return;if(commit(data=>core.merge(data,pendingImport),'已合并备份中的新增条目，原有记录保持不变。')){pendingImport=null;$('import-preview').hidden=true;}};
   window.addEventListener('storage',event=>{if(event.key===core.KEY)renderLibrary();});
-  schoolPicker();plan();renderLibrary();window.START_READY=true;
+  try{const saved=JSON.parse(sessionStorage.getItem('mentor-start-draft-v1')||'null');if(saved&&['exam','recommend'].includes(saved.path)&&Number.isInteger(saved.year)&&saved.year>=2000&&saved.year<=2100&&typeof saved.interest==='string'&&saved.interest.length<=200&&Array.isArray(saved.schools)){document.querySelector('[name="path"][value="'+saved.path+'"]').checked=true;$('target-year').value=saved.year;$('target-interest').value=saved.interest;selectedSchools=new Map(saved.schools.filter(s=>schoolMap.has(s.id)).map(s=>[s.id,schoolMap.get(s.id)]));}}catch(error){}
+  schoolPicker();plan();renderLibrary();restoring=false;window.START_READY=true;
 })();

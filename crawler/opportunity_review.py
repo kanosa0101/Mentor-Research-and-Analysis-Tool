@@ -31,6 +31,44 @@ def read_queue(path):
     return data
 
 
+def triage(draft):
+    value = draft.get('triage', {})
+    if value.get('source_sha256') and value['source_sha256'] != draft.get('fetch', {}).get('sha256'):
+        return dict(classification='unknown', reason='分流后原文版本变化，须重新核对适用范围')
+    return value
+
+
+def apply_triage(queue_path, audit):
+    """Explicit maintainer audit classification, separate from publishable claims."""
+    rows = audit.get('candidates', [])
+    if not isinstance(rows, list):
+        raise ValueError('分流审计须包含candidates列表')
+    with output_lock(queue_path):
+        queue = read_queue(queue_path)
+        by_id = {d['id']: d for d in queue['drafts']}
+        by_url = {d['source_url']: d for d in queue['drafts']}
+        updates = []
+        for row in rows:
+            if row.get('classification') not in ('current', 'historical', 'irrelevant', 'blocked', 'unknown') or not isinstance(row.get('reason'), str) or not row['reason'].strip():
+                raise ValueError('每条分流须有有效分类和理由')
+            draft = by_id.get(row.get('id')) or by_url.get(row.get('source_url'))
+            if draft is None:
+                continue
+            if row.get('source_url') and row['source_url'] != draft['source_url']:
+                raise ValueError('分流条目标识与官方来源不一致')
+            if row.get('content_sha256') and row['content_sha256'] != draft.get('fetch', {}).get('content_sha256'):
+                raise ValueError('分流审计与当前正文版本不一致，请重新核对后应用')
+            if row.get('source_sha256') and row['source_sha256'] != draft.get('fetch', {}).get('sha256'):
+                raise ValueError('分流审计与当前原文版本不一致，请重新核对后应用')
+            updates.append((draft, dict(classification=row['classification'], reason=row['reason'][:2000],
+                reviewed_at=audit.get('checked_at'), source_sha256=draft.get('fetch', {}).get('sha256'),
+                evidence_basis=row.get('evidence_basis', ''))))
+        for draft, value in updates:
+            draft['triage'] = value
+        atomic_json(queue_path, queue)
+        return len(updates)
+
+
 def institution(url):
     parsed = urlsplit(url)
     if parsed.scheme not in ('https', 'http') or parsed.username or parsed.password:
@@ -140,7 +178,8 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf):
         draft.update(extracted)
         return raw
     except (OSError, ValueError, requests.RequestException) as error:
-        draft['fetch'] = dict(previous, status='error', checked_at=timestamp, error=str(error)[:500])
+        draft['fetch'] = dict(previous, status='error', checked_at=timestamp, error=str(error)[:500],
+                              consecutive_failures=previous.get('consecutive_failures', 0) + 1)
         return None
 
 
@@ -180,7 +219,10 @@ def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=f
                 except (KeyError, ValueError, TypeError):
                     age = -1
                 pdf_files_exist = all(Path(p.get('evidence_file', '')).is_file() for p in evidence.get('pdfs', []))
-                if not refresh and evidence.get('status') in ('ok', 'pdf_review') and 0 <= age < 86400 and Path(evidence.get('evidence_file', '')).is_file() and pdf_files_exist:
+                interval = 604800 if triage(draft).get('classification') in ('historical', 'irrelevant') else 86400
+                if not refresh and evidence.get('status') == 'error' and 0 <= age < min(172800, 3600 * 2 ** min(evidence.get('consecutive_failures', 1), 6)):
+                    counts['reused'] += 1
+                elif not refresh and evidence.get('status') in ('ok', 'pdf_review') and 0 <= age < interval and Path(evidence.get('evidence_file', '')).is_file() and pdf_files_exist:
                     counts['reused'] += 1
                     if evidence.get('status') == 'ok' and not draft.get('field_evidence'):
                         extracted = extraction.extract(Path(evidence['evidence_file']).read_bytes(), draft['source_url'], draft['item'].get('title', ''), opportunities.today())
@@ -381,6 +423,7 @@ second item. External edits should not run concurrently with this command.
                       field_evidence=copy.deepcopy(draft.get('reviewed_fields', {})))
         if documents:
             review['source_documents'] = copy.deepcopy(documents)
+        review['published_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds')
         catalog['opportunities'] = [item if i['id'] == item['id'] else i for i in catalog['opportunities']]
         if existing is None:
             catalog['opportunities'].append(item)

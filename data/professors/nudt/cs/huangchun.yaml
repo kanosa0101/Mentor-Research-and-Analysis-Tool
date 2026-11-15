@@ -3,7 +3,7 @@ name: 黄春
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术、集成电路科学与工程、电子信息
 bio_raw: 女,从事程序设计语言和编译技术、处理器验证等研究，包括面向国产处理器的编译优化，面向大规模并行计算的编程与优化、高性能数学库、并行程序开发工具以及处理器验证等。获国家科技进步特等奖1项，军队科技进步奖一等奖4项，湖南省科技进步二等奖1项，军队科技进步二等奖1项，国家级一流本科课程1项，全国创新争先奖牌。主持多项国家和军队重点项目，出版教材2部，发表论文50余篇。13723890327
@@ -22,7 +22,7 @@ provenance:
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25945
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -37,5 +37,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25945
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25945
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 程序设计语言和编译技术、处理器验证等研究，包括面向国产处理器的编译优化，面向大规模并行计算的编程与优化、高性能数学库、并行程序开发工具以及处理器验证等
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

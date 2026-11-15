@@ -3,7 +3,7 @@ name: 于瑞航
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：控制科学与工程、电子信息
 email: yuruihang@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26532
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26532
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26532
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26532
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 智能导航、重力测量方向的研究与应用，承担国家自然科学基金、装备预研、省自然科学基金等项目9项，授权专利13项，发表论文30余篇，出版专著4部，获湖南省科技进步二等奖1项、湖南省教学成果特等奖1项、二等奖1项、军队教学成果一等奖1项、三等奖1项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

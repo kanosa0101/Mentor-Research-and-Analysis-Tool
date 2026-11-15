@@ -97,9 +97,11 @@ function render(){
   const stageItems=Object.entries(stages);optionList('targets-stage',stageItems,'全部阶段');
   optionList('context-stage-edit',stageItems);optionList('reply-stage',stageItems);
   if(!el('reply-stage').dataset.initialized){el('reply-stage').value='replied';el('reply-stage').dataset.initialized='true';}
-  const pending=Object.values(FLOW.reminders).filter(r=>!r.completed).sort((a,b)=>a.due_date.localeCompare(b.due_date));
-  const waiting=Object.values(FLOW.targets).filter(t=>t.stage==='waiting');
-  const preparing=Object.values(FLOW.targets).filter(t=>['research','preparing'].includes(t.stage));
+  const overviewProject=el('targets-project').value,withinProject=item=>!overviewProject||item.project_id===overviewProject;
+  if(el('overview-scope'))el('overview-scope').textContent=overviewProject?'当前项目：'+projectLabel(overviewProject)+'；下方待办与联系进度按此项目展示。':'当前显示全部项目的待办与联系进度。';
+  const pending=Object.values(FLOW.reminders).filter(r=>!r.completed&&withinProject(r)).sort((a,b)=>a.due_date.localeCompare(b.due_date));
+  const waiting=Object.values(FLOW.targets).filter(t=>t.stage==='waiting'&&withinProject(t));
+  const preparing=Object.values(FLOW.targets).filter(t=>['research','preparing'].includes(t.stage)&&withinProject(t));
   el('stat-due').textContent=pending.filter(r=>r.due_date<=today()).length;
   el('stat-waiting').textContent=waiting.length;el('stat-preparing').textContent=preparing.length;
   const taskCards=pending.map(r=>{
@@ -110,7 +112,7 @@ function render(){
   el('future-task-list').innerHTML=taskCards.filter((_,i)=>pending[i].due_date>today()).join('')||'<div class="empty">暂无未来计划。</div>';
   el('waiting-list').innerHTML=waiting.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">暂无等待回复的目标。</div>';
   el('preparing-list').innerHTML=preparing.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">暂无待准备的目标。</div>';
-  const unplanned=Object.values(FLOW.targets).filter(t=>['replied','materials','meeting'].includes(t.stage)&&!pending.some(r=>r.project_id===t.project_id&&r.mentor_id===t.mentor_id));
+  const unplanned=Object.values(FLOW.targets).filter(t=>withinProject(t)&&['replied','materials','meeting'].includes(t.stage)&&!pending.some(r=>r.project_id===t.project_id&&r.mentor_id===t.mentor_id));
   el('unplanned-list').innerHTML=unplanned.map(t=>targetCard(t,'data-continue-target')).join('')||'<div class="empty">已回复、需补材料或约谈的导师均已安排下一步，或暂无这类目标。</div>';
   const q=el('targets-query').value.toLowerCase().trim(),project=el('targets-project').value,stage=el('targets-stage').value;
   el('target-list').innerHTML=Object.values(FLOW.targets).filter(t=>(!project||t.project_id===project)&&(!stage||t.stage===stage)&&(!q||`${personLabel(t.mentor_id)} ${t.reason}`.toLowerCase().includes(q))).sort((a,b)=>['high','normal','low'].indexOf(a.priority)-['high','normal','low'].indexOf(b.priority)).map(t=>targetCard(t,'data-target')).join('')||'<div class="empty">暂无符合条件的目标。选择项目和导师即可加入。</div>';

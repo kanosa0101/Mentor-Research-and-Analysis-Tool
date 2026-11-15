@@ -3,14 +3,14 @@ name: 冯超超
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 电子信息
 email: fengchaochao@nudt.edu.cn
 bio_raw: 男,长期致力于高性能微处理器和超大规模集成电路设计领域的研究工作，主要研究方向包括机器学习/大语言模型辅助的集成电路物理设计、集成电路设计自动化（EDA）技术、片上网络设计等前沿领域。主持/参与国家级科研项目10余项。作为核心骨干参与研制了10余款飞腾系列高性能微处理器，已在关键领域得到广泛应用。获省部级科技进步一等奖1项、自然科学二等奖1项，军队科技进步二等奖2项。授权国家发明专利10余项，发表高水平学术论文20余篇，其中2篇论文进入ESI前10%层次。指导学生在集成电路相关竞赛中屡获佳绩（国一2项，国二1项，国三1项）。CCF高级会员、CCF计算机工程与工艺专委执行委员。fengchaochao@nudt.edu.cn  13517475147
 institutes:
 - 官方导师登记归属：计算机学院
-research_direction_raw: 男,长期致力于高性能微处理器和超大规模集成电路设计领域的研究工作，主要研究方向包括机器学习/大语言模型辅助的集成电路物理设计、集成电路设计自动化（EDA）技术、片上网络设计等前沿领域。
+research_direction_raw: 方向包括机器学习/大语言模型辅助的集成电路物理设计、集成电路设计自动化（EDA）技术、片上网络设计等前沿领域
 detail_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
 profile_url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
 first_seen: '2026-10-15'
@@ -24,12 +24,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -39,7 +39,7 @@ provenance:
   research_direction_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   institutes:
     origin: crawled
@@ -49,5 +49,7 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25987
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

@@ -3,7 +3,7 @@ name: 王涛
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 电子信息
 email: taowang2005@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26055
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26055
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26055
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26055
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 群体智能、群智软件开发方法、开源生态大数据分析挖掘等方向的研究，发表论文40余篇，承担科技创新2030-新一代人工智能、国家重点研发计划等国家项目多项，Trustie、GitLink、红山等开源平台技术负责人，支撑了我国多个开源社区的建设
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

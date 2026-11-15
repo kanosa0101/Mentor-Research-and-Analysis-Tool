@@ -3,7 +3,7 @@ name: 郭熙业
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 博导
 subjects: '硕士：仪器科学与技术、电子信息
 
@@ -26,12 +26,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26557
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26557
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -46,5 +46,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26557
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26557
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 时空组网测量领域研究工作，在北斗星间链路、无人系统区域/协同定位导航、分布式动态时频同步等方面取得一大批高水平研究成果
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

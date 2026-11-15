@@ -3,7 +3,7 @@ name: 蒋涛
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：机械工程、机械
 email: jiangtao@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26562
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26562
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26562
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26562
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 类生命体机器人肌肉驱动、生物3D打印、仿生结构设计与制造方向研究，主持国家自然科学基金、军科委基础加强基金、自主科研基石基金等项目8项，发表SCI/EI论文30余篇，1篇进入ESI前1%，获授权专利30余项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

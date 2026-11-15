@@ -3,7 +3,7 @@ name: 江荣
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 计算机科学与技术、电子信息
 email: jiangrong@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26000
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26000
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26000
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26000
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 大数据和人工智能领域研究，主持或参与了国家重点研发计划、自然科学基金等10余项国家和军队重大项目，获国家科技进步二等奖1项，发表高水平论文50多篇，引用超1200次，申请专利40多项，授权专利26项，软著17项，编著2部，行业标准3项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

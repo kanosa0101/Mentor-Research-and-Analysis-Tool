@@ -8,18 +8,21 @@ import sys
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import opportunity_util, push_util
 from crawler import public_snapshot
+from crawler.static_assets import AssetCache, send as send_asset
+from crawler.public_catalog import selected as selected_mentors, search as search_mentors
 
 CONTENT_TYPES = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
                  '.css': 'text/css; charset=utf-8'}
 
 
 class Handler(BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
     server_version = 'MentorPublic/1.0'
     sys_version = ''
 
@@ -81,6 +84,18 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(404, {'error': 'Not found'})
         if path in ('/health', '/api/health'):
             return self.json(200, {'ok': True, 'mode': 'public'})
+        if path == '/api/mentors':
+            try:
+                ids = parse_qs(raw.query).get('ids', [''])[0]
+                return self.json(200, {'mentors': selected_mentors(self.root, ids.split(',') if ids else [])})
+            except (OSError, ValueError, KeyError):
+                return self.json(400, {'error': '无法读取所选导师资料，请重试'})
+        if path == '/api/mentor-search':
+            try:
+                params=parse_qs(raw.query)
+                return self.json(200, search_mentors(self.root,json.loads(params.get('terms',['[]'])[0]),params.get('school',[])))
+            except (OSError, ValueError, KeyError, TypeError):
+                return self.json(400, {'error':'研究资料查询失败，请重试'})
         if re.fullmatch(r'/\.well-known/acme-challenge/[A-Za-z0-9_-]{20,200}', path):
             token = self.root / 'var/acme' / path.lstrip('/')
             if token.is_file() and not token.is_symlink():
@@ -91,6 +106,21 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(200, {'enabled': bool(cfg), 'public_key': cfg.get('public_key'), 'origin': cfg.get('origin')})
         if path == '/api/updates':
             return self.json(200, {'events': push_util.recent(self.root)})
+        if re.fullmatch(r'/download/mentor-assistant-v\d+\.\d+\.\d+-local\.zip(?:\.sha256)?', path):
+            target = self.root / 'dist' / path.rsplit('/', 1)[-1]
+            if target.is_file() and not target.is_symlink() and not target.parent.is_symlink() and target.resolve().is_relative_to(self.root.resolve()):
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/plain' if target.suffix == '.sha256' else 'application/zip')
+                self.send_header('Content-Length', str(target.stat().st_size))
+                self.send_header('Content-Disposition', 'attachment; filename="' + target.name + '"')
+                self.send_header('Cache-Control', 'public, max-age=3600')
+                self.end_headers()
+                if self.command != 'HEAD':
+                    with target.open('rb') as stream:
+                        while chunk := stream.read(65536):
+                            self.wfile.write(chunk)
+                return
+            return self.json(404, {'error': '该运行包尚未发布'})
         if path == '/api/public-data':
             descriptor = public_snapshot.latest(self.root)
             return self.json(200 if descriptor else 503, dict(descriptor or {}, mode='public'))
@@ -123,10 +153,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.json(404, {'error': 'Not found'})
             if not candidate.resolve().is_relative_to(self.site.resolve()) or candidate.suffix not in CONTENT_TYPES or not candidate.is_file():
                 return self.json(404, {'error': 'Not found'})
-            body = candidate.read_bytes()
+            return send_asset(self, candidate, CONTENT_TYPES[candidate.suffix], self.server.asset_cache, self.accepts_gzip())
         except (OSError, ValueError):
             return self.json(404, {'error': 'Not found'})
-        return self.reply(200, body, CONTENT_TYPES[candidate.suffix])
 
     do_HEAD = do_GET
 
@@ -177,7 +206,9 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def create_server(root=ROOT, host='0.0.0.0', port=8080):
-    return ThreadingHTTPServer((host, port), partial(Handler, root=root))
+    server = ThreadingHTTPServer((host, port), partial(Handler, root=root))
+    server.asset_cache = AssetCache()
+    return server
 
 
 def main():

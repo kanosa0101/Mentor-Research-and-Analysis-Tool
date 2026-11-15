@@ -12,10 +12,10 @@
   function safeUrl(value){
     check(text(value,3000),'收藏链接无效');
     check(!/^[a-z][a-z\d+.-]*:|^\/\/|\\|[\u0000-\u0020]/i.test(value),'备份只接受本站页面链接');
-    check(!/%|(^|\/)\.{1,2}(\/|$)/.test(value.split(/[?#]/)[0]),'收藏路径不能包含编码或目录跳转');
+    let decoded;try{decoded=decodeURIComponent(value.split(/[?#]/)[0]);}catch(error){throw new Error('收藏路径编码无效');}check(!/[%\\:\u0000-\u0020]|(^|\/)\.{1,2}(\/|$)/.test(decoded),'收藏路径不能包含目录跳转');
     const url=new URL(value,'https://browser-library.invalid/');
     check(url.origin==='https://browser-library.invalid'&&!url.username&&!url.password,'备份链接不能离开本站');
-    check(/^\/(?:start|discovery|notices|opportunities|admissions|compare|desk|applications)\.html$/.test(url.pathname)||/^\/p\/[A-Za-z0-9_-]+\.html$/.test(url.pathname),'不支持的收藏页面');
+    check(/^\/(?:start|discovery|notices|opportunities|admissions|compare|desk|applications)\.html$/.test(url.pathname)||/^\/p\/[^/\\:.%]+\.html$/.test(decodeURIComponent(url.pathname)),'不支持的收藏页面');
     return url.pathname.slice(1)+url.search+url.hash;
   }
   function validate(data){

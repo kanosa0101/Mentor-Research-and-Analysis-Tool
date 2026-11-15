@@ -3,7 +3,7 @@ name: 王耀华
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术、集成电路科学与工程、电子信息
 email: nudtyh@foxmail.com
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25969
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25969
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25969
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25969
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 微处理器体系结构相关的科研和教学工作，获IEEE CAL最佳论文并受邀在顶级会议HPCA上作报告，是国内少数在体系结构三大顶级会议ISCA，MICRO，HPCA上都有研究成果发表的青年学者，所指导学生发表包括Security，CVPR，HPCA，TPDS，TACO在内的多篇CCF-A类会议和期刊论文
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

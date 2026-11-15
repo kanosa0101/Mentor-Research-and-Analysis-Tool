@@ -68,9 +68,9 @@ async function refreshOpportunityMonitor(){
     if(!publicOpportunityMode)await loadSavedOpportunities();
     if(data.feed_error)oe('opportunity-result').textContent=data.feed_error;
     const m=data.monitoring;
-    if(!m){oe('monitor-health').textContent=publicOpportunityMode?'服务器尚无可用监测记录，当前页面不能确认信息已更新。请直接核对官方通知。':'尚无监测记录。运行“启动信息监测.cmd”后，每 6 小时检查已配置的官方栏目。电脑休眠或程序关闭期间不会更新。';oe('monitor-list').replaceChildren();oe('monitor-sources').replaceChildren();return;}
+    if(!m){oe('monitor-health').textContent=publicOpportunityMode?'服务器尚无可用监测记录，当前页面不能确认信息已更新。请直接核对官方通知。':'尚无监测记录。运行“启动信息监测.cmd”后按来源优先级检查已配置的官方栏目。电脑休眠或程序关闭期间不会更新。';oe('monitor-list').replaceChildren();oe('monitor-sources').replaceChildren();return;}
     const overdue=!m.next_check_at||Date.parse(m.next_check_at)<Date.now(),sum=m.summary||{};
-    oe('monitor-health').textContent=(overdue?'监测已超出应检时间，请检查监测程序。':'最近一轮监测已完成；这不代表所有信息已核验。')+' 最近检查：'+opportunityTime(m.checked_at)+'；下次应检：'+opportunityTime(m.next_check_at)+'（北京时间）。成功栏目 '+(sum.sources_ok||0)+' / '+(sum.source_count||0)+'；失败 '+(sum.sources_error||0)+'。本轮新发现 '+(sum.new_count||0)+' 条。';
+    oe('monitor-health').textContent=(overdue?'监测已超出应检时间，请检查监测程序。':'最近一轮监测已完成；这不代表所有信息已核验。')+' 最近实际回源：'+opportunityTime(m.last_fetch_at||m.checked_at)+'；下次应检：'+opportunityTime(m.next_check_at)+'（北京时间）。成功栏目 '+(sum.sources_ok||0)+' / '+(sum.source_count||0)+'；失败 '+(sum.sources_error||0)+'。本轮实际检查 '+(sum.sources_attempted??sum.source_count??0)+' 个，未到期跳过 '+(sum.sources_skipped||0)+' 个；超期 '+(sum.overdue_sources||0)+' 个。新发现 '+(sum.new_count||0)+' 条。';
     oe('monitor-sources').innerHTML=Object.values(m.sources||{}).filter(s=>s.status!=='removed').map(s=>`<p><a href="${ox(s.url)}" target="_blank" rel="noopener">${ox(s.unit||'官方招生栏目')}</a> · ${s.status==='ok'?'最近检查成功':'暂时无法读取，请直接查官网'}<br><small>最近成功：${ox(opportunityTime(s.last_success))}</small></p>`).join('')||'<p>暂无来源记录。</p>';
     const candidate=opportunityParams.get('candidate');
     const rows=(m.candidates||[]).filter(c=>(!candidate||c.id===candidate)&&!opportunityRows.some(o=>o.source_url===c.url)).sort((a,b)=>(b.first_seen||'').localeCompare(a.first_seen||''));

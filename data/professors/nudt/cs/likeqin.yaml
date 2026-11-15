@@ -3,7 +3,7 @@ name: 李克勤
 aliases: []
 school: nudt
 dept: cs
-status: roster
+status: enriched
 supervisor: 博导
 subjects: 计算机科学与技术、电子信息
 bio_raw: 男,IEEE Fellow。发表论文660篇以上，多次担任国际学术会议主席，先后主持国家自然科学基金重点项目和国家重点研发计划课题等国家级项目9项，是IEEE
@@ -23,7 +23,7 @@ provenance:
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -38,5 +38,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  email:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
+    fetched_at: '2026-11-15'
+    confidence: auto
+email: liujie@nudt.edu.cn
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

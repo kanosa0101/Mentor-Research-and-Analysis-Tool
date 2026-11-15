@@ -2,6 +2,7 @@
 import base64
 import hashlib
 import json
+import re
 import secrets
 import sqlite3
 from contextlib import contextmanager
@@ -13,6 +14,17 @@ from crawler import opportunity_util
 
 FIELDS = ('title', 'eligibility', 'materials', 'deadline', 'deadline_note', 'registration_start',
           'application_url', 'application_method', 'contact', 'research_directions')
+
+
+def semantic(value):
+    """Ignore display whitespace and ordering of independent requirements only."""
+    if isinstance(value, str):
+        return re.sub(r'\s+', ' ', value).strip()
+    if isinstance(value, dict):
+        return {k: semantic(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return sorted((semantic(v) for v in value), key=lambda v: json.dumps(v, ensure_ascii=False, sort_keys=True))
+    return value
 
 
 def config(root):
@@ -117,6 +129,7 @@ def record(root, catalog, monitoring=None, day=None):
     """First scan is a baseline. Later public changes and explicit deadlines become events."""
     day = day or opportunity_util.today()
     added = 0
+    reviews = {r.get('opportunity_id'):r for r in catalog.get('review_log', [])}
     with database(root) as db:
         initial = db.execute("SELECT 1 FROM snapshots WHERE key='initialized'").fetchone() is None
         def event(key, kind, title, item, changes=None):
@@ -128,6 +141,7 @@ def record(root, catalog, monitoring=None, day=None):
                         search_text=' '.join([item.get('title', ''), item.get('unit', ''), *item.get('eligibility', []),
                                              *[' '.join(r.get(k, '') for k in ('department','direction','contact','email')) for r in item.get('research_directions', [])]]),
                         changes=changes or [], source_url=item['source_url'],
+                        timeline={k:reviews.get(item.get('id'), {}).get(k) for k in ('first_seen','reviewed_at','published_at')},
                         url='/opportunities.html?id='+item['id'] if kind != 'discovered' else '/opportunities.html?candidate='+item['id']+'#monitor-candidates',
                         created_at=datetime.now(timezone.utc).isoformat(timespec='seconds'))
             added += db.execute('INSERT OR IGNORE INTO events(key,body) VALUES (?,?)', (key, json.dumps(body, ensure_ascii=False))).rowcount
@@ -135,9 +149,9 @@ def record(root, catalog, monitoring=None, day=None):
             key = 'item:' + item['id']
             previous = db.execute('SELECT body FROM snapshots WHERE key=?', (key,)).fetchone()
             snapshot = {k: item.get(k) for k in (*FIELDS, 'source_state', 'cycle')}
-            changed = [k for k in FIELDS if previous and json.loads(previous['body']).get(k) != snapshot[k]]
+            changed = [k for k in FIELDS if previous and semantic(json.loads(previous['body']).get(k)) != semantic(snapshot[k])]
             if not initial and item['cycle'] == 'current' and item['source_state'] == 'verified':
-                fingerprint = hashlib.sha256(json.dumps(snapshot, sort_keys=True).encode()).hexdigest()[:20]
+                fingerprint = hashlib.sha256(json.dumps(semantic(snapshot), sort_keys=True).encode()).hexdigest()[:20]
                 if not previous or json.loads(previous['body']).get('source_state') != 'verified' or json.loads(previous['body']).get('cycle') != 'current':
                     event('published:'+item['id']+':'+fingerprint, 'published', '已核验机会：'+item['title'], item)
                 elif changed:
@@ -193,7 +207,7 @@ def send(root, subscription, payload):
 
 def dispatch(root, sender=None):
     sender = sender or (lambda subscription, payload: send(root, subscription, payload))
-    result = dict(sent=0, failed=0, expired=0)
+    result = dict(sent=0, failed=0, expired=0, attempted_at=datetime.now(timezone.utc).isoformat(timespec='seconds'), max_successful_event_age_seconds=None, max_publish_to_send_seconds=None)
     with database(root) as db:
         subscribers = db.execute('SELECT * FROM subscriptions').fetchall()
     for sub in subscribers:
@@ -221,6 +235,17 @@ def dispatch(root, sender=None):
                 if db.execute('SELECT 1 FROM subscriptions WHERE id=?',(sub['id'],)).fetchone():
                     db.execute('INSERT OR REPLACE INTO deliveries VALUES (?,?,?,?)',(sub['id'],row['id'],row['attempts']+1,int(success)))
                 result['sent' if success else 'failed'] += 1
+                if success:
+                    try:
+                        age = max(0, int((datetime.now(timezone.utc) - datetime.fromisoformat(event['created_at'])).total_seconds()))
+                        result['max_successful_event_age_seconds'] = max(result['max_successful_event_age_seconds'] or 0, age)
+                        published_at = event.get('timeline', {}).get('published_at')
+                        if published_at:
+                            elapsed = max(0, int((datetime.now(timezone.utc)-datetime.fromisoformat(published_at)).total_seconds()))
+                            result['max_publish_to_send_seconds'] = max(result['max_publish_to_send_seconds'] or 0, elapsed)
+                    except (KeyError, ValueError, TypeError):
+                        pass
+    result['completed_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds')
     return result
 
 

@@ -3,7 +3,7 @@ name: 刘瑛
 aliases: []
 school: nudt
 dept: ai
-status: roster
+status: enriched
 supervisor: 硕导
 subjects: 硕士：机械工程、机械
 email: liuying@nudt.edu.cn
@@ -23,12 +23,12 @@ provenance:
   email:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26679
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26679
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
   subjects:
     origin: crawled
@@ -43,5 +43,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26679
-    fetched_at: '2026-10-15'
+    fetched_at: '2026-11-15'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26679
+    fetched_at: '2026-11-15'
+    confidence: auto
+research_direction_raw: 机器人仿生电子皮肤与触觉具身智能、石墨烯类二维材料纳机电精密传感、超高压低维纳米材料原子级改性制造、石墨烯、碳纳米管等纳米材料柔性电子器件方向研究，主持国家自然科学基金、机器人重大专项子课题等项目8项，发表SCI/EI论文30余篇，授权专利15项
+last_fetched: '2026-11-15'
+last_parsed: '2026-11-15'

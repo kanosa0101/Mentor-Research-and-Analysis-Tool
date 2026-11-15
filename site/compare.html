@@ -98,11 +98,18 @@ a:hover{text-decoration:underline}
   </div>
   <div class="foot">字段旁 ↗ 为官网出处（悬停看抓取日期） · 缺失字段显示"暂未收录"</div>
 </div>
-<script src="data.js?v=20261015-17"></script>
-<script src="compare-data.js?v=20261015-17"></script>
 <script>
-const DATA = window.MENTOR_DATA;
-DATA.forEach(p => Object.assign(p, window.MENTOR_COMPARE[p.page]));
+(async()=>{
+let requested=[];try{requested=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(x=>typeof x==='string').slice(0,5);}catch(e){}
+let DATA=[];
+if(requested.length){
+ try{const response=await fetch('/api/mentors?ids='+encodeURIComponent(requested.join(',')));if(!response.ok)throw new Error('服务不可用');DATA=(await response.json()).mentors;}
+ catch(error){
+  const load=file=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=file;script.onload=resolve;script.onerror=reject;document.head.append(script);});
+  await load('data.js?v=20261115-6');await load('compare-data.js?v=20261115-6');
+  DATA=window.MENTOR_DATA.filter(p=>requested.includes(p.page)).map(p=>Object.assign(p,window.MENTOR_COMPARE[p.page]));
+ }
+}
 const byId = {}; DATA.forEach(p => byId[p.page] = p);
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const scopeInput=new URLSearchParams(location.search);
@@ -191,6 +198,7 @@ function render(){
 }
 document.getElementById("clear-selection").onclick=()=>{SEL=[];localStorage.setItem("compare_sel","[]");render();};
 render();
+})().catch(()=>{document.getElementById("hint").style.display="block";document.getElementById("hint").textContent="导师资料暂未加载成功，请刷新重试。";});
 </script>
 </body>
 </html>

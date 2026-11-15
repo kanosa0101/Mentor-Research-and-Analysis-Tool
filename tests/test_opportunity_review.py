@@ -184,7 +184,7 @@ class ReviewTests(unittest.TestCase):
         fetch.assert_called_once()
         self.assertEqual(stale['summary']['fetched'], 1)
 
-    def test_refresh_bypasses_cache_and_failed_sources_retry_early(self):
+    def test_failed_source_backs_off_and_explicit_refresh_bypasses_wait(self):
         now = datetime(2026, 11, 15, 0, tzinfo=timezone.utc)
         review.sync(self.monitoring, self.queue, self.configs, fetcher=lambda _: self.raw, now=now)
         fail = Mock(side_effect=requests.Timeout('timeout'))
@@ -192,7 +192,10 @@ class ReviewTests(unittest.TestCase):
         fail.assert_called_once()
         self.assertEqual(failed['summary']['source_errors'], 1)
         retry = Mock(return_value=self.raw)
-        recovered = review.sync(self.monitoring, self.queue, self.configs, fetcher=retry, now=now)
+        waiting = review.sync(self.monitoring, self.queue, self.configs, fetcher=retry, now=now)
+        retry.assert_not_called()
+        self.assertEqual(waiting['summary']['source_errors'], 1)
+        recovered = review.sync(self.monitoring, self.queue, self.configs, fetcher=retry, now=now, refresh=True)
         retry.assert_called_once()
         self.assertEqual(recovered['summary']['source_errors'], 0)
 
