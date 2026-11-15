@@ -19,18 +19,18 @@ flowchart LR
   B --> W[本机项目 / 材料 / 联系历史 / 下一步]
 ```
 
-图中导师筛选及活动边界是本次目标。当前运行版仍有目标学位、私人核验筛选，以及个人招募混入活动页的问题。对应规则以 [需求](REQUIREMENTS.md)、[用况](docs/USE_CASES.md) 为准。
+图中导师筛选与活动边界已在v1.10落实：目标学位和私人核验不再参与目录，个人招募从院校活动列表分出。对应规则以 [需求](REQUIREMENTS.md)、[用况](docs/USE_CASES.md) 为准。
 
 ## 页面地图
 
-| 页面 / 用户入口 | 应承担的单一主要任务 | 现状问题与整改范围 | 主要实现 |
+| 页面 / 用户入口 | 应承担的单一主要任务 | v1.10处理与保留边界 | 主要实现 |
 | --- | --- | --- | --- |
-| 申请导航 `start.html` | 首访选路径；回访继续已关注内容 | 目标、收藏、更新维护信息混杂；精简默认内容，不新增仪表盘 | `start.js`、`browser-library*.js`、`plan-transfer.js` |
-| 找导师 `discovery.html` | 按真实导师属性找出愿意进一步了解的人 | 学位偏好被误当硬筛选；缺邮箱仍出现；卡片不齐 | `discovery.js`、`discovery-core.js`、`crawler/public_discovery.py` |
+| 申请导航 `start.html` | 首访选路径；回访继续已关注内容 | 学校入口前置，步骤建议折叠，维护和备份按需打开 | `start.js`、`browser-library*.js`、`plan-transfer.js` |
+| 找导师 `discovery.html` | 按真实导师属性找出愿意进一步了解的人 | 资格与职称独立过滤，默认可追溯邮箱，同视口卡片等高，回访恢复 | `discovery.js`、`discovery-core.js`、`crawler/public_discovery.py` |
 | 导师资料 `p/*.html` | 判断研究交集，取得联系人与原始依据 | 长介绍、来源和招募事实需清晰分层；个人实习招募归此 | `detail.html.j2`、`crawler/model.py` |
 | 导师对比 `compare.html` | 比较已选导师的方向、资格和联系信息 | 不推断个人资格、名额或录取概率；手机也要能比较 | `compare.html.j2`、`crawler/public_catalog.py` |
-| 保研机会 `opportunities.html` | 查看学校/院系/研究所组织的营和正式院所项目 | 个人招募混入；主办方、发布时间与核验状态不直观 | `opportunities*.js`、`crawler/opportunity_util.py` |
-| 学校与要求 `admissions.html` | 核对当前目标条件、材料、截止与适用范围 | 摘要截断不等于有效概括；不能把关键限制全藏起 | `admissions*.js`、`material-actions.js` |
+| 院校活动 `opportunities.html` | 查看学校/院系/研究所组织的营和正式院所项目 | 只显示机构活动；个人招募等旧ID说明去向；主办方、条件、时间和官方入口优先 | `opportunities*.js`、`crawler/opportunity_util.py` |
+| 学校与要求 `admissions.html` | 核对当前目标条件、材料、截止与适用范围 | 保留申请目标筛选；关键限制不截断，材料及完整证据按需查看 | `admissions*.js`、`material-actions.js` |
 | 招生通知 `notices.html` | 查正式招生通知及未结构化官方信息 | 与活动/要求边界含混；需显示轮次与通知阶段 | `notices*.js`、`crawler/notice_util.py` |
 | 我的申请 `desk.html` | 继续联系、登记回复、安排下一步 | 名称像项目总览，主体实际是联系工作台；减少重复入口 | `desk.js`、`crawler/contact_util.py` |
 | 项目与材料 `applications.html` | 管理一次具体申请及所需材料 | 与联系页保持同一项目上下文；简化空态/重复解释 | `workflow.js`、`crawler/workflow_util.py`、`material_task_util.py` |
@@ -38,7 +38,7 @@ flowchart LR
 | 旧套磁看板 `board.html` | 访问已有旧记录 | 与新工作流不同步；保留历史访问，退出新用户主要路径 | `board.html.j2`、outreach API |
 | 本机说明 `local.html` | 说明安装与公私边界，提供下载 | 公开站点击私人操作不能直接落入不可用表单 | `local.html.j2` |
 | 覆盖/版本 `coverage.html`、`release.html` | 查覆盖缺口及实际交付记录 | 次级说明，不能成为阅读正常内容的前置步骤 | coverage 数据、`release.json` |
-| 维护台 `review.html` | 取证、核验、处理来源和发布 | 仅维护者使用；新归类门禁需在发布前执行 | `review.js`、`scripts/serve_review.py` |
+| 维护台 `review.html` | 取证、核验、处理来源和发布 | 仅维护者使用；归类可编辑，发布前必须核对当前原句 | `review.js`、`scripts/serve_review.py` |
 
 模板在 `site/templates/`；`site/*.html` 与 `site/p/*.html` 是构建结果，不能只手改生成文件。样式入口为 `site/ui.css`，当前仍有局部模板样式；整改围绕现有模板，不更换技术栈。
 
@@ -59,7 +59,7 @@ flowchart LR
 flowchart TD
   S[官方名单 / 教师主页 / 招生栏目 / 公告附件] --> C[抓取与证据存档]
   C --> Q[候选与核验队列]
-  Q --> G[待补：主办层级与用户相关性归类门禁]
+  Q --> G[主办层级与用户相关性归类门禁]
   G --> E[院校活动]
   G --> M[导师招募记录]
   G --> N[招生通知与政策]
