@@ -393,7 +393,6 @@ document.querySelector("#tbl tbody").addEventListener("click", async e=>{
   }catch(err){ alert("保存失败：" + err.message); }
 });
 (async ()=>{  // Only an authenticated account can load private follow-up records.
-  if(location.protocol === "file:") return;
   try{
     const account = await OnlineAccount.ready;
     if(account.authenticated){const response=await fetch("/api/outreach");if(!response.ok)throw new Error("记录暂不可读取");OUT=await response.json();API_OK=true;render();}

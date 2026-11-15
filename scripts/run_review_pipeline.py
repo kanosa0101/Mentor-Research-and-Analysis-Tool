@@ -13,7 +13,6 @@ sys.path.insert(0, str(ROOT))
 from crawler import automatic_review, review_queue, source_discovery, maintenance_push
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler.pipeline_metrics import summarize
-from crawler.public_snapshot import build as build_snapshot
 
 
 def rebuild(root):
@@ -22,8 +21,8 @@ def rebuild(root):
             [sys.executable, '-X', 'utf8', str(root / 'scripts/maintain_public.py'), '--build-only'],
             cwd=root, capture_output=True, text=True, encoding='utf8', timeout=600)
         if result.returncode:
-            raise ValueError('公共页面重建失败，未生成新资料归档；下轮重试')
-        return build_snapshot(root)
+            raise ValueError('公共页面重建失败；下轮重试')
+        return {'published': True}
 
 
 def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_candidates=8):
@@ -51,14 +50,14 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
             phase('maintainer_notifications', lambda: maintenance_push.dispatch(root, result['alerts']))
         catalog = root / 'data/opportunities.json'
         if publish and catalog.exists():
-            def publish_snapshot():
+            def publish_pages():
                 digest = hashlib.sha256(catalog.read_bytes()).hexdigest()
                 if digest == result['built_catalog_sha256']:
                     return {'skipped': True, 'reason': '公开目录未变化'}
-                snapshot = rebuild(root)
+                publication = rebuild(root)
                 result['built_catalog_sha256'] = digest
-                return snapshot
-            phase('public_snapshot', publish_snapshot)
+                return publication
+            phase('public_pages', publish_pages)
         phase('metrics', lambda: summarize(root))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
         delivery = result.get('maintainer_notifications', {})

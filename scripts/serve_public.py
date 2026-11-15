@@ -17,7 +17,6 @@ from urllib.parse import unquote, urlsplit, parse_qs, urlencode
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import opportunity_util, push_util
-from crawler import public_snapshot
 from crawler.static_assets import AssetCache, send as send_asset
 from crawler.public_catalog import selected as selected_mentors, search as search_mentors
 from crawler.public_discovery import candidates as mentor_candidates
@@ -133,6 +132,12 @@ class Handler(BaseHTTPRequestHandler):
         self.close_connection = True
         return self.reply(code, json.dumps({'error': message}, ensure_ascii=False).encode(), headers={'Connection': 'close'})
 
+    def retired_client(self, path):
+        if path == '/public-data.js' or path == '/api/public-data' or path.startswith('/api/public-data/'):
+            self.online_reject(410, '资料由网站自动更新，无需下载或安装客户端更新')
+            return True
+        return False
+
     def online_origin(self):
         scheme = 'https' if isinstance(self.connection, ssl.SSLSocket) else 'http'
         return scheme + '://' + self.headers.get('Host', '')
@@ -211,6 +216,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(404, {'error': 'Not found'})
         if self.server.https_origin and not isinstance(self.connection, ssl.SSLSocket) and path not in ('/health', '/api/health') and not path.startswith('/.well-known/acme-challenge/'):
             return self.reply(302, headers={'Location': self.server.https_origin + raw.path + ('?' + raw.query if raw.query else '')})
+        if self.retired_client(path):
+            return
         if path.startswith('/api/auth/') or PRIVATE_API.fullmatch(path):
             return self.online_request('GET')
         if path in ('/health', '/api/health'):
@@ -244,14 +251,6 @@ class Handler(BaseHTTPRequestHandler):
             return self.json(200, {'events': push_util.recent(self.root)})
         if re.fullmatch(r'/download/mentor-assistant-v\d+\.\d+\.\d+-local\.zip(?:\.sha256)?', path):
             return self.reply(410, '本站仅提供在线服务，请打开网站登录使用。'.encode(), 'text/plain; charset=utf-8', headers={'Link': '</start.html>; rel="alternate"'})
-        if path == '/api/public-data':
-            descriptor = public_snapshot.latest(self.root)
-            return self.json(200 if descriptor else 503, dict(descriptor or {}, mode='public'))
-        if re.fullmatch(r'/api/public-data/archive/[a-f0-9]{64}', path):
-            archive = self.root / 'cache/public_snapshots' / (path.rsplit('/', 1)[-1] + '.zip')
-            if archive.is_file() and not archive.is_symlink():
-                return self.reply(200, archive.read_bytes(), 'application/zip')
-            return self.json(409, {'error': '该资料版本已更新，请重新检查'})
         if path == '/api/opportunities':
             try:
                 payload = opportunity_util.public_catalog(opportunity_util.observed(self.root))
@@ -309,6 +308,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlsplit(self.path).path
+        if self.retired_client(path):
+            return
         if path.startswith('/api/auth/') or PRIVATE_API.fullmatch(path):
             return self.online_request('POST')
         if self.path not in ('/api/push/subscribe', '/api/push/unsubscribe', '/api/push/test'):

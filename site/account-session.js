@@ -11,6 +11,17 @@
     return state;
   }
   const ready=refresh();ready.catch(()=>{});
+  function expired(){
+    const wasLoggedIn=state.authenticated;
+    Object.assign(state,{authenticated:false,user:null,csrf_token:''});
+    window.dispatchEvent(new CustomEvent('account-session-expired'));
+    document.querySelectorAll('[data-account-link]').forEach(a=>{a.textContent='登录 / 注册';a.href=loginUrl();});
+    if(wasLoggedIn&&!document.getElementById('account-expired-message')){
+      const note=document.createElement('p');note.id='account-expired-message';note.setAttribute('role','status');
+      note.append('登录已失效，已保存的记录仍在账号中。');const link=document.createElement('a');link.href=loginUrl();link.textContent='重新登录后继续 →';note.append(' ',link);
+      (document.querySelector('main')||document.body).prepend(note);
+    }
+  }
   window.OnlineAccount={state,ready,refresh,loginUrl};
   window.fetch=async function(input,options={}){
     const url=new URL(typeof input==='string'||input instanceof URL?input:input.url,location.href);
@@ -23,7 +34,7 @@
       options={...options,headers};
     }
     const response=await nativeFetch(input,options);
-    if(response.status===401&&/^\/(desk|applications|board)\.html$/.test(location.pathname))location.replace(loginUrl());
+    if(response.status===401){expired();if(/^\/(desk|applications|board)\.html$/.test(location.pathname))location.replace(loginUrl());}
     return response;
   };
   document.addEventListener('DOMContentLoaded',()=>{ready.then(()=>document.querySelectorAll('[data-account-link]').forEach(a=>{a.textContent=state.authenticated?'我的账号':'登录 / 注册';a.href=loginUrl();})).catch(()=>{});});

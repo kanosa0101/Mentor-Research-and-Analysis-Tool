@@ -242,7 +242,7 @@ function render(){
   const materials=Object.values(WORKFLOW.materials);
   const scopedMaterials=materials.filter(m=>linked(m.mentor_ids,m.project_ids));
   const unassigned=materials.filter(m=>!m.project_ids.length);
-  el('material-summary').textContent=`当前范围已登记 ${scopedMaterials.length} 个文件，索引标记缺失 ${scopedMaterials.filter(m=>m.missing).length} 个；全部记录中未关联任何项目 ${unassigned.length} 个。登记及文件存在性不代表申请要求齐全，请另行核对官方要求。`;
+  el('material-summary').textContent=`当前范围已上传 ${scopedMaterials.length} 份材料，其中 ${scopedMaterials.filter(m=>m.missing).length} 份需重新上传；另有 ${unassigned.length} 份材料未关联申请项目。请按学校官方要求检查材料是否齐全。`;
   el('material-current').setAttribute('aria-pressed',String(materialView==='current'));
   el('material-unassigned').setAttribute('aria-pressed',String(materialView==='unassigned'));
   el('material-scope').textContent=materialView==='unassigned' ? `正在查看全部未关联任何项目的材料（不按导师筛选）。${projectFilter ? '点击关联将加入项目：'+projectName(projectFilter)+'。' : '请先选择目标项目，再逐条关联。'}` : `正在按当前项目与导师范围查看材料。${projectFilter ? '当前项目：'+projectName(projectFilter)+'。' : ''}`;

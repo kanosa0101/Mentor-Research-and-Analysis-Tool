@@ -8,6 +8,7 @@ import json
 import secrets
 import time
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from playwright.sync_api import sync_playwright
 
@@ -22,7 +23,7 @@ def main():
         raise ValueError('Deployment verification requires HTTPS')
     args.output.mkdir(parents=True, exist_ok=True)
     result = {'base_url': base, 'accounts': [], 'checks': [], 'passed': False}
-    name = 'qa_v111_' + str(int(time.time()))
+    name = 'qa_v1111_' + str(int(time.time()))
     result['planned_usernames'] = [name + '_a', name + '_b']
     password = secrets.token_urlsafe(24)
 
@@ -34,8 +35,9 @@ def main():
             return {status:r.status,data};
         }''', {'path': path, 'method': method, 'body': body})
 
-    def sign_in(page, username, register=False):
-        page.goto(base + '/account.html?next=/applications.html', wait_until='networkidle')
+    def sign_in(page, username, register=False, current_page=False):
+        if not current_page:
+            page.goto(base + '/account.html?next=/applications.html', wait_until='networkidle')
         if register:
             page.locator('[data-account-mode=register]').click()
         page.locator('#account-username').fill(username)
@@ -43,35 +45,64 @@ def main():
         if register:
             page.locator('#account-confirm').fill(password)
         page.locator('#account-submit').click()
-        page.wait_for_url(lambda url: url.split('?')[0].endswith('/applications.html'))
+        destination = '/desk.html' if current_page else '/applications.html'
+        page.wait_for_url(lambda url: urlsplit(url).path == destination)
         state = api(page, '/api/auth/me')['data']
         if register:
-            result['accounts'].append(state['user'])
+            if state['user'] not in result['accounts']:
+                result['accounts'].append(state['user'])
             save()
-        page.wait_for_function('window.WORKFLOW_READY')
+        page.wait_for_function('window.CONTACT_READY' if current_page else 'window.WORKFLOW_READY')
         return state
 
     def save():
         (args.output / 'result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf8')
 
+    save()
     try:
         with sync_playwright() as pw:
-            browser = pw.chromium.launch()
+            # Verify the public endpoint directly, without workstation system proxies.
+            browser = pw.chromium.launch(args=['--no-proxy-server'])
             contexts = [browser.new_context(viewport={'width': width, 'height': 960}) for width in (1440, 390, 390)]
             errors = []
             result['browser_errors'] = errors
+            result['failed_requests'] = []
+            result['core_asset_responses'] = []
             pages = [context.new_page() for context in contexts]
             for page in pages:
-                page.on('pageerror', lambda error: errors.append(str(error)))
+                page.on('pageerror', lambda error: errors.append(str(error.stack)))
+                page.on('requestfailed', lambda request: result['failed_requests'].append({'url': request.url, 'error': request.failure}))
+                page.on('response', lambda response: result['core_asset_responses'].append({'url': response.url, 'status': response.status}) if '/browser-library-core.js' in response.url else None)
             a, same, other = pages
-            sign_in(a, name + '_a', register=True)
+            a.goto(base + '/discovery.html?school=ruc', wait_until='networkidle')
+            a.wait_for_function('window.DISCOVERY_READY')
+            card = a.locator('[data-candidate]').first
+            mentor = card.get_attribute('data-candidate')
+            mentor_name = card.locator('h2').inner_text()
+            card.locator('a[href^="desk.html"]').click()
+            a.wait_for_url(lambda url: urlsplit(url).path == '/account.html')
+            sign_in(a, name + '_a', register=True, current_page=True)
+            assert a.evaluate('incomingMentor') == mentor
             cookies = contexts[0].cookies()
             cookie = next(c for c in cookies if c['name'] == 'mentor_session')
             assert cookie['secure'] and cookie['httpOnly'] and cookie['sameSite'] == 'Lax'
             result['checks'].append('https_registration_secure_cookie')
-            project = api(a, '/api/workflow/projects', 'POST', {'name': '部署验收项目', 'notes': 'Synthetic QA only', 'mentor_ids': ['ruc-info-dongjinhao']})
-            assert project['status'] == 200, project
-            project_id = project['data']['id']
+            a.locator('#prepare-empty a').click()
+            a.wait_for_function('window.WORKFLOW_READY')
+            a.locator('#project-name').fill('部署验收项目')
+            a.locator('#project-save').click()
+            a.wait_for_function('Object.keys(WORKFLOW.projects).length===1')
+            project_id = a.evaluate('Object.keys(WORKFLOW.projects)[0]')
+            assert mentor in a.evaluate('Object.values(WORKFLOW.projects)[0].mentor_ids')
+            a.locator('#back-desk').click()
+            a.wait_for_function('window.CONTACT_READY')
+            a.locator('.tabs [data-view=targets]').click()
+            a.locator('#target-project').select_option(project_id)
+            a.locator('#target-reason').fill('部署验收：保留所选导师和申请项目')
+            a.locator('#target-save').click()
+            a.wait_for_function('Object.keys(FLOW.targets).length===1')
+            assert mentor_name in a.locator('#context-name').inner_text()
+            result['checks'].append('discovery_registration_project_creation_and_target_use_ui_and_preserve_context')
             reminder = api(a, '/api/workflow/reminders', 'POST', {'title': '验收提醒', 'project_id': project_id, 'due_date': time.strftime('%Y-%m-%d')})
             assert reminder['status'] == 200, reminder
             a.goto(base + '/applications.html?section=material', wait_until='networkidle')
@@ -81,11 +112,18 @@ def main():
             a.locator('#material-save').click()
             a.wait_for_function('Object.keys(WORKFLOW.materials).length===1')
             material_id = a.evaluate('Object.keys(WORKFLOW.materials)[0]')
-            communication = api(a, '/api/workflow/communications', 'POST', {'project_id': project_id, 'mentor_id': 'ruc-info-dongjinhao',
-                'kind': 'note', 'date': time.strftime('%Y-%m-%d'), 'subject': '部署验收', 'content': '部署验收沟通记录', 'material_ids': [material_id]})
-            assert communication['status'] == 200, communication
+            a.goto(base + '/applications.html?section=communication', wait_until='networkidle')
+            a.wait_for_function('window.WORKFLOW_READY')
+            a.locator('#communication-mentor-query').fill(mentor)
+            a.locator('#communication-mentor-results button').first.click()
+            a.locator('#communication-project').select_option(project_id)
+            a.locator('#communication-subject').fill('部署验收')
+            a.locator('#communication-content').fill('部署验收沟通记录')
+            a.locator('#communication-materials').select_option(material_id)
+            a.locator('#communication-save').click()
+            a.wait_for_function('Object.keys(WORKFLOW.communications).length===1')
             a.evaluate('scrollTo(0,0)')
-            a.screenshot(path=str(args.output / 'materials-desktop.png'))
+            a.screenshot(path=str(args.output / 'communication-desktop.png'))
             a.goto(base + '/start.html', wait_until='networkidle')
             a.wait_for_function('window.START_READY')
             a.locator('#target-interest').fill('部署验收研究目标')
@@ -105,11 +143,13 @@ def main():
             assert api(other, '/api/workflow/projects/' + project_id, 'PATCH', {'name': 'forbidden'})['status'] != 200
             result['checks'].append('other_account_cannot_read_or_modify_records')
             assert api(other, '/api/auth/logout', 'POST', {})['status'] == 200
-            assert api(other, '/api/workflow')['status'] == 401
+            assert contexts[2].request.get(base + '/api/workflow').status == 401
             result['checks'].append('logout_revokes_private_access')
             anonymous = browser.new_context()
             response = anonymous.request.get(base + '/download/mentor-assistant-v1.10.0-local.zip')
             assert response.status == 410
+            for path in ('/api/public-data', '/api/public-data/check', '/api/public-data/archive/' + 'a' * 64, '/public-data.js'):
+                assert anonymous.request.get(base + path).status == 410, path
             assert anonymous.request.get(base + '/api/workflow').status == 401
             for path in ('/review.html', '/api/review', '/var/accounts/accounts.sqlite3', '/data/workflow.yaml'):
                 assert anonymous.request.get(base + path).status == 404, path

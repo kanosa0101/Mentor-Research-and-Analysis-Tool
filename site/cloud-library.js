@@ -2,6 +2,7 @@
 (function(){
   'use strict';
   let data=null,revision=0,queue=Promise.resolve();
+  window.addEventListener('account-session-expired',()=>{data=core()?.empty()||null;revision=0;window.dispatchEvent(new CustomEvent('browser-library-change'));});
   const core=()=>window.BrowserLibraryCore;
   const read=()=>{if(!data)return core().empty();return core().validate(data);};
   async function reload(){
@@ -9,6 +10,7 @@
     if(!OnlineAccount.state.authenticated){data=core().empty();return;}
     const response=await fetch('/api/library',{cache:'no-store'}),value=await response.json();
     if(!response.ok)throw new Error(value.error||'收藏与待办暂不可读取');
+    if(!OnlineAccount.state.authenticated)return;
     data=core().validate(value.library||core().empty());revision=value.revision;
   }
   const ready=new Promise(resolve=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',resolve,{once:true}):resolve()).then(()=>OnlineAccount.ready).then(reload);
@@ -20,6 +22,7 @@
       const next=core().validate(action(read())),response=await fetch('/api/library',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision,library:next})}),value=await response.json();
       if(response.status===409){await reload();window.dispatchEvent(new CustomEvent('browser-library-change'));throw new Error('其他页面或设备已更新记录，已加载最新内容，请重新操作');}
       if(!response.ok)throw new Error(value.error||'保存失败，请重试');
+      if(!OnlineAccount.state.authenticated)throw new Error('登录已失效，请重新登录后查看保存结果');
       data=core().validate(value.library||next);revision=value.revision;
       window.dispatchEvent(new CustomEvent('browser-library-change'));return read();
     });queue=operation.catch(()=>{});return operation;

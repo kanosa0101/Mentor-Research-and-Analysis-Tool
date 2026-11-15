@@ -59,7 +59,7 @@ def test_failed_build_retries_next_run_and_only_success_advances_digest(tmp_path
     phases['build'].side_effect = [RuntimeError('build failed'), {'published': True}, {'published': True}]
     first = pipeline.run(tmp_path, publish=True)
     assert first['status'] == 'partial' and first['built_catalog_sha256'] is None
-    assert first['failures']['public_snapshot'] == 'RuntimeError'
+    assert first['failures']['public_pages'] == 'RuntimeError'
     second = pipeline.run(tmp_path, publish=True)
     assert second['status'] == 'ok' and second['built_catalog_sha256'] == digest
     pipeline.run(tmp_path, publish=True)
@@ -88,7 +88,7 @@ def test_catalog_read_failure_is_isolated_and_releases_run_lock(tmp_path, phases
         return original(path)
     monkeypatch.setattr(Path, 'read_bytes', fail_catalog)
     failed = pipeline.run(tmp_path, publish=True)
-    assert failed['status'] == 'partial' and failed['failures']['public_snapshot'] == 'PermissionError'
+    assert failed['status'] == 'partial' and failed['failures']['public_pages'] == 'PermissionError'
     assert 'secret fixture' not in json.dumps(failed)
     phases['metrics'].assert_called_once_with(tmp_path)
     monkeypatch.setattr(Path, 'read_bytes', original)
@@ -100,11 +100,12 @@ def test_rebuild_subprocess_failures_hide_raw_output_and_release_lock(tmp_path, 
     process = Mock(return_value=Mock(returncode=1, stdout='fixture-key-secret', stderr='fixture-key-secret'))
     monkeypatch.setattr(pipeline.subprocess, 'run', process)
     snapshot = Mock()
-    monkeypatch.setattr(pipeline, 'build_snapshot', snapshot)
+    from crawler import public_snapshot
+    monkeypatch.setattr(public_snapshot, 'build', snapshot)
     with pytest.raises(ValueError, match='重建失败') as error:
         pipeline.rebuild(tmp_path)
     assert 'fixture-key-secret' not in str(error.value)
     snapshot.assert_not_called()
     process.return_value.returncode = 0
-    pipeline.rebuild(tmp_path)
-    snapshot.assert_called_once_with(tmp_path)
+    assert pipeline.rebuild(tmp_path) == {'published': True}
+    snapshot.assert_not_called()

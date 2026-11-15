@@ -14,7 +14,6 @@ from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler.opportunity_review import renew
 from scripts import build_site
 from scripts.monitor_notices import collect as collect_notices
-from crawler.public_snapshot import build as build_snapshot
 from crawler.notice_util import classify_notice
 from crawler.pipeline_metrics import summarize as pipeline_metrics
 import yaml
@@ -79,8 +78,6 @@ def main():
         task('notices', refresh_notices)
         task('renewed', lambda: renew(ROOT / 'cache/opportunity_review.json', ROOT))
         task('pages_updated', rebuild)
-        if 'pages_updated' not in result['failures']:
-            task('public_snapshot', lambda: build_snapshot(ROOT))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
         warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', 'error', 'manual_required', 'sources_error')}
                     for name in ('policies', 'professors', 'notices')

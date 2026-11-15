@@ -84,8 +84,8 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .foot{color:#a0a8b8;font-size:11.5px;text-align:center;padding:18px 0 4px}
 </style>
 <link rel="stylesheet" href="ui.css?v=20261115-online1">
-<script src="account-session.js?v=20261115-online1"></script>
-<script src="cloud-library.js?v=20261115-online1"></script></head>
+<script src="account-session.js?v=20261116-online3"></script>
+<script src="cloud-library.js?v=20261116-online3"></script></head>
 <body class="page page-board">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -308,13 +308,11 @@ el("backup-file").addEventListener("change", async ()=>{
   }catch(e){alert(e.message);}finally{el("backup-file").value="";}
 });
 
-(async ()=>{  // 写回服务在线则加载跟进数据，否则显示提示；file:// 不发请求
-  if(location.protocol !== "file:"){
+(async ()=>{
     try{
       const account=await OnlineAccount.ready;
       if(account.authenticated){const response=await fetch("/api/outreach");if(!response.ok)throw new Error("记录暂不可读取");OUT=await response.json();API_OK=true;}
     }catch(e){}
-  }
   if(!API_OK) el("hint").style.display = "block";
   el("backup").disabled = el("restore").disabled = !API_OK;
   render();

@@ -68,8 +68,8 @@ a:hover{text-decoration:underline}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
 <link rel="stylesheet" href="../ui.css?v=20261115-online1">
-<script src="../account-session.js?v=20261115-online1"></script>
-<script src="../cloud-library.js?v=20261115-online1"></script></head>
+<script src="../account-session.js?v=20261116-online3"></script>
+<script src="../cloud-library.js?v=20261116-online3"></script></head>
 <body class="page page-detail">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -616,10 +616,6 @@ function fill(e){
     `<div class="h-item"><span class="h-d">${esc(x.date)}</span><span class="h-a">${esc(OLABEL[x.action]||x.action)}</span><span>${esc(x.note||"")}</span></div>`).join("");
 }
 (async ()=>{
-  if(location.protocol === "file:"){  // 静态双击打开：不发请求，只读
-    $("ob-hint").style.display = "block";
-    return;
-  }
   try{
     const account = await OnlineAccount.ready;
     if(!account.authenticated) throw 0;

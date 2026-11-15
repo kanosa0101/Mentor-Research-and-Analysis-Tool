@@ -98,15 +98,17 @@ class OpportunityTests(unittest.TestCase):
             self.assertEqual(factory.call_count,1)
             self.assertFalse((Path(directory)/'data/workflow.yaml').exists())
 
-    def test_feed_failure_never_claims_cached_snapshot_is_current(self):
+    def test_server_catalog_ignores_retired_client_feed_even_if_enabled(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'data').mkdir()
             (root/'data/opportunities.json').write_text(json.dumps(self.catalog()),encoding='utf-8')
             (root/'data/opportunity_feed.json').write_text(json.dumps({'enabled':True,'url':'http://example.org/api/opportunities'}),encoding='utf-8')
-            with patch.object(opportunities,'remote_catalog',side_effect=ValueError('invalid response')):
+            with patch.object(opportunities,'remote_catalog',side_effect=AssertionError('server must not fetch itself')) as remote:
                 result=opportunities.observed(root)
-            self.assertIn('feed_error',result)
-            self.assertEqual(opportunities.state(result['opportunities'][0]),'review')
+            remote.assert_not_called()
+            self.assertNotIn('feed_error',result)
+            self.assertEqual(result['opportunities'],self.catalog()['opportunities'])
+            self.assertEqual(opportunities.state(result['opportunities'][0]),'open')
 
     def test_stopped_monitor_cannot_keep_claiming_registration_is_current(self):
         with tempfile.TemporaryDirectory() as directory:

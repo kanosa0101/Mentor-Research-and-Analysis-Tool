@@ -276,13 +276,11 @@ el("backup-file").addEventListener("change", async ()=>{
   }catch(e){alert(e.message);}finally{el("backup-file").value="";}
 });
 
-(async ()=>{  // 写回服务在线则加载跟进数据，否则显示提示；file:// 不发请求
-  if(location.protocol !== "file:"){
+(async ()=>{
     try{
       const account=await OnlineAccount.ready;
       if(account.authenticated){const response=await fetch("/api/outreach");if(!response.ok)throw new Error("记录暂不可读取");OUT=await response.json();API_OK=true;}
     }catch(e){}
-  }
   if(!API_OK) el("hint").style.display = "block";
   el("backup").disabled = el("restore").disabled = !API_OK;
   render();

@@ -39,7 +39,7 @@ class PackagingTests(unittest.TestCase):
                 package_release.checked_path(root, outside)
 
     def test_allow_only_reviewed_public_patterns(self):
-        for name in ['VERSION', 'release.json', '启动应用.cmd', 'README.md', 'docs/INDEX.md',
+        for name in ['VERSION', 'release.json', 'README.md', 'docs/INDEX.md',
                      'docs/DATA_SNAPSHOT.json', 'scripts/serve.py', 'scripts/package_release.py',
                      'crawler/model.py', 'sites/buaa/cs.yaml', 'sites/notices.yaml', 'sites/buaa/buaa_cs.py',
                      'site/release.html', 'site/data.js', 'site/ui.css', 'site/p/x.html',
@@ -47,7 +47,7 @@ class PackagingTests(unittest.TestCase):
                      'data/admissions_checks.json']:
             with self.subTest(name=name):
                 self.assertTrue(package_release.allowed(name))
-        for name in ['DELIVERY_OLD.md', 'docs/private.md', 'scripts/ai_enrich.py',
+        for name in ['DELIVERY_OLD.md', 'docs/private.md', 'scripts/ai_enrich.py', '启动应用.cmd', '启动信息监测.cmd',
                      'data/changes/a.jsonl',
                      'data/admissions_fragments/a.yaml', 'data/professors/a.yaml', 'site/x.txt']:
             self.assertFalse(package_release.allowed(name), name)

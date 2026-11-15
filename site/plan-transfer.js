@@ -10,6 +10,11 @@
   document.body.append(dialog);
   const style=el('style');style.textContent='#plan-transfer-dialog{width:min(580px,calc(100% - 28px));max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:22px}#plan-transfer-dialog::backdrop{background:#152c2855}#plan-transfer-form label{display:grid;gap:6px;margin:14px 0}#plan-transfer-form input,#plan-transfer-form select,#plan-transfer-form textarea{width:100%;min-width:0;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit}#local-next-actions article{border-bottom:1px solid var(--line);padding:14px 0}#local-next-actions p{margin:6px 0;line-height:1.7}#local-next-actions a{margin-right:14px}#local-next-actions .personal-due{color:#945619}';document.head.append(style);
   const $=id=>document.getElementById(id),title=g=>g.path==='exam'?g.year+'年入学统考':g.year+'届保研准备';
+  window.addEventListener('account-session-expired',()=>{
+    mode='guest';selection=null;workflow=null;dialog.close();$('plan-transfer-form').reset();
+    $('plan-source').textContent='';$('plan-preview').textContent='';$('plan-status').textContent='';$('plan-goal').replaceChildren();$('plan-school').replaceChildren();
+    if(panel){panel.hidden=true;list.replaceChildren();$('local-overview-status').textContent='';}refresh();
+  });
   const link=(name,url)=>{const n=el('a',name);n.href=url;return n;};
   async function api(path,body){const r=await fetch('/api/workflow'+path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{});const d=await r.json();if(!r.ok)throw new Error(d.error||'申请工作台暂不可用');return d;}
   function refresh(){
@@ -33,7 +38,7 @@
       location.assign(OnlineAccount.loginUrl());return;
     }
     try{
-      const data=CloudLibrary.read(),item=data[kind==='target'?'targets':'bookmarks'].find(i=>i.id===id);if(!item)throw new Error('该浏览器记录已不存在，请刷新');
+      const data=CloudLibrary.read(),item=data[kind==='target'?'targets':'bookmarks'].find(i=>i.id===id);if(!item)throw new Error('该账号记录已不存在，请刷新');
       selection={kind,item,data};$('plan-source').textContent='来自：'+(kind==='target'?title(item):item.title);
       $('plan-name').value=kind==='target'?(item.schools.length===1?item.schools[0].name+' · ':'')+title(item):item.title;
       $('plan-notes').value='';$('plan-status').textContent='';$('plan-confirm').disabled=false;
@@ -58,7 +63,8 @@
   async function loadOverview(){
     if(mode!=='online'||!panel)return;
     try{
-      workflow=await api('');panel.hidden=false;list.replaceChildren();
+      const loaded=await api('');if(mode!=='online'||!OnlineAccount.state.authenticated)return;
+      workflow=loaded;panel.hidden=false;list.replaceChildren();
       const projects=Object.values(workflow.projects),today=core.day();
       $('local-overview-status').textContent=projects.length?'正式项目 '+projects.length+' 个 · 以下为账号云端记录':'还没有正式项目。可从下方关注目标或收藏明确建立。';
       for(const p of projects.filter(p=>!['archived','rejected'].includes(p.status)).slice(0,12)){
@@ -77,7 +83,7 @@
         actions.append(link('目标与材料','applications.html?project='+encodeURIComponent(p.id)),link('联系与提醒','desk.html?project='+encodeURIComponent(p.id)));row.append(actions);list.append(row);
       }
       if(projects.length>12)list.append(link('查看全部项目 →','applications.html'));
-    }catch(error){panel.hidden=false;$('local-overview-status').textContent='申请记录暂不可读：'+error.message;}
+    }catch(error){if(mode!=='online')return;panel.hidden=false;$('local-overview-status').textContent='申请记录暂不可读：'+error.message;}
   }
   Promise.all([OnlineAccount.ready,CloudLibrary.ready]).then(async()=>{mode=OnlineAccount.state.authenticated?'online':'guest';refresh();await loadOverview();}).catch(()=>{mode='unavailable';refresh();});
   window.PlanTransfer={open,refresh};

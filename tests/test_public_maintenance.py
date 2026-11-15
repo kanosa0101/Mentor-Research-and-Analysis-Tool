@@ -14,12 +14,14 @@ class MaintenanceTests(unittest.TestCase):
             def run(*args,**kwargs):
                 if kwargs['kind']=='policies':raise ValueError('policy stage failed')
                 return {'error':0,'attempted':40}
-            with patch.object(maintain,'ROOT',root),patch.object(maintain,'run',side_effect=run),patch.object(maintain,'refresh_notices',return_value={'sources_error':0}) as notices,patch.object(maintain,'renew',return_value=[]),patch.object(maintain,'rebuild',return_value=2) as rebuild,patch.object(maintain,'build_snapshot',return_value={'id':'test'}):
+            with patch.object(maintain,'ROOT',root),patch.object(maintain,'run',side_effect=run),patch.object(maintain,'refresh_notices',return_value={'sources_error':0}) as notices,patch.object(maintain,'renew',return_value=[]),patch.object(maintain,'rebuild',return_value=2) as rebuild,patch('crawler.public_snapshot.build',side_effect=AssertionError('No client archive')) as snapshot:
                 self.assertEqual(maintain.main(),1)
             notices.assert_called_once();rebuild.assert_called_once()
+            snapshot.assert_not_called()
             report=json.loads((root/'cache/public-maintenance.json').read_text(encoding='utf-8'))
             self.assertIn('policies',report['failures'])
             self.assertEqual(report['professors']['attempted'],40)
+            self.assertNotIn('public_snapshot',report)
     def test_notice_refresh_does_not_repeat_within_six_hours(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'data').mkdir()

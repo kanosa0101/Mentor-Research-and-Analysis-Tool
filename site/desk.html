@@ -19,8 +19,8 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 @media(max-width:800px){.context>.eyebrow{display:none}.context.panel{padding:12px 14px}.context p{margin:4px 0}.context details{margin-top:6px}main{padding:18px 14px}.header-inner{padding:16px 14px;gap:14px}.hero{align-items:flex-start;flex-direction:column}.columns,.prepare-grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.panel{padding:17px}.list-tools{grid-template-columns:1fr 1fr}.list-tools input{grid-column:1/-1}.stats{gap:8px}.stat{padding:14px 10px}.stat strong{font-size:27px}.stat span{font-size:12px}.draft-title{align-items:flex-start;flex-direction:column}.draft-title select{max-width:100%}.toolbar{gap:6px}.tabs{gap:24px}.context h2{font-size:22px}}
 </style>
 <link rel="stylesheet" href="ui.css?v=20261115-online1">
-<script src="account-session.js?v=20261115-online1"></script>
-<script src="cloud-library.js?v=20261115-online1"></script></head>
+<script src="account-session.js?v=20261116-online3"></script>
+<script src="cloud-library.js?v=20261116-online3"></script></head>
 <body class="page page-desk">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -72,12 +72,12 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 <label class="wide">申请项目<select id="target-project" required></select></label>
 <div class="wide"><label>导师<input id="target-query" autocomplete="off" placeholder="姓名、学校或导师 ID"></label><div id="target-results" class="results"></div><div id="target-choice" class="choice"></div></div>
 <label>优先级<select id="target-priority"><option value="normal">一般</option><option value="high">优先</option><option value="low">暂缓</option></select></label>
-<label class="wide">为什么选择这位导师<textarea id="target-reason" placeholder="具体研究交集、想进一步了解的问题"></textarea></label></div><div class="actions"><button class="primary" id="target-save">加入并准备联系</button></div></form><p class="muted"><a id="target-manage" href="applications.html">新建申请项目 / 登记材料 →</a></p></section></div>
+<label class="wide">为什么选择这位导师<textarea id="target-reason" placeholder="具体研究交集、想进一步了解的问题"></textarea></label></div><div class="actions"><button class="primary" id="target-save">加入并准备联系</button></div></form><p class="muted"><a id="target-manage" href="applications.html">新建申请项目 / 上传材料 →</a></p></section></div>
 </section>
 <section id="view-prepare" hidden>
 <div id="prepare-empty" class="welcome"><h2>先选择一位目标导师</h2><p>从“我的导师”进入，也可以从导师详情页直接开始。</p><button data-view="targets">选择目标导师 →</button></div>
 <div id="prepare-detail" class="prepare-grid" hidden>
-<aside class="panel context"><span class="eyebrow">Current target</span><h2 id="context-name"></h2><p id="context-project"></p><p><span id="context-stage" class="badge"></span><span id="context-priority" class="badge"></span></p><p><small id="context-next"></small></p><button type="button" id="context-task-link" data-panel="tasks">安排 / 查看下一步 →</button><details><summary>背景与阶段管理</summary><small id="context-reason"></small><p><a id="context-profile" href="#">查看官网信息与出处 →</a></p><div class="progress"><small id="context-research"></small><label>联系阶段<select id="context-stage-edit"></select></label><div class="actions"><button id="stage-save">更新阶段</button></div><small>正式申请状态在项目管理中单独维护。</small></div></details></aside>
+<aside class="panel context"><span class="eyebrow">当前导师</span><h2 id="context-name"></h2><p id="context-project"></p><p><span id="context-stage" class="badge"></span><span id="context-priority" class="badge"></span></p><p><small id="context-next"></small></p><button type="button" id="context-task-link" data-panel="tasks">安排 / 查看下一步 →</button><details><summary>背景与阶段管理</summary><small id="context-reason"></small><p><a id="context-profile" href="#">查看官网信息与出处 →</a></p><div class="progress"><small id="context-research"></small><label>联系阶段<select id="context-stage-edit"></select></label><div class="actions"><button id="stage-save">更新阶段</button></div><small>正式申请状态在项目管理中单独维护。</small></div></details></aside>
 <div class="prepare-panels">
 <nav class="prepare-links" aria-label="联系操作"><button type="button" data-panel="mail" aria-selected="false">写邮件</button><button type="button" data-panel="tasks" aria-selected="false">下一步</button><button type="button" data-panel="reply" aria-selected="false">记回复</button><button type="button" data-panel="history" aria-selected="false">历史</button></nav><section class="panel" id="prepare-tasks" hidden><h2>下一步与提醒</h2><div id="target-task-list"></div><form id="task-form"><div class="fields"><label>提醒内容<input id="task-title" required placeholder="例如：核对报名截止、整理简历"></label><label>计划日期<input id="task-due" type="date" required></label></div><div class="actions"><button id="task-save" class="primary">新增提醒</button><button id="task-reset" type="button">取消编辑 / 清空</button></div><div id="task-status" role="status" aria-live="polite"></div></form></section>
 <section class="panel" id="prepare-mail"><div class="draft-title"><h2>准备这一次联系</h2><select id="draft-choice" aria-label="选择历史草稿"></select></div><p class="muted">先核实联系依据，再写邮件。导出 EML 包含所选附件，由你在邮件客户端检查并发送。</p>

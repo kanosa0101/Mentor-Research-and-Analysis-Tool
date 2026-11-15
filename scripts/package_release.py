@@ -12,14 +12,14 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 FIXED = {
-    'VERSION', 'release.json', '启动应用.cmd', 'README.md', 'USER_GUIDE.md',
+    'VERSION', 'release.json', 'README.md', 'USER_GUIDE.md',
     'RELEASE_NOTES.md', 'RELEASE_ACCEPTANCE.md', 'REQUIREMENTS.md',
     'ARCHITECTURE.md', 'HANDOVER.md', 'requirements.txt', 'docs/INDEX.md',
     'docs/DATA_SNAPSHOT.json', 'docs/UI_GUIDELINES.md', 'scripts/serve.py', 'scripts/build_site.py',
     'scripts/package_release.py', 'sites/notices.yaml', 'data/schools.yaml',
     'data/admissions.yaml', 'data/admissions_entries.yaml',
     'data/admissions_checks.json', 'data/notices.json', 'data/opportunities.json',
-    'scripts/monitor_opportunities.py', 'scripts/monitor_notices.py', '启动信息监测.cmd', 'sites/opportunities.yaml', 'data/opportunity_feed.json',
+    'scripts/monitor_opportunities.py', 'scripts/monitor_notices.py', 'sites/opportunities.yaml', 'data/opportunity_feed.json',
     'scripts/review_opportunities.py', 'scripts/refresh_legacy.py',
     'deploy/DELIVERY_V1.2_2026-11-15.md',
     'deploy/DELIVERY_V1.3_2026-11-15.md',
@@ -54,7 +54,7 @@ PATTERNS = (
 )
 REQUIRED_SITE = {
     'site/start.html', 'site/coverage.html', 'site/start.js',
-    'site/browser-library-core.js', 'site/browser-library.js', 'site/public-data.js',
+    'site/browser-library-core.js', 'site/browser-library.js',
     'site/plan-transfer.js', 'site/school-catalog.js', 'site/discovery-data.js',
     'site/release.html', 'site/index.html', 'site/discovery.html', 'site/discovery-entry.js',
     'site/admissions.html', 'site/applications.html', 'site/desk.html',

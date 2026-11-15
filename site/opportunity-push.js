@@ -10,7 +10,7 @@ async function updatePushPanel(){
     const response=await fetch('/api/push/config');if(!response.ok)throw new Error();pushConfig=await response.json();
     const secure=pushConfig.origin&&location.origin===pushConfig.origin&&window.isSecureContext;
     if(!pushConfig.enabled||!secure){
-      pushNode('push-status').textContent=pushConfig.mode==='local'?'本机不提供后台推送，请到公开 HTTPS 站点订阅。':pushConfig.enabled?'请在安全站点订阅浏览器后台通知。':'此服务未启用后台通知。公开站点可提供订阅。';
+      pushNode('push-status').textContent=pushConfig.enabled?'请在本站 HTTPS 页面订阅浏览器通知。':'浏览器通知暂不可用，请查看站内更新记录。';
       if(pushConfig.origin){const link=document.createElement('a');link.href=pushConfig.origin+'/opportunities.html';link.textContent='打开 HTTPS 通知站点 →';pushNode('push-status').append(' ',link);}
       return;
     }

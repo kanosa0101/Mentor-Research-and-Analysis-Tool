@@ -221,19 +221,8 @@ def load(root):
 
 
 def observed(root):
-    """Overlay monitoring health, without rewriting curated facts or their review date."""
+    """Read the server catalog and monitoring health; never fetch a client mirror."""
     catalog = load(root)
-    feed = Path(root) / 'data/opportunity_feed.json'
-    if feed.exists():
-        try:
-            config = json.loads(feed.read_text(encoding='utf-8'))
-            if config.get('enabled'):
-                return remote_catalog(root, config['url'])
-        except (OSError, ValueError, KeyError, requests.RequestException):
-            catalog['feed_error'] = '服务器更新暂不可读取；当前为本机快照，不能确认最新报名状态。'
-            for item in catalog['opportunities']:
-                item['source_state'] = 'unavailable'
-                item['source_note'] += ' 服务器更新未能读取，请查官方原文。'
     path = Path(root) / 'cache/opportunities_live.json'
     try:
         monitoring = json.loads(path.read_text(encoding='utf-8')) if path.exists() else None

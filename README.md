@@ -19,7 +19,7 @@
 - [在线服务决策与验收标准](docs/ONLINE_SERVICE.md)、[实施计划](IMPLEMENTATION_PLAN.md)。
 - [架构](ARCHITECTURE.md)、[维护交接](HANDOVER.md)、[自动核验](docs/AUTOMATIC_REVIEW.md)。
 
-v1.10交付报告中的本机运行包是历史交付，已被在线产品决策取消。历史文档保留在[归档](docs/history/pre-online-20261115/SHA256.json)。当前结果见[v1.11交付记录](deploy/DELIVERY_V1.11_2026-11-15.md)：已部署，686项Python测试、14组Node、补充TLS浏览器及公网流程验证通过。
+本轮在线体验收敛的测试与部署结果见[v1.11.1交付记录](deploy/DELIVERY_V1.11.1_2026-11-16.md)，具体完成状态以报告中的实测记录为准。此前账号功能上线证据见[v1.11交付记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
 
 ## 开发与运维
 

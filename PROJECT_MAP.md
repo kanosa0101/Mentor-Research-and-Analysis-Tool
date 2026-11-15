@@ -1,8 +1,6 @@
 # 项目地图
 
-> 2026-11-15 产品决策更新：只提供在线网站；账号登录、云端保存、跨设备使用。下文有关本机版、运行包和公开站转本机的约定已废止，以[在线服务调整](docs/ONLINE_SERVICE.md)为准；实现、技术验收与部署已完成，结果见[v1.11交付记录](deploy/DELIVERY_V1.11_2026-11-15.md)。
-
-整理日期：2026-11-15；v1.9 为问题审计基线，当前 v1.10 整理实现见[交付记录](deploy/DELIVERY_V1.10_2026-11-15.md)。下文标明历史基线的数据不代表重新采集。
+修订日期：2026-11-16。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.1交付记录](deploy/DELIVERY_V1.11.1_2026-11-16.md)。历史审计数字不代表本轮重新采集。
 
 ## 产品究竟服务什么任务
 
@@ -25,7 +23,7 @@ flowchart LR
 
 ## 页面地图
 
-| 页面 / 用户入口 | 应承担的单一主要任务 | v1.10处理与保留边界 | 主要实现 |
+| 页面 / 用户入口 | 应承担的单一主要任务 | 当前行为与边界 | 主要实现 |
 | --- | --- | --- | --- |
 | 申请导航 `start.html` | 首访选路径；回访继续已关注内容 | 学校入口前置，步骤建议折叠，维护和备份按需打开 | `start.js`、`browser-library*.js`、`plan-transfer.js` |
 | 找导师 `discovery.html` | 按真实导师属性找出愿意进一步了解的人 | 资格与职称独立过滤，默认可追溯邮箱，同视口卡片等高，回访恢复 | `discovery.js`、`discovery-core.js`、`crawler/public_discovery.py` |
@@ -33,8 +31,8 @@ flowchart LR
 | 导师对比 `compare.html` | 比较已选导师的方向、资格和联系信息 | 不推断个人资格、名额或录取概率；手机也要能比较 | `compare.html.j2`、`crawler/public_catalog.py` |
 | 院校活动 `opportunities.html` | 查看学校/院系/研究所组织的营和正式院所项目 | 只显示机构活动；个人招募等旧ID说明去向；主办方、条件、时间和官方入口优先 | `opportunities*.js`、`crawler/opportunity_util.py` |
 | 学校与要求 `admissions.html` | 核对当前目标条件、材料、截止与适用范围 | 保留申请目标筛选；关键限制不截断，材料及完整证据按需查看 | `admissions*.js`、`material-actions.js` |
-| 招生通知 `notices.html` | 查正式招生通知及未结构化官方信息 | 与活动/要求边界含混；需显示轮次与通知阶段 | `notices*.js`、`crawler/notice_util.py` |
-| 我的申请 `desk.html` | 继续联系、登记回复、安排下一步 | 名称像项目总览，主体实际是联系工作台；减少重复入口 | `desk.js`、`crawler/contact_util.py` |
+| 招生通知 `notices.html` | 查正式招生通知及未结构化官方信息 | 显示轮次与通知阶段；候选通知不等于已核验申请条件 | `notices*.js`、`crawler/notice_util.py` |
+| 我的申请 `desk.html` | 继续联系、登记回复、安排下一步 | 以当前导师和申请为上下文；项目与材料在关联页面管理 | `desk.js`、`crawler/contact_util.py` |
 | 项目与材料 `applications.html` | 管理一次具体申请及所需材料 | 与联系页保持同一项目上下文；简化空态/重复解释 | `workflow.js`、`crawler/workflow_util.py`、`material_task_util.py` |
 | 全量目录 `index.html` | 查看完整原始目录，含缺邮箱记录 | 保留为次级核对工具，不让新用户再理解第二套主筛选 | `index.html.j2`、`data.js`、`search.js` |
 | 旧套磁看板 `board.html` | 访问已有旧记录 | 与新工作流不同步；保留历史访问，退出新用户主要路径 | `board.html.j2`、outreach API |
@@ -53,7 +51,7 @@ flowchart LR
 | 云端账号记录 | `var/accounts/accounts.sqlite3` 中身份/会话/收藏；`var/users/<ID>/` 中申请、沟通、提醒与材料 | 公共事实、服务器旧私人文件或其他账号资料 |
 | 维护证据 | `cache/opportunity_review.json`、来源正文/附件、审核与自动任务记录；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
 
-界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。本轮按明确需求建立云账号；原私人文件保留，不自动归属新用户。
+界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。现有云账号隔离个人数据；原私人文件保留，不自动归属新用户。
 
 ## 信息、API 与运行地图
 
@@ -69,7 +67,7 @@ flowchart TD
   E --> B[静态构建 / 公开查询 / 更新摘要]
   M --> B
   N --> B
-  B --> W[公开站与本机版]
+  B --> W[在线网站]
   B --> P[浏览器自愿更新提醒]
 ```
 
@@ -81,19 +79,17 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 | 候选查询 | `/api/mentor-candidates` → `crawler/public_discovery.py`；按ID读取 → `public_catalog.py` | 邮箱/资格/职称在分页前过滤；总数、前端回退、旧偏好兼容一致 |
 | 活动发现 | `sites/opportunities.yaml`、`opportunity_monitor.py`、`source_discovery.py` | 来源监测不等于活动准入；个人招募不得自动重新混入 |
 | 核验发布 | `opportunity_review.py`、`automatic_review.py`、`ai_evidence.py`、`review_queue.py` | 官方事实门禁与产品归类门禁都通过才分发；AI不能凭标题猜主办层级 |
-| 更新与推送 | `run_review_pipeline.py`、`push_util.py`、`dispatch_updates.py`、`opportunity-sw.js` | 活动API、列表、更新记录、订阅推送与资料包使用同一范围 |
-| 私人工作流 | `scripts/serve.py`；workflow/contact/project/material 模块 | 仅本机明确保存；旧活动快照、联系人、材料和提醒不被公开迁移重写 |
-| 构建与分发 | `scripts/build_site.py`、`maintain_public.py`、`public_snapshot.py`、`public_update.py`、`package_release.py` | 源数据、索引、详情、API、安装包配套；资料更新不更新程序代码 |
+| 更新与推送 | `run_review_pipeline.py`、`push_util.py`、`dispatch_updates.py`、`opportunity-sw.js` | 活动API、列表、更新记录、订阅推送使用同一公开范围 |
+| 私人工作流 | `online_workspace.py` 按账号适配 `scripts/serve.py` 的 workflow/contact/project/material 业务 | 登录后显式保存；旧活动快照、联系人、材料和提醒不被公共更新重写 |
+| 构建与发布 | `scripts/build_site.py`、`maintain_public.py`、`run_review_pipeline.py` | 源数据、索引、详情与API配套；维护不生成客户端资料ZIP，不更新账号目录 |
 
-技术形态：Python + YAML/JSON + Jinja2 + 原生 JS，多页站点。公开站由 `scripts/serve_public.py` 提供 HTTPS 8443；本机应用默认 loopback 8000；维护台 loopback 18769。部署约定及凭据边界见 [架构](ARCHITECTURE.md) 和 [交接](HANDOVER.md)，本次文档盘点未重新部署或调整定时器。
+技术形态：Python + YAML/JSON + SQLite账号库 + Jinja2 + 原生 JS，多页站点。`scripts/serve_public.py` 提供 HTTPS 8443，HTTP80跳转；维护台仅监听 loopback 18769。`scripts/serve.py` 保留业务代码和内部开发用途，不是学生服务入口。部署约定及凭据边界见 [架构](ARCHITECTURE.md) 和 [交接](HANDOVER.md)。
 
 ## 数据和验证现状
 
-本地 v1.9 基线：7173条导师记录、39校、59配置单位（56有导师）、111政策、183来源、96官方入口、360通知、18条混合机会。数量不表示最新、完整或可报名。
+公开数据数量和已整理缺口见 [数据快照](docs/DATA_SNAPSHOT.json) 与网站覆盖页；每条资料以自身来源、适用年度和核验时间为准，构建日期不能证明整库已刷新。2026-11-15整改前的字段质量与18条混合内容处置依据保留在 [历史问题审计](docs/PRODUCT_AUDIT_2026-11-15.md)。
 
-本轮只读审计：5639条导师邮箱格式有效且有来源记录，1505条为空，29条异常；5639并不代表已验证送达。18条机会建议9条活动（7历史、2当期机构项目）、6条导师招募，其余3条需分别处理。逐项证据见 [现状审计](docs/PRODUCT_AUDIT_2026-11-15.md)。
-
-Python/Node 测试覆盖证据、范围、存储、分页和发布边界。v1.10 增补内容归类、筛选一致性、等高卡片、原文出处、40位返回及公开到本机转接走查；实际证据见[交付记录](deploy/DELIVERY_V1.10_2026-11-15.md)。内部走查不替代用户体验验收。
+Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证见[v1.11.1记录](deploy/DELIVERY_V1.11.1_2026-11-16.md)。内部走查不替代用户体验验收。
 
 ## 文档阅读顺序
 
@@ -101,7 +97,7 @@ Python/Node 测试覆盖证据、范围、存储、分页和发布边界。v1.10
 2. [产品计划](PRODUCT_PLAN.md) → [需求](REQUIREMENTS.md) → [用况](docs/USE_CASES.md)：为谁解决什么问题。
 3. [内容规则](docs/CONTENT_RULES.md) → [UI规则](docs/UI_GUIDELINES.md)：内容准入、来源和呈现口径。
 4. [实施计划](IMPLEMENTATION_PLAN.md)：四阶段顺序、改动边界、验收与回滚。
-5. [架构](ARCHITECTURE.md)、[交接](HANDOVER.md)、[运行版手册](USER_GUIDE.md)：现有运行事实。
+5. [架构](ARCHITECTURE.md)、[交接](HANDOVER.md)、[在线使用手册](USER_GUIDE.md)：现有运行事实。
 
 旧通用计划已原字节归档到 `docs/history/pre-ux-reset-20261115/`，日期命名的其他历史交付保留，不作为当前计划。
 

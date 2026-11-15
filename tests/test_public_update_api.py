@@ -50,21 +50,32 @@ class UpdateAPITests(unittest.TestCase):
                 finish.set();server.shutdown();server.server_close();thread.join()
                 serve._public_update.update(busy=False,message='',result=None)
 
-    def test_public_archive_matches_hash_and_excludes_private_inputs(self):
+    def test_online_site_retires_client_update_and_archives_even_when_present(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/'VERSION').write_text('1.5.0')
             for name in public_snapshot.FIXED | {'data/professors/demo/cs/name.yaml'}:
                 p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('{}')
             (root/'data/workflow.yaml').write_text('private snapshot')
             expected=public_snapshot.build(root)
+            (root/'site').mkdir()
+            (root/'site/public-data.js').write_text('retired-client-script')
             server=serve_public.create_server(root,'127.0.0.1',0)
             thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
             try:
-                with closing(http.client.HTTPConnection('127.0.0.1',server.server_port)) as connection:
-                    connection.request('GET','/api/public-data');response=connection.getresponse()
-                    self.assertEqual(response.status,200);actual=json.loads(response.read())
-                    self.assertEqual(actual['id'],expected['id']);self.assertEqual(actual['mode'],'public')
-                    connection.request('GET',actual['archive']);response=connection.getresponse()
-                    self.assertEqual(response.status,200);self.assertEqual(public_snapshot.digest(response.read()),expected['sha256'])
+                for path in ('/api/public-data', expected['archive'], '/public-data.js'):
+                    for method in ('GET', 'HEAD'):
+                        with closing(http.client.HTTPConnection('127.0.0.1',server.server_port)) as connection:
+                            connection.request(method,path);response=connection.getresponse()
+                            self.assertEqual(response.status,410)
+                            raw=response.read()
+                            self.assertNotIn(b'private snapshot',raw)
+                            self.assertNotIn(b'retired-client-script',raw)
+                            self.assertEqual(response.getheader('Cache-Control'),'no-store')
+                            if method=='HEAD':self.assertEqual(raw,b'')
+                for path in ('/api/public-data/check','/api/public-data/update'):
+                    with closing(http.client.HTTPConnection('127.0.0.1',server.server_port)) as connection:
+                        connection.request('POST',path,'{}',{'Content-Type':'application/json'})
+                        response=connection.getresponse();self.assertEqual(response.status,410);response.read()
+                self.assertEqual((root/'data/workflow.yaml').read_text(),'private snapshot')
             finally:
                 server.shutdown();server.server_close();thread.join()
