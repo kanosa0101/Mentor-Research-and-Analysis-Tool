@@ -1,4 +1,4 @@
-"""Policy return links: real local applications UI, intercepted API and target page only."""
+"""Policy return links: real local applications and policy pages, intercepted workflow API."""
 import copy
 import json
 import shutil
@@ -13,7 +13,7 @@ from jinja2 import Environment, FileSystemLoader
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / 'cache/policy_v20/material_policy_return'
+OUT = ROOT / 'cache/v19/material_policy_return'
 
 
 def main():
@@ -56,11 +56,11 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         site = Path(tmp)
         for name in ['workflow.js', 'material-actions.js', 'data.js', 'admissions-data.js',
-                     'admissions-core.js', 'ui.css']:
+                     'admissions-core.js', 'admissions.js', 'opportunities-core.js', 'ui.css']:
             shutil.copyfile(ROOT / 'site' / name, site / name)
         env = Environment(loader=FileSystemLoader(ROOT / 'site/templates'))
         (site / 'applications.html').write_text(env.get_template('applications.html.j2').render(), encoding='utf-8')
-        (site / 'admissions.html').write_text('<!doctype html><title>Local target stub</title><p>Scope URL target only</p>', encoding='utf-8')
+        (site / 'admissions.html').write_text(env.get_template('admissions.html.j2').render(), encoding='utf-8')
         server = ThreadingHTTPServer(('127.0.0.1', 0), partial(SimpleHTTPRequestHandler, directory=tmp))
         threading.Thread(target=server.serve_forever, daemon=True).start()
         origin = f'http://127.0.0.1:{server.server_port}'
@@ -104,7 +104,10 @@ def main():
                             page.screenshot(path=str(OUT / f'{pid}-{width}.png'), full_page=True)
                         link.click()
                         page.wait_for_url('**/admissions.html*')
+                        page.wait_for_function('window.ADMISSIONS_READY')
                         assert parse_qs(urlsplit(page.url).query) == {k:[v] for k,v in expected.items()}
+                        if pid in ['unknown-dept', 'missing-dept', 'missing-goal']:
+                            assert page.locator('#checklist-project').count() == 0
                         seen.append(dict(case=pid, width=width, query=expected))
                     # In-place project changes must replace the link scope, including after normal actions.
                     page.goto(origin + '/applications.html?section=preparation&project=normal')
@@ -140,7 +143,7 @@ def main():
             server.shutdown()
             server.server_close()
     result=dict(status='pass', clicked_scopes=seen, writes=writes, browser_errors=errors,
-                target='local stub; verifies actual navigation query only', viewport_widths=[1440,390])
+                target='real policy page; verifies actual navigation, retained scope and incomplete-target protection', viewport_widths=[1440,390])
     (OUT/'green.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     print('PASS policy-return: empty/actions, exact scope/unknown/code-only, project switches, no POST, real clicks, 1440/390 no overflow')
 

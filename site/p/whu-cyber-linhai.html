@@ -32,10 +32,6 @@ img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:rig
 .dl dt{color:var(--muted)}.dl dl dd{margin:0}
 .dl dd{margin:0}
 .meta{font-size:11.5px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;vertical-align:2px;margin-left:8px}
-.tag-roster{background:#fef4e0;color:var(--warn)}
-.tag-enriched{background:var(--accent-soft);color:var(--accent)}
-.tag-verified{background:#e3f7ef;color:var(--ok)}
 .pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
 .pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
 .pv th{background:#fafbfd;color:var(--muted);font-weight:600}
@@ -47,7 +43,6 @@ a{color:var(--accent);text-decoration:none;word-break:break-all}
 a:hover{text-decoration:underline}
 .chip{display:inline-block;font-size:11.5px;background:#f1f3f7;color:#556;border-radius:6px;padding:2px 8px;margin:0 4px 2px 0}
 .card.ai{border-style:dashed;border-color:#d6c7f5}
-.ai-meta{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
 .card.ai h4{margin:10px 0 4px;font-size:12.5px;color:#6b46c1}
 .ai-claims{margin:0;padding-left:18px;font-size:13px;line-height:1.75}
 .ai-claims li{margin-bottom:4px}
@@ -72,8 +67,8 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261115-1"></head>
-<body>
+<link rel="stylesheet" href="../ui.css?v=20261115-19"></head>
+<body class="page page-detail">
 
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="../start.html">◈ 导师库 · 申请助手</a>
@@ -111,23 +106,19 @@ a:hover{text-decoration:underline}
 <p id="detail-scope-warning" class="note" hidden>此导师不在原项目院系，继续时已清除原专业／专项范围，请重新核对招生要求。</p>
 <div class="card">
 
-  <h2>林海 <span class="tag tag-enriched">已富化</span></h2>
+  <h2>林海</h2>
   <div style="color:var(--muted);font-size:13.5px">副教授</div>
   <dl class="dl">
-    <dt>研究所</dt><dd>网络空间安全系</dd>
+    <dt>所属团队</dt><dd>网络空间安全系</dd>
     <dt>导师资格</dt><dd>暂未收录</dd>
 
     <dt>研究方向</dt><dd>1. 算法与深度学习、深度学习研究包括： 1 ）强化学习：多步骤的马尔科夫决策模型（ Toward Multiple-Phase MDP Model for Charging Station Recommendation ， IEEE TITS ），多智能体和大动作空间强化学习（ SABQ: Transition-Aware Advantage-based Branching Q-Network for Efficient Deep Reinforcement Learning in Large Action Spaces ，在投）； 2 ）迁移学习：迁移学习在智能交通中的应用（车联网中基于迁移强化学习的跨域充电站推荐算法，物联网学报）； 3 ）联邦学习：车联网下的联邦学习（ Koshino: A Semi-Asynchronous Edge-Based Federated Learning Framework for Highly Dynamic Vehicular Networks ，在投）、算法研究包括： 1 ）时间序列算法：车联网的交通流预测（ Frequency Enhanced Dynamic Graph Convolutional Networks for Traffic Flow Forecasting ， IEEE access ）； 2 ）推荐算法：电动车的充电推荐（ PDQN: User Preference-Based Charging Station Recommendation ， IEEE TCE ）； 3 ）物流仓储中的储位优化算法（针对 B2C 电商物流配送中心的储位优化算法，计算机应用与软件；低层人工拣货仓库货位优化问题研究，计算机工程与科学）； 4 ）路径规划算法：无人机的路径规划、2. 车联网和边缘计算、包括： 1 ）车联网边缘计算：边缘计算的任务调度（ A survey on computation offloading modeling for edge computing ， Elsevier JNCA ）； 2 ）边缘智能（ Luffynet: 面向硬件感知的边缘智能，计算机工程）； 3 ）车联网中充电站推荐、3. 数据融合和网络安全、包括： 1 ）车联网入侵检测（ RAG-HIDS: A Multi-Relational Graph-Based Hierarchical Intrusion Detection System for In-Vehicle Networks ，在投）； 2 ）车联网信任机制（ Trust evaluation mechanism for the internet of vehicles based on filtering algorithm, Computer Networks ）； 3 ）数据融合：卡尔曼滤波，粒子滤波，联邦滤波等</dd>
-    <dt>邮箱</dt><dd>暂未收录</dd>
-    <dt>个人主页</dt><dd><span class="missing">暂未收录</span></dd>
-    <dt>官网页面</dt><dd><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank">https://cse.whu.edu.cn/info/3441/37621.htm</a></dd>
-  </dl>
-  <div class="meta">
-    <span>首次入库：2026-10-14</span>
-    <span>字段来源最晚抓取：2026-10-14</span>
-<span>最近解析：2026-10-14</span>
+    <dt>公开邮箱</dt><dd>暂未收录，可查看官网联系渠道</dd>
 
-  </div>
+
+    <dt>官方资料</dt><dd><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank" rel="noopener">查看学校官网资料 ↗</a></dd>
+  </dl>
+  <p class="note">导师资格不代表当前招生名额，联系前请核对当年招生安排。</p>
   <div style="clear:both"></div>
 </div>
 <details class="card" id="obox">
@@ -371,40 +362,48 @@ Smart and Proactive Multi-RAT Traffic Steering for V2X
 </div>
 
 
-<div class="card">
-  <h3>字段出处 · PROVENANCE</h3>
+<details class="card" id="profile-evidence">
+  <summary>来源与核验记录</summary>
+  <p class="note">已补充官网资料。来源日期和整理状态不代表导师当前正在招生。</p>
+  <div class="meta">
+    <span>首次入库：2026-10-14</span>
+    <span>字段来源最晚抓取：2026-10-14</span>
+    <span>最近解析：2026-10-14</span>
+
+  </div>
+
   <div class="proof-scroll"><table class="pv">
-    <tr><th>字段</th><th>值</th><th>origin</th><th>confidence</th><th>抓取日期</th><th>出处</th></tr>
+    <tr><th>信息</th><th>内容</th><th>来源类型</th><th>核对状态</th><th>抓取日期</th><th>出处</th></tr>
 
     <tr>
-      <td>name</td>
+      <td>姓名</td>
       <td>林海</td>
-      <td class="o-crawled">crawled</td>
-      <td class="c-auto">auto</td>
+      <td class="o-crawled">官网采集</td>
+      <td class="c-auto">自动整理</td>
       <td>2026-10-14</td>
-      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank">原文 ↗</a></td>
+      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank" rel="noopener">原文 ↗</a></td>
     </tr>
 
     <tr>
-      <td>title</td>
+      <td>职称</td>
       <td>副教授</td>
-      <td class="o-crawled">crawled</td>
-      <td class="c-auto">auto</td>
+      <td class="o-crawled">官网采集</td>
+      <td class="c-auto">自动整理</td>
       <td>2026-10-14</td>
-      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank">原文 ↗</a></td>
+      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank" rel="noopener">原文 ↗</a></td>
     </tr>
 
     <tr>
-      <td>institutes</td>
+      <td>所属团队</td>
       <td>网络空间安全系</td>
-      <td class="o-crawled">crawled</td>
-      <td class="c-auto">auto</td>
+      <td class="o-crawled">官网采集</td>
+      <td class="c-auto">自动整理</td>
       <td>2026-10-14</td>
-      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank">原文 ↗</a></td>
+      <td><a href="https://cse.whu.edu.cn/szdw/jsml.htm" target="_blank" rel="noopener">原文 ↗</a></td>
     </tr>
 
     <tr>
-      <td>bio_raw</td>
+      <td>个人简介</td>
       <td>个人简介
 研究方向
 教育背景
@@ -416,23 +415,23 @@ Smart and Proactive Multi-RAT Traffic Steering for V2X
 获奖信息
 个人简介
 林海，副教授，...</td>
-      <td class="o-crawled">crawled</td>
-      <td class="c-auto">auto</td>
+      <td class="o-crawled">官网采集</td>
+      <td class="c-auto">自动整理</td>
       <td>2026-10-14</td>
-      <td><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank">原文 ↗</a></td>
+      <td><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank" rel="noopener">原文 ↗</a></td>
     </tr>
 
     <tr>
-      <td>research_direction_raw</td>
+      <td>研究方向</td>
       <td>1. 算法与深度学习、深度学习研究包括： 1 ）强化学习：多步骤的马尔科夫决策模型（ Toward Multiple-Phase MDP Model for Charging Station Recommendation ， IEEE TITS ），多智能体和大动作空间强化学习（ SABQ: Transition-Aware Advantage-based Branching Q-Network for Efficient Deep Reinforcement Learning in Large Action Spaces ，在投）； 2 ）迁移学习：迁移学习在智能交通中的应用（车联网中基于迁移强化学习的跨域充电站推荐算法，物联网学报）； 3 ）联邦学习：车联网下的联邦学习（ Koshino: A Semi-Asynchronous Edge-Based Federated Learning Framework for Highly Dynamic Vehicular Networks ，在投）、算法研究包括： 1 ）时间序列算法：车联网的交通流预测（ Frequency Enhanced Dynamic Graph Convolutional Networks for Traffic Flow Forecasting ， IEEE access ）； 2 ）推荐算法：电动车的充电推荐（ PDQN: User Preference-Based Charging Station Recommendation ， IEEE TCE ）； 3 ）物流仓储中的储位优化算法（针对 B2C 电商物流配送中心的储位优化算法，计算机应用与软件；低层人工拣货仓库货位优化问题研究，计算机工程与科学）； 4 ）路径规划算法：无人机的路径规划、2. 车联网和边缘计算、包括： 1 ）车联网边缘计算：边缘计算的任务调度（ A survey on computation offloading modeling for edge computing ， Elsevier JNCA ）； 2 ）边缘智能（ Luffynet: 面向硬件感知的边缘智能，计算机工程）； 3 ）车联网中充电站推荐、3. 数据融合和网络安全、包括： 1 ）车联网入侵检测（ RAG-HIDS: A Multi-Relational Graph-Based Hierarchical Intrusion Detection System for In-Vehicle Networks ，在投）； 2 ）车联网信任机制（ Trust evaluation mechanism for the internet of vehicles based on filtering algorithm, Computer Networks ）； 3 ）数据融合：卡尔曼滤波，粒子滤波，联邦滤波等</td>
-      <td class="o-crawled">crawled</td>
-      <td class="c-auto">auto</td>
+      <td class="o-crawled">官网采集</td>
+      <td class="c-auto">自动整理</td>
       <td>2026-10-14</td>
-      <td><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank">原文 ↗</a></td>
+      <td><a href="https://cse.whu.edu.cn/info/3441/37621.htm" target="_blank" rel="noopener">原文 ↗</a></td>
     </tr>
 
   </table></div>
-</div>
+</details>
 </div>
 <script>
 const detailScope=new URLSearchParams(),detailIncoming=new URLSearchParams(location.search);

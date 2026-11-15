@@ -15,7 +15,7 @@ FIXED = {
     'VERSION', 'release.json', '启动应用.cmd', 'README.md', 'USER_GUIDE.md',
     'RELEASE_NOTES.md', 'RELEASE_ACCEPTANCE.md', 'REQUIREMENTS.md',
     'ARCHITECTURE.md', 'HANDOVER.md', 'requirements.txt', 'docs/INDEX.md',
-    'docs/DATA_SNAPSHOT.json', 'scripts/serve.py', 'scripts/build_site.py',
+    'docs/DATA_SNAPSHOT.json', 'docs/UI_GUIDELINES.md', 'scripts/serve.py', 'scripts/build_site.py',
     'scripts/package_release.py', 'sites/notices.yaml', 'data/schools.yaml',
     'data/admissions.yaml', 'data/admissions_entries.yaml',
     'data/admissions_checks.json', 'data/notices.json', 'data/opportunities.json',
@@ -30,6 +30,7 @@ FIXED = {
     'deploy/DELIVERY_V1.6_2026-11-15.md',
     'deploy/DELIVERY_V1.7_2026-11-15.md',
     'deploy/DELIVERY_V1.8_2026-11-15.md', 'docs/AUTOMATIC_REVIEW.md',
+    'deploy/DELIVERY_V1.9_2026-11-15.md',
     'scripts/run_review_pipeline.py', 'scripts/process_reviews.py',
     'scripts/discover_sources.py', 'scripts/maintain_public.py',
 }
@@ -41,6 +42,7 @@ PATTERNS = (
     'docs/history/pre-v1.6/*.md', 'docs/history/pre-v1.6/*.json',
     'docs/history/pre-v1.7/*.md', 'docs/history/pre-v1.7/*.json',
     'docs/history/pre-v1.8/*.md', 'docs/history/pre-v1.8/*.json',
+    'docs/history/pre-v1.9/*.md', 'docs/history/pre-v1.9/*.json',
 )
 REQUIRED_SITE = {
     'site/start.html', 'site/coverage.html', 'site/start.js',

@@ -1,12 +1,17 @@
 {
   "metadata": {
-    "version": "1.8.0",
+    "version": "1.9.0",
     "as_of": "2026-11-15",
     "generated_at": "2026-11-15T11:49:47.580987+00:00",
     "source_version": "运行包 MANIFEST.json 的 source_git_commit 与 source_worktree_dirty 为源码版本依据；本快照不固定旧版本提交。",
     "method": "Current public-file inventory after v1.8 public-data merge; public_counts reused directly from scripts.package_release; policy quality computed by crawler.material_task_util.quality.",
     "warning": "统计表示已登记资料与核验状态，不等于官方完整覆盖、当前招生名额、个人申请资格或材料完成。last_fetched/抓取出处日期与人工内容复核日期分别统计。",
-    "previous_snapshot_sha256": "37858c7a963ad439250b307bd1f6e1b805deab97ca9dea599bf43c5b53b8a68c"
+    "previous_snapshot_sha256": "8bb0e86e6f288258e421f1015c9043b0464cd9de00e91aa269be866422ab2fcd",
+    "ui_release": {
+      "version": "1.9.0",
+      "released_on": "2026-11-15",
+      "note": "UI-only release metadata; inventory counts, generated_at, as_of, source dates and review dates retain the v1.8 snapshot. This is not a fresh collection or content verification."
+    }
   },
   "counts": {
     "professors": 7173,

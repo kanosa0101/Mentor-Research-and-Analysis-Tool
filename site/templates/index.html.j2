@@ -110,7 +110,7 @@ a:hover{text-decoration:underline}
 @media(max-width:800px){ #cmpbtn{right:14px;bottom:14px;padding:10px 16px}.tblcard table{min-width:1050px}}
 </style>
 {% include '_ui_head.html.j2' %}</head>
-<body>
+<body class="page page-index">
 {% include '_nav.html.j2' %}
 <div class="page-heading"><h1>全量导师库</h1></div><div class="site-meta"><span>{{ profs|length }} 导师 · {{ schools|length }} 校 · {{ depts|length }} 院系</span><span>来源最晚抓取 {{ fresh or '未知' }}</span><span>来源超过 30 天或未知：{{ stale }} 人</span></div>
 <div class="wrap"><div class="context-actions"><a href="discovery.html">按研究条件找导师</a><a href="compare.html" id="selection-link">查看对比选择</a><span id="selection-summary" class="note"></span></div>

@@ -4,7 +4,7 @@ const opportunityTime=value=>value?new Date(value).toLocaleString('zh-CN',{timeZ
 const opportunityParams=new URLSearchParams(location.search), opportunityToday=OpportunityRules.dayOf(new Date().toISOString());
 function opportunityFacts(o){
   const window=o.application_window,label=!o.deadline&&window?.mode==='rolling'?'官方受理方式':!o.deadline&&window?.mode==='month'?'截止月份':'报名截止';
-  const value=o.deadline|| (window?.mode==='rolling'?'长期 / 滚动受理':window?.mode==='month'?window.end_month+'（具体日期未公布）':'具体日期待确认');
+  const value=OpportunityRules.formatDate(o.deadline)|| (window?.mode==='rolling'?'长期 / 滚动受理':window?.mode==='month'?OpportunityRules.formatDate(window.end_month)+'（具体日期未公布）':'具体日期待确认');
   return `<div class="opportunity-facts"><div><span class="muted">${label}</span><strong>${ox(value)}${o.deadline?.length===10?'（未注明时刻）':''}</strong></div>${o.graduation_year?`<div><span class="muted">面向届别</span><strong>${ox(o.graduation_year)} 届本科生</strong></div>`:''}${o.event_start||o.event_end?`<div><span class="muted">活动时间</span><strong>${ox(o.event_start||'开始日期待核对')}${o.event_end?' 至 '+ox(o.event_end):''}</strong></div>`:''}</div>`;
 }
 function opportunityWindow(o,state){

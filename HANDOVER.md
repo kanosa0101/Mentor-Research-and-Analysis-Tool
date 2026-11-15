@@ -1,6 +1,6 @@
-# 维护交接 · v1.8.0
+# 维护交接 · v1.9.0
 
-版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.8 交付记录](deploy/DELIVERY_V1.8_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
+版本入口为 `VERSION`、`release.json` 和本版文档。运行包、实际测试结果及部署状态由 [v1.9 交付记录](deploy/DELIVERY_V1.9_2026-11-15.md)统一登记；本文描述维护方式，不提前声明尚未完成的部署或验证。
 
 ## 运行边界
 
@@ -96,4 +96,4 @@ v1.7 在 2026-11-15 的基线快照为 18 条机会，状态 `open=1/open_month=
 
 运行包通过 `scripts/package_release.py` 白名单生成并带逐文件摘要。新加入的维护台、公共版本模块、申请导航和浏览器资料模块应进入必要白名单；维护证据缓存、原材料、私人文件与 Git 历史不分发。重建后检查实际 HTTP 页面和数据版本，写操作验证使用隔离目录。
 
-`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。主公开资料合并并经发布负责人确认后，由发布负责人使用经核对的本版快照脚本生成 `docs/DATA_SNAPSHOT.json`，核对其版本与时间，不提前填写最终机会数。该脚本是源码维护工具，不随运行包分发。v1.7 快照及六份现行文档已按原字节保存在 `docs/history/pre-v1.8/`，v1.6 原件保留于 `docs/history/pre-v1.7/`，附 SHA256 清单；v1.5 快照与文档在 `docs/history/pre-v1.6/`，更早资料在 `docs/history/pre-v1.5/` 和 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。
+`RELEASE_NOTES.md`、`RELEASE_ACCEPTANCE.md` 保留 v1.0 历史意义。主公开资料合并并经发布负责人确认后，由发布负责人使用经核对的本版快照脚本生成 `docs/DATA_SNAPSHOT.json`，核对其版本与时间，不提前填写最终机会数。该脚本是源码维护工具，不随运行包分发。v1.9 为 UI 版本，快照的资料统计、来源日期与生成时间沿用 v1.8 基线，另以 UI 发布元数据注明，不冒充重新采集。v1.8 快照及六份文档原件保存在 `docs/history/pre-v1.9/`，附 SHA256 清单。v1.7 快照及六份现行文档已按原字节保存在 `docs/history/pre-v1.8/`，v1.6 原件保留于 `docs/history/pre-v1.7/`，附 SHA256 清单；v1.5 快照与文档在 `docs/history/pre-v1.6/`，更早资料在 `docs/history/pre-v1.5/` 和 `docs/history/pre-v1/`。旧“冻结”“停止扩充”、测试数和快照数据不描述当前状态，也不能覆盖用户后续授权。

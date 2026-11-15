@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from scripts.serve import create_server
 
-OUT = ROOT / 'cache/policy_v22/live_flow'
+OUT = ROOT / 'cache/v19/policy_requirements'
 SDU = ['sdu-cs-081200-2027-exam-v22', 'sdu-cs-085404-2027-exam-v22']
 THU = 'tsinghua-2027-phd-assessment-v16pilot'
 ZJU = 'zju-2027-phd-assessment-v16pilot'
@@ -112,6 +112,10 @@ def main():
             card.wait_for()
             assert policy['reviewed_at'] in card.locator('.policy-age').first.inner_text()
             card.locator('.policy-body > summary').click()
+            # Read the disclosed original quotations and dates before asserting their facts.
+            for detail in card.locator('.policy-body details').all():
+                if detail.get_attribute('open') is None:
+                    detail.locator(':scope > summary').click()
             source = public['sources'][policy['source_id']]['url']
             assert card.locator('a').filter(has_text='核对完整政策').get_attribute('href') == source
             assert card.locator('a').filter(has_text='核对完整政策').is_visible()
@@ -152,7 +156,7 @@ def main():
                         other = SDU[1] if policy_id == SDU[0] else SDU[0]
                         assert page.locator('#policy-' + other).count() == 0
                         assert '不招收同等学力' in card.inner_text()
-                        assert p['fields']['exams']['quote'] in card.inner_text()
+                        assert ''.join(p['fields']['exams']['quote'].split()) in ''.join(card.inner_text().split()), repr(card.inner_text())
                         assert policies[other]['fields']['exams']['quote'] not in page.locator('#application-checklist').inner_text()
                         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
                         page.screenshot(path=str(OUT / f'{policy_id}-{width}-public.png'), full_page=True)
@@ -170,7 +174,7 @@ def main():
                         card = show_policy(page, p)
                         if policy_id == AUTO:
                             assert '2026-07-28' in card.inner_text()
-                            assert '已登记事项截止均已过' in card.inner_text() and '该事项已截止' in card.inner_text()
+                            assert '已登记事项截止已过' in card.inner_text() and '该事项已截止' in card.inner_text()
                             assert '已截止' in p['title'] and '冬季' in card.inner_text()
                         assert len(p.get('material_actions', [])) > 0
                         page.screenshot(path=str(OUT / f'{policy_id}-{width}-public.png'), full_page=True)

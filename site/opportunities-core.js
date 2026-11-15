@@ -2,6 +2,14 @@
   const labels={open:'明确日期 · 报名时间内',open_month:'受理期内 · 截止仅公布月份',rolling:'长期 / 滚动受理',upcoming:'尚未开始',review:'待复核',unknown:'报名时间待核实',closed:'已截止 / 历史参考'};
   const kinds={winter_camp:'冬令营',summer_camp:'夏令营',recommend:'预推免',research_program:'科研实践'};
   const dayOf=now=>new Date(now).toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
+  function formatDate(value){
+    if(!value)return '';
+    const day=String(value).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
+    if(day)return `${day[1]}年${Number(day[2])}月${day[3]?Number(day[3])+'日':''}`;
+    if(!/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(value)||!Number.isFinite(Date.parse(value)))return String(value);
+    const parts=Object.fromEntries(new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(value)).map(p=>[p.type,p.value]));
+    return `${parts.year}年${parts.month}月${parts.day}日 ${parts.hour}:${parts.minute}（北京时间）`;
+  }
   function state(o,now=new Date().toISOString()){
     if(o.cycle==='historical')return 'closed';
     const day=dayOf(now),deadline=o.deadline,window=o.application_window;
@@ -29,5 +37,5 @@
     const fields={research_directions:'研究方向与联系人',graduation_year:'面向届别',registration_start:'报名开始',deadline:'报名截止',deadline_note:'截止说明',application_window:'受理方式与截止月份',event_start:'活动开始',event_end:'活动结束',eligibility:'申请条件',materials:'材料与提交阶段',application_method:'报名方式',application_url:'报名入口',contact:'联系方式',admission_note:'招生说明',source_url:'官方来源',source_attachments:'官方申请表与核验依据'};
     return Object.entries(fields).filter(([key])=>JSON.stringify(saved[key])!==JSON.stringify(current[key])).map(([key,label])=>({key,label,before:saved[key],after:current[key]}));
   }
-  const api={state,select,kinds,labels,dayOf,changes};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
+  const api={state,select,kinds,labels,dayOf,changes,formatDate};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
 })(typeof window!=='undefined'?window:globalThis);
