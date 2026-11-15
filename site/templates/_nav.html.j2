@@ -7,6 +7,7 @@
 {% endfor %}
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+<a href="{{ prefix }}account.html" data-account-link>登录 / 注册</a>
 {% for key,label,file in [('notices','招生通知','notices.html'),('index','全量导师目录','index.html'),('compare','导师对比','compare.html'),('applications','项目与材料','applications.html')] %}
 <a href="{{ prefix }}{{ file }}" {% if current_page == key %}aria-current="page"{% endif %}{% if key == 'applications' and current_page == 'desk' %} id="manage-link"{% endif %}>{{ label }}</a>
 {% endfor %}

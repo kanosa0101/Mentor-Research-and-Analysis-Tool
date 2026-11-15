@@ -18,7 +18,9 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 
 .preparation-action{margin:16px 0;padding:16px;border:1px solid var(--line)!important;border-radius:8px}.preparation-action h4{font-size:16px;margin:8px 0}.preparation-action form{margin:18px 0}.preparation-action label{margin:12px 0}.preparation-files{margin:14px 0;padding:12px;border:1px solid var(--line)}.preparation-files .check{display:flex;flex-wrap:wrap;justify-content:flex-start}.preparation-files small{flex-basis:100%;margin-left:22px}.preparation-action pre{white-space:pre-wrap}.preparation-action blockquote{margin:12px 0;padding-left:12px;border-left:3px solid var(--line)}
 </style>
-<link rel="stylesheet" href="ui.css?v=20261115-20"></head>
+<link rel="stylesheet" href="ui.css?v=20261115-online1">
+<script src="account-session.js?v=20261115-online1"></script>
+<script src="cloud-library.js?v=20261115-online1"></script></head>
 <body class="page page-applications">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -37,6 +39,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+<a href="account.html" data-account-link>登录 / 注册</a>
 
 <a href="notices.html" >招生通知</a>
 
@@ -52,8 +55,8 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </div></header>
 <div class="page-heading"><h1>申请工作台</h1></div>
 <main>
-<p class="intro muted">按申请项目整理材料、沟通和提醒。私人记录仅在本地保存。备份不含附件原文件，请另外保管。</p>
-<div id="service-hint" class="hint">请运行 <code>python scripts\serve.py</code> 并从本地服务打开本页。直接打开 HTML 无法读取或保存私人记录。</div>
+<p class="intro muted">按申请项目整理材料、沟通和提醒。私人记录按账号保存。备份不含附件原文件，请另外保管。</p>
+<div id="service-hint" class="hint">正在读取账号中的申请记录…</div>
 <div id="message" role="status" aria-live="polite"></div>
 <div class="toolbar"><button id="workflow-restore" type="button" disabled>恢复工作台备份</button><input id="workflow-restore-file" type="file" accept=".json" hidden></div>
 <fieldset id="workspace" disabled>
@@ -93,16 +96,15 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <div class="actions"><button type="button" id="material-current">查看当前范围材料</button><button type="button" id="material-unassigned">查看未关联项目材料</button></div>
 <p id="material-scope" class="muted"></p>
 <div id="material-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="material-list" tabindex="-1" aria-label="材料查询结果"></div>
-<form id="scan-form"><label>扫描材料目录（绝对路径）<input id="scan-root" required placeholder="E:\申请材料"></label><div class="actions"><button id="scan-save">扫描 / 复查目录</button></div></form>
-<p class="muted">每次最多 1000 个文件；仅登记元数据，不自动关联项目。扫描后可查看“未关联项目材料”并逐条关联。未关联指无项目关联，可能已有导师关联。重扫保留人工关联，文件缺失保留索引。</p>
+<p class="muted">上传后可在其他设备下载；单个文件最多 20 MB，账号材料总量最多 200 MB。文件不会公开展示。</p>
 <form id="material-form"><div class="fields">
-<label class="wide">文件绝对路径<input id="material-path" required placeholder="E:\申请材料\简历.pdf"></label>
+<label class="wide" id="material-file-label">选择文件<input id="material-file" type="file" required></label>
 <label>材料标题<input id="material-title" placeholder="留空使用文件名"></label>
 <label>类型<select id="material-kind"><option value="other">其他</option><option value="paper">论文</option><option value="letter">信件</option><option value="cv">简历</option><option value="application">申请材料</option></select></label>
 <label class="wide">关联项目（可多选）<select id="material-projects" multiple></select></label>
 <div class="wide" data-mentor-picker="material" data-multiple="true"></div>
 <label class="wide">备注<textarea id="material-notes"></textarea></label></div>
-<div class="actions"><button class="primary" id="material-save">登记文件</button><button type="button" id="material-reset">清空表单</button></div></form>
+<div class="actions"><button class="primary" id="material-save">上传材料</button><button type="button" id="material-reset">清空表单</button></div></form>
 </section>
 <section class="panel" id="section-communication"><h2>历史沟通补录</h2>
 <p class="muted">补录已发生的沟通或旧草稿；准备新邮件请回“我的申请”。更正记录时追加说明，保留原历史。</p>
@@ -132,6 +134,6 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <script src="admissions-core.js?v=20261115-7"></script>
 <script src="material-actions.js?v=20261115-7"></script>
 <script src="opportunities-core.js?v=20261115-20"></script>
-<script src="workflow.js?v=20261115-20"></script>
+<script src="workflow.js?v=20261115-online2"></script>
 </body>
 </html>

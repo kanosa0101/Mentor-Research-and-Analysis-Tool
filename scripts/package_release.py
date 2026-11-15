@@ -136,11 +136,14 @@ def collect(root):
 
 def build(root=ROOT):
     root = Path(root).resolve()
+    release_path = root / 'release.json'
+    release = json.loads(release_path.read_text(encoding='utf-8-sig')) if release_path.exists() else {}
+    if release.get('edition') == 'online':
+        raise ValueError('在线产品不再生成本机运行包；请使用网站部署流程')
     paths = collect(root)
     version = (root / 'VERSION').read_text(encoding='utf-8-sig').strip()
     if not re.fullmatch(r'\d+\.\d+\.\d+', version):
         raise ValueError('VERSION must be a numeric release version')
-    release = json.loads((root / 'release.json').read_text(encoding='utf-8-sig'))
     if release.get('version') != version or release.get('edition') != 'local':
         raise ValueError('VERSION and release.json disagree')
     counts = public_counts(root)

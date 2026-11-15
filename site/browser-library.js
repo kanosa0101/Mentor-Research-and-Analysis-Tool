@@ -1,17 +1,22 @@
-/* Add explicit browser bookmarks without changing existing application actions. */
+/* Saved account bookmarks, shown after the server confirms persistence. */
 (function(){
   'use strict';
   const core=window.BrowserLibraryCore;if(!core)return;
   const prefix=/\/p\/[^/]+\.html$/.test(location.pathname)?'../':'';
   function notify(){window.dispatchEvent(new CustomEvent('browser-library-change'));}
-  function save(item){const result=core.bookmark(core.read(localStorage),item);core.write(localStorage,result.data);notify();return result;}
+  async function save(item){let result;await CloudLibrary.mutate(data=>{result=core.bookmark(data,item);return result.data;});return result;}
   function add(container,item){
-    if(!container||container.querySelector('[data-browser-bookmark]'))return;
+    if(!container)return;
+    const existing=container.querySelector('[data-browser-bookmark]');
+    if(existing){
+      if(existing.dataset.bookmarkId&&!existing.browserRefresh){existing.browserRefresh=()=>{const saved=CloudLibrary.read().bookmarks.some(b=>b.kind===item.kind&&b.url===core.safeUrl(item.url));existing.textContent=saved?'已收藏':'收藏到我的账号';existing.setAttribute('aria-pressed',String(saved));};existing.browserRefresh();}
+      return;
+    }
     const row=document.createElement('div');row.className='browser-library-action';
     const button=document.createElement('button');button.type='button';button.dataset.browserBookmark=item.kind;
-    const message=document.createElement('span');message.setAttribute('role','status');message.style.fontSize='12px';
-    function label(){try{const exists=core.read(localStorage).bookmarks.some(b=>b.kind===item.kind&&b.url===core.safeUrl(item.url));button.textContent=exists?'已收藏 · 此浏览器':'收藏到此浏览器';button.setAttribute('aria-pressed',String(exists));}catch(error){button.textContent='收藏到此浏览器';}}
-    button.onclick=()=>{try{const result=save(item);message.replaceChildren();message.append(result.duplicate?'已在当前浏览器收藏。':'已保存到此浏览器，不会上传。');const link=document.createElement('a');link.href=prefix+'start.html#library';link.textContent='查看收藏 →';message.append(' ',link);label();}catch(error){message.textContent='未保存：'+error.message;}};
+    const message=document.createElement('span');message.setAttribute('role','status');message.style.fontSize='13px';
+    function label(){try{const exists=CloudLibrary.read().bookmarks.some(b=>b.kind===item.kind&&b.url===core.safeUrl(item.url));button.textContent=exists?'已收藏':'收藏到我的账号';button.setAttribute('aria-pressed',String(exists));}catch(error){button.textContent='收藏到我的账号';}}
+    button.onclick=async()=>{button.disabled=true;try{const result=await save(item);message.replaceChildren();message.append(result.duplicate?'已在账号中收藏。':'已保存到账号，可跨设备查看。');const link=document.createElement('a');link.href=prefix+'start.html#library';link.textContent='查看收藏 →';message.append(' ',link);label();}catch(error){message.textContent='未保存：'+error.message;}finally{button.disabled=false;}};
     button.browserRefresh=label;row.append(button,message);container.append(row);label();
   }
   function refreshButtons(){
@@ -32,5 +37,5 @@
   observer.observe(document.body,{childList:true,subtree:true});
   window.addEventListener('browser-library-change',()=>document.querySelectorAll('[data-browser-bookmark]').forEach(button=>button.browserRefresh?.()));
   window.addEventListener('storage',event=>{if(event.key===core.KEY)notify();});
-  window.BrowserLibrary={save,refreshButtons};refreshButtons();
+  window.BrowserLibrary={save,refreshButtons};refreshButtons();CloudLibrary.ready.then(()=>{document.querySelectorAll('[data-browser-bookmark]').forEach(button=>button.browserRefresh?.());}).catch(()=>{});
 })();

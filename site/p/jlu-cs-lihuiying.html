@@ -67,7 +67,9 @@ a:hover{text-decoration:underline}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
 </style>
-<link rel="stylesheet" href="../ui.css?v=20261115-20"></head>
+<link rel="stylesheet" href="../ui.css?v=20261115-online1">
+<script src="../account-session.js?v=20261115-online1"></script>
+<script src="../cloud-library.js?v=20261115-online1"></script></head>
 <body class="page page-detail">
 
 <header class="top site-header"><div class="site-header-inner">
@@ -86,6 +88,7 @@ a:hover{text-decoration:underline}
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+<a href="../account.html" data-account-link>登录 / 注册</a>
 
 <a href="../notices.html" >招生通知</a>
 
@@ -123,7 +126,7 @@ a:hover{text-decoration:underline}
 
 <details class="card" id="obox">
   <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
-  <div id="ob-hint" class="ohint" style="display:none">静态打开为只读——运行 <code>python scripts\serve.py</code> 后刷新本页，即可直接记录跟进状态（数据仅存本地，不进 git）。</div>
+  <div id="ob-hint" class="ohint" style="display:none">登录账号后可记录跟进状态。<a href="../account.html">登录 / 注册 →</a></div>
   <div class="obrow">
     <label>状态</label>
     <select id="ob-status" disabled>
@@ -135,7 +138,7 @@ a:hover{text-decoration:underline}
       <option value="archived">归档</option>
     </select>
     <button id="ob-save" disabled>保存</button>
-    <span id="ob-remove" style="display:none">移出看板</span>
+    <button type="button" id="ob-remove" style="display:none">移出看板</button>
     <span id="ob-msg"></span>
   </div>
   <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
@@ -450,9 +453,8 @@ function fill(e){
     return;
   }
   try{
-    const r = await fetch("/api/health");
-    const health = await r.json();
-    if(!r.ok || health.mode === 'public') throw 0;
+    const account = await OnlineAccount.ready;
+    if(!account.authenticated) throw 0;
     const response = await fetch("/api/outreach");
     if(!response.ok) throw 0;
     const all = await response.json();
@@ -479,10 +481,10 @@ function fill(e){
   });
   $("ob-remove").addEventListener("click", async ()=>{
     if(!confirm("移出看板？备注与历史将一并清除。")) return;
-    try{ await fetch("/api/outreach/" + PID, {method:"DELETE"}); fill({}); msg("已移出"); }
+    try{ const response=await fetch("/api/outreach/" + PID, {method:"DELETE",headers:{"Content-Type":"application/json"},body:"{}"});if(!response.ok)throw new Error((await response.json().catch(()=>({}))).error||response.status);fill({}); msg("已移出"); }
     catch(e2){ msg("操作失败：" + e2.message, false); }
   });
 })();
 </script>
-<script src="../browser-library-core.js?v=20261115-7"></script><script src="../browser-library.js?v=20261115-7"></script></body>
+<script src="../browser-library-core.js?v=20261115-7"></script><script src="../browser-library.js?v=20261115-online1"></script></body>
 </html>

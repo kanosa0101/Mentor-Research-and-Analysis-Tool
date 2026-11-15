@@ -9,15 +9,15 @@
   const element=(tag,text,className)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;};
   const button=(text,action)=>{const node=element('button',text);node.type='button';node.onclick=action;return node;};
   const status=(text,error=false)=>{$('library-status').textContent=text;$('library-status').style.color=error?'#9a4e12':'';};
-  function commit(action,message){try{const next=action(core.read(localStorage));core.write(localStorage,next);renderLibrary();status(message);window.dispatchEvent(new CustomEvent('browser-library-change'));return true;}catch(error){status('未保存：'+error.message,true);return false;}}
+  async function commit(action,message){try{await CloudLibrary.mutate(action);renderLibrary();status(message);return true;}catch(error){status('未保存：'+error.message,true);return false;}}
   function draft(){
     const path=document.querySelector('[name="path"]:checked').value,year=Number($('target-year').value);
     if(!Number.isInteger(year)||year<2000||year>2100)throw new Error('请填写有效的年份');
     return {path,year,schools:[...selectedSchools.values()],interest:$('target-interest').value.trim()};
   }
   function selectTab(name){activeTab=name;for(const key of ['targets','bookmarks','todos']){$('panel-'+key).hidden=key!==name;$('tab-'+key).setAttribute('aria-selected',String(key===name));}}
-  function addTodo(title,targetId=''){
-    const saved=commit(data=>{data.todos.push({id:core.id('todo'),title:title.slice(0,300),done:false,due_date:'',target_id:targetId,created_at:today});return data;},'已添加待办，仅保存在此浏览器。');
+  async function addTodo(title,targetId=''){
+    const saved=await commit(data=>{data.todos.push({id:core.id('todo'),title:title.slice(0,300),done:false,due_date:'',target_id:targetId,created_at:today});return data;},'已添加待办，已保存到账号。');
     if(saved)selectTab('todos');
   }
   function schoolPicker(){
@@ -69,18 +69,18 @@
     if(target.interest.split(/[,，、;；]+/).filter(value=>value.trim()).length>1)entries.append(element('p','多个兴趣在导师页按任一关键词查找；机会页先保留所选学校的全部线索，可再用一个方向关键词细查。','start-note'));
   }
   function renderLibrary(){
-    let data;try{data=core.read(localStorage);}catch(error){status('浏览器记录暂不可读取：'+error.message+'。未覆盖原有记录。',true);return;}
+    let data;try{data=CloudLibrary.read();}catch(error){status('账号记录暂不可读取：'+error.message+'。未覆盖原有记录。',true);return;}
     for(const [key,title] of [['targets','关注目标'],['bookmarks','收藏'],['todos','待办']])$('tab-'+key).textContent=title+' '+data[key].length;
     const targetPanel=$('panel-targets');targetPanel.replaceChildren();
     for(const target of data.targets){const row=element('div',undefined,'library-item'),actions=element('div',undefined,'start-actions');row.dataset.planKind='target';row.dataset.planId=target.id;row.append(element('strong',label(target)),element('p',[target.schools.map(s=>s.name).join('、')||'跨校探索',target.interest].filter(Boolean).join(' · '),'start-note'));actions.append(button('应用此目标',()=>{document.querySelector('[name="path"][value="'+target.path+'"]').checked=true;$('target-year').value=target.year;$('target-interest').value=target.interest;selectedSchools=new Map(target.schools.map(s=>[s.id,s]));schoolPicker();plan();$('target-form').scrollIntoView({block:'start'});$('target-status').textContent='已应用保存的关注目标；更改后可另存新目标。';}),button('删除目标',()=>commit(data=>core.remove(data,'targets',target.id),'已删除关注目标；关联待办保留为独立待办。')));row.append(actions);targetPanel.append(row);}
     if(!data.targets.length)targetPanel.append(element('p','尚无关注目标。在上方选择路径、学校和兴趣后，点击“保存为关注目标”。','start-note'));
     const bookmarkPanel=$('panel-bookmarks');bookmarkPanel.replaceChildren();
-    for(const item of data.bookmarks){const row=element('div',undefined,'library-item'),a=element('a',item.title),actions=element('div',undefined,'start-actions');a.href=core.safeUrl(item.url);row.dataset.planKind='bookmark';row.dataset.planId=item.id;row.append(element('p',({mentor:'导师',notice:'招生通知',opportunity:'保研 / 科研机会'})[item.kind]+' · 收藏于 '+item.created_at,'start-note'),a);actions.append(button('添加跟进待办',()=>addTodo('查看并核对：'+item.title)),button('删除收藏',()=>commit(data=>core.remove(data,'bookmarks',item.id),'已删除此浏览器中的收藏。')));row.append(actions);bookmarkPanel.append(row);}
-    if(!data.bookmarks.length){const empty=element('p','尚无收藏。在导师、招生通知或机会卡片上点击“收藏到此浏览器”，再回到这里。','start-note');bookmarkPanel.append(empty);}
+    for(const item of data.bookmarks){const row=element('div',undefined,'library-item'),a=element('a',item.title),actions=element('div',undefined,'start-actions');a.href=core.safeUrl(item.url);row.dataset.planKind='bookmark';row.dataset.planId=item.id;row.append(element('p',({mentor:'导师',notice:'招生通知',opportunity:'保研 / 科研机会'})[item.kind]+' · 收藏于 '+item.created_at,'start-note'),a);actions.append(button('添加跟进待办',()=>addTodo('查看并核对：'+item.title)),button('删除收藏',()=>commit(data=>core.remove(data,'bookmarks',item.id),'已删除账号中的收藏。')));row.append(actions);bookmarkPanel.append(row);}
+    if(!data.bookmarks.length){const empty=element('p','尚无收藏。在导师、招生通知或机会卡片上点击“收藏到我的账号”，再回到这里。','start-note');bookmarkPanel.append(empty);}
     const targetSelect=$('todo-target'),previous=targetSelect.value;targetSelect.replaceChildren(new Option('不关联',''));for(const target of data.targets)targetSelect.add(new Option(label(target)+(target.schools.length?' · '+target.schools.map(s=>s.name).join('、'):''),target.id));targetSelect.value=data.targets.some(t=>t.id===previous)?previous:'';
     const todos=$('todo-list');todos.replaceChildren();
     for(const item of [...data.todos].sort((a,b)=>Number(a.done)-Number(b.done)||(a.due_date||'9999').localeCompare(b.due_date||'9999'))){
-      const row=element('div',undefined,'library-item'+(item.done?' todo-done':'')),line=element('label',undefined,'todo-title'),input=document.createElement('input');input.type='checkbox';input.checked=item.done;input.onchange=()=>{if(!commit(data=>{data.todos.find(t=>t.id===item.id).done=input.checked;return data;},input.checked?'已标记完成。':'已恢复为待办。'))input.checked=item.done;};line.append(input,element('span',item.title,'todo-text'));row.append(line);
+      const row=element('div',undefined,'library-item'+(item.done?' todo-done':'')),line=element('label',undefined,'todo-title'),input=document.createElement('input');input.type='checkbox';input.checked=item.done;input.onchange=async()=>{if(!await commit(data=>{data.todos.find(t=>t.id===item.id).done=input.checked;return data;},input.checked?'已标记完成。':'已恢复为待办。'))input.checked=item.done;};line.append(input,element('span',item.title,'todo-text'));row.append(line);
       const target=data.targets.find(t=>t.id===item.target_id),notes=[item.due_date?'个人计划 '+item.due_date:'',target?label(target):''].filter(Boolean);if(notes.length)row.append(element('p',notes.join(' · ')+(item.due_date&&item.due_date<today&&!item.done?' · 已过个人计划日期':''),'start-note'+(item.due_date&&item.due_date<today&&!item.done?' due-overdue':'')));
       row.append(button('删除待办',()=>commit(data=>core.remove(data,'todos',item.id),'已删除待办。')));todos.append(row);
     }
@@ -91,19 +91,20 @@
   for(const input of document.querySelectorAll('[name="path"]'))input.onchange=()=>{$('target-year').value=defaults[input.value];plan();};
   $('target-year').oninput=plan;$('target-interest').oninput=plan;$('start-school-search').oninput=schoolPicker;
   $('clear-target-schools').onclick=()=>{selectedSchools.clear();schoolPicker();plan();};
-  $('target-form').onsubmit=event=>{event.preventDefault();let target;try{target=draft();}catch(error){$('target-status').textContent=error.message;return;}let duplicate=false;
-    const saved=commit(data=>{duplicate=data.targets.some(t=>t.path===target.path&&t.year===target.year&&t.interest===target.interest&&JSON.stringify(t.schools.map(s=>s.id).sort())===JSON.stringify(target.schools.map(s=>s.id).sort()));if(!duplicate)data.targets.push({...target,id:core.id('target'),created_at:today});return data;},'关注目标已保存在此浏览器。');
+  $('target-form').onsubmit=async event=>{event.preventDefault();let target;try{target=draft();}catch(error){$('target-status').textContent=error.message;return;}let duplicate=false;
+    const saved=await commit(data=>{duplicate=data.targets.some(t=>t.path===target.path&&t.year===target.year&&t.interest===target.interest&&JSON.stringify(t.schools.map(s=>s.id).sort())===JSON.stringify(target.schools.map(s=>s.id).sort()));if(!duplicate)data.targets.push({...target,id:core.id('target'),created_at:today});return data;},'关注目标已保存到账号。');
     if(saved){$('target-status').textContent=duplicate?'相同目标已保存，可在下方“关注目标”查看。':'已保存关注目标。没有创建正式申请或提交报名。';selectTab('targets');}
   };
-  $('todo-form').onsubmit=event=>{event.preventDefault();const title=$('todo-title').value.trim();if(!title){status('请填写要做的事。',true);return;}if(commit(data=>{data.todos.push({id:core.id('todo'),title,done:false,due_date:$('todo-date').value,target_id:$('todo-target').value,created_at:today});return data;},'待办已保存在此浏览器。')){$('todo-title').value='';$('todo-date').value='';}};
+  $('todo-form').onsubmit=async event=>{event.preventDefault();const title=$('todo-title').value.trim();if(!title){status('请填写要做的事。',true);return;}if(await commit(data=>{data.todos.push({id:core.id('todo'),title,done:false,due_date:$('todo-date').value,target_id:$('todo-target').value,created_at:today});return data;},'待办已保存到账号。')){$('todo-title').value='';$('todo-date').value='';}};
   const tabs=[...document.querySelectorAll('[data-library-tab]')];
   for(const tab of tabs){tab.onclick=()=>selectTab(tab.dataset.libraryTab);tab.onkeydown=event=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;event.preventDefault();const index=event.key==='Home'?0:event.key==='End'?tabs.length-1:(tabs.indexOf(tab)+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[index].click();tabs[index].focus();};}
-  $('library-export').onclick=()=>{try{const data=core.read(localStorage),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=element('a');a.href=url;a.download='browser-application-library-'+today+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status('已生成浏览器备份，请妥善保存下载的文件。');}catch(error){status('导出失败：'+error.message,true);}};
+  $('library-export').onclick=()=>{try{const data=CloudLibrary.read(),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=element('a');a.href=url;a.download='browser-application-library-'+today+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status('已生成收藏与待办备份，请妥善保存下载的文件。');}catch(error){status('导出失败：'+error.message,true);}};
   $('library-import-open').onclick=()=>$('library-import').click();
+  $('library-import-browser').onclick=()=>{try{pendingImport=core.read(localStorage);$('import-summary').textContent='当前浏览器旧记录：'+pendingImport.targets.length+' 个目标、'+pendingImport.bookmarks.length+' 条收藏、'+pendingImport.todos.length+' 条待办。确认后上传并合并到当前账号，原浏览器记录保留。';$('import-preview').hidden=false;}catch(error){status(error.message,true);}};
   $('library-import').onchange=async()=>{pendingImport=null;$('import-preview').hidden=true;const file=$('library-import').files[0];if(!file)return;try{if(file.size>2000000)throw new Error('备份文件不能超过2MB');pendingImport=core.parse(await file.text());$('import-summary').textContent='检查通过：'+pendingImport.targets.length+' 个关注目标、'+pendingImport.bookmarks.length+' 条收藏、'+pendingImport.todos.length+' 条待办。尚未写入，确认后合并新增条目。';$('import-preview').hidden=false;}catch(error){status('未导入：'+error.message,true);}finally{$('library-import').value='';}};
   $('library-import-cancel').onclick=()=>{pendingImport=null;$('import-preview').hidden=true;status('已取消导入，记录未改变。');};
-  $('library-import-confirm').onclick=()=>{if(!pendingImport)return;if(commit(data=>core.merge(data,pendingImport),'已合并备份中的新增条目，原有记录保持不变。')){pendingImport=null;$('import-preview').hidden=true;}};
-  window.addEventListener('storage',event=>{if(event.key===core.KEY)renderLibrary();});
+  $('library-import-confirm').onclick=async()=>{if(!pendingImport)return;if(await commit(data=>core.merge(data,pendingImport),'已合并备份中的新增条目，原有记录保持不变。')){pendingImport=null;$('import-preview').hidden=true;}};
+  window.addEventListener('browser-library-change',renderLibrary);
   try{const saved=JSON.parse(sessionStorage.getItem('mentor-start-draft-v1')||'null');if(saved&&['exam','recommend'].includes(saved.path)&&Number.isInteger(saved.year)&&saved.year>=2000&&saved.year<=2100&&typeof saved.interest==='string'&&saved.interest.length<=200&&Array.isArray(saved.schools)){document.querySelector('[name="path"][value="'+saved.path+'"]').checked=true;$('target-year').value=saved.year;$('target-interest').value=saved.interest;selectedSchools=new Map(saved.schools.filter(s=>schoolMap.has(s.id)).map(s=>[s.id,schoolMap.get(s.id)]));}}catch(error){}
-  schoolPicker();plan();renderLibrary();restoring=false;window.START_READY=true;
+  schoolPicker();plan();restoring=false;CloudLibrary.ready.then(()=>{renderLibrary();window.START_READY=true;if(!OnlineAccount.state.authenticated)status('登录后可保存关注目标、收藏与待办。');}).catch(error=>status(error.message,true));
 })();

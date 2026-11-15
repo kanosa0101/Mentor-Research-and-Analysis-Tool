@@ -14,6 +14,14 @@ SPEC.loader.exec_module(package_release)
 
 
 class PackagingTests(unittest.TestCase):
+    def test_online_product_does_not_generate_local_package(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'release.json').write_text('{"edition":"online"}', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, '不再生成本机运行包'):
+                package_release.build(root)
+            self.assertFalse((root / 'dist').exists())
+
     def test_reject_private_paths_and_path_escape(self):
         for name in ['data/outreach.yaml', 'data/student.yaml', 'data/student_sop.md',
                      'data/workflow.yaml', 'data/discovery.yaml', 'data/letters/a.md',

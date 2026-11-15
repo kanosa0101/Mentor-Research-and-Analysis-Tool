@@ -1,5 +1,5 @@
 [Unit]
-Description=Mentor Assistant HTTPS and opt-in browser notifications
+Description=Mentor Assistant online accounts, applications and notifications
 After=network.target
 
 [Service]
@@ -12,7 +12,7 @@ ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_public.py --host 
 Restart=on-failure
 NoNewPrivileges=true
 ProtectSystem=strict
-ReadWritePaths=/opt/mentor-assistant/var/push
+ReadWritePaths=/opt/mentor-assistant/var/push /opt/mentor-assistant/var/accounts /opt/mentor-assistant/var/users
 ProtectHome=true
 PrivateTmp=true
 PrivateDevices=true

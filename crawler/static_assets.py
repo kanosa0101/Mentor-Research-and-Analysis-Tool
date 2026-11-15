@@ -47,6 +47,8 @@ def send(handler, path, content_type, cache, accepts_gzip=False, max_age=300):
     handler.send_header('Cache-Control', 'no-cache' if path.suffix == '.html' or not max_age else f'public, max-age={max_age}, must-revalidate')
     handler.send_header('X-Content-Type-Options', 'nosniff')
     handler.send_header('Referrer-Policy', 'same-origin')
+    handler.send_header('X-Frame-Options', 'DENY')
+    handler.send_header('Content-Security-Policy', "frame-ancestors 'none'")
     if compressed:
         handler.send_header('Content-Encoding', 'gzip')
     handler.end_headers()

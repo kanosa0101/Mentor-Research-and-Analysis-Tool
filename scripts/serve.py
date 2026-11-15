@@ -32,7 +32,7 @@ from crawler.public_discovery import candidates as mentor_candidates
 
 SITE = ROOT / 'site'
 OUTREACH = ROOT / 'data' / 'outreach.yaml'
-_lock = threading.Lock()
+_lock = threading.RLock()
 _public_update = {'busy': False, 'message': '', 'result': None}
 _update_guard = threading.Lock()
 

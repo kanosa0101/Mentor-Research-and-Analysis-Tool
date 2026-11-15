@@ -1,0 +1,62 @@
+"""Exercise online account/library/project/material UI using isolated data directories."""
+import ipaddress,json,shutil,ssl,sys,tempfile,threading
+from datetime import datetime,timedelta,timezone
+from cryptography import x509
+from cryptography.hazmat.primitives import hashes,serialization
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.x509.oid import NameOID
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from playwright.sync_api import sync_playwright
+from scripts import serve_public,build_site
+ROOT=Path(__file__).resolve().parents[1]
+out=ROOT/'cache/online/ui-tls';out.mkdir(parents=True,exist_ok=True)
+root=Path(tempfile.mkdtemp(prefix='ui-',dir=out))
+shutil.copytree(ROOT/'site',root/'site')
+(root/'data').mkdir()
+for name in ['opportunities.json','admissions.yaml','admissions_entries.yaml','admissions_checks.json','schools.yaml']:
+ shutil.copyfile(ROOT/'data'/name,root/'data'/name)
+# Render directly from current source templates; do not modify the shared generated pages.
+env=build_site.template_environment()
+for name in ['start','desk','applications','account','local','opportunities','board']:
+ (root/'site'/f'{name}.html').write_text(env.get_template(name+'.html.j2').render(),encoding='utf8')
+(root/'site/discovery.html').write_text(build_site.render_discovery_page(root/'site',env),encoding='utf8')
+# Exercise the same HTTPS protocol and Secure cookie behavior used in production.
+key=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+name=x509.Name([x509.NameAttribute(NameOID.COMMON_NAME,'127.0.0.1')]);now=datetime.now(timezone.utc)
+cert=x509.CertificateBuilder().subject_name(name).issuer_name(name).public_key(key.public_key()).serial_number(x509.random_serial_number()).not_valid_before(now-timedelta(minutes=1)).not_valid_after(now+timedelta(days=1)).add_extension(x509.SubjectAlternativeName([x509.IPAddress(ipaddress.ip_address('127.0.0.1'))]),critical=False).sign(key,hashes.SHA256())
+cert_path,key_path=root/'test-cert.pem',root/'test-key.pem';cert_path.write_bytes(cert.public_bytes(serialization.Encoding.PEM));key_path.write_bytes(key.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()))
+server=serve_public.create_server(root,'127.0.0.1',0);tls=ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER);tls.load_cert_chain(cert_path,key_path);server.socket=tls.wrap_socket(server.socket,server_side=True,do_handshake_on_connect=False)
+threading.Thread(target=server.serve_forever,daemon=True).start();base=f'https://127.0.0.1:{server.server_port}'
+result={'isolated_root':str(root),'protocol':'https','certificate':'self-signed test fixture; browser trust errors ignored only for this isolated fixture','checks':[]}
+try:
+ with sync_playwright() as pw:
+  browser=pw.chromium.launch();ctx=browser.new_context(ignore_https_errors=True,viewport={'width':1440,'height':980});page=ctx.new_page();errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
+  page.goto(base+'/desk.html?mentor=bit-cs-danchun',wait_until='networkidle');assert '/account.html?' in page.url
+  page.screenshot(path=str(out/'login-desktop.png'));page.set_viewport_size({'width':320,'height':950});page.screenshot(path=str(out/'login-mobile.png'));page.set_viewport_size({'width':1440,'height':980});page.locator('[data-account-mode=register]').click();page.locator('#account-username').fill('ui_user_a');page.locator('#account-password').fill('test-password-long-a');page.locator('#account-confirm').fill('test-password-long-a');page.locator('#account-submit').click();page.wait_for_url('**/desk.html?mentor=bit-cs-danchun');page.wait_for_function('window.CONTACT_READY')
+  assert page.evaluate('OnlineAccount.state.authenticated');result['checks'].append('register_to_original_mentor_context')
+  page.goto(base+'/start.html',wait_until='networkidle');page.wait_for_function('window.START_READY');page.locator('#target-interest').fill('online account research');page.locator('#target-form button[type=submit]').click();page.wait_for_function('document.querySelector("#tab-targets").textContent.includes("1")');page.locator('[data-plan-convert]').first.click();page.locator('#plan-confirm').click();page.wait_for_function('document.querySelector("#plan-status").textContent.includes("已建立")');page.locator('#plan-cancel').click();result['checks'].append('cloud_target_to_project')
+  page.goto(base+'/applications.html?section=material',wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY');project=page.evaluate('Object.keys(WORKFLOW.projects)[0]');page.locator('#material-file').set_input_files({'name':'CV.txt','mimeType':'text/plain','buffer':b'private material bytes'});page.locator('#material-projects').select_option(project);page.locator('#material-save').click();page.wait_for_function('Object.keys(WORKFLOW.materials).length===1');material=page.evaluate('Object.keys(WORKFLOW.materials)[0]');assert page.locator('#material-feedback').inner_text().find('已保存到账号')>=0
+  response=page.evaluate('async url=>{const r=await fetch(url);return {status:r.status,text:await r.text()}}','/api/materials/'+material+'/download');assert response['status']==200 and response['text']=='private material bytes';result['checks'].append('cloud_material_upload_and_download')
+  page.locator('#material-list [data-edit-material]').first.click();assert page.locator('#material-file-label').is_hidden();page.locator('#material-notes').fill('linked cloud material');page.locator('#material-save').click();page.wait_for_function('Object.values(WORKFLOW.materials)[0].notes==="linked cloud material"');result['checks'].append('material_metadata_edit')
+  page.locator('#material-file').set_input_files({'name':'unused.txt','mimeType':'text/plain','buffer':b'delete this extra file'});page.locator('#material-save').click();page.wait_for_function('Object.keys(WORKFLOW.materials).length===2');extra=page.evaluate('Object.keys(WORKFLOW.materials).find(id=>id!=='+json.dumps(material)+')');page.once('dialog',lambda dialog:dialog.accept());page.locator('#material-list [data-delete-material="'+extra+'"]').click();page.wait_for_function('Object.keys(WORKFLOW.materials).length===1');result['checks'].append('unused_material_delete');page.evaluate('scrollTo(0,0)');page.screenshot(path=str(out/'materials-desktop.png'),full_page=True);
+  page.goto(base+'/applications.html?section=communication',wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY');page.locator('#communication-mentor-query').fill('单纯');page.locator('#communication-mentor-results button').first.click();page.locator('#communication-project').select_option(project);page.locator('#communication-subject').fill('Cloud contact history');page.locator('#communication-content').fill('Private reply record');page.locator('#communication-materials').select_option(material);page.locator('#communication-save').click();page.wait_for_function('Object.keys(WORKFLOW.communications).length===1');result['checks'].append('communication_with_cloud_material');
+  page.goto(base+'/discovery.html',wait_until='networkidle');page.wait_for_function('window.DISCOVERY_READY');page.locator('[data-bookmark-id]').first.click();page.wait_for_function('CloudLibrary.read().bookmarks.length===1');assert page.locator('[data-bookmark-id]').first.inner_text()=='已收藏';result['checks'].append('mentor_bookmark_cloud_save')
+  # A fresh browser context has no localStorage or shared cookies.
+  ctx2=browser.new_context(ignore_https_errors=True,viewport={'width':390,'height':844});p2=ctx2.new_page();p2.on('pageerror',lambda error:errors.append(str(error)))
+  p2.goto(base+'/account.html?next=/start.html',wait_until='networkidle');p2.locator('#account-username').fill('ui_user_a');p2.locator('#account-password').fill('test-password-long-a');p2.locator('#account-submit').click();p2.wait_for_url('**/start.html');p2.wait_for_function('window.START_READY');assert p2.locator('#tab-targets').inner_text().endswith('1');assert p2.locator('#tab-bookmarks').inner_text().endswith('1');p2.locator('#local-overview').wait_for(state='visible');assert len(p2.evaluate('async()=>await(await fetch("/api/workflow")).json()')['materials'])==1;result['checks'].append('fresh_device_cloud_records')
+  p2.screenshot(path=str(out/'start-mobile.png'),full_page=True)
+  page.locator('[data-bookmark-id]').nth(1).click();page.wait_for_function('CloudLibrary.read().bookmarks.length===2');p2.locator('#tab-todos').click();p2.locator('#todo-title').fill('Cross device reminder');p2.locator('#todo-form button[type=submit]').click();p2.wait_for_function('document.querySelector("#library-status").textContent.includes("其他页面或设备")');assert not p2.evaluate('CloudLibrary.read().todos');p2.locator('#todo-form button[type=submit]').click();p2.wait_for_function('CloudLibrary.read().todos.length===1');result['checks'].append('conflict_refresh_without_overwrite_then_retry')
+  p2.goto(base+'/account.html',wait_until='networkidle');p2.locator('#account-logout').click();p2.wait_for_function('!OnlineAccount.state.authenticated');assert p2.evaluate('async()=>(await fetch("/api/workflow")).status')==401;result['checks'].append('logout_revokes_session')
+  p2.locator('[data-account-mode=register]').click();p2.locator('#account-username').fill('ui_user_b');p2.locator('#account-password').fill('test-password-long-b');p2.locator('#account-confirm').fill('test-password-long-b');p2.locator('#account-submit').click();p2.wait_for_url('**/start.html');p2.wait_for_function('window.START_READY');assert p2.locator('#tab-targets').inner_text().endswith('0');assert not p2.evaluate('async()=>await(await fetch("/api/workflow")).json()')['projects'];assert p2.evaluate('async url=>(await fetch(url)).status','/api/materials/'+material+'/download')==404;result['checks'].append('other_account_cannot_read_records_or_file')
+  # Existing browser records are only uploaded after preview and explicit confirmation.
+  old={'version':1,'targets':[],'bookmarks':[{'id':'old_bookmark','kind':'mentor','title':'Old mentor','url':'p/bit-cs-danchun.html','created_at':'2026-11-15'}],'todos':[]}
+  p2.evaluate('(value)=>localStorage.setItem(BrowserLibraryCore.KEY,JSON.stringify(value))',old);p2.reload(wait_until='networkidle');p2.wait_for_function('window.START_READY');assert p2.locator('#tab-bookmarks').inner_text().endswith('0');p2.locator('#library-import-browser').click();assert p2.locator('#import-preview').is_visible();assert p2.locator('#tab-bookmarks').inner_text().endswith('0');p2.locator('#library-import-confirm').click();p2.wait_for_function('CloudLibrary.read().bookmarks.length===1');assert p2.evaluate('JSON.parse(localStorage.getItem(BrowserLibraryCore.KEY)).bookmarks.length')==1;result['checks'].append('explicit_legacy_import_preserves_original')
+  p2.goto(base+'/account.html',wait_until='networkidle');p2.locator('details summary').filter(has_text='修改密码').click();p2.locator('#password-current').fill('test-password-long-b');p2.locator('#password-new').fill('test-new-password-long-b');p2.locator('#password-submit').click();p2.wait_for_function('document.querySelector("#account-message").textContent.includes("密码已修改")');result['checks'].append('password_change')
+  for width in (320,390,768,1440):
+   p2.set_viewport_size({'width':width,'height':950});p2.goto(base+'/account.html',wait_until='networkidle');assert p2.evaluate('document.documentElement.scrollWidth<=innerWidth+1');p2.screenshot(path=str(out/f'account-{width}.png'))
+  result['checks'].append('account_layout_320_390_768_1440')
+  assert not errors,errors;result['no_page_errors']=True;result['passed']=True;browser.close()
+finally:
+ server.shutdown();server.server_close();(out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')
+print(json.dumps(result,ensure_ascii=False))

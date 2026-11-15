@@ -24,7 +24,7 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 
 <main>
 <div class="hero"><div><h1>我的申请</h1><p class="muted">在这里联系导师、记录回复与下一步；申请目标和材料在“项目与材料”中管理。</p></div><details><summary>备份与恢复</summary><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></details></div>
-<div id="desk-hint" class="hint">请运行 <code>python scripts\serve.py</code> 并从本地服务打开。直接打开 HTML 可浏览导师库，私人联系操作不可用。</div>
+<div id="desk-hint" class="hint">正在读取账号中的申请记录…</div>
 <div id="desk-message" class="message" role="status" aria-live="polite"></div>
 <p id="incoming-goal" class="muted" hidden></p>
 <fieldset id="desk-workspace" disabled>
@@ -66,6 +66,6 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 </div></div>
 </section>
 </fieldset>
-<div class="footer">私人记录仅在本地保存 · 备份不包含附件原文件</div>
-</main><script src="data.js?v=20261115-7"></script><script src="desk.js?v=20261115-20"></script>
+<div class="footer">私人记录按账号保存 · 备份不包含附件原文件</div>
+</main><script src="data.js?v=20261115-7"></script><script src="desk.js?v=20261115-online2"></script>
 </body></html>

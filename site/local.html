@@ -1,5 +1,7 @@
 
-<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>在本机管理申请 · 导师库</title><style>main{max-width:800px;margin:40px auto;padding:0 20px}section{background:white;padding:24px;border:1px solid var(--line);border-radius:8px;line-height:1.9}code{overflow-wrap:anywhere}h1{font-size:26px}</style><link rel="stylesheet" href="ui.css?v=20261115-20"></head><body class="page page-local">
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>继续在线使用 · 导师库</title><link rel="stylesheet" href="ui.css?v=20261115-online1">
+<script src="account-session.js?v=20261115-online1"></script>
+<script src="cloud-library.js?v=20261115-online1"></script></head><body class="page">
 <header class="top site-header"><div class="site-header-inner">
 <a class="site-brand" href="start.html">◈ 导师库 · 申请助手</a>
 <nav aria-label="主导航">
@@ -12,10 +14,11 @@
 
 <a href="admissions.html" >学校要求</a>
 
-<a href="desk.html" aria-current="page">我的申请</a>
+<a href="desk.html" >我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
+<a href="account.html" data-account-link>登录 / 注册</a>
 
 <a href="notices.html" >招生通知</a>
 
@@ -23,27 +26,9 @@
 
 <a href="compare.html" >导师对比</a>
 
-<a href="applications.html"  id="manage-link">项目与材料</a>
+<a href="applications.html" >项目与材料</a>
 
 <a href="release.html">版本与使用说明</a><details><summary>历史记录</summary><a href="board.html">旧套磁看板</a></details></div></details>
 
 
-</div></header><main><h1>先收藏规划，再到本机准备正式申请</h1><section><p>公开站提供导师资料、学校要求和保研机会，也可以直接保存浏览器关注目标、收藏与待办。它们只保存在当前浏览器、当前站点，不上传、不跨设备同步；可导出浏览器备份。</p><p><a href="start.html#library">打开浏览器收藏与待办 →</a></p><p>正式申请项目、材料文件路径、邮件草稿与沟通记录仍由本机版管理，不会上传到公开站。浏览器收藏不会自动变成正式申请项目。</p><h2>第一次使用本机版</h2><p><a href="https://8.213.137.82:8443/download/mentor-assistant-v1.10.0-local.zip">下载 v1.10 本机运行包 →</a> · <a href="https://8.213.137.82:8443/download/mentor-assistant-v1.10.0-local.zip.sha256">SHA256 校验码</a></p><ol><li>将运行包解压到独立目录，按包内 README 安装 Python 与依赖。</li><li>启动本机服务，进入“申请导航”。</li><li>先在本页所属浏览器导出收藏备份，再到本机页面导入；确认后即可从目标或收藏建立正式申请。</li></ol><p>浏览器记录不会随网址跳转自动搬运；备份文件也不会上传到公开站。</p><p>已有本机版：在项目目录运行 <code>python scripts/serve.py</code>，再打开本机页面保存申请、关联材料和设置提醒。</p><p><a id="open-local" href="http://127.0.0.1:8000/start.html">打开已启动的本机版 →</a></p><p class="muted">需要先在自己的电脑启动服务；这里没有远程账户或自动跨设备同步。</p><p><a href="opportunities.html">继续查看保研机会 →</a> · <a href="discovery.html">继续找导师 →</a></p></section></main><script>
-const localContext=new URLSearchParams(location.search),activity=localContext.get('id'),mentor=localContext.get('mentor');
-const localLink=document.getElementById('open-local'),localUrl=new URL(localLink.href);
-const validId=value=>typeof value==='string'&&/^[a-z0-9_-]{1,256}$/.test(value);
-if(validId(activity)){localUrl.pathname='/opportunities.html';localUrl.searchParams.set('id',activity);localLink.textContent='在已启动的本机版继续这条资料 →';}
-else if(validId(mentor)||['desk','applications','board'].includes(localContext.get('page'))){
- localUrl.pathname='/'+(localContext.get('page')==='applications'?'applications':'desk')+'.html';
- for(const key of ['mentor','school','dept','year','degree','route','track','program']){
-  const value=localContext.get(key);if(value&&value.length<=500&&!/[\x00-\x1f\x7f]/.test(value))localUrl.searchParams.set(key,value);
- }
- localLink.textContent=validId(mentor)?'在已启动的本机版继续联系这位导师 →':'在已启动的本机版继续申请准备 →';
-}
-const discoveryReturn=localContext.get('discovery_return')||'';
-if(/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(discoveryReturn)){
- localUrl.searchParams.set('discovery_return',discoveryReturn);
- for(const link of document.querySelectorAll('a[href="discovery.html"]'))link.href=discoveryReturn;
-}
-localLink.href=localUrl.href;
-</script></body></html>
+</div></header><main style="max-width:760px;margin:32px auto;padding:0 20px"><h1>直接在网站继续申请准备</h1><p>无需下载安装。登录账号后，申请项目、上传材料、沟通记录与收藏可在不同设备继续使用。</p><p><a href="account.html">登录 / 注册 →</a> · <a href="start.html">返回申请导航 →</a></p></main></body></html>

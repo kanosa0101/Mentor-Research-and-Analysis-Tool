@@ -133,7 +133,7 @@ a:hover{text-decoration:underline}
     </details>
     <div class="fld"><label>短名单</label><select id="f-outreach"><option value="">全部</option>
       <option value="interested">意向</option><option value="tracked">已跟进</option><option value="untracked">未跟进</option></select></div>
-    <div class="fld"><input id="f-tag" placeholder="私人标签（本地服务）"></div>
+    <div class="fld"><input id="f-tag" placeholder="私人标签（需登录）"></div>
     <span class="count" id="count"></span>
   </div>
 
@@ -387,16 +387,16 @@ document.querySelector("#tbl tbody").addEventListener("click", async e=>{
   const id = s.dataset.star, cur = OUT[id] && OUT[id].status;
   try{
     if(!cur) OUT[id] = await patchO(id, {status:"interested"});
-    else if(cur==="interested"){ await fetch("/api/outreach/"+id, {method:"DELETE"}); delete OUT[id]; }
+    else if(cur==="interested"){ const response=await fetch("/api/outreach/"+id, {method:"DELETE",headers:{"Content-Type":"application/json"},body:"{}"});if(!response.ok)throw new Error((await response.json().catch(()=>({}))).error||response.status);delete OUT[id]; }
     else return;
     render();
   }catch(err){ alert("保存失败：" + err.message); }
 });
-(async ()=>{  // serve.py 在线则加载跟进数据；file:// 直开不发请求（fetch 会报错），降级为只读
+(async ()=>{  // Only an authenticated account can load private follow-up records.
   if(location.protocol === "file:") return;
   try{
-    const h = await fetch("/api/health").then(r=>r.json());
-    if(h && h.ok){ OUT = await fetch("/api/outreach").then(r=>r.json()); API_OK = true; render(); }
+    const account = await OnlineAccount.ready;
+    if(account.authenticated){const response=await fetch("/api/outreach");if(!response.ok)throw new Error("记录暂不可读取");OUT=await response.json();API_OK=true;render();}
   }catch(e){}
 })();
 initCols(); initFacets(); applyCols(); initDepts(); render(); updateCmpBtn();

@@ -205,6 +205,7 @@ def main():
     (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
     write_html(SITE / 'opportunities.html', env.get_template('opportunities.html.j2').render())
     write_html(SITE / 'local.html', env.get_template('local.html.j2').render())
+    write_html(SITE / 'account.html', env.get_template('account.html.j2').render())
     write_html(SITE / 'start.html', env.get_template('start.html.j2').render())
     coverage_path = ROOT / 'data/coverage.json'
     if coverage_path.exists():

@@ -1,0 +1,22 @@
+{
+  "protocol": "https",
+  "certificate": "self-signed test fixture; browser trust errors ignored only for this isolated fixture",
+  "checks": [
+    "register_to_original_mentor_context",
+    "cloud_target_to_project",
+    "cloud_material_upload_and_download",
+    "material_metadata_edit",
+    "unused_material_delete",
+    "communication_with_cloud_material",
+    "mentor_bookmark_cloud_save",
+    "fresh_device_cloud_records",
+    "conflict_refresh_without_overwrite_then_retry",
+    "logout_revokes_session",
+    "other_account_cannot_read_records_or_file",
+    "explicit_legacy_import_preserves_original",
+    "password_change",
+    "account_layout_320_390_768_1440"
+  ],
+  "no_page_errors": true,
+  "passed": true
+}

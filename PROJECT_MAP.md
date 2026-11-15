@@ -1,5 +1,7 @@
 # 项目地图
 
+> 2026-11-15 产品决策更新：只提供在线网站；账号登录、云端保存、跨设备使用。下文有关本机版、运行包和公开站转本机的约定已废止，以[在线服务调整](docs/ONLINE_SERVICE.md)为准；实现、技术验收与部署已完成，结果见[v1.11交付记录](deploy/DELIVERY_V1.11_2026-11-15.md)。
+
 整理日期：2026-11-15；v1.9 为问题审计基线，当前 v1.10 整理实现见[交付记录](deploy/DELIVERY_V1.10_2026-11-15.md)。下文标明历史基线的数据不代表重新采集。
 
 ## 产品究竟服务什么任务
@@ -14,9 +16,9 @@ flowchart LR
   D --> P[导师资料与公开联系方式]
   E --> O[官方公告 / 附件 / 报名入口]
   A --> O
-  P --> B[浏览器收藏或本机联系准备]
+  P --> B[账号收藏或在线联系准备]
   O --> B
-  B --> W[本机项目 / 材料 / 联系历史 / 下一步]
+  B --> W[云端项目 / 材料 / 联系历史 / 下一步]
 ```
 
 图中导师筛选与活动边界已在v1.10落实：目标学位和私人核验不再参与目录，个人招募从院校活动列表分出。对应规则以 [需求](REQUIREMENTS.md)、[用况](docs/USE_CASES.md) 为准。
@@ -36,22 +38,22 @@ flowchart LR
 | 项目与材料 `applications.html` | 管理一次具体申请及所需材料 | 与联系页保持同一项目上下文；简化空态/重复解释 | `workflow.js`、`crawler/workflow_util.py`、`material_task_util.py` |
 | 全量目录 `index.html` | 查看完整原始目录，含缺邮箱记录 | 保留为次级核对工具，不让新用户再理解第二套主筛选 | `index.html.j2`、`data.js`、`search.js` |
 | 旧套磁看板 `board.html` | 访问已有旧记录 | 与新工作流不同步；保留历史访问，退出新用户主要路径 | `board.html.j2`、outreach API |
-| 本机说明 `local.html` | 说明安装与公私边界，提供下载 | 公开站点击私人操作不能直接落入不可用表单 | `local.html.j2` |
+| 我的账号 `account.html` | 注册、登录、修改密码、退出 | 私人动作登录后返回原上下文；local.html只保留在线跳转 | `account*.js`、`online_accounts.py` |
 | 覆盖/版本 `coverage.html`、`release.html` | 查覆盖缺口及实际交付记录 | 次级说明，不能成为阅读正常内容的前置步骤 | coverage 数据、`release.json` |
 | 维护台 `review.html` | 取证、核验、处理来源和发布 | 仅维护者使用；归类可编辑，发布前必须核对当前原句 | `review.js`、`scripts/serve_review.py` |
 
 模板在 `site/templates/`；`site/*.html` 与 `site/p/*.html` 是构建结果，不能只手改生成文件。样式入口为 `site/ui.css`，当前仍有局部模板样式；整改围绕现有模板，不更换技术栈。
 
-## 四套记录边界
+## 当前记录边界
 
 | 边界 | 记录与权威位置 | 不应混淆成 |
 | --- | --- | --- |
 | 公共资料 | `data/professors/`；`admissions.yaml`、`admissions_entries.yaml`、`admissions_checks.json`；`notices.json`、`opportunities.json` | 个人满足资格、学校已收件、导师尚有名额 |
-| 当前浏览器 | localStorage 中收藏/关注/待办及 `compare_sel`；sessionStorage 中已应用搜索状态 | 跨设备账号或已建立正式申请 |
-| 本机私人申请 | `data/workflow.yaml`、`data/discovery.yaml`、旧 `data/outreach.yaml`；材料原文件另存 | 公共事实或公开网站可以读取的数据 |
+| 浏览器界面状态 | 筛选、滚动、对比与未保存表单；历史浏览器收藏待本人确认导入 | 已保存云端账号数据 |
+| 云端账号记录 | `var/accounts/accounts.sqlite3` 中身份/会话/收藏；`var/users/<ID>/` 中申请、沟通、提醒与材料 | 公共事实、服务器旧私人文件或其他账号资料 |
 | 维护证据 | `cache/opportunity_review.json`、来源正文/附件、审核与自动任务记录；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
 
-界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。本轮不合并数据库、不迁移私人文件、不建立云账号。
+界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。本轮按明确需求建立云账号；原私人文件保留，不自动归属新用户。
 
 ## 信息、API 与运行地图
 
@@ -102,3 +104,11 @@ Python/Node 测试覆盖证据、范围、存储、分页和发布边界。v1.10
 5. [架构](ARCHITECTURE.md)、[交接](HANDOVER.md)、[运行版手册](USER_GUIDE.md)：现有运行事实。
 
 旧通用计划已原字节归档到 `docs/history/pre-ux-reset-20261115/`，日期命名的其他历史交付保留，不作为当前计划。
+
+## 在线服务新增落点
+
+- `scripts/serve_public.py`：HTTPS账号与私人API门禁、HTTP跳转及旧下载下线。
+- `crawler/online_accounts.py`：用户、会话、限流和带版本的账号收藏。
+- `crawler/online_workspace.py`：原申请业务的按账号适配，不暴露原本机接口。
+- `crawler/online_materials.py`：上传、下载、配额、路径与材料引用保护。
+- `site/account-session.js`、`account.js`、`cloud-library.js`：会话、登录返回和云端收藏。

@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "register_to_original_mentor_context",
+    "cloud_target_to_project",
+    "cloud_material_upload_and_download",
+    "material_metadata_edit",
+    "unused_material_delete",
+    "communication_with_cloud_material",
+    "mentor_bookmark_cloud_save",
+    "fresh_device_cloud_records",
+    "conflict_refresh_without_overwrite_then_retry",
+    "logout_revokes_session",
+    "other_account_cannot_read_records_or_file",
+    "explicit_legacy_import_preserves_original",
+    "password_change",
+    "account_layout_320_390_768_1440",
+    "auth_success_when_web_storage_blocked",
+    "logout_when_web_storage_blocked",
+    "materials_readable_time_and_sticky_nav_top",
+    "legacy_detail_authenticated_save_delete_and_failure_integrity",
+    "legacy_index_account_gate_and_delete",
+    "legacy_board_account_add_delete"
+  ],
+  "no_page_errors": true,
+  "passed": true,
+  "visual_review": "Inspected login 320px and account desktop; fixed shared max-width precedence then rechecked 320/390/768/1440 widths."
+}

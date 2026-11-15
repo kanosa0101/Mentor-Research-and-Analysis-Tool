@@ -60,10 +60,15 @@ class StaticHTTPTests(unittest.TestCase):
         code,new,body=self.request('/data.js',headers={'If-None-Match':headers['ETag']})
         self.assertEqual(code,200);self.assertNotEqual(new['ETag'],headers['ETag'])
         self.assertEqual(self.request('/start.html')[1]['Cache-Control'],'no-cache')
+        self.assertEqual(self.request('/start.html')[1]['X-Frame-Options'], 'DENY')
+        self.assertEqual(self.request('/start.html')[1]['Content-Security-Policy'], "frame-ancestors 'none'")
 
-    def test_only_named_release_download_is_exposed(self):
+    def test_local_release_download_is_retired_even_when_file_exists(self):
         (self.root/'dist').mkdir();(self.root/'dist/mentor-assistant-v1.6.0-local.zip').write_bytes(b'zip')
         (self.root/'dist/private.json').write_text('private')
-        self.assertEqual(self.request('/download/mentor-assistant-v1.6.0-local.zip')[2],b'zip')
+        code, _, body = self.request('/download/mentor-assistant-v1.6.0-local.zip')
+        self.assertEqual(code, 410)
+        self.assertIn('在线服务'.encode(), body)
+        self.assertEqual(self.request('/download/mentor-assistant-v1.6.0-local.zip.sha256')[0], 410)
         for path in ('/download/private.json','/download/../data/workflow.yaml','/dist/mentor-assistant-v1.6.0-local.zip'):
             self.assertEqual(self.request(path)[0],404)

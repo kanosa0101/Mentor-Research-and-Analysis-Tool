@@ -76,7 +76,7 @@ class SnapshotTests(unittest.TestCase):
 
 
 class PublicUpdateStageTests(unittest.TestCase):
-    dependencies = ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css')
+    dependencies = ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css', 'account-session.js', 'cloud-library.js')
 
     def fixture(self, folder, invalid=False):
         source = Path(__file__).resolve().parents[1]
@@ -126,7 +126,10 @@ class PublicUpdateStageTests(unittest.TestCase):
             self.assertTrue(result['private_data_unchanged'])
             html = (root / 'site/discovery.html').read_text(encoding='utf-8')
             self.assertIn('更新后的公共目录大学', html)
-            self.assertFalse(BeautifulSoup(html, 'html.parser').select('script[src],link[rel=stylesheet]'))
+            page = BeautifulSoup(html, 'html.parser')
+            self.assertFalse(page.select('link[rel=stylesheet]'))
+            self.assertEqual({node['src'].split('?')[0] for node in page.select('script[src]')},
+                             {'account-session.js', 'cloud-library.js'})
             self.assertEqual((root / 'data/workflow.yaml').read_text(), 'private-sentinel')
             self.assertEqual({name: (root / 'site' / name).read_bytes() for name in self.dependencies}, original_sources)
             self.assertEqual(json.loads((root / 'cache/public-data-installed.json').read_text())['id'], descriptor['id'])

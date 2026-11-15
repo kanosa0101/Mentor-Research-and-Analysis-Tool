@@ -306,7 +306,7 @@ el('target-task-list').onclick=e=>{const b=e.target.closest('button');if(!b)retu
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.closest('#draft-form')||b.id==='draft-confirm'||b.id==='draft-export')statusArea='draft-status';else if(b.closest('#reply-form'))statusArea='reply-status';else if(b.closest('#task-form')||b.closest('#target-task-list'))statusArea='task-status';else statusArea='';},true);
 el('reply-date').value=today();el('sent-date').value=today();renderMentorSearch();showPanel(currentPanel);showView(currentView);
 renderGoal();
-if(location.protocol==='http:'){
+if(['http:','https:'].includes(location.protocol)){
   el('desk-restore').disabled=false;
   refresh().then(()=>{el('desk-workspace').disabled=false;})
     .catch(e=>message('无法读取私人工作流：'+e.message,true));

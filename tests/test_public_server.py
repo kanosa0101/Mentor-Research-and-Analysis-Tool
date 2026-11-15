@@ -78,15 +78,12 @@ class PublicServerTests(unittest.TestCase):
         code, headers, _ = self.request('/desk.html?mentor=ruc-info-dongjinhao&school=ruc&dept=info&year=2027&degree=master&project=private&material_path=private&discovery_return=discovery.html%3Fschool%3Druc')
         target = urlsplit(headers['Location'])
         self.assertEqual(code, 302)
-        self.assertEqual(target.path, '/local.html')
-        query = parse_qs(target.query)
+        self.assertEqual(target.path, '/account.html')
+        query = parse_qs(urlsplit(parse_qs(target.query)['next'][0]).query)
         self.assertEqual(query['mentor'], ['ruc-info-dongjinhao'])
         self.assertEqual(query['degree'], ['master'])
-        self.assertEqual(query['page'], ['desk'])
         self.assertEqual(query['discovery_return'], ['discovery.html?school=ruc'])
-        self.assertNotIn('project', query)
-        self.assertNotIn('material_path', query)
-        self.assertEqual(self.request('/desk.html')[1]['Location'], '/local.html')
+        self.assertEqual(self.request('/desk.html')[1]['Location'], '/account.html?next=%2Fdesk.html')
 
     def test_gzip_negotiation_and_head_length(self):
         original = ('window.DATA="导师资料";\n' * 1000).encode('utf-8')
@@ -117,7 +114,7 @@ class PublicServerTests(unittest.TestCase):
                      '/cache/opportunities_live.json', '/review.html', '/review.js', '/does-not-exist.html']:
             with self.subTest(path=path):
                 code, _, body = self.request(path)
-                self.assertEqual(code, 404)
+                self.assertEqual(code, 401 if path.startswith(('/api/workflow', '/api/discovery', '/api/outreach')) else 404)
                 self.assertNotIn(b'private-secret', body)
                 self.assertNotIn(b'Directory listing', body)
 
@@ -126,8 +123,10 @@ class PublicServerTests(unittest.TestCase):
         for method in ['POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS']:
             for path in ['/api/opportunities', '/api/workflow/projects', '/data.js']:
                 code, headers, body = self.request(path, method, b'{"name":"must-not-save"}')
-                self.assertEqual(code, 405)
-                self.assertEqual(headers['Allow'], 'GET, HEAD')
+                private = path == '/api/workflow/projects' and method in ('POST', 'PATCH', 'DELETE')
+                self.assertEqual(code, 403 if private else 405)
+                if not private:
+                    self.assertEqual(headers['Allow'], 'GET, HEAD')
         after = {p.relative_to(self.root): p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
         self.assertEqual(before, after)
 

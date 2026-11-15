@@ -1,0 +1,14 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "checks": [
+    "https_registration_secure_cookie",
+    "project_material_communication_reminder_and_target_saved",
+    "independent_mobile_browser_same_account_reads_same_records_and_file",
+    "other_account_cannot_read_or_modify_records",
+    "logout_revokes_private_access",
+    "local_download_retired_and_private_maintenance_files_hidden",
+    "no_browser_errors_or_account_horizontal_overflow"
+  ],
+  "passed": true,
+  "browser_errors": []
+}

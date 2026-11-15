@@ -1,4 +1,4 @@
-/* 私人数据只经本地 API 读取；不写入静态文件或 localStorage。 */
+/* Account-scoped workflow; private records are never embedded in static pages. */
 const el = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const mentors = new Map((window.MENTOR_DATA || []).map(p => [p.page, p]));
@@ -97,7 +97,7 @@ async function refreshOpportunityChanges(){
       const current=catalog.opportunities.find(o=>o.id===saved.id),changes=OpportunityRules.changes(saved,current);
       const value=v=>Array.isArray(v)?v.map(x=>typeof x==='object'?[x.department,x.direction,x.contact,x.email].filter(Boolean).join(' · '):x).join('；'):String(v??'未明确')||'未明确';
       node.innerHTML=(!current?'<p class="hint">当前目录未找到此活动，请核对官方通知。原申请记录保留。</p>':
-        `<p class="hint">当前活动状态：${esc(OpportunityRules.labels[OpportunityRules.state(current)])}。${catalog.feed_error?'更新服务暂不可用，以下比较基于本机资料。':''}${changes.length?'发现 '+changes.length+' 项与保存时不同，请检查材料与个人提醒。':'与保存快照相比，申请条件、材料与时间未发现差异；仍需核对当前报名状态。'}</p>`)+
+        `<p class="hint">当前活动状态：${esc(OpportunityRules.labels[OpportunityRules.state(current)])}。${catalog.feed_error?'更新服务暂不可用，以下比较基于服务器资料。':''}${changes.length?'发现 '+changes.length+' 项与保存时不同，请检查材料与个人提醒。':'与保存快照相比，申请条件、材料与时间未发现差异；仍需核对当前报名状态。'}</p>`)+
         (changes.length?'<details open><summary>查看变更，不覆盖原记录</summary>'+changes.map(c=>`<p><strong>${esc(c.label)}</strong><br>保存时：${esc(value(c.before))}<br>当前记录：${esc(value(c.after))}</p>`).join('')+'<p>个人准备进度和提醒日期未自动修改，请按核实后的要求调整。</p></details>':'');
     }
   }catch(error){for(const node of document.querySelectorAll('[data-opportunity-changes]'))node.textContent='暂时无法检查活动更新；保存记录仍可使用，请通过官方通知核对。';}
@@ -109,7 +109,7 @@ function projectRequirements(p){
     const list=values=>values.length?'<ul>'+values.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>':'<p>尚未取得明确清单，请查原文。</p>';
     const window=o.application_window,windowInfo=window?`<p class="opportunity-window"><strong>${window.mode==='month'?'官方截止月份：'+esc(window.end_month)+'（具体日期未公布）':'官方说明长期 / 滚动受理；当前余位须联系确认'}</strong><br>原文：${esc(window.quote)}</p>`:'';
     const attachments=(o.source_attachments||[]).map((doc,index)=>`<p><a href="${esc(doc.url)}" target="_blank" rel="noopener">官方申请材料附件 ${index+1}（DOCX） ↗</a> · 核对 ${esc(doc.checked_at)}</p>`).join('');
-    return `<details open><summary>活动条件与准备材料 · 关联文件 ${files.length}</summary><div data-opportunity-changes="${esc(p.id)}" role="status">正在核对活动更新…</div><p>${esc(o.unit)} · 面向 ${o.graduation_year?esc(o.graduation_year)+' 届':'届别未明确'} · 活动年份 ${o.camp_year||'未明确'}</p><p>登记的报名截止：${esc(o.deadline||'未明确')} · 活动时间：${esc(o.event_start||'待核对')}${o.event_end?' 至 '+esc(o.event_end):''}</p>${windowInfo}<p class="hint">保存时快照，核查于 ${esc(o.verified_at)}。${esc(o.source_note)} 活动不是正式录取；当前更新请回活动页核对。</p><a href="opportunities.html?id=${encodeURIComponent(o.id)}">查看活动最新记录 →</a> · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">官方原文 ↗</a><h4>申请条件</h4>${list(o.eligibility)}<h4>材料与提交阶段</h4>${list(o.materials)}${attachments}<p>${esc(o.application_method)}</p><p>${esc(o.admission_note)}</p><h4>我的关联材料</h4>${files.length?'<ul>'+files.map(m=>'<li>'+esc(m.title)+(m.missing?' · 文件缺失':' · 已登记文件，不代表已提交')+'</li>').join('')+'</ul>':'<p>尚未关联材料。先登记本机文件，再关联到此项目。</p>'}<button type="button" data-project-section="material" data-project-id="${esc(p.id)}">关联本机材料</button></details>`;
+    return `<details open><summary>活动条件与准备材料 · 关联文件 ${files.length}</summary><div data-opportunity-changes="${esc(p.id)}" role="status">正在核对活动更新…</div><p>${esc(o.unit)} · 面向 ${o.graduation_year?esc(o.graduation_year)+' 届':'届别未明确'} · 活动年份 ${o.camp_year||'未明确'}</p><p>登记的报名截止：${esc(o.deadline||'未明确')} · 活动时间：${esc(o.event_start||'待核对')}${o.event_end?' 至 '+esc(o.event_end):''}</p>${windowInfo}<p class="hint">保存时快照，核查于 ${esc(o.verified_at)}。${esc(o.source_note)} 活动不是正式录取；当前更新请回活动页核对。</p><a href="opportunities.html?id=${encodeURIComponent(o.id)}">查看活动最新记录 →</a> · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">官方原文 ↗</a><h4>申请条件</h4>${list(o.eligibility)}<h4>材料与提交阶段</h4>${list(o.materials)}${attachments}<p>${esc(o.application_method)}</p><p>${esc(o.admission_note)}</p><h4>我的关联材料</h4>${files.length?'<ul>'+files.map(m=>'<li>'+esc(m.title)+(m.missing?' · 文件缺失':' · 已登记文件，不代表已提交')+'</li>').join('')+'</ul>':'<p>尚未关联材料。先上传材料，再关联到此项目。</p>'}<button type="button" data-project-section="material" data-project-id="${esc(p.id)}">关联上传材料</button></details>`;
   }
   const scope=projectScope(p),result=projectChecklist(p),q=goalQuery(p);
   const materials=Object.values(WORKFLOW.materials).filter(m=>m.project_ids.includes(p.id));
@@ -216,8 +216,8 @@ function reset(prefix){
   if(prefix==='communication') el('communication-date').value=reminderDay(new Date().toISOString());
   else{
     editing[prefix]=null;
-    el(prefix+'-save').textContent={project:'新增项目',material:'登记文件',reminder:'新增提醒'}[prefix];
-    if(prefix==='material') el('material-path').readOnly=false;
+    el(prefix+'-save').textContent={project:'新增项目',material:'上传材料',reminder:'新增提醒'}[prefix];
+    if(prefix==='material'){el('material-file-label').hidden=false;el('material-file').required=true;}
   }
   if(prefix==='project')renderGoalEditor();
 }
@@ -232,7 +232,7 @@ function render(){
   el('context-mentor').textContent=contextMentor ? '当前导师：'+mentorName(contextMentor) : '';
   el('clear-context').hidden=!contextMentor;
   const projectFilter=el('filter-project').value;
-  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。手动登记材料、沟通与提醒默认关联此项目；扫描仅登记文件，不自动关联项目。' : '当前显示全部项目。新增记录时请选择关联项目。';
+  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。手动登记材料、沟通与提醒默认关联此项目；上传时请确认项目关联。' : '当前显示全部项目。新增记录时请选择关联项目。';
   const relatedProject=id=>!!id && (!projectFilter || id===projectFilter) && (!contextMentor || WORKFLOW.projects[id]?.mentor_ids.includes(contextMentor));
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
@@ -248,8 +248,8 @@ function render(){
   el('material-scope').textContent=materialView==='unassigned' ? `正在查看全部未关联任何项目的材料（不按导师筛选）。${projectFilter ? '点击关联将加入项目：'+projectName(projectFilter)+'。' : '请先选择目标项目，再逐条关联。'}` : `正在按当前项目与导师范围查看材料。${projectFilter ? '当前项目：'+projectName(projectFilter)+'。' : ''}`;
   const visibleMaterials=materialView==='unassigned' ? unassigned : scopedMaterials;
   list('material-list',visibleMaterials.map(m=>
-    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span> ${m.missing ? '<span class="bad">文件缺失</span>' : ''}</h3><p class="path">${esc(m.path)}</p><small>${m.size} 字节 · 文件修改：${esc(m.mtime)}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button>${projectFilter&&!m.project_ids.includes(projectFilter) ? ` <button type="button" data-link-material="${m.id}">关联到项目：${esc(projectName(projectFilter))}</button>` : ''}</article>`));
-  if(!visibleMaterials.length)el('material-list').innerHTML=`<div class="empty">${!materials.length ? '尚未登记材料。可以扫描目录或登记单个文件，再关联项目。' : materialView==='unassigned' ? '暂无未关联项目的材料。' : '当前范围暂无关联材料。扫描的新文件不会自动归入项目，可查看未关联项目材料并逐条关联。'}</div>`;
+    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span> ${m.missing ? '<span class="bad">文件缺失</span>' : ''}</h3><p><a href="/api/materials/${encodeURIComponent(m.id)}/download">下载材料</a></p><small>${m.size} 字节 · 保存时间：${esc(String(m.mtime||'').replace('T',' ').slice(0,16))}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button> <button type="button" data-delete-material="${m.id}">删除材料</button>${projectFilter&&!m.project_ids.includes(projectFilter) ? ` <button type="button" data-link-material="${m.id}">关联到项目：${esc(projectName(projectFilter))}</button>` : ''}</article>`));
+  if(!visibleMaterials.length)el('material-list').innerHTML=`<div class="empty">${!materials.length ? '尚未上传材料。请选择文件上传，并关联申请项目。' : materialView==='unassigned' ? '暂无未关联项目的材料。' : '当前范围暂无关联材料。未关联的文件不会自动归入项目，可查看未关联项目材料并逐条关联。'}</div>`;
   list('communication-list',Object.values(WORKFLOW.communications).filter(c=>(!projectFilter || c.project_id===projectFilter) && (!contextMentor || c.mentor_id===contextMentor)).sort((a,b)=>b.date.localeCompare(a.date) || b.created_at.localeCompare(a.created_at)).map(c=>
     `<article><h3>${esc(c.subject)} <span class="tag">${esc(communicationLabels[c.kind])}</span></h3><small>${esc(c.date)} · ${mentorLinks([c.mentor_id])} · ${esc(projectName(c.project_id))}</small><p>${esc(c.content)}</p><p>材料：${esc(c.material_ids.map(id=>WORKFLOW.materials[id].title).join('；')) || '未关联'}</p></article>`));
   const today=reminderDay(new Date().toISOString());
@@ -279,9 +279,21 @@ bindSubmit('project','projects',()=>({name:el('project-name').value,school:el('p
   college:el('project-college').value,application_type:el('project-type').value,
   ...projectForm(),
   status:el('project-status').value,notes:el('project-notes').value,mentor_ids:chosen.project}));
-bindSubmit('material','materials',()=>({...(editing.material ? {} : {path:el('material-path').value}),
-  title:el('material-title').value,kind:el('material-kind').value,notes:el('material-notes').value,
-  mentor_ids:chosen.material,project_ids:selected('material-projects')}));
+el('material-form').onsubmit=e=>{
+  e.preventDefault();
+  action(async()=>{
+    const payload={title:el('material-title').value,kind:el('material-kind').value,notes:el('material-notes').value,mentor_ids:chosen.material,project_ids:selected('material-projects')};
+    if(editing.material)await api('/materials/'+editing.material,payload,'PATCH');
+    else{
+      const file=el('material-file').files[0];if(!file)throw new Error('请选择需要上传的文件');
+      if(file.size>20_000_000)throw new Error('单个文件不能超过 20 MB');
+      const encoded=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.onerror=()=>reject(new Error('文件读取失败'));reader.readAsDataURL(file);});
+      const response=await fetch('/api/materials/upload',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,filename:file.name,content_base64:encoded})}),result=await response.json();
+      if(!response.ok)throw new Error(result.error||'上传失败');
+    }
+    reset('material');
+  },'材料已保存到账号，可在其他设备查看与下载');
+};
 bindSubmit('communication','communications',()=>({mentor_id:chosen.communication[0] || '',
   project_id:el('communication-project').value,kind:el('communication-kind').value,
   date:el('communication-date').value,subject:el('communication-subject').value,content:el('communication-content').value,
@@ -299,16 +311,11 @@ el('project-add-date').onclick=()=>{
   projectDates.push({label:label.includes('个人计划')?label:'个人计划：'+label,kind:'plan',at,origin:'manual',policy_id:'',source_ids:[],source_url:el('project-date-source').value.trim(),quote:el('project-date-quote').value.trim(),locator:el('project-date-locator').value.trim()});
   formDirty.add('project');for(const suffix of ['label','at','source','quote','locator'])el('project-date-'+suffix).value='';el('project-date-feedback').textContent='个人计划已加入编辑列表；保存项目后生效。';renderGoalEditor();
 };
-el('scan-form').onsubmit=e=>{
-  e.preventDefault();
-  let summary;
-  action(async()=>{summary=await api('/scan',{root:el('scan-root').value},'POST');},
-    ()=>`扫描 ${summary.scanned} 个文件，新增 ${summary.added}，缺失 ${summary.missing}。扫描不自动关联项目；未关联任何项目的文件可通过“查看未关联项目材料”找到并逐条关联。`);
-};
 for(const view of ['current','unassigned'])el('material-'+view).onclick=()=>{materialView=view;render();el('material-list').focus({preventScroll:true});el('material-list').scrollIntoView({block:'center'});};
 document.querySelector('main').addEventListener('click',e=>{
   const button=e.target.closest('button'); if(!button) return;
   const d=button.dataset;
+  if(d.deleteMaterial){if(!confirm('删除这份材料及文件？已被邮件、沟通历史或准备记录引用的材料不能直接删除。'))return;action(async()=>{const response=await fetch('/api/materials/'+encodeURIComponent(d.deleteMaterial),{method:'DELETE',headers:{'Content-Type':'application/json'},body:'{}'}),result=await response.json();if(!response.ok)throw new Error(result.error||'删除失败');},'材料已删除');return;}
   if(d.projectSection){
     el('filter-project').value=d.projectId;
     if(!el('filter-project').onchange())return;
@@ -333,13 +340,13 @@ document.querySelector('main').addEventListener('click',e=>{
     const collection={project:'projects',material:'materials',reminder:'reminders'}[prefix];
     const item=WORKFLOW[collection][key]; editing[prefix]=key;
     const fields={project:{name:'name',school:'school',college:'college',type:'application_type',year:'year',status:'status',notes:'notes'},
-      material:{path:'path',title:'title',kind:'kind',notes:'notes'},reminder:{title:'title',due:'due_date',project:'project_id',notes:'notes'}}[prefix];
+      material:{title:'title',kind:'kind',notes:'notes'},reminder:{title:'title',due:'due_date',project:'project_id',notes:'notes'}}[prefix];
     for(const [suffix,field] of Object.entries(fields)) el(prefix+'-'+suffix).value=item[field] ?? '';
     if(prefix==='project'){setProjectGoal(item);projectDates=(item.deadlines||[]).map(d=>({...d,source_ids:[...d.source_ids]}));renderGoalEditor();}
     chosen[prefix]=prefix==='reminder' ? (item.mentor_id ? [item.mentor_id] : []) : [...item.mentor_ids];
     renderPicker(prefix);
     if(prefix==='material'){
-      el('material-path').readOnly=true;
+      el('material-file-label').hidden=true;el('material-file').required=false;
       for(const o of el('material-projects').options) o.selected=item.project_ids.includes(o.value);
     }
     el(prefix+'-save').textContent='保存修改';
@@ -414,7 +421,7 @@ window.addEventListener('beforeunload',e=>{if(formDirty.size){e.preventDefault()
 window.MaterialPreparation?.init({reload:refresh});
 showSection(currentSection);
 for(const prefix of Object.keys(chosen)) reset(prefix);
-if(location.protocol==='http:'){
+if(['http:','https:'].includes(location.protocol)){
   el('workflow-restore').disabled=false;
   refresh().then(()=>{el('workspace').disabled=false;})
     .catch(e=>message('无法读取私人工作台：'+e.message,true));

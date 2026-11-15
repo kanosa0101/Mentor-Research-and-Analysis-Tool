@@ -37,7 +37,7 @@ function opportunitySource(o){
 function opportunityActions(o,state){
   const saved=savedOpportunities.get(o.id),urls=new Set([o.source_url]);
   const link=(url,label)=>{if(!url||urls.has(url))return '';urls.add(url);return `<a href="${ox(url)}" target="_blank" rel="noopener">${label} ↗</a>`;};
-  return `<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看官方公告 ↗</a>${o.source_state==='verified'?link(o.application_url,state==='closed'?'原报名入口':'官方报名入口'):''}${publicOpportunityMode?`<a href="local.html?id=${encodeURIComponent(o.id)}">在本机准备申请</a>`:saved?`<a href="applications.html?project=${ox(saved)}">查看我的项目</a>`:`<button type="button" data-save-opportunity="${ox(o.id)}" ${opportunityModeReady?'':'disabled'}>${opportunityModeReady?(state==='closed'?'保存作参考':'加入我的申请'):'正在连接工作台…'}</button>`}</div>`;
+  return `<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看官方公告 ↗</a>${o.source_state==='verified'?link(o.application_url,state==='closed'?'原报名入口':'官方报名入口'):''}${publicOpportunityMode?`<a href="${ox(OnlineAccount.loginUrl('/opportunities.html?id='+encodeURIComponent(o.id)))}">登录后加入申请</a>`:saved?`<a href="applications.html?project=${ox(saved)}">查看我的项目</a>`:`<button type="button" data-save-opportunity="${ox(o.id)}" ${opportunityModeReady?'':'disabled'}>${opportunityModeReady?(state==='closed'?'保存作参考':'加入我的申请'):'正在连接工作台…'}</button>`}</div>`;
 }
 function opportunityCard(o,filter){
   const state=OpportunityRules.state(o),organizer=o.content_classification.organizer_name;
@@ -95,8 +95,8 @@ oe('opportunity-search').oninput=renderOpportunities;
 document.addEventListener('click',e=>{
   if(e.target.id==='opportunity-reset'||e.target.id==='opportunity-history'){for(const key of ['kind','school','year','search'])oe('opportunity-'+key).value='';opportunityParams.delete('id');oe('opportunity-state').value=e.target.id==='opportunity-history'?'closed':'current';renderOpportunities();}
   const button=e.target.closest('[data-save-opportunity]');if(!button)return;
-  if(publicOpportunityMode){oe('opportunity-result').textContent='这是公开浏览站点。私人项目、材料与提醒请在本机版保存；这里不会接收你的申请资料。';oe('opportunity-result').scrollIntoView({block:'center'});return;}
-  if(!['http:','https:'].includes(location.protocol)){oe('opportunity-result').textContent='请启动本机服务后保存项目；现在仍可浏览官方通知。';return;}
+  if(publicOpportunityMode){oe('opportunity-result').textContent='请先登录，再保存申请项目、材料与提醒。';oe('opportunity-result').scrollIntoView({block:'center'});return;}
+  if(!['http:','https:'].includes(location.protocol)){oe('opportunity-result').textContent='请从在线网站登录后保存项目。';return;}
   savingOpportunity=opportunityRows.find(o=>o.id===button.dataset.saveOpportunity&&OpportunityRules.classification(o)==='institutional_activity');
   if(!savingOpportunity)return;
   oe('opportunity-name').value=savingOpportunity.title;oe('opportunity-reminder').value='';oe('opportunity-reminder').min=opportunityToday;
@@ -113,16 +113,16 @@ oe('opportunity-form').onsubmit=async e=>{
   finally{saveBusy=false;oe('opportunity-confirm').disabled=false;}
 };
 renderOpportunities();
-function loadSavedOpportunities(){return fetch('/api/workflow').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{for(const p of Object.values(data.projects||{}))if(p.opportunity)savedOpportunities.set(p.opportunity.id,p.id);renderOpportunities();}).catch(()=>{oe('opportunity-result').textContent='本机工作台暂不可读取；仍可查阅活动，保存失败时请重试。';});}
+function loadSavedOpportunities(){return fetch('/api/workflow').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{for(const p of Object.values(data.projects||{}))if(p.opportunity)savedOpportunities.set(p.opportunity.id,p.id);renderOpportunities();}).catch(()=>{oe('opportunity-result').textContent='账号申请记录暂不可读取；仍可查阅活动，保存失败时请重试。';});}
 async function refreshOpportunityMonitor(){
-  if(!['http:','https:'].includes(location.protocol)){oe('monitor-health').textContent='静态浏览模式：未连接监测服务，请启动本机服务查看更新状态。';return;}
+  if(!['http:','https:'].includes(location.protocol)){oe('monitor-health').textContent='请通过在线网站查看服务器的最新监测状态。';return;}
   oe('monitor-refresh').disabled=true;
   try{
     const response=await fetch('/api/opportunities');if(!response.ok)throw new Error('读取失败');const data=await response.json();opportunityCatalog=data;opportunityRows=data.opportunities;publicOpportunityMode=data.mode==='public';opportunityModeReady=true;refreshOpportunityOptions();renderOpportunities();
     if(!publicOpportunityMode)await loadSavedOpportunities();
     if(data.feed_error)oe('opportunity-result').textContent=data.feed_error;
     const m=data.monitoring;
-    if(!m){oe('monitor-health').textContent=publicOpportunityMode?'服务器尚无可用监测记录，当前页面不能确认信息已更新。请直接核对官方通知。':'尚无监测记录。运行“启动信息监测.cmd”后按来源优先级检查已配置的官方栏目。电脑休眠或程序关闭期间不会更新。';oe('monitor-list').replaceChildren();oe('monitor-sources').replaceChildren();return;}
+    if(!m){oe('monitor-health').textContent=publicOpportunityMode?'服务器尚无可用监测记录，当前页面不能确认信息已更新。请直接核对官方通知。':'服务器尚无监测记录，请稍后重试并以官方公告为准。';oe('monitor-list').replaceChildren();oe('monitor-sources').replaceChildren();return;}
     const overdue=!m.next_check_at||Date.parse(m.next_check_at)<Date.now(),sum=m.summary||{};
     oe('monitor-health').textContent=(overdue?'监测已超出应检时间，请检查监测程序。':'最近一轮监测已完成；这不代表所有信息已核验。')+' 最近实际回源：'+opportunityTime(m.last_fetch_at||m.checked_at)+'；下次应检：'+opportunityTime(m.next_check_at)+'（北京时间）。成功栏目 '+(sum.sources_ok||0)+' / '+(sum.source_count||0)+'；失败 '+(sum.sources_error||0)+'。本轮实际检查 '+(sum.sources_attempted??sum.source_count??0)+' 个，未到期跳过 '+(sum.sources_skipped||0)+' 个；超期 '+(sum.overdue_sources||0)+' 个。新发现 '+(sum.new_count||0)+' 条。';
     oe('monitor-sources').innerHTML=Object.values(m.sources||{}).filter(s=>s.status!=='removed').map(s=>`<p><a href="${ox(s.url)}" target="_blank" rel="noopener">${ox(s.unit||'官方招生栏目')}</a> · ${s.status==='ok'?'最近检查成功':'暂时无法读取，请直接查官网'}<br><small>最近成功：${ox(opportunityTime(s.last_success))}</small></p>`).join('')||'<p>暂无来源记录。</p>';

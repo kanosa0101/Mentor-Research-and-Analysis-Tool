@@ -1,5 +1,5 @@
 [Unit]
-Description=Mentor Assistant public read-only website
+Description=Mentor Assistant HTTPS redirect and certificate verification
 After=network.target
 
 [Service]
@@ -10,7 +10,7 @@ WorkingDirectory=/opt/mentor-assistant
 Environment=PYTHONDONTWRITEBYTECODE=1
 Environment=PYTHONUNBUFFERED=1
 Environment=TZ=UTC
-ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_public.py --host 0.0.0.0 --port 80
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/serve_public.py --host 0.0.0.0 --port 80 --https-origin https://8.213.137.82:8443
 Restart=on-failure
 RestartSec=5s
 NoNewPrivileges=true
