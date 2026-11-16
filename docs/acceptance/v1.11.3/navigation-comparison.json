@@ -1,0 +1,55 @@
+{
+  "fixture": {
+    "projects": 10,
+    "materials": 50,
+    "communications": 100
+  },
+  "rounds": 5,
+  "method": "One cold sample per page; round 1 can still be cold because browser cache is cleared before each round 0 page; rounds 2-4 are steady reuse. All raw samples and median of all four revisits retained. One network path only; no universal latency guarantee.",
+  "rows": [
+    {
+      "page": "applications",
+      "cold_before_ms": 4154,
+      "cold_after_ms": 3702,
+      "revisit_before_ms": 1437,
+      "revisit_after_ms": 998,
+      "all_revisit_before_ms": 1531.0,
+      "all_revisit_after_ms": 1026.5,
+      "cold_before_bytes": 512175,
+      "cold_after_bytes": 244533
+    },
+    {
+      "page": "desk",
+      "cold_before_ms": 2983,
+      "cold_after_ms": 4364,
+      "revisit_before_ms": 1668,
+      "revisit_after_ms": 1703,
+      "all_revisit_before_ms": 1775.0,
+      "all_revisit_after_ms": 1849.5,
+      "cold_before_bytes": 312297,
+      "cold_after_bytes": 313403
+    },
+    {
+      "page": "discovery",
+      "cold_before_ms": 1801,
+      "cold_after_ms": 1817,
+      "revisit_before_ms": 1227,
+      "revisit_after_ms": 963,
+      "all_revisit_before_ms": 1195.0,
+      "all_revisit_after_ms": 968.5,
+      "cold_before_bytes": 9773,
+      "cold_after_bytes": 10214
+    },
+    {
+      "page": "start",
+      "cold_before_ms": 2163,
+      "cold_after_ms": 2175,
+      "revisit_before_ms": 1647,
+      "revisit_after_ms": 1619,
+      "all_revisit_before_ms": 1695.0,
+      "all_revisit_after_ms": 1475.5,
+      "cold_before_bytes": 34708,
+      "cold_after_bytes": 34826
+    }
+  ]
+}

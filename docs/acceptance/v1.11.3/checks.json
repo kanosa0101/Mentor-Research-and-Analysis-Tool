@@ -15,5 +15,21 @@
     "new_schema_or_site_errors": 0,
     "unchanged_since": "v1.11.2",
     "note": "既有抓取、身份、邮箱和名册问题保留；未降低质量门禁。CI preflight仍会失败。"
-  }
+  },
+  "public_https_checks": {
+    "passed": true,
+    "count": 12
+  },
+  "isolated_https_checks": {
+    "account": 16,
+    "workflow": 14,
+    "passed": true
+  },
+  "content_browser_groups": {
+    "passed": true,
+    "count": 6
+  },
+  "policy_projection_combinations": 888,
+  "synthetic_accounts_removed": 10,
+  "user_final_acceptance": false
 }

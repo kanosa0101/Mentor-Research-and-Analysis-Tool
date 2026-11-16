@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-16T08:39:27+00:00",
+  "errors": {},
+  "backup": {
+    "path": "/opt/mentor-assistant-before-v1113r3.tar.gz",
+    "sha256": "8f2e9413e4a4e98698f1911478c45e23a41a4226619e21dc6a3189aa21ac7a36",
+    "permissions": "0o600",
+    "protected_files": 7461,
+    "verified": 7461,
+    "missing": 0,
+    "hash_mismatches": 0,
+    "nonregular_entries": 0,
+    "duplicate_entries": 0,
+    "ok": true
+  },
+  "version": "1.11.3",
+  "public_counts": {
+    "mentors": 7173,
+    "policies": 111
+  },
+  "services": {
+    "mentor-https.service": "active",
+    "mentor-public.service": "active",
+    "mentor-review-ui.service": "active",
+    "mentor-maintenance.timer": "active",
+    "mentor-monitor.timer": "active",
+    "mentor-review-pipeline.timer": "active",
+    "mentor-updates.timer": "active",
+    "mentor-certificate.timer": "active"
+  },
+  "ok": true
+}
