@@ -76,6 +76,13 @@ def render_discovery_page(site=None, env=None):
         discovery_js=javascript, **entry_head(site))
 
 
+def render_admissions_page(site=None, env=None):
+    site = SITE if site is None else Path(site)
+    return (env or template_environment()).get_template('admissions.html.j2').render(
+        **entry_head(site), admissions_js=inline_scripts(site, (
+            'admissions-data.js', 'admissions-core.js', 'material-actions.js', 'admissions.js')))
+
+
 def safe_url(value):
     return value if value and urlsplit(value).scheme in ('http', 'https') else '#'
 
@@ -293,7 +300,7 @@ def main():
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     (SITE / 'application-data.js').write_text(application_payload(profs, admissions), encoding='utf-8')
     build_application_entry()
-    write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())
+    write_html(SITE / 'admissions.html', render_admissions_page(env=env))
     release_file = ROOT / 'release.json'
     if release_file.exists():
         release = json.loads(release_file.read_text(encoding='utf-8'))

@@ -88,4 +88,4 @@ flowchart LR
 
 `review_preflight`只写来源SHA、人工修订指纹绑定的机器分流，历史与导航不进入AI调用；人工分流优先。`automatic_evidence`绑定HTML及受支持附件，`policy_intake`只追加新范围政策，独立持久队列接入既有维护提醒。活动与政策AI、辅助摘录共享生产UTC日账本，失败也计数。详细规则见[自动核验说明](docs/AUTOMATIC_REVIEW.md)。
 
-构建仅对start/discovery首屏内联共享样式、账号与业务脚本，其他页面沿用缓存资源；不缓存私人账号内容。活动页仅在线API首取，8秒未完成进入保守静态降级；静态加载另有8秒上限，保留重试入口。HTTP连接启用TCP_NODELAY；公网TCP连接偶发慢仍需独立计时，不能归因于前端资源。
+构建对start/discovery/admissions首屏内联共享样式、账号与业务脚本，其他页面沿用缓存资源；不缓存私人账号内容。活动页仅在线API首取，8秒未完成进入保守静态降级；静态加载另有8秒上限，保留重试入口。HTTP连接启用TCP_NODELAY；公网TCP连接偶发慢仍需独立计时，不能归因于前端资源。

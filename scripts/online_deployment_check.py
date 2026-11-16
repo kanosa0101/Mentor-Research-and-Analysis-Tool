@@ -61,7 +61,7 @@ def main():
     save()
     try:
         with sync_playwright() as pw:
-            # Verify the public endpoint directly, without workstation system proxies.
+            # Request the public HTTPS URL; measure the actual client network path separately.
             browser = pw.chromium.launch(args=['--no-proxy-server'])
             contexts = [browser.new_context(viewport={'width': width, 'height': 960}) for width in (1440, 390, 390)]
             errors = []
