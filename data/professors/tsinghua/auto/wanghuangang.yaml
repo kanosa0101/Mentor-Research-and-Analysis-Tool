@@ -134,8 +134,8 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -146,15 +146,31 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1080/3220.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: '[1] 复杂生产过程控制与优化 [2] 数据驱动的故障检测 [3] 函数型数据分析 研究概况 [1] 选冶检测与优化控制技术，国家863计划资源环境技术领域主题项目，2011年1月至2014年12月
+  [2] 65-45nm PVD设备研发，国家科技重大专项，2009年1月至2012年12月 [3] 选冶过程测控关键技术与设备，国家863计划资源环境技术领域重点项目，2006年10月至2010年12月
+  [4] 金川镍矿磨矿与浮选过程优化控制，国家发改委西部专项，2008年1月至2009年7月 [5] 射频自动阻抗匹配算法研究，企业横向，2006年10月至2007年7月
+  奖励与荣誉 2012年 获清华大学2011年度“青年教师教学优秀奖” 2011年 获江西省科学技术进步二等奖 2010年 获中国有色金属工业科学技术一等奖 2010年
+  获清华大学教学成果二等奖 2006年 获清华大学林枫辅导员奖 2005年 获清华大学优秀博士毕业生 2005年 获清华大学优秀博士论文二等奖 学术成果 主要论著
+  [1] Yingchao Xiao, Huangang Wang, Wenli Xu, Junwu Zhou, L1 norm based KPCA for novelty
+  detection, Pattern Recognition, vol. 46, no. 1, pp. 389-396, 2013. [2] Huangang
+  Wang, Lin Zhang, Yingchao Xiao, Wenli Xu, An approach to choosing Gaussian kernel
+  parameter for One-class SVMs via tightness detecting, International Conference on
+  Intelligent Human-Machine Systems and Cybernetics, pp. 318-323, Nanchang, China,
+  2012.'

@@ -1365,14 +1365,14 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   research_direction_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   name:
     origin: crawled
@@ -1382,21 +1382,19 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
-research_direction_raw: '[1] 机器人的群智能自主控制
-
-  主要包括旋翼无人机群通信约束下的故障诊断；旋翼无人机群的容错编队；多仿人机器人的协作控制等
-
-  [2] 高速列车信息控制系统的故障诊断
-
-  主要包括面向间歇故障的诊断；闭环系统的鲁棒故障诊断；数据驱动的故障诊断技术等
-
-  [3] 深海载人潜水器的容错控制与自救
-
-  主要包括动态系统的主动故障诊断；微小故障的诊断与识别；人在回路复杂系统的安全性评估等'
+  supervisor:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1077/3189.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: '[1] 机器人的群智能自主控制 主要包括旋翼无人机群通信约束下的故障诊断；旋翼无人机群的容错编队；多仿人机器人的协作控制等
+  [2] 高速列车信息控制系统的故障诊断 主要包括面向间歇故障的诊断；闭环系统的鲁棒故障诊断；数据驱动的故障诊断技术等 [3] 深海载人潜水器的容错控制与自救 主要包括动态系统的主动故障诊断；微小故障的诊断与识别；人在回路复杂系统的安全性评估等
+  研究概况 [1] 国家自然科学基金青A项目(62525308): 复杂工程系统故障诊断、容错控制与安全性评估, 项目'
+supervisor: 博导

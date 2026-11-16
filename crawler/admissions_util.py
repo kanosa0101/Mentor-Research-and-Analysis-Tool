@@ -29,7 +29,7 @@ def validate(data, units):
         if not isinstance(source['url'], str):
             raise ValueError('来源 URL 须为字符串')
         link = urlsplit(source['url'])
-        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf', 'json', 'docx') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
+        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf', 'json', 'docx', 'doc', 'xlsx') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
             raise ValueError('须登记 HTTP(S) 原文和正文选择器')
         if source['format'] == 'json':
             if not isinstance(source.get('api'), str) or not source['api'] or not source['selector'].startswith('/') or re.search(r'~(?:[^01]|$)', source['selector']):
@@ -139,9 +139,9 @@ def fingerprint(body, source):
         if not body.lstrip().startswith(b'%PDF-'):
             raise ValueError('来源未返回 PDF')
         content = body
-    elif source['format'] == 'docx':
-        from crawler.opportunity_attachments import parse_docx
-        parse_docx(body)
+    elif source['format'] in ('docx', 'doc', 'xlsx'):
+        from crawler.opportunity_attachments import parse_office
+        parse_office(body, source['format'])
         content = body
     else:
         if source['format'] == 'json':

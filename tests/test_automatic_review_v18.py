@@ -27,8 +27,34 @@ HTML = '''<html><meta charset="utf-8"><title>2027年计算机冬令营</title><a
 
 def accepted(root, url, text, fields):
     return dict(decision='consistent', issues=[], checks=[dict(field=k, quote=v['quote'], consistent=True) for k,v in fields.items()],
-                model='fixture-model', input_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                model='fixture-model', input_text_sha256=hashlib.sha256(text.encode()).hexdigest(), input_fields_sha256=ai_review.fields_hash(fields),
                 input_chars=len(text), validated_extracts=True, truncated=False)
+
+
+def test_cached_verdict_is_not_reused_for_changed_proposed_values(setup):
+    root, queue, process = setup
+    assert process(publish=False)['state'] == 'eligible'
+    data = review.read_queue(queue)
+    data['drafts'][0]['automatic_review']['ai']['input_fields_sha256'] = '0' * 64
+    review.atomic_json(queue, data)
+    calls = []
+    def check(*args):
+        calls.append(1)
+        return accepted(*args)
+    assert process(checker=check)['state'] == 'published'
+    assert calls == [1]
+
+
+def test_concurrent_human_triage_is_not_overridden_by_automatic_publication(setup):
+    root, queue, process = setup
+    def check(*args):
+        data = review.read_queue(queue)
+        data['drafts'][0]['triage'] = {'classification': 'blocked', 'reason': '人工核对对象'}
+        review.atomic_json(queue, data)
+        return accepted(*args)
+    assert process(checker=check)['state'] == 'manual_required'
+    assert review.read_queue(queue)['drafts'][0]['triage']['reason'] == '人工核对对象'
+    assert not (root/'data/opportunities.json').exists()
 
 
 @pytest.fixture

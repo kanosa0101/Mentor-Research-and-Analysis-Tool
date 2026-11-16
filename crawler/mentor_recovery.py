@@ -21,6 +21,7 @@ RULES = {
     'template_empty': ('个人信息未能解析', 'discover_official_source', '查找个人页或可读官方名册', 168),
     'directory_only': ('只有名册登记', 'discover_official_source', '核验名册并寻找个人页', 168),
     'parser_unsupported': ('解析器待适配', 'adapt_parser', '适配官方页面结构', 168),
+    'identity_evidence_missing': ('身份依据尚不足', 'discover_official_source', '继续寻找可交叉核验的官方身份依据', 24),
     'identity_conflict': ('身份或职称需核对', 'manual_review', '保留冲突并等待官方依据', 168),
     'shared_contact': ('联系人归属不明', 'manual_review', '核对本人独立联系方式', 168),
     'roster_incomplete': ('名册数量不一致', 'manual_review', '核对完整官方名册', 168),
@@ -57,8 +58,12 @@ def classify(message='', kind='', *, original=None, cfg=None):
     has_status = lambda codes: bool(re.search(r'(?<![\w/])(?:' + codes + r')(?![\w/])', status_text))
     if kind == 'shared_public_contact':
         code = 'shared_contact'
-    elif kind in ('unknown_detail_field', 'duplicate_public_registration') or re.search('姓名.*不符|身份.*匹配|同名.*候选|职称.*冲突|URL 为人工维护', message):
+    elif kind in ('unknown_detail_field', 'duplicate_public_registration'):
         code = 'identity_conflict'
+    elif re.search('姓名.*不符|邮箱.*不一致|身份.*矛盾|职称.*冲突|URL 为人工维护', message):
+        code = 'identity_conflict'
+    elif re.search('未通过姓名与独立身份特征匹配|未通过姓名和邮箱双重身份匹配|同名官方候选过多|身份依据尚不足',message):
+        code = 'identity_evidence_missing'
     elif kind == 'roster_count_mismatch':
         code = 'roster_incomplete'
     elif has_status('404|410') or re.search(r'Not Found|\bGone\b', status_text, re.I):
@@ -372,8 +377,12 @@ def refresh_directories(root, *, max_units=2, request_budget=16, fetcher=None, n
             added=[row for row in index['links'] if (row['name'],row['url']) not in previous]
             woke=[]
             for key,record in records.items():
+                # Older releases labelled insufficient evidence as a hard conflict.
+                # Reclassify the diagnostic before filtering; genuine conflicts stay blocked.
+                current_reason=classify(record.get('reason',''),record.get('kind'))
+                action=current_reason['next_action'] if current_reason['reason_code']=='identity_evidence_missing' else record.get('next_action')
                 if (not key.startswith(unit+'/') or record.get('status') not in ('error','pending') or
-                        record.get('next_action') not in ('discover_official_source','retry') or used>=request_budget):continue
+                        action not in ('discover_official_source','retry') or used>=request_budget):continue
                 path=root/'data/professors'/unit/(record['ref']+'.yaml')
                 if path.parent!=root/'data/professors'/unit or not path.is_file():continue
                 original=mentor_quality.load_yaml(path)
@@ -399,8 +408,11 @@ def refresh_directories(root, *, max_units=2, request_budget=16, fetcher=None, n
             state=json.loads(state_path.read_text(encoding='utf-8'))
             for key,original,path,replacement,evidence in wake:
                 row=state['records'].get(key,{})
-                if (row.get('status') not in ('error','pending') or row.get('next_action') not in ('discover_official_source','retry') or
+                current_reason=classify(row.get('reason',''),row.get('kind'))
+                action=current_reason['next_action'] if current_reason['reason_code']=='identity_evidence_missing' else row.get('next_action')
+                if (row.get('status') not in ('error','pending') or action not in ('discover_official_source','retry') or
                         mentor_quality.load_yaml(path)!=original):continue
+                if current_reason['reason_code']=='identity_evidence_missing':row.update({k:v for k,v in current_reason.items() if k!='retry_hours'})
                 row.update(next_check_at=stamp,discovery_verified_at=stamp,discovered_replacement=replacement,
                            discovery_evidence=evidence)
                 requeued.append(key)

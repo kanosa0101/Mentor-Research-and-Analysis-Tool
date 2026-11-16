@@ -305,8 +305,8 @@ detail_url: https://sais.sjtu.edu.cn/faculty/peiling.html
 profile_url: https://sais.sjtu.edu.cn/faculty/peiling.html
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -317,15 +317,25 @@ provenance:
   title:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/peiling.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/peiling.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/peiling.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/peiling.html
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 具身导航、仿生导航、泛在感知与导航（含无线定位、传感定位、人体运动识别、人体运动重构）、无人系统全源导航（含vSLAM、LiDAR
+  SLAM、全源SLAM、多模感知）、混合现实 导航等 Embodied navigation, Bio-inspired navigation, Ubiquitous
+  sensing and navigation (Including wireless positioning and sensor-based localization,
+  HAR, HPE), All source navigation for unmanned systems(including,vSLAM, LiDAR SLAM,
+  all-source SLAM, multi-modal sensing), Mixed reality for navigation

@@ -7,15 +7,7 @@ status: enriched
 title: 助理研究员
 email: zyying@cs.ecnu.edu.cn
 phone: 传真：
-bio_raw: '社会兼职
-
-  研究方向
-
-  智能教育治理与社会实验，医疗、教育等交叉智能领域数据处理和分析
-
-  招生与培养
-
-  开授课程'
+bio_raw: 个人简介
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247734
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247734
@@ -36,7 +28,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247734
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -46,10 +38,18 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247734
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   title:
     origin: computed
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247734
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 智能教育治理与社会实验，医疗、教育等交叉智能领域数据处理和分析
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

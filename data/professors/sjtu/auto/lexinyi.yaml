@@ -137,8 +137,8 @@ detail_url: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
 profile_url: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -149,15 +149,25 @@ provenance:
   title:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://sais.sjtu.edu.cn/faculty/yuexinyi.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: '招收2027级入学硕士及博士：(具身智能方向已招，目前意向大模型方向和工业检测多模态大模型方向） 主要方向1：工业质检大模型（知识点涉及视觉、大模型和具身智能的融合，具体包括大模型强化学习,
+  知识库检索增强，router智能体调用，将具身智能算法应用于检测系统等具体方法和任务） 主要方向2：将神经扩散模型（ode diffusion）应用于路径规划，机械臂控制（需要数学证明+仿真），具身智能的具体实现。
+  任务及待遇：独立完成高水平论文及工程项目，优厚的助研补贴，优秀者可推荐实习及交换。 组内代表论文： U2PL, CVPR 2022, 引用700次，硕士生1作。
+  PFnet, CVPR 2020, 引用670次，硕士生1作。 UniAD, NeurIPS 2022, 引用575次，硕士生1作。 1）大模型时代的工业检测：具身质检员；
+  2）大模型时代的工业机器人：具身操作员； 3）基础科学问题: 神经动力学，神经常微分方程，脑启发的神经网络等'

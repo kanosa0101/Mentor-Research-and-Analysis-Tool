@@ -7,15 +7,7 @@ status: enriched
 title: 教授
 email: zli@cs.ecnu.edu.cn
 phone: 021-62233560
-bio_raw: '社会兼职
-
-  研究方向
-
-  图像处理 深度学习
-
-  招生与培养
-
-  开授课程'
+bio_raw: 个人简介
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=764167
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=764167
@@ -41,7 +33,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=764167
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
@@ -51,10 +43,18 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=764167
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=764167
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
+research_direction_raw: 图像处理 深度学习

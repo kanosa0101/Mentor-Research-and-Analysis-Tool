@@ -7,7 +7,9 @@ status: enriched
 title: 讲师
 email: dyshi@cs.ecnu.edu.cn
 phone: '62233671'
-bio_raw: '1996-2000，中南大学，学士
+bio_raw: '个人简介
+
+  1996-2000，中南大学，学士
 
   2000-2007，上海交通大学，博士
 
@@ -16,22 +18,6 @@ bio_raw: '1996-2000，中南大学，学士
   研究方向：不确定推理系统，概率推断
 
   当前开设课程：
-
-  本科生：抽象代数，编译原理
-
-  研究生：高级算法
-
-  社会兼职
-
-  无
-
-  研究方向
-
-  不确定推理系统，概率推断
-
-  招生与培养
-
-  开授课程
 
   本科生：抽象代数，编译原理
 
@@ -55,8 +41,8 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://faculty.ecnu.edu.cn/_s16/sdy/main.psp
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -66,10 +52,18 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/sdy/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/sdy/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/sdy/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 不确定推理系统，概率推断
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

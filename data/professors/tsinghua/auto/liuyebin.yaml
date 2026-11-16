@@ -129,8 +129,8 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -141,15 +141,21 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1080/3160.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 三维视觉、数字人体技术、计算摄像 研究概况 长期致力于动态三维重建理论和关键技术创新，率先构建了多视角变光照高精三维重建装置，做出了系列创新(获国家技术发明一等奖)。近年针对二十年来长期制约“复杂场景-精简感知-实时重建”发展的基础表征难题，提出了三维场景多元表征(隐表面、体态模板等)模型与协同优化机理，突破了单一表征难以兼顾精度和鲁棒性的矛盾，设计了行为交互4D时空聚类解耦方法，将固定阵列相机拓展至移动乃至单一视点感知，解决了动态三维重建实时计算难题，成功研制了国际首个单一视点相机实时动态三维重建系统，引领了实时人体三维重建新方向

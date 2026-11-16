@@ -19,6 +19,11 @@ from crawler.opportunity_monitor import atomic_json, output_lock
 EMAIL = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
 
 
+def refresh_fields(root, **kwargs):
+    from crawler.mentor_fields import run
+    return run(root, **kwargs)
+
+
 def load_yaml(path):
     return yaml.load(path.read_text(encoding='utf-8'), Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
 
@@ -160,6 +165,11 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                             parsed['name'] = original['name']
                     basis = mentor_recovery.identity(original, parsed, url)
                     if not basis:
+                        if parsed.get('name') and ''.join(parsed['name'].split())!=''.join(original['name'].split()):
+                            raise ValueError('备用官方详情明确姓名与原记录不符')
+                        old_email,new_email=normalize_email(original.get('email')),normalize_email(parsed.get('email'))
+                        if old_email and new_email and old_email.casefold()!=new_email.casefold():
+                            raise ValueError('备用官方详情邮箱与原记录不一致，保留矛盾待核对')
                         raise ValueError('备用官方详情未通过姓名与独立身份特征匹配')
                 else:
                     expected = normalize_email(original.get('email'))

@@ -90,11 +90,14 @@ def test_request_errors_are_typed_without_credentials(exception,code,retryable):
 
 def test_continuous_heartbeats_cannot_reset_total_budget(monkeypatch):
     client, result = response(iter([b': heart',b'beat\n',b': next']))
-    moments = iter([0,1,20,20,89,91])
+    moments = iter([0,1,20,20,89,91,91])
     monkeypatch.setattr(transport.time,'monotonic',lambda:next(moments))
     with pytest.raises(transport.AIServiceError) as error:
         transport.completion(SETTINGS, [], session=client)
     assert error.value.code == 'total_timeout' and error.value.retryable
+    assert error.value.transport['elapsed_seconds'] == 91
+    assert error.value.transport['first_answer_seconds'] is None
+    assert error.value.transport['complete'] is False
     result.close.assert_called_once()
 
 

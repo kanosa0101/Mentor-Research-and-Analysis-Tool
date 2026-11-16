@@ -4,10 +4,12 @@ aliases: []
 school: ecnu
 dept: cs
 status: enriched
-title: 助理研究员
+title: 高级工程师
 email: tlma@cs.ecnu.edu.cn
 phone: '62233603'
-bio_raw: '马天龙，硕士，高级工程师，专任助理研究员。主要从事数据处理和分析方面的工程实施及技术研究。先后参与
+bio_raw: '个人简介
+
+  马天龙，硕士，高级工程师，专任助理研究员。主要从事数据处理和分析方面的工程实施及技术研究。先后参与
 
   10
 
@@ -15,17 +17,7 @@ bio_raw: '马天龙，硕士，高级工程师，专任助理研究员。主要�
 
   3
 
-  项。
-
-  社会兼职
-
-  研究方向
-
-  数据处理和分析
-
-  招生与培养
-
-  开授课程'
+  项。'
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
@@ -41,7 +33,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -51,10 +43,18 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   title:
-    origin: computed
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247732
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 数据处理和分析
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

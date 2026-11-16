@@ -6,7 +6,9 @@ dept: cs
 status: enriched
 title: 副研究员
 email: twqian@cs.ecnu.edu.cn
-bio_raw: '主要研究方向为视觉-语言多模态学习、视频理解、具身智能，围绕面向具身场景的第一人称视频理解、多模态大模型推理、视觉语言导航等具体任务开展技术探索。
+bio_raw: '个人简介
+
+  主要研究方向为视觉-语言多模态学习、视频理解、具身智能，围绕面向具身场景的第一人称视频理解、多模态大模型推理、视觉语言导航等具体任务开展技术探索。
 
   在多媒体、计算机视觉等领域国际知名会议和顶刊（IEEE TMM、CVPR、ICLR、
 
@@ -26,31 +28,7 @@ bio_raw: '主要研究方向为视觉-语言多模态学习、视频理解、具
 
   。
 
-  团队长期招收硕士生和博士生，也期待对多模态视频理解和具身智能感兴趣的本科生参与科研，欢迎感兴趣的同学邮件咨询。
-
-  社会兼职
-
-  研究方向
-
-  多模态学习、跨模态视觉推理、视频理解
-
-  当前研究聚焦基于多模态大模型的具身场景理解与推理，具体方向包括：
-
-  1）第一人称视频理解
-
-  ，包含第一人称视频问答、时空定位等基础任务，研究面向复杂动态环境的第一人称视频场景感知、时空推理。
-
-  2）流式视频理解
-
-  ，研究面向实时视频流的在线感知与推理、增量记忆等，支持长时序、有限视觉上下文条件下的实时视频理解。
-
-  3）具身智能
-
-  ，探索真实环境下的智能体感知、理解与行动闭环，提升智能体面向复杂动态环境的自主交互能力，如视觉语言导航等。
-
-  招生与培养
-
-  开授课程'
+  团队长期招收硕士生和博士生，也期待对多模态视频理解和具身智能感兴趣的本科生参与科研，欢迎感兴趣的同学邮件咨询。'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/qtw/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/qtw/main.psp
@@ -91,10 +69,20 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/qtw/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/qtw/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/qtw/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 多模态学习、跨模态视觉推理、视频理解 当前研究聚焦基于多模态大模型的具身场景理解与推理，具体方向包括： 1）第一人称视频理解
+  ，包含第一人称视频问答、时空定位等基础任务，研究面向复杂动态环境的第一人称视频场景感知、时空推理。 2）流式视频理解 ，研究面向实时视频流的在线感知与推理、增量记忆等，支持长时序、有限视觉上下文条件下的实时视频理解。
+  3）具身智能 ，探索真实环境下的智能体感知、理解与行动闭环，提升智能体面向复杂动态环境的自主交互能力，如视觉语言导航等
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

@@ -11,6 +11,12 @@ from bs4 import BeautifulSoup
 from crawler import opportunity_attachments as attachments, opportunity_extract as extract
 
 
+class EvidenceError(ValueError):
+    def __init__(self, code, message, *, retryable=False):
+        super().__init__(message)
+        self.code, self.retryable = code, retryable
+
+
 def attachment_links(raw, source_url):
     soup = BeautifulSoup(raw, 'html.parser')
     for node in soup.select('nav,header,footer'):
@@ -28,9 +34,21 @@ def attachment_links(raw, source_url):
         found[url] = 'docx'
     if len(found) > 5:
         raise ValueError('官方附件超过5份，需人工核对适用范围')
-    if any(kind not in ('pdf', 'docx') for kind in found.values()):
-        raise ValueError('官方附件含尚不支持的DOC/XLS/ZIP格式，不能忽略后发布')
+    if any(kind not in ('pdf', 'docx', 'doc', 'xlsx') for kind in found.values()):
+        raise EvidenceError('unsupported_attachment', '官方附件含尚不支持的XLS/ZIP格式，不能忽略后发布')
     return found
+
+
+def attachment_icon(image, links, source_url):
+    """Recognize the CMS's file-type icon only when it labels an actual bound download."""
+    src = urlsplit(urljoin(source_url, image.get('src', '')))
+    anchor = image.find_parent('a', href=True)
+    if (src.hostname != urlsplit(source_url).hostname or src.query or src.fragment or
+            not re.fullmatch(r'/system/resource/images/fileTypeImages/icon_(?:docx?|pdf|xlsx?)\.gif', src.path) or
+            image.get('alt', '').strip() or image.get('title', '').strip() or image.get('usemap') or image.find_parent('figure') or not anchor):
+        return False
+    target = urljoin(source_url, anchor['href'])
+    return target in links and bool(re.search(r'\.' + links[target] + r'\s*$', anchor.get_text(' ', strip=True), re.I))
 
 
 def inspect_html(raw, source_url):
@@ -42,16 +60,24 @@ def inspect_html(raw, source_url):
         node.decompose()
     body = next((soup.select_one(s) for s in extract.BODY_SELECTORS if soup.select_one(s)), soup.body or soup)
     links = attachment_links(raw, source_url)
+    image_checks = []
     for image in body.select('img'):
+        if attachment_icon(image, links, source_url):
+            image_checks.append(dict(url=urljoin(source_url, image['src']), kind='attachment_type_icon',
+                                     reason='固定CMS文件图标路径、空替代文本与明确文件下载链接共同确认'))
+            continue
         decorative = (image.get('role') == 'presentation' or image.get('aria-hidden') == 'true')
         if (not decorative or image.get('alt', '').strip() or image.get('title', '').strip() or
                 image.find_parent(['a', 'figure']) or image.get('usemap')):
-            raise ValueError('正文图片未明确标为纯装饰，需核实图中申请信息或二维码')
+            qr = re.search(r'二维码|扫码|qrcode|qr-code', str(image) + image.parent.get_text(' ', strip=True), re.I)
+            raise EvidenceError('qr_evidence_required' if qr else 'image_evidence_required',
+                                '正文二维码入口需核对与文字报名流程是否一致' if qr else '正文图片未明确标为纯装饰，需核实图中申请信息')
     for node in body.select('iframe,object,embed'):
         value = node.get('src') or node.get('data') or node.get('pdfsrc') or ''
         if urljoin(source_url, value) not in links or links[urljoin(source_url, value)] != 'pdf':
             raise ValueError('正文有尚未核验的嵌入内容')
     doc = extract.document(raw, source_url, require_article=not links)
+    doc['image_checks'] = image_checks
     if re.search(r'忽略.{0,12}(?:指令|规则)|ignore\s+(?:all\s+)?previous|system\s*prompt|AI助手请', doc['text'], re.I):
         raise ValueError('原文含模型指令式内容，需人工确认页面可信性')
     if not links and re.search(r'见附件|详见附表|下载(?:附件|申请表)|附件\s*[一二三四\d]|附件中(?:查询|查看)', doc['text']):
@@ -61,7 +87,7 @@ def inspect_html(raw, source_url):
     return doc, links
 
 
-def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, folder=None, wait=None):
+def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, office_fetcher=None, folder=None, wait=None):
     """Bind every linked document, including forms, to one untruncated text version."""
     from crawler.ai_review import MAX_INPUT
     doc, links = inspect_html(raw, source_url)
@@ -75,7 +101,8 @@ def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, folder=None, wait=Non
         attachments.official_url(url, source_url)
         if wait:
             wait(url)
-        content = (pdf_fetcher if kind == 'pdf' else docx_fetcher)(url, source_url)
+        content = ((office_fetcher or attachments.fetch_office)(url, source_url, kind) if kind in ('doc', 'xlsx') else
+                   (pdf_fetcher if kind == 'pdf' else docx_fetcher)(url, source_url))
         if kind == 'pdf':
             from pypdf import PdfReader
             parsed = extract.pdf_document(content, url)
@@ -88,12 +115,15 @@ def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, folder=None, wait=Non
             pages = complete_pages(content, parsed['pages'])
             text = '\n'.join(p['text'] for p in pages)
             detail = dict(pages=pages, page_count=parsed['page_count'])
-        else:
+        elif kind == 'docx':
             parsed = attachments.parse_docx(content)
             with zipfile.ZipFile(io.BytesIO(content)) as archive:
                 if any(name.startswith('word/media/') for name in archive.namelist()):
                     raise ValueError('DOCX含图片证据，不能仅按文本自动发布')
             text, detail = parsed['text'], {}
+        else:
+            parsed = attachments.parse_office(content, kind)
+            text, detail = parsed['text'], {key: value for key, value in parsed.items() if key != 'text'}
         if len(text) > 6000:
             raise ValueError('附件超过逐项完整核验长度，不能截断发布')
         digest = hashlib.sha256(content).hexdigest()
@@ -116,7 +146,7 @@ def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, folder=None, wait=Non
     if re.search(r'忽略.{0,12}(?:指令|规则)|ignore\s+(?:all\s+)?previous|system\s*prompt|AI助手请', combined['text'], re.I):
         raise ValueError('官方附件含模型指令式内容，需人工确认可信性')
     pdfs = [d for d in documents if d['format'] == 'pdf']
-    docxs = [d for d in documents if d['format'] == 'docx']
+    docxs = [d for d in documents if d['format'] != 'pdf']
     content_hash = extract.pdf_source_version(raw, source_url, pdfs) if pdfs else doc['content_sha256']
     combined['content_sha256'] = attachments.source_version(content_hash, docxs)
     return combined
@@ -131,7 +161,10 @@ def metadata(doc, checked_at):
                 quote=document['text'], pages=[p['page'] for p in document['pages']])})
             pdfs.append(value)
         else:
-            value['field_evidence'] = {'materials': dict(quote=document['text'], locator='官方DOCX完整正文（含表格）')}
+            kind = document['format']
+            if kind != 'docx':
+                value['format'] = kind
+            value['field_evidence'] = {'materials': dict(quote=document['text'], locator='官方' + kind.upper() + '完整正文（含表格定位）')}
             docxs.append(value)
     return pdfs, docxs
 

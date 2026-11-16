@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-11-16T16:44:27.302246+00:00",
+  "baseline_at": "2026-11-16T16:13:59+00:00",
+  "baseline_archive_sha256": "d1a1a31cd9be95c1ae9421022abc9eff0bf37d44ad58abeec20620238e4a42a1",
+  "before": {
+    "total": 7173,
+    "contactable": 5690,
+    "research_direction_raw": 2744,
+    "supervisor": 3131,
+    "title": 4477,
+    "all_three": 1263
+  },
+  "after": {
+    "total": 7173,
+    "contactable": 5690,
+    "research_direction_raw": 3061,
+    "supervisor": 3141,
+    "title": 4477,
+    "all_three": 1321
+  },
+  "new_usable_fields": {
+    "research_direction_raw": 318,
+    "supervisor": 11
+  },
+  "changed_fields": {
+    "research_direction_raw": 344,
+    "title": 5,
+    "supervisor": 11,
+    "email": 1
+  },
+  "per_unit_adds": {
+    "ecnu/cs": {
+      "research_direction_raw": 60,
+      "supervisor": 4
+    },
+    "nudt/cs": {
+      "research_direction_raw": 1
+    },
+    "sjtu/auto": {
+      "research_direction_raw": 175
+    },
+    "sjtu/cs": {
+      "research_direction_raw": 1
+    },
+    "tsinghua/auto": {
+      "supervisor": 7,
+      "research_direction_raw": 80
+    },
+    "whu/cs": {
+      "research_direction_raw": 1
+    }
+  },
+  "profiles_changed": 375,
+  "manual_fields_preserved": 2,
+  "field_gaps_before": {
+    "profiles": 5910,
+    "fields": 10743,
+    "by_field": {
+      "email": 1483,
+      "research_direction_raw": 4134,
+      "title": 1973,
+      "supervisor": 3153
+    },
+    "by_reason": {
+      "not_checked": 10219,
+      "content_mixed": 524
+    },
+    "by_status": {
+      "pending": 10743
+    },
+    "by_unit": {
+      "bit/cs": 62,
+      "bnu/ai": 72,
+      "buaa/cs": 82,
+      "buaa/cyber": 54,
+      "bupt/cs": 554,
+      "cqu/cs": 98,
+      "csu/auto": 153,
+      "csu/cs": 125,
+      "dlut/cs": 22,
+      "dlut/ss": 26,
+      "ecnu/cs": 118,
+      "fudan/cs": 182,
+      "hit/cs": 786,
+      "hnu/cs": 209,
+      "hust/aia": 216,
+      "hust/cyber": 171,
+      "jlu/cs": 345,
+      "nankai/cs": 67,
+      "nankai/cyber": 65,
+      "nankai/software": 19,
+      "neu/cs": 295,
+      "nju/cs": 146,
+      "nudt/ai": 293,
+      "nudt/cs": 408,
+      "nwpu/cs": 92,
+      "pku/cs": 124,
+      "pku/sai": 37,
+      "ruc/ai": 40,
+      "ruc/info": 108,
+      "scu/cs": 315,
+      "scut/cs": 98,
+      "sdu/cs": 24,
+      "seu/auto": 77,
+      "seu/cs": 38,
+      "shanghaitech/cs": 145,
+      "sjtu/ai": 2,
+      "sjtu/auto": 364,
+      "sjtu/cs": 364,
+      "sustech/cs": 71,
+      "sysu/cs": 123,
+      "tju/cs": 27,
+      "tongji/cs": 304,
+      "tsinghua/auto": 201,
+      "tsinghua/cs": 152,
+      "ucas/ia": 443,
+      "ucas/ict": 200,
+      "ucas/iie": 527,
+      "ucas/iscas": 188,
+      "uestc/cs": 371,
+      "ustc/cs": 105,
+      "whu/cs": 174,
+      "whu/cyber": 164,
+      "xidian/cs": 197,
+      "xjtu/cs": 120,
+      "xmu/cs": 143,
+      "zju/cs": 837
+    }
+  },
+  "field_gaps_after": {
+    "profiles": 5852,
+    "fields": 10414,
+    "by_field": {
+      "email": 1483,
+      "research_direction_raw": 3816,
+      "title": 1973,
+      "supervisor": 3142
+    },
+    "by_reason": {
+      "not_checked": 9536,
+      "content_mixed": 521,
+      "not_found_in_checked_source": 316,
+      "not_extracted": 33,
+      "template_empty": 8
+    },
+    "by_status": {
+      "pending": 10090,
+      "waiting_source": 316,
+      "error": 8
+    },
+    "by_unit": {
+      "bit/cs": 62,
+      "bnu/ai": 72,
+      "buaa/cs": 82,
+      "buaa/cyber": 54,
+      "bupt/cs": 554,
+      "cqu/cs": 98,
+      "csu/auto": 153,
+      "csu/cs": 125,
+      "dlut/cs": 22,
+      "dlut/ss": 26,
+      "ecnu/cs": 54,
+      "fudan/cs": 182,
+      "hit/cs": 786,
+      "hnu/cs": 209,
+      "hust/aia": 216,
+      "hust/cyber": 171,
+      "jlu/cs": 345,
+      "nankai/cs": 67,
+      "nankai/cyber": 65,
+      "nankai/software": 19,
+      "neu/cs": 295,
+      "nju/cs": 146,
+      "nudt/ai": 293,
+      "nudt/cs": 407,
+      "nwpu/cs": 92,
+      "pku/cs": 124,
+      "pku/sai": 37,
+      "ruc/ai": 40,
+      "ruc/info": 108,
+      "scu/cs": 315,
+      "scut/cs": 98,
+      "sdu/cs": 24,
+      "seu/auto": 77,
+      "seu/cs": 38,
+      "shanghaitech/cs": 145,
+      "sjtu/ai": 2,
+      "sjtu/auto": 189,
+      "sjtu/cs": 363,
+      "sustech/cs": 71,
+      "sysu/cs": 123,
+      "tju/cs": 27,
+      "tongji/cs": 304,
+      "tsinghua/auto": 114,
+      "tsinghua/cs": 152,
+      "ucas/ia": 443,
+      "ucas/ict": 200,
+      "ucas/iie": 527,
+      "ucas/iscas": 188,
+      "uestc/cs": 371,
+      "ustc/cs": 105,
+      "whu/cs": 173,
+      "whu/cyber": 164,
+      "xidian/cs": 197,
+      "xjtu/cs": 120,
+      "xmu/cs": 143,
+      "zju/cs": 837
+    }
+  },
+  "attempted": 374,
+  "requests": 322,
+  "reused": 71,
+  "errors": [
+    {
+      "id": "tsinghua/auto/liuliyang",
+      "status": "error",
+      "reason": "未解析出可用详情字段，保留旧记录",
+      "reused_evidence": false,
+      "filled_fields": []
+    },
+    {
+      "id": "tsinghua/auto/lvwenxiang",
+      "status": "error",
+      "reason": "未解析出可用详情字段，保留旧记录",
+      "reused_evidence": false,
+      "filled_fields": []
+    }
+  ],
+  "units": {
+    "sjtu/auto": {
+      "before": {
+        "total": 203,
+        "contactable": 199,
+        "research_direction_raw": 16,
+        "supervisor": 26,
+        "title": 196,
+        "all_three": 2
+      },
+      "after": {
+        "total": 203,
+        "contactable": 199,
+        "research_direction_raw": 191,
+        "supervisor": 26,
+        "title": 196,
+        "all_three": 25
+      }
+    },
+    "tsinghua/auto": {
+      "before": {
+        "total": 110,
+        "contactable": 98,
+        "research_direction_raw": 18,
+        "supervisor": 13,
+        "title": 97,
+        "all_three": 3
+      },
+      "after": {
+        "total": 110,
+        "contactable": 98,
+        "research_direction_raw": 97,
+        "supervisor": 19,
+        "title": 97,
+        "all_three": 19
+      }
+    },
+    "ecnu/cs": {
+      "before": {
+        "total": 70,
+        "contactable": 70,
+        "research_direction_raw": 7,
+        "supervisor": 18,
+        "title": 67,
+        "all_three": 4
+      },
+      "after": {
+        "total": 70,
+        "contactable": 70,
+        "research_direction_raw": 67,
+        "supervisor": 22,
+        "title": 67,
+        "all_three": 22
+      }
+    }
+  },
+  "notes": [
+    "缺口数与来源故障数独立；not_found_in_checked_source仅表示本次本人来源未明确公开。",
+    "基线的同台账并行试跑被非阻塞锁拒绝；交大完成后顺序续跑另外两单位，未覆盖已完成结果。"
+  ]
+}

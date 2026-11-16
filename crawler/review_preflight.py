@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from crawler import opportunity_extract as extract, opportunity_review as review
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-VERSION = 'official-queue-preflight-v1'
+VERSION = 'official-queue-preflight-v2-evidence-state'
 HUMAN_FIELDS = ('item', 'quotes', 'reviewed_fields', 'review', 'manual_edit', 'notes', 'note', 'manual_notes', 'triage')
 ACTIVITY = re.compile(r'冬令营|夏令营|暑期(?:学校|研修班)|科研实践|科创计划|推荐免试|推免|Summer School', re.I)
 NAVIGATION = re.compile(r'^(?:特色|暑期|大学生|优秀大学生)?(?:夏令营|冬令营)(?:网上报名系统|报名系统|报名)?$|^(?:通知公告|招生信息|招生工作)$')
@@ -43,10 +43,10 @@ def classify(root, draft, configs, *, now=None, queue_path=None):
     if any(draft.get(key) for key in ('review', 'manual_edit', 'quotes', 'reviewed_fields', 'notes', 'note', 'manual_notes', 'triage')):
         return dict(value, reason_code='human_protected', reason='保留已有人工内容或分流，不自动改其审核归属')
     fetch = draft.get('fetch', {})
-    if fetch.get('status') != 'ok':
+    if fetch.get('status') != 'ok' and not review.evidence_error(fetch):
         return dict(value, reason_code='source_unavailable', reason='当前正文尚不可用，先恢复或核验完整来源')
     try:
-        checked = datetime.fromisoformat(fetch['checked_at'])
+        checked = datetime.fromisoformat(fetch.get('html_fetched_at') or fetch['checked_at'])
         if checked.tzinfo is None or not 0 <= (now-checked).total_seconds() <= 86400:
             return dict(value, reason_code='stale_evidence', reason='正文取证超过24小时，先刷新再自动分流')
         review.check_source(draft, configs)
@@ -120,6 +120,13 @@ def classify(root, draft, configs, *, now=None, queue_path=None):
             evidence += [dict(quote=line[:1500], locator='正文明确的历史毕业届别') for _, line in cohorts[:2]]
         return dict(value, classification='historical', reason_code='past_activity_dates',
                     reason='官方公告年度与正文日期或毕业届别证据指向已过去的轮次；保留历史，不占当期AI队列', evidence=evidence)
+    if (review.evidence_error(fetch) and article_titles and len(title_years) == 1 and
+            max(title_years) < now.year and not future and not uncertain_window and
+            any(int(day[:4]) == max(title_years) for day, _ in dates)):
+        return dict(value, priority_hint='past_activity_evidence', reason_code='past_activity_needs_evidence',
+            reason='官方活动标题及页面日期属于往年，但图片或附件正文未完整核验；低优先处理，不自动确认为历史或当期机会',
+            evidence=[dict(quote=article_titles[0], locator='官方公告标题'),
+                      dict(quote=next(line[:1500] for day, line in dates if int(day[:4]) == max(title_years)), locator='页面明确日期')])
     target_year = now.year + (2 if now.month >= 9 else 1)
     cohort = derived.get('field_evidence', {}).get('graduation_year', {})
     if (derived.get('suggestions', {}).get('graduation_year') == target_year and

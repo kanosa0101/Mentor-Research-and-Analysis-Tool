@@ -15,7 +15,7 @@ from crawler import ai_evidence, ai_review, automatic_evidence, opportunity_extr
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler import review_preflight
 
-POLICY_VERSION = 'v2.5-compact-field-verdicts'
+POLICY_VERSION = 'v2.7-source-fidelity'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
@@ -31,11 +31,22 @@ class NeedsHuman(ValueError):
     pass
 
 
+class EvidenceUnavailable(ValueError):
+    def __init__(self, fetch):
+        super().__init__(fetch['error'])
+        self.code = fetch.get('error_code', 'incomplete_evidence')
+        self.retryable = bool(fetch.get('evidence_retryable'))
+        self.phase = 'source_evidence'
+
+
 def service_failure(error):
     """Prefer the transport's stable classification to wording-dependent retries."""
     code, retryable = getattr(error, 'code', None), getattr(error, 'retryable', None)
     if isinstance(code, str) and isinstance(retryable, bool):
-        return dict(error_code=code, retryable=retryable, error_phase=getattr(error, 'phase', 'ai_transport'))
+        result = dict(error_code=code, retryable=retryable, error_phase=getattr(error, 'phase', 'ai_transport'))
+        if getattr(error, 'transport', None):
+            result['transport'] = error.transport
+        return result
     if isinstance(error, PermissionError):
         return dict(error_code='local_permission_denied', retryable=False, error_phase='local_storage')
     if isinstance(error, OSError) and not isinstance(error, requests.RequestException):
@@ -56,7 +67,7 @@ def transient_failure(reason):
 def protected(draft):
     """Machine status and freshness may change; human content and review may not."""
     return review.item_hash({key: draft.get(key) for key in
-        ('item', 'quotes', 'reviewed_fields', 'review', 'manual_edit', 'notes', 'note', 'manual_notes')})
+        ('item', 'quotes', 'reviewed_fields', 'review', 'manual_edit', 'notes', 'note', 'manual_notes', 'triage')})
 
 
 def sections(lines):
@@ -339,21 +350,26 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
         staged = copy.deepcopy(draft)
         raw = review.fetch_evidence(staged, queue_path, fetcher, now=now, complete=True,
                                    pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
+        decision = review_preflight.classify(root, staged, configs, now=now, queue_path=queue_path)
+        staged['preflight'] = decision
         with output_lock(queue_path):
             queue = review.read_queue(queue_path)
             current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
             if protected(current) != protected(original):
                 raise NeedsHuman('实时取证期间草稿被人工编辑，未覆盖')
             current['fetch'] = copy.deepcopy(staged['fetch'])
+            if current.get('preflight') and any(current['preflight'].get(key) != decision.get(key) for key in
+                    ('source_sha256', 'human_revision', 'classification', 'reason_code', 'priority_hint')):
+                current.setdefault('preflight_history', []).append(current['preflight'])
+            current['preflight'] = copy.deepcopy(decision)
             atomic_json(queue_path, queue)
         result.update(source_sha256=staged['fetch'].get('sha256'), content_sha256=staged['fetch'].get('content_sha256'))
-        if raw is None:
-            if staged['fetch'].get('error_kind') == 'evidence':
-                raise NeedsHuman(staged['fetch']['error'])
-            raise ValueError('官方原文实时获取失败')
-        decision = review_preflight.classify(root, staged, configs, now=now, queue_path=queue_path)
         if decision['classification'] in ('historical', 'irrelevant'):
             return _store(queue_path, draft['id'], dict(result, state='skipped', reasons=[decision['reason']]), protected(original))
+        if raw is None:
+            if review.evidence_error(staged['fetch']):
+                raise EvidenceUnavailable(staged['fetch'])
+            raise ValueError('官方原文实时获取失败')
         doc = inspect_source(raw, draft['source_url'], staged['fetch']['complete_document'])
         if existing:
             if review.status(staged) != 'published':
@@ -372,7 +388,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
             fetcher({'url': staged['item']['application_url']})  # Public GET only; never register or submit.
         result.update(source_sha256=staged['fetch']['sha256'], content_sha256=doc['content_sha256'])
         cached = prior.get('ai')
-        if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and cached.get('input_text_sha256') == hashlib.sha256(doc['text'].encode()).hexdigest() and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('content_sha256') == doc['content_sha256'] and prior.get('input_revision') == protected(original):
+        if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and cached.get('input_text_sha256') == hashlib.sha256(doc['text'].encode()).hexdigest() and cached.get('input_fields_sha256') == ai_review.fields_hash(fields) and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('content_sha256') == doc['content_sha256'] and prior.get('input_revision') == protected(original):
             ai = cached
         else:
             result['attempts'] += 1

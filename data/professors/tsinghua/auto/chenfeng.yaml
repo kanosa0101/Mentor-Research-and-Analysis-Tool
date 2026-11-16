@@ -133,14 +133,14 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-11-15'
-last_parsed: '2026-11-15'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   research_direction_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   name:
     origin: crawled
@@ -150,16 +150,22 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-17'
     confidence: auto
-research_direction_raw: 类脑计算,机器学习,概率图模型,计算机视觉,视频分析
+  supervisor:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1080/3113.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 类脑计算,机器学习,概率图模型,计算机视觉,视频分析 研究概况 国家自然科学基金项目，基于约束松弛的概率图模型近似推理研究及在计算摄像学中的应用，61271388，2013年1月至今
+supervisor: 博导

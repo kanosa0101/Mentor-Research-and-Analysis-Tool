@@ -8,6 +8,7 @@ import re
 from bs4 import BeautifulSoup
 
 from crawler import fetch
+from sites.profile_fields import research,qualification,own_labelled_email
 
 
 def iter_roster(cfg):
@@ -33,6 +34,7 @@ def iter_roster(cfg):
                 continue
             rec = {"name": nm, "url": href, "profile_url": href, "institutes": []}
             intro = li.select_one(".intro")
+            txt = ''
             if intro:
                 txt = intro.get_text(" ", strip=True)
             for line in re.split(r"[$\n]", txt):
@@ -58,17 +60,24 @@ def parse_detail(cfg, html, url):
     for tag in soup(["script", "style"]):
         tag.decompose()
     out = {}
-    text = soup.get_text("\n", strip=True)
-    # 简介: 个人简介标题后的整段
-    m = re.search(r"个人简介\n(.{30,}?)(?:\n(教学|科研|获奖|代表性|学生|实验室)|$)", text, re.S)
-    if m:
-        out["bio_raw"] = m.group(1).strip()[:5000]
-    # 研究方向: 常在简介首段"主要研究方向为…"
-    m = re.search(r"主要研究方向[为是]([^。]{4,120})。", text)
-    if m:
-        out["research_direction_raw"] = m.group(1).strip()[:200]
-    if "email" not in out:
-        m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
-        if m:
-            out["email"] = m.group(0)
+    name=soup.select_one('h1.news_title')
+    if name is None:return out
+    out['name']=name.get_text(strip=True)
+    title=name.parent.select_one('.news_meta .tip1')
+    if title is not None and re.search(r'教授|研究员|讲师|工程师',title.get_text()):out['title']=title.get_text(strip=True)
+    sections={}
+    for heading in soup.select('h3.tit'):
+        label=heading.get_text(strip=True)
+        if label not in ('个人资料','个人简介','研究方向'):continue
+        section=heading.parent.parent
+        sections[label]=section.get_text('\n',strip=True)
+    biography=sections.get('个人简介','')
+    if biography:out['bio_raw']=biography
+    direction=research(sections.get('研究方向','')) or research(biography)
+    if direction:out['research_direction_raw']=direction
+    supervisor=qualification(biography,out['name'])
+    if supervisor:out['supervisor']=supervisor
+    email=own_labelled_email(sections.get('个人资料',''))
+    if email:out['email']=email
+    out['_field_scope']='\n'.join([name.parent.get_text('\n',strip=True),*sections.values()])
     return out

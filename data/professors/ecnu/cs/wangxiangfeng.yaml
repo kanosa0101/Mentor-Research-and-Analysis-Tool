@@ -7,7 +7,9 @@ status: enriched
 title: 教授
 email: xfwang@cs.ecnu.edu.cn
 phone: '62233865'
-bio_raw: '深圳河套学院
+bio_raw: '个人简介
+
+  深圳河套学院
 
   双聘教授
 
@@ -17,25 +19,7 @@ bio_raw: '深圳河套学院
 
   个人主页：
 
-  https://xfwang87.github.io/
-
-  社会兼职
-
-  研究方向
-
-  - Agent (Optimization, RL, MARL, LLM-based) and Applications
-
-  智能体及应用
-
-  - AI Infra (Kernel Optimization, AI System Optimization) AI基础设施优化
-
-  招生与培养
-
-  开授课程
-
-  - Reinforcement Learning
-
-  - AI4Math'
+  https://xfwang87.github.io/'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/wxf2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/wxf2/main.psp
@@ -61,7 +45,7 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/wxf2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -71,5 +55,14 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/wxf2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/wxf2/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: '- Agent (Optimization, RL, MARL, LLM-based) and Applications
+  智能体及应用 - AI Infra (Kernel Optimization, AI System Optimization) AI基础设施优化'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

@@ -6,7 +6,9 @@ dept: cs
 status: enriched
 title: 副教授
 email: wwu@cc.ecnu.edu.cn
-bio_raw: '吴雯博士，
+bio_raw: '个人简介
+
+  吴雯博士，
 
   华东师范大学计算机科学与技术学院院长助理，
 
@@ -23,41 +25,7 @@ bio_raw: '吴雯博士，
 
   >Please refer to my homepage for details in English
 
-  http://wenwu198810.wixsite.com/carriewu
-
-  社会兼职
-
-  研究方向
-
-  > 聚焦人工智能、心理学、教育学等多学科交叉
-
-  > 涉及深度学习、用户建模、人机交互、数据挖掘、推荐系统、性格心理学、认知与元认知、统计学、群体博弈等知识
-
-  > 具体研究内容包括但不仅限于
-
-  基于元认知的启发式提问、基于多智能体的大模型安全与价值观对齐、基于性格和情绪的个性化推荐、群体智能决策等
-
-  >
-
-  Please refer to my homepage for details in English
-
-  http://wenwu198810.wixsite.com/carriewu
-
-  招生与培养
-
-  开授课程
-
-  本科专业必修 数据结构
-
-  本科专业必修 编程综合实践
-
-  本科公共必修 数据分析与大数据
-
-  本科公共必修 大学信息技术-数据分析与可视化
-
-  本科公共必修 多媒体技术与应用
-
-  研究生选修  用户行为分析与推荐技术'
+  http://wenwu198810.wixsite.com/carriewu'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
@@ -102,16 +70,32 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/ww2/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+supervisor: 博导
+research_direction_raw: '> 聚焦人工智能、心理学、教育学等多学科交叉 > 涉及深度学习、用户建模、人机交互、数据挖掘、推荐系统、性格心理学、认知与元认知、统计学、群体博弈等知识
+  > 具体研究内容包括但不仅限于 基于元认知的启发式提问、基于多智能体的大模型安全与价值观对齐、基于性格和情绪的个性化推荐、群体智能决策等 > Please refer
+  to my homepage for details in English http://wenwu198810.wixsite.com/carriewu'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

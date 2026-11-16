@@ -140,7 +140,7 @@ def run(root, *, limit=1, request_budget=16, fetcher=None, now=None):
 
     with output_lock(path):
         data = read(root); records = data['records']
-        pending = [d for d in queue['drafts'] if d.get('fetch', {}).get('status') == 'error'
+        pending = [d for d in queue['drafts'] if review.source_error(d.get('fetch', {}))
                    and review.triage(d).get('classification') not in ('historical', 'irrelevant')]
         pending.sort(key=lambda d: (not bool(re.search(r'2028|2027.*冬令营', _title(d))),
                                    records.get(d['id'], {}).get('checked_at', ''), d['id']))
@@ -219,7 +219,7 @@ def run(root, *, limit=1, request_budget=16, fetcher=None, now=None):
                 result['reason'] = '当前可信父入口未找到可核验的同名替代公告；不改来源、不推断申请条件'
             records[draft['id']] = result
         current_queue = review.read_queue(root / 'cache/opportunity_review.json')
-        active = {d['id']: d['source_url'] for d in current_queue['drafts'] if d.get('fetch', {}).get('status') == 'error'
+        active = {d['id']: d['source_url'] for d in current_queue['drafts'] if review.source_error(d.get('fetch', {}))
                   and review.triage(d).get('classification') not in ('historical', 'irrelevant')}
         for record in records.values():
             record['active'] = active.get(record['id']) == record['original_url']

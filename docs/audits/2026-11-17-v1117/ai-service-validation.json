@@ -1,0 +1,285 @@
+{
+  "actual_calls": 4,
+  "published": 0,
+  "all_responses_complete": true,
+  "positive_consistent": 0,
+  "negative_missing_condition_detected": true,
+  "final_ledger_requests": 18,
+  "normal_daily_limit_unchanged": true,
+  "rows": [
+    {
+      "started_at": "2026-11-16T16:30:14.434965+00:00",
+      "uid": 999,
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "proposal_sha256": "1e3a585535cd10fb55c64cd0e3a0d4d4cd78b9c8a411b51e2bca21f34dd3cfc4",
+      "input_chars": 6619,
+      "input_fields_sha256": "ac0e443200fb357f387eb01ec294c2d50ed1046ed14c601adaf79e5f03e1ed4e",
+      "field_count": 6,
+      "before": {
+        "date": "2026-11-16",
+        "requests": 14,
+        "input_chars": 45211
+      },
+      "state": "manual",
+      "elapsed_seconds": 15.542,
+      "after": {
+        "date": "2026-11-16",
+        "requests": 15,
+        "input_chars": 51830
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "pku1",
+      "transport": {
+        "first_byte_seconds": 6.932,
+        "first_answer_seconds": 6.933,
+        "header_seconds": 6.932,
+        "elapsed_seconds": 15.537,
+        "response_bytes": 54625,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "field_verdicts": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_procedure",
+          "consistent": false
+        },
+        {
+          "field": "attachment_0",
+          "consistent": true
+        }
+      ],
+      "issues_count": 3
+    },
+    {
+      "started_at": "2026-11-16T16:39:58.318638+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "a0b73978f132cdc198c1e3117a1b0a1da98b6c5d503bbb043b50725787d27bfc",
+      "input_chars": 4125,
+      "input_fields_sha256": "482627acf2be37fc0f6550d9b5160c28c1317dee0fb75c774186d7eafe8f38a1",
+      "field_count": 5,
+      "before": {
+        "date": "2026-11-16",
+        "requests": 15,
+        "input_chars": 51830
+      },
+      "state": "manual",
+      "elapsed_seconds": 10.369,
+      "after": {
+        "date": "2026-11-16",
+        "requests": 16,
+        "input_chars": 55955
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai1",
+      "transport": {
+        "first_byte_seconds": 5.081,
+        "first_answer_seconds": 5.082,
+        "header_seconds": 5.081,
+        "elapsed_seconds": 10.365,
+        "response_bytes": 48212,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "field_verdicts": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_procedure",
+          "consistent": false
+        }
+      ],
+      "issues_count": 3
+    },
+    {
+      "started_at": "2026-11-16T16:43:44.909411+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "a0b73978f132cdc198c1e3117a1b0a1da98b6c5d503bbb043b50725787d27bfc",
+      "input_chars": 4125,
+      "input_fields_sha256": "482627acf2be37fc0f6550d9b5160c28c1317dee0fb75c774186d7eafe8f38a1",
+      "field_count": 5,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-16",
+        "requests": 16,
+        "input_chars": 55955
+      },
+      "state": "manual",
+      "elapsed_seconds": 27.287,
+      "after": {
+        "date": "2026-11-16",
+        "requests": 17,
+        "input_chars": 60080
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai2",
+      "transport": {
+        "first_byte_seconds": 4.84,
+        "first_answer_seconds": 4.841,
+        "header_seconds": 4.84,
+        "elapsed_seconds": 27.284,
+        "response_bytes": 137281,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "field_verdicts": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_procedure",
+          "consistent": false
+        }
+      ],
+      "issues_count": 10
+    },
+    {
+      "started_at": "2026-11-16T16:45:01.008155+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "f689ec5412218d8612e7eb7453856a3dd0274c7c803eaf44a9e855a36b0d0e4e",
+      "input_chars": 4125,
+      "input_fields_sha256": "41d656959c0a477bf88cefcf7d0ef140b03503c2fd92d619216a890f95a154b1",
+      "field_count": 5,
+      "negative_control": true,
+      "before": {
+        "date": "2026-11-16",
+        "requests": 17,
+        "input_chars": 60080
+      },
+      "state": "manual",
+      "elapsed_seconds": 11.874,
+      "after": {
+        "date": "2026-11-16",
+        "requests": 18,
+        "input_chars": 64205
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai-negative",
+      "transport": {
+        "first_byte_seconds": 6.466,
+        "first_answer_seconds": 6.467,
+        "header_seconds": 6.466,
+        "elapsed_seconds": 11.864,
+        "response_bytes": 40521,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "field_verdicts": [
+        {
+          "field": "eligibility",
+          "consistent": false
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_procedure",
+          "consistent": false
+        }
+      ],
+      "issues_count": 2
+    }
+  ],
+  "nwpu_gate": {
+    "url": "https://jsj.nwpu.edu.cn/info/1599/31105.htm",
+    "source_sha256": "3996cece8cb3e0a526e838404b85f0c7f858ab34cd9948fee985a94e93ef0488",
+    "row": {
+      "url": "https://jsj.nwpu.edu.cn/info/1599/31105.htm",
+      "title": "计算机学院2027年博士研究生招生“申请-考核”制实施方案",
+      "school": "nwpu",
+      "dept": "cs",
+      "source": "https://jsj.nwpu.edu.cn",
+      "discovery": "root-selected official notice; not yet in monitored candidate feed"
+    },
+    "registered_department": "计算机学院",
+    "state": "blocked_before_ai",
+    "reason": "官方附件超过5份，需人工核对适用范围",
+    "reason_code": null
+  }
+}

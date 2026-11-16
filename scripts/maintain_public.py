@@ -79,6 +79,7 @@ def main():
         task('professors', lambda: run(ROOT, kind='professors', limit=40, timeout=12, priority_units=priority_units()))
         task('mentor_directories', lambda: mentor_recovery.refresh_directories(ROOT, max_units=2, request_budget=16))
         task('mentor_quality', lambda: mentor_quality.run(ROOT, limit=40))
+        task('mentor_fields', lambda: mentor_quality.refresh_fields(ROOT, limit=6, request_budget=12))
         task('notices', refresh_notices)
         task('policy_intake', lambda: policy_intake.run(ROOT, limit=2, publish=True))
         task('renewed', lambda: renew(ROOT / 'cache/opportunity_review.json', ROOT))
@@ -87,7 +88,7 @@ def main():
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
         counters = ('error', 'manual_required', 'sources_error', 'retry', 'review_required', 'pending')
         warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', *counters)}
-                    for name in ('policies', 'policy_revalidation', 'policy_intake', 'professors', 'mentor_directories', 'mentor_quality', 'notices')
+                    for name in ('policies', 'policy_revalidation', 'policy_intake', 'professors', 'mentor_directories', 'mentor_quality', 'mentor_fields', 'notices')
                     if any(result[name].get(key, 0) for key in counters)}
         result['source_warnings'] = warnings
         atomic_json(ROOT / 'cache/public-maintenance.json', result)

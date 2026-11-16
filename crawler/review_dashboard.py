@@ -14,6 +14,7 @@ from crawler.pipeline_metrics import summarize as pipeline_metrics
 from crawler import review_queue, source_discovery
 
 LABELS = {'pending_review': '待核验', 'needs_pdf_review': '待核验PDF', 'source_error': '来源获取失败',
+          'needs_evidence_review': '附件或图片待核验',
           'source_changed': '来源已变化', 'published': '已发布'}
 MANAGED = {'source_url', 'source_sha256', 'source_content_sha256', 'source_documents', 'source_state', 'checked_at', 'verified_at'}
 EDITABLE = ((util.TEXT | util.YEARS | util.LISTS) - MANAGED) | {'content_classification'}
@@ -51,6 +52,9 @@ class Dashboard:
         if util.content_scope(draft.get('item', {})) == 'pending':
             errors.append('请先填写内容归类、实际主办方及官方原句；待核验内容不能发布到活动或导师招募。')
         fetch = draft.get('fetch', {})
+        if review.evidence_error(fetch):
+            return ['页面已取得，但完整证据尚未核验：' + (fetch.get('error') or '附件或图片内容待处理') +
+                    '。请按原因处理附件、图片或二维码证据；完成完整核验前不能发布。']
         if fetch.get('status') not in ('ok', 'pdf_review'):
             return ['官方原文未成功取得，请重新抓取；不能使用旧缓存发布。']
         try:
@@ -95,6 +99,8 @@ class Dashboard:
             reasons.append('待补齐：' + '、'.join(missing))
         if status == 'needs_pdf_review':
             reasons.append('待确认PDF版本及逐字段页码')
+        if status == 'needs_evidence_review':
+            reasons.append('附件或图片证据待处理：' + (draft.get('fetch', {}).get('error') or '完整证据尚未核验'))
         return dict(id=draft['id'], title=item.get('title', ''), unit=item.get('unit', ''), school_name=item.get('school_name', ''), status=status,
                     status_label=LABELS[status], deadline=deadline, graduation_year=year,
                     current_cycle=current, historical=historical, waiting_days=waiting, priority=priority['priority'],
@@ -205,6 +211,9 @@ class Dashboard:
                 raise ValueError('请明确勾选要采纳的字段')
             review.accept(self.queue, draft_id, fields, body.get('replace') is True, expected_revision=revision)
         elif action == 'publish':
+            draft = self.find(draft_id)
+            if review.evidence_error(draft.get('fetch', {})):
+                raise ValueError(self.blockers(draft)[0])
             if body.get('confirmed') is not True:
                 raise ValueError('须明确确认已逐项核对当前原文和证据页码')
             if any(not isinstance(body.get(field), str) or not body[field].strip() for field in ('reviewer', 'note')):

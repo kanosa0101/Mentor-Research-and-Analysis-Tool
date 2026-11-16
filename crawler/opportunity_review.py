@@ -135,6 +135,7 @@ def fetch_pdf(url, source_url):
 def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, docx_fetcher=None, complete=False):
     timestamp = (now or datetime.now(timezone.utc)).isoformat(timespec='seconds')
     previous = draft.get('fetch', {})
+    html_received = False
     try:
         raw = fetcher({'url': draft['source_url']})
         raw = raw.encode('utf-8') if isinstance(raw, str) else raw
@@ -145,7 +146,11 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
         folder.mkdir(parents=True, exist_ok=True)
         path = folder / (digest + '.html')
         path.write_bytes(raw)
-        previous = dict(previous, sha256=digest, evidence_file=str(path.resolve()))
+        html_received = True
+        if previous.get('sha256') != digest:
+            previous = dict(previous, content_sha256=None)
+            previous.pop('complete_document', None)
+        previous = dict(previous, sha256=digest, evidence_file=str(path.resolve()), html_fetched_at=timestamp)
         if complete:
             from crawler import automatic_evidence
             doc = automatic_evidence.collect(raw, draft['source_url'], pdf_fetcher=pdf_fetcher,
@@ -201,10 +206,25 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
         draft.update(extracted)
         return raw
     except (OSError, ValueError, requests.RequestException) as error:
-        draft['fetch'] = dict(previous, status='error', checked_at=timestamp, error=str(error)[:500],
-                              error_kind='evidence' if isinstance(error, ValueError) else 'transport',
+        # Failure to interpret or download an attachment does not mean the HTML
+        # URL is dead. Preserve its current bytes for source-bound triage only.
+        content_error = html_received and str(error) != '返回的是访问验证或错误页面，不是公告正文'
+        draft['fetch'] = dict(previous, status='evidence_error' if content_error else 'error',
+                              checked_at=timestamp, error=str(error)[:500],
+                              error_kind='evidence' if content_error else 'transport',
+                              error_code=getattr(error, 'code', 'incomplete_evidence' if content_error else 'source_unavailable'),
+                              evidence_retryable=bool(content_error and getattr(error, 'retryable', isinstance(error, requests.RequestException))),
                               consecutive_failures=previous.get('consecutive_failures', 0) + 1)
         return None
+
+
+def evidence_error(fetch):
+    """Read old mixed-state records without treating their HTML as a dead URL."""
+    return fetch.get('status') == 'evidence_error' or (fetch.get('status') == 'error' and fetch.get('error_kind') == 'evidence')
+
+
+def source_error(fetch):
+    return fetch.get('status') == 'error' and not evidence_error(fetch)
 
 
 def replaced_sources(draft):
@@ -276,7 +296,9 @@ def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=f
                     age = -1
                 pdf_files_exist = all(Path(p.get('evidence_file', '')).is_file() for p in evidence.get('pdfs', []))
                 interval = 604800 if triage(draft).get('classification') in ('historical', 'irrelevant') else 86400
-                if not refresh and evidence.get('status') == 'error' and 0 <= age < min(172800, 3600 * 2 ** min(evidence.get('consecutive_failures', 1), 6)):
+                if not refresh and source_error(evidence) and 0 <= age < min(172800, 3600 * 2 ** min(evidence.get('consecutive_failures', 1), 6)):
+                    counts['reused'] += 1
+                elif not refresh and evidence_error(evidence) and 0 <= age < interval and Path(evidence.get('evidence_file', '')).is_file():
                     counts['reused'] += 1
                 elif not refresh and evidence.get('status') in ('ok', 'pdf_review') and 0 <= age < interval and Path(evidence.get('evidence_file', '')).is_file() and pdf_files_exist:
                     counts['reused'] += 1
@@ -288,9 +310,11 @@ def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=f
                     counts['fetched'] += 1
                     fetch_evidence(draft, queue_path, fetcher, now, pdf_fetcher)
             except ValueError as error:
-                draft['fetch'] = dict(draft.get('fetch', {}), status='error', error=str(error))
+                draft['fetch'] = dict(draft.get('fetch', {}), status='error', error=str(error), error_kind='transport')
             if draft.get('fetch', {}).get('status') == 'pdf_review':
                 counts['needs_pdf_review'] += status(draft) != 'published'
+            elif evidence_error(draft.get('fetch', {})):
+                counts['needs_evidence_review'] = counts.get('needs_evidence_review', 0) + 1
             elif draft.get('fetch', {}).get('status') != 'ok':
                 counts['source_errors'] += 1
         queue['drafts'] = list(drafts.values())
@@ -308,6 +332,8 @@ def item_hash(item):
 def status(draft):
     evidence = draft.get('fetch', {})
     review = draft.get('review')
+    if evidence_error(evidence):
+        return 'needs_evidence_review'
     if evidence.get('status') == 'pdf_review' and not (review or {}).get('source_documents'):
         return 'needs_pdf_review'
     if evidence.get('status') not in ('ok', 'pdf_review'):

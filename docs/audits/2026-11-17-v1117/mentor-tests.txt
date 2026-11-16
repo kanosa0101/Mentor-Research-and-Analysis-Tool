@@ -1,0 +1,9 @@
+........................................................................ [ 55%]
+.........................................................                [100%]
+============================== warnings summary ===============================
+tests/test_mentor_fields_v1117.py::test_topics_remove_biography_without_destroying_real_project_topics[\u7f51\u7edc\u4e0e\u7cfb\u7edf\u5b89\u5168\u3001\u4eba\u5de5\u667a\u80fd\u5b89\u5168\u548c\u8f6f\u4ef6\u5de5\u7a0b\u3001\u4e3b\u6301\u53c2\u4e0e\u56fd\u5bb6\u7ea7\u9879\u76ee\u3001\u91cd\u70b9\u8bfe\u9898-\u7f51\u7edc\u4e0e\u7cfb\u7edf\u5b89\u5168\u3001\u4eba\u5de5\u667a\u80fd\u5b89\u5168\u548c\u8f6f\u4ef6\u5de5\u7a0b]
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+129 passed, 1 warning in 5.99s

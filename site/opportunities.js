@@ -121,7 +121,7 @@ oe('opportunity-form').onsubmit=async e=>{
   finally{saveBusy=false;oe('opportunity-confirm').disabled=false;}
 };
 renderOpportunities();
-function loadSavedOpportunities(){return fetch('/api/workflow').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{for(const p of Object.values(data.projects||{}))if(p.opportunity)savedOpportunities.set(p.opportunity.id,p.id);renderOpportunities();}).catch(()=>{oe('opportunity-result').textContent='账号申请记录暂不可读取；仍可查阅活动，保存失败时请重试。';});}
+function loadSavedOpportunities(){const failed='账号申请记录暂不可读取；仍可查阅活动，请点击重新检查后再保存。';return OnlineAccount.readJSON('/api/workflow').then(({response,data})=>{if(!response.ok)throw new Error();for(const p of Object.values(data.projects||{}))if(p.opportunity)savedOpportunities.set(p.opportunity.id,p.id);if(oe('opportunity-result').textContent===failed)oe('opportunity-result').textContent='';renderOpportunities();}).catch(()=>{oe('opportunity-result').textContent=failed;});}
 async function refreshOpportunityMonitor(){
   if(!['http:','https:'].includes(location.protocol)){oe('monitor-health').textContent='请通过在线网站查看服务器的最新监测状态。';return;}
   oe('monitor-refresh').disabled=true;

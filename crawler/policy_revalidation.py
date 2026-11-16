@@ -126,9 +126,9 @@ def document(raw, source):
         if not ''.join(pages).strip():
             raise ValueError('PDF无可读取正文，不能代替OCR核验')
         return '\n'.join(pages), []
-    if source['format'] == 'docx':
-        from crawler.opportunity_attachments import parse_docx
-        return parse_docx(raw)['text'], []
+    if source['format'] in ('docx', 'doc', 'xlsx'):
+        from crawler.opportunity_attachments import parse_office
+        return parse_office(raw, source['format'])['text'], []
     if source['format'] == 'json':
         value = json.loads(raw)
         for key in source['selector'].split('/')[1:]:

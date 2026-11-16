@@ -7,15 +7,7 @@ status: enriched
 title: 副教授
 email: dli@cs.ecnu.edu.cn
 phone: '62233583'
-bio_raw: '社会兼职
-
-  研究方向
-
-  软件与算法、ERP系统研究与开发、GIS系统设计与开发、现代CAD技术、信息安全
-
-  招生与培养
-
-  开授课程'
+bio_raw: 个人简介
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247736
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247736
@@ -36,7 +28,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247736
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
@@ -46,10 +38,18 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247736
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247736
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
+research_direction_raw: 软件与算法、ERP系统研究与开发、GIS系统设计与开发、现代CAD技术、信息安全

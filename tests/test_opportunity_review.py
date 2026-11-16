@@ -360,7 +360,8 @@ class ReviewTests(unittest.TestCase):
         raw=b'<article><script>showVsbpdfIframe("https://other.edu.cn/a.pdf");</script></article>'
         queue=review.sync(self.monitoring,self.queue,self.configs,fetcher=lambda _:raw,pdf_fetcher=fetch)
         fetch.assert_not_called()
-        self.assertEqual(queue['summary']['source_errors'],1)
+        self.assertEqual(queue['summary']['source_errors'],0)
+        self.assertEqual(queue['summary']['needs_evidence_review'],1)
         with patch.object(review.requests,'Session') as session, patch.object(review.extraction,'MAX_PDF_BYTES',8):
             response=session.return_value.__enter__.return_value.get.return_value.__enter__.return_value
             response.status_code=200;response.headers={};response.iter_content.return_value=[b'%PDF-1.7',b'extra']

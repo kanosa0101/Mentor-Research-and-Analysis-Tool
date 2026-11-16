@@ -20,7 +20,7 @@ from crawler import opportunity_extract as extract, opportunity_review as review
 from crawler.legacy_refresh import write_yaml
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-VERSION = 'new-official-policy-v2-complete-layout'
+VERSION = 'new-official-policy-v4-bound-fields'
 CST = timezone(timedelta(hours=8))
 HEADINGS = {
     'eligibility': ('申请条件', '报考条件', '报名条件', '申请资格', '招生对象', '基本条件'),
@@ -39,7 +39,7 @@ def reason_code(reason, status):
     if reason in ('公告为已结束招生周期，不新增为当前政策', '申请窗口已过，不作为当前新政策自动入库', '已到具体申请截止时点'):
         return 'historical_window'
     for terms, code in [
-        (('DOC/XLS/ZIP', '附件类型'), 'unsupported_attachment'),
+        (('DOC/XLS/ZIP', 'XLS/ZIP', '附件类型'), 'unsupported_attachment'),
         (('图片', '扫描', '附件未', '附件中', '嵌入', '动态附件', 'PDF表格'), 'incomplete_evidence'),
         (('相同招生范围', '标识冲突'), 'existing_policy_conflict'),
         (('版本变化', '目录在核验期间'), 'source_changed'),
@@ -53,6 +53,7 @@ def reason_code(reason, status):
 
 
 NEXT_ACTION = {
+    'awaiting_evidence': '按已发现时间排队，取得完整官方正文后核验',
     'ai_budget_wait': '等待共享AI额度恢复后继续，不重置调用账本',
     'unsupported_attachment': '核对并提取官方附件的受支持文本版本',
     'incomplete_evidence': '补齐图中信息、扫描件或缺失的官方附件',
@@ -98,12 +99,12 @@ def deadline_events(parts):
         if not re.search(r'^\s*[-—•]?\s*(?:网上报名时间|报名(?:时间|截止)|申请(?:时间|截止)|接收截止时间|材料.{0,8}截止)', line):
             continue
         tight = extract.compact(line)
-        if not re.search(r'至|截止|截至', tight):
+        if not re.search(r'至|截止|截至|日\d{0,2}[:：]?\d{0,2}[-—~～]\d{1,2}月', tight):
             continue
         if re.search(r'UTC|GMT|当地时间|时区', tight, re.I):
             raise ValueError('截止时区不明确，不能按北京时间推断')
         # One explicitly dated same-year range; no year inferred from publication.
-        ranged = re.search(r'(20\d{2})年(\d{1,2})月(\d{1,2})日(?:\d{1,2}[:：]\d{2})?至(\d{1,2})月(\d{1,2})日(.*)$', tight)
+        ranged = re.search(r'(20\d{2})年(\d{1,2})月(\d{1,2})日(?:\d{1,2}[:：]\d{2})?[至\-—~～](\d{1,2})月(\d{1,2})日(.*)$', tight)
         if ranged:
             start = datetime(int(ranged[1]), int(ranged[2]), int(ranged[3]))
             end = datetime(int(ranged[1]), int(ranged[4]), int(ranged[5]))
@@ -155,7 +156,8 @@ def candidates(root):
     queue = root / 'cache/opportunity_review.json'
     if queue.exists():
         rows += [dict(url=d['source_url'], source=d['listing_url'], school=d['item']['school_id'],
-                      dept=d['item'].get('dept_id', ''), title=d['item']['title'], publication_date=None)
+                      dept=d['item'].get('dept_id', ''), title=d['item']['title'], publication_date=None,
+                      first_seen=d.get('first_seen'))
                  for d in review.read_queue(queue)['drafts'] if not d.get('manual_edit')]
     for row in rows:
         if (row.get('source'), row.get('school'), row.get('dept', '')) not in enabled:
@@ -173,6 +175,107 @@ def candidates(root):
             continue
         result.setdefault(row['url'], row)
     return list(result.values())
+
+
+def discovered_at(row, previous, now):
+    """A listing's discovery date is not its publication date or a new retry clock."""
+    observed = []
+    for value in (row.get('first_seen'), previous.get('first_seen')):
+        try:
+            stamp = datetime.fromisoformat(value)
+            stamp = stamp.replace(tzinfo=CST) if stamp.tzinfo is None else stamp
+            if stamp <= now:
+                observed.append(stamp.astimezone(timezone.utc))
+        except (TypeError, ValueError):
+            pass
+    return min(observed, default=now).isoformat()
+
+
+def source_hints(row, raw, now):
+    """Cheap source-bound routing before fetching attachments; never a publication gate."""
+    try:
+        doc = extract.document(raw, row['url'])
+    except ValueError:
+        return {}
+    title, text = row['title'], doc['text']
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(raw, 'html.parser')
+    headings = [node.get_text(' ', strip=True) for node in soup.select('title,h1,h2,.news_title,.article-title,.article_title')]
+    if not any(extract.compact(title) in extract.compact(heading) for heading in headings):
+        return {}
+    value = dict(source_sha256=hashlib.sha256(raw).hexdigest(), checked_at=now.isoformat())
+    years = set(re.findall(r'(20\d{2})\s*年', title))
+    if len(years) == 1:
+        year = int(next(iter(years)))
+        target = now.astimezone(CST).year + (1 if now.astimezone(CST).month >= 9 else 0)
+        if re.search(r'推免|推荐免试', title):
+            target = now.astimezone(CST).year + (2 if now.astimezone(CST).month >= 11 else 1)
+        # A reused old title with a newly stated year must be reread, not archived.
+        if year < target and not any(int(y) > year for y in re.findall(r'(20\d{2})\s*年', text)):
+            return dict(value, classification='historical', reason_code='historical_window',
+                        reason='官方正文标题明确为已结束招生周期，保留历史依据',
+                        evidence=[dict(quote=title, locator='官方文章标题')])
+    try:
+        parts = sections(doc['lines'])
+        events = deadline_events(dict(timeline=parts.get('timeline', ''), application_method=parts.get('application_method', '')))
+        future = [event for event in events if (datetime.fromisoformat(event['at']) > now if 'T' in event['at'] else event['at'] >= now.astimezone(CST).date().isoformat())]
+        if future:
+            value['deadline_hint'] = min(future, key=lambda event: event['at'])
+    except ValueError:
+        pass
+    return value
+
+
+def register_candidates(root, pool, state, now):
+    """Persist the whole discovered queue before this round's bounded network work."""
+    queue_path = Path(root) / 'cache/opportunity_review.json'
+    drafts = {d['source_url']: d for d in review.read_queue(queue_path)['drafts']}
+    for row in pool:
+        prior = state['records'].get(row['url'], {})
+        first = discovered_at(row, prior, now)
+        record = dict(prior, title=row['title'], source_url=row['url'], listing_url=row['source'], first_seen=first,
+                      registered_at=prior.get('registered_at', now.isoformat()))
+        if not prior:
+            record.update(status='queued', reason='已从登记官方来源发现，等待取得完整证据', reason_code='awaiting_evidence',
+                          next_action=NEXT_ACTION['awaiting_evidence'], pending_since=first)
+        elif prior.get('title') != row['title']:
+            record.update(status='queued', reason='同一官方地址的公告标题变化，重新核验', reason_code='source_changed',
+                          next_action=NEXT_ACTION['source_changed'], pending_since=now.isoformat(), next_attempt_at=now.isoformat())
+            record.pop('source_hints', None)
+        elif prior.get('pending_since') in (None, prior.get('first_seen')) and prior.get('status') not in ('published', 'historical'):
+            record['pending_since'] = first
+        draft = drafts.get(row['url'], {})
+        fetched = draft.get('fetch', {})
+        try:
+            checked = datetime.fromisoformat(fetched['checked_at'])
+            sha = fetched['sha256']
+            if draft.get('listing_url') != row['source'] or checked.tzinfo is None or not 0 <= (now-checked).total_seconds() <= 86400 or not re.fullmatch('[a-f0-9]{64}', sha):
+                raise ValueError('unbound or stale cache')
+            evidence = Path(root) / 'cache/opportunity_evidence' / (sha + '.html')
+            if evidence.is_symlink() or evidence.parent.is_symlink():
+                raise ValueError('unsafe cache')
+            raw = evidence.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != sha:
+                raise ValueError('changed cache')
+            hints = source_hints(row, raw, now)
+            if hints:
+                record['source_hints'] = hints
+                if hints.get('classification') == 'historical' and prior.get('status') not in ('published', 'eligible'):
+                    record.update(status='historical', reason_code='historical_window', reason=hints['reason'],
+                                  next_action=NEXT_ACTION['historical_window'], next_attempt_at=(now+timedelta(days=7)).isoformat())
+                    record.pop('pending_since', None)
+        except (OSError, KeyError, TypeError, ValueError):
+            pass
+        state['records'][row['url']] = record
+
+
+def candidate_priority(row, state, now):
+    record = state['records'][row['url']]
+    hint = record.get('source_hints', {}).get('deadline_hint', {}).get('at', '')
+    urgent = bool(hint and now.astimezone(CST).date().isoformat() <= hint[:10] <= (now+timedelta(days=7)).astimezone(CST).date().isoformat())
+    cycle = notice_util.classify_notice(row, day=now.astimezone(CST).date())['cycle']
+    return (0 if urgent else 1 if cycle in ('current', 'preparation') else 3 if cycle == 'historical' else 2,
+            hint if urgent else '', record.get('checked_at', ''), record['first_seen'], row['url'])
 
 
 def collect(raw, row, folder, pdf_fetcher, docx_fetcher):
@@ -311,9 +414,9 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
         data = yaml.safe_load(data_path.read_text(encoding='utf-8'))
         urls = {s['url'] for s in data['sources'].values()}
         pool = [row for row in candidates(root) if row['url'] not in urls and (not source_urls or row['url'] in source_urls)]
-        pool.sort(key=lambda row: (notice_util.classify_notice(row)['cycle'] not in ('current', 'preparation'),
-                                  state['records'].get(row['url'], {}).get('checked_at', ''),
-                                  -(int((row.get('publication_date') or '2000-01-01').replace('-', '')))))
+        register_candidates(root, pool, state, now)
+        atomic_json(path, state)
+        pool.sort(key=lambda row: candidate_priority(row, state, now))
         results = []
         for row in pool:
             if len(results) >= limit:
@@ -324,7 +427,8 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 continue
             record = dict(title=row['title'], source_url=row['url'], listing_url=row['source'],
                           checked_at=now.isoformat(), policy_version=VERSION,
-                          first_seen=previous.get('first_seen', now.isoformat()))
+                          first_seen=previous['first_seen'], registered_at=previous['registered_at'],
+                          first_attempt_at=previous.get('first_attempt_at', now.isoformat()))
             if previous.get('manual_review'):
                 # Keep the last complete manual decision through transient fetch failures.
                 record['manual_review'] = copy.deepcopy(previous['manual_review'])
@@ -334,6 +438,10 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 digest = hashlib.sha256(raw).hexdigest()
                 (folder / (digest + '.html')).write_bytes(raw)
                 record['source_sha256'] = digest
+                hints = source_hints(row, raw, now)
+                record['source_hints'] = hints
+                if hints.get('classification') == 'historical':
+                    raise ValueError('公告为已结束招生周期，不新增为当前政策')
                 doc = collect(raw, row, folder, pdf_fetcher, docx_fetcher)
                 record['content_sha256'] = doc['content_sha256']
                 prepared = prepare(root, row, raw, doc, now)
@@ -349,6 +457,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 cached = saved.get('ai', {})
                 unchanged = (cached.get('decision') == 'manual' and cached.get('validated_extracts') and
                     not cached.get('truncated') and cached.get('input_text_sha256') == record['input_text_sha256'] and
+                    cached.get('input_fields_sha256') == ai_review.fields_hash(prepared['checks']) and
                     all(saved.get(key) == record[key] for key in
                         ('policy_version', 'source_sha256', 'content_sha256', 'input_text_sha256', 'proposal_sha256')))
                 if unchanged:
@@ -360,7 +469,9 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 record['ai_reused'] = bool(unchanged)
                 record['ai'] = ai  # Keep real timing, decisions and issues even when publication is refused.
                 ai_review.validate({key: ai[key] for key in ('decision', 'issues', 'checks')}, doc['text'], prepared['checks'])
-                if ai.get('truncated') or not ai.get('validated_extracts') or ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest():
+                if (ai.get('truncated') or not ai.get('validated_extracts') or
+                        ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest() or
+                        ai.get('input_fields_sha256') != ai_review.fields_hash(prepared['checks'])):
                     raise ValueError('AI未完成全部原文与附件的有效核验')
                 if ai['decision'] != 'consistent':
                     record['manual_review'] = {key: copy.deepcopy(record[key]) for key in
@@ -403,6 +514,8 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                     record['status'] = 'budget_wait'
                 if getattr(error, 'code', None):
                     record['error_code'] = error.code
+                if getattr(error, 'transport', None):
+                    record['transport'] = error.transport
             record['reason_code'] = reason_code(record.get('reason', ''), record['status']) if record['status'] not in ('published', 'eligible') else record['status']
             if record['reason_code'] == 'historical_window':
                 record['status'] = 'historical'

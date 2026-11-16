@@ -7,7 +7,9 @@ status: enriched
 title: 教授
 email: shlin@cs.ecnu.edu.cn
 phone: 021-62233667
-bio_raw: '林绍辉，目前是华东师范大学计算机科学与计算学院教授（博导）、紫江青年学者、“闽江学者”讲座教授，上海市杨帆计划获得者。博士毕业于厦门大学，
+bio_raw: '个人简介
+
+  林绍辉，目前是华东师范大学计算机科学与计算学院教授（博导）、紫江青年学者、“闽江学者”讲座教授，上海市杨帆计划获得者。博士毕业于厦门大学，
 
   新加坡国立大学博士后
 
@@ -103,7 +105,15 @@ bio_raw: '林绍辉，目前是华东师范大学计算机科学与计算学院�
 
   https://
 
-  sites.google.com/site/shaohuilin007'
+  sites.google.com/site/shaohuilin007
+
+  实验室主页：
+
+  https://eic-lab.github.io/
+
+  课题组长期招收博士生，硕士生，欢迎感兴趣的同学咨询，邮件请发送到
+
+  shlin@cs.ecnu.edu.cn'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
@@ -128,13 +138,13 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
@@ -144,5 +154,19 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
+    fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/lsh2/main.psp
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
+supervisor: 博导
+research_direction_raw: 大模型压缩 高效图像复原与生成 Agent AI4Science

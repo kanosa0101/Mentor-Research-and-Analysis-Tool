@@ -23,7 +23,8 @@ def moment(value):
 
 def evidence_fields(draft, root):
     """Do not promote an AI/date suggestion to an urgent deadline without its HTML."""
-    if root is None or draft.get('fetch', {}).get('status') != 'ok':
+    fetch = draft.get('fetch', {})
+    if root is None or (fetch.get('status') != 'ok' and not review.evidence_error(fetch)):
         return {}
     digest = draft['fetch'].get('sha256', '')
     if len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
@@ -66,7 +67,8 @@ def evaluate(draft, now=None, root=None):
     if state == 'source_changed':
         opened = moment(fetch.get('checked_at')) or now
     fields = {} if historical or state == 'published' else evidence_fields(draft, root)
-    current_hint = preflight(draft).get('priority_hint')
+    hint = preflight(draft).get('priority_hint')
+    current_hint = hint in ('target_cohort', 'current_winter')
     deadline = item.get('deadline') if state == 'published' else fields.get('deadline')
     days = None
     if deadline:
@@ -85,6 +87,9 @@ def evaluate(draft, now=None, root=None):
     elif days is not None and days < 0:
         priority = 3
         reasons.append('正文报名截止已过，优先分流历史；不表示已核验发布')
+    elif hint == 'past_activity_evidence':
+        priority = 3
+        reasons.append('官方标题与页面日期属于往年，完整图文证据仍待核验；当前机会优先')
     elif (days is not None and 0 <= days <= 14) or triage == 'current' or fields.get('graduation_year') == target_year or current_hint:
         priority = 1
         reasons.append('正文明确当前准备届别、当前冬令营、已核实当前轮次或官方截止在14天内')
@@ -97,6 +102,13 @@ def evaluate(draft, now=None, root=None):
         state == 'source_error', state == 'verification_due'], ensure_ascii=False).encode()).hexdigest()[:24]
     if root is not None:
         previous = read_alerts(root).get('records', {}).get(draft['id'])
+        # Correcting a legacy evidence failure is not a newly discovered issue.
+        # Keep its waiting clock and notification generation for the same bytes.
+        if previous and previous.get('active') and review.evidence_error(fetch):
+            legacy = hashlib.sha256(json.dumps([draft.get('source_url'), fetch.get('content_sha256') or fetch.get('sha256'),
+                True, False], ensure_ascii=False).encode()).hexdigest()[:24]
+            if previous.get('fingerprint') == legacy:
+                fingerprint = legacy
         if previous and previous.get('active') and previous.get('fingerprint') == fingerprint:
             opened = moment(previous.get('opened_at')) or opened
     hours = SLA_HOURS[priority]

@@ -7,7 +7,9 @@ status: enriched
 title: 教授
 supervisor: 博导
 email: hcsong@cs.ecnu.edu.cn
-bio_raw: '宋海川，华东师范大学计算机科学与技术学院教授，博士生导师。
+bio_raw: '个人简介
+
+  宋海川，华东师范大学计算机科学与技术学院教授，博士生导师。
 
   博士毕业于清华大学，曾任法国信息与自动化研究所博士后研究员、华东师范大学计算机科学与技术学院准聘副教授、教授。
 
@@ -85,39 +87,7 @@ bio_raw: '宋海川，华东师范大学计算机科学与技术学院教授，�
 
   长期招收本科实习生及科研助理！
 
-  请联系邮箱：hcsong@cs.ecnu.edu.cn
-
-  社会兼职
-
-  担任
-
-  GDC2023
-
-  程序委员会主席。
-
-  研究方向
-
-  主要研究领域包括计算机辅助设计（CAD）、三维打印、三维计算机视觉等。
-
-  招生与培养
-
-  每年计划招收博士研究生2名，全日制硕士研究生2-3名，非全日制硕士研究生3-4名。
-
-  长期招收本科实习生及科研助理！
-
-  请联系邮箱：hcsong@cs.ecnu.edu.cn
-
-  开授课程
-
-  “计算机辅助智能制造”（本科生课程），宋海川，2020年-至今
-
-  “高级
-
-  计算机辅助智能制造
-
-  ”，宋海川，2020年-至今
-
-  “深度学习理论与视觉应用”，马利庄，宋海川，2019年-至今'
+  请联系邮箱：hcsong@cs.ecnu.edu.cn'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
@@ -142,21 +112,29 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/shc/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 计算机辅助设计（CAD）、三维打印、三维计算机视觉等
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

@@ -1,5 +1,6 @@
 """Bounded completion transport for the configured public-evidence model."""
 import json
+import sys
 import time
 from urllib.parse import urlsplit
 
@@ -34,6 +35,7 @@ def completion(settings, messages, *, session=None):
     response = None
     phase = 'response_headers'
     timing = dict(first_byte_seconds=None, first_answer_seconds=None)
+    received = 0
     try:
         response = client.post(settings['base_url'] + '/chat/completions',
             headers={'Authorization': 'Bearer ' + settings['api_key'], 'Content-Type': 'application/json'},
@@ -116,6 +118,12 @@ def completion(settings, messages, *, session=None):
     except (KeyError, IndexError, TypeError, AttributeError, json.JSONDecodeError, UnicodeDecodeError):
         fail('invalid_response', 'AI响应无法通过结构检查', phase=phase)
     finally:
+        error = sys.exc_info()[1]
+        if isinstance(error, AIServiceError):
+            # Diagnostics contain timing/counters only, never provider output,
+            # request headers, credentials or private reasoning tokens.
+            error.transport = dict(timing, elapsed_seconds=round(time.monotonic() - started, 3),
+                response_bytes=received, complete=False, phase=phase)
         if response is not None:
             response.close()
         if session is None:

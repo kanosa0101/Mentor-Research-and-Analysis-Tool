@@ -261,8 +261,8 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -273,15 +273,26 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1079/3239.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: '[1] 过程成像技术（Process Tomography) 过程成像是一种用于工业过程测量、监测和控制的成像技术，其采用类似于医学断层成像的技术，通过特殊设计的敏感器空间阵列，以非接触或非侵入方式获取被测对象的场信息，运用图像重建算法重现被测过程对象装置内部某一横截面上物质的分布情况，实现其被测参数的可视化。过程成像技术有多种形式，目前课题组主要从事电容成像（Electrical
+  Capacitance Tomography)方面的研究,内容包括传感器设计、优化、建模；成像系统电子测量硬件设计；图像重建；图像解释等。 [2] 两相流/多相流检测技术
+  两相流（two-phase flow或two-component flow）或多相流（multi-phase flow或multi-component flow）是指由两种或多种相物质（或成分）构成的流动，如石油工业中的油／气、油／水两相流和油／气／水多相流；冶金、电力工业中各种气力物料输送管道中的气／固两相流等。研究两相流流动特性及变化规律并对其相关参数进行测量对于相关的科研和设计工作以及生产过程的安全高效运行均具有十分重要的意义。近年来，两相流检测技术已成为现代工业国家的一个重要科研领域。目前课题组主要从事基于静电、电容、及图像等传感器的气/固、气/液两相流流速、浓度、流量等多种参数的测量。
+  [3] 反问题理论及其应用 反问题（Inverse Problems)广泛存在于众多科学研究及工程领域，通俗解释就是由已知结果反求造成该结果的可能原因的过程。反问题通常具有病态特性,这为其求解造成了相应的困难。目前课题组主要从事反问题正则化理论（regularization)、数值方法及其在断层成像图像重建等方面的应用。
+  [4] 多传感器融合理论及应用 多传感器融合是指通过将来自单一或多个传感器系统的数据和信息进行关联、相关和组合，在一定准则下进行分析、综合、支配和使用，以获得对被测对象更加完备与及时的一致性解释与描述，进而实现相应的估计、决策、及评估。课题组目前相关工作主要涉及图像融合、态势分析等内容。
+  研究概况 [1] 电容成像若干问题研究， 国家自然科学基金项目（61571253）， 2016年1月至2019年12月'

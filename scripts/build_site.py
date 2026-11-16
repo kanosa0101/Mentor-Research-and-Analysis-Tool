@@ -50,6 +50,14 @@ def render_start_page(site=None, env=None):
             'school-catalog.js', 'browser-library-core.js', 'plan-transfer.js', 'start.js')))
 
 
+def render_opportunities_page(site=None, env=None):
+    site = SITE if site is None else Path(site)
+    return (env or template_environment()).get_template('opportunities.html.j2').render(
+        **entry_head(site), opportunity_js=inline_scripts(site, (
+            'opportunities-core.js', 'opportunities.js', 'opportunity-push.js',
+            'browser-library-core.js', 'browser-library.js')))
+
+
 def build_discovery_entry(site=None):
     site = SITE if site is None else Path(site)
     files = [site / 'school-catalog.js']
@@ -259,7 +267,7 @@ def main():
     opportunities = opportunity_util.public_catalog(all_opportunities)
     payload = json.dumps(opportunities, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
-    write_html(SITE / 'opportunities.html', env.get_template('opportunities.html.j2').render())
+    write_html(SITE / 'opportunities.html', render_opportunities_page(env=env))
     write_html(SITE / 'local.html', env.get_template('local.html.j2').render())
     write_html(SITE / 'account.html', env.get_template('account.html.j2').render())
     coverage_path = ROOT / 'data/coverage.json'

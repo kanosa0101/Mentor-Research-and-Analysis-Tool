@@ -9,7 +9,7 @@ from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
-BODY_SELECTORS = ('.TRS_Editor', '.v_news_content', '#vsb_content', '.article-content', '.article_content', 'article', 'main')
+BODY_SELECTORS = ('.TRS_Editor', '.v_news_content', '#vsb_content', '#vsb_content_2', '.wp_articlecontent', '.article-content', '.article_content', '.news-info', 'article', 'main')
 DATE = re.compile(r'(20\d{2})\s*[年./-]\s*(\d{1,2})\s*[月./-]\s*(\d{1,2})\s*日?')
 EMAIL = re.compile(r'(?<![\w.+-])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![\w.-])')
 MAX_PDF_BYTES = 12 * 1024 * 1024

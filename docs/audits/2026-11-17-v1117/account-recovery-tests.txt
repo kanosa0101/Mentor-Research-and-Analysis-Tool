@@ -1,0 +1,8 @@
+...............                                                          [100%]
+============================== warnings summary ===============================
+tests/test_account_recovery_v1117.py::test_same_page_read_recovery_allows_one_explicit_bookmark_and_protected_save[account_timeout]
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+15 passed, 1 warning in 58.31s

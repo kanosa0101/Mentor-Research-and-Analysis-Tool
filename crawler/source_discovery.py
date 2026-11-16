@@ -23,6 +23,10 @@ COLUMN = re.compile(r'招生|招募|研究生教育|人才培养|培养招生|�
 EXCLUDED = re.compile(r'登录|注册|搜索|检索|结果|公示|名单|回顾|总结|中小学|中学生|本科招生|出国|海外|(?<![a-z0-9])(?:login|logout|search|signin)(?![a-z0-9])', re.I)
 ARTICLE_PATH = re.compile(r'/(?:info/[^/]+/[^/]+\.(?:htm|html)|(?:20\d{2})/(?:\d{2}|\d{4})/|ShowArticle/news/|article/\d+|[^/]*c\d+a\d+/page\.htm)|/t20\d{6}_|/20\d{6,}\.html', re.I)
 ARTICLE_BODY = '.wp_articlecontent, #vsb_content, #vsb_content_2, .TRS_Editor, .v_news_content'
+CONTENT_REASONS = {
+    '这是单条公告正文，不能用正文或页脚链接充当持续更新栏目': 'announcement_not_column',
+    '未解析到独立活动公告链接；不能把导航或API外壳当成可用栏目': 'no_activity_links',
+}
 
 
 def column_link(link):
@@ -173,6 +177,14 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
     with output_lock(path):
         data = read(root); states = data.setdefault('seeds', {})
         known = {c['url'] for c in configs}; candidates = {c['id']: c for c in data['candidates']}
+        # Legacy content findings are not broken URLs. Preserve discovery time
+        # and retry them weekly, or sooner when their trusted parent changes.
+        for candidate in candidates.values():
+            code = CONTENT_REASONS.get(candidate.get('reason'))
+            if candidate.get('status') == 'error' and code:
+                candidate.update(status='not_column', reason_code=code, error_kind='content')
+                checked = datetime.fromisoformat(candidate['checked_at'])
+                candidate['next_check_at'] = (checked + timedelta(days=7)).isoformat()
         pool = seeds(root, configs)
         pool.sort(key=lambda c: (states.get(c['url'], {}).get('checked_at', ''), c['url']))
         due_pool = [seed for seed in pool if refresh or states.get(seed['url'], {}).get('next_check_at', '') <= now.isoformat()]
@@ -189,6 +201,7 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
             try:
                 parent_url = canonical(seed['url'])
                 raw = fetcher(parent_url, parent_url)
+                parent_digest = hashlib.sha256(raw).hexdigest()
                 proposed = [link for link in links(raw, parent_url) if link['url'] not in known and
                             column_link(link) and len(link['title']) <= 40]
                 # Previously failing menu links must not monopolize the bounded scan.
@@ -203,7 +216,8 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                     old = candidates.get(ident)
                     if old and old.get('status') in ('approved', 'rejected'):
                         continue
-                    if old and not refresh and old.get('next_check_at', '') > now.isoformat():
+                    parent_changed = bool(old and old.get('status') == 'not_column' and old.get('parent_sha256') != parent_digest)
+                    if old and not refresh and not parent_changed and old.get('next_check_at', '') > now.isoformat():
                         continue
                     if inspected >= max_candidates or seed_inspected >= per_seed:
                         state['next_check_at'] = now.isoformat()
@@ -212,14 +226,19 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                     seed_inspected += 1
                     candidate = dict(old or {}, id=ident, url=link['url'], label=link['title'], kind='column',
                         school=seed.get('school', ''), dept='', unit=link['title'],
-                        parent_url=parent_url, parent_label=seed.get('name', ''), parent_sha256=hashlib.sha256(raw).hexdigest(),
+                        parent_url=parent_url, parent_label=seed.get('name', ''), parent_sha256=parent_digest,
                         first_seen=(old or {}).get('first_seen', now.isoformat()), checked_at=now.isoformat(),
                         next_check_at=(now + timedelta(hours=6)).isoformat())
                     try:
                         candidate.update(inspect(fetcher(link['url'], parent_url), link['url']), status='candidate',
+                            reason_code='activity_links_confirmed', error_kind=None,
                             reason='同机构HTML栏目已解析活动链接；等待接入规则复核，不代表活动已核验')
                     except (requests.RequestException, OSError, ValueError) as error:
-                        candidate.update(status='error', reason=str(error)[:400])
+                        code = CONTENT_REASONS.get(str(error))
+                        candidate.update(status='not_column' if code else 'error', reason=str(error)[:400],
+                            reason_code=code or 'source_unavailable', error_kind='content' if code else 'transport')
+                        if code:
+                            candidate['next_check_at'] = (now + timedelta(days=7)).isoformat()
                     candidates[ident] = candidate; added += int(old is None)
             except (requests.RequestException, OSError, ValueError) as error:
                 state.update(status='error', error=str(error)[:400])
@@ -228,6 +247,8 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                     summary=dict(seed_count=len(pool), seeds_attempted=attempted, candidates_checked=inspected,
                                  new_candidates=added, due_seeds_deferred=max(0, len(due_pool) - attempted),
                                  candidates_per_seed=per_seed,
+                                 content_wait=sum(c['status'] == 'not_column' for c in candidates.values()),
+                                 source_errors=sum(c['status'] == 'error' for c in candidates.values()),
                                  pending=sum(c['status'] == 'candidate' for c in candidates.values())))
         data['next_check_at'] = min((states.get(c['url'], {}).get('next_check_at', now.isoformat()) for c in pool), default=(now + timedelta(hours=6)).isoformat())
         data['status'] = 'partial' if any(s.get('status') == 'error' for s in states.values()) else 'ok'

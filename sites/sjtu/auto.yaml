@@ -3,6 +3,7 @@ dept: auto
 dept_name: 自动化与感知学院
 base_url: https://sais.sjtu.edu.cn
 hook: related_roster
+parser_dependencies: [profile_fields.py]
 direct: true
 detail_fields:
   name: .js-info .tit p

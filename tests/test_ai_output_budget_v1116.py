@@ -109,6 +109,9 @@ def test_prompt_limits_checks_to_supplied_sources_without_overriding_official_st
     result = ai_review.check(tmp_path, 'https://cs.pku.edu.cn/info/1051/6700.htm', text, fields)
     instruction = captured[0]['content']
     assert '仅限给定官方原文、附件及来源元数据' in instruction
+    assert '不是审查官方标准的合理性、外部评分尺度或背景解释是否充分' in instruction
+    assert '相应业务字段value中实际缺失的具体限制片段' in instruction
+    assert '不能用完整quote替代value中遗漏的限制' in instruction
     assert '不得根据外部知识、记忆或常识纠正官方公布的标准' in instruction
     assert '原文内部存在矛盾、歧义或提议字段遗漏限制，仍须判为manual' in instruction
     assert '按全体提议字段的集合核对完整性' in instruction

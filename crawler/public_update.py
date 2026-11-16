@@ -103,7 +103,8 @@ def update(root, expected_id):
             shutil.copytree(root / 'site/templates', stage / 'site/templates')
             for name in ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css',
                          'account-session.js', 'cloud-library.js', 'plan-transfer.js', 'start.js',
-                         'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js'):
+                         'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js',
+                         'admissions.js', 'opportunities.js', 'opportunity-push.js'):
                 shutil.copy2(root / 'site' / name, stage / 'site' / name)
             for name in ('VERSION', 'release.json'):
                 shutil.copy2(root / name, stage / name)

@@ -6,7 +6,9 @@ dept: cs
 status: enriched
 email: hongdc@dase.ecnu.edu.cn
 phone: 021-62233067
-bio_raw: '洪道诚，在以海内外人才引进方式加盟华东师大前，曾就职于复旦大学和维多利亚大学；入选国家留学基金委青年骨干教师公派出国计划
+bio_raw: '个人简介
+
+  洪道诚，在以海内外人才引进方式加盟华东师大前，曾就职于复旦大学和维多利亚大学；入选国家留学基金委青年骨干教师公派出国计划
 
   、复旦大学青年骨干教师带薪出国计划
 
@@ -25,23 +27,9 @@ bio_raw: '洪道诚，在以海内外人才引进方式加盟华东师大前，�
 
   。（
 
-  常年招收博士、硕士，期待优秀学生加入！
+  常年招收博士、硕士！
 
-  ）
-
-  社会兼职
-
-  研究方向
-
-  教育大数据、智能教育、深度学习分析、多模态智能处理等。（
-
-  常年招收博士、硕士，欢迎优秀学生加入！
-
-  ）
-
-  招生与培养
-
-  开授课程'
+  ）'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s37/hdc/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s37/hdc/main.psp
@@ -77,10 +65,18 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s37/hdc/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s37/hdc/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s37/hdc/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
+research_direction_raw: 教育大数据、智能教育、深度学习分析、多模态智能处理等。（ 常年招收博士、硕士，欢迎优秀学生加入！ ）

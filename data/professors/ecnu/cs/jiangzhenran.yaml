@@ -7,43 +7,7 @@ status: enriched
 title: 副教授
 email: zrjiang@cs.ecnu.edu.cn
 phone: 传真：
-bio_raw: '社会兼职
-
-  研究方向
-
-  研究方向：医学大数据智能信息处理、人工智能应用
-
-  、机器学习
-
-  、
-
-  教育智能技术
-
-  招生信息：本科生
-
-  2~3
-
-  人
-
-  /
-
-  年进行科研训练，硕士生
-
-  2~3
-
-  人
-
-  /
-
-  年。有意者请
-
-  E-mail
-
-  联系。
-
-  招生与培养
-
-  开授课程'
+bio_raw: 个人简介
 institutes: []
 homepage: http://diml.ecnu.edu.cn
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247677
@@ -70,7 +34,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247677
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
@@ -85,10 +49,19 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247677
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247677
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
+research_direction_raw: 医学大数据智能信息处理、人工智能应用 、机器学习 、 教育智能技术 招生信息：本科生 2~3 人 / 年进行科研训练，硕士生
+  2~3 人 / 年。有意者请 E-mail 联系

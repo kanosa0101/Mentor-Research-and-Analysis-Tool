@@ -1,0 +1,99 @@
+{
+  "snapshot_at": "2026-11-16T16:13:59+00:00",
+  "mode": "offline replay of SHA-verified public snapshot; no network, AI or publication",
+  "verified_files": 218,
+  "draft_count": 219,
+  "before_classifications": {
+    "irrelevant": 16,
+    "current": 1,
+    "historical": 115,
+    "blocked": 1,
+    "unknown": 86
+  },
+  "after_classifications": {
+    "irrelevant": 16,
+    "current": 1,
+    "historical": 115,
+    "blocked": 1,
+    "unknown": 86
+  },
+  "newly_historical": 0,
+  "evidence_errors": 59,
+  "source_errors": 6,
+  "old_alerts": {
+    "active": 81,
+    "overdue": 1,
+    "urgent": 0
+  },
+  "new_alerts": {
+    "active": 81,
+    "overdue": 1,
+    "urgent": 0
+  },
+  "before_discovery": {
+    "error": 520,
+    "candidate": 90,
+    "approved": 31
+  },
+  "after_discovery": {
+    "not_column": 506,
+    "candidate": 90,
+    "approved": 31,
+    "error": 14
+  },
+  "preserved_human_fields": true,
+  "preserved_first_seen": true,
+  "tests": {
+    "passed": 286,
+    "log": "cache/v1117/review-ai-tests.log"
+  },
+  "code_sha256": {
+    "crawler\\opportunity_review.py": "ada589d4a535a409dec447fbf06c0b232f2c36abf913a7993b8f8debcf6a82fa",
+    "crawler\\review_preflight.py": "d0adbf2d918997a9ab1f37f71ee8652eae7bd26486df1a34a53b526254d79c06",
+    "crawler\\review_queue.py": "727afd12636e6f7350c86da37fd134bf7426f5e09431ba2054b986f068ffdc36",
+    "crawler\\opportunity_recovery.py": "95aa24d5bcd72a6a09e174b27728aa46736cbf2d76671852216ac70cff06d6eb",
+    "crawler\\automatic_review.py": "dee07bcd1d020b0b52c20aea8289ae993bb6f9c10b66ffe349cab1e2a7e6591c",
+    "crawler\\source_discovery.py": "c8de128f7c818c2957ba78e409ab99d80eca55e063cd2b25dc4f2d2dc58e8986",
+    "crawler\\ai_review.py": "01961b331fbcca0ee0c1624a7f37d6512481e7b8b8dd9d271e4a38096e07b591",
+    "crawler\\ai_transport.py": "1200186c5efae9c85266842d0b4cd28ec5f3c39c661e70b1e57239419c19357b",
+    "crawler/review_dashboard.py": "92bb051d7cda64a1b0b20813156ac974c6e6ad551791c9ed0e58f403bd48a5d7"
+  },
+  "low_priority_old_image_notices": 20,
+  "final_contract_tests": {
+    "passed": 116,
+    "overlaps_base_suite": true,
+    "log": "cache/v1117/review-ai-final-contract-tests.log"
+  },
+  "service_validation": "ai-service-validation.json",
+  "delivery_manifest": "cache/v1117/review-delivery-manifest.json",
+  "dashboard_tests": {
+    "passed": 20,
+    "log": "cache/v1117/review-dashboard-tests.log",
+    "real_queue_validation": "cache/v1117/dashboard-real-queue-validation.json",
+    "real_queue_result": {
+      "drafts": 219,
+      "detail_success": 219,
+      "failures": [],
+      "evidence_rows": 59,
+      "review_states": {
+        "pending_review": 139,
+        "published": 8,
+        "needs_pdf_review": 6,
+        "source_changed": 1,
+        "needs_evidence_review": 59,
+        "source_error": 6
+      },
+      "labels": {
+        "pending_review": "待核验",
+        "needs_pdf_review": "待核验PDF",
+        "source_error": "来源获取失败",
+        "needs_evidence_review": "附件或图片待核验",
+        "source_changed": "来源已变化",
+        "published": "已发布"
+      },
+      "source_metric_scope": "pipeline_metrics.source_errors counts monitor source requests, not draft evidence failures",
+      "read_only_sha_unchanged": true,
+      "elapsed_seconds": 64.812
+    }
+  }
+}

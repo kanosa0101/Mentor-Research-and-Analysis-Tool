@@ -3,6 +3,7 @@ dept: cs
 dept_name: 计算机科学与技术学院
 base_url: https://cs.ecnu.edu.cn
 hook: ecnu_cs
+parser_dependencies: [profile_fields.py]
 list:
   method: GET
   # .team ul li 服务端内嵌全部教师(姓名/个人主页/职称/邮箱/导师资格)

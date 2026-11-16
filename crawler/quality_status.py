@@ -8,6 +8,7 @@ from pathlib import Path
 from crawler.opportunity_monitor import atomic_json
 
 INTAKE_REASONS = {
+    'awaiting_evidence': '新政策：已发现待核验',
     'ai_budget_wait': '新政策：AI额度等待', 'unsupported_attachment': '新政策：附件格式待处理',
     'incomplete_evidence': '新政策：完整证据缺失', 'existing_policy_conflict': '新政策：既有范围冲突',
     'source_changed': '新政策：原文版本变化', 'historical_window': '新政策：历史报名窗口',
@@ -23,6 +24,52 @@ def moment(value):
         return value if value.tzinfo else None
     except (TypeError, ValueError):
         return None
+
+
+def field_gaps(root, now):
+    path = root / 'cache/mentor_quality/field-gaps.json'
+    labels = {'email': '公开邮箱', 'research_direction_raw': '研究方向', 'supervisor': '招生资格', 'title': '职称'}
+    counts = {key: Counter() for key in ('by_field', 'by_unit', 'by_status', 'by_reason')}
+    entries = []
+    records = json.loads(path.read_text(encoding='utf-8'))['records']
+    if not isinstance(records, dict):
+        raise ValueError('Invalid mentor field records')
+    for ident, row in records.items():
+        fields = {key: value for key, value in row['fields'].items() if value.get('status') != 'resolved'}
+        if not fields:
+            continue
+        for key, value in fields.items():
+            counts['by_field'][key] += 1
+            counts['by_unit'][row.get('unit', '')] += 1
+            counts['by_status'][value.get('status', 'unknown')] += 1
+            counts['by_reason'][value.get('reason_code', 'unknown')] += 1
+        checked = [v for v in fields.values() if moment(v.get('checked_at'))]
+        pending = [v for v in checked if v.get('status') != 'waiting_source']
+        clocks = [moment(v.get('pending_since') or v.get('first_seen')) for v in pending]
+        opened = min(clocks) if clocks and all(clocks) else None
+        opened = opened if opened and opened <= now else None
+        due = opened + timedelta(hours=24) if opened else None
+        status = ('manual_review' if any(v.get('status') == 'manual_review' for v in pending) else
+                  'pending' if pending else 'waiting_source' if checked else 'queued')
+        scheduled = [moment(v.get('next_check_at')) for v in checked if v.get('status') == 'waiting_source']
+        scheduled = [value for value in scheduled if value]
+        if not pending and scheduled and min(scheduled) + timedelta(hours=2) <= now:
+            status, due = 'maintenance_overdue', min(scheduled) + timedelta(hours=2)
+        next_times = [v['next_check_at'] for v in fields.values() if moment(v.get('next_check_at'))]
+        attempted = [v['checked_at'] for v in fields.values() if moment(v.get('checked_at'))]
+        entries.append(dict(id='mentor_fields:' + ident, category='mentor_fields', title=row.get('name') or ident,
+            status=status, fields=list(fields), field_labels=[labels.get(key, key) for key in fields],
+            reasons=[labels.get(key, key) + '：' + v.get('reason', v.get('reason_code', '待核验')) for key, v in fields.items()],
+            reason_code='mentor_field_gap', category_label='导师公开资料缺口',
+            next_action='review_fields' if pending else 'check_queued_fields' if not checked else 'wait_for_source',
+            action_label='核验缺失字段与官方出处' if pending else '按来源轮转进行首次核验' if not checked else '等待官方资料更新，按计划复查',
+            discovered_at=min((v.get('first_seen') for v in fields.values() if moment(v.get('first_seen'))), default=None),
+            opened_at=opened.isoformat() if opened else None, due_at=due.isoformat() if due else None,
+            overdue=bool(due and due <= now), priority=1 if due and due <= now else 2 if pending else 3,
+            next_attempt_at=min(next_times) if next_times else None, last_attempt_at=max(attempted) if attempted else None,
+            source_urls=list(dict.fromkeys(v['source_url'] for v in fields.values() if v.get('source_url'))),
+            fingerprint=hashlib.sha256(json.dumps([ident, sorted((k, v.get('pending_since') or v.get('first_seen')) for k, v in fields.items())]).encode()).hexdigest()[:24]))
+    return entries, {key: dict(value) for key, value in counts.items()}
 
 
 def refresh(root, now=None):
@@ -102,16 +149,30 @@ def refresh(root, now=None):
                     source_urls=list(dict.fromkeys(urls)), priority=1 if due and due <= now else 2, fingerprint=fingerprint))
         except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
             failures[category] = type(error).__name__
+    available['mentor_fields'] = (root / 'cache/mentor_quality/field-gaps.json').is_file()
+    field_breakdown = {}
+    try:
+        if not available['mentor_fields']:
+            failures['mentor_fields'] = 'MissingState'
+        else:
+            fields, field_breakdown = field_gaps(root, now)
+            active.extend(fields)
+            incomplete.extend(dict(id=r['id'], reason='缺少有效的首次待处理时间，无法判断处理时限')
+                              for r in fields if r['status'] in ('pending', 'manual_review') and not r['opened_at'])
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
+        failures['mentor_fields'] = type(error).__name__
     active.sort(key=lambda r: (r['priority'], r['due_at'] or '', r['id']))
     result = dict(checked_at=now.isoformat(timespec='seconds'), available=available,
-        failures=failures, incomplete=incomplete, active=active,
+        failures=failures, incomplete=incomplete, active=active, mentor_field_breakdown=field_breakdown,
         breakdown=dict(reasons=dict(Counter(r['reason_code'] for r in active)),
             actions=dict(Counter(r['next_action'] for r in active)),
             never_attempted=sum(not r['last_attempt_at'] for r in active)),
         summary=dict(active=len(active), overdue=sum(r['overdue'] for r in active),
             policies=sum(r['category'] == 'policy' for r in active),
             new_policies=sum(r['category'] == 'policy_intake' for r in active),
-            mentors=sum(r['category'] == 'mentor' for r in active)),
-        audience='maintainer', note='24小时为待处理维护时限；计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。')
+            mentors=sum(r['category'] == 'mentor' for r in active),
+            mentor_field_gaps=sum(r['category'] == 'mentor_fields' for r in active),
+            missing_fields=sum(field_breakdown.get('by_field', {}).values())),
+        audience='maintainer', note='24小时为新政策及已核验问题的处理时限；导师尚未核验的字段库存与等待官方补充不计此时限。计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。')
     atomic_json(root / 'cache/quality-alerts.json', result)
     return result

@@ -1,0 +1,46 @@
+{
+  "queue_registration": {
+    "checked_at": "2026-11-16T16:42:21.359870+00:00",
+    "before_records": 5,
+    "candidates": 167,
+    "after_records": 167,
+    "by_status": {
+      "retry": 1,
+      "manual_required": 4,
+      "queued": 155,
+      "historical": 7
+    },
+    "new_policy_alerts": 160,
+    "overdue": 137,
+    "network_requests": 0,
+    "ai_calls": 0
+  },
+  "delivery_manifest": "cache\\v1117\\policy-pilot\\delivery\\changed-public.json",
+  "delivery_files": [
+    {
+      "path": "cache/policy_intake/state.json",
+      "before_sha256": "b9f12c751799700191fa1bcab4b9cb08493a63afe909ef2ba1c083c7987c7fad",
+      "after_sha256": "4972034130f51023ddf95b6c687dab91278c033de8c32d523a30bbbe699bdb7c"
+    },
+    {
+      "path": "cache/policy_intake/evidence/a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729.html",
+      "before_sha256": null,
+      "after_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729"
+    }
+  ],
+  "new_policies": 0,
+  "new_opportunities": 0,
+  "explicit_2028_additions": 0,
+  "production_mutated": false,
+  "manual_ai_result": "cache/v1117/sai2-result.json",
+  "manual_run": "cache/v1117/policy-pilot/publish-result.json",
+  "real_office_samples": "cache/v1117/official-samples/office-index.json",
+  "real_doc_conversion": "cache/v1117/official-samples/doc-converted-final.json",
+  "note": "Windows legacy DOC runtime test is skipped; actual two-document service-user Linux conversion separately verified. Only whole-current official sources can publish; unavailable IHEP aliases not accepted.",
+  "tests": {
+    "passed": 138,
+    "skipped": 1,
+    "seconds": 19.78,
+    "skip_reason": "Windows legacy DOC runtime requires unprivileged Linux antiword/prlimit; two actual service-account conversions were verified separately."
+  }
+}

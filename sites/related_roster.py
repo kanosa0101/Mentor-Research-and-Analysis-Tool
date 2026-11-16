@@ -8,6 +8,7 @@ from crawler import fetch
 from crawler.email_util import normalize_email
 from crawler.title_util import normalize_title
 from sites.wp import parse_wp_detail
+from sites.profile_fields import research, qualification, own_labelled_email
 
 
 def collect(cfg, page_url, html, fetched_at):
@@ -91,4 +92,15 @@ def parse_detail(cfg, html, url):
         text = '\n'.join(n.get_text('\n', strip=True) for n in soup.select(cfg['bio_selector']))
         if text.strip():
             result['bio_raw'] = text
+    biography=result.get('bio_raw') or ''
+    direction=research(biography)
+    if direction:result['research_direction_raw']=direction
+    name=result.get('name') or cfg.get('_expected_name')
+    personal_header='\n'.join(n.get_text('\n',strip=True) for selector in cfg.get('detail_fields',{}).values() for n in soup.select(selector))
+    supervisor=qualification(biography,name) or qualification(personal_header,name)
+    if supervisor:result['supervisor']=supervisor
+    if not result.get('email'):
+        email=own_labelled_email(biography)
+        if email:result['email']=email
+    if biography or personal_header:result['_field_scope']=personal_header+'\n'+biography
     return result

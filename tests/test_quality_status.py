@@ -19,7 +19,7 @@ def test_retry_keeps_sla_and_delivery_fingerprint_and_resolution_removes_alert(t
                   reasons=[{'kind':'source_error','message':'官方来源暂不可读'}])
     save(tmp_path, 'cache/policy_revalidation/state.json', {'policies': {'p':record}})
     first = refresh(tmp_path, NOW)
-    assert first['summary'] == {'active':1,'overdue':1,'policies':1,'new_policies':0,'mentors':0}
+    assert first['summary'] == {'active':1,'overdue':1,'policies':1,'new_policies':0,'mentors':0,'mentor_field_gaps':0,'missing_fields':0}
     record['last_attempt'] = (NOW+timedelta(hours=2)).isoformat()
     save(tmp_path, 'cache/policy_revalidation/state.json', {'policies': {'p':record}})
     second = refresh(tmp_path, NOW+timedelta(hours=2))
@@ -36,7 +36,7 @@ def test_retry_keeps_sla_and_delivery_fingerprint_and_resolution_removes_alert(t
 
 
 def test_mentor_backlog_and_missing_or_corrupt_state_are_not_silently_healthy(tmp_path):
-    assert refresh(tmp_path, NOW)['available'] == {'policy':False,'mentor':False,'policy_intake':False}
+    assert refresh(tmp_path, NOW)['available'] == {'policy':False,'mentor':False,'policy_intake':False,'mentor_fields':False}
     save(tmp_path,'cache/mentor_quality/state.json',{'records':{
         'unit/error/person':dict(status='pending',title='导师详情',reason='正文空白',
             pending_since=(NOW-timedelta(hours=3)).isoformat(),next_check_at=NOW.isoformat()),
@@ -45,15 +45,16 @@ def test_mentor_backlog_and_missing_or_corrupt_state_are_not_silently_healthy(tm
     assert value['summary']['mentors'] == 1 and value['summary']['overdue'] == 0
     assert value['active'][0]['reasons'] == ['正文空白']
     save(tmp_path,'cache/policy_revalidation/state.json',{'policies':[]})
-    assert refresh(tmp_path,NOW)['failures'] == {'policy':'ValueError','policy_intake':'MissingState'}
+    assert refresh(tmp_path,NOW)['failures'] == {'policy':'ValueError','policy_intake':'MissingState','mentor_fields':'MissingState'}
 
 
 def test_missing_states_are_unknown_but_initialized_empty_states_are_healthy(tmp_path):
     value = refresh(tmp_path, NOW)
-    assert value['failures'] == {'policy': 'MissingState', 'mentor': 'MissingState', 'policy_intake':'MissingState'}
+    assert value['failures'] == {'policy': 'MissingState', 'mentor': 'MissingState', 'policy_intake':'MissingState','mentor_fields':'MissingState'}
     save(tmp_path, 'cache/policy_revalidation/state.json', {'policies': {}})
     save(tmp_path, 'cache/mentor_quality/state.json', {'records': {}})
     save(tmp_path, 'cache/policy_intake/state.json', {'records': {}})
+    save(tmp_path, 'cache/mentor_quality/field-gaps.json', {'records': {}})
     value = refresh(tmp_path, NOW)
     assert all(value['available'].values()) and not value['failures'] and not value['incomplete']
     assert value['active'] == []

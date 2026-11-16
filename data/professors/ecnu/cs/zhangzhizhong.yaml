@@ -4,10 +4,12 @@ aliases: []
 school: ecnu
 dept: cs
 status: enriched
-title: 副教授
+title: 副研究员
 email: zzzhang@cs.ecnu.edu.cn
 phone: 021-62233667
-bio_raw: '主要研究方向为机器学习与计算机视觉。围绕全天候的视觉感知，针对行人重识别、小样本图像分类、
+bio_raw: '个人简介
+
+  主要研究方向为机器学习与计算机视觉。围绕全天候的视觉感知，针对行人重识别、小样本图像分类、
 
   3D
 
@@ -65,29 +67,7 @@ bio_raw: '主要研究方向为机器学习与计算机视觉。围绕全天候�
 
   审稿人。详见实验室主页：
 
-  dmcv-ecnu.github.io
-
-  社会兼职
-
-  研究方向
-
-  1、行人重识别相关理论与应用研究
-
-  2、跨模态
-
-  /
-
-  跨域的域迁移算法研究
-
-  3、人工智能社会影响分析
-
-  招生与培养
-
-  开授课程
-
-  计算机视觉
-
-  统计机器学习算法导论'
+  dmcv-ecnu.github.io'
 institutes: []
 detail_url: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
 profile_url: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
@@ -112,13 +92,13 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -128,5 +108,13 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 1、行人重识别相关理论与应用研究 2、跨模态 / 跨域的域迁移算法研究 3、人工智能社会影响分析
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

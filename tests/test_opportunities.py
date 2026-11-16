@@ -124,7 +124,7 @@ class OpportunityTests(unittest.TestCase):
             self.assertEqual(opportunities.load(root)['opportunities'][0]['source_state'],'verified')
 
     def test_monitor_quarter_hour_wake_does_not_flicker_current_activity(self):
-        now = datetime.now(timezone.utc).replace(hour=8, minute=27, second=0, microsecond=0)
+        now = datetime.now(timezone(timedelta(hours=8))).replace(hour=16, minute=27, second=0, microsecond=0).astimezone(timezone.utc)
         due = now.replace(minute=15, second=16)
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'data').mkdir();(root/'cache').mkdir()

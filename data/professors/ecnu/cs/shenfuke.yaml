@@ -7,23 +7,7 @@ status: enriched
 title: 教授
 email: fkshen@ecnu.edu.cn
 phone: 021-54344989
-bio_raw: '社会兼职
-
-  中国高教学会教育信息化分会副理事长兼秘书长‚上海教育和科研计算机网络专家委员会成员
-
-  上海高等教育学会管理信息委员会主任委员
-
-  上海教科网IPv6实验室（华东师大）研发中心主任
-
-  研究方向
-
-  通信及计算机网络:下一代网络体系结构、网络协议原理及实现、网络流量监测及行为管理；
-
-  教育信息化/数字化校园：SSO、跨域身份认证、E-Learning、Smart Campus
-
-  招生与培养
-
-  开授课程'
+bio_raw: 个人简介
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
@@ -49,7 +33,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
@@ -59,10 +43,19 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   title:
     origin: computed
     source: https://cs.ecnu.edu.cn/jzgml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247714
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: 通信及计算机网络:下一代网络体系结构、网络协议原理及实现、网络流量监测及行为管理； 教育信息化/数字化校园：SSO、跨域身份认证、E-Learning、Smart
+  Campus
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

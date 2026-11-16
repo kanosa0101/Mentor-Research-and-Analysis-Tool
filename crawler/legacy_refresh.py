@@ -66,6 +66,9 @@ def merge_profile(original, parsed, body, day):
     parsed = dict(parsed)
     if not parsed.get('research_direction_raw') and parsed.get('research_directions'):
         parsed['research_direction_raw'] = '、'.join(parsed['research_directions'])
+    if parsed.get('research_direction_raw'):
+        from sites.profile_fields import clean_research
+        parsed['research_direction_raw']=clean_research(parsed['research_direction_raw'])
     if parsed.get('institute_from_detail'):
         parsed['institutes'] = list(dict.fromkeys(original.get('institutes', []) + parsed['institute_from_detail']))
     if parsed.get('email'):
@@ -234,11 +237,18 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
             pending = [path for path in paths if due('professor/' + '/'.join(path.parts[-3:]))]
             # Reserve at most half the batch for current applications; keep a fair full-library rotation.
             priority = [path for path in pending if '/'.join(path.parts[-3:-1]) in priority_units][:limit // 2]
-            selected = priority + [path for path in pending if path not in priority][:limit-len(priority)]
+            from crawler import mentor_fields
+            gaps=mentor_fields.read(root).get('records',{})
+            field_priority=[path for path in pending if path not in priority and any(
+                field.get('status') in ('pending','error') and (not field.get('next_check_at') or field['next_check_at']<=stamp)
+                for field in gaps.get('/'.join(path.parts[-3:-1])+'/'+path.stem,{}).get('fields',{}).values())][:limit//4]
+            selected = priority + field_priority
+            selected += [path for path in pending if path not in selected][:limit-len(selected)]
             hooks = {}
             for path in selected:
                 key = 'professor/' + '/'.join(path.parts[-3:])
                 original = yaml.safe_load(path.read_text(encoding='utf-8'))
+                parsed={};raw=None;raw_hash=None;cfg=None
                 try:
                     unit = original['school'] + '/' + original['dept']
                     if unit not in hooks:
@@ -267,8 +277,14 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                     record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
                                  'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,
                                  'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
+                    from crawler import mentor_fields,mentor_recovery
+                    mentor_fields.observation(root,updated,parsed=parsed,source_sha256=raw_hash,fetched_at=stamp,now=now,
+                                              parser_signature=mentor_recovery.signature(root,cfg))
                 except Exception as error:
                     record(key, {'status': 'error', 'source_url': original['detail_url'], 'error': str(error)[:500]})
+                    from crawler import mentor_fields,mentor_recovery
+                    mentor_fields.observation(root,original,parsed=parsed,source_sha256=raw_hash,fetched_at=stamp if raw_hash else None,
+                                              now=now,error=error,parser_signature=mentor_recovery.signature(root,cfg) if cfg else None)
         report = {'version': 1, 'completed_at': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'kind': kind,
                   'attempted': len(results), 'ok': sum(r['status'] == 'ok' for r in results),
                   'error': sum(r['status'] == 'error' for r in results),

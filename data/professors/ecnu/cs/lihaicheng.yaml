@@ -7,17 +7,7 @@ status: enriched
 title: 副教授
 email: hsli@cs.ecnu.edu.cn
 phone: 021-62233362
-bio_raw: '社会兼职
-
-  研究方向
-
-  纤维缠绕计算机辅助设计，计算机图形学，计算机视觉‚ 图像处理
-
-  招生与培养
-
-  开授课程
-
-  概率论与数理统计；计算机图形学；工程数学建模与应用'
+bio_raw: 个人简介
 institutes: []
 detail_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
 profile_url: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
@@ -43,7 +33,7 @@ provenance:
   email:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
@@ -53,10 +43,18 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.ecnu.edu.cn/jzgml/list.htm
-    fetched_at: '2026-09-05'
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.ecnu.edu.cn/_redirect?siteId=499&columnId=24531&articleId=247681
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-17'
+research_direction_raw: 纤维缠绕计算机辅助设计，计算机图形学，计算机视觉‚ 图像处理

@@ -194,8 +194,8 @@ detail_url: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
 profile_url: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'
 facets: []
 provenance:
   name:
@@ -206,15 +206,32 @@ provenance:
   title:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.au.tsinghua.edu.cn/info/1078/3141.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+research_direction_raw: '[1] 人工分子机器的设计与控制 [2] 合成生物学 [3] 肿瘤基因组学 [4] 肿瘤基因与细胞治疗 学术成果
+  1. Huiya Huang#, Yiqi Liu#, Weixi Liao#, Yubing Cao, Qiang Liu, Yakun Guo, Yinying
+  Lu and Zhen Xie*. Oncolytic adenovirus programmed by synthetic gene circuit for
+  cancer immunotherapy, Nature Communications, 2019, 10(1):4801 2. Yucheng Guo†, Chen
+  Bao†, Dacheng Ma, Yubing Cao, Yanda Li, Zhen Xie*, Shao Li*. Network-Based Combinatorial
+  CRISPR-Cas9 Screens Identify Synergistic Modules in Human Cells, ACS Synthetic Biology,
+  2019, 8(3):482-490. 3. Dacheng Ma, Zhimeng Xu, Zhaoyu Zhang, Xi Chen, Xiangzhi Zeng,
+  Yiyang Zhang, Tingyue Deng, Mengfei Ren, Zheng Sun, Rui Jiang, Zhen Xie*. Engineer
+  chimeric Cas9 to expand PAM recognition based on evolutionary information, Nature
+  Communications, 2019, 10(1):560. 4. Jiahui Guo, Tianmin Wang, Changge Guan, Bing
+  Liu, Cheng Luo, Zhen Xie, Chong Zhang*, Xin-Hui Xing. Improved sgRNA design in bacteria
+  via genome-wide activity profiling, Nucleic Acids Research, 2018, 46(14):7052-7069.'

@@ -3,6 +3,7 @@ dept: auto
 dept_name: 自动化系
 base_url: https://www.au.tsinghua.edu.cn
 hook: related_roster
+parser_dependencies: [profile_fields.py]
 direct: true
 detail_fields:
   name: .fl01 h2

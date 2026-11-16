@@ -1,0 +1,8 @@
+..                                                                       [100%]
+============================== warnings summary ===============================
+tests/test_account_recovery_v1117.py::test_anonymous_and_expired_sessions_keep_login_behavior[False]
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 3.61s

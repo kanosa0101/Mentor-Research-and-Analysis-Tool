@@ -75,7 +75,7 @@ def test_changed_attachment_does_not_reuse_previous_ai_decision(setup):
 @pytest.mark.parametrize('addition', [
     '<img src="requirements.png">', '<img role="presentation" alt="报名条件" src="a.png">',
     '<a href="/x"><img role="presentation" alt="" src="a.png"></a>', '<iframe src="/unknown"></iframe>',
-    '<a href="/x.doc">申请表.doc</a>', '<p>申请表见附件。</p>',
+    '<a href="/x.xls">申请表.xls</a>', '<p>申请表见附件。</p>',
 ])
 def test_unverified_images_and_documents_stop_before_ai(setup, addition):
     root, queue, _ = setup
@@ -155,6 +155,15 @@ def test_new_policy_creates_conditions_action_and_deadline_then_is_idempotent(po
     assert policy['events'][0]['at'] == '2026-11-30T17:00:00+08:00'
     assert policy['material_actions'][0]['event_indexes'] == [0]
     assert policy_intake.run(root, now=NOW, fetcher=lambda _: pytest.fail('duplicate fetched'), checker=accepted)['attempted'] == 0
+
+
+def test_new_policy_rejects_ai_bound_to_other_proposed_values(policy_setup):
+    def mismatched(*args):
+        ai = accepted(*args)
+        ai['input_fields_sha256'] = '0' * 64
+        return ai
+    result = policy_intake.run(policy_setup, now=NOW, fetcher=lambda _: POLICY_HTML, checker=mismatched)
+    assert result['published'] == 0 and result['manual_required'] == 1
 
 
 def test_new_policy_preserves_existing_scope_and_all_manual_values(policy_setup):
