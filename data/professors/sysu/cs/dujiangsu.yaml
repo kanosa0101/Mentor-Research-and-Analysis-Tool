@@ -10,8 +10,8 @@ email: dujiangsu@mail.sysu.edu.cn
 institutes:
 - 超算中心
 research_direction_raw: 并行与分布式大模型训推系统、高性能计算、计算机系统结构
-detail_url: https://cse.sysu.edu.cn/teacher
-profile_url: https://cse.sysu.edu.cn/teacher
+detail_url: https://cse.sysu.edu.cn/teacher/3325
+profile_url: https://cse.sysu.edu.cn/teacher/3325
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -33,13 +33,13 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/3325
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/3325
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
@@ -51,3 +51,32 @@ provenance:
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
+  office_address:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/3325
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/3325
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+office_address: 国家超级计算广州中心
+bio_raw: '杜江溯（Jiangsu Du），中山大学计算机学院副教授（引进人才系列），博士生导师。本科毕业于武汉大学，硕士毕业于爱丁堡大学（爱丁堡并行计算中心），博士毕业于中山大学（国家超级计算广州中心），曾赴新加坡国立大学HPC-AI实验室进行长期学习，研究成果发表在OSDI、PPoPP、SC、ASPLOS、VLDB、ICS、INFOCOM、TPDS、TACO等并行系统高水平会议和期刊上。获得国自然青年基金项目，广东省区域联合基金，百度松果基金、阿里创新合作AIR、中国科协“科技智库青年人才计划”等项目资助。
+
+  研究围绕大模型训推系统（MLSYS/AI Infra）展开，聚焦算力底座底层优化需求，融合算法层（高效采样、优化器重构、计算冗余消解）、系统层（GPU / 国产加速卡算子优化、资源调度、存算协同、网络与体系结构设计）关键技术，面向大语言模型、多模态模型、扩散模型、MoE
+  混合专家模型等主流架构，赋能通用人工智能与科学智能领域大规模计算需求，实现极致算力加速与工程落地。论文科研与工程开源并重，目前已与微信、腾讯、阿里构建合作研究。
+
+  招收自驱力强的硕博研究生，也欢迎有兴趣的本科生/科研实习生加入，希望你：对底层系统优化真正有兴趣，而不是停留在API调用；愿钻研复杂问题，敢啃国产生态硬骨头；有高性能计算、计算机系统相关科研竞赛经历者优先；若无相关经历，希望你逻辑严谨、自学能力强。'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

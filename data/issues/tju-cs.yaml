@@ -1,7 +1,83 @@
 - kind: fetch_or_parse_error
-  ref: zhangchangqing
-  message: 'HTTPError(''404 Client Error: Not Found for url: http://cic.tju.edu.cn/info/1117/1354.htm'')'
-  first_seen: '2026-09-05'
+  ref: chenjiezhujiao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: 官网死链留痕
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 详情明确姓名与原记录不符，保留旧记录
+    evidence: &id001
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/zgj.htm
+      sha256: ae143ccbeaaa90ec85acbf8c268f0c33d494ba4f8ad2d21e817f73e47b757512
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/fgj.htm
+      sha256: 3ce8986b90665ca6f1ef2c429b2cca3c9d6511c55e7d789f7c6dc537f6c5e44f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/zj.htm
+      sha256: e4d72e827c926ddf901addff409b04729ee2d1039f419b173a546dd92b6aab13
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/faculty/jzgml/azc/cj.htm
+      sha256: 4cbe5dedee8043d6d9dc86b45354856c320f2c63aabfdb3d886b966bfc731458
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/jyjx/yjsjy/yjsdsml.htm
+      sha256: e0c4cc6fdd95b55885d95d1d59316630c93557480d363549fda6a5b40b6bf8ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/
+      sha256: 5e79df3ccd327c10a94eb97f15173b13748f725049952b60343999a1afd3d248
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/faculty.htm
+      sha256: 9f89652c0794a5dff989069afaf3a86a7fe3445292c0085e3f92ccd2c47b51c4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tju.edu.cn/faculty/jzgml.htm
+      sha256: 5c5b99e1fe9ad5af7248aef306868a5d86edb8578e8f348d60231b1e39699287
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1094/1090.htm
+      sha256: 9fe6345293a571aa8af2e982c37c5c69858e901f62227b9040e4ed0f43500bd1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1097/1914.htm
+      sha256: 35ce44a5a7cd96e698fac2a38f4e2d3066cc70a9d414e8db458bd756af5b65f7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1099/1096.htm
+      sha256: 13b97d5d252e67d7db6c462cbd7c431da438cac1da17de9b49aeae38d59620c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1099/1098.htm
+      sha256: 43fbd4a05cdc1fb954d92828b4b8114e02dd8590a3624252bec92cac4f1736cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1099/5228.htm
+      sha256: fdb2a547bfe9036dead859069dac76e34ddc81096a3290a78d950e5214d0326f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1101/1102.htm
+      sha256: ab6f7e3392bbc9358f73426f2748bc429d316a6a60ce9b7a954bf536ebc03a9e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1103/1104.htm
+      sha256: d64f54c3db3d21e35efc9d6022bda30e3bd1da4db06789083904030ab71c04e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1103/1106.htm
+      sha256: 192066fc2bd4d60198e94fbc3a93732024e590ee2a2a582c8f1e3c00c7b0fddd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cic.tju.edu.cn/info/1094/1085.htm
+      sha256: 4fa8bd16485508f01cf48424a2d5239be4a370f9c34f59126bb9d585bffaba92
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 详情明确姓名与原记录不符，保留旧记录
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 1fa1ee98e959e2a5a172dc73f3e7bb3211d84a54be9e38b50e376517fc3d7a0e
+    id: tju/cs/fetch_or_parse_error/chenjiezhujiao
+    kind: fetch_or_parse_error
+    ref: chenjiezhujiao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: tju-cs · chenjiezhujiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

@@ -1,1 +1,53 @@
-[]
+- kind: fetch_or_parse_error
+  ref: chenyichao
+  message: js-info block not found
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：js-info block not found
+    evidence: &id001
+    - url: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
+      sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.sjtu.edu.cn/
+      sha256: 1e7f9f764326146249b4c14a8c08e283c6c4da2e98806fc85cefe535c387ecc1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.sjtu.edu.cn/szdw.html
+      sha256: 49c8483109798f1b02dced810092e5e96d7ec5b27eb980078c45df342b36021c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.sjtu.edu.cn/jiaoshiml.html
+      sha256: 49c8483109798f1b02dced810092e5e96d7ec5b27eb980078c45df342b36021c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.sjtu.edu.cn/news/1952.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源不属于受支持的官方教育或科研域名
+    - url: https://www.cs.sjtu.edu.cn/news/2055.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源不属于受支持的官方教育或科研域名
+    - url: https://www.cs.sjtu.edu.cn/exploration/1792.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源不属于受支持的官方教育或科研域名
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：js-info block not found
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 41ed38e9cb645222721bc60c4cfc6db577f2adea3ba2cfbcd98dc1d6e492ffa0
+    id: sjtu/cs/fetch_or_parse_error/chenyichao
+    kind: fetch_or_parse_error
+    ref: chenyichao
+    original_message: js-info block not found
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: sjtu-cs · chenyichao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

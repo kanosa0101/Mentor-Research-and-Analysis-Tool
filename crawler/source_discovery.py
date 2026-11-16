@@ -58,7 +58,7 @@ def canonical(url, parent=None):
     return result
 
 
-def fetch_html(url, parent_url=None):
+def fetch_html(url, parent_url=None, *, before_request=None):
     initial = canonical(url, parent_url)
     current = initial
     with requests.Session() as session:
@@ -68,12 +68,16 @@ def fetch_html(url, parent_url=None):
             addresses = socket.getaddrinfo(parsed.hostname, parsed.port or (443 if parsed.scheme == 'https' else 80), type=socket.SOCK_STREAM)
             if not addresses or any(not ipaddress.ip_address(a[4][0]).is_global for a in addresses):
                 raise ValueError('来源解析到非公网地址，拒绝抓取')
+            if before_request:
+                before_request()
             with session.get(current, timeout=(6, 12), stream=True, allow_redirects=False,
                              headers={'User-Agent': 'Mozilla/5.0 (official admissions source discovery)'}) as response:
                 if response.status_code in (301, 302, 303, 307, 308):
                     current = canonical(response.headers.get('Location', ''), current)
                     if boundary(current) != boundary(initial):
                         raise ValueError('来源跨机构跳转，未抓取目标')
+                    if urlsplit(initial).scheme == 'https' and urlsplit(current).scheme != 'https':
+                        raise ValueError('官方HTTPS来源降级为HTTP，未抓取目标')
                     continue
                 response.raise_for_status()
                 if response.status_code != 200 or not any(t in response.headers.get('Content-Type', '').lower() for t in ('text/html', 'application/xhtml+xml')):
@@ -99,7 +103,7 @@ def links(raw, url):
     for anchor in soup.select('a[href]')[:1500]:
         label = ' '.join(anchor.get_text(' ', strip=True).split())
         if (not label or len(label) > 240 or EXCLUDED.search(label + ' ' + anchor['href'])
-                or re.search(r'/(?:bkzs|bks|undergraduate|undergrad)/', anchor['href'], re.I)):
+                or re.search(r'/(?:bkzs|undergraduate|undergrad)/', anchor['href'], re.I)):
             continue
         try:
             target = canonical(anchor['href'], url)
@@ -171,8 +175,10 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
         known = {c['url'] for c in configs}; candidates = {c['id']: c for c in data['candidates']}
         pool = seeds(root, configs)
         pool.sort(key=lambda c: (states.get(c['url'], {}).get('checked_at', ''), c['url']))
+        due_pool = [seed for seed in pool if refresh or states.get(seed['url'], {}).get('next_check_at', '') <= now.isoformat()]
+        per_seed = max(1, max_candidates // max(1, min(max_seeds, len(due_pool))))
         attempted, inspected, added = 0, 0, 0
-        for seed in pool:
+        for seed in due_pool:
             prior = states.get(seed['url'], {})
             if attempted >= max_seeds or inspected >= max_candidates:
                 break
@@ -186,7 +192,12 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                 proposed = [link for link in links(raw, parent_url) if link['url'] not in known and
                             column_link(link) and len(link['title']) <= 40]
                 # Previously failing menu links must not monopolize the bounded scan.
-                proposed.sort(key=lambda link: (hashlib.sha256(link['url'].encode()).hexdigest()[:20] in candidates, link['url']))
+                proposed.sort(key=lambda link: (hashlib.sha256(link['url'].encode()).hexdigest()[:20] in candidates,
+                    candidates.get(hashlib.sha256(link['url'].encode()).hexdigest()[:20], {}).get('checked_at', ''),
+                    0 if re.search(r'冬令营|夏令营|暑期学校|科研实践|科研实习', link['title']) else
+                    1 if re.search(r'研究生|招生', link['title']) else
+                    2 if re.search(r'人才培养|培养招生', link['title']) else 3, link['url']))
+                seed_inspected = 0
                 for link in proposed:
                     ident = hashlib.sha256(link['url'].encode()).hexdigest()[:20]
                     old = candidates.get(ident)
@@ -194,10 +205,11 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                         continue
                     if old and not refresh and old.get('next_check_at', '') > now.isoformat():
                         continue
-                    if inspected >= max_candidates:
+                    if inspected >= max_candidates or seed_inspected >= per_seed:
                         state['next_check_at'] = now.isoformat()
                         break
                     inspected += 1
+                    seed_inspected += 1
                     candidate = dict(old or {}, id=ident, url=link['url'], label=link['title'], kind='column',
                         school=seed.get('school', ''), dept='', unit=link['title'],
                         parent_url=parent_url, parent_label=seed.get('name', ''), parent_sha256=hashlib.sha256(raw).hexdigest(),
@@ -214,7 +226,9 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
             states[seed['url']] = state
         data.update(candidates=list(candidates.values()), checked_at=now.isoformat(),
                     summary=dict(seed_count=len(pool), seeds_attempted=attempted, candidates_checked=inspected,
-                                 new_candidates=added, pending=sum(c['status'] == 'candidate' for c in candidates.values())))
+                                 new_candidates=added, due_seeds_deferred=max(0, len(due_pool) - attempted),
+                                 candidates_per_seed=per_seed,
+                                 pending=sum(c['status'] == 'candidate' for c in candidates.values())))
         data['next_check_at'] = min((states.get(c['url'], {}).get('next_check_at', now.isoformat()) for c in pool), default=(now + timedelta(hours=6)).isoformat())
         data['status'] = 'partial' if any(s.get('status') == 'error' for s in states.values()) else 'ok'
         atomic_json(path, data)

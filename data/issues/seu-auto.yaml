@@ -10,20 +10,44 @@
     automatic: true
     state: error
     reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
-    evidence: &id001
+    evidence:
     - url: https://automation.seu.edu.cn/hw/list.htm
       sha256: e08e68b1b74f9e4baa02b92ba74c92a406dcc519d9637799a98a89dd59e1b008
       fetched_at: '2026-11-16T09:24:18+00:00'
   automatic_check:
     status: error
     reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 2201f4f267c187573be6e05d7cc31338e15c18d94f840ad21f26ed7604627faa
     id: seu/auto/fetch_or_parse_error/huangwei
     kind: fetch_or_parse_error
     ref: huangwei
     original_message: ValueError('个人页缺少姓名与身份区，不能将空壳当成已富化')
-    checked_at: '2026-11-16T09:24:18+00:00'
-    next_check_at: '2026-11-17T09:24:18+00:00'
-    evidence: *id001
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://automation.seu.edu.cn/32668/list.htm
+      sha256: 7e25be4b2ff0bce5b17f847280ae335a1f68ee68701979910261f44fe03a1984
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/
+      sha256: 5e20541508355efc451f9ad584aa501b23a3fb585345afdb678546b1a2b0d838
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/szdw_32667/list.htm
+      sha256: 210826d2b8e3e371dcde5da0e3d7c91da54536be3b7afc2ae4d529a4f82b1dcd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/2026/1104/c24510a588657/page.htm
+      sha256: 9cca98e2116671d840eb69246a5aceae6c97a0c0481b5b48e5cbe2f62c44d02b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/2026/1026/c24510a587584/page.htm
+      sha256: c6ca6d4811fe179cb8a962b4aac0b6552e788bb59b67eb82e047c951aca3c286
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/hw/list.htm
+      sha256: e08e68b1b74f9e4baa02b92ba74c92a406dcc519d9637799a98a89dd59e1b008
+      fetched_at: '2026-11-16T11:26:05+00:00'
     title: seu-auto · huangwei · fetch_or_parse_error
     pending_since: '2026-11-16T09:24:18+00:00'
     last_success: null
@@ -39,7 +63,7 @@
     automatic: true
     state: pending
     reason: 官方标称总数与实际公开分页仍不一致，不宣称全量
-    evidence: &id002
+    evidence:
     - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
       sha256: a017529df94cc79f2e9c3d6710850c2aa82a22554c8af1066e26fe540eec35b5
       fetched_at: '2026-11-16T09:24:18+00:00'
@@ -92,13 +116,120 @@
     returned: 95
     unique: 95
     pages: 3
+    reason_code: roster_incomplete
+    category_label: 名册数量不一致
+    next_action: manual_review
+    action_label: 核对完整官方名册
+    consecutive_failures: 1
+    repair_signature: 2201f4f267c187573be6e05d7cc31338e15c18d94f840ad21f26ed7604627faa
     id: seu/auto/roster_count_mismatch/https://automation.seu.edu.cn/32668/list.htm
     kind: roster_count_mismatch
     ref: https://automation.seu.edu.cn/32668/list.htm
     original_message: 公开teacherHome接口标称114条；两页实际返回100条且与rows999返回集合一致，仅接入85条明示学术身份记录，完整名单待核对。
-    checked_at: '2026-11-16T09:24:18+00:00'
-    next_check_at: '2026-11-17T09:24:18+00:00'
-    evidence: *id002
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: a6927bbd044e47ba25c4b95fb5d24defba68cf90d7fffab4c2a1d2a42de57ad3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      request:
+        siteId: 338
+        pageIndex: 1
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: 45d7d4abac24c9f52225fe9abd6d91192e04df5358bf79a8185ffdee90c871f9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      request:
+        siteId: 338
+        pageIndex: 2
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: d04ab0c0eda99bad56c8cdab8979324b96fd3e35ec5c8cad53b4fc56bfc86ffc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      request:
+        siteId: 338
+        pageIndex: 3
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
     title: seu-auto · https://automation.seu.edu.cn/32668/list.htm · roster_count_mismatch
     pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fuyingjie
+  message: 个人页缺少姓名与身份区，不能将空壳当成已富化
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    evidence: &id001
+    - url: https://automation.seu.edu.cn/32668/list.htm
+      sha256: 7e25be4b2ff0bce5b17f847280ae335a1f68ee68701979910261f44fe03a1984
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/
+      sha256: 5e20541508355efc451f9ad584aa501b23a3fb585345afdb678546b1a2b0d838
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/szdw_32667/list.htm
+      sha256: 210826d2b8e3e371dcde5da0e3d7c91da54536be3b7afc2ae4d529a4f82b1dcd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/2026/1104/c24510a588657/page.htm
+      sha256: 9cca98e2116671d840eb69246a5aceae6c97a0c0481b5b48e5cbe2f62c44d02b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/2026/1026/c24510a587584/page.htm
+      sha256: c6ca6d4811fe179cb8a962b4aac0b6552e788bb59b67eb82e047c951aca3c286
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://automation.seu.edu.cn/_upload/article/files/95/af/505f0939415eb1762738d219e7d2/dafbe175-314b-4311-aaa5-68dde0e8adf0.doc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 非HTML来源需要专用解析，不作为新栏目接入
+    - url: https://automation.seu.edu.cn/_upload/article/files/95/af/505f0939415eb1762738d219e7d2/56bc62d9-1ad7-46f3-a4f3-568a578f03bd.doc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 非HTML来源需要专用解析，不作为新栏目接入
+    - url: https://automation.seu.edu.cn/fyj/list.htm
+      sha256: 51e778da9bca73c1be9336c0d4f9e86b01a688f7180f5028864b3c76fca26b53
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 2201f4f267c187573be6e05d7cc31338e15c18d94f840ad21f26ed7604627faa
+    id: seu/auto/fetch_or_parse_error/fuyingjie
+    kind: fetch_or_parse_error
+    ref: fuyingjie
+    original_message: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: seu-auto · fuyingjie · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null

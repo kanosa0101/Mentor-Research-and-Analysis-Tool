@@ -12,7 +12,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup, UnicodeDammit
 
-from crawler import legacy_refresh
+from crawler import legacy_refresh, mentor_recovery
 from crawler.email_util import normalize_email
 from crawler.opportunity_monitor import atomic_json, output_lock
 
@@ -24,25 +24,34 @@ def load_yaml(path):
 
 
 def fetch_source(source, timeout=15):
+    if source.get('official_scope'):
+        if not mentor_recovery.allowed(source['url'], source['official_scope']):
+            raise ValueError('替代来源离开已登记官方机构边界')
+        from crawler.source_discovery import fetch_html
+        return fetch_html(source['url'], source['official_scope'])
     with requests.Session() as session:
         session.trust_env = False
         response = session.request(source.get('method', 'GET'), source['url'], data=source.get('data'),
-                                   timeout=timeout, headers={'User-Agent': 'Mozilla/5.0 (public faculty source verification)'})
+            timeout=timeout, headers={'User-Agent': 'Mozilla/5.0 (public faculty source verification)'})
         response.raise_for_status()
-        if response.status_code != 200 or len(response.content) > 3_000_000:
-            raise ValueError('来源状态或体积异常')
+        if response.status_code != 200:
+            raise ValueError(f'HTTP {response.status_code}: 来源未返回可核对的导师正文')
+        if len(response.content) > 3_000_000:
+            raise ValueError('导师正文超过3MB检查上限')
         return response.content
 
 
 class Sources:
     def __init__(self, root, fetcher, stamp):
+        self.root = root
         self.folder = root / 'cache/mentor_quality/evidence'
         self.folder.mkdir(parents=True, exist_ok=True)
         self.fetcher, self.stamp, self.cache, self.used = fetcher, stamp, {}, []
         self.day = datetime.fromisoformat(stamp).astimezone(timezone(timedelta(hours=8))).date().isoformat()
 
-    def read(self, url, data=None):
-        source = {'url': url, **({'method': 'POST', 'data': data} if data else {})}
+    def read(self, url, data=None, official_scope=None):
+        source = {'url': url, **({'method': 'POST', 'data': data} if data else {}),
+                  **({'official_scope': official_scope} if official_scope else {})}
         key = json.dumps(source, sort_keys=True)
         if key not in self.cache:
             try:
@@ -88,7 +97,7 @@ def alternatives(original, cfg, sources):
     return urls
 
 
-def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=False):
+def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=False, failure_reason=''):
     hook = legacy_refresh.load_hook(root, cfg)
     parse_cfg = copy.deepcopy(cfg)
     if raw_title:
@@ -102,24 +111,65 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
             candidates = preferred + candidates
             expanded = True
     errors = []
+    def discover():
+        rows, index = mentor_recovery.replacements(root, original, cfg, sources)
+        found = [(row['url'], {'url': row['directory_url'], 'kind': 'directory'}) for row in rows]
+        for roster in index['rosters']:
+            raw = (sources.folder / (roster['sha256'] + '.body')).read_bytes()
+            html = UnicodeDammit(raw).unicode_markup or ''
+            parsed, _ = mentor_recovery.directory_fields(cfg, html, original['name'])
+            if parsed and mentor_recovery.identity(original, parsed, roster['url']) == 'name_and_email':
+                found.append((roster['url'], {'url': roster['url'], 'kind': 'roster', 'parsed': parsed}))
+        return found
+    failure = mentor_recovery.classify(failure_reason, original=original, cfg=cfg)
+    if allow_alternative and failure_reason and failure['next_action'] == 'discover_official_source':
+        candidates = discover()
+        if failure['reason_code'] in ('http_forbidden', 'template_empty'):
+            candidates.append((mentor_recovery.canonical(original['detail_url']), None))
+        expanded = True
+        if not candidates:
+            raise ValueError('当前官方目录未找到通过身份核验的替代来源；原问题：' + failure_reason)
     index = 0
     while index < len(candidates):
         url, directory = candidates[index]
         index += 1
         try:
-            raw, html = sources.read(url)
-            parsed = hook.parse_detail(parse_cfg, html, url)
+            scope = (cfg.get('base_url') or url) if isinstance(directory,dict) and directory.get('kind') else None
+            if isinstance(directory,dict) and directory.get('kind')=='directory':
+                _, parent = sources.read(directory['url'],official_scope=scope)
+                if not mentor_recovery.named_link(parent,directory['url'],url,original['name']):
+                    raise ValueError('当前官方目录已不再链接该姓名的候选详情，未迁移')
+            raw, html = sources.read(url, official_scope=scope)
+            expected_cfg = dict(parse_cfg, _expected_name=original['name'])
+            if isinstance(directory,dict) and directory.get('kind')=='roster':
+                parsed, _ = mentor_recovery.directory_fields(cfg,html,original['name'])
+                if not parsed:
+                    raise ValueError('当前官方名册行已移除或存在冲突，未采纳缓存字段')
+            else:
+                parsed = hook.parse_detail(expected_cfg, html, url)
             if directory:
-                if isinstance(directory, dict):
+                if isinstance(directory, dict) and not directory.get('kind'):
                     head = BeautifulSoup(html, 'html.parser').select_one('.js-top .info h2')
                     if head is None or head.get_text(strip=True) != original['name']:
                         raise ValueError('官方同一教师中文链接的个人姓名未确认')
+                elif isinstance(directory, dict):
+                    if not parsed.get('name'):
+                        doc = BeautifulSoup(html,'html.parser')
+                        if any(node.get_text(strip=True) == original['name'] for node in doc.select('h1,h2,.news_title,.teacher-name,.name')):
+                            parsed['name'] = original['name']
+                    basis = mentor_recovery.identity(original, parsed, url)
+                    if not basis:
+                        raise ValueError('备用官方详情未通过姓名与独立身份特征匹配')
                 else:
                     expected = normalize_email(original.get('email'))
                     if (not expected or parsed.get('name') != original['name'] or
                             str(normalize_email(parsed.get('email'))).lower() != expected.lower()):
                         raise ValueError('备用官方详情未通过姓名和邮箱双重身份匹配')
             candidate = dict(original, detail_url=url)
+            if ((directory or url != original['detail_url']) and
+                    any(original.get('provenance', {}).get(field, {}).get('origin') == 'manual'
+                        for field in ('detail_url', 'profile_url'))):
+                raise ValueError('替代候选已核验，但详情或主页 URL 为人工维护，保留原地址待人工确认：' + url)
             updated, changed, checked = legacy_refresh.merge_profile(candidate, parsed, raw,
                 sources.day)
             if directory:
@@ -128,6 +178,9 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                     updated.setdefault('provenance', {})[field] = dict(origin='crawled', source=directory['url'] if isinstance(directory, dict) else directory,
                         fetched_at=sources.day, confidence='auto')
                 changed += ['detail_url', 'profile_url']
+                sources.replacement = dict(old_url=original['detail_url'], new_url=url,
+                    directory_url=directory['url'] if isinstance(directory,dict) else directory,
+                    identity_basis=basis if isinstance(directory,dict) and directory.get('kind') else 'same_person_language_link' if isinstance(directory,dict) else 'name_and_email')
             return updated, parsed, changed, checked
         except Exception as error:
             errors.append(str(error)[:300])
@@ -149,7 +202,7 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                                 candidates.append((target, {'url': original['detail_url']}))
                     except Exception:
                         pass
-                candidates.extend(alternatives(original, cfg, sources))
+                candidates.extend(discover())
     raise ValueError('；'.join(dict.fromkeys(errors))[:1200])
 
 
@@ -263,7 +316,8 @@ def inspect_issue(root, unit, issue, sources):
                             observed_titles=sorted(titles), changed_fields=own[1], checked_fields=own[2])
             return dict(status='pending', reason='官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知',
                         observed_titles=sorted(titles), unavailable_pages=failed)
-        updated, parsed, changed, checked = profile(root, original, cfg, sources)
+        updated, parsed, changed, checked = profile(root, original, cfg, sources,
+            failure_reason=issue.get('message','') if kind == 'fetch_or_parse_error' else '')
         if kind == 'shared_public_contact':
             # Refresh the complete conflict group, not only one current record.
             names = next((names for names in cfg.get('shared_public_contacts', {}).values() if original['name'] in names), [])
@@ -275,8 +329,9 @@ def inspect_issue(root, unit, issue, sources):
             return dict(status='pending', reason='官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检',
                         changed_fields=changed, checked_fields=checked, personal_email_withheld=bool(parsed.get('_rejected_email')))
         write_profile(path, original, updated)
-        return dict(status='resolved', reason='当前官方详情身份及字段解析通过', changed_fields=changed,
-                    checked_fields=checked, previous_source=original['detail_url'], current_source=updated['detail_url'])
+        return dict(status='resolved', reason='当前官方详情或明确名册行的身份及字段解析通过', changed_fields=changed,
+                    checked_fields=checked, previous_source=original['detail_url'], current_source=updated['detail_url'],
+                    **({'replacement':sources.replacement} if getattr(sources,'replacement',None) else {}))
     if kind == 'duplicate_public_registration':
         people = [load_yaml(path) for path in folder.glob('*.yaml')]
         people = [person for person in people if person['name'] == issue['ref']]
@@ -319,8 +374,13 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
         created = seed_issues(root, now)
         selected = []
         known = set()
+        configs = {}
+        signatures = {}
         for path in sorted((root / 'data/issues').glob('*.yaml')):
             unit = path.stem.replace('-', '/', 1)
+            cfg_path = root / 'sites' / (unit + '.yaml')
+            cfg = configs.setdefault(unit, load_yaml(cfg_path) if cfg_path.exists() else {})
+            signatures[unit] = mentor_recovery.signature(root, cfg) if cfg else ''
             for issue in load_yaml(path) or []:
                 key = unit + '/' + issue['kind'] + '/' + issue['ref']
                 known.add(key)
@@ -342,10 +402,17 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
                         if url:
                             queued['source_urls'] = {'profile': url}
                     state['records'][key] = previous = queued
+                if not issue.get('resolved'):
+                    person_path = root/'data/professors'/unit/(issue['ref']+'.yaml')
+                    person = load_yaml(person_path) if person_path.parent == root/'data/professors'/unit and person_path.is_file() else None
+                    if person:
+                        previous.setdefault('source_urls', {'profile': person['detail_url']})
+                    previous.update(mentor_recovery.classify(previous.get('reason') or issue['message'], issue['kind'], original=person, cfg=cfg))
                 if units and unit not in units:
                     continue
                 if (not retry and previous.get('next_check_at', '') > stamp and
-                        bool(issue.get('resolved')) == (previous.get('status') == 'resolved')):
+                        bool(issue.get('resolved')) == (previous.get('status') == 'resolved') and
+                        (issue.get('resolved') or previous.get('repair_signature') == signatures[unit])):
                     continue
                 selected.append((previous.get('checked_at', ''), key, path, issue))
         state['records'] = {key: value for key, value in state['records'].items() if key in known}
@@ -356,15 +423,35 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
         results, reopened = [], 0
         for _, key, path, issue in selected[:limit]:
             sources.used = []
+            sources.replacement = None
             try:
                 result = inspect_issue(root, path.stem.replace('-', '/', 1), issue, sources)
             except Exception as error:
                 result = dict(status='error', reason=str(error)[:1200])
-            delay = timedelta(days=7) if result['status'] == 'resolved' else timedelta(hours=24)
+            previous = state['records'].get(key, {})
+            if previous.get('source_urls'):
+                result['source_urls'] = previous['source_urls']
+            if result['status'] == 'resolved':
+                if result.get('current_source'):
+                    result['source_urls'] = {'profile': result['current_source']}
+                label, action, action_label, hours = mentor_recovery.RULES['resolved']
+                result.update(reason_code='resolved',category_label=label,next_action=action,action_label=action_label)
+            else:
+                unit = path.stem.replace('-', '/', 1)
+                person_path = root/'data/professors'/unit/(issue['ref']+'.yaml')
+                person = load_yaml(person_path) if person_path.parent == root/'data/professors'/unit and person_path.is_file() else None
+                if person:
+                    result['source_urls'] = {'profile': person['detail_url']}
+                result.update(mentor_recovery.classify(result['reason'],issue['kind'],original=person,cfg=configs[unit]))
+                hours = result.pop('retry_hours')
+                if result['next_action'] == 'retry':
+                    hours = min(48, hours * 2 ** min(previous.get('consecutive_failures',0),4))
+            result['consecutive_failures'] = 0 if result['status']=='resolved' else previous.get('consecutive_failures',0)+1
+            result['repair_signature'] = signatures[path.stem.replace('-', '/', 1)]
+            delay = timedelta(hours=hours)
             result.update(id=key, kind=issue['kind'], ref=issue['ref'], original_message=issue['message'],
                           checked_at=stamp, next_check_at=(now + delay).isoformat(timespec='seconds'),
                           evidence=copy.deepcopy(sources.used))
-            previous = state['records'].get(key, {})
             result['title'] = path.stem + ' · ' + issue['ref'] + ' · ' + issue['kind']
             result['pending_since'] = (None if result['status'] == 'resolved' else
                 previous.get('pending_since') if previous.get('status') in ('error', 'pending') and previous.get('pending_since') else stamp)

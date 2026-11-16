@@ -1,460 +1,246 @@
 - kind: fetch_or_parse_error
-  ref: baiwenyang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
+  ref: chenxin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://cs.nju.edu.cn/2639/list.htm
+      sha256: e6142e57051288281849c5e5f1513d998127add1a6b2b748d78035b1a59e0f03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2640/list.htm
+      sha256: aa0cbe0275ddc27041dfe771271fd279ba5717a10754db15324bca31ff430255
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2641/list.htm
+      sha256: 3910cba9563b0ee168d82a32547c0f0af853558ff474afed6479d3db0c34457d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2642/list.htm
+      sha256: f1eb4def5b81517c8193c97959fc480f1da8902c6057ca03df377dcebe765cda
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/
+      sha256: f1f8471c468659c719afde72347c442799ad9d89df234aa0474ff67001424a68
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/1651/list.htm
+      sha256: 3cb76e5248c71b775d159e62d1694a084ea9fc016583c254503cce0f2517dc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/df/f1/c50174a843761/page.htm
+      sha256: 1c9e088ed92568315f78c5602799e8bce259d392f286fe9806dc24b0edbc950e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/8d/c50174a799373/page.htm
+      sha256: cdb0e650b280ad051836a93cbdc43c92e3f6a8c0bbb29fa622d84f8091292e12
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/0d/96/c50174a789910/page.htm
+      sha256: 36e8b55a802ac139ea04e1f0844ebba5b327eafbf23c5ae09699cde670f0e739
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/7e/c1654a799358/page.htm
+      sha256: f48b357bf7f5661964e5d76c5e2d142e5aae9194fec0746f32d44c1256028111
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/b3/0e/c1654a832270/page.htm
+      sha256: 10e59537d225957b53c0caabe629a698bfa220a2eb2fda6b33f8d9a42e5914cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/f1/ac/c1661a848300/page.htm
+      sha256: 7bf47de6483b5a1d09dc5ec23efc20bf35867fa544f79b449505b7b5e208e8ef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ef/20/c1661a847648/page.htm
+      sha256: 4bafd3e51633b14d758039ec138eefdfdbb9bfc884ae18f36fef7183511276e2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ed/0d/c1661a847117/page.htm
+      sha256: c1cd93fea5c6c9b5e7678943a89dec6a65bfb90efe603b52c4ea5987e737c0da
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/a0/2b/c56396a761899/page.htm
+      sha256: 16c5015b1265666c300d0adddb8f7cffeac32feb1749551d1b8f25f180f46c2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/96/42/c56396a235074/page.htm
+      sha256: 76da03bdab9aceae4dcfeb281ffb340672da69f1d6ad5f9b1a5e00000fe4b4ea
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/57/15/c2640a153365/page.htm
+      sha256: 8119e14f44a894f3f23cb8aebb9d02bf30d4d7de58fb6b5a700d6b1358b7f123
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: da73bcfdc69ea2be4ba1946d6066b74ef495a7996cb112ad50cc4fe71e33d2ed
+    id: nju/cs/fetch_or_parse_error/chenxin
+    kind: fetch_or_parse_error
+    ref: chenxin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: nju-cs · chenxin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
-  ref: bolei
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: caochun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: cengqingkai
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenggong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenguihai
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenjiajun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenjian
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenlijun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: daihaipeng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: douwanchun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: fengxinyu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gaoyang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
+  ref: ganshiwei
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://cs.nju.edu.cn/2639/list.htm
+      sha256: e6142e57051288281849c5e5f1513d998127add1a6b2b748d78035b1a59e0f03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2640/list.htm
+      sha256: aa0cbe0275ddc27041dfe771271fd279ba5717a10754db15324bca31ff430255
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2641/list.htm
+      sha256: 3910cba9563b0ee168d82a32547c0f0af853558ff474afed6479d3db0c34457d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2642/list.htm
+      sha256: f1eb4def5b81517c8193c97959fc480f1da8902c6057ca03df377dcebe765cda
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/
+      sha256: f1f8471c468659c719afde72347c442799ad9d89df234aa0474ff67001424a68
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/1651/list.htm
+      sha256: 3cb76e5248c71b775d159e62d1694a084ea9fc016583c254503cce0f2517dc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/df/f1/c50174a843761/page.htm
+      sha256: 1c9e088ed92568315f78c5602799e8bce259d392f286fe9806dc24b0edbc950e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/8d/c50174a799373/page.htm
+      sha256: cdb0e650b280ad051836a93cbdc43c92e3f6a8c0bbb29fa622d84f8091292e12
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/0d/96/c50174a789910/page.htm
+      sha256: 36e8b55a802ac139ea04e1f0844ebba5b327eafbf23c5ae09699cde670f0e739
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/7e/c1654a799358/page.htm
+      sha256: f48b357bf7f5661964e5d76c5e2d142e5aae9194fec0746f32d44c1256028111
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/b3/0e/c1654a832270/page.htm
+      sha256: 10e59537d225957b53c0caabe629a698bfa220a2eb2fda6b33f8d9a42e5914cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/f1/ac/c1661a848300/page.htm
+      sha256: 7bf47de6483b5a1d09dc5ec23efc20bf35867fa544f79b449505b7b5e208e8ef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ef/20/c1661a847648/page.htm
+      sha256: 4bafd3e51633b14d758039ec138eefdfdbb9bfc884ae18f36fef7183511276e2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ed/0d/c1661a847117/page.htm
+      sha256: c1cd93fea5c6c9b5e7678943a89dec6a65bfb90efe603b52c4ea5987e737c0da
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/a0/2b/c56396a761899/page.htm
+      sha256: 16c5015b1265666c300d0adddb8f7cffeac32feb1749551d1b8f25f180f46c2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/96/42/c56396a235074/page.htm
+      sha256: 76da03bdab9aceae4dcfeb281ffb340672da69f1d6ad5f9b1a5e00000fe4b4ea
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/13/d1/c2641a791505/page.htm
+      sha256: 6985d468fc9c278f1b8195e8d712f8a6bd8f3ea93be6f37a669c78fe8c56ecf6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: da73bcfdc69ea2be4ba1946d6066b74ef495a7996cb112ad50cc4fe71e33d2ed
+    id: nju/cs/fetch_or_parse_error/ganshiwei
+    kind: fetch_or_parse_error
+    ref: ganshiwei
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: nju-cs · ganshiwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: guoyanwen
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: guqing
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huajingyu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangchengyuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangdaming
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangshujian
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangyihua
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangyu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huhao
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huwei
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jinying
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lianghongjin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lijun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: linbingkai
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lining
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liujia
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuqizhi
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liwenzhong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liwujun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lixuandong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liyuanqi
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liyue
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: luhongmin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lusanglu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lutong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lvjian
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: maobing
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: maxiaoxing
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: niezhanghai
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: ningjingyi
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: panyi
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: qianzhuzhong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: quyuzhong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: shanglin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: shiyinghuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: songfangmin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: sufeng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: sunzhengxing
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tangjie
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tantieniu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: taoxianping
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: taoye
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tianchen
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangchongjun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangliang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanglimin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanglinzhang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangwei
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangxiaoliang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wugangshan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wuhaijun
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wunan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wuyinghong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xiejunyuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xielei
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xubaowen
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xuchang
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xufeng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xufengyuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xulei
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangruoyu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangyubin
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yaopenghui
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yaoyuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yebaoliu
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yincunyan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yinyitong
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yuanchunfeng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yuping
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangjie
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangli
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangshan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangsheng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangtian
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangyan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangyuan
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaojianhua
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhongsheng
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhouyuming
-  message: IndexError('no such group')
-  first_seen: '2026-09-03'
-  resolved: true
+  message: '410 Client Error:  for url: https://cs.nju.edu.cn/58/0f/c2639a153615/page.psp'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：410 Client Error:  for url: https://cs.nju.edu.cn/58/0f/c2639a153615/page.psp'
+    evidence: &id003
+    - url: https://cs.nju.edu.cn/2639/list.htm
+      sha256: e6142e57051288281849c5e5f1513d998127add1a6b2b748d78035b1a59e0f03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2640/list.htm
+      sha256: aa0cbe0275ddc27041dfe771271fd279ba5717a10754db15324bca31ff430255
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2641/list.htm
+      sha256: 3910cba9563b0ee168d82a32547c0f0af853558ff474afed6479d3db0c34457d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/2642/list.htm
+      sha256: f1eb4def5b81517c8193c97959fc480f1da8902c6057ca03df377dcebe765cda
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/
+      sha256: f1f8471c468659c719afde72347c442799ad9d89df234aa0474ff67001424a68
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/1651/list.htm
+      sha256: 3cb76e5248c71b775d159e62d1694a084ea9fc016583c254503cce0f2517dc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/df/f1/c50174a843761/page.htm
+      sha256: 1c9e088ed92568315f78c5602799e8bce259d392f286fe9806dc24b0edbc950e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/8d/c50174a799373/page.htm
+      sha256: cdb0e650b280ad051836a93cbdc43c92e3f6a8c0bbb29fa622d84f8091292e12
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/0d/96/c50174a789910/page.htm
+      sha256: 36e8b55a802ac139ea04e1f0844ebba5b327eafbf23c5ae09699cde670f0e739
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/32/7e/c1654a799358/page.htm
+      sha256: f48b357bf7f5661964e5d76c5e2d142e5aae9194fec0746f32d44c1256028111
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/b3/0e/c1654a832270/page.htm
+      sha256: 10e59537d225957b53c0caabe629a698bfa220a2eb2fda6b33f8d9a42e5914cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/f1/ac/c1661a848300/page.htm
+      sha256: 7bf47de6483b5a1d09dc5ec23efc20bf35867fa544f79b449505b7b5e208e8ef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ef/20/c1661a847648/page.htm
+      sha256: 4bafd3e51633b14d758039ec138eefdfdbb9bfc884ae18f36fef7183511276e2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/ed/0d/c1661a847117/page.htm
+      sha256: c1cd93fea5c6c9b5e7678943a89dec6a65bfb90efe603b52c4ea5987e737c0da
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/a0/2b/c56396a761899/page.htm
+      sha256: 16c5015b1265666c300d0adddb8f7cffeac32feb1749551d1b8f25f180f46c2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.nju.edu.cn/96/42/c56396a235074/page.htm
+      sha256: 76da03bdab9aceae4dcfeb281ffb340672da69f1d6ad5f9b1a5e00000fe4b4ea
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：410 Client Error:  for url: https://cs.nju.edu.cn/58/0f/c2639a153615/page.psp'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: da73bcfdc69ea2be4ba1946d6066b74ef495a7996cb112ad50cc4fe71e33d2ed
+    id: nju/cs/fetch_or_parse_error/guoyanwen
+    kind: fetch_or_parse_error
+    ref: guoyanwen
+    original_message: '410 Client Error:  for url: https://cs.nju.edu.cn/58/0f/c2639a153615/page.psp'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: nju-cs · guoyanwen · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

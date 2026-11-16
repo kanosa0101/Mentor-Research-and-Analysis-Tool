@@ -10,7 +10,7 @@ supervisor: 硕导
 email: Xiucao@fudan.edu.cn
 institutes: []
 photo_url: https://cs.fudan.edu.cn/_upload/article/images/e3/e9/11ee30b34090ae6b544f670bff07/2baa9120-df03-42b0-9567-9800496fbc5f.jpg
-detail_url: http://ai.fudan.edu.cn/cx/list.htm
+detail_url: https://ai.fudan.edu.cn/cx/list.htm
 profile_url: http://ai.fudan.edu.cn/cx/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
@@ -23,13 +23,13 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/53161/list.htm
-    fetched_at: '2026-09-05'
+    source: https://ai.fudan.edu.cn/cx/list.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/53161/list.htm
-    fetched_at: '2026-09-05'
+    source: https://ai.fudan.edu.cn/cx/list.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
@@ -41,3 +41,5 @@ provenance:
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

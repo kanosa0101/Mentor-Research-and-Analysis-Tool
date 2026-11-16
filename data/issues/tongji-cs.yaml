@@ -1,364 +1,1367 @@
-- kind: email_missing_source_side
-  ref: fangyu
-  message: 详情页信息表有"电子邮件"栏但官网未填值(空白)
-  first_seen: '2026-09-06'
+- kind: fetch_or_parse_error
+  ref: binyi
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3376.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liguangyao
-  message: 详情页信息表有"电子邮件"栏但官网未填值(空白)
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: sunlijun
-  message: 详情页信息表有"电子邮件"栏但官网未填值(空白)
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: tianchunqi
-  message: 详情页信息表有"电子邮件"栏但官网未填值(空白)
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: yinchangqing
-  message: 详情页信息表有"电子邮件"栏但官网未填值(空白)
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id001
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/fjs_fyjy_.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/fjs_fyjy_.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/ypzljs.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/ypzljs.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js1.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js1.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jfxl.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jfxl.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jzjs.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jzjs.htm'
+    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm'
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1065/3462.htm
+      sha256: a80ae04c73bfefb19f52f541dc84cbf0c7abbcd46b89091be13dffc69da389a2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/binyi
+    kind: fetch_or_parse_error
+    ref: binyi
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3376.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: tongji-cs · binyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: caojianping
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3276.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3276.htm'
+    evidence: &id002
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3276.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/caojianping
+    kind: fetch_or_parse_error
+    ref: caojianping
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3276.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: tongji-cs · caojianping · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: caoxiaofeng
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/3692.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id003
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1066/3539.htm
+      sha256: 84a232115639ab25ae8046a9ba52869dd8bce39e0cd00ef7fa20431d0bbfdcf0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/caoxiaofeng
+    kind: fetch_or_parse_error
+    ref: caoxiaofeng
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/3692.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: tongji-cs · caoxiaofeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cengguosun
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2802.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2802.htm'
+    evidence: &id004
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2802.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/cengguosun
+    kind: fetch_or_parse_error
+    ref: cengguosun
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2802.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: tongji-cs · cengguosun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cengjin
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3287.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id005
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1067/3600.htm
+      sha256: c78015e917b2d418b69f6ad3566f3e04fa8ff713411a51d2754a7dbac4940315
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/cengjin
+    kind: fetch_or_parse_error
+    ref: cengjin
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3287.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: tongji-cs · cengjin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cengpengpeng
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3723.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3723.htm'
+    evidence: &id006
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3723.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/cengpengpeng
+    kind: fetch_or_parse_error
+    ref: cengpengpeng
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3723.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: tongji-cs · cengpengpeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengdawei
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3991.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id007
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1065/3465.htm
+      sha256: 9ffe65a1374b90cc3cc5ae8c1164658369308bbba9fa12aa62f8be9f0807cc23
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chengdawei
+    kind: fetch_or_parse_error
+    ref: chengdawei
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3991.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: tongji-cs · chengdawei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengjiujun
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2817.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id008
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1065/3466.htm
+      sha256: 1941b0bfdcceb0693e8b439f1257ac0eaea7feabaa0f36ce0ad0f29b0c9a916b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chengjiujun
+    kind: fetch_or_parse_error
+    ref: chengjiujun
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2817.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: tongji-cs · chengjiujun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengpeng
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3617.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id009
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.tongji.edu.cn/chengpeng/zh_CN/index.htm
+      sha256: b9a0f6999163af87eebf363276fd48f2c73e07fce3ca5de53fd15f67cfe01e47
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chengpeng
+    kind: fetch_or_parse_error
+    ref: chengpeng
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3617.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: tongji-cs · chengpeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenguang
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3444.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id010
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.tongji.edu.cn/%7EjIJVre/zh_CN/index.htm
+      sha256: cef79d98cfeac054a4b27fad4945cd5d17ec15f29424ad3a37af981c86b1035a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenguang
+    kind: fetch_or_parse_error
+    ref: chenguang
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/3444.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: tongji-cs · chenguang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengying
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3834.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id011
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1067/3590.htm
+      sha256: 3d835794f29842f3d39443fa2f3dc774a3935efb3f75da2219c71a71b2d09cbc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chengying
+    kind: fetch_or_parse_error
+    ref: chengying
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3834.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: tongji-cs · chengying · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: chenliang
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3263.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3263.htm'
+    evidence: &id012
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3263.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenliang
+    kind: fetch_or_parse_error
+    ref: chenliang
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3263.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: tongji-cs · chenliang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: chenshangyi
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1062/3250.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id013
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1070/3655.htm
+      sha256: f9cbb91682ec1ca0afd5893325c522e1f44bc64cd4c7f286142a20bb4bdf5adb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenshangyi
+    kind: fetch_or_parse_error
+    ref: chenshangyi
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1062/3250.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: tongji-cs · chenshangyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: chenweichao
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3281.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id014
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1067/3589.htm
+      sha256: c4f5b8a6dd59e309f1127705ef458583c645115ccd2a2cf1632bc15d231541ab
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenweichao
+    kind: fetch_or_parse_error
+    ref: chenweichao
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3281.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: tongji-cs · chenweichao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenyongsheng
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2818.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id015
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1065/3464.htm
+      sha256: 1706eb0173cc5ee547e5cbe7b834928241773b1399ee816702e50dd501ae2fed
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenyongsheng
+    kind: fetch_or_parse_error
+    ref: chenyongsheng
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2818.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: tongji-cs · chenyongsheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenyufei
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/2824.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id016
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1066/3540.htm
+      sha256: 7eca32db79f401ef06326e724557aa52f2ebfa3ef91f71de0f562240e81019ca
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/chenyufei
+    kind: fetch_or_parse_error
+    ref: chenyufei
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/2824.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: tongji-cs · chenyufei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: denghao
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/3303.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id017
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1066/3542.htm
+      sha256: a3efbba0f184d64b05d9459a2a9749b8c365c57a2941fcbc06f3ebb4f872d960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/denghao
+    kind: fetch_or_parse_error
+    ref: denghao
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1063/3303.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: tongji-cs · denghao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: dengrong
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3275.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3275.htm'
+    evidence: &id018
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3275.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/dengrong
+    kind: fetch_or_parse_error
+    ref: dengrong
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1064/3275.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: tongji-cs · dengrong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dingzhijun
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2816.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id019
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1065/3468.htm
+      sha256: 96b35589a7bea9153251f3054886cf3206c3f582f02794c366c958fb973233d1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/dingzhijun
+    kind: fetch_or_parse_error
+    ref: dingzhijun
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1061/2816.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: tongji-cs · dingzhijun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: dingzijun
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3262.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3262.htm'
+    evidence: &id020
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3262.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/dingzijun
+    kind: fetch_or_parse_error
+    ref: dingzijun
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1122/3262.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: tongji-cs · dingzijun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: dongjiawen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1062/2751.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id021
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1070/3653.htm
+      sha256: b7100ee824d2255f083150a1ca74b831d4a32d872583fe0fabd8ee161e5164c2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/dongjiawen
+    kind: fetch_or_parse_error
+    ref: dongjiawen
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1062/2751.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: tongji-cs · dongjiawen · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: dubowen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
+  message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3282.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: gaomei
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: guoyuchen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: hexiangdong
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: huangjie
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: jianghaiying
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: jiangxun
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liuchunmei
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liujun
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liushiping
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liuyan
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liuzhen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: liwengen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: lixiangmei
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: lixiaoming
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: luyoujun
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: maxu
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: raoweixiong
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: shenhengtao
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: shenjian
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: shenying
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: sunhaiping
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: tangjianfeng
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: wangjie
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: wangruizhi
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: wujian
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: xiaojing
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: xiaoyang
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: xiechen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: xiongmingliang
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: yanglizhen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: yechen
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: yujian
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhangguangzhang
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhanglin
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhangtiehua
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhongjidong
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhujunbo
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhukun
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
-- kind: email_missing_source_side
-  ref: zhuqiang
-  message: 详情页信息表无邮箱栏, 正文简介亦无邮箱, 属官网字段缺失
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 官网字段确缺'
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id022
+    - url: https://cs.tongji.edu.cn/
+      sha256: b4f165550e3313a92f530b971450225f5f86c736b110797a7ceea9c77ee50389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/lyys.htm
+      sha256: f02cbd77d6a70f0216e9ef54ca9dabd061bfe91e8d69a11800bb529678e48960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/szgk.htm
+      sha256: 1320ab23ff24c005e416ea03d11389c9af40eb466ae71923f565ef4a78c50d86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+      sha256: 3706886ba1f5060640faa5fccf8365aa1be524d55fca26bd6cf06d91b663e0e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+      sha256: 1d28f59d0c3a4bd3ab9ad50d871b02d3f082ff3adebc8b70528e6120fd34c78c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+      sha256: 9469e96d4fdd33ffa59c0cf5642be4b6b98f32f56ec393baa3947fb39eefdfd9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+      sha256: 57d46bcde0c42f4819fe4b6bc606a2e9a5fa0f107195c534b2ad240f76215f28
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/4.htm
+      sha256: 345cdc106b10bd9d76b4442226c9b4cc263be8fddcd32861cb7ad8d739febcfe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_/3.htm
+      sha256: afea4d6bf873890ef5ee9abef78464a72e5c436d5e2c2e6227b7ebf4d85d18ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.tongji.edu.cn/info/1067/3591.htm
+      sha256: ca1f132378b2ec52fa3f06c5c561e7699303eba5e3c2dc84598691375a577304
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 52ae58e5b4d7032c20bbc90f95334a1432790563982ff458d2d8f3bf4eabd872
+    id: tongji/cs/fetch_or_parse_error/dubowen
+    kind: fetch_or_parse_error
+    ref: dubowen
+    original_message: '404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1121/3282.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: tongji-cs · dubowen · fetch_or_parse_error
+    pending_since: '2026-11-16T10:20:37+00:00'
+    last_success: null

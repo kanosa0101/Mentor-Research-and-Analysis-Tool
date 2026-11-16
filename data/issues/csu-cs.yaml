@@ -1,108 +1,65 @@
 - kind: fetch_or_parse_error
   ref: chenbaomin
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: denglei
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gaoyang
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: guokehua
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: heshiwen
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huangjunyu
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: kangsonglin
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: ligang
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lishaohua
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lishucheng
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liujingling
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liupin
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuyinhong
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lvgeli
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tongjian
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangsenzhang
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangchao
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaohaochen
-  message: UnboundLocalError("cannot access local variable '_label_value' where it
-    is not associated with a value")
-  first_seen: '2026-09-04'
-  resolved: true
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: http://faculty.csu.edu.cn/chenbaomin/zh_CN/index.htm'
+    evidence:
+    - url: http://faculty.csu.edu.cn/chenbaomin/zh_CN/index.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: http://faculty.csu.edu.cn/chenbaomin/zh_CN/index.htm'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: bdaf8f66b325b43f81b6e80432f7681af641d83b2babec16f49b564a33db43f8
+    id: csu/cs/fetch_or_parse_error/chenbaomin
+    kind: fetch_or_parse_error
+    ref: chenbaomin
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cse.csu.edu.cn/szdw/jsml.htm
+      sha256: d3019ce87a98a884e3b157815d8a3c957b296cafb8b67af93d7a2a65a0402d5d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.csu.edu.cn/
+      sha256: af0940f32947c5676b94261778d8749390682982e5938185c5d6b0318c68e55c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: 'https://cse.csu.edu.cn/xygk/jswyh.htm                                                             '
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '400 Client Error: Bad Request for url: https://cse.csu.edu.cn/xygk/jswyh.htm%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'
+    - url: 'https://cse.csu.edu.cn/szdw/jsml.htm                                                             '
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '400 Client Error: Bad Request for url: https://cse.csu.edu.cn/szdw/jsml.htm%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'
+    - url: https://cse.csu.edu.cn/info/1039/11705.htm
+      sha256: 77662a497ab7c0260d1b8f783c2730d77ffafffd06e6807e18685eb743ab31d1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.csu.edu.cn/info/1039/11702.htm
+      sha256: e3e16cf98b8d34426fc83fdad56855756a8f29c17612eeea9c74b5c5e7cc720b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.csu.edu.cn/info/1039/11699.htm
+      sha256: f84817c80a843b5ef6d0fdd4457f036e6c1f17a19903c9c9833c14f400a93b84
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.csu.edu.cn/info/1043/10458.htm
+      sha256: 96f78bb8bedd73f7d8c45931cc57d39d64df02701d6693ad0cda3a01f2003d9a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.csu.edu.cn/info/1043/10459.htm
+      sha256: 5f8551280a0afe33841451530682e651a317bab8839d2c815e5853fdbfe81efe
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.csu.edu.cn/chenbaomin/zh_CN/index.htm
+      sha256: f81c6ea6fbcfe90fd404320a0235bb19decc84620367d6ff409c72b4e4ef5ff5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: csu-cs · chenbaomin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

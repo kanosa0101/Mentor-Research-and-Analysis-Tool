@@ -1,1 +1,1363 @@
-[]
+- kind: fetch_or_parse_error
+  ref: caochao
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/cc/index.htm
+      sha256: 03f1d90ddcf5e6f915a9f1a1194e872d67b2f82aee213caf7e60b49bb0317c95
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/cc/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/cc/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/caochao
+    kind: fetch_or_parse_error
+    ref: caochao
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cc/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: ruc-ai · caochao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: cengyi
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/yizeng/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id002
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/zy/index.htm
+      sha256: bfcbd365d60cd70da6a8b384f9e27aef46f35f714ec3e3e08c2498351257b560
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/cengyi
+    kind: fetch_or_parse_error
+    ref: cengyi
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/yizeng/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: ruc-ai · cengyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenxu
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cx/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/cx/index.htm
+      sha256: b621c0a1f55cbe3febbbf83a21404523e3c89378d6d4e33486f7e74727bc2b37
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/cx/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/cx/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cx/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/cx/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/chenxu
+    kind: fetch_or_parse_error
+    ref: chenxu
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/cx/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: ruc-ai · chenxu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: douzhicheng
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/dzc/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id004
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/dzc/index.htm
+      sha256: 579d73c53c2edce8a371fbfe6b5256cdf28c7912b3b7f0466321503d86e85ba3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/douzhicheng
+    kind: fetch_or_parse_error
+    ref: douzhicheng
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/dzc/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: ruc-ai · douzhicheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: huangwenbing
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/hwb/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/hwb/index.htm
+      sha256: d80078c1e5e4f2bf4cf2017690d2b30a6f5c5662a9059b18545742563168f8f4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/hwb/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/hwb/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/hwb/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/hwb/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/huangwenbing
+    kind: fetch_or_parse_error
+    ref: huangwenbing
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/hwb/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: ruc-ai · huangwenbing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hudi
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/hd/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id006
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/hd/index.htm
+      sha256: 671ee0cabc40ea70d933e45f0dc2bc8e188de59d704f9eaea2a549cd32148a56
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/hudi
+    kind: fetch_or_parse_error
+    ref: hudi
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/hd/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: ruc-ai · hudi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: lichongxuan
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lcx/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/lcx/index.htm
+      sha256: c36134b0c894338347356d75111228995a96cf46806b8fc0cc9e72b0f15d186f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/lcx/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/lcx/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lcx/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/lcx/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/lichongxuan
+    kind: fetch_or_parse_error
+    ref: lichongxuan
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lcx/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: ruc-ai · lichongxuan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: linyankai
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lyk/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/lyk/index.htm
+      sha256: 166c028095c7ba242cd2cd4c75806157f57c29265d08f5d11447872f6029f010
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/lyk/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/lyk/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lyk/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/lyk/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/linyankai
+    kind: fetch_or_parse_error
+    ref: linyankai
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lyk/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: ruc-ai · linyankai · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyong
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/ly/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id009
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/ly/index.htm
+      sha256: 4178965af630e2f0ec805720e9366cdd9516b8310002abffc0f3300493d48e44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/ly/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/ly/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/ly/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/ly/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/liuyong
+    kind: fetch_or_parse_error
+    ref: liuyong
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/ly/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: ruc-ai · liuyong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: luzhiwu
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id010
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/lzw/index.htm
+      sha256: 94a851add1bcc5e5f5359ab10e8f9bba624fb0e0faa9cf59fbb1f2a2a0a9cb0c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/luzhiwu
+    kind: fetch_or_parse_error
+    ref: luzhiwu
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/lzw/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: ruc-ai · luzhiwu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: maojiaxin
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/mjx/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id011
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/mjx/index.htm
+      sha256: 1121eb577c0c7d873cf483ac1ae858730505057c8c70643c60305aa0cffea9d7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/maojiaxin
+    kind: fetch_or_parse_error
+    ref: maojiaxin
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/mjx/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: ruc-ai · maojiaxin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: mayanbiao
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/myb/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/myb/index.htm
+      sha256: bfe957e66a63363c2138861a2cee42450099d9dfd86fe10a581a7169a304186e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    - bio_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/myb/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/myb/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/myb/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/myb/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/mayanbiao
+    kind: fetch_or_parse_error
+    ref: mayanbiao
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/myb/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: ruc-ai · mayanbiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: qiqi
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/qq/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/qq/index.htm
+      sha256: 3c72ec7d0e949d11ca8dcefeafd00a3ffa86c31d3a25df94c4788824681d863d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/qq/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/qq/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/qq/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/qq/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/qiqi
+    kind: fetch_or_parse_error
+    ref: qiqi
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/qq/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: ruc-ai · qiqi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: shenweiran
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+      sha256: 55b3695f4ab2b952fbf8d8f2745d93cd40cb006daf0d9885e7d058a817e6b680
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/shenweiran
+    kind: fetch_or_parse_error
+    ref: shenweiran
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: ruc-ai · shenweiran · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: songruihua
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
+      sha256: 344d5fb6cc03d1f9468a1de89c6c5ea0bcebb8e0e95b5925776db3aa28e7aa26
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/songruihua
+    kind: fetch_or_parse_error
+    ref: songruihua
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: ruc-ai · songruihua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: subing
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sb/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id016
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/sb/index.htm
+      sha256: 1789c925530d998a3a82f717f0acc9903806cf10cf4f9b059476c2dfb915e188
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/sb/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/sb/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sb/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/sb/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/subing
+    kind: fetch_or_parse_error
+    ref: subing
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sb/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: ruc-ai · subing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: sunhao
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sh/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id017
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/sh/index.htm
+      sha256: d083e9895bad3380e79574142c52e3dd20c67f0173a2c065414ca69b67f9d200
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/sh/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/sh/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sh/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/sh/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/sunhao
+    kind: fetch_or_parse_error
+    ref: sunhao
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/sh/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: ruc-ai · sunhao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: wangxiting
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wxt/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id018
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/wxt/index.htm
+      sha256: c1de4c8f9d7a89440f9b369dd2945c2ab9e740f0c53f9c8fd50093110c682da2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wxt/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/wxt/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wxt/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/wxt/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/wangxiting
+    kind: fetch_or_parse_error
+    ref: wangxiting
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wxt/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: ruc-ai · wangxiting · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: wangzihe
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzh/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id019
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/wzh/index.htm
+      sha256: a28fb56fa4eee56320ce422752bb145cafe0eecb0db551a245adaf01f19e6312
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/wangzihe
+    kind: fetch_or_parse_error
+    ref: wangzihe
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzh/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: ruc-ai · wangzihe · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: weiyake
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wyk/index.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id020
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/wyk/index.htm
+      sha256: eb327bee09d2075b948badb61c8802b0a904dc72a154bcc999f8b66ad321d5ee
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wyk/index.htm
+    current_source: https://ai.ruc.edu.cn/szdw/zrjs/wyk/index.htm
+    replacement:
+      old_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wyk/index.htm
+      new_url: https://ai.ruc.edu.cn/szdw/zrjs/wyk/index.htm
+      directory_url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/weiyake
+    kind: fetch_or_parse_error
+    ref: weiyake
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wyk/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: ruc-ai · weiyake · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: weizhewei
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id021
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/wzw/index.htm
+      sha256: c80c91f23988b5fff80054e794ae36690221e9b5be42e41853f756734c2b7135
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/weizhewei
+    kind: fetch_or_parse_error
+    ref: weizhewei
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: ruc-ai · weizhewei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: wenjirong
+  message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence: &id022
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+      sha256: 493f80c6ea621e035f25df24b58e9fca32db95225e0610a230b86b672e1ec202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/
+      sha256: e1d13ff9d5c5324da5304cc16f7e0fe902e02b881d71d2247cdf7888735d9c25
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/index.htm
+      sha256: 1064a3ec9a271897f6bf7d7cc7f24288f342b1d110e1908924e5887136d8b367
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20260727100.html
+      sha256: 3d90676067fa785d8b8a20df116954007ed54757f62f5ea651ffad8479e35438
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xwgg/xyxw/20261106001.html
+      sha256: f3e7ad4f3edfd9750b770ed4ba9946c2ceeab633da88eafee6f7c4b50db815b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/xsjz/20251126103.html
+      sha256: 0ade3dd8d1e60c08cb035f8f2b3b445a5063d3ab4a2f71e36419acec6211a483
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.ruc.edu.cn/szdw/zrjs/wjr/index.htm
+      sha256: 3e33b9c11bdd2bafee81328fec2b1949d3e590fc3c96a62e0271e52381095b5d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 10b40c1254530a46d1023ee9a396aff6adbc2848c4242ac6df7e0f7e4870d5ce
+    id: ruc/ai/fetch_or_parse_error/wenjirong
+    kind: fetch_or_parse_error
+    ref: wenjirong
+    original_message: '404 Client Error: Not Found for url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wjr/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: ruc-ai · wenjirong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

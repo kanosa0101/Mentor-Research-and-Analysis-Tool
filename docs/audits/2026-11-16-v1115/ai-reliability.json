@@ -1,0 +1,127 @@
+{
+  "audited_at": "2026-11-16T11:14:58.856192+00:00",
+  "network": {
+    "dns_seconds": 0.062,
+    "tls_seconds": 0.7,
+    "tls_version": "TLSv1.3",
+    "certificate_expiry": "2027-02-09T02:28:52Z",
+    "unauthenticated_models_http_status": 401,
+    "unauthenticated_models_seconds": 1.08
+  },
+  "budget": {
+    "before_requests": 3,
+    "after_requests": 6,
+    "diagnostic_requests": 3,
+    "before_input_chars": 6292,
+    "after_input_chars": 14635,
+    "daily_limit": 10
+  },
+  "experiments": [
+    {
+      "experiment": "baseline",
+      "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "input_chars": 2781,
+      "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "max_tokens": 6000,
+      "stream": true,
+      "thinking": null,
+      "reasoning_chars": 0,
+      "answer_chars": 0,
+      "finish_reason": null,
+      "published": false,
+      "http_status": 200,
+      "header_seconds": 10.498,
+      "content_type": "text/event-stream",
+      "first_line_seconds": 10.499,
+      "passed": false,
+      "error_type": "TimeoutError",
+      "reason": "total_deadline_90s",
+      "elapsed_seconds": 90.156
+    },
+    {
+      "experiment": "disabled",
+      "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "input_chars": 2781,
+      "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "max_tokens": 6000,
+      "stream": true,
+      "reasoning_effort": "none",
+      "reasoning_chars": 0,
+      "answer_chars": 250,
+      "finish_reason": "stop",
+      "published": false,
+      "http_status": 200,
+      "header_seconds": 2.187,
+      "content_type": "text/event-stream",
+      "first_line_seconds": 2.188,
+      "first_answer_seconds": 2.188,
+      "usage": {
+        "prompt_tokens": 1671,
+        "total_tokens": 1765,
+        "completion_tokens": 94,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 1664
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "done": true,
+      "validated_suggestions": 3,
+      "passed": true,
+      "elapsed_seconds": 5.307
+    },
+    {
+      "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "purpose": "new transport through real ai_review.check; no publication",
+      "published": false,
+      "passed": true,
+      "decision": "manual",
+      "validated_extracts": true,
+      "checks": 1,
+      "transport": {
+        "first_byte_seconds": 6.117,
+        "first_answer_seconds": 6.118,
+        "header_seconds": 6.117,
+        "elapsed_seconds": 13.512,
+        "response_bytes": 12059,
+        "mode": "stream",
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "input_chars": 2781,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "source_files": {
+        "ai_transport": "982909f246ff1cd25c9eba61b717f684eece92af94692655d7e8ba4211eb1d8c",
+        "ai_evidence": "70ec60cb23bcd44e88644e4000f8ee1d411e7bca97d55d62cd4ea3ced830a059",
+        "ai_review": "01905135532d95ffcb38adfac4bf99c28c9ba00e90a0822ce39da81f34d13726"
+      }
+    }
+  ],
+  "tests": {
+    "passed": 100,
+    "warnings": 1,
+    "command": "python -m pytest tests/test_ai_transport_v1115.py tests/test_maintenance_v16.py tests/test_automatic_review_v18.py -q"
+  },
+  "production_code_mutations": false,
+  "publication_mutations": false,
+  "sources": [
+    "https://ai.50x.energy/docs/api-reference",
+    "https://ai.50x.energy/docs/coding-agents",
+    "https://ai.50x.energy/assets/index-DuAMkDGu.js",
+    "https://api-docs.deepseek.com/guides/thinking_mode/"
+  ],
+  "limitations": [
+    "Only three live model requests; not a service availability guarantee",
+    "Default-mode stall and non-thinking success do not prove every prior timeout had the same cause",
+    "Live check returned manual and did not publish"
+  ],
+  "final_source_files": {
+    "ai_transport": "8746e52a433f9d1d6ec1833ee1074b18563180835871262d4010829b008a6d5d",
+    "ai_evidence": "70ec60cb23bcd44e88644e4000f8ee1d411e7bca97d55d62cd4ea3ced830a059",
+    "ai_review": "01905135532d95ffcb38adfac4bf99c28c9ba00e90a0822ce39da81f34d13726"
+  },
+  "post_live_check_change": "Added hostname gate for the already-tested provider/model pair. Actual production request parameters unchanged; different providers no longer receive an unverified reasoning_effort parameter. Additional regression passed; no fourth model request."
+}

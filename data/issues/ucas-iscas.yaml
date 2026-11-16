@@ -1,1 +1,1319 @@
-[]
+- kind: fetch_or_parse_error
+  ref: anjie
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/anjie
+    kind: fetch_or_parse_error
+    ref: anjie
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: ucas-iscas · anjie · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: baiyancheng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/baiyancheng
+    kind: fetch_or_parse_error
+    ref: baiyancheng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: ucas-iscas · baiyancheng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenlong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/chenlong
+    kind: fetch_or_parse_error
+    ref: chenlong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: ucas-iscas · chenlong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenshiteng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/chenshiteng
+    kind: fetch_or_parse_error
+    ref: chenshiteng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: ucas-iscas · chenshiteng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenyanyun
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/chenyanyun
+    kind: fetch_or_parse_error
+    ref: chenyanyun
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: ucas-iscas · chenyanyun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dingliping
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/dingliping
+    kind: fetch_or_parse_error
+    ref: dingliping
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: ucas-iscas · dingliping · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dingzhiming
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/dingzhiming
+    kind: fetch_or_parse_error
+    ref: dingzhiming
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: ucas-iscas · dingzhiming · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dongqian
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/dongqian
+    kind: fetch_or_parse_error
+    ref: dongqian
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: ucas-iscas · dongqian · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hexiaowei
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: &id009
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/hexiaowei
+    kind: fetch_or_parse_error
+    ref: hexiaowei
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: ucas-iscas · hexiaowei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: houpengpeng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/houpengpeng
+    kind: fetch_or_parse_error
+    ref: houpengpeng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: ucas-iscas · houpengpeng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jiaoli
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id011
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/jiaoli
+    kind: fetch_or_parse_error
+    ref: jiaoli
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: ucas-iscas · jiaoli · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jiaxiangkun
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/jiaxiangkun
+    kind: fetch_or_parse_error
+    ref: jiaxiangkun
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: ucas-iscas · jiaxiangkun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jinbeihong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/jinbeihong
+    kind: fetch_or_parse_error
+    ref: jinbeihong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: ucas-iscas · jinbeihong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lileisheng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/lileisheng
+    kind: fetch_or_parse_error
+    ref: lileisheng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: ucas-iscas · lileisheng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lingxiang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://is.cas.cn/yjsjy/dsxx/
+      sha256: 45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/
+      sha256: f0c21c9330276831dcf4d7c352eb4e656987f4cf3b333b79a8d006348506e976
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_1.html
+      sha256: e8dbfebcb2368879aa084ff41655026de97316be01f18366b063a1f59a4d7814
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_2.html
+      sha256: 3d9c87f65de77a9b431c193893aaa8471686c734885ac60bdabdc30811ad30cd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_3.html
+      sha256: bb7272f785ee24651ac7cd66a30ca06a16bc00b3f85b3abe563daab8d62b49e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index_4.html
+      sha256: 298f29d5048e6f50d7a187848a6db7000205318fbbc3afd0442c7234defe9c33
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_1.html
+      sha256: 5c5eab468bb8ed690d0227254d061044e7674068ce04b4679c85f84ca31efc15
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_2.html
+      sha256: 1a5189df05b702f835c74d09d3dc9944a07cc090168729ac7f5b5ef008166cb6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_3.html
+      sha256: a8755c9b7514d45df4926dcf1984438c6e62b18cb7b30f4f1dde36565cc1983c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index_4.html
+      sha256: 1138845ac049501a33577fa25bdde8921564c978e74c64750c4878556c4ffb3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/yjy/index.html
+      sha256: 7e8e38104f1b53366aee6cb920d62d9125ad8c1793632edc97d512eed40ccc61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://is.cas.cn/rcdw/fyjy/index.html
+      sha256: 403af1c09803edb220260ac29da42510ddd6a6710bd77428f6d96574bb7b6d55
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - supervisor
+    - subjects
+    - email
+    - research_direction_raw
+    previous_source: https://is.cas.cn/yjsjy/dsxx/
+    current_source: https://is.cas.cn/yjsjy/dsxx/
+    replacement:
+      old_url: https://is.cas.cn/yjsjy/dsxx/
+      new_url: https://is.cas.cn/yjsjy/dsxx/
+      directory_url: https://is.cas.cn/yjsjy/dsxx/
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644
+    id: ucas/iscas/fetch_or_parse_error/lingxiang
+    kind: fetch_or_parse_error
+    ref: lingxiang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: ucas-iscas · lingxiang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'

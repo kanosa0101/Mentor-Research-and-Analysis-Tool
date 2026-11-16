@@ -9,9 +9,29 @@ title: 教授
 email: huangd79@mail.sysu.edu.cn
 institutes:
 - 超算中心
-research_direction_raw: 高性能计算/并行计算系统与应用优化、高性能人工智能计算、科学数据并行处理与存储IO系统
-detail_url: https://cse.sysu.edu.cn/teacher
-profile_url: https://cse.sysu.edu.cn/teacher
+research_direction_raw: '高性能计算/并行计算系统与应用优化、高性能人工智能计算系统、科学数据并行处理与存储IO系统
+
+  Three key factors of system research计算机系统研究三个关键要素:
+
+  Abstractions抽象, Principles原理, Techniques技术.
+
+  项目组已研发系统：
+
+  1. StarHelix系列框架：面向超算平台的高效流式HPC-AI协同开发运行框架
+
+  ->国内外相关系统：Ray、Google Pathways、Parsl、Radical、DeepDriveMD、Colmena
+
+  ->助力药物设计专家团队，扩展超智融合药物设计工作流至1245万处理器核心
+
+  2. ParM:基于国产处理器的异构并行编程模型
+
+  ->国内外相关系统：Kokkos、RAJA
+
+  3. HeteroHC：基于GPU 的基因序列比对并行工作流
+
+  ->国内外相关系统：GATK HaplotypeCaller、Samtools、NVIDIA Clara Parabricks'
+detail_url: https://cse.sysu.edu.cn/teacher/Huangdan
+profile_url: https://cse.sysu.edu.cn/teacher/Huangdan
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -28,21 +48,52 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/Huangdan
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/Huangdan
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/Huangdan
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
+  office_address:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/Huangdan
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/Huangdan
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+office_address: 超算中心417A
+bio_raw: '黄聃，教授，2018年8月获得美国中佛罗里达大学计算机工程专业博士学位。2015年11月至2016年8月在美国橡树岭国家实验室从事研究工作。在国家超级计算广州中心从事超算和大数据、人工智能融合创新发展的技术、系统和应用研究和实现。研究成果发表在IEEE
+  TC, IEEE TPDS, SC, PPoPP,ICML, ACL, IPDPS, ICDCS, ICS, ICPP等期刊和会议。
+
+  欢迎有意报考中山大学的硕士生和博士生与我联系。
+
+  硕士培养路径：探索一个领域应用，研发一个系统软件，熟悉一个硬件设备（1+1+1）
+
+  博士培养路径：在硕士路径基础上，独立发现问题、诊断分析问题、提出技术方案、系统研发验证、论文撰写修改、PPT设计汇报、项目资料整理'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

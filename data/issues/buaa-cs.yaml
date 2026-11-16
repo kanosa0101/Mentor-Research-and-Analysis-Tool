@@ -1,1 +1,2334 @@
-[]
+- kind: fetch_or_parse_error
+  ref: aimingjing
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9216.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9216.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/9216.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9216.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/szdw/jcrc1.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/szdw/jcrc1.htm'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3236.htm
+      sha256: 163c0dd0ae151fdb0f5552aa9648d0f57fb55ff11189a5a0eb574c123e91026d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/9216.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/9216.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/aimingjing
+    kind: fetch_or_parse_error
+    ref: aimingjing
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9216.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: buaa-cs · aimingjing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: baixiao
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2669.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2669.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2669.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2669.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - phone
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2669.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2669.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/baixiao
+    kind: fetch_or_parse_error
+    ref: baixiao
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2669.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: buaa-cs · baixiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: baiyuebin
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2662.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2662.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2662.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2662.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    previous_source: http://scse.buaa.edu.cn/info/1078/2662.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2662.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/baiyuebin
+    kind: fetch_or_parse_error
+    ref: baiyuebin
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2662.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: buaa-cs · baiyuebin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: banyikun
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12266.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12266.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1546/12266.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12266.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3255.htm
+      sha256: 2ce28d41bc0ff988e4b09c78f934dbd91c71498512508c1fe81fd4a7d15f1c7c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1546/12266.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1546/12266.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/banyikun
+    kind: fetch_or_parse_error
+    ref: banyikun
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12266.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: buaa-cs · banyikun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: caoqinghua
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2665.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2665.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2665.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2665.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2665.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2665.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/caoqinghua
+    kind: fetch_or_parse_error
+    ref: caoqinghua
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2665.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: buaa-cs · caoqinghua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenjiaxin
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/10607.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/10607.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1546/10607.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/10607.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1546/10607.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1546/10607.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/chenjiaxin
+    kind: fetch_or_parse_error
+    ref: chenjiaxin
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/10607.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: buaa-cs · chenjiaxin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dubowen
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7285.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7285.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/7285.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7285.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/7285.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/7285.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/dubowen
+    kind: fetch_or_parse_error
+    ref: dubowen
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7285.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: buaa-cs · dubowen · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: gaoxiaopeng
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2671.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2671.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2671.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2671.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - phone
+    previous_source: http://scse.buaa.edu.cn/info/1078/2671.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2671.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/gaoxiaopeng
+    kind: fetch_or_parse_error
+    ref: gaoxiaopeng
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2671.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: buaa-cs · gaoxiaopeng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: gaoyang
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12184.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12184.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1546/12184.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12184.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id009
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3216.htm
+      sha256: da3348bc65aed1c01552dd071e1695d05b6ad3fe65ce08153bcb04b4ce330df9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1546/12184.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1546/12184.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/gaoyang
+    kind: fetch_or_parse_error
+    ref: gaoyang
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12184.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: buaa-cs · gaoyang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hanjun
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2675.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2675.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2675.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2675.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3225.htm
+      sha256: 5244c99e0e9fe1c4497ea49ca1a0f768cb3bc35e60fe704a1892741fd314e295
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2675.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2675.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/hanjun
+    kind: fetch_or_parse_error
+    ref: hanjun
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2675.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: buaa-cs · hanjun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: haoaimin
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2654.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2654.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2654.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2654.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id011
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2654.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2654.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/haoaimin
+    kind: fetch_or_parse_error
+    ref: haoaimin
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2654.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: buaa-cs · haoaimin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: huangdi
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7417.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7417.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/7417.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7417.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3219.htm
+      sha256: f6a42784c9afbfa7d80a5ec629d554ad816793bc3b8775f300b1834f0692b195
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/7417.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/7417.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/huangdi
+    kind: fetch_or_parse_error
+    ref: huangdi
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7417.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: buaa-cs · huangdi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: huhaimiao
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/8385.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/8385.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/8385.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/8385.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3237.htm
+      sha256: 50e46901c9698a29e2e8aeec69d9a0f5486fca0594e768ab4868aff64dc4f773
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/8385.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/8385.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/huhaimiao
+    kind: fetch_or_parse_error
+    ref: huhaimiao
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/8385.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: buaa-cs · huhaimiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hukai
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2676.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2676.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2676.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2676.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2676.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2676.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/hukai
+    kind: fetch_or_parse_error
+    ref: hukai
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2676.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: buaa-cs · hukai · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jiangbo
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9989.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9989.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/9989.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9989.htm'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/jiangbo
+    kind: fetch_or_parse_error
+    ref: jiangbo
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/9989.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3240.htm
+      sha256: fbab122b53b868422705b4b0875dbfc90c7b6714e7309e21f1aa9b3a2ac5b3b0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: buaa-cs · jiangbo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: jianghongxu
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/6393.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/6393.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/6393.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/6393.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    previous_source: http://scse.buaa.edu.cn/info/1078/6393.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/6393.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/jianghongxu
+    kind: fetch_or_parse_error
+    ref: jianghongxu
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/6393.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: buaa-cs · jianghongxu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jiechenhao
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12279.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12279.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1546/12279.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12279.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id016
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3224.htm
+      sha256: 5c204ba543ac1f0078880fcbbdec4be92dc24a9e1420a8f7d9aa61c4264cb68c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1546/12279.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1546/12279.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/jiechenhao
+    kind: fetch_or_parse_error
+    ref: jiechenhao
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1546/12279.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: buaa-cs · jiechenhao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: langbo
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2660.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2660.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2660.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2660.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id017
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3297.htm
+      sha256: 2cda6a0daaf9990ed2125cc3ea3218b5349151f8e711c3ea5f05471ff9025d4a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2660.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2660.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/langbo
+    kind: fetch_or_parse_error
+    ref: langbo
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2660.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: buaa-cs · langbo · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lengbiao
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7291.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7291.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/7291.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7291.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id018
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3244.htm
+      sha256: 4c14f605af834f3dc554f3179cae0c6b17ac2b1d9a11bcc82170d61616ed5daf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/7291.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/7291.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/lengbiao
+    kind: fetch_or_parse_error
+    ref: lengbiao
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7291.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: buaa-cs · lengbiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liangsheng
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5403.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5403.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/5403.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5403.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id019
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    previous_source: http://scse.buaa.edu.cn/info/1078/5403.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/5403.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/liangsheng
+    kind: fetch_or_parse_error
+    ref: liangsheng
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5403.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: buaa-cs · liangsheng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liangxiaohui
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2678.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2678.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/2678.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2678.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id020
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/2678.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/2678.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/liangxiaohui
+    kind: fetch_or_parse_error
+    ref: liangxiaohui
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/2678.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: buaa-cs · liangxiaohui · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: libo
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5211.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5211.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/5211.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5211.htm'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/libo
+    kind: fetch_or_parse_error
+    ref: libo
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/5211.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: buaa-cs · libo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: lijia
+  message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7295.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7295.htm'
+    evidence:
+    - url: http://scse.buaa.edu.cn/info/1078/7295.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7295.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id021
+    - url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      sha256: c170222f6484af1795cc05a426f4a3d0ae145bfd7afbc7b1e7bbfbddc0710939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/
+      sha256: dc1d41d3ffa6c8a6d763276412f66f28b15c4e97e4e82983dc66a14ccd59d33b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3268.htm
+      sha256: 54050223a4035b88aeebe079ede1aa7974e881eb5fc6dbba08f4a361462bfe80
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3321.htm
+      sha256: 05a388a789058a4342b0443b0cd1e5ef9fb459184523cfb7e3234623249a8679
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3262.htm
+      sha256: 6fcf01b76b829e888621cbcf4d01986019c95d497d84bd8d538f4a4b4f2e400b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3232.htm
+      sha256: 13e5a6654eddafa3b0e8d5a643b1d886aa96595ce4f51747a10a5ae696b875e3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3229.htm
+      sha256: 44b9fe74705d43d460efaf1c7b4e09fb7077454db0ddde2d47842b3214cb1d6d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3309.htm
+      sha256: e59489571b383ca1c2860595545c47a9a7fdfe07d22031842d9000162e27458b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3234.htm
+      sha256: f995a5050a128cf47a3fbeb0a68b173e934565bd31671956dcc34e25e774c368
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3223.htm
+      sha256: 7ba2efab1cca5c1b64f894544f319ab04a490dc5591d0da8a18135d50253de5c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3253.htm
+      sha256: 0c9c5d80d89cd6c695f70a15d170408ef4868b0ed161a66e1ed8867449d0c9d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3317.htm
+      sha256: 2af5166b20f709f101dc7d18e38945c07009e466d8a0e6ccfcb58738eebc567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3270.htm
+      sha256: a6b56f9992960ae3e223afff13e8b51b5499e474c992ceed0db2e9ed545a72bf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3252.htm
+      sha256: 9485dc7b017b49190a988581b2cd937f2f451509edca2a4f13ac78b815427f3d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3231.htm
+      sha256: 530363b21027a54b78bf655d93c187d9d4bec47c31236f01c15d7207616d8e93
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scse.buaa.edu.cn/info/1131/3245.htm
+      sha256: 52d444856844458615e58b9ec820618af743e3ff5c8ab8a161f582cee3c6a9a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - supervisor
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - research_direction_raw
+    previous_source: http://scse.buaa.edu.cn/info/1078/7295.htm
+    current_source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    replacement:
+      old_url: http://scse.buaa.edu.cn/info/1078/7295.htm
+      new_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      directory_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: b216d8db3405b40e2f3f3f6330c79193cf43660a6b9685a310302dba7c26ea8b
+    id: buaa/cs/fetch_or_parse_error/lijia
+    kind: fetch_or_parse_error
+    ref: lijia
+    original_message: '404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/7295.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: buaa-cs · lijia · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'

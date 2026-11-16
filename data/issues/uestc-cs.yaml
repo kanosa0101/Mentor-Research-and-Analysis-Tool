@@ -1,1 +1,1068 @@
-[]
+- kind: fetch_or_parse_error
+  ref: BakhadyrKhoussainov
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/13650.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/js_sz.jsp?urltype=tree.TreeTempUrl&wbtreeid=1081
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源未返回可核对的HTML栏目
+    - url: https://www.scse.uestc.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源未返回可核对的HTML栏目
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/BakhadyrKhoussainov
+    kind: fetch_or_parse_error
+    ref: BakhadyrKhoussainov
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/13650.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/js_sz.jsp?urltype=tree.TreeTempUrl&wbtreeid=1081
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源未返回可核对的HTML栏目
+    - url: https://www.scse.uestc.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源未返回可核对的HTML栏目
+    - url: https://www.scse.uestc.edu.cn/info/1081/13650.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 384
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · BakhadyrKhoussainov · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/13650.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: ToruTakisaka
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/15372.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/ToruTakisaka
+    kind: fetch_or_parse_error
+    ref: ToruTakisaka
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/15372.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/15372.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 387
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · ToruTakisaka · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/15372.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: caihongbin
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11644.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/caihongbin
+    kind: fetch_or_parse_error
+    ref: caihongbin
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11644.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11644.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 388
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · caihongbin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11644.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: caishimin
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11284.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/caishimin
+    kind: fetch_or_parse_error
+    ref: caishimin
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11284.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11284.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 389
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · caishimin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11284.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: caocheng
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11280.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/caocheng
+    kind: fetch_or_parse_error
+    ref: caocheng
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11280.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11280.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 390
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · caocheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11280.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: cengjinquan
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11285.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/cengjinquan
+    kind: fetch_or_parse_error
+    ref: cengjinquan
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11285.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11285.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 391
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · cengjinquan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11285.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: cengwei
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11298.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/cengwei
+    kind: fetch_or_parse_error
+    ref: cengwei
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11298.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11298.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 392
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · cengwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11298.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: changzheng
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/10956.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/changzheng
+    kind: fetch_or_parse_error
+    ref: changzheng
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/10956.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/10956.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 393
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · changzheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/10956.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenaiguo
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11379.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenaiguo
+    kind: fetch_or_parse_error
+    ref: chenaiguo
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11379.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11379.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 394
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenaiguo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11379.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenduanbing
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11926.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenduanbing
+    kind: fetch_or_parse_error
+    ref: chenduanbing
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11926.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11926.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 395
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenduanbing · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11926.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenfu
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11928.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenfu
+    kind: fetch_or_parse_error
+    ref: chenfu
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11928.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11928.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 396
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenfu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11928.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chengwei
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11375.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chengwei
+    kind: fetch_or_parse_error
+    ref: chengwei
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11375.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11375.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 397
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chengwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11375.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenhong
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11209.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenhong
+    kind: fetch_or_parse_error
+    ref: chenhong
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11209.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11209.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 398
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenhong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11209.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenjuan
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/10954.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenjuan
+    kind: fetch_or_parse_error
+    ref: chenjuan
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/10954.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/10954.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 399
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenjuan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/10954.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenkun
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11929.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenkun
+    kind: fetch_or_parse_error
+    ref: chenkun
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11929.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11929.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 400
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenkun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11929.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenlisi
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11352.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenlisi
+    kind: fetch_or_parse_error
+    ref: chenlisi
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11352.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11352.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 401
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenlisi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11352.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenruidong
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11930.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenruidong
+    kind: fetch_or_parse_error
+    ref: chenruidong
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11930.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11930.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 402
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenruidong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11930.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenting
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11931.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenting
+    kind: fetch_or_parse_error
+    ref: chenting
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11931.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11931.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 403
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenting · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11931.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: chenwenyu
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11419.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/chenwenyu
+    kind: fetch_or_parse_error
+    ref: chenwenyu
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11419.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11419.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 404
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · chenwenyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11419.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: cuijinzhong
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11530.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/cuijinzhong
+    kind: fetch_or_parse_error
+    ref: cuijinzhong
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11530.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11530.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 405
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · cuijinzhong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11530.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: daibo
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11208.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/daibo
+    kind: fetch_or_parse_error
+    ref: daibo
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11208.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11208.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 406
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · daibo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11208.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'
+- kind: fetch_or_parse_error
+  ref: dengjian
+  message: Source did not return HTTP 200
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 来源状态或体积异常
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11932.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+  automatic_check:
+    status: error
+    reason: 'HTTP 202: 来源未返回可核对的导师正文；已依据本轮真实请求记录明确状态，未重复抓取。'
+    reason_code: http_unexpected_status
+    category_label: 来源未返回正文
+    next_action: discover_official_source
+    action_label: 核验返回状态并寻找官方正文入口
+    consecutive_failures: 1
+    repair_signature: 876f13b95d97eb4b8ebd25079942d0abd7e480706e0661ef0edae978b703e1c5
+    id: uestc/cs/fetch_or_parse_error/dengjian
+    kind: fetch_or_parse_error
+    ref: dengjian
+    original_message: Source did not return HTTP 200
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://www.scse.uestc.edu.cn/info/1081/11932.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 来源状态或体积异常
+    - url: https://www.scse.uestc.edu.cn/info/1081/11932.htm
+      http_status: 202
+      observation_source: saved_request_log
+      request_log_sha256: 3aa2bfcc2aae6c4ba3470a5be9bfd1b949d044a1f72a984f14bd66396467edf9
+      request_log_line: 407
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: uestc-cs · dengjian · fetch_or_parse_error
+    pending_since: '2026-11-16T10:20:37+00:00'
+    last_success: null
+    source_urls:
+      profile: https://www.scse.uestc.edu.cn/info/1081/11932.htm
+    previous_diagnostic_reason: 来源状态或体积异常
+    diagnostic_refined_at: '2026-11-16T11:49:54+00:00'

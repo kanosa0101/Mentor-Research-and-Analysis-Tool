@@ -1,1 +1,212 @@
-[]
+- kind: fetch_or_parse_error
+  ref: KaganIrez
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/
+      sha256: dff695cfe6d3e002cb602a7a5c3eb519f853bd547a5d9161aac7f46d19417e47
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=1
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2865/list.htm
+      sha256: 9fd9cd50b7ede45f640e7dc412cae0e5bc431fafc1a88f90f616c074bbcc19f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2026/1113/c2858a1129832/page.htm
+      sha256: 1bb596a656b11f139193f2580b3d1718099a849a9c43ba3796049287942eef21
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2017/0426/c2863a23763/page.htm
+      sha256: 2ef7e8dd0c382e79230e6695eb8be90b7d4a897dff2be268b2799bd3b303a11d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/Kagan Irez/main.htm
+      sha256: 61368f81a607acaac82a9e8ead56f0a72316b755ed6485a3537dd7fc87be0d79
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 6a7e7933566458477e4ab1a27dfea263fd00b5a2c112e170fb065402f97fca5e
+    id: shanghaitech/cs/fetch_or_parse_error/KaganIrez
+    kind: fetch_or_parse_error
+    ref: KaganIrez
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: shanghaitech-cs · KaganIrez · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: LaurentKneip
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id002
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/
+      sha256: dff695cfe6d3e002cb602a7a5c3eb519f853bd547a5d9161aac7f46d19417e47
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=1
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2865/list.htm
+      sha256: 9fd9cd50b7ede45f640e7dc412cae0e5bc431fafc1a88f90f616c074bbcc19f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2026/1113/c2858a1129832/page.htm
+      sha256: 1bb596a656b11f139193f2580b3d1718099a849a9c43ba3796049287942eef21
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2017/0426/c2863a23763/page.htm
+      sha256: 2ef7e8dd0c382e79230e6695eb8be90b7d4a897dff2be268b2799bd3b303a11d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/lkneip/main.htm
+      sha256: 940a758df46390f0394146f05e8e5cd367b01d33f535a43938aba74b55b84dc0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 6a7e7933566458477e4ab1a27dfea263fd00b5a2c112e170fb065402f97fca5e
+    id: shanghaitech/cs/fetch_or_parse_error/LaurentKneip
+    kind: fetch_or_parse_error
+    ref: LaurentKneip
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: shanghaitech-cs · LaurentKneip · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: caoying
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id003
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/
+      sha256: dff695cfe6d3e002cb602a7a5c3eb519f853bd547a5d9161aac7f46d19417e47
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=1
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2865/list.htm
+      sha256: 9fd9cd50b7ede45f640e7dc412cae0e5bc431fafc1a88f90f616c074bbcc19f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2026/1113/c2858a1129832/page.htm
+      sha256: 1bb596a656b11f139193f2580b3d1718099a849a9c43ba3796049287942eef21
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2017/0426/c2863a23763/page.htm
+      sha256: 2ef7e8dd0c382e79230e6695eb8be90b7d4a897dff2be268b2799bd3b303a11d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/caoying1/main.htm
+      sha256: 21592f8ec3d3e19d596c728a4b07573dab460f78008f1e1f09f05e70f57d0e21
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 6a7e7933566458477e4ab1a27dfea263fd00b5a2c112e170fb065402f97fca5e
+    id: shanghaitech/cs/fetch_or_parse_error/caoying
+    kind: fetch_or_parse_error
+    ref: caoying
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: shanghaitech-cs · caoying · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: jiangzhihao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id004
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=0
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/
+      sha256: dff695cfe6d3e002cb602a7a5c3eb519f853bd547a5d9161aac7f46d19417e47
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/szdwx/list.htm?col=1
+      sha256: 7d6ab6336b59af1976e108bdcdee51905f8315b0ac7086bee27262ac63d31de9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2865/list.htm
+      sha256: 9fd9cd50b7ede45f640e7dc412cae0e5bc431fafc1a88f90f616c074bbcc19f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2026/1113/c2858a1129832/page.htm
+      sha256: 1bb596a656b11f139193f2580b3d1718099a849a9c43ba3796049287942eef21
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/2017/0426/c2863a23763/page.htm
+      sha256: 2ef7e8dd0c382e79230e6695eb8be90b7d4a897dff2be268b2799bd3b303a11d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://sist.shanghaitech.edu.cn/jiangzhh/main.htm
+      sha256: 65bb08b3bdd18a602c06cb4ab1cc22e55a33f5298f5e8c50a814363f094c1371
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 6a7e7933566458477e4ab1a27dfea263fd00b5a2c112e170fb065402f97fca5e
+    id: shanghaitech/cs/fetch_or_parse_error/jiangzhihao
+    kind: fetch_or_parse_error
+    ref: jiangzhihao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: shanghaitech-cs · jiangzhihao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

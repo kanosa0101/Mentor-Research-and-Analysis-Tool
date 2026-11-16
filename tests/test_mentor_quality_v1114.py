@@ -62,7 +62,8 @@ def test_recurring_check_reopens_failure_without_resetting_pending_since(root):
     failed = quality.run(root, fetcher=lambda _: body(name='其他教师'), now=NOW+timedelta(days=8))
     assert failed['error'] == failed['reopened'] == 1
     since = failed['results'][0]['pending_since']
-    retry = quality.run(root, fetcher=lambda _: body(name='其他教师'), now=NOW+timedelta(days=9))
+    assert quality.run(root, fetcher=lambda _: pytest.fail('identity conflict cools down'), now=NOW+timedelta(days=9))['attempted'] == 0
+    retry = quality.run(root, fetcher=lambda _: body(name='其他教师'), now=NOW+timedelta(days=15))
     assert retry['results'][0]['pending_since'] == since
     assert retry['results'][0]['last_success'] == NOW.isoformat(timespec='seconds')
     assert not quality.load_yaml(root / 'data/issues/test-cs.yaml')[0]['resolved']

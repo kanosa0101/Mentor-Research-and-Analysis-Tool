@@ -3,6 +3,13 @@ dept: iscas
 dept_name: 软件研究所
 base_url: https://is.cas.cn
 hook: ucas_iscas
+profile_directory_format: faculty_table
+profile_table_columns:
+  name: 0
+  supervisor: 1
+  subjects: 2
+  research_direction_raw: 3
+  email: 4
 list:
   url: https://is.cas.cn/yjsjy/dsxx/
   method: GET

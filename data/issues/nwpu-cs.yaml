@@ -1,1 +1,168 @@
-[]
+- kind: fetch_or_parse_error
+  ref: chenchao
+  message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2007010074.html'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2007010074.html'
+    evidence: &id001
+    - url: https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
+      sha256: ebda4df60d3d4a1e112a8beaf3fdbea119fda4a36144248cbfaf1ed4804b46f9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/
+      sha256: 6116fbfc5be5e8ef661d679e21c02011f706dc879b18e9e85f5bc2f8fee2268e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/xygk/zmjs.htm
+      sha256: 3c6161d7b372fe05e6875fe515c5c1aff94e2f73b2a265881e6a231254c0408b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/szdw.htm
+      sha256: 7fdbdb5e3f81de3cef86654305ecac52f90cae4bbaf666ef081b51b04b53ebb1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30635.htm
+      sha256: e6845a5e53aa5e4ddf92c2b6c34cb2cbf58eae04be416088eeae4514c507567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30655.htm
+      sha256: 9e9e79f85f689a1c63cb23aea3bd6fdcb0241efee15eff638a97b93455e50c03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/27875.htm
+      sha256: d69b5d824e204a8ff62afc915342be00b2536e8273664309e75498d1dda935de
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://teacher.nwpu.edu.cn/2007010074.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2007010074.html'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2007010074.html'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 73c2a5a8faa96bbe3388bcf8c720106344e8a65bf31b9376f11a7d3d79ca8766
+    id: nwpu/cs/fetch_or_parse_error/chenchao
+    kind: fetch_or_parse_error
+    ref: chenchao
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2007010074.html'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: nwpu-cs · chenchao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenjinchao
+  message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2016010219.html'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2016010219.html'
+    evidence: &id002
+    - url: https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
+      sha256: ebda4df60d3d4a1e112a8beaf3fdbea119fda4a36144248cbfaf1ed4804b46f9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/
+      sha256: 6116fbfc5be5e8ef661d679e21c02011f706dc879b18e9e85f5bc2f8fee2268e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/xygk/zmjs.htm
+      sha256: 3c6161d7b372fe05e6875fe515c5c1aff94e2f73b2a265881e6a231254c0408b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/szdw.htm
+      sha256: 7fdbdb5e3f81de3cef86654305ecac52f90cae4bbaf666ef081b51b04b53ebb1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30635.htm
+      sha256: e6845a5e53aa5e4ddf92c2b6c34cb2cbf58eae04be416088eeae4514c507567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30655.htm
+      sha256: 9e9e79f85f689a1c63cb23aea3bd6fdcb0241efee15eff638a97b93455e50c03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/27875.htm
+      sha256: d69b5d824e204a8ff62afc915342be00b2536e8273664309e75498d1dda935de
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://teacher.nwpu.edu.cn/2016010219.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2016010219.html'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2016010219.html'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 73c2a5a8faa96bbe3388bcf8c720106344e8a65bf31b9376f11a7d3d79ca8766
+    id: nwpu/cs/fetch_or_parse_error/chenjinchao
+    kind: fetch_or_parse_error
+    ref: chenjinchao
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2016010219.html'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: nwpu-cs · chenjinchao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cuihengfei
+  message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html'
+    evidence: &id003
+    - url: https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
+      sha256: ebda4df60d3d4a1e112a8beaf3fdbea119fda4a36144248cbfaf1ed4804b46f9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/
+      sha256: 6116fbfc5be5e8ef661d679e21c02011f706dc879b18e9e85f5bc2f8fee2268e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/xygk/zmjs.htm
+      sha256: 3c6161d7b372fe05e6875fe515c5c1aff94e2f73b2a265881e6a231254c0408b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/snew/szdw.htm
+      sha256: 7fdbdb5e3f81de3cef86654305ecac52f90cae4bbaf666ef081b51b04b53ebb1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30635.htm
+      sha256: e6845a5e53aa5e4ddf92c2b6c34cb2cbf58eae04be416088eeae4514c507567e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/30655.htm
+      sha256: 9e9e79f85f689a1c63cb23aea3bd6fdcb0241efee15eff638a97b93455e50c03
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jsj.nwpu.edu.cn/info/1600/27875.htm
+      sha256: d69b5d824e204a8ff62afc915342be00b2536e8273664309e75498d1dda935de
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://teacher.nwpu.edu.cn/2017030108.html
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 73c2a5a8faa96bbe3388bcf8c720106344e8a65bf31b9376f11a7d3d79ca8766
+    id: nwpu/cs/fetch_or_parse_error/cuihengfei
+    kind: fetch_or_parse_error
+    ref: cuihengfei
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: nwpu-cs · cuihengfei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

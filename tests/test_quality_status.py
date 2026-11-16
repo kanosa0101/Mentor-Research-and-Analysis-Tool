@@ -83,3 +83,19 @@ def test_missing_pending_clock_or_recheck_schedule_is_unknown_not_fabricated_ove
     value = refresh(tmp_path, NOW)
     assert len(value['incomplete']) == 4 and value['summary']['overdue'] == 0
     assert all(r['status'] == 'unknown' and r['opened_at'] is None and r['due_at'] is None for r in value['active'])
+
+
+def test_reason_groups_include_unattempted_backlog_without_claiming_evidence(tmp_path):
+    save(tmp_path, 'cache/policy_revalidation/state.json', {'policies': {}})
+    save(tmp_path, 'cache/mentor_quality/state.json', {'records': {
+        'm': dict(status='pending', reason_code='http_not_found', category_label='旧页面不存在',
+                  next_action='discover_official_source', action_label='发现替代官方来源',
+                  pending_since=(NOW-timedelta(hours=26)).isoformat(),
+                  source_urls={'profile': 'https://example.edu.cn/old.htm'})}})
+    first = refresh(tmp_path, NOW)
+    assert first['breakdown'] == {'reasons': {'http_not_found': 1},
+                                 'actions': {'discover_official_source': 1}, 'never_attempted': 1}
+    row = first['active'][0]
+    assert row['overdue'] and row['last_attempt_at'] is None and row['replacement'] is None
+    assert row['action_label'] == '发现替代官方来源'
+    assert refresh(tmp_path, NOW+timedelta(hours=2))['active'][0]['fingerprint'] == row['fingerprint']

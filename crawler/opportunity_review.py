@@ -194,29 +194,60 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
         return None
 
 
+def replaced_sources(draft):
+    """Only a complete recorded migration chain can retire an old candidate URL."""
+    chain = draft.get('source_replacements') or []
+    if not isinstance(chain, list) or not chain or not isinstance(chain[-1], dict) or chain[-1].get('new_url') != draft.get('source_url'):
+        return set()
+    previous, originals = None, set()
+    for row in chain:
+        if (not isinstance(row, dict) or not row.get('original_url') or not row.get('new_url') or
+            previous is not None and previous != row['original_url'] or
+            any(not isinstance(row.get(key), str) or not re.fullmatch(r'[a-f0-9]{64}', row[key]) for key in ('old_sha', 'new_sha'))):
+            return set()
+        try:
+            if datetime.fromisoformat(row['adopted_at']).tzinfo is None:
+                return set()
+        except (KeyError, TypeError, ValueError):
+            return set()
+        originals.add(row['original_url'])
+        previous = row['new_url']
+    return originals
+
+
 def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=fetch_pdf, refresh=False, now=None):
     """Fetch new/failed/24h-old evidence, preserving human fields; refresh bypasses age."""
     with output_lock(queue_path):
         now = now or datetime.now(timezone.utc)
         queue = read_queue(queue_path)
         drafts = {d['source_url']: d for d in queue['drafts']}
+        migrated = {url: d for d in drafts.values() for url in replaced_sources(d)}
         counts = dict(total=0, new=0, fetched=0, reused=0, source_errors=0, needs_pdf_review=0)
         for candidate in monitoring['candidates']:
             url = candidate['url']
+            replaced = migrated.get(url)
+            if replaced and (candidate['school'], candidate['dept'], extraction.compact(candidate['title'])) == (
+                replaced['item']['school_id'], replaced['item']['dept_id'], extraction.compact(replaced['item']['title'])):
+                counts['retired_candidates'] = counts.get('retired_candidates', 0) + 1
+                continue
             if url not in drafts:
                 item = {k: '' for k in opportunities.TEXT}
                 item.update({k: None for k in opportunities.YEARS})
                 item.update({k: [] for k in opportunities.LISTS})
                 key = hashlib.sha256(url.encode('utf-8')).hexdigest()[:20]
+                if any(d['id'] == key for d in drafts.values()):
+                    # An old URL can later host a different announcement. Preserve
+                    # the migrated record ID while giving the new title its own ID.
+                    key = hashlib.sha256((url + '\n' + candidate['title']).encode('utf-8')).hexdigest()[:20]
                 item.update(id='activity-' + key, title=candidate['title'], source_url=url,
                             school_id=candidate['school'], dept_id=candidate['dept'], unit=candidate['unit'])
                 drafts[url] = dict(id=key, source_url=url, listing_url=candidate['source'],
                                    first_seen=candidate['first_seen'], item=item, quotes=[])
                 counts['new'] += 1
             elif candidate['source'] != drafts[url]['listing_url']:
-                migrated = dict(drafts[url], listing_url=candidate['source'])
+                relisted = dict(drafts[url], listing_url=candidate['source'])
                 try:
-                    check_source(migrated, configs)
+                    check_source(relisted, configs)
                     drafts[url]['listing_url'] = candidate['source']
                 except ValueError:
                     pass  # An untrusted replacement cannot erase the previous provenance.

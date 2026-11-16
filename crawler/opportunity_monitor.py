@@ -20,6 +20,8 @@ EXCLUDED = ('中学生', '中小学', '青少年', '奥林匹克', '出国', '�
 
 
 def activity_title(title):
+    if title.strip() in (*ACTIVITIES, '科技创新实践课程', '夏令营报名', '冬令营报名'):
+        return False
     recommendation = any(word in title for word in ('推免', '推荐免试')) and any(word in title for word in ('报名', '招收', '接收'))
     return (any(word in title for word in ACTIVITIES) or recommendation) and not any(word in title for word in EXCLUDED)
 

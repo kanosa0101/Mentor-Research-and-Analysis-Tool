@@ -9,9 +9,23 @@ title: 副教授
 email: zengkun2@mail.sysu.edu.cn
 institutes:
 - 量子计算与软件研究所
-research_direction_raw: 1.  计算机视觉和机器学习
-detail_url: https://cse.sysu.edu.cn/teacher
-profile_url: https://cse.sysu.edu.cn/teacher
+research_direction_raw: '1.  计算机视觉和机器学习
+
+  -- Object Recognition and Segmentation
+
+  -- Deep Learning and Image Stylization
+
+  -- 手写体识别, 车牌识别等
+
+  2.  医学影像分析
+
+  -- Deep Learning and Medical Image Segmentation
+
+  3.  金融大数据分析
+
+  -- 时序分析, 统计分析, 模式分析等'
+detail_url: https://cse.sysu.edu.cn/teacher/ZengKun
+profile_url: https://cse.sysu.edu.cn/teacher/ZengKun
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -33,21 +47,39 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ZengKun
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ZengKun
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ZengKun
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
+  office_address:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/ZengKun
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+office_address: Building of School of Software A21
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

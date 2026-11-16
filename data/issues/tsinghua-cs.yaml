@@ -1,1 +1,41 @@
-[]
+- kind: fetch_or_parse_error
+  ref: aihaizhou
+  message: '404 Client Error: Not Found for url: https://www.cs.tsinghua.edu.cn/info/1116/3537.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://www.cs.tsinghua.edu.cn/info/1116/3537.htm'
+    evidence: &id001
+    - url: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+      sha256: 915b31a143aea99c69561fb62177e1a268b2562b68a10afc3f65c449fedff73d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.tsinghua.edu.cn/
+      sha256: e034820bd028d1694f488133c733c789e25f514a0d2edfcf4e5d69957eac040b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www.cs.tsinghua.edu.cn/info/1088/7370.htm
+      sha256: 8b69f3d3c3eb21d6acba5559dfe7c401be194dd5dbe5bc9dfc42c541b63aa944
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://www.cs.tsinghua.edu.cn/info/1116/3537.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 974bf3036f214313ec9852fee5c47199ec2d051c5c630b0cf420a01f04bb4c2e
+    id: tsinghua/cs/fetch_or_parse_error/aihaizhou
+    kind: fetch_or_parse_error
+    ref: aihaizhou
+    original_message: '404 Client Error: Not Found for url: https://www.cs.tsinghua.edu.cn/info/1116/3537.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: tsinghua-cs · aihaizhou · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

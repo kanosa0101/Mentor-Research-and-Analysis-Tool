@@ -8,8 +8,8 @@ status: enriched
 title: 副教授
 email: shenweiran@ruc.edu.cn
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
@@ -26,6 +26,36 @@ provenance:
     confidence: auto
   email:
     origin: crawled
-    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/swr/index.htm
-    fetched_at: '2026-09-04'
+    source: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/swr/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: '返回列表
+
+  邮箱：shenweiran@ruc.edu.cn
+
+  个人网页：--
+
+  沈蔚然本科毕业于清华大学电子工程系，2019年于清华大学交叉信息研究院获博士学位，2019年至2020年于卡内基梅隆大学担任博士后研究员。主要研究方向为多智能体系统、博弈论、机制设计和机器学习，在相关领域国际会议及期刊发表高水平论文四十余篇，出版英文专著2本，中文教材2本。担任AAAI、WWW、IJCAI等多个国际会议的高级程序委员会委员、领域主席，以及AIJ、JET、TKDE等多个期刊的审稿人。现担任CCF理论计算机专委、计算经济学专委执行委员，中国运筹学会博弈论分会理事等职务。在机制设计方面的研究成果已在百度、字节跳动、快手等互联网平台落地实现。'
+research_direction_raw: 多智能体系统、博弈论、机制设计和机器学习，在相关领域国际会议及期刊发表高水平论文四十余篇，出版英文专著2本，中文教材2本
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

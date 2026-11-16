@@ -80,6 +80,8 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 | 政策证据再确认 | `crawler/policy_revalidation.py`、`crawler/admissions_util.py`、`cache/policy_revalidation/` | 版本、原句和附件完整一致才续核；保留原人工日期，历史政策不冒充本届要求 |
 | 候选查询 | `/api/mentor-candidates` → `crawler/public_discovery.py`；按ID读取 → `public_catalog.py` | 邮箱/资格/职称在分页前过滤；总数、前端回退、旧偏好兼容一致 |
 | 活动发现 | `sites/opportunities.yaml`、`opportunity_monitor.py`、`source_discovery.py` | 官方同机构栏目经父子来源复核可自动接入监测；栏目准入不等于活动发布 |
+| 失效来源恢复 | `mentor_recovery.py`、`opportunity_recovery.py` | 按原因选择退避、官方目录发现、解析适配或人工核对；名称和独立身份依据校验，保留旧新来源证据；迁移不覆盖人工字段、不直接发布 |
+| AI传输与故障分流 | `ai_transport.py`、`automatic_review.py` | 共用预算、受限流式回答、稳定错误码；服务故障与事实冲突分开处理 |
 | 核验发布 | `opportunity_review.py`、`automatic_review.py`、`ai_evidence.py`、`review_queue.py` | 官方事实门禁与产品归类门禁都通过才分发；AI不能凭标题猜主办层级 |
 | 更新与推送 | `run_review_pipeline.py`、`push_util.py`、`dispatch_updates.py`、`opportunity-sw.js` | 活动API、列表、更新记录、订阅推送使用同一公开范围 |
 | 维护告警 | `crawler/quality_status.py`、`maintenance_push.py`、`cache/quality-alerts.json` | 连续等待不重置，缺失任务状态不报健康；维护通知与学生更新订阅分离 |
@@ -94,7 +96,9 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 
 v1.11.4 候选资料的专项结果：机会监测配置 74 项；原 30 条积压政策完成证据再确认，现有 111 条均为 2027 年度；原 67 条资料问题解决 46 条、保留 21 条。新增栏目中的历史公告不计作当前机会，本轮没有新增可确认面向 2028 届的正在报名项目。逐条证据见[政策](docs/audits/2026-11-16/policy-revalidation.md)、[导师](docs/audits/2026-11-16/mentor-quality.md)和[来源](docs/audits/2026-11-16/opportunity-sources.md)。首次生产自动扫描可能发现原台账之外的新问题，须另计。
 
-Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证及部署状态见[v1.11.4记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)。内部走查不替代用户体验验收。
+v1.11.5 对随后暴露的419条积压完成逐项处理（原411、新增8）：155条恢复，264条保留明确原因和后续动作；103条实际迁移到核验过的官方来源。AI传输、目录发现、名册翻页及故障退避改进的证据分别见[资料台账](docs/audits/2026-11-16-v1115/backlog.md)和[AI诊断](docs/audits/2026-11-16-v1115/ai-reliability.md)。当期活动没有新增足够证据可发布的2028届项目，不能把目录发现数作为机会数。
+
+Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证及部署状态见[v1.11.5记录](deploy/DELIVERY_V1.11.5_2026-11-16.md)。内部走查不替代用户体验验收。
 
 ## 文档阅读顺序
 

@@ -73,6 +73,11 @@ def _merge(old, new):
 
 def parse_detail(cfg, html, url):
     from crawler.email_util import normalize_email
+    if cfg.get('_expected_name') and cfg.get('profile_directory_format'):
+        from crawler.mentor_recovery import directory_fields
+        parsed, _ = directory_fields(cfg, html, cfg['_expected_name'])
+        if parsed:
+            return parsed
 
     if UCAS_PEOPLE not in url:
         return {}

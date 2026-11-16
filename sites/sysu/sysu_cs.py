@@ -74,4 +74,34 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
-    return {}
+    soup = BeautifulSoup(html, 'html.parser')
+    card = soup.select_one('article.node--type-teacher .teacherinfo')
+    if card is None or card.select_one('h1') is None:
+        return {}
+    result = {'name': card.select_one('h1').get_text(strip=True)}
+    title = card.find('p', recursive=False)
+    if title is not None:
+        result['title'] = title.get_text(' ', strip=True)
+    for paragraph in card.select('.teacherinfodetail p'):
+        text = paragraph.get_text(' ', strip=True)
+        if text.startswith('联系邮箱'):
+            email = normalize_email(re.sub(r'^联系邮箱\s*[：:]\s*', '', text))
+            if email:
+                result['email'] = email
+        elif text.startswith('联系地址'):
+            result['office_address'] = re.sub(r'^联系地址\s*[：:]\s*', '', text)
+    content = soup.select_one('article.node--type-teacher .field-body')
+    if content is not None:
+        for heading in content.select('h3'):
+            label = heading.get_text(strip=True).rstrip(':：').strip()
+            field = {'教师简介': 'bio_raw', '研究领域': 'research_direction_raw',
+                     '研究方向': 'research_direction_raw'}.get(label)
+            if field:
+                parts = []
+                for sibling in heading.find_next_siblings():
+                    if sibling.name in ('h1', 'h2', 'h3'):
+                        break
+                    parts.append(sibling.get_text(' ', strip=True))
+                if any(parts):
+                    result[field] = '\n'.join(part for part in parts if part)
+    return result

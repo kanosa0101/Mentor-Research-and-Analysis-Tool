@@ -1,0 +1,159 @@
+{
+  "started_at": "2026-11-16T11:17:31.911995+00:00",
+  "isolated_root": "/opt/mentor-assistant/cache/v1115/opportunity-pilot",
+  "rounds": [
+    {
+      "round": 1,
+      "requests": 8,
+      "urls": [
+        "https://cs.ustc.edu.cn/",
+        "http://cs.ustc.edu.cn/20160/list.htm",
+        "https://cs.whu.edu.cn/",
+        "https://cs.whu.edu.cn/rcpy/yjsjy.htm",
+        "https://cs.xidian.edu.cn/",
+        "https://cs.xidian.edu.cn/djgz1/tzgg.htm",
+        "https://cs.xmu.edu.cn/",
+        "https://cs.xmu.edu.cn/xwdt.htm"
+      ],
+      "summary": {
+        "seed_count": 199,
+        "seeds_attempted": 4,
+        "candidates_checked": 4,
+        "new_candidates": 4,
+        "due_seeds_deferred": 152,
+        "candidates_per_seed": 1,
+        "pending": 88
+      }
+    },
+    {
+      "round": 2,
+      "requests": 8,
+      "urls": [
+        "https://cse.csu.edu.cn/",
+        "https://cse.csu.edu.cn/index/tzgg.htm",
+        "https://cse.hust.edu.cn/",
+        "https://cse.hust.edu.cn/dqjs1/tzgg.htm",
+        "https://cse.seu.edu.cn/",
+        "https://cse.seu.edu.cn/49338/list.htm",
+        "https://cse.sustech.edu.cn/",
+        "https://cse.sustech.edu.cn/notices/"
+      ],
+      "summary": {
+        "seed_count": 199,
+        "seeds_attempted": 4,
+        "candidates_checked": 4,
+        "new_candidates": 4,
+        "due_seeds_deferred": 150,
+        "candidates_per_seed": 1,
+        "pending": 88
+      }
+    },
+    {
+      "round": 3,
+      "requests": 8,
+      "urls": [
+        "https://cse.sysu.edu.cn/",
+        "https://cse.sysu.edu.cn/nonDegreeEdu/inform",
+        "https://cse.sysu.edu.cn/admission/graduate",
+        "https://cse.sysu.edu.cn/admission/hmt",
+        "https://cse.sysu.edu.cn/admission/summer_camp",
+        "https://cse.sysu.edu.cn/admission/supervisor",
+        "https://cse.tju.edu.cn/",
+        "https://cse.tju.edu.cn/index/tzgg.htm"
+      ],
+      "summary": {
+        "seed_count": 199,
+        "seeds_attempted": 4,
+        "candidates_checked": 4,
+        "new_candidates": 2,
+        "due_seeds_deferred": 149,
+        "candidates_per_seed": 1,
+        "pending": 89
+      }
+    },
+    {
+      "round": 4,
+      "requests": 8,
+      "urls": [
+        "https://cse.whu.edu.cn/",
+        "https://cse.whu.edu.cn/kjdh/tzgg/zx.htm",
+        "https://cse.whu.edu.cn/zsjy/yjszs.htm",
+        "https://cse.whu.edu.cn/xxgk/tzgg.htm",
+        "https://csee.hnu.edu.cn/",
+        "http://admi.hnu.edu.cn/",
+        "https://cst.buaa.edu.cn/",
+        "https://cst.buaa.edu.cn/xwdt/xwzx.htm"
+      ],
+      "summary": {
+        "seed_count": 199,
+        "seeds_attempted": 4,
+        "candidates_checked": 4,
+        "new_candidates": 4,
+        "due_seeds_deferred": 147,
+        "candidates_per_seed": 1,
+        "pending": 91
+      }
+    }
+  ],
+  "recovery": {
+    "failed_drafts": 2,
+    "attempted": 2,
+    "requests": 0,
+    "request_budget": 6,
+    "adopted": 0,
+    "manual_required": 0,
+    "not_announcement": 2,
+    "unresolved": 0
+  },
+  "finished_at": "2026-11-16T11:18:09.428301+00:00",
+  "cibr_recheck": {
+    "checked_at": "2026-11-16T11:21:43.618313+00:00",
+    "item_id": "cibr-winter-training-2027",
+    "source_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+    "documents": [
+      {
+        "url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+        "final_url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+        "status_code": 200,
+        "sha256": "46daad0af4f81735d60e56b4b558211820bac3f7cf2b582001a9506b0ae3a25d",
+        "expected_sha256": "87df26fc3c72674bc2b4064e8ae692e62433420b19aca1f153a01336cc2add45",
+        "matches": false,
+        "bytes": 120717
+      },
+      {
+        "url": "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5",
+        "final_url": "https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5",
+        "status_code": 200,
+        "sha256": "8e7a54fc88ea8c325eb8cae62d0aea8e73248e0b1c2faec9939a45afdc67ca12",
+        "expected_sha256": "8e7a54fc88ea8c325eb8cae62d0aea8e73248e0b1c2faec9939a45afdc67ca12",
+        "matches": true,
+        "bytes": 30258
+      },
+      {
+        "url": "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+        "final_url": "https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c",
+        "status_code": 200,
+        "sha256": "73c44d0f084a72b36a65b9e8065d3175b5c607be77dc891058fed4adf3c1707f",
+        "expected_sha256": "73c44d0f084a72b36a65b9e8065d3175b5c607be77dc891058fed4adf3c1707f",
+        "matches": true,
+        "bytes": 27597
+      }
+    ],
+    "content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b",
+    "content_matches": true
+  },
+  "new_publishable_opportunities": 0,
+  "new_confirmed_2028_opportunities": 0,
+  "discovery_budget_unit": "page fetch calls; at most four redirect hops per call",
+  "recovery_budget_unit": "actual HTTP requests including redirect hops",
+  "tests": {
+    "passed": 98,
+    "files": [
+      "tests/test_opportunity_recovery_v1115.py",
+      "tests/test_source_discovery_v18.py",
+      "tests/test_source_admission_v1114.py",
+      "tests/test_opportunity_monitor.py",
+      "tests/test_opportunity_attachments_v17.py"
+    ]
+  }
+}

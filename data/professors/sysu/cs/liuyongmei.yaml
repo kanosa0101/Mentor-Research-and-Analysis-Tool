@@ -10,8 +10,8 @@ email: ymliu@mail.sysu.edu.cn
 institutes:
 - 量子计算与软件研究所
 research_direction_raw: 人工智能，知识表示与推理，自然语言处理，多智能体系统，智能规划
-detail_url: https://cse.sysu.edu.cn/teacher
-profile_url: https://cse.sysu.edu.cn/teacher
+detail_url: https://cse.sysu.edu.cn/teacher/LiuYongmei
+profile_url: https://cse.sysu.edu.cn/teacher/LiuYongmei
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -28,21 +28,58 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
+  office_address:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+office_address: 计算机学院楼
+bio_raw: '刘咏梅，中山大学计算机学院教授，博士生导师。于加拿大多伦多大学计算机科学系获博士学位。研究方向为人工智能，知识表示与推理，自然语言处理，多智能体系统，智能规划。于国际人工智能会议IJCAI,
+  AAAI，ECAI，ACL，和EMNLP上发表学术论文40余篇。主持国家自然科学基金面上项目多项。长期担任国际人工智能会议IJCAI，AAAI，ECAI，ICAPS，AAMAS，KR等的程序委员会委员。
+
+  招生信息：
+
+  本研究组致力于探索神经符号人工智能，将经典的符号逻辑、形式化方法与前沿的大语言模型、强化学习技术相结合，构建具备深度推理、自主规划和可信决策能力的下一代智能体。目前，本研究组围绕四个前沿方向开展研究。欢迎感兴趣的同学加入我们！
+
+  1.自然语言上的综合逻辑推理：逻辑推理是人类智能的基石。虽然大语言模型在自然语言处理上表现出色，但在复杂推理任务上仍存在局限。我们的研究将经典知识表示与推理理论（如演绎推理、缺省推理、信念推理）与最新的大语言模型技术相结合，提升机器对自然语言的深度理解与综合推理能力。
+
+  2.通用规划和认知规划：规划能力是智能的核心，无论是制定旅行路线还是完成复杂任务。我们研究自动规划：其中通用规划旨在为一类相似的规划问题生成通解，让机器具备“举一反三”的泛化能力；认知规划则重点关注如何通过执行具有认知前提和效果的动作，来实现认知目标。
+
+  3.多智能体系统的形式化研究：当多个智能体（如机器人、软件程序）共同存在时，它们如何高效地协作或博弈？我们研究多智能体系统的行为规律。运用逻辑、博弈论等形式化方法，严格刻画智能体的知识、信念、意图、协作与策略行为，并进行严谨的推理和验证，为设计更可靠的分布式智能系统提供理论支撑。
+
+  4. 逻辑规范引导的强化学习：在自动驾驶、医疗诊断等安全攸关场景中，智能体的行为必须满足严格的安全约束。我们研究基于形式化逻辑规范（如线性时序逻辑LTL）的强化学习，让智能体在与环境交互的过程中，不仅追求最大化累积奖励，还要确保行为始终符合逻辑约束，为实现可信、可解释的强化学习奠定基础。'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

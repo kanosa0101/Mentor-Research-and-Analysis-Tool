@@ -1,6 +1,7 @@
 """Public policy/profile maintenance backlog; never read applicant account files."""
 import hashlib
 import json
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -71,6 +72,11 @@ def refresh(root, now=None):
                     urls.extend(v['url'] for v in evidence if isinstance(v, dict) and v.get('url'))
                 active.append(dict(id=category + ':' + ident, category=category,
                     title=row.get('title') or ident, status=status, reasons=reasons,
+                    reason_code=row.get('reason_code') or ('policy_review' if category == 'policy' else 'unclassified'),
+                    category_label=row.get('category_label') or ('政策证据与版本' if category == 'policy' else '等待原因分类'),
+                    next_action=row.get('next_action') or ('retry' if status == 'retry' else 'manual_review'),
+                    action_label=row.get('action_label') or ('按计划重试' if status == 'retry' else '核对原文与处理规则'),
+                    replacement=row.get('replacement'),
                     opened_at=opened.isoformat() if opened else None,
                     due_at=due.isoformat() if due else None, overdue=bool(due and due <= now),
                     next_attempt_at=row.get('next_attempt') or row.get('next_check_at'),
@@ -81,6 +87,9 @@ def refresh(root, now=None):
     active.sort(key=lambda r: (r['priority'], r['due_at'] or '', r['id']))
     result = dict(checked_at=now.isoformat(timespec='seconds'), available=available,
         failures=failures, incomplete=incomplete, active=active,
+        breakdown=dict(reasons=dict(Counter(r['reason_code'] for r in active)),
+            actions=dict(Counter(r['next_action'] for r in active)),
+            never_attempted=sum(not r['last_attempt_at'] for r in active)),
         summary=dict(active=len(active), overdue=sum(r['overdue'] for r in active),
             policies=sum(r['category'] == 'policy' for r in active),
             mentors=sum(r['category'] == 'mentor' for r in active)),

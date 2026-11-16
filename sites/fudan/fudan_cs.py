@@ -78,6 +78,21 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
+    soup = BeautifulSoup(html, 'html.parser')
+    name = soup.select_one('.news_wz .news_title')
+    if name:
+        out = {'name': name.get_text(strip=True)}
+        for selector, field in [('.news_cara .nr1','title'),('.news_email .nr','email'),
+                                ('.news_dz .nr','office_address'),('.news_tel .nr','phone')]:
+            value = soup.select_one(selector)
+            if value and value.get_text(strip=True) not in ('无','暂无',''):
+                out[field] = value.get_text(' ',strip=True)
+        qualification = soup.select_one('.news_cara .nr2')
+        if qualification:
+            text = qualification.get_text(strip=True)
+            parts = [label for token,label in [('博士','博导'),('硕士','硕导')] if token in text]
+            if parts:out['supervisor']='、'.join(parts)
+        return out
     if "/page.htm" not in url:
         return {}  # ai.fudan 等列表页无可解析字段
     return parse_wp_detail(cfg, html, url)

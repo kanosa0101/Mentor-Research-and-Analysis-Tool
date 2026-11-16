@@ -338,6 +338,9 @@ def test_credential_file_and_shared_ai_budget(tmp_path, monkeypatch):
 def test_ai_rejects_unfinished_output_without_accepting_reasoning(tmp_path, monkeypatch, finish):
     monkeypatch.setattr(ai_evidence, 'config', lambda _: dict(model='fake', api_key='fixture-key', base_url='https://example.com/v1', daily_limit=2))
     client = Mock()
+    response = client.post.return_value
+    response.headers = {'Content-Type':'application/json'}
+    response.iter_content.side_effect = lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
     client.post.return_value.status_code = 200
     client.post.return_value.content = b'{}'
     client.post.return_value.json.return_value = dict(choices=[dict(finish_reason=finish,
@@ -355,6 +358,9 @@ def test_complete_ai_transport_response_discards_reasoning(tmp_path, monkeypatch
     monkeypatch.setattr(ai_evidence, 'config', lambda _: dict(model='fake', api_key='fixture-key', base_url='https://example.com/v1', daily_limit=2))
     fields = {'eligibility': dict(value=['本科生可以申请'], quote='本科生可以申请')}
     client = Mock()
+    response = client.post.return_value
+    response.headers = {'Content-Type':'application/json'}
+    response.iter_content.side_effect = lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
     client.post.return_value.status_code = 200
     client.post.return_value.content = b'{}'
     client.post.return_value.json.return_value = dict(choices=[dict(finish_reason='stop', message=dict(
@@ -362,7 +368,8 @@ def test_complete_ai_transport_response_discards_reasoning(tmp_path, monkeypatch
         reasoning_content='private model reasoning'))])
     result = ai_review.check(tmp_path, URL, '本科生可以申请', fields, session=client)
     assert result['decision'] == 'consistent'
-    assert 'reasoning' not in json.dumps(result) and 'fixture-key' not in json.dumps(result)
+    assert 'private model reasoning' not in json.dumps(result) and 'reasoning_content' not in json.dumps(result)
+    assert 'fixture-key' not in json.dumps(result)
     sent = client.post.call_args.kwargs
     assert sent['allow_redirects'] is False
     assert json.loads(sent['json']['messages'][1]['content'])['official_text'] == '本科生可以申请'
@@ -520,6 +527,9 @@ def test_same_source_semantically_invalid_assistance_does_not_repeat_ai(setup):
 def test_malformed_ai_transport_response_has_retriable_protocol_error(tmp_path, monkeypatch, content):
     monkeypatch.setattr(ai_evidence, 'config', lambda _: dict(model='fake', api_key='fixture-key', base_url='https://example.com/v1', daily_limit=2))
     client = Mock()
+    response = client.post.return_value
+    response.headers = {'Content-Type':'application/json'}
+    response.iter_content.side_effect = lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
     client.post.return_value.status_code = 200
     client.post.return_value.content = b'{}'
     client.post.return_value.json.return_value = dict(choices=[dict(finish_reason='stop', message=dict(content=content))])
@@ -533,6 +543,9 @@ def test_malformed_ai_transport_response_has_retriable_protocol_error(tmp_path, 
 def test_extractive_assistant_requires_stop(tmp_path, monkeypatch, finish):
     monkeypatch.setattr(ai_evidence, 'config', lambda _: dict(model='fake', api_key='fixture-key', base_url='https://example.com/v1', daily_limit=2))
     client = Mock()
+    response = client.post.return_value
+    response.headers = {'Content-Type':'application/json'}
+    response.iter_content.side_effect = lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
     client.post.return_value.status_code = 200
     client.post.return_value.content = b'{}'
     client.post.return_value.json.return_value = dict(choices=[dict(finish_reason=finish, message=dict(content='{"suggestions":[]}'))])

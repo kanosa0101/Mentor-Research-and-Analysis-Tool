@@ -1,515 +1,767 @@
-- kind: missing_in_list
+- kind: fetch_or_parse_error
+  ref: baihonghuan
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id001
+    - url: https://www.cs.zju.edu.cn/csen/27003/list.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cs.zju.edu.cn'', port=443): Max retries
+        exceeded with url: /csen/27003/list.htm (Caused by NewConnectionError("HTTPSConnection(host=''www.cs.zju.edu.cn'',
+        port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    - url: https://www.cs.zju.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cs.zju.edu.cn'', port=443): Max retries
+        exceeded with url: / (Caused by NewConnectionError("HTTPSConnection(host=''www.cs.zju.edu.cn'',
+        port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    - url: https://person.zju.edu.cn/blackwhite
+      sha256: 6fa857d81f48f06880d315ffed35c23e981e1d703d97292682e9ad57f7d84276
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/baihonghuan
+    kind: fetch_or_parse_error
+    ref: baihonghuan
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: zju-cs · baihonghuan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: baiyefei
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id002 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/baiyefei
+    kind: fetch_or_parse_error
+    ref: baiyefei
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: zju-cs · baiyefei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: baohujun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0093140
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
+  message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/0093140'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id003
+    - url: https://person.zju.edu.cn/0093140
+      sha256: 789a8e619e3996c04ea59c339e288b4519afa359af3904321736d82e68ea2782
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/baohujun
+    kind: fetch_or_parse_error
+    ref: baohujun
+    original_message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/0093140'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: zju-cs · baohujun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: baolingfeng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/baolingfeng
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/baolingfeng'
+    evidence: &id004
+    - url: https://person.zju.edu.cn/baolingfeng
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/baolingfeng'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/baolingfeng'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/baolingfeng
+    kind: fetch_or_parse_error
+    ref: baolingfeng
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: zju-cs · baolingfeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: bazhongjie
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhongjieba
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
+  message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/zhongjieba'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id005
+    - url: https://person.zju.edu.cn/zhongjieba
+      sha256: bfe80cb34e3e39b1e6a337e389da387f1312617a2089eb9e9e3ad521a11cc511
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/bazhongjie
+    kind: fetch_or_parse_error
+    ref: bazhongjie
+    original_message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/zhongjieba'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: zju-cs · bazhongjie · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: beiyijun
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id006 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/beiyijun
+    kind: fetch_or_parse_error
+    ref: beiyijun
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: zju-cs · beiyijun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: bodao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: &id007 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/bodao
+    kind: fetch_or_parse_error
+    ref: bodao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: zju-cs · bodao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: bojiajun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/bjj
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/bjj'
+    evidence: &id008
+    - url: https://person.zju.edu.cn/bjj
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/bjj'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/bjj'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/bojiajun
+    kind: fetch_or_parse_error
+    ref: bojiajun
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: zju-cs · bojiajun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: bokai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/kaibu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
+  message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/kaibu'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/kaibu'
+    evidence: &id009
+    - url: https://person.zju.edu.cn/kaibu
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/kaibu'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/kaibu'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/bokai
+    kind: fetch_or_parse_error
+    ref: bokai
+    original_message: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/kaibu'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: zju-cs · bokai · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: caideng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/dengcai
-  first_seen: '2026-09-06'
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
   resolved: true
-- kind: missing_in_list
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://person.zju.edu.cn/dengcai
+      sha256: 76c80b674f7026242758711a3b1d1c68a25aea125499adcce3b218313d659ae6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    - office_address
+    - research_direction_raw
+    previous_source: https://person.zju.edu.cn/dengcai
+    current_source: https://person.zju.edu.cn/dengcai
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/caideng
+    kind: fetch_or_parse_error
+    ref: caideng
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: zju-cs · caideng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: caijianping
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id011 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/caijianping
+    kind: fetch_or_parse_error
+    ref: caijianping
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: zju-cs · caijianping · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: cailiang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0002380
-  first_seen: '2026-09-06'
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
   resolved: true
-- kind: missing_in_list
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://person.zju.edu.cn/0002380
+      sha256: 86db487dbcdb5be9ce1186804fcab82b07e419866fbc284fcf602784e326ff7a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    - research_direction_raw
+    previous_source: https://person.zju.edu.cn/0002380
+    current_source: https://person.zju.edu.cn/0002380
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/cailiang
+    kind: fetch_or_parse_error
+    ref: cailiang
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: zju-cs · cailiang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: caiyuxiang
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id013 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/caiyuxiang
+    kind: fetch_or_parse_error
+    ref: caiyuxiang
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: zju-cs · caiyuxiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: caizhengong
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id014 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/caizhengong
+    kind: fetch_or_parse_error
+    ref: caizhengong
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: zju-cs · caizhengong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cenglimin
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id015 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/cenglimin
+    kind: fetch_or_parse_error
+    ref: cenglimin
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: zju-cs · cenglimin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cenglingfang
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id016 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/cenglingfang
+    kind: fetch_or_parse_error
+    ref: cenglingfang
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: zju-cs · cenglingfang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cengzhenyu
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id017 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/cengzhenyu
+    kind: fetch_or_parse_error
+    ref: cengzhenyu
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: zju-cs · cengzhenyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: changrui
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/changrui
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenhuajun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/huajun
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenjianhai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/cjh
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenke
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/kechenpage
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenlin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0024110
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenling
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/lc
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenwei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/wei_chen
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenwenzhi
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/chenwenzhi
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chenyue
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0096205
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: chuzhixuan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhixuanchu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: dengshuiguang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/shuiguang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: dongwei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/dongw
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: duyuejin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/duyuejin
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: fengbo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/fengbo
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: fengjieqing
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/jqfeng
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: gaoyi
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/gaoyi
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: gaoyunjun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/gaoyj_cn
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: guhongying
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/gu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: hanjingsong
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/hanjinsong
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: houqiming
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0010046
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: huangjin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0007420
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: huangxiuqi
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/huangxq
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: jiangjiaxin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0026082
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: jiangxiaohong
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/jiangxh
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lanlei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0025815
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lijijun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/ljj
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liming
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/mli
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: linfeng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/flin
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: linhuaizhong
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/lhz
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lishijian
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/lishijian
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lisong
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0096094
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liuhaifeng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/hfliu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liujian
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/jianliu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liujinfei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/jinfeiliu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liuxinguo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xgliu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liuyusheng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0003172
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liuzhenguang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/lzg
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lixiaobai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0022089
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: liying
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/liying
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: luli
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/lynnluli
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: luomeng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/mengluo
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: luxiqun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0097159
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: lvhongbing
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0095175
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: niwangze
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/niwangze
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: panzhijie
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhijiepan
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: qinzhan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/qinzhan
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shaotianjia
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/tjshao
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shenchunhua
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/chunhua
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shenhaoting
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/htshen
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shenwenbo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/shenwenbo
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shenxuan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0026163
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: shoulidan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/should
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: songmingli
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/msong
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: sunjianling
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/sunjl
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: taoyubo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0009665
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangcan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/wangcan
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wanghaishuai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/haishuaiwang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangqiang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/wangqiang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangrui
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/rwang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangxiaohang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xiaohangwang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangxinyu
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/wangxinyu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangzhibo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhibowang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wangzonghui
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhwang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wuchunming
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0095168
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wulei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/geoghost
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wuqiang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0005259
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wusai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0011057
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: wuyingcai
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/ycwu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: xiaxin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xxia
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: xietian
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xietian
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: xuhaitao
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/haitaoxu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: xuweiwei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0015060
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yangkun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0004194
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yangxiaohu
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xiaohu
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yangyingchun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/yyczju
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yangziqi
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/yangziqi
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yaopeisen
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/pyao
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yingjing
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0095096
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yinjianwei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0001038
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: yuanxin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/yuanxin
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangbingcheng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/bingsheng
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangcong
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0022090
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangfan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/fanzhang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangguofeng
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0009726
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhanghongxin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhx
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangmingmin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0095045
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhangmingxue
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/0022387
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhaobinbin
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/binz
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhaolei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhaolei
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhaoyongwang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/zhaoyw
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhengtianhang
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/tianhangzheng
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhoubo
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/bzhou
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhoukun
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/kunzhou
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhouxiaowei
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/xzhou
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhuangbohan
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/bohan_zhuang
-  first_seen: '2026-09-06'
-  resolved: true
-- kind: missing_in_list
-  ref: zhujianke
-  message: 官网名单中未出现，详情页 https://person.zju.edu.cn/jkzhu
-  first_seen: '2026-09-06'
-  resolved: true
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/changrui'
+    evidence: &id018
+    - url: https://person.zju.edu.cn/changrui
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/changrui'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/changrui'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/changrui
+    kind: fetch_or_parse_error
+    ref: changrui
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: zju-cs · changrui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: changzhihao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id019 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/changzhihao
+    kind: fetch_or_parse_error
+    ref: changzhihao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: zju-cs · changzhihao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenchaochao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/zjuccc'
+    evidence: &id020
+    - url: https://person.zju.edu.cn/zjuccc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/zjuccc'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://person.zju.edu.cn/zjuccc'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/chenchaochao
+    kind: fetch_or_parse_error
+    ref: chenchaochao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: zju-cs · chenchaochao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenchun
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id021
+    - url: https://person.zju.edu.cn/chenc
+      sha256: 7d914166402cb00b9a908138292e29a97ec3b1d6993b5c8ab5ff21992668785f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/chenchun
+    kind: fetch_or_parse_error
+    ref: chenchun
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: zju-cs · chenchun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengang
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence: &id022 []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7bc2323a970de254ef7de1b6e6b07e492c1b9c4825f49c9e10f084998d8304ee
+    id: zju/cs/fetch_or_parse_error/chengang
+    kind: fetch_or_parse_error
+    ref: chengang
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: zju-cs · chengang · fetch_or_parse_error
+    pending_since: '2026-11-16T10:20:37+00:00'
+    last_success: null

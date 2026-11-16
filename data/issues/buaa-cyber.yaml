@@ -1,1 +1,1462 @@
-[]
+- kind: fetch_or_parse_error
+  ref: baijiaju
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2760.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2760.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2760.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2760.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2332.htm
+      sha256: b83fdfa078f0fa88c93d4c842b46e8917018f0b784fae803fe3db6fb165a42e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2760.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2332.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2760.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2332.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/baijiaju
+    kind: fetch_or_parse_error
+    ref: baijiaju
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2760.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: buaa-cyber · baijiaju · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: bailin
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2779.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2779.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/2779.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2779.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2287.htm
+      sha256: e6285c3d06e693cbdc2618f96421f1466ea67393da2b2aaa3eb4a4227a13524a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/2779.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2287.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/2779.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2287.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/bailin
+    kind: fetch_or_parse_error
+    ref: bailin
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2779.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: buaa-cyber · bailin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: baitong
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/3723.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/3723.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/3723.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/3723.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2333.htm
+      sha256: 8aff3254fdbba45f18afa5e9ac77b8371747813cff63f4c619e63b68e71b2bca
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/3723.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2333.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/3723.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2333.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/baitong
+    kind: fetch_or_parse_error
+    ref: baitong
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/3723.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: buaa-cyber · baitong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: biansong
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2759.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2759.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2759.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2759.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2334.htm
+      sha256: 62cd024a8563a9ab9161d7a962a21b05ad4d96eba80dacd804e3c24f1641d204
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2759.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2334.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2759.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2334.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/biansong
+    kind: fetch_or_parse_error
+    ref: biansong
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2759.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: buaa-cyber · biansong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenjia
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2940.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2940.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1113/2940.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2940.htm'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/chenjia
+    kind: fetch_or_parse_error
+    ref: chenjia
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2940.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2363.htm
+      sha256: f3b0c1b9afca2980858056f01ac5cb5447d48b7b707aad5059bd90144314eb5b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: buaa-cyber · chenjia · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cuijian
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2719.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2719.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1113/2719.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2719.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2364.htm
+      sha256: 65773641ee36a8ecc461779a3ad7f6aa51a05eda5236b3b7aee3171f0ee8f8a4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1113/2719.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2364.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1113/2719.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2364.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/cuijian
+    kind: fetch_or_parse_error
+    ref: cuijian
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2719.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: buaa-cyber · cuijian · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: duhaohua
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2720.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2720.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1113/2720.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2720.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2365.htm
+      sha256: b3253896aed225546491bc068aa548011312e3c1a39b41b04cd705721e1d6911
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1113/2720.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2365.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1113/2720.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2365.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/duhaohua
+    kind: fetch_or_parse_error
+    ref: duhaohua
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1113/2720.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: buaa-cyber · duhaohua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: gaoying
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/5429.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/5429.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/5429.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/5429.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2336.htm
+      sha256: 87c73f4a03d222f6488aece8933f0c59d4ca45570bb1cf53c4bcd0142354b131
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/5429.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2336.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/5429.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2336.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/gaoying
+    kind: fetch_or_parse_error
+    ref: gaoying
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/5429.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: buaa-cyber · gaoying · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: guanzhenyu
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2778.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2778.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/2778.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2778.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2288.htm
+      sha256: 0913b76e1fa96a705f24483f826b0417db7eccfd7d464d2003a0a3d419d9cfda
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/2778.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2288.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/2778.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2288.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/guanzhenyu
+    kind: fetch_or_parse_error
+    ref: guanzhenyu
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2778.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: buaa-cyber · guanzhenyu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: guohua
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2741.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2741.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2741.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2741.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id009
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2337.htm
+      sha256: 74f08bf8fba60c9e4569ea334d12a82a083170e6d409a9ce6e88985a478e1acf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2741.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2337.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2741.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2337.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/guohua
+    kind: fetch_or_parse_error
+    ref: guohua
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2741.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: buaa-cyber · guohua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hanrui
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1114/3376.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1114/3376.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1114/3376.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1114/3376.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2369.htm
+      sha256: 2fe8ce9750e19bdec93eb3a6a71a74709771d059c4c1ee8b33a83ae01925be08
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1114/3376.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2369.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1114/3376.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2369.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/hanrui
+    kind: fetch_or_parse_error
+    ref: hanrui
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1114/3376.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: buaa-cyber · hanrui · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: hongcheng
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2739.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2739.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2739.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2739.htm'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/hongcheng
+    kind: fetch_or_parse_error
+    ref: hongcheng
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2739.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2338.htm
+      sha256: 1ab9a62f5efbcda4c92e50aa2872bd6c358c826838f1ff3550ca0324e78c3459
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: buaa-cyber · hongcheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: jiangyupeng
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2766.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2766.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2766.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2766.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id011
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2339.htm
+      sha256: 2ef7160b74b572e282e2000cb71067fff1ad434711b3d1e8b2c25b6db6b47b50
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2766.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2339.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2766.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2339.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/jiangyupeng
+    kind: fetch_or_parse_error
+    ref: jiangyupeng
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2766.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: buaa-cyber · jiangyupeng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: jiejingjie
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5335.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5335.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/5335.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5335.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2340.htm
+      sha256: 89cb8a9bff8cfe5a39a729042dc142e7d8ff6acfdbeb95fec8d48da5285e70c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/5335.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2340.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/5335.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2340.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/jiejingjie
+    kind: fetch_or_parse_error
+    ref: jiejingjie
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5335.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: buaa-cyber · jiejingjie · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lanyuqing
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1060/3983.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1060/3983.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1060/3983.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1060/3983.htm'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1060/3983.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/lanyuqing
+    kind: fetch_or_parse_error
+    ref: lanyuqing
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1060/3983.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: buaa-cyber · lanyuqing · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: libingyu
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2748.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2748.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2748.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2748.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2341.htm
+      sha256: ff8d3d9134d15cd87fa0ad3e97385b011cbc7cba9317d2dc7acb0397b83c70b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2748.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2341.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2748.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2341.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/libingyu
+    kind: fetch_or_parse_error
+    ref: libingyu
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2748.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: buaa-cyber · libingyu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lidawei
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4940.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4940.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/4940.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4940.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2294.htm
+      sha256: 37f4ef91b974aad96f53a4bae03abcb38a8b3cc356e41c84df5d2a4098039893
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/4940.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2294.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/4940.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2294.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/lidawei
+    kind: fetch_or_parse_error
+    ref: lidawei
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4940.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: buaa-cyber · lidawei · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lidongyu
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4973.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4973.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/4973.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4973.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2295.htm
+      sha256: e63ec89a9d31fa3679785325524c65e95116cc1a8fb861e9a406505d8d929b8c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/4973.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2295.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/4973.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2295.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/lidongyu
+    kind: fetch_or_parse_error
+    ref: lidongyu
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/4973.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: buaa-cyber · lidongyu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: lihaoran
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5003.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5003.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/5003.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5003.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id016
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2342.htm
+      sha256: 29d24d4536238e5bcc077c0ab11bc6c003c5974c6d69b1be5cc0d8c24ab1da3c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/5003.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2342.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/5003.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2342.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/lihaoran
+    kind: fetch_or_parse_error
+    ref: lihaoran
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/5003.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: buaa-cyber · lihaoran · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liudong
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2758.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2758.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2758.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2758.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id017
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2344.htm
+      sha256: 905e6ae85baaa9312d64b24a57761c39c35f094f163bb379b656ee52f0891235
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2758.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2344.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2758.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2344.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/liudong
+    kind: fetch_or_parse_error
+    ref: liudong
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2758.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: buaa-cyber · liudong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyishi
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2751.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2751.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/2751.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2751.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id018
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2346.htm
+      sha256: 6de50645db09c6cca4032ea17225083634bc8e8f8d97d8a92e6be575f71b9a86
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/2751.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2346.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/2751.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2346.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/liuyishi
+    kind: fetch_or_parse_error
+    ref: liuyishi
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/2751.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: buaa-cyber · liuyishi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyizhong
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/4273.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/4273.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1112/4273.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/4273.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id019
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2347.htm
+      sha256: c7174c89cc051280bb189dd0c92c6db6c7df0c121604835dee4c561c6a9a6ee7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1112/4273.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2347.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1112/4273.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2347.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/liuyizhong
+    kind: fetch_or_parse_error
+    ref: liuyizhong
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1112/4273.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: buaa-cyber · liuyizhong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: liyunchun
+  message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2771.htm'
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2771.htm'
+    evidence:
+    - url: https://cst.buaa.edu.cn/info/1111/2771.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2771.htm'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id020
+    - url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      sha256: 881ce1e5b6520ab8ba5bc92408c0e4f7964d01233da9363beb02f0f40e975882
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/
+      sha256: cb65e15b16eda83e62c823ff7ebf758c8f3a8de472011b652b87ca42ed2aedef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cst.buaa.edu.cn/info/1127/2298.htm
+      sha256: da56a314ecc81066eb6aee49d6982a50c1e89c4aaa7a7d04f390819058134e5f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - title
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cst.buaa.edu.cn/info/1111/2771.htm
+    current_source: https://cst.buaa.edu.cn/info/1127/2298.htm
+    replacement:
+      old_url: https://cst.buaa.edu.cn/info/1111/2771.htm
+      new_url: https://cst.buaa.edu.cn/info/1127/2298.htm
+      directory_url: https://cst.buaa.edu.cn/szdw/qtjs1.htm
+      identity_basis: name_and_email
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 21d4f7acce6ab51029453c02a970390a0c67c3ebbb49a6a7df002e58c6c6921f
+    id: buaa/cyber/fetch_or_parse_error/liyunchun
+    kind: fetch_or_parse_error
+    ref: liyunchun
+    original_message: '404 Client Error: Not Found for url: https://cst.buaa.edu.cn/info/1111/2771.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: buaa-cyber · liyunchun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'

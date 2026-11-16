@@ -1,0 +1,8 @@
+..................................................                       [100%]
+============================== warnings summary ===============================
+tests/test_sysu_recovery_v1115.py::test_current_sysu_profile_uses_contact_card_and_named_sections
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+50 passed, 1 warning in 5.19s

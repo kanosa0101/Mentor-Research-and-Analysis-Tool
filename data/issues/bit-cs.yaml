@@ -1,1 +1,344 @@
-[]
+- kind: fetch_or_parse_error
+  ref: chenchanming
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/b68d77a3632e40cc99c4125e2ec01306.htm
+      sha256: fd197853d1f1dfbbc4b877b4f70ce99a74d7e1066c82725944965fa4ec6a1185
+      fetched_at: '2026-11-16T09:57:21+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: c84f8cf7034b1b956a31fa6ca5c30466cdfaafd77f1303e76561d0c1431fad39
+    id: bit/cs/fetch_or_parse_error/chenchanming
+    kind: fetch_or_parse_error
+    ref: chenchanming
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+      sha256: def96aa8d72cfd4964578915578c4d9a0ee367e431ebf926c224a9979ec44d61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/index.htm
+      sha256: ff3efd5d1bed825ab0ea1a21e6639989fa27c1f8e593412b1f8c4e4a9fa88ace
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/
+      sha256: b6278bd2a1557c9458a93d9e4ee7da9fbd4df692121fcc1e1ddbe9c69fe09e5f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/index.htm
+      sha256: a43f382540031e57c0909151adf1f6e7c409524814f31359504775b0443db304
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/szgk/index.htm
+      sha256: 8f6699a53591bad8dc647e038fec15df78fa66e8a310d08eacc320f293caafbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml2/index.htm
+      sha256: 287dd064dcec0e77c57e1f871a2de484002e2e60eafe1dbbb17512909bd05729
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/ec32dd3546854a479acf97df07346546.htm
+      sha256: 20ff827e6883004abc82fcb102e26d6153292096122a2126e4c46573fdb3abae
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/75aef92616024569ad23f12e713e683f.htm
+      sha256: 907e352967ff48a11ffc5ce62c418b734385a6bf1e213be39170bf25fa1d7645
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/2654a55344864ae9a5ba23abc24cefda.htm
+      sha256: 1ca1fe1cb26ca0fecb82f89bdcd4feca3949b6e336134b37bced64b9bf0d34c8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/170fca7a57704d4fb1defdcc69011793.htm
+      sha256: 0a0ef84a6708ac1018b30e4f0ffb831196eae4069d3108693d6cb278a8f63f70
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/92888aa88ca1450493e46f87e647f656.htm
+      sha256: 48f7d95cbc26a09ba398e05b688dd0ed25480539dc5532dc25278ea003df5f97
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/4345de3264bd4ab8a9176ffb7d8b162f.htm
+      sha256: fbd4c6737efbbdc04062f2a935f40dd90c7b7288ea541ab73fa42d37cd4bdc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/f86b64a3384649adb318340c84be01d9.htm
+      sha256: 5688fd638eb8b9f2b49d2c7465ecc0e0a7e3294bcae9c6f68ba852db076971f1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/7c4c4868801f4a408f85a70bdfb1446c.htm
+      sha256: 66015ed1118555b6df21fc57a7c7353e1d56fca86a3d1efcec0de93aeb04fd50
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/ys/b19ede72be2a4da2988939406d03c292.htm
+      sha256: 43f3035e4297b5a443e4c1a46914ad7131e02aeaa99a463ee9bbb13918b495a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/gjjqnrc/1d2a0354986e4247a776ff1afba75333.blk.htm
+      sha256: 04c3137b81effdbbce9dfc094081411e16ef74ffcb85c37678c99388dfe6fbfc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/b68d77a3632e40cc99c4125e2ec01306.htm
+      sha256: fd197853d1f1dfbbc4b877b4f70ce99a74d7e1066c82725944965fa4ec6a1185
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bit-cs · chenchanming · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenjiehao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/f76755ee8f8344618fdcea21ad859f4c.htm
+      sha256: 69b34044c3f4c3bdb18870bebc3ab91c30bd66977b5bdd5bf98309d767a9a6c3
+      fetched_at: '2026-11-16T09:57:21+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: c84f8cf7034b1b956a31fa6ca5c30466cdfaafd77f1303e76561d0c1431fad39
+    id: bit/cs/fetch_or_parse_error/chenjiehao
+    kind: fetch_or_parse_error
+    ref: chenjiehao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+      sha256: def96aa8d72cfd4964578915578c4d9a0ee367e431ebf926c224a9979ec44d61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/index.htm
+      sha256: ff3efd5d1bed825ab0ea1a21e6639989fa27c1f8e593412b1f8c4e4a9fa88ace
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/
+      sha256: b6278bd2a1557c9458a93d9e4ee7da9fbd4df692121fcc1e1ddbe9c69fe09e5f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/index.htm
+      sha256: a43f382540031e57c0909151adf1f6e7c409524814f31359504775b0443db304
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/szgk/index.htm
+      sha256: 8f6699a53591bad8dc647e038fec15df78fa66e8a310d08eacc320f293caafbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml2/index.htm
+      sha256: 287dd064dcec0e77c57e1f871a2de484002e2e60eafe1dbbb17512909bd05729
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/ec32dd3546854a479acf97df07346546.htm
+      sha256: 20ff827e6883004abc82fcb102e26d6153292096122a2126e4c46573fdb3abae
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/75aef92616024569ad23f12e713e683f.htm
+      sha256: 907e352967ff48a11ffc5ce62c418b734385a6bf1e213be39170bf25fa1d7645
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/2654a55344864ae9a5ba23abc24cefda.htm
+      sha256: 1ca1fe1cb26ca0fecb82f89bdcd4feca3949b6e336134b37bced64b9bf0d34c8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/170fca7a57704d4fb1defdcc69011793.htm
+      sha256: 0a0ef84a6708ac1018b30e4f0ffb831196eae4069d3108693d6cb278a8f63f70
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/92888aa88ca1450493e46f87e647f656.htm
+      sha256: 48f7d95cbc26a09ba398e05b688dd0ed25480539dc5532dc25278ea003df5f97
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/4345de3264bd4ab8a9176ffb7d8b162f.htm
+      sha256: fbd4c6737efbbdc04062f2a935f40dd90c7b7288ea541ab73fa42d37cd4bdc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/f86b64a3384649adb318340c84be01d9.htm
+      sha256: 5688fd638eb8b9f2b49d2c7465ecc0e0a7e3294bcae9c6f68ba852db076971f1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/7c4c4868801f4a408f85a70bdfb1446c.htm
+      sha256: 66015ed1118555b6df21fc57a7c7353e1d56fca86a3d1efcec0de93aeb04fd50
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/ys/b19ede72be2a4da2988939406d03c292.htm
+      sha256: 43f3035e4297b5a443e4c1a46914ad7131e02aeaa99a463ee9bbb13918b495a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/gjjqnrc/1d2a0354986e4247a776ff1afba75333.blk.htm
+      sha256: 04c3137b81effdbbce9dfc094081411e16ef74ffcb85c37678c99388dfe6fbfc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/f76755ee8f8344618fdcea21ad859f4c.htm
+      sha256: 69b34044c3f4c3bdb18870bebc3ab91c30bd66977b5bdd5bf98309d767a9a6c3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bit-cs · chenjiehao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenshuoying
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/9e1f6474e53e45dfbf303a98239f16aa.htm
+      sha256: 9d5d7faa198d238f3d0810e740ff95593443e828fbf36bb0150457fe9a03beaf
+      fetched_at: '2026-11-16T09:57:21+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: c84f8cf7034b1b956a31fa6ca5c30466cdfaafd77f1303e76561d0c1431fad39
+    id: bit/cs/fetch_or_parse_error/chenshuoying
+    kind: fetch_or_parse_error
+    ref: chenshuoying
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+      sha256: def96aa8d72cfd4964578915578c4d9a0ee367e431ebf926c224a9979ec44d61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/index.htm
+      sha256: ff3efd5d1bed825ab0ea1a21e6639989fa27c1f8e593412b1f8c4e4a9fa88ace
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/
+      sha256: b6278bd2a1557c9458a93d9e4ee7da9fbd4df692121fcc1e1ddbe9c69fe09e5f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/index.htm
+      sha256: a43f382540031e57c0909151adf1f6e7c409524814f31359504775b0443db304
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/szgk/index.htm
+      sha256: 8f6699a53591bad8dc647e038fec15df78fa66e8a310d08eacc320f293caafbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml2/index.htm
+      sha256: 287dd064dcec0e77c57e1f871a2de484002e2e60eafe1dbbb17512909bd05729
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/ec32dd3546854a479acf97df07346546.htm
+      sha256: 20ff827e6883004abc82fcb102e26d6153292096122a2126e4c46573fdb3abae
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/75aef92616024569ad23f12e713e683f.htm
+      sha256: 907e352967ff48a11ffc5ce62c418b734385a6bf1e213be39170bf25fa1d7645
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/2654a55344864ae9a5ba23abc24cefda.htm
+      sha256: 1ca1fe1cb26ca0fecb82f89bdcd4feca3949b6e336134b37bced64b9bf0d34c8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/170fca7a57704d4fb1defdcc69011793.htm
+      sha256: 0a0ef84a6708ac1018b30e4f0ffb831196eae4069d3108693d6cb278a8f63f70
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/92888aa88ca1450493e46f87e647f656.htm
+      sha256: 48f7d95cbc26a09ba398e05b688dd0ed25480539dc5532dc25278ea003df5f97
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/4345de3264bd4ab8a9176ffb7d8b162f.htm
+      sha256: fbd4c6737efbbdc04062f2a935f40dd90c7b7288ea541ab73fa42d37cd4bdc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/f86b64a3384649adb318340c84be01d9.htm
+      sha256: 5688fd638eb8b9f2b49d2c7465ecc0e0a7e3294bcae9c6f68ba852db076971f1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/7c4c4868801f4a408f85a70bdfb1446c.htm
+      sha256: 66015ed1118555b6df21fc57a7c7353e1d56fca86a3d1efcec0de93aeb04fd50
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/ys/b19ede72be2a4da2988939406d03c292.htm
+      sha256: 43f3035e4297b5a443e4c1a46914ad7131e02aeaa99a463ee9bbb13918b495a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/gjjqnrc/1d2a0354986e4247a776ff1afba75333.blk.htm
+      sha256: 04c3137b81effdbbce9dfc094081411e16ef74ffcb85c37678c99388dfe6fbfc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/9e1f6474e53e45dfbf303a98239f16aa.htm
+      sha256: 9d5d7faa198d238f3d0810e740ff95593443e828fbf36bb0150457fe9a03beaf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bit-cs · chenshuoying · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: gaochunxiao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/c3d0330d6fe44bfd83a7a320bd00fb0f.htm
+      sha256: a0a400481414c916d4e526fa892931b521d8b29c7e4ca9273fd5fe124572184d
+      fetched_at: '2026-11-16T09:57:21+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: c84f8cf7034b1b956a31fa6ca5c30466cdfaafd77f1303e76561d0c1431fad39
+    id: bit/cs/fetch_or_parse_error/gaochunxiao
+    kind: fetch_or_parse_error
+    ref: gaochunxiao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.bit.edu.cn/szdw/jsml/bssds/index.htm
+      sha256: def96aa8d72cfd4964578915578c4d9a0ee367e431ebf926c224a9979ec44d61
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/index.htm
+      sha256: ff3efd5d1bed825ab0ea1a21e6639989fa27c1f8e593412b1f8c4e4a9fa88ace
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/
+      sha256: b6278bd2a1557c9458a93d9e4ee7da9fbd4df692121fcc1e1ddbe9c69fe09e5f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/index.htm
+      sha256: a43f382540031e57c0909151adf1f6e7c409524814f31359504775b0443db304
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/szgk/index.htm
+      sha256: 8f6699a53591bad8dc647e038fec15df78fa66e8a310d08eacc320f293caafbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml2/index.htm
+      sha256: 287dd064dcec0e77c57e1f871a2de484002e2e60eafe1dbbb17512909bd05729
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/ec32dd3546854a479acf97df07346546.htm
+      sha256: 20ff827e6883004abc82fcb102e26d6153292096122a2126e4c46573fdb3abae
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/banner/75aef92616024569ad23f12e713e683f.htm
+      sha256: 907e352967ff48a11ffc5ce62c418b734385a6bf1e213be39170bf25fa1d7645
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/2654a55344864ae9a5ba23abc24cefda.htm
+      sha256: 1ca1fe1cb26ca0fecb82f89bdcd4feca3949b6e336134b37bced64b9bf0d34c8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/170fca7a57704d4fb1defdcc69011793.htm
+      sha256: 0a0ef84a6708ac1018b30e4f0ffb831196eae4069d3108693d6cb278a8f63f70
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/92888aa88ca1450493e46f87e647f656.htm
+      sha256: 48f7d95cbc26a09ba398e05b688dd0ed25480539dc5532dc25278ea003df5f97
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xyxw/4345de3264bd4ab8a9176ffb7d8b162f.htm
+      sha256: fbd4c6737efbbdc04062f2a935f40dd90c7b7288ea541ab73fa42d37cd4bdc63
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/f86b64a3384649adb318340c84be01d9.htm
+      sha256: 5688fd638eb8b9f2b49d2c7465ecc0e0a7e3294bcae9c6f68ba852db076971f1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/xsbg/7c4c4868801f4a408f85a70bdfb1446c.htm
+      sha256: 66015ed1118555b6df21fc57a7c7353e1d56fca86a3d1efcec0de93aeb04fd50
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/ys/b19ede72be2a4da2988939406d03c292.htm
+      sha256: 43f3035e4297b5a443e4c1a46914ad7131e02aeaa99a463ee9bbb13918b495a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jcrc/gjjqnrc/1d2a0354986e4247a776ff1afba75333.blk.htm
+      sha256: 04c3137b81effdbbce9dfc094081411e16ef74ffcb85c37678c99388dfe6fbfc
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.bit.edu.cn/szdw/jsml/sssds/c3d0330d6fe44bfd83a7a320bd00fb0f.htm
+      sha256: a0a400481414c916d4e526fa892931b521d8b29c7e4ca9273fd5fe124572184d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bit-cs · gaochunxiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

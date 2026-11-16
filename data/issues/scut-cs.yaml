@@ -1,1 +1,91 @@
-[]
+- kind: fetch_or_parse_error
+  ref: chenyile
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://www2.scut.edu.cn/cs/22284/list.htm
+      sha256: 61dc525bc5c3e964f6982a8584882ad22701e09ed217fda3487e7278ab4dc272
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs/22285/list.htm
+      sha256: 5f1bff832b934ac49610162adc70cf502c66728873fd2de8f41d21abad176536
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs/22286/list.htm
+      sha256: e52bda9aebbd9c68ab47fe247ad7c53dcb168220eb9058378d27af99d65d9fbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 官方HTTPS来源降级为HTTP，未抓取目标
+    - url: https://www2.scut.edu.cn/cs/2026/0228/c22285a618583/page.htm
+      sha256: 943d5e3dd8430212c1906218a21677ea5065c76314239cac6eac1aa820f7019b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 4bd2a9457f5aabd58cd97922015b89e30ef03a2c94b4e893096f39643affbb18
+    id: scut/cs/fetch_or_parse_error/chenyile
+    kind: fetch_or_parse_error
+    ref: chenyile
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: scut-cs · chenyile · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: jiangyi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://www2.scut.edu.cn/cs/22284/list.htm
+      sha256: 61dc525bc5c3e964f6982a8584882ad22701e09ed217fda3487e7278ab4dc272
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs/22285/list.htm
+      sha256: 5f1bff832b934ac49610162adc70cf502c66728873fd2de8f41d21abad176536
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs/22286/list.htm
+      sha256: e52bda9aebbd9c68ab47fe247ad7c53dcb168220eb9058378d27af99d65d9fbd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://www2.scut.edu.cn/cs/2026/0324/c22286a621140/page.htm
+      sha256: 053f227bdf7ab2c3667eec6a022f6efd254fc36ec545ca97b4239fed6ad11202
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 4bd2a9457f5aabd58cd97922015b89e30ef03a2c94b4e893096f39643affbb18
+    id: scut/cs/fetch_or_parse_error/jiangyi
+    kind: fetch_or_parse_error
+    ref: jiangyi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: scut-cs · jiangyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

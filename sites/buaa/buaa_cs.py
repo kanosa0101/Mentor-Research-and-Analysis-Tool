@@ -73,6 +73,11 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
+    if cfg.get('_expected_name') and cfg.get('profile_directory_format'):
+        from crawler.mentor_recovery import directory_fields
+        parsed, _ = directory_fields(cfg, html, cfg['_expected_name'])
+        if parsed:
+            return parsed
     out = parse_wp_detail(cfg, html, url)
     _card_fields(BeautifulSoup(html, "html.parser"), out)
     return out

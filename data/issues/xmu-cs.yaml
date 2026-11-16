@@ -1,301 +1,2336 @@
 - kind: fetch_or_parse_error
   ref: caoliujuan
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'
+    evidence: &id001
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://informatics.xmu.edu.cn/info/1284/23609.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'
+    - url: https://informatics.xmu.edu.cn/info/1011/22799.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/24429.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://informatics.xmu.edu.cn/info/1284/24729.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/23679.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/23699.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/23619.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/43129.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/23629.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'
+    - url: https://informatics.xmu.edu.cn/info/1284/23669.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/caoliujuan
+    kind: fetch_or_parse_error
+    ref: caoliujuan
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1011/22799.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: xmu-cs · caoliujuan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: chengming
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'
+    evidence: &id002
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chengming
+    kind: fetch_or_parse_error
+    ref: chengming
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24429.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: xmu-cs · chengming · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: chenjinxiu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm'
+    evidence: &id003
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chenjinxiu
+    kind: fetch_or_parse_error
+    ref: chenjinxiu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: xmu-cs · chenjinxiu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: chenlongbiao
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43960.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43960.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43960.htm'
+    evidence: &id004
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43960.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chenlongbiao
+    kind: fetch_or_parse_error
+    ref: chenlongbiao
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43960.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: xmu-cs · chenlongbiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: chenyijiang
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43970.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43970.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43970.htm'
+    evidence: &id005
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43970.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chenyijiang
+    kind: fetch_or_parse_error
+    ref: chenyijiang
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43970.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: xmu-cs · chenyijiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: chenyinran
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25459.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25459.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25459.htm'
+    evidence: &id006
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25459.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chenyinran
+    kind: fetch_or_parse_error
+    ref: chenyinran
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25459.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: xmu-cs · chenyinran · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenzhonggui
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id007
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/chenzhonggui
+    kind: fetch_or_parse_error
+    ref: chenzhonggui
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: xmu-cs · chenzhonggui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: fengshaorong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43870.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43870.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43870.htm'
+    evidence: &id008
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43870.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/fengshaorong
+    kind: fetch_or_parse_error
+    ref: fengshaorong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43870.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: xmu-cs · fengshaorong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: gaojunlong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/44380.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/44380.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/44380.htm'
+    evidence: &id009
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/44380.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/gaojunlong
+    kind: fetch_or_parse_error
+    ref: gaojunlong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/44380.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: xmu-cs · gaojunlong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: huanghongyi
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43850.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43850.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43850.htm'
+    evidence: &id010
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43850.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/huanghongyi
+    kind: fetch_or_parse_error
+    ref: huanghongyi
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43850.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: xmu-cs · huanghongyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: huanghuaxun
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/38619.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/38619.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/38619.htm'
+    evidence: &id011
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/38619.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/huanghuaxun
+    kind: fetch_or_parse_error
+    ref: huanghuaxun
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/38619.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: xmu-cs · huanghuaxun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: huangshaohui
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43910.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43910.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43910.htm'
+    evidence: &id012
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43910.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/huangshaohui
+    kind: fetch_or_parse_error
+    ref: huangshaohui
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43910.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: xmu-cs · huangshaohui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: huangxiaoyang
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25469.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25469.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25469.htm'
+    evidence: &id013
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25469.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/huangxiaoyang
+    kind: fetch_or_parse_error
+    ref: huangxiaoyang
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25469.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: xmu-cs · huangxiaoyang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: jintaisong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43930.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43930.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43930.htm'
+    evidence: &id014
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43930.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/jintaisong
+    kind: fetch_or_parse_error
+    ref: jintaisong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43930.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: xmu-cs · jintaisong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: juying
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43880.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43880.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43880.htm'
+    evidence: &id015
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43880.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/juying
+    kind: fetch_or_parse_error
+    ref: juying
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43880.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: xmu-cs · juying · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: leiyunqi
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'
+    evidence: &id016
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/leiyunqi
+    kind: fetch_or_parse_error
+    ref: leiyunqi
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23699.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: xmu-cs · leiyunqi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: linziyu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43940.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43940.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43940.htm'
+    evidence: &id017
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43940.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/linziyu
+    kind: fetch_or_parse_error
+    ref: linziyu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43940.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: xmu-cs · linziyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: liuxiangrong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'
+    evidence: &id018
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/liuxiangrong
+    kind: fetch_or_parse_error
+    ref: liuxiangrong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23679.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: xmu-cs · liuxiangrong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: luoxiongbiao
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'
+    evidence: &id019
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/luoxiongbiao
+    kind: fetch_or_parse_error
+    ref: luoxiongbiao
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24729.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: xmu-cs · luoxiongbiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: luoye
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43900.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43900.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43900.htm'
+    evidence: &id020
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43900.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/luoye
+    kind: fetch_or_parse_error
+    ref: luoye
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43900.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: xmu-cs · luoye · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: lvyina
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/42919.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/42919.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/42919.htm'
+    evidence: &id021
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/42919.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/lvyina
+    kind: fetch_or_parse_error
+    ref: lvyina
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/42919.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: xmu-cs · lvyina · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: minxiaoping
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43990.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43990.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43990.htm'
+    evidence: &id022
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43990.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/minxiaoping
+    kind: fetch_or_parse_error
+    ref: minxiaoping
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43990.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: xmu-cs · minxiaoping · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: quyanyun
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'
+    evidence: &id023
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/quyanyun
+    kind: fetch_or_parse_error
+    ref: quyanyun
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23619.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id023
+    title: xmu-cs · quyanyun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: shensiqi
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44040.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44040.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44040.htm'
+    evidence: &id024
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44040.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/shensiqi
+    kind: fetch_or_parse_error
+    ref: shensiqi
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44040.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id024
+    title: xmu-cs · shensiqi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: shenyaobin
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44070.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44070.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44070.htm'
+    evidence: &id025
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44070.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/shenyaobin
+    kind: fetch_or_parse_error
+    ref: shenyaobin
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44070.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id025
+    title: xmu-cs · shenyaobin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: shenzhirong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'
+    evidence: &id026
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/shenzhirong
+    kind: fetch_or_parse_error
+    ref: shenzhirong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/43129.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id026
+    title: xmu-cs · shenzhirong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: shujiwu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'
+    evidence: &id027
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/shujiwu
+    kind: fetch_or_parse_error
+    ref: shujiwu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23629.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id027
+    title: xmu-cs · shujiwu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: tanglu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25509.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25509.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25509.htm'
+    evidence: &id028
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25509.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/tanglu
+    kind: fetch_or_parse_error
+    ref: tanglu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25509.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id028
+    title: xmu-cs · tanglu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wangcheng
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'
+    evidence: &id029
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/wangcheng
+    kind: fetch_or_parse_error
+    ref: wangcheng
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23669.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id029
+    title: xmu-cs · wangcheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wangliansheng
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/26649.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/26649.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/26649.htm'
+    evidence: &id030
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/26649.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/wangliansheng
+    kind: fetch_or_parse_error
+    ref: wangliansheng
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/26649.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id030
+    title: xmu-cs · wangliansheng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wangqicong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44000.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44000.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44000.htm'
+    evidence: &id031
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44000.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/wangqicong
+    kind: fetch_or_parse_error
+    ref: wangqicong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44000.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id031
+    title: xmu-cs · wangqicong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wurongxin
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43950.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43950.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43950.htm'
+    evidence: &id032
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43950.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/wurongxin
+    kind: fetch_or_parse_error
+    ref: wurongxin
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43950.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id032
+    title: xmu-cs · wurongxin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wusuzhen
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/36699.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/36699.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/36699.htm'
+    evidence: &id033
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/36699.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/wusuzhen
+    kind: fetch_or_parse_error
+    ref: wusuzhen
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/36699.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id033
+    title: xmu-cs · wusuzhen · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: xiangqiao
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'
+    evidence: &id034
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/xiangqiao
+    kind: fetch_or_parse_error
+    ref: xiangqiao
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23609.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id034
+    title: xmu-cs · xiangqiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: xieyi
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44010.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44010.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44010.htm'
+    evidence: &id035
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44010.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/xieyi
+    kind: fetch_or_parse_error
+    ref: xieyi
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44010.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id035
+    title: xmu-cs · xieyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: yangchenhui
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23639.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23639.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23639.htm'
+    evidence: &id036
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23639.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/yangchenhui
+    kind: fetch_or_parse_error
+    ref: yangchenhui
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23639.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id036
+    title: xmu-cs · yangchenhui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: yanyan
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23659.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23659.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23659.htm'
+    evidence: &id037
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23659.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/yanyan
+    kind: fetch_or_parse_error
+    ref: yanyan
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23659.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id037
+    title: xmu-cs · yanyan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: yaolantian
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id038
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/info/1011/2940.htm
+      sha256: 0fa40702c1efac2bfbcf58e3ba16f851085091dc216a5ec4e5e85533d5b553f1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/yaolantian
+    kind: fetch_or_parse_error
+    ref: yaolantian
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id038
+    title: xmu-cs · yaolantian · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: yurongshan
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24709.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24709.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24709.htm'
+    evidence: &id039
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24709.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/yurongshan
+    kind: fetch_or_parse_error
+    ref: yurongshan
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/24709.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id039
+    title: xmu-cs · yurongshan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zangyu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44020.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44020.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44020.htm'
+    evidence: &id040
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44020.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zangyu
+    kind: fetch_or_parse_error
+    ref: zangyu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44020.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id040
+    title: xmu-cs · zangyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zhangdefu
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23649.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23649.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23649.htm'
+    evidence: &id041
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23649.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhangdefu
+    kind: fetch_or_parse_error
+    ref: zhangdefu
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1284/23649.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id041
+    title: xmu-cs · zhangdefu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zhangdongzhan
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44030.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44030.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44030.htm'
+    evidence: &id042
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44030.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhangdongzhan
+    kind: fetch_or_parse_error
+    ref: zhangdongzhan
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/44030.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id042
+    title: xmu-cs · zhangdongzhan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangyachao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id043
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/yachaozhang/zh_CN/index.htm
+      sha256: 05265a4e64a0d6173b5a0f5ba7041c38ebd205af330c5b3b69bb4dac1a2ea939
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhangyachao
+    kind: fetch_or_parse_error
+    ref: zhangyachao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id043
+    title: xmu-cs · zhangyachao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zhaochong
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25519.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25519.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25519.htm'
+    evidence: &id044
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25519.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhaochong
+    kind: fetch_or_parse_error
+    ref: zhaochong
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1435/25519.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id044
+    title: xmu-cs · zhaochong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zhaowanlei
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43890.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43890.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43890.htm'
+    evidence: &id045
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43890.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhaowanlei
+    kind: fetch_or_parse_error
+    ref: zhaowanlei
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43890.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id045
+    title: xmu-cs · zhaowanlei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: zhengwei
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43860.htm'')'
-  first_seen: '2026-09-05'
+  message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43860.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: informatics.xmu.edu.cn 详情页批量404, 抽样复验确认——官网死链
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43860.htm'
+    evidence: &id046
+    - url: https://cs.xmu.edu.cn/szll/js.htm
+      sha256: ea23a3da1de0f8a1e760e609bb0592fa330abd1fea9ec10d3f5be4cfb09b88e4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/fjs.htm
+      sha256: 84848bd5542d5db27c51ea2b012d3aa26328dd7f46d1dc8c6b03cfd755dffdef
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/szll/zljs.htm
+      sha256: 2b61d1f0780136af4ded710beb4c0f8950074bcad80939d7f05881878f6b41c7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.xmu.edu.cn/
+      sha256: a0b156891860ab0bfd3fe713a0fe437975d5655bc778bc8d21938704bbc53d44
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/CZG/zh_CN/index.htm
+      sha256: 54ff912e40df7ac34933140880fa13463f3a79a6c35173a555c9666bc451009b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.xmu.edu.cn/LC1/zh_CN/index.htm
+      sha256: 58e55647610609b47d457d7161c05111833be66a306afd083bdfaf3a469503c0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43860.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: 597125178d34a87cad89a1461e3008f7769da52e021676c117192ce9244c951c
+    id: xmu/cs/fetch_or_parse_error/zhengwei
+    kind: fetch_or_parse_error
+    ref: zhengwei
+    original_message: '404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43860.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id046
+    title: xmu-cs · zhengwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

@@ -1,1 +1,166 @@
-[]
+- kind: fetch_or_parse_error
+  ref: dairong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 6b5302a4b899a2a0fb256732b2e9cd91e7454a298daf0b6d53f3e66cb38da5b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/
+      sha256: 148c3258d75da1df359f6de8fff5bfce5fab90be09ad8d762013255123cbc422
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=2&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 797c7b97e8125c7fd576458ba80ebc35ebf8200a7043bb26bb251248429835b6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=21&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: a41f460ab2f35528ed9ab08636edc91a5018788506a8bb3594f2ef180b606058
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=3&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 12451f250402969bbbf2e6c5aa6fdbd63cde02d697789485cf896cc6d1221cf1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=4&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 8dfe8dc85a3cd44c9ca36c09229bbc5d32f59865102a7524bfb85e897ef591d8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=5&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 653a2c5b4c75a09dd4007f5d9e98563ece4ed0854bfe905f6ce69397500f46b2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=6&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: a523d545fae46165539175cfc7fc7d3a7a07d38684a7fe3833e9f6031445751c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=7&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 5ae757e2962ecc6b54e9450cdb0dbc1479a3149b7cc7fa12f84e2e56aad94730
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=8&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 71ff5439e953175f82961c559eb5da85b2749e27d3631c7d62530f939910f806
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=9&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 0f4881fa4d632a107a27ae6d1c62f4cda50ecd4581dcf1058e40ccfe1184044e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=10&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 39ade965674219e795e0d6849863f98ce0bf471bd818114a1b1eeb3a30f01870
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=11&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: d868cff8e440e4b751c9538d80a14306a082e19e293dbda115ce1db7dfe4ff09
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=12&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 780deb57774b31b9b81f717cd389f79d64a51c9083e66f9b93706df4168b9117
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=13&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 6cdec0b0ce659057c63cbb49a0305e181832fa1582ae005760e7a080bd5921eb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=14&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 5412aa3c384d0da994e08c8ae5aafdd8f0af45f0f3b5f658b41dee73fe53d4d8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/dairong/zh_CN/index.htm
+      sha256: 763e4b81e47b66bd359bd83e8b2670f9ee373c41f6f24286c1fab6cc9b076621
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 8e8cf2fec944156177dd7e990189f501e6c7f9d4105dc52a55266ea4e37f33df
+    id: scu/cs/fetch_or_parse_error/dairong
+    kind: fetch_or_parse_error
+    ref: dairong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: scu-cs · dairong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dongtiangang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 6b5302a4b899a2a0fb256732b2e9cd91e7454a298daf0b6d53f3e66cb38da5b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/
+      sha256: 148c3258d75da1df359f6de8fff5bfce5fab90be09ad8d762013255123cbc422
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=2&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 797c7b97e8125c7fd576458ba80ebc35ebf8200a7043bb26bb251248429835b6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=21&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: a41f460ab2f35528ed9ab08636edc91a5018788506a8bb3594f2ef180b606058
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=3&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 12451f250402969bbbf2e6c5aa6fdbd63cde02d697789485cf896cc6d1221cf1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=4&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 8dfe8dc85a3cd44c9ca36c09229bbc5d32f59865102a7524bfb85e897ef591d8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=5&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 653a2c5b4c75a09dd4007f5d9e98563ece4ed0854bfe905f6ce69397500f46b2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=6&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: a523d545fae46165539175cfc7fc7d3a7a07d38684a7fe3833e9f6031445751c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=7&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 5ae757e2962ecc6b54e9450cdb0dbc1479a3149b7cc7fa12f84e2e56aad94730
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=8&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 71ff5439e953175f82961c559eb5da85b2749e27d3631c7d62530f939910f806
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=9&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 0f4881fa4d632a107a27ae6d1c62f4cda50ecd4581dcf1058e40ccfe1184044e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=10&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 39ade965674219e795e0d6849863f98ce0bf471bd818114a1b1eeb3a30f01870
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=11&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: d868cff8e440e4b751c9538d80a14306a082e19e293dbda115ce1db7dfe4ff09
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=12&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 780deb57774b31b9b81f717cd389f79d64a51c9083e66f9b93706df4168b9117
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=13&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 6cdec0b0ce659057c63cbb49a0305e181832fa1582ae005760e7a080bd5921eb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/xyjs.jsp?totalpage=21&PAGENUM=14&id=1035&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012
+      sha256: 5412aa3c384d0da994e08c8ae5aafdd8f0af45f0f3b5f658b41dee73fe53d4d8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.scu.edu.cn/dongtiangang/zh_CN/index.htm
+      sha256: 511f85380d8b2a80d578fd8763039991f54aebfaca6f899f24a0724c5caf6faa
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 8e8cf2fec944156177dd7e990189f501e6c7f9d4105dc52a55266ea4e37f33df
+    id: scu/cs/fetch_or_parse_error/dongtiangang
+    kind: fetch_or_parse_error
+    ref: dongtiangang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: scu-cs · dongtiangang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

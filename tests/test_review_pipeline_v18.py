@@ -13,6 +13,7 @@ def phases(monkeypatch):
     mocks = {}
     for name, module, function, value in (
         ('discovery', pipeline.source_discovery, 'run', {'summary': {}}),
+        ('recovery', pipeline.opportunity_recovery, 'run', {'summary': {}}),
         ('automatic', pipeline.automatic_review, 'run', {'counts': {}}),
         ('alerts', pipeline.review_queue, 'refresh_alerts', {'active': [], 'summary': {}}),
         ('quality', pipeline.quality_status, 'refresh', {'available': {'policy': True, 'mentor': True}, 'active': [], 'summary': {}}),
@@ -135,3 +136,20 @@ def test_rebuild_subprocess_failures_hide_raw_output_and_release_lock(tmp_path, 
 def test_unavailable_or_incomplete_quality_never_reports_healthy(tmp_path, phases, quality):
     phases['quality'].return_value = dict(active=[], **quality)
     assert pipeline.run(tmp_path)['status'] == 'attention'
+
+
+def test_source_recovery_requires_publish_mode_and_isolates_failure(tmp_path, phases):
+    pipeline.run(tmp_path, discover=True)
+    phases['recovery'].assert_not_called()
+    phases['recovery'].side_effect = ValueError('fixture private diagnostic')
+    result = pipeline.run(tmp_path, discover=True, publish=True)
+    phases['recovery'].assert_called_once_with(tmp_path, limit=1, request_budget=16)
+    assert result['status'] == 'partial' and result['failures']['source_recovery'] == 'ValueError'
+    assert 'fixture private diagnostic' not in json.dumps(result)
+    assert phases['automatic'].call_count == 2 and phases['metrics'].call_count == 2
+
+
+def test_source_recovery_budget_wait_needs_attention(tmp_path, phases):
+    phases['recovery'].return_value = {'summary': {'budget_wait': 1}}
+    result = pipeline.run(tmp_path, discover=True, publish=True)
+    assert result['status'] == 'attention' and not result['failures']

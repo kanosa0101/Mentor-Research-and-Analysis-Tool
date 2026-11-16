@@ -136,3 +136,67 @@ def test_cross_institution_redirect_is_rejected_before_following(monkeypatch):
     with pytest.raises(ValueError, match='跨机构'):
         discovery.fetch_html(CHILD, PARENT)
     assert session.get.call_count == 1
+
+
+def test_bks_camp_column_is_not_undergraduate_admissions():
+    parent = 'https://ihep.cas.cn/edu/'
+    raw = '<meta charset="utf-8"><a href="bks/xly/">大学生冬令营</a><a href="bkzs/">本科招生</a>'.encode()
+    assert discovery.links(raw, parent) == [dict(url=parent + 'bks/xly/', title='大学生冬令营')]
+
+
+def test_multiple_seeds_share_candidate_budget_and_progress_over_rounds(tmp_path):
+    configs = [dict(url=f'https://cs.example.edu.cn/seed{i}/', school='example', dept='cs') for i in range(4)]
+    calls = []
+    def fetch(url, _):
+        calls.append(url)
+        if url in {c['url'] for c in configs}:
+            return '<meta charset="utf-8"><a href="a">研究生招生</a><a href="b">通知公告</a>'.encode()
+        return COLUMN
+    first = discovery.run(tmp_path, configs=configs, fetcher=fetch, now=NOW, max_seeds=2, max_candidates=2)
+    assert first['summary']['seeds_attempted'] == first['summary']['candidates_checked'] == 2
+    assert first['summary']['due_seeds_deferred'] == 2
+    second = discovery.run(tmp_path, configs=configs, fetcher=fetch, now=NOW + timedelta(minutes=1), max_seeds=2, max_candidates=2)
+    assert len(second['seeds']) == 4 and len(second['candidates']) == 4
+    third = discovery.run(tmp_path, configs=configs, fetcher=fetch, now=NOW + timedelta(minutes=2), max_seeds=2, max_candidates=2)
+    assert len(third['candidates']) == 6
+    assert all(calls.count(c['url'] + 'a') == 1 for c in configs)
+
+
+def test_official_https_redirect_cannot_downgrade_transport(monkeypatch):
+    session = MagicMock(); session.__enter__.return_value = session
+    response = MagicMock(); response.__enter__.return_value = response
+    response.status_code = 302; response.headers = {'Location': CHILD.replace('https:', 'http:')}
+    session.get.return_value = response
+    monkeypatch.setattr(discovery.requests, 'Session', lambda: session)
+    monkeypatch.setattr(discovery.socket, 'getaddrinfo', lambda *a, **k: [(None, None, None, None, ('8.8.8.8', 443))])
+    with pytest.raises(ValueError, match='降级'):
+        discovery.fetch_html(CHILD, PARENT)
+    assert session.get.call_count == 1
+
+
+def test_camp_and_admissions_columns_precede_generic_notices(tmp_path):
+    raw = '<meta charset="utf-8"><a href="a">通知公告</a><a href="b">研究生招生</a><a href="z">冬令营</a>'.encode()
+    calls = []
+    def fetch(url, _):
+        calls.append(url)
+        return raw if url == PARENT else COLUMN
+    discovery.run(tmp_path, configs=[dict(url=PARENT, school='example', dept='cs')],
+                  fetcher=fetch, now=NOW, max_seeds=1, max_candidates=1)
+    assert calls == [PARENT, 'https://cs.example.edu.cn/z']
+
+
+def test_redirect_hops_consume_external_request_budget(monkeypatch):
+    session = MagicMock(); session.__enter__.return_value = session
+    response = MagicMock(); response.__enter__.return_value = response
+    response.status_code = 302; response.headers = {'Location': CHILD + '?moved=1'}
+    session.get.return_value = response
+    monkeypatch.setattr(discovery.requests, 'Session', lambda: session)
+    monkeypatch.setattr(discovery.socket, 'getaddrinfo', lambda *a, **k: [(None, None, None, None, ('8.8.8.8', 443))])
+    used = []
+    def budget():
+        if used:
+            raise ValueError('budget exhausted')
+        used.append(True)
+    with pytest.raises(ValueError, match='budget exhausted'):
+        discovery.fetch_html(CHILD, PARENT, before_request=budget)
+    assert session.get.call_count == 1

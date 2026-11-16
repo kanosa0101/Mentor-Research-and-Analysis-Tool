@@ -4,8 +4,8 @@ aliases: []
 school: buaa
 dept: cs
 status: enriched
-title: 研究员
-supervisor: 博导
+title: 教授
+supervisor: 博导、硕导
 email: frank0139@163.com
 phone: 010-82316301
 bio_raw: '胡海苗 北航计算机学院 研究员、博导，2012年获北航计算机应用技术专业工学博士学位，获2013年度“北京市优秀博士学位论文”奖。2008年至2009年在美国华盛顿大学（University
@@ -34,8 +34,8 @@ bio_raw: '胡海苗 北航计算机学院 研究员、博导，2012年获北航�
   主页：http://shi.buaa.edu.cn/huhaimiao/zh_CN/index.htm'
 institutes: []
 homepage: http://shi.buaa.edu.cn/huhaimiao/zh_CN/index.htm
-detail_url: http://scse.buaa.edu.cn/info/1078/8385.htm
-profile_url: http://scse.buaa.edu.cn/info/1078/8385.htm
+detail_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
+profile_url: https://scse.buaa.edu.cn/szdw/qtjs.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets:
@@ -52,18 +52,18 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: http://scse.buaa.edu.cn/info/1078/8385.htm
-    fetched_at: '2026-09-05'
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
-    source: http://scse.buaa.edu.cn/info/1078/8385.htm
-    fetched_at: '2026-09-05'
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: http://scse.buaa.edu.cn/info/1078/8385.htm
-    fetched_at: '2026-09-05'
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
@@ -80,3 +80,21 @@ provenance:
     source: http://scse.buaa.edu.cn/info/1078/8385.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://scse.buaa.edu.cn/szdw/qtjs.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 智能感知、计算机视觉、具身智能、人工智能应用
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

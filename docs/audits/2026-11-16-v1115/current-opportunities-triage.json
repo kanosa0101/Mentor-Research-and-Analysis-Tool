@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-16T11:21:43+00:00",
+  "candidates": [
+    {
+      "id": "21b192b1ca3f188bfef7",
+      "source_url": "https://cse.sysu.edu.cn/admission/summer_camp",
+      "source_sha256": "a5c013e29f5bf62a5942aec29f7a8badd4e12854bac352afb97d18ad3aed8f48",
+      "classification": "irrelevant",
+      "reason": "该条目本身是夏令营栏目，不是一则报名公告。保存的官方HTML含200个链接，标题为“夏令营 | 中山大学计算机学院”，正文按2026-07、2026-06、2025-06等日期列出不同通知及摘要；各公告需按独立正文入队核验。",
+      "evidence_basis": "已取回生产抓取留存HTML并核对SHA256、页面标题、正文列表及逐年独立链接；不是仅按短标题排除。栏目可保留为来源，不能发布为活动。"
+    },
+    {
+      "id": "8b351692e4cce400afb3",
+      "source_url": "https://cs.pku.edu.cn/yy/kjcxsjkc.htm",
+      "source_sha256": "e56a6ed84323933e8e040d138c7bce6e8d8d5e0edbf3d2a789dd9044dcf0f3c4",
+      "classification": "irrelevant",
+      "reason": "该页是计算机学院“院友→科技创新实践课程”栏目，正文介绍公选课及其课程网站，并列出2026春季学期课程简介；不是面向申请人的院校夏冬令营、推免或统一科研项目招生公告。",
+      "evidence_basis": "已取回生产抓取留存HTML并核对SHA256、标题、面包屑、正文与148个链接；原文明确称一门创新创业课程。"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from crawler import automatic_review, review_queue, source_discovery, maintenance_push, quality_status
+from crawler import automatic_review, review_queue, source_discovery, opportunity_recovery, maintenance_push, quality_status
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler.pipeline_metrics import summarize
 
@@ -45,6 +45,8 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
         if discover:
             phase('discovery', lambda: source_discovery.run(root, max_seeds=max_seeds, max_candidates=max_candidates,
                                                           auto_admit=publish))
+            if publish:
+                phase('source_recovery', lambda: opportunity_recovery.run(root, limit=1, request_budget=16))
         phase('automatic', lambda: automatic_review.run(root, limit=limit, publish=publish))
         phase('alerts', lambda: review_queue.refresh_alerts(root))
         phase('quality_alerts', lambda: quality_status.refresh(root))
@@ -66,6 +68,10 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
         delivery = result.get('maintainer_notifications', {})
         attention = bool(result.get('automatic', {}).get('errors') or
+                         result.get('source_recovery', {}).get('summary', {}).get('unresolved') or
+                         result.get('source_recovery', {}).get('summary', {}).get('manual_required') or
+                         result.get('source_recovery', {}).get('summary', {}).get('not_announcement') or
+                         result.get('source_recovery', {}).get('summary', {}).get('budget_wait') or
                          delivery.get('failed') or delivery.get('retry_exhausted') or
                          result.get('quality_alerts', {}).get('failures') or
                          result.get('quality_alerts', {}).get('incomplete') or

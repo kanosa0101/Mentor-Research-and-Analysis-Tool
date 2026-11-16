@@ -1,1 +1,164 @@
-[]
+- kind: fetch_or_parse_error
+  ref: caijie
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://csee.hnu.edu.cn/teacher/syjs/1
+      sha256: 8655124cfc2806608e80e25828e246ef9bef19a03e74f5ae1910baceefc3b6c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/2
+      sha256: b866cb3e58dc0932ed1f5f24de2d3c5ddddfdf3df871b98de335aa73847064b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/3
+      sha256: fda0944b55a4b280ec3c5a83922800e8c2d42147fdf9fb300502b7db3ff7f325
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/4
+      sha256: d3c0e5a3f4650f844351c93da86f03940b12b57cc67bb9a3f7d066d22388aa29
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/5
+      sha256: 7f3593841fef7c7d5a7cfcf2b9bae28197c6f37f7fedb08797a721d82ea169f0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/6
+      sha256: 4fe10f4a2e0ee35ad640c073cdd4a0c634b6ac96130c736c408d3d06e7791495
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/
+      sha256: f746268eb8be6d8925f483851d81a9fdcfbb88dbdc94a5ba5a5ed655cb5d7175
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/xygk/szll.htm
+      sha256: c5fc024536f7fc02625a1a1ab6d0948e4da94603ad3cbfcc67b91c11cc4e0b76
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/10
+      sha256: 9cf137b0e4f5ecc6a99aab744958ae4e7913f7c7979beead69eabbb9a6f09668
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/25
+      sha256: b866cb3e58dc0932ed1f5f24de2d3c5ddddfdf3df871b98de335aa73847064b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/40
+      sha256: 6816300f898829ca392fcd7d009e0ea5c3dea71e03ec660250bba70c2289fa38
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/15
+      sha256: 9f91c8f257b09a08d030896333a10978fdfd5a94d1c4239fd4a1cf592331cd77
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/30
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''csee.hnu.edu.cn'', port=443): Max retries
+        exceeded with url: /teacher/syjs/30 (Caused by NewConnectionError("HTTPSConnection(host=''csee.hnu.edu.cn'',
+        port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/60
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''csee.hnu.edu.cn'', port=443): Max retries
+        exceeded with url: /teacher/syjs/60 (Caused by NewConnectionError("HTTPSConnection(host=''csee.hnu.edu.cn'',
+        port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/65
+      sha256: b4e6f667e9b97dde7389224b1988565f47a3c4a5ee5ededa0a274cd1f3f0e5a7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/70
+      sha256: 977774291d4d30f1541af6012239962d6ec8f954a0d75e768f1bcb1f36899d2c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/people/caijie
+      sha256: 61250a09979d3ec985f12df4bdadf7161bc2e029caaf44302ff6d3ef86ee9a2d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 11cde9422e8675afc1381f3236564a1117cd3f7bdb44cdf379833ae3f3f9fcda
+    id: hnu/cs/fetch_or_parse_error/caijie
+    kind: fetch_or_parse_error
+    ref: caijie
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: hnu-cs · caijie · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenjuan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://csee.hnu.edu.cn/teacher/syjs/1
+      sha256: 8655124cfc2806608e80e25828e246ef9bef19a03e74f5ae1910baceefc3b6c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/2
+      sha256: b866cb3e58dc0932ed1f5f24de2d3c5ddddfdf3df871b98de335aa73847064b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/3
+      sha256: fda0944b55a4b280ec3c5a83922800e8c2d42147fdf9fb300502b7db3ff7f325
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/4
+      sha256: d3c0e5a3f4650f844351c93da86f03940b12b57cc67bb9a3f7d066d22388aa29
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/5
+      sha256: 7f3593841fef7c7d5a7cfcf2b9bae28197c6f37f7fedb08797a721d82ea169f0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/6
+      sha256: 4fe10f4a2e0ee35ad640c073cdd4a0c634b6ac96130c736c408d3d06e7791495
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/
+      sha256: f746268eb8be6d8925f483851d81a9fdcfbb88dbdc94a5ba5a5ed655cb5d7175
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/xygk/szll.htm
+      sha256: c5fc024536f7fc02625a1a1ab6d0948e4da94603ad3cbfcc67b91c11cc4e0b76
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/10
+      sha256: 9cf137b0e4f5ecc6a99aab744958ae4e7913f7c7979beead69eabbb9a6f09668
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/25
+      sha256: b866cb3e58dc0932ed1f5f24de2d3c5ddddfdf3df871b98de335aa73847064b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/40
+      sha256: 6816300f898829ca392fcd7d009e0ea5c3dea71e03ec660250bba70c2289fa38
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/15
+      sha256: 9f91c8f257b09a08d030896333a10978fdfd5a94d1c4239fd4a1cf592331cd77
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/65
+      sha256: b4e6f667e9b97dde7389224b1988565f47a3c4a5ee5ededa0a274cd1f3f0e5a7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/teacher/syjs/70
+      sha256: 977774291d4d30f1541af6012239962d6ec8f954a0d75e768f1bcb1f36899d2c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://csee.hnu.edu.cn/people/chenjuan
+      sha256: 74a2ef1addc22b1b0a693ec1817e33acea6f1c03d88cde7a47bd034f9671778f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 11cde9422e8675afc1381f3236564a1117cd3f7bdb44cdf379833ae3f3f9fcda
+    id: hnu/cs/fetch_or_parse_error/chenjuan
+    kind: fetch_or_parse_error
+    ref: chenjuan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: hnu-cs · chenjuan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

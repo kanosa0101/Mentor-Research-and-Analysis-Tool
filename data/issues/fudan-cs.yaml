@@ -1,1 +1,1372 @@
-[]
+- kind: fetch_or_parse_error
+  ref: anhailong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://ai.fudan.edu.cn/ahl/list.htm
+      sha256: aca1dd9e54c992b7efbf9eb9571fb1cd47e0bfc82a09a355e129e038000401e7
+      fetched_at: '2026-11-16T10:20:37+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/ahl/list.htm
+      sha256: aca1dd9e54c992b7efbf9eb9571fb1cd47e0bfc82a09a355e129e038000401e7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/ahl/list.htm
+    current_source: https://ai.fudan.edu.cn/ahl/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/anhailong
+    kind: fetch_or_parse_error
+    ref: anhailong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: fudan-cs · anhailong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: caoxiu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cx/list.htm
+      sha256: 4cf15c335c7a7c8e53f61f091d8f2be4e724ff0ac9f7449ea55e5b547e63d328
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cx/list.htm
+    current_source: https://ai.fudan.edu.cn/cx/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/caoxiu
+    kind: fetch_or_parse_error
+    ref: caoxiu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: fudan-cs · caoxiu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: caoyu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cy_37042/list.htm
+      sha256: 18c18ceefaef091b0c9f58bc95d2b162f101531ee9b0b4bac988e45b36826909
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cy_37042/list.htm
+    current_source: https://ai.fudan.edu.cn/cy_37042/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/caoyu
+    kind: fetch_or_parse_error
+    ref: caoyu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: fudan-cs · caoyu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: cengjianping
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cjp/list.htm
+      sha256: 0b7b42dfe74085bf279c59bfd5dcee92a38e941524d2880aa48016e315ad4ff0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cjp/list.htm
+    current_source: https://ai.fudan.edu.cn/cjp/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/cengjianping
+    kind: fetch_or_parse_error
+    ref: cengjianping
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: fudan-cs · cengjianping · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: cengyi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cy_50313/list.htm
+      sha256: 75b8c5a4988498364848ba648a0ba31f563f771061b20559a443642d924ee516
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cy_50313/list.htm
+    current_source: https://ai.fudan.edu.cn/cy_50313/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/cengyi
+    kind: fetch_or_parse_error
+    ref: cengyi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: fudan-cs · cengyi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chaihongfeng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/chf/list.htm
+      sha256: 85da5e40d1b7082932af487b02433394f8d36beafb4dcf438151c8485d12f947
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/chf/list.htm
+    current_source: https://ai.fudan.edu.cn/chf/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chaihongfeng
+    kind: fetch_or_parse_error
+    ref: chaihongfeng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: fudan-cs · chaihongfeng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenbihuan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cbh/list.htm
+      sha256: 1085ea3393567b76c89c5d1f8029cc5c9ba131005635ca9810ea7bca45e13149
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cbh/list.htm
+    current_source: https://ai.fudan.edu.cn/cbh/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenbihuan
+    kind: fetch_or_parse_error
+    ref: chenbihuan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id007
+    title: fudan-cs · chenbihuan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenchen
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cc/list.htm
+      sha256: 535422974c7c544601c9ad8d8530df955acbd2d46ffe78d4c9b536862d0a5360
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cc/list.htm
+    current_source: https://ai.fudan.edu.cn/cc/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenchen
+    kind: fetch_or_parse_error
+    ref: chenchen
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: fudan-cs · chenchen · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenhaihong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id009
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/chh/list.htm
+      sha256: 05f065bb5faf2abef247d27ef090140b7e24fe1707d848b5de411b0ba18da77e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/chh/list.htm
+    current_source: https://ai.fudan.edu.cn/chh/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenhaihong
+    kind: fetch_or_parse_error
+    ref: chenhaihong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: fudan-cs · chenhaihong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenlifeng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/clf/list.htm
+      sha256: 9ded1c54c00647cbb3846a38c2c68f667a91c17b6a850ceee5039c8828693af6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/clf/list.htm
+    current_source: https://ai.fudan.edu.cn/clf/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenlifeng
+    kind: fetch_or_parse_error
+    ref: chenlifeng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: fudan-cs · chenlifeng · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenronghua
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id011
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/crh/list.htm
+      sha256: d7642d7055a3848ebf758722fa5ee0b07241a7eeff24b2ba946a2e83e9e55958
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/crh/list.htm
+    current_source: https://ai.fudan.edu.cn/crh/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenronghua
+    kind: fetch_or_parse_error
+    ref: chenronghua
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id011
+    title: fudan-cs · chenronghua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chentongbing
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/ctb/list.htm
+      sha256: 6a48bd95bff01e8895314de0c5276ec9c5f2dd7dddbeca262ad14b7cc06ded22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/ctb/list.htm
+    current_source: https://ai.fudan.edu.cn/ctb/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chentongbing
+    kind: fetch_or_parse_error
+    ref: chentongbing
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id012
+    title: fudan-cs · chentongbing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenweinan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cwn/list.htm
+      sha256: d3d0326608fa292b354956bb517399fe0f80c0f9229ec755764dc0678caf7984
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cwn/list.htm
+    current_source: https://ai.fudan.edu.cn/cwn/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenweinan
+    kind: fetch_or_parse_error
+    ref: chenweinan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: fudan-cs · chenweinan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenxueqing
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cxq/list.htm
+      sha256: f8deabb116bf6048b6fc1ceaeadcbb96a95acde8f91eb2d01d12ee3a7b7f9502
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cxq/list.htm
+    current_source: https://ai.fudan.edu.cn/cxq/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenxueqing
+    kind: fetch_or_parse_error
+    ref: chenxueqing
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: fudan-cs · chenxueqing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chenyang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cy_37066/list.htm
+      sha256: 103af19c2ccc5c9ac83d75789035654957813f20e3b637797709ac5c2c472713
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cy_37066/list.htm
+    current_source: https://ai.fudan.edu.cn/cy_37066/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chenyang
+    kind: fetch_or_parse_error
+    ref: chenyang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: fudan-cs · chenyang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: chimingmin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id016
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/cmm/list.htm
+      sha256: 322d334c6291da978281573281ff909594d6d8d07d053e8711ef223fd0ee64f9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/cmm/list.htm
+    current_source: https://ai.fudan.edu.cn/cmm/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/chimingmin
+    kind: fetch_or_parse_error
+    ref: chimingmin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: fudan-cs · chimingmin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: daijiarun
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id017
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/djr/list.htm
+      sha256: 5c98467aaaade8b41a98aa9539b0d04d75cd6d1953cf29806382909e5f9c3c2f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/djr/list.htm
+    current_source: https://ai.fudan.edu.cn/djr/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/daijiarun
+    kind: fetch_or_parse_error
+    ref: daijiarun
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id017
+    title: fudan-cs · daijiarun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: daikaiyu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id018
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/dky/list.htm
+      sha256: 6cbcc9fd8face17c9a861d1aff800df577475ec65fb751eb15eb0dfbe58f8a51
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/dky/list.htm
+    current_source: https://ai.fudan.edu.cn/dky/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/daikaiyu
+    kind: fetch_or_parse_error
+    ref: daikaiyu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id018
+    title: fudan-cs · daikaiyu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: danxiaoyue
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id019
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/sxy/list.htm
+      sha256: 2d8595f1d6d24301aa110ca0efe0bd550b5bc6a759c8d0f4d8345dfc9cb5464c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/sxy/list.htm
+    current_source: https://ai.fudan.edu.cn/sxy/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/danxiaoyue
+    kind: fetch_or_parse_error
+    ref: danxiaoyue
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: fudan-cs · danxiaoyue · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dengzhiyou
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id020
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/dzy/list.htm
+      sha256: 44d73c5f69c1b1f021237a4cbca6841170d4ef57d79ab51462dbe3466b20476c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/dzy/list.htm
+    current_source: https://ai.fudan.edu.cn/dzy/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/dengzhiyou
+    kind: fetch_or_parse_error
+    ref: dengzhiyou
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id020
+    title: fudan-cs · dengzhiyou · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dingling
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id021
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/dl/list.htm
+      sha256: 430cc63a96df7ac43528dad1cab5f8f1ba1f5d358bf7ed802f26c7fb116f1ee3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/dl/list.htm
+    current_source: https://ai.fudan.edu.cn/dl/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/dingling
+    kind: fetch_or_parse_error
+    ref: dingling
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: fudan-cs · dingling · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: dingsufen
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id022
+    - url: https://cs.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/
+      sha256: e2a323081881efa653e6cc7a758811955664a70637b067ba8ba657aebef6685f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53161/list.htm
+      sha256: 0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/30/27/c24256a798759/page.htm
+      sha256: a240f334f7622c7aeaadf7a675e92f35cd5db3210a7fecbdf5e7e165b0d5d3a9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.fudan.edu.cn/1f/eb/c24256a794603/page.htm
+      sha256: 9724b90d6c7165268a67a950aa62cc7521167bb9faadae4618bc5f618aca4280
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/53163/list.htm
+      sha256: 974fee94d33d29b614f1f572cc3b6cfa3c0b7b5c170e652297e5c0f17382b991
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.fudan.edu.cn/dsf/list.htm
+      sha256: 5d2216f1afca692369133855542ee933ad74547d94b28e70f5881f7d6fb04369
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    previous_source: http://ai.fudan.edu.cn/dsf/list.htm
+    current_source: https://ai.fudan.edu.cn/dsf/list.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786
+    id: fudan/cs/fetch_or_parse_error/dingsufen
+    kind: fetch_or_parse_error
+    ref: dingsufen
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: fudan-cs · dingsufen · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'

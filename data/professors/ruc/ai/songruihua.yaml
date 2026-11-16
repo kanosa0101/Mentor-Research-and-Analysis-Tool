@@ -8,8 +8,8 @@ status: enriched
 title: 长聘副教授
 email: rsong@ruc.edu.cn
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
@@ -26,6 +26,18 @@ provenance:
     confidence: auto
   email:
     origin: crawled
-    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/srh/index.htm
-    fetched_at: '2026-09-04'
+    source: https://ai.ruc.edu.cn/szdw/zrjs/srh/index.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

@@ -1,10 +1,10 @@
 school: ruc
 dept: ai
 dept_name: 高瓴人工智能学院
-base_url: http://ai.ruc.edu.cn
+base_url: https://ai.ruc.edu.cn
 hook: ruc_ai
 direct: true
 list:
   urls:
-    - http://ai.ruc.edu.cn/academicfaculty/szdwn/index.htm
-  person_href: /academicfaculty/szdwn/[a-z0-9]+/index\.htm
+    - https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+  person_href: /szdw/zrjs/[a-z0-9]+/index\.htm

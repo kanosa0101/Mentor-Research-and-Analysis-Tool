@@ -7,7 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from crawler import opportunity_monitor as monitor, opportunity_review as review, pipeline_metrics
-from crawler import ai_evidence as ai
+from crawler import ai_evidence as ai, ai_transport
 import test_push_util
 
 
@@ -111,19 +111,20 @@ class AISuggestionTests(unittest.TestCase):
             with self.assertRaises(ValueError):ai.validate({'suggestions':[row]},text)
 
     def test_disabled_never_calls_external_service(self):
-        with tempfile.TemporaryDirectory() as folder,patch.dict(ai.os.environ,{},clear=True),patch.object(ai.requests,'Session') as session:
+        with tempfile.TemporaryDirectory() as folder,patch.dict(ai.os.environ,{},clear=True),patch.object(ai_transport.requests,'Session') as session:
             with self.assertRaises(ValueError):ai.suggest(folder,'https://demo.edu.cn/a','公开正文')
             session.assert_not_called()
 
     def test_budget_request_bounds_and_no_key_in_prompt_or_result(self):
         with tempfile.TemporaryDirectory() as folder,patch.dict(ai.os.environ,{'MENTOR_AI_ENABLED':'true','MENTOR_AI_API_KEY':'fixture-credential'},clear=True):
             settings=Path(folder)/'var/ai/config.json';settings.parent.mkdir(parents=True);settings.write_text('{"daily_limit":1}')
-            with patch.object(ai.requests,'Session') as factory:
+            with patch.object(ai_transport.requests,'Session') as factory:
                 client=factory.return_value;response=client.post.return_value
+                response.headers={'Content-Type':'application/json'};response.iter_content.side_effect=lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
                 response.status_code=200;response.content=b'{}';response.json.return_value={'choices':[{'finish_reason':'stop','message':{'content':'{"suggestions":[]}'}}]}
                 result=ai.suggest(folder,'https://demo.edu.cn/a','公开正文'*10000)
                 call=client.post.call_args.kwargs
-                self.assertEqual(call['json']['max_tokens'],6000);self.assertFalse(call['allow_redirects']);self.assertEqual(call['timeout'],(10,120))
+                self.assertEqual(call['json']['max_tokens'],6000);self.assertFalse(call['allow_redirects']);self.assertEqual(call['timeout'],(10,30));self.assertTrue(call['stream']);self.assertEqual(call['json']['reasoning_effort'],'none')
                 self.assertNotIn('fixture-credential',json.dumps(call['json']))
                 self.assertNotIn('fixture-credential',json.dumps(result))
                 self.assertEqual(result['input_chars'],18000)
@@ -131,9 +132,10 @@ class AISuggestionTests(unittest.TestCase):
                 self.assertEqual(client.post.call_count,1)
 
     def test_length_finish_is_rejected_even_for_valid_json(self):
-        with tempfile.TemporaryDirectory() as folder,patch.dict(ai.os.environ,{'MENTOR_AI_ENABLED':'true','MENTOR_AI_API_KEY':'fixture-credential'},clear=True),patch.object(ai.requests,'Session') as factory:
+        with tempfile.TemporaryDirectory() as folder,patch.dict(ai.os.environ,{'MENTOR_AI_ENABLED':'true','MENTOR_AI_API_KEY':'fixture-credential'},clear=True),patch.object(ai_transport.requests,'Session') as factory:
             response=factory.return_value.post.return_value
             response.status_code=200;response.content=b'{}'
+            response.headers={'Content-Type':'application/json'};response.iter_content.side_effect=lambda **kwargs: iter([json.dumps(response.json.return_value).encode()])
             response.json.return_value={'choices':[{'finish_reason':'length','message':{'content':'{"suggestions":[]}'}}]}
             with self.assertRaisesRegex(ValueError,'不完整'):ai.suggest(folder,'https://demo.edu.cn/a','公开正文')
 

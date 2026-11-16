@@ -2681,49 +2681,55 @@
     - 副教授
     - 教授
     unavailable_pages: 1
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: c9592ad1368cc435b45e2730ec9e2b78d9c52feb4ed9db0fb2085a1a27be750f
     id: nankai/cyber/unknown_detail_field/luye
     kind: unknown_detail_field
     ref: luye
     original_message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
-    checked_at: '2026-11-16T09:28:00+00:00'
-    next_check_at: '2026-11-17T09:28:00+00:00'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
     evidence:
     - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
       sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
       sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list1.htm
       sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/jswyjy/list.htm
       sha256: ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list.htm
       sha256: 5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/jswyjy/list.htm
       sha256: a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/js/list.htm
       sha256: a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm
       sha256: 327bc2db1e9a9ff6c0f06e7a40ae85618342b5315ca41053f5ba49469fa4c587
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.htm
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
       error: '410 Client Error:  for url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.psp'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13839a551990/page.htm
       sha256: f9dd46b62814d5d97e659ee1221eaad5426f31ad5d7b4ca55cc2e121807f10f5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     title: nankai-cyber · luye · unknown_detail_field
     pending_since: '2026-11-16T09:24:18+00:00'
     last_success: null
@@ -2783,48 +2789,54 @@
     - 副教授
     - 教授
     unavailable_pages: 1
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: c9592ad1368cc435b45e2730ec9e2b78d9c52feb4ed9db0fb2085a1a27be750f
     id: nankai/cyber/unknown_detail_field/luye-2
     kind: unknown_detail_field
     ref: luye-2
     original_message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
-    checked_at: '2026-11-16T09:28:00+00:00'
-    next_check_at: '2026-11-17T09:28:00+00:00'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
     evidence:
     - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
       sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
       sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list1.htm
       sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/jswyjy/list.htm
       sha256: ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list.htm
       sha256: 5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/jswyjy/list.htm
       sha256: a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/js/list.htm
       sha256: a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13839a551990/page.htm
       sha256: f9dd46b62814d5d97e659ee1221eaad5426f31ad5d7b4ca55cc2e121807f10f5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm
       sha256: 327bc2db1e9a9ff6c0f06e7a40ae85618342b5315ca41053f5ba49469fa4c587
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.htm
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
       error: '410 Client Error:  for url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.psp'
     title: nankai-cyber · luye-2 · unknown_detail_field
     pending_since: '2026-11-16T09:24:18+00:00'
@@ -2885,49 +2897,55 @@
     - 副教授
     - 博士后
     unavailable_pages: 0
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: c9592ad1368cc435b45e2730ec9e2b78d9c52feb4ed9db0fb2085a1a27be750f
     id: nankai/cyber/unknown_detail_field/yuanxinjing
     kind: unknown_detail_field
     ref: yuanxinjing
     original_message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
-    checked_at: '2026-11-16T09:28:00+00:00'
-    next_check_at: '2026-11-17T09:28:00+00:00'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
     evidence:
     - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
       sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
       sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list1.htm
       sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/jswyjy/list.htm
       sha256: ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list.htm
       sha256: 5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/jswyjy/list.htm
       sha256: a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/js/list.htm
       sha256: a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13839a577372/page.htm
       sha256: 8e7906187390823db7254b6330376e8c19bb5d6a5b270fc8c086aa310c3bab2e
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13620a577371/page.htm
       sha256: 0a9f810ee7f66d9c621e46967b939e5459087675dbffd1baaf173e9871811e08
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13840a551959/page.htm
       sha256: e32a1b822313ad2e84bfe6d03d27120c4fff2e7bbd4fcb9e6940705d200fddb7
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     title: nankai-cyber · yuanxinjing · unknown_detail_field
     pending_since: '2026-11-16T09:24:18+00:00'
     last_success: null
@@ -2987,49 +3005,55 @@
     - 副教授
     - 博士后
     unavailable_pages: 0
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: c9592ad1368cc435b45e2730ec9e2b78d9c52feb4ed9db0fb2085a1a27be750f
     id: nankai/cyber/unknown_detail_field/yuanxinjing-2
     kind: unknown_detail_field
     ref: yuanxinjing-2
     original_message: 同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。
-    checked_at: '2026-11-16T09:28:00+00:00'
-    next_check_at: '2026-11-17T09:28:00+00:00'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
     evidence:
     - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
       sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
       sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list1.htm
       sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/jswyjy/list.htm
       sha256: ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/js/list.htm
       sha256: 5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/jswyjy/list.htm
       sha256: a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
       sha256: 79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/js/list.htm
       sha256: a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13840a551959/page.htm
       sha256: e32a1b822313ad2e84bfe6d03d27120c4fff2e7bbd4fcb9e6940705d200fddb7
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cc.nankai.edu.cn/2021/0323/c13620a577371/page.htm
       sha256: 0a9f810ee7f66d9c621e46967b939e5459087675dbffd1baaf173e9871811e08
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     - url: https://cyber.nankai.edu.cn/2021/0323/c13839a577372/page.htm
       sha256: 8e7906187390823db7254b6330376e8c19bb5d6a5b270fc8c086aa310c3bab2e
-      fetched_at: '2026-11-16T09:28:00+00:00'
+      fetched_at: '2026-11-16T11:26:05+00:00'
     title: nankai-cyber · yuanxinjing-2 · unknown_detail_field
     pending_since: '2026-11-16T09:24:18+00:00'
     last_success: null

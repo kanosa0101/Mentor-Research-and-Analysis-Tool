@@ -1,20 +1,97 @@
 - kind: fetch_or_parse_error
+  ref: cenglingqiu
+  message: 'HTTPSConnectionPool(host=''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn'', port=443):
+    Max retries exceeded with url: /LingqiuZeng/zh_CN/index.htm (Caused by SSLError(SSLCertVerificationError(1,
+    "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+    certificate is not valid for ''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn''. (_ssl.c:1000)")))'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn'',
+      port=443): Max retries exceeded with url: /LingqiuZeng/zh_CN/index.htm (Caused
+      by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate
+      verify failed: Hostname mismatch, certificate is not valid for ''facu'
+    evidence:
+    - url: https://faculty-cqu-edu-cn-s.atrust.cqu.edu.cn/LingqiuZeng/zh_CN/index.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn'',
+        port=443): Max retries exceeded with url: /LingqiuZeng/zh_CN/index.htm (Caused
+        by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED]
+        certificate verify failed: Hostname mismatch, certificate is not valid for
+        ''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn''. (_ssl.c:1000)")))'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：HTTPSConnectionPool(host=''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn'',
+      port=443): Max retries exceeded with url: /LingqiuZeng/zh_CN/index.htm (Caused
+      by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate
+      verify failed: Hostname mismatch, certificate is not valid for ''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn''.
+      (_ssl.c:1000)")))'
+    reason_code: tls_error
+    category_label: 官方证书异常
+    next_action: discover_official_source
+    action_label: 核验其他官方入口
+    consecutive_failures: 1
+    repair_signature: bbb7dcb6f9e138ed148b8f34c1a4c0163a110d96d1c33dd1d0db2d44aac86339
+    id: cqu/cs/fetch_or_parse_error/cenglingqiu
+    kind: fetch_or_parse_error
+    ref: cenglingqiu
+    original_message: 'HTTPSConnectionPool(host=''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn'',
+      port=443): Max retries exceeded with url: /LingqiuZeng/zh_CN/index.htm (Caused
+      by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate
+      verify failed: Hostname mismatch, certificate is not valid for ''faculty-cqu-edu-cn-s.atrust.cqu.edu.cn''.
+      (_ssl.c:1000)")))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.cqu.edu.cn/szdw/bdsd.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/szdw/bdsd.htm'
+    - url: https://cs.cqu.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/'
+    title: cqu-cs · cenglingqiu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
   ref: dengshaojiang
-  message: 'Error(''Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at http://www.cs.cqu.edu.cn/info/1680/10184.htm\nCall
-    log:\n  - navigating to "http://www.cs.cqu.edu.cn/info/1680/10184.htm", waiting
-    until "domcontentloaded"\n'')'
-  first_seen: '2026-09-05'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuweining
-  message: 'MissingSchema("Invalid URL ''../info/1614/11197.htm'': No scheme supplied.
-    Perhaps you meant https://../info/1614/11197.htm?")'
-  first_seen: '2026-09-05'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangjiyun
-  message: 'Error(''Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at http://www.cs.cqu.edu.cn/info/1275/4061.htm\nCall
-    log:\n  - navigating to "http://www.cs.cqu.edu.cn/info/1275/4061.htm", waiting
-    until "domcontentloaded"\n'')'
-  first_seen: '2026-09-05'
-  resolved: true
+  message: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+    evidence:
+    - url: https://cs.cqu.edu.cn/info/1680/10184.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: bbb7dcb6f9e138ed148b8f34c1a4c0163a110d96d1c33dd1d0db2d44aac86339
+    id: cqu/cs/fetch_or_parse_error/dengshaojiang
+    kind: fetch_or_parse_error
+    ref: dengshaojiang
+    original_message: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://cs.cqu.edu.cn/info/1680/10184.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://cs.cqu.edu.cn/info/1680/10184.htm'
+    title: cqu-cs · dengshaojiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

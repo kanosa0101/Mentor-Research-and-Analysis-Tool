@@ -1,1 +1,4380 @@
-[]
+- kind: fetch_or_parse_error
+  ref: caisuihua
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/CaiSuihua
+      sha256: 14647083f66bdbef2375c932d3e68aae3a5cdd5f8ef450ab5269e915c378659a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/CaiSuihua
+      sha256: 14647083f66bdbef2375c932d3e68aae3a5cdd5f8ef450ab5269e915c378659a
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/CaiSuihua
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/CaiSuihua
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/caisuihua
+    kind: fetch_or_parse_error
+    ref: caisuihua
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id001
+    title: sysu-cs · caisuihua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: cengkun
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ZengKun
+      sha256: 94eaa3a128c3c19318449d087629fdb6808c1812c56802d3ea9887b5776632ea
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ZengKun
+      sha256: 94eaa3a128c3c19318449d087629fdb6808c1812c56802d3ea9887b5776632ea
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ZengKun
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ZengKun
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/cengkun
+    kind: fetch_or_parse_error
+    ref: cengkun
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id002
+    title: sysu-cs · cengkun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chenchuan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenChuan
+      sha256: 514cf7b4e185adf1760a71e4ca9ca488666917f5cee7189ea185551bc461ed30
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenChuan
+      sha256: 514cf7b4e185adf1760a71e4ca9ca488666917f5cee7189ea185551bc461ed30
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChenChuan
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChenChuan
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenchuan
+    kind: fetch_or_parse_error
+    ref: chenchuan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id003
+    title: sysu-cs · chenchuan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chengang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenGang
+      sha256: dbac211fc7a6db25774224e945374e1b93e4bc2920a96b252ab6cf845987806d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenGang
+      sha256: dbac211fc7a6db25774224e945374e1b93e4bc2920a96b252ab6cf845987806d
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChenGang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChenGang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chengang
+    kind: fetch_or_parse_error
+    ref: chengang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id004
+    title: sysu-cs · chengang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chenghui
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChengHui
+      sha256: c3a75fcb1a8b410533e21e97dfbeca6a8775bf4ad05e4568326f3fdb6a9030ca
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChengHui
+      sha256: c3a75fcb1a8b410533e21e97dfbeca6a8775bf4ad05e4568326f3fdb6a9030ca
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChengHui
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChengHui
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenghui
+    kind: fetch_or_parse_error
+    ref: chenghui
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id005
+    title: sysu-cs · chenghui · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chenliang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenLiang
+      sha256: 907bad0257a6cce89a05dde2c480beb1b3e90aae342ab375cb34f3fbd61798d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenLiang
+      sha256: 907bad0257a6cce89a05dde2c480beb1b3e90aae342ab375cb34f3fbd61798d4
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChenLiang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChenLiang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenliang
+    kind: fetch_or_parse_error
+    ref: chenliang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id006
+    title: sysu-cs · chenliang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chenpengfei
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenPengfei
+      sha256: 93dc3c3da8737d7dc7f0ffa6af14775447366db714d200ee626c73a2a9be1de3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id007
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenPengfei
+      sha256: 93dc3c3da8737d7dc7f0ffa6af14775447366db714d200ee626c73a2a9be1de3
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChenPengfei
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChenPengfei
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenpengfei
+    kind: fetch_or_parse_error
+    ref: chenpengfei
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id007
+    title: sysu-cs · chenpengfei · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: chenxu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenXu
+      sha256: 6de0040a5608f7c2a14ba213c734e27d6d78979c5c231da26679ab23afb2b2c2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''cse.sysu.edu.cn'', port=443): Read timed out.
+      (read timeout=6)'
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenxu
+    kind: fetch_or_parse_error
+    ref: chenxu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-16T15:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenXu
+      fetched_at: '2026-11-16T11:41:02+00:00'
+      error: 'HTTPSConnectionPool(host=''cse.sysu.edu.cn'', port=443): Read timed
+        out. (read timeout=6)'
+    title: sysu-cs · chenxu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenzhiguang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+      sha256: 124f670635321405d47ac530588c6c99b1fc49f345253271824d33d4d15705b7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id008
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+      sha256: 124f670635321405d47ac530588c6c99b1fc49f345253271824d33d4d15705b7
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/chenzhiguang
+    kind: fetch_or_parse_error
+    ref: chenzhiguang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id008
+    title: sysu-cs · chenzhiguang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: daizhiming
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/DaiZhiming
+      sha256: 2a0294733c4c1c4d3e476959a86d6561f66471a553663e8980535a900a612659
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id009
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/DaiZhiming
+      sha256: 2a0294733c4c1c4d3e476959a86d6561f66471a553663e8980535a900a612659
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/DaiZhiming
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/DaiZhiming
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/daizhiming
+    kind: fetch_or_parse_error
+    ref: daizhiming
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id009
+    title: sysu-cs · daizhiming · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: donghaoye
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/3568
+      sha256: dca198bab5e2b367501889902f2cb9fe52a639d220acb79a156961306b5f3962
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id010
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/3568
+      sha256: dca198bab5e2b367501889902f2cb9fe52a639d220acb79a156961306b5f3962
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/3568
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/3568
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/donghaoye
+    kind: fetch_or_parse_error
+    ref: donghaoye
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id010
+    title: sysu-cs · donghaoye · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: dujiangsu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/3325
+      sha256: 967d4717b60a59be3f20d4c5dff3134aa825307c8fc196adbf8376de9710096a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id011
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/3325
+      sha256: 967d4717b60a59be3f20d4c5dff3134aa825307c8fc196adbf8376de9710096a
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/3325
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/3325
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/dujiangsu
+    kind: fetch_or_parse_error
+    ref: dujiangsu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id011
+    title: sysu-cs · dujiangsu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: duyusong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/DuYusong
+      sha256: cb64333462ef166369d2e760d5cd8adfb134c4c8ba2b48230ef20c8e299e6104
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id012
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/DuYusong
+      sha256: cb64333462ef166369d2e760d5cd8adfb134c4c8ba2b48230ef20c8e299e6104
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/DuYusong
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/DuYusong
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/duyusong
+    kind: fetch_or_parse_error
+    ref: duyusong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id012
+    title: sysu-cs · duyusong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: fengjianlin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/FengJianlin
+      sha256: b3f19ce2d4388fd455457e40dbba7cc3817abf8a2fde0ce8f760f7175c265972
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id013
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/FengJianlin
+      sha256: b3f19ce2d4388fd455457e40dbba7cc3817abf8a2fde0ce8f760f7175c265972
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/FengJianlin
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/FengJianlin
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/fengjianlin
+    kind: fetch_or_parse_error
+    ref: fengjianlin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id013
+    title: sysu-cs · fengjianlin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: gaochengying
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GaoChengying
+      sha256: b77d59005ba6dfdbf4e321ae6512c47d87b4f5d13fe1ca018777d23cd25fe518
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id014
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GaoChengying
+      sha256: b77d59005ba6dfdbf4e321ae6512c47d87b4f5d13fe1ca018777d23cd25fe518
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/GaoChengying
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/GaoChengying
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/gaochengying
+    kind: fetch_or_parse_error
+    ref: gaochengying
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id014
+    title: sysu-cs · gaochengying · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: gongjie
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GongJie
+      sha256: bbee96eb23947a6f200d6d58049655086464579c260dfe0bb5471402c6dfdf99
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id015
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GongJie
+      sha256: bbee96eb23947a6f200d6d58049655086464579c260dfe0bb5471402c6dfdf99
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/GongJie
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/GongJie
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/gongjie
+    kind: fetch_or_parse_error
+    ref: gongjie
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id015
+    title: sysu-cs · gongjie · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: guanjiechao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GuanJiechao
+      sha256: 5ffbc19a6b3a4f14fd2d8a785a987bcc3cf47bc5c6d73ebeb7c48eea042f086f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id016
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GuanJiechao
+      sha256: 5ffbc19a6b3a4f14fd2d8a785a987bcc3cf47bc5c6d73ebeb7c48eea042f086f
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/GuanJiechao
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/GuanJiechao
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/guanjiechao
+    kind: fetch_or_parse_error
+    ref: guanjiechao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id016
+    title: sysu-cs · guanjiechao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: guodeke
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GuoDeke
+      sha256: 59344576572cd9acdfb68115ad8341e7b63cff55ea52021b5c28bfaba22c6736
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''cse.sysu.edu.cn'', port=443): Read timed out.
+      (read timeout=6)'
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/guodeke
+    kind: fetch_or_parse_error
+    ref: guodeke
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-16T15:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/GuoDeke
+      fetched_at: '2026-11-16T11:41:02+00:00'
+      error: 'HTTPSConnectionPool(host=''cse.sysu.edu.cn'', port=443): Read timed
+        out. (read timeout=6)'
+    title: sysu-cs · guodeke · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: hengyi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HengYi
+      sha256: 8d5251d722a902beafa36ec148b7bc6bf98be706dd165420beb9c035e9da1141
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id017
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HengYi
+      sha256: 8d5251d722a902beafa36ec148b7bc6bf98be706dd165420beb9c035e9da1141
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/HengYi
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/HengYi
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/hengyi
+    kind: fetch_or_parse_error
+    ref: hengyi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id017
+    title: sysu-cs · hengyi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: huangdan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/Huangdan
+      sha256: 0f1ab18c777b345b61a8299913eb8c56b0262fea9ad4854c25301d3eb7b171eb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id018
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/Huangdan
+      sha256: 0f1ab18c777b345b61a8299913eb8c56b0262fea9ad4854c25301d3eb7b171eb
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/Huangdan
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/Huangdan
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/huangdan
+    kind: fetch_or_parse_error
+    ref: huangdan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id018
+    title: sysu-cs · huangdan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: huangkai
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuangKai
+      sha256: da2e929f63925546a3f7590a990a9422fb3ed10d683db937fff4212ae59eb64c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id019
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuangKai
+      sha256: da2e929f63925546a3f7590a990a9422fb3ed10d683db937fff4212ae59eb64c
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/HuangKai
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/HuangKai
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/huangkai
+    kind: fetch_or_parse_error
+    ref: huangkai
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id019
+    title: sysu-cs · huangkai · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: huangqianyi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuangQianyi
+      sha256: 8cba4f4d202c824f1ced7f44cec28724e45abc83b1d3c368372b2517b87a6027
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id020
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuangQianyi
+      sha256: 8cba4f4d202c824f1ced7f44cec28724e45abc83b1d3c368372b2517b87a6027
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/HuangQianyi
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/HuangQianyi
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/huangqianyi
+    kind: fetch_or_parse_error
+    ref: huangqianyi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id020
+    title: sysu-cs · huangqianyi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: hujianfang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuJianfang
+      sha256: a3860e03c2191a5059df95a691d00805267bdf420d016ea1d76deb727316a7f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id021
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuJianfang
+      sha256: a3860e03c2191a5059df95a691d00805267bdf420d016ea1d76deb727316a7f5
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/HuJianfang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/HuJianfang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/hujianfang
+    kind: fetch_or_parse_error
+    ref: hujianfang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id021
+    title: sysu-cs · hujianfang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: humiao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuMiao
+      sha256: b7d24e3be078aadc856138d2ba9249bd228fac50a1aaa976921c8bc8e9efaa8b
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id022
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/HuMiao
+      sha256: b7d24e3be078aadc856138d2ba9249bd228fac50a1aaa976921c8bc8e9efaa8b
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/HuMiao
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/HuMiao
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/humiao
+    kind: fetch_or_parse_error
+    ref: humiao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id022
+    title: sysu-cs · humiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: jiangying
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/JiangYing
+      sha256: a33956530cbff5d10bf23b7f11259476ff6cf2a8ba3f8fbed00a2547ea2f90e6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id023
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/JiangYing
+      sha256: a33956530cbff5d10bf23b7f11259476ff6cf2a8ba3f8fbed00a2547ea2f90e6
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/JiangYing
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/JiangYing
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/jiangying
+    kind: fetch_or_parse_error
+    ref: jiangying
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id023
+    title: sysu-cs · jiangying · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: jinshuyuan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/JinShuyuan
+      sha256: 4f9814f1947bf93d5a1f44b580af4c3f5c9adcbdde5edf6e47446052fd3ee0da
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id024
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/JinShuyuan
+      sha256: 4f9814f1947bf93d5a1f44b580af4c3f5c9adcbdde5edf6e47446052fd3ee0da
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/JinShuyuan
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/JinShuyuan
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/jinshuyuan
+    kind: fetch_or_parse_error
+    ref: jinshuyuan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id024
+    title: sysu-cs · jinshuyuan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: jiqingge
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：导师姓名未出现在返回正文，保留旧记录
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/jiqingge
+    kind: fetch_or_parse_error
+    ref: jiqingge
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: sysu-cs · jiqingge · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: kangxiangui
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/KangXiangui
+      sha256: d95218ff5a5c9ec297007c13d8662463244227e80561a3644ac4167026e1e9b8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id025
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/KangXiangui
+      sha256: d95218ff5a5c9ec297007c13d8662463244227e80561a3644ac4167026e1e9b8
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/KangXiangui
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/KangXiangui
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/kangxiangui
+    kind: fetch_or_parse_error
+    ref: kangxiangui
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id025
+    title: sysu-cs · kangxiangui · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: kexueyanjiu-2
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/research
+      sha256: 2b9a9181a2d9244caeb485c02ea7fc8ac34928aa96ded2a6cb30ef0e6491dabf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/kexueyanjiu-2
+    kind: fetch_or_parse_error
+    ref: kexueyanjiu-2
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/research
+      sha256: 2b9a9181a2d9244caeb485c02ea7fc8ac34928aa96ded2a6cb30ef0e6491dabf
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    title: sysu-cs · kexueyanjiu-2 · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: kexueyanjiu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/research
+      sha256: 2b9a9181a2d9244caeb485c02ea7fc8ac34928aa96ded2a6cb30ef0e6491dabf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/kexueyanjiu
+    kind: fetch_or_parse_error
+    ref: kexueyanjiu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/research
+      sha256: 2b9a9181a2d9244caeb485c02ea7fc8ac34928aa96ded2a6cb30ef0e6491dabf
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    title: sysu-cs · kexueyanjiu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: laihanjiang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LaiHanjiang
+      sha256: 36b068da35bd5a251aaf45924f1130fb8777067631d9b10655e6c696890a003a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id026
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LaiHanjiang
+      sha256: 36b068da35bd5a251aaf45924f1130fb8777067631d9b10655e6c696890a003a
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LaiHanjiang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LaiHanjiang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/laihanjiang
+    kind: fetch_or_parse_error
+    ref: laihanjiang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id026
+    title: sysu-cs · laihanjiang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: laijianhuang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LaiJianhuang
+      sha256: a4da40fb4167133ba74db114f4d8d5bdc3237a84da6786d50d3da6fc16267ea9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id027
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LaiJianhuang
+      sha256: a4da40fb4167133ba74db114f4d8d5bdc3237a84da6786d50d3da6fc16267ea9
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LaiJianhuang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LaiJianhuang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/laijianhuang
+    kind: fetch_or_parse_error
+    ref: laijianhuang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id027
+    title: sysu-cs · laijianhuang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liguanbin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiGuanbin
+      sha256: 0af52b42f9b3ff68857285588928677aa7cbbd0867e3a4cd531df5147534866d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id028
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiGuanbin
+      sha256: 0af52b42f9b3ff68857285588928677aa7cbbd0867e3a4cd531df5147534866d
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiGuanbin
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiGuanbin
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liguanbin
+    kind: fetch_or_parse_error
+    ref: liguanbin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id028
+    title: sysu-cs · liguanbin · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: lilvzhou
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiLvzhou
+      sha256: 2bccdf80ba9da5f1f751027c028c8550c4e2d22e98375e646d207be7b0baf06d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id029
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiLvzhou
+      sha256: 2bccdf80ba9da5f1f751027c028c8550c4e2d22e98375e646d207be7b0baf06d
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiLvzhou
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiLvzhou
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/lilvzhou
+    kind: fetch_or_parse_error
+    ref: lilvzhou
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id029
+    title: sysu-cs · lilvzhou · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: lingqing
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LingQing
+      sha256: 545cfa2a2b1e17541f211949e87da6172b52a909f195f00ddb244a5d332b9f2f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id030
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LingQing
+      sha256: 545cfa2a2b1e17541f211949e87da6172b52a909f195f00ddb244a5d332b9f2f
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LingQing
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LingQing
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/lingqing
+    kind: fetch_or_parse_error
+    ref: lingqing
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id030
+    title: sysu-cs · lingqing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: linjing
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LinLiang
+      sha256: 8a95bdbb0a46e714d9572e95f91ed180d6b9f5d871f8447e67a79c3b92055fba
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id031
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LinLiang
+      sha256: 8a95bdbb0a46e714d9572e95f91ed180d6b9f5d871f8447e67a79c3b92055fba
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LinLiang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LinLiang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/linjing
+    kind: fetch_or_parse_error
+    ref: linjing
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id031
+    title: sysu-cs · linjing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liqia
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiQia
+      sha256: f38c4b45561506f46a615df1224b31deb241af3f1199976a81f91eee73a1a790
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id032
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiQia
+      sha256: f38c4b45561506f46a615df1224b31deb241af3f1199976a81f91eee73a1a790
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiQia
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiQia
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liqia
+    kind: fetch_or_parse_error
+    ref: liqia
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id032
+    title: sysu-cs · liqia · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liquanzhong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiQuanzhong
+      sha256: 7b64cca8338afd0a1b9865592a5d57b9b9ee80e42a586409038a2d42faa73068
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id033
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiQuanzhong
+      sha256: 7b64cca8338afd0a1b9865592a5d57b9b9ee80e42a586409038a2d42faa73068
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiQuanzhong
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiQuanzhong
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liquanzhong
+    kind: fetch_or_parse_error
+    ref: liquanzhong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id033
+    title: sysu-cs · liquanzhong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liucong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuCong
+      sha256: 4c0fbcf3cbc3c120a3372e74987ba6f2d4bb128eec24a32d65364114a741041f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id034
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuCong
+      sha256: 4c0fbcf3cbc3c120a3372e74987ba6f2d4bb128eec24a32d65364114a741041f
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiuCong
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiuCong
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liucong
+    kind: fetch_or_parse_error
+    ref: liucong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id034
+    title: sysu-cs · liucong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liuning
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuNing
+      sha256: 3b627c9b3a8e029daf9b1838da03af3dfbc4189005e8d5ab6831457f1907ece1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id035
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuNing
+      sha256: 3b627c9b3a8e029daf9b1838da03af3dfbc4189005e8d5ab6831457f1907ece1
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiuNing
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiuNing
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liuning
+    kind: fetch_or_parse_error
+    ref: liuning
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id035
+    title: sysu-cs · liuning · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYang
+      sha256: 70374939c8af0d7052c83503360d8b8773e825180fd0f85c0bf1d43503925734
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id036
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYang
+      sha256: 70374939c8af0d7052c83503360d8b8773e825180fd0f85c0bf1d43503925734
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiuYang
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiuYang
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liuyang
+    kind: fetch_or_parse_error
+    ref: liuyang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id036
+    title: sysu-cs · liuyang · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyongmei
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYongmei
+      sha256: 1dab3f6be9a6159ec6104ad5ad7d00b430117c70a8b3aed1e616bbe381612cf4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id037
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYongmei
+      sha256: 1dab3f6be9a6159ec6104ad5ad7d00b430117c70a8b3aed1e616bbe381612cf4
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiuYongmei
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiuYongmei
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liuyongmei
+    kind: fetch_or_parse_error
+    ref: liuyongmei
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id037
+    title: sysu-cs · liuyongmei · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liuyubao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYubao
+      sha256: 712236c4eae41ba5e4319f899f97d39ba2f1ff0d94b3cc081428785f74e46f74
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id038
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiuYubao
+      sha256: 712236c4eae41ba5e4319f899f97d39ba2f1ff0d94b3cc081428785f74e46f74
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiuYubao
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiuYubao
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liuyubao
+    kind: fetch_or_parse_error
+    ref: liuyubao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id038
+    title: sysu-cs · liuyubao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liweibing
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiWeibing
+      sha256: b90c470f4b6cf0901b44398d7b44b7d6a35271e9f6853e56ef5ae6c6283124c6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id039
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiWeibing
+      sha256: b90c470f4b6cf0901b44398d7b44b7d6a35271e9f6853e56ef5ae6c6283124c6
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiWeibing
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiWeibing
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liweibing
+    kind: fetch_or_parse_error
+    ref: liweibing
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id039
+    title: sysu-cs · liweibing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: liwenjun
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiWenjun
+      sha256: 744faa2d1d504b122c07f6549fca3ab79a19c8e3521e6572bbe2abb2df705ab1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id040
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LiWenjun
+      sha256: 744faa2d1d504b122c07f6549fca3ab79a19c8e3521e6572bbe2abb2df705ab1
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LiWenjun
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LiWenjun
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/liwenjun
+    kind: fetch_or_parse_error
+    ref: liwenjun
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id040
+    title: sysu-cs · liwenjun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: luoweiqi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuoWeiqi
+      sha256: 276a054a9fee0fd80605297fbe9fd4efd4482b0f89e99728196eb8c74624f960
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id041
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuoWeiqi
+      sha256: 276a054a9fee0fd80605297fbe9fd4efd4482b0f89e99728196eb8c74624f960
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LuoWeiqi
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LuoWeiqi
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/luoweiqi
+    kind: fetch_or_parse_error
+    ref: luoweiqi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id041
+    title: sysu-cs · luoweiqi · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: luwei
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuWei
+      sha256: 7e847b9904f6a4aa74acf9d0043d8c37e24bf8a5329d88c129c60354a7d70def
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id042
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuWei
+      sha256: 7e847b9904f6a4aa74acf9d0043d8c37e24bf8a5329d88c129c60354a7d70def
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LuWei
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LuWei
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/luwei
+    kind: fetch_or_parse_error
+    ref: luwei
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id042
+    title: sysu-cs · luwei · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: luyao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuYao
+      sha256: 331323268bf9a16627a911c0301909b89630a0373e373d124c9ebe6af7861e54
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id043
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuYao
+      sha256: 331323268bf9a16627a911c0301909b89630a0373e373d124c9ebe6af7861e54
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/LuYao
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/LuYao
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/luyao
+    kind: fetch_or_parse_error
+    ref: luyao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id043
+    title: sysu-cs · luyao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: luyutong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuYutong
+      sha256: 8364bf8a6da9cf5ab813e891776db5269600eda8a680a2a4c406d4ab50e786e7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 2
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/luyutong
+    kind: fetch_or_parse_error
+    ref: luyutong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/LuYutong
+      sha256: 8364bf8a6da9cf5ab813e891776db5269600eda8a680a2a4c406d4ab50e786e7
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    title: sysu-cs · luyutong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: majinhua
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MaJinhua
+      sha256: 58fd1c862dd2e7ee0fa763f66d7fa9478d4cd69c5916a8927acb212d052b4db6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id044
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MaJinhua
+      sha256: 58fd1c862dd2e7ee0fa763f66d7fa9478d4cd69c5916a8927acb212d052b4db6
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/MaJinhua
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/MaJinhua
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/majinhua
+    kind: fetch_or_parse_error
+    ref: majinhua
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id044
+    title: sysu-cs · majinhua · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: maxiao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MaXiao
+      sha256: afc2fff1f95d841237b1428ae352aac096fe82932561d3d37dcd0eb079e3a400
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id045
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MaXiao
+      sha256: afc2fff1f95d841237b1428ae352aac096fe82932561d3d37dcd0eb079e3a400
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/MaXiao
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/MaXiao
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/maxiao
+    kind: fetch_or_parse_error
+    ref: maxiao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id045
+    title: sysu-cs · maxiao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: mengjingke
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MengJingke
+      sha256: 5419d29450c1cebc9bfe2a0fb25027ab4e98780898c5510baed55443ba417330
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id046
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/MengJingke
+      sha256: 5419d29450c1cebc9bfe2a0fb25027ab4e98780898c5510baed55443ba417330
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - office_address
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/MengJingke
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/MengJingke
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/mengjingke
+    kind: fetch_or_parse_error
+    ref: mengjingke
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id046
+    title: sysu-cs · mengjingke · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: panrong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/PanRong
+      sha256: f2270d1e175c3d57aa2a10f104a4ef3ff150d3b2f269ff99fea36769d3986b5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id047
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/PanRong
+      sha256: f2270d1e175c3d57aa2a10f104a4ef3ff150d3b2f269ff99fea36769d3986b5e
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/PanRong
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/PanRong
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/panrong
+    kind: fetch_or_parse_error
+    ref: panrong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id047
+    title: sysu-cs · panrong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'
+- kind: fetch_or_parse_error
+  ref: panyan
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    evidence:
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/PanYan
+      sha256: 0c7c263842c6cd21e3471d9a75e0efc613c2a65544fe2f62ab557cb1885cf1d3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T11:41:02+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id048
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/
+      sha256: c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/faculty
+      sha256: a5a9ec4f5d3a7a13955d0e5bf04615cb81f3260a43172411df4b04cf54a21e32
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sysu.edu.cn/teacher
+      sha256: dd95750c50f19b1d1a5a8051a2bf4074265cd6963dccb322cad7800eee66f6f2
+      fetched_at: '2026-11-16T11:41:02+00:00'
+    - url: https://cse.sysu.edu.cn/teacher/PanYan
+      sha256: 0c7c263842c6cd21e3471d9a75e0efc613c2a65544fe2f62ab557cb1885cf1d3
+      fetched_at: '2026-11-16T11:41:02+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://cse.sysu.edu.cn/teacher
+    current_source: https://cse.sysu.edu.cn/teacher/PanYan
+    replacement:
+      old_url: https://cse.sysu.edu.cn/teacher
+      new_url: https://cse.sysu.edu.cn/teacher/PanYan
+      directory_url: https://cse.sysu.edu.cn/teacher
+      identity_basis: name_and_email
+    source_urls:
+      profile: https://cse.sysu.edu.cn/teacher
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 98210e9c5005824233a1c4bd5ae0a35ea35156bd69f767d173ba7a967ed6db08
+    id: sysu/cs/fetch_or_parse_error/panyan
+    kind: fetch_or_parse_error
+    ref: panyan
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:41:02+00:00'
+    next_check_at: '2026-11-23T11:41:02+00:00'
+    evidence: *id048
+    title: sysu-cs · panyan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:41:02+00:00'

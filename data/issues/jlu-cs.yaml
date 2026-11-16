@@ -1,8 +1,234 @@
 - kind: fetch_or_parse_error
-  ref: lixiongfei
-  message: 'ProxyError(MaxRetryError("HTTPSConnectionPool(host=''ccst.jlu.edu.cn'',
-    port=443): Max retries exceeded with url: /info/1367/19068.htm (Caused by ProxyError(''Unable
-    to connect to proxy'', RemoteDisconnected(''Remote end closed connection without
-    response'')))"))'
-  first_seen: '2026-09-04'
+  ref: baitian
+  message: 'HTTPSConnectionPool(host=''ccst.jlu.edu.cn'', port=443): Read timed out.
+    (read timeout=12)'
+  first_seen: '2026-11-16'
   resolved: true
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id001
+    - url: https://ccst.jlu.edu.cn/info/1367/20115.htm
+      sha256: 766f7a438953c0604fbcde9dfaa8e7b72cb41c3923bc6a26b83c9035967d074c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields:
+    - research_direction_raw
+    checked_fields:
+    - title
+    - supervisor
+    - email
+    - phone
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://ccst.jlu.edu.cn/info/1367/20115.htm
+    current_source: https://ccst.jlu.edu.cn/info/1367/20115.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: 744b87b261a34148484060c2594253f4bff9212401ff81de65a61c5316018be6
+    id: jlu/cs/fetch_or_parse_error/baitian
+    kind: fetch_or_parse_error
+    ref: baitian
+    original_message: 'HTTPSConnectionPool(host=''ccst.jlu.edu.cn'', port=443): Read
+      timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: jlu-cs · baitian · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
+- kind: fetch_or_parse_error
+  ref: baotie
+  message: No module named 'cv2'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: No module named 'cv2'
+    evidence: &id002
+    - url: https://ccst.jlu.edu.cn/info/1367/19104.htm
+      sha256: 241cbe78e6a65e7de2f9348bcd7529ed8e57a909541a9a45edd4594635ea4cad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+      sha256: a82fe9bb30a9f3a58c0373a1b7ed14c3572fe214ff42b818e4b5edb66ed21f87
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/taqxz.htm
+      sha256: d7fcd72e59296f05617bf329016deba16dfb17e1bc9286a43a7473caf7fa13e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js.htm
+      sha256: a4ef842d58d92654847192819290b23a285cdadc059aab49a18f1ab9b237605e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/fjs.htm
+      sha256: c83b613a1302bc38a82cefd016095d5d0eaa0d084657c5559b36255ad241dca8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js1.htm
+      sha256: 7e24f2354246a1566ec22631879bc964171749565a3cc8e5400650ee509e1bd6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/dxxz.htm
+      sha256: 0f9216d09fdd66a8d46a0ddc2562954e734b042937d3d51dd6a5a91d5bb1508c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/
+      sha256: f5b5a5c5ed43f975bf30f5c190f72b6699f7694d79712cc559c05a8df044a02f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs/1.htm
+      sha256: 36b91d94755c0895cfcb023c654f0e716380f4d20f4d2a4129b2001253d1ae6c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/info/1038/21275.htm
+      sha256: f8e73744a8010a49dd18933637f8a4174ae191b30cf077dfea62e6665687108f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: No module named 'cv2'
+    reason_code: parser_unsupported
+    category_label: 解析器待适配
+    next_action: adapt_parser
+    action_label: 适配官方页面结构
+    consecutive_failures: 1
+    repair_signature: 744b87b261a34148484060c2594253f4bff9212401ff81de65a61c5316018be6
+    id: jlu/cs/fetch_or_parse_error/baotie
+    kind: fetch_or_parse_error
+    ref: baotie
+    original_message: No module named 'cv2'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: jlu-cs · baotie · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dongjinnan
+  message: No module named 'cv2'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: No module named 'cv2'
+    evidence: &id003
+    - url: https://ccst.jlu.edu.cn/info/1211/19203.htm
+      sha256: cef4128017950b36b83f43f78a8064d29d3bd23977fafb063c94565fc4a2ef72
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+      sha256: a82fe9bb30a9f3a58c0373a1b7ed14c3572fe214ff42b818e4b5edb66ed21f87
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/taqxz.htm
+      sha256: d7fcd72e59296f05617bf329016deba16dfb17e1bc9286a43a7473caf7fa13e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js.htm
+      sha256: a4ef842d58d92654847192819290b23a285cdadc059aab49a18f1ab9b237605e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/fjs.htm
+      sha256: c83b613a1302bc38a82cefd016095d5d0eaa0d084657c5559b36255ad241dca8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js1.htm
+      sha256: 7e24f2354246a1566ec22631879bc964171749565a3cc8e5400650ee509e1bd6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/dxxz.htm
+      sha256: 0f9216d09fdd66a8d46a0ddc2562954e734b042937d3d51dd6a5a91d5bb1508c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/
+      sha256: f5b5a5c5ed43f975bf30f5c190f72b6699f7694d79712cc559c05a8df044a02f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs/1.htm
+      sha256: 36b91d94755c0895cfcb023c654f0e716380f4d20f4d2a4129b2001253d1ae6c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/info/1038/21275.htm
+      sha256: f8e73744a8010a49dd18933637f8a4174ae191b30cf077dfea62e6665687108f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: No module named 'cv2'
+    reason_code: parser_unsupported
+    category_label: 解析器待适配
+    next_action: adapt_parser
+    action_label: 适配官方页面结构
+    consecutive_failures: 1
+    repair_signature: 744b87b261a34148484060c2594253f4bff9212401ff81de65a61c5316018be6
+    id: jlu/cs/fetch_or_parse_error/dongjinnan
+    kind: fetch_or_parse_error
+    ref: dongjinnan
+    original_message: No module named 'cv2'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: jlu-cs · dongjinnan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dongliyan
+  message: No module named 'cv2'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: No module named 'cv2'
+    evidence: &id004
+    - url: https://ccst.jlu.edu.cn/info/1367/19079.htm
+      sha256: 4d6fd9b932a3c18a639cf03ea0bb443bad719711ab62d3db3b0058357c5a07c4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
+      sha256: a82fe9bb30a9f3a58c0373a1b7ed14c3572fe214ff42b818e4b5edb66ed21f87
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/taqxz.htm
+      sha256: d7fcd72e59296f05617bf329016deba16dfb17e1bc9286a43a7473caf7fa13e1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js.htm
+      sha256: a4ef842d58d92654847192819290b23a285cdadc059aab49a18f1ab9b237605e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/fjs.htm
+      sha256: c83b613a1302bc38a82cefd016095d5d0eaa0d084657c5559b36255ad241dca8
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/js1.htm
+      sha256: 7e24f2354246a1566ec22631879bc964171749565a3cc8e5400650ee509e1bd6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/dxxz.htm
+      sha256: 0f9216d09fdd66a8d46a0ddc2562954e734b042937d3d51dd6a5a91d5bb1508c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/
+      sha256: f5b5a5c5ed43f975bf30f5c190f72b6699f7694d79712cc559c05a8df044a02f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/szdw/zpzpjs/1.htm
+      sha256: 36b91d94755c0895cfcb023c654f0e716380f4d20f4d2a4129b2001253d1ae6c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ccst.jlu.edu.cn/info/1038/21275.htm
+      sha256: f8e73744a8010a49dd18933637f8a4174ae191b30cf077dfea62e6665687108f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: No module named 'cv2'
+    reason_code: parser_unsupported
+    category_label: 解析器待适配
+    next_action: adapt_parser
+    action_label: 适配官方页面结构
+    consecutive_failures: 1
+    repair_signature: 744b87b261a34148484060c2594253f4bff9212401ff81de65a61c5316018be6
+    id: jlu/cs/fetch_or_parse_error/dongliyan
+    kind: fetch_or_parse_error
+    ref: dongliyan
+    original_message: No module named 'cv2'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: jlu-cs · dongliyan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

@@ -1,0 +1,24 @@
+{
+  "audited_on": "2026-11-16",
+  "default_request_budget": 16,
+  "pipeline_request_budget": 16,
+  "budget_unit": "actual HTTP requests including initial requests and redirects",
+  "page_fetches_per_adoption": 4,
+  "max_http_requests_per_page": 4,
+  "budget_exhausted_status": "budget_wait",
+  "cursor_on_exhaustion": "retain unfinished parent; fetch all evidence again next run",
+  "retry_hours": 24,
+  "validation": {
+    "command": "python -m pytest tests/test_opportunity_recovery_v1115.py tests/test_source_migration_sync_v1115.py tests/test_review_pipeline_v18.py -q",
+    "passed": 39,
+    "warnings": 1,
+    "network": "mock HTTP responses through production fetch_html",
+    "ai_calls": 0,
+    "deployed": false,
+    "cases": [
+      {"redirects_per_page": 1, "requests": 8, "adopted": true},
+      {"redirects_per_page": 3, "requests": 16, "adopted": true},
+      {"prior_unmatched_parent": true, "first_run_requests": 16, "first_run_status": "budget_wait", "retained_parent_cursor": 1, "second_run_requests": 16, "adopted": true}
+    ]
+  }
+}

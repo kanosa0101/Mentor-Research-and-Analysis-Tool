@@ -4,9 +4,7 @@ import json
 import re
 from datetime import datetime, timezone
 
-import requests
-
-from crawler import ai_evidence, opportunity_extract as extract, opportunity_review as review
+from crawler import ai_evidence, ai_transport, opportunity_extract as extract, opportunity_review as review
 
 MAX_INPUT = 18000
 
@@ -53,35 +51,14 @@ def check(root, source_url, text, fields, *, session=None):
               '"checks":[{"field":"原字段名","quote":"完整复制该字段提供的证据quote，不摘要不改写"}]}。'
               '每个字段恰好一个check。只有所有字段与完整原文一致且无问题才用consistent和空issues；'
               '否则manual。不要代码围栏、额外文字或新增事实。')
-    request = dict(model=settings['model'], temperature=0, max_tokens=6000,
-                   messages=[dict(role='system', content=system), dict(role='user', content=json.dumps(
-                       dict(source_url=source_url, official_text=text, proposed_fields=fields), ensure_ascii=False))])
-    client = session or requests.Session()
+    messages = [dict(role='system', content=system), dict(role='user', content=json.dumps(
+        dict(source_url=source_url, official_text=text, proposed_fields=fields), ensure_ascii=False))]
     try:
-        client.trust_env = False
-        response = client.post(settings['base_url'] + '/chat/completions',
-            headers={'Authorization': 'Bearer ' + settings['api_key'], 'Content-Type': 'application/json'},
-            json=request, timeout=(10, 120), allow_redirects=False)
-        if response.status_code != 200:
-            raise ValueError('AI核验服务HTTP ' + str(response.status_code) + '，没有核验结论')
-        if len(response.content) > 1_000_000:
-            raise ValueError('AI核验响应超出上限')
-        body = response.json()
-        choice = body['choices'][0]
-        if choice.get('finish_reason') != 'stop':
-            raise ValueError('AI核验响应未完整结束')
-        raw = choice['message']['content']
-        if not isinstance(raw, str):
-            raise ValueError('AI核验响应不是文字')
+        raw, transport = ai_transport.completion(settings, messages, session=session)
         raw = re.sub(r'^```(?:json)?\s*|\s*```$', '', raw.strip())
         result = validate(json.loads(raw), text, fields)
         return dict(result, model=settings['model'], generated_at=datetime.now(timezone.utc).isoformat(),
                     input_text_sha256=hashlib.sha256(text.encode()).hexdigest(), input_chars=len(text),
-                    validated_extracts=True, truncated=False)
-    except requests.RequestException:
-        raise ValueError('AI核验服务连接失败，没有核验结论') from None
+                    validated_extracts=True, truncated=False, transport=transport)
     except (KeyError, IndexError, TypeError, json.JSONDecodeError):
-        raise ValueError('AI核验响应无法通过结构检查') from None
-    finally:
-        if session is None:
-            client.close()
+        raise ai_transport.AIServiceError('invalid_json', 'AI核验响应无法通过结构检查', retryable=True) from None

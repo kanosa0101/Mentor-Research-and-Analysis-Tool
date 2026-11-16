@@ -1,1055 +1,144 @@
 - kind: fetch_or_parse_error
   ref: aozhiguang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: baoxirong
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: baoyubin
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: biyuanguo
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: caochunhong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: caopeng
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chendi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chengjingwei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenjian
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: chenmo
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: dengqingxu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: dingjingfang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: dingshan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162080/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    evidence: &id001
+    - url: https://www.cse.neu.edu.cn/6314/list.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+        exceeded with url: /6314/list.htm (Caused by SSLError(SSLCertVerificationError(1,
+        "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+        certificate is not valid for ''www.cse.neu.edu.cn''. (_ssl.c:1000)")))'
+    - url: https://www.cse.neu.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+        exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL:
+        CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate
+        is not valid for ''www.cse.neu.edu.cn''. (_ssl.c:1000)")))'
+    - url: https://www.cse.neu.edu.cn/2019/1206/c6641a162080/page.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+        exceeded with url: /2019/1206/c6641a162080/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+        "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+        certificate is not valid for ''www.cse.neu.edu.cn''. (_ssl.c:1000)")))'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162080/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    reason_code: tls_error
+    category_label: 官方证书异常
+    next_action: discover_official_source
+    action_label: 核验其他官方入口
+    consecutive_failures: 1
+    repair_signature: 3eb11f0a8854c4fed3c512fabd3a07438e70ef003f3aa0a84d2b1c52deebb23b
+    id: neu/cs/fetch_or_parse_error/aozhiguang
+    kind: fetch_or_parse_error
+    ref: aozhiguang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: neu-cs · aozhiguang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: diyingying
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: dongxiaomei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: fengchaolu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: fengshi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: fengzhiwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: fuchong
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162073/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    evidence: &id002
+    - url: https://www.cse.neu.edu.cn/2019/1206/c6641a162073/page.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+        exceeded with url: /2019/1206/c6641a162073/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+        "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+        certificate is not valid for ''www.cse.neu.edu.cn''. (_ssl.c:1000)")))'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162073/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    reason_code: tls_error
+    category_label: 官方证书异常
+    next_action: discover_official_source
+    action_label: 核验其他官方入口
+    consecutive_failures: 1
+    repair_signature: 3eb11f0a8854c4fed3c512fabd3a07438e70ef003f3aa0a84d2b1c52deebb23b
+    id: neu/cs/fetch_or_parse_error/diyingying
+    kind: fetch_or_parse_error
+    ref: diyingying
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: neu-cs · diyingying · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: gaokening
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gaoyan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gaoyunqi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gengrong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: gongshufeng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: guannan
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: guonan
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: guyu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: handonghong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: heqiang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: huoshuwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jiajie
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jiaominghai
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jice
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jihangxu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: jinxi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: kouyue
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: langjun
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lanxing
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: leiweimin
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lengfangling
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lichuanwen
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lidayu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lifaming
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lifangfang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lifeng
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lifengyun
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lifuliang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lihaiyan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lijie
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lijinshuang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: linshukuan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liugenan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuhuilin
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liujiren
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liujun
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liusongran
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuxiumei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuxue
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuyao
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuying
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuzheng
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liuzhenghao
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lixiaohua
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: liyuxi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: luanfeng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lubingxian
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: luoxuewen
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: lvmingsong
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: maanxiang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: nietiezheng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: panjiayu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: peixinyue
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: pengyuhuai
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: qiaobaiyou
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: renfeiliang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: shelihuang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: shenderong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: songqingyang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: songwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: songxiaoshi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: sunyongjiao
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tangyue
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tanwenjun
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: tianliying
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangbin
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangchenglong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangdaling
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanggang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanghuizhen
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangjinming
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangjunhua
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanglixing
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wanglu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangmingquan
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangqiange
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangxin
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangxingwei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangyang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangyi
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wangyishu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: weiyangjie
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wenyingyou
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wugang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wuhonglin
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: wujingjing
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xiaotong
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xinjunchang
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xubin
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xuelifang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: xujiuqiang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangjinzhu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yanglei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangsong
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangxiaochun
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yangxiaocui
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yaodi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yaoyu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yening
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yibo
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yinying
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yixiushuang
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yuge
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yushangshu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yuyao
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: yuyaxin
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangende
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangfu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhanggaoyuan
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangshi
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangsongwei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangtiancheng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangwei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangxia
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangxinchen
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangxu
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangyanfeng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangyifei
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhangyu
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaodazhe
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaomufei
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaoyuhai
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhaozhangkuan
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhengmeng
-  message: AttributeError("module 'wp' has no attribute 'parse_detail'")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhujian
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: fetch_or_parse_error
-  ref: zhujingbo
-  message: NameError("name 'BeautifulSoup' is not defined")
-  first_seen: '2026-09-04'
-  resolved: true
-- kind: email_missing_source_side
-  ref: aozhiguang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: caopeng
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: diyingying
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: dongxiaomei
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: gaokening
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: guannan
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: jice
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: kouyue
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lengfangling
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lidayu
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lifangfang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lifeng
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lijie
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lijinshuang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: liuxue
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: liuyao
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: liuying
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: liuzheng
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: lixiaohua
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: maanxiang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: shelihuang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: songqingyang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wangchenglong
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wanggang
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wanghuizhen
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wangjinming
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wangmingquan
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wangxingwei
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wangyi
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wuhonglin
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: wujingjing
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: xiaotong
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: yangxiaochun
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: yuge
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: yuyaxin
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: zhangende
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: zhangxu
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: zhangyifei
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: zhaodazhe
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
-- kind: email_missing_source_side
-  ref: zhaozhangkuan
-  message: '2026-09-06 逐页核验: 文章正文(简介)无教师本人邮箱, 页面仅有页脚学院公邮 neucse@cse.neu.edu.cn(禁止记为个人邮箱),
-    属官网字段缺失'
-  first_seen: '2026-09-06'
-  resolved: false
-  reviewed: true
-  review_note: '2026-09-06 逐页核验: 页脚公邮排除后正文确无个人邮箱'
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162061/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    evidence: &id003
+    - url: https://www.cse.neu.edu.cn/2019/1206/c6641a162061/page.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+        exceeded with url: /2019/1206/c6641a162061/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+        "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+        certificate is not valid for ''www.cse.neu.edu.cn''. (_ssl.c:1000)")))'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''www.cse.neu.edu.cn'', port=443): Max retries
+      exceeded with url: /2019/1206/c6641a162061/page.htm (Caused by SSLError(SSLCertVerificationError(1,
+      "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch,
+      certificate is not valid for ''www.cse.neu.edu.cn''.'
+    reason_code: tls_error
+    category_label: 官方证书异常
+    next_action: discover_official_source
+    action_label: 核验其他官方入口
+    consecutive_failures: 1
+    repair_signature: 3eb11f0a8854c4fed3c512fabd3a07438e70ef003f3aa0a84d2b1c52deebb23b
+    id: neu/cs/fetch_or_parse_error/gaokening
+    kind: fetch_or_parse_error
+    ref: gaokening
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: neu-cs · gaokening · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

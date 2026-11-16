@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 from crawler import ai_evidence, ai_review, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-POLICY_VERSION = 'v2.2-bound-cohort-organizer-retry'
+POLICY_VERSION = 'v2.3-classified-service-errors'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
@@ -29,6 +29,12 @@ SECTIONS = {
 
 class NeedsHuman(ValueError):
     pass
+
+
+def service_failure(error):
+    """Prefer the transport's stable classification to wording-dependent retries."""
+    code, retryable = getattr(error, 'code', None), getattr(error, 'retryable', None)
+    return dict(error_code=code, retryable=retryable) if isinstance(code, str) and isinstance(retryable, bool) else {}
 
 
 def transient_failure(reason):
@@ -385,7 +391,9 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
                         if key in original: current[key] = copy.deepcopy(original[key])
                         else: current.pop(key, None)
                     atomic_json(queue_path, queue)
-        transient = transient_failure(reason)
+        classified = service_failure(error)
+        result.update(classified)
+        transient = classified.get('retryable', transient_failure(reason))
         if isinstance(error, NeedsHuman) or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
             result.update(state='manual_required', reasons=[reason])
         elif '每日调用上限' in reason:
@@ -411,7 +419,7 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
     failed = draft.get('automatic_review', {}).get('assistance', {})
     original = protected(draft)
     if failed.get('state') == 'failed' and failed.get('source_sha256') == digest and draft.get('automatic_review', {}).get('state') == 'manual_required':
-        if not transient_failure(failed.get('reason', '')):
+        if not failed.get('retryable', transient_failure(failed.get('reason', ''))):
             return result
         # Recover legacy manual markers for a transport/protocol failure, while
         # keeping a bounded wait and the original queue discovery/pending clock.
@@ -463,14 +471,16 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         return result
     except (ValueError, OSError, requests.RequestException) as error:
         reason = str(error) if isinstance(error, ValueError) else 'AI辅助公开证据暂时不可用'
-        transient = transient_failure(reason)
+        classified = service_failure(error)
+        result.update(classified)
+        transient = classified.get('retryable', transient_failure(reason))
         if '每日调用上限' in reason:
             retry = (now + timedelta(days=1)).astimezone(timezone.utc).replace(hour=0, minute=5, second=0, microsecond=0)
             result.update(state='budget_wait', next_attempt_at=retry.isoformat())
         elif transient or isinstance(error, (OSError, requests.RequestException)):
             failures = draft.get('automatic_review', {}).get('failures', 0) + 1
             result.update(state='retry', failures=failures, next_attempt_at=(now + timedelta(hours=min(24, 2 ** min(failures, 5)))).isoformat())
-        result['assistance'] = dict(state='failed', reason=reason, source_sha256=digest)
+        result['assistance'] = dict(state='failed', reason=reason, source_sha256=digest, **classified)
         result['reasons'] = result.get('reasons', []) + [reason]
         return _store(queue_path, draft['id'], result, original)
 

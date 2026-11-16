@@ -1,88 +1,284 @@
 - kind: fetch_or_parse_error
-  ref: chenzhong
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: null
-  review_note: null
-  review_history: []
-- kind: fetch_or_parse_error
-  ref: guikang
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: null
-  review_note: null
-  review_history: []
-- kind: fetch_or_parse_error
   ref: hanshoudong
-  message: 个人页身份未确认与名单本人一致：韩守东
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: false
-  review_note: 2026-10-15：原HTTP官方个人页实时可访问；确认个人身份后修复英文模板/明确研究方向解析。已补实际简介与明确字段；不解密猜测邮箱。原始HTTP与SHA256见cache/policy_v14/units/hust-gap-repair-audit.json。
-  review_history: []
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.hust.edu.cn'', port=443): Max retries
+      exceeded with url: /hanshoudong (Caused by NewConnectionError("HTTPSConnection(host=''faculty.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    evidence: &id001
+    - url: https://aia.hust.edu.cn/szdw/xysz/axlb.htm
+      sha256: 8033dab8c546d8616d6647bf192df7b3cba35709faf860ed9ee842e576daefd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://aia.hust.edu.cn/
+      sha256: 6f23ae166a5ee298d7a08eb36ce81dcbe8ca692c495f9eba4b4d598cff85e2bb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://aia.hust.edu.cn/szdw/xysz/axmpyszmlb.htm
+      sha256: 3e2b789a700796d095386c770b024cbebe002a3ebd9822b32a97b5590c5d31d3
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.hust.edu.cn/hanshoudong
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.hust.edu.cn'', port=443): Max retries
+        exceeded with url: /hanshoudong (Caused by NewConnectionError("HTTPSConnection(host=''faculty.hust.edu.cn'',
+        port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.hust.edu.cn'', port=443): Max retries
+      exceeded with url: /hanshoudong (Caused by NewConnectionError("HTTPSConnection(host=''faculty.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/hanshoudong
+    kind: fetch_or_parse_error
+    ref: hanshoudong
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id001
+    title: hust-aia · hanshoudong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
-  ref: hubinbin
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
+  ref: hongliu
+  message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max retries exceeded
+    with url: /info/1697/10512.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+    port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  first_seen: '2026-11-16'
   resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id002
+    - url: https://aia.hust.edu.cn/info/1697/10512.htm
+      sha256: f2fbc277cd0925ed8e37032b7e65c6f20d00f6ea37e71c1149ac0be6a0c723e0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    previous_source: https://aia.hust.edu.cn/info/1697/10512.htm
+    current_source: https://aia.hust.edu.cn/info/1697/10512.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/hongliu
+    kind: fetch_or_parse_error
+    ref: hongliu
+    original_message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max
+      retries exceeded with url: /info/1697/10512.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: hust-aia · hongliu · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
 - kind: fetch_or_parse_error
-  ref: luoqinqin
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
+  ref: huangjian
+  message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max retries exceeded
+    with url: /info/1700/10544.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+    port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  first_seen: '2026-11-16'
   resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id003
+    - url: https://aia.hust.edu.cn/info/1700/10544.htm
+      sha256: 49959668f5b8d2defbc99ec3cae99ad1e125ed80a23b1ba44cd7ad7e1d9cff94
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://aia.hust.edu.cn/info/1700/10544.htm
+    current_source: https://aia.hust.edu.cn/info/1700/10544.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/huangjian
+    kind: fetch_or_parse_error
+    ref: huangjian
+    original_message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max
+      retries exceeded with url: /info/1700/10544.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: hust-aia · huangjian · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
 - kind: fetch_or_parse_error
-  ref: maguijun
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
+  ref: hujing
+  message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max retries exceeded
+    with url: /info/1701/10571.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+    port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  first_seen: '2026-11-16'
   resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id004
+    - url: https://aia.hust.edu.cn/info/1701/10571.htm
+      sha256: 4393f1ad4d48d20657ea48eea7a63e7463081efe50ba25c5d9041e3fc810b106
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://aia.hust.edu.cn/info/1701/10571.htm
+    current_source: https://aia.hust.edu.cn/info/1701/10571.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/hujing
+    kind: fetch_or_parse_error
+    ref: hujing
+    original_message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max
+      retries exceeded with url: /info/1701/10571.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id004
+    title: hust-aia · hujing · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
 - kind: fetch_or_parse_error
-  ref: tairuochen
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
+  ref: huruolan
+  message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max retries exceeded
+    with url: /info/1702/10581.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+    port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  first_seen: '2026-11-16'
   resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id005
+    - url: https://aia.hust.edu.cn/info/1702/10581.htm
+      sha256: 546986fcdfa7c143aa540b728c75a2482684c4065244dd3320b2ae2dba41ecf4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://aia.hust.edu.cn/info/1702/10581.htm
+    current_source: https://aia.hust.edu.cn/info/1702/10581.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/huruolan
+    kind: fetch_or_parse_error
+    ref: huruolan
+    original_message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max
+      retries exceeded with url: /info/1702/10581.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: hust-aia · huruolan · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'
 - kind: fetch_or_parse_error
-  ref: yuezuogong
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
+  ref: jiangjun
+  message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max retries exceeded
+    with url: /info/1702/10582.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+    port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+  first_seen: '2026-11-16'
   resolved: true
   reviewed: null
   review_note: null
-  review_history: []
-- kind: fetch_or_parse_error
-  ref: zhangyahui
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: null
-  review_note: null
-  review_history: []
-- kind: fetch_or_parse_error
-  ref: zhengce
-  message: ValueError('详情无明确个人字段，保留名单并登记失败')
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: null
-  review_note: null
-  review_history: []
-- kind: fetch_or_parse_error
-  ref: zouxu
-  message: 详情无明确个人字段，保留名单并登记失败
-  first_seen: '2026-10-14'
-  resolved: true
-  reviewed: false
-  review_note: 2026-10-15：原HTTP官方个人页实时可访问；确认个人身份后修复英文模板/明确研究方向解析。已补实际简介与明确字段；不解密猜测邮箱。原始HTTP与SHA256见cache/policy_v14/units/hust-gap-repair-audit.json。
-  review_history: []
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    evidence: &id006
+    - url: https://aia.hust.edu.cn/info/1702/10582.htm
+      sha256: 7d2412c4c53ad0a4ec6a248a21d514d79c73dadd70ce82b401e0a96014d31433
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情或明确名册行的身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    previous_source: https://aia.hust.edu.cn/info/1702/10582.htm
+    current_source: https://aia.hust.edu.cn/info/1702/10582.htm
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: a053e696711bd1a4e9fbc25e79ccb662785e689c73136f1dc6c6239a236ea681
+    id: hust/aia/fetch_or_parse_error/jiangjun
+    kind: fetch_or_parse_error
+    ref: jiangjun
+    original_message: 'HTTPSConnectionPool(host=''aia.hust.edu.cn'', port=443): Max
+      retries exceeded with url: /info/1702/10582.htm (Caused by NewConnectionError("HTTPSConnection(host=''aia.hust.edu.cn'',
+      port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: hust-aia · jiangjun · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T11:26:05+00:00'

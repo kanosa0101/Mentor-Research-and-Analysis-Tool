@@ -1,1 +1,142 @@
-[]
+- kind: fetch_or_parse_error
+  ref: dongxiao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://cse.seu.edu.cn/49355/list.htm
+      sha256: f4b0d1e639e44dae425d4945b7b7051864821d2b2e79ccadcddc7fc303efdc49
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/
+      sha256: 6e6930c017cc4dcbdf069c6df6df9c425dc2bb0db04f0f37768574e9f1a1cd13
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/49354/list.htm
+      sha256: 2692a53b582d0717f2116da835dd5e84a9c04d0bba3dc5d824122543fcbf1370
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/AIzxszzp/list.htm
+      sha256: 7d72b2e812e8a4d856d7bc4dc36bf4973533c89f001a550fdd59d15d3d0db91d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1109/c22535a588906/page.htm
+      sha256: 48e1b323d045b334813ff03845aa210f2661a351eddceec99513b8f886da0bc7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589257/page.htm
+      sha256: 573aaeb78a97943c03c99c0495cbfe4fcf1f294104cbfae0c51120f80620cff4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589238/page.htm
+      sha256: b6cbbebe93520f5622b154c7e7fb2394746bd0a3e714b9097b23519ea6d0a5f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589261/page.htm
+      sha256: c02760f31676a2d5295a3f6d42b97c916c6d11f0827f256c22d3f44c2c7bb5b9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589260/page.htm
+      sha256: 28e2692118a7db8bbb5e5034046d434bbf8b9a8e38c7f4dd19e08a5cbfa47aa9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589263/page.htm
+      sha256: 2e7357817200d5d43a56aaaabbbe999c93311aad49240e03aef4f0164e791420
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589265/page.htm
+      sha256: 8355a1e7ccf301ac5158eb2f9ddec6bedb2ea012e8158ad5a10203c37325ce64
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589271/page.htm
+      sha256: a224f7aefee2a233a0b40147385969fbece382958af34d5a95bcd419341c8252
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589270/page.htm
+      sha256: de4e959f5e98792ebe96fa99ff3a59bbc8132a90fea71f454ff538f55cf59fb9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7473c67e7374e0f8b0f4fc1343cb3989601d52ac4db8d0158b7780fe92248f33
+    id: seu/cs/fetch_or_parse_error/dongxiao
+    kind: fetch_or_parse_error
+    ref: dongxiao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: seu-cs · dongxiao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: gengxin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://cse.seu.edu.cn/49355/list.htm
+      sha256: f4b0d1e639e44dae425d4945b7b7051864821d2b2e79ccadcddc7fc303efdc49
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/
+      sha256: 6e6930c017cc4dcbdf069c6df6df9c425dc2bb0db04f0f37768574e9f1a1cd13
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/49354/list.htm
+      sha256: 2692a53b582d0717f2116da835dd5e84a9c04d0bba3dc5d824122543fcbf1370
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/AIzxszzp/list.htm
+      sha256: 7d72b2e812e8a4d856d7bc4dc36bf4973533c89f001a550fdd59d15d3d0db91d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1109/c22535a588906/page.htm
+      sha256: 48e1b323d045b334813ff03845aa210f2661a351eddceec99513b8f886da0bc7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589257/page.htm
+      sha256: 573aaeb78a97943c03c99c0495cbfe4fcf1f294104cbfae0c51120f80620cff4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589238/page.htm
+      sha256: b6cbbebe93520f5622b154c7e7fb2394746bd0a3e714b9097b23519ea6d0a5f5
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589261/page.htm
+      sha256: c02760f31676a2d5295a3f6d42b97c916c6d11f0827f256c22d3f44c2c7bb5b9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589260/page.htm
+      sha256: 28e2692118a7db8bbb5e5034046d434bbf8b9a8e38c7f4dd19e08a5cbfa47aa9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589263/page.htm
+      sha256: 2e7357817200d5d43a56aaaabbbe999c93311aad49240e03aef4f0164e791420
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589265/page.htm
+      sha256: 8355a1e7ccf301ac5158eb2f9ddec6bedb2ea012e8158ad5a10203c37325ce64
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589271/page.htm
+      sha256: a224f7aefee2a233a0b40147385969fbece382958af34d5a95bcd419341c8252
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.seu.edu.cn/2026/1111/c53564a589270/page.htm
+      sha256: de4e959f5e98792ebe96fa99ff3a59bbc8132a90fea71f454ff538f55cf59fb9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7473c67e7374e0f8b0f4fc1343cb3989601d52ac4db8d0158b7780fe92248f33
+    id: seu/cs/fetch_or_parse_error/gengxin
+    kind: fetch_or_parse_error
+    ref: gengxin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: seu-cs · gengxin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

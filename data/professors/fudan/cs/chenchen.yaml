@@ -10,7 +10,7 @@ supervisor: 硕导
 email: chenc@fudan.edu.cn
 institutes: []
 photo_url: https://cs.fudan.edu.cn/_upload/article/images/67/89/8016a19b4080bcd150a4825a2e2d/e11682b0-4f49-41ce-ae33-f31725fb049f.jpg
-detail_url: http://ai.fudan.edu.cn/cc/list.htm
+detail_url: https://ai.fudan.edu.cn/cc/list.htm
 profile_url: http://ai.fudan.edu.cn/cc/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
@@ -23,13 +23,13 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cs.fudan.edu.cn/53161/list.htm
-    fetched_at: '2026-09-05'
+    source: https://ai.fudan.edu.cn/cc/list.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cs.fudan.edu.cn/53161/list.htm
-    fetched_at: '2026-09-05'
+    source: https://ai.fudan.edu.cn/cc/list.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
@@ -41,3 +41,5 @@ provenance:
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

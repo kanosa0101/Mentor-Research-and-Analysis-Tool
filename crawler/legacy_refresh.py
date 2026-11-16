@@ -56,7 +56,8 @@ def merge_profile(original, parsed, body, day):
         names = identity_names(soup)
     if parsed.get('name') and ''.join(parsed['name'].split()) != ''.join(original['name'].split()):
         raise ValueError('详情明确姓名与原记录不符，保留旧记录')
-    if ''.join(original['name'].split()) not in text and original['name'] not in names:
+    if (''.join(original['name'].split()) not in text and original['name'] not in names and
+            parsed.get('_verified_roster_name') != original['name']):
         raise ValueError('导师姓名未出现在返回正文，保留旧记录')
     parsed = dict(parsed)
     if not parsed.get('research_direction_raw') and parsed.get('research_directions'):
@@ -124,6 +125,9 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
         records = state['records']
         results = []
         signatures = {}
+        quality_path = root / 'cache/mentor_quality/state.json'
+        quality_records = json.loads(quality_path.read_text(encoding='utf-8')).get('records', {}) if quality_path.exists() else {}
+        recovery_signatures = {}
 
         def signature(key):
             if not key.startswith('professor/'):
@@ -146,6 +150,21 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
             return signatures[unit]
 
         def due(key):
+            if key.startswith('professor/') and not retry:
+                from crawler import mentor_recovery
+                school, dept, filename = key.split('/')[1:]
+                unit = school + '/' + dept
+                recovery = quality_records.get(unit + '/fetch_or_parse_error/' + Path(filename).stem, {})
+                if recovery.get('status') in ('error', 'pending') and recovery.get('next_check_at', '') > stamp:
+                    cfg_path = root / 'sites' / school / (dept + '.yaml')
+                    if cfg_path.exists():
+                        if unit not in recovery_signatures:
+                            recovery_signatures[unit] = mentor_recovery.signature(root, yaml.safe_load(cfg_path.read_text(encoding='utf-8')))
+                        original = yaml.safe_load((root / 'data/professors' / school / dept / filename).read_text(encoding='utf-8'))
+                        issue_source = (recovery.get('source_urls') or {}).get('profile') or records.get(key, {}).get('source_url')
+                        if (recovery.get('repair_signature') == recovery_signatures[unit] and
+                                original.get('detail_url') == issue_source):
+                            return False
             if records.get(key, {}).get('status') == 'manual_required' and not retry:
                 previous = records[key]
                 if previous.get('parser_signature') != signature(key):
@@ -232,7 +251,7 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                     html = UnicodeDammit(raw).unicode_markup
                     if not html:
                         raise ValueError('无法解码导师正文')
-                    parsed = hook.parse_detail(cfg, html, original['detail_url'])
+                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name']), html, original['detail_url'])
                     updated, changed, checked = merge_profile(original, parsed, raw, day)
                     write_yaml(path, updated)
                     record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,

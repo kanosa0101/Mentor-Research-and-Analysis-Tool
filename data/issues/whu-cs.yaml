@@ -1,1 +1,56 @@
-[]
+- kind: fetch_or_parse_error
+  ref: chenmin
+  message: '404 Client Error: Not Found for url: https://cs.whu.edu.cn/info/1019/2938.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.whu.edu.cn/info/1019/2938.htm'
+    evidence: &id001
+    - url: https://cs.whu.edu.cn/szdw/zrjs.htm
+      sha256: 1619a0094527ba0b69de482ecc70c2b248e86ff41e6f4513387931ea09746a40
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/
+      sha256: ff4b31d148ebbe7e92cfe612daa7edf78cbfc94f53d89945529ae9ce78b80937
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/rczp/szgwzp.htm
+      sha256: 9a28aad18c86bad1533efa0837531cd8ddf3c68b120d034d44052ff855ae0f2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/info/1028/67461.htm
+      sha256: 916e51dcc289d8887320d5d3da443574a60eb19f6d7bf669064a08c191d21851
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/info/1028/56511.htm
+      sha256: fa26f9180cb8854398831b45f74bb29c2df249a591e54d53e3dbcd1d5fc3c3bd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/info/1028/48431.htm
+      sha256: 1bd9ef44f066c398c94a369e28a8847e05032cf298b87bbc01d443ae451e4752
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/info/1028/43521.htm
+      sha256: 2b36e8c41e4dcba69b60ccbb525e3ac35c863712d40d3d6aff2d9f2c369ec607
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cs.whu.edu.cn/info/1028/38141.htm
+      sha256: e772c5a345c0dbb2b3ed59d2bc62a76baaed56e658d10a50e7b213dab01caed1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://cs.whu.edu.cn/info/1019/2938.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: dc06f071ffe14af6e55e3d7e9b2c19bbb2b9915187c4b8ba3351e093544336e3
+    id: whu/cs/fetch_or_parse_error/chenmin
+    kind: fetch_or_parse_error
+    ref: chenmin
+    original_message: '404 Client Error: Not Found for url: https://cs.whu.edu.cn/info/1019/2938.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: whu-cs · chenmin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

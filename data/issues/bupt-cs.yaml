@@ -1,6 +1,880 @@
 - kind: fetch_or_parse_error
-  ref: shiyan
-  message: 'TimeoutError(''Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating
-    to "https://teacher.bupt.edu.cn/shiyan", waiting until "domcontentloaded"\n'')'
-  first_seen: '2026-09-05'
-  resolved: true
+  ref: bianjiali
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/bianjiali
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/bianjiali
+    kind: fetch_or_parse_error
+    ref: bianjiali
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://scs.bupt.edu.cn/szjs1/jsyl.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://scs.bupt.edu.cn/szjs1/jsyl.htm'
+    - url: https://scs.bupt.edu.cn/
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://scs.bupt.edu.cn/'
+    - url: https://teacher.bupt.edu.cn/bianjiali
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/bianjiali'
+    title: bupt-cs · bianjiali · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: caiyuanqiang
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/caiyuanqiang
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/caiyuanqiang
+    kind: fetch_or_parse_error
+    ref: caiyuanqiang
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/caiyuanqiang
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/caiyuanqiang'
+    title: bupt-cs · caiyuanqiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengbo
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengbo
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chengbo
+    kind: fetch_or_parse_error
+    ref: chengbo
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengbo
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengbo'
+    title: bupt-cs · chengbo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengli
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengli
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chengli
+    kind: fetch_or_parse_error
+    ref: chengli
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengli
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengli'
+    title: bupt-cs · chengli · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chengxiang
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengxiang
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chengxiang
+    kind: fetch_or_parse_error
+    ref: chengxiang
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chengxiang
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chengxiang'
+    title: bupt-cs · chengxiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenhong
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chenhong
+    kind: fetch_or_parse_error
+    ref: chenhong
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenhong1/zh_CN/index.htm'
+    title: bupt-cs · chenhong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenjinpeng
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenjinpeng
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chenjinpeng
+    kind: fetch_or_parse_error
+    ref: chenjinpeng
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenjinpeng
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenjinpeng'
+    title: bupt-cs · chenjinpeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenliping
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenliping
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chenliping
+    kind: fetch_or_parse_error
+    ref: chenliping
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenliping
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenliping'
+    title: bupt-cs · chenliping · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenxingyu
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chenxingyu
+    kind: fetch_or_parse_error
+    ref: chenxingyu
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenxingyu/zh_CN/index.htm'
+    title: bupt-cs · chenxingyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: chenyong
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenyong
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/chenyong
+    kind: fetch_or_parse_error
+    ref: chenyong
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/chenyong
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/chenyong'
+    title: bupt-cs · chenyong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: cuiyidong
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/cyd
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/cuiyidong
+    kind: fetch_or_parse_error
+    ref: cuiyidong
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/cyd
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/cyd'
+    title: bupt-cs · cuiyidong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: daizhitao
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/daizhitao
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/daizhitao
+    kind: fetch_or_parse_error
+    ref: daizhitao
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/daizhitao
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/daizhitao'
+    title: bupt-cs · daizhitao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dengfang
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/dengfang
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/dengfang
+    kind: fetch_or_parse_error
+    ref: dengfang
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/dengfang
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dengfang'
+    title: bupt-cs · dengfang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: duanpengrui
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duanpengrui
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/duanpengrui
+    kind: fetch_or_parse_error
+    ref: duanpengrui
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duanpengrui
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duanpengrui'
+    title: bupt-cs · duanpengrui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: dujunping
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/dujunping
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/dujunping
+    kind: fetch_or_parse_error
+    ref: dujunping
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/dujunping
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/dujunping'
+    title: bupt-cs · dujunping · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: duxiaofeng
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duxiaofeng
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/duxiaofeng
+    kind: fetch_or_parse_error
+    ref: duxiaofeng
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duxiaofeng
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng'
+    title: bupt-cs · duxiaofeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: duxiaoting
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/duxiaoting
+    kind: fetch_or_parse_error
+    ref: duxiaoting
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaoting/zh_CN/index.htm'
+    title: bupt-cs · duxiaoting · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: ehaihong
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/ehaihong
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/ehaihong
+    kind: fetch_or_parse_error
+    ref: ehaihong
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/ehaihong
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/ehaihong'
+    title: bupt-cs · ehaihong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fangpeiyu
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fangpeiyu
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/fangpeiyu
+    kind: fetch_or_parse_error
+    ref: fangpeiyu
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fangpeiyu
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangpeiyu'
+    title: bupt-cs · fangpeiyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fangwei
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fangwei
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/fangwei
+    kind: fetch_or_parse_error
+    ref: fangwei
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fangwei
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fangwei'
+    title: bupt-cs · fangwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fenglei
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fenglei
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/fenglei
+    kind: fetch_or_parse_error
+    ref: fenglei
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fenglei
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fenglei'
+    title: bupt-cs · fenglei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fuhuiyuan
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fuhuiyuan
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/fuhuiyuan
+    kind: fetch_or_parse_error
+    ref: fuhuiyuan
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fuhuiyuan
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuhuiyuan'
+    title: bupt-cs · fuhuiyuan · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: fuxiangling
+  message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T10:20:37+00:00'
+    automatic: true
+    state: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fuxiangling
+      fetched_at: '2026-11-16T10:20:37+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+  automatic_check:
+    status: error
+    reason: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 7f977edfeafe7a9ddd30f678f8b370ceedeebd9ad1e6948841390dbbedd19059
+    id: bupt/cs/fetch_or_parse_error/fuxiangling
+    kind: fetch_or_parse_error
+    ref: fuxiangling
+    original_message: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://teacher.bupt.edu.cn/fuxiangling
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/fuxiangling'
+    title: bupt-cs · fuxiangling · fetch_or_parse_error
+    pending_since: '2026-11-16T10:20:37+00:00'
+    last_success: null

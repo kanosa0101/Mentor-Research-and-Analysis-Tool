@@ -55,18 +55,25 @@ def fixture(root):
             pending_since=(now-timedelta(hours=3)).isoformat(), last_attempt=now.isoformat(),
             next_attempt=(now+timedelta(hours=1)).isoformat(), source_urls={'notice':listing},
             reasons=['官方正文发生变化，申请条件与材料提交阶段需要重新核对。']),
-        'policy-confirmed': dict(title='不应出现在待办里的已确认政策', status='confirmed')}))
+        'policy-confirmed': dict(title='不应出现在待办里的已确认政策', status='confirmed', next_attempt=(now+timedelta(days=14)).isoformat())}))
     review.atomic_json(root/'cache/mentor_quality/state.json', dict(records={
         'mentor-pending': dict(title='示例大学智能科学与技术学院导师研究方向与联系人资料', status='pending',
             pending_since=(now-timedelta(hours=2)).isoformat(), checked_at=now.isoformat(),
             next_check_at=(now+timedelta(hours=6)).isoformat(), reason='官网未明确公开邮箱，等待后续来源更新。',
             evidence=[dict(url='https://cs.example.edu.cn/people/teacher-profile.htm')]),
         'mentor-error': dict(title='示例大学自动化学院导师详情', status='error',
+            reason_code='http_not_found', category_label='旧页面不存在', next_action='discover_official_source', action_label='发现替代官方来源',
             pending_since=(now-timedelta(hours=26)).isoformat(), checked_at=now.isoformat(),
             next_check_at=(now+timedelta(hours=6)).isoformat(), reason='导师页面暂时返回访问验证页，未以导航文本补充研究方向。',
             evidence=dict(source_url='https://cs.example.edu.cn/people/teacher-profile.htm')),
-        'mentor-resolved': dict(title='不应出现在待办里的已解决导师', status='resolved')}))
+        'mentor-resolved': dict(title='不应出现在待办里的已解决导师', status='resolved', next_check_at=(now+timedelta(days=7)).isoformat())}))
     quality_status.refresh(root, now)
+    review.atomic_json(root/'cache/opportunity-recovery.json', dict(checked_at=now.isoformat(),
+        summary=dict(attempted=1, adopted=0, manual_required=1), records={
+            'active': dict(title='替代来源待核验的冬令营', status='manual_required', active=True,
+                reason='新旧正文有变化', original_url=listing, checked_at=now.isoformat(),
+                candidates=[dict(new_url=listing, parent_url=listing)]),
+            'closed': dict(title='已退出来源异常队列', status='not_found', active=False)}))
     column = '<html><title>计算机科研实践</title><a href="newcamp.htm">2027年大学生冬令营报名通知</a></html>'.encode()
     url = 'https://cs.example.edu.cn/research.htm'
     source = dict(id='fixture-source', url=url, label='示例大学科研实践栏目', school='example', dept='', unit='科研实践', parent_url=listing, parent_label='已配置官方栏目', first_seen=now.isoformat(), checked_at=now.isoformat(), status='candidate', kind='column', reason='同机构栏目内发现招生公告', **source_discovery.inspect(column, url))
@@ -117,9 +124,17 @@ def main():
                     expect(page.locator('#auto-errors')).to_contain_text('503')
                     expect(page.locator('#alert-list')).to_contain_text('已超时')
                     expect(page.locator('#push-delivery')).to_contain_text('重试已用尽')
+                    expect(page.locator('#recovery-items > details')).to_have_count(1)
+                    expect(page.locator('#recovery-items')).not_to_contain_text('已退出来源异常队列')
+                    page.locator('#recovery-panel > summary').click()
+                    page.locator('#recovery-items > details > summary').click()
+                    expect(page.locator('#recovery-items')).to_contain_text('新旧正文有变化')
+                    expect(page.locator('#recovery-items a')).to_have_count(3)
+                    page.locator('#recovery-panel > summary').click()
                     assert page.evaluate('window.__permissionRequests') == 0
                     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
                     page.evaluate('window.scrollTo(0,0)'); page.screenshot(path=str(args.output/f'review-{width}-overview.png'))
+                    expect(page.locator('#quality-items > details')).to_have_count(0)
                     page.locator('#quality-panel > summary').click()
                     expect(page.locator('#quality-summary')).to_contain_text('政策待处理 2 · 导师资料待处理 2 · 超时 2')
                     expect(page.locator('#quality-items > details')).to_have_count(4)
@@ -134,6 +149,32 @@ def main():
                     expect(page.locator('#quality-items')).to_contain_text('下次检查')
                     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
                     page.locator('#quality-panel').screenshot(path=str(args.output/f'review-{width}-quality.png'))
+                    page.locator('#quality-reason').select_option('http_not_found')
+                    expect(page.locator('#quality-items > details')).to_have_count(1)
+                    expect(page.locator('#quality-items')).to_contain_text('下一步：发现替代官方来源')
+                    quality_path=root/'cache/mentor_quality/state.json'
+                    original_quality=json.loads(quality_path.read_text(encoding='utf-8'))
+                    large_quality=copy.deepcopy(original_quality)
+                    for i in range(65):
+                        large_quality['records'][f'waiting-{i}']=dict(status='pending',title=f'等待首次核验的资料 {i}',
+                            pending_since=datetime.now(timezone.utc).isoformat(),reason_code='http_not_found',
+                            category_label='旧页面不存在',next_action='discover_official_source',action_label='发现替代官方来源')
+                    review.atomic_json(quality_path,large_quality);quality_status.refresh(root)
+                    page.evaluate('window.REVIEW_POLL()')
+                    expect(page.locator('#quality-count')).to_contain_text('符合当前原因 66 项 · 等待首次复核 65 项')
+                    expect(page.locator('#quality-items > details')).to_have_count(30)
+                    page.locator('#quality-more').click()
+                    expect(page.locator('#quality-items > details')).to_have_count(60)
+                    page.locator('#quality-more').click()
+                    expect(page.locator('#quality-items > details')).to_have_count(66)
+                    expect(page.locator('#quality-more')).to_be_hidden()
+                    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+                    page.locator('#quality-panel').screenshot(path=str(args.output/f'review-{width}-quality-backlog.png'))
+                    review.atomic_json(quality_path,original_quality);quality_status.refresh(root)
+                    page.evaluate('window.REVIEW_POLL()');page.locator('#quality-reason').select_option('')
+                    expect(page.locator('#quality-items > details')).to_have_count(4)
+                    checks.append(f'{width}px backlog: cause filter, next action, unattempted count, lazy 30/60/66 rows, poll preserves selection')
+
                     page.locator('#quality-panel > summary').click()
                     checks.append(f'{width}px quality panel: retry/review_required/pending/error, overdue and next retry visible, resolved rows absent, 4 official source links, no overflow')
                     expect(page.locator('.automation-result')).to_contain_text('已生成 1 条AI辅助摘录')

@@ -9,9 +9,13 @@ title: 教授
 email: chenzhg29@mail.sysu.edu.cn
 institutes:
 - 超算中心
-research_direction_raw: 高性能计算与超级计算机：超算体系结构、面向新一代国产超算的高性能计算应用；
-detail_url: https://cse.sysu.edu.cn/teacher
-profile_url: https://cse.sysu.edu.cn/teacher
+research_direction_raw: '高性能计算与超级计算机：超算体系结构、面向新一代国产超算的高性能计算应用；
+
+  大数据存储与处理：并行文件系统、面向新型互连协议的内存存储系统、新型I/O栈；
+
+  MLSys：大模型推理、向量存储与检索、HPC-AI融合支撑系统。'
+detail_url: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+profile_url: https://cse.sysu.edu.cn/teacher/ChenZhiguang
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -28,21 +32,39 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cse.sysu.edu.cn/teacher
-    fetched_at: '2026-09-03'
+    source: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://cse.sysu.edu.cn/teacher
     fetched_at: '2026-09-03'
     confidence: auto
+  office_address:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher/ChenZhiguang
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse.sysu.edu.cn/teacher
+    fetched_at: '2026-11-16'
+    confidence: auto
+office_address: 超算中心419
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

@@ -1,26 +1,2129 @@
 - kind: fetch_or_parse_error
-  ref: mayuxin
-  message: 'ConnectionError(MaxRetryError(''HTTPSConnectionPool(host=\''mayuxin.me\'',
-    port=443): Max retries exceeded with url: / (Caused by NewConnectionError("HTTPSConnection(host=\''mayuxin.me\'',
-    port=443): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
-  first_seen: '2026-09-05'
+  ref: GeorgiosTheodoropoulos
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: 外部主页被墙/网络抖动留痕
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id001
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.sustech.edu.cn/?tagid=liuj&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=12)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/GeorgiosTheodoropoulos
+    kind: fetch_or_parse_error
+    ref: GeorgiosTheodoropoulos
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id001
+    title: sustech-cs · GeorgiosTheodoropoulos · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: HisaoIshibuchi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id002
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/HisaoIshibuchi
+    kind: fetch_or_parse_error
+    ref: HisaoIshibuchi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id002
+    title: sustech-cs · HisaoIshibuchi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: PANGLIEMENG
-  message: 'ConnectionError(MaxRetryError(''HTTPSConnectionPool(host=\''scholar.google.com\'',
-    port=443): Max retries exceeded with url: /citations?user=bAPjJ5kAAAAJ&hl=en (Caused
-    by NewConnectionError("HTTPSConnection(host=\''scholar.google.com\'', port=443):
-    Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
-  first_seen: '2026-09-05'
+  message: '403 Client Error: Forbidden for url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: 外部主页被墙/网络抖动留痕
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en'
+    evidence: &id003
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: '403 Client Error: Forbidden for url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en'
+  automatic_check:
+    status: error
+    reason: '403 Client Error: Forbidden for url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en'
+    reason_code: http_forbidden
+    category_label: 来源限制访问
+    next_action: discover_official_source
+    action_label: 检查官方替代入口
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/PANGLIEMENG
+    kind: fetch_or_parse_error
+    ref: PANGLIEMENG
+    original_message: '403 Client Error: Forbidden for url: https://scholar.google.com/citations?user=bAPjJ5kAAAAJ&hl=en'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id003
+    title: sustech-cs · PANGLIEMENG · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: PietroSimoneOliveto
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id004
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://faculty.sustech.edu.cn/?tagid=olivetop&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/PietroSimoneOliveto
+    kind: fetch_or_parse_error
+    ref: PietroSimoneOliveto
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id004
+    title: sustech-cs · PietroSimoneOliveto · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: baiyuhui
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id005
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3275.html
+      sha256: 8c39b49ad80b78b502b29a8ab1bef231012d4f42c5b9bec95363c0870560b807
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/baiyuhui
+    kind: fetch_or_parse_error
+    ref: baiyuhui
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id005
+    title: sustech-cs · baiyuhui · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: liren
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id006
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://liren2515.github.io/
+      sha256: 12a4cb6c3d4f74768294d3ccbd34f9205cd6b040829b66d4ab687286b15b8735
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/liren
+    kind: fetch_or_parse_error
+    ref: liren
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id006
+    title: sustech-cs · liren · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: liujiang
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id007
+    - url: https://faculty.sustech.edu.cn/?tagid=liuj&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/liujiang
+    kind: fetch_or_parse_error
+    ref: liujiang
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id007
+    title: sustech-cs · liujiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: lizhuozhao
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id008
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://zhuozhaoli.github.io/
+      sha256: d4e057050c8ef76b0e062f93881026529d0a83f8fed7cdcb6cbea5d688ef4144
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/lizhuozhao
+    kind: fetch_or_parse_error
+    ref: lizhuozhao
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id008
+    title: sustech-cs · lizhuozhao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: mayuxin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id009
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://mayuxin.me/
+      sha256: 621acbc64afe9b1571c93cb49e57e5a1f00b8c7de920d62a5620ca2d179a14cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/mayuxin
+    kind: fetch_or_parse_error
+    ref: mayuxin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id009
+    title: sustech-cs · mayuxin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: songxuemeng
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id010
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://xuemengsong.github.io/
+      sha256: 82fb4f0a63266077b4468d3441bb9bdbc16f6ea9d348f5853861117823cf19cf
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/songxuemeng
+    kind: fetch_or_parse_error
+    ref: songxuemeng
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id010
+    title: sustech-cs · songxuemeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: tangbo
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id011
+    - url: https://faculty.sustech.edu.cn/?tagid=tangb3&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/tangbo
+    kind: fetch_or_parse_error
+    ref: tangbo
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id011
+    title: sustech-cs · tangbo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: tangke
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id012
+    - url: https://faculty.sustech.edu.cn/?tagid=tangk3&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/tangke
+    kind: fetch_or_parse_error
+    ref: tangke
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id012
+    title: sustech-cs · tangke · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: tangming
-  message: 'ConnectionError(MaxRetryError(''HTTPSConnectionPool(host=\''mingtang.website\'',
-    port=443): Max retries exceeded with url: / (Caused by NewConnectionError("HTTPSConnection(host=\''mingtang.website\'',
-    port=443): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))''))'
-  first_seen: '2026-09-05'
-  resolved: true
+  message: 'HTTPSConnectionPool(host=''mingtang.website'', port=443): Max retries
+    exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, ''[SSL: CERTIFICATE_VERIFY_FAILED]
+    certificate verify failed: certificate has expired (_ssl.c:1000)'')))'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：HTTPSConnectionPool(host=''mingtang.website'',
+      port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1,
+      ''[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has
+      expired (_ssl.c:1000)'')))'
+    evidence: &id013
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：HTTPSConnectionPool(host=''mingtang.website'',
+      port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1,
+      ''[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has
+      expired (_ssl.c:1000)'')))'
+    reason_code: tls_error
+    category_label: 官方证书异常
+    next_action: discover_official_source
+    action_label: 核验其他官方入口
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/tangming
+    kind: fetch_or_parse_error
+    ref: tangming
+    original_message: 'HTTPSConnectionPool(host=''mingtang.website'', port=443): Max
+      retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1,
+      ''[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has
+      expired (_ssl.c:1000)'')))'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id013
+    title: sustech-cs · tangming · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: wangqi
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id014
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://dake98.github.io/
+      sha256: bca04247c017b7addb0d56f1ebf20e7ba22bbf31792d33640be55803fca227ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/wangqi
+    kind: fetch_or_parse_error
+    ref: wangqi
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id014
+    title: sustech-cs · wangqi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: wangzhongqiu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence: &id015
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://zqwang7.github.io/
+      sha256: aebf1b375979fb5586926227bd360e4464eee9ff70724533e86556ca96b356f0
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 未解析出可用详情字段，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/wangzhongqiu
+    kind: fetch_or_parse_error
+    ref: wangzhongqiu
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id015
+    title: sustech-cs · wangzhongqiu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: xuyang
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id016
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://clcs-sustech.github.io/
+      sha256: bd803e760b5615ea8123a1ad5cdbee436d8dccca166bd2b2348fa08aa4104490
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/xuyang
+    kind: fetch_or_parse_error
+    ref: xuyang
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id016
+    title: sustech-cs · xuyang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: yuanbo
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id017
+    - url: https://faculty.sustech.edu.cn/?tagid=yuanb&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/yuanbo
+    kind: fetch_or_parse_error
+    ref: yuanbo
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id017
+    title: sustech-cs · yuanbo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: yushiqi
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id018
+    - url: https://faculty.sustech.edu.cn/?tagid=yusq&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/yushiqi
+    kind: fetch_or_parse_error
+    ref: yushiqi
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id018
+    title: sustech-cs · yushiqi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangfengwei
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id019
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~zhangfw/
+      sha256: 7d3cc277265277810f59c4f36606952a39f139aa27d6c39c6d370d0294903617
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhangfengwei
+    kind: fetch_or_parse_error
+    ref: zhangfengwei
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id019
+    title: sustech-cs · zhangfengwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangjianguo
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id020
+    - url: https://faculty.sustech.edu.cn/?tagid=zhangjg&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhangjianguo
+    kind: fetch_or_parse_error
+    ref: zhangjianguo
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id020
+    title: sustech-cs · zhangjianguo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangjin
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id021
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://jinzhang-sustech.github.io/
+      sha256: 1cee140fe232e1be83d91dc23dd2bea399b1dd4841ec66768b1f5806713bffaa
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhangjin
+    kind: fetch_or_parse_error
+    ref: zhangjin
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id021
+    title: sustech-cs · zhangjin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangyu
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id022
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~zhangy/
+      sha256: 2954f4fe06394bdde7a842453a119eff0060de6edcce0a153cfb24dd837a2324
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhangyu
+    kind: fetch_or_parse_error
+    ref: zhangyu
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id022
+    title: sustech-cs · zhangyu · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhangyuqun
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id023
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://zhangyuqun.github.io/
+      sha256: 76c94d90a41c3c58975861ab10688358a62477655adc6ebe8b9f457c679e545e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhangyuqun
+    kind: fetch_or_parse_error
+    ref: zhangyuqun
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id023
+    title: sustech-cs · zhangyuqun · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhengfeng
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id024
+    - url: https://faculty.sustech.edu.cn/?tagid=fengzheng&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhengfeng
+    kind: fetch_or_parse_error
+    ref: zhengfeng
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id024
+    title: sustech-cs · zhengfeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhengmingkai
+  message: 导师姓名未出现在返回正文，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    evidence: &id025
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://mingkai-zheng.github.io/
+      sha256: 25b0fc478f00a2864ea652de0a34af01b3ddfdb7faf4b9497f837b769faedb58
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 导师姓名未出现在返回正文，保留旧记录
+    reason_code: template_empty
+    category_label: 个人信息未能解析
+    next_action: discover_official_source
+    action_label: 查找个人页或可读官方名册
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhengmingkai
+    kind: fetch_or_parse_error
+    ref: zhengmingkai
+    original_message: 导师姓名未出现在返回正文，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: *id025
+    title: sustech-cs · zhengmingkai · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: zhengtianyue
+  message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read timed
+    out. (read timeout=12)'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    evidence: &id026
+    - url: https://faculty.sustech.edu.cn/?tagid=zhengty&iscss=1&snapid=1&orderby=date&go=2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+      error: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+        timed out. (read timeout=15)'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1
+      sha256: 451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/
+      sha256: dd03b4738f07b48e46dc0b727511e2f85ade489fab209ddeb88cac2d3ddd4ecb
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/
+      sha256: 27a439660837d3f4222db2f64ed49957788f805084a92ac4ce8e17bb9f930a2a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3287.html
+      sha256: 499908132e6589578afd027690831962e51ed70fcd1c93fce31fa36131c35c1d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~georgios/
+      sha256: a334bad1a861d9c7aa387ccaf541c2a9353eb5f12261bc39b23272ba04291b22
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~haoq/
+      sha256: f2338bb423dced3b328bc7dd098a06f557ca16d6f4a1410051a4bd47bd446ee4
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/~hisao/
+      sha256: cd0fa4bcbc1a8c3ba95e8506b9a25970483dfb62ffa1f9edfafcf41cf971663f
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/3785.html
+      sha256: 04d93c6bc19abba2a065ac833dbaf9919e3796da9445e7a068cba9c8bf5f3154
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=2
+      sha256: 631d7655a125df0c0d6dc96ec4e5d8efec7b3801ba05a135c25478d12f69e4c9
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=3
+      sha256: 85293457fa63d40d6d3adb01b892e577714906b547a63cc073422c57f832f36d
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/news/3793.html
+      sha256: 489b7eb33d77ef5b8148270c6e29eb55f3af28003fcf2ed7c7799965e164ae5e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3798.html
+      sha256: 4258db939dbca47c46b6b113caf9fb7d09450f36b3db8ff31d5501f75e031fe1
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3795.html
+      sha256: 3411647d590bd3d5ba3a6ae2f383c12c5290a8ccc2ff5842ba011a44f0314d4c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3776.html
+      sha256: 3e72f533a5ce50e75bb6fd671ed84828ffd62b914cb0428ab91957367557996a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://cse.sustech.edu.cn/notices/3775.html
+      sha256: 02549073e4fdecd464840cc4f90c73bb2e489b6abad90194fca535cf40dcb9ad
+      fetched_at: '2026-11-16T11:26:05+00:00'
+  automatic_check:
+    status: error
+    reason: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443): Read
+      timed out. (read timeout=15)'
+    reason_code: network_timeout
+    category_label: 网络暂时失败
+    next_action: retry
+    action_label: 退避后重试
+    consecutive_failures: 1
+    repair_signature: 948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4
+    id: sustech/cs/fetch_or_parse_error/zhengtianyue
+    kind: fetch_or_parse_error
+    ref: zhengtianyue
+    original_message: 'HTTPSConnectionPool(host=''faculty.sustech.edu.cn'', port=443):
+      Read timed out. (read timeout=12)'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-16T13:26:05+00:00'
+    evidence: *id026
+    title: sustech-cs · zhengtianyue · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null

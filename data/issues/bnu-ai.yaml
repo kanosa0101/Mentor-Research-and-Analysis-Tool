@@ -1,14 +1,180 @@
 - kind: fetch_or_parse_error
-  ref: lijia-2
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'')'
-  first_seen: '2026-09-04'
+  ref: cengwenyi
+  message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: 官网死链留痕(09-04 起)
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: ee09c86bdc785cc41819a2d6691950f9f10fa6608ce3c4cfe42777b8d42c1bea
+    id: bnu/ai/fetch_or_parse_error/cengwenyi
+    kind: fetch_or_parse_error
+    ref: cengwenyi
+    original_message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zgj/85ea4b8dca294eeaba5e3f017320e4f7.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm
+      sha256: 7b0bde5c21d153be3aa923e756cd9946e5ee0940371bc97b0f719f6e55495d6e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/fgj/index.htm
+      sha256: 2fd268c1b5bcb24f37161480485361d96b5c4f5573896f73a744b66a65bcf776
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zj/index.htm
+      sha256: d473bfc087b51f4ef70d6039dd95e6b0b4c32062d49df1c2397bbc7a782089d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/
+      sha256: 6e73078e70cb914cc2e82bf4ef4a7920d460142aacf0c8d9f8719c5db4f7f5d2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/index.htm
+      sha256: 32d3e0fa5072b253f7db12903b9c4c5da011a51bd17e4464f43cd2e85ca1c39c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/index.htm
+      sha256: fb06e280e690384f3301ce42ea13c23d99e0c266b19790881227c7231530fab7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/jsjzy/index.htm
+      sha256: 5d70fe33e0105fba93b0793b06746abf7bda2adf26b5cc2945d109d49bbc199a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/sylbt/bf7aae9f1966414b94c10cfe56c1d4e1.htm
+      sha256: 2498da4e1468d63da4f2bb6be2f599e77a83a8fa2268eb81d478cbc2d8cfb03e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bnu-ai · cengwenyi · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+- kind: fetch_or_parse_error
+  ref: lijia-2
+  message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'
+  automatic_check:
+    status: error
+    reason: '当前官方目录未找到通过身份核验的替代来源；原问题：404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'
+    reason_code: http_not_found
+    category_label: 官方链接已失效
+    next_action: discover_official_source
+    action_label: 发现替代官方来源
+    consecutive_failures: 1
+    repair_signature: ee09c86bdc785cc41819a2d6691950f9f10fa6608ce3c4cfe42777b8d42c1bea
+    id: bnu/ai/fetch_or_parse_error/lijia-2
+    kind: fetch_or_parse_error
+    ref: lijia-2
+    original_message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/zj/408947d88fc047cca40027cc20abc3b5.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm
+      sha256: 7b0bde5c21d153be3aa923e756cd9946e5ee0940371bc97b0f719f6e55495d6e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/fgj/index.htm
+      sha256: 2fd268c1b5bcb24f37161480485361d96b5c4f5573896f73a744b66a65bcf776
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zj/index.htm
+      sha256: d473bfc087b51f4ef70d6039dd95e6b0b4c32062d49df1c2397bbc7a782089d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/
+      sha256: 6e73078e70cb914cc2e82bf4ef4a7920d460142aacf0c8d9f8719c5db4f7f5d2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/index.htm
+      sha256: 32d3e0fa5072b253f7db12903b9c4c5da011a51bd17e4464f43cd2e85ca1c39c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/index.htm
+      sha256: fb06e280e690384f3301ce42ea13c23d99e0c266b19790881227c7231530fab7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/jsjzy/index.htm
+      sha256: 5d70fe33e0105fba93b0793b06746abf7bda2adf26b5cc2945d109d49bbc199a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/sylbt/bf7aae9f1966414b94c10cfe56c1d4e1.htm
+      sha256: 2498da4e1468d63da4f2bb6be2f599e77a83a8fa2268eb81d478cbc2d8cfb03e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bnu-ai · lijia-2 · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
 - kind: fetch_or_parse_error
   ref: wangzhichun-2
-  message: 'HTTPError(''404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'')'
-  first_seen: '2026-09-04'
+  message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'
+  first_seen: '2026-11-16'
   resolved: false
-  reviewed: true
-  review_note: 官网死链留痕(09-04 起)
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T09:57:21+00:00'
+    automatic: true
+    state: error
+    reason: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm
+      fetched_at: '2026-11-16T09:57:21+00:00'
+      error: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'
+  automatic_check:
+    status: error
+    reason: 备用官方详情未通过姓名与独立身份特征匹配
+    reason_code: identity_conflict
+    category_label: 身份或职称需核对
+    next_action: manual_review
+    action_label: 保留冲突并等待官方依据
+    consecutive_failures: 1
+    repair_signature: ee09c86bdc785cc41819a2d6691950f9f10fa6608ce3c4cfe42777b8d42c1bea
+    id: bnu/ai/fetch_or_parse_error/wangzhichun-2
+    kind: fetch_or_parse_error
+    ref: wangzhichun-2
+    original_message: '404 Client Error: Not Found for url: https://ai.bnu.edu.cn/xygk/szdw/fgj/7bdef5f31787413387197b748339f2e8.htm'
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence:
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zgj/index.htm
+      sha256: 7b0bde5c21d153be3aa923e756cd9946e5ee0940371bc97b0f719f6e55495d6e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/fgj/index.htm
+      sha256: 2fd268c1b5bcb24f37161480485361d96b5c4f5573896f73a744b66a65bcf776
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zj/index.htm
+      sha256: d473bfc087b51f4ef70d6039dd95e6b0b4c32062d49df1c2397bbc7a782089d6
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/
+      sha256: 6e73078e70cb914cc2e82bf4ef4a7920d460142aacf0c8d9f8719c5db4f7f5d2
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/index.htm
+      sha256: 32d3e0fa5072b253f7db12903b9c4c5da011a51bd17e4464f43cd2e85ca1c39c
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/index.htm
+      sha256: fb06e280e690384f3301ce42ea13c23d99e0c266b19790881227c7231530fab7
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/zszl/bkzy/jsjzy/index.htm
+      sha256: 5d70fe33e0105fba93b0793b06746abf7bda2adf26b5cc2945d109d49bbc199a
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/sylbt/bf7aae9f1966414b94c10cfe56c1d4e1.htm
+      sha256: 2498da4e1468d63da4f2bb6be2f599e77a83a8fa2268eb81d478cbc2d8cfb03e
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    - url: https://ai.bnu.edu.cn/xygk/szdw/zgj/60db430b33a341028fce2d119f6ebdac.htm
+      sha256: 59161eaee52a681b763c32b18c38095ffadd355c31b2c6f960966e8a37233021
+      fetched_at: '2026-11-16T11:26:05+00:00'
+    title: bnu-ai · wangzhichun-2 · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
