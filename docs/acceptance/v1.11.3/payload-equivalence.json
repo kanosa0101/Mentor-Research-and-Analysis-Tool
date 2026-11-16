@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_contact_payload.py -q",
+      "passed": 4,
+      "warnings": 1,
+      "warning_note": "pytest_asyncio third-party deprecation"
+    },
+    {
+      "command": "node tests/application_payload.cjs",
+      "passed": true,
+      "target_time_combinations": 888,
+      "verified": [
+        "policy selection",
+        "fields",
+        "conditions",
+        "events",
+        "date state",
+        "official source references",
+        "source quality"
+      ]
+    }
+  ],
+  "note": "Recorded from successful tool execution; full integration log is verification.log"
+}

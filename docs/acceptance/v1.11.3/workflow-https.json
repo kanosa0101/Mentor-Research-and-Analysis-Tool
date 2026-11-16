@@ -14,11 +14,16 @@
     "restore_reports_missing_original_and_preserves_project_history",
     "missing_original_does_not_block_reupload_into_current_project",
     "contact_prepare_returns_through_primary_application_entry_with_context",
-    "multiple_mentors_require_explicit_choice"
+    "multiple_mentors_require_explicit_choice",
+    "compact_payload_preserves_empty_and_populated_preparation_api_with_official_evidence"
   ],
   "create_button_bottom": 786.171875,
   "mobile_file_top": 465.8125,
   "mobile_upload_bottom": 657.90625,
+  "preparation_actions": {
+    "bit": 0,
+    "tsinghua": 2
+  },
   "passed": true,
   "no_page_errors": true
 }

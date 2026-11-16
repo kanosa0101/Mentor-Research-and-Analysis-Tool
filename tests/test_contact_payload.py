@@ -1,6 +1,7 @@
 """The smaller application payload preserves contact and saved mentor identities."""
 import gzip
 import json
+import copy
 import unittest
 from pathlib import Path
 
@@ -34,6 +35,40 @@ class ContactPayloadTests(unittest.TestCase):
                 self.assertEqual(compact.get(key), original.get(key), (original['page'], key))
         self.assertLess(len(json.dumps(contacts, ensure_ascii=False)),
                         len(json.dumps(source, ensure_ascii=False)) * .6)
+
+    def test_application_payload_preserves_identity_policy_evidence_and_source_quality(self):
+        root = Path(__file__).resolve().parents[1]
+        def data(name):
+            return json.loads((root / 'site' / name).read_text(encoding='utf8').split('=', 1)[1].strip().removesuffix(';'))
+        mentors, admissions = data('contact-data.js'), data('admissions-data.js')
+        original = copy.deepcopy(admissions)
+        script = build_site.application_payload(mentors, admissions)
+        values = [json.loads(line.split('=', 1)[1].strip().removesuffix(';')) for line in script.splitlines()]
+        payload = {'mentors': values[0], 'admissions': values[1]}
+        self.assertEqual(admissions, original)
+        self.assertEqual(payload['mentors'], [
+            {key: mentor[key] for key in ('page', 'name', 'school', 'dept', 'school_name', 'dept_name') if key in mentor}
+            for mentor in mentors])
+        compact = payload['admissions']
+        self.assertEqual([p['id'] for p in compact['policies']], [p['id'] for p in admissions['policies']])
+        for before, after in zip(admissions['policies'], compact['policies']):
+            for key in ('id', 'title', 'school', 'dept', 'year', 'degree', 'route', 'level', 'track',
+                        'program', 'program_code', 'source_id', 'fields', 'events', 'applies_if',
+                        'review_hashes', 'reviewed_at'):
+                self.assertEqual(after.get(key), before.get(key), (before['id'], key))
+            self.assertNotIn('material_actions', after)
+        for sid, source in admissions['sources'].items():
+            for key in ('url', 'label', 'format'):
+                self.assertEqual(compact['sources'][sid].get(key), source.get(key), (sid, key))
+        for sid, check in admissions['checks'].items():
+            for key in ('status', 'hash', 'last_success'):
+                self.assertEqual(compact['checks'][sid].get(key), check.get(key), (sid, key))
+        self.assertEqual(compact['schools'], admissions['schools'])
+        self.assertEqual([(u['school'], u['dept'], u['school_name'], u['dept_name']) for u in compact['units']],
+                         [(u['school'], u['dept'], u['school_name'], u['dept_name']) for u in admissions['units']])
+        encode = lambda value: json.dumps(value, ensure_ascii=False, separators=(',', ':')).encode()
+        self.assertLess(len(gzip.compress(encode(payload))),
+                        .75 * (len(gzip.compress(encode(mentors))) + len(gzip.compress(encode(admissions)))))
 
 
 class ContactAssetTests(unittest.TestCase):

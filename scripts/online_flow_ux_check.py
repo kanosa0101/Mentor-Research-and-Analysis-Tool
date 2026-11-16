@@ -74,6 +74,19 @@ try:
   page.locator('#manage-link').click();page.wait_for_function('window.WORKFLOW_READY');assert page.locator('#filter-project').input_value()==project;assert page.evaluate('contextMentor')=='bit-cs-danchun';result['checks'].append('contact_prepare_returns_through_primary_application_entry_with_context')
   multi=page.evaluate("""async()=>{const r=await fetch('/api/workflow/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'多导师项目',mentor_ids:['bit-cs-danchun','bit-cs-dinggangyi']})});if(!r.ok)throw new Error(await r.text());return (await r.json()).id}""")
   page.goto(base+'/applications.html?section=communication&project='+multi,wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY');assert not page.evaluate('chosen.communication');assert not page.evaluate('chosen.material');result['checks'].append('multiple_mentors_require_explicit_choice')
+  assert page.evaluate('ADMISSIONS_DATA.policies.every(p=>!("material_actions" in p))');assert not [url for url in requests if '/admissions-data.js' in url]
+  result['preparation_actions']={}
+  for school,has_actions in [('bit',False),('tsinghua',True)]:
+   goal=page.evaluate("""async school=>{const r=await fetch('/api/workflow/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'材料准备验收 '+school,school_id:school,dept_id:'cs',year:2027,degree:'master',route:'recommend',track:'ordinary'})});if(!r.ok)throw new Error(await r.text());return (await r.json()).id}""",school)
+   with page.expect_response(lambda response:'/api/workflow/material-tasks' in response.url) as prepared:
+    page.goto(base+'/applications.html?section=preparation&project='+goal,wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY')
+   actions=prepared.value.json()['actions'][goal];result['preparation_actions'][school]=len(actions);assert bool(actions)==has_actions
+   if has_actions:
+    view=next(v for v in actions if v['policy_id']=='tsinghua-cs-2027-master-recommend');card=page.locator('.preparation-action').filter(has_text=view['policy_title']).first;card.wait_for(state='visible');card.locator('details[data-prepare-detail]>summary').first.click()
+    source_id=page.evaluate('(id)=>ADMISSIONS_DATA.policies.find(p=>p.id===id).source_id',view['policy_id']);source_url=page.evaluate('(id)=>ADMISSIONS_DATA.sources[id].url',source_id);assert source_url in card.locator('a').evaluate_all('(links)=>links.map(a=>a.href)');assert view['action']['instruction']['quote'] in card.inner_text();page.evaluate('scrollTo(0,0)');page.screenshot(path=str(out/'preparation-from-api.png'),full_page=True)
+   else:
+    page.get_by_text('当前目标尚无已整理的分阶段动作。',exact=False).wait_for(state='visible')
+  result['checks'].append('compact_payload_preserves_empty_and_populated_preparation_api_with_official_evidence')
   assert not errors,errors;result['passed']=True;result['no_page_errors']=True;browser.close()
 finally:
  server.shutdown();server.server_close();(out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')

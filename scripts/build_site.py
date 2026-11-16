@@ -94,6 +94,21 @@ def contact_record(p):
     return {k: p[k] for k in keys if k in p}
 
 
+def application_payload(profs, admissions):
+    # The project picker needs identities; email/research remain on the contact page.
+    identity = ('page', 'name', 'school', 'dept', 'school_name', 'dept_name')
+    people = [{k: p[k] for k in identity if k in p} for p in profs]
+    context = {k: admissions[k] for k in ('schools', 'sources', 'checks')}
+    context['units'] = [{k: unit[k] for k in ('school', 'dept', 'school_name', 'dept_name')}
+                        for unit in admissions['units']]
+    # Preparation actions are loaded from the account API when that panel opens.
+    context['policies'] = [{k: v for k, v in p.items() if k != 'material_actions'}
+                           for p in admissions['policies']]
+    def encode(value):
+        return json.dumps(value, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    return 'window.MENTOR_DATA = ' + encode(people) + ';\nwindow.ADMISSIONS_DATA = ' + encode(context) + ';\n'
+
+
 def compare_record(p):
     rec = {'bio_excerpt': (p.get('bio_raw') or '')[:130]}
     rec['provenance'] = {k: v for k, v in p.get('provenance', {}).items()
@@ -250,6 +265,7 @@ def main():
     write_html(SITE / 'discovery.html', render_discovery_page(env=env))
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
+    (SITE / 'application-data.js').write_text(application_payload(profs, admissions), encoding='utf-8')
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())
     release_file = ROOT / 'release.json'
     if release_file.exists():
