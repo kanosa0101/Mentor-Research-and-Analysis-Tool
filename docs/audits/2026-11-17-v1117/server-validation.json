@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "version": "1.11.7",
+  "edition": "online",
+  "services": {
+    "mentor-https.service": "active",
+    "mentor-public.service": "active",
+    "mentor-review-ui.service": "active",
+    "mentor-maintenance.timer": "active",
+    "mentor-monitor.timer": "active",
+    "mentor-review-pipeline.timer": "active",
+    "mentor-updates.timer": "active",
+    "mentor-certificate.timer": "active"
+  },
+  "mentor_records": 7173,
+  "contactable": 5690,
+  "policy_count": 111,
+  "policy_years": [
+    2027
+  ],
+  "policy_quality": {
+    "checked": 111
+  },
+  "institutional_activities": 9,
+  "activity_states": {
+    "open_month": 1,
+    "closed": 7,
+    "open": 1
+  },
+  "explicit_2028_activities": 0,
+  "configured_sources": 104,
+  "original_backlog_statuses": {
+    "original411": {
+      "pending": 20,
+      "error": 228,
+      "resolved": 163
+    },
+    "added8": {
+      "resolved": 4,
+      "error": 4
+    }
+  },
+  "quality_summary": {
+    "active": 6307,
+    "overdue": 137,
+    "policies": 0,
+    "new_policies": 163,
+    "mentors": 293,
+    "mentor_field_gaps": 5851,
+    "missing_fields": 10412
+  },
+  "quality_breakdown": {
+    "reasons": {
+      "awaiting_evidence": 153,
+      "incomplete_evidence": 4,
+      "ambiguous_scope": 3,
+      "ai_review": 1,
+      "unsupported_attachment": 2,
+      "identity_conflict": 12,
+      "shared_contact": 8,
+      "template_empty": 50,
+      "roster_incomplete": 1,
+      "http_not_found": 59,
+      "identity_evidence_missing": 58,
+      "http_forbidden": 37,
+      "tls_error": 15,
+      "parser_unsupported": 4,
+      "directory_only": 21,
+      "http_unexpected_status": 27,
+      "network_timeout": 1,
+      "mentor_field_gap": 5851
+    },
+    "actions": {
+      "按已发现时间排队，取得完整官方正文后核验": 153,
+      "补齐图中信息、扫描件或缺失的官方附件": 4,
+      "按明确年度、学位、渠道及适用对象拆分核验": 3,
+      "根据AI错误或证据冲突原因继续核验，未通过不发布": 1,
+      "核对并提取官方附件的受支持文本版本": 2,
+      "manual_review": 21,
+      "discover_official_source": 267,
+      "adapt_parser": 4,
+      "retry": 1,
+      "review_fields": 61,
+      "wait_for_source": 292,
+      "check_queued_fields": 5498
+    },
+    "never_attempted": 5651
+  },
+  "maintenance_stage_failures": {},
+  "pipeline_stage_failures": {},
+  "pipeline_status": "attention",
+  "source_recovery": {
+    "failed_drafts": 3,
+    "attempted": 0,
+    "requests": 0,
+    "request_budget": 16,
+    "adopted": 0,
+    "manual_required": 0,
+    "not_announcement": 1,
+    "budget_wait": 0,
+    "unresolved": 2
+  },
+  "private_permissions_verified": true,
+  "qa_cleanup_verified": true
+}

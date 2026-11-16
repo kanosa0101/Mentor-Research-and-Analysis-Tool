@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-11-16T17:14:11+00:00",
+  "method": "All eight PNGs opened with view_image; four additional public mobile pages rendered in Chromium at 390x844 without writes or timing measurements.",
+  "screenshots": {
+    "account-mobile.png": {
+      "sha256": "7683a3001d9dd24b23a8696a1e254e315cb604dd5dd87d43dbf722bcb6efeff0",
+      "viewed": true
+    },
+    "admissions-mobile.png": {
+      "sha256": "d37fd69f689fbeb8eeab95cdc46112d219a08348688147f5dc2d9935f544847e",
+      "viewed": true
+    },
+    "communication-desktop.png": {
+      "sha256": "bf0b4fa7f5ddc288b139ee26b713f9bba656cf38394fab54b9914fc8a66d4be2",
+      "viewed": true
+    },
+    "discovery-mobile.png": {
+      "sha256": "587766c64abd1013b452b18360d81ffdb59d9331b811dc210f2bfe783c48f0f5",
+      "viewed": true
+    },
+    "materials-desktop.png": {
+      "sha256": "fcff793c7a9c7f77177f08c30c3ff43ec2c0993681d310b2580a3785e3d2473e",
+      "viewed": true
+    },
+    "notices-mobile.png": {
+      "sha256": "18216934a1dc464a8c956ab504dc4902411ff3bf0b4bfb5b50bf68622bcdcb6a",
+      "viewed": true
+    },
+    "opportunities-mobile.png": {
+      "sha256": "4981d2587025d7ff0412e5799465029ba00be4125bfa50ae9770530b089727c9",
+      "viewed": true
+    },
+    "opportunities-public.png": {
+      "sha256": "113b3562821102b9e2d1dba7383aeab4d47c6c965b4e449b80ac1c67097690a5",
+      "viewed": true
+    }
+  },
+  "findings": [
+    {
+      "severity": "pass",
+      "scope": "desktop materials and communication",
+      "detail": "Fields, linked project/mentor, upload confirmation and communication history remain readable. No large empty card region or clipped form controls observed."
+    },
+    {
+      "severity": "pass",
+      "scope": "mobile account / activities / requirements / notices / mentors",
+      "detail": "Typography and navigation fit 390px, primary controls readable, all four public pages show no horizontal overflow."
+    },
+    {
+      "severity": "artifact",
+      "scope": "communication-desktop.png",
+      "detail": "Full-page capture retains sticky navigation at the current scroll coordinate. Suitable to inspect saved record, not a reliable screenshot for header positioning; no functional/UI blocker inferred."
+    }
+  ],
+  "blocking_product_defects": []
+}

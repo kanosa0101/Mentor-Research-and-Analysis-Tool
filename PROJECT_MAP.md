@@ -1,6 +1,6 @@
 # 项目地图
 
-修订日期：2026-11-16，当前线上版本 v1.11.6。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.6交付记录](deploy/DELIVERY_V1.11.6_2026-11-16.md)。历史审计数字不代表本轮重新采集。实现和工程验证已部署，2028届机会覆盖与真实新政策自动发布仍未达标。
+修订日期：2026-11-17，当前线上版本 v1.11.7。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.7交付记录](deploy/DELIVERY_V1.11.7_2026-11-17.md)。历史审计数字不代表本轮重新采集。导师字段自动维护、审核分类和读取恢复已部署，2028届机会覆盖与真实新政策自动发布仍未达标。
 
 ## 产品究竟服务什么任务
 
@@ -77,6 +77,7 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 | --- | --- | --- |
 | 导师抓取/轮转 | `sites/<school>/*.yaml`、`scripts/crawl.py`、`crawler/legacy_refresh.py` | 保留原文、字段出处；解析器/配置修复恢复旧失败，保护人工字段 |
 | 资料问题治理 | `crawler/mentor_quality.py`、`data/issues/`、`cache/mentor_quality/` | 新抓取错误自动入账，解决后周期复检或新失败重开；共享邮箱撤回后不被日常解析写回 |
+| 导师字段缺口 | `crawler/mentor_fields.py`、`cache/mentor_quality/field-gaps.json` | 全库扫描邮箱、纯研究方向、明确资格、职称；未检查库存和已核验问题分账，原文复用、有界轮转、官网未公开30天复看 |
 | 政策证据再确认 | `crawler/policy_revalidation.py`、`crawler/admissions_util.py`、`cache/policy_revalidation/` | 版本、原句和附件完整一致才续核；保留原人工日期，历史政策不冒充本届要求 |
 | 候选查询 | `/api/mentor-candidates` → `crawler/public_discovery.py`；按ID读取 → `public_catalog.py` | 邮箱/资格/职称在分页前过滤；总数、前端回退、旧偏好兼容一致 |
 | 活动发现 | `sites/opportunities.yaml`、`opportunity_monitor.py`、`source_discovery.py` | 官方同机构栏目经父子来源复核可自动接入监测；栏目准入不等于活动发布 |

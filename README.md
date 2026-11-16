@@ -19,7 +19,7 @@
 - [在线服务决策与验收标准](docs/ONLINE_SERVICE.md)、[实施计划](IMPLEMENTATION_PLAN.md)。
 - [架构](ARCHITECTURE.md)、[维护交接](HANDOVER.md)、[自动核验](docs/AUTOMATIC_REVIEW.md)。
 
-本轮 v1.11.5 修复AI超时、按原因分流资料积压，并通过官方目录发现和核验替代来源；范围与剩余边界见[实施计划](IMPLEMENTATION_PLAN.md)，测试及部署状态以[v1.11.5交付记录](deploy/DELIVERY_V1.11.5_2026-11-16.md)中的实测为准。此前政策与持续维护基线见[v1.11.4记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)，加载与申请操作优化见[v1.11.3记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)，账号上线证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
+当前 v1.11.7 修复审核分类、排队时限和读取失败恢复，将导师关键字段缺口纳入自动维护，并补齐三院系的真实资料。工程验证、线上实测和仍未达标的当期内容见[v1.11.7交付记录](deploy/DELIVERY_V1.11.7_2026-11-17.md)；真实AI正例仍未自动发布，不能把流程启用当作覆盖完整。上一轮基线见[v1.11.6记录](deploy/DELIVERY_V1.11.6_2026-11-16.md)，账号上线证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
 
 ## 开发与运维
 

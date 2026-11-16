@@ -1,0 +1,52 @@
+PASS: layered scope/year/route/source-change/error/age/review separation
+✔ E:\homework\自动化调研\tests\admissions_rules.cjs (232.2049ms)
+PASS: 888 application target/time combinations preserve policy scope, conditions, events, source evidence and quality
+✔ E:\homework\自动化调研\tests\application_payload.cjs (1849.8948ms)
+✔ complete target retains all school, department and program requirements (27.0087ms)
+✔ a selected program cannot borrow another program while retaining general layers (0.9257ms)
+✔ special programmes never borrow another project rules (0.3039ms)
+✔ blank scope and invalid values request a complete target (0.7589ms)
+✔ year, channel and ordinary/special scopes never borrow other requirements (0.584ms)
+✔ changed, failed, stale and missing checks remain recheck states per requirement (1.5622ms)
+✔ field and event references use their actual sources while legacy fields retain primary (0.5269ms)
+✔ explicit applies_if remains conditional even with a selected program; general and selected-program events remain usable (31.4892ms)
+✔ unspecified program protection remains alongside explicit conditions (1.7069ms)
+discovery v1.1: contact validation, placeholder cleaning and unknown filtering passed
+✔ E:\homework\自动化调研\tests\discovery_data_quality_v1_1.cjs (181.1524ms)
+v21 discovery quality: 8 scenarios passed
+✔ E:\homework\自动化调研\tests\discovery_quality_v21.cjs (159.2465ms)
+discovery ranking: 9 scenarios passed
+✔ E:\homework\自动化调研\tests\discovery_ranking_v14.cjs (140.8839ms)
+PASS: rule evidence, hard/soft, unknown, no degree inference, review scope/expiry
+✔ E:\homework\自动化调研\tests\discovery_rules.cjs (123.7824ms)
+✔ specific programmes and special scope never gain score from legacy pass (2.9092ms)
+✔ legacy fail cannot exclude unsupported programme/special scope candidates (0.4148ms)
+✔ ordinary unspecified scope retains legacy judgement and other checks remain normal (0.3951ms)
+PASS entry scope classification and policy source isolation
+PASS incomplete target, special/program, source failure and old dates
+PASS partial PhD browsing keeps candidate official originals reachable
+PASS event item/exam timing does not imply registration availability
+PASS legacy payload official navigation retains independent-check warning
+PASS saved project event semantics and manual-date compatibility
+✔ E:\homework\自动化调研\tests\entry_scope_v17.cjs (119.2683ms)
+opportunity date, scope, unknown and history rules passed
+saved opportunity changes preserve original dates and material stages
+✔ E:\homework\自动化调研\tests\opportunities.cjs (110.8781ms)
+Precise, date-only and month-only opportunity dates preserve their meaning.
+✔ E:\homework\自动化调研\tests\opportunity_dates_v19.cjs (102.753ms)
+18 original IDs retained; only 9 evidenced institutional activities enter filters; personal/formal/pending and invalid evidence fail closed.
+✔ E:\homework\自动化调研\tests\opportunity_scope_v20.cjs (102.4263ms)
+20 opportunity window date cases plus filters/order/change boundaries passed
+✔ E:\homework\自动化调研\tests\opportunity_windows_v17.cjs (97.8391ms)
+Policy system reconfirmation preserves manual date, China timezone and source/version freshness gates.
+✔ E:\homework\自动化调研\tests\policy_revalidation.cjs (98.2995ms)
+PASS project review isolation, exact goal, hard/unknown and scope conflict
+✔ E:\homework\自动化调研\tests\project_reviews_v16.cjs (76.8774ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1879.7221

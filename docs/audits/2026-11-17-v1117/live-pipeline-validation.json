@@ -1,0 +1,267 @@
+{
+  "observed_at": "2026-11-16T17:16:01.481198+00:00",
+  "version": "1.11.7",
+  "queue": {
+    "total": 233,
+    "statuses": {
+      "pending_review": 154,
+      "published": 8,
+      "needs_pdf_review": 6,
+      "source_changed": 1,
+      "needs_evidence_review": 62,
+      "source_error": 2
+    },
+    "dashboard_rows": 233,
+    "dashboard_read_only": true
+  },
+  "source_discovery": {
+    "checked_at": "2026-11-16T17:13:11.031195+00:00",
+    "counts": {
+      "not_column": 516,
+      "candidate": 88,
+      "approved": 36,
+      "error": 14
+    },
+    "summary": {
+      "seed_count": 219,
+      "seeds_attempted": 8,
+      "candidates_checked": 4,
+      "new_candidates": 0,
+      "due_seeds_deferred": 110,
+      "candidates_per_seed": 1,
+      "content_wait": 516,
+      "source_errors": 14,
+      "pending": 88
+    }
+  },
+  "policy_intake": {
+    "total": 170,
+    "states": {
+      "retry": 1,
+      "manual_required": 9,
+      "queued": 153,
+      "historical": 7
+    },
+    "never_attempted": 160
+  },
+  "maintenance": {
+    "started_at": "2026-11-16T17:11:19.781679+00:00",
+    "completed_at": "2026-11-16T17:13:10.381505+00:00",
+    "failures": {},
+    "source_warnings": {
+      "policy_intake": {
+        "attempted": 2,
+        "pending": 162,
+        "manual_required": 2,
+        "retry": 0
+      },
+      "professors": {
+        "attempted": 40,
+        "error": 9,
+        "manual_required": 0
+      },
+      "mentor_quality": {
+        "attempted": 37,
+        "pending": 0,
+        "error": 32
+      }
+    },
+    "mentor_fields": {
+      "checked_at": "2026-11-16T17:12:49+00:00",
+      "attempted": 6,
+      "requests": 5,
+      "request_budget": 12,
+      "reused": 1,
+      "filled_fields": 0,
+      "filled_profiles": 0,
+      "errors": 3,
+      "results": [
+        {
+          "id": "bit/cs/chenchanming",
+          "status": "error",
+          "reason": "未解析出可用详情字段，保留旧记录",
+          "reused_evidence": false,
+          "filled_fields": []
+        },
+        {
+          "id": "bit/cs/chengcheng",
+          "status": "checked",
+          "reused_evidence": false,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "480d313156d62d147aa148c7bf2e9e0f4f8d9e791a042e3e363d2fa4530fd5a2",
+          "fetched_at": "2026-11-16T17:12:49+00:00"
+        },
+        {
+          "id": "bit/cs/chenjiehao",
+          "status": "error",
+          "reason": "未解析出可用详情字段，保留旧记录",
+          "reused_evidence": false,
+          "filled_fields": []
+        },
+        {
+          "id": "bit/cs/chenshuoying",
+          "status": "error",
+          "reason": "未解析出可用详情字段，保留旧记录",
+          "reused_evidence": false,
+          "filled_fields": []
+        },
+        {
+          "id": "bit/cs/dihuijun",
+          "status": "checked",
+          "reused_evidence": false,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "636cbdf14096610fbc1dbdec0ec6ba56eeda560bbb1a155aba1981bdec3f387e",
+          "fetched_at": "2026-11-16T17:12:49+00:00"
+        },
+        {
+          "id": "bit/cs/fengkaiyu",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "20e93c6a5afd02f9697e41852fa9dd2512e38205b124ae91333681dbb7335ad2",
+          "fetched_at": "2026-11-16T05:20:18+00:00"
+        }
+      ]
+    },
+    "new_policy_result": {
+      "checked_at": "2026-11-16T17:12:57.090039+00:00",
+      "attempted": 2,
+      "candidate_total": 169,
+      "pending": 162,
+      "published": 0,
+      "changed": 0,
+      "manual_required": 2,
+      "retry": 0,
+      "budget_wait": 0,
+      "counts": {
+        "manual_required": 2
+      },
+      "results": [
+        {
+          "title": "北京大学科学智能学院2027年“申请-考核制”博士研究生招生说明（学术型）",
+          "source_url": "https://ai4s.pkusz.edu.cn/info/1007/1480.htm",
+          "listing_url": "https://ai4s.pkusz.edu.cn/xydt/tzgg1.htm",
+          "checked_at": "2026-11-16T17:12:57.090039+00:00",
+          "policy_version": "new-official-policy-v4-bound-fields",
+          "first_seen": "2026-11-14T16:00:00+00:00",
+          "registered_at": "2026-11-16T16:42:21.359870+00:00",
+          "first_attempt_at": "2026-11-16T17:12:57.090039+00:00",
+          "source_sha256": "9f781300c81ea83d4dec0d75600abba62c541efbcd21766b91a0e3c09629cfea",
+          "source_hints": {
+            "source_sha256": "9f781300c81ea83d4dec0d75600abba62c541efbcd21766b91a0e3c09629cfea",
+            "checked_at": "2026-11-16T17:12:57.090039+00:00"
+          },
+          "status": "manual_required",
+          "reason": "正文图片未明确标为纯装饰，需核实图中申请信息",
+          "error_code": "image_evidence_required",
+          "reason_code": "incomplete_evidence",
+          "failure_count": 0,
+          "next_attempt_at": "2026-11-17T17:12:57.090039+00:00",
+          "next_action": "补齐图中信息、扫描件或缺失的官方附件",
+          "pending_since": "2026-11-14T16:00:00+00:00",
+          "history": [
+            {
+              "checked_at": null,
+              "status": "queued",
+              "reason_code": "awaiting_evidence",
+              "source_sha256": null,
+              "content_sha256": null
+            }
+          ]
+        },
+        {
+          "title": "中国科学院计算机网络信息中心2027年硕士研究生招生章程",
+          "source_url": "https://cnic.cas.cn/yjsjy/zsxx/sstk/202610/t20261010_8291163.html",
+          "listing_url": "https://cnic.cas.cn/yjsjy/tzgg/",
+          "checked_at": "2026-11-16T17:12:57.090039+00:00",
+          "policy_version": "new-official-policy-v4-bound-fields",
+          "first_seen": "2026-11-14T16:00:00+00:00",
+          "registered_at": "2026-11-16T16:42:21.359870+00:00",
+          "first_attempt_at": "2026-11-16T17:12:57.090039+00:00",
+          "source_sha256": "e781eb79350c0dfe7846d1dc531b48347f6abc3c1a31eba79ac3fb68e7788d5a",
+          "source_hints": {
+            "source_sha256": "e781eb79350c0dfe7846d1dc531b48347f6abc3c1a31eba79ac3fb68e7788d5a",
+            "checked_at": "2026-11-16T17:12:57.090039+00:00"
+          },
+          "content_sha256": "3ae7efb2134ff658ba465a737ed42dc1c400ea71e9f83a85725550632d1a9098",
+          "status": "manual_required",
+          "reason": "招生渠道缺失或同页多渠道，须核验各自适用范围",
+          "reason_code": "ambiguous_scope",
+          "failure_count": 0,
+          "next_attempt_at": "2026-11-17T17:12:57.090039+00:00",
+          "next_action": "按明确年度、学位、渠道及适用对象拆分核验",
+          "pending_since": "2026-11-14T16:00:00+00:00",
+          "history": [
+            {
+              "checked_at": null,
+              "status": "queued",
+              "reason_code": "awaiting_evidence",
+              "source_sha256": null,
+              "content_sha256": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pipeline": {
+    "started_at": "2026-11-16T17:13:11.031154+00:00",
+    "completed_at": "2026-11-16T17:14:07.276933+00:00",
+    "failures": {},
+    "status": "attention",
+    "automatic": {
+      "manual_required": 6,
+      "retry": 1,
+      "budget_wait": 1
+    },
+    "source_recovery": {
+      "failed_drafts": 3,
+      "attempted": 0,
+      "requests": 0,
+      "request_budget": 16,
+      "adopted": 0,
+      "manual_required": 0,
+      "not_announcement": 1,
+      "budget_wait": 0,
+      "unresolved": 2
+    },
+    "notifications": {
+      "attempted_at": "2026-11-16T17:14:07.207592+00:00",
+      "sent": 0,
+      "failed": 0,
+      "expired": 0,
+      "retry_exhausted": 0,
+      "audience": "maintainer",
+      "disabled": false,
+      "subscribers": 0,
+      "overdue": 138,
+      "unreceived": true,
+      "completed_at": "2026-11-16T17:14:07.208525+00:00"
+    }
+  },
+  "quality": {
+    "summary": {
+      "active": 6307,
+      "overdue": 137,
+      "policies": 0,
+      "new_policies": 163,
+      "mentors": 293,
+      "mentor_field_gaps": 5851,
+      "missing_fields": 10412
+    },
+    "incomplete": [],
+    "field_statuses": {
+      "pending": 61,
+      "waiting_source": 292,
+      "queued": 5498
+    }
+  },
+  "ai_usage": {
+    "date": "2026-11-16",
+    "requests": 18,
+    "input_chars": 64205
+  }
+}

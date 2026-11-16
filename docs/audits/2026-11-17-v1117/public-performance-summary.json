@@ -1,0 +1,105 @@
+{
+  "started_at": "2026-11-16T17:13:54.608664+00:00",
+  "completed_at": "2026-11-16T17:14:38.387950+00:00",
+  "origin": "https://8.213.137.82:8443",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "rounds": 3,
+  "passed": true,
+  "definition": "Each round: fresh-browser start + same-session nav/return; separate fresh-browser discovery. OS DNS cache unchanged. No account writes.",
+  "timing_note": "TLS is included in connect_ms. TTFB includes connection; request_to_first_byte is network+server wait, not pure server CPU.",
+  "summary": {
+    "cold:start.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.761,
+        1.704,
+        2.881
+      ],
+      "ready_statistics": {
+        "min": 1.704,
+        "median": 1.761,
+        "max": 2.881
+      }
+    },
+    "navigation:discovery.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.095,
+        1.086,
+        1.532
+      ],
+      "ready_statistics": {
+        "min": 1.086,
+        "median": 1.095,
+        "max": 1.532
+      }
+    },
+    "navigation:admissions.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.104,
+        2.254,
+        1.687
+      ],
+      "ready_statistics": {
+        "min": 1.104,
+        "median": 1.687,
+        "max": 2.254
+      }
+    },
+    "navigation:opportunities.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.174,
+        1.806,
+        1.276
+      ],
+      "ready_statistics": {
+        "min": 1.174,
+        "median": 1.276,
+        "max": 1.806
+      }
+    },
+    "warm_return:start.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        0.783,
+        0.729,
+        1.39
+      ],
+      "ready_statistics": {
+        "min": 0.729,
+        "median": 0.783,
+        "max": 1.39
+      }
+    },
+    "cold:discovery.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        2.777,
+        3.354,
+        2.291
+      ],
+      "ready_statistics": {
+        "min": 2.291,
+        "median": 2.777,
+        "max": 3.354
+      }
+    }
+  },
+  "samples": 18,
+  "peers": [
+    "('127.0.0.1', 10808)"
+  ],
+  "full_catalog_fallbacks": 0,
+  "activity_external_scripts": []
+}

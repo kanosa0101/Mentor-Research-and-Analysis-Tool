@@ -86,7 +86,7 @@ def main():
         task('pages_updated', rebuild)
         task('quality_alerts', lambda: quality_status.refresh(ROOT))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
-        counters = ('error', 'manual_required', 'sources_error', 'retry', 'review_required', 'pending')
+        counters = ('error', 'errors', 'manual_required', 'sources_error', 'retry', 'review_required', 'pending')
         warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', *counters)}
                     for name in ('policies', 'policy_revalidation', 'policy_intake', 'professors', 'mentor_directories', 'mentor_quality', 'mentor_fields', 'notices')
                     if any(result[name].get(key, 0) for key in counters)}

@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "baseline_commit": "88d67f962eb463a0155c9f842daa88a1037a6637",
+  "files": {
+    "cache/policy_intake/state.json": {
+      "base_sha256": "b9f12c751799700191fa1bcab4b9cb08493a63afe909ef2ba1c083c7987c7fad",
+      "desired_sha256": "4972034130f51023ddf95b6c687dab91278c033de8c32d523a30bbbe699bdb7c",
+      "live_sha256": "4d79acc3a483e59ca58ae7cea499b7c924fe1606cb4b5efc3bbc072abd9198de",
+      "resolutions": [
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/first_seen",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "2026-11-14T16:00:00+00:00",
+            "theirs": "2026-11-16T16:21:57.292607+00:00"
+          },
+          "value": "2026-11-14T16:00:00+00:00",
+          "reason": "Preserve the earlier verified notice discovery date rather than the old first-attempt timestamp."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/status",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "queued",
+            "theirs": "manual_required"
+          },
+          "value": "manual_required",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/reason",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "已从登记官方来源发现，等待取得完整证据",
+            "theirs": "正文要求的附件未取得明确官方链接"
+          },
+          "value": "正文要求的附件未取得明确官方链接",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/reason_code",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "awaiting_evidence",
+            "theirs": "incomplete_evidence"
+          },
+          "value": "incomplete_evidence",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/next_action",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "按已发现时间排队，取得完整官方正文后核验",
+            "theirs": "补齐图中信息、扫描件或缺失的官方附件"
+          },
+          "value": "补齐图中信息、扫描件或缺失的官方附件",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1yz.uestc.edu.cn~1info~11007~15996.htm/pending_since",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "2026-11-14T16:00:00+00:00",
+            "theirs": "2026-11-16T16:21:57.292607+00:00"
+          },
+          "value": "2026-11-14T16:00:00+00:00",
+          "reason": "Preserve the earlier verified notice discovery date rather than the old first-attempt timestamp."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/first_seen",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "2026-11-14T16:00:00+00:00",
+            "theirs": "2026-11-16T16:21:57.292607+00:00"
+          },
+          "value": "2026-11-14T16:00:00+00:00",
+          "reason": "Preserve the earlier verified notice discovery date rather than the old first-attempt timestamp."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/status",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "queued",
+            "theirs": "manual_required"
+          },
+          "value": "manual_required",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/reason",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "已从登记官方来源发现，等待取得完整证据",
+            "theirs": "正文图片未明确标为纯装饰，需核实图中申请信息或二维码"
+          },
+          "value": "正文图片未明确标为纯装饰，需核实图中申请信息或二维码",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/reason_code",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "awaiting_evidence",
+            "theirs": "incomplete_evidence"
+          },
+          "value": "incomplete_evidence",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/next_action",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "按已发现时间排队，取得完整官方正文后核验",
+            "theirs": "补齐图中信息、扫描件或缺失的官方附件"
+          },
+          "value": "补齐图中信息、扫描件或缺失的官方附件",
+          "reason": "Keep production evidence and attempted/manual state instead of rolling back to queued."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/records/https:~1~1sais.sjtu.edu.cn~1yjs_zsgz~11896.html/pending_since",
+            "base_present": false,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": null,
+            "ours": "2026-11-14T16:00:00+00:00",
+            "theirs": "2026-11-16T16:21:57.292607+00:00"
+          },
+          "value": "2026-11-14T16:00:00+00:00",
+          "reason": "Preserve the earlier verified notice discovery date rather than the old first-attempt timestamp."
+        },
+        {
+          "expected": {
+            "path": "cache/policy_intake/state.json/checked_at",
+            "base_present": true,
+            "ours_present": true,
+            "theirs_present": true,
+            "base": "2026-11-16T15:21:15.327819+00:00",
+            "ours": "2026-11-16T16:46:26.660384+00:00",
+            "theirs": "2026-11-16T16:21:57.292607+00:00"
+          },
+          "value": "2026-11-16T16:46:26.660384+00:00",
+          "reason": "Keep the newest actual processing timestamp; per-record evidence dates remain separate."
+        }
+      ]
+    }
+  }
+}

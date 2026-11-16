@@ -1,0 +1,15 @@
+{
+  "excluded_patches": [
+    {
+      "path": "cache/opportunity_review.json",
+      "before_sha256": "deb7d3d1dc1984433e857e8ef0bffffbc1ef8aa05c3afa53094734e6dfb16cc8",
+      "after_sha256": "446d549f192930ae75a2f57c09ef2e0ef42e61651e0b3a50628b0f8df2540e25"
+    },
+    {
+      "path": "cache/source-discovery.json",
+      "before_sha256": "db7affec39f7280ba92e4bf770ddd58f0e1528561bcb9268ccc8ddf6b602334f",
+      "after_sha256": "1c1bf9a0512930f89e3f95eb6c89ed6364ced128071613c042239678bf61a638"
+    }
+  ],
+  "reason": "Keep the latest production queue and source candidates whole; execute new preflight and discovery over current state after install."
+}

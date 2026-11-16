@@ -1,0 +1,47 @@
+{
+  "patched_sha256": "c3b3642187836f5769c29f8d5fd2a0c55cbc5d89491f4a87f96e2af721f25c22",
+  "aggregated_at": "2026-11-16T17:22:08.844429+00:00",
+  "data_collected_at": "2026-11-16T17:22:06.245033+00:00",
+  "old_warnings": {
+    "policy_intake": {
+      "attempted": 2,
+      "pending": 162,
+      "manual_required": 2,
+      "retry": 0
+    },
+    "professors": {
+      "attempted": 40,
+      "error": 10,
+      "manual_required": 0
+    },
+    "mentor_quality": {
+      "attempted": 10,
+      "pending": 0,
+      "error": 7
+    }
+  },
+  "new_warnings": {
+    "policy_intake": {
+      "attempted": 2,
+      "pending": 162,
+      "manual_required": 2,
+      "retry": 0
+    },
+    "professors": {
+      "attempted": 40,
+      "error": 10,
+      "manual_required": 0
+    },
+    "mentor_quality": {
+      "attempted": 10,
+      "pending": 0,
+      "error": 7
+    },
+    "mentor_fields": {
+      "attempted": 6,
+      "errors": 4
+    }
+  },
+  "collection_repeated": false,
+  "protected_code_backup_sha256": "c8b84380cf1415308216ed74a14142195e6d1a0aeb1a17fa3f84b2f541fde716"
+}
