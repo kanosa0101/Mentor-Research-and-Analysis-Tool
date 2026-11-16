@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-16T09:57:48.777208+00:00",
+  "completed_at": "2026-11-16T09:58:16.151226+00:00",
+  "status": "attention",
+  "failures": {},
+  "mode": "publish",
+  "discovery": {
+    "summary": {
+      "seed_count": 192,
+      "seeds_attempted": 1,
+      "candidates_checked": 8,
+      "new_candidates": 5,
+      "pending": 98
+    },
+    "automatic_admission": {
+      "checked_at": "2026-11-16T09:57:48.777234+00:00",
+      "attempted": 8,
+      "approved": 3,
+      "pending": 5,
+      "manual_required": 23
+    }
+  },
+  "automatic": {
+    "counts": {
+      "retry": 2
+    },
+    "errors": [
+      {
+        "id": "21b192b1ca3f188bfef7",
+        "reasons": [
+          "官方原文实时获取失败"
+        ]
+      },
+      {
+        "id": "8b351692e4cce400afb3",
+        "reasons": [
+          "官方原文实时获取失败"
+        ]
+      }
+    ]
+  },
+  "alerts": {
+    "summary": {
+      "active": 29,
+      "overdue": 1,
+      "urgent": 0
+    }
+  },
+  "quality_alerts": {
+    "summary": {
+      "active": 411,
+      "overdue": 0,
+      "policies": 0,
+      "mentors": 411
+    },
+    "available": {
+      "policy": true,
+      "mentor": true
+    },
+    "failures": {},
+    "incomplete": []
+  },
+  "maintainer_notifications": {
+    "sent": 0,
+    "failed": 0,
+    "retry_exhausted": 0
+  },
+  "public_pages": {
+    "skipped": true,
+    "reason": "公开目录未变化"
+  }
+}

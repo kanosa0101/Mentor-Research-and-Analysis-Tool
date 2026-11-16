@@ -1,0 +1,40 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "accounts": [
+    {
+      "id": "2d861a8abff06c8f60feb4b415a20bf1",
+      "username": "qa_v1114_1794822966_a"
+    },
+    {
+      "id": "10993dcde0cd9797302f8c2f376f485b",
+      "username": "qa_v1114_1794822966_b"
+    }
+  ],
+  "checks": [
+    "https_registration_secure_cookie",
+    "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+    "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+    "project_material_communication_reminder_and_target_saved",
+    "independent_mobile_browser_same_account_reads_same_records_and_file",
+    "other_account_cannot_read_or_modify_records",
+    "logout_revokes_private_access",
+    "local_download_retired_and_private_maintenance_files_hidden",
+    "no_browser_errors_or_account_horizontal_overflow",
+    "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+    "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+    "public_content_pages_fit_mobile_without_script_errors"
+  ],
+  "passed": true,
+  "planned_usernames": [
+    "qa_v1114_1794822966_a",
+    "qa_v1114_1794822966_b"
+  ],
+  "browser_errors": [],
+  "failed_requests": [],
+  "core_asset_responses": [
+    {
+      "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+      "status": 200
+    }
+  ]
+}

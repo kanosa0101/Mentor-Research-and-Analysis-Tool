@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "version": "1.11.4",
+  "edition": "online",
+  "services": {
+    "mentor-https.service": "active",
+    "mentor-public.service": "active",
+    "mentor-review-ui.service": "active",
+    "mentor-maintenance.timer": "active",
+    "mentor-monitor.timer": "active",
+    "mentor-review-pipeline.timer": "active",
+    "mentor-updates.timer": "active",
+    "mentor-certificate.timer": "active"
+  },
+  "mentor_records": 7173,
+  "contactable": 5662,
+  "policy_count": 111,
+  "policy_years": [
+    2027
+  ],
+  "policy_quality": {
+    "checked": 111
+  },
+  "institutional_activities": 9,
+  "activity_states": {
+    "open_month": 1,
+    "closed": 7,
+    "open": 1
+  },
+  "explicit_2028_activities": 0,
+  "configured_sources": 74,
+  "original_67_statuses": {
+    "resolved": 46,
+    "pending": 20,
+    "error": 1
+  },
+  "mentor_quality_total_active": 411,
+  "maintenance_stage_failures": {},
+  "pipeline_stage_failures": {},
+  "pipeline_status": "attention",
+  "private_permissions_verified": true,
+  "qa_cleanup_verified": true
+}

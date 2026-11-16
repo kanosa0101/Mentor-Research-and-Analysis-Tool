@@ -1,0 +1,61 @@
+{
+  "started_at": "2026-11-16T09:56:41.673442+00:00",
+  "completed_at": "2026-11-16T09:57:48.463532+00:00",
+  "failures": {},
+  "source_warnings": {
+    "professors": {
+      "attempted": 40,
+      "error": 8,
+      "manual_required": 1
+    },
+    "mentor_quality": {
+      "attempted": 40,
+      "pending": 0,
+      "error": 40
+    }
+  },
+  "policies": {
+    "attempted": 20,
+    "error": 0
+  },
+  "policy_revalidation": {
+    "attempted": 0,
+    "confirmed": 0,
+    "retry": 0,
+    "review_required": 0
+  },
+  "professors": {
+    "attempted": 40,
+    "error": 8
+  },
+  "mentor_quality": {
+    "attempted": 40,
+    "created": 390,
+    "reopened": 0,
+    "resolved": 0,
+    "pending": 0,
+    "error": 40,
+    "active": 411
+  },
+  "notices": {},
+  "quality_alerts": {
+    "summary": {
+      "active": 411,
+      "overdue": 0,
+      "policies": 0,
+      "mentors": 411
+    },
+    "available": {
+      "policy": true,
+      "mentor": true
+    },
+    "failures": {},
+    "incomplete": []
+  },
+  "mentor_state_statuses": {
+    "resolved": 46,
+    "pending": 370,
+    "error": 41
+  },
+  "mentor_never_attempted": 350
+}
