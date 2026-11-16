@@ -45,7 +45,21 @@ class Workspace(serve.Handler):
         return self.transport.reply(self.response_code or 500, self.wfile.getvalue(), content_type, headers)
 
     def _json(self, code, obj):
+        if code == 200:
+            workflow = obj if self.path == '/api/workflow' else obj.get('workflow') if self.path == '/api/workflow/backup' else None
+            if workflow is not None:
+                missing = online_materials.missing_materials(workflow, self.user_root)
+                for key, material in workflow.get('materials', {}).items():
+                    material['missing'] = key in missing
+            if self.path == '/api/workflow/restore' and obj.get('restored'):
+                obj['missing_materials'] = len(online_materials.missing_materials(self._parsed_body['workflow'], self.user_root))
         return self._reply(code, json.dumps(obj, ensure_ascii=False).encode(), 'application/json; charset=utf-8')
+
+    def _known_ids(self):
+        # One adapter is created per request; avoid repeated full-directory scans.
+        if not hasattr(self, '_request_known_ids'):
+            self._request_known_ids = super()._known_ids()
+        return self._request_known_ids
 
     def _local_request(self, json_body=False):
         # Authentication, CSRF and JSON type have already been checked by the online gate.
@@ -69,10 +83,11 @@ class Workspace(serve.Handler):
             # Guard BOTH stored snapshots and incoming backups before existing export code can read files.
             body = self._body(32_000_000 if self.path == '/api/workflow/restore' else 2_000_000) if method != 'GET' else None
             with serve._lock:
-                stored = serve.load_outreach(self.workflow) if self.workflow.exists() else {}
-                online_materials.validate_storage_paths(stored, self.user_root)
                 if self.path == '/api/workflow/restore' and isinstance(body, dict):
                     online_materials.validate_storage_paths(body.get('workflow', {}), self.user_root)
+                elif self.path != '/api/workflow/restore':
+                    stored = serve.load_outreach(self.workflow) if self.workflow.exists() else {}
+                    online_materials.validate_storage_paths(stored, self.user_root)
                 if re.fullmatch(r'/api/workflow/materials/[a-f0-9]{32}', self.path) and isinstance(body, dict) and 'path' in body:
                     raise ValueError('材料文件不能通过修改路径替换，请重新上传')
                 return self._workflow_request(method)

@@ -1,6 +1,6 @@
 # 项目地图
 
-修订日期：2026-11-16。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.1交付记录](deploy/DELIVERY_V1.11.1_2026-11-16.md)。历史审计数字不代表本轮重新采集。
+修订日期：2026-11-16。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.3交付记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)。历史审计数字不代表本轮重新采集。
 
 ## 产品究竟服务什么任务
 
@@ -32,8 +32,8 @@ flowchart LR
 | 院校活动 `opportunities.html` | 查看学校/院系/研究所组织的营和正式院所项目 | 只显示机构活动；个人招募等旧ID说明去向；主办方、条件、时间和官方入口优先 | `opportunities*.js`、`crawler/opportunity_util.py` |
 | 学校与要求 `admissions.html` | 核对当前目标条件、材料、截止与适用范围 | 保留申请目标筛选；关键限制不截断，材料及完整证据按需查看 | `admissions*.js`、`material-actions.js` |
 | 招生通知 `notices.html` | 查正式招生通知及未结构化官方信息 | 显示轮次与通知阶段；候选通知不等于已核验申请条件 | `notices*.js`、`crawler/notice_util.py` |
-| 我的申请 `desk.html` | 继续联系、登记回复、安排下一步 | 以当前导师和申请为上下文；项目与材料在关联页面管理 | `desk.js`、`crawler/contact_util.py` |
-| 项目与材料 `applications.html` | 管理一次具体申请及所需材料 | 与联系页保持同一项目上下文；简化空态/重复解释 | `workflow.js`、`crawler/workflow_util.py`、`material_task_util.py` |
+| 联系准备 `desk.html` | 继续联系、登记回复、安排下一步 | 以当前导师和申请为上下文；从我的申请进入，保留项目与导师 | `desk.js`、`crawler/contact_util.py` |
+| 我的申请 `applications.html` | 管理一次具体申请及所需材料 | 主导航统一入口，项目、材料、沟通和提醒保留同一上下文 | `workflow.js`、`crawler/workflow_util.py`、`material_task_util.py` |
 | 全量目录 `index.html` | 查看完整原始目录，含缺邮箱记录 | 保留为次级核对工具，不让新用户再理解第二套主筛选 | `index.html.j2`、`data.js`、`search.js` |
 | 旧套磁看板 `board.html` | 访问已有旧记录 | 与新工作流不同步；保留历史访问，退出新用户主要路径 | `board.html.j2`、outreach API |
 | 我的账号 `account.html` | 注册、登录、修改密码、退出 | 私人动作登录后返回原上下文；local.html只保留在线跳转 | `account*.js`、`online_accounts.py` |
@@ -89,7 +89,7 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 
 公开数据数量和已整理缺口见 [数据快照](docs/DATA_SNAPSHOT.json) 与网站覆盖页；每条资料以自身来源、适用年度和核验时间为准，构建日期不能证明整库已刷新。2026-11-15整改前的字段质量与18条混合内容处置依据保留在 [历史问题审计](docs/PRODUCT_AUDIT_2026-11-15.md)。
 
-Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证见[v1.11.1记录](deploy/DELIVERY_V1.11.1_2026-11-16.md)。内部走查不替代用户体验验收。
+Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证见[v1.11.1记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)。内部走查不替代用户体验验收。
 
 ## 文档阅读顺序
 

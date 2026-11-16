@@ -5,7 +5,7 @@ const opportunityParams=new URLSearchParams(location.search), opportunityToday=O
 function opportunityFacts(o){
   const window=o.application_window,label=!o.deadline&&window?.mode==='rolling'?'官方受理方式':!o.deadline&&window?.mode==='month'?'截止月份':'报名截止';
   const value=OpportunityRules.formatDate(o.deadline)|| (window?.mode==='rolling'?'长期 / 滚动受理':window?.mode==='month'?OpportunityRules.formatDate(window.end_month)+'（具体日期未公布）':'具体日期待确认');
-  return `<div class="opportunity-facts"><div><span class="muted">${label}</span><strong>${ox(value)}${o.deadline?.length===10?'（未注明时刻）':''}</strong></div>${o.graduation_year?`<div><span class="muted">面向届别</span><strong>${ox(o.graduation_year)} 届本科生</strong></div>`:''}${o.event_start||o.event_end?`<div><span class="muted">活动时间</span><strong>${ox(OpportunityRules.formatDate(o.event_start)||'开始日期待核对')}${o.event_end?' 至 '+ox(OpportunityRules.formatDate(o.event_end)):''}</strong></div>`:''}</div>`;
+  return `<div class="opportunity-facts"><div><span class="muted">${label}</span><strong>${ox(value)}${o.deadline?.length===10?'（未注明时刻）':''}</strong></div><div><span class="muted">本科毕业届别</span><strong>${o.graduation_year?ox(o.graduation_year)+' 届':'原文未明确'}</strong></div>${o.event_start||o.event_end?`<div><span class="muted">活动时间</span><strong>${ox(OpportunityRules.formatDate(o.event_start)||'开始日期待核对')}${o.event_end?' 至 '+ox(OpportunityRules.formatDate(o.event_end)):''}</strong></div>`:''}</div>`;
 }
 function opportunityWindow(o,state){
   const window=o.application_window;if(!window||o.deadline)return '';
@@ -49,7 +49,7 @@ function opportunityCard(o,filter){
     <h2>${ox(o.title)}</h2><p class="opportunity-organizer">主办 / 组织：${ox(organizer)}</p>
     ${opportunityFacts(o)}
     <div class="opportunity-eligibility"><h3>适合谁申请</h3>${opportunityList(o.eligibility,'申请对象尚未明确，请先核对官方公告。')}</div>
-    ${!o.graduation_year?`<p class="note opportunity-cohort">原文未明确毕业届别${filter.year?'，不代表已确认适用于 '+ox(filter.year)+' 届':''}；以以上年级和身份条件为准。</p>`:''}
+    ${!o.graduation_year?'<p class="note opportunity-cohort">活动年份不等于毕业届别，请按上述年级和身份条件核对。</p>':''}
     ${o.source_state!=='verified'||state==='review'?'<p class="hint">当前来源或内容需重新核验，不能据此确认报名仍开放。</p>':''}
     ${!o.deadline&&o.application_window?.mode==='month'?'<p class="note">仅公布截止月份，请先确认具体日期，不按月底安排。</p>':''}
     ${opportunitySource(o)}${opportunityActions(o,state)}
@@ -69,9 +69,12 @@ function renderOpportunities(){
   const filter={query:oe('opportunity-search').value,kind:oe('opportunity-kind').value,school:oe('opportunity-school').value,year:oe('opportunity-year').value,status:oe('opportunity-state').value};
   const focus=opportunityParams.get('id'),all=[...opportunityRows,...(opportunityCatalog.other_contents||[])],focused=focus&&all.find(o=>o.id===focus);
   const rows=focus?(focused&&OpportunityRules.classification(focused)==='institutional_activity'?[focused]:[]):OpportunityRules.select(opportunityRows,filter);
-  oe('opportunity-count').textContent=focus?'当前记录':`${rows.length} 条院校活动${filter.status==='closed'?' · 历史参考':''}`;
+  const states=rows.map(o=>OpportunityRules.state(o)),available=states.filter(s=>['open','open_month','rolling'].includes(s)).length,closed=states.filter(s=>s==='closed').length,upcoming=states.filter(s=>s==='upcoming').length;
+  const cohort=filter.year?(filter.year==='unknown'?' · 毕业届别未明确':' · 明确面向 '+filter.year+' 届'):'';
+  const statusSummary=[[available,'报名窗口内'],[upcoming,'尚未开始'],[rows.length-available-closed-upcoming,'待确认'],[closed,'历史']].filter(([count])=>count).map(([count,label])=>`${label} ${count} 条`).join(' · ');
+  oe('opportunity-count').textContent=focus?'当前记录':`${rows.length} 条院校活动${cohort}${statusSummary?' · '+statusSummary:''}`;
   const back=focus?'<p class="opportunity-back"><a href="opportunities.html">← 返回全部院校活动</a></p>':'';
-  const empty='<div class="opportunity-empty"><h2>当前条件下还没有已整理的院校活动</h2><p>个人招募、正式招生通知和待核验线索不计入活动数量；未收录不代表院校没有发布。</p><div class="opportunity-actions"><button type="button" id="opportunity-reset">清除筛选</button><button type="button" id="opportunity-history">查看历史活动</button><a href="notices.html">查官方招生通知 →</a></div></div>';
+  const empty=`<div class="opportunity-empty"><h2>${filter.year&&filter.year!=='unknown'?'尚无符合筛选且明确面向 '+ox(filter.year)+' 届的已核验活动':'当前条件下还没有已整理的院校活动'}</h2><p>未收录不代表院校没有发布；届别未知的活动不计入明确届别结果。</p><div class="opportunity-actions">${filter.year&&filter.year!=='unknown'?'<button type="button" id="opportunity-unknown-year">查看届别未明确的活动</button>':''}<button type="button" id="opportunity-reset">清除筛选</button><button type="button" id="opportunity-history">查看历史活动</button><a href="notices.html">查官方招生通知 →</a></div></div>`;
   oe('opportunity-list').innerHTML=back+(focus&&!focused?'<div class="opportunity-empty"><h2>当前目录未找到这条记录</h2><p>旧收藏或申请快照不会被删除。可返回活动列表，或从已保存项目中的官方出处核对。</p><a href="opportunities.html">返回活动列表 →</a></div>':focused&&OpportunityRules.classification(focused)!=='institutional_activity'?movedOpportunity(focused):rows.length?rows.map(o=>opportunityCard(o,filter)).join(''):empty);
   oe('pending-contents').innerHTML=(opportunityCatalog.other_contents||[]).filter(o=>OpportunityRules.classification(o)==='pending').map(o=>`<p><a href="opportunities.html?id=${encodeURIComponent(o.id)}">${ox(o.title)}</a> · 对象或来源尚待核验，不计入活动数量。</p>`).join('');
   oe('opportunity-coverage').textContent=(opportunityCatalog.coverage_note||'当前来源范围待说明')+' 最近整理：'+(opportunityCatalog.checked_at||'未知')+'。';
@@ -79,10 +82,12 @@ function renderOpportunities(){
 
 function refreshOpportunityOptions(){
   const activities=opportunityRows.filter(o=>OpportunityRules.classification(o)==='institutional_activity');
-  for(const [key,values,label] of [['year',[...new Set(activities.map(o=>o.graduation_year).filter(Boolean))].sort(),'全部届别'],['school',[...new Set(activities.map(o=>o.school_name))].sort(),'全部学校']]){
+  const nextCohort=Number(opportunityToday.slice(0,4))+(Number(opportunityToday.slice(5,7))>=11?2:1);
+  for(const [key,values,label] of [['year',[...new Set([...activities.map(o=>o.graduation_year).filter(Boolean),nextCohort])].sort(),'全部届别'],['school',[...new Set(activities.map(o=>o.school_name))].sort(),'全部学校']]){
     const select=oe('opportunity-'+key),old=select.value;
     select.replaceChildren(new Option(label,''));
     for(const value of values)select.add(new Option(key==='year'?value+' 届':value,value));
+    if(key==='year')select.add(new Option('毕业届别未明确','unknown'));
     if(old&&![...select.options].some(o=>o.value===old))select.add(new Option(old+'（当前目录未收录）',old));
     select.value=old;
   }
@@ -93,6 +98,7 @@ if(opportunityParams.has('id'))oe('opportunity-state').value='all';
 if(opportunityParams.has('query'))oe('opportunity-search').value=opportunityParams.get('query').slice(0,200);
 oe('opportunity-search').oninput=renderOpportunities;
 document.addEventListener('click',e=>{
+  if(e.target.id==='opportunity-unknown-year'){oe('opportunity-year').value='unknown';renderOpportunities();}
   if(e.target.id==='opportunity-reset'||e.target.id==='opportunity-history'){for(const key of ['kind','school','year','search'])oe('opportunity-'+key).value='';opportunityParams.delete('id');oe('opportunity-state').value=e.target.id==='opportunity-history'?'closed':'current';renderOpportunities();}
   const button=e.target.closest('[data-save-opportunity]');if(!button)return;
   if(publicOpportunityMode){oe('opportunity-result').textContent='请先登录，再保存申请项目、材料与提醒。';oe('opportunity-result').scrollIntoView({block:'center'});return;}

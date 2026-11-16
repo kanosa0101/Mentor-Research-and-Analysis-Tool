@@ -55,6 +55,21 @@ class PublicContextLoaderTests(unittest.TestCase):
             self.assertEqual(current['units'], {'example': {'software'}, 'added': set()})
             self.assertEqual(current['policies'], [{'id': 'latest'}])
 
+    def test_cached_public_context_isolated_from_caller_and_unit_changes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.fixture(root)
+            first = projects.load_context(root)
+            first['units']['example'].add('private-mutation')
+            first['policies'].append({'id': 'must-not-leak'})
+            first['checks'] = {'private': True}
+            self.assertEqual(projects.load_context(root), legacy_context(root))
+            added = root / 'sites/example/ai.yaml'
+            added.write_text('school: example\ndept: ai\n', encoding='utf-8')
+            self.assertEqual(projects.load_context(root)['units']['example'], {'cs', 'ai'})
+            added.unlink()
+            self.assertEqual(projects.load_context(root)['units']['example'], {'cs'})
+
     def test_no_c_loader_falls_back_to_python_safe_loader(self):
         spec = importlib.util.spec_from_file_location('public_context_fallback_test', projects.__file__)
         fallback = importlib.util.module_from_spec(spec)

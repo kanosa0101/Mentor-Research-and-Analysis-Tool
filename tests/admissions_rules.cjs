@@ -21,4 +21,12 @@ assert.equal(rules.quality(school,{s:{...observations.s,status:'fake'}},'2026-10
 assert.equal(rules.quality(school,observations,'2026-10-23').state,'stale');
 assert.equal(rules.quality({...school,reviewed_at:'2026-08-01'},observations,'2026-10-14').state,'review');
 assert.equal(rules.quality({...school,reviewed_at:'2026-11-01'},observations,'2026-10-14').state,'review');
+assert.equal(rules.quality({...school,review_hashes:{}},observations,'2026-10-14').state,'unknown');
+assert.equal(rules.cycle({...school,route:'recommend'},'2026-11-16').state,'historical');
+assert.equal(rules.cycle({...school,route:'recommend'},'2026-10-31').state,'current');
+assert.equal(rules.cycle({...school,year:2028,route:'recommend'},'2026-11-16').state,'preparation');
+assert.equal(rules.cycle(school,'2026-11-16').state,'current');
+assert.equal(rules.cycle({...school,year:2028},'2026-11-16').state,'preparation');
+assert.equal(rules.cycle({...school,year:2026},'2026-11-16').state,'historical');
+assert.equal(rules.cycle({...school,year:undefined},'2026-11-16').state,'unknown');
 console.log('PASS: layered scope/year/route/source-change/error/age/review separation');

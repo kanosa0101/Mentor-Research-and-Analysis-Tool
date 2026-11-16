@@ -35,11 +35,13 @@ try:
   page.on('pageerror',lambda error:errors.append(str(error)));page.on('request',lambda request:requests.append(request.url))
   page.goto(base+'/account.html?next=/applications.html?mentor=bit-cs-danchun%26school=bit%26dept=cs',wait_until='networkidle')
   page.locator('[data-account-mode=register]').click();page.locator('#account-username').fill('ux_flow_user');page.locator('#account-password').fill('test-password-long-a');page.locator('#account-confirm').fill('test-password-long-a');page.locator('#account-submit').click();page.wait_for_url(lambda url:'/applications.html?' in url);page.wait_for_function('window.WORKFLOW_READY')
+  assert page.locator('nav[aria-label="主导航"] a',has_text='我的申请').get_attribute('href')=='applications.html';assert page.locator('h1').inner_text()=='我的申请';result['checks'].append('primary_application_entry_is_project_workspace')
   page.locator('#project-name').fill('我的申请');assert page.locator('#project-goal-details').get_attribute('open') is None
   page.screenshot(path=str(out/'create-desktop.png'),full_page=True)
   result['create_button_bottom']=page.locator('#project-save').bounding_box()['y']+page.locator('#project-save').bounding_box()['height']
   page.locator('#project-save').click();page.wait_for_function('Object.keys(WORKFLOW.projects).length===1&&!actionBusy');project=page.evaluate('Object.keys(WORKFLOW.projects)[0]')
   assert page.locator('#filter-project').input_value()==project;assert page.evaluate('chosen.communication')==['bit-cs-danchun'];assert page.evaluate('chosen.material')==['bit-cs-danchun'];assert 'project='+project in page.url
+  assert 'project='+project in page.locator('#back-desk').get_attribute('href');assert 'mentor=bit-cs-danchun' in page.locator('#back-desk').get_attribute('href')
   assert page.locator('#project-next').is_visible();result['checks'].append('project_creation_keeps_project_and_mentor_and_next_actions')
   page.locator('#project-next [data-section=material]').click();assert page.locator('#material-projects').evaluate('(n)=>[...n.selectedOptions].map(o=>o.value)')==[project]
   page.locator('#material-file').set_input_files({'name':'CV.txt','mimeType':'text/plain','buffer':b'private application material'})
@@ -59,8 +61,17 @@ try:
   page.locator('.section-tabs [data-section=material]').click()
   for width in (320,390,1440):
    page.set_viewport_size({'width':width,'height':980});page.evaluate('scrollTo(0,0)');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1');page.screenshot(path=str(out/f'materials-{width}.png'),full_page=True)
-  page.set_viewport_size({'width':390,'height':980});page.evaluate('scrollTo(0,0)');result['mobile_file_top']=page.locator('#material-file').bounding_box()['y'];result['mobile_upload_bottom']=page.locator('#material-save').bounding_box()['y']+page.locator('#material-save').bounding_box()['height'];assert result['mobile_upload_bottom']<980;assert page.locator('#material-details').get_attribute('open') is None
+  page.set_viewport_size({'width':390,'height':844});page.evaluate('scrollTo(0,0)');result['mobile_file_top']=page.locator('#material-file').bounding_box()['y'];result['mobile_upload_bottom']=page.locator('#material-save').bounding_box()['y']+page.locator('#material-save').bounding_box()['height'];assert result['mobile_upload_bottom']<760;assert page.locator('#material-details').get_attribute('open') is None
   result['checks'].append('material_layout_320_390_1440_without_horizontal_overflow')
+  material=page.evaluate('Object.values(WORKFLOW.materials)[0]');missing_path=Path(material['path']).resolve();assert missing_path.is_relative_to(root.resolve());missing_path.unlink()
+  page.reload(wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY');assert page.locator('#material-list').get_by_text('原文件缺失，请在上方重新上传。已有沟通记录仍保留。').is_visible();assert page.locator('#material-list a[href$="/download"]').count()==0
+  assert page.evaluate('Object.keys(WORKFLOW.communications).length')==1;result['checks'].append('missing_file_has_recovery_guidance_without_broken_download_or_lost_history')
+  backup=page.evaluate('async()=>await(await fetch("/api/workflow/backup")).json()');page.locator('.workflow-tools>summary').click();page.once('dialog',lambda dialog:dialog.accept())
+  page.locator('#workflow-restore-file').set_input_files({'name':'application-backup.json','mimeType':'application/json','buffer':json.dumps(backup).encode()});page.wait_for_function('!actionBusy&&document.querySelector("#material-feedback").textContent.includes("1 份原文件缺失")')
+  assert page.locator('#filter-project').input_value()==project;assert page.evaluate('Object.keys(WORKFLOW.communications).length')==1;result['checks'].append('restore_reports_missing_original_and_preserves_project_history')
+  page.locator('#material-file').set_input_files({'name':'CV-restored.txt','mimeType':'text/plain','buffer':b'reuploaded application material'});page.locator('#material-save').click();page.wait_for_function('!actionBusy&&Object.keys(WORKFLOW.materials).length===2');assert page.locator('#material-list a[href$="/download"]').count()==1;result['checks'].append('missing_original_does_not_block_reupload_into_current_project')
+  page.locator('#back-desk').click();page.wait_for_function('window.CONTACT_READY');assert page.locator('h1').inner_text()=='联系准备';assert 'project='+project in page.locator('#manage-link').get_attribute('href');assert 'mentor=bit-cs-danchun' in page.locator('#manage-link').get_attribute('href')
+  page.locator('#manage-link').click();page.wait_for_function('window.WORKFLOW_READY');assert page.locator('#filter-project').input_value()==project;assert page.evaluate('contextMentor')=='bit-cs-danchun';result['checks'].append('contact_prepare_returns_through_primary_application_entry_with_context')
   multi=page.evaluate("""async()=>{const r=await fetch('/api/workflow/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'多导师项目',mentor_ids:['bit-cs-danchun','bit-cs-dinggangyi']})});if(!r.ok)throw new Error(await r.text());return (await r.json()).id}""")
   page.goto(base+'/applications.html?section=communication&project='+multi,wait_until='networkidle');page.wait_for_function('window.WORKFLOW_READY');assert not page.evaluate('chosen.communication');assert not page.evaluate('chosen.material');result['checks'].append('multiple_mentors_require_explicit_choice')
   assert not errors,errors;result['passed']=True;result['no_page_errors']=True;browser.close()

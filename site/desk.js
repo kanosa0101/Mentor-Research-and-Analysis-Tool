@@ -199,7 +199,7 @@ async function action(task,success){
   if(button)button.textContent='正在保存…';
   el('desk-workspace').disabled=true;el('desk-workspace').setAttribute('aria-busy','true');el('desk-restore').disabled=true;el('desk-backup').disabled=true;
   let saved=false;
-  try{await task();saved=true;await refresh();message(success);}
+  try{await task();saved=true;await refresh();message(typeof success==='function'?success():success);}
   catch(e){message(saved?'操作已完成，但列表刷新失败，请刷新页面核对，勿重复提交。':e.message,true);}
   finally{actionBusy=false;el('desk-workspace').removeAttribute('aria-busy');el('desk-workspace').disabled=!window.CONTACT_READY;el('desk-restore').disabled=false;el('desk-backup').disabled=!window.CONTACT_READY;if(button?.textContent==='正在保存…')button.textContent=label;}
 }
@@ -278,7 +278,8 @@ el('desk-restore').onclick=()=>el('desk-restore-file').click();
 el('desk-restore-file').onchange=async e=>{
   const file=e.target.files[0];if(!file)return;
   if(!confirm('恢复会替换私人工作流，服务将先保留原索引副本。继续？')){e.target.value='';return;}
-  await action(async()=>{await api('/restore',JSON.parse(await file.text()),'POST');loadedTarget='';dirty=false;},'已恢复备份');e.target.value='';
+  let missingMaterials=0;
+  await action(async()=>{const result=await api('/restore',JSON.parse(await file.text()),'POST');missingMaterials=result.missing_materials||0;loadedTarget='';dirty=false;},()=>missingMaterials?`记录已恢复；${missingMaterials} 份原文件缺失，请到“我的申请”的材料页重新上传。`:'已恢复备份');e.target.value='';
 };
 function showPanel(panel){
   currentPanel=panel;

@@ -3,7 +3,7 @@
   function matches(row,filter){
     const c=row.classification||{},selected=tracks(row,filter.route);
     if(!selected.length)return false;
-    if(filter.cycle&&filter.cycle!=='all'&&!selected.some(t=>filter.cycle==='current'?['current','preparation'].includes(t.cycle):t.cycle===filter.cycle))return false;
+    if(filter.cycle&&filter.cycle!=='all'&&!selected.some(t=>filter.cycle==='active'?['current','preparation'].includes(t.cycle):t.cycle===filter.cycle))return false;
     for(const key of ['admission_year','graduation_year','activity_year']){
       if(filter[key]&&(filter[key]==='unknown'?!!c[key]:String(c[key]||'')!==filter[key]))return false;
     }

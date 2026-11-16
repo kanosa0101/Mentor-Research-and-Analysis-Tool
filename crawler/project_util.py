@@ -3,6 +3,7 @@ import copy
 import json
 import re
 from datetime import date, datetime
+from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -20,15 +21,26 @@ DATE_KEYS = {'label', 'kind', 'at', 'origin', 'policy_id', 'source_ids', 'source
 
 def load_context(root):
     root = Path(root)
+    paths = [*sorted((root / 'sites').glob('*/*.yaml')),
+             root / 'data/schools.yaml', root / 'data/admissions.yaml']
+    signature = tuple((str(path.resolve()), stat.st_mtime_ns, stat.st_size, stat.st_ino)
+                      for path in paths for stat in [path.stat()])
+    # Only public configuration is cached. Callers may attach checks or modify lists.
+    return copy.deepcopy(_read_context(signature, PUBLIC_YAML_LOADER))
+
+
+@lru_cache(maxsize=4)
+def _read_context(signature, loader):
     units = {}
-    for path in sorted((root / 'sites').glob('*/*.yaml')):
-        cfg = yaml.load(path.read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
+    paths = [Path(row[0]) for row in signature]
+    for path in paths[:-2]:
+        cfg = yaml.load(path.read_text(encoding='utf-8'), Loader=loader)
         if isinstance(cfg, dict) and cfg.get('school') and cfg.get('dept'):
             units.setdefault(cfg['school'], set()).add(cfg['dept'])
-    schools = yaml.load((root / 'data/schools.yaml').read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
+    schools = yaml.load(paths[-2].read_text(encoding='utf-8'), Loader=loader)
     for school in schools['schools']:
         units.setdefault(school['id'], set())
-    admissions = yaml.load((root / 'data/admissions.yaml').read_text(encoding='utf-8'), Loader=PUBLIC_YAML_LOADER)
+    admissions = yaml.load(paths[-1].read_text(encoding='utf-8'), Loader=loader)
     return dict(units=units, sources=admissions['sources'], policies=admissions['policies'])
 
 

@@ -35,12 +35,14 @@ OUTREACH = ROOT / 'data' / 'outreach.yaml'
 _lock = threading.RLock()
 _public_update = {'busy': False, 'message': '', 'result': None}
 _update_guard = threading.Lock()
+WORKFLOW_YAML_LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
+WORKFLOW_YAML_DUMPER = getattr(yaml, 'CSafeDumper', yaml.SafeDumper)
 
 
 def load_outreach(path=OUTREACH):
     if not path.exists():
         return {}
-    data = yaml.safe_load(path.read_text(encoding='utf-8')) or {}
+    data = yaml.load(path.read_text(encoding='utf-8'), Loader=WORKFLOW_YAML_LOADER) or {}
     if not isinstance(data, dict):
         raise ValueError('跟进文件须为 YAML 对象')
     return data
@@ -51,7 +53,7 @@ def save_outreach(data, path=OUTREACH):
     fd, tmp = tempfile.mkstemp(dir=str(path.parent), suffix='.tmp')
     try:
         with os.fdopen(fd, 'w', encoding='utf-8') as fh:
-            yaml.safe_dump(data, fh, allow_unicode=True, sort_keys=False)
+            yaml.dump(data, fh, Dumper=WORKFLOW_YAML_DUMPER, allow_unicode=True, sort_keys=False)
         os.replace(tmp, path)
     finally:
         Path(tmp).unlink(missing_ok=True)

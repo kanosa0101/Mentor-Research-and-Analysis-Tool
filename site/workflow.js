@@ -247,10 +247,11 @@ function render(){
   options('reminder-project',projectOptions,'不关联项目');
   options('communication-materials',Object.values(WORKFLOW.materials).map(m=>[m.id,`${m.title}${m.missing ? '（缺失）' : ''}`]));
   el('context-mentor').textContent=contextMentor ? '当前导师：'+mentorName(contextMentor) : '';
+  el('mentor-scope').hidden=!contextMentor;
   el('clear-context').hidden=!contextMentor;
   const projectFilter=el('filter-project').value;
-  el('project-context').hidden=!projectFilter;
-  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。上传材料、记录沟通与提醒会默认关联此项目，可在表单中调整。' : '当前显示全部项目。新增记录时请选择关联项目。';
+  el('project-context').hidden=!!projectFilter||currentSection!=='material';
+  el('project-context').textContent='未选择申请项目，上传前可在下方展开关联项目；也可稍后关联。';
   const relatedProject=id=>!!id && (!projectFilter || id===projectFilter) && (!contextMentor || WORKFLOW.projects[id]?.mentor_ids.includes(contextMentor));
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
@@ -260,13 +261,14 @@ function render(){
   const materials=Object.values(WORKFLOW.materials);
   const scopedMaterials=materials.filter(m=>linked(m.mentor_ids,m.project_ids));
   const unassigned=materials.filter(m=>!m.project_ids.length);
-  el('material-summary').textContent=`当前范围已上传 ${scopedMaterials.length} 份材料，其中 ${scopedMaterials.filter(m=>m.missing).length} 份需重新上传；另有 ${unassigned.length} 份材料未关联申请项目。请按学校官方要求检查材料是否齐全。`;
+  const missingMaterials=scopedMaterials.filter(m=>m.missing).length;
+  el('material-summary').textContent=`当前范围 ${scopedMaterials.length} 份材料${missingMaterials?' · '+missingMaterials+' 份原文件缺失，请重新上传':''}${unassigned.length?' · '+unassigned.length+' 份未关联项目':''}`;
   el('material-current').setAttribute('aria-pressed',String(materialView==='current'));
   el('material-unassigned').setAttribute('aria-pressed',String(materialView==='unassigned'));
-  el('material-scope').textContent=materialView==='unassigned' ? `正在查看全部未关联任何项目的材料（不按导师筛选）。${projectFilter ? '点击关联将加入项目：'+projectName(projectFilter)+'。' : '请先选择目标项目，再逐条关联。'}` : `正在按当前项目与导师范围查看材料。${projectFilter ? '当前项目：'+projectName(projectFilter)+'。' : ''}`;
+  el('material-scope').textContent=materialView==='unassigned' ? `未关联项目的材料，不按导师筛选。${projectFilter ? '点击关联将加入：'+projectName(projectFilter)+'。' : '先选择上方申请项目，即可关联已有材料。'}` : '';
   const visibleMaterials=materialView==='unassigned' ? unassigned : scopedMaterials;
   list('material-list',visibleMaterials.map(m=>
-    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span> ${m.missing ? '<span class="bad">文件缺失</span>' : ''}</h3><p><a href="/api/materials/${encodeURIComponent(m.id)}/download">下载材料</a></p><small>${m.size} 字节 · 保存时间：${esc(String(m.mtime||'').replace('T',' ').slice(0,16))}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button> <button type="button" data-delete-material="${m.id}">删除材料</button>${projectFilter&&!m.project_ids.includes(projectFilter) ? ` <button type="button" data-link-material="${m.id}">关联到项目：${esc(projectName(projectFilter))}</button>` : ''}</article>`));
+    `<article><h3>${esc(m.title)} <span class="tag">${esc(materialLabels[m.kind])}</span></h3>${m.missing ? '<p class="bad">原文件缺失，请在上方重新上传。已有沟通记录仍保留。</p>' : `<p><a href="/api/materials/${encodeURIComponent(m.id)}/download">下载材料</a></p>`}<small>${m.size} 字节 · 保存时间：${esc(String(m.mtime||'').replace('T',' ').slice(0,16))}</small><p>${mentorLinks(m.mentor_ids)}</p><p>项目：${esc(m.project_ids.map(projectName).join('；')) || '未关联'}</p><p>${esc(m.notes)}</p><button type="button" data-edit-material="${m.id}">编辑关联</button> <button type="button" data-delete-material="${m.id}">删除材料</button>${projectFilter&&!m.project_ids.includes(projectFilter) ? ` <button type="button" data-link-material="${m.id}">关联到项目：${esc(projectName(projectFilter))}</button>` : ''}</article>`));
   if(!visibleMaterials.length)el('material-list').innerHTML=`<div class="empty">${!materials.length ? '尚未上传材料。请选择文件上传，并关联申请项目。' : materialView==='unassigned' ? '暂无未关联项目的材料。' : '当前范围暂无关联材料。未关联的文件不会自动归入项目，可查看未关联项目材料并逐条关联。'}</div>`;
   list('communication-list',Object.values(WORKFLOW.communications).filter(c=>(!projectFilter || c.project_id===projectFilter) && (!contextMentor || c.mentor_id===contextMentor)).sort((a,b)=>b.date.localeCompare(a.date) || b.created_at.localeCompare(a.created_at)).map(c=>
     `<article><h3>${esc(c.subject)} <span class="tag">${esc(communicationLabels[c.kind])}</span></h3><small>${esc(c.date)} · ${mentorLinks([c.mentor_id])} · ${esc(projectName(c.project_id))}</small><p>${esc(c.content)}</p><p>材料：${esc(c.material_ids.map(id=>WORKFLOW.materials[id].title).join('；')) || '未关联'}</p></article>`));
@@ -413,10 +415,12 @@ el('workflow-restore').onclick=()=>el('workflow-restore-file').click();
 el('workflow-restore-file').onchange=async e=>{
   const file=e.target.files[0]; if(!file) return;
   if(!confirm('恢复将替换工作台全部记录，服务会先保留旧索引。原材料文件不受影响。')){e.target.value='';return;}
+  let missingMaterials=0;
   await action(async()=>{
-    await api('/restore',JSON.parse(await file.text()),'POST');
+    const result=await api('/restore',JSON.parse(await file.text()),'POST');
+    missingMaterials=result.missing_materials||0;
 for(const prefix of Object.keys(chosen)) reset(prefix);
-  },'已恢复工作台备份');
+  },()=>missingMaterials?`记录已恢复；${missingMaterials} 份原文件缺失，请在材料页重新上传。`:'已恢复工作台备份');
   e.target.value='';
 };
 let lastProject='';
@@ -426,7 +430,7 @@ function showSection(section){
   document.querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.section===section)));
   const q=new URLSearchParams(location.search);q.set('section',section);history.replaceState(null,'',location.pathname+'?'+q);
   lastProject=el('filter-project').value;
-  el('project-context').hidden=!lastProject&&section!=='material';
+  el('project-context').hidden=!!lastProject||section!=='material';
   if(section==='preparation'&&window.WORKFLOW_READY)window.MaterialPreparation?.refresh(WORKFLOW,lastProject);
 }
 function discardChanges(){

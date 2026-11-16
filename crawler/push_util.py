@@ -191,7 +191,8 @@ def matches(event, filters):
         return False
     return (not filters['school'] or filters['school'] in event['school']+' '+event['search_text']) and (
         not filters['kind'] or filters['kind'] == event['activity_kind']) and (
-        not filters['year'] or not event['graduation_year'] or str(event['graduation_year']) == filters['year']) and (
+        not filters['year'] or (not event['graduation_year'] if filters['year'] == 'unknown'
+                                else str(event['graduation_year']) == filters['year'])) and (
         not filters['query'] or filters['query'].lower() in event['search_text'].lower())
 
 

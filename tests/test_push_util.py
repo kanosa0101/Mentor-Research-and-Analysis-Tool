@@ -74,6 +74,17 @@ class PushTests(unittest.TestCase):
         self.record()
         self.record(activity(**changes))
 
+    def test_cohort_subscription_does_not_treat_unknown_as_matching_every_year(self):
+        event = dict(kind='published', school='测试大学', search_text='冬令营',
+                     activity_kind='winter_camp', graduation_year=None)
+        filters = dict(school='', kind='', year='2028', query='', discoveries=False)
+        self.assertFalse(push.matches(event, filters))
+        self.assertTrue(push.matches(dict(event, graduation_year=2028), filters))
+        self.assertFalse(push.matches(dict(event, graduation_year=2027), filters))
+        self.assertTrue(push.matches(event, dict(filters, year='unknown')))
+        self.assertFalse(push.matches(dict(event, graduation_year=2028), dict(filters, year='unknown')))
+        self.assertTrue(push.matches(event, dict(filters, year='')))
+
     def test_explicit_subscribe_owned_update_and_unsubscribe(self):
         self.publish()
         self.assertEqual(push.dispatch(self.root, self.sender)['sent'], 0)

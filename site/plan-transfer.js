@@ -55,7 +55,7 @@
     saving=true;$('plan-confirm').disabled=true;$('plan-cancel').disabled=true;
     try{
       const result=await api('/browser-transfer',{kind:selection.kind,item:selection.item,target:selection.kind==='bookmark'?goal:null,school_id:$('plan-school').value,name:$('plan-name').value.trim(),notes:$('plan-notes').value.trim(),todos:goal?selection.data.todos.filter(t=>t.target_id===goal.id):[]});
-      $('plan-status').replaceChildren(el('span',result.duplicate?'已有对应项目，本次未覆盖项目和个人进度。':'已建立申请项目，原关注与收藏记录已保留。'),el('br'),link('继续核对目标与材料 →','applications.html?project='+encodeURIComponent(result.project_id)),link('联系与跟进 →','desk.html?project='+encodeURIComponent(result.project_id)));
+      $('plan-status').replaceChildren(el('span',result.duplicate?'已有对应项目，本次未覆盖项目和个人进度。':'已建立申请项目，原关注与收藏记录已保留。'),el('br'),link('继续申请 →','applications.html?project='+encodeURIComponent(result.project_id)),link('联系准备 →','desk.html?project='+encodeURIComponent(result.project_id)));
       await loadOverview();
     }catch(error){$('plan-status').textContent='未完成转换：'+error.message;$('plan-confirm').disabled=false;}
     finally{saving=false;$('plan-cancel').disabled=false;}
@@ -66,7 +66,7 @@
       const loaded=await api('');if(mode!=='online'||!OnlineAccount.state.authenticated)return;
       workflow=loaded;panel.hidden=false;list.replaceChildren();
       const projects=Object.values(workflow.projects),today=core.day();
-      $('local-overview-status').textContent=projects.length?'正式项目 '+projects.length+' 个 · 以下为账号云端记录':'还没有正式项目。可从下方关注目标或收藏明确建立。';
+      $('local-overview-status').textContent=projects.length?'申请项目 '+projects.length+' 个':'还没有申请项目。可从下方关注目标或收藏建立。';
       for(const p of projects.filter(p=>!['archived','rejected'].includes(p.status)).slice(0,12)){
         const row=el('article'),actions=el('p');row.append(el('strong',p.name));
         const reminders=Object.values(workflow.reminders).filter(r=>r.project_id===p.id&&!r.completed).sort((a,b)=>a.due_date.localeCompare(b.due_date));
@@ -80,7 +80,7 @@
         if(reminders.length&&reminders[0].due_date<today){const overdue=el('p','这项个人计划已过期，可在工作台调整；不代表官方报名截止。');overdue.className='personal-due';row.append(overdue);}
         if(next)row.append(el('p','已保存的官方时间：'+next.label+' · '+next.at+'。请到项目页核对最新来源。'));
         else if(official.length)row.append(el('p','已保存的官方时间均已过去，请核对后续公告。'));
-        actions.append(link('目标与材料','applications.html?project='+encodeURIComponent(p.id)),link('联系与提醒','desk.html?project='+encodeURIComponent(p.id)));row.append(actions);list.append(row);
+        actions.append(link('继续申请','applications.html?project='+encodeURIComponent(p.id)),link('联系准备','desk.html?project='+encodeURIComponent(p.id)));row.append(actions);list.append(row);
       }
       if(projects.length>12)list.append(link('查看全部项目 →','applications.html'));
     }catch(error){if(mode!=='online')return;panel.hidden=false;$('local-overview-status').textContent='申请记录暂不可读：'+error.message;}

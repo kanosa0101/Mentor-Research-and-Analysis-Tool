@@ -49,7 +49,7 @@ def _folder(user_root):
     return folder
 
 
-def _owned_file(user_root, value):
+def _owned_file(user_root, value, require_exists=True):
     if not isinstance(value, str) or not Path(value).is_absolute():
         raise ValueError('材料必须是本账号上传的文件')
     path, folder = Path(value), _folder(user_root)
@@ -61,20 +61,22 @@ def _owned_file(user_root, value):
         raise ValueError('材料必须是本账号上传的文件')
     safe_filename(parts[1])
     _no_links(path)
-    if not path.is_file() or not path.resolve().is_relative_to(folder.resolve()):
+    if not path.resolve().is_relative_to(folder.resolve()):
+        raise ValueError('材料必须是本账号上传的文件')
+    if require_exists and not path.is_file():
         raise ValueError('材料文件不存在，请重新上传')
     return path
 
 
 def validate_storage_paths(data, user_root):
-    """Check material and historical attachment paths before any filesystem read."""
+    """Check ownership before reads; absent files must not block unrelated records."""
     if not isinstance(data, dict):
         raise ValueError('工作流须为对象')
 
     def visit(value):
         if isinstance(value, dict):
             if 'path' in value:
-                _owned_file(user_root, value['path'])
+                _owned_file(user_root, value['path'], require_exists=False)
             for item in value.values():
                 visit(item)
         elif isinstance(value, list):
@@ -83,6 +85,11 @@ def validate_storage_paths(data, user_root):
 
     for key in ('materials', 'drafts', 'communications', 'material_tasks'):
         visit(data.get(key, {}))
+
+
+def missing_materials(data, user_root):
+    return {key for key, material in data.get('materials', {}).items()
+            if not _owned_file(user_root, material['path'], require_exists=False).is_file()}
 
 
 def _used_bytes(folder):
@@ -182,7 +189,10 @@ def download_headers(filename):
 def delete_upload(user_root, data, material_id, persist):
     """Delete an unreferenced upload while retaining originals on a failed save."""
     validate_storage_paths(data, user_root)
-    path, _ = download(user_root, data, material_id)
+    entry = data.get('materials', {}).get(material_id)
+    if not isinstance(entry, dict):
+        raise KeyError('材料不存在')
+    path = _owned_file(user_root, entry.get('path'), require_exists=False)
 
     def referenced(value):
         if isinstance(value, dict):
@@ -199,6 +209,10 @@ def delete_upload(user_root, data, material_id, persist):
     # pointing at a file we have moved. An interrupted quarantine is reclaimed
     # on the next upload, only when no current material references its folder.
     persist(updated)
+    if not path.exists():
+        if path.parent.is_dir() and not any(path.parent.iterdir()):
+            path.parent.rmdir()
+        return {'deleted': True, 'material_id': material_id}
     pending = path.with_name(PENDING_DELETE)
     try:
         if pending.exists():

@@ -95,6 +95,20 @@ class OnlineMaterialsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             storage.validate_storage_paths(malicious, self.user)
 
+    def test_missing_files_retain_ownership_checks_and_refresh_when_restored(self):
+        data, record = self.upload()
+        path = Path(record['path'])
+        path.unlink()
+        storage.validate_storage_paths(data, self.user)
+        self.assertEqual(storage.missing_materials(data, self.user), {record['id']})
+        with self.assertRaises(ValueError):
+            storage.validate_storage_paths(data, self.other)
+        with self.assertRaises(ValueError):
+            storage.download(self.user, data, record['id'])
+        path.write_bytes(b'%PDF-restored')
+        self.assertEqual(storage.missing_materials(data, self.user), set())
+        self.assertEqual(storage.download(self.user, data, record['id'])[0].read_bytes(), b'%PDF-restored')
+
     def test_upload_preserves_material_task_wrapper_and_attachment_snapshot(self):
         self.data.update(version=4, material_tasks={})
         data, record = self.upload()

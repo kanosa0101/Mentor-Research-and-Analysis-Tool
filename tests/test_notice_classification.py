@@ -166,9 +166,11 @@ class NoticeClassificationTests(unittest.TestCase):
             (mixed, dict(cycle='historical', route='recommend'), True),
             (unknown, dict(cycle='current'), False),
             (unknown, dict(cycle='unknown'), True),
-            (prepared, dict(cycle='current', graduation_year='2028'), True),
+            (prepared, dict(cycle='current', graduation_year='2028'), False),
+            (prepared, dict(cycle='preparation', graduation_year='2028'), True),
+            (prepared, dict(cycle='active', graduation_year='2028'), True),
             (prepared, dict(cycle='current', admission_year='2028'), False),
-            (prepared, dict(cycle='current', admission_year='unknown'), True),
+            (prepared, dict(cycle='preparation', admission_year='unknown'), True),
         ]
         script = "const rules=require('./site/notices-core.js');const fs=require('fs');const rows=JSON.parse(fs.readFileSync(0,'utf8'));process.stdout.write(JSON.stringify(rows.map(([r,f])=>rules.matches(r,f))));"
         result = subprocess.run(['node', '-e', script], cwd=Path(__file__).resolve().parent.parent,

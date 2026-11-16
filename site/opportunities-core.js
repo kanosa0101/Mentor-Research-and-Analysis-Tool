@@ -34,7 +34,7 @@
   function select(rows,filter,now=new Date().toISOString()){
     const q=(filter.query||'').trim().toLowerCase();
     return rows.filter(o=>classification(o,now)==='institutional_activity'&&(!filter.kind||o.kind===filter.kind)&&(!filter.school||o.school_name===filter.school)&&
-      (!filter.year||!o.graduation_year||o.graduation_year===Number(filter.year))&&
+      (!filter.year||(filter.year==='unknown'?!o.graduation_year:o.graduation_year===Number(filter.year)))&&
       (!q||[o.title,o.unit,o.school_name,...o.eligibility,...(o.research_directions||[]).flatMap(r=>[r.department,r.direction,r.contact,r.email])].join(' ').toLowerCase().includes(q))&&
       (filter.status==='all'||(filter.status==='current'?state(o,now)!=='closed':state(o,now)===filter.status)))
       .sort((a,b)=>({open:0,open_month:1,rolling:2,upcoming:3,unknown:4,review:5,closed:6}[state(a,now)]-{open:0,open_month:1,rolling:2,upcoming:3,unknown:4,review:5,closed:6}[state(b,now)])||

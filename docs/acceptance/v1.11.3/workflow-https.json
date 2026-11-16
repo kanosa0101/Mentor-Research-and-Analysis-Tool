@@ -1,0 +1,24 @@
+{
+  "protocol": "https",
+  "certificate": "self-signed test fixture; browser trust errors ignored only for this isolated fixture",
+  "checks": [
+    "primary_application_entry_is_project_workspace",
+    "project_creation_keeps_project_and_mentor_and_next_actions",
+    "upload_busy_blocks_duplicate_and_failure_keeps_file_and_fields",
+    "upload_uses_current_project_and_mentor_without_reselecting",
+    "communication_uses_context_without_researching_mentor_or_claiming_sent",
+    "hidden_preparation_panel_makes_no_requests",
+    "opening_preparation_loads_once",
+    "material_layout_320_390_1440_without_horizontal_overflow",
+    "missing_file_has_recovery_guidance_without_broken_download_or_lost_history",
+    "restore_reports_missing_original_and_preserves_project_history",
+    "missing_original_does_not_block_reupload_into_current_project",
+    "contact_prepare_returns_through_primary_application_entry_with_context",
+    "multiple_mentors_require_explicit_choice"
+  ],
+  "create_button_bottom": 786.171875,
+  "mobile_file_top": 465.8125,
+  "mobile_upload_bottom": 657.90625,
+  "passed": true,
+  "no_page_errors": true
+}

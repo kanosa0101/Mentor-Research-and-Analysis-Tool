@@ -108,6 +108,16 @@ body.page .opportunity-primary:hover{background:var(--accent-hover)}
 body.page :is(.opportunity-meta,.opportunity-facts){overflow-wrap:anywhere}
 body.page .mentor-recruitment article+article{border-top:1px solid var(--line);margin-top:16px;padding-top:16px}
 body.page .mentor-recruitment h3{margin:0 0 8px}
+/* Keep the selected application and its next actions together. */
+body.page-applications .workflow-scope{margin-bottom:12px;gap:8px 16px}
+body.page-applications .workflow-scope>label{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
+body.page-applications .workflow-scope>label select{flex:1;max-width:360px}
+body.page-applications .mentor-scope{display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%;font-size:var(--text-small)}
+body.page-applications .mentor-scope button{font-size:var(--text-small);padding:4px 8px}
+body.page-applications .section-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:600px;margin:12px 0}
+body.page-applications .section-tabs button{padding:8px 4px}
+body.page-applications .material-limits{font-size:var(--text-small);margin:0 0 12px}
+body.page-applications #material-scope:empty{display:none}
 @media(max-width:760px){
  html:root{--heading-page:24px;--space-page:16px;--space-card:16px}
  body.page :is(main,.wrap){margin-top:20px;margin-bottom:36px}
@@ -135,19 +145,19 @@ body.page .mentor-recruitment h3{margin:0 0 8px}
 
 <a href="admissions.html" >学校要求</a>
 
-<a href="desk.html" >我的申请</a>
+<a href="applications.html" >我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
 <a href="account.html" data-account-link>登录 / 注册</a>
+
+<a href="desk.html" >联系准备</a>
 
 <a href="notices.html" >招生通知</a>
 
 <a href="index.html" >全量导师目录</a>
 
 <a href="compare.html" >导师对比</a>
-
-<a href="applications.html" >项目与材料</a>
 
 <a href="release.html">版本与使用说明</a><details><summary>历史记录</summary><a href="board.html">旧套磁看板</a></details></div></details>
 

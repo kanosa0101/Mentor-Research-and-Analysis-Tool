@@ -23,7 +23,7 @@ def main():
         raise ValueError('Deployment verification requires HTTPS')
     args.output.mkdir(parents=True, exist_ok=True)
     result = {'base_url': base, 'accounts': [], 'checks': [], 'passed': False}
-    name = 'qa_v1112_' + str(int(time.time()))
+    name = 'qa_v1113_' + str(int(time.time()))
     result['planned_usernames'] = [name + '_a', name + '_b']
     password = secrets.token_urlsafe(24)
 
@@ -89,6 +89,7 @@ def main():
             result['checks'].append('https_registration_secure_cookie')
             a.locator('#prepare-empty a').click()
             a.wait_for_function('window.WORKFLOW_READY')
+            assert a.locator('nav[aria-label="主导航"] a[aria-current="page"]').inner_text() == '我的申请'
             a.locator('#project-name').fill('部署验收项目')
             a.locator('#project-save').click()
             a.wait_for_function('Object.keys(WORKFLOW.projects).length===1')
@@ -161,6 +162,35 @@ def main():
             same.screenshot(path=str(args.output / 'account-mobile.png'))
             assert not errors, errors
             result['checks'].append('no_browser_errors_or_account_horizontal_overflow')
+            public = anonymous.new_page()
+            public.on('pageerror', lambda error: errors.append(str(error)))
+            public.goto(base + '/opportunities.html?year=2028', wait_until='networkidle')
+            public.wait_for_function('opportunityModeReady')
+            public.locator('#opportunity-year').select_option('2028')
+            assert public.evaluate('''[...document.querySelectorAll('[data-opportunity]')].every(node=>
+                opportunityRows.find(row=>row.id===node.dataset.opportunity)?.graduation_year===2028)''')
+            if not public.locator('[data-opportunity]').count():
+                assert '明确面向 2028 届' in public.locator('.opportunity-empty').inner_text()
+                public.locator('#opportunity-unknown-year').click()
+            else:
+                public.locator('#opportunity-year').select_option('unknown')
+            assert public.locator('[data-opportunity]').count() >= 1
+            public.screenshot(path=str(args.output / 'opportunities-public.png'), full_page=True)
+            result['checks'].append('explicit_cohort_excludes_unknown_and_retains_unknown_activity_access')
+            public.goto(base + '/admissions.html?school=bit&dept=cs&year=2027&degree=master&route=recommend&track=ordinary', wait_until='networkidle')
+            public.wait_for_function('window.ADMISSIONS_READY')
+            assert public.locator('.policy-cycle').count() > 0
+            assert all('历史参考' in text for text in public.locator('.policy-cycle').all_text_contents())
+            public.locator('#policy-year').fill('2028')
+            public.locator('#policy-year').dispatch_event('change')
+            assert '不表示学校尚未发布' in public.locator('#policy-list').inner_text()
+            result['checks'].append('historical_recommendation_policy_and_current_cohort_gap_are_explicit')
+            public.set_viewport_size({'width': 390, 'height': 844})
+            for path in ('opportunities.html', 'admissions.html', 'notices.html'):
+                public.goto(base + '/' + path, wait_until='networkidle')
+                assert public.evaluate('document.documentElement.scrollWidth<=innerWidth+1'), path
+            assert not errors, errors
+            result['checks'].append('public_content_pages_fit_mobile_without_script_errors')
             result['passed'] = True
             browser.close()
     finally:

@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>我的申请 · 导师库</title>
+<title>联系准备 · 导师库</title>
 <style>
 .message:empty{min-height:0;margin-top:0}
 #target-task-list{max-height:280px;overflow:auto}.prepare-links{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.prepare-links button{flex:1;white-space:nowrap}.prepare-links button[aria-selected="true"]{background:var(--accent);color:white}.context details{margin-top:12px}.context summary{cursor:pointer;color:var(--accent)}.prepare-panels>.panel{margin-top:0}
@@ -23,7 +23,7 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 {% include '_nav.html.j2' %}
 
 <main>
-<div class="hero"><div><h1>我的申请</h1><p class="muted">在这里联系导师、记录回复与下一步；申请目标和材料在“项目与材料”中管理。</p></div><details><summary>备份与恢复</summary><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></details></div>
+<div class="hero"><div><h1>联系准备</h1><p class="muted">写邮件、记录回复与下一步。项目和材料统一在“我的申请”管理。</p></div><details><summary>备份与恢复</summary><div class="toolbar"><button id="desk-backup" disabled>备份记录</button><button class="restore" id="desk-restore" disabled>恢复备份</button><input id="desk-restore-file" type="file" accept=".json" hidden></div></details></div>
 <div id="desk-hint" class="hint">正在读取账号中的申请记录…</div>
 <div id="desk-message" class="message" role="status" aria-live="polite"></div>
 <p id="incoming-goal" class="muted" hidden></p>
@@ -67,5 +67,5 @@ input,select,textarea{padding:10px 11px;background:white;border:1px solid #cfd8d
 </section>
 </fieldset>
 <div class="footer">私人记录按账号保存 · 备份不包含附件原文件</div>
-</main><script src="contact-data.js?v=20261116-ux1"></script><script src="desk.js?v=20261116-ux1"></script>
+</main><script src="contact-data.js?v=20261116-ux1"></script><script src="desk.js?v=20261116-ux2"></script>
 </body></html>

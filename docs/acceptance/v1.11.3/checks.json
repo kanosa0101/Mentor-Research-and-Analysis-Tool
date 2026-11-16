@@ -1,0 +1,19 @@
+{
+  "python": {
+    "passed": 697,
+    "third_party_deprecations": 3
+  },
+  "node": {
+    "files": 14,
+    "runner_checks": 23,
+    "passed": true
+  },
+  "preflight": {
+    "passed": false,
+    "existing_issue_groups": 7,
+    "existing_issue_records": 67,
+    "new_schema_or_site_errors": 0,
+    "unchanged_since": "v1.11.2",
+    "note": "既有抓取、身份、邮箱和名册问题保留；未降低质量门禁。CI preflight仍会失败。"
+  }
+}

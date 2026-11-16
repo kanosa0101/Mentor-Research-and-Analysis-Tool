@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>申请工作台 · 导师库</title>
+<title>我的申请 · 导师库</title>
 <style>
 [hidden]{display:none!important}#project-list{max-height:none;overflow:visible}.section-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.section-tabs button[aria-selected="true"]{background:var(--accent);color:white}.section-status{min-height:24px;overflow-wrap:anywhere}.section-status:empty{display:none}.section-status.error{color:#b42318} .grid{display:block!important}.scope-note{padding:12px;background:#e8f0e9;border-radius:6px}
 :root{--ink:#171e2b;--muted:#6b7280;--line:#e6e9ef;--accent:#2f54c8}
@@ -19,7 +19,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 .preparation-action{margin:16px 0;padding:16px;border:1px solid var(--line)!important;border-radius:8px}.preparation-action h4{font-size:16px;margin:8px 0}.preparation-action form{margin:18px 0}.preparation-action label{margin:12px 0}.preparation-files{margin:14px 0;padding:12px;border:1px solid var(--line)}.preparation-files .check{display:flex;flex-wrap:wrap;justify-content:flex-start}.preparation-files small{flex-basis:100%;margin-left:22px}.preparation-action pre{white-space:pre-wrap}.preparation-action blockquote{margin:12px 0;padding-left:12px;border-left:3px solid var(--line)}
 .workflow-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.workflow-heading .workflow-tools{font-size:14px}.workflow-tools{margin:0}body.page.page-applications main{padding-top:4px}.workflow-tools[open]{max-width:420px}.workflow-tools summary{cursor:pointer}@media(max-width:600px){.workflow-heading{align-items:flex-start;flex-wrap:wrap}}.workflow-tools .toolbar{margin:10px 0}.section-status:empty{display:none}#project-next[hidden]{display:none}#project-next{margin:10px 0}#project-list:has(.empty){display:none}#message:empty{display:none}#project-form details summary{padding:8px 0;cursor:pointer}#project-form details>.fields{margin-top:10px}#project-form>.fields{gap:12px}#material-list{max-height:none}#material-details summary{padding:8px 0;cursor:pointer}#material-details>.fields{margin-top:10px}#material-summary{margin-top:24px}#section-project>h3{font-size:16px}
 </style>
-<link rel="stylesheet" href="ui.css?v=20261115-online1">
+<link rel="stylesheet" href="ui.css?v=20261116-converge1">
 <script src="account-session.js?v=20261116-online3"></script>
 <script src="cloud-library.js?v=20261116-online3"></script></head>
 <body class="page page-applications">
@@ -36,11 +36,13 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 
 <a href="admissions.html" >学校要求</a>
 
-<a href="desk.html"  id="back-desk">我的申请</a>
+<a href="applications.html" aria-current="page">我的申请</a>
 
 </nav>
 <details class="site-tools"><summary>更多工具</summary><div class="site-tools-menu">
 <a href="account.html" data-account-link>登录 / 注册</a>
+
+<a href="desk.html" >联系准备</a>
 
 <a href="notices.html" >招生通知</a>
 
@@ -48,25 +50,22 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 
 <a href="compare.html" >导师对比</a>
 
-<a href="applications.html" aria-current="page">项目与材料</a>
-
 <a href="release.html">版本与使用说明</a><details><summary>历史记录</summary><a href="board.html">旧套磁看板</a></details></div></details>
 
 
 </div></header>
-<div class="page-heading workflow-heading"><h1>申请工作台</h1><details class="workflow-tools"><summary>备份与恢复</summary><div class="toolbar"><button id="workflow-restore" type="button" disabled>恢复工作台备份</button><button id="workflow-backup" type="button" disabled>导出工作台备份</button><input id="workflow-restore-file" type="file" accept=".json" hidden></div><p class="muted">备份不含附件原文件，请另外保管。</p></details></div>
+<div class="page-heading workflow-heading"><h1>我的申请</h1><details class="workflow-tools"><summary>备份与恢复</summary><div class="toolbar"><button id="workflow-restore" type="button" disabled>恢复工作台备份</button><button id="workflow-backup" type="button" disabled>导出工作台备份</button><input id="workflow-restore-file" type="file" accept=".json" hidden></div><p class="muted">备份不含附件原文件，请另外保管。</p></details></div>
 <main>
-<p class="intro muted">按申请项目整理材料、沟通和提醒。私人记录按账号保存，可在其他设备继续。</p>
 <div id="service-hint" class="hint">正在读取账号中的申请记录…</div>
 <div id="message" role="status" aria-live="polite"></div>
 
 <fieldset id="workspace" disabled>
-<div class="toolbar">
-<span id="context-mentor"></span><button id="clear-context" type="button" hidden>查看全部导师</button>
-<label>筛选项目 <select id="filter-project"><option value="">全部项目</option></select></label>
-
+<div class="toolbar workflow-scope">
+<label>当前申请 <select id="filter-project"><option value="">全部项目</option></select></label>
+<a id="back-desk" href="desk.html">联系准备 →</a>
+<div id="mentor-scope" class="mentor-scope" hidden><span id="context-mentor"></span><button id="clear-context" type="button" hidden>清除导师筛选</button></div>
 </div>
-<p id="project-context" class="scope-note"></p><nav class="section-tabs" aria-label="项目工作分区"><button type="button" data-section="project" aria-selected="false">申请项目</button><button type="button" data-section="preparation" aria-selected="false">准备清单</button><button type="button" data-section="material" aria-selected="false">材料</button><button type="button" data-section="communication" aria-selected="false">沟通记录</button><button type="button" data-section="reminder" aria-selected="false">提醒</button></nav><div class="grid">
+<nav class="section-tabs" aria-label="项目工作分区"><button type="button" data-section="project" aria-selected="false">项目</button><button type="button" data-section="preparation" aria-selected="false">清单</button><button type="button" data-section="material" aria-selected="false">材料</button><button type="button" data-section="communication" aria-selected="false">沟通</button><button type="button" data-section="reminder" aria-selected="false">提醒</button></nav><div class="grid">
 <section class="panel" id="section-preparation" hidden><h2>按项目准备材料</h2><p>选项目 → 按阶段核对原文 → 选择已有文件并登记状态 → 保存本次记录。</p><p class="muted">准备与提交按动作分别记录。未知要求请查完整政策，保存进度不代表符合资格。</p><div id="preparation-feedback" class="section-status" role="status" aria-live="polite"></div><button type="button" id="preparation-reload">放弃未保存修改并重新核对清单</button><div id="preparation-list"></div></section>
 <section class="panel" id="section-project"><h2>申请项目</h2>
 <div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div id="project-next" class="actions" hidden><button type="button" data-section="material">上传材料 →</button><button type="button" data-section="communication">记录沟通 →</button></div><div class="list" id="project-list"></div>
@@ -92,8 +91,9 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <label class="wide">备注<textarea id="project-notes"></textarea></label><details class="wide"><summary>旧说明 / 补充信息（不参与政策匹配）</summary><div class="fields"><label>学校说明<input id="project-school"></label><label>院系说明<input id="project-college"></label><label class="wide">申请类型说明<input id="project-type" placeholder="夏令营 / 预推免 / 统考"></label></div></details></div></details></div>
 </form>
 </section>
-<section class="panel" id="section-material"><h2>材料与关联</h2>
-<p class="muted">上传后可在其他设备下载；单个文件最多 20 MB，账号材料总量最多 200 MB。文件不会公开展示。</p>
+<section class="panel" id="section-material"><h2>申请材料</h2>
+<p class="muted material-limits">单文件最多 20 MB，账号共 200 MB。</p>
+<p id="project-context" class="muted" hidden></p>
 <form id="material-form"><div class="fields">
 <label class="wide" id="material-file-label">选择文件<input id="material-file" type="file" required></label>
 <label class="wide">材料标题（可选）<input id="material-title" placeholder="留空使用文件名"></label>
@@ -108,7 +108,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 <div class="list" id="material-list" tabindex="-1" aria-label="材料查询结果"></div>
 </section>
 <section class="panel" id="section-communication"><h2>记录沟通</h2>
-<p class="muted">补录已发生的沟通或旧草稿；准备新邮件请回“我的申请”。更正记录时追加说明，保留原历史。</p>
+<p class="muted">记录已发生的沟通；写新邮件请进入上方“联系准备”。更正时追加说明，保留原历史。</p>
 <form id="communication-form"><div class="fields">
 <div class="wide" data-mentor-picker="communication"></div>
 <label>关联项目<select id="communication-project"></select></label>
@@ -132,9 +132,9 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </main>
 <script src="contact-data.js?v=20261116-ux1"></script>
 <script src="admissions-data.js?v=20261115-7"></script>
-<script src="admissions-core.js?v=20261115-7"></script>
+<script src="admissions-core.js?v=20261116-converge1"></script>
 <script src="material-actions.js?v=20261115-7"></script>
-<script src="opportunities-core.js?v=20261115-20"></script>
-<script src="workflow.js?v=20261116-ux1"></script>
+<script src="opportunities-core.js?v=20261116-converge1"></script>
+<script src="workflow.js?v=20261116-ux2"></script>
 </body>
 </html>

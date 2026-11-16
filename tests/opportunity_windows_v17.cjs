@@ -33,7 +33,8 @@ assert.deepEqual(rules.select([rolling,month,fixed],{status:'current'},now).map(
 assert.deepEqual(rules.select([rolling,month,fixed],{status:'rolling'},now),[rolling]);
 assert.deepEqual(rules.select([rolling,month,fixed],{status:'open_month'},now),[month]);
 assert.deepEqual(rules.select([rolling,month,fixed],{status:'open'},now),[fixed]);
-assert.equal(rules.select([rolling],{year:'2028',status:'current'},now).length,1);
+assert.equal(rules.select([rolling],{year:'2028',status:'current'},now).length,0);
+assert.equal(rules.select([rolling],{year:'unknown',status:'current'},now).length,1);
 assert.deepEqual(rules.changes(month,{...month,application_window:{...month.application_window,end_month:'2027-01'}}).map(x=>x.key),['application_window']);
 assert.deepEqual(rules.changes(base,{...base,source_attachments:[{url:'https://example.edu/apply.docx',sha256:'a'.repeat(64),checked_at:'2026-11-15',field_evidence:{materials:{quote:'不得使用AI代写',locator:'申请表第2段'}}}]}).map(x=>x.key),['source_attachments']);
 assert.equal(month.deadline,'');

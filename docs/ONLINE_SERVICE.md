@@ -43,4 +43,4 @@
 
 会话使用 HTTPS、HttpOnly、Secure、SameSite cookie；私人写操作核验同源及CSRF令牌。密码采用带独立盐的慢哈希，登录有频率限制。材料使用服务端生成ID、文件名与大小约束，存于静态站目录之外；下载仍检查账号，不直接公布文件路径。设计参考 [OWASP会话管理](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)和[文件上传指南](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)，具体覆盖以实现和测试为准。
 
-不增加第三方登录、自动发信或学生材料AI分析。当前没有邮箱验证、邮件找回、自助注销或异地自动容灾。单文件20MB、每账号200MB；记录备份不含材料原件。账号收藏采用版本冲突检查，申请工作流无逐字段合并，同字段以后一次成功保存为准。备份、恢复和实际验证边界见[使用手册](../USER_GUIDE.md)、[维护交接](../HANDOVER.md)及[本轮交付记录](../deploy/DELIVERY_V1.11.1_2026-11-16.md)。
+不增加第三方登录、自动发信或学生材料AI分析。当前没有邮箱验证、邮件找回、自助注销或异地自动容灾。单文件20MB、每账号200MB；记录备份不含材料原件。账号收藏采用版本冲突检查，申请工作流无逐字段合并，同字段以后一次成功保存为准。备份、恢复和实际验证边界见[使用手册](../USER_GUIDE.md)、[维护交接](../HANDOVER.md)及[本轮交付记录](../deploy/DELIVERY_V1.11.3_2026-11-16.md)。

@@ -150,6 +150,69 @@ class OnlineMaterialsHTTPTests(unittest.TestCase):
         self.assertEqual(response.status_code, 400, response.text)
         self.assertEqual(self.request(self.b, '/api/workflow').json()['materials'], {})
 
+    def test_missing_file_does_not_block_project_material_or_communication_work(self):
+        project = self.request(self.a, '/api/workflow/projects',
+                               {'name': '继续申请', 'mentor_ids': [self.mentor]}, 'POST').json()
+        missing = self.upload(self.a, project['id'])
+        healthy = self.upload(self.a, project['id'])
+        Path(missing['path']).unlink()
+
+        response = self.request(self.a, '/api/workflow')
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertTrue(response.json()['materials'][missing['id']]['missing'])
+        self.assertFalse(response.json()['materials'][healthy['id']]['missing'])
+        self.assertEqual(self.request(self.a, '/api/materials/' + healthy['id'] + '/download').content,
+                         b'%PDF-PRIVATE-CV')
+        self.assertEqual(self.request(self.a, '/api/materials/' + missing['id'] + '/download').status_code, 400)
+        uploaded = self.upload(self.a, project['id'])
+        self.assertNotEqual(uploaded['id'], missing['id'])
+        response = self.request(self.a, '/api/workflow/materials/' + missing['id'],
+                                {'notes': '需要补传'}, 'PATCH')
+        self.assertEqual(response.status_code, 200, response.text)
+        response = self.request(self.a, '/api/workflow/communications',
+                                {'mentor_id': self.mentor, 'project_id': project['id'], 'kind': 'note',
+                                 'date': '2026-11-16', 'subject': '继续记录沟通'}, 'POST')
+        self.assertEqual(response.status_code, 200, response.text)
+        backup = self.request(self.a, '/api/workflow/backup').json()
+        self.assertTrue(backup['workflow']['materials'][missing['id']]['missing'])
+        response = self.request(self.a, '/api/workflow/restore', backup, 'POST')
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertEqual(response.json()['missing_materials'], 1)
+        self.assertEqual(len(self.request(self.a, '/api/workflow').json()['communications']), 1)
+        response = self.request(self.a, '/api/materials/' + missing['id'], {}, 'DELETE')
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertNotIn(missing['id'], self.request(self.a, '/api/workflow').json()['materials'])
+
+    def test_restore_valid_backup_does_not_depend_on_corrupt_old_index(self):
+        material = self.upload(self.a)
+        backup = self.request(self.a, '/api/workflow/backup').json()
+        user_root = Path(material['path']).parents[2]
+        old_bytes = b'invalid: [workflow'
+        (user_root / 'workflow.yaml').write_bytes(old_bytes)
+        response = self.request(self.a, '/api/workflow/restore', backup, 'POST')
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertEqual(response.json()['missing_materials'], 0)
+        self.assertIn(material['id'], self.request(self.a, '/api/workflow').json()['materials'])
+        self.assertEqual([p.read_bytes() for p in (user_root / 'backups').glob('workflow-*.yaml')], [old_bytes])
+
+    def test_missing_historical_attachment_preserves_records_and_blocks_export(self):
+        project = self.request(self.a, '/api/workflow/projects',
+                               {'name': '历史材料', 'mentor_ids': [self.mentor]}, 'POST').json()
+        material = self.upload(self.a, project['id'])
+        target = next(iter(self.request(self.a, '/api/workflow').json()['targets']))
+        draft = self.request(self.a, '/api/workflow/drafts',
+                             {'target_id': target, 'recipient': 'mentor@example.edu', 'subject': '申请',
+                              'body': '申请正文', 'basis': '研究资料', 'material_ids': [material['id']]}, 'POST').json()
+        backup = self.request(self.a, '/api/workflow/backup').json()
+        Path(material['path']).unlink()
+        response = self.request(self.a, '/api/workflow/restore', backup, 'POST')
+        self.assertEqual(response.status_code, 200, response.text)
+        data = self.request(self.a, '/api/workflow').json()
+        self.assertEqual(data['drafts'][draft['id']]['attachments'], draft['attachments'])
+        self.assertTrue(data['materials'][material['id']]['missing'])
+        self.assertEqual(self.request(self.a, '/api/workflow/drafts/' + draft['id'] + '/eml').status_code, 400)
+        self.assertEqual(self.request(self.a, '/api/materials/' + material['id'], {}, 'DELETE').status_code, 409)
+
     def test_restore_path_check_and_save_are_serialized_with_material_delete(self):
         material = self.upload(self.a)
         backup = self.request(self.a, '/api/workflow/backup').json()

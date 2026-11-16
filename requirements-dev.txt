@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# The regression suite includes pytest functions and isolated HTTPS fixtures.
+pytest>=8,<10
+cryptography>=44,<50

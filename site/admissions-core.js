@@ -1,4 +1,12 @@
 (function(root){
+  function cycle(policy,today=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'})){
+    const [year,month]=today.split('-').map(Number),target=Number(policy.year);
+    if(!Number.isInteger(target)||target<2000||target>2100)return {state:'unknown',label:'适用周期待核对'};
+    const current=year+(policy.route==='recommend'?(month>=11?2:1):(month>=9?1:0));
+    if(target<current)return {state:'historical',label:'历史参考 · 非本届要求'};
+    if(target>current||policy.route==='recommend'&&month>=11)return {state:'preparation',label:'后续申请周期'};
+    return {state:'current',label:'当前申请周期'};
+  }
   function select(policies,prefs){return policies.filter(p=>
     (!prefs.school||p.school===prefs.school)&&(!prefs.dept||!p.dept||p.dept===prefs.dept)&&
     (!prefs.year||p.year===Number(prefs.year))&&(!prefs.degree||p.degree===prefs.degree)&&(!prefs.route||p.route===prefs.route)&&
@@ -6,7 +14,8 @@
   function eventState(event,now=new Date().toISOString()){const at=Date.parse(event.at),time=Date.parse(now);if(!Number.isFinite(at)||!Number.isFinite(time))return 'unknown';if(/^\d{4}-\d{2}-\d{2}$/.test(event.at)){const day=new Date(time).toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});return event.at<day?'past':'future';}return at<time?'past':'future';}
   function quality(p,observations,today=new Date().toLocaleDateString('sv-SE')){
     const age=day=>(Date.parse(today+'T00:00:00Z')-Date.parse(day+'T00:00:00Z'))/86400000;
-    const sources=Object.keys(p.review_hashes).map(id=>({id,expected:p.review_hashes[id],observation:observations[id]}));
+    const sources=Object.keys(p.review_hashes||{}).map(id=>({id,expected:p.review_hashes[id],observation:observations[id]}));
+    if(!sources.length)return {state:'unknown',label:'尚无有效来源检查记录'};
     if(sources.some(s=>s.observation?.status==='error'))return {state:'error',label:'来源检查失败，需人工复核'};
     if(sources.some(s=>s.observation?.hash&&s.observation.hash!==s.expected))return {state:'changed',label:'原文或附件已变化，摘要待复核'};
     if(sources.some(s=>s.observation?.status!=='ok'||!s.observation.hash||!s.observation.last_success))return {state:'unknown',label:'尚无有效来源检查记录'};
@@ -30,5 +39,5 @@
   function programKey(p){return (p.program_code||'')+'|'+(p.program||'');}
   function conditionLabel(policy,conditional=false){return policy.applies_if?'条件性参考：'+policy.applies_if.text+'，需本人确认':conditional?'条件性参考，未确认专业适用':'';}
   function sourceReferences(policy,item,sources){return (item?.source_ids||[policy.source_id]).map(id=>{const source=sources[id];return {...source,id,label:source.label||(source.format==='pdf'?'PDF原文':'官方原文')};});}
-  const api={select,quality,eventState,checklist,programKey,conditionLabel,sourceReferences};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
+  const api={select,quality,eventState,checklist,programKey,conditionLabel,sourceReferences,cycle};if(typeof module!=='undefined')module.exports=api;else root.AdmissionsRules=api;
 })(typeof window!=='undefined'?window:globalThis);

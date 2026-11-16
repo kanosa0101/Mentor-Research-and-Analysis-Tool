@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "mode": "isolated browser routes using current public data and source templates; no production writes",
+  "checks": [
+    "cohort_2028_excludes_unknown_and_empty_state_preserves_unknown_route",
+    "institutional_scope_and_historical_counts_remain_separate",
+    "recommend_2027_is_historical_and_2028_gap_does_not_claim_unpublished",
+    "exam_2027_stays_current_without_open_registration_claim",
+    "current_notices_and_next_cohort_have_distinct_filters",
+    "three_public_pages_fit_390px_viewport"
+  ],
+  "page_errors": []
+}

@@ -1,0 +1,1203 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "measurements": [
+    {
+      "page": "applications",
+      "round": 0,
+      "cache": "cold",
+      "ready_ms": 4154,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 3068,
+          "decoded_bytes": 9846,
+          "duration_ms": 510
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 1658,
+          "decoded_bytes": 3005,
+          "duration_ms": 1003
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 1306,
+          "decoded_bytes": 2218,
+          "duration_ms": 1434
+        },
+        {
+          "name": "admissions-data.js?v=20261115-7",
+          "transfer_bytes": 181580,
+          "decoded_bytes": 874955,
+          "duration_ms": 2008
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 285921,
+          "decoded_bytes": 1743969,
+          "duration_ms": 2560
+        },
+        {
+          "name": "admissions-core.js?v=20261115-7",
+          "transfer_bytes": 2072,
+          "decoded_bytes": 4113,
+          "duration_ms": 1511
+        },
+        {
+          "name": "material-actions.js?v=20261115-7",
+          "transfer_bytes": 7796,
+          "decoded_bytes": 20890,
+          "duration_ms": 1512
+        },
+        {
+          "name": "opportunities-core.js?v=20261115-20",
+          "transfer_bytes": 2620,
+          "decoded_bytes": 5341,
+          "duration_ms": 1777
+        },
+        {
+          "name": "workflow.js?v=20261116-ux1",
+          "transfer_bytes": 16378,
+          "decoded_bytes": 50761,
+          "duration_ms": 1923
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 1001
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 904
+        }
+      ],
+      "transfer_bytes": 512175,
+      "decoded_bytes": 2796370
+    },
+    {
+      "page": "desk",
+      "round": 0,
+      "cache": "cold",
+      "ready_ms": 2983,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 3068,
+          "decoded_bytes": 9846,
+          "duration_ms": 558
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 1658,
+          "decoded_bytes": 3005,
+          "duration_ms": 558
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 1306,
+          "decoded_bytes": 2218,
+          "duration_ms": 869
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 285921,
+          "decoded_bytes": 1743969,
+          "duration_ms": 1147
+        },
+        {
+          "name": "desk.js?v=20261116-ux1",
+          "transfer_bytes": 10568,
+          "decoded_bytes": 31707,
+          "duration_ms": 866
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 536
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 876
+        }
+      ],
+      "transfer_bytes": 312297,
+      "decoded_bytes": 1872017
+    },
+    {
+      "page": "discovery",
+      "round": 0,
+      "cache": "cold",
+      "ready_ms": 1801,
+      "resources": [
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 1658,
+          "decoded_bytes": 3005,
+          "duration_ms": 504
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 1306,
+          "decoded_bytes": 2218,
+          "duration_ms": 504
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 491
+        },
+        {
+          "name": "mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=2fe5b13f-fb1e-4737-8ed6-17aca97d1f05&offset=0&limit=20",
+          "transfer_bytes": 6001,
+          "decoded_bytes": 24882,
+          "duration_ms": 771
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 495
+        }
+      ],
+      "transfer_bytes": 9773,
+      "decoded_bytes": 30313
+    },
+    {
+      "page": "start",
+      "round": 0,
+      "cache": "cold",
+      "ready_ms": 2163,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 3068,
+          "decoded_bytes": 9846,
+          "duration_ms": 504
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 1658,
+          "decoded_bytes": 3005,
+          "duration_ms": 502
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 1306,
+          "decoded_bytes": 2218,
+          "duration_ms": 492
+        },
+        {
+          "name": "school-catalog.js?v=20261115-7",
+          "transfer_bytes": 4600,
+          "decoded_bytes": 21334,
+          "duration_ms": 553
+        },
+        {
+          "name": "browser-library-core.js?v=20261115-7",
+          "transfer_bytes": 2851,
+          "decoded_bytes": 5948,
+          "duration_ms": 502
+        },
+        {
+          "name": "plan-transfer.js?v=20261116-online3",
+          "transfer_bytes": 4613,
+          "decoded_bytes": 10533,
+          "duration_ms": 503
+        },
+        {
+          "name": "start.js?v=20261115-online1",
+          "transfer_bytes": 6504,
+          "decoded_bytes": 17102,
+          "duration_ms": 1059
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 488
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 514
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 878
+        }
+      ],
+      "transfer_bytes": 34708,
+      "decoded_bytes": 151290
+    },
+    {
+      "page": "applications",
+      "round": 1,
+      "cache": "warm",
+      "ready_ms": 3065,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 285921,
+          "decoded_bytes": 1743969,
+          "duration_ms": 1507
+        },
+        {
+          "name": "admissions-data.js?v=20261115-7",
+          "transfer_bytes": 181580,
+          "decoded_bytes": 874955,
+          "duration_ms": 527
+        },
+        {
+          "name": "admissions-core.js?v=20261115-7",
+          "transfer_bytes": 2072,
+          "decoded_bytes": 4113,
+          "duration_ms": 525
+        },
+        {
+          "name": "material-actions.js?v=20261115-7",
+          "transfer_bytes": 7796,
+          "decoded_bytes": 20890,
+          "duration_ms": 512
+        },
+        {
+          "name": "opportunities-core.js?v=20261115-20",
+          "transfer_bytes": 2620,
+          "decoded_bytes": 5341,
+          "duration_ms": 517
+        },
+        {
+          "name": "workflow.js?v=20261116-ux1",
+          "transfer_bytes": 16378,
+          "decoded_bytes": 50761,
+          "duration_ms": 754
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 1007
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1000
+        }
+      ],
+      "transfer_bytes": 506143,
+      "decoded_bytes": 2796370
+    },
+    {
+      "page": "desk",
+      "round": 1,
+      "cache": "warm",
+      "ready_ms": 1882,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "desk.js?v=20261116-ux1",
+          "transfer_bytes": 10568,
+          "decoded_bytes": 31707,
+          "duration_ms": 485
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 491
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 886
+        }
+      ],
+      "transfer_bytes": 20344,
+      "decoded_bytes": 1872017
+    },
+    {
+      "page": "discovery",
+      "round": 1,
+      "cache": "warm",
+      "ready_ms": 1163,
+      "resources": [
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 489
+        },
+        {
+          "name": "mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=2fe5b13f-fb1e-4737-8ed6-17aca97d1f05&offset=0&limit=20",
+          "transfer_bytes": 6001,
+          "decoded_bytes": 24882,
+          "duration_ms": 638
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 578
+        }
+      ],
+      "transfer_bytes": 6809,
+      "decoded_bytes": 30313
+    },
+    {
+      "page": "start",
+      "round": 1,
+      "cache": "warm",
+      "ready_ms": 1743,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "school-catalog.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 21334,
+          "duration_ms": 0
+        },
+        {
+          "name": "browser-library-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5948,
+          "duration_ms": 0
+        },
+        {
+          "name": "plan-transfer.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 10533,
+          "duration_ms": 0
+        },
+        {
+          "name": "start.js?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 17102,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 617
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 602
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 964
+        }
+      ],
+      "transfer_bytes": 10108,
+      "decoded_bytes": 151290
+    },
+    {
+      "page": "applications",
+      "round": 2,
+      "cache": "warm",
+      "ready_ms": 1408,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-data.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 874955,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 4113,
+          "duration_ms": 0
+        },
+        {
+          "name": "material-actions.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 20890,
+          "duration_ms": 0
+        },
+        {
+          "name": "opportunities-core.js?v=20261115-20",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5341,
+          "duration_ms": 0
+        },
+        {
+          "name": "workflow.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 50761,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 496
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 850
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 2796370
+    },
+    {
+      "page": "desk",
+      "round": 2,
+      "cache": "warm",
+      "ready_ms": 1582,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "desk.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 31707,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 536
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 962
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 1872017
+    },
+    {
+      "page": "discovery",
+      "round": 2,
+      "cache": "warm",
+      "ready_ms": 1141,
+      "resources": [
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 609
+        },
+        {
+          "name": "mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=2fe5b13f-fb1e-4737-8ed6-17aca97d1f05&offset=0&limit=20",
+          "transfer_bytes": 6001,
+          "decoded_bytes": 24882,
+          "duration_ms": 659
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 617
+        }
+      ],
+      "transfer_bytes": 6809,
+      "decoded_bytes": 30313
+    },
+    {
+      "page": "start",
+      "round": 2,
+      "cache": "warm",
+      "ready_ms": 1647,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "school-catalog.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 21334,
+          "duration_ms": 0
+        },
+        {
+          "name": "browser-library-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5948,
+          "duration_ms": 0
+        },
+        {
+          "name": "plan-transfer.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 10533,
+          "duration_ms": 0
+        },
+        {
+          "name": "start.js?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 17102,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 583
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 585
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 893
+        }
+      ],
+      "transfer_bytes": 10108,
+      "decoded_bytes": 151290
+    },
+    {
+      "page": "applications",
+      "round": 3,
+      "cache": "warm",
+      "ready_ms": 1437,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-data.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 874955,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 4113,
+          "duration_ms": 0
+        },
+        {
+          "name": "material-actions.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 20890,
+          "duration_ms": 0
+        },
+        {
+          "name": "opportunities-core.js?v=20261115-20",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5341,
+          "duration_ms": 0
+        },
+        {
+          "name": "workflow.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 50761,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 543
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 896
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 2796370
+    },
+    {
+      "page": "desk",
+      "round": 3,
+      "cache": "warm",
+      "ready_ms": 2032,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "desk.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 31707,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 633
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1492
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 1872017
+    },
+    {
+      "page": "discovery",
+      "round": 3,
+      "cache": "warm",
+      "ready_ms": 1255,
+      "resources": [
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 647
+        },
+        {
+          "name": "mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=2fe5b13f-fb1e-4737-8ed6-17aca97d1f05&offset=0&limit=20",
+          "transfer_bytes": 6001,
+          "decoded_bytes": 24882,
+          "duration_ms": 702
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 580
+        }
+      ],
+      "transfer_bytes": 6809,
+      "decoded_bytes": 30313
+    },
+    {
+      "page": "start",
+      "round": 3,
+      "cache": "warm",
+      "ready_ms": 1751,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "school-catalog.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 21334,
+          "duration_ms": 0
+        },
+        {
+          "name": "browser-library-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5948,
+          "duration_ms": 0
+        },
+        {
+          "name": "plan-transfer.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 10533,
+          "duration_ms": 0
+        },
+        {
+          "name": "start.js?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 17102,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 607
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 638
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1333
+        }
+      ],
+      "transfer_bytes": 10108,
+      "decoded_bytes": 151290
+    },
+    {
+      "page": "applications",
+      "round": 4,
+      "cache": "warm",
+      "ready_ms": 1625,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-data.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 874955,
+          "duration_ms": 0
+        },
+        {
+          "name": "admissions-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 4113,
+          "duration_ms": 0
+        },
+        {
+          "name": "material-actions.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 20890,
+          "duration_ms": 0
+        },
+        {
+          "name": "opportunities-core.js?v=20261115-20",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5341,
+          "duration_ms": 0
+        },
+        {
+          "name": "workflow.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 50761,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 655
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1086
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 2796370
+    },
+    {
+      "page": "desk",
+      "round": 4,
+      "cache": "warm",
+      "ready_ms": 1668,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "contact-data.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1743969,
+          "duration_ms": 0
+        },
+        {
+          "name": "desk.js?v=20261116-ux1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 31707,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 822
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1226
+        }
+      ],
+      "transfer_bytes": 9776,
+      "decoded_bytes": 1872017
+    },
+    {
+      "page": "discovery",
+      "round": 4,
+      "cache": "warm",
+      "ready_ms": 1227,
+      "resources": [
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 600
+        },
+        {
+          "name": "mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=2fe5b13f-fb1e-4737-8ed6-17aca97d1f05&offset=0&limit=20",
+          "transfer_bytes": 6001,
+          "decoded_bytes": 24882,
+          "duration_ms": 715
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 602
+        }
+      ],
+      "transfer_bytes": 6809,
+      "decoded_bytes": 30313
+    },
+    {
+      "page": "start",
+      "round": 4,
+      "cache": "warm",
+      "ready_ms": 1593,
+      "resources": [
+        {
+          "name": "ui.css?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 9846,
+          "duration_ms": 0
+        },
+        {
+          "name": "account-session.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3005,
+          "duration_ms": 0
+        },
+        {
+          "name": "cloud-library.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2218,
+          "duration_ms": 0
+        },
+        {
+          "name": "school-catalog.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 21334,
+          "duration_ms": 0
+        },
+        {
+          "name": "browser-library-core.js?v=20261115-7",
+          "transfer_bytes": 0,
+          "decoded_bytes": 5948,
+          "duration_ms": 0
+        },
+        {
+          "name": "plan-transfer.js?v=20261116-online3",
+          "transfer_bytes": 0,
+          "decoded_bytes": 10533,
+          "duration_ms": 0
+        },
+        {
+          "name": "start.js?v=20261115-online1",
+          "transfer_bytes": 0,
+          "decoded_bytes": 17102,
+          "duration_ms": 0
+        },
+        {
+          "name": "me",
+          "transfer_bytes": 476,
+          "decoded_bytes": 176,
+          "duration_ms": 562
+        },
+        {
+          "name": "library",
+          "transfer_bytes": 332,
+          "decoded_bytes": 32,
+          "duration_ms": 584
+        },
+        {
+          "name": "workflow",
+          "transfer_bytes": 9300,
+          "decoded_bytes": 81096,
+          "duration_ms": 1233
+        }
+      ],
+      "transfer_bytes": 10108,
+      "decoded_bytes": 151290
+    }
+  ],
+  "browser_errors": [],
+  "failed_requests": [],
+  "passed": true,
+  "fixture": {
+    "projects": 10,
+    "materials": 50,
+    "communications": 100
+  }
+}
