@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-11-16T12:01:21.781290+00:00",
+  "pages_updated": 47,
+  "completed_at": "2026-11-16T12:02:49.927960+00:00",
+  "failures": {},
+  "policies": {
+    "version": 1,
+    "completed_at": "2026-11-16T12:01:24+00:00",
+    "kind": "policies",
+    "attempted": 5,
+    "ok": 5,
+    "error": 0,
+    "manual_required": 0
+  },
+  "policy_revalidation": {
+    "version": 1,
+    "checked_at": "2026-11-16T12:01:24+00:00",
+    "attempted": 0,
+    "sources_attempted": 0,
+    "confirmed": 0,
+    "retry": 0,
+    "review_required": 0
+  },
+  "professors": {
+    "version": 1,
+    "completed_at": "2026-11-16T12:02:06+00:00",
+    "kind": "professors",
+    "attempted": 40,
+    "ok": 30,
+    "error": 10,
+    "manual_required": 0
+  },
+  "mentor_quality": {
+    "version": 1,
+    "checked_at": "2026-11-16T12:02:06+00:00",
+    "attempted": 16,
+    "created": 10,
+    "reopened": 0,
+    "resolved": 8,
+    "pending": 0,
+    "error": 8,
+    "active": 272,
+    "overdue": 21
+  },
+  "notices": {
+    "skipped": true,
+    "source_count": 36,
+    "sources_ok": 36,
+    "sources_error": 0,
+    "changed_count": 0,
+    "notice_count": 360
+  },
+  "quality_alerts": {
+    "checked_at": "2026-11-16T12:02:49+00:00",
+    "available": {
+      "policy": true,
+      "mentor": true
+    },
+    "failures": {},
+    "breakdown": {
+      "reasons": {
+        "identity_conflict": 46,
+        "shared_contact": 8,
+        "template_empty": 41,
+        "roster_incomplete": 1,
+        "http_not_found": 59,
+        "http_forbidden": 34,
+        "tls_error": 5,
+        "directory_only": 40,
+        "network_timeout": 12,
+        "parser_unsupported": 3,
+        "http_unexpected_status": 23
+      },
+      "actions": {
+        "manual_review": 55,
+        "discover_official_source": 202,
+        "retry": 12,
+        "adapt_parser": 3
+      },
+      "never_attempted": 0
+    },
+    "summary": {
+      "active": 272,
+      "overdue": 0,
+      "policies": 0,
+      "mentors": 272
+    },
+    "audience": "maintainer",
+    "note": "24小时为待处理维护时限；计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。"
+  },
+  "source_warnings": {}
+}

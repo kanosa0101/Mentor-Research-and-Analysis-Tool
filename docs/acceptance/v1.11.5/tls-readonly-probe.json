@@ -1,0 +1,178 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "requests": [
+    {
+      "mode": "close",
+      "index": 0,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.602
+    },
+    {
+      "mode": "close",
+      "index": 1,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.441
+    },
+    {
+      "mode": "close",
+      "index": 2,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.421
+    },
+    {
+      "mode": "close",
+      "index": 3,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.415
+    },
+    {
+      "mode": "close",
+      "index": 4,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.437
+    },
+    {
+      "mode": "close",
+      "index": 5,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 1.589
+    },
+    {
+      "mode": "keep-alive",
+      "index": 0,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.56
+    },
+    {
+      "mode": "keep-alive",
+      "index": 1,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.252
+    },
+    {
+      "mode": "keep-alive",
+      "index": 2,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.225
+    },
+    {
+      "mode": "keep-alive",
+      "index": 3,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.248
+    },
+    {
+      "mode": "keep-alive",
+      "index": 4,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.261
+    },
+    {
+      "mode": "keep-alive",
+      "index": 5,
+      "status": 200,
+      "bytes": 5948,
+      "sha256": "4d018ef2aea70d523bbe8fd646a8d0c66a7b0c5be515503721271b03e3b92412",
+      "seconds": 0.26
+    }
+  ],
+  "browsers": [
+    {
+      "index": 0,
+      "errors": [],
+      "failed_requests": [],
+      "core_response": {
+        "status": 200,
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7"
+      },
+      "html_status": 200,
+      "ready": true,
+      "state": {
+        "core": true,
+        "ready": true,
+        "year": "2028",
+        "schools": 39
+      },
+      "seconds": 5.183
+    },
+    {
+      "index": 1,
+      "errors": [],
+      "failed_requests": [],
+      "core_response": {
+        "status": 200,
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7"
+      },
+      "html_status": 200,
+      "ready": true,
+      "state": {
+        "core": true,
+        "ready": true,
+        "year": "2028",
+        "schools": 39
+      },
+      "seconds": 5.168
+    },
+    {
+      "index": 2,
+      "errors": [],
+      "failed_requests": [],
+      "core_response": {
+        "status": 200,
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7"
+      },
+      "html_status": 200,
+      "ready": true,
+      "state": {
+        "core": true,
+        "ready": true,
+        "year": "2028",
+        "schools": 39
+      },
+      "seconds": 4.844
+    },
+    {
+      "index": 3,
+      "errors": [],
+      "failed_requests": [],
+      "core_response": {
+        "status": 200,
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7"
+      },
+      "html_status": 200,
+      "ready": true,
+      "state": {
+        "core": true,
+        "ready": true,
+        "year": "2028",
+        "schools": 39
+      },
+      "seconds": 5.107
+    }
+  ],
+  "blocked_mutations": [],
+  "tls_verification": true,
+  "production_mutations": false
+}

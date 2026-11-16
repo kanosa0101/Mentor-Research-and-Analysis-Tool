@@ -1,0 +1,75 @@
+{
+  "service": "mentor-review-pipeline.service",
+  "rows": [
+    {
+      "id": "12db005333f70f3fbc2e",
+      "state": "manual_required",
+      "assistance": {
+        "state": "ready",
+        "suggestions": 4,
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "source_sha256": "6f3afcfedbe3fdfc3f4e9c4c1ac5d83c0a56f16e500061b861029d7c4a521a4c",
+        "scope": "仅HTML正文逐字建议；未核验附件、申请届别或资格，不构成可发布结论。"
+      },
+      "validated_extracts": true,
+      "suggestions": 4,
+      "transport": {
+        "first_byte_seconds": 1.869,
+        "first_answer_seconds": 1.87,
+        "header_seconds": 1.869,
+        "elapsed_seconds": 10.23,
+        "response_bytes": 57605,
+        "mode": "stream",
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "source_sha256": "6f3afcfedbe3fdfc3f4e9c4c1ac5d83c0a56f16e500061b861029d7c4a521a4c",
+      "same_source": true,
+      "published": false
+    },
+    {
+      "id": "06b23057fdba9354e264",
+      "state": "manual_required",
+      "assistance": {
+        "state": "ready",
+        "suggestions": 0,
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "source_sha256": "e0b219b8ada14500e0d090818129956dff45acc3fb80b552170f13d3d01c3854",
+        "scope": "仅HTML正文逐字建议；未核验附件、申请届别或资格，不构成可发布结论。"
+      },
+      "validated_extracts": true,
+      "suggestions": 0,
+      "transport": {
+        "first_byte_seconds": 5.785,
+        "first_answer_seconds": 5.785,
+        "header_seconds": 5.785,
+        "elapsed_seconds": 6.193,
+        "response_bytes": 2680,
+        "mode": "stream",
+        "reasoning_effort": "none",
+        "complete": true
+      },
+      "source_sha256": "e0b219b8ada14500e0d090818129956dff45acc3fb80b552170f13d3d01c3854",
+      "same_source": true,
+      "published": false
+    }
+  ],
+  "usage": {
+    "date": "2026-11-16",
+    "requests": 8,
+    "input_chars": 18269
+  },
+  "permission_recovery": {
+    "at": "2026-11-16T12:07:39.669013+00:00",
+    "ids": [
+      "12db005333f70f3fbc2e",
+      "06b23057fdba9354e264"
+    ],
+    "reason": "修复诊断产生的预算台账owner错误后重试，仅提前这两条运维重试；预算与人工字段及队列时钟不变",
+    "usage_before": {
+      "date": "2026-11-16",
+      "requests": 6,
+      "input_chars": 14635
+    }
+  }
+}

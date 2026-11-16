@@ -1,0 +1,157 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "tls_verification": true,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "polls": [
+    {
+      "index": 0,
+      "status": 200,
+      "guard_version_present": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "normal",
+      "blocked_asset": null,
+      "page_errors": [],
+      "request_failures": [],
+      "mutations": [],
+      "aborted_once": false,
+      "core_responses": [
+        {
+          "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/cloud-library.js?v=20261116-online3",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/plan-transfer.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/start.js?v=20261116-loadguard1",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "school_count": 39,
+      "year": "2028",
+      "interest_link": "discovery.html?degree=master&route=recommend&topics=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0",
+      "unexpected_request_failures": [],
+      "ready_screenshot": "E:\\homework\\自动化调研\\cache\\v1115\\public-guard-normal-ready-mobile.png",
+      "seconds": 25.782
+    },
+    {
+      "name": "core",
+      "blocked_asset": "browser-library-core.js",
+      "page_errors": [],
+      "request_failures": [
+        {
+          "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+          "error": "net::ERR_FAILED"
+        }
+      ],
+      "mutations": [],
+      "aborted_once": true,
+      "core_responses": [
+        {
+          "url": "https://8.213.137.82:8443/cloud-library.js?v=20261116-online3",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/plan-transfer.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/start.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/cloud-library.js?v=20261116-online3",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/start.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/plan-transfer.js?v=20261116-loadguard1",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "error_message": "页面资源加载失败，请重新加载后继续设置申请目标。 重新加载",
+      "error_screenshot": "E:\\homework\\自动化调研\\cache\\v1115\\public-guard-core-error-mobile.png",
+      "school_count": 39,
+      "year": "2028",
+      "interest_link": "discovery.html?degree=master&route=recommend&topics=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0",
+      "unexpected_request_failures": [],
+      "ready_screenshot": "E:\\homework\\自动化调研\\cache\\v1115\\public-guard-core-ready-mobile.png",
+      "seconds": 9.831
+    },
+    {
+      "name": "cloud",
+      "blocked_asset": "cloud-library.js",
+      "page_errors": [],
+      "request_failures": [
+        {
+          "url": "https://8.213.137.82:8443/cloud-library.js?v=20261116-online3",
+          "error": "net::ERR_FAILED"
+        }
+      ],
+      "mutations": [],
+      "aborted_once": true,
+      "core_responses": [
+        {
+          "url": "https://8.213.137.82:8443/plan-transfer.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/start.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/cloud-library.js?v=20261116-online3",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/plan-transfer.js?v=20261116-loadguard1",
+          "status": 200
+        },
+        {
+          "url": "https://8.213.137.82:8443/start.js?v=20261116-loadguard1",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "error_message": "页面资源加载失败，请重新加载后继续设置申请目标。 重新加载",
+      "error_screenshot": "E:\\homework\\自动化调研\\cache\\v1115\\public-guard-cloud-error-mobile.png",
+      "school_count": 39,
+      "year": "2028",
+      "interest_link": "discovery.html?degree=master&route=recommend&topics=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0",
+      "unexpected_request_failures": [],
+      "ready_screenshot": "E:\\homework\\自动化调研\\cache\\v1115\\public-guard-cloud-ready-mobile.png",
+      "seconds": 8.912
+    }
+  ],
+  "passed": true,
+  "production_mutations": false,
+  "html_sha256": "f19bb7a2f296908a33154749d29e818bf679f85d6cc9d4f52e6ef986fbdde97f"
+}

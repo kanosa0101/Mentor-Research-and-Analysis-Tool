@@ -1,0 +1,29 @@
+{
+  "base_url": "https://8.213.137.82:8443",
+  "accounts": [
+    {
+      "id": "dbf56e0500105acd72ad3719847dba75",
+      "username": "qa_v1115_1794830479_a"
+    }
+  ],
+  "checks": [
+    "https_registration_secure_cookie",
+    "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+    "discovery_registration_project_creation_and_target_use_ui_and_preserve_context"
+  ],
+  "passed": false,
+  "planned_usernames": [
+    "qa_v1115_1794830479_a",
+    "qa_v1115_1794830479_b"
+  ],
+  "browser_errors": [
+    "TypeError: Cannot read properties of undefined (reading 'day')\n    at https://8.213.137.82:8443/start.js?v=20261115-online1:3:85\n    at https://8.213.137.82:8443/start.js?v=20261115-online1:110:3"
+  ],
+  "failed_requests": [
+    {
+      "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+      "error": "net::ERR_SSL_PROTOCOL_ERROR"
+    }
+  ],
+  "core_asset_responses": []
+}

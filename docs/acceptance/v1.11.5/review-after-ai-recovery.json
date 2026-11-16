@@ -1,0 +1,125 @@
+{
+  "started_at": "2026-11-16T12:07:41.743650+00:00",
+  "mode": "publish",
+  "built_catalog_sha256": "c59b5815d11b4d315c50ff2575c41b3c4156aaead7d83938634aec2e50c055ef",
+  "completed_at": "2026-11-16T12:08:16.892814+00:00",
+  "status": "ok",
+  "failures": {},
+  "discovery": {
+    "version": 1,
+    "checked_at": "2026-11-16T12:07:41.743677+00:00",
+    "summary": {
+      "seed_count": 203,
+      "seeds_attempted": 8,
+      "candidates_checked": 5,
+      "new_candidates": 5,
+      "due_seeds_deferred": 139,
+      "candidates_per_seed": 1,
+      "pending": 88
+    },
+    "next_check_at": "2026-11-15T20:22:01.424716+00:00",
+    "status": "partial"
+  },
+  "source_recovery": {
+    "version": 1,
+    "checked_at": "2026-11-16T12:07:56.542569+00:00",
+    "summary": {
+      "failed_drafts": 0,
+      "attempted": 0,
+      "requests": 0,
+      "request_budget": 16,
+      "adopted": 0,
+      "manual_required": 0,
+      "not_announcement": 0,
+      "budget_wait": 0,
+      "unresolved": 0
+    }
+  },
+  "automatic": {
+    "version": 1,
+    "started_at": "2026-11-16T12:07:56.598761+00:00",
+    "completed_at": "2026-11-16T12:08:15.692973+00:00",
+    "mode": "publish",
+    "counts": {
+      "skipped": 2,
+      "manual_required": 2
+    }
+  },
+  "alerts": {
+    "version": 1,
+    "checked_at": "2026-11-16T12:08:15.694833+00:00",
+    "summary": {
+      "active": 52,
+      "overdue": 1,
+      "urgent": 0
+    },
+    "audience": "maintainer",
+    "note": "维护者审核时限提醒，不是申请截止承诺，也未向普通申请订阅者发送。"
+  },
+  "quality_alerts": {
+    "checked_at": "2026-11-16T12:08:16+00:00",
+    "available": {
+      "policy": true,
+      "mentor": true
+    },
+    "failures": {},
+    "breakdown": {
+      "reasons": {
+        "identity_conflict": 46,
+        "shared_contact": 8,
+        "template_empty": 41,
+        "roster_incomplete": 1,
+        "http_not_found": 59,
+        "http_forbidden": 34,
+        "tls_error": 5,
+        "directory_only": 40,
+        "network_timeout": 12,
+        "parser_unsupported": 3,
+        "http_unexpected_status": 23
+      },
+      "actions": {
+        "manual_review": 55,
+        "discover_official_source": 202,
+        "retry": 12,
+        "adapt_parser": 3
+      },
+      "never_attempted": 0
+    },
+    "summary": {
+      "active": 272,
+      "overdue": 0,
+      "policies": 0,
+      "mentors": 272
+    },
+    "audience": "maintainer",
+    "note": "24小时为待处理维护时限；计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。"
+  },
+  "maintainer_notifications": {
+    "attempted_at": "2026-11-16T12:08:16.876379+00:00",
+    "sent": 0,
+    "failed": 0,
+    "expired": 0,
+    "retry_exhausted": 0,
+    "audience": "maintainer",
+    "disabled": false,
+    "completed_at": "2026-11-16T12:08:16.876657+00:00"
+  },
+  "public_pages": {
+    "skipped": true,
+    "reason": "公开目录未变化"
+  },
+  "metrics": {
+    "checked_at": "2026-11-16T12:08:16+00:00",
+    "queue_count": 172,
+    "pending_active": 52,
+    "oldest_pending_seconds": 115221,
+    "published_samples": 9,
+    "pending_over_24h": 2,
+    "review_to_publish_max_seconds": 0,
+    "discovery_to_review_max_seconds": 24545,
+    "source_count": 81,
+    "source_errors": 1,
+    "source_overdue": 0,
+    "note": "等待时长从本系统首次发现计起，不是官网发布到发现的延迟；旧记录缺少时间时不估算。"
+  }
+}

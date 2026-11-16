@@ -1,0 +1,35 @@
+{
+  "source_report_sha256": "8238be01196a6f6b1955ef48c78675daeb3659ef84c2ea37504c025a1c864487",
+  "resolution_sha256": "ad79ce473b3a074297b3ef40d4d0ee5eab59018f65ba37ceb2145eef9c80b208",
+  "conflict_count": 456,
+  "files": [
+    "data/issues/fudan-cs.yaml",
+    "data/issues/hit-cs.yaml",
+    "cache/mentor_quality/state.json"
+  ],
+  "record_count": 39,
+  "histories": 39,
+  "total_history_entries_after_merge": 78,
+  "decisions": {
+    "merge_automatic_history": 39,
+    "newer_automatic_field": 417
+  },
+  "timestamps": [
+    {
+      "live": "2026-11-16T11:20:51+00:00",
+      "pilot": "2026-11-16T11:26:05+00:00"
+    }
+  ],
+  "original_conflicts_reproduced": true,
+  "all_manual_issue_fields_unchanged": true,
+  "all_history_additions_automatic": true,
+  "baseline_prefixes_preserved": true,
+  "live_history_preserved": true,
+  "remaining_conflicts": [],
+  "merged_sha256": {
+    "data/issues/fudan-cs.yaml": "695895d361631f19e6db9188182af524f4d23e2a0510488824feb42dca5ea555",
+    "data/issues/hit-cs.yaml": "4e7bc38ecf9d564b501d44128a294a7e7e1a17543fe21e4d34a23ab9b3a2f921",
+    "cache/mentor_quality/state.json": "c98399572834e3ca6057ffd88b4430c6c5d6968389505ae1e95da6ac47e890c2"
+  },
+  "note": "Proposal for root review only. No public originals modified. Stage must bind base/desired/live SHA and exact three-way conflict values again."
+}

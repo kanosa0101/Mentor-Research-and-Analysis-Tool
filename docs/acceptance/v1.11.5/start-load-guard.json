@@ -1,0 +1,18 @@
+{
+  "tests": 3,
+  "command": "python -m pytest tests/test_start_dependencies_v1115.py -q",
+  "cases": [
+    "normal startup",
+    "core JS aborted once, visible error and disabled form, reload recovers",
+    "cloud JS aborted once, visible error and disabled form, reload recovers"
+  ],
+  "page_errors": 0,
+  "network_writes": 0,
+  "browser": "Chromium with isolated routed local assets and anonymous auth fixture",
+  "product_files": {
+    "site/start.js": "3bdd45ad9ee7b07336e10272dad0c090b5b0a82f9fb0648b9be1130749d9cc86",
+    "site/plan-transfer.js": "c78ca0e14eeabd5bc9309b3c025cec798b0b3f7de8b5e6bf589150b7e9e7d84b",
+    "site/templates/start.html.j2": "eeafb621c24d5a104c79e92021683c9aedfedfad805368e70293a1501260e761"
+  },
+  "production_operations": false
+}

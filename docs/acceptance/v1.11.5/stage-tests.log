@@ -1,0 +1,8 @@
+.......................................                                  [100%]
+============================== warnings summary ===============================
+cache/v1115/test_stage_release.py::test_dict_field_merge_and_both_sides_new_records
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+39 passed, 1 warning in 3.32s

@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "version": "1.11.5",
+  "edition": "online",
+  "services": {
+    "mentor-https.service": "active",
+    "mentor-public.service": "active",
+    "mentor-review-ui.service": "active",
+    "mentor-maintenance.timer": "active",
+    "mentor-monitor.timer": "active",
+    "mentor-review-pipeline.timer": "active",
+    "mentor-updates.timer": "active",
+    "mentor-certificate.timer": "active"
+  },
+  "mentor_records": 7173,
+  "contactable": 5662,
+  "policy_count": 111,
+  "policy_years": [
+    2027
+  ],
+  "policy_quality": {
+    "checked": 111
+  },
+  "institutional_activities": 9,
+  "activity_states": {
+    "open_month": 1,
+    "closed": 7,
+    "open": 1
+  },
+  "explicit_2028_activities": 0,
+  "configured_sources": 85,
+  "original_backlog_statuses": {
+    "original411": {
+      "pending": 20,
+      "error": 240,
+      "resolved": 151
+    },
+    "added8": {
+      "resolved": 4,
+      "error": 4
+    }
+  },
+  "quality_summary": {
+    "active": 272,
+    "overdue": 0,
+    "policies": 0,
+    "mentors": 272
+  },
+  "quality_breakdown": {
+    "reasons": {
+      "identity_conflict": 46,
+      "shared_contact": 8,
+      "template_empty": 41,
+      "roster_incomplete": 1,
+      "http_not_found": 59,
+      "http_forbidden": 34,
+      "tls_error": 5,
+      "directory_only": 40,
+      "network_timeout": 12,
+      "parser_unsupported": 3,
+      "http_unexpected_status": 23
+    },
+    "actions": {
+      "manual_review": 55,
+      "discover_official_source": 202,
+      "retry": 12,
+      "adapt_parser": 3
+    },
+    "never_attempted": 0
+  },
+  "maintenance_stage_failures": {},
+  "pipeline_stage_failures": {},
+  "pipeline_status": "ok",
+  "source_recovery": {
+    "failed_drafts": 0,
+    "attempted": 0,
+    "requests": 0,
+    "request_budget": 16,
+    "adopted": 0,
+    "manual_required": 0,
+    "not_announcement": 0,
+    "budget_wait": 0,
+    "unresolved": 0
+  },
+  "private_permissions_verified": true,
+  "qa_cleanup_verified": true,
+  "observed_at_file_mtime": "2026-11-16T12:14:30+00:00",
+  "server_snapshot_sha256": "c54ba34d893957e10fbc03da5f386e9cefef52e05b764b17d4663bfc0fcdee6f"
+}

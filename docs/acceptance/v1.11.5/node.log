@@ -1,0 +1,52 @@
+PASS: layered scope/year/route/source-change/error/age/review separation
+✔ tests\admissions_rules.cjs (368.0746ms)
+PASS: 888 application target/time combinations preserve policy scope, conditions, events, source evidence and quality
+✔ tests\application_payload.cjs (2432.484ms)
+✔ complete target retains all school, department and program requirements (70.1477ms)
+✔ a selected program cannot borrow another program while retaining general layers (1.5716ms)
+✔ special programmes never borrow another project rules (0.5763ms)
+✔ blank scope and invalid values request a complete target (1.0703ms)
+✔ year, channel and ordinary/special scopes never borrow other requirements (0.4122ms)
+✔ changed, failed, stale and missing checks remain recheck states per requirement (1.2598ms)
+✔ field and event references use their actual sources while legacy fields retain primary (0.6036ms)
+✔ explicit applies_if remains conditional even with a selected program; general and selected-program events remain usable (74.8878ms)
+✔ unspecified program protection remains alongside explicit conditions (2.2088ms)
+discovery v1.1: contact validation, placeholder cleaning and unknown filtering passed
+✔ tests\discovery_data_quality_v1_1.cjs (292.5266ms)
+v21 discovery quality: 8 scenarios passed
+✔ tests\discovery_quality_v21.cjs (278.2043ms)
+discovery ranking: 9 scenarios passed
+✔ tests\discovery_ranking_v14.cjs (263.1837ms)
+PASS: rule evidence, hard/soft, unknown, no degree inference, review scope/expiry
+✔ tests\discovery_rules.cjs (244.9017ms)
+✔ specific programmes and special scope never gain score from legacy pass (3.5981ms)
+✔ legacy fail cannot exclude unsupported programme/special scope candidates (1.2954ms)
+✔ ordinary unspecified scope retains legacy judgement and other checks remain normal (0.5767ms)
+PASS entry scope classification and policy source isolation
+PASS incomplete target, special/program, source failure and old dates
+PASS partial PhD browsing keeps candidate official originals reachable
+PASS event item/exam timing does not imply registration availability
+PASS legacy payload official navigation retains independent-check warning
+PASS saved project event semantics and manual-date compatibility
+✔ tests\entry_scope_v17.cjs (262.7957ms)
+opportunity date, scope, unknown and history rules passed
+saved opportunity changes preserve original dates and material stages
+✔ tests\opportunities.cjs (228.1146ms)
+Precise, date-only and month-only opportunity dates preserve their meaning.
+✔ tests\opportunity_dates_v19.cjs (183.266ms)
+18 original IDs retained; only 9 evidenced institutional activities enter filters; personal/formal/pending and invalid evidence fail closed.
+✔ tests\opportunity_scope_v20.cjs (217.0436ms)
+20 opportunity window date cases plus filters/order/change boundaries passed
+✔ tests\opportunity_windows_v17.cjs (250.7048ms)
+Policy system reconfirmation preserves manual date, China timezone and source/version freshness gates.
+✔ tests\policy_revalidation.cjs (245.077ms)
+PASS project review isolation, exact goal, hard/unknown and scope conflict
+✔ tests\project_reviews_v16.cjs (108.5282ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2474.2989

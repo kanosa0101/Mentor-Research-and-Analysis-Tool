@@ -1,0 +1,60 @@
+{
+  "installer_sha256": "99ea5f24b325a45df62437920e33a7927cd449a144d494e27fb72b42c122d5f5",
+  "passed": 4,
+  "results": [
+    {
+      "scenario": "success",
+      "private_files_unchanged": 3,
+      "error": null,
+      "installed": true,
+      "queue_triaged": true,
+      "old_site_backup_matches": true
+    },
+    {
+      "scenario": "triage_exception",
+      "private_files_unchanged": 3,
+      "error": "ValueError",
+      "restored_original_files": 12,
+      "removed_added_files": 3,
+      "site_tree_restored": true,
+      "queue_bytes_restored": true,
+      "ownership_and_mode_restore_requested": true
+    },
+    {
+      "scenario": "triage_assertion",
+      "private_files_unchanged": 3,
+      "error": "AssertionError",
+      "restored_original_files": 12,
+      "removed_added_files": 3,
+      "site_tree_restored": true,
+      "queue_bytes_restored": true,
+      "ownership_and_mode_restore_requested": true
+    },
+    {
+      "scenario": "health_failure",
+      "private_files_unchanged": 3,
+      "error": "AssertionError",
+      "restored_original_files": 12,
+      "removed_added_files": 3,
+      "site_tree_restored": true,
+      "queue_bytes_restored": true,
+      "ownership_and_mode_restore_requested": true
+    }
+  ],
+  "real_operations": [
+    "copy2",
+    "content SHA256",
+    "site directory rename",
+    "queue write and restoration",
+    "added-file removal"
+  ],
+  "mocked_operations": [
+    "subprocess/runuser/systemctl",
+    "ownership changes",
+    "triage semantics",
+    "sleep"
+  ],
+  "limitations": "Windows temporary filesystem execution; owner changes are asserted calls, not Linux service or permission validation.",
+  "platform_adapter": "Protected relative path keys use as_posix(), equivalent to production Linux str(relative_path).",
+  "production_operations": false
+}
