@@ -87,6 +87,13 @@ def search_record(p):
     return (p.get('bio_raw') or '').lower()
 
 
+def contact_record(p):
+    # Application forms need identities and contact context, not directory facets or biographies.
+    keys = ('page', 'name', 'school', 'dept', 'school_name', 'dept_name',
+            'email', 'research_direction_raw')
+    return {k: p[k] for k in keys if k in p}
+
+
 def compare_record(p):
     rec = {'bio_excerpt': (p.get('bio_raw') or '')[:130]}
     rec['provenance'] = {k: v for k, v in p.get('provenance', {}).items()
@@ -179,6 +186,8 @@ def main():
     live_pages = {r["page"] for r in profs}
     payload = json.dumps([list_record(p) for p in profs], ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'data.js').write_text('window.MENTOR_DATA = ' + payload + ';\n', encoding='utf-8')
+    contacts = json.dumps([contact_record(p) for p in profs], ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    (SITE / 'contact-data.js').write_text('window.MENTOR_DATA = ' + contacts + ';\n', encoding='utf-8')
     lean = json.dumps([discovery_record(p) for p in profs], ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'discovery-data.js').write_text('window.MENTOR_DATA = ' + lean + ';\n', encoding='utf-8')
     for filename, variable, make_record in (('search.js', 'MENTOR_SEARCH', search_record),

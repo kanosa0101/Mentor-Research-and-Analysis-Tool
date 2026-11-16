@@ -1,0 +1,45 @@
+{
+  "method": "Same public HTTPS endpoint and browser, empty QA accounts, fresh browser cache for each round-0 page; round 2 is the second sequential revisit. Single samples, not a latency guarantee.",
+  "rows": [
+    {
+      "page": "applications",
+      "cold_before_ms": 2446,
+      "cold_after_ms": 2103,
+      "cold_before_transfer_bytes": 765668,
+      "cold_after_transfer_bytes": 497309,
+      "transfer_reduction_percent": 35.05,
+      "second_revisit_before_ms": 980,
+      "second_revisit_after_ms": 1058
+    },
+    {
+      "page": "desk",
+      "cold_before_ms": 1865,
+      "cold_after_ms": 2154,
+      "cold_before_transfer_bytes": 565584,
+      "cold_after_transfer_bytes": 297544,
+      "transfer_reduction_percent": 47.39,
+      "second_revisit_before_ms": 967,
+      "second_revisit_after_ms": 1111
+    },
+    {
+      "page": "discovery",
+      "cold_before_ms": 1708,
+      "cold_after_ms": 1616,
+      "cold_before_transfer_bytes": 10647,
+      "cold_after_transfer_bytes": 10088,
+      "transfer_reduction_percent": 5.25,
+      "second_revisit_before_ms": 962,
+      "second_revisit_after_ms": 1075
+    },
+    {
+      "page": "start",
+      "cold_before_ms": 1923,
+      "cold_after_ms": 2294,
+      "cold_before_transfer_bytes": 25823,
+      "cold_after_transfer_bytes": 25823,
+      "transfer_reduction_percent": 0.0,
+      "second_revisit_before_ms": 1337,
+      "second_revisit_after_ms": 1344
+    }
+  ]
+}

@@ -7,7 +7,7 @@ const materialLabels = {paper:'论文',letter:'信件',cv:'简历',application:'
 const communicationLabels = {draft:'草稿',sent:'已发送',replied:'收到回复',note:'备注 / 更正'};
 let WORKFLOW = {projects:{},materials:{},communications:{},reminders:{}};
 let currentSection=['project','preparation','material','communication','reminder'].includes(new URLSearchParams(location.search).get('section')) ? new URLSearchParams(location.search).get('section') : 'project';
-let contextReady=false;
+let contextReady=false,actionBusy=false;
 let materialView='current';
 const formDirty=new Set();
 let editing = {project:null,material:null,reminder:null};
@@ -63,7 +63,13 @@ function snapshotStatus(d){if(d.origin!=='policy')return '个人计划（手动�
 function sourceLinks(policy,item){return AdmissionsRules.sourceReferences(policy,item,window.ADMISSIONS_DATA.sources).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(' · ');}
 function snapshotLinks(d){const refs=d.source_ids.map(id=>window.ADMISSIONS_DATA.sources[id]).filter(Boolean),current=refs.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label||'官方原文')}</a>`).join(' · ');return current+(d.source_url&&(!refs.length||refs[0].url!==d.source_url)?`${current?' · ':''}<a href="${esc(d.source_url)}" target="_blank" rel="noopener">${d.origin==='manual'?'手动参考来源':'登记时来源'}</a>`:'');}
 function goalQuery(p){const q=new URLSearchParams();for(const [key,value] of Object.entries(projectScope(p)))if(value)q.set(key,value);return q;}
-function goalTitle(p){if(p.opportunity)return '活动准备 · '+p.opportunity.unit+' · '+(p.opportunity.graduation_year?p.opportunity.graduation_year+'届':'届别未明确')+'；正式招生目标可后续补充';const unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school_id&&u.dept===p.dept_id);return [schoolName(p.school_id)||'学校待补',unit?.dept_name||p.dept_id||'院系待补',p.year||'年度未知',goalLabels[p.degree]||'学位待补',goalLabels[p.route]||'渠道待补',goalLabels[p.track]||'类别待补',p.program_name?(p.program_code||'')+' '+p.program_name:'正式专业 / 项目未知'].join(' · ');}
+function goalTitle(p){
+  if(p.opportunity)return '活动准备 · '+p.opportunity.unit+' · '+(p.opportunity.graduation_year?p.opportunity.graduation_year+'届':'届别未明确');
+  const unit=window.ADMISSIONS_DATA.units.find(u=>u.school===p.school_id&&u.dept===p.dept_id);
+  const known=[schoolName(p.school_id),unit?.dept_name||p.dept_id,p.year,goalLabels[p.degree],goalLabels[p.route],goalLabels[p.track],p.program_name?(p.program_code||'')+' '+p.program_name:''].filter(Boolean);
+  if(!['school_id','dept_id','year','degree','route','track'].every(key=>p[key]))known.push('招生目标待补充，暂不能匹配完整要求');
+  return known.join(' · ');
+}
 function reminderStatus(r,today=reminderDay(new Date().toISOString())){return r.completed?'已完成':r.due_date<today?'逾期未完成':r.due_date===today?'今天':'待办';}
 function projectRecentActions(p){
   const pending=Object.values(WORKFLOW.reminders).filter(r=>r.project_id===p.id&&!r.completed).sort((a,b)=>a.due_date.localeCompare(b.due_date));
@@ -74,9 +80,10 @@ function projectRecentActions(p){
   // Without a time, same-day events have no known order. Keep their saved order instead of inventing midnight.
   if(!dateOnly)sameDay.sort((a,b)=>Date.parse(a.at)-Date.parse(b.at));
   const date=sameDay[0];
+  if(!reminder&&!date)return '';
   return `<div class="project-next-actions"><h4>${p.status==='archived'?'归档记录':'近期行动'}</h4>${p.status==='archived'?'<p class="muted">项目已归档；保留的未完成提醒仍可管理。</p>':''}<p><strong>未完成提醒${pending.length?' · '+pending.length+' 项':''}</strong>${reminder?`<br><span class="${reminder.due_date<reminderDay(now)?'overdue':''}">${esc(reminderStatus(reminder,reminderDay(now)))} · ${esc(reminder.due_date)}</span> · ${esc(reminder.title)}<br>${reminder.mentor_id?'导师事项：'+esc(mentorName(reminder.mentor_id)):'项目事项'}`:'<br><span class="muted">暂无未完成提醒。</span>'}</p><button type="button" data-project-section="reminder" data-project-id="${esc(p.id)}">查看此项目提醒</button><p><strong>后续安排</strong>${date?`<br>${esc(date.origin==='policy'?'官方事件快照':'个人计划')} · ${esc(dateLabels[date.kind])} · ${esc(date.label)}<br>${esc(date.at)} · ${esc(dateStatus(date))}${date.origin==='policy'?`<br><small>${esc(snapshotStatus(date))}；申请前核对原文。</small>`:''}${sameDay.length>1?`<br><small>同日另有 ${sameDay.length-1} 条安排${dateOnly?'，因日期精度不同或未注明时刻，先后未确定':''}；完整安排请展开目标与要求。</small>`:/^\d{4}-\d{2}-\d{2}$/.test(date.at)?'<br><small>仅登记日期，未注明具体时刻。</small>':''}`:'<br><span class="muted">尚未登记后续安排；不表示没有申请截止时间。</span>'}</p></div>`;
 }
-function projectCard(p){return `<article><h3>${esc(p.name)} <span class="tag">${esc(projectLabels[p.status])}</span></h3><p>${esc(goalTitle(p))}</p>${p.school||p.college||p.application_type?`<details><summary>旧说明（不参与政策匹配）</summary><p>${esc([p.school,p.college,p.application_type].filter(Boolean).join(' · '))}</p></details>`:''}<p>${mentorLinks(p.mentor_ids)}</p><p>${esc(p.notes)}</p>${projectRecentActions(p)}${projectRequirements(p)}<button type="button" data-project-section="preparation" data-project-id="${esc(p.id)}">准备材料</button> <button type="button" data-edit-project="${p.id}">编辑项目</button> <button type="button" data-focus-project="${p.id}">查看关联记录</button></article>`;}
+function projectCard(p){return `<article><h3>${esc(p.name)} <span class="tag">${esc(projectLabels[p.status])}</span></h3><p>${esc(goalTitle(p))}</p>${p.school||p.college||p.application_type?`<details><summary>旧说明（不参与政策匹配）</summary><p>${esc([p.school,p.college,p.application_type].filter(Boolean).join(' · '))}</p></details>`:''}<p>${mentorLinks(p.mentor_ids)}</p><p>${esc(p.notes)}</p>${projectRecentActions(p)}${projectRequirements(p)}<button type="button" data-project-section="material" data-project-id="${esc(p.id)}">上传材料</button> <button type="button" data-project-section="communication" data-project-id="${esc(p.id)}">记录沟通</button> <button type="button" data-project-section="preparation" data-project-id="${esc(p.id)}">准备清单</button> <button type="button" data-edit-project="${p.id}">编辑项目</button> <button type="button" data-focus-project="${p.id}">查看关联记录</button></article>`;}
 function renderGoalEditor(){
   const p=projectForm(),result=projectChecklist(p);
   el('project-goal-preview').textContent=result.ready?'目标已填写；保存后绑定。专业 / 项目未指定时，其专属要求仅作条件性参考。':'结构化目标尚未完整，保存后也不会借用其他目标政策。';
@@ -137,14 +144,25 @@ async function refresh(){
     else if(WORKFLOW.projects[returnProject]){el('filter-project').value=returnProject;backQuery.set('project',returnProject);el('back-desk').href='desk.html?'+backQuery;}
     contextReady=true;for(const key of Object.keys(chosen))reset(key);render();
   }
-  showSection(currentSection);el('service-hint').hidden=true;window.WORKFLOW_READY=true;
+  window.WORKFLOW_READY=true;showSection(currentSection);el('service-hint').hidden=true;el('workflow-backup').disabled=false;
 }
 async function action(task, success){
-  el('workspace').disabled=true;
-  el('workflow-restore').disabled=true;
-  try{await task(); await refresh(); message(typeof success==='function' ? success() : success);}
-  catch(e){message(e.message,true);}
-  finally{el('workspace').disabled=!window.WORKFLOW_READY;el('workflow-restore').disabled=false;}
+  if(actionBusy)return;
+  actionBusy=true;
+  const button=document.activeElement?.tagName==='BUTTON'?document.activeElement:null;
+  const label=button?.textContent,busyText=button?.id==='material-save'&&!editing.material?'正在上传…':'正在保存…';
+  if(button)button.textContent=busyText;
+  el('workspace').disabled=true;el('workspace').setAttribute('aria-busy','true');
+  el('workflow-restore').disabled=true;el('workflow-backup').disabled=true;
+  let saved=false;
+  try{await task();saved=true;await refresh();message(typeof success==='function' ? success() : success);}
+  catch(e){message(saved?'操作已完成，但列表刷新失败，请刷新页面核对，勿重复提交。':e.message,true);}
+  finally{
+    actionBusy=false;el('workspace').removeAttribute('aria-busy');
+    el('workspace').disabled=!window.WORKFLOW_READY;el('workflow-restore').disabled=false;el('workflow-backup').disabled=!window.WORKFLOW_READY;
+    if(button?.textContent===busyText)button.textContent=label;
+    el(currentSection+'-feedback')?.scrollIntoView({block:'nearest'});
+  }
 }
 function options(id, entries, placeholder){
   const old = selected(id);
@@ -208,8 +226,8 @@ function reset(prefix){
     const program=(policy?(policy.program?AdmissionsRules.programKey(policy):same&&track===incomingGoal.get('track')?incomingGoal.get('program')||'':''):incomingGoal.get('program')||'').split('|');
     setProjectGoal({school_id:policy?.school||incomingGoal.get('school')||'',dept_id:dept,degree:policy?.degree||incomingGoal.get('degree')||'',route:policy?.route||incomingGoal.get('route')||'',track,program_code:program[0]||'',program_name:program.slice(1).join('|')});
   }
-  chosen[prefix]=contextMentor ? [contextMentor] : [];
-  const project=el('filter-project').value;
+  const project=el('filter-project').value,projectMentors=WORKFLOW.projects[project]?.mentor_ids||[];
+  chosen[prefix]=contextMentor ? [contextMentor] : prefix!=='project'&&projectMentors.length===1 ? [...projectMentors] : [];
   if(prefix==='material')for(const o of el('material-projects').options)o.selected=o.value===project;
   if(prefix==='reminder'||prefix==='communication')el(prefix+'-project').value=project;
   renderPicker(prefix);
@@ -217,12 +235,11 @@ function reset(prefix){
   else{
     editing[prefix]=null;
     el(prefix+'-save').textContent={project:'新增项目',material:'上传材料',reminder:'新增提醒'}[prefix];
-    if(prefix==='material'){el('material-file-label').hidden=false;el('material-file').required=true;}
+    if(prefix==='material'){el('material-file-label').hidden=false;el('material-file').required=true;el('material-details').open=!project;}
   }
   if(prefix==='project')renderGoalEditor();
 }
 function render(){
-  window.MaterialPreparation?.refresh(WORKFLOW,el('filter-project').value);
   const projectOptions=Object.values(WORKFLOW.projects).map(p=>[p.id,`${p.name} · ${p.year ?? '年度未知'}`]);
   options('filter-project',projectOptions,'全部项目');
   options('material-projects',projectOptions);
@@ -232,7 +249,8 @@ function render(){
   el('context-mentor').textContent=contextMentor ? '当前导师：'+mentorName(contextMentor) : '';
   el('clear-context').hidden=!contextMentor;
   const projectFilter=el('filter-project').value;
-  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。手动登记材料、沟通与提醒默认关联此项目；上传时请确认项目关联。' : '当前显示全部项目。新增记录时请选择关联项目。';
+  el('project-context').hidden=!projectFilter;
+  el('project-context').textContent=projectFilter ? '当前项目：'+projectName(projectFilter)+'。上传材料、记录沟通与提醒会默认关联此项目，可在表单中调整。' : '当前显示全部项目。新增记录时请选择关联项目。';
   const relatedProject=id=>!!id && (!projectFilter || id===projectFilter) && (!contextMentor || WORKFLOW.projects[id]?.mentor_ids.includes(contextMentor));
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
@@ -270,9 +288,15 @@ function bindSubmit(prefix, collection, body){
     }
     action(async()=>{
       const id=editing[prefix];
-      await api('/'+collection+(id ? '/'+id : ''),payload,id ? 'PATCH' : 'POST');
-      reset(prefix);
-    },'已保存');
+      const saved=await api('/'+collection+(id ? '/'+id : ''),payload,id ? 'PATCH' : 'POST');
+      if(prefix==='project'&&!id){
+        WORKFLOW.projects[saved.id]=saved;
+        options('filter-project',Object.values(WORKFLOW.projects).map(p=>[p.id,p.name]),'全部项目');
+        el('filter-project').value=saved.id;syncProjectContext();render();
+        for(const key of Object.keys(chosen))reset(key);
+        el('project-next').hidden=false;
+      }else reset(prefix);
+    },prefix==='project'?'申请项目已保存。可以继续上传材料或记录沟通。':prefix==='communication'?'沟通记录已保存到当前账号。':'提醒已保存');
   };
 }
 bindSubmit('project','projects',()=>({name:el('project-name').value,school:el('project-school').value,
@@ -342,11 +366,11 @@ document.querySelector('main').addEventListener('click',e=>{
     const fields={project:{name:'name',school:'school',college:'college',type:'application_type',year:'year',status:'status',notes:'notes'},
       material:{title:'title',kind:'kind',notes:'notes'},reminder:{title:'title',due:'due_date',project:'project_id',notes:'notes'}}[prefix];
     for(const [suffix,field] of Object.entries(fields)) el(prefix+'-'+suffix).value=item[field] ?? '';
-    if(prefix==='project'){setProjectGoal(item);projectDates=(item.deadlines||[]).map(d=>({...d,source_ids:[...d.source_ids]}));renderGoalEditor();}
+    if(prefix==='project'){el('project-goal-details').open=true;el('project-date-details').open=!!item.deadlines?.length;el('project-notes-details').open=!!item.notes;setProjectGoal(item);projectDates=(item.deadlines||[]).map(d=>({...d,source_ids:[...d.source_ids]}));renderGoalEditor();}
     chosen[prefix]=prefix==='reminder' ? (item.mentor_id ? [item.mentor_id] : []) : [...item.mentor_ids];
     renderPicker(prefix);
     if(prefix==='material'){
-      el('material-file-label').hidden=true;el('material-file').required=false;
+      el('material-file-label').hidden=true;el('material-file').required=false;el('material-details').open=true;
       for(const o of el('material-projects').options) o.selected=item.project_ids.includes(o.value);
     }
     el(prefix+'-save').textContent='保存修改';
@@ -374,7 +398,8 @@ el('filter-project').onchange=()=>{
   if(!discardChanges()){el('filter-project').value=lastProject;return false;}
   lastProject=el('filter-project').value;
   materialView='current';syncProjectContext();
-  for(const key of Object.keys(chosen))reset(key);render();
+  for(const key of Object.keys(chosen))reset(key);render();showSection(currentSection);
+  el('project-next').hidden=true;
   return true;
 };
 el('only-pending').onchange=render;
@@ -401,6 +426,8 @@ function showSection(section){
   document.querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.section===section)));
   const q=new URLSearchParams(location.search);q.set('section',section);history.replaceState(null,'',location.pathname+'?'+q);
   lastProject=el('filter-project').value;
+  el('project-context').hidden=!lastProject&&section!=='material';
+  if(section==='preparation'&&window.WORKFLOW_READY)window.MaterialPreparation?.refresh(WORKFLOW,lastProject);
 }
 function discardChanges(){
   if(window.MaterialPreparation&&!window.MaterialPreparation.discard())return false;

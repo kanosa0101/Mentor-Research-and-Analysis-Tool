@@ -17,6 +17,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 @media(max-width:760px){.grid,.fields{grid-template-columns:1fr}.wide{grid-column:auto}.top,main{padding:14px}.panel{padding:14px}.toolbar{gap:8px}.list{max-height:420px}}
 
 .preparation-action{margin:16px 0;padding:16px;border:1px solid var(--line)!important;border-radius:8px}.preparation-action h4{font-size:16px;margin:8px 0}.preparation-action form{margin:18px 0}.preparation-action label{margin:12px 0}.preparation-files{margin:14px 0;padding:12px;border:1px solid var(--line)}.preparation-files .check{display:flex;flex-wrap:wrap;justify-content:flex-start}.preparation-files small{flex-basis:100%;margin-left:22px}.preparation-action pre{white-space:pre-wrap}.preparation-action blockquote{margin:12px 0;padding-left:12px;border-left:3px solid var(--line)}
+.workflow-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.workflow-heading .workflow-tools{font-size:14px}.workflow-tools{margin:0}body.page.page-applications main{padding-top:4px}.workflow-tools[open]{max-width:420px}.workflow-tools summary{cursor:pointer}@media(max-width:600px){.workflow-heading{align-items:flex-start;flex-wrap:wrap}}.workflow-tools .toolbar{margin:10px 0}.section-status:empty{display:none}#project-next[hidden]{display:none}#project-next{margin:10px 0}#project-list:has(.empty){display:none}#message:empty{display:none}#project-form details summary{padding:8px 0;cursor:pointer}#project-form details>.fields{margin-top:10px}#project-form>.fields{gap:12px}#material-list{max-height:none}#material-details summary{padding:8px 0;cursor:pointer}#material-details>.fields{margin-top:10px}#material-summary{margin-top:24px}#section-project>h3{font-size:16px}
 </style>
 <link rel="stylesheet" href="ui.css?v=20261115-online1">
 <script src="account-session.js?v=20261116-online3"></script>
@@ -53,65 +54,65 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 
 
 </div></header>
-<div class="page-heading"><h1>申请工作台</h1></div>
+<div class="page-heading workflow-heading"><h1>申请工作台</h1><details class="workflow-tools"><summary>备份与恢复</summary><div class="toolbar"><button id="workflow-restore" type="button" disabled>恢复工作台备份</button><button id="workflow-backup" type="button" disabled>导出工作台备份</button><input id="workflow-restore-file" type="file" accept=".json" hidden></div><p class="muted">备份不含附件原文件，请另外保管。</p></details></div>
 <main>
-<p class="intro muted">按申请项目整理材料、沟通和提醒。私人记录按账号保存。备份不含附件原文件，请另外保管。</p>
+<p class="intro muted">按申请项目整理材料、沟通和提醒。私人记录按账号保存，可在其他设备继续。</p>
 <div id="service-hint" class="hint">正在读取账号中的申请记录…</div>
 <div id="message" role="status" aria-live="polite"></div>
-<div class="toolbar"><button id="workflow-restore" type="button" disabled>恢复工作台备份</button><input id="workflow-restore-file" type="file" accept=".json" hidden></div>
+
 <fieldset id="workspace" disabled>
 <div class="toolbar">
 <span id="context-mentor"></span><button id="clear-context" type="button" hidden>查看全部导师</button>
 <label>筛选项目 <select id="filter-project"><option value="">全部项目</option></select></label>
-<button id="workflow-backup" type="button">导出工作台备份</button>
+
 </div>
-<p id="project-context" class="scope-note"></p><nav class="section-tabs" aria-label="项目工作分区"><button type="button" data-section="project" aria-selected="false">申请项目</button><button type="button" data-section="preparation" aria-selected="false">准备清单</button><button type="button" data-section="material" aria-selected="false">材料</button><button type="button" data-section="communication" aria-selected="false">沟通补录</button><button type="button" data-section="reminder" aria-selected="false">提醒</button></nav><div class="grid">
+<p id="project-context" class="scope-note"></p><nav class="section-tabs" aria-label="项目工作分区"><button type="button" data-section="project" aria-selected="false">申请项目</button><button type="button" data-section="preparation" aria-selected="false">准备清单</button><button type="button" data-section="material" aria-selected="false">材料</button><button type="button" data-section="communication" aria-selected="false">沟通记录</button><button type="button" data-section="reminder" aria-selected="false">提醒</button></nav><div class="grid">
 <section class="panel" id="section-preparation" hidden><h2>按项目准备材料</h2><p>选项目 → 按阶段核对原文 → 选择已有文件并登记状态 → 保存本次记录。</p><p class="muted">准备与提交按动作分别记录。未知要求请查完整政策，保存进度不代表符合资格。</p><div id="preparation-feedback" class="section-status" role="status" aria-live="polite"></div><button type="button" id="preparation-reload">放弃未保存修改并重新核对清单</button><div id="preparation-list"></div></section>
 <section class="panel" id="section-project"><h2>申请项目</h2>
-<div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="project-list"></div>
+<div id="project-feedback" class="section-status" role="status" aria-live="polite"></div><div id="project-next" class="actions" hidden><button type="button" data-section="material">上传材料 →</button><button type="button" data-section="communication">记录沟通 →</button></div><div class="list" id="project-list"></div>
 <h3>新增 / 编辑项目</h3>
 <form id="project-form"><div class="fields">
 <label class="wide">项目名称<input id="project-name" required placeholder="例如：某校计算机学院夏令营"></label>
-<div class="wide scope-note">结构化申请目标：请明确选择，留空表示未知。保存后目标才绑定项目；旧说明不参与政策匹配。</div>
+<label>目标学校<select id="project-school-id"></select></label><label>目标院系<select id="project-dept-id"></select></label><div class="wide" data-mentor-picker="project" data-multiple="true"></div><div class="actions wide"><button class="primary" id="project-save">新增项目</button><button type="button" id="project-reset">清空表单</button></div><details class="wide" id="project-goal-details"><summary>招生目标（年度、渠道与专业，可稍后补充）</summary><div class="fields"><div class="wide scope-note">结构化申请目标：请明确选择，留空表示未知。保存后目标才绑定项目；旧说明不参与政策匹配。</div>
 <label>入学年度<input id="project-year" type="number" min="2000" max="2100" placeholder="留空表示未知"></label>
-<label>目标学校<select id="project-school-id"></select></label><label>目标院系<select id="project-dept-id"></select></label>
+
 <label>学位<select id="project-degree"><option value="">未知</option><option value="master">硕士</option><option value="phd">博士</option></select></label>
 <label>招生渠道<select id="project-route"><option value="">未知</option><option value="recommend">推免</option><option value="exam">统考</option><option value="assessment">申请考核</option></select></label>
 <label>招生类别<select id="project-track"><option value="">未知</option><option value="ordinary">普通招生</option><option value="special">专项 / 特定项目</option></select></label>
 <label>正式专业 / 项目代码<input id="project-program-code" placeholder="未知可留空，勿填研究方向"></label>
 <label class="wide">正式专业 / 项目名称<input id="project-program-name" placeholder="按当年官方目录填写；未知可留空"></label>
-<details class="wide"><summary>旧说明 / 补充信息（不参与政策匹配）</summary><div class="fields"><label>学校说明<input id="project-school"></label><label>院系说明<input id="project-college"></label><label class="wide">申请类型说明<input id="project-type" placeholder="夏令营 / 预推免 / 统考"></label></div></details>
-<div class="wide" id="project-goal-preview"></div>
-<div class="wide"><h3>项目日期</h3><p class="muted">官方日期按原事件类型保存。考试、资格取得时间与个人计划分别显示；不自动转为报名截止或提醒。</p><div id="project-dates"></div></div>
+<div class="wide" id="project-goal-preview"></div></div></details>
+
+<details class="wide" id="project-date-details"><summary>项目日期与个人计划（可选）</summary><div class="fields"><div class="wide"><h3>项目日期</h3><p class="muted">官方日期按原事件类型保存。考试、资格取得时间与个人计划分别显示；不自动转为报名截止或提醒。</p><div id="project-dates"></div></div>
 <label>个人计划名称<input id="project-date-label" placeholder="例如：个人计划：核对材料"></label><label>个人计划日期<input id="project-date-at" type="date"></label>
 <details class="wide"><summary>个人计划参考来源（可选，未经核验）</summary><label>参考链接<input id="project-date-source" type="url" placeholder="https://..."></label><label>参考原文<textarea id="project-date-quote"></textarea></label><label>原文定位<input id="project-date-locator"></label></details>
 <div class="wide"><button type="button" id="project-add-date">加入个人计划日期</button><div id="project-policy-dates"></div><p id="project-date-feedback" class="muted" role="status"></p></div>
-<label>申请状态<select id="project-status"><option value="planned">准备中</option><option value="submitted">已提交</option><option value="interview">面试中</option><option value="accepted">已录取</option><option value="rejected">未录取</option><option value="archived">归档</option></select></label>
-<div class="wide" data-mentor-picker="project" data-multiple="true"></div>
-<label class="wide">备注<textarea id="project-notes"></textarea></label></div>
-<div class="actions"><button class="primary" id="project-save">新增项目</button><button type="button" id="project-reset">清空表单</button></div></form>
+</div></details><details class="wide" id="project-notes-details"><summary>状态与备注（可选）</summary><div class="fields"><label>申请状态<select id="project-status"><option value="planned">准备中</option><option value="submitted">已提交</option><option value="interview">面试中</option><option value="accepted">已录取</option><option value="rejected">未录取</option><option value="archived">归档</option></select></label>
+
+<label class="wide">备注<textarea id="project-notes"></textarea></label><details class="wide"><summary>旧说明 / 补充信息（不参与政策匹配）</summary><div class="fields"><label>学校说明<input id="project-school"></label><label>院系说明<input id="project-college"></label><label class="wide">申请类型说明<input id="project-type" placeholder="夏令营 / 预推免 / 统考"></label></div></details></div></details></div>
+</form>
 </section>
 <section class="panel" id="section-material"><h2>材料与关联</h2>
-<p id="material-summary" class="scope-note"></p>
-<div class="actions"><button type="button" id="material-current">查看当前范围材料</button><button type="button" id="material-unassigned">查看未关联项目材料</button></div>
-<p id="material-scope" class="muted"></p>
-<div id="material-feedback" class="section-status" role="status" aria-live="polite"></div><div class="list" id="material-list" tabindex="-1" aria-label="材料查询结果"></div>
 <p class="muted">上传后可在其他设备下载；单个文件最多 20 MB，账号材料总量最多 200 MB。文件不会公开展示。</p>
 <form id="material-form"><div class="fields">
 <label class="wide" id="material-file-label">选择文件<input id="material-file" type="file" required></label>
-<label>材料标题<input id="material-title" placeholder="留空使用文件名"></label>
-<label>类型<select id="material-kind"><option value="other">其他</option><option value="paper">论文</option><option value="letter">信件</option><option value="cv">简历</option><option value="application">申请材料</option></select></label>
+<label class="wide">材料标题（可选）<input id="material-title" placeholder="留空使用文件名"></label>
+<div class="actions wide"><button class="primary" id="material-save">上传材料</button><button type="button" id="material-reset">清空表单</button></div><details class="wide" id="material-details"><summary>类型、关联项目与备注（可调整）</summary><div class="fields"><label>类型<select id="material-kind"><option value="other">其他</option><option value="paper">论文</option><option value="letter">信件</option><option value="cv">简历</option><option value="application">申请材料</option></select></label>
 <label class="wide">关联项目（可多选）<select id="material-projects" multiple></select></label>
 <div class="wide" data-mentor-picker="material" data-multiple="true"></div>
-<label class="wide">备注<textarea id="material-notes"></textarea></label></div>
-<div class="actions"><button class="primary" id="material-save">上传材料</button><button type="button" id="material-reset">清空表单</button></div></form>
+<label class="wide">备注<textarea id="material-notes"></textarea></label></div></details></div>
+</form><div id="material-feedback" class="section-status" role="status" aria-live="polite"></div><p id="material-summary" class="scope-note"></p>
+<div class="actions"><button type="button" id="material-current">查看当前范围材料</button><button type="button" id="material-unassigned">查看未关联项目材料</button></div>
+<p id="material-scope" class="muted"></p>
+
+<div class="list" id="material-list" tabindex="-1" aria-label="材料查询结果"></div>
 </section>
-<section class="panel" id="section-communication"><h2>历史沟通补录</h2>
+<section class="panel" id="section-communication"><h2>记录沟通</h2>
 <p class="muted">补录已发生的沟通或旧草稿；准备新邮件请回“我的申请”。更正记录时追加说明，保留原历史。</p>
 <form id="communication-form"><div class="fields">
 <div class="wide" data-mentor-picker="communication"></div>
 <label>关联项目<select id="communication-project"></select></label>
-<label>事件类型<select id="communication-kind"><option value="draft">草稿</option><option value="sent">已发送</option><option value="replied">收到回复</option><option value="note">备注 / 更正</option></select></label>
+<label>事件类型<select id="communication-kind"><option value="note">备注 / 更正</option><option value="sent">已发送</option><option value="replied">收到回复</option><option value="draft">历史草稿</option></select></label>
 <label>日期<input id="communication-date" type="date" required></label><label>主题<input id="communication-subject" required></label>
 <label class="wide">内容<textarea id="communication-content"></textarea></label>
 <label class="wide">关联材料（可多选）<select id="communication-materials" multiple></select></label></div>
@@ -129,11 +130,11 @@ fieldset{border:0;padding:0;margin:0;min-width:0}.grid{display:grid;grid-templat
 </div>
 </fieldset>
 </main>
-<script src="data.js?v=20261115-7"></script>
+<script src="contact-data.js?v=20261116-ux1"></script>
 <script src="admissions-data.js?v=20261115-7"></script>
 <script src="admissions-core.js?v=20261115-7"></script>
 <script src="material-actions.js?v=20261115-7"></script>
 <script src="opportunities-core.js?v=20261115-20"></script>
-<script src="workflow.js?v=20261116-online3"></script>
+<script src="workflow.js?v=20261116-ux1"></script>
 </body>
 </html>

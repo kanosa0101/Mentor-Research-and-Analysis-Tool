@@ -20,7 +20,7 @@ let FLOW={projects:{},materials:{},communications:{},reminders:{},targets:{},dra
 let currentTarget=params.get('target')||'', currentDraft='', chosenMentor=incomingMentor, dirty=false, replyDirty=false, loadedTarget='';
 let currentView=['today','targets','prepare'].includes(params.get('view')) ? params.get('view') : incomingMentor ? 'prepare' : 'today';
 let currentPanel=['mail','tasks','reply','history'].includes(params.get('panel'))?params.get('panel'):'mail';
-let taskDirty=false,editingTask='',statusArea='';
+let taskDirty=false,editingTask='',statusArea='',actionBusy=false;
 window.CONTACT_READY=false;
 const today=()=>new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
 const personName=id=>people.get(id)?.name||id;
@@ -148,7 +148,7 @@ function loadDraft(id=''){
   const p=people.get(t.mentor_id);const fields={recipient:d?.recipient||((p?.email&&!/[;,，；\s]/.test(p.email))?p.email:''),subject:d?.subject||'',body:d?.body||'',basis:d?.basis||''};
   for(const [key,value]of Object.entries(fields))el('draft-'+key).value=value;
   const eligible=Object.values(FLOW.materials).filter(m=>m.mentor_ids.includes(t.mentor_id)||m.project_ids.includes(t.project_id)||(!m.mentor_ids.length&&!m.project_ids.length)||(d?.material_ids||[]).includes(m.id));
-  el('draft-materials').innerHTML=eligible.map(m=>`<label class="check"><input type="checkbox" value="${m.id}" data-missing="${m.missing}" ${(d?.material_ids||[]).includes(m.id)?'checked':''} ${m.missing&&!(d?.material_ids||[]).includes(m.id)?'disabled':''}>${esc(m.title)}${m.missing?'（文件缺失，可取消已选附件）':''}</label>`).join('')||`<small>暂无适用材料，可从“整理材料”登记或关联文件。</small>`;
+  el('draft-materials').innerHTML=eligible.map(m=>`<label class="check"><input type="checkbox" value="${m.id}" data-missing="${m.missing}" ${(d?.material_ids||[]).includes(m.id)?'checked':''} ${m.missing&&!(d?.material_ids||[]).includes(m.id)?'disabled':''}>${esc(m.title)}${m.missing?'（文件缺失，可取消已选附件）':''}</label>`).join('')||`<small>暂无适用材料，可从“整理材料”上传文件并关联当前项目。</small>`;
   el('attachment-state').textContent=d?.attachments.length ? d.attachments.map(a=>`${a.title} · ${a.size} 字节`).join('；') : '保存草稿时固定本次附件版本；文件变更后需重新选择保存。';
   el('sent-confirmed').checked=false;el('sent-date').value=today();el('draft-choice').value=id;updateDraftState();
 }
@@ -193,10 +193,15 @@ async function refresh(){
   render();el('desk-hint').hidden=true;window.CONTACT_READY=true;el('desk-backup').disabled=false;
 }
 async function action(task,success){
-  el('desk-workspace').disabled=true;el('desk-restore').disabled=true;el('desk-backup').disabled=true;
-  try{await task();await refresh();message(success);}
-  catch(e){message(e.message,true);}
-  finally{el('desk-workspace').disabled=!window.CONTACT_READY;el('desk-restore').disabled=false;el('desk-backup').disabled=!window.CONTACT_READY;}
+  if(actionBusy)return;
+  actionBusy=true;
+  const button=document.activeElement?.tagName==='BUTTON'?document.activeElement:null,label=button?.textContent;
+  if(button)button.textContent='正在保存…';
+  el('desk-workspace').disabled=true;el('desk-workspace').setAttribute('aria-busy','true');el('desk-restore').disabled=true;el('desk-backup').disabled=true;
+  let saved=false;
+  try{await task();saved=true;await refresh();message(success);}
+  catch(e){message(saved?'操作已完成，但列表刷新失败，请刷新页面核对，勿重复提交。':e.message,true);}
+  finally{actionBusy=false;el('desk-workspace').removeAttribute('aria-busy');el('desk-workspace').disabled=!window.CONTACT_READY;el('desk-restore').disabled=false;el('desk-backup').disabled=!window.CONTACT_READY;if(button?.textContent==='正在保存…')button.textContent=label;}
 }
 function chooseTarget(id){
   if(id===currentTarget){showView('prepare');return;}
