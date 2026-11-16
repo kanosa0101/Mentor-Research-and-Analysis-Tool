@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "checked_at": "2026-11-16T09:36:33+00:00",
+  "purpose": "源码哈希绑定的分流建议；本文件不修改发布数据、不代表报名截止已核验",
+  "production_mutations": false,
+  "candidates": [
+    {
+      "id": "f7ea1998f5389c049849",
+      "source_url": "https://air.tsinghua.edu.cn/info/1007/2476.htm",
+      "source_sha256": "75fc4e70998830b3331413f87c670c11564c8b4680ba1dd0dbdce3ae06672d89",
+      "content_sha256": "0c0936a8a8d99d45b349da253ef76d31d0406a3fb3f194f6088c1a358bae7b2c",
+      "classification": "historical",
+      "reason": "往季2026冬令营公告，官方发布于2025-12-04；正文和方向图片均无日历截止，图片只写每个课题名额有限招满即止。当前名额未确认，不作为当前报名机会；历史分流不是断言已经截止。",
+      "evidence_basis": "2026-11-16直接HTTPS取回官方HTML；核对官方发布时间及网页两张图片。活动年份不作毕业届别或报名窗口证据。",
+      "direct_document_sha256": "0c0936a8a8d99d45b349da253ef76d31d0406a3fb3f194f6088c1a358bae7b2c"
+    },
+    {
+      "id": "0306bd90ae9bb57af9e4",
+      "source_url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "source_sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "content_sha256": "23be000341f6d76a665a4c11db2cbd4ea8aab4a366fe5398b27af665945e6b7f",
+      "classification": "blocked",
+      "reason": "院内口径的科研实习招募管理流程：导师报名2026-11-13至11-23，学生申请11-24至12-06，学院备案12-07至12-09。公告未明确外校申请资格、具体导师招募名额及统一活动安排；须确认适用范围和学生入口，不能当作公开保研营，也不能把导师报名或学院备案时间当学生截止。未断言活动已截止。",
+      "evidence_basis": "2026-11-16直接HTTPS取回官方正文；适用称谓为各课题组、全体本科生；第二部分工作安排分别列明导师、学生和学院阶段。",
+      "direct_document_sha256": "530de1c2017e27e539fa63828517370ea9ee299de4020aca67f20be460c1fe37",
+      "binding_note": "直接取回的原文SHA与生产基线完全相同；本机语义提取hash与基线队列存量hash不同，故分别记录。操作仍同时校验原文SHA与基线队列content_sha256；若在线队列已重提取，应拒绝后重新生成清单，不移除校验。"
+    }
+  ],
+  "source_checks": [
+    {
+      "key": "air2026",
+      "url": "https://air.tsinghua.edu.cn/info/1007/2476.htm",
+      "checked_at": "2026-11-16T09:21:15.038280+00:00",
+      "status": 200,
+      "sha256": "75fc4e70998830b3331413f87c670c11564c8b4680ba1dd0dbdce3ae06672d89",
+      "content_sha256": "0c0936a8a8d99d45b349da253ef76d31d0406a3fb3f194f6088c1a358bae7b2c"
+    },
+    {
+      "key": "bnu-intern-management",
+      "url": "https://ai.bnu.edu.cn/ggjxz/tzgg/f7db49ad446c4a8ca26a34a80c4677e1.htm",
+      "checked_at": "2026-11-16T09:21:15.509757+00:00",
+      "status": 200,
+      "sha256": "f8fad73f4184556ffcb8e3723433feaf0f1f91b3cc383b0c440840188250acc1",
+      "content_sha256": "530de1c2017e27e539fa63828517370ea9ee299de4020aca67f20be460c1fe37"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://air.tsinghua.edu.cn/__local/D/82/4F/6C8CBF9AAE46D5801A7A81D3187_2E372AD9_62B3B.png",
+      "sha256": "539872646e9ea527f168f262380296b406479f225f5cb165d95bcf61753ee68a",
+      "locator": "研究主题及方向图片底部",
+      "finding": "仅有招满即止，不含具体日期"
+    }
+  ],
+  "application_order": [
+    "对照当前队列的source_url、source_sha256、content_sha256；任一不一致则重新核验，不得删去哈希绕过。",
+    "仅通过opportunity_review.apply_triage应用candidates分流；不改item、review、公开机会或报名日期。",
+    "重新生成队列优先级与维护告警：AIR应退出当前审核SLA；BNU保留范围确认阻塞。",
+    "保存应用前后队列哈希、实际变更数和执行时间；无源码变化不重复调用AI处理同一范围问题。"
+  ]
+}

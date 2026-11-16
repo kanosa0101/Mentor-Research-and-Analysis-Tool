@@ -82,7 +82,7 @@ def suggest(root, source_url, text, *, session=None):
         client.trust_env = False
         response = client.post(settings['base_url']+'/chat/completions',
             headers={'Authorization':'Bearer '+settings['api_key'], 'Content-Type':'application/json'},
-            json=dict(model=settings['model'], messages=messages, max_tokens=2000, temperature=0),
+            json=dict(model=settings['model'], messages=messages, max_tokens=6000, temperature=0),
             timeout=(10, 120), allow_redirects=False)
         if response.status_code != 200:
             raise ValueError('AI服务未返回成功状态（HTTP '+str(response.status_code)+'）；未写入建议')

@@ -3,13 +3,14 @@ name: 孙国磊
 aliases: []
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 教授
 email: guolei.sun@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 多模态大模型，大模型量化压缩，底层视觉，长视频理解
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/sunguolei
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/sunguolei
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +21,80 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+supervisor: 博导
+homepage: https://guoleisun.github.io/
+bio_raw: '南开大学教授、博导，国家级青年人才。博士毕业于瑞士苏黎世理工学院（ETH Zurich），师从国际计算机视觉顶尖科学家
+
+  Luc Van Gool
+
+  教授（谷歌学术引用
+
+  27万+
+
+  ，计算机视觉最高奖
+
+  Marr奖
+
+  获得者）。并随后担任博士后研究员。曾在阿联酋人工智能研究院任研究工程师，在美国大公司Meta、Adobe任研究科学家（实习）。研究方向为计算机视觉、视频理解和多模态大模型应用。在CCF-A类等国际顶级期刊和会议上发表论文40余篇（多篇
+
+  Oral/Spotlight/Highlight
+
+  论文），授权国际/国内专利2 项，谷歌学术论文总引用8800余次。曾获CVPR、ICCV研讨会最佳论文奖，CVPR研讨会弱监督分割挑战赛冠军，和国家优秀自费留学生奖学金特等奖。作为核心成员参与瑞士国家“私人化医疗与相关技术”项目。研究成果曾获英国国际媒体《New
+  Scientist》报告。目前担任人工智能顶会ICLR领域主席（Area Chair）。
+
+  谷歌学术：https://scholar.google.ae/citations?user=qd8Blw0AAAAJ&hl=en
+
+  个人主页：https://guoleisun.github.io/
+
+  实验室经费充足，常年招收博士和硕士研究生，以及本科实习生，欢迎联系
+
+  guolei.sun@nankai.edu.cn
+
+  。
+
+  课题组与国际/国内的高校/公司合作密切，联系紧密，实习交流机会充足。优秀的学生可推荐到国外深造或大厂工作。目前已指导学生发表多篇AI/CV顶会论文（CVPR、NeurIPS、ICLR等），相关学生在世界名校深造或大厂工作。'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

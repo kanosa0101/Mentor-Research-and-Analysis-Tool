@@ -3,13 +3,14 @@ name: 郭青
 aliases: []
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 教授
 email: qing.guo@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 可靠感知；AI安全；对抗攻击与防御；
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/guoqing
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/guoqing
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +21,54 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+supervisor: 博导
+bio_raw: '郭青，南开大学计算机学院教授，博士生导师，国家级青年人才（海外），多次入选斯坦福全球Top 2%科学家。2019年加入新加坡南洋理工大学任博士后研究员，并于2020年获聘为瓦伦堡-南洋理工大学校长博士后（全球500选5人），2022年加入新加坡科技研究
+  （A*STAR）前沿人工智能研究中心（CFAR）任高级研究员，2023年起新加坡国立大学兼职助理教授。曾获ICME最佳论文奖、ACM优秀博士论文奖等多项荣誉，在新加坡期间主持多项重大科研项目，累计科研经费约400万新币。主要研究方向可靠视觉感知及人工智能安全。在ICML、NeurIPS、ICLR、CVPR、ICCV、TPAMI、IJCV等A类会议及期刊上发表论文60余篇。现担任ICML、ICLR、NeurIPS、ICCV、CVPR、IJCAI领域主席，AAAI
+  Senior PC，VALSE AC ，并在top期刊IEEE Trans. Image Process. 和Visual Intelligence 担任Associate
+  Editor。
+
+  若有意联系攻读博士及硕士学位，请填写表格信息：
+
+  https://nankai.feishu.cn/share/base/form/shrcnGptKvaRfesIF3WPgdDMDlg，或
+
+  发邮件到qing.guo@nankai.edu.cn , 主题设置为：硕士/博士-姓名-学校。'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

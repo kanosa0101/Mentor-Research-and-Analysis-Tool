@@ -4,13 +4,14 @@ aliases:
 - chengwt
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 副教授
 email: wentaocheng@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 三维计算机视觉、视觉SLAM、视觉定位、三维重建
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/chengwt
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/chengwt
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -21,16 +22,48 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+homepage: https://wtchengcv.github.io/
+bio_raw: '程文韬，南开大学计算机学院副教授，2020年博士毕业于新加坡南洋理工大学，2020~2022年在阿里巴巴集团从事机器人视觉及激光定位算法研究工作。他的研究兴趣主要为三维计算机视觉，包括视觉SLAM、三维重建以及视觉定位等。他以第一作者身份在
+  ICCV, ICRA, TIP 等计算机视觉和机器人领域顶级国际期刊和会议上发表多篇学术论文。更多信息请参考个人主页：
+
+  https://wtchengcv.github.io/'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

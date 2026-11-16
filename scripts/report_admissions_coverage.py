@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import admissions_util
 from crawler.admissions_entries import load_catalog, load_entries, source_status
+from crawler.material_task_util import quality
 
 
 def entry_scope(entry, year, degree, route):
@@ -66,8 +67,7 @@ def build_report(schools, units, data, entries, checks, year=2027, degree='maste
                 gaps.append('学校通用条款对专项的适用仍待核对')
             source_states = {source: source_status({'reviewed_at': today}, checks.get(source, {}), today)['state']
                              for p in selected for source in p['review_hashes']}
-            review_due = [p['id'] for p in selected if not 0 <= (date.fromisoformat(today) - date.fromisoformat(p['reviewed_at'])).days <= 30
-                          or any(checks.get(s, {}).get('hash') != h or source_states[s] != 'checked' for s, h in p['review_hashes'].items())]
+            review_due = [p['id'] for p in selected if quality(p, {'checks': checks, 'sources': data['sources']}, today)['state'] != 'checked']
             rows.append({'school': sid, 'school_name': school['name'], 'dept': dept,
                          'year': year, 'degree': degree, 'route': route, 'track': track, 'program': program,
                          **{level + '_policy_ids': [p['id'] for p in ps] for level, ps in levels.items()},

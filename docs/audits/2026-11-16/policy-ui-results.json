@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "manual_date_system_reconfirmation_and_historical_cycle_are_distinct",
+    "special_application_form_signature_and_direct_contact_are_source_linked",
+    "mobile_policy_materials_without_horizontal_overflow"
+  ],
+  "passed": true,
+  "source": "isolated public fixtures from current production snapshot and fresh policy evidence",
+  "browser_errors": []
+}

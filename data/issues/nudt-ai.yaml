@@ -5,4 +5,31 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id001
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26528
+      sha256: 4a9a915e355363b6d6f9447d38a1d0e42a9c338c12e24100d0fa14fcd4773163
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26611
+      sha256: d1d75c72716298cc07e1e82121f2f5b4941f299b2c63a3e10462f6bd0596fdc0
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - lijie
+    - lijie-2
+    id: nudt/ai/duplicate_public_registration/李杰
+    kind: duplicate_public_registration
+    ref: 李杰
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id001
+    title: nudt-ai · 李杰 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null

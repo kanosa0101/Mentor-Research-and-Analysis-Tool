@@ -12,12 +12,12 @@ Environment=PYTHONDONTWRITEBYTECODE=1
 Environment=TZ=Asia/Shanghai
 Environment=MENTOR_AI_CONFIG_FILE=%d/ai-config
 LoadCredential=ai-config:/opt/mentor-assistant/var/ai/config.json
-ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/run_review_pipeline.py --publish --discover --limit 2 --max-seeds 4 --max-candidates 8
+ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/run_review_pipeline.py --publish --discover --limit 2 --max-seeds 8 --max-candidates 8
 SuccessExitStatus=1
 TimeoutStartSec=20min
 NoNewPrivileges=true
 ProtectSystem=strict
-ReadWritePaths=/opt/mentor-assistant/data /opt/mentor-assistant/cache /opt/mentor-assistant/site /opt/mentor-assistant/var/review-notifications
+ReadWritePaths=/opt/mentor-assistant/data /opt/mentor-assistant/sites /opt/mentor-assistant/cache /opt/mentor-assistant/site /opt/mentor-assistant/var/review-notifications
 ProtectHome=true
 PrivateTmp=true
 UMask=0002

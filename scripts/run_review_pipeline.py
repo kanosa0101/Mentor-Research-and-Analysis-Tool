@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from crawler import automatic_review, review_queue, source_discovery, maintenance_push
+from crawler import automatic_review, review_queue, source_discovery, maintenance_push, quality_status
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler.pipeline_metrics import summarize
 
@@ -43,11 +43,15 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
                 result[name] = {'error': True, 'message': '本阶段未完成，其他独立阶段继续；请检查维护日志'}
 
         if discover:
-            phase('discovery', lambda: source_discovery.run(root, max_seeds=max_seeds, max_candidates=max_candidates))
+            phase('discovery', lambda: source_discovery.run(root, max_seeds=max_seeds, max_candidates=max_candidates,
+                                                          auto_admit=publish))
         phase('automatic', lambda: automatic_review.run(root, limit=limit, publish=publish))
         phase('alerts', lambda: review_queue.refresh_alerts(root))
+        phase('quality_alerts', lambda: quality_status.refresh(root))
         if publish and 'alerts' not in result['failures']:
-            phase('maintainer_notifications', lambda: maintenance_push.dispatch(root, result['alerts']))
+            combined = dict(result['alerts'], active=result['alerts'].get('active', []) +
+                            result.get('quality_alerts', {}).get('active', []))
+            phase('maintainer_notifications', lambda: maintenance_push.dispatch(root, combined))
         catalog = root / 'data/opportunities.json'
         if publish and catalog.exists():
             def publish_pages():
@@ -62,7 +66,11 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
         delivery = result.get('maintainer_notifications', {})
         attention = bool(result.get('automatic', {}).get('errors') or
-                         delivery.get('failed') or delivery.get('retry_exhausted'))
+                         delivery.get('failed') or delivery.get('retry_exhausted') or
+                         result.get('quality_alerts', {}).get('failures') or
+                         result.get('quality_alerts', {}).get('incomplete') or
+                         any(value is False for value in result.get('quality_alerts', {}).get('available', {}).values()) or
+                         result.get('quality_alerts', {}).get('summary', {}).get('overdue'))
         result['status'] = 'partial' if result['failures'] else 'attention' if attention else 'ok'
         atomic_json(path, result)
         return result

@@ -5,7 +5,28 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: error
+    reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    evidence: &id001
+    - url: https://automation.seu.edu.cn/hw/list.htm
+      sha256: e08e68b1b74f9e4baa02b92ba74c92a406dcc519d9637799a98a89dd59e1b008
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: error
+    reason: 个人页缺少姓名与身份区，不能将空壳当成已富化
+    id: seu/auto/fetch_or_parse_error/huangwei
+    kind: fetch_or_parse_error
+    ref: huangwei
+    original_message: ValueError('个人页缺少姓名与身份区，不能将空壳当成已富化')
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id001
+    title: seu-auto · huangwei · fetch_or_parse_error
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: roster_count_mismatch
   ref: https://automation.seu.edu.cn/32668/list.htm
   message: 公开teacherHome接口标称114条；两页实际返回100条且与rows999返回集合一致，仅接入85条明示学术身份记录，完整名单待核对。
@@ -13,4 +34,71 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方标称总数与实际公开分页仍不一致，不宣称全量
+    evidence: &id002
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: a017529df94cc79f2e9c3d6710850c2aa82a22554c8af1066e26fe540eec35b5
+      fetched_at: '2026-11-16T09:24:18+00:00'
+      request:
+        siteId: 338
+        pageIndex: 1
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: c8e099d79f9e3d43c97fc4f66604343e98607cb3adba4e8d2f98085041839e80
+      fetched_at: '2026-11-16T09:24:18+00:00'
+      request:
+        siteId: 338
+        pageIndex: 2
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
+    - url: https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome
+      sha256: 49af941b5a2d548071192cbb654af10a1c83c66a593627530b4cbc3f77f3104f
+      fetched_at: '2026-11-16T09:24:18+00:00'
+      request:
+        siteId: 338
+        pageIndex: 3
+        rows: 50
+        conditions: '[{"field": "published", "value": "1", "judge": "="}]'
+        orders: '[{"field": "letter", "type": "asc"}]'
+        returnInfos: '[{"field": "title", "name": "title"}, {"field": "exField1",
+          "name": "exField1"}, {"field": "degree", "name": "degree"}, {"field": "post",
+          "name": "post"}, {"field": "cnUrl", "name": "cnUrl"}, {"field": "headerPic",
+          "name": "headerPic"}]'
+        articleType: 1
+        level: 1
+  automatic_check:
+    status: pending
+    reason: 官方标称总数与实际公开分页仍不一致，不宣称全量
+    reported: 109
+    returned: 95
+    unique: 95
+    pages: 3
+    id: seu/auto/roster_count_mismatch/https://automation.seu.edu.cn/32668/list.htm
+    kind: roster_count_mismatch
+    ref: https://automation.seu.edu.cn/32668/list.htm
+    original_message: 公开teacherHome接口标称114条；两页实际返回100条且与rows999返回集合一致，仅接入85条明示学术身份记录，完整名单待核对。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id002
+    title: seu-auto · https://automation.seu.edu.cn/32668/list.htm · roster_count_mismatch
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null

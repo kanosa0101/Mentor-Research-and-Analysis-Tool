@@ -3,13 +3,14 @@ name: 李岳
 aliases: []
 school: nankai
 dept: cs
-status: roster
+status: enriched
 title: 副教授
 email: liyue80@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 图像处理、计算机视觉、计算机安全、软件工程
-detail_url: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue
-profile_url: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +21,49 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cc.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cc.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cc.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: '李岳，1980年生人，汉族，博士学历。
+
+  2003年本科毕业于：南开大学数学院，信息与计算专业
+
+  2005年硕士毕业于：英国诺丁汉大学，计算机与信息技术专业
+
+  2010年博士毕业于：英国华威大学，计算机系图像处理专业
+
+  2010年3月至南开大学软件学院参加工作至今
+
+  研究室网站：https://my.nankai.edu.cn/jkxy/ly/list.htm'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

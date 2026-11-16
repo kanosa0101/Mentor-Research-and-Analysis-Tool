@@ -36,7 +36,12 @@ def parse_detail(cfg, html, url):
         out['supervisor'] = fields['导师层次']
     match = re.search(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', bio)
     if match:
-        out['email'] = normalize_email(match.group())
+        email = normalize_email(match.group())
+        if name in cfg.get('shared_public_contacts', {}).get(email.lower(), []):
+            # A shared/public group contact is not a confirmed personal address.
+            out['_rejected_email'] = email
+        else:
+            out['email'] = email
     directions = re.findall(r'(?:主要研究方向|研究方向)\s*[:：]\s*([^。！？\n]+)', bio)
     if not directions:
         directions = re.findall(r'(?:主要从事|长期从事|主要研究|从事)([^。！？\n]*(?:研究|设计|开发)[^。！？\n]*)', bio)

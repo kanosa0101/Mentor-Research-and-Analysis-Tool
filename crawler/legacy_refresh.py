@@ -9,6 +9,7 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import requests
 import yaml
@@ -47,8 +48,15 @@ def write_yaml(path, data):
 
 
 def merge_profile(original, parsed, body, day):
-    text = ''.join(BeautifulSoup(body, 'html.parser').get_text().split())
-    if ''.join(original['name'].split()) not in text:
+    soup = BeautifulSoup(body, 'html.parser')
+    text = ''.join(soup.get_text().split())
+    names = []
+    if urlsplit(original['detail_url']).hostname == 'faculty.hust.edu.cn':
+        from sites.hust_profile import identity_names
+        names = identity_names(soup)
+    if parsed.get('name') and ''.join(parsed['name'].split()) != ''.join(original['name'].split()):
+        raise ValueError('详情明确姓名与原记录不符，保留旧记录')
+    if ''.join(original['name'].split()) not in text and original['name'] not in names:
         raise ValueError('导师姓名未出现在返回正文，保留旧记录')
     parsed = dict(parsed)
     if not parsed.get('research_direction_raw') and parsed.get('research_directions'):
@@ -65,6 +73,13 @@ def merge_profile(original, parsed, body, day):
     provenance = result.setdefault('provenance', {})
     changed = []
     checked = []
+    if (parsed.get('_rejected_email') and
+            str(result.get('email', '')).lower() == parsed['_rejected_email'].lower() and
+            provenance.get('email', {}).get('origin') != 'manual'):
+        result.pop('email', None)
+        provenance.pop('email', None)
+        changed.append('email')
+        checked.append('email')
     for field in FIELDS:
         value = parsed.get(field)
         if not value or provenance.get(field, {}).get('origin') == 'manual':
@@ -108,14 +123,41 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
         state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {'version': 1, 'records': {}}
         records = state['records']
         results = []
+        signatures = {}
+
+        def signature(key):
+            if not key.startswith('professor/'):
+                return None
+            parts = key.split('/')[1:]
+            unit = '/'.join(parts[:2])
+            if unit not in signatures:
+                cfg_path = root / 'sites' / parts[0] / (parts[1] + '.yaml')
+                raw = cfg_path.read_bytes() if cfg_path.exists() else b''
+                try:
+                    cfg = yaml.safe_load(raw) or {}
+                    if not isinstance(cfg, dict):
+                        cfg = {}
+                except yaml.YAMLError:
+                    cfg = {}
+                hook = cfg.get('hook', '')
+                files = [folder / (hook + '.py') for folder in (root / 'sites' / parts[0], root / 'sites')]
+                raw += next((path.read_bytes() for path in files if path.is_file()), b'')
+                signatures[unit] = hashlib.sha256(raw).hexdigest()
+            return signatures[unit]
 
         def due(key):
             if records.get(key, {}).get('status') == 'manual_required' and not retry:
-                return False
+                previous = records[key]
+                if previous.get('parser_signature') != signature(key):
+                    return True
+                attempted = previous.get('last_attempt')
+                return not attempted or (now - datetime.fromisoformat(attempted)).total_seconds() >= 7 * 86400
             attempted = records.get(key, {}).get('last_attempt')
             return retry or not attempted or (now - datetime.fromisoformat(attempted)).total_seconds() >= 86400
 
         def record(key, value):
+            if key.startswith('professor/'):
+                value = dict(value, parser_signature=signature(key))
             records[key] = dict(records.get(key, {}), **value, last_attempt=stamp)
             results.append(dict(id=key, **records[key]))
             atomic_json(state_path, state)

@@ -3,13 +3,14 @@ name: 张莹
 aliases: []
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 教授
 email: yingzhang@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 跨媒体分析推理、自然语言处理、人工智能、数据挖掘、机器学习
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangying
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangying
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +21,58 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/jswyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/jswyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+supervisor: 博导
+homepage: https://dbis.nankai.edu.cn/
+bio_raw: '张莹，南开大学教授、博导，计算机学院、密码与网络空间安全学院副院长，国家级青年人才、天津杰青、南开百青（A计划）。主要研究方向为跨媒体分析推理、知识图谱与大模型、人工智能等。在自然语言处理、人工智能、数据挖掘等领域国际重要会议和期刊（IEEE
+  TIP、IEEE TKDE、NeurIPS、SIGIR、ACL、KDD等）发表多篇学术论文。主持十余项国家级和省部级科研项目。
+
+  所属实验室为数据库与信息系统研究室，学术带头人为袁晓洁教授。实验室长期从事大型数据库系统、异构数据集成和Web信息检索与挖掘等方向的研究工作。曾完成国家863目标导向课题“无缝集成关系数据库系统的纯XML引擎研究与关键技术研究”，国家自然科学基金“云数据库查询模式集自动生成与检索关键技术研究”，天津市科委“大规模数据集分布式存储技术研究”等国家级和省部组科研课题30余项，发表高水平论文百余篇。
+
+  详情见实验室主页：https://dbis.nankai.edu.cn/
+
+  接收26年入学推免硕士生及博士生'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

@@ -15,6 +15,7 @@ def phases(monkeypatch):
         ('discovery', pipeline.source_discovery, 'run', {'summary': {}}),
         ('automatic', pipeline.automatic_review, 'run', {'counts': {}}),
         ('alerts', pipeline.review_queue, 'refresh_alerts', {'active': [], 'summary': {}}),
+        ('quality', pipeline.quality_status, 'refresh', {'available': {'policy': True, 'mentor': True}, 'active': [], 'summary': {}}),
         ('notifications', pipeline.maintenance_push, 'dispatch', {'sent': 0}),
         ('metrics', pipeline, 'summarize', {'status': 'ok'}),
         ('build', pipeline, 'rebuild', {'published': True}),
@@ -52,6 +53,21 @@ def test_assess_mode_never_sends_or_rebuilds_even_when_catalog_changed(tmp_path,
     phases['build'].assert_not_called()
     phases['discovery'].assert_not_called()
     assert result['mode'] == 'assess' and result['built_catalog_sha256'] is None
+
+
+def test_discovery_admits_only_in_publish_mode_and_quality_alerts_join_maintainer_delivery(tmp_path, phases, monkeypatch):
+    catalog(tmp_path)
+    quality = {'id':'policy:example', 'category':'policy', 'overdue':True}
+    monkeypatch.setattr(pipeline.quality_status, 'refresh', Mock(return_value={
+        'active':[quality], 'summary':{'overdue':1}}))
+    result = pipeline.run(tmp_path, publish=True, discover=True)
+    assert phases['discovery'].call_args.kwargs['auto_admit'] is True
+    assert quality in phases['notifications'].call_args.args[1]['active']
+    assert result['status'] == 'attention'
+    phases['notifications'].reset_mock()
+    pipeline.run(tmp_path, publish=False, discover=True)
+    assert phases['discovery'].call_args.kwargs['auto_admit'] is False
+    phases['notifications'].assert_not_called()
 
 
 def test_failed_build_retries_next_run_and_only_success_advances_digest(tmp_path, phases):
@@ -109,3 +125,13 @@ def test_rebuild_subprocess_failures_hide_raw_output_and_release_lock(tmp_path, 
     process.return_value.returncode = 0
     assert pipeline.rebuild(tmp_path) == {'published': True}
     snapshot.assert_not_called()
+
+
+@pytest.mark.parametrize('quality', [
+    {'available': {'policy': False, 'mentor': True}},
+    {'incomplete': [{'id': 'policy:p', 'reason': '缺少时钟'}]},
+    {'summary': {'overdue': 1}},
+])
+def test_unavailable_or_incomplete_quality_never_reports_healthy(tmp_path, phases, quality):
+    phases['quality'].return_value = dict(active=[], **quality)
+    assert pipeline.run(tmp_path)['status'] == 'attention'

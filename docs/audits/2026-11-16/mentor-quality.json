@@ -1,0 +1,2597 @@
+{
+  "audited_at": "2026-11-16",
+  "scope": "67 open issues from version-controlled v1.11.3 ledger; latest production professor snapshot; isolated real official-source fetches, no production writes",
+  "baseline_issue_ledger_deployed": false,
+  "baseline_issue_count": 67,
+  "summary": {
+    "resolved": 46,
+    "pending": 20,
+    "error": 1
+  },
+  "changed_professor_files": 54,
+  "validation": {
+    "python_checks_passed": 68,
+    "third_party_warnings": 3,
+    "no_manual_review_flags_used": true,
+    "stable_professor_ids_preserved": true,
+    "ambiguous_email_withdrawals": 8
+  },
+  "source_artifacts": "cache/v1114/mentor-results/cache/mentor_quality/evidence/*.body; content addressed SHA-256 is in each record",
+  "records": [
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [
+        "subjects",
+        "institutes",
+        "detail_url",
+        "profile_url"
+      ],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "subjects",
+        "institutes"
+      ],
+      "previous_source": "http://faculty.hust.edu.cn/zhouke2/",
+      "current_source": "http://faculty.hust.edu.cn/zhouke2/zh_CN/index.htm",
+      "id": "hust/cyber/fetch_or_parse_error/zhouke",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhouke",
+      "original_message": "ValueError('详情未识别到明确个人信息，保留名单并登记缺口')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "http://faculty.hust.edu.cn/zhouke2/",
+          "sha256": "9418070d451407dcdf211cc6b99ddc55da3357756d80631af1da5beb69c19d98",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "http://faculty.hust.edu.cn/zhouke2/zh_CN/index.htm",
+          "sha256": "e2b2cc3d41accd1a39bf9d8a3dacd2a155d55594a6da058cee9ceb49d0b9fbca",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "hust-cyber · zhouke · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "hust/cyber",
+      "first_seen": "2026-10-14"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+      "id": "nankai/cs/fetch_or_parse_error/kanghong",
+      "kind": "fetch_or_parse_error",
+      "ref": "kanghong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/kangh')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+          "sha256": "9365daa120e190ca846de41700b71eb9b6604ddaecf28b8bdf6aa2a93d8a0d11",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nankai-cs · kanghong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "nankai/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+      "id": "nankai/cs/fetch_or_parse_error/liuweijie",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuweijie",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+          "sha256": "6a3be804fd4404adadb5ab5781220f91e0c6f661c1951effd8efff4efd26b592",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nankai-cs · liuweijie · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "nankai/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+      "id": "nankai/cs/fetch_or_parse_error/liyue",
+      "kind": "fetch_or_parse_error",
+      "ref": "liyue",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+          "sha256": "fda4219d178ed5c0a9e67a4c5cddac253b87c5d4dfed9f3bf7974ed2b1ecbaea",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nankai-cs · liyue · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "nankai/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [
+        "institutes",
+        "detail_url",
+        "profile_url"
+      ],
+      "checked_fields": [
+        "title",
+        "email",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei",
+      "current_source": "https://cyber.nankai.edu.cn/2021/0323/c13840a551961/page.htm",
+      "id": "nankai/cs/fetch_or_parse_error/yangfei",
+      "kind": "fetch_or_parse_error",
+      "ref": "yangfei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13840a551961/page.htm",
+          "sha256": "93380259188d2abfdecaa3b04243ca561a6e11b2aff9aec7989b6ed8ffb3e2a1",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nankai-cs · yangfei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "nankai/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549997/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549997/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/caixiangrui",
+      "kind": "fetch_or_parse_error",
+      "ref": "caixiangrui",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/caixiangrui')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549997/page.htm",
+          "sha256": "313bf7fb1f680d924233565986363b2e2d79745b09f6b169cc23b33e1abcfc0c",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · caixiangrui · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/chengwentao",
+      "kind": "fetch_or_parse_error",
+      "ref": "chengwentao",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/chengwt')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549995/page.htm",
+          "sha256": "ce1d647eff6eaf9cca692a95226c55a32a8eccf0da6fda683eb45bea6e353273",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · chengwentao · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a569225/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a569225/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/chensen",
+      "kind": "fetch_or_parse_error",
+      "ref": "chensen",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/chensen')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a569225/page.htm",
+          "sha256": "d654fd4c3f557dcf78c31abe9235d24b363b803e7ba39211d8926ad859dbb28a",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · chensen · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a569770/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a569770/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/dingdan",
+      "kind": "fetch_or_parse_error",
+      "ref": "dingdan",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/dingdan')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a569770/page.htm",
+          "sha256": "619e87b59bf3cbd29ed65b4e6cc5734bf9e1f5d1f0ecd707723e8f82231eff9f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · dingdan · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/dongxiaodong",
+      "kind": "fetch_or_parse_error",
+      "ref": "dongxiaodong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/dongxd')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm",
+          "sha256": "47391bc841e7878e42424b7f30508619ac571028847c6ec584eda8511428fff8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · dongxiaodong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549994/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549994/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/fanlingling",
+      "kind": "fetch_or_parse_error",
+      "ref": "fanlingling",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/fanlingling')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549994/page.htm",
+          "sha256": "30c835f5478833bc8bd1e0328971efd8df48eb7eeb947f140bcb98d07dffe23f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · fanlingling · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549992/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549992/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/gaoqi",
+      "kind": "fetch_or_parse_error",
+      "ref": "gaoqi",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/gaoq')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549992/page.htm",
+          "sha256": "26b60a017a30d9455668332655e974e821284ef5b99d350f9a9fa09f3f1a678e",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · gaoqi · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548886/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548886/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/gongxiaoli",
+      "kind": "fetch_or_parse_error",
+      "ref": "gongxiaoli",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/gongxl')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548886/page.htm",
+          "sha256": "63f68bd5fc30b0a3cb765e4958a0aac97c1ae850066142d34e3238bce16badff",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · gongxiaoli · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/guochunle",
+      "kind": "fetch_or_parse_error",
+      "ref": "guochunle",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/guochunle')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm",
+          "sha256": "d238105ff5d2c3a089fd40ab184d6839dafb88e22b352bb86ed4932db5b683ee",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · guochunle · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/guoqing",
+      "kind": "fetch_or_parse_error",
+      "ref": "guoqing",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/guoqing')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a577808/page.htm",
+          "sha256": "9ecc721c87bba6cef9ba0e3fef844a80cf88ad19b9416dd93d3310aa79155b67",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · guoqing · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549987/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549987/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/huangshenwei",
+      "kind": "fetch_or_parse_error",
+      "ref": "huangshenwei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/huangsw')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549987/page.htm",
+          "sha256": "06df51641c26c87496cc669535ee5d383fbefa6ed5f9f217164ac9140fe6d921",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · huangshenwei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548885/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548885/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/jiachunfu",
+      "kind": "fetch_or_parse_error",
+      "ref": "jiachunfu",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiacf')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548885/page.htm",
+          "sha256": "1e665b38ab3a02d16979fd7cd8bf15394e57022f8feb2e04629011ad7b8248c8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · jiachunfu · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a588912/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a588912/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/jiangzhizhuo",
+      "kind": "fetch_or_parse_error",
+      "ref": "jiangzhizhuo",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiangzhizhuo')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a588912/page.htm",
+          "sha256": "9eac25575898ffcd59fd0e506ca3371e352df7d51adf0f6df0e998072915ec41",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · jiangzhizhuo · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549986/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549986/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/jiayan",
+      "kind": "fetch_or_parse_error",
+      "ref": "jiayan",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/jiayan')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549986/page.htm",
+          "sha256": "461d3bc271bee216dc84d7d704e2c0b9602fba736c7958bb532c7783eb0661ea",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · jiayan · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/kanghong",
+      "kind": "fetch_or_parse_error",
+      "ref": "kanghong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/kangh')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm",
+          "sha256": "9365daa120e190ca846de41700b71eb9b6604ddaecf28b8bdf6aa2a93d8a0d11",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · kanghong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549982/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549982/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/litong",
+      "kind": "fetch_or_parse_error",
+      "ref": "litong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/litong')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549982/page.htm",
+          "sha256": "0aaa50f5996ec574f74372a11cc28d423ff8aff5b5860ed173bfb20c7740365a",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · litong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a592255/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a592255/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liuhan",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuhan",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuhan')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a592255/page.htm",
+          "sha256": "877f87efc549960a83b55a5d9fd7d45617dab969165d59695d1de751eea0ba08",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liuhan · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548879/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548879/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liujian",
+      "kind": "fetch_or_parse_error",
+      "ref": "liujian",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liujian')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548879/page.htm",
+          "sha256": "0e8a7cfab97e8751cad5e6dc4d194bfc10d1505bf93f05e258353037c9a79c28",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liujian · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liuweijie",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuweijie",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuweijie')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm",
+          "sha256": "6a3be804fd4404adadb5ab5781220f91e0c6f661c1951effd8efff4efd26b592",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liuweijie · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a599894/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a599894/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liuxialei",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuxialei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuxl')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a599894/page.htm",
+          "sha256": "c5adc76ddedd24a07f9e61ad9989d0d2a5e6e01088c47b7ba988214716d0c4d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liuxialei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572841/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572841/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liuyun",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuyun",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuyun')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a572841/page.htm",
+          "sha256": "309bbcc0b1a5dd42e3f66a6cd49ea7d59e0a35f888dfa67895c94f33230404e0",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liuyun · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548877/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548877/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liuzheli",
+      "kind": "fetch_or_parse_error",
+      "ref": "liuzheli",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liuzl')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548877/page.htm",
+          "sha256": "dae849ab666bcddadb810bd6337c166179b1a7b9f0f1c46d5d3201e0d397f1fd",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liuzheli · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/lixiang-2",
+      "kind": "fetch_or_parse_error",
+      "ref": "lixiang-2",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang123')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm",
+          "sha256": "8c9dd4d5bab4c2f9e2c69f2ffde6e9883d580ecbe41f5d5f698dd7cac7a643e9",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · lixiang-2 · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549981/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549981/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/lixiang",
+      "kind": "fetch_or_parse_error",
+      "ref": "lixiang",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549981/page.htm",
+          "sha256": "e11eaa1ad118b27ffaeb23fc062f9378579be586c0e5392cee4ea25bed312f47",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · lixiang · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/liyue",
+      "kind": "fetch_or_parse_error",
+      "ref": "liyue",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/liyue')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm",
+          "sha256": "fda4219d178ed5c0a9e67a4c5cddac253b87c5d4dfed9f3bf7974ed2b1ecbaea",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · liyue · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549984/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549984/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/lizhaohui",
+      "kind": "fetch_or_parse_error",
+      "ref": "lizhaohui",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lizh')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549984/page.htm",
+          "sha256": "061a085875d734a8562eb918d332d06f78bfabc0d7567a4d97c124aef602e071",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · lizhaohui · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549978/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549978/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/lizhongwei",
+      "kind": "fetch_or_parse_error",
+      "ref": "lizhongwei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lizw')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549978/page.htm",
+          "sha256": "1fc03caceb301bb223bd1bccc3dd401704ed261af63720d08ebddbfe1f38c747",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · lizhongwei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548880/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548880/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/lizhongyi",
+      "kind": "fetch_or_parse_error",
+      "ref": "lizhongyi",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/lichy')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548880/page.htm",
+          "sha256": "1b4ab07819012cffd709d150be506a4002c3a2b15fb062bcfab9c3ca9c8cf37b",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · lizhongyi · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/luye",
+      "kind": "fetch_or_parse_error",
+      "ref": "luye",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/luye')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm",
+          "sha256": "327bc2db1e9a9ff6c0f06e7a40ae85618342b5315ca41053f5ba49469fa4c587",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · luye · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13621a570934/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13621a570934/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/shijianxin",
+      "kind": "fetch_or_parse_error",
+      "ref": "shijianxin",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/shijianxin')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13621a570934/page.htm",
+          "sha256": "2910aa1265cdfd6dee6803be9fbfa79e89860aee378d82488ee9357cd056b019",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · shijianxin · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/sunguolei",
+      "kind": "fetch_or_parse_error",
+      "ref": "sunguolei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/sunguolei')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a572933/page.htm",
+          "sha256": "06f72c0135fde3ead3f5f5e71ec6d2baabd10d757c7141646b5aa3e661429696",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · sunguolei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a559015/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a559015/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/wangjinwei",
+      "kind": "fetch_or_parse_error",
+      "ref": "wangjinwei",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/wjw')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a559015/page.htm",
+          "sha256": "33b5dd61f28a8851c01ef95e2008461e138420f6e01f5e05595730e93c6a5ef0",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · wangjinwei · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548870/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548870/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/wangkai",
+      "kind": "fetch_or_parse_error",
+      "ref": "wangkai",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/wangk')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548870/page.htm",
+          "sha256": "b9703f58584eb5359d91a272702970b5043ac3594c8aac805e8379890a76473d",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · wangkai · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [
+        "supervisor",
+        "homepage",
+        "bio_raw",
+        "institutes",
+        "detail_url",
+        "profile_url"
+      ],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjian",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548859/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangjian",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangjian",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjian')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548859/page.htm",
+          "sha256": "e965f18039e4fe6d1cffe6ea84e96b446b91176432338b93545848c221b3a705",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangjian · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548860/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548860/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangjianzhong",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangjianzhong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjz')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548860/page.htm",
+          "sha256": "abc8c99fce20cf80011147c154b85776c39589cfe2b67a5e803b3df7e3c11dae",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangjianzhong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548858/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548858/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangjin",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangjin",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjin')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548858/page.htm",
+          "sha256": "870880d0143da3d676369b0867a2c239f68b530a8d191fa8eca4ae25a7e869c3",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangjin · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13621a549999/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13621a549999/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangjiuwu",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangjiuwu",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangjiuwu')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13621a549999/page.htm",
+          "sha256": "d6dc928237f00c0dc7ab60306aa931b93e757e24d925f87ab81f255862ee794a",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangjiuwu · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "homepage",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangying",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangying",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangying')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548856/page.htm",
+          "sha256": "844be5b31d3b254a2fa65562c295b88b90c8c21e298e5bd8a50e575abb967c42",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangying · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549959/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13620a549959/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhangyu",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhangyu",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhangyu')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549959/page.htm",
+          "sha256": "93e1311c81229142d3371cdf7aaf37dea8201f67f11e21004394986317b52ef9",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhangyu · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548855/page.htm",
+      "current_source": "https://cc.nankai.edu.cn/2021/0323/c13619a548855/page.htm",
+      "id": "nankai/cyber/fetch_or_parse_error/zhaohong",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhaohong",
+      "original_message": "ValueError('官方GET失败 HTTP 403: http://cyber-backend.nankai.edu.cn/teachers/introduce/zhaoh')",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-23T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a548855/page.htm",
+          "sha256": "37732961875c23002ed2a7f82ab02078e1bbacc9d967dc6f4b2119bd5c6431f2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · zhaohong · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:28:00+00:00",
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知",
+      "observed_titles": [
+        "副教授",
+        "教授"
+      ],
+      "unavailable_pages": 1,
+      "id": "nankai/cyber/unknown_detail_field/luye",
+      "kind": "unknown_detail_field",
+      "ref": "luye",
+      "original_message": "同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-17T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm",
+          "sha256": "327bc2db1e9a9ff6c0f06e7a40ae85618342b5315ca41053f5ba49469fa4c587",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.htm",
+          "fetched_at": "2026-11-16T09:28:00+00:00",
+          "error": "410 Client Error:  for url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.psp"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13839a551990/page.htm",
+          "sha256": "f9dd46b62814d5d97e659ee1221eaad5426f31ad5d7b4ca55cc2e121807f10f5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · luye · unknown_detail_field",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知",
+      "observed_titles": [
+        "副教授",
+        "教授"
+      ],
+      "unavailable_pages": 1,
+      "id": "nankai/cyber/unknown_detail_field/luye-2",
+      "kind": "unknown_detail_field",
+      "ref": "luye-2",
+      "original_message": "同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-17T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13839a551990/page.htm",
+          "sha256": "f9dd46b62814d5d97e659ee1221eaad5426f31ad5d7b4ca55cc2e121807f10f5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm",
+          "sha256": "327bc2db1e9a9ff6c0f06e7a40ae85618342b5315ca41053f5ba49469fa4c587",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.htm",
+          "fetched_at": "2026-11-16T09:28:00+00:00",
+          "error": "410 Client Error:  for url: https://cc.nankai.edu.cn/2021/0323/c13620a549975/page.psp"
+        }
+      ],
+      "title": "nankai-cyber · luye-2 · unknown_detail_field",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知",
+      "observed_titles": [
+        "副教授",
+        "博士后"
+      ],
+      "unavailable_pages": 0,
+      "id": "nankai/cyber/unknown_detail_field/yuanxinjing",
+      "kind": "unknown_detail_field",
+      "ref": "yuanxinjing",
+      "original_message": "同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-17T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13839a577372/page.htm",
+          "sha256": "8e7906187390823db7254b6330376e8c19bb5d6a5b270fc8c086aa310c3bab2e",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a577371/page.htm",
+          "sha256": "0a9f810ee7f66d9c621e46967b939e5459087675dbffd1baaf173e9871811e08",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13840a551959/page.htm",
+          "sha256": "e32a1b822313ad2e84bfe6d03d27120c4fff2e7bbd4fcb9e6940705d200fddb7",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · yuanxinjing · unknown_detail_field",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知",
+      "observed_titles": [
+        "副教授",
+        "博士后"
+      ],
+      "unavailable_pages": 0,
+      "id": "nankai/cyber/unknown_detail_field/yuanxinjing-2",
+      "kind": "unknown_detail_field",
+      "ref": "yuanxinjing-2",
+      "original_message": "同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。",
+      "checked_at": "2026-11-16T09:28:00+00:00",
+      "next_check_at": "2026-11-17T09:28:00+00:00",
+      "evidence": [
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list1.htm",
+          "sha256": "a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list1.htm",
+          "sha256": "304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list1.htm",
+          "sha256": "91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/js/list.htm",
+          "sha256": "5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/jswyjy/list.htm",
+          "sha256": "a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/fjswfyjy/list.htm",
+          "sha256": "79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/js/list.htm",
+          "sha256": "a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13840a551959/page.htm",
+          "sha256": "e32a1b822313ad2e84bfe6d03d27120c4fff2e7bbd4fcb9e6940705d200fddb7",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cc.nankai.edu.cn/2021/0323/c13620a577371/page.htm",
+          "sha256": "0a9f810ee7f66d9c621e46967b939e5459087675dbffd1baaf173e9871811e08",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        },
+        {
+          "url": "https://cyber.nankai.edu.cn/2021/0323/c13839a577372/page.htm",
+          "sha256": "8e7906187390823db7254b6330376e8c19bb5d6a5b270fc8c086aa310c3bab2e",
+          "fetched_at": "2026-11-16T09:28:00+00:00"
+        }
+      ],
+      "title": "nankai-cyber · yuanxinjing-2 · unknown_detail_field",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nankai/cyber",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "lijie",
+        "lijie-2"
+      ],
+      "id": "nudt/ai/duplicate_public_registration/李杰",
+      "kind": "duplicate_public_registration",
+      "ref": "李杰",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26528",
+          "sha256": "4a9a915e355363b6d6f9447d38a1d0e42a9c338c12e24100d0fa14fcd4773163",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26611",
+          "sha256": "d1d75c72716298cc07e1e82121f2f5b4941f299b2c63a3e10462f6bd0596fdc0",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-ai · 李杰 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/ai",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "chuzengyong-2",
+        "chuzengyong"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/楚增勇",
+      "kind": "duplicate_public_registration",
+      "ref": "楚增勇",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26112",
+          "sha256": "27b2ca3285b3e1fc9727b22c70e792ad458e825ed8d64d4156a441defb3dc02c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25718",
+          "sha256": "27b2ca3285b3e1fc9727b22c70e792ad458e825ed8d64d4156a441defb3dc02c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 楚增勇 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "renkaijun",
+        "renkaijun-2"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/任开军",
+      "kind": "duplicate_public_registration",
+      "ref": "任开军",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26068",
+          "sha256": "fc0ddec2eb148ee4677cbe09d8ada9f77176db044b34a3d679db6d7d47185895",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27331",
+          "sha256": "099d5d3b73a25777694d46781b09f3f4c294bcf6ee2dbb5b5f353101be2e5971",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 任开军 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "songjunqiang",
+        "songjunqiang-2"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/宋君强",
+      "kind": "duplicate_public_registration",
+      "ref": "宋君强",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26069",
+          "sha256": "382ffbe00c8bc1e591205440a8cd176989d5fefa4aba74cbc15b1e947a7a90f1",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27391",
+          "sha256": "d61afc97f4ce6d6ad3036a74417a1a7375d450dedfcdf21259edb16ed2342e84",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 宋君强 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "zhangweimin",
+        "zhangweimin-2"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/张卫民",
+      "kind": "duplicate_public_registration",
+      "ref": "张卫民",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26070",
+          "sha256": "f37cff54a8914bcf8035586ab52cfbee2e26231e7a796c9c134b40a1717bf968",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27392",
+          "sha256": "5d907de6c560d5c41dc05b2b5f38628d5544c531c35fc3470b183def105578aa",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 张卫民 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "zhongwei-2",
+        "zhongwei"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/钟玮",
+      "kind": "duplicate_public_registration",
+      "ref": "钟玮",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26515",
+          "sha256": "f7f8f4fd5deb8c88620b6ca47c377e4e1b321cdea225bd0f6c627d9b58a02f73",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26105",
+          "sha256": "a7aa74e1d3f4fd4ac338bf906bad3352b51d479972225a4e97ecbb89cf0513c4",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 钟玮 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除",
+      "registrations": [
+        "zhuxiaoqian",
+        "zhuxiaoqian-2"
+      ],
+      "id": "nudt/cs/duplicate_public_registration/朱小谦",
+      "kind": "duplicate_public_registration",
+      "ref": "朱小谦",
+      "original_message": "官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26071",
+          "sha256": "5e4224a918c20ce5582dd73c5c190c4b24cc1c239a6f9221cd4a42159c1f279e",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27428",
+          "sha256": "dcaea8e8c8595d1b65d5078b79db895446ff2f56d92488dc81e2e928129c649c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · 朱小谦 · duplicate_public_registration",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/liaoxiangke",
+      "kind": "shared_public_contact",
+      "ref": "liaoxiangke",
+      "original_message": "官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960",
+          "sha256": "b8452b4795e2b7809dd6611254fac5c7144d9ec90d3e906a5850c4f9882033d2",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882",
+          "sha256": "2373287a0bcfa9ce4c5ba28c5ca4ec911cd9c09fda89a323c9dcaf89b46d7703",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · liaoxiangke · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/lishanshan",
+      "kind": "shared_public_contact",
+      "ref": "lishanshan",
+      "original_message": "官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882",
+          "sha256": "2373287a0bcfa9ce4c5ba28c5ca4ec911cd9c09fda89a323c9dcaf89b46d7703",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960",
+          "sha256": "b8452b4795e2b7809dd6611254fac5c7144d9ec90d3e906a5850c4f9882033d2",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · lishanshan · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/likenli",
+      "kind": "shared_public_contact",
+      "ref": "likenli",
+      "original_message": "官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073",
+          "sha256": "1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072",
+          "sha256": "325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003",
+          "sha256": "7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · likenli · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/likeqin",
+      "kind": "shared_public_contact",
+      "ref": "likeqin",
+      "original_message": "官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072",
+          "sha256": "325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073",
+          "sha256": "1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003",
+          "sha256": "7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · likeqin · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw",
+        "research_direction_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/liujie",
+      "kind": "shared_public_contact",
+      "ref": "liujie",
+      "original_message": "官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003",
+          "sha256": "7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073",
+          "sha256": "1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072",
+          "sha256": "325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · liujie · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/lidongsheng",
+      "kind": "shared_public_contact",
+      "ref": "lidongsheng",
+      "original_message": "官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039",
+          "sha256": "ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041",
+          "sha256": "8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046",
+          "sha256": "0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · lidongsheng · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/luxicheng",
+      "kind": "shared_public_contact",
+      "ref": "luxicheng",
+      "original_message": "官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041",
+          "sha256": "8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046",
+          "sha256": "0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039",
+          "sha256": "ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · luxicheng · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "pending",
+      "reason": "官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检",
+      "changed_fields": [
+        "email"
+      ],
+      "checked_fields": [
+        "email",
+        "supervisor",
+        "bio_raw",
+        "research_direction_raw"
+      ],
+      "personal_email_withheld": true,
+      "id": "nudt/cs/shared_public_contact/xujie",
+      "kind": "shared_public_contact",
+      "ref": "xujie",
+      "original_message": "官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046",
+          "sha256": "0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041",
+          "sha256": "8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        },
+        {
+          "url": "https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039",
+          "sha256": "ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "nudt-cs · xujie · shared_public_contact",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "nudt/cs",
+      "first_seen": "2026-10-15"
+    },
+    {
+      "status": "error",
+      "reason": "个人页缺少姓名与身份区，不能将空壳当成已富化",
+      "id": "seu/auto/fetch_or_parse_error/huangwei",
+      "kind": "fetch_or_parse_error",
+      "ref": "huangwei",
+      "original_message": "ValueError('个人页缺少姓名与身份区，不能将空壳当成已富化')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://automation.seu.edu.cn/hw/list.htm",
+          "sha256": "e08e68b1b74f9e4baa02b92ba74c92a406dcc519d9637799a98a89dd59e1b008",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "seu-auto · huangwei · fetch_or_parse_error",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "seu/auto",
+      "first_seen": "2026-10-14"
+    },
+    {
+      "status": "pending",
+      "reason": "官方标称总数与实际公开分页仍不一致，不宣称全量",
+      "reported": 109,
+      "returned": 95,
+      "unique": 95,
+      "pages": 3,
+      "id": "seu/auto/roster_count_mismatch/https://automation.seu.edu.cn/32668/list.htm",
+      "kind": "roster_count_mismatch",
+      "ref": "https://automation.seu.edu.cn/32668/list.htm",
+      "original_message": "公开teacherHome接口标称114条；两页实际返回100条且与rows999返回集合一致，仅接入85条明示学术身份记录，完整名单待核对。",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-17T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome",
+          "sha256": "a017529df94cc79f2e9c3d6710850c2aa82a22554c8af1066e26fe540eec35b5",
+          "fetched_at": "2026-11-16T09:24:18+00:00",
+          "request": {
+            "siteId": 338,
+            "pageIndex": 1,
+            "rows": 50,
+            "conditions": "[{\"field\": \"published\", \"value\": \"1\", \"judge\": \"=\"}]",
+            "orders": "[{\"field\": \"letter\", \"type\": \"asc\"}]",
+            "returnInfos": "[{\"field\": \"title\", \"name\": \"title\"}, {\"field\": \"exField1\", \"name\": \"exField1\"}, {\"field\": \"degree\", \"name\": \"degree\"}, {\"field\": \"post\", \"name\": \"post\"}, {\"field\": \"cnUrl\", \"name\": \"cnUrl\"}, {\"field\": \"headerPic\", \"name\": \"headerPic\"}]",
+            "articleType": 1,
+            "level": 1
+          }
+        },
+        {
+          "url": "https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome",
+          "sha256": "c8e099d79f9e3d43c97fc4f66604343e98607cb3adba4e8d2f98085041839e80",
+          "fetched_at": "2026-11-16T09:24:18+00:00",
+          "request": {
+            "siteId": 338,
+            "pageIndex": 2,
+            "rows": 50,
+            "conditions": "[{\"field\": \"published\", \"value\": \"1\", \"judge\": \"=\"}]",
+            "orders": "[{\"field\": \"letter\", \"type\": \"asc\"}]",
+            "returnInfos": "[{\"field\": \"title\", \"name\": \"title\"}, {\"field\": \"exField1\", \"name\": \"exField1\"}, {\"field\": \"degree\", \"name\": \"degree\"}, {\"field\": \"post\", \"name\": \"post\"}, {\"field\": \"cnUrl\", \"name\": \"cnUrl\"}, {\"field\": \"headerPic\", \"name\": \"headerPic\"}]",
+            "articleType": 1,
+            "level": 1
+          }
+        },
+        {
+          "url": "https://automation.seu.edu.cn/_wp3services/generalQuery?queryObj=teacherHome",
+          "sha256": "49af941b5a2d548071192cbb654af10a1c83c66a593627530b4cbc3f77f3104f",
+          "fetched_at": "2026-11-16T09:24:18+00:00",
+          "request": {
+            "siteId": 338,
+            "pageIndex": 3,
+            "rows": 50,
+            "conditions": "[{\"field\": \"published\", \"value\": \"1\", \"judge\": \"=\"}]",
+            "orders": "[{\"field\": \"letter\", \"type\": \"asc\"}]",
+            "returnInfos": "[{\"field\": \"title\", \"name\": \"title\"}, {\"field\": \"exField1\", \"name\": \"exField1\"}, {\"field\": \"degree\", \"name\": \"degree\"}, {\"field\": \"post\", \"name\": \"post\"}, {\"field\": \"cnUrl\", \"name\": \"cnUrl\"}, {\"field\": \"headerPic\", \"name\": \"headerPic\"}]",
+            "articleType": 1,
+            "level": 1
+          }
+        }
+      ],
+      "title": "seu-auto · https://automation.seu.edu.cn/32668/list.htm · roster_count_mismatch",
+      "pending_since": "2026-11-16T09:24:18+00:00",
+      "last_success": null,
+      "unit": "seu/auto",
+      "first_seen": "2026-10-14"
+    },
+    {
+      "status": "resolved",
+      "reason": "当前官方详情身份及字段解析通过",
+      "changed_fields": [
+        "supervisor",
+        "email",
+        "office_address",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "checked_fields": [
+        "title",
+        "supervisor",
+        "email",
+        "office_address",
+        "bio_raw",
+        "research_direction_raw",
+        "institutes"
+      ],
+      "previous_source": "https://jszy.whu.edu.cn/xzhao/zh_CN/index/1709296/list/index.htm",
+      "current_source": "https://jszy.whu.edu.cn/xzhao/zh_CN/index/1709296/list/index.htm",
+      "id": "whu/cyber/fetch_or_parse_error/zhaoxingyu",
+      "kind": "fetch_or_parse_error",
+      "ref": "zhaoxingyu",
+      "original_message": "ValueError('详情未识别到明确个人信息，保留名单并登记缺口')",
+      "checked_at": "2026-11-16T09:24:18+00:00",
+      "next_check_at": "2026-11-23T09:24:18+00:00",
+      "evidence": [
+        {
+          "url": "https://jszy.whu.edu.cn/xzhao/zh_CN/index/1709296/list/index.htm",
+          "sha256": "c78da84c19ef5120d133117117ffa27b5af29cd60433132b89f831fd9c8ce73f",
+          "fetched_at": "2026-11-16T09:24:18+00:00"
+        }
+      ],
+      "title": "whu-cyber · zhaoxingyu · fetch_or_parse_error",
+      "pending_since": null,
+      "last_success": "2026-11-16T09:24:18+00:00",
+      "unit": "whu/cyber",
+      "first_seen": "2026-10-14"
+    }
+  ]
+}

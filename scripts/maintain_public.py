@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler.legacy_refresh import run
+from crawler import policy_revalidation, mentor_quality, quality_status
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler.opportunity_review import renew
 from scripts import build_site
@@ -74,21 +75,24 @@ def main():
                 result['failures'][name] = str(error)[:1000]
                 result[name] = {'error': 1, 'message': '本阶段失败，其他独立维护继续'}
         task('policies', lambda: run(ROOT, kind='policies', limit=20, workers=4, timeout=12))
+        task('policy_revalidation', lambda: policy_revalidation.run(ROOT, limit=20, workers=4, timeout=15))
         task('professors', lambda: run(ROOT, kind='professors', limit=40, timeout=12, priority_units=priority_units()))
+        task('mentor_quality', lambda: mentor_quality.run(ROOT, limit=40))
         task('notices', refresh_notices)
         task('renewed', lambda: renew(ROOT / 'cache/opportunity_review.json', ROOT))
         task('pages_updated', rebuild)
+        task('quality_alerts', lambda: quality_status.refresh(ROOT))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
-        warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', 'error', 'manual_required', 'sources_error')}
-                    for name in ('policies', 'professors', 'notices')
-                    if result[name].get('error', 0) or result[name].get('manual_required', 0) or result[name].get('sources_error', 0)}
+        counters = ('error', 'manual_required', 'sources_error', 'retry', 'review_required', 'pending')
+        warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', *counters)}
+                    for name in ('policies', 'policy_revalidation', 'professors', 'mentor_quality', 'notices')
+                    if any(result[name].get(key, 0) for key in counters)}
         result['source_warnings'] = warnings
         atomic_json(ROOT / 'cache/public-maintenance.json', result)
         atomic_json(ROOT / 'cache/maintenance-alerts.json', {'checked_at': result['completed_at'], 'failures': result['failures'], 'source_warnings': warnings})
         atomic_json(ROOT / 'cache/pipeline-metrics.json', pipeline_metrics(ROOT))
         print(json.dumps(result, ensure_ascii=False))
-        return int(bool(result['failures']) or result['policies'].get('error', 0) > 0 or
-                   result['professors'].get('error', 0) > 0 or result['notices'].get('sources_error', 0) > 0)
+        return int(bool(result['failures']) or bool(warnings))
 
 
 if __name__ == '__main__':

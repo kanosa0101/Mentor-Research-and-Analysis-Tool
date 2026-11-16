@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 from crawler import ai_evidence, ai_review, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-POLICY_VERSION = 'v2.0-content-scope-1'
+POLICY_VERSION = 'v2.2-bound-cohort-organizer-retry'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
@@ -29,6 +29,12 @@ SECTIONS = {
 
 class NeedsHuman(ValueError):
     pass
+
+
+def transient_failure(reason):
+    return (reason in ('AI核验响应无法通过结构检查', 'AI响应无法通过结构检查；未写入建议') or
+            any(token in reason for token in ('HTTP', '网络', '连接', '实时获取失败', '未启用',
+                                              '缺少服务端密钥', '响应未完整结束', '输出未完整结束')))
 
 
 def protected(draft):
@@ -120,16 +126,38 @@ def prepare_new(root, draft, doc, now):
         ('科研实践', 'research_program'), ('科研实习', 'research_program'), ('科创计划', 'research_program')] if label in title), None)
     if kind is None:
         raise NeedsHuman('活动类别不在自动发布范围；正式推免或学位招生需人工核对')
-    # A domain/title is not organizer evidence. Only an explicit official organizer line
-    # matching the registered institution can enter automatic institution publication.
+    schools_path = Path(root) / 'data/schools.yaml'
+    schools = yaml.safe_load(schools_path.read_text(encoding='utf-8'))['schools'] if schools_path.exists() else []
+    school = next((s['name'] for s in schools if s['id'] == item['school_id']), '')
+    if not school:
+        raise NeedsHuman('学校身份未登记，需先核对来源所属机构')
+    # A discovered column label is not the organizer. A replacement still needs an
+    # explicit organizer line naming the institution bound to that trusted source.
     unit = item['unit'].strip()
-    organizer = next((line for line in doc['lines'] if re.fullmatch(
-        r'(?:主办单位|组织单位)\s*[:：]\s*' + re.escape(unit) + r'[。；;]?', line.strip())), None)
+    organizers = [(line, match[1].strip()) for line in doc['lines']
+                  if (match := re.fullmatch(r'(?:主办单位|组织单位)\s*[:：]\s*(.+?)[。；;]?', line.strip()))]
+    organizer = None
+    if len(organizers) == 1:
+        line, name = organizers[0]
+        if (name == unit or name.startswith(school)) and not re.search(r'[、，,；;]|联合主办', name):
+            organizer, unit = line, name
+    if item.get('dept_id'):
+        # A school domain does not establish which of its departments organized
+        # an event. Bind the declared organizer to the registered department.
+        if not all(re.fullmatch(r'[a-z0-9_-]+', item[key]) for key in ('school_id', 'dept_id')):
+            raise NeedsHuman('院系标识未登记，需核对主办单位')
+        path = Path(root) / 'sites' / item['school_id'] / (item['dept_id'] + '.yaml')
+        config = yaml.safe_load(path.read_text(encoding='utf-8')) if path.is_file() else {}
+        department = config.get('dept_name', '')
+        if (config.get('school') != item['school_id'] or config.get('dept') != item['dept_id'] or
+            not department or unit not in (department, school + department)):
+            raise NeedsHuman('公告主办单位与已登记院系不一致或缺少院系身份依据')
     level = ('research_institute' if unit.endswith('研究所') else
              'university_research_institute' if unit.endswith('研究院') else
              'school_department' if unit.endswith(('学院', '大学', '学系')) else None)
     if not organizer or not level or re.search(r'课题组.{0,12}(?:长期|招收|招募)|导师.{0,8}个人招募', text):
         raise NeedsHuman('缺少明确机构统一主办依据；个人招募或组织层级不明须归类核验')
+    item['unit'] = unit
     item['content_classification'] = dict(scope='institutional_activity', organizer_level=level,
         organizer_name=unit, source_url=item['source_url'], quote=organizer,
         verified_at=now.astimezone(CST).date().isoformat())
@@ -145,11 +173,6 @@ def prepare_new(root, draft, doc, now):
     if (not extract.EMAIL.search(parts['application_method']) or not extract.EMAIL.search(parts['contact']) or
         re.search(r'系统|平台|在线|链接|网站|网报', parts['application_method'])):
         raise NeedsHuman('自动发布仅支持明确邮件申请及联系邮箱；其他系统流程需人工核对')
-    schools_path = Path(root) / 'data/schools.yaml'
-    schools = yaml.safe_load(schools_path.read_text(encoding='utf-8'))['schools'] if schools_path.exists() else []
-    school = next((s['name'] for s in schools if s['id'] == item['school_id']), '')
-    if not school:
-        raise NeedsHuman('学校身份未登记，需先核对来源所属机构')
     item.update(school_name=school, kind=kind, cycle='current', source_state='verified',
                 checked_at=now.astimezone(CST).date().isoformat(), verified_at=now.astimezone(CST).date().isoformat(),
                 source_sha256=draft['fetch']['sha256'], source_content_sha256=doc['content_sha256'])
@@ -184,9 +207,22 @@ def prepare_new(root, draft, doc, now):
             fields[key] = dict(value=item[key], quote=window)
     else:
         raise NeedsHuman('报名窗口没有唯一完整的开始/截止日期或长期科研招募原文')
-    # Years are never inferred; explicit years need a separate human applicability check.
-    if re.search(r'20\d{2}\s*届|20\d{2}\s*年\s*入学', text):
-        raise NeedsHuman('涉及具体毕业或入学届别，需人工确认对象映射')
+    # Only a single explicitly named undergraduate cohort in the eligibility section
+    # can be adopted. Event years and admission years are never converted to cohorts.
+    if re.search(r'20\d{2}\s*年\s*入学', text):
+        raise NeedsHuman('涉及入学年份，须核对与本科毕业届别的区别')
+    years = set(re.findall(r'(20\d{2})\s*届', text))
+    if years:
+        eligibility = extract.compact(parts['eligibility'])
+        named = set(re.findall(r'(20\d{2})届[^，。；\n]{0,15}本科', eligibility))
+        cohort_clauses = [clause for clause in re.split(r'[，,。；;\n]', parts['eligibility'])
+                          if re.search(r'20\d{2}\s*届', clause)]
+        ambiguous = any(re.search(r'不|非|除|禁止|拒绝|以[前后上下外]|之[前后]|及(?:更早|更晚)|[至到~～—-]\s*20\d{2}', clause)
+                        for clause in cohort_clauses)
+        if len(years) != 1 or named != years or ambiguous or re.search(r'其他(?:活动|项目)|另一个(?:活动|项目)', eligibility):
+            raise NeedsHuman('毕业届别不是申请对象中的单一明确本科届别，需核对适用范围')
+        item['graduation_year'] = int(next(iter(years)))
+        fields['graduation_year'] = dict(value=item['graduation_year'], quote=parts['eligibility'])
     item['evidence'] = list(dict.fromkeys(f['quote'] for f in fields.values()))
     item['source_note'] = '自动证据核验：完整原文摘录、AI交叉核对及规则校验；不判断个人资格或保证名额。'
     item['admission_note'] = '科研或营活动不等于正式推免或研究生录取，毕业及入学届别未推断。'
@@ -249,7 +285,8 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
     result = dict(id=draft['id'], policy_version=POLICY_VERSION, checked_at=now.isoformat(),
                   source_sha256=draft.get('fetch', {}).get('sha256'), content_sha256=draft.get('fetch', {}).get('content_sha256'),
                   input_revision=protected(draft), attempts=prior.get('attempts', 0), failures=prior.get('failures', 0), reasons=[])
-    if prior.get('policy_version') == POLICY_VERSION and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and prior.get('content_sha256') == result['content_sha256'] and prior.get('input_revision') == result['input_revision']:
+    recovering = bool(draft.get('review')) and review.status(draft) == 'source_error' and prior.get('state') in ('published', 'renewed')
+    if not recovering and prior.get('policy_version') == POLICY_VERSION and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and prior.get('content_sha256') == result['content_sha256'] and prior.get('input_revision') == result['input_revision']:
         return dict(result, state='skipped', reasons=['尚未到下一次处理时间'], next_attempt_at=prior['next_attempt_at'])
     if prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and prior.get('input_revision') == result['input_revision'] and prior.get('content_sha256') == result['content_sha256']:
         return dict(result, state='skipped', reasons=['同版本仍需人工处理'], blocked_state='manual_required')
@@ -259,16 +296,19 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
             raise NeedsHuman('维护者已编辑草稿，自动任务不会覆盖')
         if review.triage(draft).get('classification') in ('historical', 'irrelevant') or draft['item'].get('cycle') == 'historical':
             return dict(result, state='skipped', reasons=['历史或非报名记录不自动发布'])
+        if review.triage(draft).get('classification') == 'blocked':
+            raise NeedsHuman('当前版本的适用范围已标为待确认：' + review.triage(draft).get('reason', '请核对官方范围'))
         review.check_source(draft, configs)
         if any(urlsplit(draft[key]).scheme != 'https' for key in ('source_url', 'listing_url')) or not any(
             c['url'] == draft['listing_url'] and c.get('enabled') is not False for c in configs):
             raise NeedsHuman('自动发布仅接受已启用的HTTPS官方来源')
-        if draft.get('fetch', {}).get('status') != 'ok' or draft['item'].get('source_documents') or draft['item'].get('source_attachments'):
-            raise NeedsHuman('尚无完整HTML证据，或存在须核验的附件')
+        if draft['item'].get('source_documents') or draft['item'].get('source_attachments'):
+            raise NeedsHuman('存在须核验的附件')
         existing = bool(draft.get('review'))
-        if existing and review.status(draft) != 'published':
+        source_error = review.status(draft) == 'source_error'
+        if existing and review.status(draft) not in ('published', 'source_error'):
             raise NeedsHuman('已发布事实、人工摘录或官方版本变化，不能自动覆盖')
-        if existing and draft['item'].get('verified_at') and 0 <= (now.astimezone(CST).date() - datetime.fromisoformat(draft['item']['verified_at']).date()).days < 14:
+        if existing and not source_error and draft['item'].get('verified_at') and 0 <= (now.astimezone(CST).date() - datetime.fromisoformat(draft['item']['verified_at']).date()).days < 14:
             return dict(result, state='skipped', reasons=['已有近期核验，日常来源检查继续运行'])
         staged = copy.deepcopy(draft)
         raw = review.fetch_evidence(staged, queue_path, fetcher, now=now)
@@ -284,6 +324,8 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
             raise ValueError('官方原文实时获取失败')
         doc = inspect_source(raw, draft['source_url'])
         if existing:
+            if review.status(staged) != 'published':
+                raise NeedsHuman('已发布事实或人工摘录变化，不能自动覆盖')
             if staged['fetch']['content_sha256'] != draft['review'].get('content_sha256') or staged['fetch']['sha256'] != draft['review']['source_sha256']:
                 raise NeedsHuman('已核验原文发生变化，需人工核对新事实')
             catalog_item = next((i for i in util.load(root)['opportunities'] if i['id'] == draft['item']['id']), None)
@@ -343,7 +385,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
                         if key in original: current[key] = copy.deepcopy(original[key])
                         else: current.pop(key, None)
                     atomic_json(queue_path, queue)
-        transient = any(token in reason for token in ('服务HTTP', '服务连接', '服务网络', '实时获取失败', '未启用', '缺少服务端密钥'))
+        transient = transient_failure(reason)
         if isinstance(error, NeedsHuman) or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
             result.update(state='manual_required', reasons=[reason])
         elif '每日调用上限' in reason:
@@ -359,7 +401,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
 def assist_pending(root, queue_path, draft, configs, result, now, assistant):
     """Offer source-bound suggestions for human review without promoting any facts."""
     if (draft.get('review') or draft['item'].get('cycle') == 'historical' or
-        review.triage(draft).get('classification') in ('historical', 'irrelevant') or
+        review.triage(draft).get('classification') in ('historical', 'irrelevant', 'blocked') or
         draft.get('fetch', {}).get('status') != 'ok'):
         return result
     digest = draft['fetch'].get('sha256', '')
@@ -367,9 +409,24 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
     if previous.get('source_sha256') == digest and previous.get('validated_extracts') and not previous.get('truncated'):
         return result
     failed = draft.get('automatic_review', {}).get('assistance', {})
-    if failed.get('state') == 'failed' and failed.get('source_sha256') == digest and draft.get('automatic_review', {}).get('state') == 'manual_required':
-        return result
     original = protected(draft)
+    if failed.get('state') == 'failed' and failed.get('source_sha256') == digest and draft.get('automatic_review', {}).get('state') == 'manual_required':
+        if not transient_failure(failed.get('reason', '')):
+            return result
+        # Recover legacy manual markers for a transport/protocol failure, while
+        # keeping a bounded wait and the original queue discovery/pending clock.
+        try:
+            checked = datetime.fromisoformat(draft['automatic_review']['checked_at'])
+            if checked.tzinfo is None:
+                checked = now
+        except (KeyError, TypeError, ValueError):
+            checked = now
+        failures = max(1, draft['automatic_review'].get('failures', 0))
+        retry_at = checked + timedelta(hours=min(24, 2 ** min(failures, 5)))
+        if retry_at > now:
+            waiting = dict(result, state='retry', failures=failures, next_attempt_at=retry_at.isoformat(),
+                           assistance=copy.deepcopy(failed), reasons=[failed['reason']])
+            return _store(queue_path, draft['id'], waiting, original)
     result = dict(result, state='manual_required', input_revision=original)
     try:
         review.check_source(draft, configs)
@@ -406,7 +463,7 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         return result
     except (ValueError, OSError, requests.RequestException) as error:
         reason = str(error) if isinstance(error, ValueError) else 'AI辅助公开证据暂时不可用'
-        transient = any(s in reason for s in ('HTTP', '网络', '连接', '未启用', '缺少服务端密钥'))
+        transient = transient_failure(reason)
         if '每日调用上限' in reason:
             retry = (now + timedelta(days=1)).astimezone(timezone.utc).replace(hour=0, minute=5, second=0, microsecond=0)
             result.update(state='budget_wait', next_attempt_at=retry.isoformat())

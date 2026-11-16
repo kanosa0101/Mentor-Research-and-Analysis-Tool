@@ -4,13 +4,14 @@ aliases:
 - dongxd
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 副教授
 email: dongxiaodong@nankai.edu.cn
-institutes: []
+institutes:
+- 计算机科学与技术系
 research_direction_raw: 计算机网络、未来网络体系结构、软件定义网络、云计算
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/dongxd
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/dongxd
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -21,16 +22,53 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a599896/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: '主持项目：
+
+  天津市自主立项校内
+
+  青年
+
+  项目（
+
+  天津市自然科学基金青年项目）
+
+  中央高校基本科研项目
+
+  国家自然科学基金青年项目
+
+  齐鲁工业大学（山东省科学院）算力互联网与信息安全教育部重点实验室开放课题重点项目'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

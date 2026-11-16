@@ -161,7 +161,7 @@ def parse_detail(cfg, html, url):
             label = re.sub(r'[\s:：]', '', attribute.get_text())
             value = paragraph.get_text(' ', strip=True).split('：', 1)[-1].strip()
             if label == '姓名' and value:
-                result['name'] = value
+                result['name'] = re.sub(r'[（(](?:男|女)[）)]$', '', value).strip()
             elif label == '职称' and value:
                 result['title'] = value
             elif label == '电子邮件' and normalize_email(value):
@@ -170,7 +170,7 @@ def parse_detail(cfg, html, url):
                 result['research_directions'] = [value]
             elif label == '所属部门' and value:
                 result['institute_from_detail'] = [value]
-        if result.get('name') in cfg.get('_title_conflict_names', []):
+        if result.get('name') in cfg.get('_title_conflict_names', []) + cfg.get('title_conflicts', []):
             result.pop('title', None)
             result['unknown_fields'] = ['同一官方名册同名同邮箱跨分类职称冲突，暂无明确更新依据；职称保持未知，原文保留。']
         return result

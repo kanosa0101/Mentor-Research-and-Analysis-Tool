@@ -118,7 +118,8 @@ def dispatch(root, alerts, sender=None):
             try:
                 code = sender(current['subscription'], dict(title=f"{len(remaining)}条审核任务已超时",
                     body='打开维护工作台核对证据、处理阻断；此提醒不发送给申请用户。',
-                    url='/review.html?draft=' + quote(first['id'], safe=''), tag='maintainer-overdue'))
+                    url=('/review.html#quality-panel' if first.get('category') in ('policy', 'mentor') else
+                         '/review.html?draft=' + quote(first['id'], safe='')), tag='maintainer-overdue'))
             except Exception as error:
                 code = getattr(getattr(error, 'response', None), 'status_code', 0)
             with output_lock(path):

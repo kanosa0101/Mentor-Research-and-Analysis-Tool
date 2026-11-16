@@ -3,13 +3,20 @@ name: 郭春乐
 aliases: []
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 副教授
 email: guochunle@nankai.edu.cn
-institutes: []
-research_direction_raw: 图像增强与复原、底层视觉、AIGC、AI ISP
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/guochunle
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/guochunle
+institutes:
+- 计算机科学与技术系
+research_direction_raw: '图像与视频修复与增强 人工智能图像信号处理（如原始图像降噪） 机器学习驱动的图像质量评估 生成式图像修复 多光谱色彩修复
+  计算成像 Publications: Yuang Meng#, Xin Jin#, Lina Lei, Chun-Le Guo*, Chongyi Li, UltraLED:
+  Learning to See Everything in Ultra-High Dynamic Range Scenes, Neural Information
+  Processing Systems (NeurIPS), 2025. Xin Jin, Simon Niklaus, Zhoutong Zhang, Zhihao
+  Xia, Chunle Guo*, Yuting Yang, Jiawen Chen, Chongyi Li, Classic Video Denoising
+  in a Machine Learning World: Robust, Fast, and Controllable, IEEE Conference on
+  Computer Vision and Patter'
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +27,305 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549991/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+supervisor: 博导
+bio_raw: '郭春乐，南开大学副教授，博导，入选南开大学“百名青年学科带头人培养计划”，第十届中国科协青年托举计划，2023 OPEN100 开源贡献人才榜，2024、2025斯坦福全球前2%顶尖科学家榜，2024爱思唯尔中国高被引学者。研究内容包括计算成像、图像增强与复原等。谷歌学术引用1万余次，其中一作单篇最高引用2400余次。主持国自然、天津市青年项目（B类）以及华为、三星等资助的项目。参与组织2022-2025年VALSE大会，现任VALSE
+  EAC、IEEE Journal of Oceanic Engineering（SCI二区）编委，CVPR 2026领域主席。
+
+  主要研究方向：
+
+  图像与视频修复与增强
+
+  人工智能图像信号处理（如原始图像降噪）
+
+  机器学习驱动的图像质量评估
+
+  生成式图像修复
+
+  多光谱色彩修复
+
+  计算成像
+
+  Publications:
+
+  Yuang Meng#, Xin Jin#, Lina Lei, Chun-Le Guo*, Chongyi Li, UltraLED: Learning to
+  See Everything in Ultra-High Dynamic Range Scenes, Neural Information Processing
+  Systems (NeurIPS), 2025.
+
+  Xin Jin, Simon Niklaus, Zhoutong Zhang, Zhihao Xia, Chunle Guo*, Yuting Yang, Jiawen
+  Chen, Chongyi Li, Classic Video Denoising in a Machine Learning World: Robust, Fast,
+  and Controllable, IEEE Conference on Computer Vision and Pattern Recognition (CVPR),
+  2025.
+
+  Siyu Liu#, Zheng-Peng Duan#, Jia OuYang, Jiayi Fu, Hyunhee Park, Zikun Liu, Chun-Le
+  Guo*, Chongyi Li, FaceMe: Robust blind face restoration with personal identification,
+  AAAI Conference on Artificial Intelligence (AAAI).
+
+  Ruiqi Wu, Liangyu Chen, Tong Yang, Chunle Guo*, Chongyi Li, Xiangyu Zhang, LAMP:
+  Learn A Motion Pattern for Few-Shot Video Generation, IEEE Conference on Computer
+  Vision and Pattern Recognition (CVPR), 2024. [
+
+  Paper
+
+  ][
+
+  中译版
+
+  ]
+
+  Chujie Qin, Ruiqi Wu, Zikun Liu, Xin Lin, Chunle Guo, Hyun Hee Park, Chongyi Li*, Restore
+  Anything with Masks: Leveraging Mask Image Modeling for Blind All-in-One Image Restoration,
+  European Conference on Computer Vision(ECCV), 2024. [
+
+  Paper
+
+  ][
+
+  中译版
+
+  ]
+
+  Xin Jin, Linghao Han, Zhen Li, Zhi Chai, Chunle Guo*, Chongyi Li, DNF: Decouple
+  and Feedback Network for Seeing in the Dark, IEEE Conference on Computer Vision
+  and Pattern Recognition (CVPR), 2023.
+
+  [Paper]
+
+  [Project]
+
+  [Highlight, 2.5% acceptance rate][
+
+  中译版
+
+  ]
+
+  Ruiqi Wu, Zhengpeng Duan, Chunle Guo*, Zhi Chai, Chongyi Li, RIDCP: Revitalizing
+  Real Image Dehazing via High-Quality Codebook Priors, IEEE Conference on Computer
+  Vision and Pattern Recognition (CVPR), 2023.
+
+  [Paper]
+
+  [Project]
+
+  [
+
+  中译版
+
+  ]
+
+  Zhen Li, Zuoliang Zhu, Linghao Han, Qibin Hou, Chunle Guo*, Ming-Ming Cheng, AMT:
+  All-Pairs Multi-Field Transforms for Efficient Frame Interpolation, IEEE Conference
+  on Computer Vision and Pattern Recognition (CVPR), 2023. [
+
+  Paper
+
+  ][
+
+  Code
+
+  ][中译版]
+
+  Chunle Guo#, Ruiqi Wu#, Xin Jin, Linghao Han, Zhi Chai, Weidong Zhang, and Chongyi
+  Li*, Underwater Ranker: Learn Which Is Better and How to Be Better, AAAI Conference
+  on Artificial Intelligence (AAAI), 2023. [
+
+  PDF-arXiv version
+
+  ][
+
+  Project
+
+  ]
+
+  Zheng Lin, Zheng-Peng Duan, Zhao Zhang, Chunle Guo*, Ming-Ming Cheng, KnifeCut:
+  Refining Thin Part Segmentation with Cutting Lines, Proceedings of the 30th ACM
+  International Conference on Multimedia(ACM MM), 2022. [
+
+  Paper
+
+  ]
+
+  Zuo-Liang Zhu, Zhen Li, Rui-Xun Zhang, Chunle Guo*, Ming-Ming Cheng, Designing an
+  Illumination-Aware Network for Deep Image Relighting, IEEE Transactions on Image
+  Processing (TIP), 2022. [
+
+  Paper
+
+  ] [
+
+  Code
+
+  ]
+
+  Chunle Guo, Qixin Yan, Chongyi Li*, et al., Image Dehazing Transformer with Transmission-Aware
+  3D Position Embedding, IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR) , 2022. [
+
+  Paper
+
+  ][
+
+  Code
+
+  ][
+
+  Project
+
+  ]
+
+  Zheng Lin, Zhengpeng Duan, Zhao Zhang, Chunle Guo*, Ming-Ming Cheng, FocusCut: Diving
+  into a Focus View in Interactive Segmentation, IEEE Conference on Computer Vision
+  and Pattern Recognition (CVPR) , 2022. [
+
+  Paper
+
+  ][
+
+  Project
+
+  ]
+
+  Zhen Li#, Chengze Lu#, Jianhua Qin, Chunle Guo*, Ming-Ming Cheng, Towards An End-to-End
+  Framework for Flow-Guided Video Inpainting, IEEE Conference on Computer Vision and
+  Pattern Recognition (CVPR), 2022. [
+
+  Paper
+
+  ] [
+
+  Code
+
+  ]
+
+  Chongyi Li#, Chunle Guo#, and Chen Change Loy*, Learning to Enhance Low-Light Image
+  via Zero-Reference Deep Curve Estimation, IEEE Transactions on Pattern Analysis
+  and Machine Intelligence(TPAMI), 2021.
+
+  [PDF-arXiv version]
+
+  [PDF-offical version]
+
+  [Project]
+
+  [Invited Talk 商汤学术 AI画质@B站, in Chinese]
+
+  Chongyi Li#, Chunle Guo#, Linghao Han, et al. Low-Light Image and Video Enhancement
+  Using Deep Learning: A Survey, IEEE Transactions on Pattern Analysis and Machine
+  Intelligence(TPAMI), 2021. [
+
+  Paper
+
+  ][
+
+  Code
+
+  ][
+
+  中译版
+
+  ]
+
+  Chunle Guo, Junhui Hou*, Jing Jin, et al., Accurate Light Field Depth Estimation
+  via an Occlusion-Aware Network, in IEEE International Conference on Multimedia &
+  Expo(ICME), 2020.[
+
+  Paper
+
+  ]
+
+  Chunle Guo, Chongyi Li, Jichang Guo*, et al., Zero-Reference Learning for Low-Light
+  Image Enhancement, in IEEE Conference on Computer Vision and Pattern Recognition,
+  2020.[
+
+  Paper
+
+  ][
+
+  Supplementary Material
+
+  ][
+
+  Preject
+
+  ][
+
+  Code
+
+  ]
+
+  Chongyi Li, Chunle Guo, Wenqi Ren*, et al., An Underwater Image Enhancement Benchmark
+  Dataset and Beyond, in IEEE Transactions on Image Processing (TIP), 2019.[
+
+  Paper
+
+  ][
+
+  Project
+
+  ][
+
+  Benchmark
+
+  ][
+
+  Code
+
+  ]
+
+  Chunle Guo#, Chongyi Li#*, Jichang Guo, et al., Hierarchical features driven residual
+  learning for depth map super-resolution, IEEE Transactions on Image Processing (TIP),
+  2019.[
+
+  Paper
+
+  ][
+
+  Project
+
+  ][
+
+  Code
+
+  ]
+
+  Notes: Joint first authors are indicated using # and corresponding authors are indicated
+  using *.'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

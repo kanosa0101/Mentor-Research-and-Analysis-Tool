@@ -61,6 +61,16 @@ def test_overdue_delivery_is_deduplicated_and_reopened_version_notifies(root):
     assert all(c['url'] == '/review.html?draft=draft1' for c in calls)
 
 
+def test_policy_quality_alert_uses_maintenance_panel_not_a_fake_opportunity(root):
+    alerts.subscribe(root, dict(subscription=subscription()))
+    data = queue()
+    data['active'][0].update(id='policy:school-policy', category='policy')
+    sent = []
+    assert alerts.dispatch(root, data, lambda sub, payload: (sent.append(payload), 201)[1])['sent'] == 1
+    assert sent[0]['url'] == '/review.html#quality-panel'
+    assert alerts.dispatch(root, data, lambda *_: pytest.fail('duplicate quality alert'))['sent'] == 0
+
+
 def test_delivery_failure_is_bounded_and_remains_visible(root):
     alerts.subscribe(root, dict(subscription=subscription()))
     calls = []

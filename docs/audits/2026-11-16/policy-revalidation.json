@@ -1,0 +1,2670 @@
+{
+  "version": "1.11.4",
+  "verified_on": "2026-11-16",
+  "basis": "Production-network isolated run against registered official sources; live production data was not mutated by the verification run.",
+  "baseline_review_count": 30,
+  "confirmed": 30,
+  "failed": 0,
+  "sources_live_fetched": 25,
+  "original_manual_dates_preserved": 28,
+  "maintainer_content_repairs": 2,
+  "policy_quality_after": {
+    "checked": 111
+  },
+  "unchanged_scope": {
+    "policy_count": 111,
+    "policy_years": {
+      "2027": 111
+    }
+  },
+  "policy_ledger": [
+    {
+      "policy_id": "tsinghua-2027-master-recommend",
+      "title": "清华2027硕士推免：学校通用规则",
+      "school": "tsinghua",
+      "dept": "",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "30232bf25744bf5e03df7fc5480574a0633007406ddc656cad2e528aa8da7ddf",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "school_pdf",
+          "url": "https://yz.tsinghua.edu.cn/__local/0/91/84/E623A07C9896EB168DD345BC2D3_D80BBF73_52A36.pdf",
+          "format": "pdf",
+          "content_sha256": "44923127b8c927782afe8f5b4403eaa6286dd23158feb1c23313746e109cd250",
+          "raw_sha256": "44923127b8c927782afe8f5b4403eaa6286dd23158feb1c23313746e109cd250"
+        },
+        {
+          "id": "school_page",
+          "url": "https://yz.tsinghua.edu.cn/info/1024/3266.htm",
+          "format": "html",
+          "content_sha256": "e796ed6b529dd0456390bc31ce0d7e1bf2e6156a0ae3ad19d168b0f16a5dd02b",
+          "raw_sha256": "4434629c64a789948fd48ddbcfd076428d7c13454fafb26fd5ce6e61663b7bde"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "school_pdf"
+          ],
+          "match_modes": {
+            "school_pdf": "contiguous"
+          },
+          "locator": "PDF第1页，第六条"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "school_pdf"
+          ],
+          "match_modes": {
+            "school_pdf": "contiguous"
+          },
+          "locator": "PDF第1—2页，第七条"
+        },
+        {
+          "field": "fields.tuition",
+          "source_ids": [
+            "school_pdf"
+          ],
+          "match_modes": {
+            "school_pdf": "contiguous"
+          },
+          "locator": "PDF第7页，第二十二条第3项及第8—14页附表"
+        },
+        {
+          "field": "material_actions.send-final-year-transcript.instruction",
+          "source_ids": [
+            "school_pdf"
+          ],
+          "match_modes": {
+            "school_pdf": "contiguous"
+          },
+          "locator": "PDF第2页 第二章 推荐免试／第九条 推免生资格复审，“推免生必须在2027年6月”段"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "tsinghua-auto-2027-master-recommend",
+      "title": "清华自动化2027普通硕士推免考核",
+      "school": "tsinghua",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "0adfe36ed6c0598e930d0da295830a97f063bc64215d23363e42a500e5802082",
+      "evidence_count": 8,
+      "sources": [
+        {
+          "id": "tsinghua_auto_recommend",
+          "url": "https://www.au.tsinghua.edu.cn/info/1037/4577.htm",
+          "format": "html",
+          "content_sha256": "add42a43854295da15c802023b2db6d91b34952be643f320584e27ed600c4438",
+          "raw_sha256": "c4576c8ebaa50f0c0272ff25c8d68aa99dcba2f65fbc41d3a1df5d19c1d6698a"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第二、第五节"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第二节"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第三节"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第六节"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第二节：14:00—16:00"
+        },
+        {
+          "field": "events.1",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "第三节：日期明确，个人时刻另通知"
+        },
+        {
+          "field": "material_actions.present-qualification-originals.instruction",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "二、资格审查，“在资格审查中请申请人准备好”段"
+        },
+        {
+          "field": "material_actions.present-qualification-originals.applies_if",
+          "source_ids": [
+            "tsinghua_auto_recommend"
+          ],
+          "match_modes": {
+            "tsinghua_auto_recommend": "contiguous"
+          },
+          "locator": "二、资格审查，“在资格审查中请申请人准备好”段"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "seu-auto-2027-master-recommend",
+      "title": "东南自动化2027接收推免报名进度",
+      "school": "seu",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "367d35bfdf8f6535bc67a501487c80af47ed3707e2a9854350bcf882fe00e072",
+      "evidence_count": 2,
+      "sources": [
+        {
+          "id": "seu_auto_recommend",
+          "url": "https://automation.seu.edu.cn/2026/0707/c24460a575743/page.htm",
+          "format": "html",
+          "content_sha256": "aab5975fc34748766f0f17c461516214d0a1c80b03816a164e617bba0995b998",
+          "raw_sha256": "45e2de6870844484eeaefa1ea0559b44ef1568993ec629deb6bf7efdb73f1ace"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "seu_auto_recommend"
+          ],
+          "match_modes": {
+            "seu_auto_recommend": "contiguous"
+          },
+          "locator": "进度说明第1、3项"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "seu_auto_recommend"
+          ],
+          "match_modes": {
+            "seu_auto_recommend": "contiguous"
+          },
+          "locator": "进度说明第1项"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "sjtu-auto-2027-phd-recommend",
+      "title": "上交自动化与感知2027常规直博预推免",
+      "school": "sjtu",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-11-16",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "f5b885b915a65baeebb1910128938031c32d53512b29d164be442f06484931c1",
+      "evidence_count": 6,
+      "sources": [
+        {
+          "id": "sjtu_auto_recommend",
+          "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1838.html",
+          "format": "html",
+          "content_sha256": "7cdafc9ba77e603b515e04601a92e2438213ff56addb863d97e1f3325c102253",
+          "raw_sha256": "759643d3d92165492d081a4fad930a20777aa36d9a7ed74ade4c34d37fd8372a"
+        },
+        {
+          "id": "sjtu_auto_phd_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/30976978/自动化与感知学院2027级预推免选拔直博申请表.docx",
+          "format": "docx",
+          "content_sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d",
+          "raw_sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d"
+        },
+        {
+          "id": "sjtu_auto_special_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/36734474/自动化与感知学院2027级工程硕博专项申请表.docx",
+          "format": "docx",
+          "content_sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0",
+          "raw_sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第一节申请条件第1—6项及特别优秀者例外；维护核对完整段落"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第四节申请材料完整清单；附件填写与签名要求另见材料动作"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第二、第三节"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第七节咨询方式；按直硕/直博类型区分"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第三节：上午9:00"
+        },
+        {
+          "field": "material_actions.complete-signed-application-form.instruction",
+          "source_ids": [
+            "sjtu_auto_phd_form_v1114"
+          ],
+          "match_modes": {
+            "sjtu_auto_phd_form_v1114": "ordered_paragraphs"
+          },
+          "locator": "DOCX首段标题、专项联培志愿说明及末段签名要求；分段证据按原顺序列出"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "sjtu-auto-2027-master-special",
+      "title": "上交自动化与感知2027工程硕博专项直硕",
+      "school": "sjtu",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-11-16",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "e9b297f44d13be72e206d471a1d231bb8e8f39edeb8090825e6363218e1e3fcb",
+      "evidence_count": 7,
+      "sources": [
+        {
+          "id": "sjtu_auto_recommend",
+          "url": "https://sais.sjtu.edu.cn/yjs_zsgz/1838.html",
+          "format": "html",
+          "content_sha256": "7cdafc9ba77e603b515e04601a92e2438213ff56addb863d97e1f3325c102253",
+          "raw_sha256": "759643d3d92165492d081a4fad930a20777aa36d9a7ed74ade4c34d37fd8372a"
+        },
+        {
+          "id": "sjtu_auto_phd_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/30976978/自动化与感知学院2027级预推免选拔直博申请表.docx",
+          "format": "docx",
+          "content_sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d",
+          "raw_sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d"
+        },
+        {
+          "id": "sjtu_auto_special_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/36734474/自动化与感知学院2027级工程硕博专项申请表.docx",
+          "format": "docx",
+          "content_sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0",
+          "raw_sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.tuition",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第二节专项介绍，第六节"
+        },
+        {
+          "field": "fields.quota",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第二节专项计划表"
+        },
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第一节申请条件第1—6项及特别优秀者例外；维护核对完整段落"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第四节申请材料完整清单；附件填写与签名要求另见材料动作"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第七节咨询方式；按直硕/直博类型区分"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "sjtu_auto_recommend"
+          ],
+          "match_modes": {
+            "sjtu_auto_recommend": "contiguous"
+          },
+          "locator": "第三节：上午9:00"
+        },
+        {
+          "field": "material_actions.complete-signed-application-form.instruction",
+          "source_ids": [
+            "sjtu_auto_special_form_v1114"
+          ],
+          "match_modes": {
+            "sjtu_auto_special_form_v1114": "ordered_paragraphs"
+          },
+          "locator": "DOCX首段标题、专项联培志愿说明及末段签名要求；分段证据按原顺序列出"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "whu-cyber-2027-master-recommend",
+      "title": "武大网安2027普通硕士推免：正式接收及预报名阶段",
+      "school": "whu",
+      "dept": "cyber",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "70d05c853cfc95cf06cc54f1ceb51ad405a7c5cc29f6816c2f9c33b9c81521ef",
+      "evidence_count": 8,
+      "sources": [
+        {
+          "id": "whu_cyber_recommend_pdf_v7",
+          "url": "https://cse.whu.edu.cn/__local/7/61/69/C6170A6B13FC436CF387D871291_5E3B52F3_1F664.pdf",
+          "format": "pdf",
+          "content_sha256": "2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592",
+          "raw_sha256": "2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592"
+        },
+        {
+          "id": "whu_cyber_prerecommend_pdf_v7",
+          "url": "https://cse.whu.edu.cn/__local/5/25/DE/51582978060F518921AD789313B_5C9D8C5A_1ECBA.pdf",
+          "format": "pdf",
+          "content_sha256": "d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f",
+          "raw_sha256": "d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第1页第一、二节；预报名PDF第1页第二节"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "whu_cyber_prerecommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_prerecommend_pdf_v7": "contiguous"
+          },
+          "locator": "预报名PDF第1—2页第三节（一）—（三）"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2—3页第四节"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2页第三节；预报名PDF第1—3页第三节"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第3页第六节；预报名PDF第1页第三节、末页联系人"
+        },
+        {
+          "field": "fields.tuition",
+          "source_ids": [
+            "whu_cyber_prerecommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_prerecommend_pdf_v7": "contiguous"
+          },
+          "locator": "预报名PDF第3页第五节；正式细则PDF第1页专项学制说明"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "whu_cyber_prerecommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_prerecommend_pdf_v7": "contiguous"
+          },
+          "locator": "预报名PDF第1页第三节（一）第1项，非全年接收截止"
+        },
+        {
+          "field": "events.1",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2页第三节（一）第1项，仅该考生类别"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "whu-cyber-2027-083900-phd-recommend",
+      "title": "武大网安2027网络空间安全普通直博推免",
+      "school": "whu",
+      "dept": "cyber",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "8ca668804ff19b101abc20a402dd8e0d660b0cfeeba91927bde06f70ca146002",
+      "evidence_count": 7,
+      "sources": [
+        {
+          "id": "whu_cyber_recommend_pdf_v7",
+          "url": "https://cse.whu.edu.cn/__local/7/61/69/C6170A6B13FC436CF387D871291_5E3B52F3_1F664.pdf",
+          "format": "pdf",
+          "content_sha256": "2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592",
+          "raw_sha256": "2dbf4ce8efc8335ebeee440283181d9314f2e2387e73eddb48b26a08fef8e592"
+        },
+        {
+          "id": "whu_cyber_prerecommend_pdf_v7",
+          "url": "https://cse.whu.edu.cn/__local/5/25/DE/51582978060F518921AD789313B_5C9D8C5A_1ECBA.pdf",
+          "format": "pdf",
+          "content_sha256": "d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f",
+          "raw_sha256": "d8c2781caac106dc70caa143227007078d7f8c297b681631ff6ff90a91935b3f"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第1页第一、二节；预报名PDF第1页第一、二节"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "whu_cyber_prerecommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_prerecommend_pdf_v7": "contiguous"
+          },
+          "locator": "预报名PDF第1—2页第三节（一）—（三）"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2—3页第四节"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2页第三节；预报名PDF第1—3页第三节"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第3页第六节；预报名PDF第1页第三节"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "whu_cyber_prerecommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_prerecommend_pdf_v7": "contiguous"
+          },
+          "locator": "预报名PDF第1页第三节（一）第1项，非全年直博接收截止"
+        },
+        {
+          "field": "events.1",
+          "source_ids": [
+            "whu_cyber_recommend_pdf_v7"
+          ],
+          "match_modes": {
+            "whu_cyber_recommend_pdf_v7": "contiguous"
+          },
+          "locator": "正式细则PDF第2页第三节（一）第1项，仅该考生类别"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "seu-auto-2027-master-elite-recommend",
+      "title": "东南自动化2027创新创业硕士研究生菁英班推免选拔考核",
+      "school": "seu",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-14",
+      "human_reviewed_at": "2026-10-14",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "a9cb1e4634f2ece21e1752400272eba7d745ebf2320cd84d343246a783b28b78",
+      "evidence_count": 2,
+      "sources": [
+        {
+          "id": "seu_auto_elite_pdf_v7",
+          "url": "https://automation.seu.edu.cn/_upload/article/files/35/fb/9e9a4b5f44b38208253d26a845e3/0dce9242-75ff-4998-bc7c-b643c84be95f.pdf",
+          "format": "pdf",
+          "content_sha256": "9b0a34530dd96d7f651a50b83263652c828fdf35cd3f7c69a6463bc6f624ad32",
+          "raw_sha256": "9b0a34530dd96d7f651a50b83263652c828fdf35cd3f7c69a6463bc6f624ad32"
+        },
+        {
+          "id": "seu_auto_recommend",
+          "url": "https://automation.seu.edu.cn/2026/0707/c24460a575743/page.htm",
+          "format": "html",
+          "content_sha256": "aab5975fc34748766f0f17c461516214d0a1c80b03816a164e617bba0995b998",
+          "raw_sha256": "45e2de6870844484eeaefa1ea0559b44ef1568993ec629deb6bf7efdb73f1ace"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "seu_auto_elite_pdf_v7"
+          ],
+          "match_modes": {
+            "seu_auto_elite_pdf_v7": "contiguous"
+          },
+          "locator": "选拔方案PDF第1页第1节；接收推免报名通知进度说明第2、3项确认项目渠道"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "seu_auto_elite_pdf_v7"
+          ],
+          "match_modes": {
+            "seu_auto_elite_pdf_v7": "contiguous"
+          },
+          "locator": "选拔方案PDF第2页第2节；发布页发布时间2026-08-13"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "bit-2027-master-recommend",
+      "title": "北理工2027硕士推免：学校通用系统要求",
+      "school": "bit",
+      "dept": "",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "f0c680ed2ba06f5be93b1dec770dcc2840b852cd37e2b2922be492ffff26bd07",
+      "evidence_count": 2,
+      "sources": [
+        {
+          "id": "bit_2027_master_charter_v14",
+          "url": "https://grd.bit.edu.cn/zsgz/ssyjs/gzzd_ss/256b73c5ca7d41b5b279b8f34dd39192.htm",
+          "format": "html",
+          "content_sha256": "f07ef28f8f27614b774e6a1379319e7ba83d72e85d6d60883fbf73c10eff6dbd",
+          "raw_sha256": "3592afdd4712f256bdde96fc60124a59a82bf33fae25d2d57ba815282e5606ed"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "bit_2027_master_charter_v14"
+          ],
+          "match_modes": {
+            "bit_2027_master_charter_v14": "contiguous"
+          },
+          "locator": "章程五、4（8）"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "bit_2027_master_charter_v14"
+          ],
+          "match_modes": {
+            "bit_2027_master_charter_v14": "contiguous"
+          },
+          "locator": "章程五、4（8）"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "bit-cs-2027-master-recommend-performance",
+      "title": "北理工计算机2027推免：智能数字表演（本轮已截止）",
+      "school": "bit",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "9a8d0882e4ced17a369af0e787f2b7d159969410f29b6cc0a454213e360589fb",
+      "evidence_count": 6,
+      "sources": [
+        {
+          "id": "bit_cs_2027_recommend_v14",
+          "url": "https://cs.bit.edu.cn/tzgg/4d632f0195df4f51b98d27b18a618e3f.htm",
+          "format": "html",
+          "content_sha256": "7aa0575a16c0d61df864969344b60c58cee9013ad2c1ebb105e4a4ed9c6e82e8",
+          "raw_sha256": "56c83f786afe0f14144771558103feed673cea937a97b6fe8bbca95a243c35ff"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "二、申请条件；一、招收类别及专业"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1、3"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1—2"
+        },
+        {
+          "field": "fields.tuition",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "一、招收类别及专业"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1；四、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "2026-09-15通知三、申请程序1；年份由通知发布日期确定"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "bit-cs-2027-master-recommend-software",
+      "title": "北理工计算机2027推免：软件工程（本轮已截止）",
+      "school": "bit",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "05ff06b08f54d996ee8b8ab662c2e72d27084937d95a7b7e7d31a3023f5fa8d5",
+      "evidence_count": 6,
+      "sources": [
+        {
+          "id": "bit_cs_2027_recommend_v14",
+          "url": "https://cs.bit.edu.cn/tzgg/4d632f0195df4f51b98d27b18a618e3f.htm",
+          "format": "html",
+          "content_sha256": "7aa0575a16c0d61df864969344b60c58cee9013ad2c1ebb105e4a4ed9c6e82e8",
+          "raw_sha256": "56c83f786afe0f14144771558103feed673cea937a97b6fe8bbca95a243c35ff"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "二、申请条件；一、招收类别及专业"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1、3"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1—2"
+        },
+        {
+          "field": "fields.tuition",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "一、招收类别及专业"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "三、申请程序1；四、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "bit_cs_2027_recommend_v14"
+          ],
+          "match_modes": {
+            "bit_cs_2027_recommend_v14": "contiguous"
+          },
+          "locator": "2026-09-15通知三、申请程序1；年份由通知发布日期确定"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "csu-auto-2027-master-recommend",
+      "title": "中南自动化2027推免：历史轮次材料与考核",
+      "school": "csu",
+      "dept": "auto",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "24d8a1ed41bd712e11e155f41b8d8b7fb04fb0885202bc81e4f767a631467c37",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "v14_units_csu_auto",
+          "url": "https://soa.csu.edu.cn/info/1032/9784.htm",
+          "format": "html",
+          "content_sha256": "9df81e7c03a1c662ba9f72a7c814a40601780798d92a8f1fe2666f39eb2a604e",
+          "raw_sha256": "c194f549545c871e48c9cf1ecab7b9fb4c9bd8c44cfad9389f3c070901b869b8"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "v14_units_csu_auto"
+          ],
+          "match_modes": {
+            "v14_units_csu_auto": "contiguous"
+          },
+          "locator": "四、申请条件"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "v14_units_csu_auto"
+          ],
+          "match_modes": {
+            "v14_units_csu_auto": "contiguous"
+          },
+          "locator": "五、资格审查及8项材料清单"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "v14_units_csu_auto"
+          ],
+          "match_modes": {
+            "v14_units_csu_auto": "contiguous"
+          },
+          "locator": "申请时间及五、资格审查、七、面试考核"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "v14_units_csu_auto"
+          ],
+          "match_modes": {
+            "v14_units_csu_auto": "contiguous"
+          },
+          "locator": "四、申请时间；五、资格审查：2026年9月10日18点前"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "hust-cyber-2027-master-recommend-extension",
+      "title": "华科网安2027推免：历史预报名延后截止",
+      "school": "hust",
+      "dept": "cyber",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "e481eceb1b8718e0677c579d082bfa38dddb2db8ebe97f16caba15558f818e7c",
+      "evidence_count": 2,
+      "sources": [
+        {
+          "id": "v14_units_hust_cyber_extension",
+          "url": "https://cse.hust.edu.cn/info/1079/4531.htm",
+          "format": "html",
+          "content_sha256": "4a97e9e43736e2d044e7ff97808af2118798f53ce113e97210d69b2fe6c8c7cc",
+          "raw_sha256": "8ebd1e11bf7af6dabb43a4f7b98a455c935509912e53d9cc119526888eae111f"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "v14_units_hust_cyber_extension"
+          ],
+          "match_modes": {
+            "v14_units_hust_cyber_extension": "contiguous"
+          },
+          "locator": "正文调整后截止时间"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "v14_units_hust_cyber_extension"
+          ],
+          "match_modes": {
+            "v14_units_hust_cyber_extension": "contiguous"
+          },
+          "locator": "正文调整后截止时间"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-cs-2027-master-recommend-v17",
+      "title": "计算机学院2027年硕士推免接收要求",
+      "school": "nankai",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "9b3a58790165b2f8ddecf2a5b019f64d82617b94859f095e56e3170c14920572",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_cc_recommend_v17",
+          "url": "https://cc.nankai.edu.cn/2026/0920/c13297a603018/page.htm",
+          "format": "html",
+          "content_sha256": "37d54807ef2c684c36ac58d70d8dd4112d3e536929bd13185ac26cbe3ff94bec",
+          "raw_sha256": "3ee66c7d4b1aa790d8bdb8857b44c00ee8b8b76ce3cfd9c251947ee3c1c12fb2"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-cs-2027-phd-recommend-v17",
+      "title": "计算机学院2027年直博推免接收要求",
+      "school": "nankai",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "7bb18463c6ebc9becf65143b453d9e298a99bbb6ec423ccfa8f0c1a660063256",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_cc_recommend_v17",
+          "url": "https://cc.nankai.edu.cn/2026/0920/c13297a603018/page.htm",
+          "format": "html",
+          "content_sha256": "37d54807ef2c684c36ac58d70d8dd4112d3e536929bd13185ac26cbe3ff94bec",
+          "raw_sha256": "3ee66c7d4b1aa790d8bdb8857b44c00ee8b8b76ce3cfd9c251947ee3c1c12fb2"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-cyber-2027-master-recommend-v17",
+      "title": "密码与网络空间安全学院2027年硕士推免接收要求",
+      "school": "nankai",
+      "dept": "cyber",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "32f77f302941759c918d4f20a8cb36a0c25c84d8f50105fe4a22afc4fbcaad93",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_cc_recommend_v17",
+          "url": "https://cc.nankai.edu.cn/2026/0920/c13297a603018/page.htm",
+          "format": "html",
+          "content_sha256": "37d54807ef2c684c36ac58d70d8dd4112d3e536929bd13185ac26cbe3ff94bec",
+          "raw_sha256": "3ee66c7d4b1aa790d8bdb8857b44c00ee8b8b76ce3cfd9c251947ee3c1c12fb2"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-cyber-2027-phd-recommend-v17",
+      "title": "密码与网络空间安全学院2027年直博推免接收要求",
+      "school": "nankai",
+      "dept": "cyber",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "34bc6d7ede779210bee35a284374cc259d84c94e711e3d6c010cce24ad3f8791",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_cc_recommend_v17",
+          "url": "https://cc.nankai.edu.cn/2026/0920/c13297a603018/page.htm",
+          "format": "html",
+          "content_sha256": "37d54807ef2c684c36ac58d70d8dd4112d3e536929bd13185ac26cbe3ff94bec",
+          "raw_sha256": "3ee66c7d4b1aa790d8bdb8857b44c00ee8b8b76ce3cfd9c251947ee3c1c12fb2"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_cc_recommend_v17"
+          ],
+          "match_modes": {
+            "nankai_cc_recommend_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-software-2027-master-recommend-v17",
+      "title": "软件学院2027年硕士推免接收要求",
+      "school": "nankai",
+      "dept": "software",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "149efe7136c25bbc9f7ed3755041c417509ab5ab1e56844bbf0d02bbba41fee1",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_software_recommend_pdf_v17",
+          "url": "https://cs.nankai.edu.cn/__local/1/79/5A/0E22DC463C540654DCF9D258916_6184BFAC_1D2F7.pdf",
+          "format": "pdf",
+          "content_sha256": "518f49673d7f13b49482ebc1f9a1081d6ef074d3193a794a931c542d9b573229",
+          "raw_sha256": "518f49673d7f13b49482ebc1f9a1081d6ef074d3193a794a931c542d9b573229"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-software-2027-phd-recommend-v17",
+      "title": "软件学院2027年直博推免接收要求",
+      "school": "nankai",
+      "dept": "software",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "dce55988570aa83620592cd03c8e623bc9274e665cf8ac22209dbac220703ca8",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_software_recommend_pdf_v17",
+          "url": "https://cs.nankai.edu.cn/__local/1/79/5A/0E22DC463C540654DCF9D258916_6184BFAC_1D2F7.pdf",
+          "format": "pdf",
+          "content_sha256": "518f49673d7f13b49482ebc1f9a1081d6ef074d3193a794a931c542d9b573229",
+          "raw_sha256": "518f49673d7f13b49482ebc1f9a1081d6ef074d3193a794a931c542d9b573229"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "一、接收条件"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、接收流程；发布于2026-09-20"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "文末联系电话"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_software_recommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_recommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、接收流程；年份据发布日2026-09-20"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-software-2027-master-prerecommend-v17",
+      "title": "软件学院2027推免预报名及材料要求（前期阶段已结束）",
+      "school": "nankai",
+      "dept": "software",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "642134041b727799e713dca32be6f1ad7a5be427e9f59cc9db63935a2d3ea949",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_software_prerecommend_pdf_v17",
+          "url": "https://cs.nankai.edu.cn/__local/2/64/9C/BBF90CCD02652E703E0E1502E49_427746E9_2698B.pdf",
+          "format": "pdf",
+          "content_sha256": "20b96d426107415be63a2c588312ed84886f9cc00e301ce9fa7c17df9cca897d",
+          "raw_sha256": "20b96d426107415be63a2c588312ed84886f9cc00e301ce9fa7c17df9cca897d"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第4项"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "四、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第3项"
+        },
+        {
+          "field": "events.1",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第4项，上传材料截止"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "nankai-software-2027-phd-prerecommend-v17",
+      "title": "软件学院2027推免预报名及材料要求（前期阶段已结束）",
+      "school": "nankai",
+      "dept": "software",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "b0bd53b46362deab2bb67dd5a73dcb43425cfd89389943c370807df7360dac67",
+      "evidence_count": 4,
+      "sources": [
+        {
+          "id": "nankai_software_prerecommend_pdf_v17",
+          "url": "https://cs.nankai.edu.cn/__local/2/64/9C/BBF90CCD02652E703E0E1502E49_427746E9_2698B.pdf",
+          "format": "pdf",
+          "content_sha256": "20b96d426107415be63a2c588312ed84886f9cc00e301ce9fa7c17df9cca897d",
+          "raw_sha256": "20b96d426107415be63a2c588312ed84886f9cc00e301ce9fa7c17df9cca897d"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第4项"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "四、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第3项"
+        },
+        {
+          "field": "events.1",
+          "source_ids": [
+            "nankai_software_prerecommend_pdf_v17"
+          ],
+          "match_modes": {
+            "nankai_software_prerecommend_pdf_v17": "contiguous"
+          },
+          "locator": "二、报名流程第4项，上传材料截止"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "sdu-cs-2027-master-recommend-v18",
+      "title": "山东大学计算机学院2027硕士推免条件与材料（预报名已结束）",
+      "school": "sdu",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "83a7dfc63d83892c8a8a56e3f0d5f9e1d0e6fb0715d4e20bab4344d8864e5da0",
+      "evidence_count": 8,
+      "sources": [
+        {
+          "id": "sdu_cs_recommend_v18",
+          "url": "https://www.cs.sdu.edu.cn/info/1068/6891.htm",
+          "format": "html",
+          "content_sha256": "f37fb43eed095caff98d8689ecaf9441a4e3d33f70a1005c3181b5c842615a46",
+          "raw_sha256": "299727dfa892c567408a4873e92e92141f4ab75448baa7a5512ed5601bc5f0bf"
+        },
+        {
+          "id": "sdu_cs_schedule_pdf_v18",
+          "url": "https://www.cs.sdu.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1470795559&wbfileid=18218345",
+          "format": "pdf",
+          "content_sha256": "39978b33bd63dca814c68b4e8f865abc737904fdd96907b3ae79e4f6e5e09a16",
+          "raw_sha256": "39978b33bd63dca814c68b4e8f865abc737904fdd96907b3ae79e4f6e5e09a16"
+        },
+        {
+          "id": "sdu_cs_schedule_v18",
+          "url": "https://www.cs.sdu.edu.cn/info/1068/6902.htm",
+          "format": "html",
+          "content_sha256": "1a4f2ff3a177d44431292a12648d8502456d24f9da5f9593edfa0e6b0c9c4995",
+          "raw_sha256": "59ff8f55ba1a1e414b0a03903484387ef01e8fc59d75b0aae10ed2423e525b0f"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "二、申请资格"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料1—11"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "ordered_paragraphs"
+          },
+          "locator": "三、预报名；五、其他事项第4项；quote以换行分隔独立原文段"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "六、咨询方式"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "sdu_cs_schedule_pdf_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_schedule_pdf_v18": "contiguous"
+          },
+          "locator": "PDF第3页四、成绩说明；年份据2026-09-13发布页"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三、预报名第1项；原文2026年存在排版空格"
+        },
+        {
+          "field": "material_actions.prepare-recommendation-materials.instruction",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料"
+        },
+        {
+          "field": "material_actions.prepare-recommendation-materials.applies_if",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "sdu-cs-2027-phd-recommend-v18",
+      "title": "山东大学计算机学院2027本科直博推免条件与材料（预报名已结束）",
+      "school": "sdu",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "634d8e5a6a34e68415c0cdeb52edb3827cad94f0a364866da935be714917c2f1",
+      "evidence_count": 8,
+      "sources": [
+        {
+          "id": "sdu_cs_recommend_v18",
+          "url": "https://www.cs.sdu.edu.cn/info/1068/6891.htm",
+          "format": "html",
+          "content_sha256": "f37fb43eed095caff98d8689ecaf9441a4e3d33f70a1005c3181b5c842615a46",
+          "raw_sha256": "299727dfa892c567408a4873e92e92141f4ab75448baa7a5512ed5601bc5f0bf"
+        },
+        {
+          "id": "sdu_cs_schedule_pdf_v18",
+          "url": "https://www.cs.sdu.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1470795559&wbfileid=18218345",
+          "format": "pdf",
+          "content_sha256": "39978b33bd63dca814c68b4e8f865abc737904fdd96907b3ae79e4f6e5e09a16",
+          "raw_sha256": "39978b33bd63dca814c68b4e8f865abc737904fdd96907b3ae79e4f6e5e09a16"
+        },
+        {
+          "id": "sdu_cs_schedule_v18",
+          "url": "https://www.cs.sdu.edu.cn/info/1068/6902.htm",
+          "format": "html",
+          "content_sha256": "1a4f2ff3a177d44431292a12648d8502456d24f9da5f9593edfa0e6b0c9c4995",
+          "raw_sha256": "59ff8f55ba1a1e414b0a03903484387ef01e8fc59d75b0aae10ed2423e525b0f"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "二、申请资格"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料1—11"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "ordered_paragraphs"
+          },
+          "locator": "三、预报名；五、其他事项第4项；quote以换行分隔独立原文段"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "六、咨询方式"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "sdu_cs_schedule_pdf_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_schedule_pdf_v18": "contiguous"
+          },
+          "locator": "PDF第3页四、成绩说明；年份据2026-09-13发布页"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三、预报名第1项；原文2026年存在排版空格"
+        },
+        {
+          "field": "material_actions.prepare-recommendation-materials.instruction",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料"
+        },
+        {
+          "field": "material_actions.prepare-recommendation-materials.applies_if",
+          "source_ids": [
+            "sdu_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "sdu_cs_recommend_v18": "contiguous"
+          },
+          "locator": "四、申请材料"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "tju-cs-2027-master-recommend-v18",
+      "title": "天津大学计算机学院2027推免硕士接收条件与材料",
+      "school": "tju",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "bdef0a19082c882c95e8b9c1590f4bab4cc58f014507fd8babd5f2946893e101",
+      "evidence_count": 9,
+      "sources": [
+        {
+          "id": "tju_cs_recommend_v18",
+          "url": "https://cs.tju.edu.cn/info/1171/6261.htm",
+          "format": "html",
+          "content_sha256": "393a23debc79ac2422fc852f44807b5ddd045b2f6ac38119b7407cc629f15833",
+          "raw_sha256": "c96f5ae04ab85e7b13ffb501c14817357e93e3f7d5055aaf96f4ec51ff9bba90"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "一、申请条件"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（二）提交材料分学位清单"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（三）（四）；四（二）3"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（一）填报志愿；年份据2026-09-11发布与文中2026考核结束日"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "六、联系方式"
+        },
+        {
+          "field": "material_actions.master-recommend-materials.instruction",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（二）提交材料（1）"
+        },
+        {
+          "field": "material_actions.master-recommend-materials.applies_if",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（二）提交材料（1）"
+        },
+        {
+          "field": "material_actions.recusal-disclosure.instruction",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、管理与监督（四）"
+        },
+        {
+          "field": "material_actions.recusal-disclosure.applies_if",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、管理与监督（四）"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "tju-cs-2027-phd-recommend-v18",
+      "title": "天津大学计算机学院2027本科直博接收条件与材料",
+      "school": "tju",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "d6f775e56eb8a9fa9fbdb72cfdbe733407aaa0d07cbb141e4530250c0b909fd1",
+      "evidence_count": 6,
+      "sources": [
+        {
+          "id": "tju_cs_recommend_v18",
+          "url": "https://cs.tju.edu.cn/info/1171/6261.htm",
+          "format": "html",
+          "content_sha256": "393a23debc79ac2422fc852f44807b5ddd045b2f6ac38119b7407cc629f15833",
+          "raw_sha256": "c96f5ae04ab85e7b13ffb501c14817357e93e3f7d5055aaf96f4ec51ff9bba90"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "一、申请条件"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（二）提交材料分学位清单"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（三）（四）；四（二）3"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（一）填报志愿；年份据2026-09-11发布与文中2026考核结束日"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "六、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "tju_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "tju_cs_recommend_v18": "contiguous"
+          },
+          "locator": "三（一）第2项；年份据2026发布及考核年度"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "dlut-cs-2027-master-recommend-post-admission-v18",
+      "title": "大连理工计算机学院2027硕士推免接收章程（仅拟录取后政审材料）",
+      "school": "dlut",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "dc378470255b9354ee8db0abdb12eb583a543a42704935443a95b96e3f20424a",
+      "evidence_count": 5,
+      "sources": [
+        {
+          "id": "dlut_cs_recommend_v18",
+          "url": "https://cs.dlut.edu.cn/info/1256/6480.htm",
+          "format": "html",
+          "content_sha256": "b77cf754e4f139099278f71f7e8e733b7fad07c5bd933c9265c9ef672708b132",
+          "raw_sha256": "550e05a0bbe5e1386635357fdd03fa3b84c85413caa8ebe0935f1963700afc7c"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "applies_if",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "material_actions.political-review-form.instruction",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "material_actions.political-review-form.applies_if",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "dlut-cs-2027-phd-recommend-post-admission-v18",
+      "title": "大连理工计算机学院2027本科直博接收章程（仅拟录取后政审材料）",
+      "school": "dlut",
+      "dept": "cs",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "c3733a034ee4a6f45ad55656b6a9f250f46f320b7ad91f13e5e7d1179f97a3ca",
+      "evidence_count": 5,
+      "sources": [
+        {
+          "id": "dlut_cs_recommend_v18",
+          "url": "https://cs.dlut.edu.cn/info/1256/6480.htm",
+          "format": "html",
+          "content_sha256": "b77cf754e4f139099278f71f7e8e733b7fad07c5bd933c9265c9ef672708b132",
+          "raw_sha256": "550e05a0bbe5e1386635357fdd03fa3b84c85413caa8ebe0935f1963700afc7c"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "applies_if",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "material_actions.political-review-form.instruction",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "material_actions.political-review-form.applies_if",
+          "source_ids": [
+            "dlut_cs_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_cs_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "dlut-ss-2027-master-recommend-post-admission-v18",
+      "title": "大连理工软件学院2027硕士推免接收章程（仅拟录取后政审材料）",
+      "school": "dlut",
+      "dept": "ss",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "master",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "9664e0d6e248a908a61214b945d0f643aa4f40e37f99d20a5b68e361ecea892d",
+      "evidence_count": 5,
+      "sources": [
+        {
+          "id": "dlut_ss_recommend_v18",
+          "url": "https://ss.dlut.edu.cn/info/1321/34912.htm",
+          "format": "html",
+          "content_sha256": "40593e6cb90b025dde89febc05906607afbeb5661c8c463649077ac52d3f067e",
+          "raw_sha256": "f9c2c0f3de95832aace615ef6b324ae226a4e74b1f86a2e8db6e022a8b9792da"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "applies_if",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "material_actions.political-review-form.instruction",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "material_actions.political-review-form.applies_if",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "dlut-ss-2027-phd-recommend-post-admission-v18",
+      "title": "大连理工软件学院2027本科直博接收章程（仅拟录取后政审材料）",
+      "school": "dlut",
+      "dept": "ss",
+      "year": 2027,
+      "route": "recommend",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "8c65e059883da6693a7fd724efe124a671f6558516b33b3b1c43731bb6730d6a",
+      "evidence_count": 5,
+      "sources": [
+        {
+          "id": "dlut_ss_recommend_v18",
+          "url": "https://ss.dlut.edu.cn/info/1321/34912.htm",
+          "format": "html",
+          "content_sha256": "40593e6cb90b025dde89febc05906607afbeb5661c8c463649077ac52d3f067e",
+          "raw_sha256": "f9c2c0f3de95832aace615ef6b324ae226a4e74b1f86a2e8db6e022a8b9792da"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "applies_if",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五1；只录日期，不补时刻"
+        },
+        {
+          "field": "material_actions.political-review-form.instruction",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        },
+        {
+          "field": "material_actions.political-review-form.applies_if",
+          "source_ids": [
+            "dlut_ss_recommend_v18"
+          ],
+          "match_modes": {
+            "dlut_ss_recommend_v18": "contiguous"
+          },
+          "locator": "五、复试内容及流程1"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "policy_id": "tsinghua-auto-2027-phd-assessment-v22",
+      "title": "清华自动化系2027普通博士秋季申请（2026年7月已截止）",
+      "school": "tsinghua",
+      "dept": "auto",
+      "year": 2027,
+      "route": "assessment",
+      "degree": "phd",
+      "status": "confirmed",
+      "quality": "checked",
+      "previous_reviewed_at": "2026-10-15",
+      "human_reviewed_at": "2026-10-15",
+      "system_reconfirmed_at": "2026-11-16T09:16:22+00:00",
+      "next_attempt": "2026-11-30T09:16:22+00:00",
+      "policy_sha256": "ec600f28e9280417c14de15eca4c33d6417a8711aaefdd3291c4a29832a6e4a8",
+      "evidence_count": 14,
+      "sources": [
+        {
+          "id": "tsinghua_auto_phd_v22",
+          "url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/e16d784f-403e-4ac4-98ff-15fd79e051a4?yxsdm=025",
+          "format": "html",
+          "content_sha256": "3fbd27893811b926da15ca9397230afe39f2b5eec149e83f8346f41685ffa25a",
+          "raw_sha256": "05dee32695a06f429401adf5aae726b7c74bbefeb64fec7049ae5b8559d5842f"
+        },
+        {
+          "id": "tsinghua_school_v16phd",
+          "url": "https://yzbm.tsinghua.edu.cn/publish/s03/s0302/detail/1ceee112-93f3-400d-bd92-c1bfce260b0f",
+          "format": "html",
+          "content_sha256": "21b11577384b672985dff14cb706daf0d604a62808fe4cdf838241867d027d6e",
+          "raw_sha256": "e09cda9efda775483c002da2ca456dabaecfacc63be7fc6911d6d9c1643a99a1"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "fields.eligibility",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）1"
+        },
+        {
+          "field": "fields.materials",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3（1）至（10）"
+        },
+        {
+          "field": "fields.timeline",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）2"
+        },
+        {
+          "field": "fields.exams",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "二、综合考核"
+        },
+        {
+          "field": "fields.quota",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "二、材料审查"
+        },
+        {
+          "field": "fields.contact",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "五、联系方式"
+        },
+        {
+          "field": "events.0",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）2申请时间1"
+        },
+        {
+          "field": "material_actions.historical-core-package.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3（1）至（10）"
+        },
+        {
+          "field": "material_actions.statement-research-plan.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3（9）"
+        },
+        {
+          "field": "material_actions.two-page-cv.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3（10）"
+        },
+        {
+          "field": "material_actions.expert-references-no-proposed-supervisor.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3注1"
+        },
+        {
+          "field": "material_actions.sealed-reference-originals.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3注1后半"
+        },
+        {
+          "field": "material_actions.overseas-verification.instruction",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3注2"
+        },
+        {
+          "field": "material_actions.overseas-verification.applies_if",
+          "source_ids": [
+            "tsinghua_auto_phd_v22"
+          ],
+          "match_modes": {
+            "tsinghua_auto_phd_v22": "contiguous"
+          },
+          "locator": "一（三）3注2"
+        }
+      ],
+      "reasons": []
+    }
+  ],
+  "initial_repairs": [
+    {
+      "policy_id": "sjtu-auto-2027-phd-recommend",
+      "previous_reviewed_at": "2026-10-14",
+      "reviewed_at": "2026-11-16",
+      "mode": "maintainer_evidence_review",
+      "source_url": "https://sais.sjtu.edu.cn/yjs_zsgz/1838.html",
+      "reason": "新增纳入两份官方DOCX申请表的版本追踪，复核原报名条件/范围/截止，补全材料与按类型联系人；未改变2027历史周期",
+      "attachments": [
+        {
+          "source_id": "sjtu_auto_phd_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/30976978/自动化与感知学院2027级预推免选拔直博申请表.docx",
+          "sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d",
+          "evidence_paragraphs": [
+            "2027级预推免选拔活动申请表（直博）",
+            "注：申请表内容与系统所填内容一致，填写后申请人签名！"
+          ]
+        },
+        {
+          "source_id": "sjtu_auto_special_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/36734474/自动化与感知学院2027级工程硕博专项申请表.docx",
+          "sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0",
+          "evidence_paragraphs": [
+            "2027级工程硕博士培养改革专项研究生推荐免试选拔申请表",
+            "注：申请表内容与系统所填内容一致，填写后申请人签名！"
+          ]
+        }
+      ]
+    },
+    {
+      "policy_id": "sjtu-auto-2027-master-special",
+      "previous_reviewed_at": "2026-10-14",
+      "reviewed_at": "2026-11-16",
+      "mode": "maintainer_evidence_review",
+      "source_url": "https://sais.sjtu.edu.cn/yjs_zsgz/1838.html",
+      "reason": "新增纳入两份官方DOCX申请表的版本追踪，复核原报名条件/范围/截止，补全材料与按类型联系人；未改变2027历史周期",
+      "attachments": [
+        {
+          "source_id": "sjtu_auto_phd_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/30976978/自动化与感知学院2027级预推免选拔直博申请表.docx",
+          "sha256": "a59d8eec7f4ae106a40974958e2d49a36f035913b1ab250943335edaf272109d",
+          "evidence_paragraphs": [
+            "2027级预推免选拔活动申请表（直博）",
+            "注：申请表内容与系统所填内容一致，填写后申请人签名！"
+          ]
+        },
+        {
+          "source_id": "sjtu_auto_special_form_v1114",
+          "url": "https://sais.sjtu.edu.cn/upload/ueditor/file/20260908/36734474/自动化与感知学院2027级工程硕博专项申请表.docx",
+          "sha256": "1928ae0dd9fbeff9a8a06b9d0fff7200077fb93b1e73089dcbd402db29c038e0",
+          "evidence_paragraphs": [
+            "2027级工程硕博士培养改革专项研究生推荐免试选拔申请表",
+            "注：申请表内容与系统所填内容一致，填写后申请人签名！"
+          ]
+        }
+      ]
+    }
+  ],
+  "idempotent_second_run": {
+    "version": 1,
+    "checked_at": "2026-11-16T09:19:13+00:00",
+    "attempted": 0,
+    "sources_attempted": 0,
+    "confirmed": 0,
+    "retry": 0,
+    "review_required": 0,
+    "results": []
+  },
+  "tests": {
+    "python_related_passed": 106,
+    "python_third_party_warnings": 3,
+    "node_policy_rule_file_passed": true,
+    "browser_checks_passed": 3,
+    "python_after_data_update_passed": 99,
+    "node_related_files_passed": 3,
+    "node_runner_checks_passed": 4
+  }
+}

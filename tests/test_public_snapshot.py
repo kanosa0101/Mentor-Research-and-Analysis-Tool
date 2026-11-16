@@ -106,7 +106,8 @@ class PublicUpdateStageTests(unittest.TestCase):
         (client / 'data/opportunity_feed.json').write_text(json.dumps({'notification_origin': 'https://example.edu'}), encoding='utf-8')
         shutil.copytree(source / 'crawler', client / 'crawler', ignore=shutil.ignore_patterns('__pycache__'))
         (client / 'scripts').mkdir()
-        shutil.copy2(source / 'scripts/build_site.py', client / 'scripts/build_site.py')
+        for script in (source / 'scripts').glob('*.py'):
+            shutil.copy2(script, client / 'scripts' / script.name)
         shutil.copytree(source / 'site/templates', client / 'site/templates')
         for name in self.dependencies:
             shutil.copy2(source / 'site' / name, client / 'site' / name)

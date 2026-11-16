@@ -15,7 +15,7 @@ class CoverageScopeTests(unittest.TestCase):
 
     def rows(self, entries=None, **scope):
         return self.report.build_report(
-            [{'id': 's', 'name': '学校'}], {'s': {'cs'}}, {'policies': []},
+            [{'id': 's', 'name': '学校'}], {'s': {'cs'}}, {'sources': {}, 'policies': []},
             self.entries if entries is None else entries, {},
             degree='phd', route='assessment', today='2026-10-15', **scope)['rows']
 
@@ -50,7 +50,7 @@ class CoverageScopeTests(unittest.TestCase):
                       reviewed_at='2026-10-15', review_hashes={}, fields={'materials': {'text': '报考点材料'}},
                       applies_if={'text': '仅6112报考点', 'quote': '6112', 'locator': '二'})
         rows = self.report.build_report([{'id': 's', 'name': '学校'}], {'s': {'cs'}},
-                                        {'policies': [policy]}, [], {}, today='2026-10-15')['rows']
+                                        {'sources': {}, 'policies': [policy]}, [], {}, today='2026-10-15')['rows']
         for row in rows:
             self.assertEqual(row['school_policy_ids'], [])
             self.assertEqual(row['fields_by_layer']['school'], [])
@@ -65,7 +65,7 @@ class CoverageScopeTests(unittest.TestCase):
                                         {'id': 'check', 'stage': 'enrollment', 'applies_if': {'text': '应届生'}}])
         specific = dict(policy, id='specific', dept='cs', level='program', program='计算机技术', program_code='085404')
         rows = self.report.build_report([{'id': 's', 'name': '学校'}], {'s': {'cs'}},
-                                        {'policies': [policy, specific]}, [], {}, today='2026-10-15')['rows']
+                                        {'sources': {}, 'policies': [policy, specific]}, [], {}, today='2026-10-15')['rows']
         self.assertEqual(rows[1]['material_actions'], [
             {'policy_id': 'school', 'action_id': 'upload', 'stage': 'application', 'conditional': False},
             {'policy_id': 'school', 'action_id': 'check', 'stage': 'enrollment', 'conditional': True}])

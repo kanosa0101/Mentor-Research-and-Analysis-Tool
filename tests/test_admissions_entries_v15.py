@@ -88,7 +88,7 @@ class AdmissionEntryTests(unittest.TestCase):
         base = {'id': 'old', 'school': 'known', 'dept': '', 'level': 'school', 'year': 2027,
                 'degree': 'master', 'route': 'exam', 'track': 'general', 'program': '', 'program_code': '',
                 'reviewed_at': '2026-09-01', 'review_hashes': {'school': 'a' * 64}, 'fields': {}}
-        data = {'policies': [base, dict(base, id='new', reviewed_at='2026-10-15')]}
+        data = {'sources': self.sources, 'policies': [base, dict(base, id='new', reviewed_at='2026-10-15')]}
         checks = {'school': {'status': 'ok', 'hash': 'a' * 64, 'last_attempt': '2026-10-15', 'last_success': '2026-10-15'}}
         result = report.build_report([{'id': 'known', 'name': '学校'}], self.units, data, [], checks, today='2026-10-15')
         row = result['rows'][0]
@@ -103,7 +103,7 @@ class AdmissionEntryTests(unittest.TestCase):
                       'reviewed_at': '2026-10-15', 'review_hashes': {}, 'fields': {}}
             for program, covered in [('', False), ('085400|另一专项', False), ('085400|特定专项', True)]:
                 with self.subTest(level=level, program=program):
-                    rows = report.build_report([{'id': 'known', 'name': '学校'}], self.units, {'policies': [policy]}, [], {},
+                    rows = report.build_report([{'id': 'known', 'name': '学校'}], self.units, {'sources': self.sources, 'policies': [policy]}, [], {},
                                                track='special', program=program, today='2026-10-15')['rows']
                     row = next(r for r in rows if r['dept'] == 'cs')
                     self.assertEqual(row['school_policy_ids'], [])

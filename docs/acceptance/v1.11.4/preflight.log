@@ -1,0 +1,27 @@
+== 1. YAML + schema 校验 ==
+records: 7173
+== 2. 字段卫生 ==
+== 3. issues / changes ==
+ok
+== 4. 站点一致性 ==
+payload rows: 7173 (data 7173)
+== 5. 仓库卫生 ==
+junk candidates: 149 | gitignore cache: True
+== 6. schools.yaml ==
+== 7. outreach.yaml（套磁跟进, 私人数据）==
+entries: 0
+== 8. AI 块（evidence 必须可回溯到库内材料）==
+ai blocks: 0
+== 9. 私人申请工作流 ==
+none (尚未创建私人申请记录)
+== 10. 私人筛选与招生核验 ==
+none (尚未保存私人筛选与核验)
+== 11. 公开学校/院系招生政策 ==
+111 scoped policies / 185 sources / 96 official entries
+
+== PROBLEMS ==
+ - open issues: nankai-cyber.yaml x4
+ - open issues: nudt-ai.yaml x1
+ - open issues: nudt-cs.yaml x14
+ - open issues: seu-auto.yaml x2
+total: 4

@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 
 from crawler import store
 from crawler import admissions_util
+from crawler.policy_revalidation import public_policy
 from crawler import opportunity_util
 from crawler.notice_util import annotate_notices
 from crawler.admissions_entries import load_catalog, load_entries
@@ -255,6 +256,7 @@ def main():
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
     configured_schools, units = load_catalog(ROOT)
     admissions_util.validate(admissions, units)
+    admissions['policies'] = [public_policy(policy, admissions['sources']) for policy in admissions['policies']]
     checks_file = ROOT / 'data/admissions_checks.json'
     admissions['checks'] = json.loads(checks_file.read_text(encoding='utf-8')) if checks_file.exists() else {}
     admissions_util.validate_checks(admissions['checks'], admissions['sources'])

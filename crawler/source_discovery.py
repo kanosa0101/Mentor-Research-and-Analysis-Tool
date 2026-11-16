@@ -1,8 +1,9 @@
-"""Discover bounded same-institution HTML columns; onboarding remains explicit."""
+"""Discover bounded official columns; verified columns may enter monitoring, never publication."""
 import hashlib
 import ipaddress
 import json
 import os
+import posixpath
 import re
 import socket
 import tempfile
@@ -18,13 +19,19 @@ from crawler.opportunity_monitor import activity_title, atomic_json, output_lock
 from crawler.opportunity_review import institution
 
 MAX_BYTES = 2 * 1024 * 1024
-COLUMN = re.compile(r'招生|招募|研究生教育|人才培养|培养招生|夏令营|冬令营|科研实践|科研实习|科创计划')
-EXCLUDED = re.compile(r'登录|注册|搜索|检索|结果|公示|名单|新闻|回顾|总结|中小学|中学生|本科招生|出国|海外|(?<![a-z0-9])(?:login|logout|search|signin)(?![a-z0-9])', re.I)
+COLUMN = re.compile(r'招生|招募|研究生教育|人才培养|培养招生|夏令营|冬令营|暑期学校|科研实践|科研实习|科创计划')
+EXCLUDED = re.compile(r'登录|注册|搜索|检索|结果|公示|名单|回顾|总结|中小学|中学生|本科招生|出国|海外|(?<![a-z0-9])(?:login|logout|search|signin)(?![a-z0-9])', re.I)
+ARTICLE_PATH = re.compile(r'/(?:info/[^/]+/[^/]+\.(?:htm|html)|(?:20\d{2})/(?:\d{2}|\d{4})/|ShowArticle/news/|article/\d+|[^/]*c\d+a\d+/page\.htm)|/t20\d{6}_|/20\d{6,}\.html', re.I)
+ARTICLE_BODY = '.wp_articlecontent, #vsb_content, #vsb_content_2, .TRS_Editor, .v_news_content'
 
 
 def column_link(link):
-    return bool(COLUMN.search(link['title']) or link['title'] == '通知公告' and
-                re.search(r'/(?:yjszs|zszp|zspy|admissions|recruit|zsxx)/', urlsplit(link['url']).path, re.I))
+    # Short announcement titles and article footers are not source columns.
+    if (ARTICLE_PATH.search(urlsplit(link['url']).path) or
+            re.search(r'20\d{2}|关于|举办|开展|报名通知|招生简章|本科生?(?:招生|培养|教育)|博士招生|境外|留学', link['title']) or
+            re.search(r'/(?:bkszs|bkzs|bkspy|undergraduate|undergrad)(?:/|\.)', urlsplit(link['url']).path, re.I)):
+        return False
+    return bool(COLUMN.search(link['title']) or link['title'] in ('通知公告', '学院公告', '招生公告', '公告通知', '新闻公告', '新闻动态'))
 
 
 def boundary(url):
@@ -39,7 +46,10 @@ def canonical(url, parent=None):
     if (parsed.scheme not in ('http', 'https') or not parsed.hostname or parsed.username or parsed.password
             or parsed.port not in (None, 80, 443) or '\\' in url or len(url) > 1500):
         raise ValueError('来源地址须为无凭据、标准端口的官方HTTP(S)链接')
-    result = urlunsplit((parsed.scheme, parsed.netloc.lower(), parsed.path or '/', parsed.query, ''))
+    path = posixpath.normpath(parsed.path or '/')
+    if parsed.path.endswith('/') and path != '/':
+        path += '/'
+    result = urlunsplit((parsed.scheme, parsed.netloc.lower(), path, parsed.query, ''))
     if parent and boundary(result) != boundary(parent):
         raise ValueError('发现链接跨机构，须另行人工核对来源')
     boundary(result)
@@ -101,8 +111,13 @@ def links(raw, url):
 
 
 def inspect(raw, url):
+    soup = BeautifulSoup(raw, 'html.parser')
+    if ARTICLE_PATH.search(urlsplit(url).path) or soup.select_one(ARTICLE_BODY):
+        raise ValueError('这是单条公告正文，不能用正文或页脚链接充当持续更新栏目')
     rows = links(raw, url)
-    activities = [r for r in rows if activity_title(r['title']) and len(r['title']) >= 8]
+    activities = [r for r in rows if activity_title(r['title']) and len(r['title']) >= 8 and
+                  not column_link(r) and (ARTICLE_PATH.search(urlsplit(r['url']).path) or
+                  re.search(r'20\d{2}|报名|招募|招收|接收|申请|通知', r['title']))]
     if not activities:
         raise ValueError('未解析到独立活动公告链接；不能把导航或API外壳当成可用栏目')
     canonical_rows = sorted((r['url'], r['title']) for r in rows)
@@ -127,10 +142,24 @@ def seeds(root, configs):
             if source.get('url') and source.get('format') == 'html':
                 result.setdefault(source['url'], dict(url=source['url'], school=entry['school'], dept=entry.get('dept', ''),
                                                        name=source.get('label') or entry.get('note') or entry['school']))
+    # Department homepages are already maintained identities, independent of policy completeness.
+    for path in sorted((root / 'sites').glob('*/*.yaml')):
+        unit = yaml.safe_load(path.read_text(encoding='utf-8')) or {}
+        if not unit.get('base_url') or not unit.get('school') or not unit.get('dept'):
+            continue
+        try:
+            parsed = urlsplit(canonical(unit['base_url']))
+            # Prefer a TLS-verified view of the same registered host; failure is retained, never downgraded.
+            url = urlunsplit(('https', parsed.netloc, parsed.path, parsed.query, ''))
+        except ValueError:
+            continue
+        result.setdefault(url, dict(url=url, school=unit['school'], dept=unit['dept'],
+            name=unit.get('dept_name') or unit['dept'], seed_kind='registered_department',
+            declared_url=unit['base_url']))
     return list(result.values())
 
 
-def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidates=12, refresh=False):
+def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidates=12, refresh=False, auto_admit=False):
     root = Path(root); now = now or datetime.now(timezone.utc)
     if not 1 <= max_seeds <= 12 or not 1 <= max_candidates <= 24:
         raise ValueError('每轮最多12个入口、24个新栏目')
@@ -176,7 +205,7 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
                         next_check_at=(now + timedelta(hours=6)).isoformat())
                     try:
                         candidate.update(inspect(fetcher(link['url'], parent_url), link['url']), status='candidate',
-                            reason='同机构HTML栏目已解析活动链接；仍需维护者核准接入，不代表活动已核验')
+                            reason='同机构HTML栏目已解析活动链接；等待接入规则复核，不代表活动已核验')
                     except (requests.RequestException, OSError, ValueError) as error:
                         candidate.update(status='error', reason=str(error)[:400])
                     candidates[ident] = candidate; added += int(old is None)
@@ -189,10 +218,78 @@ def run(root, *, configs=None, fetcher=None, now=None, max_seeds=6, max_candidat
         data['next_check_at'] = min((states.get(c['url'], {}).get('next_check_at', now.isoformat()) for c in pool), default=(now + timedelta(hours=6)).isoformat())
         data['status'] = 'partial' if any(s.get('status') == 'error' for s in states.values()) else 'ok'
         atomic_json(path, data)
-        return data
+    if auto_admit:
+        admit_verified(root, max_candidates=min(max_candidates, 8), fetcher=fetcher, now=now)
+        data = read(root)
+    return data
 
 
-def decide(root, candidate_id, action, *, expected_sha256=None, fetcher=None, now=None):
+def automatic_reason(root, candidate, configs):
+    """An automatic source changes monitoring only, with an existing institutional trust chain."""
+    if not column_link(dict(url=candidate['url'], title=candidate['label'])):
+        return '不是明确的研究生或活动栏目；公告、个人招募及本科招生不自动接入'
+    if re.search(r'港澳台|同等学力|非全日制|留学|专业目录|招生目录|报名系统|博士|奖学金', candidate['label']):
+        return '这是特定学位、地区或目录服务，不能自动作为本科生院校活动来源'
+    if any(urlsplit(candidate[key]).scheme != 'https' for key in ('url', 'parent_url')):
+        return '自动接入只接受经TLS校验的官方HTTPS入口和栏目'
+    parent = next((c for c in seeds(root, configs) if c['url'] == candidate['parent_url']), None)
+    if not parent or not parent.get('school') or parent.get('school') != candidate.get('school'):
+        return '父入口或学校身份不在当前可信登记中'
+    if parent.get('mode') == 'direct_page' or parent.get('content_scope_hint') == 'mentor_recruitment':
+        return '个人招募或单条公告不能扩展为机构栏目'
+    if int(parent.get('discovery_depth', bool(parent.get('discovery_parent')))) >= 2:
+        return '自动发现已到两层上限，需维护者确认后扩展'
+    if not candidate.get('activity_count') or not candidate.get('content_sha256'):
+        return '尚无可重复解析的独立活动公告'
+    return ''
+
+
+def admit_verified(root, *, max_candidates=4, fetcher=None, now=None):
+    """Recheck the parent and column before bounded, idempotent monitoring admission."""
+    if not 1 <= max_candidates <= 8:
+        raise ValueError('每轮最多自动接入8个栏目')
+    root = Path(root); now = now or datetime.now(timezone.utc)
+    path = root / 'cache/source-discovery.json'
+    config_path = root / 'sites/opportunities.yaml'
+    configs = yaml.safe_load(config_path.read_text(encoding='utf-8'))['targets']
+    candidates = sorted(read(root)['candidates'], key=lambda c: (c.get('automatic_admission', {}).get('checked_at', ''), c['id']))
+    attempts, approved = 0, 0
+    for candidate in candidates:
+        if candidate.get('status') != 'candidate':
+            continue
+        prior = candidate.get('automatic_admission', {})
+        if prior.get('next_check_at', '') > now.isoformat():
+            continue
+        reason = automatic_reason(root, candidate, configs)
+        result = dict(checked_at=now.isoformat(), next_check_at=(now + timedelta(hours=6)).isoformat())
+        if reason:
+            result.update(state='manual_required', reason=reason)
+        else:
+            if attempts >= max_candidates:
+                break
+            attempts += 1
+            try:
+                decide(root, candidate['id'], 'approve', expected_sha256=candidate['source_sha256'],
+                       fetcher=fetcher, now=now, automatic=True)
+                approved += 1
+                result.update(state='approved', reason='可信官方入口和栏目两次核对一致；仅接入监测，公告仍独立核验')
+            except (requests.RequestException, OSError, ValueError, RuntimeError) as error:
+                result.update(state='retry_pending', reason=str(error)[:400])
+        with output_lock(path):
+            data = read(root)
+            current = next(c for c in data['candidates'] if c['id'] == candidate['id'])
+            current['automatic_admission'] = result
+            atomic_json(path, data)
+    with output_lock(path):
+        data = read(root)
+        data['automatic_admission'] = dict(checked_at=now.isoformat(), attempted=attempts, approved=approved,
+            pending=sum(c.get('automatic_admission', {}).get('state') == 'retry_pending' for c in data['candidates']),
+            manual_required=sum(c.get('automatic_admission', {}).get('state') == 'manual_required' for c in data['candidates']))
+        atomic_json(path, data)
+    return data['automatic_admission']
+
+
+def decide(root, candidate_id, action, *, expected_sha256=None, fetcher=None, now=None, automatic=False):
     if action not in ('approve', 'reject'):
         raise ValueError('请选择核准或拒绝来源')
     root = Path(root); now = now or datetime.now(timezone.utc); fetcher = fetcher or fetch_html
@@ -222,10 +319,17 @@ def decide(root, candidate_id, action, *, expected_sha256=None, fetcher=None, no
         # The parent must still belong to the maintained official seed registry.
         if candidate['parent_url'] not in {c['url'] for c in seeds(root, config['targets'])}:
             raise ValueError('父来源已不在可信入口中，未接入')
+        if automatic:
+            reason = automatic_reason(root, candidate, config['targets'])
+            if reason:
+                raise ValueError(reason)
         if candidate['url'] not in {c['url'] for c in config['targets']}:
+            parent = next(c for c in seeds(root, config['targets']) if c['url'] == candidate['parent_url'])
             config['targets'].append(dict(source_id='discovered-' + candidate_id, school=candidate['school'], dept=candidate['dept'],
                 name=candidate['label'], url=candidate['url'], selector='a[href]', title_selector='self',
-                priority='normal', interval_hours=6, discovery_parent=candidate['parent_url']))
+                priority='normal', interval_hours=6, discovery_parent=candidate['parent_url'],
+                discovery_depth=int(parent.get('discovery_depth', bool(parent.get('discovery_parent')))) + 1,
+                source_note='可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。'))
             backup = root / 'cache/source-discovery-backups' / (hashlib.sha256(original).hexdigest() + '.yaml')
             backup.parent.mkdir(parents=True, exist_ok=True)
             if not backup.exists():
@@ -237,7 +341,8 @@ def decide(root, candidate_id, action, *, expected_sha256=None, fetcher=None, no
                 os.replace(temporary, config_path)
             finally:
                 Path(temporary).unlink(missing_ok=True)
-        candidate.update(current, status='approved', decided_at=now.isoformat(), reason='维护者核准，同机构栏目已接入；公告仍须独立核验发布')
+        candidate.update(current, status='approved', decided_at=now.isoformat(),
+            reason='规则核准，同机构栏目已接入；公告仍须独立核验发布' if automatic else '维护者核准，同机构栏目已接入；公告仍须独立核验发布')
         data.setdefault('summary', {})['pending'] = sum(c['status'] == 'candidate' for c in data['candidates'])
         atomic_json(path, data)
         return candidate

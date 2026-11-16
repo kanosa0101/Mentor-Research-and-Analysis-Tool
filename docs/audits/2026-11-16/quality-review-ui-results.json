@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "1440px quality panel: retry/review_required/pending/error, overdue and next retry visible, resolved rows absent, 4 official source links, no overflow",
+    "dirty polling/stale409/manual marker/hidden and version-bound evidence preserved/source config backed up",
+    "1440px real API, no overflow/page errors, priority filters, opt-in foreground dedup, isolated background subscribe/test/unsubscribe",
+    "390px quality panel: retry/review_required/pending/error, overdue and next retry visible, resolved rows absent, 4 official source links, no overflow",
+    "390px real API, no overflow/page errors, priority filters, opt-in foreground dedup, isolated background subscribe/test/unsubscribe",
+    "real browser service worker installed/activated without requesting notification permission; private store URL denied"
+  ],
+  "notification_delivery": "Browser/system display mocked; real loopback HTTP and independent maintainer store exercised. No actual external push delivery claimed.",
+  "production_mutations": false
+}

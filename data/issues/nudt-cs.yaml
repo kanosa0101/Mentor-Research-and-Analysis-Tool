@@ -5,7 +5,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id001
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26112
+      sha256: 27b2ca3285b3e1fc9727b22c70e792ad458e825ed8d64d4156a441defb3dc02c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25718
+      sha256: 27b2ca3285b3e1fc9727b22c70e792ad458e825ed8d64d4156a441defb3dc02c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - chuzengyong-2
+    - chuzengyong
+    id: nudt/cs/duplicate_public_registration/楚增勇
+    kind: duplicate_public_registration
+    ref: 楚增勇
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id001
+    title: nudt-cs · 楚增勇 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: duplicate_public_registration
   ref: 任开军
   message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
@@ -13,7 +40,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id002
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26068
+      sha256: fc0ddec2eb148ee4677cbe09d8ada9f77176db044b34a3d679db6d7d47185895
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27331
+      sha256: 099d5d3b73a25777694d46781b09f3f4c294bcf6ee2dbb5b5f353101be2e5971
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - renkaijun
+    - renkaijun-2
+    id: nudt/cs/duplicate_public_registration/任开军
+    kind: duplicate_public_registration
+    ref: 任开军
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id002
+    title: nudt-cs · 任开军 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: duplicate_public_registration
   ref: 宋君强
   message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
@@ -21,7 +75,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id003
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26069
+      sha256: 382ffbe00c8bc1e591205440a8cd176989d5fefa4aba74cbc15b1e947a7a90f1
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27391
+      sha256: d61afc97f4ce6d6ad3036a74417a1a7375d450dedfcdf21259edb16ed2342e84
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - songjunqiang
+    - songjunqiang-2
+    id: nudt/cs/duplicate_public_registration/宋君强
+    kind: duplicate_public_registration
+    ref: 宋君强
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id003
+    title: nudt-cs · 宋君强 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: duplicate_public_registration
   ref: 张卫民
   message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
@@ -29,7 +110,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id004
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26070
+      sha256: f37cff54a8914bcf8035586ab52cfbee2e26231e7a796c9c134b40a1717bf968
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27392
+      sha256: 5d907de6c560d5c41dc05b2b5f38628d5544c531c35fc3470b183def105578aa
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - zhangweimin
+    - zhangweimin-2
+    id: nudt/cs/duplicate_public_registration/张卫民
+    kind: duplicate_public_registration
+    ref: 张卫民
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id004
+    title: nudt-cs · 张卫民 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: duplicate_public_registration
   ref: 钟玮
   message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
@@ -37,7 +145,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id005
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26515
+      sha256: f7f8f4fd5deb8c88620b6ca47c377e4e1b321cdea225bd0f6c627d9b58a02f73
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26105
+      sha256: a7aa74e1d3f4fd4ac338bf906bad3352b51d479972225a4e97ecbb89cf0513c4
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - zhongwei-2
+    - zhongwei
+    id: nudt/cs/duplicate_public_registration/钟玮
+    kind: duplicate_public_registration
+    ref: 钟玮
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id005
+    title: nudt-cs · 钟玮 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: duplicate_public_registration
   ref: 朱小谦
   message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
@@ -45,7 +180,34 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    evidence: &id006
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26071
+      sha256: 5e4224a918c20ce5582dd73c5c190c4b24cc1c239a6f9221cd4a42159c1f279e
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=27428
+      sha256: dcaea8e8c8595d1b65d5078b79db895446ff2f56d92488dc81e2e928129c649c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 多个官方登记仍存在，缺人员唯一标识；不按同名合并或删除
+    registrations:
+    - zhuxiaoqian
+    - zhuxiaoqian-2
+    id: nudt/cs/duplicate_public_registration/朱小谦
+    kind: duplicate_public_registration
+    ref: 朱小谦
+    original_message: 官方公开导师查询存在2条同名不同keyId登记，未提供稳定人员ID，保留登记并待核同人；不能按条目数计算独立教师人数。
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id006
+    title: nudt-cs · 朱小谦 · duplicate_public_registration
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: liaoxiangke
   message: 官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960
@@ -53,7 +215,38 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id007
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960
+      sha256: b8452b4795e2b7809dd6611254fac5c7144d9ec90d3e906a5850c4f9882033d2
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882
+      sha256: 2373287a0bcfa9ce4c5ba28c5ca4ec911cd9c09fda89a323c9dcaf89b46d7703
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/liaoxiangke
+    kind: shared_public_contact
+    ref: liaoxiangke
+    original_message: 官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id007
+    title: nudt-cs · liaoxiangke · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: lishanshan
   message: 官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882
@@ -61,7 +254,38 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id008
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882
+      sha256: 2373287a0bcfa9ce4c5ba28c5ca4ec911cd9c09fda89a323c9dcaf89b46d7703
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25960
+      sha256: b8452b4795e2b7809dd6611254fac5c7144d9ec90d3e906a5850c4f9882033d2
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/lishanshan
+    kind: shared_public_contact
+    ref: lishanshan
+    original_message: 官方导师登记在不同姓名（李姗姗、廖湘科）简介共享邮箱shanshanli@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=25882
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id008
+    title: nudt-cs · lishanshan · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: likenli
   message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073
@@ -69,7 +293,41 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id009
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073
+      sha256: 1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
+      sha256: 325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003
+      sha256: 7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/likenli
+    kind: shared_public_contact
+    ref: likenli
+    original_message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id009
+    title: nudt-cs · likenli · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: likeqin
   message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
@@ -77,7 +335,41 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id010
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
+      sha256: 325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073
+      sha256: 1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003
+      sha256: 7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/likeqin
+    kind: shared_public_contact
+    ref: likeqin
+    original_message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id010
+    title: nudt-cs · likeqin · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: liujie
   message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003
@@ -85,7 +377,42 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id011
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003
+      sha256: 7095f2812b65d99b4ee977d365d3ce6cf158d3728d4d2d4df89479dfa0a0f7d3
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26073
+      sha256: 1009c69ed72e1168374861e405ba0fe82620deda2122ca9dcf53122e8d08af9c
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26072
+      sha256: 325254ac7f4c2d0c500567e0fd80898bf809180b535559de9475cf26c1355baf
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    - research_direction_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/liujie
+    kind: shared_public_contact
+    ref: liujie
+    original_message: 官方导师登记在不同姓名（刘杰、李克勤、李肯立）简介共享邮箱liujie@nudt.edu.cn；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26003
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id011
+    title: nudt-cs · liujie · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: lidongsheng
   message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039
@@ -93,7 +420,41 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id012
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039
+      sha256: ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041
+      sha256: 8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046
+      sha256: 0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/lidongsheng
+    kind: shared_public_contact
+    ref: lidongsheng
+    original_message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id012
+    title: nudt-cs · lidongsheng · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: luxicheng
   message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041
@@ -101,7 +462,41 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id013
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041
+      sha256: 8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046
+      sha256: 0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039
+      sha256: ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/luxicheng
+    kind: shared_public_contact
+    ref: luxicheng
+    original_message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id013
+    title: nudt-cs · luxicheng · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null
 - kind: shared_public_contact
   ref: xujie
   message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046
@@ -109,4 +504,39 @@
   resolved: false
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    evidence: &id014
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046
+      sha256: 0eac48618351e6c1cabaa275303d6ef282651910c3c9541238689c7c8b89b0ac
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26041
+      sha256: 8ff4287078cfa00d526fb09610ef6ff4fe3825eab3f60f733d813386884736e1
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26039
+      sha256: ddda7d2559839137d86623a6f43b25a943609ef35eae97f0f1e3d8cf9428e94f
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: pending
+    reason: 官方登记仍共享联系方式；撤回自动个人邮箱，保留原文并继续复检
+    changed_fields:
+    - email
+    checked_fields:
+    - email
+    - supervisor
+    - bio_raw
+    - research_direction_raw
+    personal_email_withheld: true
+    id: nudt/cs/shared_public_contact/xujie
+    kind: shared_public_contact
+    ref: xujie
+    original_message: 官方导师登记在不同姓名（李东升、卢锡城、徐洁）简介共享邮箱lds1201@163.com；无法确认本人独立邮箱，结构化字段留空，bio_raw保留。当前登记来源：https://yjszs.nudt.edu.cn/zsmh/pubweb/homePageList/getView.view?keyId=26046
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-17T09:24:18+00:00'
+    evidence: *id014
+    title: nudt-cs · xujie · shared_public_contact
+    pending_since: '2026-11-16T09:24:18+00:00'
+    last_success: null

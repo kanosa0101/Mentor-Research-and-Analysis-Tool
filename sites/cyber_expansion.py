@@ -8,6 +8,7 @@ from crawler import fetch
 from crawler.email_util import normalize_email
 from sites.wp import parse_wp_detail
 from sites.tsites import _header_block, parse_detail as parse_portal
+from sites import hust_profile
 
 WHU_UNITS = {'信息安全系', '网络空间安全系', '密码科学与技术系'}
 
@@ -90,6 +91,15 @@ def parse_detail(cfg, html, url):
         bits = [short for full, short in [('博士生导师', '博导'), ('硕士生导师', '硕导')] if any(full in line for line in qualification)]
         if bits:
             out['supervisor'] = '、'.join(bits)
+        if urlsplit(url).hostname == 'faculty.hust.edu.cn' and hust_profile.identity_names(soup):
+            out.update(hust_profile.parse(soup))
+        own_bio = soup.select_one('.dft-midcont .Psl-info .cont') if urlsplit(url).hostname == 'faculty.hust.edu.cn' else None
+        if own_bio is not None:
+            text = own_bio.get_text(' ', strip=True)
+            if text in ('暂无内容', 'No content', ''):
+                out.pop('bio_raw', None)
+            else:
+                out['bio_raw'] = text
         for node in soup.select('p, li, td'):
             text = node.get_text(' ', strip=True)
             match = re.match(r'^[·•\s]*(?:电子邮箱|邮箱|E-mail|Email)\s*[：:]\s*(.+)', text, re.I)
@@ -127,6 +137,17 @@ def parse_detail(cfg, html, url):
                 block = heading.find_next_sibling() or heading.parent.find_next_sibling()
                 if block:
                     directions.extend(n.get_text(' ', strip=True) for n in block.select('li, p') if n.get_text(strip=True))
+    biography = soup.select_one('.rightfont') if urlsplit(url).hostname == 'jszy.whu.edu.cn' else None
+    if biography:
+        for paragraph in biography.select('p'):
+            text = paragraph.get_text(' ', strip=True)
+            if len(text) < 500:
+                match = re.search(r'(?:核心研究方向包括|主要研究方向|研究方向)\s*[：:]\s*([^。]+)', text)
+                if match:
+                    directions.append(match[1].strip())
+                match = re.search(r'(?:发送至|联系|咨询).{0,40}电子邮箱\s*[：:]\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})', text)
+                if match:
+                    out.setdefault('email', normalize_email(match[1]))
     directions = [re.sub(r'^[·•\s]+', '', value).strip() for value in directions]
     directions = list(dict.fromkeys(value for value in directions if value and value not in {'研究领域', '研究方向'}))
     if directions:

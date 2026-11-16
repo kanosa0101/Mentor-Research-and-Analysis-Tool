@@ -29,7 +29,7 @@ def validate(data, units):
         if not isinstance(source['url'], str):
             raise ValueError('来源 URL 须为字符串')
         link = urlsplit(source['url'])
-        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf', 'json') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
+        if link.scheme not in ('http', 'https') or not link.hostname or link.username or link.password or source['format'] not in ('html', 'pdf', 'json', 'docx') or not isinstance(source['selector'], str) or (source['format'] == 'html' and not source['selector']):
             raise ValueError('须登记 HTTP(S) 原文和正文选择器')
         if source['format'] == 'json':
             if not isinstance(source.get('api'), str) or not source['api'] or not source['selector'].startswith('/') or re.search(r'~(?:[^01]|$)', source['selector']):
@@ -49,8 +49,11 @@ def validate(data, units):
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
-        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if', 'material_actions'}:
+        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if', 'material_actions', 'revalidation'}:
             raise ValueError('政策结构错误')
+        if 'revalidation' in p:
+            from crawler.policy_revalidation import validate_revalidation
+            validate_revalidation(p['revalidation'])
         if not isinstance(p['id'], str) or not re.fullmatch(r'[a-z0-9_-]+', p['id']) or p['id'] in ids:
             raise ValueError('政策 ID 错误或重复')
         ids.add(p['id'])
@@ -133,6 +136,10 @@ def fingerprint(body, source):
     if source['format'] == 'pdf':
         if not body.lstrip().startswith(b'%PDF-'):
             raise ValueError('来源未返回 PDF')
+        content = body
+    elif source['format'] == 'docx':
+        from crawler.opportunity_attachments import parse_docx
+        parse_docx(body)
         content = body
     else:
         if source['format'] == 'json':

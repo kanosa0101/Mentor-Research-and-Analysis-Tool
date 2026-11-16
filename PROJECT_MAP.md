@@ -1,6 +1,6 @@
 # 项目地图
 
-修订日期：2026-11-16。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.3交付记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)。历史审计数字不代表本轮重新采集。
+修订日期：2026-11-16，当前候选版本 v1.11.4。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.4交付记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)。历史审计数字不代表本轮重新采集。
 
 ## 产品究竟服务什么任务
 
@@ -49,7 +49,7 @@ flowchart LR
 | 公共资料 | `data/professors/`；`admissions.yaml`、`admissions_entries.yaml`、`admissions_checks.json`；`notices.json`、`opportunities.json` | 个人满足资格、学校已收件、导师尚有名额 |
 | 浏览器界面状态 | 筛选、滚动、对比与未保存表单；历史浏览器收藏待本人确认导入 | 已保存云端账号数据 |
 | 云端账号记录 | `var/accounts/accounts.sqlite3` 中身份/会话/收藏；`var/users/<ID>/` 中申请、沟通、提醒与材料 | 公共事实、服务器旧私人文件或其他账号资料 |
-| 维护证据 | `cache/opportunity_review.json`、来源正文/附件、审核与自动任务记录；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
+| 维护证据 | `cache/opportunity_review.json`、`cache/policy_revalidation/`、`cache/mentor_quality/`、`data/issues/`及来源正文/附件；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
 
 界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。现有云账号隔离个人数据；原私人文件保留，不自动归属新用户。
 
@@ -75,11 +75,14 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 
 | 链路 | 关键位置 | 本轮必须一致的部分 |
 | --- | --- | --- |
-| 导师抓取/轮转 | `sites/<school>/*.yaml`、`scripts/crawl.py`、`crawler/legacy_refresh.py` | 保留原文、字段出处；纠正既有解析问题，不扩大院校采集 |
+| 导师抓取/轮转 | `sites/<school>/*.yaml`、`scripts/crawl.py`、`crawler/legacy_refresh.py` | 保留原文、字段出处；解析器/配置修复恢复旧失败，保护人工字段 |
+| 资料问题治理 | `crawler/mentor_quality.py`、`data/issues/`、`cache/mentor_quality/` | 新抓取错误自动入账，解决后周期复检或新失败重开；共享邮箱撤回后不被日常解析写回 |
+| 政策证据再确认 | `crawler/policy_revalidation.py`、`crawler/admissions_util.py`、`cache/policy_revalidation/` | 版本、原句和附件完整一致才续核；保留原人工日期，历史政策不冒充本届要求 |
 | 候选查询 | `/api/mentor-candidates` → `crawler/public_discovery.py`；按ID读取 → `public_catalog.py` | 邮箱/资格/职称在分页前过滤；总数、前端回退、旧偏好兼容一致 |
-| 活动发现 | `sites/opportunities.yaml`、`opportunity_monitor.py`、`source_discovery.py` | 来源监测不等于活动准入；个人招募不得自动重新混入 |
+| 活动发现 | `sites/opportunities.yaml`、`opportunity_monitor.py`、`source_discovery.py` | 官方同机构栏目经父子来源复核可自动接入监测；栏目准入不等于活动发布 |
 | 核验发布 | `opportunity_review.py`、`automatic_review.py`、`ai_evidence.py`、`review_queue.py` | 官方事实门禁与产品归类门禁都通过才分发；AI不能凭标题猜主办层级 |
 | 更新与推送 | `run_review_pipeline.py`、`push_util.py`、`dispatch_updates.py`、`opportunity-sw.js` | 活动API、列表、更新记录、订阅推送使用同一公开范围 |
+| 维护告警 | `crawler/quality_status.py`、`maintenance_push.py`、`cache/quality-alerts.json` | 连续等待不重置，缺失任务状态不报健康；维护通知与学生更新订阅分离 |
 | 私人工作流 | `online_workspace.py` 按账号适配 `scripts/serve.py` 的 workflow/contact/project/material 业务 | 登录后显式保存；旧活动快照、联系人、材料和提醒不被公共更新重写 |
 | 构建与发布 | `scripts/build_site.py`、`maintain_public.py`、`run_review_pipeline.py` | 源数据、索引、详情与API配套；维护不生成客户端资料ZIP，不更新账号目录 |
 
@@ -89,7 +92,9 @@ v1.10 已将归类门禁接入审核、发布、API、活动页和推送；既�
 
 公开数据数量和已整理缺口见 [数据快照](docs/DATA_SNAPSHOT.json) 与网站覆盖页；每条资料以自身来源、适用年度和核验时间为准，构建日期不能证明整库已刷新。2026-11-15整改前的字段质量与18条混合内容处置依据保留在 [历史问题审计](docs/PRODUCT_AUDIT_2026-11-15.md)。
 
-Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证见[v1.11.3记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)。内部走查不替代用户体验验收。
+v1.11.4 候选资料的专项结果：机会监测配置 74 项；原 30 条积压政策完成证据再确认，现有 111 条均为 2027 年度；原 67 条资料问题解决 46 条、保留 21 条。新增栏目中的历史公告不计作当前机会，本轮没有新增可确认面向 2028 届的正在报名项目。逐条证据见[政策](docs/audits/2026-11-16/policy-revalidation.md)、[导师](docs/audits/2026-11-16/mentor-quality.md)和[来源](docs/audits/2026-11-16/opportunity-sources.md)。首次生产自动扫描可能发现原台账之外的新问题，须另计。
+
+Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览器验证必须覆盖真实HTTPS页面上的注册登录、导师转接、建立申请、上传下载和沟通记录。账号上线的既有证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)，本轮独立验证及部署状态见[v1.11.4记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)。内部走查不替代用户体验验收。
 
 ## 文档阅读顺序
 

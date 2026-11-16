@@ -123,7 +123,7 @@ class AISuggestionTests(unittest.TestCase):
                 response.status_code=200;response.content=b'{}';response.json.return_value={'choices':[{'finish_reason':'stop','message':{'content':'{"suggestions":[]}'}}]}
                 result=ai.suggest(folder,'https://demo.edu.cn/a','公开正文'*10000)
                 call=client.post.call_args.kwargs
-                self.assertEqual(call['json']['max_tokens'],2000);self.assertFalse(call['allow_redirects']);self.assertEqual(call['timeout'],(10,120))
+                self.assertEqual(call['json']['max_tokens'],6000);self.assertFalse(call['allow_redirects']);self.assertEqual(call['timeout'],(10,120))
                 self.assertNotIn('fixture-credential',json.dumps(call['json']))
                 self.assertNotIn('fixture-credential',json.dumps(result))
                 self.assertEqual(result['input_chars'],18000)

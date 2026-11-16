@@ -42,4 +42,5 @@ def summarize(root, queue=None, now=None):
         source_overdue=sum(s.get('status') != 'removed' and s.get('next_check_at', stamp) < stamp for s in sources),
         monitoring=live.get('summary', {}), last_notification_delivery=load(root, 'var/push/last_delivery.json'),
         maintenance_alerts=load(root, 'cache/maintenance-alerts.json'),
+        quality_alerts=load(root, 'cache/quality-alerts.json'),
         note='等待时长从本系统首次发现计起，不是官网发布到发现的延迟；旧记录缺少时间时不估算。')

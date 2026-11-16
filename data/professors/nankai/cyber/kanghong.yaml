@@ -4,13 +4,14 @@ aliases:
 - kangh
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 副教授
 email: kanghong@nankai.edu.cn
-institutes: []
+institutes:
+- 物联网工程系
 research_direction_raw: 数据库技术，中间件技术，J2EE
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/kangh
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/kangh
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -21,16 +22,39 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: 实验室地址：http://cc.nankai.edu.cn/dbis/frontend/web/index.php
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

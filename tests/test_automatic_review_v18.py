@@ -16,7 +16,7 @@ URL = 'https://cs.example.edu.cn/camp.htm'
 CONFIGS = [dict(url='https://cs.example.edu.cn/admissions.htm', school='example', dept='cs')]
 HTML = '''<html><meta charset="utf-8"><title>2027年计算机冬令营</title><article>
 <h1>2027年计算机冬令营</h1>
-<p>主办单位：示例计算机学院</p>
+<p>主办单位：示例大学计算机学院</p>
 <h2>一、申请条件</h2><p>计算机相关专业本科生可申请。</p><p>仅限本校学生，不接受已毕业申请人。</p>
 <h2>二、申请材料</h2><p>须提交个人简历、加盖公章的成绩单和英语证明。</p>
 <h2>三、报名方式</h2><p>请将全部申请材料合并PDF发送至 camp@example.edu.cn。</p>
@@ -36,9 +36,11 @@ def setup(tmp_path, monkeypatch):
     monkeypatch.setattr(util, 'today', lambda: NOW.date())
     (tmp_path / 'data').mkdir()
     (tmp_path / 'data/schools.yaml').write_text('schools:\n- id: example\n  name: 示例大学\n', encoding='utf8')
+    (tmp_path / 'sites/example').mkdir(parents=True)
+    (tmp_path / 'sites/example/cs.yaml').write_text('school: example\ndept: cs\ndept_name: 计算机学院\n', encoding='utf8')
     queue = tmp_path / 'cache/opportunity_review.json'
     monitoring = dict(candidates=[dict(url=URL, source=CONFIGS[0]['url'], school='example', dept='cs',
-        unit='示例计算机学院', title='2027年计算机冬令营', first_seen=NOW.isoformat(), last_seen=NOW.isoformat())])
+        unit='示例大学计算机学院', title='2027年计算机冬令营', first_seen=NOW.isoformat(), last_seen=NOW.isoformat())])
     review.sync(monitoring, queue, CONFIGS, fetcher=lambda _: HTML, now=NOW)
     def process(raw=HTML, checker=accepted, publish=True, now=NOW):
         draft = review.read_queue(queue)['drafts'][0]
@@ -60,6 +62,154 @@ def test_full_sections_and_original_publication_gate_then_idempotence(setup):
     before = (root / 'data/opportunities.json').read_bytes()
     assert process(checker=lambda *a: pytest.fail('same version called AI again'))['state'] == 'skipped'
     assert (root / 'data/opportunities.json').read_bytes() == before
+
+
+def test_explicit_single_undergraduate_cohort_can_be_published_without_inference(setup):
+    root, queue, process = setup
+    raw = HTML.replace('计算机相关专业本科生可申请。'.encode(), '2028届计算机相关专业本科生可申请。'.encode())
+    assert process(raw=raw)['state'] == 'published'
+    item = util.load(root)['opportunities'][0]
+    assert item['graduation_year'] == 2028 and item['admission_year'] is None
+    assert '2028届' in review.read_queue(queue)['drafts'][0]['reviewed_fields']['graduation_year']['quote']
+
+
+@pytest.mark.parametrize('condition', [
+    '2027届及2028届本科生可申请。',
+    '2028年入学的学生可申请。',
+    '本科生可申请。其他活动面向2028届本科生。',
+    '不接受2028届本科生，其他本科生可申请。',
+    '仅非2028届本科生可申请。',
+    '2028届以外的本科生可申请。',
+    '2028届及以前的本科生可申请。',
+    '2028届之后的本科生可申请。',
+    '2028届本科生不可申请。',
+])
+def test_ambiguous_or_unmapped_cohort_remains_manual(setup, condition):
+    root, queue, process = setup
+    raw = HTML.replace('计算机相关专业本科生可申请。'.encode(), condition.encode())
+    assert process(raw=raw, checker=lambda *args: pytest.fail('ambiguous cohort reached AI'))['state'] == 'manual_required'
+    assert not (root / 'data/opportunities.json').exists()
+
+
+def test_source_error_retries_after_recovery_instead_of_permanent_manual(setup):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    data['drafts'][0]['fetch']['status'] = 'error'
+    review.atomic_json(queue, data)
+    assert process()['state'] == 'published'
+
+
+def test_discovered_column_label_does_not_replace_explicit_registered_organizer(setup):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    data['drafts'][0]['item']['unit'] = '通知公告'
+    review.atomic_json(queue, data)
+    raw = HTML
+    assert process(raw=raw)['state'] == 'published'
+    item = util.load(root)['opportunities'][0]
+    assert item['unit'] == item['content_classification']['organizer_name'] == '示例大学计算机学院'
+
+
+def test_discovered_column_cannot_claim_another_institution_as_organizer(setup):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    data['drafts'][0]['item']['unit'] = '通知公告'
+    review.atomic_json(queue, data)
+    raw = HTML.replace('主办单位：示例大学计算机学院'.encode(), '主办单位：另一大学计算机学院'.encode())
+    assert process(raw=raw, checker=lambda *args: pytest.fail('unbound organizer reached AI'))['state'] == 'manual_required'
+
+
+@pytest.mark.parametrize('reason', ['AI核验响应未完整结束', 'AI核验响应无法通过结构检查'])
+def test_incomplete_ai_response_gets_bounded_retry(setup, reason):
+    root, queue, process = setup
+    def incomplete(*args):
+        raise ValueError(reason)
+    first = process(checker=incomplete)
+    assert first['state'] == 'retry'
+    assert process(checker=lambda *args: pytest.fail('retry ignored wait'))['state'] == 'skipped'
+    assert process(now=NOW + timedelta(hours=3))['state'] == 'published'
+
+
+@pytest.mark.parametrize('organizer', ['示例大学自动化学院', '示例大学', '示例大学计算机学院、自动化学院'])
+def test_organizer_must_match_registered_department(setup, organizer):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    data['drafts'][0]['item']['unit'] = '通知公告'
+    review.atomic_json(queue, data)
+    raw = HTML.replace('主办单位：示例大学计算机学院'.encode(), ('主办单位：' + organizer).encode())
+    assert process(raw=raw, checker=lambda *a: pytest.fail('wrong department reached AI'))['state'] == 'manual_required'
+    assert not (root / 'data/opportunities.json').exists()
+
+
+def test_multiple_organizer_declarations_cannot_hide_another_institution(setup):
+    root, queue, process = setup
+    raw = HTML.replace(b'</article>', '<p>组织单位：另一大学计算机学院</p></article>'.encode())
+    assert process(raw=raw, checker=lambda *a: pytest.fail('ambiguous organizer reached AI'))['state'] == 'manual_required'
+
+
+def test_registered_department_short_name_can_publish(setup):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    data['drafts'][0]['item']['unit'] = '计算机学院'
+    review.atomic_json(queue, data)
+    raw = HTML.replace('示例大学计算机学院'.encode(), '计算机学院'.encode())
+    assert process(raw=raw)['state'] == 'published'
+    assert util.load(root)['opportunities'][0]['dept_id'] == 'cs'
+
+
+def test_missing_department_registry_requires_review(setup):
+    root, queue, process = setup
+    (root / 'sites/example/cs.yaml').unlink()
+    assert process(checker=lambda *a: pytest.fail('unregistered department reached AI'))['state'] == 'manual_required'
+
+
+def test_published_source_error_recovers_with_real_fetch_and_preserves_facts(setup):
+    root, queue, process = setup
+    assert process()['state'] == 'published'
+    data = review.read_queue(queue)
+    data['drafts'][0]['fetch']['status'] = 'error'
+    review.atomic_json(queue, data)
+    before = copy.deepcopy(data['drafts'][0]['item']['materials'])
+    calls = []
+    def fail(_):
+        calls.append(1)
+        raise OSError('temporary transport error')
+    result = automatic.process(root, queue, data['drafts'][0], CONFIGS, publish=True,
+        now=NOW + timedelta(hours=1), checker=accepted, fetcher=fail)
+    assert result['state'] == 'retry' and calls
+    assert process(now=NOW + timedelta(hours=2), checker=lambda *a: pytest.fail('retry ignored wait'))['state'] == 'skipped'
+    assert process(now=NOW + timedelta(hours=4))['state'] == 'renewed'
+    after = review.read_queue(queue)['drafts'][0]
+    assert review.status(after) == 'published' and after['item']['materials'] == before
+
+
+@pytest.mark.parametrize('edit', ['source', 'quotes'])
+def test_published_source_error_cannot_bypass_changed_evidence(setup, edit):
+    root, queue, process = setup
+    assert process()['state'] == 'published'
+    data = review.read_queue(queue)
+    data['drafts'][0]['fetch']['status'] = 'error'
+    if edit == 'quotes':
+        data['drafts'][0]['quotes'].append('人工增加证据')
+    review.atomic_json(queue, data)
+    raw = HTML.replace('成绩单'.encode(), '推荐信'.encode()) if edit == 'source' else HTML
+    before = (root / 'data/opportunities.json').read_bytes()
+    assert process(raw=raw, now=NOW + timedelta(days=15), checker=lambda *a: pytest.fail('changed facts reached AI'))['state'] == 'manual_required'
+    assert (root / 'data/opportunities.json').read_bytes() == before
+
+
+def test_evidence_bound_scope_hold_does_not_spend_ai_again(setup):
+    root, queue, process = setup
+    data = review.read_queue(queue)
+    draft = data['drafts'][0]
+    draft['triage'] = dict(classification='blocked',reason='院内招募安排，对外申请资格未说明',
+                          source_sha256=draft['fetch']['sha256'])
+    review.atomic_json(queue,data)
+    result = automatic.run(root,queue,CONFIGS,publish=True,now=NOW,
+        checker=lambda *a: pytest.fail('blocked scope reached checker'),
+        assistant=lambda *a: pytest.fail('blocked scope reached assistant'),fetcher=lambda _:HTML)
+    assert result['counts'] == {'manual_required':1}
+    assert not (root/'data/opportunities.json').exists()
 
 
 def test_evaluation_does_not_publish_or_change_manual_fields(setup):
@@ -316,6 +466,67 @@ def test_second_assistance_failure_uses_four_hour_backoff(setup):
     result = automatic.run(root, queue, CONFIGS, now=second_time, **args)['results'][0]
     assert result['state'] == 'retry' and result['failures'] == 2
     assert result['next_attempt_at'] == (second_time + timedelta(hours=4)).isoformat()
+
+
+def test_malformed_assistance_json_retries_without_promoting_suggestions(setup):
+    root, queue, _ = setup
+    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    def malformed(*args):
+        raise ValueError('AI响应无法通过结构检查；未写入建议')
+    args = dict(limit=1, publish=True, fetcher=lambda _: raw)
+    first = automatic.run(root, queue, CONFIGS, now=NOW, assistant=malformed, **args)
+    assert first['counts'] == {'retry': 1}
+    automatic.run(root, queue, CONFIGS, now=NOW, assistant=lambda *a: pytest.fail('protocol retry ignored wait'), **args)
+    recovered = automatic.run(root, queue, CONFIGS, now=NOW+timedelta(hours=3), assistant=extractive_advice, **args)
+    assert recovered['results'][0]['assistance']['state'] == 'ready'
+    assert not (root / 'data/opportunities.json').exists()
+
+
+@pytest.mark.parametrize('reason', ['AI服务网络请求失败；未写入建议', 'AI响应无法通过结构检查；未写入建议'])
+def test_legacy_manual_assistance_transport_failure_waits_then_retries(setup, reason):
+    root, queue, _ = setup
+    data = review.read_queue(queue)
+    draft = data['drafts'][0]
+    draft['automatic_review'] = dict(policy_version=automatic.POLICY_VERSION, state='manual_required',
+        checked_at=NOW.isoformat(), input_revision=automatic.protected(draft), attempts=1,
+        content_sha256=draft['fetch']['content_sha256'], reasons=[reason],
+        assistance=dict(state='failed', source_sha256=draft['fetch']['sha256'], reason=reason))
+    before_clock = draft['first_seen']
+    review.atomic_json(queue, data)
+    args = dict(limit=1, publish=True, checker=lambda *a: pytest.fail('legacy assistance must not publish'),
+                fetcher=lambda _: pytest.fail('legacy assistance uses stored public evidence'))
+    waiting = automatic.run(root, queue, CONFIGS, now=NOW+timedelta(hours=1),
+                            assistant=lambda *a: pytest.fail('legacy retry ignored wait'), **args)
+    assert waiting['counts'] == {'retry': 1}
+    recovered = automatic.run(root, queue, CONFIGS, now=NOW+timedelta(hours=3),
+                              assistant=extractive_advice, **{**args, 'fetcher': lambda _: HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())})
+    assert recovered['results'][0]['assistance']['state'] == 'ready'
+    assert review.read_queue(queue)['drafts'][0]['first_seen'] == before_clock
+    assert not (root / 'data/opportunities.json').exists()
+
+
+def test_same_source_semantically_invalid_assistance_does_not_repeat_ai(setup):
+    root, queue, _ = setup
+    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    def invalid(*args):
+        raise ValueError('AI建议或证据不在官方原文中，未写入建议')
+    args = dict(limit=1, publish=True, now=NOW, fetcher=lambda _: raw)
+    first = automatic.run(root, queue, CONFIGS, assistant=invalid, **args)
+    assert first['counts'] == {'manual_required': 1}
+    automatic.run(root, queue, CONFIGS, assistant=lambda *a: pytest.fail('semantic failure repeated AI'), **args)
+
+
+@pytest.mark.parametrize('content', ['not json', '{"decision":'])
+def test_malformed_ai_transport_response_has_retriable_protocol_error(tmp_path, monkeypatch, content):
+    monkeypatch.setattr(ai_evidence, 'config', lambda _: dict(model='fake', api_key='fixture-key', base_url='https://example.com/v1', daily_limit=2))
+    client = Mock()
+    client.post.return_value.status_code = 200
+    client.post.return_value.content = b'{}'
+    client.post.return_value.json.return_value = dict(choices=[dict(finish_reason='stop', message=dict(content=content))])
+    with pytest.raises(ValueError, match='AI核验响应无法通过结构检查'):
+        ai_review.check(tmp_path, URL, '本科生可以申请', {'eligibility': dict(value='本科生', quote='本科生')}, session=client)
+    with pytest.raises(ValueError, match='AI响应无法通过结构检查'):
+        ai_evidence.suggest(tmp_path, URL, '本科生可以申请', session=client)
 
 
 @pytest.mark.parametrize('finish', [None, 'tool_calls', 'content_filter'])

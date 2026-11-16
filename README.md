@@ -19,7 +19,7 @@
 - [在线服务决策与验收标准](docs/ONLINE_SERVICE.md)、[实施计划](IMPLEMENTATION_PLAN.md)。
 - [架构](ARCHITECTURE.md)、[维护交接](HANDOVER.md)、[自动核验](docs/AUTOMATIC_REVIEW.md)。
 
-本轮加载、布局与申请操作优化的测试与部署结果见[v1.11.3交付记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)，具体完成状态以报告中的实测记录为准。此前账号功能上线证据见[v1.11交付记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
+本轮 v1.11.4 整理政策证据、导师资料问题和机会来源，并将复检、问题重开及维护提醒接入持续更新流程；范围与剩余边界见[实施计划](IMPLEMENTATION_PLAN.md)，测试及部署状态以[v1.11.4交付记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)中的实测为准。此前加载与申请操作优化见[v1.11.3记录](deploy/DELIVERY_V1.11.3_2026-11-16.md)，账号上线证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
 
 ## 开发与运维
 

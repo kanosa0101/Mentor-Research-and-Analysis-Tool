@@ -424,44 +424,44 @@ targets:
   name: 大数据研究院张帆团队
   url: https://ibd.fudan.edu.cn/0f/12/c24067a724754/page.htm
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 复旦大学张帆团队本科科研实习联系
   required_text: 【长期招收优秀博士后、优秀博士/硕士研究生、优秀本科实习生】
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - source_id: sjtu-ins-hongliang
   school: sjtu
   dept: ins
   name: 洪亮团队／张江高等研究院
   url: https://ins.sjtu.edu.cn/people/lhong/join-us.html
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 上海交通大学洪亮团队AI与生物方向长期实习
   required_text: 课题组长期招收计算机/生物工程方向实习生
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - source_id: ustc-robotics-huqiqiang
   school: ustc
   dept: robotics
   name: 胡奇强实验室／人形机器人研究院
   url: https://faculty.ustc.edu.cn/qqhu/zh_CN/zdylm/1029917/list/index.htm
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 中国科大胡奇强实验室本科机器人科研联系
   required_text: 长期招收，有意向者请联系：qqhu@ustc.edu.cn
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - source_id: westlake-bioelectronics-dingshichao
   school: westlake
   dept: bioelectronics
   name: 网络化生物电子系统实验室
   url: https://shichaoding.lab.westlake.edu.cn/
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 西湖大学丁士超实验室访问学生联系
   required_text: 招聘启事在岗位招满前长期有效。
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - source_id: pku-ai4s-recruit
   school: pku
   dept: ai4s
@@ -523,22 +523,22 @@ targets:
   name: 北京航空航天大学解佳豪课题组
   url: https://shi.buaa.edu.cn/jiejiahao/en/xsxx/230178/list/index.htm
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 北航解佳豪课题组本科生科研实习
   required_text: 同时长期招收科研实习生，欢迎优秀本科生提前联系进组实习。
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - source_id: ruc-dongjinhao-research-contact
   school: ruc
   dept: cs
   name: 信息学院·数据工程与知识工程教育部重点实验室
   url: https://deke.ruc.edu.cn/kytd/zzry/ab852a64cdbe42468db8234b238a03ca.htm
   mode: direct_page
-  content_scope_hint: mentor_recruitment
   title: 人大董谨豪课题组科研实习联系
   required_text: 课题组长期面向优秀本科生和研究生开放科研实习机会
   priority: current
   interval_hours: 24
+  content_scope_hint: mentor_recruitment
 - school: tsinghua
   dept: air
   name: 清华AIR已登记冬令营官方公告
@@ -548,3 +548,147 @@ targets:
   title: WINTER@AIR｜2026冬令营开始报名啦！
   required_text: 清华大学智能产业研究院（AIR）2026冬令营开启报名
   source_note: 2026-11-15回查既有官方详情，补此历史活动正文监测；并非伪称由栏目列表发现，也不扩展采集其他院系。
+- source_id: discovered-0ff6b6fb85bed6067e93
+  school: xidian
+  dept: ''
+  name: 招生信息
+  url: https://gr.xidian.edu.cn/yjsy.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://gr.xidian.edu.cn/yjsy/yjszs.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-21b192b1ca3f188bfef7
+  school: sysu
+  dept: ''
+  name: 夏令营
+  url: https://cse.sysu.edu.cn/admission/summer_camp
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://cse.sysu.edu.cn/admission/master
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-2d901e3523030d737400
+  school: hust
+  dept: ''
+  name: 招生信息
+  url: https://gszs.hust.edu.cn/zsxx/ggtz.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://gszs.hust.edu.cn/info/1106/4160.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-5d45fe70697af730ecc2
+  school: cqu
+  dept: ''
+  name: 硕士招生
+  url: https://yz.cqu.edu.cn/ss_news.html
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://yz.cqu.edu.cn/news/2026-09/2593.html
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-6ecb1d29701db455897b
+  school: pku
+  dept: ''
+  name: 通知公告
+  url: https://cs.pku.edu.cn/xyxw/tzgg.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://cs.pku.edu.cn/
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-9f2e171ccbe9514212a8
+  school: xjtu
+  dept: ''
+  name: 夏令营
+  url: https://yz.xjtu.edu.cn/a2025xly.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://yz.xjtu.edu.cn/index/sszs.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-9f57c95d281e9c6d8c2c
+  school: whu
+  dept: ''
+  name: 研究生招生
+  url: https://cse.whu.edu.cn/zsjy/yjszs.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://cse.whu.edu.cn/info/2521/50311.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-06b23057fdba9354e264
+  school: ucas
+  dept: ''
+  name: 夏令营
+  url: https://admission.ucas.ac.cn/ShowArticle/newslist/f824c2a9-f94a-48c7-bbe2-a4bf2a22bcab
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://admission.ucas.ac.cn/showarticle/Article/1beb211c-ea0d-4c97-b5ce-61efa7addfcd/8166de60-e1d2-43e4-8311-57c196935f89
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-2e1e233b3cf237c5d848
+  school: bnu
+  dept: ''
+  name: 通知公告
+  url: https://ai.bnu.edu.cn/zszl/yjszs/tzgg3/index.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://ai.bnu.edu.cn/ggjxz/tzgg/index.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-1dc8a069181d95a324a0
+  school: ucas
+  dept: ''
+  name: 暑期学校
+  url: https://admission.ucas.ac.cn/ShowArticle/newslist/f17d7cfd-4e6e-4470-be9d-f39e73c73b02
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://admission.ucas.ac.cn/ShowArticle/newslist/f824c2a9-f94a-48c7-bbe2-a4bf2a22bcab
+  discovery_depth: 2
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-6d4be20ed2d593d2b1ab
+  school: dlut
+  dept: ''
+  name: 招生信息
+  url: https://cs.dlut.edu.cn/yjsgz/zsxx.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://cs.dlut.edu.cn/yjsgz/gsgg.htm
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。
+- source_id: discovered-6fb3232b202379edbcf3
+  school: ruc
+  dept: ''
+  name: 学院公告
+  url: https://ai.ruc.edu.cn/xwgg/xygg/index.htm
+  selector: a[href]
+  title_selector: self
+  priority: normal
+  interval_hours: 6
+  discovery_parent: https://ai.ruc.edu.cn/
+  discovery_depth: 1
+  source_note: 可信入口与栏目当前链接复核一致；只用于发现线索，活动须独立核验发布。

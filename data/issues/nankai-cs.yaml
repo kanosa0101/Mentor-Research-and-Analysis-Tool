@@ -10,31 +10,243 @@
   ref: kanghong
   message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/kangh'')'
   first_seen: '2026-10-15'
-  resolved: false
+  resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:19:13+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情身份及字段解析通过
+    evidence:
+    - url: http://cc-backend.nankai.edu.cn/teachers/introduce/kangh
+      fetched_at: '2026-11-16T09:19:13+00:00'
+      error: '403 Client Error: Forbidden for url: https://cc-backend.nankai.edu.cn/teachers/introduce/kangh'
+    - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
+      sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+      sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/js/list1.htm
+      sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+      sha256: 9365daa120e190ca846de41700b71eb9b6604ddaecf28b8bdf6aa2a93d8a0d11
+      fetched_at: '2026-11-16T09:19:13+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    - institutes
+    previous_source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    current_source: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+    id: nankai/cs/fetch_or_parse_error/kanghong
+    kind: fetch_or_parse_error
+    ref: kanghong
+    original_message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/kangh'')'
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-23T09:24:18+00:00'
+    evidence:
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549985/page.htm
+      sha256: 9365daa120e190ca846de41700b71eb9b6604ddaecf28b8bdf6aa2a93d8a0d11
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    title: nankai-cs · kanghong · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T09:24:18+00:00'
 - kind: fetch_or_parse_error
   ref: liuweijie
   message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie'')'
   first_seen: '2026-10-15'
-  resolved: false
+  resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:19:13+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情身份及字段解析通过
+    evidence:
+    - url: http://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie
+      fetched_at: '2026-11-16T09:19:13+00:00'
+      error: '403 Client Error: Forbidden for url: https://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie'
+    - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
+      sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+      sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/js/list1.htm
+      sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm
+      sha256: 6a3be804fd4404adadb5ab5781220f91e0c6f661c1951effd8efff4efd26b592
+      fetched_at: '2026-11-16T09:19:13+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - homepage
+    - bio_raw
+    - research_direction_raw
+    - institutes
+    previous_source: https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm
+    current_source: https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm
+    id: nankai/cs/fetch_or_parse_error/liuweijie
+    kind: fetch_or_parse_error
+    ref: liuweijie
+    original_message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liuweijie'')'
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-23T09:24:18+00:00'
+    evidence:
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549977/page.htm
+      sha256: 6a3be804fd4404adadb5ab5781220f91e0c6f661c1951effd8efff4efd26b592
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    title: nankai-cs · liuweijie · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T09:24:18+00:00'
 - kind: fetch_or_parse_error
   ref: liyue
   message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue'')'
   first_seen: '2026-10-15'
-  resolved: false
+  resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:19:13+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情身份及字段解析通过
+    evidence:
+    - url: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue
+      fetched_at: '2026-11-16T09:19:13+00:00'
+      error: '403 Client Error: Forbidden for url: https://cc-backend.nankai.edu.cn/teachers/introduce/liyue'
+    - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
+      sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+      sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/js/list1.htm
+      sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+      sha256: fda4219d178ed5c0a9e67a4c5cddac253b87c5d4dfed9f3bf7974ed2b1ecbaea
+      fetched_at: '2026-11-16T09:19:13+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情身份及字段解析通过
+    changed_fields: []
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    - institutes
+    previous_source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    current_source: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+    id: nankai/cs/fetch_or_parse_error/liyue
+    kind: fetch_or_parse_error
+    ref: liyue
+    original_message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/liyue'')'
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-23T09:24:18+00:00'
+    evidence:
+    - url: https://cc.nankai.edu.cn/2021/0323/c13620a549979/page.htm
+      sha256: fda4219d178ed5c0a9e67a4c5cddac253b87c5d4dfed9f3bf7974ed2b1ecbaea
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    title: nankai-cs · liyue · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T09:24:18+00:00'
 - kind: fetch_or_parse_error
   ref: yangfei
   message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei'')'
   first_seen: '2026-10-15'
-  resolved: false
+  resolved: true
   reviewed: null
   review_note: null
-  review_history: []
+  review_history:
+  - date: '2026-11-16T09:19:13+00:00'
+    automatic: true
+    state: error
+    reason: '403 Client Error: Forbidden for url: https://cc-backend.nankai.edu.cn/teachers/introduce/yangfei'
+    evidence:
+    - url: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei
+      fetched_at: '2026-11-16T09:19:13+00:00'
+      error: '403 Client Error: Forbidden for url: https://cc-backend.nankai.edu.cn/teachers/introduce/yangfei'
+    - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
+      sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+      sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
+      fetched_at: '2026-11-16T09:19:13+00:00'
+    - url: https://cc.nankai.edu.cn/js/list1.htm
+      sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
+      fetched_at: '2026-11-16T09:19:13+00:00'
+  - date: '2026-11-16T09:24:18+00:00'
+    automatic: true
+    state: resolved
+    reason: 当前官方详情身份及字段解析通过
+    evidence: &id001
+    - url: https://cc.nankai.edu.cn/jswyjy/list1.htm
+      sha256: a03550a46d8af4f7e83a2a16d02332ae7a3d583178ad697cfba8e72ecc87354f
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+      sha256: 304ab62ec40b700349a41d4d91859e5fc41a55c8c6d107f5c289d1787a66fcd8
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cc.nankai.edu.cn/js/list1.htm
+      sha256: 91238b979ca0d8653565a2fc8a862e4afe2798575a00fa0ffb1de45edf71e6a5
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cc.nankai.edu.cn/jswyjy/list.htm
+      sha256: ac469668a5fc711026a7ea39fc1756082becc76342f994810282da33d5b5ae54
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cc.nankai.edu.cn/fjswfyjy/list.htm
+      sha256: 0f33b8dbd40abc508e0c88319501a38d8cac4215d336d41c04cdf5f0877607d2
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cc.nankai.edu.cn/js/list.htm
+      sha256: 5dcd5557b6436212995207344aa9040fc04ad89a5d91a510cc81ab6e939714b2
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cyber.nankai.edu.cn/jswyjy/list.htm
+      sha256: a0b95846a1f7bae95120219935af8e3bcf3b69e90cd15f569869b3033a4a3323
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
+      sha256: 79d651872aa21a75f24bf655e9369b147a40d5d954698fe5a6f95f8fdbc3d2b2
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cyber.nankai.edu.cn/js/list.htm
+      sha256: a6d4bcd4d7ab2d94ee752e34f1b2ad2da3d15e72e32744d3115d3f62c8d90c68
+      fetched_at: '2026-11-16T09:24:18+00:00'
+    - url: https://cyber.nankai.edu.cn/2021/0323/c13840a551961/page.htm
+      sha256: 93380259188d2abfdecaa3b04243ca561a6e11b2aff9aec7989b6ed8ffb3e2a1
+      fetched_at: '2026-11-16T09:24:18+00:00'
+  automatic_check:
+    status: resolved
+    reason: 当前官方详情身份及字段解析通过
+    changed_fields:
+    - institutes
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - research_direction_raw
+    - institutes
+    previous_source: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei
+    current_source: https://cyber.nankai.edu.cn/2021/0323/c13840a551961/page.htm
+    id: nankai/cs/fetch_or_parse_error/yangfei
+    kind: fetch_or_parse_error
+    ref: yangfei
+    original_message: 'ValueError(''官方GET失败 HTTP 403: http://cc-backend.nankai.edu.cn/teachers/introduce/yangfei'')'
+    checked_at: '2026-11-16T09:24:18+00:00'
+    next_check_at: '2026-11-23T09:24:18+00:00'
+    evidence: *id001
+    title: nankai-cs · yangfei · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T09:24:18+00:00'

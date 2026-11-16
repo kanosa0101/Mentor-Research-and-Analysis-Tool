@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const rules=require('../site/admissions-core');
 const source=fs.readFileSync('site/admissions.js','utf8');
-const code=source.split('function renderLayerCoverage')[0]+source.slice(source.indexOf('function successfulSourceDate'),source.indexOf('function unitInfo'));
+const code=source.split('function renderLayerCoverage')[0]+source.slice(source.indexOf('function successfulSourceDate'),source.indexOf('function unitInfo'))+source.slice(source.indexOf('function confirmationLabel'),source.indexOf('function checklistItem'));
 const data={schools:[{id:'s',name:'学校'}],units:[{school:'s',dept:'d',dept_name:'学院'}],entries:[],policies:[],sources:{},checks:{}};
 const context={window:{ADMISSIONS_DATA:data},document:{getElementById:()=>null},AdmissionsRules:rules,URLSearchParams,console};
 vm.createContext(context);vm.runInContext(code,context);

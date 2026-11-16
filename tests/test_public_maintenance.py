@@ -8,6 +8,24 @@ from scripts import maintain_public as maintain
 
 
 class MaintenanceTests(unittest.TestCase):
+    def test_quality_jobs_run_each_cycle_and_pending_work_does_not_prevent_pages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with patch.object(maintain, 'ROOT', root), \
+                    patch.object(maintain, 'run', return_value={'error':0}), \
+                    patch.object(maintain.policy_revalidation, 'run', return_value={'attempted':20,'confirmed':20,'retry':0,'review_required':0}) as policies, \
+                    patch.object(maintain.mentor_quality, 'run', return_value={'attempted':40,'resolved':38,'pending':2,'error':0}) as mentors, \
+                    patch.object(maintain, 'refresh_notices', return_value={'sources_error':0}), \
+                    patch.object(maintain, 'renew', return_value=[]), \
+                    patch.object(maintain, 'rebuild', return_value=2) as rebuild:
+                self.assertEqual(maintain.main(), 1)
+            policies.assert_called_once_with(root,limit=20,workers=4,timeout=15)
+            mentors.assert_called_once_with(root,limit=40)
+            rebuild.assert_called_once()
+            report=json.loads((root/'cache/public-maintenance.json').read_text(encoding='utf-8'))
+            self.assertEqual(report['failures'],{})
+            self.assertEqual(report['source_warnings']['mentor_quality']['pending'],2)
+
     def test_failed_stage_does_not_cancel_independent_tasks(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)

@@ -3,13 +3,14 @@ name: 李想
 aliases: []
 school: nankai
 dept: cyber
-status: roster
+status: enriched
 title: 副教授
 email: LIXIANG@NANKAI.EDU.CN
-institutes: []
+institutes:
+- 信息安全系
 research_direction_raw: 网络协议安全、大模型与智能体安全、漏洞挖掘、互联网测量等
-detail_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang123
-profile_url: http://cyber-backend.nankai.edu.cn/teachers/introduce/lixiang123
+detail_url: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+profile_url: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
 first_seen: '2026-10-15'
 facets: []
 provenance:
@@ -20,16 +21,64 @@ provenance:
     confidence: auto
   title:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
-    source: https://cyber.nankai.edu.cn/fjswfyjy/list.htm
-    fetched_at: '2026-10-15'
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  homepage:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  institutes:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/2021/0323/c13620a549980/page.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cc.nankai.edu.cn/fjswfyjy/list1.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+supervisor: 博导
+homepage: https://lixiang521.com/
+bio_raw: "李想（Xiang Li from Nankai University），\n南开大学百名青年学科带头人、副教授、博导\n，\n入选国家级网信优秀人才（网络安全）\n\
+  。清华大学博士，加州大学尔湾分校\n访问学者\n，开源网络扫描器XMap的开发者与维护者（490+ GitHub stars），SecureComm Session\
+  \ Chair and Publications Chair、CCF\n网络与系统安全专委会秘书处工作、CCF\n计算机安全专委会执行委员、\n电力工控系统信息安全专业委员会委员、\n\
+  DataCon专家委员会委员、ACM会员、CCF会员、CIC会员，会议PC（如安全顶会USENIX Security 2027、ACM CCS 2026，IMC、ACSAC、\n\
+  RAID、ESORICS、\nAsiaCCS、GLOBECOM、WOOT2025）、网络与信息安全学报青年编委与责任编委副组长。研究领域涉及网络安全、协议安全、IPv6安全、DNS安全、互联网测量、网络协议fuzzing、网络漏洞挖掘与攻击以及黑灰产检测。\n\
+  目前在知名会议及期刊已发表40余篇学术论文。作为第一作者，在网络安全四大顶级会议均有论文发表，涵盖Oakland S&P（2）、USENIX Security（1）、CCS（2）、NDSS（1）\n\
+  。\n作为通讯作者和合作作者，在网络顶级会议发表多篇论文，如USENIX Security、CCS、NDSS、SIGMETRICS、IMC。在工业界顶级安全会议也进行过演讲，如Black\
+  \ Hat（Asia*3、USA*2、Europe*2）；并参加相关会议讨论分享最近的研究进展，如IDS、OARC、VehicleSec。已申请专利12项，包括授权专利5项。在漏洞挖掘领域，目前已发现超过5,000多个IPv6和DNS方向的新型重大漏洞并获得250+安全漏洞编号（CVE/CNVD/CNNVD），其中所发现的IPv6漏洞影响了数十家路由器厂商、DNS协议设计和实现层面的漏洞影响了所有DNS的软件和实现。已经获得了多家知名互联网厂商的致谢和奖励（超过$11.6k），包括谷歌、微软、Cloudflare、Akamai等公司，奥地利政府CERT每日安全公告，瑞典政府CERT每周安全公告，伯恩茅斯大学CERT安全公告，100+科技媒体报道，并在积极推进网络协议标准的改进（相关工作已被纳入RFC文档）。获得了多个奖励荣誉，如\n\
+  2026年度新疆维吾尔自治区数字化科学技术进步奖\n二等奖\n（\n排名第3\n）、\n2026年度\n黑客奥斯卡Pwnie最具创新研究奖\n（\n中国机构首次获得\n\
+  ）\n、2026年度\n黑帽大会五大必看研究榜单\n、2025年度\nACSAC网络安全技术成果影响力奖\n（\n中国机构首次获得\n）、2024年度ACM SIGSAC中国优博奖（排名第1、仅3个）、2024年度\n\
+  黑客奥斯卡Pwnie最具创新研究提名奖（仅3个）、\nIPv6创新大赛一二三等奖、GeekCon国际安全极客大赛冠亚军及非凡黑客荣誉称号、王大中奖学金、博士研究生国家奖学金、优秀毕业生、清华优秀奖学金等。指导学生获得全国大学生信息安全竞赛作品赛一二三等奖、人工智能安全竞赛二三等奖、京津冀大学生信息安全网络攻防竞赛一/三等奖。\n\
+  个人主页：\nhttps://lixiang521.com/\n办公地点：计算机学院/密码与网安学院553\n招收保研学生（2027年推免）、普博生（2027年入学），以及访问生、实习生（本科生/研究生均可，推荐大二或大三提前联系实习）！\n\
+  请有意向的同学发送邮件/飞书联系，并提供简历，包括个人介绍和研究兴趣及相关经历等。\n\uFEFF欢迎对网络安全及相关领域感兴趣的同学沟通联系！一起探索安全课题、做研究、写论文！\n\
+  你想做的，我们共同探讨！"
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

@@ -165,13 +165,15 @@ def validate_snapshot(entry):
         raise ValueError('材料动作快照指纹不一致')
 
 
-def quality(policy, context):
+def quality(policy, context, today=None):
+    from crawler.policy_revalidation import confirmation_date, valid_revalidation
     checks = context.get('checks', {})
     sources = [(value, checks.get(sid, {})) for sid, value in policy.get('review_hashes', {}).items()]
     state, label = 'checked', '近期检查与核对版本一致；申请前仍需查看官网'
     def age(value):
         try:
-            return (datetime.now(timezone(timedelta(hours=8))).date() - date.fromisoformat(value)).days
+            current = date.fromisoformat(today) if today else datetime.now(timezone(timedelta(hours=8))).date()
+            return (current - date.fromisoformat(value)).days
         except (TypeError, ValueError):
             return -1
     if any(c.get('status') == 'error' for _, c in sources):
@@ -182,8 +184,13 @@ def quality(policy, context):
         state, label = 'unknown', '尚无有效来源检查记录'
     elif any(not 0 <= age(c['last_success']) <= 7 for _, c in sources):
         state, label = 'stale', '来源超过7天未成功检查，需复核'
+    elif policy.get('revalidation_invalid') or policy.get('revalidation') and not valid_revalidation(policy, context.get('sources')):
+        state, label = 'review', '政策内容或来源配置已变化，原系统复检不再适用'
+    elif (confirmed := confirmation_date(policy, context.get('sources'))) and 0 <= age(confirmed) <= 30:
+        return {'state': 'checked', 'label': '系统复检：原核验版本与逐项证据一致；未改写人工摘要或适用年度',
+                'method': 'unchanged_source', 'confirmed_at': confirmed}
     elif not 0 <= age(policy.get('reviewed_at')) <= 30:
-        state, label = 'review', '人工摘要超过30天或日期异常，需复核'
+        state, label = 'review', '人工摘要超过30天且无有效系统复检，需复核'
     return {'state': state, 'label': label}
 
 

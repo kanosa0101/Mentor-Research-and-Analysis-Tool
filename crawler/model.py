@@ -71,3 +71,4 @@ class Issue(BaseModel):
     reviewed: Optional[bool] = None
     review_note: Optional[str] = None
     review_history: list[dict] = Field(default_factory=list)
+    automatic_check: Optional[dict] = None
