@@ -21,10 +21,8 @@ class AttachmentChanged(ValueError):
     pass
 
 
-def validate_links(value, raw, source_url):
-    """Require the reviewed attachments to remain linked by the official notice."""
-    if not value:
-        return
+def linked_docx(raw, source_url):
+    """Read public DOCX links without executing site scripts."""
     soup = BeautifulSoup(raw, 'html.parser')
     urls = {urljoin(source_url, a['href']) for a in soup.select('a[href]')
             if '.docx' in a['href'].lower() or '.docx' in a.get_text().lower()}
@@ -41,7 +39,12 @@ def validate_links(value, raw, source_url):
                     if type(name) is int and type(ident) is int and 0 <= name < len(data) and 0 <= ident < len(data):
                         if isinstance(data[name], str) and data[name].lower().endswith('.docx') and isinstance(data[ident], str) and re.fullmatch('[a-f0-9]{32}', data[ident]):
                             urls.add('https://cibr.ac.cn/file/common/download/' + data[ident])
-    if urls != {a['url'] for a in value}:
+    return urls
+
+
+def validate_links(value, raw, source_url):
+    """Require the reviewed attachments to remain linked by the official notice."""
+    if value and linked_docx(raw, source_url) != {a['url'] for a in value}:
         raise AttachmentChanged('DOCX链接列表变化或附件不在当前官方公告中，须重新核验')
 
 

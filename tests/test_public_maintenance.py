@@ -14,6 +14,8 @@ class MaintenanceTests(unittest.TestCase):
             with patch.object(maintain, 'ROOT', root), \
                     patch.object(maintain, 'run', return_value={'error':0}), \
                     patch.object(maintain.policy_revalidation, 'run', return_value={'attempted':20,'confirmed':20,'retry':0,'review_required':0}) as policies, \
+                    patch.object(maintain.policy_intake, 'run', return_value={'attempted':2,'published':1,'pending':1}) as intake, \
+                    patch.object(maintain.mentor_recovery, 'refresh_directories', return_value={'attempted':2,'error':0}) as directories, \
                     patch.object(maintain.mentor_quality, 'run', return_value={'attempted':40,'resolved':38,'pending':2,'error':0}) as mentors, \
                     patch.object(maintain, 'refresh_notices', return_value={'sources_error':0}), \
                     patch.object(maintain, 'renew', return_value=[]), \
@@ -21,10 +23,13 @@ class MaintenanceTests(unittest.TestCase):
                 self.assertEqual(maintain.main(), 1)
             policies.assert_called_once_with(root,limit=20,workers=4,timeout=15)
             mentors.assert_called_once_with(root,limit=40)
+            intake.assert_called_once_with(root,limit=2,publish=True)
+            directories.assert_called_once_with(root,max_units=2,request_budget=16)
             rebuild.assert_called_once()
             report=json.loads((root/'cache/public-maintenance.json').read_text(encoding='utf-8'))
             self.assertEqual(report['failures'],{})
             self.assertEqual(report['source_warnings']['mentor_quality']['pending'],2)
+            self.assertEqual(report['source_warnings']['policy_intake']['pending'],1)
 
     def test_failed_stage_does_not_cancel_independent_tasks(self):
         with tempfile.TemporaryDirectory() as directory:

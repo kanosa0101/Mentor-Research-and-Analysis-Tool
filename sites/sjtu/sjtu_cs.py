@@ -75,6 +75,11 @@ def parse_detail(cfg, html, url):
         bio = extra.get_text("\n", strip=True)
         if bio:
             out["bio_raw"] = bio
+            from sites.profile_fields import research,qualification
+            direction=research(bio)
+            if direction:out['research_direction_raw']=direction
+            supervisor=qualification(bio,out.get('name',''))
+            if supervisor:out['supervisor']=supervisor
     return out
 
 

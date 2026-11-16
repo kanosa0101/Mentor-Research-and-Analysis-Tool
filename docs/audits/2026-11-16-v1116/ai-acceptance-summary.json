@@ -1,0 +1,23 @@
+{
+  "requests_before": 10,
+  "requests_after": 14,
+  "normal_daily_limit": 10,
+  "published": 0,
+  "outcomes": [
+    "retry",
+    "manual_required",
+    "manual_required",
+    "retry"
+  ],
+  "complete_response": {
+    "first_byte_seconds": 12.48,
+    "first_answer_seconds": 12.481,
+    "header_seconds": 12.48,
+    "elapsed_seconds": 33.725,
+    "response_bytes": 69279,
+    "mode": "stream",
+    "max_tokens": 6000,
+    "reasoning_effort": "none",
+    "complete": true
+  }
+}

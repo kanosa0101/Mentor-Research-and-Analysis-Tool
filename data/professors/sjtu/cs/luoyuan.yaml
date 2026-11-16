@@ -10,7 +10,7 @@ email: yuanluo@sjtu.edu.cn
 bio_raw: '个人简介
 
   骆源，上海交通大学计算机学院长聘教授，学院下属计算机系主任，上海交通大学区块链研究中心副主任。科技部区块链重点研发计划首席科学家， 国家网信办网信优秀人才，负责科技部区块链重点研发计划1项，国家自然科学基金7项，上海市科技创新行动计划1项，及其他项目十余项。1999年获得南开大学数学系概率统计专业博士学位，中国科学院系统所和德国杜伊斯堡埃森大学博士后。2003年入职上海交通大学。研究方向为信息论、信息安全和区块链技术，在IEEE
-  TIT TIFS TWC JSAC等国际重要刊物发表学术论文150余篇。
+  TIT TIFS TWC JSAC等国际重要刊物发表学术论文150余篇。其中2026年在ASE国际会议上，获ACM杰出论文奖，2025年获中国电子学会信息论分会学术激励计划。
 
   论文发表
 
@@ -21,6 +21,15 @@ bio_raw: '个人简介
   通信学报
 
   ，vol. 47, no. 4, pp. 1-12，2026.
+
+  F. Xia, Q. Zhang, C. Ying, H. Zhu, S. Wang, Y. Luo, P. Ma, Y. Du, KQFuzz: Knowledge-Guided
+  Fuzzing for Quantum Libraries via Large Language Models,
+
+  The 41st IEEE/ACM International Conference on Automated Software Engineering
+
+  , ASE2026, 12-16 October 2026 Munich, Germany.
+
+  ACM SIGSOFT Distinguished Paper Award. CCF A
 
   Tinghan Wang, Chenghao Ying, Jia Wang, Yuan Luo, Security Problem in Cluster Distributed
   Storage Systems: Regenerating Code Against Two General Types of Active Adversaries,
@@ -52,13 +61,6 @@ bio_raw: '个人简介
 
   (FSE2026), July 5-9, 2026, Montreal, Canada. CCF A
 
-  F. Xia, Q. Zhang, C. Ying, H. Zhu, S. Wang, Y. Luo, P. Ma, Y. Du, KQFuzz: Knowledge-Guided
-  Fuzzing for Quantum Libraries via Large Language Models,
-
-  The 41st IEEE/ACM International Conference on Automated Software Engineering
-
-  , ASE2026, 12-16 October 2026 Munich, Germany. CCF A
-
   B. Xie, S. Zhang, Z. Peng, W. Chen, X. Yin, C. Ying, Y. Luo , ArkEval: Benchmarking
   and Evaluating Automated Code Repair for ArkTS,
 
@@ -85,7 +87,7 @@ bio_raw: '个人简介
 
   , July 3 2026, CCF C, DOI: 10.1109/JIOT.2026.3710438.
 
-  目前暂时仅列出2025年发表的论文：其中CCF A类论文10篇，B类论文5篇
+  2025年发表的论文：其中CCF A类论文10篇，B类论文5篇
 
   应臣浩、郭尚坤、骆源、李颉、斯雪明，“区块链与人工智能融合应用研究” ，
 
@@ -246,26 +248,34 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/luoyuan.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 信息论、信息安全和区块链技术，在IEEE TIT TIFS TWC JSAC等国际重要刊物发表学术论文150余篇
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

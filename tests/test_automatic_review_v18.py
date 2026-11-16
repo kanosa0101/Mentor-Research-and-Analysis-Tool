@@ -26,7 +26,7 @@ HTML = '''<html><meta charset="utf-8"><title>2027年计算机冬令营</title><a
 
 
 def accepted(root, url, text, fields):
-    return dict(decision='consistent', issues=[], checks=[dict(field=k, quote=v['quote']) for k,v in fields.items()],
+    return dict(decision='consistent', issues=[], checks=[dict(field=k, quote=v['quote'], consistent=True) for k,v in fields.items()],
                 model='fixture-model', input_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
                 input_chars=len(text), validated_extracts=True, truncated=False)
 
@@ -364,7 +364,7 @@ def test_complete_ai_transport_response_discards_reasoning(tmp_path, monkeypatch
     client.post.return_value.status_code = 200
     client.post.return_value.content = b'{}'
     client.post.return_value.json.return_value = dict(choices=[dict(finish_reason='stop', message=dict(
-        content=json.dumps(dict(decision='consistent', issues=[], checks=[dict(field='eligibility', quote='本科生可以申请')])),
+        content=json.dumps(dict(decision='consistent', issues=[], checks=[dict(field='eligibility', consistent=True)])),
         reasoning_content='private model reasoning'))])
     result = ai_review.check(tmp_path, URL, '本科生可以申请', fields, session=client)
     assert result['decision'] == 'consistent'
@@ -413,7 +413,7 @@ def extractive_advice(root, url, text):
                     dict(field='eligibility', value=quote, quote=quote)])
 
 
-def test_manual_attachment_branch_gets_only_bounded_suggestions_once(setup):
+def test_complete_html_with_ambiguous_scope_gets_bounded_suggestions_once(setup):
     root, queue, _ = setup
     data = review.read_queue(queue)
     other = copy.deepcopy(data['drafts'][0])
@@ -426,8 +426,8 @@ def test_manual_attachment_branch_gets_only_bounded_suggestions_once(setup):
     def advice(*args):
         calls.append(1)
         return extractive_advice(*args)
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
-    args = dict(limit=1, publish=True, now=NOW, checker=lambda *a: pytest.fail('attachments cannot reach full auto check'), fetcher=lambda _: raw, assistant=advice)
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
+    args = dict(limit=1, publish=True, now=NOW, checker=lambda *a: pytest.fail('ambiguous scope cannot reach full auto check'), fetcher=lambda _: raw, assistant=advice)
     result = automatic.run(root, queue, CONFIGS, **args)
     assert len(calls) == 1 and len(result['results']) == 1
     assert result['results'][0]['assistance']['state'] == 'ready'
@@ -443,7 +443,7 @@ def test_manual_attachment_branch_gets_only_bounded_suggestions_once(setup):
 
 def test_assistance_error_backoff_and_concurrent_edit_are_safe(setup):
     root, queue, _ = setup
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
     def fail(*args): raise ValueError('AI服务未返回成功状态（HTTP 503）；未写入建议')
     args = dict(limit=1, publish=True, now=NOW, fetcher=lambda _: raw)
     result = automatic.run(root, queue, CONFIGS, assistant=fail, **args)
@@ -465,7 +465,7 @@ def test_assistance_error_backoff_and_concurrent_edit_are_safe(setup):
 
 def test_second_assistance_failure_uses_four_hour_backoff(setup):
     root, queue, _ = setup
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
     def fail(*args): raise ValueError('AI服务未返回成功状态（HTTP 503）；未写入建议')
     args = dict(limit=1, publish=True, fetcher=lambda _: raw, assistant=fail)
     automatic.run(root, queue, CONFIGS, now=NOW, **args)
@@ -477,7 +477,7 @@ def test_second_assistance_failure_uses_four_hour_backoff(setup):
 
 def test_malformed_assistance_json_retries_without_promoting_suggestions(setup):
     root, queue, _ = setup
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
     def malformed(*args):
         raise ValueError('AI响应无法通过结构检查；未写入建议')
     args = dict(limit=1, publish=True, fetcher=lambda _: raw)
@@ -506,7 +506,7 @@ def test_legacy_manual_assistance_transport_failure_waits_then_retries(setup, re
                             assistant=lambda *a: pytest.fail('legacy retry ignored wait'), **args)
     assert waiting['counts'] == {'retry': 1}
     recovered = automatic.run(root, queue, CONFIGS, now=NOW+timedelta(hours=3),
-                              assistant=extractive_advice, **{**args, 'fetcher': lambda _: HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())})
+                              assistant=extractive_advice, **{**args, 'fetcher': lambda _: HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())})
     assert recovered['results'][0]['assistance']['state'] == 'ready'
     assert review.read_queue(queue)['drafts'][0]['first_seen'] == before_clock
     assert not (root / 'data/opportunities.json').exists()
@@ -514,7 +514,7 @@ def test_legacy_manual_assistance_transport_failure_waits_then_retries(setup, re
 
 def test_same_source_semantically_invalid_assistance_does_not_repeat_ai(setup):
     root, queue, _ = setup
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
     def invalid(*args):
         raise ValueError('AI建议或证据不在官方原文中，未写入建议')
     args = dict(limit=1, publish=True, now=NOW, fetcher=lambda _: raw)

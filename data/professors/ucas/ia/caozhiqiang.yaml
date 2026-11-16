@@ -135,17 +135,17 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129909.html
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129909.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129909.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
@@ -157,5 +157,11 @@ provenance:
     source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129909.html
     fetched_at: '2026-09-02'
     confidence: auto
-last_fetched: '2026-11-15'
-last_parsed: '2026-11-15'
+  research_direction_raw:
+    origin: crawled
+    source: https://ia.cas.cn/rcdw/yjy/202404/t20240422_7129909.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
+research_direction_raw: 1. 服务机器人环境感知（物体检测与分割、小样本检测、可供性、位姿测量等）与杂乱环境下的智能操作 2. 激光/视觉SLAM定位导航等

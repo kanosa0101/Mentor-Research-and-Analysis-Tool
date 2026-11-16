@@ -6,17 +6,59 @@ dept: cs
 status: enriched
 title: 助理教授
 email: yifu.lai@sjtu.edu.cn
-bio_raw: '个人简介
-
-  工作履历
+bio_raw: '工作履历
 
   博士后研究员, COSIC (KU Leuven), Belgium Oct 2025 – Feb 2026
 
-  博士后研究员, CASA (Ruhr University Bochum Oct 2023 – Sep 2025
+  博士后研究员, CASA (Ruhr University Bochum Oct 202
+
+  教授课程
+
+  离散数学
+
+  -<span style="color: rgb(74%2
 
   论文发表
 
   依照理论计算机与密码学传统，作者排序默认依照字母序排列，两篇除外。
+
+  Asiacrypt
+
+  202
+
+  6
+
+  .
+
+  Fault Injection Attacks on Torsion Masking
+
+  (针对扭点掩码的故障注入攻击)
+
+  .
+
+  Valerie Gilchrist
+
+  ,
+
+  Yi-Fu Lai
+
+  (
+
+  ✉
+
+  )
+
+  ,
+
+  Michael Meyer
+
+  .
+
+  (
+
+  ia.cr/2026/1640
+
+  )
 
   Crypto
 
@@ -27,6 +69,12 @@ bio_raw: '个人简介
   .
 
   A Little LESS Secure: Side-Channel Attacks Exploiting Randomness Leakage
+
+  (LESS 有点没那么安全：利用随机性泄漏的侧信道攻
+
+  击
+
+  )
 
   .
 
@@ -60,7 +108,9 @@ bio_raw: '个人简介
 
   .
 
-  PIKE: Faster Isogeny-Based Public Key Encryption with Pairing-Assisted Decryption.
+  PIKE: Faster Isogeny-Based Public Key Encryption with Pairing-Assisted Decryption
+
+  (戟：采用配对辅助解密的高效同源公钥加密).
 
   Shiping Cai
 
@@ -94,7 +144,9 @@ bio_raw: '个人简介
 
   Efficient and Parallel Implementation of Isogeny-based
 
-  Deterministic Group Actions.
+  Deterministic Group Actions
+
+  (基于同源的确定性群作用的高效并行实现).
 
   (
 
@@ -109,7 +161,9 @@ bio_raw: '个人简介
   .
 
   Wombat: Post-Quantum Blind Signature from Standard Group Action Assumptions and
-  More.
+  More
+
+  (袋熊：基于标准群作用假设的后量子盲签名及更多构造).
 
   Lucjan Hanzlik
 
@@ -164,7 +218,15 @@ bio_raw: '个人简介
   .
 
   Tanuki: New Frameworks for (Concurrently Secure) Blind Signatures from Post-Quantum
-  Groups Actions.
+  Groups Actions
+
+  (
+
+  狸猫：基于后量子群作用的（并发安全）盲签名新框架
+
+  )
+
+  .
 
   Lucjan Hanzlik
 
@@ -218,6 +280,8 @@ bio_raw: '个人简介
 
   Erebor and Durian:Full Anonymous Ring Signatures from Quaternions and Isogenies
 
+  (孤山与榴莲：基于四元数与同源的完全匿名环签名)
+
   .
 
   Giacomo Borin
@@ -240,7 +304,9 @@ bio_raw: '个人简介
 
   .
 
-  A Simpler and More Efficient Reduction of DLOG to CDH for Abelian Group Actions.
+  A Simpler and More Efficient Reduction of DLOG to CDH for Abelian Group Actions
+
+  (阿贝尔群作用中从 DLOG 到 CDH 的更简单高效归约).
 
   Steven Galbraith
 
@@ -270,7 +336,9 @@ bio_raw: '个人简介
 
   .
 
-  Breaking Parallel ROS: Implication for Isogeny and Lattice-based Blind Signatures.
+  Breaking Parallel ROS: Implication for Isogeny and Lattice-based Blind Signatures
+
+  (攻破并行 ROS：对基于同源和格的盲签名的影响).
 
   Shuichi Katsumata
 
@@ -334,7 +402,9 @@ bio_raw: '个人简介
   .
 
   CSI-Otter: Isogeny-based (Partially) Blind Signatures from the Class Group Action
-  with a Twist.
+  with a Twist
+
+  (海獺：基于类群作用变体的同源（部分）盲签名).
 
   Shuichi Katsumata
 
@@ -360,7 +430,9 @@ bio_raw: '个人简介
 
   .
 
-  CAPYBARA and TSUBAKI: Verifiable Random Functions from Group Actions and Isogenies.
+  CAPYBARA and TSUBAKI: Verifiable Random Functions from Group Actions and Isogenies
+
+  (水豚与山茶花：基于群作用与同源的可验证随机函数).
 
   Yi-Fu Lai
 
@@ -375,6 +447,8 @@ bio_raw: '个人简介
   .
 
   Efficient Isogeny Proofs Using Generic Techniques
+
+  (利用通用技术实现高效同源证明)
 
   .
 
@@ -408,6 +482,8 @@ bio_raw: '个人简介
 
   Attack on SHealS and HealS: the Second Wave of GPST
 
+  (对 SHealS 和 HealS 的攻击：GPST 的第二波)
+
   .
 
   Steven Galbraith
@@ -434,7 +510,9 @@ bio_raw: '个人简介
 
   .
 
-  Group Signatures and More from Isogenies and Lattices: Generic, Simple, and Efficient.
+  Group Signatures and More from Isogenies and Lattices: Generic, Simple, and Efficient
+
+  (基于同源与格的群签名及更多密码构造：通用、简洁且高效).
 
   Ward Beullens
 
@@ -466,7 +544,9 @@ bio_raw: '个人简介
 
   .
 
-  Compact, Efficient and UC-Secure Isogeny-Based Oblivious Transfer.
+  Compact, Efficient and UC-Secure Isogeny-Based Oblivious Transfer
+
+  (紧凑、高效且具 UC 安全性的同源不经意传输).
 
   Yi-Fu Lai
 
@@ -483,6 +563,16 @@ bio_raw: '个人简介
   ,
 
   Cyprien Delpech de Saint Guilhem
+
+  ,
+
+  (
+
+  ia.cr/2020/1012
+
+  )
+
+  <span class="C9Dx
 
   学术服务
 
@@ -523,31 +613,33 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/laiyifu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

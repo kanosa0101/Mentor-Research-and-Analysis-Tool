@@ -12,7 +12,10 @@ bio_raw: '个人简介
   收录20余篇)。近年来参与科技部国家重点研发计划两项，负责6G网络系统内生安全机制度量研究和拟态安全度量模型与系统测试评估研究。 在国内外重要学术期刊、会议上已发表和录用学术论文50余篇(其中EI/SCI/ISTP
   收录20余篇)。近年来在网络安全本体和神经网络鲁棒性安全等相关领域发表多篇学术论文，其中在国际期刊Engineering Applications of Artificial
   Intelligence 发表的论文：“A Word Net-based semantic similarity measurement combining edge-counting
-  and information content theory”（通讯作者）2018年初被列入ESI高被引论文。申请并获得国家技术发明专利3项，撰写《EJB 设计模式》译著1部（第三作者），参编或审校教材《信息系统安全检测与风险评估》、《等级保护测评理论及应用》和《网络安全协议的形式化分析与验证》共3部。
+  and information content theory”（通讯作者）2018年初被列入ESI高被引论文。撰写《网络安全协议与分析》教材1部（第一作者），《EJB
+  设计模式》译著1部（第三作者），参编或审校教材《信息系统安全检测与风险评估》、《等级保护测评理论及应用》和《网络安全协议的形式化分析与验证》共3部，
+
+  申请并获得国家技术发明专利多项。
 
   教育背景
 
@@ -29,71 +32,75 @@ bio_raw: '个人简介
   近年发表的主要论文：
 
   1, Yuhang Zhao, Baowen Zhang ,Jianhua Li. Directed Adversarial Training: Directing
-  Robustness Optimization for Priority Classes, ICME2026, accepted.
+  Robustness Optimization for Priority Classes, ICME2026, July, 2026.
 
-  2,
+  2, Jiashuo Yan, Quanhai Zhang, Pan Li, Baowen Zhang and Ning Zhang, A Compositional
+  Optimization Framework Driven by Multi-Teacher Distillation for Enhancing Robustness
+  against Harmful Adversarial Perturbations, ICECCS 2026, Accepted.
+
+  3,
 
   Jiarui WU; Baowen Zhang ; A Fine-Tuned Multi-Classifier Optimization Framework towards
   Safety-Critical Classes, ICONIP 2024, https://iconip2024.org/, 2024-12-6
 
-  3,
+  4,
 
   Xiong yuanchun, Zhang Baowen SMART, a Framework for Evaluating the Robustness of
   Neural Networks，ICONIP 2022，Nov，2022.
 
-  4,
+  5,
 
   Chenqi Xie, Ping Yi and Baowen Zhang,DeepMark: Embedding Watermarks into Deep Neural
   Network Using Pruning，IEEE，ICTAI2021,Nov,2021.
 
-  5, Baowen Zhang; Xiao Chang; Jianhua Li; A Generalized Information Security Model
+  6, Baowen Zhang; Xiao Chang; Jianhua Li; A Generalized Information Security Model
   SOCMD for CMD Systems, Chinese Journal of Electronics, 2020, 29(3): 417-426
-
-  6,
-
-  王正龙，张保稳，生成对抗网络研究综述[J].网络与信息安全学报, 2021,7(4):18.
 
   7,
 
-  谢宸琪，张保稳，易平，人工智能模型水印研究综述[J]，计算机科学, 2021,48(07)
+  王正龙，张保稳，生成对抗网络研究综述[J].网络与信息安全学报, 2021,7(4):18.
 
   8,
+
+  谢宸琪，张保稳，易平，人工智能模型水印研究综述[J]，计算机科学, 2021,48(07)
+
+  9,
 
   Li, Jiaying; Zhang, Baowen*; An ontology-based approach to improve access policy
   administration of attribute-based access control, International Journal of Information
   and Computer Security, 2019, 11(4-5): 391-412.
 
-  9,
+  10,
 
   Gao Jian-Bo, Zhang Bao-Wen*, Chen Xiao-Hua. A Word Net-based semantic similarity
   measurement combining edge-counting and information content theory[J]. Engineering
   Applications of Artificial Intelligence. 2015,39:80-88. SCI
 
-  10,
+  11,
 
   Gao Jian-Bo*; Zhang Bao-Wen; Chen Xiao-Hua; Using CVSS to quantitatively analyze
   risks to software caused by vulnerabilities, 7th International Conference on Mechanical
   and Electronics Engineering (ICMEE), Dalian, China, 2015.9
 
-  11,
+  12,
 
   Gao Jian-Bo, Zhang Bao-Wen, Chen Xiao-Hua. A SIMPLIFIED EDGE-COUNTING METHOD FOR
   MEASURING SEMANTIC SIMILARITY OF CONCEPTS[C], International Conference on Machine
   Learning and Cybernetics (ICMLC). 2015:176-181.
 
-  12,
+  13,
 
   Gao Jian-Bo, Zhang Bao-Wen, Chen Xiao-Hua. ONTOLOGY-BASED SEMANTIC SIMILARITY: A
   NEW APPROACH BASED ON ANALYSIS OF THE CONCEPT INTENT[C], International Conference
   on Machine Learning and Cybernetics (ICMLC). 2013:676-681.
 
-  13,
+  14,
 
   Gao Jian Bo, Zhang Bao Wen, Chen Xiao Hua, et al. Ontology-based model of network
   and computer attacks for security assessment[J]. Journal of Shanghai Jiaotong University
   (Science). 2013,18,(5):554-562.
 
-  14,
+  15.
 
   张保稳; 罗铮; 薛质; 银鹰; 基于全局权限图的网络风险评估模型 , 上海交通大学学报, 2010, 44(09): 1197-1200.
 
@@ -150,13 +157,13 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
@@ -166,10 +173,18 @@ provenance:
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhangbaowen.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 新型网络与信息系统安全度量与与评估、信息安全本体、面向安全关键场景的人工智能安全（神经网络鲁棒性度量）等
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

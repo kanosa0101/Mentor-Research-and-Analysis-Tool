@@ -9,8 +9,8 @@ supervisor: 博导
 email: zchua@sjtu.edu.cn
 bio_raw: '个人简介
 
-  上海交通大学副研究员、博导，主要研究方向为操作系统、系统结构与大模型基础软件。在ISCA、ASPLOS、USENIX ATC、EuroSys、USENIX Security、IEEE
-  TC、ACM TOCS等计算机领域著名国际会议与期刊上发表论文十多篇。主持国家自然科学基金青年项目，获上海市“市长奖”、中国产学研合作促进会创新成果二等奖等荣誉。
+  上海交通大学副研究员、博导，主要研究方向为操作系统、系统结构与大模型基础软件。在ISCA、MICRO、ASPLOS、USENIX ATC、EuroSys、USENIX
+  Security、IEEE TC、ACM TOCS等计算机领域著名国际会议与期刊上发表论文十多篇。主持国家自然科学基金青年项目与面上项目，获上海市“市长奖”、中国产学研合作促进会创新成果二等奖等荣誉。
 
   教育背景
 
@@ -169,31 +169,39 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
     fetched_at: '2026-09-02'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huazhichao.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 操作系统、系统结构与大模型基础软件
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

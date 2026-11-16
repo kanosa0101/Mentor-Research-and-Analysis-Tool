@@ -77,6 +77,7 @@ class SnapshotTests(unittest.TestCase):
 
 class PublicUpdateStageTests(unittest.TestCase):
     dependencies = ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css', 'account-session.js', 'cloud-library.js',
+                    'plan-transfer.js', 'start.js',
                     'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js')
 
     def fixture(self, folder, invalid=False):
@@ -130,8 +131,9 @@ class PublicUpdateStageTests(unittest.TestCase):
             self.assertIn('更新后的公共目录大学', html)
             page = BeautifulSoup(html, 'html.parser')
             self.assertFalse(page.select('link[rel=stylesheet]'))
-            self.assertEqual({node['src'].split('?')[0] for node in page.select('script[src]')},
-                             {'account-session.js', 'cloud-library.js'})
+            self.assertFalse(page.select('script[src]'))
+            self.assertEqual(len(page.select('script:not([src])')), 2)
+            self.assertIn('更新后的公共目录大学', (root / 'site/start.html').read_text(encoding='utf-8'))
             self.assertEqual((root / 'data/workflow.yaml').read_text(), 'private-sentinel')
             self.assertEqual({name: (root / 'site' / name).read_bytes() for name in self.dependencies}, original_sources)
             self.assertEqual(json.loads((root / 'cache/public-data-installed.json').read_text())['id'], descriptor['id'])

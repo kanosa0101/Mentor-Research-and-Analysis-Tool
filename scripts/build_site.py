@@ -31,6 +31,25 @@ def write_html(path, html):
     path.write_text('\n'.join(line.rstrip() for line in html.splitlines()) + '\n', encoding='utf-8', newline='\n')
 
 
+def inline_scripts(site, names):
+    paths = [site / name if (site / name).is_file() else ROOT / 'site' / name for name in names]
+    javascript = '\n;\n'.join(path.read_text(encoding='utf-8') for path in paths)
+    return re.sub(r'</script', lambda match: '<\\/' + match.group(0)[2:], javascript, flags=re.I)
+
+
+def entry_head(site):
+    css = site / 'ui.css' if (site / 'ui.css').is_file() else ROOT / 'site' / 'ui.css'
+    return dict(entry_css=css.read_text(encoding='utf-8'),
+                entry_session_js=inline_scripts(site, ('account-session.js', 'cloud-library.js')))
+
+
+def render_start_page(site=None, env=None):
+    site = SITE if site is None else Path(site)
+    return (env or template_environment()).get_template('start.html.j2').render(
+        **entry_head(site), start_js=inline_scripts(site, (
+            'school-catalog.js', 'browser-library-core.js', 'plan-transfer.js', 'start.js')))
+
+
 def build_discovery_entry(site=None):
     site = SITE if site is None else Path(site)
     files = [site / 'school-catalog.js']
@@ -51,14 +70,10 @@ def build_application_entry(site=None):
 
 def render_discovery_page(site=None, env=None):
     site = SITE if site is None else Path(site)
-    files = [site / 'school-catalog.js']
-    files.extend(site / name if (site / name).is_file() else ROOT / 'site' / name
-                 for name in ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js'))
-    javascript = '\n;\n'.join(path.read_text(encoding='utf-8') for path in files)
-    javascript = re.sub(r'</script', lambda match: '<\\/' + match.group(0)[2:], javascript, flags=re.I)
-    css = site / 'ui.css' if (site / 'ui.css').is_file() else ROOT / 'site' / 'ui.css'
+    javascript = inline_scripts(site, ('school-catalog.js', 'discovery-core.js', 'discovery.js',
+                                       'browser-library-core.js', 'browser-library.js'))
     return (env or template_environment()).get_template('discovery.html.j2').render(
-        discovery_js=javascript, discovery_css=css.read_text(encoding='utf-8'))
+        discovery_js=javascript, **entry_head(site))
 
 
 def safe_url(value):
@@ -240,7 +255,6 @@ def main():
     write_html(SITE / 'opportunities.html', env.get_template('opportunities.html.j2').render())
     write_html(SITE / 'local.html', env.get_template('local.html.j2').render())
     write_html(SITE / 'account.html', env.get_template('account.html.j2').render())
-    write_html(SITE / 'start.html', env.get_template('start.html.j2').render())
     coverage_path = ROOT / 'data/coverage.json'
     if coverage_path.exists():
         coverage = json.loads(coverage_path.read_text(encoding='utf-8'))
@@ -272,6 +286,7 @@ def main():
                             'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
     catalog = {'schools': configured_schools, 'units': [{k: v for k, v in unit.items() if k != 'coverage'} for unit in admissions['units']]}
     (SITE / 'school-catalog.js').write_text('window.SCHOOL_CATALOG = ' + json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n', encoding='utf-8')
+    write_html(SITE / 'start.html', render_start_page(env=env))
     build_discovery_entry()
     write_html(SITE / 'discovery.html', render_discovery_page(env=env))
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')

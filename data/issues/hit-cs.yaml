@@ -2,15 +2,23 @@
   ref: baiyuanchao
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
-  resolved: false
+  resolved: true
   reviewed: null
   review_note: null
   review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
   - date: '2026-11-16T11:26:05+00:00'
     automatic: true
     state: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id001
+    evidence:
     - url: https://www.cs.hit.edu.cn/jsml/list.htm
       fetched_at: '2026-11-16T11:26:05+00:00'
       error: 'HTTPSConnectionPool(host=''www.cs.hit.edu.cn'', port=443): Max retries
@@ -23,27 +31,748 @@
         exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL:
         CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate
         is not valid for ''www.cs.hit.edu.cn''. (_ssl.c:1000)")))'
+  - date: '2026-11-16T13:47:32.423714+00:00'
+    automatic: true
+    state: resolved
+    reason: 同批真实官方正文已重新解析成功，沿用其实际采集时间及原始响应证据
+    evidence: &id001
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://cs.hit.edu.cn/22195/list.htm
+      sha256: e398eab8e05c043d2556c29ed61ddbdc6b9d0897640f1991f3e5b0909d3f746d
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://cs.hit.edu.cn/22196/list.htm
+      sha256: ad75a1ab51b073d4d7fade41e65563014abc9cfbfc912aad2087e5894bdc5605
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://cs.hit.edu.cn/
+      sha256: 52c9471c1774cf0fdbbe89da994bbaae0fcd0f62b58edb727bf4c70f13f614ed
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://homepage.hit.edu.cn/baiyuanchao?lang=zh
+      sha256: e5c2ade444a1e4dbc3456c54262c40db48359dc85fe7fc69e82419458c169a44
+      fetched_at: '2026-11-16T13:47:32+00:00'
+    - url: https://homepage.hit.edu.cn/TeacherHome/teacherBody.do?id=6e839ebd2e4f44249a3cca9373a3d38a&versionId=
+      sha256: 1d8b932d685b8173bdc43894bca6c88865fbe11cff94154843b42e2eaf04cf5c
+      fetched_at: '2026-11-16T13:47:32+00:00'
+  automatic_check:
+    status: resolved
+    reason: 同批真实官方正文已重新解析成功，沿用其实际采集时间及原始响应证据
+    id: hit/cs/fetch_or_parse_error/baiyuanchao
+    kind: fetch_or_parse_error
+    ref: baiyuanchao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T13:47:32.423714+00:00'
+    next_check_at: '2026-11-23T13:47:32.423714+00:00'
+    evidence: *id001
+    title: hit-cs · baiyuanchao · fetch_or_parse_error
+    pending_since: null
+    last_success: '2026-11-16T13:47:32.423714+00:00'
+    reason_code: resolved
+    category_label: 官方证据已恢复
+    next_action: none
+    action_label: 按周期复检
+    consecutive_failures: 0
+    repair_signature: cf68147b40a892d282df554739c8d940200b4b3a37c5aa26df3babe3142551b3
+    retry_hours: 168
+    source_urls:
+      profile: https://homepage.hit.edu.cn/baiyuanchao?lang=zh
+    changed_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+    - detail_url
+    - profile_url
+    checked_fields:
+    - title
+    - email
+    - bio_raw
+    - research_direction_raw
+- kind: fetch_or_parse_error
+  ref: caibibo
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
   automatic_check:
     status: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/caibibo
+    kind: fetch_or_parse_error
+    ref: caibibo
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · caibibo · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
     reason_code: directory_only
     category_label: 只有名册登记
     next_action: discover_official_source
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/baiyuanchao
+- kind: fetch_or_parse_error
+  ref: caizesu
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/caizesu
     kind: fetch_or_parse_error
-    ref: baiyuanchao
+    ref: caizesu
     original_message: 未解析出可用详情字段，保留旧记录
     checked_at: '2026-11-16T11:26:05+00:00'
     next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id001
-    title: hit-cs · baiyuanchao · fetch_or_parse_error
+    evidence: []
+    title: hit-cs · caizesu · fetch_or_parse_error
     pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
 - kind: fetch_or_parse_error
-  ref: caibibo
+  ref: caohailong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/caohailong
+    kind: fetch_or_parse_error
+    ref: caohailong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · caohailong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chaozemin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chaozemin
+    kind: fetch_or_parse_error
+    ref: chaozemin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chaozemin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chengdansong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chengdansong
+    kind: fetch_or_parse_error
+    ref: chengdansong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chengdansong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chengjianxia
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chengjianxia
+    kind: fetch_or_parse_error
+    ref: chengjianxia
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chengjianxia · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chengsiyao
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chengsiyao
+    kind: fetch_or_parse_error
+    ref: chengsiyao
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chengsiyao · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chenhuipeng
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chenhuipeng
+    kind: fetch_or_parse_error
+    ref: chenhuipeng
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chenhuipeng · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chenjianwen
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chenjianwen
+    kind: fetch_or_parse_error
+    ref: chenjianwen
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chenjianwen · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chenyin
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chenyin
+    kind: fetch_or_parse_error
+    ref: chenyin
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chenyin · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chenyuanlong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chenyuanlong
+    kind: fetch_or_parse_error
+    ref: chenyuanlong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chenyuanlong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: chewanxiang
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/chewanxiang
+    kind: fetch_or_parse_error
+    ref: chewanxiang
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · chewanxiang · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: cuiwenxue
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/cuiwenxue
+    kind: fetch_or_parse_error
+    ref: cuiwenxue
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · cuiwenxue · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: cuixuejian
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/cuixuejian
+    kind: fetch_or_parse_error
+    ref: cuixuejian
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · cuixuejian · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: danlili
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/danlili
+    kind: fetch_or_parse_error
+    ref: danlili
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · danlili · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: dideming
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/dideming
+    kind: fetch_or_parse_error
+    ref: dideming
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · dideming · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: dijianhong
+  message: 未解析出可用详情字段，保留旧记录
+  first_seen: '2026-11-16'
+  resolved: false
+  reviewed: null
+  review_note: null
+  review_history:
+  - date: '2026-11-16T11:20:51+00:00'
+    automatic: true
+    state: error
+    reason: 未解析出可用详情字段，保留旧记录
+    evidence:
+    - url: http://www.cs.hit.edu.cn/jsml/list.htm
+      sha256: 83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e
+      fetched_at: '2026-11-16T11:20:51+00:00'
+  - date: '2026-11-16T11:26:05+00:00'
+    automatic: true
+    state: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    evidence: []
+  automatic_check:
+    status: error
+    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    id: hit/cs/fetch_or_parse_error/dijianhong
+    kind: fetch_or_parse_error
+    ref: dijianhong
+    original_message: 未解析出可用详情字段，保留旧记录
+    checked_at: '2026-11-16T11:26:05+00:00'
+    next_check_at: '2026-11-23T11:26:05+00:00'
+    evidence: []
+    title: hit-cs · dijianhong · fetch_or_parse_error
+    pending_since: '2026-11-16T09:57:21+00:00'
+    last_success: null
+    reason_code: directory_only
+    category_label: 只有名册登记
+    next_action: discover_official_source
+    action_label: 核验名册并寻找个人页
+    consecutive_failures: 1
+    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
+- kind: fetch_or_parse_error
+  ref: dingxiao
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
@@ -64,18 +793,18 @@
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/caibibo
+    id: hit/cs/fetch_or_parse_error/dingxiao
     kind: fetch_or_parse_error
-    ref: caibibo
+    ref: dingxiao
     original_message: 未解析出可用详情字段，保留旧记录
     checked_at: '2026-11-16T11:26:05+00:00'
     next_check_at: '2026-11-23T11:26:05+00:00'
     evidence: *id002
-    title: hit-cs · caibibo · fetch_or_parse_error
+    title: hit-cs · dingxiao · fetch_or_parse_error
     pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null
 - kind: fetch_or_parse_error
-  ref: caizesu
+  ref: dingxiaoou
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
@@ -96,18 +825,18 @@
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/caizesu
+    id: hit/cs/fetch_or_parse_error/dingxiaoou
     kind: fetch_or_parse_error
-    ref: caizesu
+    ref: dingxiaoou
     original_message: 未解析出可用详情字段，保留旧记录
     checked_at: '2026-11-16T11:26:05+00:00'
     next_check_at: '2026-11-23T11:26:05+00:00'
     evidence: *id003
-    title: hit-cs · caizesu · fetch_or_parse_error
+    title: hit-cs · dingxiaoou · fetch_or_parse_error
     pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null
 - kind: fetch_or_parse_error
-  ref: caohailong
+  ref: dongjian
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
@@ -128,18 +857,18 @@
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/caohailong
+    id: hit/cs/fetch_or_parse_error/dongjian
     kind: fetch_or_parse_error
-    ref: caohailong
+    ref: dongjian
     original_message: 未解析出可用详情字段，保留旧记录
     checked_at: '2026-11-16T11:26:05+00:00'
     next_check_at: '2026-11-23T11:26:05+00:00'
     evidence: *id004
-    title: hit-cs · caohailong · fetch_or_parse_error
+    title: hit-cs · dongjian · fetch_or_parse_error
     pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null
 - kind: fetch_or_parse_error
-  ref: chaozemin
+  ref: fancangning
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
@@ -160,25 +889,25 @@
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chaozemin
+    id: hit/cs/fetch_or_parse_error/fancangning
     kind: fetch_or_parse_error
-    ref: chaozemin
+    ref: fancangning
     original_message: 未解析出可用详情字段，保留旧记录
     checked_at: '2026-11-16T11:26:05+00:00'
     next_check_at: '2026-11-23T11:26:05+00:00'
     evidence: *id005
-    title: hit-cs · chaozemin · fetch_or_parse_error
+    title: hit-cs · fancangning · fetch_or_parse_error
     pending_since: '2026-11-16T09:57:21+00:00'
     last_success: null
 - kind: fetch_or_parse_error
-  ref: chengdansong
+  ref: fanguoxiang
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
   reviewed: null
   review_note: null
   review_history:
-  - date: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T12:02:06+00:00'
     automatic: true
     state: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
@@ -186,31 +915,33 @@
   automatic_check:
     status: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    source_urls:
+      profile: http://www.cs.hit.edu.cn/jsml/list.htm
     reason_code: directory_only
     category_label: 只有名册登记
     next_action: discover_official_source
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chengdansong
+    id: hit/cs/fetch_or_parse_error/fanguoxiang
     kind: fetch_or_parse_error
-    ref: chengdansong
+    ref: fanguoxiang
     original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
+    checked_at: '2026-11-16T12:02:06+00:00'
+    next_check_at: '2026-11-23T12:02:06+00:00'
     evidence: *id006
-    title: hit-cs · chengdansong · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
+    title: hit-cs · fanguoxiang · fetch_or_parse_error
+    pending_since: '2026-11-16T11:20:51+00:00'
     last_success: null
 - kind: fetch_or_parse_error
-  ref: chengjianxia
+  ref: fanjijun
   message: 未解析出可用详情字段，保留旧记录
   first_seen: '2026-11-16'
   resolved: false
   reviewed: null
   review_note: null
   review_history:
-  - date: '2026-11-16T11:26:05+00:00'
+  - date: '2026-11-16T12:21:10+00:00'
     automatic: true
     state: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
@@ -218,499 +949,21 @@
   automatic_check:
     status: error
     reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
+    source_urls:
+      profile: http://www.cs.hit.edu.cn/jsml/list.htm
     reason_code: directory_only
     category_label: 只有名册登记
     next_action: discover_official_source
     action_label: 核验名册并寻找个人页
     consecutive_failures: 1
     repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chengjianxia
+    id: hit/cs/fetch_or_parse_error/fanjijun
     kind: fetch_or_parse_error
-    ref: chengjianxia
+    ref: fanjijun
     original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
+    checked_at: '2026-11-16T12:21:10+00:00'
+    next_check_at: '2026-11-23T12:21:10+00:00'
     evidence: *id007
-    title: hit-cs · chengjianxia · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chengsiyao
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id008 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chengsiyao
-    kind: fetch_or_parse_error
-    ref: chengsiyao
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id008
-    title: hit-cs · chengsiyao · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chenhuipeng
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id009 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chenhuipeng
-    kind: fetch_or_parse_error
-    ref: chenhuipeng
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id009
-    title: hit-cs · chenhuipeng · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chenjianwen
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id010 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chenjianwen
-    kind: fetch_or_parse_error
-    ref: chenjianwen
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id010
-    title: hit-cs · chenjianwen · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chenyin
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id011 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chenyin
-    kind: fetch_or_parse_error
-    ref: chenyin
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id011
-    title: hit-cs · chenyin · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chenyuanlong
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id012 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chenyuanlong
-    kind: fetch_or_parse_error
-    ref: chenyuanlong
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id012
-    title: hit-cs · chenyuanlong · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: chewanxiang
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id013 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/chewanxiang
-    kind: fetch_or_parse_error
-    ref: chewanxiang
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id013
-    title: hit-cs · chewanxiang · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: cuiwenxue
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id014 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/cuiwenxue
-    kind: fetch_or_parse_error
-    ref: cuiwenxue
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id014
-    title: hit-cs · cuiwenxue · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: cuixuejian
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id015 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/cuixuejian
-    kind: fetch_or_parse_error
-    ref: cuixuejian
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id015
-    title: hit-cs · cuixuejian · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: danlili
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id016 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/danlili
-    kind: fetch_or_parse_error
-    ref: danlili
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id016
-    title: hit-cs · danlili · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: dideming
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id017 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/dideming
-    kind: fetch_or_parse_error
-    ref: dideming
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id017
-    title: hit-cs · dideming · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: dijianhong
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id018 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/dijianhong
-    kind: fetch_or_parse_error
-    ref: dijianhong
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id018
-    title: hit-cs · dijianhong · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: dingxiao
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id019 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/dingxiao
-    kind: fetch_or_parse_error
-    ref: dingxiao
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id019
-    title: hit-cs · dingxiao · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: dingxiaoou
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id020 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/dingxiaoou
-    kind: fetch_or_parse_error
-    ref: dingxiaoou
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id020
-    title: hit-cs · dingxiaoou · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: dongjian
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id021 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/dongjian
-    kind: fetch_or_parse_error
-    ref: dongjian
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id021
-    title: hit-cs · dongjian · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
-    last_success: null
-- kind: fetch_or_parse_error
-  ref: fancangning
-  message: 未解析出可用详情字段，保留旧记录
-  first_seen: '2026-11-16'
-  resolved: false
-  reviewed: null
-  review_note: null
-  review_history:
-  - date: '2026-11-16T11:26:05+00:00'
-    automatic: true
-    state: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    evidence: &id022 []
-  automatic_check:
-    status: error
-    reason: 当前官方目录未找到通过身份核验的替代来源；原问题：未解析出可用详情字段，保留旧记录
-    reason_code: directory_only
-    category_label: 只有名册登记
-    next_action: discover_official_source
-    action_label: 核验名册并寻找个人页
-    consecutive_failures: 1
-    repair_signature: 7e8d333cc0b8f88c9026b857635f95c2a5717591d29716d8fc2e38911457e8f1
-    id: hit/cs/fetch_or_parse_error/fancangning
-    kind: fetch_or_parse_error
-    ref: fancangning
-    original_message: 未解析出可用详情字段，保留旧记录
-    checked_at: '2026-11-16T11:26:05+00:00'
-    next_check_at: '2026-11-23T11:26:05+00:00'
-    evidence: *id022
-    title: hit-cs · fancangning · fetch_or_parse_error
-    pending_since: '2026-11-16T09:57:21+00:00'
+    title: hit-cs · fanjijun · fetch_or_parse_error
+    pending_since: '2026-11-16T12:21:10+00:00'
     last_success: null

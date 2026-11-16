@@ -5,6 +5,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from crawler import opportunity_extract as extract, opportunity_review as review
+from crawler.review_preflight import effective as preflight
 from crawler.opportunity_monitor import atomic_json, output_lock
 
 CST = timezone(timedelta(hours=8))
@@ -65,6 +66,7 @@ def evaluate(draft, now=None, root=None):
     if state == 'source_changed':
         opened = moment(fetch.get('checked_at')) or now
     fields = {} if historical or state == 'published' else evidence_fields(draft, root)
+    current_hint = preflight(draft).get('priority_hint')
     deadline = item.get('deadline') if state == 'published' else fields.get('deadline')
     days = None
     if deadline:
@@ -83,9 +85,9 @@ def evaluate(draft, now=None, root=None):
     elif days is not None and days < 0:
         priority = 3
         reasons.append('正文报名截止已过，优先分流历史；不表示已核验发布')
-    elif (days is not None and 0 <= days <= 14) or triage == 'current' or fields.get('graduation_year') == target_year:
+    elif (days is not None and 0 <= days <= 14) or triage == 'current' or fields.get('graduation_year') == target_year or current_hint:
         priority = 1
-        reasons.append('正文明确当前准备届别、已核实当前轮次或官方截止在14天内')
+        reasons.append('正文明确当前准备届别、当前冬令营、已核实当前轮次或官方截止在14天内')
     else:
         priority = 2
         reasons.append('新机会或适用轮次待确认；不根据活动年份推断毕业届别')
@@ -103,12 +105,13 @@ def evaluate(draft, now=None, root=None):
         reasons=reasons, deadline=deadline, deadline_verified=bool(deadline), sla_hours=hours,
         opened_at=opened.isoformat(), due_at=due.isoformat() if due else None,
         overdue=bool(due and due <= now), state=state, fingerprint=fingerprint,
+        current_cycle_priority=bool(current_hint or triage == 'current' or fields.get('graduation_year') == target_year),
         automatic_state=automatic.get('state'), next_attempt_at=automatic.get('next_attempt_at'))
 
 
 def ordered(queue, now=None, root=None):
     rows = [evaluate(d, now, root) for d in queue.get('drafts', [])]
-    return sorted(rows, key=lambda r: (r['priority'], not r['overdue'], r['deadline'] or '9999', r['opened_at'], r['id']))
+    return sorted(rows, key=lambda r: (r['priority'], not r['current_cycle_priority'], not r['overdue'], r['deadline'] or '9999', r['opened_at'], r['id']))
 
 
 def read_alerts(root):

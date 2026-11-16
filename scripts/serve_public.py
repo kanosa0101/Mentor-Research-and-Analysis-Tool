@@ -33,6 +33,7 @@ CONTENT_TYPES = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript; c
 
 class Handler(BaseHTTPRequestHandler):
     protocol_version = 'HTTP/1.1'
+    disable_nagle_algorithm = True
     server_version = 'MentorPublic/1.0'
     sys_version = ''
 
@@ -126,9 +127,12 @@ class Handler(BaseHTTPRequestHandler):
             raise ValueError('请求长度无效') from None
         if self.headers.get('Transfer-Encoding') or size <= 0 or size > limit:
             raise ValueError('请求为空或超过大小限制')
+        self._online_body_read = True
         return json.loads(self.rfile.read(size))
 
     def online_reject(self, code, message):
+        if not getattr(self, '_online_body_read', False):
+            self.drain_small_body()
         self.close_connection = True
         return self.reply(code, json.dumps({'error': message}, ensure_ascii=False).encode(), headers={'Connection': 'close'})
 
@@ -149,6 +153,7 @@ class Handler(BaseHTTPRequestHandler):
         return self.reply(200, json.dumps(payload, ensure_ascii=False).encode(), headers={'Set-Cookie': self.online_cookie(token)})
 
     def online_request(self, method):
+        self._online_body_read = False
         path = urlsplit(self.path).path
         if not self.online_transport():
             return self.online_reject(403, '账号与私人记录仅通过 HTTPS 网站访问')
@@ -293,7 +298,7 @@ class Handler(BaseHTTPRequestHandler):
 
     do_HEAD = do_GET
 
-    def read_only(self):
+    def drain_small_body(self):
         # Drain only small bodies so closing does not reset the response on Windows.
         try:
             size = int(self.headers.get('Content-Length', '0'))
@@ -302,6 +307,9 @@ class Handler(BaseHTTPRequestHandler):
                 self.rfile.read(size)
         except (ValueError, OSError):
             pass
+
+    def read_only(self):
+        self.drain_small_body()
         self.close_connection = True
         self.reply(405, b'{"error":"Read-only public server","mode":"public"}',
                    headers={'Allow': 'GET, HEAD', 'Connection': 'close'})

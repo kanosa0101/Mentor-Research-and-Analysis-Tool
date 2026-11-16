@@ -22,26 +22,80 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dongyihong.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: '个人简介
+
+  董益宏，上海交通大学计算机学院新入职PI，主要研究方向是智能化软件工程、大语言模型以及多智能体协同，近两年发表CCF-A类论文30余篇，其中一作论文引用2000余次，在AI4SE领域属于高被引，且多项学术成果转化为实际应用落地，提出最早的多智能体协同软件开发框架Self-collaboration。曾获通义阿里星、字节
+  TikTok、京东 TGT、腾讯青云、美团北斗等顶尖人才计划，以及CCF软工专委博士学位论文激励计划、北京大学优秀博士学位论文、北京大学计算机学院“学术十杰”、CCF中国科协博士青托计划、CCF青年开源专项基金种子计划、通义实验室2025年度Top30专利、ACL2026
+  SAC Highlight Award等10余项荣誉奖项。
+
+  论文发表
+
+  代表性论文（10篇）：
+
+  Self-collaboration Code Generation via ChatGPT, TOSEM 24 (CCF-A, Citation: 673,
+  First Multi-agent Collaboration Coding Framework, Same as Long-horizon Harness Design
+  for Claude Code in Mar 2026 (See www.anthropic.com/engineering/harness-design-long-running-apps))
+
+  Self-planning Code Generation with Large Language Model, TOSEM 24 (CCF-A, Citation:
+  546)
+
+  Generalization or Memorization: Data Contamination and Trustworthy Evaluation for
+  Large Language Models, ACL 24 / TSE 26 (CCF-A, Citation: 303)
+
+  Codescore: Evaluating Code Generation by Learning Code Execution, TOSEM 25 (CCF-A,
+  Citation: 187）
+
+  A Survey on Code Generation with LLM-based Agents, Journal of Software 26 (CCF-A,
+  Citation: 176)
+
+  FAN: Fourier Analysis Networks, NeurIPS 25 (CCF-A, Citation: 107)
+
+  Rethinking Repetition Problems of LLMs in Code Generation, ACL 26 (CCF-A, Oral <
+  2.96%)
+
+  CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment,
+  ACL 26 (CCF-A, Oral < 2.7%)
+
+  RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning
+  with Hybrid-policy Optimization, ACL 26 (CCF-A, VeRL Awesome Work,  Tongyi Lab Top
+  30 Patent)
+
+  Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking
+  for Diffusion Language Model in Code Generation, ACL 26 (CCF-A, Best Paper Candidate,
+  SAC Highlight Award < 0.5%)'
+research_direction_raw: 智能化软件工程、大语言模型以及多智能体协同，近两年发表CCF-A类论文30余篇，其中一作论文引用2000余次，在AI4SE领域属于高被引，且多项学术成果转化为实际应用落地，提出最早的多智能体协同软件开发框架Self-collaboration
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

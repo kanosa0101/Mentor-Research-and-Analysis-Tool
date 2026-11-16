@@ -1,8 +1,12 @@
 school: hit
 dept: cs
 dept_name: 计算学部·计算机科学与技术学院
-base_url: http://www.cs.hit.edu.cn
+base_url: https://cs.hit.edu.cn
 hook: hit_cs
+parser_dependencies: [profile_fields.py]
+profile_lookup_urls:
+  - https://cs.hit.edu.cn/22195/list.htm
+  - https://cs.hit.edu.cn/22196/list.htm
 list:
-  url: http://www.cs.hit.edu.cn/jsml/list.htm
-  method: RENDER
+  url: https://cs.hit.edu.cn/jsml/list.htm
+  method: GET

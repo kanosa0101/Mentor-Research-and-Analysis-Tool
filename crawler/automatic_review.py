@@ -10,12 +10,12 @@ from urllib.parse import urlsplit
 
 import requests
 import yaml
-from bs4 import BeautifulSoup
 
-from crawler import ai_evidence, ai_review, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
+from crawler import ai_evidence, ai_review, automatic_evidence, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
 from crawler.opportunity_monitor import atomic_json, output_lock
+from crawler import review_preflight
 
-POLICY_VERSION = 'v2.3-classified-service-errors'
+POLICY_VERSION = 'v2.5-compact-field-verdicts'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
@@ -34,7 +34,17 @@ class NeedsHuman(ValueError):
 def service_failure(error):
     """Prefer the transport's stable classification to wording-dependent retries."""
     code, retryable = getattr(error, 'code', None), getattr(error, 'retryable', None)
-    return dict(error_code=code, retryable=retryable) if isinstance(code, str) and isinstance(retryable, bool) else {}
+    if isinstance(code, str) and isinstance(retryable, bool):
+        return dict(error_code=code, retryable=retryable, error_phase=getattr(error, 'phase', 'ai_transport'))
+    if isinstance(error, PermissionError):
+        return dict(error_code='local_permission_denied', retryable=False, error_phase='local_storage')
+    if isinstance(error, OSError) and not isinstance(error, requests.RequestException):
+        return dict(error_code='local_io_error', retryable=True, error_phase='local_storage')
+    if '每日调用上限' in str(error):
+        return dict(error_code='daily_budget_exhausted', retryable=True, error_phase='budget')
+    if str(error) == '官方原文实时获取失败':
+        return dict(error_code='source_unavailable', retryable=True, error_phase='source_fetch')
+    return {}
 
 
 def transient_failure(reason):
@@ -68,22 +78,17 @@ def sections(lines):
     return {key: '\n'.join(lines).strip() for key, lines in result.items()}
 
 
-def inspect_source(raw, source_url):
-    if len(raw) > 3_000_000:
-        raise NeedsHuman('官方页面超过自动核验大小上限')
-    doc = extract.document(raw, source_url)
-    if re.search(r'忽略.{0,12}(?:指令|规则)|ignore\s+(?:all\s+)?previous|system\s*prompt|AI助手请', doc['text'], re.I):
-        raise NeedsHuman('原文含模型指令式内容，需人工确认页面可信性')
-    if len(doc['text']) > ai_review.MAX_INPUT:
-        raise NeedsHuman('官方正文超过完整AI核验长度，不能截断发布')
-    soup = BeautifulSoup(raw, 'html.parser')
-    body = next((soup.select_one(s) for s in extract.BODY_SELECTORS if soup.select_one(s)), soup.body or soup)
-    if (extract.embedded_pdf_urls(raw, source_url) or body.select('img,iframe,object,embed') or
-        re.search(r'附件|附表|二维码|扫码|扫描件|下载申请表', doc['text']) or
-        any(re.search(r'\.(?:pdf|docx?|xlsx?|zip)(?:[?#]|$)|/file/(?:common/)?download/', link['url'], re.I)
-            for link in doc['links']) or soup.select('script#__NUXT_DATA__') and re.search(r'\.docx|fileList|file/common/download', str(soup), re.I)):
-        raise NeedsHuman('正文含图片、附件或下载要求，需人工核实完整材料及附件版本')
-    return doc
+def inspect_source(raw, source_url, complete_doc=None):
+    try:
+        doc, links = automatic_evidence.inspect_html(raw, source_url)
+        if links and complete_doc is None:
+            raise ValueError('官方正文含附件，须联合核验完整版本')
+        doc = complete_doc or doc
+        if len(doc['text']) > ai_review.MAX_INPUT:
+            raise ValueError('官方正文超过完整AI核验长度，不能截断发布')
+        return doc
+    except ValueError as error:
+        raise NeedsHuman(str(error)) from error
 
 
 def fields_for_existing(draft, item, text):
@@ -121,8 +126,8 @@ def prepare_new(root, draft, doc, now):
     text = doc['text']
     if re.search(r'第一批|第二批|第三批|分批|多批|分阶段|另行通知|另行公布|暂定|待定|更正|调整为|UTC|GMT|当地时间', text, re.I):
         raise NeedsHuman('存在多批次、变更或日期语义歧义')
-    if re.search(r'博士|硕士|研究生招生|研究生申请', text):
-        raise NeedsHuman('同页涉及不同学位或角色，需人工独立核对本科申请范围')
+    if re.search(r'(?:博士|硕士|研究生).{0,12}申请.{0,20}(?:另[一行]|不同|单独)', text):
+        raise NeedsHuman('同页涉及另一套学位申请条件，需核对不同对象')
     if re.search(r'入选名单|录取名单|录取结果|报到须知|活动回顾|圆满|开营安排', item['title']):
         raise NeedsHuman('标题不是明确的申请报名公告')
     title = item['title']
@@ -147,6 +152,11 @@ def prepare_new(root, draft, doc, now):
         line, name = organizers[0]
         if (name == unit or name.startswith(school)) and not re.search(r'[、，,；;]|联合主办', name):
             organizer, unit = line, name
+    if not organizers and unit.startswith(school) and unit in title:
+        statements = [line for line in doc['lines'] if re.search(
+            re.escape(unit) + r'[^。；]{0,30}(?:举办|组织|开展)[^。；]{0,40}(?:冬令营|夏令营|科研实践|科创计划)', line)]
+        if len(statements) == 1 and not re.search(r'联合|共同|、', statements[0]):
+            organizer = statements[0]
     if item.get('dept_id'):
         # A school domain does not establish which of its departments organized
         # an event. Bind the declared organizer to the registered department.
@@ -176,9 +186,13 @@ def prepare_new(root, draft, doc, now):
             raise NeedsHuman('关键限制出现在已覆盖栏目之外，需人工核对完整适用范围')
     if '本科' not in parts['eligibility']:
         raise NeedsHuman('未明确本科生申请对象，需人工判断适用范围')
-    if (not extract.EMAIL.search(parts['application_method']) or not extract.EMAIL.search(parts['contact']) or
-        re.search(r'系统|平台|在线|链接|网站|网报', parts['application_method'])):
-        raise NeedsHuman('自动发布仅支持明确邮件申请及联系邮箱；其他系统流程需人工核对')
+    if not extract.EMAIL.search(parts['contact']) and not re.search(r'(?:电话|联系方式).{0,12}\d[\d\s-]{6,}', parts['contact']):
+        raise NeedsHuman('联系方式缺少明确公开邮箱或电话')
+    try:
+        application_url = automatic_evidence.application_entry(doc, parts['application_method'], item['source_url'])
+    except ValueError as error:
+        raise NeedsHuman(str(error)) from error
+    item['application_url'] = application_url
     item.update(school_name=school, kind=kind, cycle='current', source_state='verified',
                 checked_at=now.astimezone(CST).date().isoformat(), verified_at=now.astimezone(CST).date().isoformat(),
                 source_sha256=draft['fetch']['sha256'], source_content_sha256=doc['content_sha256'])
@@ -193,6 +207,9 @@ def prepare_new(root, draft, doc, now):
     for key in ('eligibility', 'materials', 'application_method', 'contact'):
         item[key] = [parts[key]] if key in ('eligibility', 'materials') else parts[key]
         fields[key] = dict(value=item[key], quote=parts[key])
+    # Full forms enter the AI check and source details, not the concise materials list.
+    for index, document in enumerate(doc.get('documents', [])):
+        fields['attachment_' + str(index)] = dict(value=document['text'], quote=document['text'])
     window = parts['window']
     dates = list(extract.DATE.finditer(extract.compact(window)))
     rolling = re.search(r'(?:长期|全年|常年|滚动).{0,30}(?:接受|接收|招收|招募|申请|报名)', extract.compact(window))
@@ -233,7 +250,8 @@ def prepare_new(root, draft, doc, now):
     item['source_note'] = '自动证据核验：完整原文摘录、AI交叉核对及规则校验；不判断个人资格或保证名额。'
     item['admission_note'] = '科研或营活动不等于正式推免或研究生录取，毕业及入学届别未推断。'
     draft.update(item=item, quotes=item['evidence'], reviewed_fields={key: dict(quote=f['quote'], source_url=item['source_url'],
-                 locator='官方公告完整栏目；自动证据核验', content_sha256=doc['content_sha256']) for key, f in fields.items()})
+                 locator='官方正文及附件完整栏目；自动证据核验', content_sha256=doc['content_sha256'])
+                 for key, f in fields.items() if not key.startswith('attachment_')})
     util.validate(item)
     util.validate_classification(item, text, require_publishable=True)
     review.validate_field_evidence(draft, item, text)
@@ -253,12 +271,16 @@ def _store(queue_path, draft_id, result, expected=None):
     return result
 
 
-def _renew(root, queue_path, original, staged, result, now, fetcher):
+def _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher=None, docx_fetcher=None):
     # The exact original bytes are fetched again, without treating new counters as unchanged.
     live = fetcher({'url': staged['source_url']})
     live = live.encode() if isinstance(live, str) else live
     if hashlib.sha256(live).hexdigest() != staged['fetch']['sha256']:
         raise NeedsHuman('AI复核后原文版本再次变化，保留旧事实待人工处理')
+    fresh = automatic_evidence.collect(live, staged['source_url'], pdf_fetcher=pdf_fetcher or review.fetch_pdf,
+        docx_fetcher=docx_fetcher or review.attachments.fetch_docx, wait=getattr(fetcher, 'wait', None))
+    if fresh['content_sha256'] != staged['fetch']['content_sha256']:
+        raise NeedsHuman('AI复核后官方附件版本变化，保留旧事实待处理')
     with output_lock(queue_path), output_lock(Path(root) / 'data/opportunities.json'):
         queue = review.read_queue(queue_path)
         current = next(d for d in queue['drafts'] if d['id'] == original['id'])
@@ -285,14 +307,14 @@ def _renew(root, queue_path, original, staged, result, now, fetcher):
         atomic_json(queue_path, queue)
 
 
-def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher):
+def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher, pdf_fetcher=None, docx_fetcher=None):
     original = copy.deepcopy(draft)
     prior = draft.get('automatic_review', {})
     result = dict(id=draft['id'], policy_version=POLICY_VERSION, checked_at=now.isoformat(),
                   source_sha256=draft.get('fetch', {}).get('sha256'), content_sha256=draft.get('fetch', {}).get('content_sha256'),
                   input_revision=protected(draft), attempts=prior.get('attempts', 0), failures=prior.get('failures', 0), reasons=[])
     recovering = bool(draft.get('review')) and review.status(draft) == 'source_error' and prior.get('state') in ('published', 'renewed')
-    if not recovering and prior.get('policy_version') == POLICY_VERSION and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and prior.get('content_sha256') == result['content_sha256'] and prior.get('input_revision') == result['input_revision']:
+    if not recovering and (prior.get('policy_version') == POLICY_VERSION or prior.get('state') in ('retry', 'budget_wait')) and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and prior.get('content_sha256') == result['content_sha256'] and prior.get('input_revision') == result['input_revision']:
         return dict(result, state='skipped', reasons=['尚未到下一次处理时间'], next_attempt_at=prior['next_attempt_at'])
     if prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and prior.get('input_revision') == result['input_revision'] and prior.get('content_sha256') == result['content_sha256']:
         return dict(result, state='skipped', reasons=['同版本仍需人工处理'], blocked_state='manual_required')
@@ -308,8 +330,6 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
         if any(urlsplit(draft[key]).scheme != 'https' for key in ('source_url', 'listing_url')) or not any(
             c['url'] == draft['listing_url'] and c.get('enabled') is not False for c in configs):
             raise NeedsHuman('自动发布仅接受已启用的HTTPS官方来源')
-        if draft['item'].get('source_documents') or draft['item'].get('source_attachments'):
-            raise NeedsHuman('存在须核验的附件')
         existing = bool(draft.get('review'))
         source_error = review.status(draft) == 'source_error'
         if existing and review.status(draft) not in ('published', 'source_error'):
@@ -317,7 +337,8 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
         if existing and not source_error and draft['item'].get('verified_at') and 0 <= (now.astimezone(CST).date() - datetime.fromisoformat(draft['item']['verified_at']).date()).days < 14:
             return dict(result, state='skipped', reasons=['已有近期核验，日常来源检查继续运行'])
         staged = copy.deepcopy(draft)
-        raw = review.fetch_evidence(staged, queue_path, fetcher, now=now)
+        raw = review.fetch_evidence(staged, queue_path, fetcher, now=now, complete=True,
+                                   pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
         with output_lock(queue_path):
             queue = review.read_queue(queue_path)
             current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
@@ -327,8 +348,13 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
             atomic_json(queue_path, queue)
         result.update(source_sha256=staged['fetch'].get('sha256'), content_sha256=staged['fetch'].get('content_sha256'))
         if raw is None:
+            if staged['fetch'].get('error_kind') == 'evidence':
+                raise NeedsHuman(staged['fetch']['error'])
             raise ValueError('官方原文实时获取失败')
-        doc = inspect_source(raw, draft['source_url'])
+        decision = review_preflight.classify(root, staged, configs, now=now, queue_path=queue_path)
+        if decision['classification'] in ('historical', 'irrelevant'):
+            return _store(queue_path, draft['id'], dict(result, state='skipped', reasons=[decision['reason']]), protected(original))
+        doc = inspect_source(raw, draft['source_url'], staged['fetch']['complete_document'])
         if existing:
             if review.status(staged) != 'published':
                 raise NeedsHuman('已发布事实或人工摘录变化，不能自动覆盖')
@@ -341,9 +367,12 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
             review.validate_field_evidence(staged, staged['item'], doc['text'])
         else:
             fields = prepare_new(root, staged, doc, now)
+        if staged['item'].get('application_url'):
+            review.institution(staged['item']['application_url'])
+            fetcher({'url': staged['item']['application_url']})  # Public GET only; never register or submit.
         result.update(source_sha256=staged['fetch']['sha256'], content_sha256=doc['content_sha256'])
         cached = prior.get('ai')
-        if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('input_revision') == protected(original):
+        if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and cached.get('input_text_sha256') == hashlib.sha256(doc['text'].encode()).hexdigest() and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('content_sha256') == doc['content_sha256'] and prior.get('input_revision') == protected(original):
             ai = cached
         else:
             result['attempts'] += 1
@@ -359,7 +388,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
         result.update(state='renewed' if existing else 'published', reasons=['完整原文与关键字段通过自动证据核验'],
                       next_attempt_at=(now + timedelta(days=14)).isoformat())
         if existing:
-            _renew(root, queue_path, original, staged, result, now, fetcher)
+            _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher, docx_fetcher)
         else:
             with output_lock(queue_path):
                 queue = review.read_queue(queue_path)
@@ -375,13 +404,15 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
             try:
                 review.publish(queue_path, draft['id'], root, configs, acknowledged_hash=staged['fetch']['sha256'],
                     reviewer='自动证据核验/' + POLICY_VERSION, note='AI交叉核对与确定性证据门禁通过；不判断个人申请资格。',
-                    expected_revision=revision, fetcher=fetcher)
+                    expected_revision=revision, fetcher=fetcher, complete=True,
+                    pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
             except ValueError as error:
                 raise NeedsHuman('发布门禁拒绝：' + str(error)) from None
             _store(queue_path, draft['id'], result)
         return result
     except (NeedsHuman, ValueError, OSError, requests.RequestException) as error:
-        reason = str(error) if isinstance(error, ValueError) else '官方证据或本地处理暂时失败'
+        reason = ('本地证据存储权限不足，须修复权限后重试' if isinstance(error, PermissionError) else
+                  str(error) if isinstance(error, ValueError) else '官方证据或本地处理暂时失败')
         if prepared:
             with output_lock(queue_path):
                 queue = review.read_queue(queue_path)
@@ -394,7 +425,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher)
         classified = service_failure(error)
         result.update(classified)
         transient = classified.get('retryable', transient_failure(reason))
-        if isinstance(error, NeedsHuman) or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
+        if isinstance(error, NeedsHuman) or classified.get('retryable') is False or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
             result.update(state='manual_required', reasons=[reason])
         elif '每日调用上限' in reason:
             tomorrow = (now + timedelta(days=1)).astimezone(timezone.utc).replace(hour=0, minute=5, second=0, microsecond=0)
@@ -412,6 +443,9 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         review.triage(draft).get('classification') in ('historical', 'irrelevant', 'blocked') or
         draft.get('fetch', {}).get('status') != 'ok'):
         return result
+    decision = review_preflight.classify(root, draft, configs, now=now, queue_path=queue_path)
+    if decision['classification'] in ('historical', 'irrelevant'):
+        return dict(result, state='skipped', reasons=[decision['reason']])
     digest = draft['fetch'].get('sha256', '')
     previous = draft.get('ai_suggestions', {})
     if previous.get('source_sha256') == digest and previous.get('validated_extracts') and not previous.get('truncated'):
@@ -448,7 +482,10 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         raw = path.read_bytes()
         if len(raw) > 3_000_000 or hashlib.sha256(raw).hexdigest() != digest:
             return result
-        text = extract.document(raw, draft['source_url'])['text']
+        doc, links = automatic_evidence.inspect_html(raw, draft['source_url'])
+        if links:
+            return result  # Suggestions cannot silently omit required attachment evidence.
+        text = doc['text']
         if not text.strip() or len(text) > ai_evidence.MAX_INPUT:
             return result
         result['attempts'] = result.get('attempts', 0) + 1
@@ -470,14 +507,15 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
             atomic_json(queue_path, queue)
         return result
     except (ValueError, OSError, requests.RequestException) as error:
-        reason = str(error) if isinstance(error, ValueError) else 'AI辅助公开证据暂时不可用'
+        reason = ('本地证据存储权限不足，须修复权限后重试' if isinstance(error, PermissionError) else
+                  str(error) if isinstance(error, ValueError) else 'AI辅助公开证据暂时不可用')
         classified = service_failure(error)
         result.update(classified)
         transient = classified.get('retryable', transient_failure(reason))
         if '每日调用上限' in reason:
             retry = (now + timedelta(days=1)).astimezone(timezone.utc).replace(hour=0, minute=5, second=0, microsecond=0)
             result.update(state='budget_wait', next_attempt_at=retry.isoformat())
-        elif transient or isinstance(error, (OSError, requests.RequestException)):
+        elif transient or not classified and isinstance(error, (OSError, requests.RequestException)):
             failures = draft.get('automatic_review', {}).get('failures', 0) + 1
             result.update(state='retry', failures=failures, next_attempt_at=(now + timedelta(hours=min(24, 2 ** min(failures, 5)))).isoformat())
         result['assistance'] = dict(state='failed', reason=reason, source_sha256=digest, **classified)
@@ -495,6 +533,7 @@ def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None
         raise ValueError('每轮自动核验上限须为1至20条')
     configs = configs if configs is not None else yaml.safe_load((root / 'sites/opportunities.yaml').read_text(encoding='utf-8'))['targets']
     with output_lock(root / 'cache/automatic-review-run'):
+        preflight = review_preflight.run(root, queue_path, configs, now=now)
         queue = review.read_queue(queue_path)
         from crawler.review_queue import ordered
         by_id = {d['id']: d for d in queue['drafts']}
@@ -511,6 +550,7 @@ def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None
             if active >= limit or checked >= limit * 10:
                 break
         report = dict(version=1, started_at=now.isoformat(), completed_at=datetime.now(timezone.utc).isoformat(),
+            preflight_counts=preflight['counts'],
             mode='publish' if publish else 'evaluate', counts=dict(Counter(r['state'] for r in results)), results=results,
             published_ids=[r['id'] for r in results if r['state'] == 'published'], renewed_ids=[r['id'] for r in results if r['state'] == 'renewed'],
             errors=[dict(id=r['id'], reasons=r['reasons']) for r in results if r['state'] in ('retry', 'budget_wait')])

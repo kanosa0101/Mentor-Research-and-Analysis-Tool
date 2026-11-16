@@ -136,7 +136,7 @@ bio_raw: '个人简介
   NSFC青年科学基金'
 institutes:
 - 约翰·霍普克罗夫特计算机科学中心
-homepage: jhc.sjtu.edu.cn/~shizhenzhao/
+homepage: https://jhc.sjtu.edu.cn/~shizhenzhao/
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/赵世振.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
@@ -155,31 +155,39 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhaoshizhen.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
+supervisor: 博导

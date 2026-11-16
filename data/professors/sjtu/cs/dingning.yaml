@@ -61,31 +61,40 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingning.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 密码学（ 零知识协议、承诺方案、程序混淆等 ）、隐私计算与数据安全、计算学习等，宽泛的兴趣爱好是理论计算机科学，目前研究点集中于基于
+  MPC 的隐私保护机器学习、恶意敌手模型下的高效协议构造、PAC和Agnostic Learning Model下的布尔函数学习
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

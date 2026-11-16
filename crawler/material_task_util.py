@@ -187,10 +187,10 @@ def quality(policy, context, today=None):
     elif policy.get('revalidation_invalid') or policy.get('revalidation') and not valid_revalidation(policy, context.get('sources')):
         state, label = 'review', '政策内容或来源配置已变化，原系统复检不再适用'
     elif (confirmed := confirmation_date(policy, context.get('sources'))) and 0 <= age(confirmed) <= 30:
-        return {'state': 'checked', 'label': '系统复检：原核验版本与逐项证据一致；未改写人工摘要或适用年度',
+        return {'state': 'checked', 'label': '系统复检：原核验版本与逐项证据一致；未改写摘要或适用年度',
                 'method': 'unchanged_source', 'confirmed_at': confirmed}
     elif not 0 <= age(policy.get('reviewed_at')) <= 30:
-        state, label = 'review', '人工摘要超过30天且无有效系统复检，需复核'
+        state, label = 'review', '摘要超过30天且无有效系统复检，需复核'
     return {'state': state, 'label': label}
 
 

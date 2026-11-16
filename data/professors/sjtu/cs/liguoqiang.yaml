@@ -12,7 +12,7 @@ office_address: 上海市闵行区东川路800号上海交通大学软件大楼1
 bio_raw: '个人简介
 
   李国强博士，上海交通大学计算机学院副教授，博士生导师，中国计算机学会高级会员。2001年在太原理工大学获得工学学士学位、2005年在上海交通大学获得工学硕士学位、2008年在日本北陆先端科学大学院大学获得工学博士学位。2008年至2009年在日本名古屋大学信息科学研究科担任博士后研究员，2009年至2013年在上海交通大学软件学院担任讲师
-  ，2015年至2016年在英国牛津大学计算机科学系任访问学者，2016年至2020年在日本九州大学担任客座副教授。 研究兴趣包括形式化验证、程序语言理论、代码智能。
+  ，2015年至2016年在英国牛津大学计算机科学系任访问学者，2016年至2020年在日本九州大学担任客座副教授。 研究兴趣包括形式化验证、程序语言理论、程序智能、智能问题求解与优化。
   主持国家自然科学基金五项、自然科学基金重点子课题两项。已经在国内外知名期刊和国际主流会议发表论文超百篇，包括OOPLSA、FM、 ICML、NeurIPS、ACL、ASE、FSE、ICSE、CSCW等顶级会议以及TSE、TDSC、TSC、TII、TECS、TSMCA等顶级期刊。现担任中国计算机学会形式化方法专委会常务委员，
 
   上海计算机学会理论计算机科学专委会副主任，
@@ -107,7 +107,7 @@ bio_raw: '个人简介
 
   ●
 
-  EI6303，算法设计与分析，研究生专业基础课程
+  EI6714，算法设计与分析，研究生专业基础课程
 
   已结束课程
 
@@ -137,6 +137,10 @@ bio_raw: '个人简介
 
   ●
 
+  X037506/EI6303，算法设计与分析（3学分），研究生课程，2011-2026
+
+  ●
+
   GE6001, 科学写作、规范与伦理，研究生课程，2019-2024
 
   ●
@@ -146,6 +150,20 @@ bio_raw: '个人简介
   论文发表
 
   Conferences and Workshops:
+
+  ● Minyu Chen, Song Qin, Ling-I Wu, Jianxin Xue, Guoqiang Li
+
+  . Teacher-Aware Evolution of Heuristic Programs from Learned Optimization Policies.
+  NeurIPS''26
+
+  ● Weijie Lu, Jingyu Ke, Hongfei Fu, Zhouyue Sun, Yi Zhou, Guoqiang Li, Haokun Li.
+  Array-Carrying Symbolic Execution for Function Contract Generation. FM''26
+
+  ● Minyu Chen, Sihao Wu, Ling-I Wu, Song Qin, Jingyang Li, Lei Ning, Jianxin Xue,
+  Guoqiang Li
+
+  . TipCoder: Reinforcement Learning Boosted Test-time Instruction Proposer for Code
+  Generation . EMNLP''26 findings
 
   ● Shuyang Tang, Sherman S. M. Chow, Hongfei Fu, Zihan Guo, Guoqiang Li. Staged Multi-Step
   UTXO Workflows via Recursive Invariants. OOPSLA''26
@@ -396,46 +414,54 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liguoqiang.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 形式化验证、程序语言理论、程序智能、智能问题求解与优化
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

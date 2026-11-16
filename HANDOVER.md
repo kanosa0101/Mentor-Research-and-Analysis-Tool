@@ -98,3 +98,9 @@ v1.7 在 2026-11-15 的基线快照为 18 条机会，状态 `open=1/open_month=
 v1.11.5 将失效来源恢复与AI故障分流接入已有定时任务，规则和预算见[自动核验说明](docs/AUTOMATIC_REVIEW.md)。导师错误、替代地址、身份依据、下次动作与冷却时间保存于 `cache/mentor_quality/`；活动替代源保存在 `cache/opportunity-recovery.json`。这些状态需与证据文件共同保留，不能通过清空缓存重置积压时钟或反复访问失效链接。升级公开数据时按生产基线三方合并，不覆盖更新期间的人工字段和私人申请。一次完整轮转没有找到官方报名证据时，仍保留缺口；不得把来源接入数当成新增机会数。
 
 `VERSION`、`release.json` 标识代码版次，不代表每条资料重新核验。现状数字应写真实来源时间；账号功能上线不刷新导师/政策事实。历史 v1.10 文档位于 `docs/history/pre-online-20261115/`，附原字节SHA清单。当前交付只包含在线地址、源码提交、测试与部署证据及已知限制。
+
+## v1.11.6交接补充
+
+本轮部署及逐项实测见[交付记录](deploy/DELIVERY_V1.11.6_2026-11-16.md)。`mentor-maintenance.service`与审核服务均通过systemd LoadCredential取得AI私有配置，正常日上限10次；新政策每小时最多2条，与活动核验共享日账本。不要复制或清零账本来处理积压。
+
+目录轮转每小时2院系/16次HTTP，配置与请求实际计数保存在`cache/mentor_quality/directory-refresh.json`；名册差异仅生成候选，不冒充新导师已核验。`cache/review-preflight.json`保留队列历史/导航分流，原人工字段和人工日期不变。新政策待办位于`cache/policy_intake/state.json`；没有维护者订阅时，超时只在维护台出现，不能声称浏览器后台已经送达。

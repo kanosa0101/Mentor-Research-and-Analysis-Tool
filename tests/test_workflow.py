@@ -106,6 +106,7 @@ class BuildTests(unittest.TestCase):
             (root / 'site/p').mkdir(parents=True)
             (root / 'site/p/orphan.html').write_text('old')
             for name in ('ui.css', 'discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js',
+                         'account-session.js', 'cloud-library.js', 'plan-transfer.js', 'start.js',
                          'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js'):
                 (root / 'site' / name).write_bytes((ROOT / 'site' / name).read_bytes())
             with patch.object(build, 'ROOT', root), patch.object(build, 'SITE', root / 'site'), \

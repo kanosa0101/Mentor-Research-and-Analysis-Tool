@@ -1,4 +1,6 @@
 import re
+import json
+from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 
@@ -63,4 +65,38 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
-    return {}
+    if urlsplit(url).hostname!='homepage.hit.edu.cn':return {}
+    soup=BeautifulSoup(html,'html.parser');name=soup.select_one('h3.chineseName')
+    if name is None:return {}
+    out={'name':name.get_text(strip=True)}
+    from crawler.email_util import normalize_email
+    # The official newUtils.js renders EmailText by IsReverse; decode only this
+    # known public template, never encrypted/private contact fields.
+    if soup.select_one('script[src="scripts/utils/newUtils.js"]'):
+        emails={normalize_email(node.get_text(strip=True)[::-1]) for node in soup.select('#col-r .EmailText')}
+        emails.discard(None)
+        if len(emails)==1:out['email']=next(iter(emails))
+    directions=soup.select_one('#teacher_info .user-label')
+    if directions and directions.get_text(strip=True):out['research_direction_raw']=directions.get_text(' ',strip=True)
+    holder=soup.select_one('div.teacher-body[data-tid]');reader=cfg.get('_read_source')
+    if holder and reader and re.fullmatch(r'[a-f0-9]{32}',holder['data-tid']):
+        _,body=reader('https://homepage.hit.edu.cn/TeacherHome/teacherBody.do?id='+holder['data-tid']+'&versionId=')
+        content=json.loads(body)
+        if not isinstance(content,str):raise ValueError('HIT公开个人简介不是JSON字符串')
+        detail=BeautifulSoup(content,'html.parser')
+        for heading in detail.select('.part_t_l em'):
+            if heading.get_text(strip=True)!='个人简介':continue
+            section=heading.find_parent(class_='part_box')
+            if section:
+                bio=re.sub(r'^(?:个人简介\s*)?(?:名称\s*)?','',section.get_text(' ',strip=True)).strip()
+                out['bio_raw']=bio
+                # The identity centre must appear in the person's own opening,
+                # not a collaborator, publication, or the rest of the homepage.
+                opening=re.split(r'[。]',bio,maxsplit=1)[0][:240]
+                if opening.startswith(out['name']):out['_identity_bio']=opening
+                match=re.search(r'(?:特聘|长聘|准聘|预聘|助理|副)?(?:教授|研究员)|讲师',opening)
+                if match:out['title']=match[0]
+                # Existing HIT qualifications come from separate official lists.
+                # A shortened biography must not remove a listed qualification.
+                break
+    return out

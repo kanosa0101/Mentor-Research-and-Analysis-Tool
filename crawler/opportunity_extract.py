@@ -24,6 +24,12 @@ def embedded_pdf_urls(raw, source_url):
     """Read known literal embed locations; never evaluate page JavaScript."""
     soup = BeautifulSoup(raw, 'html.parser')
     values = [node['pdfsrc'] for node in soup.select('.wp_pdf_player[pdfsrc]')]
+    for node in soup.select('nav,header,footer'):
+        node.decompose()
+    # University CMS attachment lists often sit after the article body container.
+    values.extend(node['href'] for node in soup.select('a[href]')
+                  if re.search(r'\.pdf(?:[?#]|$)', node['href'], re.I) or
+                  re.search(r'\.pdf\s*$', node.get_text(' ', strip=True), re.I))
     for script in soup.select('script'):
         values.extend(match[1] for match in re.findall(r'showVsbpdfIframe\s*\(\s*([\"\'])([^\"\']+\.pdf(?:[?#][^\"\']*)?)\1', script.get_text(), re.I))
     urls = []

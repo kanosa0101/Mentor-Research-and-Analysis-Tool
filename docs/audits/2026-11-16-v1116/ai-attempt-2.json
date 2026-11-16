@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-16T14:03:48.014490+00:00",
+  "attempted": 1,
+  "candidate_total": 1,
+  "pending": 1,
+  "published": 0,
+  "changed": 0,
+  "manual_required": 1,
+  "retry": 0,
+  "budget_wait": 0,
+  "counts": {
+    "manual_required": 1
+  },
+  "results": [
+    {
+      "title": "北京大学计算机学院2027年“申请-考核制” 博士研究生招生说明",
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "listing_url": "https://cs.pku.edu.cn/zsxx/yjszs.htm",
+      "checked_at": "2026-11-16T14:03:48.014490+00:00",
+      "policy_version": "new-official-policy-v1",
+      "first_seen": "2026-11-16T14:03:48.014490+00:00",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "status": "manual_required",
+      "reason": "AI建议人工判断：exams字段的value混入了“四、违规处理”下的第1至3条内容，而该字段的quote也包含这些条目；但exams字段的value未包含“四、违规处理”标题，导致违规处理条款被归入考试/录取部分，归类边界不清，需人工确认。；attachment_0字段的value为下载链接，但原文正文仅显示“附件：研究所编码”及表格内容，未直接给出该下载链接；无法从原文核实该链接是否对应本附件，需人工确认。；原文附件表格中研究所编码与研究所名称的对应关系存在排版错位（如“软件研究所 101001”“元宇宙技术研究所 101002”等编码与名称分行排列），无法可靠判断各研究所编码归属，需人工核对附件原始版式。；原文英语水平证明a)项写“TOEFL（iBT）成绩100分及以上……或者5分及以上”，其中“5分及以上”表述异常，疑似原文排版或录入问题，需人工确认是否为笔误及实际要求。；原文附件表格中部分导师姓名存在空格或断字（如“王捍 贫”“熊 瑞勤”“万小 军”），无法确定规范姓名，需人工核对。",
+      "next_attempt_at": "2026-11-17T14:03:48.014490+00:00",
+      "reason_code": "ambiguous_scope",
+      "next_action": "按明确年度、学位、渠道及适用对象拆分核验",
+      "pending_since": "2026-11-16T14:03:48.014490+00:00",
+      "history": []
+    }
+  ]
+}

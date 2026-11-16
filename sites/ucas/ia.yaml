@@ -3,6 +3,8 @@ dept: ia
 dept_name: 自动化研究所
 base_url: https://ia.cas.cn
 hook: ucas_ia
+parser_dependencies: [ucas/cas_lists.py, profile_fields.py]
+roster_discovery: true
 list:
   urls:
     - https://ia.cas.cn/rcdw/yjy/

@@ -29,13 +29,25 @@ RULES = {
 }
 
 
+class DiscoveryBudgetExhausted(RuntimeError):
+    pass
+
+
 def signature(root, cfg):
     content = json.dumps([VERSION,cfg],sort_keys=True,ensure_ascii=False).encode()
+    return hashlib.sha256(content+parser_source(root,cfg)).hexdigest()
+
+
+def parser_source(root,cfg):
+    content=b''
     for folder in (root/'sites'/cfg['school'],root/'sites'):
         path=folder/(cfg.get('hook','')+'.py')
         if path.is_file():
             content += path.read_bytes();break
-    return hashlib.sha256(content).hexdigest()
+    for name in cfg.get('parser_dependencies',[]):
+        path=(root/'sites'/name).resolve()
+        if path.is_relative_to((root/'sites').resolve()) and path.is_file():content+=path.read_bytes()
+    return content
 
 
 def classify(message='', kind='', *, original=None, cfg=None):
@@ -80,6 +92,24 @@ def canonical(url):
     parts = urlsplit(url)
     return urlunsplit(('https' if parts.scheme == 'http' else parts.scheme,
                        parts.netloc.lower(), parts.path or '/', parts.query, ''))
+
+
+def directory_target(url,scope):
+    """Decode one documented HIT gateway host, never guess a person's slug."""
+    value=urlsplit(url)
+    if (institution(urlsplit(scope).hostname)=='hit.edu.cn' and
+            value.netloc=='homepage-hit-edu-cn.ivpn.hit.edu.cn:1080' and
+            re.fullmatch(r'/[A-Za-z0-9_-]+',value.path) and not value.query):
+        return 'https://homepage.hit.edu.cn'+value.path
+    return canonical(url)
+
+
+def content_types(url):
+    value=urlsplit(url)
+    if (value.scheme=='https' and value.netloc=='homepage.hit.edu.cn' and value.path=='/TeacherHome/teacherBody.do' and
+            re.fullmatch(r'id=[a-f0-9]{32}&versionId=',value.query)):
+        return ('text/json','application/json')
+    return ('text/html','application/xhtml+xml')
 
 
 def institution(host):
@@ -181,6 +211,10 @@ def identity(original, parsed, url):
         return 'same_official_article_id_and_name'
     if any(canonical(original.get(field, '')) == canonical(url) for field in ('homepage','profile_url') if original.get(field)):
         return 'registered_homepage_and_name'
+    if (old.hostname in ('www.cs.hit.edu.cn','cs.hit.edu.cn') and old.path=='/jsml/list.htm' and
+            new.hostname=='homepage.hit.edu.cn' and any(len(v)>=8 and v in parsed.get('_identity_bio','')
+            for v in original.get('institutes',[]))):
+        return 'official_named_link_and_same_research_centre'
     return None
 
 
@@ -194,21 +228,21 @@ def matches_name(label, name):
 
 def named_link(html, directory_url, target, name):
     for anchor in BeautifulSoup(html,'html.parser').select('a[href]'):
-        if matches_name(anchor.get_text(' ',strip=True),name) and canonical(urljoin(directory_url,anchor['href']))==canonical(target):
+        if matches_name(anchor.get_text(' ',strip=True),name) and directory_target(urljoin(directory_url,anchor['href']),directory_url)==canonical(target):
             return True
     return any((row.get('title') or row.get('showTitle'))==name and isinstance(row.get('url'),str) and
                canonical(urljoin(directory_url,row['url']))==canonical(target) for row in inline_rows(html))
 
 
-def directory_index(root, cfg, sources, *, refresh=False):
+def directory_index(root, cfg, sources, *, refresh=False, max_pages=16):
     """Cache a bounded official directory walk once per unit, not once per teacher."""
     seeds = seed_urls(cfg)
     signature = hashlib.sha256(json.dumps([VERSION,cfg],sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     path = root / 'cache/mentor_quality/discovery' / (cfg['school']+'-'+cfg['dept']+'.json')
     previous = {}
-    if path.exists() and not refresh:
+    if path.exists():
         value = json.loads(path.read_text(encoding='utf-8'))
-        if value.get('signature') == signature and value.get('next_check_at','') > sources.stamp:
+        if not refresh and value.get('signature') == signature and value.get('next_check_at','') > sources.stamp:
             sources.used.extend(e for e in value.get('evidence',[]) if e not in sources.used)
             return value
         if value.get('signature') == signature and value.get('frontier'):
@@ -216,12 +250,15 @@ def directory_index(root, cfg, sources, *, refresh=False):
     queue = previous.get('frontier') or [(s,0) for s in seeds]
     seen=set();visited=set(previous.get('visited',[]));links=previous.get('links',[])
     rosters=previous.get('rosters',[]);evidence=previous.get('evidence',[]);failures=[]
-    while queue and len(seen)<16:
+    while queue and len(seen)<max_pages:
         url,depth=queue.pop(0)
         if url in seen or url in visited:continue
         seen.add(url);visited.add(url)
         try:
             raw,html=sources.read(url, official_scope=cfg.get('base_url') or url)
+        except DiscoveryBudgetExhausted:
+            queue.insert(0,(url,depth));seen.remove(url);visited.remove(url)
+            break
         except Exception as error:
             failures.append(dict(url=url,reason=str(error)[:300]));continue
         evidence.append(dict(url=url,sha256=hashlib.sha256(raw).hexdigest(),fetched_at=sources.stamp))
@@ -229,12 +266,13 @@ def directory_index(root, cfg, sources, *, refresh=False):
             rosters.append(dict(url=url,sha256=hashlib.sha256(raw).hexdigest()))
         soup=BeautifulSoup(html,'html.parser')
         for a in soup.select('a[href]'):
-            text=a.get_text(' ',strip=True);target=canonical(urljoin(url,a['href']))
+            text=a.get_text(' ',strip=True);target=directory_target(urljoin(url,a['href']),cfg.get('base_url') or url)
             if not allowed(target,cfg.get('base_url') or url) or target==url:continue
             if 2 <= len(text) <= 60:
                 links.append(dict(name=text,url=target,directory_url=url))
             paging=bool(re.fullmatch(r'\d+|下[一]?页|尾页|Next',text,re.I))
-            faculty=bool(re.search(r'师资|教师名录|全体教师|教授|研究员|faculty|staff',text,re.I))
+            faculty=bool(len(text)<=24 and re.search(r'师资|教师名录|全体教师|教授|研究员|faculty|staff',text,re.I) and
+                         not re.search(r'新闻|讲座|获奖|获批|报告|20\d{2}|/info/\d+/\d+\.htm',text+' '+target))
             if (paging or depth<2 and faculty) and target not in visited and len(queue)<200:
                 queue.append((target,depth if paging else depth+1))
         for row in inline_rows(html):
@@ -243,7 +281,7 @@ def directory_index(root, cfg, sources, *, refresh=False):
                 target=canonical(urljoin(url,href))
                 if allowed(target,cfg.get('base_url') or url):links.append(dict(name=name,url=target,directory_url=url))
     value=dict(version=1,signature=signature,checked_at=sources.stamp,
-               next_check_at=(datetime.fromisoformat(sources.stamp)+timedelta(hours=24)).isoformat(timespec='seconds'),
+               next_check_at=(datetime.fromisoformat(sources.stamp)+timedelta(hours=1 if queue else 24)).isoformat(timespec='seconds'),
                links=list({(v['name'],v['url']):v for v in links}.values()),rosters=rosters,evidence=evidence,failures=failures,
                pages_checked=len(seen),frontier=queue,visited=sorted(visited) if queue else [])
     from crawler.opportunity_monitor import atomic_json
@@ -260,3 +298,114 @@ def replacements(root, original, cfg, sources):
     if len({r['url'] for r in candidates})>8:
         raise ValueError('同名官方候选过多，不能自动确认身份')
     return candidates,index
+
+
+def collect_roster_candidates(root,cfg,index,sources):
+    """Record strict official-directory differences for later identity review."""
+    if not cfg.get('roster_discovery') or not cfg.get('list',{}).get('person_href'):
+        return dict(candidates=0)
+    from crawler import mentor_quality as quality
+    from crawler.opportunity_monitor import atomic_json,output_lock
+    path=root/'cache/mentor_quality/roster-candidates.json'
+    folder=root/'data/professors'/cfg['school']/cfg['dept']
+    people=[quality.load_yaml(p) for p in folder.glob('*.yaml')]
+    known_urls={canonical(p['detail_url']) for p in people}
+    rows=[row for row in index['links'] if re.fullmatch(r'[\u4e00-\u9fff·]{2,8}',row['name']) and
+          re.search(cfg['list']['person_href'],row['url']) and row['url'] not in known_urls]
+    with output_lock(path):
+        state=json.loads(path.read_text(encoding='utf8')) if path.exists() else {'version':1,'records':{}}
+        for row in rows:
+            key=cfg['school']+'/'+cfg['dept']+'/'+hashlib.sha256(row['url'].encode()).hexdigest()[:16]
+            if key in state['records']:continue
+            conflict=any(p['name']==row['name'] for p in people) or len({r['url'] for r in rows if r['name']==row['name']})>1
+            state['records'][key]=dict(id=key,unit=cfg['school']+'/'+cfg['dept'],name=row['name'],url=row['url'],
+                directory_url=row['directory_url'],discovered_at=sources.stamp,status='identity_conflict' if conflict else 'pending',
+                reason='存在同名登记，需核对替代来源；不按姓名合并' if conflict else '新官方目录登记，待核验本人身份与联系方式',
+                evidence=index.get('evidence',[]))
+        atomic_json(path,state)
+    return dict(candidates=len(rows))
+
+
+def refresh_directories(root, *, max_units=2, request_budget=16, fetcher=None, now=None):
+    """Advance directory cursors independently of a broken profile's weekly cooldown.
+
+    New links alone do not wake issues: the existing full identity/provenance gate
+    must also validate a current profile, within the same transport budget.
+    """
+    from pathlib import Path
+    from datetime import timezone
+    from crawler import mentor_quality
+    from crawler.opportunity_monitor import atomic_json, output_lock
+    from crawler.source_discovery import fetch_html
+    root=Path(root);now=now or datetime.now(timezone.utc);stamp=now.isoformat(timespec='seconds')
+    state_path=root/'cache/mentor_quality/state.json'
+    records=json.loads(state_path.read_text(encoding='utf-8')).get('records',{}) if state_path.exists() else {}
+    candidates=[]
+    for cfg_path in sorted((root/'sites').glob('*/*.yaml')):
+        cfg=mentor_quality.load_yaml(cfg_path);unit=cfg['school']+'/'+cfg['dept']
+        if not any((root/'data/professors'/unit).glob('*.yaml')):continue
+        path=root/'cache/mentor_quality/discovery'/(unit.replace('/','-')+'.json')
+        old=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+        due=old.get('next_check_at','')
+        if old.get('frontier') and old.get('checked_at'):
+            due=min(due or stamp,(datetime.fromisoformat(old['checked_at'])+timedelta(hours=1)).isoformat(timespec='seconds'))
+        if due and due>stamp:continue
+        candidates.append((0 if old.get('frontier') else 1,old.get('checked_at',''),unit,cfg,old))
+    candidates.sort(key=lambda row:row[:3])
+    used=0;results=[];wake=[]
+    def before_request():
+        nonlocal used
+        if used>=request_budget:raise DiscoveryBudgetExhausted('本轮官方目录请求预算已用完，保留游标')
+        used+=1
+    for _,_,unit,cfg,old in candidates[:max_units]:
+        if used>=request_budget:break
+        def bounded(source):
+            url=canonical(source['url']);scope=cfg.get('base_url') or url
+            if not allowed(url,scope):raise ValueError('目录补充来源离开登记官方机构边界')
+            if fetcher:
+                before_request();return fetcher(dict(source,url=url,official_scope=scope))
+            return fetch_html(url,scope,before_request=before_request,accepted_types=content_types(url))
+        sources=mentor_quality.Sources(root,bounded,stamp)
+        try:
+            index=directory_index(root,cfg,sources,refresh=True,max_pages=max(1,request_budget//max(1,max_units)//2))
+            previous={(row['name'],row['url']) for row in old.get('links',[])}
+            added=[row for row in index['links'] if (row['name'],row['url']) not in previous]
+            woke=[]
+            for key,record in records.items():
+                if (not key.startswith(unit+'/') or record.get('status') not in ('error','pending') or
+                        record.get('next_action') not in ('discover_official_source','retry') or used>=request_budget):continue
+                path=root/'data/professors'/unit/(record['ref']+'.yaml')
+                if path.parent!=root/'data/professors'/unit or not path.is_file():continue
+                original=mentor_quality.load_yaml(path)
+                new_urls={row['url'] for row in added if matches_name(row['name'],original['name'])}
+                if not new_urls:continue
+                sources.replacement=None
+                try:
+                    mentor_quality.profile(root,original,cfg,sources,failure_reason=record.get('reason',''))
+                except Exception:
+                    continue
+                replacement=sources.replacement
+                if replacement and replacement['new_url'] in new_urls:
+                    wake.append((key,original,path,replacement,list(sources.used)))
+                    woke.append(key)
+            roster=collect_roster_candidates(root,cfg,index,sources)
+            results.append(dict(unit=unit,pages_checked=index['pages_checked'],frontier=len(index['frontier']),roster=roster,
+                                new_links=len(added),verified_candidates=len(woke),source_errors=len(index['failures'])))
+        except Exception as error:
+            results.append(dict(unit=unit,error=str(error)[:400]))
+    requeued=[]
+    if wake:
+        with output_lock(state_path):
+            state=json.loads(state_path.read_text(encoding='utf-8'))
+            for key,original,path,replacement,evidence in wake:
+                row=state['records'].get(key,{})
+                if (row.get('status') not in ('error','pending') or row.get('next_action') not in ('discover_official_source','retry') or
+                        mentor_quality.load_yaml(path)!=original):continue
+                row.update(next_check_at=stamp,discovery_verified_at=stamp,discovered_replacement=replacement,
+                           discovery_evidence=evidence)
+                requeued.append(key)
+            atomic_json(state_path,state)
+    report=dict(checked_at=stamp,attempted=len(results),requests=used,request_budget=request_budget,
+                requeued=len(requeued),requeued_ids=requeued,error=sum('error' in row for row in results),results=results)
+    atomic_json(root/'cache/mentor_quality/directory-refresh.json',report)
+    return report

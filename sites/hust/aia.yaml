@@ -3,6 +3,7 @@ dept: aia
 dept_name: 人工智能与自动化学院
 base_url: https://aia.hust.edu.cn
 hook: related_v7
+parser_dependencies: [profile_fields.py]
 direct: true
 explicit_supervisor_only: true
 roster_pending: 仅中文学院师资按系列表的个人登记页；不含独立实验工程人员、博士后、荣休教师和英文名单，职级正高/副高不推断具体职称。

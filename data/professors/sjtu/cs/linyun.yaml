@@ -13,7 +13,19 @@ bio_raw: '个人简介
 
   华为x-explore人才计划
 
-  ，毕业于复旦大学计算机学院获得博士学位。研究工作包括自动代码编程、可解释AI、网络反诈、智能体安全等。发表CCF-A类国际顶级会议和期刊论文70余篇，获ICSE2018杰出论文奖，多次获中国软件大会
+  。研究工作包括需求编译（复杂软件生成）、
+
+  智能体安全、
+
+  可解释AI、网络反诈等。发表CCF-A类国际会议和期刊论文（
+
+  Nature Communication、
+
+  TSE、TOSEM
+
+  等
+
+  ）近80篇，获ICSE2018杰出论文奖，多次获中国软件大会
 
   研究
 
@@ -22,17 +34,19 @@ bio_raw: '个人简介
   FSE 2027（CCF-A类）领域主席、
 
   ICECCS 2026、PRDC 2023程序委员会联合会议主席、ISACE 2025大会联合主席，ICSE、FSE、USENIX Security等重要国际会议的程序委员会委员。主持国家自然科学基金委海外优青项目及面上项目、主持多项校企合作，自动编程技术落地于豆包代码模型以及Trae
-  IDE，GUI测试相关研究合作入选信通院优秀案例等。更详细内容请参见：http://linyun.info
+  IDE，GUI测试相关研究合作入选信通院优秀案例等。更详细内容请参见：
+
+  http://linyun.info
 
   教授课程
 
   CS3604: 软件工程和项目管理
 
-  CS7354: 开源软件技术与实践
-
-  CS3322: 数据库原理
+  CS4810J: 智能体软件工程
 
   CS3331: 软件工程
+
+  CS7354: 开源软件技术与实践
 
   论文发表
 
@@ -66,26 +80,40 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  homepage:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/linyun.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+homepage: http://linyun.info
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
+supervisor: 博导

@@ -23,7 +23,7 @@ def main():
         raise ValueError('Deployment verification requires HTTPS')
     args.output.mkdir(parents=True, exist_ok=True)
     result = {'base_url': base, 'accounts': [], 'checks': [], 'passed': False}
-    name = 'qa_v1115_' + str(int(time.time()))
+    name = 'qa_v1116_' + str(int(time.time()))
     result['planned_usernames'] = [name + '_a', name + '_b']
     password = secrets.token_urlsafe(24)
 

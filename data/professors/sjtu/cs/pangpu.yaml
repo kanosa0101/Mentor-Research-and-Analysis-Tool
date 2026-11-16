@@ -11,7 +11,7 @@ office_address: 电信群楼3-118
 bio_raw: '个人简介
 
   庞浦，上海交通大学计算机学院助理研究员。2023年于上海交通大学计算机系获博士学位，2024年起加入上海交通大学。长期从事云计算、操作系统研究，在ASPLOS、SC、VLDB、HPCA、IEEE
-  TPDS、ICS、SoCC等系统与体系结构顶级会议期刊上发表论文20余篇，
+  TPDS、ACM TACO、ICS、SoCC等系统与体系结构顶级会议期刊上发表论文20余篇，
 
   获SoCC 2025最佳论文奖提名。
 
@@ -41,6 +41,8 @@ bio_raw: '个人简介
 
   教授课程
 
+  CS1601 离散数学（A类）
+
   CS3302 Linux内核'
 institutes:
 - 先进计算研究所
@@ -63,36 +65,38 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/pangpu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

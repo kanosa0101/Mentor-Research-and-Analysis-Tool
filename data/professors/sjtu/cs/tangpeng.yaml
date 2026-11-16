@@ -49,22 +49,30 @@ bio_raw: '个人简介
 
   [1] Peng Tang, Xiaoyu Zhu, et al. “FLAD: Byzantine-Robust Federated Learning Based
   on Gradient Feature Anomaly Detection,” in IEEE Transactions on Dependable and Secure
-  Computing, 2025.
+  Computing, 2025. (CCF-A)
 
-  [2] Ke Hu, Liyao Xiang, Peng Tang, and Weidong Qiu, “Feature Norm Regularized Federated
-  Learning: Utilizing Data Disparities for Model Performance Gains,” IJCAI 2024.
+  [2] Peng Tang, Xin Li, Yuxing Chen, Weidong Qiu, Haochen Mei, Allison Holmes, Fenghua
+  Li, and Shujun Li. “A Comprehensive Study on GDPR-Oriented Analysis of Privacy Policies:
+  Taxonomy, Corpus and GDPR Concept Classifiers,” IEEE Transactions on Dependable
+  and Secure Computing, 2026.
 
-  [3] Guowei Lin, Fei Tang, Chaochao Cai, Jinyong Shan, Haiyang Xue, Wulu Li, Peng
-  Tang, Xinyi Huang, and Weidong Qiu, “P²FRPSI: Privacy-Preserving Feature Retrieved
-  Private Set Intersection,” IEEE Transactions on Information Forensics and Security,
-  vol. 19, pp. 2201-2216
+  (CCF-A)
 
-  [4] Peng Tang, Weidong Qiu, Zheng Huang, Shuang Chen, Min Yan, Huijuan Lian, and Zhe Li.
-  “Anomaly detection in electronic invoice systems based on machine learning,” Information
-  Sciences, vol. 535, pp. 172–186, 2020.
+  [3] Guowei Ling, Peng Tang*, Jinyong Shan, Liyao Xiang, and Weidong Qiu. “Faster
+  Than Ever: A New Lightweight Private Set Intersection and Its Variants,” Network
+  and Distributed System Security (NDSS) Symposium 2026.
 
-  [5] Peng Tang, Lifan Wang, Weidong Qiu, Zheng Huang, and Qiangmin Wang. “Fuzzy Clustered
-  Federated Learning Under Mixed Data Distributions,” AAMAS 2024.
+  (CCF-A)
+
+  [4] Guowei Ling, Peng Tang*, Fei Tang, Shifeng Sun, Jinyong Shan, Liyao Xiang, Weidong
+  Qiu. “Privacy-Preserving Authorized Set Matching via Dishonest Majority Multiparty
+  Computation, ” IEEE Transactions on Dependable and Secure Computing, 2025.
+
+  (CCF-A)
+
+  [5] Ke Hu, Liyao Xiang, Peng Tang*, Weidong Qiu. “FedTopo: Topology-Informed Representation
+  Alignment in Federated Learning under Non-IID Conditions,” Proceedings of the AAAI
+  Conference on Artificial Intelligence 26 (AAAI 2026). (CCF-A)
 
   资助项目
 
@@ -112,26 +120,34 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangpeng.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 隐私保护、人工智能安全、数据流通共享安全等
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

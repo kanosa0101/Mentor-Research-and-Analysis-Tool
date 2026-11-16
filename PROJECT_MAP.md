@@ -1,6 +1,6 @@
 # 项目地图
 
-修订日期：2026-11-16，当前候选版本 v1.11.4。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.4交付记录](deploy/DELIVERY_V1.11.4_2026-11-16.md)。历史审计数字不代表本轮重新采集。
+修订日期：2026-11-16，当前候选版本 v1.11.6。只提供在线网站；免登录浏览，账号保存，跨设备使用。当前产品约定见[在线服务说明](docs/ONLINE_SERVICE.md)，本轮验收及部署状态见[v1.11.6交付记录](deploy/DELIVERY_V1.11.6_2026-11-16.md)。历史审计数字不代表本轮重新采集。
 
 ## 产品究竟服务什么任务
 
@@ -49,7 +49,7 @@ flowchart LR
 | 公共资料 | `data/professors/`；`admissions.yaml`、`admissions_entries.yaml`、`admissions_checks.json`；`notices.json`、`opportunities.json` | 个人满足资格、学校已收件、导师尚有名额 |
 | 浏览器界面状态 | 筛选、滚动、对比与未保存表单；历史浏览器收藏待本人确认导入 | 已保存云端账号数据 |
 | 云端账号记录 | `var/accounts/accounts.sqlite3` 中身份/会话/收藏；`var/users/<ID>/` 中申请、沟通、提醒与材料 | 公共事实、服务器旧私人文件或其他账号资料 |
-| 维护证据 | `cache/opportunity_review.json`、`cache/policy_revalidation/`、`cache/mentor_quality/`、`data/issues/`及来源正文/附件；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
+| 维护证据 | `cache/opportunity_review.json`、`cache/policy_intake/`、`cache/policy_revalidation/`、`cache/mentor_quality/`、`data/issues/`及来源正文/附件；配置在 `sites/` | 申请人的操作步骤或学生应理解的技术台账 |
 
 界面统一使用“收藏”“申请项目”“联系记录”“个人提醒”。旧核验/旧套磁数据保留，不要求普通学生理解所有内部对象。现有云账号隔离个人数据；原私人文件保留，不自动归属新用户。
 
@@ -117,3 +117,9 @@ Python/Node测试覆盖规则、范围、存储、分页和发布边界；浏览
 - `crawler/online_workspace.py`：原申请业务的按账号适配，不暴露原本机接口。
 - `crawler/online_materials.py`：上传、下载、配额、路径与材料引用保护。
 - `site/account-session.js`、`account.js`、`cloud-library.js`：会话、登录返回和云端收藏。
+
+## v1.11.6现有流程收敛
+
+审核前先按有效官方证据分流历史与栏目入口；活动附件和报名链接纳入同一版本门禁。新政策从已登记通知进入独立持久队列，通过完整证据、AI交叉核对和发布前回源后追加入库。完整语义变化、复杂附件与同范围冲突保留维护处理。导师名册持续续扫并保留候选，不自动新增身份不清的人物。
+
+首访申请导航与找导师将必要样式/启动脚本内联，账号状态仍从在线API取得；院校活动正常只请求一次在线目录，API异常才降级到静态副本并标记来源未确认。学校要求按原文句子分条，长证据继续按需展开。真实公网连接与页面加载分开测量，不能以请求数减少代替访问速度验收。

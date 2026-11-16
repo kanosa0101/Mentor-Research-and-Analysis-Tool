@@ -36,7 +36,11 @@ def triage(draft):
     value = draft.get('triage', {})
     if value.get('source_sha256') and value['source_sha256'] != draft.get('fetch', {}).get('sha256'):
         return dict(classification='unknown', reason='分流后原文版本变化，须重新核对适用范围')
-    return value
+    if value:
+        return value
+    from crawler.review_preflight import effective
+    automatic = effective(draft)
+    return automatic if automatic.get('classification') in ('historical', 'irrelevant') else {}
 
 
 def apply_triage(queue_path, audit):
@@ -128,7 +132,7 @@ def fetch_pdf(url, source_url):
         raise ValueError('PDF重定向次数过多')
 
 
-def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, docx_fetcher=None):
+def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, docx_fetcher=None, complete=False):
     timestamp = (now or datetime.now(timezone.utc)).isoformat(timespec='seconds')
     previous = draft.get('fetch', {})
     try:
@@ -142,6 +146,14 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
         path = folder / (digest + '.html')
         path.write_bytes(raw)
         previous = dict(previous, sha256=digest, evidence_file=str(path.resolve()))
+        if complete:
+            from crawler import automatic_evidence
+            doc = automatic_evidence.collect(raw, draft['source_url'], pdf_fetcher=pdf_fetcher,
+                docx_fetcher=docx_fetcher or attachments.fetch_docx, folder=folder, wait=getattr(fetcher, 'wait', None))
+            draft['fetch'] = dict(status='ok', checked_at=timestamp, sha256=digest,
+                content_sha256=doc['content_sha256'], evidence_file=str(path.resolve()),
+                complete_document=doc, error=None)
+            return raw
         attachment_records = draft['item'].get('source_attachments', [])
         attachments.validate_links(attachment_records, raw, draft['source_url'])
         def saved_docx(url, source_url):
@@ -190,6 +202,7 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
         return raw
     except (OSError, ValueError, requests.RequestException) as error:
         draft['fetch'] = dict(previous, status='error', checked_at=timestamp, error=str(error)[:500],
+                              error_kind='evidence' if isinstance(error, ValueError) else 'transport',
                               consecutive_failures=previous.get('consecutive_failures', 0) + 1)
         return None
 
@@ -433,7 +446,7 @@ def pdf_review_evidence(draft, acknowledged_pdf_hashes):
 
 def publish(queue_path, draft_id, root, configs, *, acknowledged_hash, reviewer, note, fetcher=fetch_source,
             pdf_fetcher=fetch_pdf, acknowledged_pdf_hashes=None, expected_revision=None, docx_fetcher=None,
-            acknowledged_content_hash=None):
+            acknowledged_content_hash=None, complete=False):
     """Recheck source, validate one item, atomically replace the catalog with audit.
 
 catalog.review_log is the authoritative audit if a crash interrupts the later
@@ -452,12 +465,18 @@ second item. External edits should not run concurrently with this command.
             raise ValueError('草稿已被其他操作更新，请重新打开后核验')
         check_source(draft, configs)
         acknowledged_fetch = copy.deepcopy(draft.get('fetch', {}))
-        raw = fetch_evidence(draft, queue_path, fetcher, pdf_fetcher=pdf_fetcher, docx_fetcher=docx_fetcher)
+        raw = fetch_evidence(draft, queue_path, fetcher, pdf_fetcher=pdf_fetcher, docx_fetcher=docx_fetcher, complete=complete)
         atomic_json(queue_path, queue)
         if raw is None:
             raise ValueError('原文当前获取失败，未发布')
         documents = []
-        if draft['fetch']['status'] == 'pdf_review':
+        if complete:
+            from crawler import automatic_evidence
+            if acknowledged_fetch.get('content_sha256') != draft['fetch']['content_sha256']:
+                raise ValueError('正文或附件组合版本变化，须重新核验后发布')
+            source_text = draft['fetch']['complete_document']['text']
+            documents, source_attachments = automatic_evidence.metadata(draft['fetch']['complete_document'], opportunities.today().isoformat())
+        elif draft['fetch']['status'] == 'pdf_review':
             documents, source_text = pdf_review_evidence(draft, acknowledged_pdf_hashes)
         else:
             source_text = extraction.document(raw, draft['source_url'])['text']
@@ -488,6 +507,11 @@ second item. External edits should not run concurrently with this command.
             item['source_documents'] = documents
         else:
             item.pop('source_documents', None)
+        if complete:
+            if source_attachments:
+                item['source_attachments'] = source_attachments
+            else:
+                item.pop('source_attachments', None)
         opportunities.validate(item)
         opportunities.validate_classification(item, source_text, require_publishable=True)
         opportunities.validate_mentor_links(root, item, source_text)

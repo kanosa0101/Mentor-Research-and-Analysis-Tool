@@ -58,7 +58,7 @@ def canonical(url, parent=None):
     return result
 
 
-def fetch_html(url, parent_url=None, *, before_request=None):
+def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('text/html', 'application/xhtml+xml')):
     initial = canonical(url, parent_url)
     current = initial
     with requests.Session() as session:
@@ -80,7 +80,7 @@ def fetch_html(url, parent_url=None, *, before_request=None):
                         raise ValueError('官方HTTPS来源降级为HTTP，未抓取目标')
                     continue
                 response.raise_for_status()
-                if response.status_code != 200 or not any(t in response.headers.get('Content-Type', '').lower() for t in ('text/html', 'application/xhtml+xml')):
+                if response.status_code != 200 or response.headers.get('Content-Type', '').split(';',1)[0].strip().lower() not in accepted_types:
                     raise ValueError('来源未返回可核对的HTML栏目')
                 chunks, size = [], 0
                 for chunk in response.iter_content(65536):

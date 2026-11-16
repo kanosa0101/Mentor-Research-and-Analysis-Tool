@@ -60,13 +60,13 @@ bio_raw: '个人简介
 
   项）等国家级课题
 
-  7
+  8
 
   项、省部级课题
 
   5
 
-  项。国家重点研发计划项目、国家自然科学基金重点项目等项目骨干。获得中国密码学会
+  项。国家科技重大专项、国家重点研发计划项目、国家自然科学基金重点项目等项目骨干。获得中国密码学会
 
   2019
 
@@ -166,6 +166,18 @@ bio_raw: '个人简介
 
   1.
 
+  Weizhe Wang,
+
+  Deng Tang
+
+  . Differential Fault Attacks on TFHE-Friendly Cipher FRAST,
+
+  IEEE Transactions on Information Forensics and Security
+
+  , 2026, 21: 7980-7991.
+
+  2.
+
   Xiao-Xin Zhao, Wen-Feng Qi, Zhong-Xiao Wang, Qun-Xiong Zheng,
 
   Deng Tang
@@ -178,7 +190,7 @@ bio_raw: '个人简介
 
   71(10): 8029-8047 (2025).
 
-  2.
+  3.
 
   Weizhe Wang,
 
@@ -190,37 +202,7 @@ bio_raw: '个人简介
 
   , 2025 (74): 2267-2277.
 
-  3.
-
-  Weizhe Wang, Pierrick Méaux and
-
-  Deng Tang
-
-  . Shortcut2Secrets: A Table-based Differential Fault Attack Framework,
-
-  IACR Transactions on Cryptographic Hardware and Embedded Systems
-
-  , 2025 (2): 385–419.
-
   4.
-
-  Ying Ouyang,
-
-  Deng Tang
-
-  , Yanhong Xu. Code-Based Zero-Knowledge from VOLE-in-the-Head and Their Applications:
-  Simpler, Faster, and Smaller, ASIACRYPT 2024.
-
-  5.
-
-  Hongseng Yang, Qun-xiong Zheng, Jing Yang, Quanfeng Liu,
-
-  Deng Tang
-
-  . A New Security Evaluation Method Based on Resultant for Arithmetic-Oriented Algorithms,
-  ASIACRYPT 2024.
-
-  6.
 
   Xiaoxin Zhao, Zhongxiao Wang, Qunxiong Zheng,
 
@@ -232,7 +214,37 @@ bio_raw: '个人简介
 
   , 71(1): 768-782 (2025).
 
+  5.
+
+  Weizhe Wang, Pierrick Méaux and
+
+  Deng Tang
+
+  . Shortcut2Secrets: A Table-based Differential Fault Attack Framework,
+
+  IACR Transactions on Cryptographic Hardware and Embedded Systems (CHES)
+
+  , 2025 (2): 385–419.
+
+  6.
+
+  Ying Ouyang,
+
+  Deng Tang
+
+  , Yanhong Xu. Code-Based Zero-Knowledge from VOLE-in-the-Head and Their Applications:
+  Simpler, Faster, and Smaller, ASIACRYPT 2024.
+
   7.
+
+  Hongseng Yang, Qun-xiong Zheng, Jing Yang, Quanfeng Liu,
+
+  Deng Tang
+
+  . A New Security Evaluation Method Based on Resultant for Arithmetic-Oriented Algorithms,
+  ASIACRYPT 2024.
+
+  8.
 
   Wenqin Zhang,
 
@@ -244,18 +256,6 @@ bio_raw: '个人简介
   SCIENCE CHINA Information Sciences
 
   , 2023.
-
-  8.
-
-  Lijing Zheng, Haibin Kan, Yanjun Li, Jie Peng,
-
-  Deng Tang
-
-  . Constructing New APN Functions Through Relative Trace Functions.
-
-  IEEE Transactions on Information Theory
-
-  68(11): 7528-7537 (2022)
 
   9.
 
@@ -487,31 +487,40 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/tangdeng.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 密码算法设计与分析、密码学与隐私保护、代数编码及其应用，在 ASIACRYPT 、 CHES 、 FSE 、 IEEE
+  TIT/TC/TIFS 、 CiC 、 SCIS 、 DCC 、 SIDMA 、 FFA 等国内外重要学术会议和期刊和发表研究论文六十余篇
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

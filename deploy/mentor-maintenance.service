@@ -9,6 +9,8 @@ Group=mentor-assistant
 WorkingDirectory=/opt/mentor-assistant
 Environment=PYTHONDONTWRITEBYTECODE=1
 Environment=TZ=Asia/Shanghai
+Environment=MENTOR_AI_CONFIG_FILE=%d/ai-config
+LoadCredential=ai-config:/opt/mentor-assistant/var/ai/config.json
 ExecStart=/opt/mentor-assistant/.venv/bin/python scripts/maintain_public.py
 SuccessExitStatus=1
 TimeoutStartSec=45min

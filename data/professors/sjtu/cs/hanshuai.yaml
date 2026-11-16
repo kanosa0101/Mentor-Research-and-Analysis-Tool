@@ -56,26 +56,35 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hanshuai.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 为公钥密码学，主要研究和设计具有如下特性的公钥密码算法与协议： - 公钥加密、数字签名、功能加密、密钥协商； - 可抵抗新型密码分析和攻击技术，包括密钥泄漏攻击、用户渗透攻击、相关密钥攻击、选择打开攻击等；
+  - 可证明安全，且安全性可紧致地规约到离散对数、格相关等问题的困难性假设上。
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

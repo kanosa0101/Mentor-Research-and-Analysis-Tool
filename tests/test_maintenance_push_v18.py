@@ -39,6 +39,13 @@ def test_subscriptions_are_isolated_owned_and_never_expose_private_keys(root):
     assert alerts.subscribe(root, dict(subscription=subscription(), token=body['token'])) == body
     assert set(alerts.settings(root)) == {'enabled', 'public_key', 'last_delivery', 'audience', 'requires_explicit_subscription'}
     alerts.unsubscribe(root, body)
+
+
+def test_overdue_without_subscribers_is_not_reported_as_delivery(root):
+    result = alerts.dispatch(root, queue(), lambda *_: pytest.fail('no subscriber'))
+    assert result['unreceived'] and result['overdue'] == 1 and result['subscribers'] == 0
+    assert result['sent'] == result['failed'] == 0
+    assert json.loads(alerts.paths(root)[1].read_text())['unreceived'] is True
     assert alerts.read(alerts.paths(root)[0]) == {}
 
 

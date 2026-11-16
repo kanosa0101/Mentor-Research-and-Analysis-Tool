@@ -68,13 +68,13 @@ bio_raw: '个人简介
 
   湖南省长沙市
 
-  智能优化状态转移算法简介
+  智能优化状态转移算法简介（2010年提出）
 
   ：
 
   状态转移算法是一种基于结构主义（也译作建构主义）学习的智能优化算法，它从最优化算法的要求出发，创立了以全局性、最优性、快速性、收敛性、可控性为五大核心结构要素的状态转移算法体系框架。其基本思路是将最优化问题的一个解看成是一个状态，解的迭代更新过程看成是状态转移过程，利用现代控制理论中的离散时间状态空间表达式来作为产生候选解的统一框架，基于此框架来设计状态变换算子。与大多数基于种群的进化算法不同，标准的状态转移算法是一种基于个体的进化算法，它基于给定当前解，通过采样方式，多次独立运行某种状态变换算子产生候选解集，并与当前解进行比较，迭代更新当前解，直到满足某种终止条件。值得一提的是，状态转移算法中的每种状态变换算子都能够产生具有规则形状、可控大小的几何邻域，它设计了包括旋转变换、平移变换、伸缩变换、坐标轴搜索等不同的状态变换算子以满足全局搜索、局部搜索以及启发式搜索等功能需要，并且以交替轮换的方式适时地使用各种不同算子，使得状态转移算法能够在概率意义上很快找到全局最优解。
 
-  对偶理论
+  对偶理论（2013年提出）
 
   ，又称太极阴阳论，全文如下：
 
@@ -86,7 +86,7 @@ bio_raw: '个人简介
 
   宗教学说，旁门左道，信之则有，不信则无。太极阴阳则不然，信也有之，不信亦有，从古至今，永恒存在。不同层次，不同形式，相互转化，大千世界，莫不如是。
 
-  佛法自修，人生自渡
+  佛法自修，人生自渡（2024年提出）
 
   上篇
 
@@ -121,7 +121,7 @@ bio_raw: '个人简介
 
   人人皆有佛性，但并非人人皆可成佛，原因是多方面的，不管是普通人不愿意学，还是悟道人不愿意教。总之一句话就是：佛法自修，人生自渡，个人因果个人了，个人福报个人修。
 
-  问题、答案、方法和准则的关系
+  问题、答案、方法和准则的关系（2016年提出）
 
   ：
 
@@ -175,7 +175,11 @@ bio_raw: '个人简介
 
   夏润松：
 
-  2025年硕士研究生国家奖学金'
+  2025年硕士研究生国家奖学金，2026届中南大学优秀毕业生
+
+  张裕文：2026届中南大学优秀毕业生
+
+  陈栩昀：2026年硕士研究生国家奖学金'
 institutes:
 - 人工智能系
 research_direction_raw: '[1]  运筹优化、[2]  过程控制、[3]  机器学习、[4]  智能决策'
@@ -183,8 +187,8 @@ detail_url: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
 facets: []
 provenance:
   name:
@@ -195,7 +199,7 @@ provenance:
   title:
     origin: crawled
     source: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
@@ -205,15 +209,21 @@ provenance:
   supervisor:
     origin: crawled
     source: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   research_direction_raw:
     origin: crawled
     source: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
+  email:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/michael_x_zhou/zh_CN/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+email: michael.x.zhou@csu.edu.cn

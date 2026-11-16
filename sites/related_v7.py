@@ -60,9 +60,9 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
-    if '_roster_names' not in cfg:
+    if '_roster_names' not in cfg and not cfg.get('_expected_name'):
         iter_roster(cfg)
-    expected = cfg['_roster_names'].get(url)
+    expected = cfg.get('_expected_name') or cfg.get('_roster_names',{}).get(url)
     soup = BeautifulSoup(html, 'html.parser')
     title = soup.title.get_text(' ', strip=True) if soup.title else ''
     names = []
@@ -83,7 +83,17 @@ def parse_detail(cfg, html, url):
     title_match = expected and re.search(r'(?<![\u4e00-\u9fff])' + re.escape(expected) + r'(?![\u4e00-\u9fff])', title)
     if not expected or (names and expected not in names) or not (title_match or expected in names):
         raise ValueError('个人页身份未确认与名单本人一致：' + str(expected))
-    return parse_profile(cfg, html, url)
+    result=parse_profile(cfg, html, url)
+    result['name']=expected
+    if result.get('bio_raw'):
+        from sites.profile_fields import research,own_labelled_email
+        if not result.get('research_directions') and not result.get('research_direction_raw'):
+            direction=research(result['bio_raw'])
+            if direction:result['research_direction_raw']=direction
+        if not result.get('email'):
+            email=own_labelled_email(result['bio_raw'])
+            if email:result['email']=email
+    return result
 
 
 def parse_profile(cfg, html, url):

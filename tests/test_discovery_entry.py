@@ -39,13 +39,13 @@ def test_inline_stage_uses_new_catalog_escapes_script_end_and_preserves_live_sit
     build_site.write_html(tmp_path / 'discovery.html', html)
     soup = BeautifulSoup(html, 'html.parser')
     inline = soup.select('script:not([src])')
-    assert len(inline) == 1
-    assert {node['src'].split('?')[0] for node in soup.select('script[src]')} == {'account-session.js', 'cloud-library.js'}
+    assert len(inline) == 2
+    assert not soup.select('script[src]')
     assert not soup.select('link[rel=stylesheet]')
-    assert '<\\/ScRiPt>' in inline[0].string and '<\\/SCRIPT>' in inline[0].string
-    assert 'stage-only' in inline[0].string
+    assert '<\\/ScRiPt>' in inline[1].string and '<\\/SCRIPT>' in inline[1].string
+    assert 'stage-only' in inline[1].string
     assert (build_site.ROOT / 'site' / 'ui.css').read_text(encoding='utf-8') in html
-    assert 'window.BrowserLibraryCore' in inline[0].string
+    assert 'window.BrowserLibraryCore' in inline[1].string
     assert {path: path.read_bytes() if path.exists() else None for path in live} == before
 
 

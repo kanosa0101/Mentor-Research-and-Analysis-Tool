@@ -2,7 +2,7 @@
 import hashlib
 import json
 import re
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
@@ -14,7 +14,7 @@ FIELDS = {'eligibility': '报名资格', 'materials': '所需材料', 'exams': '
 
 
 def valid_date(value):
-    if not isinstance(value, str) or date.fromisoformat(value).isoformat() != value or value > date.today().isoformat():
+    if not isinstance(value, str) or date.fromisoformat(value).isoformat() != value or value > datetime.now(timezone(timedelta(hours=8))).date().isoformat():
         raise ValueError('日期格式错误或在未来')
 
 
@@ -49,8 +49,10 @@ def validate(data, units):
     ids = set()
     keys = {'id', 'school', 'dept', 'level', 'title', 'year', 'degree', 'route', 'program', 'program_code', 'published_at', 'reviewed_at', 'review_hashes', 'source_id', 'fields'}
     for p in data['policies']:
-        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if', 'material_actions', 'revalidation'}:
+        if not isinstance(p, dict) or not keys <= set(p) or set(p) - keys - {'track', 'events', 'applies_if', 'material_actions', 'revalidation', 'review_method'}:
             raise ValueError('政策结构错误')
+        if p.get('review_method', 'human') not in ('human', 'automatic_evidence'):
+            raise ValueError('政策核验方式无效')
         if 'revalidation' in p:
             from crawler.policy_revalidation import validate_revalidation
             validate_revalidation(p['revalidation'])

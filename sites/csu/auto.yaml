@@ -3,6 +3,7 @@ dept: auto
 dept_name: 自动化学院
 base_url: https://soa.csu.edu.cn
 hook: related_v7
+parser_dependencies: [profile_fields.py]
 direct: true
 explicit_supervisor_only: true
 roster_pending: 仅中文教师名录中四个教学系及电工电子基础教学中心且有个人登记页的教师；不含党政、学工、实验教学中心和指向名单本身的占位链接，未覆盖英文名单，不能视为学院全体教职工或全体导师。

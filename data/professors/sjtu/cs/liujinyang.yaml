@@ -123,9 +123,55 @@ bio_raw: '个人简介
 
   2024.9 - 2026.3 美国休斯敦大学计算机系 助理教授
 
+  教授课程
+
+  程序设计思想与方法（C++），2026秋
+
+  计算机系统结构实验（强化），2026秋
+
   论文发表
 
   会议发表：
+
+  [PPoPP ''27]
+
+  Bing Lu,
+
+  Jinyang Liu
+
+  +
+
+  , Xinyang Ma, Quantong Fu, Chenwei Hou, Zedong Liu, Wenjing Huang, Yida Gu, Xingchen
+  Liu, Zheng Wei, Angbang Wu, Xiaofeng Hou, Chao Li, Guangming Tan, Minyi Guo, and
+  Dingwen Tao.
+
+  “Falcons: Pushing the Speed-Ratio Limits of Lossy Compression for Parallel Scientific
+  Applications.”
+
+  The 32nd ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming
+  (PPoPP), 2027. (
+
+  +: Corresponding author)
+
+  [DRBSD ''25]
+
+  Ziwei Qiu,
+
+  Jinyang Liu
+
+  +
+
+  , Kai Zhao, Robert Underwood, and Sheng Di.
+
+  “Benchmarking Cutting-Edge Scientific Error-Bounded Lossy Compressors on Correlation-Based
+  Rate-Distortion.”
+
+  Proceedings of the SC ''25 Workshops of the International Conference for High Performance
+  Computing, Networking, Storage and Analysis (SC Workshops), pp. 324-331, 2025.
+
+  (
+
+  +: Corresponding author)
 
   [SC ''25]
 
@@ -219,6 +265,61 @@ bio_raw: '个人简介
 
   2021 IEEE International Conference on Cluster Computing (CLUSTER), pp. 294-306.
   IEEE, 2021.
+
+  [SIGCOMM ''26]
+
+  Zedong Liu, Xinyang Ma, Dejun Luo, Hairui Zhao, Bing Lu, Wenjing Huang, Yida Gu,
+  Xingchen Liu, Zheng Wei,
+
+  Jinyang Liu
+
+  , Dingwen Tao, and Guangming Tan.
+
+  “KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated
+  LLM Serving.”
+
+  Proceedings of the ACM SIGCOMM 2026 Conference (SIGCOMM), pp. 1-15, 2026.
+
+  [HPDC ''26]
+
+  Zhuoxun Yang, Ruoyu Li, Amit N. Subrahmanya, Vishwas Rao, Sheng Di, Robert Underwood,
+  Longtao Zhang,
+
+  Jinyang Liu
+
+  , Franck Cappello, and Kai Zhao.
+
+  “TZ: Achieving High-Ratio Scientific Data Compression on GPUs with Global Data Decomposition.”
+
+  The 35th International Symposium on High-Performance Parallel and Distributed Computing
+  (HPDC), pp. 71-84, 2026.
+
+  [HPDC ''26]
+
+  Longtao Zhang, Ruoyu Li, Zhuoxun Yang, Robert Underwood, Sheng Di, Daoce Wang,
+
+  Jinyang Liu
+
+  , Jiajun Huang, Franck Cappello, and Kai Zhao.
+
+  “OPAL: On-demand Progressive Accelerated Scientific Lossy Compression.”
+
+  The 35th International Symposium on High-Performance Parallel and Distributed Computing
+  (HPDC), pp. 58-70, 2026.
+
+  [ICS ''26]
+
+  Ruoyu Li, Yafan Huang, Longtao Zhang, Zhuoxun Yang, Sheng Di, Boyuan Zhang, Jiajun
+  Huang,
+
+  Jinyang Liu
+
+  , Jiannan Tian, Guanpeng Li, Fengguang Song, Hanqi Guo, Franck Cappello, and Kai
+  Zhao.
+
+  “GPZ: GPU-Accelerated Lossy Compressor for Particle Data.”
+
+  ACM International Conference on Supercomputing (ICS), pp. 637-649, 2026.
 
   [PPoPP ''26 (Best Paper Nomination)]
 
@@ -420,6 +521,8 @@ bio_raw: '个人简介
 
   PPoPP 2026，最佳论文提名
 
+  DRBSD 2025，最佳论文提名
+
   HPDC 2025，最佳论文提名
 
   ICS 2023，最佳论文提名
@@ -429,8 +532,8 @@ bio_raw: '个人简介
   Program Committee: ICDM 2026, ICDCS 2026, CCGrid 2026, PPoPP 2026, ICS 2025, Cluster
   2025, CCGrid 2025, ICDCS 2025, GPGPU 2025, IWBDR 2023, DRBSD-10/11.
 
-  Reviewer: HiPC 2024, IPDPS 2024, CCGrid 2024, ICS 2023, DCC 2023, HDIS 2022, IWBDR
-  2022, IWBDR 2023, ICMLA 2021, TPDS, THPC, TOMM.'
+  Reviewer: HPCAsia 2027, HiPC 2024, IPDPS 2024, CCGrid 2024, ICS 2023, DCC 2023,
+  HDIS 2022, IWBDR 2022, IWBDR 2023, ICMLA 2021, TPDS, THPC, TOMM.'
 institutes:
 - 先进计算研究所
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/20260624/20260624202303.jpg
@@ -451,26 +554,28 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/liujinyang.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liujinyang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liujinyang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liujinyang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/liujinyang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

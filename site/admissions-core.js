@@ -26,8 +26,8 @@
     if(confirmation?.method==='unchanged-reviewed-policy-v1'&&confirmation.source_hashes&&
        Object.keys(confirmation.source_hashes).length===sources.length&&sources.every(s=>confirmation.source_hashes[s.id]===s.expected)&&
        Number.isFinite(age(confirmed))&&age(confirmed)>=0&&age(confirmed)<=30)
-      return {state:'checked',label:'系统复检：原核验版本与逐项证据一致；未改写人工摘要或适用年度',method:'unchanged_source',confirmed_at:confirmed};
-    if(!Number.isFinite(age(p.reviewed_at))||age(p.reviewed_at)<0||age(p.reviewed_at)>30)return {state:'review',label:'人工摘要超过30天且无有效系统复检，需复核'};
+      return {state:'checked',label:'系统复检：原核验版本与逐项证据一致；未改写摘要或适用年度',method:'unchanged_source',confirmed_at:confirmed};
+    if(!Number.isFinite(age(p.reviewed_at))||age(p.reviewed_at)<0||age(p.reviewed_at)>30)return {state:'review',label:'摘要超过30天且无有效系统复检，需复核'};
     return {state:'checked',label:'近期检查与核对版本一致；申请前仍需查看官网'};
   }
   function checklist(data,prefs,today=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'}),now=new Date().toISOString()){

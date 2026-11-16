@@ -29,6 +29,10 @@ bio_raw: '个人简介
 
   ：涵盖星地链路持续认证、分布式接入控制、星地协同安全防御机制等；
 
+  基于区块链的星地融合可信安全与分布式信任机制：
+
+  基于联盟链/DID/智能合约的去中心化信任锚、跨域动态授权、威胁情报共享与防篡改审计
+
   星地融合网络架构与协议
 
   ：涵盖异构网络无缝切换、星地协同传输与服务质量保障；
@@ -282,36 +286,48 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
     fetched_at: '2026-09-02'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/huacunqing.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 主要涉及 6G网络、卫星互联网 等领域，聚焦AI驱动的智能无线网络和内生安全技术等方向，包括但不限于： AI驱动的卫星互联网高效组网与传输技术
+  ：涵盖低轨星座动态资源调度、星间协作通信与干扰认知管理； 面向卫星互联网的零信任安全机制 ：涵盖星地链路持续认证、分布式接入控制、星地协同安全防御机制等； 基于区块链的星地融合可信安全与分布式信任机制：
+  基于联盟链/DID/智能合约的去中心化信任锚、跨域动态授权、威胁情报共享与防篡改审计 星地融合网络架构与协议 ：涵盖异构网络无缝切换、星地协同传输与服务质量保障；
+  智能频谱管控与动态共享 ：涵盖频谱态势感知、干扰智能规避、多域频谱协同调度、低空无人机频谱监测； AI内生的6G物理层安全机制 ：涵盖基于深度学习的射频指纹识别、物理层密钥生成与无线信道特征认证；
+  无线AI安全与对抗性防御 ：涵盖针对无线AI模型的投毒攻击防御、对抗样本检测及鲁棒学习理论。
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

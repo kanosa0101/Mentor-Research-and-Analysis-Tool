@@ -26,7 +26,7 @@ def test_publisher_obeys_transport_classification_without_publishing(setup, retr
 def test_assistance_obeys_classification_without_changing_facts(setup, retryable):
     root, queue, _ = setup
     before = review.read_queue(queue)['drafts'][0]['item']
-    raw = HTML.replace(b'</article>', '<p>申请表见附件。</p></article>'.encode())
+    raw = HTML.replace(b'</article>', '<p>具体入营安排另行通知。</p></article>'.encode())
     def fail(*args):
         raise ClassifiedFailure(retryable)
     result = automatic.run(root, queue, CONFIGS, limit=1, publish=True, now=NOW,

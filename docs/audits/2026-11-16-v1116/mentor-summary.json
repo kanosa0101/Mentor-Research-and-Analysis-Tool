@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-11-16T14:00:58.274589+00:00",
+  "baseline_at": "2026-11-16T13:13:37+00:00",
+  "before": {
+    "total": 7173,
+    "contactable": 5662,
+    "direction": 2787,
+    "supervisor": 3086,
+    "title": 4451,
+    "all_three": 1286
+  },
+  "after": {
+    "total": 7173,
+    "contactable": 5688,
+    "direction": 3142,
+    "supervisor": 3130,
+    "title": 4476,
+    "all_three": 1426
+  },
+  "new_fields": {
+    "email": 26,
+    "research_direction_raw": 371,
+    "title": 2,
+    "supervisor": 18
+  },
+  "changed_existing_fields": {
+    "title": 1,
+    "email": 1
+  },
+  "units": {
+    "csu/auto": {
+      "new_email": 24,
+      "new_research_direction_raw": 33
+    },
+    "hit/cs": {
+      "new_email": 2,
+      "new_research_direction_raw": 2,
+      "new_title": 2
+    },
+    "sjtu/cs": {
+      "new_research_direction_raw": 138,
+      "new_supervisor": 13
+    },
+    "ucas/ia": {
+      "new_research_direction_raw": 198,
+      "new_supervisor": 5
+    }
+  },
+  "profiles_changed": 740,
+  "manual_fields_preserved": 2,
+  "field_batch": {
+    "version": 1,
+    "completed_at": "2026-11-16T13:42:56+00:00",
+    "kind": "professors",
+    "attempted": 748,
+    "ok": 747,
+    "error": 1,
+    "manual_required": 0
+  },
+  "field_http_requests": 749,
+  "offline_reparse_network_requests": 0,
+  "hit": {
+    "started_at": "2026-11-16T13:47:32.423714+00:00",
+    "completed_at": "2026-11-16T13:51:00.954807+00:00",
+    "requests": 216,
+    "attempted": 120,
+    "ok": 2
+  },
+  "directory": {
+    "checked_at": "2026-11-16T13:52:42+00:00",
+    "attempted": 2,
+    "requests": 4,
+    "request_budget": 16,
+    "requeued": 0,
+    "requeued_ids": [],
+    "error": 0,
+    "results": [
+      {
+        "unit": "bit/cs",
+        "pages_checked": 0,
+        "frontier": 0,
+        "roster": {
+          "candidates": 0
+        },
+        "new_links": 0,
+        "verified_candidates": 0,
+        "source_errors": 0
+      },
+      {
+        "unit": "buaa/cs",
+        "pages_checked": 4,
+        "frontier": 14,
+        "roster": {
+          "candidates": 0
+        },
+        "new_links": 0,
+        "verified_candidates": 0,
+        "source_errors": 0
+      }
+    ]
+  },
+  "quality_reconciled": [
+    "hit/cs/fetch_or_parse_error/baiyuanchao"
+  ],
+  "active_before": 275,
+  "active_after": 274,
+  "quality_actions": {
+    "manual_review": 55,
+    "discover_official_source": 204,
+    "retry": 12,
+    "adapt_parser": 3
+  },
+  "field_errors": [
+    {
+      "id": "professor/sjtu/cs/chenyichao.yaml",
+      "status": "error",
+      "source_url": "https://www.cs.sjtu.edu.cn/jiaoshiml/chenyichao.html",
+      "error": "js-info block not found",
+      "last_attempt": "2026-11-16T13:30:33+00:00",
+      "parser_signature": "347dc751ea7b1c9c5100b214978e7460893c1cd12cd9fc4624f9e2a5bbd1e924"
+    }
+  ]
+}

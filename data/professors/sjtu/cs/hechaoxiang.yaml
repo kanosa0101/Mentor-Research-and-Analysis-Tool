@@ -18,7 +18,7 @@ bio_raw: '个人简介
 
   人工智能模型的安全与隐私保护
 
-  ，包括大模型与智能体安全和云环境大模型基础设施安全等领域。在人工智能安全方面，在包括IEEE S&P、ACM CCS、NDSS、USENIX Security、CVPR、ICML、EMNLP在内的信息安全、人工智能等领域知名学术会议和期刊上发表十余篇论文，其中以第一作者/通讯身份发表9篇。担任IEEE
+  ，包括大模型与智能体安全和云环境大模型基础设施安全等领域。在人工智能安全方面，在包括IEEE S&P、ACM CCS、NDSS、USENIX Security、CVPR、ICML、EMNLP在内的信息安全、人工智能等领域知名学术会议和期刊上以第一作者/通讯身份发表发表十余篇论文。担任IEEE
   TII编委，USENIX Security、NDSS、IEEE Euro S&P、PAKDD、IEEE HPCC等会议PC/AEC成员，及IEEE TIFS、IEEE
   TDSC、NeurIPS、ICLR、ICML、IJCAI、ACM MM、计算机学报等知名会议与期刊的审稿人。主持国自然青年科学基金项目(C类)、上海市自然科学基金青年项目、上海市科技行动计划等项目/课题5项，课题骨干身份参与国家重点研发计划、长三角科技创新共同体联合攻关专项和国家自然基金重点项目等国家省部级项目/课题。共同带队斩获2025年挑战杯“揭榜挂帅”人工智能领域主擂台赛擂主（特等奖第一名）、2024全球AI大模型攻防挑战赛杰出方案奖（全球唯二）。研究成果入选全国颠覆性技术优胜奖和世界人工智能大会“全球人工智能赋能可持续发展十大卓越案例”。目前团队致力于面向重要应用场景构筑安全、可信和可验证的人工智能模型，欢迎感兴趣的老师和同学们联系交流！
 
@@ -28,11 +28,9 @@ bio_raw: '个人简介
 
   教授课程
 
-  NIS4301
+  NIS4301    信息内容安全的理论与应用    2025/2026 Spring
 
-  信息内容安全的理论与应用
-
-  2025/2026 Spring
+  NIS8029    智能体可信技术前沿    2026Fall
 
   论文发表
 
@@ -222,12 +220,17 @@ bio_raw: '个人简介
 
   ).
 
-  [14] Feiyue Xu, Jiaming Mu, Fengting Li, Bin Benjamin Zhu, Hongsheng Hu,
+  [14] Feiyue Xu, Jiaming Mu, Fengting Li, Bin Benjamin Zhu, Hongsheng Hu, Qiankun
+  Liu, Shuo Wang,
 
   Chaoxiang He
 
-  , Qiankun Liu, Shuo Wang, Chao Feng. Staying on Task: Defending Against Prompt Injection
-  via Task Consistency Checking. EMNLP 2026 (CCF-B,
+  *
+
+  ,
+
+  Chao Feng*. Staying on Task: Defending Against Prompt Injection via Task Consistency
+  Checking. EMNLP 2026 (CCF-B,
 
   自然语言处理顶会
 
@@ -274,36 +277,44 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
     fetched_at: '2026-09-02'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hechaoxiang.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 可信人工智能 和 人工智能模型的安全与隐私保护 ，包括大模型与智能体安全和云环境大模型基础设施安全等领域
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

@@ -26,6 +26,10 @@ FIELDS = ('title', 'supervisor', 'subjects', 'email', 'homepage', 'photo_url',
 
 
 def fetch_source(source, timeout=20):
+    if source.get('official_scope'):
+        from crawler.source_discovery import fetch_html
+        from crawler.mentor_recovery import content_types
+        return fetch_html(source['url'],source['official_scope'],accepted_types=content_types(source['url']))
     with requests.Session() as session:
         session.trust_env = False
         response = session.request(source.get('method', 'GET'), source.get('api') or source['url'],
@@ -143,9 +147,9 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                         cfg = {}
                 except yaml.YAMLError:
                     cfg = {}
-                hook = cfg.get('hook', '')
-                files = [folder / (hook + '.py') for folder in (root / 'sites' / parts[0], root / 'sites')]
-                raw += next((path.read_bytes() for path in files if path.is_file()), b'')
+                from crawler.mentor_recovery import parser_source
+                cfg.setdefault('school',parts[0])
+                raw += parser_source(root,cfg)
                 signatures[unit] = hashlib.sha256(raw).hexdigest()
             return signatures[unit]
 
@@ -251,11 +255,18 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                     html = UnicodeDammit(raw).unicode_markup
                     if not html:
                         raise ValueError('无法解码导师正文')
-                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name']), html, original['detail_url'])
+                    supplemental=[]
+                    def read_source(url):
+                        body=fetcher({'url':url,'official_scope':cfg.get('base_url') or original['detail_url']})
+                        digest=evidence(key,body)
+                        supplemental.append(dict(url=url,sha256=digest,fetched_at=stamp))
+                        return body,UnicodeDammit(body).unicode_markup or ''
+                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source), html, original['detail_url'])
                     updated, changed, checked = merge_profile(original, parsed, raw, day)
                     write_yaml(path, updated)
                     record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
-                                 'raw_sha256': raw_hash, 'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
+                                 'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,
+                                 'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
                 except Exception as error:
                     record(key, {'status': 'error', 'source_url': original['detail_url'], 'error': str(error)[:500]})
         report = {'version': 1, 'completed_at': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'kind': kind,

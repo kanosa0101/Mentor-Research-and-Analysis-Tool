@@ -353,36 +353,49 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
     fetched_at: '2026-09-02'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wangshuo.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 聚焦于可信人工智能与人工智能安全，重点包括： 1. 大模型安全与合规 研究大语言模型在生成内容、安全边界、风险识别、合规评测、红队测试、越狱攻击、防御机制和安全认证方面的关键问题。
+  2. 智能体系统安全可控 面向 AI Agent、多智能体系统和自动化决策系统，研究智能体的行为约束、任务执行安全、工具调用安全、权限控制、风险传播和可控治理。
+  3. 垂域大模型可靠可信 面向医疗、工业、科研和公共治理等高风险应用场景，研究垂直领域大模型的可靠性、安全性、可解释性、评测体系和可信部署方法。 4. 人工智能模型可解释性与信任认证
+  研究机器学习模型和深度神经网络的可解释性、因果分析、行为验证、鲁棒性评估和模型可信认证机制。 5. 人工智能攻击、防御与隐私保护 研究针对人工智能模型的对抗攻击、数据投毒、模型窃取、成员推断、隐私泄露、鲁棒训练和安全防护技术。
+  学术成果 近五年，王烁在人工智能安全、可信人工智能、网络安全、机器学习、软件工程和服务计算等方向发表学术论文80余篇，论文发表于多个国际顶级会议和期刊，包括：
+  网络与系统安全方向： ●
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

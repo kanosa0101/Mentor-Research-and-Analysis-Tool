@@ -85,7 +85,7 @@ def parse_generic_detail(cfg, html, url):
     if box is None:
         return {}
     raw_lines = [l.strip() for l in box.get_text("\n", strip=True).split("\n") if l.strip()]
-    lines = [l.replace("\u3000", "").replace(" ", "") for l in raw_lines]
+    lines = [l.replace("\u3000", "").replace(" ", "").replace('：',':') for l in raw_lines]
     out = {}
     insts = []
 
@@ -98,7 +98,7 @@ def parse_generic_detail(cfg, html, url):
                 return rest
             if i + 1 < len(lines):
                 return lines[i + 1]
-        if lines[i] == prefix.rstrip(":") and i + 1 < len(lines):
+        if lines[i].rstrip(':') == prefix.rstrip(":") and i + 1 < len(lines):
             return lines[i + 1]
         return None
 
@@ -128,4 +128,22 @@ def parse_generic_detail(cfg, html, url):
     if insts:
         out["institute_from_detail"] = insts
     out["bio_raw"] = "\n".join(raw_lines) or None
+    name=box.select_one('.gunius-info .name')
+    if name:
+        out['name']=name.get_text(' ',strip=True).split('/')[0].strip()
+    from sites.profile_fields import qualification
+    for section in box.select('.gunius-list'):
+        heading=section.select_one('h3')
+        if heading and heading.get_text(strip=True) in ('个人简介','个人简历') and out.get('name'):
+            supervisor=qualification(section.get_text(' ',strip=True),out['name'])
+            if supervisor:out['supervisor']=supervisor
+    # Each CAS section has its own container; project and publication text must
+    # not leak into the research field.
+    for section in box.select('.gunius-list'):
+        heading=section.select_one('h3')
+        content=section.select_one('.gunitem')
+        if heading and content and heading.get_text(strip=True) in ('研究方向','研究领域'):
+            value=content.get_text(' ',strip=True)
+            if value and value not in ('暂无','暂无内容','无'):
+                out['research_direction_raw']=value
     return out

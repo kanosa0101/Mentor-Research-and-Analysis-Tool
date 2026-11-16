@@ -7,7 +7,7 @@ status: enriched
 title: 长聘教轨副教授
 bio_raw: '个人简介
 
-  贺可强，研究方向为计算机网络和系统。研究成果发表于SIGCOMM、NSDI、ToN、EuroSys、SIGMETRICS、ATC、INFOCOM等旗舰学术会议和期刊，并担任NSDI、IWQoS、ICDM、ToN等重要学术会议和期刊的程序委员会委员、分项联合主席和审稿人。谷歌引用次数为1500余次（其中一作最高引用450余次），多项成果获得落地应用。
+  贺可强，研究兴趣为计算机网络和系统。研究成果发表于SIGCOMM、NSDI、ToN、EuroSys、SIGMETRICS、ATC、INFOCOM等旗舰学术会议和期刊，并担任NSDI、IWQoS、ICDM、ToN等重要学术会议和期刊的程序委员会委员、分项联合主席和审稿人。谷歌引用次数为1600余次，其中一作最高引用500余次。
 
   教育背景
 
@@ -43,7 +43,7 @@ bio_raw: '个人简介
 
   论文发表
 
-  部分代表性论文：
+  代表性论文：
 
   (*: corresponding or co-corresponding author)
 
@@ -214,21 +214,29 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/hekeqiang.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 计算机网络和系统
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

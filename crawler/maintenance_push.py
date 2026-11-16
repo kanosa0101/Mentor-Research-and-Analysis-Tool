@@ -102,6 +102,8 @@ def dispatch(root, alerts, sender=None):
     with output_lock(path.with_name('dispatch')):
         with output_lock(path):
             subscribers = list(read(path).values())
+        result.update(subscribers=len(subscribers), overdue=len(pending),
+                      unreceived=bool(pending and not subscribers))
         for sub in subscribers:
             with output_lock(path):
                 current = read(path).get(sub['id'])
@@ -118,7 +120,7 @@ def dispatch(root, alerts, sender=None):
             try:
                 code = sender(current['subscription'], dict(title=f"{len(remaining)}条审核任务已超时",
                     body='打开维护工作台核对证据、处理阻断；此提醒不发送给申请用户。',
-                    url=('/review.html#quality-panel' if first.get('category') in ('policy', 'mentor') else
+                    url=('/review.html#quality-panel' if first.get('category') in ('policy', 'mentor', 'policy_intake') else
                          '/review.html?draft=' + quote(first['id'], safe='')), tag='maintainer-overdue'))
             except Exception as error:
                 code = getattr(getattr(error, 'response', None), 'status_code', 0)

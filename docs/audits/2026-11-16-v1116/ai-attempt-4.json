@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-16T14:22:50.308639+00:00",
+  "attempted": 1,
+  "candidate_total": 1,
+  "pending": 1,
+  "published": 0,
+  "changed": 0,
+  "manual_required": 0,
+  "retry": 1,
+  "budget_wait": 0,
+  "counts": {
+    "retry": 1
+  },
+  "results": [
+    {
+      "title": "北京大学计算机学院2027年“申请-考核制” 博士研究生招生说明",
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "listing_url": "https://cs.pku.edu.cn/zsxx/yjszs.htm",
+      "checked_at": "2026-11-16T14:22:50.308639+00:00",
+      "policy_version": "new-official-policy-v2-complete-layout",
+      "first_seen": "2026-11-16T14:22:50.308639+00:00",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "status": "retry",
+      "reason": "AI服务总耗时超过限制；没有完整核验结论",
+      "error_code": "total_timeout",
+      "reason_code": "ai_review",
+      "next_attempt_at": "2026-11-16T16:22:50.308639+00:00",
+      "next_action": "根据AI错误或证据冲突原因继续核验，未通过不发布",
+      "pending_since": "2026-11-16T14:22:50.308639+00:00",
+      "history": []
+    }
+  ]
+}

@@ -92,8 +92,8 @@ detail_url: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
 profile_url: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
 facets: []
 provenance:
   name:
@@ -104,7 +104,7 @@ provenance:
   title:
     origin: crawled
     source: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
@@ -114,10 +114,20 @@ provenance:
   supervisor:
     origin: crawled
     source: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://faculty.csu.edu.cn/xinglu/zh_CN/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 自动驾驶智能决策： 传统预测-决策-规划-控制、基于世界模型与推理大模型的智能驾驶决策与规划、端到端自动驾驶技术；
+  交通场景理解与风险生成： 高风险与对抗场景的加速生成、基于大模型的场景语义理解、场景库自动化构建与标注； 自动驾驶加速测试： 可扩展虚实结合测试环境搭建、基于对抗场景的自动驾驶/无人系统加速测试；
+  矿区无人系统： 矿区复杂环境感知与建图、矿区无人驾驶矿卡协同控制、矿区车辆协同与动态调度优化； 重卡及特殊车辆智能管控： 针对重载及特殊车型动力学、运动学特性，研发专用智能决策与控制算法；
+  复杂交通系统仿真建模与态势推演： 多交通主体交互建模、多级别混合交通流微观建模、动态交通环境下的态势演化推演与风险态势预测； 车路协同智能管控： 面向CAV和HDV混合流协同管控、粒流协同管控；
+  低空空域无人机路径规划： 面向动态环境建模的无人机路径规划、空地协同等。 近年来出版学术专著1部（独著），共发表SCI/SSCI/EI学术论文50余篇，Google总引1574次，单篇最高被引288次，一作单篇最高被引155次。申请国家发明专利60余项，其中第一发明人28项（授权17项），软著12项。

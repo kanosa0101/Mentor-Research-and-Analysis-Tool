@@ -4,7 +4,7 @@ const source=fs.readFileSync('site/admissions.js','utf8');
 const code=source.split('function renderLayerCoverage')[0]+source.slice(source.indexOf('function successfulSourceDate'),source.indexOf('function unitInfo'))+source.slice(source.indexOf('function confirmationLabel'),source.indexOf('function checklistItem'));
 const data={schools:[{id:'s',name:'学校'}],units:[{school:'s',dept:'d',dept_name:'学院'}],entries:[],policies:[],sources:{},checks:{}};
 const context={window:{ADMISSIONS_DATA:data},document:{getElementById:()=>null},AdmissionsRules:rules,URLSearchParams,console};
-vm.createContext(context);vm.runInContext(code,context);
+vm.createContext(context);vm.runInContext(source.slice(source.indexOf('function reviewLabel'),source.indexOf('function reviewLabel')+source.slice(source.indexOf('function reviewLabel')).indexOf('\n')),context);vm.runInContext(code,context);
 const run=(name,...args)=>context[name](...args);
 const prefs={school:'s',dept:'d',year:'2027',degree:'phd',route:'assessment',track:'ordinary'};
 assert.equal(run('entryScope',{year:2027,degree:'master',route:'exam'},prefs),'other');

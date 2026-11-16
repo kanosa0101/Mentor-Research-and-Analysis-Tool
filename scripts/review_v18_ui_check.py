@@ -67,6 +67,7 @@ def fixture(root):
             next_check_at=(now+timedelta(hours=6)).isoformat(), reason='导师页面暂时返回访问验证页，未以导航文本补充研究方向。',
             evidence=dict(source_url='https://cs.example.edu.cn/people/teacher-profile.htm')),
         'mentor-resolved': dict(title='不应出现在待办里的已解决导师', status='resolved', next_check_at=(now+timedelta(days=7)).isoformat())}))
+    review.atomic_json(root/'cache/policy_intake/state.json', dict(version=1, records={}))
     quality_status.refresh(root, now)
     review.atomic_json(root/'cache/opportunity-recovery.json', dict(checked_at=now.isoformat(),
         summary=dict(attempted=1, adopted=0, manual_required=1), records={
@@ -136,7 +137,7 @@ def main():
                     page.evaluate('window.scrollTo(0,0)'); page.screenshot(path=str(args.output/f'review-{width}-overview.png'))
                     expect(page.locator('#quality-items > details')).to_have_count(0)
                     page.locator('#quality-panel > summary').click()
-                    expect(page.locator('#quality-summary')).to_contain_text('政策待处理 2 · 导师资料待处理 2 · 超时 2')
+                    expect(page.locator('#quality-summary')).to_contain_text('政策待处理 2 · 新政策核验 0 · 导师资料待处理 2 · 超时 2')
                     expect(page.locator('#quality-items > details')).to_have_count(4)
                     for summary in page.locator('#quality-items > details > summary').all():
                         summary.click()

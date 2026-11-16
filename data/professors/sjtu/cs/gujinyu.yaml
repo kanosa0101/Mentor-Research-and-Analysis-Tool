@@ -9,19 +9,15 @@ email: gujinyu@sjtu.edu.cn
 office_address: 软件大楼3207
 bio_raw: '个人简介
 
-  研究方向为操作系统内核、系统安全、机器学习系统。担任开源鸿蒙具身智能PMC主席，领域操作系统教育部工程研究中心内核实验室主任，CCF系统软件专业委员会执委，CCF开源发展技术委员会执委。研究方向为操作系统内核、系统安全、机器学习系统。研究成果发表在本领域主流学术会议与期刊如SOSP、OSDI、
+  研究方向为操作系统、具身智能系统、系统安全。担任开源鸿蒙具身智能PMC主席，领域操作系统教育部工程研究中心内核实验室主任，CCF系统软件专业委员会执委，CCF开源发展技术委员会执委。研究成果发表在本领域主流学术会议与期刊如SOSP、OSDI、
 
   EuroSys、
 
-  USENIX ATC、USENIX Security、
-
-  NSDI、
-
-  IEEE TC等。研究成果通过产学研合作应用于
+  USENIX ATC、USENIX Security等。研究成果通过产学研合作应用于
 
   开源鸿蒙操作系统、
 
-  航天卫星操作系统、OPPO智能终端操作系统、南方电网的电力鸿蒙操作系统等。担任包括EuroSys和ATC在内的多个期刊审稿人及国际会议程序委员会成员。参与编著《智能终端操作系统与OpenHarmony实践》《操作系统：原理与实现》。获
+  航天卫星操作系统、OPPO智能终端操作系统、南方电网的电力鸿蒙操作系统等。担任包括EuroSys、ATC、TPDS、TDSC在内的多个国际会议程序委员会成员和期刊审稿人。参与编著《智能终端操作系统与OpenHarmony实践》《操作系统：原理与实现》。获“启源青年学者”、
 
   “示范性软件学院联盟十大关键软件技术成果
 
@@ -29,11 +25,7 @@ bio_raw: '个人简介
 
   、
 
-  “终端操作系统十大技术挑战特别贡献奖”、“OpenHarmony领航课题”等。指导学生获上海交通大学优异学士学位论文、
-
-  全国大学生操作系统设计赛一等奖等
-
-  。
+  “终端操作系统十大技术挑战特别贡献奖”、“OpenHarmony领航课题”等。指导学生获国自然本科生基金项目、上海交通大学优异学士学位论文、全国大学生操作系统设计赛一等奖等。
 
   教育背景
 
@@ -77,6 +69,32 @@ bio_raw: '个人简介
 
   [
 
+  IROS
+
+  ] Zhuoran Li, Zhiyang Li, Kaijun Zhou,
+
+  Jinyu Gu ✉️
+
+  . RoboHarness: A Memory-Augmented Policy Harness for Vision-Language-Action Model
+  Robustness via In-Context Adaptation. IEEE/RSJ International Conference on Intelligent
+  Robots and Systems, 2026.
+
+  [
+
+  OSDI
+
+  ] Wenxin Zheng, Wenxiao Wang, Yun Zhang, Mingcong Han, Bin Xu,
+
+  Jinyu Gu ✉️
+
+  , Xingda Wei, Haibo Chen, Zuquan Song, Gaohong Liu, Yucheng Nie, Zhe Nan, Zhuolin
+  Zheng, Huan Yu, Shuguang Wang, Ziming Zhou, Hang Zhu, Wencong Xiao, Xin Liu. SDCs
+  in the Wild: Characterizing and Diagnosing SDC-defective GPUs in Production LLM
+  Training. Proceedings of the 20th USENIX Symposium on Operating Systems Design and
+  Implementation, Seattle, WA, USA, July, 2026.
+
+  [
+
   SIGCSE TS
 
   ] Experiences with ChCore Experimental Operating System Kernel. Haibo Chen, Yubin
@@ -91,7 +109,7 @@ bio_raw: '个人简介
 
   EuroSys
 
-  ] Xunjie Wang, Jiacheng Shi (co-first author), Zihan Zhao, Yang Yu, Zhichao Hua,
+  ] Xunjie Wang, Jiacheng Shi, Zihan Zhao, Yang Yu, Zhichao Hua,
 
   Jinyu Gu ✉️
 
@@ -384,36 +402,46 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/gujinyu.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 为操作系统、具身智能系统、系统安全。担任开源鸿蒙具身智能PMC主席，领域操作系统教育部工程研究中心内核实验室主任，CCF系统软件专业委员会执委，CCF开源发展技术委员会执委。研究成果发表在本领域主流学术会议与期刊如SOSP、OSDI、
+  EuroSys、 USENIX ATC、USENIX Security等。研究成果通过产学研合作应用于 开源鸿蒙操作系统、 航天卫星操作系统、OPPO智能终端操作系统、南方电网的电力鸿蒙操作系统等。担任包括EuroSys、ATC、TPDS、TDSC在内的多个国际会议程序委员会成员和期刊审稿人。参与编著《智能终端操作系统与OpenHarmony实践》《操作系统：原理与实现》。获“启源青年学者”、
+  “示范性软件学院联盟十大关键软件技术成果 ” 、 “终端操作系统十大技术挑战特别贡献奖”、“OpenHarmony领航课题”等。指导学生获国自然本科生基金项目、上海交通大学优异学士学位论文、全国大学生操作系统设计赛一等奖等。
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

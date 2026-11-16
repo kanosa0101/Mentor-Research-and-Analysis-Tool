@@ -73,6 +73,7 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
                          result.get('source_recovery', {}).get('summary', {}).get('not_announcement') or
                          result.get('source_recovery', {}).get('summary', {}).get('budget_wait') or
                          delivery.get('failed') or delivery.get('retry_exhausted') or
+                         delivery.get('unreceived') or
                          result.get('quality_alerts', {}).get('failures') or
                          result.get('quality_alerts', {}).get('incomplete') or
                          any(value is False for value in result.get('quality_alerts', {}).get('available', {}).values()) or

@@ -9,7 +9,13 @@ title: 教授
 email: wanglei_hb@sjtu.edu.cn
 bio_raw: '个人简介
 
-  王磊，上海交通大学计算机学院教授，主要从事密码学研究。研究成果多次在CRYPTO、EUROCRYPT、ASIACRYPT等学术会议上发表，指导学生获得“互联网+”大学生创新创业大赛金奖、中国密码学会优秀博士论文等。
+  王磊，上海交通大学计算机学院教授，
+
+  主要从事国家/国际密码基础算法的安全评估，包括美国FIPS 197 (AES)、180-2 (SHA-2)和NIST SP 800（KDF等）、俄罗斯GOST
+  R 34.11-2012 (Streebog)、ISO/IEC 9797-1/2/3（CMAC、HMAC等），以及主流密码应用协议的安全评估，包括TLS 1.3（互联网安全传输）、ANSI
+  X9.24-1（金融）、APOP（电子邮件）等
+
+  。研究成果多次在Journal of Cryptology、CRYPTO、EUROCRYPT、ASIACRYPT等学术期刊和国际会议上发表。指导学生获得“互联网+”大学生创新创业大赛金奖、中国密码学会优秀博士论文，上海市/交大优秀毕业生等
 
   教育背景
 
@@ -37,7 +43,7 @@ bio_raw: '个人简介
 
   资助项目
 
-  国自然面上项目、重点研发课题等'
+  国自然基金、重点研发课题、重大专项课题、国家密码基金等'
 institutes:
 - 量子计算研究所（筹）
 photo_url: https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/王磊.jpg
@@ -58,26 +64,28 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/wanglei.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wanglei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wanglei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wanglei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/wanglei.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

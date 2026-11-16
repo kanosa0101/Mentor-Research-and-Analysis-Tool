@@ -9,15 +9,13 @@ email: Rvince@sjtu.edu.cn
 office_address: 电信群楼3-501
 bio_raw: '个人简介
 
-  牛超越，现为上海交通大学长聘教轨助理教授，目前研究兴趣主要包括移动端生成式大模型、
+  牛超越，现为上海交通大学长聘教轨副教授，目前研究兴趣主要包括移动端生成式大模型、
 
   大小模型端云协同学习以及在
 
   智能体、
 
-  推荐系统、
-
-  输入法、
+  输入法、推荐系统、
 
   多模态内容理解等场景的应用，研究成果发表在ACM MobiCom、USENIX OSDI、NeurIPS、
 
@@ -37,7 +35,9 @@ bio_raw: '个人简介
 
   工作履历
 
-  2023-06 至今, 上海交通大学，助理教授
+  2026-06至今, 上海交通大学，长聘教轨副教授
+
+  2023-06 至2026-06, 上海交通大学，长聘教轨助理教授
 
   2021-06 至 2023-05, 上海交通大学，博士后
 
@@ -99,7 +99,23 @@ bio_raw: '个人简介
 
   ), Washington D.C., DC, USA, Nov. 18-22, 2024, pp. 1162-1176.
 
-  [4] Yikai Yan,
+  [4] Zhengxiang Huang, Shengheng Chen,
+
+  Chaoyue Niu (Corresponding Author)
+
+  , Yujie Sun, Zhaode Wang, Zeyu Zhao, Chengfei Lv, Fan Wu, and Guihai Chen, "
+
+  Dynamic Flow, Static Graph: KV Cache Reuse for Efficient LLM Serving on Mobile NPUs
+
+  ,
+
+  " to appear in Proceedings of the 22nd European Conference on Computer Systems (
+
+  EuroSys
+
+  ), Rabat, Morocco, Apr. 19-23, 2027.
+
+  [5] Yikai Yan,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -115,7 +131,7 @@ bio_raw: '个人简介
 
   ), Washington, DC, USA, Aug. 14-18, 2022, pp. 2180-2190.
 
-  [5] Yucheng Ding,
+  [6] Yucheng Ding,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -130,7 +146,7 @@ bio_raw: '个人简介
 
   ), Barcelona, Spain, Aug. 25-29, 2024, pp. 597-608.
 
-  [6] Yucheng Ding, Yangwenjian Tan, Xiangyu Liu,
+  [7] Yucheng Ding, Yangwenjian Tan, Xiangyu Liu,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -145,7 +161,7 @@ bio_raw: '个人简介
 
   ), Toronto, ON, Canada, Aug. 3-7, 2025.
 
-  [7]
+  [8]
 
   Hang Zeng, Xiangyu Liu, Yong Hu,
 
@@ -164,7 +180,7 @@ bio_raw: '个人简介
 
   ), Jeju, Korea, Aug. 9-13, 2026.
 
-  [8] Gucongcong Fan,
+  [9] Gucongcong Fan,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -180,7 +196,22 @@ bio_raw: '个人简介
 
   ), San Diego, CA, USA, Dec. 2-7, 2025.
 
-  [9] Jiarui Zhang, Xiangyu Liu, Yong Hu,
+  [10] Yijie Ma,
+
+  Chaoyue Niu (Co-Corresponding Author)
+
+  , Fan Wu, and Guihai Chen, "
+
+  Reflection with Action-Induced Visual Differences for Desktop GUI Agents
+
+  ," to appear in Proceedings of the 40th Annual Conference on Neural Information
+  Processing Systems (
+
+  NeurIPS
+
+  ), Sydney, Australia, Dec. 6-12, 2026.
+
+  [11] Jiarui Zhang, Xiangyu Liu, Yong Hu,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -197,7 +228,23 @@ bio_raw: '个人简介
 
   Dec. 2-7, 2025.
 
-  [10] Zewei Xin, Qinya Li,
+  [12] Jiarui Zhang, Xiangyu Liu, Yong Hu,
+
+  Chaoyue Niu (Corresponding Author)
+
+  , Hang Zeng, Shaojie Tang, Fan Wu, and Guihai Chen, "
+
+  Adaptive LLM Routing for Multi-Turn Conversations with Continuously Evolving User
+  Queries
+
+  ," to appear in Proceedings of the 40th Annual Conference on Neural Information
+  Processing Systems (
+
+  NeurIPS
+
+  ), Sydney, Australia, Dec. 6-12, 2026.
+
+  [13] Zewei Xin, Qinya Li,
 
   Chaoyue Niu (Co-Corresponding Author)
 
@@ -218,7 +265,7 @@ bio_raw: '个人简介
 
   ), Honolulu, Hawai''i, USA, Oct. 19-23, 2025.
 
-  [11] Hang Zeng,
+  [14] Hang Zeng,
 
   Chaoyue Niu (Corresponding Author)
 
@@ -236,6 +283,21 @@ bio_raw: '个人简介
   CIKM
 
   ), Seoul, Korea, Nov. 10-14, 2025.
+
+  [15] Tiancheng Fang, Bowen Pan, Lingxi Chen, Jiangjing Lyu, Chengfei Lv,
+
+  Chaoyue Niu (Co-Corresponding Author)
+
+  , and Fan Wu, "
+
+  VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement
+
+  ," in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (
+
+  CVPR
+
+  ), Denver, CO, USA, Jun. 3-7, 2026, pp. 29060-29070.
 
   更多最新工作请见：
 
@@ -292,31 +354,33 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   office_address:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/niuchaoyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

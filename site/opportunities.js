@@ -1,5 +1,5 @@
 const oe=id=>document.getElementById(id), ox=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let opportunityRows=window.OPPORTUNITIES.opportunities, savingOpportunity=null, savedOpportunities=new Map(), saveBusy=false, publicOpportunityMode=false, opportunityModeReady=false, opportunityCatalog=window.OPPORTUNITIES;
+let opportunityCatalog=window.OPPORTUNITIES||{opportunities:[],other_contents:[]}, opportunityRows=opportunityCatalog.opportunities, catalogLoaded=!!window.OPPORTUNITIES, savingOpportunity=null, savedOpportunities=new Map(), saveBusy=false, publicOpportunityMode=false, opportunityModeReady=false;
 const opportunityTime=value=>value?new Date(value).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'未知';
 const opportunityParams=new URLSearchParams(location.search), opportunityToday=OpportunityRules.dayOf(new Date().toISOString());
 function opportunityFacts(o){
@@ -52,6 +52,7 @@ function opportunityCard(o,filter){
     ${!o.graduation_year?'<p class="note opportunity-cohort">活动年份不等于毕业届别，请按上述年级和身份条件核对。</p>':''}
     ${o.source_state!=='verified'||state==='review'?'<p class="hint">当前来源或内容需重新核验，不能据此确认报名仍开放。</p>':''}
     ${!o.deadline&&o.application_window?.mode==='month'?'<p class="note">仅公布截止月份，请先确认具体日期，不按月底安排。</p>':''}
+    ${research.length?`<div class="opportunity-contact-preview"><h3>研究方向与联系</h3>${research.slice(0,2).map(r=>`<p>${ox(r.direction)} · ${ox(r.contact||r.department||'官方联系人')}${r.email?` · <a href="mailto:${encodeURIComponent(r.email)}">${ox(r.email)}</a>`:''}</p>`).join('')}${research.length>2?`<p class="note">共 ${research.length} 项，完整方向与出处见下方。</p>`:''}</div>`:o.contact?`<p><strong>官方咨询：</strong>${ox(o.contact)}</p>`:''}
     ${opportunitySource(o)}${opportunityActions(o,state)}
     <details class="opportunity-details"><summary>申请材料与报名步骤</summary><h3>材料与提交阶段</h3>${opportunityList(o.materials,'材料清单尚未整理，请查官方公告。')}<h3>报名方式</h3><p>${ox(o.application_method||'请查官方公告。')}</p>${o.contact?`<p><strong>官方咨询渠道：</strong>${ox(o.contact)}</p>`:''}${extraAttachments.map(url=>`<p><a href="${ox(url)}" target="_blank" rel="noopener">官方附件 · 方向或申请材料 ↗</a></p>`).join('')}${opportunityAttachments(o)}<p>${ox(o.admission_note)}</p></details>
     ${research.length?`<details class="opportunity-details"><summary>研究方向与部门联系人 · ${research.length} 项</summary>${opportunityDirections(o,filter.query)}</details>`:''}
@@ -66,6 +67,7 @@ function movedOpportunity(o){
   return `<article class="opportunity-card opportunity-moved" data-other-content="${ox(o.id)}"><span class="opportunity-state">${names[scope]||names.pending}</span><h2>${ox(o.title)}</h2><p>${explanation[scope]||explanation.pending}</p>${next}<p class="note">原链接与已保存的申请快照保留。分类调整不会替你修改项目或创建新申请。</p>${opportunitySource(o)}<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看原官方记录 ↗</a><a href="opportunities.html">返回院校活动</a></div><details class="opportunity-details"><summary>查看保留的对象、时间与联系方式</summary>${opportunityFacts(o)}${opportunityList(o.eligibility,'对象需核实')}<p>${ox(o.contact)}</p><p>${ox(o.admission_note)}</p><p>${ox(o.deadline_note)}</p></details></article>`;
 }
 function renderOpportunities(){
+  if(!catalogLoaded){oe('opportunity-count').textContent='正在读取最新院校活动…';return;}
   const filter={query:oe('opportunity-search').value,kind:oe('opportunity-kind').value,school:oe('opportunity-school').value,year:oe('opportunity-year').value,status:oe('opportunity-state').value};
   const focus=opportunityParams.get('id'),all=[...opportunityRows,...(opportunityCatalog.other_contents||[])],focused=focus&&all.find(o=>o.id===focus);
   const rows=focus?(focused&&OpportunityRules.classification(focused)==='institutional_activity'?[focused]:[]):OpportunityRules.select(opportunityRows,filter);
@@ -124,7 +126,10 @@ async function refreshOpportunityMonitor(){
   if(!['http:','https:'].includes(location.protocol)){oe('monitor-health').textContent='请通过在线网站查看服务器的最新监测状态。';return;}
   oe('monitor-refresh').disabled=true;
   try{
-    const response=await fetch('/api/opportunities');if(!response.ok)throw new Error('读取失败');const data=await response.json();opportunityCatalog=data;opportunityRows=data.opportunities;publicOpportunityMode=data.mode==='public';opportunityModeReady=true;refreshOpportunityOptions();renderOpportunities();
+    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),8000);let data;
+    try{const response=await fetch('/api/opportunities',{signal:controller.signal});if(!response.ok)throw new Error('读取失败');data=await response.json();}
+    finally{clearTimeout(timeout);}
+    if(!Array.isArray(data.opportunities))throw new Error('资料格式异常');opportunityCatalog=data;opportunityRows=data.opportunities;catalogLoaded=true;publicOpportunityMode=data.mode==='public';opportunityModeReady=true;refreshOpportunityOptions();renderOpportunities();
     if(!publicOpportunityMode)await loadSavedOpportunities();
     if(data.feed_error)oe('opportunity-result').textContent=data.feed_error;
     const m=data.monitoring;
@@ -137,7 +142,19 @@ async function refreshOpportunityMonitor(){
     const rows=(m.candidates||[]).filter(c=>(!candidate||c.id===candidate)&&!known.some(o=>o.source_url===c.url)).sort((a,b)=>(b.first_seen||'').localeCompare(a.first_seen||''));
     oe('monitor-list').innerHTML=rows.length?rows.map(c=>`<p><a href="${ox(c.url)}" target="_blank" rel="noopener">${ox(c.title)}</a><br><small>${ox(c.unit)} · 官网发布日期 ${ox(c.publication_date||'未明确')} · 首次发现 ${ox(opportunityTime(c.first_seen))} · ${c.discovery_status==='initial_snapshot'?'初次收录，非新发布证明':'后续新发现，待核验'}${c.source_state!=='ok'?' · 来源异常或已移出，须核对':''}</small></p>`).join(''):'<p>本轮没有额外活动线索；不代表其他院校未发布。</p>';
     if(candidate){oe('monitor-details').open=true;oe('monitor-candidates').open=true;oe('monitor-candidates').scrollIntoView({block:'start'});}
-  }catch(error){opportunityRows=opportunityRows.map(o=>({...o,source_state:'unavailable'}));renderOpportunities();oe('monitor-health').textContent='更新状态暂时无法读取，页面保留静态快照；不能判断当前是否为最新。';if(!opportunityModeReady)oe('opportunity-result').textContent='尚未连接申请工作台，保存功能暂不可用；可以继续查看官方通知。';}
+  }catch(error){
+    if(!catalogLoaded){
+      try{
+        await new Promise((resolve,reject)=>{
+          const script=document.createElement('script'),timeout=setTimeout(()=>{script.remove();reject(new Error('资料读取超时'));},8000);
+          script.src='opportunities-data.js';script.onload=()=>{clearTimeout(timeout);resolve();};script.onerror=()=>{clearTimeout(timeout);script.remove();reject(new Error('资料读取失败'));};document.head.append(script);
+        });
+        if(!Array.isArray(window.OPPORTUNITIES?.opportunities))throw new Error('资料格式异常');
+        opportunityCatalog=window.OPPORTUNITIES;opportunityRows=opportunityCatalog.opportunities;catalogLoaded=true;refreshOpportunityOptions();
+      }catch(fallbackError){oe('opportunity-count').textContent='活动资料暂时无法读取，请点击重新检查。';}
+    }
+    opportunityRows=opportunityRows.map(o=>({...o,source_state:'unavailable'}));if(catalogLoaded)renderOpportunities();oe('monitor-health').textContent=catalogLoaded?'更新状态暂时无法读取，页面保留静态快照；不能判断当前是否为最新。':'活动资料暂时无法读取，请稍后重新检查。';if(!opportunityModeReady)oe('opportunity-result').textContent='尚未连接申请工作台，保存功能暂不可用；可以继续查看官方通知。';
+  }
   finally{oe('monitor-refresh').disabled=false;}
 }
 oe('monitor-refresh').onclick=refreshOpportunityMonitor;refreshOpportunityMonitor();

@@ -11,8 +11,8 @@ detail_url: https://faculty.csu.edu.cn/lizhonghua/zh_CN/index.htm
 profile_url: https://faculty.csu.edu.cn/lizhonghua/zh_CN/index.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
 facets: []
 provenance:
   name:
@@ -23,10 +23,22 @@ provenance:
   title:
     origin: crawled
     source: https://faculty.csu.edu.cn/lizhonghua/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-16'
     confidence: auto
   institutes:
     origin: crawled
     source: https://soa.csu.edu.cn/szdw/jcrc.htm
     fetched_at: '2026-10-14'
     confidence: auto
+  bio_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lizhonghua/zh_CN/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.csu.edu.cn/lizhonghua/zh_CN/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+bio_raw: 李中华，副教授，中南大学自动化学院教师。从事电工电子基础课程教学，编写《电路理论》等教材，并发表论文多篇。
+research_direction_raw: 无

@@ -99,6 +99,7 @@ def completion(settings, messages, *, session=None):
             fail('invalid_response', 'AI响应无法通过结构检查', phase=phase)
         timing.update(elapsed_seconds=round(time.monotonic() - started, 3),
                       response_bytes=received, mode='stream' if stream else 'json',
+                      max_tokens=request['max_tokens'],
                       reasoning_effort=request.get('reasoning_effort'), complete=True)
         return ''.join(content), timing
     except requests.exceptions.SSLError:

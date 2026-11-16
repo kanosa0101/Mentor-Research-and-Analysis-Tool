@@ -392,6 +392,18 @@ bio_raw: '个人简介
 
   排序第2
 
+  教育部高校虚仿教学创新实验室体系化建设典型案例
+
+  2025
+
+  排序第2
+
+  教育部全国师生数字素养提升实践活动标杆作品
+
+  2025
+
+  排序第2
+
   上海交通大学校级优秀班主任
 
   2022、2024
@@ -437,7 +449,7 @@ bio_raw: '个人简介
   ACM Transactions on Knowledge Discovery from Data (TKDD)'
 institutes:
 - 可扩展计算研究所
-photo_url: https://www.cs.sjtu.edu.cn/upload/image/20250905/20250905170539.jpg
+photo_url: https://www.cs.sjtu.edu.cn/upload/image/20261020/20261020170330.jpg
 detail_url: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
 profile_url: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
 last_verified: '2026-09-06'
@@ -475,31 +487,41 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
     fetched_at: '2026-09-02'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/songtao.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
+research_direction_raw: 分布式机器学习 、 多模态大模型 、 AI+X 等领域，近年来，已在一系列计算机领域的顶级会议和期刊发表论文50余篇，包括PPoPP,
+  SoCC, SIGKDD, VLDB, ICML, NeurIPS, CVPR, ICCV, ECCV, AAAI, IJCAI, ACM MM, IEEE Network,
+  JMLR, TDSC, TBD, TDS, TCBB等

@@ -307,26 +307,36 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/dingyue.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 计算机视觉、具身智能、数据挖掘和推荐系统，目前研究兴趣包括： （1） 高效鲁棒的视觉-语言-动作（VLA）模型 （2）
+  机器人目标（Goal-Oriented）导航 （3）多模态大模型 （4）自动驾驶 （5）多任务学习（图像密集预测） （6）高中低层计算机视觉技术（超分、检测、抠图、分割、深度估计、重建等）
+  （7）扩散模型
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

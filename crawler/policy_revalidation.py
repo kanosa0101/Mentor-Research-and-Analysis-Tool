@@ -262,7 +262,7 @@ def run(root, *, limit=20, workers=4, timeout=15, force=False, policy_ids=(), fe
             hours = 14 * 24 if value else min(48, 2 ** min(failures, 6)) if status == 'retry' else 24
             row = dict(policy_id=policy['id'], title=policy['title'], status=status, first_seen=previous.get('first_seen', stamp),
                        last_attempt=stamp, next_attempt=(now + timedelta(hours=hours)).isoformat(timespec='seconds'),
-                       failures=failures, policy_sha256=policy_digest(policy), human_reviewed_at=policy['reviewed_at'],
+                       failures=failures, policy_sha256=policy_digest(policy), human_reviewed_at=None if policy.get('review_method') == 'automatic_evidence' else policy['reviewed_at'],
                        observation_signature=observation_signature(policy),
                        source_urls={sid: data['sources'][sid]['url'] for sid in policy['review_hashes']},
                        source_results={sid: {k: v for k, v in fetched[sid].items() if k not in ('text', 'attachments')}

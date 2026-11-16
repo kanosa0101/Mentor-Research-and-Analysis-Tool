@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-16T14:18:58.287612+00:00",
+  "attempted": 1,
+  "candidate_total": 1,
+  "pending": 1,
+  "published": 0,
+  "changed": 0,
+  "manual_required": 1,
+  "retry": 0,
+  "budget_wait": 0,
+  "counts": {
+    "manual_required": 1
+  },
+  "results": [
+    {
+      "title": "北京大学计算机学院2027年“申请-考核制” 博士研究生招生说明",
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "listing_url": "https://cs.pku.edu.cn/zsxx/yjszs.htm",
+      "checked_at": "2026-11-16T14:18:58.287612+00:00",
+      "policy_version": "new-official-policy-v2-complete-layout",
+      "first_seen": "2026-11-16T14:18:58.287612+00:00",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "status": "manual_required",
+      "reason": "AI建议人工判断：application_procedure.materials 中 TOEFL 条件写作“或者5分及以上(自2026年1月21日后参加考试)”，与原文一致但语义明显异常（100分与5分并列），原文本身存在歧义/疑似笔误，需人工确认，不能自行纠正。；scope 仅概括为“assessment”路线，但原文基本条件第2条第(4)项还包含面向海外高校中国籍优秀本科毕业生直接攻读博士的招生对象，scope 未体现该适用对象，存在遗漏风险。；eligibility 字段完整摘录了基本条件，但未包含同等学力加试、复试前材料核验等后续限制；这些属于选拔方式而非基本条件，是否需在资格字段体现需人工判断。；附件表1中“王捍贫”在行2列4被换行拆为“王捍/贫”，属排版换行，字段值保留原样，需人工确认是否影响导师姓名解析。",
+      "reason_code": "ai_review",
+      "next_attempt_at": "2026-11-17T14:18:58.287612+00:00",
+      "next_action": "根据AI错误或证据冲突原因继续核验，未通过不发布",
+      "pending_since": "2026-11-16T14:18:58.287612+00:00",
+      "history": []
+    }
+  ]
+}

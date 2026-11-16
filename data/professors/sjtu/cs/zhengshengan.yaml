@@ -11,7 +11,7 @@ bio_raw: '个人简介
 
   郑圣安，上海交通大学计算机学院长聘教轨副教授，博士生导师。主要研究方向为大模型训推系统，分布式系统、内存与存储系统以及智能系统软件等。在FAST、EuroSys、ICDE、DAC、TPDS、TOS等国际高水平会议和期刊发表学术论文三十余篇，获国家发明专利授权十余项，受邀担任多个国际会议和期刊的程序委员会委员和审稿人，担任OpenCloudOS社区TOC委员。主持国家自然科学基金青年科学基金项目、上海市自然科学基金面上项目、中国博士后科学基金面上项目以及多项企业创新研究计划项目，参与国家重点研发计划、国家自然科学基金重点项目等。相关研究成果获2020年上海市技术发明奖一等奖。
 
-  课题组正招收2027-2028年入学的研究生和博士生，欢迎对大模型训推系统，分布式系统、内存与存储系统以及智能系统软件等方向感兴趣的同学
+  课题组正招收2027入学的研究生、2028年入学的研究生和博士生，欢迎对大模型训推系统，分布式系统、内存与存储系统以及智能系统软件等方向感兴趣的同学
 
   与我联系
 
@@ -41,11 +41,212 @@ bio_raw: '个人简介
 
   教授课程
 
-  程序设计思想与方法（2022, 2023, 2024, 2025）
+  程序设计思想与方法（2022, 2023, 2024, 2025, 2026）
 
   论文发表
 
   Full publication list
+
+  Trident: Accelerating Speculative Decoding with Similarity-Driven Context Reuse
+
+  Zhuoer Shao,
+
+  Shengan Zheng*
+
+  , Xingda Zhou, Zhiyuan Huang, Shi Shu, Cong Zhou, Guifeng Wang, Linpeng Huang*
+
+  Published in
+
+  European Conference on Computer Systems (EuroSys)
+
+  , 2027
+
+  Plurio: Scaling Microkernel-based Operating System via Service Localization and
+  Memory Pooling
+
+  Zhenlin Qi,
+
+  Shengan Zheng*
+
+  , Bowen Zhang, Linpeng Huang*
+
+  Published in
+
+  The ACM SIGOPS Annual Technical Conference (ATC)
+
+  , 2026
+
+  Kirin: Efficient In-Storage Learned Compaction for LSM-Trees via System-Algorithm
+  Co-Design
+
+  Guifeng Wang,
+
+  Shengan Zheng*
+
+  , Penghao Sun, Jin Pu, Kaijiang Deng, Bowen Zhang, Weihan Kong, Cong Zhou, Yifan
+  Hua, Linpeng Huang*
+
+  Published in
+
+  Proceedings of the VLDB Endowment (VLDB)
+
+  , 2026
+
+  [pdf]
+
+  [code]
+
+  Marlin: I/O-Efficient Prefix KV Cache Retrieval for Long-Prefix LLM Serving
+
+  Guifeng Wang,
+
+  Shengan Zheng*
+
+  , Ji Fang, Yucheng Li, Shi Shu, Weihan Kong, Cong Zhou, Kaijiang Deng, Linpeng Huang*
+
+  Published in
+
+  Design Automation Conference (DAC)
+
+  , 2026
+
+  Prism: Reducing Arithmetic for High-Recall Approximate Nearest Neighbor Search on
+  Processing-in-Memory
+
+  Weihan Kong,
+
+  Shengan Zheng*
+
+  , Yingxue Zhou, Yifan Hua, Yuheng Wen, Cong Zhou, Guifeng Wang, Linpeng Huang*
+
+  Published in
+
+  Design Automation Conference (DAC)
+
+  , 2026
+
+  DART: A Lock-free Two-layer Hashed ART Index for Disaggregated Memory
+
+  Bowen Zhang,
+
+  Shengan Zheng*
+
+  , Shi Shu, Jingxiang Li, Zhenlin Qi, Weiquan Huang, Jianguo Wang, Linpeng Huang*,
+  Hong Mei
+
+  Published in
+
+  International Conference on Management of Data (SIGMOD)
+
+  , 2026
+
+  [pdf]
+
+  [code]
+
+  High-Performance and Cache-Efficiency Adaptive Radix Tree for Disaggregated Memory
+
+  Bowen Zhang,
+
+  Shengan Zheng*
+
+  , Jingxiang Li, Shi Shu, Zhenlin Qi, Linpeng Huang*, Hong Mei
+
+  Published in
+
+  IEEE Transactions on Computers (TC)
+
+  , 2026
+
+  SwitchFS: Exploiting Persistent Memory Bandwidth in Cluster via Learning-based I/O
+  Path Selection
+
+  Zhenlin Qi,
+
+  Shengan Zheng*
+
+  , Bowen Zhang, Linpeng Huang*
+
+  Published in
+
+  ACM Transactions on Architectureand Code Optimization (TACO)
+
+  , 2026
+
+  [pdf]
+
+  Accelerating Verifiable Queries over Blockchain Database System Using Processing-in-memory
+
+  Yifan Hua,
+
+  Shengan Zheng*
+
+  , Weihan Kong, Dongliang Xue, Ke Xi, Yuheng Wen, Linpeng Huang*, Hong Mei
+
+  Published in
+
+  ACM Transactions on Architectureand Code Optimization (TACO)
+
+  , 2025
+
+  [pdf]
+
+  [url]
+
+  CSGC: Collaborative File System Garbage Collection with Computational Storage
+
+  Jin Pu,
+
+  Shengan Zheng*
+
+  , Penghao Sun, Guifeng Wang, Xin Xie, Linpeng Huang*
+
+  Published in
+
+  European Conference on Parallel Processing (Euro-Par)
+
+  , 2025
+
+  [pdf]
+
+  [url]
+
+  Shiro: Efficient and Accurate In-Storage Data Lifetime Separation for NAND Flash
+  SSDs
+
+  Penghao Sun,
+
+  Shengan Zheng*
+
+  , Litong You, Wanru Zhang, Ruoyan Ma, Jie Yang, Feng Zhu, Shu Li, Linpeng Huang*
+
+  Published in
+
+  IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)
+
+  , 2025
+
+  [pdf (camera ready)]
+
+  [url]
+
+  FusionFS: A Contention-Resilient File System for Persistent CPU Caches
+
+  Congyong Chen,
+
+  Shengan Zheng*
+
+  , Yuhang Zhang, Linpeng Huang*
+
+  Published in
+
+  ACM Transactions on Architectureand Code Optimization (TACO)
+
+  , 2025
+
+  [pdf]
+
+  [url]
 
   Sphinx: A High-Performance Hybrid Index for Disaggregated Memory with Succinct Filter
   Cache
@@ -61,6 +262,10 @@ bio_raw: '个人简介
   Design Automation Conference (DAC)
 
   , 2025
+
+  [pdf]
+
+  [url]
 
   Chrono: Meticulous Hotness Measurement and Flexible Page Migration for Memory Tiering
 
@@ -97,7 +302,9 @@ bio_raw: '个人简介
 
   , 2025
 
-  [pdf (camera ready)]
+  [pdf]
+
+  [url]
 
   PimBeam: Efficient Regular Path Queries over Graph Database Using Processing-in-Memory
 
@@ -114,24 +321,6 @@ bio_raw: '个人简介
   , 2025
 
   [pdf]
-
-  [url]
-
-  FusionFS: A Contention-Resilient File System for Persistent CPU Caches
-
-  Congyong Chen,
-
-  Shengan Zheng*
-
-  , Yuhang Zhang, Linpeng Huang*
-
-  Published in
-
-  ACM Transactions on Architectureand Code Optimization (TACO)
-
-  , 2025
-
-  [pdf (camera ready)]
 
   [url]
 
@@ -388,17 +577,17 @@ bio_raw: '个人简介
 
   [url]
 
-  JPDHeap: A JVM Heap Design for PM-DRAM Memories
+  JPDHeap: A JVM Heap Design for PM-DRAM Memories
 
-  Litong You, Tianxiao Gu,
+  Litong You, Tianxiao Gu,
 
   Shengan Zheng
 
-  , Jianmei Guo, Sanhong Li, Yuting Chen, Linpeng Huang
+  , Jianmei Guo, Sanhong Li, Yuting Chen, Linpeng Huang
 
   Published in
 
-  Design Automation Conference (DAC)
+  Design Automation Conference (DAC)
 
   , 2021
 
@@ -454,7 +643,7 @@ bio_raw: '个人简介
 
   计算机研究与发展
 
-  , 2021
+  , 2020
 
   [pdf]
 
@@ -623,36 +812,44 @@ provenance:
     confidence: auto
   institutes:
     origin: crawled
-    source: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
-    fetched_at: '2026-09-02'
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
+    fetched_at: '2026-11-16'
     confidence: auto
   title:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   homepage:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   photo_url:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
-    fetched_at: '2026-09-02'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.cs.sjtu.edu.cn/jiaoshiml/zhengshengan.html
+    fetched_at: '2026-11-16'
+    confidence: auto
+research_direction_raw: 大模型训推系统，分布式系统、内存与存储系统以及智能系统软件等
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'
