@@ -34943,5 +34943,7 @@
       ],
       "directory_frontier_remaining": 0
     }
-  ]
+  ],
+  "time_semantics": "时间口径：台账 checked_at 和 complete.json 的 completed_at 取自各轮检查起点，不是精确结束时间。每次真实请求的耗时另存 requests.jsonl；本报告不以该字段宣称完成时刻。",
+  "targeted_tests_passed": 53
 }

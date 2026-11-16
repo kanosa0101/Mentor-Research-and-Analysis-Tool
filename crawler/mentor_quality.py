@@ -124,7 +124,7 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
     failure = mentor_recovery.classify(failure_reason, original=original, cfg=cfg)
     if allow_alternative and failure_reason and failure['next_action'] == 'discover_official_source':
         candidates = discover()
-        if failure['reason_code'] in ('http_forbidden', 'template_empty'):
+        if failure['reason_code'] in ('http_forbidden', 'http_unexpected_status', 'template_empty'):
             candidates.append((mentor_recovery.canonical(original['detail_url']), None))
         expanded = True
         if not candidates:
@@ -316,8 +316,13 @@ def inspect_issue(root, unit, issue, sources):
                             observed_titles=sorted(titles), changed_fields=own[1], checked_fields=own[2])
             return dict(status='pending', reason='官方职称仍有冲突、不可读页面或缺少充分统一依据，保留未知',
                         observed_titles=sorted(titles), unavailable_pages=failed)
-        updated, parsed, changed, checked = profile(root, original, cfg, sources,
-            failure_reason=issue.get('message','') if kind == 'fetch_or_parse_error' else '')
+        automatic = issue.get('automatic_check') or {}
+        known_source = (automatic.get('source_urls') or {}).get('profile') or automatic.get('current_source')
+        failure_reason = ''
+        if (kind == 'fetch_or_parse_error' and automatic.get('status') != 'resolved' and
+                (not known_source or known_source == original['detail_url'])):
+            failure_reason = automatic.get('reason') or issue.get('message', '')
+        updated, parsed, changed, checked = profile(root, original, cfg, sources, failure_reason=failure_reason)
         if kind == 'shared_public_contact':
             # Refresh the complete conflict group, not only one current record.
             names = next((names for names in cfg.get('shared_public_contacts', {}).values() if original['name'] in names), [])

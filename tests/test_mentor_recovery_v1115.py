@@ -50,6 +50,44 @@ def test_404_discovers_without_requesting_dead_url(root):
     assert requested.count('https://test.edu.cn/people') == 1
 
 
+def test_weekly_recheck_reads_repaired_url_instead_of_replaying_old_404(root):
+    configure(root)
+    quality.run(root,fetcher=lambda s:body() if s['url'].endswith('/new') else '<a href="/new">张老师</a>',now=NOW)
+    def fresh(source):
+        assert source['url']=='https://test.edu.cn/new'
+        return body()
+    result=quality.run(root,fetcher=fresh,now=NOW+timedelta(days=8))
+    assert result['resolved']==1 and result['reopened']==0
+    assert quality.load_yaml(root/'data/issues/test-cs.yaml')[0]['message'].startswith('HTTP 404')
+
+
+def test_latest_non_body_diagnosis_controls_discovery_before_fallback(root):
+    configure(root)
+    path=root/'data/issues/test-cs.yaml'
+    issues=quality.load_yaml(path)
+    issues[0]['automatic_check']=dict(status='error',reason='HTTP 202: 来源未返回可核对的导师正文',source_urls={'profile':'https://test.edu.cn/old'})
+    put(path,issues)
+    requested=[]
+    def fresh(source):
+        requested.append(source['url'])
+        return body() if source['url'].endswith('/old') else '<p>教师目录</p>'
+    assert quality.run(root,fetcher=fresh,now=NOW)['resolved']==1
+    assert requested[0]=='https://test.edu.cn/people' and requested[-1]=='https://test.edu.cn/old'
+
+
+def test_changed_source_is_checked_without_replaying_prior_source_failure(root):
+    configure(root)
+    path=root/'data/professors/test/cs/teacher.yaml'
+    person=quality.load_yaml(path);person['detail_url']='https://test.edu.cn/new';put(path,person)
+    path=root/'data/issues/test-cs.yaml';issues=quality.load_yaml(path)
+    issues[0]['automatic_check']=dict(status='error',reason='HTTP 404',source_urls={'profile':'https://test.edu.cn/old'})
+    put(path,issues)
+    def fresh(source):
+        assert source['url']=='https://test.edu.cn/new'
+        return body()
+    assert quality.run(root,fetcher=fresh,now=NOW)['resolved']==1
+
+
 @pytest.mark.parametrize('field', ['detail_url', 'profile_url'])
 def test_manual_urls_block_automatic_migration(root, field):
     configure(root)
