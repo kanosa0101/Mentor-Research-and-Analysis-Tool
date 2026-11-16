@@ -76,7 +76,8 @@ class SnapshotTests(unittest.TestCase):
 
 
 class PublicUpdateStageTests(unittest.TestCase):
-    dependencies = ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css', 'account-session.js', 'cloud-library.js')
+    dependencies = ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css', 'account-session.js', 'cloud-library.js',
+                    'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js')
 
     def fixture(self, folder, invalid=False):
         source = Path(__file__).resolve().parents[1]

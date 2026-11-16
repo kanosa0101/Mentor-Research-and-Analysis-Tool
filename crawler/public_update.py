@@ -101,7 +101,8 @@ def update(root, expected_id):
             for script in (root / 'scripts').glob('*.py'):
                 shutil.copy2(script, stage / 'scripts' / script.name)
             shutil.copytree(root / 'site/templates', stage / 'site/templates')
-            for name in ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css'):
+            for name in ('discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js', 'ui.css',
+                         'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js'):
                 shutil.copy2(root / 'site' / name, stage / 'site' / name)
             for name in ('VERSION', 'release.json'):
                 shutil.copy2(root / name, stage / name)

@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 out=ROOT/'cache/online-ux/flow';out.mkdir(parents=True,exist_ok=True)
 root=Path(tempfile.mkdtemp(prefix='ui-',dir=out))
 shutil.copytree(ROOT/'site',root/'site')
+build_site.build_application_entry(root/'site')
 (root/'data').mkdir()
 for name in ['opportunities.json','admissions.yaml','admissions_entries.yaml','admissions_checks.json','schools.yaml']:
  shutil.copyfile(ROOT/'data'/name,root/'data'/name)
@@ -35,6 +36,7 @@ try:
   page.on('pageerror',lambda error:errors.append(str(error)));page.on('request',lambda request:requests.append(request.url))
   page.goto(base+'/account.html?next=/applications.html?mentor=bit-cs-danchun%26school=bit%26dept=cs',wait_until='networkidle')
   page.locator('[data-account-mode=register]').click();page.locator('#account-username').fill('ux_flow_user');page.locator('#account-password').fill('test-password-long-a');page.locator('#account-confirm').fill('test-password-long-a');page.locator('#account-submit').click();page.wait_for_url(lambda url:'/applications.html?' in url);page.wait_for_function('window.WORKFLOW_READY')
+  assert len([url for url in requests if '/application-entry.js?' in url])==1;assert not [url for url in requests if any('/'+name+'?' in url for name in ('application-data.js','admissions-core.js','material-actions.js','opportunities-core.js','workflow.js'))];result['application_script_requests']=1
   assert page.locator('nav[aria-label="主导航"] a',has_text='我的申请').get_attribute('href')=='applications.html';assert page.locator('h1').inner_text()=='我的申请';result['checks'].append('primary_application_entry_is_project_workspace')
   page.locator('#project-name').fill('我的申请');assert page.locator('#project-goal-details').get_attribute('open') is None
   page.screenshot(path=str(out/'create-desktop.png'),full_page=True)

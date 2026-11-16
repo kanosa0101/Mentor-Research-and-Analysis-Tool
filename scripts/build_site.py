@@ -39,6 +39,15 @@ def build_discovery_entry(site=None):
         path.read_text(encoding='utf-8') for path in files), encoding='utf-8', newline='\n')
 
 
+def build_application_entry(site=None):
+    site = SITE if site is None else Path(site)
+    files = [site / 'application-data.js']
+    files.extend(site / name if (site / name).is_file() else ROOT / 'site' / name
+                 for name in ('admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js'))
+    (site / 'application-entry.js').write_text('\n;\n'.join(
+        path.read_text(encoding='utf-8') for path in files), encoding='utf-8', newline='\n')
+
+
 def render_discovery_page(site=None, env=None):
     site = SITE if site is None else Path(site)
     files = [site / 'school-catalog.js']
@@ -266,6 +275,7 @@ def main():
     content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     (SITE / 'application-data.js').write_text(application_payload(profs, admissions), encoding='utf-8')
+    build_application_entry()
     write_html(SITE / 'admissions.html', env.get_template('admissions.html.j2').render())
     release_file = ROOT / 'release.json'
     if release_file.exists():

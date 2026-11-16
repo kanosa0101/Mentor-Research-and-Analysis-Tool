@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-16T08:30:55.893513+00:00",
+  "reproduced_before_fix": {
+    "test": "test_monitor_quarter_hour_wake_does_not_flicker_current_activity",
+    "failure": "review != open at 16:27 for next_check_at 16:15:16"
+  },
+  "fix": "Fixed 15-minute scheduling grace only; monitor scheduler, source fetch times and manual review dates unchanged",
+  "regression": {
+    "python": 43,
+    "node_files": [
+      "opportunities.cjs",
+      "opportunity_windows_v17.cjs",
+      "opportunity_scope_v20.cjs"
+    ],
+    "javascript_syntax": "site/opportunities.js passed"
+  },
+  "boundaries": [
+    "next_check_at + 15m remains valid",
+    "next_check_at + 15m1s downgrades",
+    "error/changed/unbased downgrade immediately",
+    "8-day source and 31-day fact review stay review",
+    "invalid/naive timestamp fails closed"
+  ],
+  "production_written": false
+}

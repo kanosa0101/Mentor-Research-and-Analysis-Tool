@@ -105,7 +105,8 @@ class BuildTests(unittest.TestCase):
             (root / 'sites/test/cs.yaml').write_text('school: test\ndept: cs')
             (root / 'site/p').mkdir(parents=True)
             (root / 'site/p/orphan.html').write_text('old')
-            for name in ('ui.css', 'discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js'):
+            for name in ('ui.css', 'discovery-core.js', 'discovery.js', 'browser-library-core.js', 'browser-library.js',
+                         'admissions-core.js', 'material-actions.js', 'opportunities-core.js', 'workflow.js'):
                 (root / 'site' / name).write_bytes((ROOT / 'site' / name).read_bytes())
             with patch.object(build, 'ROOT', root), patch.object(build, 'SITE', root / 'site'), \
                     patch.object(build, 'template_environment', return_value=env), \

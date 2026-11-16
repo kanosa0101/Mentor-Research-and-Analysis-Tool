@@ -1,5 +1,5 @@
 import copy
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from unittest.mock import patch
 import unittest
 import json
@@ -122,6 +122,49 @@ class OpportunityTests(unittest.TestCase):
             result=opportunities.observed(root)
             self.assertEqual(opportunities.state(result['opportunities'][0]),'review')
             self.assertEqual(opportunities.load(root)['opportunities'][0]['source_state'],'verified')
+
+    def test_monitor_quarter_hour_wake_does_not_flicker_current_activity(self):
+        now = datetime.now(timezone.utc).replace(hour=8, minute=27, second=0, microsecond=0)
+        due = now.replace(minute=15, second=16)
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir();(root/'cache').mkdir()
+            catalog=self.catalog();item=catalog['opportunities'][0]
+            (root/'data/opportunities.json').write_text(json.dumps(catalog),encoding='utf-8')
+            (root/'cache/opportunities_live.json').write_text(json.dumps({
+                'next_check_at':due.isoformat(),
+                'opportunity_checks':{item['id']:{'status':'unchanged','last_success':item['checked_at']}}
+            }),encoding='utf-8')
+            # The 16:15 wake runs just before 16:15:16; the next wake is 16:30.
+            with patch.object(opportunities,'datetime',wraps=datetime) as clock:
+                for moment,expected in ((now,'open'),(due+timedelta(minutes=15),'open'),
+                                        (due+timedelta(minutes=15,seconds=1),'review')):
+                    with self.subTest(moment=moment):
+                        clock.now.return_value=moment
+                        result=opportunities.observed(root)
+                        self.assertEqual(opportunities.state(result['opportunities'][0]),expected)
+                for invalid in ('invalid','2026-11-16T16:15:16','2027-02-30T16:15:16+08:00'):
+                    with self.subTest(invalid=invalid):
+                        (root/'cache/opportunities_live.json').write_text(json.dumps({'next_check_at':invalid}),encoding='utf-8')
+                        self.assertEqual(opportunities.state(opportunities.observed(root)['opportunities'][0]),'review')
+
+    def test_monitor_grace_never_hides_failure_changes_or_stale_evidence(self):
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir();(root/'cache').mkdir()
+            for status,age,review_age in [('error',0,0),('changed',0,0),('unbased',0,0),
+                                         ('unchanged',8,0),('unchanged',0,31)]:
+                with self.subTest(status=status,age=age,review_age=review_age):
+                    catalog=self.catalog();item=catalog['opportunities'][0]
+                    item['verified_at']=(opportunities.today()-timedelta(days=review_age)).isoformat()
+                    last_success=(opportunities.today()-timedelta(days=age)).isoformat()
+                    (root/'data/opportunities.json').write_text(json.dumps(catalog),encoding='utf-8')
+                    (root/'cache/opportunities_live.json').write_text(json.dumps({
+                        'next_check_at':(now-timedelta(minutes=10)).isoformat(),
+                        'opportunity_checks':{item['id']:{'status':status,'last_success':last_success}}
+                    }),encoding='utf-8')
+                    with patch.object(opportunities,'datetime',wraps=datetime) as clock:
+                        clock.now.return_value=now
+                        self.assertEqual(opportunities.state(opportunities.observed(root)['opportunities'][0]),'review')
 
 
 if __name__=='__main__':unittest.main()

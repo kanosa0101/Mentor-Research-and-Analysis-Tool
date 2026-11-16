@@ -12,6 +12,11 @@ assert.deepEqual(rules.select([base,{...base,id:'unknown-year',graduation_year:n
 assert.deepEqual(rules.select([base,{...base,id:'unknown-year',graduation_year:null}],{year:'unknown',status:'current'},now).map(o=>o.id),['unknown-year']);
 assert.equal(rules.select([{...base,graduation_year:null,camp_year:2028}],{year:'2028',status:'current'},now).length,0);
 assert.equal(rules.select([{...base,cycle:'historical'}],{status:'current'},now).length,0);
+const monitor={next_check_at:'2026-11-16T16:15:16+08:00'};
+assert.equal(rules.monitorOverdue(monitor,'2026-11-16T16:27:00+08:00'),false);
+assert.equal(rules.monitorOverdue(monitor,'2026-11-16T16:30:16+08:00'),false);
+assert.equal(rules.monitorOverdue(monitor,'2026-11-16T16:30:17+08:00'),true);
+for(const next_check_at of [undefined,'invalid','2026-11-16T16:15:16','2027-02-30T16:15:16+08:00','2027-02-28T24:00:00+08:00'])assert.equal(rules.monitorOverdue({next_check_at},now),true);
 console.log('opportunity date, scope, unknown and history rules passed');
 const saved={...base,materials:['入营时交成绩单']};
 assert.deepEqual(rules.changes(saved,{...saved,checked_at:'2026-11-16'}),[]);

@@ -129,8 +129,8 @@ async function refreshOpportunityMonitor(){
     if(data.feed_error)oe('opportunity-result').textContent=data.feed_error;
     const m=data.monitoring;
     if(!m){oe('monitor-health').textContent=publicOpportunityMode?'服务器尚无可用监测记录，当前页面不能确认信息已更新。请直接核对官方通知。':'服务器尚无监测记录，请稍后重试并以官方公告为准。';oe('monitor-list').replaceChildren();oe('monitor-sources').replaceChildren();return;}
-    const overdue=!m.next_check_at||Date.parse(m.next_check_at)<Date.now(),sum=m.summary||{};
-    oe('monitor-health').textContent=(overdue?'监测已超出应检时间，请检查监测程序。':'最近一轮监测已完成；这不代表所有信息已核验。')+' 最近实际回源：'+opportunityTime(m.last_fetch_at||m.checked_at)+'；下次应检：'+opportunityTime(m.next_check_at)+'（北京时间）。成功栏目 '+(sum.sources_ok||0)+' / '+(sum.source_count||0)+'；失败 '+(sum.sources_error||0)+'。本轮实际检查 '+(sum.sources_attempted??sum.source_count??0)+' 个，未到期跳过 '+(sum.sources_skipped||0)+' 个；超期 '+(sum.overdue_sources||0)+' 个。新发现 '+(sum.new_count||0)+' 条。';
+    const overdue=OpportunityRules.monitorOverdue(m),sum=m.summary||{};
+    oe('monitor-health').textContent=(overdue?'来源检查已超过下一轮调度，当前报名状态需核对。':'来源检查按计划轮转；到期后最迟下一轮调度检查（最多15分钟）。')+' 最近实际回源：'+opportunityTime(m.last_fetch_at||m.checked_at)+'；下次应检：'+opportunityTime(m.next_check_at)+'（北京时间）。成功栏目 '+(sum.sources_ok||0)+' / '+(sum.source_count||0)+'；失败 '+(sum.sources_error||0)+'。本轮实际检查 '+(sum.sources_attempted??sum.source_count??0)+' 个，未到期跳过 '+(sum.sources_skipped||0)+' 个；超期 '+(sum.overdue_sources||0)+' 个。新发现 '+(sum.new_count||0)+' 条。';
     oe('monitor-sources').innerHTML=Object.values(m.sources||{}).filter(s=>s.status!=='removed').map(s=>`<p><a href="${ox(s.url)}" target="_blank" rel="noopener">${ox(s.unit||'官方招生栏目')}</a> · ${s.status==='ok'?'最近检查成功':'暂时无法读取，请直接查官网'}<br><small>最近成功：${ox(opportunityTime(s.last_success))}</small></p>`).join('')||'<p>暂无来源记录。</p>';
     const candidate=opportunityParams.get('candidate');
     const known=[...opportunityRows,...(opportunityCatalog.other_contents||[])];

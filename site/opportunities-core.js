@@ -10,6 +10,13 @@
     return c.scope;
   }
   const dayOf=now=>new Date(now).toLocaleDateString('sv-SE',{timeZone:'Asia/Shanghai'});
+  function monitorOverdue(monitoring,now=new Date().toISOString()){
+    const value=monitoring?.next_check_at,due=Date.parse(value),time=Date.parse(now);
+    if(!Number.isFinite(due)||!Number.isFinite(time)||!/^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value))return true;
+    const day=value.slice(0,10),calendar=Date.parse(day+'T00:00:00Z');
+    if(!Number.isFinite(calendar)||new Date(calendar).toISOString().slice(0,10)!==day)return true;
+    return due+15*60*1000<time;
+  }
   function formatDate(value){
     if(!value)return '';
     const day=String(value).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
@@ -45,5 +52,5 @@
     const fields={research_directions:'研究方向与联系人',graduation_year:'面向届别',registration_start:'报名开始',deadline:'报名截止',deadline_note:'截止说明',application_window:'受理方式与截止月份',event_start:'活动开始',event_end:'活动结束',eligibility:'申请条件',materials:'材料与提交阶段',application_method:'报名方式',application_url:'报名入口',contact:'联系方式',admission_note:'招生说明',source_url:'官方来源',source_attachments:'官方申请表与核验依据'};
     return Object.entries(fields).filter(([key])=>JSON.stringify(saved[key])!==JSON.stringify(current[key])).map(([key,label])=>({key,label,before:saved[key],after:current[key]}));
   }
-  const api={state,select,kinds,labels,dayOf,changes,formatDate,classification};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
+  const api={state,select,kinds,labels,dayOf,changes,formatDate,classification,monitorOverdue};if(typeof module!=='undefined')module.exports=api;else root.OpportunityRules=api;
 })(typeof window!=='undefined'?window:globalThis);

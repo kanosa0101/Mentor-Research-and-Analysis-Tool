@@ -61,7 +61,7 @@ r=Path.cwd();before=json.loads((r/'cache/convergence/protected-before.json').rea
 changed=[n for n,h in before.items() if not (r/n).is_file() or hashlib.sha256((r/n).read_bytes()).hexdigest()!=h]
 assert not changed,changed
 expected=json.loads(Path('/tmp/mentor-v1113-hashes.json').read_text())
-generated={'site/application-data.js','site/data.js','site/contact-data.js','site/discovery-data.js','site/discovery-entry.js','site/opportunities-data.js','site/admissions-data.js','site/school-catalog.js','site/compare-data.js','site/search.js'}
+generated={'site/application-entry.js','site/application-data.js','site/data.js','site/contact-data.js','site/discovery-data.js','site/discovery-entry.js','site/opportunities-data.js','site/admissions-data.js','site/school-catalog.js','site/compare-data.js','site/search.js'}
 code={n:h for n,h in expected.items() if n not in generated and not(n.startswith('site/') and n.endswith('.html'))}
 assert all((r/n).is_file() and hashlib.sha256((r/n).read_bytes()).hexdigest()==h for n,h in code.items())
 assert (r/'VERSION').read_text().strip()=='1.11.3'

@@ -23,6 +23,7 @@ OPTIONAL = {'research_directions', 'source_content_sha256', 'source_documents',
             'application_window', 'source_attachments', 'content_classification',
             'mentor_ids', 'mentor_identity_evidence'}
 CONTENT_SCOPES = {'institutional_activity', 'mentor_recruitment', 'admission_notice', 'pending'}
+MONITOR_SCHEDULING_GRACE = timedelta(minutes=15)
 INSTITUTIONS = {'school_department', 'research_institute', 'university_research_institute'}
 PERSONAL = {'individual_team', 'individual_lab'}
 
@@ -232,7 +233,8 @@ def observed(root):
     overdue = False
     if monitoring:
         try:
-            overdue = datetime.fromisoformat(monitoring['next_check_at']) < datetime.now(timezone.utc)
+            # Source deadlines include request seconds; the timer wakes on quarter hours.
+            overdue = datetime.fromisoformat(monitoring['next_check_at']) + MONITOR_SCHEDULING_GRACE < datetime.now(timezone.utc)
         except (KeyError, ValueError, TypeError):
             overdue = True
     for item in catalog['opportunities']:
@@ -244,7 +246,7 @@ def observed(root):
             item['checked_at'] = check.get('last_success', '')[:10]
         if overdue:
             item['source_state'] = 'unavailable'
-            item['source_note'] += ' 监测已超过应检时间，不能确认当前报名状态。'
+            item['source_note'] += ' 监测已超过应检时间及下一轮调度宽限，不能确认当前报名状态。'
     return catalog
 
 

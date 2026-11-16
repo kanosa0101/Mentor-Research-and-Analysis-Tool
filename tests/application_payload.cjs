@@ -34,5 +34,5 @@ for(const p of full.policies){
 }
 assert.ok(targets>0);
 assert.equal(compact.policies.some(p=>'material_actions' in p),false);
-assert.match(fs.readFileSync(path.join(root,'site/templates/applications.html.j2'),'utf8'),/application-data\.js/);
+assert.match(fs.readFileSync(path.join(root,'site/templates/applications.html.j2'),'utf8'),/application-entry\.js/);
 console.log('PASS: '+targets+' application target/time combinations preserve policy scope, conditions, events, source evidence and quality');
