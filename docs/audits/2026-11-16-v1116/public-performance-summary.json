@@ -1,0 +1,201 @@
+{
+  "before_school_patch": {
+    "started_at": "2026-11-16T14:39:12.908710+00:00",
+    "summary": {
+      "cold:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.539,
+          3.439,
+          2.192
+        ],
+        "ready_statistics": {
+          "min": 2.192,
+          "median": 2.539,
+          "max": 3.439
+        }
+      },
+      "navigation:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          1.76,
+          1.821,
+          1.425
+        ],
+        "ready_statistics": {
+          "min": 1.425,
+          "median": 1.76,
+          "max": 1.821
+        }
+      },
+      "navigation:admissions.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          3.291,
+          5.897,
+          4.368
+        ],
+        "ready_statistics": {
+          "min": 3.291,
+          "median": 4.368,
+          "max": 5.897
+        }
+      },
+      "navigation:opportunities.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.305,
+          2.056,
+          2.456
+        ],
+        "ready_statistics": {
+          "min": 2.056,
+          "median": 2.305,
+          "max": 2.456
+        }
+      },
+      "warm_return:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          0.842,
+          1.388,
+          0.923
+        ],
+        "ready_statistics": {
+          "min": 0.842,
+          "median": 0.923,
+          "max": 1.388
+        }
+      },
+      "cold:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          3.322,
+          3.319,
+          2.884
+        ],
+        "ready_statistics": {
+          "min": 2.884,
+          "median": 3.319,
+          "max": 3.322
+        }
+      }
+    },
+    "samples": 18,
+    "passed": 18,
+    "peer_endpoints": [
+      "127.0.0.1:10808"
+    ],
+    "raw_path": "cache/v1116/public-performance/result.json",
+    "raw_sha256": "39a83fa21049b363e418742ae31adba60cfe609f7bb01818f60c649f07d958f2"
+  },
+  "final": {
+    "started_at": "2026-11-16T14:50:23.593485+00:00",
+    "summary": {
+      "cold:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.297,
+          3.497,
+          2.935
+        ],
+        "ready_statistics": {
+          "min": 2.297,
+          "median": 2.935,
+          "max": 3.497
+        }
+      },
+      "navigation:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.36,
+          1.678,
+          1.408
+        ],
+        "ready_statistics": {
+          "min": 1.408,
+          "median": 1.678,
+          "max": 2.36
+        }
+      },
+      "navigation:admissions.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.836,
+          1.932,
+          3.041
+        ],
+        "ready_statistics": {
+          "min": 1.932,
+          "median": 2.836,
+          "max": 3.041
+        }
+      },
+      "navigation:opportunities.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          3.875,
+          3.319,
+          3.862
+        ],
+        "ready_statistics": {
+          "min": 3.319,
+          "median": 3.862,
+          "max": 3.875
+        }
+      },
+      "warm_return:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          0.823,
+          0.873,
+          1.243
+        ],
+        "ready_statistics": {
+          "min": 0.823,
+          "median": 0.873,
+          "max": 1.243
+        }
+      },
+      "cold:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          3.417,
+          3.012,
+          3.154
+        ],
+        "ready_statistics": {
+          "min": 3.012,
+          "median": 3.154,
+          "max": 3.417
+        }
+      }
+    },
+    "samples": 18,
+    "passed": 18,
+    "peer_endpoints": [
+      "127.0.0.1:10808"
+    ],
+    "raw_path": "cache/v1116/public-performance-final/result.json",
+    "raw_sha256": "f0e3e9b02297b248e72dad94cc615c69a0110e62232174e3d9837eabb36b2c60"
+  },
+  "limitations": [
+    "Current client proxy path, not direct public network",
+    "Each scenario has only 3 samples; not P95 or long-term success rate",
+    "Fresh browser cold-open; OS DNS not cleared",
+    "Ready flag, not LCP or all background requests completed",
+    "Activity navigation became slower; no overall journey speedup claim"
+  ]
+}

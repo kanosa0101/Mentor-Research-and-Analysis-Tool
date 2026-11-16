@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "version": "1.11.6",
+  "edition": "online",
+  "services": {
+    "mentor-https.service": "active",
+    "mentor-public.service": "active",
+    "mentor-review-ui.service": "active",
+    "mentor-maintenance.timer": "active",
+    "mentor-monitor.timer": "active",
+    "mentor-review-pipeline.timer": "active",
+    "mentor-updates.timer": "active",
+    "mentor-certificate.timer": "active"
+  },
+  "mentor_records": 7173,
+  "contactable": 5690,
+  "policy_count": 111,
+  "policy_years": [
+    2027
+  ],
+  "policy_quality": {
+    "checked": 111
+  },
+  "institutional_activities": 9,
+  "activity_states": {
+    "open_month": 1,
+    "closed": 7,
+    "open": 1
+  },
+  "explicit_2028_activities": 0,
+  "configured_sources": 97,
+  "original_backlog_statuses": {
+    "original411": {
+      "pending": 20,
+      "error": 230,
+      "resolved": 161
+    },
+    "added8": {
+      "resolved": 4,
+      "error": 4
+    }
+  },
+  "quality_summary": {
+    "active": 285,
+    "overdue": 0,
+    "policies": 0,
+    "new_policies": 3,
+    "mentors": 282
+  },
+  "quality_breakdown": {
+    "reasons": {
+      "identity_conflict": 66,
+      "shared_contact": 8,
+      "template_empty": 47,
+      "roster_incomplete": 1,
+      "http_not_found": 59,
+      "http_forbidden": 36,
+      "tls_error": 15,
+      "parser_unsupported": 3,
+      "directory_only": 20,
+      "network_timeout": 2,
+      "http_unexpected_status": 25,
+      "ai_review": 1,
+      "incomplete_evidence": 1,
+      "unsupported_attachment": 1
+    },
+    "actions": {
+      "manual_review": 75,
+      "discover_official_source": 202,
+      "adapt_parser": 3,
+      "retry": 2,
+      "根据AI错误或证据冲突原因继续核验，未通过不发布": 1,
+      "补齐图中信息、扫描件或缺失的官方附件": 1,
+      "核对并提取官方附件的受支持文本版本": 1
+    },
+    "never_attempted": 0
+  },
+  "maintenance_stage_failures": {},
+  "pipeline_stage_failures": {},
+  "pipeline_status": "attention",
+  "source_recovery": {
+    "failed_drafts": 11,
+    "attempted": 1,
+    "requests": 2,
+    "request_budget": 16,
+    "adopted": 0,
+    "manual_required": 0,
+    "not_announcement": 1,
+    "budget_wait": 0,
+    "unresolved": 3
+  },
+  "private_permissions_verified": true,
+  "qa_cleanup_verified": true,
+  "recorded_at": "2026-11-16T14:59:01.364962+00:00"
+}
