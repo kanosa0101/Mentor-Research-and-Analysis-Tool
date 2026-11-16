@@ -2,7 +2,7 @@
 (function(){
   'use strict';
   const core=window.BrowserLibraryCore,el=(tag,text,className)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;};
-  if(!core)return;
+  if(!core||!window.CloudLibrary)return;
   let mode='loading',selection=null,workflow=null,saving=false;
   const panel=document.getElementById('local-overview'),list=document.getElementById('local-next-actions');
   const dialog=document.createElement('dialog');dialog.id='plan-transfer-dialog';

@@ -1,6 +1,14 @@
 (function(){
   'use strict';
-  const core=window.BrowserLibraryCore,$=id=>document.getElementById(id),today=core.day();
+  const core=window.BrowserLibraryCore,$=id=>document.getElementById(id);
+  if(!core||!window.CloudLibrary){
+    for(const field of $('target-form').elements)field.disabled=true;
+    const message=$('target-status'),retry=document.createElement('button');
+    message.textContent='页面资源加载失败，请重新加载后继续设置申请目标。';
+    retry.type='button';retry.textContent='重新加载';retry.onclick=()=>location.reload();
+    message.append(' ',retry);return;
+  }
+  const today=core.day();
   const [calendarYear,month]=today.split('-').map(Number),defaults={exam:calendarYear+(month>=9?1:0),recommend:calendarYear+(month>=11?2:1)};
   const schoolMap=new Map((window.SCHOOL_CATALOG?.units||window.ADMISSIONS_DATA?.units||[]).map(u=>[u.school,{id:u.school,name:u.school_name}]));
   const schools=[...schoolMap.values()].sort((a,b)=>a.name.localeCompare(b.name,'zh-CN'));

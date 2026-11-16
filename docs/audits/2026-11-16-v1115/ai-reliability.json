@@ -114,7 +114,7 @@
     "https://api-docs.deepseek.com/guides/thinking_mode/"
   ],
   "limitations": [
-    "Only three live model requests; not a service availability guarantee",
+    "Three diagnostic requests plus two later service-account requests; not a service availability guarantee",
     "Default-mode stall and non-thinking success do not prove every prior timeout had the same cause",
     "Live check returned manual and did not publish"
   ],
@@ -123,5 +123,24 @@
     "ai_evidence": "70ec60cb23bcd44e88644e4000f8ee1d411e7bca97d55d62cd4ea3ced830a059",
     "ai_review": "01905135532d95ffcb38adfac4bf99c28c9ba00e90a0822ce39da81f34d13726"
   },
-  "post_live_check_change": "Added hostname gate for the already-tested provider/model pair. Actual production request parameters unchanged; different providers no longer receive an unverified reasoning_effort parameter. Additional regression passed; no fourth model request."
+  "post_live_check_change": "Added hostname gate for the already-tested provider/model pair. Actual production request parameters unchanged; different providers no longer receive an unverified reasoning_effort parameter. Additional regression passed; no fourth model request.",
+  "production_service_validation": {
+    "initial_cycle": {
+      "blocked_attempts": 2,
+      "provider_requests_sent": 0,
+      "error": "PermissionError before budget reservation",
+      "reason": "Diagnostic run as root left the daily usage ledger owned by root with mode 0600; service user could not write it",
+      "used_requests": 6,
+      "daily_request_limit": 10
+    },
+    "status": "Service owner repaired; two production requests completed with source-bound validated extraction, no publication",
+    "root_diagnostics_are_not_service_account_acceptance": true,
+    "completed_requests": 2,
+    "elapsed_seconds": [
+      10.23,
+      6.193
+    ],
+    "used_requests_after": 8,
+    "evidence": "../../acceptance/v1.11.5/ai-service-acceptance.json"
+  }
 }
