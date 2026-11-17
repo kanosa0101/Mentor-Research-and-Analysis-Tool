@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import yaml
 from crawler.ai_util import validate_ai_block
-from crawler.model import Professor
+from crawler.model import Issue, Professor
 from crawler.outreach_util import validate_outreach
 from crawler.contact_util import upgrade
 from crawler.discovery_util import validate as validate_discovery
@@ -18,11 +18,14 @@ from crawler.admissions_entries import load_catalog, load_entries
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
 parser.add_argument('--root', type=Path, default=ROOT, help='校验独立测试数据根')
-ROOT = parser.parse_args().root
+parser.add_argument('--allow-open-issues', action='store_true', help='报告已登记未关闭资料问题，但保留各项结构校验')
+args = parser.parse_args()
+ROOT = args.root
 def load_yaml(path):
     return yaml.load(path.read_text(encoding='utf-8'), Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
 
 problems = []
+quality_warnings = []
 
 print("== 1. YAML + schema 校验 ==")
 records = {}
@@ -53,12 +56,25 @@ for key, p in records.items():
 
 print("== 3. issues / changes ==")
 for f in sorted((ROOT / "data" / "issues").glob("*.yaml")):
-    data = load_yaml(f) or []
+    try:
+        data = load_yaml(f)
+        if not isinstance(data, list):
+            raise ValueError("issues must be a list")
+    except (OSError, ValueError, yaml.YAMLError):
+        problems.append(f"issues schema: {f.name}")
+        continue
     # reviewed=True 表示人工复验过(如官网详情页确认 404、外部主页被墙),
     # 属如实记录而非待处理异常; 未复验的 open issue 才是问题
-    open_i = [i for i in data if not i.get("resolved") and not i.get("reviewed")]
-    if open_i:
-        problems.append(f"open issues: {f.name} x{len(open_i)}")
+    open_count = 0
+    for index, row in enumerate(data, 1):
+        try:
+            issue = Issue.model_validate(row, strict=True)
+        except ValueError:
+            problems.append(f"issues schema: {f.name}:{index}")
+            continue
+        open_count += not issue.resolved and not issue.reviewed
+    if open_count:
+        (quality_warnings if args.allow_open_issues else problems).append(f"open issues: {f.name} x{open_count}")
 for f in sorted((ROOT / "data" / "changes").glob("*.jsonl")):
     for i, line in enumerate(f.read_text(encoding="utf-8").splitlines()):
         try:
@@ -203,6 +219,10 @@ if af.exists():
 else:
     print('none (未接入招生政策样本)')
 
+if quality_warnings:
+    print("\n== QUALITY WARNINGS ==")
+    for warning in quality_warnings:
+        print(" -", warning)
 print("\n== PROBLEMS ==")
 if problems:
     for p in problems:

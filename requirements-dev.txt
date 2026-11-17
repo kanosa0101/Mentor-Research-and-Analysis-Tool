@@ -1,4 +1,4 @@
--r requirements.txt
+-r deploy/requirements.txt
 
 # The regression suite includes pytest functions and isolated HTTPS fixtures.
 pytest>=8,<10

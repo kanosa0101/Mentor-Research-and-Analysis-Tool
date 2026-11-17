@@ -19,8 +19,21 @@
 - [在线服务决策与验收标准](docs/ONLINE_SERVICE.md)、[实施计划](IMPLEMENTATION_PLAN.md)。
 - [架构](ARCHITECTURE.md)、[维护交接](HANDOVER.md)、[自动核验](docs/AUTOMATIC_REVIEW.md)。
 
-v1.11.9 收敛持续维护：导师邮箱与官方个人页沿可追溯来源接续补齐，核验结果按原文和字段版本复用，服务器定时任务独立推进。部署状态、真实内容增量和剩余限制见[v1.11.9交付记录](deploy/DELIVERY_V1.11.9_2026-11-17.md)。2027年博士政策不计为2028届保研机会，已有活动重放不计为新增活动。上一轮基线见[v1.11.8记录](deploy/DELIVERY_V1.11.8_2026-11-17.md)，账号上线证据见[v1.11记录](deploy/DELIVERY_V1.11_2026-11-15.md)。v1.10中的本机运行包属于历史交付，已取消；[历史文档](docs/history/pre-online-20261115/SHA256.json)保留原始记录。
+v1.12.0 整理现有在线流程和项目结构：保留查找与申请上下文，改善筛选结果反馈，归档历史计划并明确发布边界。[版本说明](RELEASE_NOTES.md)、[本版验证与部署](deploy/DELIVERY_V1.12.0_2026-11-17.md)记录实际结果。资料由服务器定时任务继续核验，版本升级不代表整库刷新，也不将2027博士政策计为2028保研机会。[前版维护与资料结果](deploy/DELIVERY_V1.11.9_2026-11-17.md)和[全部文档索引](docs/INDEX.md)分别保留证据与历史。
 
 ## 开发与运维
 
 仓库中的Python服务、采集和构建脚本供开发维护人员使用，不是学生的安装要求。公共来源配置在 `sites/`，公共资料在 `data/`，模板在 `site/templates/`。维护核验台保持独立限制，不因开放账号而暴露到公网。部署与恢复见维护交接。
+
+源码保留模板、脚本和公开开发基线；生成HTML、资料索引与拼接脚本由构建步骤产生，不作为手工维护的源码。使用Python 3.12与Node.js 24进行开发验证：
+
+```sh
+python -m pip install -r requirements-dev.txt
+python -m playwright install chromium
+python scripts/build_site.py
+python -m pytest tests -q
+node --test tests/*.cjs
+python scripts/preflight.py --allow-open-issues
+```
+
+最后一条命令仍会拒绝结构和安全问题，只把已登记的待处理资料单独列为质量警告；去掉参数即使用严格模式。Linux CI另安装浏览器系统依赖。线上公共资料由定时任务持续更新，部署时应保留服务器的较新数据，不能用仓库开发基线覆盖。旧本机打包脚本仅保留历史测试用途，对当前在线版拒绝生成运行包。

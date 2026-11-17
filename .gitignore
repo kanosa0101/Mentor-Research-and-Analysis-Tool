@@ -3,7 +3,44 @@ __pycache__/
 *.pyc
 dist/
 var/
+/.venv/
+/.venv-*/
+/.pytest_cache/
+/node_modules/
+/.env
+/.env.*
+!/.env.example
+!/.env.template
 /data/*.lock
+/docs/history/2026-10/research/raw/
+
+# Static outputs of scripts/build_site.py
+/site/p/*.html
+/site/account.html
+/site/admissions.html
+/site/applications.html
+/site/board.html
+/site/compare.html
+/site/coverage.html
+/site/desk.html
+/site/discovery.html
+/site/index.html
+/site/local.html
+/site/notices.html
+/site/opportunities.html
+/site/release.html
+/site/start.html
+/site/admissions-data.js
+/site/application-data.js
+/site/application-entry.js
+/site/compare-data.js
+/site/contact-data.js
+/site/data.js
+/site/discovery-data.js
+/site/discovery-entry.js
+/site/opportunities-data.js
+/site/school-catalog.js
+/site/search.js
 
 # 个人工作流数据(仓库公开, 不进 git)
 data/outreach.yaml

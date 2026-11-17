@@ -13,8 +13,27 @@ function checked(id){return [...el(id).querySelectorAll('input:checked')].map(x=
 function readCriteria(){return {name:el('intent-name').value.trim(),topics:[...new Set(el('intent-topics').value.split(/[,，]/).map(s=>s.trim()).filter(Boolean))],schools:checked('school-options'),qualifications:checked('qualification-options'),titles:checked('title-options'),group:el('intent-group').value,include_missing_email:el('include-missing-email').checked};}
 function fillCriteria(p){el('intent-name').value=p.name||'';el('intent-topics').value=(p.topics||[]).join('，');for(const [id,key] of [['school-options','schools'],['qualification-options','qualifications'],['title-options','titles']])for(const box of el(id).querySelectorAll('input'))box.checked=(p[key]||[]).includes(box.value);el('intent-group').value=p.group||'';el('include-missing-email').checked=!!p.include_missing_email;syncFilters();}
 function syncFilters(){const p=readCriteria();el('school-chips').innerHTML=p.schools.map(id=>`<button type="button" data-remove-school="${esc(id)}" aria-label="移除${esc(schoolName(id))}">${esc(schoolName(id))} ×</button>`).join('');el('filter-options-label').textContent=p.schools.length?'学校 · 已选 '+p.schools.length+' 所':'学校 · 不限';el('school-selected-count').textContent=p.schools.length?'已选 '+p.schools.length+' 所':'不限学校';el('clear-schools').disabled=!p.schools.length;const parts=[p.titles.length&&p.titles.map(x=>titleLabels[x]).join('、'),p.group&&el('intent-group').selectedOptions[0].textContent,p.include_missing_email&&'包含缺邮箱资料'].filter(Boolean);el('advanced-criteria-label').textContent='更多筛选'+(parts.length?' · '+parts.join(' / '):'');}
-function scope(p){const q=new URLSearchParams();for(const k of ['year','degree','route'])if(incoming.get(k))q.set(k,incoming.get(k));const school=p?.school||(appliedScope?appliedScope.school:contextSchool)||(applied?.schools.length===1?applied.schools[0]:'');if(school)q.set('school',school);const dept=p?.dept||(appliedScope?appliedScope.dept:contextDept);if(dept)q.set('dept',dept);if(school===incoming.get('school')&&dept===incoming.get('dept'))for(const k of ['track','program'])if(incoming.get(k))q.set(k,incoming.get(k));return q;}
-function renderContext(){const u=catalogUnit(contextSchool,contextDept);el('unit-context').hidden=!contextDept;el('clear-unit-context').hidden=!contextDept;el('unit-context').textContent=contextDept?'当前院系：'+schoolName(contextSchool)+' · '+(u?.dept_name||contextDept):'';el('application-context').hidden=!['project','degree','year','route','track','program'].some(k=>incoming.has(k));el('application-context-link').href='applications.html?'+(incoming.has('project')?new URLSearchParams({project:incoming.get('project')}):scope());}
+function scope(p){const q=new URLSearchParams();for(const k of ['year','degree','route'])if(incoming.get(k))q.set(k,incoming.get(k));const school=p?.school||(appliedScope?appliedScope.school:contextSchool)||(applied?.schools.length===1?applied.schools[0]:'');if(school)q.set('school',school);const dept=p?.dept||(appliedScope?appliedScope.dept:contextDept);if(dept)q.set('dept',dept);if(school===incoming.get('school')&&dept===(incoming.get('dept')||''))for(const k of ['track','program'])if(incoming.get(k))q.set(k,incoming.get(k));return q;}
+function renderContext(){
+  const unit=catalogUnit(contextSchool,contextDept);
+  el('unit-context').hidden=!contextDept;
+  el('clear-unit-context').hidden=!contextDept;
+  el('unit-context').textContent=contextDept?'当前院系：'+schoolName(contextSchool)+' · '+(unit?.dept_name||contextDept):'';
+  const goalKeys=['year','degree','route','track','program'];
+  const project=incoming.get('project');
+  const applicationScope=new URLSearchParams();
+  if(project)applicationScope.set('project',project);
+  else for(const key of ['school','dept',...goalKeys])if(incoming.get(key))applicationScope.set(key,incoming.get(key));
+  const policyScope=scope();
+  const applicationHref='applications.html'+(applicationScope.size?'?'+applicationScope:'');
+  el('application-context').hidden=!project&&!goalKeys.some(key=>incoming.get(key));
+  el('application-context-link').href=applicationHref;
+  for(const link of document.querySelectorAll('.site-header nav a[href]')){
+    const path=link.getAttribute('href').split('?')[0];
+    if(path==='admissions.html')link.href=path+(policyScope.size?'?'+policyScope:'');
+    if(path==='applications.html')link.href=applicationHref;
+  }
+}
 function saveView(){if(!applied)return;try{sessionStorage.setItem(viewKey,JSON.stringify({criteria:applied,contextSchool:appliedScope?.school||'',contextDept:appliedScope?.dept||'',count:Math.min(limit,view.length),revision,scroll:scrollY,anchor:returnAnchor}));}catch(e){}}
 let restore=null;try{restore=JSON.parse(sessionStorage.getItem(viewKey)||'null');}catch(e){}
 const lazy=new Map();function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script'),timer=setTimeout(()=>fail('筛选资料读取超时，请重试'),8000);function fail(message){clearTimeout(timer);lazy.delete(file);s.remove();reject(new Error(message));}s.src=file+'?v=directory-v2';s.onload=()=>{clearTimeout(timer);resolve();};s.onerror=()=>fail('无法加载筛选资料，请稍后重试');document.head.appendChild(s);}));return lazy.get(file);}
@@ -37,7 +56,18 @@ const schools=window.SCHOOL_CATALOG?.schools||[];el('school-options').innerHTML=
 el('filter-options').open=!matchMedia('(max-width:850px)').matches;
 el('criteria-form').addEventListener('input',e=>{if(e.target.id!=='school-search'){el('criteria-dirty').hidden=false;syncFilters();}});
 el('criteria-form').addEventListener('change',e=>{if(e.target.closest('#school-options')&&contextSchool){contextSchool='';contextDept='';renderContext();}el('criteria-dirty').hidden=false;syncFilters();});
-el('criteria-form').onsubmit=async e=>{e.preventDefault();message('');if(await apply())if(matchMedia('(max-width:850px)').matches)el('discovery-results').scrollIntoView({block:'start'});};
+el('criteria-form').onsubmit=async e=>{
+  e.preventDefault();
+  message('');
+  const succeeded=await apply();
+  const target=el(succeeded?'discovery-results':'discovery-message');
+  const {top}=target.getBoundingClientRect();
+  const headerBottom=document.querySelector('.site-header').getBoundingClientRect().bottom;
+  if(!succeeded||matchMedia('(max-width:850px)').matches||top<headerBottom||top>=innerHeight){
+    target.focus({preventScroll:true});
+    target.scrollIntoView({block:'start'});
+  }
+};
 el('school-search').oninput=()=>{const term=el('school-search').value.trim().toLowerCase();let count=0;for(const label of el('school-options').children){label.hidden=!label.textContent.toLowerCase().includes(term)&&!label.querySelector('input').value.toLowerCase().includes(term);if(!label.hidden)count++;}el('school-search-status').textContent=term?'找到 '+count+' 所学校；已有选择保持不变。':'';};el('school-search').onkeydown=e=>{if(e.key==='Enter')e.preventDefault();};
 function schoolsChanged(){contextSchool='';contextDept='';renderContext();syncFilters();el('criteria-dirty').hidden=false;}
 el('school-chips').onclick=e=>{const b=e.target.closest('[data-remove-school]');if(!b)return;for(const box of el('school-options').querySelectorAll('input'))if(box.value===b.dataset.removeSchool)box.checked=false;schoolsChanged();el('filter-options-label').focus();};el('clear-schools').onclick=()=>{for(const box of el('school-options').querySelectorAll('input'))box.checked=false;schoolsChanged();};el('select-visible-schools').onclick=()=>{for(const label of el('school-options').children)if(!label.hidden)label.querySelector('input').checked=true;schoolsChanged();};el('clear-unit-context').onclick=()=>{contextSchool='';contextDept='';renderContext();apply();};
