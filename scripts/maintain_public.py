@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler.legacy_refresh import run
 from crawler import policy_revalidation, policy_intake, mentor_quality, mentor_recovery, quality_status
-from crawler.opportunity_monitor import atomic_json, output_lock
-from crawler.opportunity_review import renew
+from crawler.opportunity_monitor import OutputLockBusy, atomic_json, output_lock
+from crawler.opportunity_review import QUEUE_LOCK_WAIT, renew
 from scripts import build_site
 from scripts.monitor_notices import collect as collect_notices
 from crawler.notice_util import classify_notice
@@ -65,6 +65,16 @@ def rebuild():
     return changed
 
 
+def renew_opportunities():
+    queue_path = ROOT / 'cache/opportunity_review.json'
+    try:
+        return renew(queue_path, ROOT, queue_wait=QUEUE_LOCK_WAIT)
+    except OutputLockBusy as error:
+        if error.output != queue_path:
+            raise
+        return dict(status='deferred', error_code='review_queue_busy', reason='审核队列由其他任务更新，下轮定时续核')
+
+
 def main():
     with output_lock(ROOT / 'cache/public-maintenance'):
         result = {'started_at': datetime.now(timezone.utc).isoformat(), 'failures': {}}
@@ -82,7 +92,7 @@ def main():
         task('mentor_fields', lambda: mentor_quality.refresh_fields(ROOT, limit=48, request_budget=96, workers=4))
         task('notices', refresh_notices)
         task('policy_intake', lambda: policy_intake.run(ROOT, limit=2, publish=True))
-        task('renewed', lambda: renew(ROOT / 'cache/opportunity_review.json', ROOT))
+        task('renewed', renew_opportunities)
         task('pages_updated', rebuild)
         task('quality_alerts', lambda: quality_status.refresh(ROOT))
         result['completed_at'] = datetime.now(timezone.utc).isoformat()
@@ -90,6 +100,8 @@ def main():
         warnings = {name: {key: value for key, value in result[name].items() if key in ('attempted', *counters)}
                     for name in ('policies', 'policy_revalidation', 'policy_intake', 'professors', 'mentor_directories', 'mentor_quality', 'mentor_fields', 'notices')
                     if any(result[name].get(key, 0) for key in counters)}
+        if isinstance(result['renewed'], dict) and result['renewed'].get('status') == 'deferred':
+            warnings['renewed'] = result['renewed']
         result['source_warnings'] = warnings
         atomic_json(ROOT / 'cache/public-maintenance.json', result)
         atomic_json(ROOT / 'cache/maintenance-alerts.json', {'checked_at': result['completed_at'], 'failures': result['failures'], 'source_warnings': warnings})

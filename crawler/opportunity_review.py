@@ -21,6 +21,9 @@ from crawler import opportunity_attachments as attachments
 from crawler.opportunity_monitor import atomic_json, output_lock
 
 
+QUEUE_LOCK_WAIT = 10
+
+
 def read_queue(path):
     if not Path(path).exists():
         return {'version': 1, 'drafts': []}
@@ -258,9 +261,9 @@ def replaced_sources(draft):
     return originals
 
 
-def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=fetch_pdf, refresh=False, now=None):
+def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=fetch_pdf, refresh=False, now=None, queue_wait=0):
     """Fetch new/failed/24h-old evidence, preserving human fields; refresh bypasses age."""
-    with output_lock(queue_path):
+    with output_lock(queue_path, wait_seconds=queue_wait):
         now = now or datetime.now(timezone.utc)
         queue = read_queue(queue_path)
         drafts = {d['source_url']: d for d in queue['drafts']}
@@ -482,7 +485,7 @@ def pdf_review_evidence(draft, acknowledged_pdf_hashes):
 
 def publish(queue_path, draft_id, root, configs, *, acknowledged_hash, reviewer, note, fetcher=fetch_source,
             pdf_fetcher=fetch_pdf, acknowledged_pdf_hashes=None, expected_revision=None, docx_fetcher=None,
-            acknowledged_content_hash=None, complete=False):
+            acknowledged_content_hash=None, complete=False, queue_wait=0, automatic_proposal=None):
     """Recheck source, validate one item, atomically replace the catalog with audit.
 
 catalog.review_log is the authoritative audit if a crash interrupts the later
@@ -492,7 +495,7 @@ second item. External edits should not run concurrently with this command.
     if not reviewer.strip() or not note.strip():
         raise ValueError('发布必须填写核验人及核验说明')
     catalog_path = Path(root) / 'data/opportunities.json'
-    with output_lock(queue_path), output_lock(catalog_path):
+    with output_lock(queue_path, wait_seconds=queue_wait), output_lock(catalog_path):
         queue = read_queue(queue_path)
         draft = next((d for d in queue['drafts'] if d['id'] == draft_id), None)
         if draft is None:
@@ -529,6 +532,11 @@ second item. External edits should not run concurrently with this command.
                 raise ValueError('正文、链接或附件组合 SHA 与显式确认的既有证据不一致，未发布')
         if acknowledged_hash != digest and not content_confirmed:
             raise ValueError('原文与已核对 SHA 不一致，请重新核验；未发布')
+        if automatic_proposal is not None:
+            # These are local until this transaction succeeds. A busy queue or
+            # failed publication must not leave a machine proposal as a human edit.
+            for key in ('item', 'quotes', 'reviewed_fields', 'automatic_review'):
+                draft[key] = copy.deepcopy(automatic_proposal[key])
         quotes = draft.get('quotes', [])
         normalize = lambda text: ''.join(text.split())
         text = normalize(source_text)
@@ -589,10 +597,10 @@ second item. External edits should not run concurrently with this command.
         return item
 
 
-def renew(queue_path, root):
+def renew(queue_path, root, *, queue_wait=0):
     """Refresh only previously reviewed, unchanged facts; keep manual review dates."""
     catalog_path = Path(root) / 'data/opportunities.json'
-    with output_lock(queue_path), output_lock(catalog_path):
+    with output_lock(queue_path, wait_seconds=queue_wait), output_lock(catalog_path):
         queue = read_queue(queue_path)
         catalog = opportunities.load(root)
         by_id = {item['id']: item for item in catalog['opportunities']}

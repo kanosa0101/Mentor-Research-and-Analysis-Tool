@@ -72,6 +72,7 @@ def run(root=ROOT, *, limit=2, publish=False, discover=False, max_seeds=4, max_c
                          result.get('source_recovery', {}).get('summary', {}).get('manual_required') or
                          result.get('source_recovery', {}).get('summary', {}).get('not_announcement') or
                          result.get('source_recovery', {}).get('summary', {}).get('budget_wait') or
+                         result.get('source_recovery', {}).get('summary', {}).get('queue_busy') or
                          delivery.get('failed') or delivery.get('retry_exhausted') or
                          delivery.get('unreceived') or
                          result.get('quality_alerts', {}).get('failures') or

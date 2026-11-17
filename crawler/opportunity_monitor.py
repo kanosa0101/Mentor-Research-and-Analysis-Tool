@@ -1,5 +1,6 @@
 """Discover official activity links without promoting them to reviewed opportunities."""
 import copy
+import errno
 import hashlib
 import html
 import json
@@ -77,35 +78,53 @@ def direct_notice(raw, config):
                  url=config['url'], source=config['url'], publication_date=None, **notice_hints(title))]
 
 
+class OutputLockBusy(RuntimeError):
+    def __init__(self, output):
+        super().__init__('已有机会监测运行中，请勿重复启动。')
+        self.output = Path(output)
+
+
 @contextmanager
-def output_lock(output):
+def output_lock(output, *, wait_seconds=0):
     """An OS lock is released on exit/crash; keep its inode to avoid unlink races."""
     path = Path(str(output) + '.lock')
     path.parent.mkdir(parents=True, exist_ok=True)
-    handle = path.open('a+b')
-    if not path.stat().st_size:
-        handle.write(b'0')
-        handle.flush()
-    handle.seek(0)
-    try:
-        if os.name == 'nt':
-            import msvcrt
-            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
-        else:
-            import fcntl
-            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except OSError as error:
-        handle.close()
-        raise RuntimeError('已有机会监测运行中，请勿重复启动。') from error
-    try:
-        yield
-    finally:
-        handle.seek(0)
-        if os.name == 'nt':
-            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
-        else:
-            fcntl.flock(handle, fcntl.LOCK_UN)
-        handle.close()
+    with path.open('a+b') as handle:
+        if not path.stat().st_size:
+            handle.write(b'0')
+            handle.flush()
+        deadline = time.monotonic() + wait_seconds
+        retrying = False
+        while True:
+            handle.seek(0)
+            try:
+                if os.name == 'nt':
+                    import msvcrt
+                    msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+                else:
+                    import fcntl
+                    fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except OSError as error:
+                if error.errno not in (errno.EAGAIN, errno.EWOULDBLOCK, errno.EACCES, errno.EDEADLK):
+                    raise
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise OutputLockBusy(output) from error
+                time.sleep(min(0.1, remaining))
+                if time.monotonic() >= deadline:
+                    raise OutputLockBusy(output) from error
+                retrying = True
+        try:
+            if retrying and time.monotonic() >= deadline:
+                raise OutputLockBusy(output)
+            yield
+        finally:
+            handle.seek(0)
+            if os.name == 'nt':
+                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(handle, fcntl.LOCK_UN)
 
 
 def atomic_json(path, value):

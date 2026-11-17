@@ -160,10 +160,10 @@ def classify_old_error(automatic):
     return value
 
 
-def run(root, queue_path, configs, *, now=None):
+def run(root, queue_path, configs, *, now=None, queue_wait=0):
     now = now or datetime.now(timezone.utc)
     rows = []
-    with output_lock(queue_path):
+    with output_lock(queue_path, wait_seconds=queue_wait):
         queue = review.read_queue(queue_path)
         changed = False
         for draft in queue['drafts']:

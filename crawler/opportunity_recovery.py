@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 from crawler import opportunity_extract as extraction
 from crawler import opportunity_review as review
 from crawler import source_discovery as discovery
-from crawler.opportunity_monitor import atomic_json, output_lock
+from crawler.opportunity_monitor import OutputLockBusy, atomic_json, output_lock
 
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 
@@ -91,7 +91,7 @@ def _manual_reason(draft, old, new, url):
 def _adopt(root, original, candidate, raw, now):
     queue_path = root / 'cache/opportunity_review.json'
     config_path = root / 'sites/opportunities.yaml'
-    with output_lock(queue_path), output_lock(config_path):
+    with output_lock(queue_path, wait_seconds=review.QUEUE_LOCK_WAIT), output_lock(config_path):
         queue = review.read_queue(queue_path)
         draft = next((d for d in queue['drafts'] if d['id'] == original['id']), None)
         if not draft or review.item_hash(draft) != review.item_hash(original):
@@ -121,7 +121,8 @@ def run(root, *, limit=1, request_budget=16, fetcher=None, now=None):
         raise ValueError('每轮最多4条公告、16个官方页面请求')
     root = Path(root); now = now or datetime.now(timezone.utc)
     configs = yaml.safe_load((root / 'sites/opportunities.yaml').read_text(encoding='utf-8'))['targets']
-    queue = review.read_queue(root / 'cache/opportunity_review.json')
+    queue_path = root / 'cache/opportunity_review.json'
+    queue = review.read_queue(queue_path)
     path = root / 'cache/opportunity-recovery.json'
     calls = 0
 
@@ -211,6 +212,13 @@ def run(root, *, limit=1, request_budget=16, fetcher=None, now=None):
                     result.update(status='budget_wait', reason=str(error))
                     result['errors'].append(dict(url=parent, error=str(error)))
                     break
+                except OutputLockBusy as error:
+                    if error.output != queue_path:
+                        raise
+                    visited -= 1
+                    result.update(status='queue_busy', reason='审核队列由其他任务更新，下轮重新核对当前父入口',
+                                  next_check_at=now.isoformat())
+                    break
                 except (requests.RequestException, OSError, ValueError) as error:
                     result['errors'].append(dict(url=parent, error=str(error)[:400]))
             result['parent_cursor'] = (cursor + visited) % max(1, len(parents))
@@ -229,6 +237,7 @@ def run(root, *, limit=1, request_budget=16, fetcher=None, now=None):
                     manual_required=sum(r['status'] == 'manual_required' for r in active_records),
                     not_announcement=sum(r['status'] == 'not_announcement' for r in active_records),
                     budget_wait=sum(r['status'] == 'budget_wait' for r in active_records),
+                    queue_busy=sum(r['status'] == 'queue_busy' for r in active_records),
                     unresolved=sum(r['status'] == 'not_found' for r in active_records)))
         atomic_json(path, data)
         return data

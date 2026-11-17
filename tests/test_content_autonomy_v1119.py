@@ -1,13 +1,21 @@
 import hashlib
 import json
+import subprocess
+import sys
+import time
+from contextlib import ExitStack, contextmanager
 from datetime import timedelta
+from types import SimpleNamespace
 
 import pytest
 import requests
+import yaml
 
-from crawler import ai_review, automatic_evidence, automatic_review as automatic, opportunity_review as review, policy_intake
+from crawler import ai_review, automatic_evidence, automatic_review as automatic, opportunity_monitor, opportunity_recovery, opportunity_review as review, policy_intake
+from scripts import maintain_public, review_opportunities
 from test_automatic_review_v18 import CONFIGS, HTML, NOW, URL, accepted, extractive_advice, setup
 from test_complete_evidence_v1116 import POLICY_HTML, docx, policy_setup
+from test_opportunity_recovery_v1115 import NOW as RECOVERY_NOW, fixture as recovery_fixture
 
 
 def finding(args, field, quote, *, kind='omission'):
@@ -136,6 +144,116 @@ def test_activity_same_verdict_can_advance_on_next_day(setup, monkeypatch):
     monkeypatch.setattr(automatic.util, 'today', lambda: NOW.date()+timedelta(days=1))
     result = process(now=NOW+timedelta(days=1), checker=lambda *a: pytest.fail('same applicant values paid twice'))
     assert result['state'] == 'published'
+
+
+@contextmanager
+def held_by_monitor(queue, mode):
+    code = """import sys, time
+from crawler.opportunity_monitor import output_lock
+with output_lock(sys.argv[1]):
+    print('locked', flush=True)
+    if sys.argv[2] == 'delay':
+        time.sleep(1)
+    elif sys.argv[2] == 'hold':
+        sys.stdin.readline()
+    else:
+        raise ValueError('test exception')
+"""
+    with subprocess.Popen([sys.executable, '-c', code, str(queue), mode], stdin=subprocess.PIPE,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) as monitor:
+        try:
+            assert monitor.stdout.readline().strip() == 'locked'
+            yield monitor
+        finally:
+            monitor.communicate(input='\n', timeout=5)
+
+
+def test_automatic_review_continues_after_monitor_releases_queue_lock(setup):
+    root, queue, _ = setup
+    with held_by_monitor(queue, 'delay') as monitor:
+        result = automatic.run(root, queue, CONFIGS, publish=True, now=NOW, fetcher=lambda _: HTML, checker=accepted)
+    assert monitor.returncode == 0
+    assert result['counts'] == {'published': 1} and not result['queue_busy']
+
+
+def test_queue_timeout_after_review_keeps_clean_draft_and_rejoins_next_run(setup, monkeypatch):
+    root, queue, _ = setup
+    monkeypatch.setattr(automatic, 'QUEUE_LOCK_WAIT', 0.1)
+    original = review.read_queue(queue)['drafts'][0]
+    with held_by_monitor(queue, 'hold') as monitor:
+        timeout = automatic.run(root, queue, CONFIGS, publish=True, now=NOW, fetcher=lambda _: pytest.fail(),
+                                 checker=lambda *a: pytest.fail())
+        assert timeout['queue_busy'] and timeout['counts'] == {}
+        assert timeout['errors'][0]['error_code'] == 'review_queue_busy'
+    assert monitor.returncode == 0
+
+    with ExitStack() as holds:
+        def checker(*args):
+            holds.enter_context(held_by_monitor(queue, 'hold'))
+            return accepted(*args)
+        deferred = automatic.run(root, queue, CONFIGS, publish=True, now=NOW, fetcher=lambda _: HTML, checker=checker)
+        assert deferred['queue_busy'] and deferred['errors'][0]['error_code'] == 'review_queue_busy'
+        current = review.read_queue(queue)['drafts'][0]
+        assert automatic.protected(current) == automatic.protected(original)
+        assert not (root/'data/opportunities.json').exists()
+    recovered = automatic.run(root, queue, CONFIGS, publish=True, now=NOW, fetcher=lambda _: HTML, checker=accepted)
+    assert recovered['counts'] == {'published': 1} and not recovered['queue_busy']
+
+
+def test_exiting_monitor_with_exception_releases_queue_lock(setup):
+    _, queue, _ = setup
+    with held_by_monitor(queue, 'raise') as monitor:
+        pass
+    assert monitor.returncode != 0
+    with review.output_lock(queue):
+        assert queue.exists()
+
+
+def test_scheduler_delay_cannot_extend_shared_lock_wait(setup, monkeypatch):
+    _, queue, _ = setup
+    monkeypatch.setattr(opportunity_monitor, 'time', SimpleNamespace(
+        monotonic=time.monotonic, sleep=lambda _: time.sleep(1.15)))
+    with held_by_monitor(queue, 'delay'):
+        with pytest.raises(opportunity_monitor.OutputLockBusy):
+            with review.output_lock(queue, wait_seconds=0.1):
+                pytest.fail('acquired after the wait deadline')
+    with review.output_lock(queue):
+        assert queue.exists()
+
+
+def test_monitor_and_hourly_renew_report_queue_busy_without_rewriting(setup, monkeypatch, capsys):
+    root, queue, _ = setup
+    configs, monitoring = root/'sites/opportunities.yaml', root/'cache/opportunities_live.json'
+    configs.write_text(yaml.safe_dump(dict(targets=CONFIGS)), encoding='utf-8')
+    monitoring.write_text(json.dumps(dict(candidates=[])), encoding='utf-8')
+    monkeypatch.setattr(review, 'QUEUE_LOCK_WAIT', 0.1)
+    monkeypatch.setattr(maintain_public, 'QUEUE_LOCK_WAIT', 0.1)
+    monkeypatch.setattr(maintain_public, 'ROOT', root)
+    monkeypatch.setattr(review, 'fetch_source', lambda _: HTML)
+    args = ['--root', str(root), '--queue', str(queue), '--config', str(configs), '--monitoring', str(monitoring), 'sync']
+    original = queue.read_bytes()
+    with held_by_monitor(queue, 'hold'):
+        assert review_opportunities.main(args) == 1
+        assert json.loads(capsys.readouterr().out)['error_code'] == 'review_queue_busy'
+        assert maintain_public.renew_opportunities()['status'] == 'deferred'
+        assert queue.read_bytes() == original
+    assert review_opportunities.main(args) == 0
+    assert json.loads(capsys.readouterr().out)['summary']['source_errors'] == 0
+    assert maintain_public.renew_opportunities() == []
+
+
+def test_source_recovery_queue_timeout_preserves_parent_cursor(tmp_path, monkeypatch):
+    original, queue, calls, fetch = recovery_fixture(tmp_path)
+    monkeypatch.setattr(review, 'QUEUE_LOCK_WAIT', 0.1)
+    with held_by_monitor(queue, 'hold'):
+        report = opportunity_recovery.run(tmp_path, fetcher=fetch, now=RECOVERY_NOW)
+        row = report['records'][original['id']]
+        assert row['status'] == 'queue_busy' and row['parent_cursor'] == 0
+        assert row['next_check_at'] == RECOVERY_NOW.isoformat() and not row['errors']
+        assert report['summary']['queue_busy'] == 1
+        assert review.read_queue(queue)['drafts'] == [original]
+    assert opportunity_recovery.run(tmp_path, fetcher=fetch, now=RECOVERY_NOW)['summary']['adopted'] == 1
+    assert calls[:4] == calls[4:]
 
 
 def test_scheduled_activity_leaves_ambiguous_source_without_using_advice(setup, monkeypatch):

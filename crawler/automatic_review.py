@@ -12,7 +12,8 @@ import requests
 import yaml
 
 from crawler import ai_evidence, ai_review, automatic_evidence, opportunity_extract as extract, opportunity_review as review, opportunity_util as util
-from crawler.opportunity_monitor import atomic_json, output_lock
+from crawler.opportunity_monitor import OutputLockBusy, atomic_json, output_lock
+from crawler.opportunity_review import QUEUE_LOCK_WAIT
 from crawler import review_preflight
 
 POLICY_VERSION = 'v2.8-business-values'
@@ -350,13 +351,11 @@ def prepare_new(root, draft, doc, now, configs=()):
 
 
 def _store(queue_path, draft_id, result, expected=None):
-    with output_lock(queue_path):
+    with output_lock(queue_path, wait_seconds=QUEUE_LOCK_WAIT):
         queue = review.read_queue(queue_path)
         current = next(d for d in queue['drafts'] if d['id'] == draft_id)
         if expected is not None and protected(current) != expected:
             result = dict(result, state='manual_required', reasons=['处理期间人工内容发生变化，结果未采纳'])
-        if result.get('state') == 'published' and (current.get('manual_edit') or review.status(current) != 'published'):
-            result = dict(result, state='manual_required', reasons=['发布后草稿再次被修改，请人工核对'])
         current['automatic_review'] = copy.deepcopy(result)
         atomic_json(queue_path, queue)
     return result
@@ -379,7 +378,7 @@ def _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher
         acknowledged_raw_sha256=staged['fetch']['sha256'], current_raw_sha256=fresh['fetch']['sha256'],
         content_sha256=fresh['fetch']['content_sha256'],
         basis='完整正文、链接及全部附件图片组合版本与AI核验输入一致；发布前再次回源确认')
-    with output_lock(queue_path), output_lock(Path(root) / 'data/opportunities.json'):
+    with output_lock(queue_path, wait_seconds=QUEUE_LOCK_WAIT), output_lock(Path(root) / 'data/opportunities.json'):
         queue = review.read_queue(queue_path)
         current = next(d for d in queue['drafts'] if d['id'] == original['id'])
         if protected(current) != protected(original):
@@ -437,7 +436,6 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
     if (prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and
             unchanged and not (recovered_evidence or updated_materials_rule)):
         return dict(result, state='skipped', reasons=['同版本仍需人工处理'], blocked_state='manual_required')
-    prepared = None
     try:
         if draft.get('manual_edit') or any(draft.get(k) for k in ('notes', 'note', 'manual_notes')):
             raise NeedsHuman('维护者已编辑草稿，自动任务不会覆盖')
@@ -460,7 +458,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
                                    pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
         decision = review_preflight.classify(root, staged, configs, now=now, queue_path=queue_path)
         staged['preflight'] = decision
-        with output_lock(queue_path):
+        with output_lock(queue_path, wait_seconds=QUEUE_LOCK_WAIT):
             queue = review.read_queue(queue_path)
             current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
             if protected(current) != protected(original):
@@ -521,38 +519,24 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
         if existing:
             _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher, docx_fetcher)
         else:
-            with output_lock(queue_path):
+            with output_lock(queue_path, wait_seconds=QUEUE_LOCK_WAIT):
                 queue = review.read_queue(queue_path)
                 current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
                 if protected(current) != protected(original):
                     raise NeedsHuman('AI处理期间草稿被人工编辑，未采纳或发布')
-                for key in ('item', 'quotes', 'reviewed_fields', 'fetch'):
-                    current[key] = copy.deepcopy(staged[key])
-                current['automatic_review'] = dict(result, state='eligible')
-                prepared = protected(current)
                 revision = review.item_hash(current)
-                atomic_json(queue_path, queue)
             try:
                 review.publish(queue_path, draft['id'], root, configs, acknowledged_hash=staged['fetch']['sha256'],
                     reviewer='自动证据核验/' + POLICY_VERSION, note='AI交叉核对与确定性证据门禁通过；不判断个人申请资格。',
                     expected_revision=revision, fetcher=fetcher, complete=True, acknowledged_content_hash=doc['content_sha256'],
-                    pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
+                    pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher, queue_wait=QUEUE_LOCK_WAIT,
+                    automatic_proposal=dict(staged, automatic_review=result))
             except ValueError as error:
                 raise NeedsHuman('发布门禁拒绝：' + str(error)) from None
-            _store(queue_path, draft['id'], result)
         return result
     except (NeedsHuman, ValueError, OSError, requests.RequestException) as error:
         reason = ('本地证据存储权限不足，须修复权限后重试' if isinstance(error, PermissionError) else
                   str(error) if isinstance(error, ValueError) else '官方证据或本地处理暂时失败')
-        if prepared:
-            with output_lock(queue_path):
-                queue = review.read_queue(queue_path)
-                current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
-                if protected(current) == prepared:
-                    for key in ('item', 'quotes', 'reviewed_fields'):
-                        if key in original: current[key] = copy.deepcopy(original[key])
-                        else: current.pop(key, None)
-                    atomic_json(queue_path, queue)
         classified = service_failure(error)
         result.update(classified)
         transient = classified.get('retryable', transient_failure(reason))
@@ -628,7 +612,7 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
             scope='仅HTML正文逐字建议；未核验附件、申请届别或资格，不构成可发布结论。')
         result['assistance'] = dict(state='ready', suggestions=len(advice['suggestions']), model=advice.get('model'),
                                     source_sha256=digest, scope=advice['scope'])
-        with output_lock(queue_path):
+        with output_lock(queue_path, wait_seconds=QUEUE_LOCK_WAIT):
             queue = review.read_queue(queue_path)
             current = next(d for d in queue['drafts'] if d['id'] == draft['id'])
             if protected(current) != original or current.get('fetch', {}).get('sha256') != digest:
@@ -664,27 +648,35 @@ def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None
         raise ValueError('每轮自动核验上限须为1至20条')
     configs = configs if configs is not None else yaml.safe_load((root / 'sites/opportunities.yaml').read_text(encoding='utf-8'))['targets']
     with output_lock(root / 'cache/automatic-review-run'):
-        preflight = review_preflight.run(root, queue_path, configs, now=now)
-        queue = review.read_queue(queue_path)
-        from crawler.review_queue import ordered
-        by_id = {d['id']: d for d in queue['drafts']}
+        preflight_counts, busy = {}, False
         results, active, checked = [], 0, 0
-        for row in ordered(queue, now=now, root=root):
-            result = process(root, queue_path, by_id[row['id']], configs, publish=publish, now=now, checker=checker, fetcher=fetcher)
-            if (assistant is not None and (result['state'] == 'manual_required' or result.get('blocked_state') == 'manual_required')
-                    and result.get('attempts', 0) == by_id[row['id']].get('automatic_review', {}).get('attempts', 0)):
-                fresh = next(d for d in review.read_queue(queue_path)['drafts'] if d['id'] == row['id'])
-                result = assist_pending(root, queue_path, fresh, configs, result, now, assistant)
-            results.append(result)
-            checked += result['state'] != 'skipped'
-            if result['state'] not in ('skipped', 'manual_required') or result.get('attempts', 0) > by_id[row['id']].get('automatic_review', {}).get('attempts', 0):
-                active += 1
-            if active >= limit or checked >= limit * 10:
-                break
+        try:
+            preflight_counts = review_preflight.run(root, queue_path, configs, now=now, queue_wait=QUEUE_LOCK_WAIT)['counts']
+            queue = review.read_queue(queue_path)
+            from crawler.review_queue import ordered
+            by_id = {d['id']: d for d in queue['drafts']}
+            for row in ordered(queue, now=now, root=root):
+                result = process(root, queue_path, by_id[row['id']], configs, publish=publish, now=now, checker=checker, fetcher=fetcher)
+                if (assistant is not None and (result['state'] == 'manual_required' or result.get('blocked_state') == 'manual_required')
+                        and result.get('attempts', 0) == by_id[row['id']].get('automatic_review', {}).get('attempts', 0)):
+                    fresh = next(d for d in review.read_queue(queue_path)['drafts'] if d['id'] == row['id'])
+                    result = assist_pending(root, queue_path, fresh, configs, result, now, assistant)
+                results.append(result)
+                checked += result['state'] != 'skipped'
+                if result['state'] not in ('skipped', 'manual_required') or result.get('attempts', 0) > by_id[row['id']].get('automatic_review', {}).get('attempts', 0):
+                    active += 1
+                if active >= limit or checked >= limit * 10:
+                    break
+        except OutputLockBusy as error:
+            if error.output != queue_path:
+                raise
+            busy = True
         report = dict(version=1, started_at=now.isoformat(), completed_at=datetime.now(timezone.utc).isoformat(),
-            preflight_counts=preflight['counts'],
+            preflight_counts=preflight_counts, queue_busy=busy,
             mode='publish' if publish else 'evaluate', counts=dict(Counter(r['state'] for r in results)), results=results,
             published_ids=[r['id'] for r in results if r['state'] == 'published'], renewed_ids=[r['id'] for r in results if r['state'] == 'renewed'],
             errors=[dict(id=r['id'], reasons=r['reasons']) for r in results if r['state'] in ('retry', 'budget_wait')])
+        if busy:
+            report['errors'].append(dict(error_code='review_queue_busy', reasons=['审核队列由其他任务更新，下轮定时继续']))
         atomic_json(root / 'cache/automatic-review.json', report)
         return report

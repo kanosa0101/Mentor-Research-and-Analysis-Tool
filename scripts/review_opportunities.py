@@ -15,7 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from crawler import opportunity_review as review
-from crawler.opportunity_monitor import DomainThrottle
+from crawler.opportunity_monitor import DomainThrottle, OutputLockBusy
 
 
 def main(argv=None):
@@ -71,7 +71,8 @@ def main(argv=None):
             def fetch_pdf(url, source_url):
                 throttle.wait(url)
                 return review.fetch_pdf(url, source_url)
-            queue = review.sync(monitoring, args.queue, configs, refresh=args.refresh, fetcher=throttle, pdf_fetcher=fetch_pdf)
+            queue = review.sync(monitoring, args.queue, configs, refresh=args.refresh, fetcher=throttle,
+                                pdf_fetcher=fetch_pdf, queue_wait=review.QUEUE_LOCK_WAIT)
             if args.renew:
                 renewed = review.renew(args.queue, args.root)
                 queue = review.read_queue(args.queue)
@@ -87,6 +88,10 @@ def main(argv=None):
         print(json.dumps({'queue': str(args.queue), 'summary': queue.get('summary'), 'renewed': queue.get('renewed', []), 'drafts': rows}, ensure_ascii=False, indent=2))
         return 1 if args.command == 'sync' and any(d.get('fetch', {}).get('status') not in ('ok', 'pdf_review') for d in queue['drafts']) else 0
     except (OSError, ValueError, RuntimeError, KeyError, TypeError) as error:
+        if args.command == 'sync' and isinstance(error, OutputLockBusy) and error.output == args.queue:
+            print(json.dumps(dict(status='deferred', error_code='review_queue_busy',
+                                  reason='审核队列由其他任务更新，下轮定时接续'), ensure_ascii=False))
+            return 1
         print(f'核验操作未完成：{error}', file=sys.stderr)
         return 1
 

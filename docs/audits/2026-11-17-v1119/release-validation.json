@@ -1,0 +1,1373 @@
+{
+  "metadata": {
+    "version": "1.11.9",
+    "added_personal_emails": 47,
+    "added_verified_independent_homepages": 0,
+    "new_policies": 0,
+    "new_winter_camps": 0,
+    "new_explicit_2028_activities": 0,
+    "python_tests": "1256 passed, 1 skipped, 3 warnings in 307.35s (0:05:07)",
+    "javascript_tests_passed": 25,
+    "online_checks_passed": 12,
+    "public_http_checks_passed": 15,
+    "published_contacts_checked": 47,
+    "actual_ai_requests_this_release": 3,
+    "actual_ai_valid_results": 0,
+    "performance": {
+      "cold:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.387,
+          2.167,
+          2.049
+        ],
+        "ready_statistics": {
+          "min": 2.049,
+          "median": 2.167,
+          "max": 2.387
+        }
+      },
+      "navigation:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          1.401,
+          1.164,
+          1.428
+        ],
+        "ready_statistics": {
+          "min": 1.164,
+          "median": 1.401,
+          "max": 1.428
+        }
+      },
+      "navigation:admissions.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          1.294,
+          1.344,
+          1.486
+        ],
+        "ready_statistics": {
+          "min": 1.294,
+          "median": 1.344,
+          "max": 1.486
+        }
+      },
+      "navigation:opportunities.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          1.194,
+          1.174,
+          1.127
+        ],
+        "ready_statistics": {
+          "min": 1.127,
+          "median": 1.174,
+          "max": 1.194
+        }
+      },
+      "warm_return:start.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          0.888,
+          0.814,
+          0.745
+        ],
+        "ready_statistics": {
+          "min": 0.745,
+          "median": 0.814,
+          "max": 0.888
+        }
+      },
+      "cold:discovery.html": {
+        "samples": 3,
+        "passed": 3,
+        "ready_seconds": [
+          2.873,
+          2.455,
+          2.444
+        ],
+        "ready_statistics": {
+          "min": 2.444,
+          "median": 2.455,
+          "max": 2.873
+        }
+      }
+    },
+    "pipeline_status": "attention",
+    "maintenance_failures": {},
+    "pipeline_failures": {}
+  },
+  "public_checks": {
+    "passed": true,
+    "version": "1.11.9",
+    "checked_at": "2026-11-17T03:27:10.355406+00:00",
+    "tls_verified": true,
+    "checks": [
+      {
+        "path": "/api/health",
+        "status": 200,
+        "bytes": 30
+      },
+      {
+        "path": "/start.html",
+        "status": 200,
+        "bytes": 84830
+      },
+      {
+        "path": "/release.html",
+        "status": 200,
+        "bytes": 4158
+      },
+      {
+        "path": "/discovery.html",
+        "status": 200,
+        "bytes": 93268
+      },
+      {
+        "path": "/admissions.html",
+        "status": 200,
+        "bytes": 1088173
+      },
+      {
+        "path": "/opportunities.html",
+        "status": 200,
+        "bytes": 76679
+      },
+      {
+        "path": "/account.html",
+        "status": 200,
+        "bytes": 3979
+      },
+      {
+        "path": "/api/mentor-candidates",
+        "status": 200,
+        "bytes": 27416
+      },
+      {
+        "path": "/api/opportunities",
+        "status": 200,
+        "bytes": 234259
+      },
+      {
+        "path": "/api/workflow",
+        "status": 401,
+        "bytes": 31
+      },
+      {
+        "path": "/review.html",
+        "status": 404,
+        "bytes": 46
+      },
+      {
+        "path": "/api/review",
+        "status": 404,
+        "bytes": 73
+      },
+      {
+        "path": "/var/accounts/accounts.sqlite3",
+        "status": 404,
+        "bytes": 22
+      },
+      {
+        "path": "/data/workflow.yaml",
+        "status": 404,
+        "bytes": 22
+      },
+      {
+        "path": "/RELEASE_SOURCE.json",
+        "status": 404,
+        "bytes": 22
+      }
+    ]
+  },
+  "online_checks": [
+    "https_registration_secure_cookie",
+    "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+    "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+    "project_material_communication_reminder_and_target_saved",
+    "independent_mobile_browser_same_account_reads_same_records_and_file",
+    "other_account_cannot_read_or_modify_records",
+    "logout_revokes_private_access",
+    "local_download_retired_and_private_maintenance_files_hidden",
+    "no_browser_errors_or_account_horizontal_overflow",
+    "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+    "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+    "public_content_pages_fit_mobile_without_script_errors"
+  ],
+  "cleanup": {
+    "synthetic_accounts_removed": 2,
+    "other_accounts_preserved": 0,
+    "original_private_files_unchanged": 1,
+    "passed": true
+  },
+  "production": {
+    "passed": true,
+    "version": "1.11.9",
+    "edition": "online",
+    "services": {
+      "mentor-https.service": "active",
+      "mentor-public.service": "active",
+      "mentor-review-ui.service": "active",
+      "mentor-maintenance.timer": "active",
+      "mentor-monitor.timer": "active",
+      "mentor-review-pipeline.timer": "active",
+      "mentor-updates.timer": "active",
+      "mentor-certificate.timer": "active"
+    },
+    "mentor_records": 7173,
+    "contactable": 5740,
+    "policy_count": 114,
+    "policy_years": [
+      2027
+    ],
+    "policy_quality": {
+      "checked": 114
+    },
+    "institutional_activities": 9,
+    "activity_states": {
+      "open_month": 1,
+      "closed": 7,
+      "open": 1
+    },
+    "explicit_2028_activities": 0,
+    "configured_sources": 122,
+    "original_backlog_statuses": {
+      "original411": {
+        "pending": 20,
+        "error": 228,
+        "resolved": 163
+      },
+      "added8": {
+        "resolved": 4,
+        "error": 4
+      }
+    },
+    "quality_summary": {
+      "active": 6377,
+      "overdue": 127,
+      "policies": 0,
+      "new_policies": 167,
+      "mentors": 397,
+      "mentor_field_gaps": 5813,
+      "missing_fields": 10309
+    },
+    "quality_breakdown": {
+      "reasons": {
+        "awaiting_evidence": 150,
+        "incomplete_evidence": 10,
+        "ambiguous_scope": 5,
+        "unsupported_attachment": 1,
+        "http_not_found": 68,
+        "no_current_unique_email": 30,
+        "other": 1,
+        "network_timeout": 1,
+        "identity_conflict": 14,
+        "shared_contact": 8,
+        "template_empty": 58,
+        "roster_incomplete": 1,
+        "identity_evidence_missing": 75,
+        "http_forbidden": 53,
+        "tls_error": 18,
+        "parser_unsupported": 7,
+        "directory_only": 28,
+        "http_unexpected_status": 35,
+        "mentor_field_gap": 5813,
+        "ai_review": 1
+      },
+      "actions": {
+        "按已发现时间排队，取得完整官方正文后核验": 150,
+        "补齐图中信息、扫描件或缺失的官方附件": 10,
+        "按明确年度、学位、渠道及适用对象拆分核验": 5,
+        "核对并提取官方附件的受支持文本版本": 1,
+        "retry_secondary_email": 34,
+        "manual_review": 23,
+        "discover_official_source": 333,
+        "adapt_parser": 7,
+        "review_fields": 462,
+        "根据AI错误或证据冲突原因继续核验，未通过不发布": 1,
+        "wait_for_source": 433,
+        "check_queued_fields": 4918
+      },
+      "never_attempted": 5068
+    },
+    "maintenance_stage_failures": {},
+    "pipeline_stage_failures": {},
+    "pipeline_status": "attention",
+    "source_recovery": {
+      "failed_drafts": 3,
+      "attempted": 0,
+      "requests": 0,
+      "request_budget": 16,
+      "adopted": 0,
+      "manual_required": 0,
+      "not_announcement": 0,
+      "budget_wait": 0,
+      "queue_busy": 0,
+      "unresolved": 3
+    },
+    "private_permissions_verified": true,
+    "qa_cleanup_verified": true
+  },
+  "pipeline": {
+    "observed_at": "2026-11-17T03:27:24.122872+00:00",
+    "version": "1.11.9",
+    "queue": {
+      "total": 261,
+      "statuses": {
+        "pending_review": 145,
+        "published": 8,
+        "needs_pdf_review": 7,
+        "source_changed": 1,
+        "needs_evidence_review": 97,
+        "source_error": 3
+      },
+      "dashboard_rows": 261,
+      "dashboard_read_only": true
+    },
+    "source_discovery": {
+      "checked_at": "2026-11-17T03:26:28.753604+00:00",
+      "counts": {
+        "not_column": 561,
+        "candidate": 79,
+        "approved": 54,
+        "error": 18
+      },
+      "summary": {
+        "seed_count": 235,
+        "seeds_attempted": 8,
+        "candidates_checked": 6,
+        "new_candidates": 2,
+        "due_seeds_deferred": 121,
+        "candidates_per_seed": 1,
+        "content_wait": 561,
+        "source_errors": 18,
+        "pending": 79
+      }
+    },
+    "policy_intake": {
+      "total": 193,
+      "states": {
+        "published": 3,
+        "manual_required": 16,
+        "queued": 150,
+        "historical": 23,
+        "retry": 1
+      },
+      "never_attempted": 164
+    },
+    "maintenance": {
+      "started_at": "2026-11-17T03:25:05.272714+00:00",
+      "completed_at": "2026-11-17T03:26:27.863509+00:00",
+      "failures": {},
+      "source_warnings": {
+        "policy_intake": {
+          "attempted": 2,
+          "pending": 166,
+          "manual_required": 1,
+          "retry": 0
+        },
+        "professors": {
+          "attempted": 40,
+          "error": 3,
+          "manual_required": 0
+        },
+        "mentor_quality": {
+          "attempted": 3,
+          "pending": 0,
+          "error": 3
+        },
+        "mentor_fields": {
+          "attempted": 48,
+          "errors": 20,
+          "sources_error": 10
+        }
+      },
+      "mentor_fields": {
+        "checked_at": "2026-11-17T03:26:01+00:00",
+        "attempted": 48,
+        "requests": 38,
+        "request_budget": 96,
+        "domain_budget": 8,
+        "requests_by_domain": {
+          "tsinghua.edu.cn": 2,
+          "fudan.edu.cn": 3,
+          "pku.edu.cn": 2,
+          "is.cas.cn": 1,
+          "hnu.edu.cn": 2,
+          "zju.edu.cn": 3,
+          "hust.edu.cn": 1,
+          "buaa.edu.cn": 1,
+          "bupt.edu.cn": 1,
+          "dlut.edu.cn": 1,
+          "jlu.edu.cn": 1,
+          "nankai.edu.cn": 1,
+          "neu.edu.cn": 1,
+          "nudt.edu.cn": 1,
+          "scu.edu.cn": 1,
+          "seu.edu.cn": 1,
+          "nwpu.edu.cn": 1,
+          "sysu.edu.cn": 1,
+          "tongji.edu.cn": 1,
+          "ict.ac.cn": 1,
+          "ucas.ac.cn": 1,
+          "uestc.edu.cn": 1,
+          "whu.edu.cn": 1,
+          "xidian.edu.cn": 1,
+          "xjtu.edu.cn": 1,
+          "xmu.edu.cn": 1,
+          "tju.edu.cn": 1,
+          "ecnu.edu.cn": 2,
+          "sdu.edu.cn": 1,
+          "ustc.edu.cn": 1
+        },
+        "domain_cooldowns": {},
+        "reused": 13,
+        "filled_fields": 1,
+        "filled_profiles": 1,
+        "errors": 20,
+        "secondary_email": {
+          "waiting_source": 10,
+          "verified": 2
+        },
+        "sources_error": 10,
+        "results": [
+          {
+            "id": "tsinghua/cs/jizhengfeng",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm",
+                "fetched_at": "2026-09-02",
+                "value": "jizhengfeng@tsinghua.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "974bf3036f214313ec9852fee5c47199ec2d051c5c630b0cf420a01f04bb4c2e",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm": "915b31a143aea99c69561fb62177e1a268b2562b68a10afc3f65c449fedff73d"
+              }
+            },
+            "source_sha256": "b1fedbaf676600394743b15e129bbe9c432588ede542fd80f9d052844a238432",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "tsinghua/cs/judapeng",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm",
+                "fetched_at": "2026-09-02",
+                "value": "judapeng@tsinghua.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "974bf3036f214313ec9852fee5c47199ec2d051c5c630b0cf420a01f04bb4c2e",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm": "915b31a143aea99c69561fb62177e1a268b2562b68a10afc3f65c449fedff73d"
+              }
+            },
+            "source_sha256": "420dd334e41a7a435be11420398f6a3ae5ba3a15100be5d9d289f0fba391d485",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "pku/cs/chengkuan",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm",
+                "fetched_at": "2026-09-03",
+                "value": "ckkcdh@pku.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "c619546041d22690ec9a17daf809d47251a21010910ff90b5ee4c2c6a5d1b8ac",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {}
+            },
+            "source_sha256": "6236ba66aee650a3dcc3533727fcd157d8c5039dec2e9a6b22dc34c743c6a901",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "pku/cs/chenguozhang",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm",
+                "fetched_at": "2026-09-03",
+                "value": "guozhang.chen@pku.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "c619546041d22690ec9a17daf809d47251a21010910ff90b5ee4c2c6a5d1b8ac",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {}
+            },
+            "source_sha256": "1fddea0567fb16fdc6b185d5236ff42de8a92a1edcdc338aeb46035496734b88",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "ucas/iscas/wangwei",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://is.cas.cn/yjsjy/dsxx/",
+                "fetched_at": "2026-11-17",
+                "value": "wangwei@otcaix.iscas.ac.cn"
+              },
+              "status": "verified",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "next_check_at": "2026-12-01T03:26:01+00:00",
+              "last_success": {
+                "url": "https://is.cas.cn/yjsjy/dsxx/",
+                "sha256": "45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba",
+                "fetched_at": "2026-11-17T03:26:01+00:00",
+                "value": "wangwei@otcaix.iscas.ac.cn",
+                "identity_basis": "named_official_roster_row"
+              },
+              "parser_signature": "bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644",
+              "changed_value": false,
+              "directory_versions": {
+                "https://is.cas.cn/yjsjy/dsxx/": "45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba"
+              }
+            },
+            "reason": "字段来源离开已登记官方机构边界",
+            "next_contact_source": null
+          },
+          {
+            "id": "ucas/iscas/wuzhilin",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://is.cas.cn/yjsjy/dsxx/",
+                "fetched_at": "2026-11-17",
+                "value": "wuzl@ios.ac.cn"
+              },
+              "status": "verified",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "next_check_at": "2026-12-01T03:26:01+00:00",
+              "last_success": {
+                "url": "https://is.cas.cn/yjsjy/dsxx/",
+                "sha256": "45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba",
+                "fetched_at": "2026-11-17T03:26:01+00:00",
+                "value": "wuzl@ios.ac.cn",
+                "identity_basis": "named_official_roster_row"
+              },
+              "parser_signature": "bb13a482e1a635d2cb65d41b907b6126cb2d22e34488a29f4c64e99233df0644",
+              "changed_value": false,
+              "directory_versions": {
+                "https://is.cas.cn/yjsjy/dsxx/": "45878435a6829dbe8062c7d1e3c2935a48f6e06b70071e296da336244d8874ba"
+              }
+            },
+            "reason": "字段来源离开已登记官方机构边界",
+            "next_contact_source": null
+          },
+          {
+            "id": "fudan/cs/hanweili",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cs.fudan.edu.cn/53161/list.htm",
+                "fetched_at": "2026-09-05",
+                "value": "wlhan@fudan.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://cs.fudan.edu.cn/53161/list.htm": "0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c"
+              }
+            }
+          },
+          {
+            "id": "fudan/cs/hehao",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cs.fudan.edu.cn/53161/list.htm",
+                "fetched_at": "2026-09-05",
+                "value": "hhe@fudan.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "c43050b35c7ff17e0d003c4384400c1dfe886f17e973b493943521f9a58ca786",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://cs.fudan.edu.cn/53161/list.htm": "0300855998f47c8e488c4069a8b9ecb96b1fd19df05c42f5f81f7f0719dc648c"
+              }
+            },
+            "source_sha256": "2175849a4c92a0a9d706bb31183530bcb2a03551deec1da939417e5ba144f90b",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "hnu/cs/cengfanzai",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "http://csee.hnu.edu.cn/teacher/syjs/1",
+                "fetched_at": "2026-09-05",
+                "value": "zengfanzi@126.com"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "11cde9422e8675afc1381f3236564a1117cd3f7bdb44cdf379833ae3f3f9fcda",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {}
+            },
+            "source_sha256": "dfaee499c6e849b33cf1aeddbd23f8e500d5861a2a990309ca5ec7f63e4c490b",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "hnu/cs/changwanli",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "http://csee.hnu.edu.cn/teacher/syjs/1",
+                "fetched_at": "2026-09-05",
+                "value": "wanli.chang.rts@gmail.com"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "11cde9422e8675afc1381f3236564a1117cd3f7bdb44cdf379833ae3f3f9fcda",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {}
+            },
+            "source_sha256": "edd49a60ca1a40f446e0bd721e1a8952375e6443e05590fab33f8f448d65cefd",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "sustech/cs/PANGLIEMENG",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1",
+                "fetched_at": "2026-09-05",
+                "value": "panglm@sustech.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1": "451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4"
+              }
+            },
+            "reason": "字段来源离开已登记官方机构边界",
+            "next_contact_source": null
+          },
+          {
+            "id": "sustech/cs/chenshan",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "secondary_email": {
+              "registration": {
+                "source": "https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1",
+                "fetched_at": "2026-09-05",
+                "value": "chens3@sustech.edu.cn"
+              },
+              "status": "waiting_source",
+              "next_check_at": "2026-11-24T03:26:01+00:00",
+              "parser_signature": "948680bec47dc18e7f834fa26b1500c744eac199e139d0d45634021b50468ca4",
+              "reason_code": "no_current_unique_email",
+              "reason": "当前官方二级资料未给出唯一的本人邮箱",
+              "checked_at": "2026-11-17T03:26:01+00:00",
+              "failed_since": "2026-11-17T03:26:01+00:00",
+              "directory_versions": {
+                "https://cse.sustech.edu.cn/faculty/full-time-faculty/?page=1": "451d8074df14d44dc2043efcdb95ec904a0fa66cdbf9a369d05b0c7308f46dd4"
+              }
+            },
+            "reason": "字段来源离开已登记官方机构边界",
+            "next_contact_source": null
+          },
+          {
+            "id": "bit/cs/chenshuoying",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "9d5d7faa198d238f3d0810e740ff95593443e828fbf36bb0150457fe9a03beaf",
+            "fetched_at": "2026-11-16T17:12:49+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "zju/cs/chengyushi",
+            "status": "error",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "a7404dec4c22c797e7ec32300d6f5f1747a755cbc5f92ad74e2fdfa07fff4d58",
+            "fetched_at": "2026-11-16T20:20:08+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "hit/cs/gaoyan",
+            "status": "error",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "83f64b492d00a2ffb90303891313f35813e56f67d7ee4c7cc47336f0b7ac957e",
+            "fetched_at": "2026-11-16T21:20:08+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "hust/aia/xieyong",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "ccdcd32fbe7269426b54a8d2ff61bc66902b393d4804126db57d691cfb7e06af",
+            "fetched_at": "2026-11-16T21:20:08+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "bnu/ai/huxiaoyan",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "8b29a2ea25e216dd62812f156642a5bdc0cbcce0c5b83354a166b8edaa5d61e0",
+            "fetched_at": "2026-11-16T22:21:07+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "scut/cs/liyong",
+            "status": "error",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "d8098aa5cc29674a0bcee064faa2a6ec68b8805279286806eb94980e22f060a5",
+            "fetched_at": "2026-11-17T01:15:57+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "nju/cs/liujingcheng",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "082ef20b1ced7ce713a5ccc9598b73e4ecdc61548095f604bcca38265682a656",
+            "fetched_at": "2026-11-17T03:25:07+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "buaa/cs/zhangyuping",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "404 Client Error: Not Found for url: https://scse.buaa.edu.cn/info/1078/8729.htm",
+            "next_contact_source": null
+          },
+          {
+            "id": "bupt/cs/duxiaofeng",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "412 Client Error: Precondition Failed for url: https://teacher.bupt.edu.cn/duxiaofeng",
+            "next_contact_source": null
+          },
+          {
+            "id": "cqu/cs/liruiyuan",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [
+              "research_direction_raw"
+            ],
+            "field_evidence": {},
+            "source_sha256": "afe1468c6e26b1caf2954cbada41575a9f82eb5742da3c5ce5f06fc831946b98",
+            "fetched_at": "2026-11-16T16:20:08+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "csu/auto/cenlihui",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "53bd0c2e329ac176b002fa79a28afcd0e90fc1251c857625a5316664e291e935",
+            "fetched_at": "2026-11-16T13:30:33+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "dlut/cs/dingnan",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [
+              "research_direction_raw"
+            ],
+            "field_evidence": {},
+            "source_sha256": "005516981c617152a3888ff796c4f0a3ac5afdc7625dec953d38efdade167386",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "jlu/cs/chexilong",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "19d189cecf7e9880a5779112d1f2a40bf61595a366c98d2168ce300e0776fe17",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "nankai/cs/zhangwensheng",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "e20108e9d440180313039fe00e7b030f719f511b278e4bae36a8549e519ea48f",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "neu/cs/diyingying",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "HTTPSConnectionPool(host='www.cse.neu.edu.cn', port=443): Max retries exceeded with url: /2019/1206/c6641a162073/page.htm (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.cse.neu.edu.cn'. (_ssl.c:1000)\")))",
+            "next_contact_source": null
+          },
+          {
+            "id": "nudt/cs/fushaojing",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "22bc2908bc346742799c053e1caa6a6a37377cec94e9100d6a1c74569330d2a4",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "nwpu/cs/cuihengfei",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "412 Client Error: Precondition Failed for url: https://teacher.nwpu.edu.cn/2017030108.html",
+            "next_contact_source": null
+          },
+          {
+            "id": "ruc/info/zhouchunlai",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "ef3ec61e24306967b5309504f89be8e80adb8fd26c99365bf7b310636e5c14e8",
+            "fetched_at": "2026-11-16T14:20:03+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "scu/cs/dairong",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "763e4b81e47b66bd359bd83e8b2670f9ee373c41f6f24286c1fab6cc9b076621",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "seu/auto/huangwei",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "个人页缺少姓名与身份区，不能将空壳当成已富化",
+            "source_sha256": "e08e68b1b74f9e4baa02b92ba74c92a406dcc519d9637799a98a89dd59e1b008",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "sjtu/cs/hekeqiang",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "7d73347119493bc1cf84f20b66648228f33e2f1a094cc9057043b4511cf30857",
+            "fetched_at": "2026-11-16T13:30:33+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "sysu/cs/kexueyanjiu-2",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "d23765a699f3fa4378171160a4f376c1d654cfc3f981cd73b1abb4f8c242031e",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "tongji/cs/chenshangyi",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "404 Client Error: Not Found for url: https://cs.tongji.edu.cn/info/1062/3250.htm",
+            "next_contact_source": null
+          },
+          {
+            "id": "ucas/ia/xiaobaihua",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "338be0f119da8c611a40d9235a74b8c5c95bda340f35a0b8ace7932989694e2a",
+            "fetched_at": "2026-11-16T13:30:33+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "ucas/ict/guanzhen",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "3064cd06314937e5423a69c6ccc0bb965fd5fb9cc03b30a84971dd58681540bb",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "ucas/iie/husonglin",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "f29c08f4dc08acc6ba969170f7d5fa1d618213031e0eff0b1c1c72b4d02fd1e4",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "uestc/cs/xuchao",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "来源未返回可核对的HTML栏目",
+            "next_contact_source": null
+          },
+          {
+            "id": "whu/cs/ganting",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "5af1ad4b9223243c2bc7afb6d1ddc5419c77f45e447995c1f7f485b0318261fb",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "xidian/cs/liujia",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "未解析出可用详情字段，保留旧记录",
+            "source_sha256": "c9b2a39d34328d0c542e168a34d2fd8ab65321385f7b7ff3edb0521d90f21904",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "xjtu/cs/chenlong",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "cb3a346a40fde1e96bb4bfc4a6559a44a90e77cf41e8951f2d1156111c107da3",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "xmu/cs/chenjinxiu",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "404 Client Error: Not Found for url: https://informatics.xmu.edu.cn/info/1425/43920.htm",
+            "next_contact_source": null
+          },
+          {
+            "id": "tju/cs/zhangchangqing",
+            "status": "error",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "reason": "404 Client Error: Not Found for url: https://cic.tju.edu.cn/info/1117/1354.htm",
+            "next_contact_source": null
+          },
+          {
+            "id": "shanghaitech/cs/sunshengli",
+            "status": "checked",
+            "reused_evidence": true,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "fcd0282bed62d73e7a81e9a1f8cf00deedd2e05e635b54ef3d1b96d13888d04a",
+            "fetched_at": "2026-11-16T20:20:08+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "ecnu/cs/heliang",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "348591f43577c787562d3b822a77d2238eb16179096c88b7e01a4af7c1aa72c7",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "sdu/cs/caixiaojun",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [
+              "research_direction_raw"
+            ],
+            "changed_fields": [
+              "research_direction_raw"
+            ],
+            "field_evidence": {},
+            "source_sha256": "1658ed0b491f0845383802eaec1e589f7a60ce5de9b3dec507f412ccc0e421fd",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          },
+          {
+            "id": "ustc/cs/cengfanping",
+            "status": "checked",
+            "reused_evidence": false,
+            "filled_fields": [],
+            "changed_fields": [],
+            "field_evidence": {},
+            "source_sha256": "7a0734f0f375ca36e9f2992c26cf96651e9d012e7b3102142daded8599b59d36",
+            "fetched_at": "2026-11-17T03:26:01+00:00",
+            "next_contact_source": null
+          }
+        ]
+      },
+      "new_policy_result": {
+        "checked_at": "2026-11-17T03:26:13.884807+00:00",
+        "attempted": 2,
+        "candidate_total": 189,
+        "pending": 166,
+        "published": 0,
+        "changed": 0,
+        "manual_required": 1,
+        "retry": 0,
+        "budget_wait": 0,
+        "counts": {
+          "historical": 1,
+          "manual_required": 1
+        },
+        "results": [
+          {
+            "title": "清华大学计算机科学与技术系2027年博士研究生招生综合考核及录取办法",
+            "source_url": "https://www.cs.tsinghua.edu.cn/info/1048/7258.htm",
+            "listing_url": "https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm",
+            "checked_at": "2026-11-17T03:26:13.884807+00:00",
+            "policy_version": "new-official-policy-v7-context-and-scope",
+            "proposal_revision": 2,
+            "first_seen": "2026-11-14T16:00:00+00:00",
+            "registered_at": "2026-11-16T16:42:21.359870+00:00",
+            "first_attempt_at": "2026-11-17T03:26:13.884807+00:00",
+            "source_sha256": "3872588a5732d60c1a5a049e6b5d003abeaf29402c04e9d7ab28fd5ea53eeba9",
+            "source_hints": {},
+            "content_sha256": "d6db52754e6b2d288c41c362ba7ea120d0923516e41fb37d32990a3f625abfe7",
+            "status": "historical",
+            "reason": "公告为已结束招生周期，不新增为当前政策",
+            "reason_code": "historical_window",
+            "failure_count": 0,
+            "next_attempt_at": "2026-11-24T03:26:13.884807+00:00",
+            "next_action": "保留历史依据，发现新一届正式公告后另行核验",
+            "history": [
+              {
+                "checked_at": null,
+                "status": "queued",
+                "reason_code": "awaiting_evidence",
+                "source_sha256": null,
+                "content_sha256": null
+              }
+            ]
+          },
+          {
+            "title": "2027年“前沿工程博士专业学位”项目电子信息专业招生说明",
+            "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/3b3a2a3833334abeaa6295b3407b6540.htm",
+            "listing_url": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+            "checked_at": "2026-11-17T03:26:13.884807+00:00",
+            "policy_version": "new-official-policy-v7-context-and-scope",
+            "proposal_revision": 2,
+            "first_seen": "2026-11-17T00:39:57.604694+00:00",
+            "registered_at": "2026-11-17T01:16:57.643117+00:00",
+            "first_attempt_at": "2026-11-17T03:26:13.884807+00:00",
+            "source_sha256": "3a3d48edb16c1e10dbdd41ac507bf6402df11f00fe8d79823a717baf94abd0d1",
+            "source_hints": {
+              "source_sha256": "3a3d48edb16c1e10dbdd41ac507bf6402df11f00fe8d79823a717baf94abd0d1",
+              "checked_at": "2026-11-17T03:26:13.884807+00:00"
+            },
+            "content_sha256": "7198f3c6a1a820c634ea6255236ce19fd9921ab25f19f5f12b103c14f7eaa5bb",
+            "status": "manual_required",
+            "reason": "涉及批次、变更或专项对象，需独立划分政策范围",
+            "reason_code": "ambiguous_scope",
+            "failure_count": 0,
+            "next_attempt_at": "2026-11-18T03:26:13.884807+00:00",
+            "next_action": "按明确年度、学位、渠道及适用对象拆分核验",
+            "pending_since": "2026-11-17T00:39:57.604694+00:00",
+            "history": [
+              {
+                "checked_at": null,
+                "status": "queued",
+                "reason_code": "awaiting_evidence",
+                "source_sha256": null,
+                "content_sha256": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pipeline": {
+      "started_at": "2026-11-17T03:26:28.753555+00:00",
+      "completed_at": "2026-11-17T03:26:53.451281+00:00",
+      "failures": {},
+      "status": "attention",
+      "automatic": {
+        "skipped": 261
+      },
+      "source_recovery": {
+        "failed_drafts": 3,
+        "attempted": 0,
+        "requests": 0,
+        "request_budget": 16,
+        "adopted": 0,
+        "manual_required": 0,
+        "not_announcement": 0,
+        "budget_wait": 0,
+        "queue_busy": 0,
+        "unresolved": 3
+      },
+      "notifications": {
+        "attempted_at": "2026-11-17T03:26:53.373523+00:00",
+        "sent": 0,
+        "failed": 0,
+        "expired": 0,
+        "retry_exhausted": 0,
+        "audience": "maintainer",
+        "disabled": false,
+        "subscribers": 0,
+        "overdue": 128,
+        "unreceived": true,
+        "completed_at": "2026-11-17T03:26:53.374819+00:00"
+      }
+    },
+    "quality": {
+      "summary": {
+        "active": 6377,
+        "overdue": 127,
+        "policies": 0,
+        "new_policies": 167,
+        "mentors": 397,
+        "mentor_field_gaps": 5813,
+        "missing_fields": 10309
+      },
+      "incomplete": [],
+      "field_statuses": {
+        "pending": 462,
+        "waiting_source": 433,
+        "queued": 4918
+      }
+    }
+  },
+  "runtime_patch": {
+    "passed": true,
+    "files": {
+      "crawler/automatic_review.py": {
+        "after": "155195aa7e7e8f237774b81e643bd891b9609fca9051da44e0a39ae1240ec9ff",
+        "before": "6910e32b6b99e0ed609059421366b6b99e4d1ef8c018241d4ecc314c7d345f1c"
+      },
+      "crawler/opportunity_monitor.py": {
+        "after": "233a7ecae4d0d67fcf7547fcc84bf39ddecc26bb8abcdc05c5677c7bd3a6094c",
+        "before": "55047642927dda2298c1990841c02cf5fd91d5b7c567c0cd5160d86c00f48653"
+      },
+      "crawler/opportunity_recovery.py": {
+        "after": "68f73d993b8ae616a69392c98717464e793095df04b5a99e213100fcb5e0aa2a",
+        "before": "95aa24d5bcd72a6a09e174b27728aa46736cbf2d76671852216ac70cff06d6eb"
+      },
+      "crawler/opportunity_review.py": {
+        "after": "e046f5cbe3238ef9236566b84be679c2f831d5bd8e143f0671d6d7aa5e664791",
+        "before": "baab605e2563ff16fb489ee5d7a38b4a9fe4b02fbbf712506479c1ff4c66a151"
+      },
+      "crawler/review_preflight.py": {
+        "after": "39aa8ff4cef4724ce9ce8a1d30ab7be4fc7237f5e70433787cb60398ed317af7",
+        "before": "d0adbf2d918997a9ab1f37f71ee8652eae7bd26486df1a34a53b526254d79c06"
+      },
+      "deploy/requirements.txt": {
+        "after": "2830bc8e30aa0b412ae617ca6a93130ff55d4351a5c8c8947772fc227c3e584d",
+        "before": "0a1eb03d9e87938d7efb1f97d974dada597b3c8823daff76944ec2fb8ad3c9d0"
+      },
+      "scripts/maintain_public.py": {
+        "after": "ed3fb95751d07b5d05181edc4ac23137df4ed3123186de531b61602edfb05360",
+        "before": "753406da62789ceef82bd61dca9952e7147dbc577728c1b21d09de4a627715c5"
+      },
+      "scripts/review_opportunities.py": {
+        "after": "80d09e9ea6611c10f845e0ff4a3ce4331ced3b9703f6a894948b389cfb7b5698",
+        "before": "0ab1ea51d3161824c10deb0ef2fcbf0f821dd87e741633693859424961cee840"
+      },
+      "scripts/run_review_pipeline.py": {
+        "after": "e50215c4d22093d8387be86fa8afa76bf9b09c5ac9100f210286f09e5042139d",
+        "before": "ed810c12fe7008b4b38f5df26b6392c5a7810310023fbdce2d8c1c5680815311"
+      },
+      "tests/test_content_autonomy_v1119.py": {
+        "after": "d0ad7a7e76b903ab8daa929daf8aeceefc64a34a87bcf64cfbd3676c17d494ed",
+        "before": "d8a00a21def3cdc438f0bf674dd1480038a89c341acdec12d350cbd014ce1c7d"
+      }
+    },
+    "backup_sha256": "1472531f6413d7d47f26a645070ee84f506d2514e1edb115d311441ba69fe37d",
+    "archive_sha256": "daf831a05d8349e283aefd3880efb1c06d7243b88599d853e26761e707ae5cb2"
+  },
+  "deployment": {
+    "protected_files_unchanged": 7507,
+    "changed_public_files": 50,
+    "changed_cache_files": 7,
+    "conflicts": [],
+    "source_files_verified": 37,
+    "source_commit": "06e5ff600d75360de9639914742a850380d5b954",
+    "backup": "/opt/mentor-assistant-before-v1119.tar.gz",
+    "backup_sha256": "bb5fcea5902943e291bc804d06dcc2e740aa5bcd7e709e52157b8a89a81398e8"
+  },
+  "limitations": [
+    "New verified 2028 activities remain zero.",
+    "AI response-header timeouts prevented a new valid decision in three live calls.",
+    "Unsupported or conflicting official evidence remains pending with retry or manual handling.",
+    "No real maintainer push delivery is claimed without a subscriber.",
+    "AI success immediately before queue-lock timeout may require a budgeted retry."
+  ]
+}
