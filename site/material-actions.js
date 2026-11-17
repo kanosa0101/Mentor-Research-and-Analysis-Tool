@@ -5,7 +5,7 @@
   const stages={application:'报名与材料提交',screening:'初审',interview:'面试与考核',admission:'录取',enrollment:'入学',other:'其他事项'};
   const applicabilityLabels={goal_incomplete:'申请目标不完整，请先编辑项目',program_pending:'专业 / 项目尚未明确，不能确认适用',source_missing:'动作来源未完整登记'};
   const statuses={todo:'待准备',prepared:'已准备',submitted:'已提交（人工记录）',needs_revision:'需补正'};
-  function evidence(item){return item?`<p>${escape(item.text)}</p><details><summary>原文与定位</summary><blockquote>${escape(item.quote)}</blockquote><p>${escape(item.locator)}</p></details>`:'';}
+  function evidence(item){return item?`<p>${escape(item.text).replace(/\r?\n/g,'<br>')}</p><details><summary>原文与定位</summary><blockquote>${escape(item.quote).replace(/\r?\n/g,'<br>')}</blockquote><p>${escape(item.locator)}</p></details>`:'';}
   function references(policy,item,data){return (item?.source_ids||[policy.source_id]).map(id=>data.sources[id]).filter(Boolean).map(s=>`<a href="${escape(s.url)}" target="_blank" rel="noopener">${escape(s.label||'官方原文')}</a>`).join(' · ');}
   function publicActions(policy,data){
     if(!policy.material_actions?.length)return '';

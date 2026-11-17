@@ -1,0 +1,49 @@
+{
+  "changed_public_files": [
+    "data/admissions.yaml",
+    "data/admissions_checks.json",
+    "data/notices.json",
+    "data/notices_changes.jsonl",
+    "sites/evidence_media.yaml",
+    "sites/notices.yaml",
+    "sites/opportunities.yaml",
+    "sites/pku/software.yaml"
+  ],
+  "changed_cache_files": [
+    "cache/policy_intake/evidence/95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f.html",
+    "cache/policy_intake/evidence/ac5d7944053ec7c521e9a7e1ce9f2465b02ca740d3a7713adc99a45f6fdf7931.html",
+    "cache/policy_intake/state.json"
+  ],
+  "unchanged_public_files": [],
+  "unchanged_cache_files": [],
+  "conflicts": [],
+  "live_hashes": {
+    "data/admissions.yaml": "7f7c803cc3844686972a9b9f81282f4bc20907f36bba53b33ebca8f412a30043",
+    "data/admissions_checks.json": "1d52d9b7a2dc30077d337d5e84caa10362139d0917a9d203a94d9089cb97cea0",
+    "data/notices.json": "5f8db932a4f07ada66b064b023693c863f35242092f9d88f3c7fa69ec0a6fffc",
+    "data/notices_changes.jsonl": "fd83090bbcdf79f78e2e7c96f989a38e1fb67f29f364a9d4f1af439c18254efd",
+    "sites/evidence_media.yaml": null,
+    "sites/notices.yaml": "01f99872b2ce89cb0dd2fa8c5faea432ad820e6f1b90c12404521d7b54cfad3b",
+    "sites/opportunities.yaml": "5ffa7b154df99cfe2bb0fc2f09647b73af80e55243b17778d9e15d58f4da6cff",
+    "sites/pku/software.yaml": null,
+    "cache/policy_intake/evidence/95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f.html": null,
+    "cache/policy_intake/evidence/ac5d7944053ec7c521e9a7e1ce9f2465b02ca740d3a7713adc99a45f6fdf7931.html": null,
+    "cache/policy_intake/state.json": "b974aadd129ee98ac8f5cb916221dccf299f66fd9dcc166389c619089ab08350"
+  },
+  "staged_hashes": {
+    "data/admissions.yaml": "081fc927925cd68d2ed5c7315ed986877c0da06539a1cb795ea01eb16ccdc3ed",
+    "data/admissions_checks.json": "1edc9956333939b0b8e019dd85f84b7b10759b1926281b518c604b8f3feb762e",
+    "data/notices.json": "3661eee8f53fa1da6197af312b59c3e43302cea6edfc45b52cfde7009fae6262",
+    "data/notices_changes.jsonl": "473daa8ef94b22db874015640181bf8cc01e74f8fc42056e4e3c142af5dd266b",
+    "sites/evidence_media.yaml": "d229fd977c29b1ad3682c18538ea7983ec2806a03bd06d32862708d9dc115cf1",
+    "sites/notices.yaml": "e7fe83929f1e006156512573c018ce78a7f016abe787c4420eda7f72aa5cc2f6",
+    "sites/opportunities.yaml": "213782d7ebdaeef8efd1d200d48bfb24bf96e68da4ccc2494c0729e7a5fd3f9e",
+    "sites/pku/software.yaml": "eefe14a8a9d06d223d9e118d176a87fab69a7f6f1803c3917cc0648bc0db7b00",
+    "cache/policy_intake/evidence/95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f.html": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+    "cache/policy_intake/evidence/ac5d7944053ec7c521e9a7e1ce9f2465b02ca740d3a7713adc99a45f6fdf7931.html": "ac5d7944053ec7c521e9a7e1ce9f2465b02ca740d3a7713adc99a45f6fdf7931",
+    "cache/policy_intake/state.json": "6ec8ae3a10b3938f70218cbfce1987a19b94f3597d412309f3d48650d10a5fbd"
+  },
+  "source_commit": "63fc0fa3eebd371f4e166e6b184b1f1d7ff3aae7",
+  "stage": "/opt/mentor-assistant-stage-v1118",
+  "status": "ready"
+}

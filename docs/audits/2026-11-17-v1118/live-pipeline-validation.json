@@ -1,0 +1,272 @@
+{
+  "observed_at": "2026-11-17T01:20:52.963338+00:00",
+  "version": "1.11.8",
+  "queue": {
+    "total": 259,
+    "statuses": {
+      "pending_review": 144,
+      "published": 8,
+      "needs_pdf_review": 20,
+      "source_changed": 1,
+      "needs_evidence_review": 83,
+      "source_error": 3
+    },
+    "dashboard_rows": 259,
+    "dashboard_read_only": true
+  },
+  "source_discovery": {
+    "checked_at": "2026-11-17T01:15:54.198850+00:00",
+    "counts": {
+      "not_column": 549,
+      "candidate": 84,
+      "approved": 50,
+      "error": 17
+    },
+    "summary": {
+      "seed_count": 231,
+      "seeds_attempted": 8,
+      "candidates_checked": 4,
+      "new_candidates": 1,
+      "due_seeds_deferred": 130,
+      "candidates_per_seed": 1,
+      "content_wait": 549,
+      "source_errors": 17,
+      "pending": 84
+    }
+  },
+  "policy_intake": {
+    "total": 192,
+    "states": {
+      "published": 3,
+      "manual_required": 11,
+      "queued": 158,
+      "historical": 20
+    },
+    "never_attempted": 171
+  },
+  "maintenance": {
+    "started_at": "2026-11-17T01:15:54.197558+00:00",
+    "completed_at": "2026-11-17T01:17:11.770275+00:00",
+    "failures": {},
+    "source_warnings": {
+      "policy_intake": {
+        "attempted": 2,
+        "pending": 168,
+        "manual_required": 1,
+        "retry": 0
+      },
+      "professors": {
+        "attempted": 40,
+        "error": 11,
+        "manual_required": 0
+      },
+      "mentor_quality": {
+        "attempted": 12,
+        "pending": 0,
+        "error": 7
+      }
+    },
+    "mentor_fields": {
+      "checked_at": "2026-11-17T01:16:52+00:00",
+      "attempted": 6,
+      "requests": 0,
+      "request_budget": 12,
+      "reused": 6,
+      "filled_fields": 0,
+      "filled_profiles": 0,
+      "errors": 0,
+      "results": [
+        {
+          "id": "bnu/ai/wuhao",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "c2b3eae93ccb509c52849a25441dfd850773d27fceedef61996ddd5d1421fa96",
+          "fetched_at": "2026-11-16T09:56:49+00:00"
+        },
+        {
+          "id": "bnu/ai/xiaomingzhong",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "c40408339e7a38a3cc5ce012213ecce4cee370cd53de689994589ca7c3b7bff4",
+          "fetched_at": "2026-11-16T09:56:49+00:00"
+        },
+        {
+          "id": "bnu/ai/xiaorong",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "1dd25b2b246b37178e7789732231b267080bde3376dde42b5207de3f46a7a904",
+          "fetched_at": "2026-11-16T10:20:08+00:00"
+        },
+        {
+          "id": "bnu/ai/yuheng",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "3c558c9e76bb91576d9a41edee25802b3b5b5e8b7c4f689404643ef8cf9d4343",
+          "fetched_at": "2026-11-16T11:20:17+00:00"
+        },
+        {
+          "id": "bnu/ai/yulejun",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "847c21e518bf02bfa50e0842590188a654c717a90c2546ce7d23f5cf4b8e1e86",
+          "fetched_at": "2026-11-16T12:01:26+00:00"
+        },
+        {
+          "id": "bnu/ai/yuxianchuan",
+          "status": "checked",
+          "reused_evidence": true,
+          "filled_fields": [],
+          "changed_fields": [],
+          "source_sha256": "9b5930736edf809a3625e12507b283633bc8f897be9636e5d3d6d270f2062d58",
+          "fetched_at": "2026-11-16T12:01:26+00:00"
+        }
+      ]
+    },
+    "new_policy_result": {
+      "checked_at": "2026-11-17T01:16:57.643117+00:00",
+      "attempted": 2,
+      "candidate_total": 188,
+      "pending": 168,
+      "published": 0,
+      "changed": 0,
+      "manual_required": 1,
+      "retry": 0,
+      "budget_wait": 0,
+      "counts": {
+        "manual_required": 1,
+        "historical": 1
+      },
+      "results": [
+        {
+          "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+          "source_url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+          "listing_url": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+          "checked_at": "2026-11-17T01:16:57.643117+00:00",
+          "policy_version": "new-official-policy-v7-context-and-scope",
+          "first_seen": "2026-11-17T00:39:57.604694+00:00",
+          "registered_at": "2026-11-17T01:16:57.643117+00:00",
+          "first_attempt_at": "2026-11-17T01:16:57.643117+00:00",
+          "source_sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+          "source_hints": {
+            "source_sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+            "checked_at": "2026-11-17T01:16:57.643117+00:00"
+          },
+          "status": "manual_required",
+          "reason": "正文图片未明确标为纯装饰，需核实图中申请信息",
+          "error_code": "image_evidence_required",
+          "reason_code": "incomplete_evidence",
+          "failure_count": 0,
+          "next_attempt_at": "2026-11-18T01:16:57.643117+00:00",
+          "next_action": "补齐图中信息、扫描件或缺失的官方附件",
+          "pending_since": "2026-11-17T00:39:57.604694+00:00",
+          "history": [
+            {
+              "checked_at": null,
+              "status": "queued",
+              "reason_code": "awaiting_evidence",
+              "source_sha256": null,
+              "content_sha256": null
+            }
+          ]
+        },
+        {
+          "title": "北京大学软件与微电子学院2027年工程硕博士培养改革专项博士研究生招生说明",
+          "source_url": "https://ss.pku.edu.cn/zsxx/zstz/67f64b43b62843d095d4bc876c723c25.htm",
+          "listing_url": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+          "checked_at": "2026-11-17T01:16:57.643117+00:00",
+          "policy_version": "new-official-policy-v7-context-and-scope",
+          "first_seen": "2026-11-17T00:39:57.604694+00:00",
+          "registered_at": "2026-11-17T01:16:57.643117+00:00",
+          "first_attempt_at": "2026-11-17T01:16:57.643117+00:00",
+          "source_sha256": "b68bd7cafaf61ca78fd0b8549f076313fc73c47e8e9d7b2e3efa911beb3a1d61",
+          "source_hints": {
+            "source_sha256": "b68bd7cafaf61ca78fd0b8549f076313fc73c47e8e9d7b2e3efa911beb3a1d61",
+            "checked_at": "2026-11-17T01:16:57.643117+00:00"
+          },
+          "content_sha256": "2e0eaf770c1df0c734f370f1632699b9ff98f5a69c5c58c38d5c06aa4298e3fc",
+          "status": "historical",
+          "reason": "公告为已结束招生周期，不新增为当前政策",
+          "reason_code": "historical_window",
+          "failure_count": 0,
+          "next_attempt_at": "2026-11-24T01:16:57.643117+00:00",
+          "next_action": "保留历史依据，发现新一届正式公告后另行核验",
+          "history": [
+            {
+              "checked_at": null,
+              "status": "queued",
+              "reason_code": "awaiting_evidence",
+              "source_sha256": null,
+              "content_sha256": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pipeline": {
+    "started_at": "2026-11-17T01:15:54.198812+00:00",
+    "completed_at": "2026-11-17T01:16:30.805711+00:00",
+    "failures": {},
+    "status": "attention",
+    "automatic": {
+      "manual_required": 20,
+      "skipped": 4
+    },
+    "source_recovery": {
+      "failed_drafts": 3,
+      "attempted": 1,
+      "requests": 1,
+      "request_budget": 16,
+      "adopted": 0,
+      "manual_required": 0,
+      "not_announcement": 0,
+      "budget_wait": 0,
+      "unresolved": 3
+    },
+    "notifications": {
+      "attempted_at": "2026-11-17T01:16:30.740364+00:00",
+      "sent": 0,
+      "failed": 0,
+      "expired": 0,
+      "retry_exhausted": 0,
+      "audience": "maintainer",
+      "disabled": false,
+      "subscribers": 0,
+      "overdue": 130,
+      "unreceived": true,
+      "completed_at": "2026-11-17T01:16:30.741240+00:00"
+    }
+  },
+  "quality": {
+    "summary": {
+      "active": 6350,
+      "overdue": 129,
+      "policies": 0,
+      "new_policies": 169,
+      "mentors": 340,
+      "mentor_field_gaps": 5841,
+      "missing_fields": 10382
+    },
+    "incomplete": [],
+    "field_statuses": {
+      "pending": 283,
+      "waiting_source": 375,
+      "queued": 5183
+    }
+  },
+  "ai_usage": {
+    "date": "2026-11-17",
+    "requests": 21,
+    "input_chars": 81782
+  }
+}

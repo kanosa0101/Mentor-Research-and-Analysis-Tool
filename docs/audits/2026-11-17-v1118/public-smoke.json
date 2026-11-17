@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "version": "1.11.8",
+  "checked_at": "2026-11-17T01:16:00.674885+00:00",
+  "tls_verified": true,
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "bytes": 30
+    },
+    {
+      "path": "/start.html",
+      "status": 200,
+      "bytes": 84830
+    },
+    {
+      "path": "/release.html",
+      "status": 200,
+      "bytes": 4158
+    },
+    {
+      "path": "/discovery.html",
+      "status": 200,
+      "bytes": 93268
+    },
+    {
+      "path": "/admissions.html",
+      "status": 200,
+      "bytes": 1088070
+    },
+    {
+      "path": "/opportunities.html",
+      "status": 200,
+      "bytes": 76679
+    },
+    {
+      "path": "/account.html",
+      "status": 200,
+      "bytes": 3979
+    },
+    {
+      "path": "/api/mentor-candidates",
+      "status": 200,
+      "bytes": 27416
+    },
+    {
+      "path": "/api/opportunities",
+      "status": 200,
+      "bytes": 233109
+    },
+    {
+      "path": "/api/workflow",
+      "status": 401,
+      "bytes": 31
+    },
+    {
+      "path": "/review.html",
+      "status": 404,
+      "bytes": 46
+    },
+    {
+      "path": "/api/review",
+      "status": 404,
+      "bytes": 73
+    },
+    {
+      "path": "/var/accounts/accounts.sqlite3",
+      "status": 404,
+      "bytes": 22
+    },
+    {
+      "path": "/data/workflow.yaml",
+      "status": 404,
+      "bytes": 22
+    },
+    {
+      "path": "/RELEASE_SOURCE.json",
+      "status": 404,
+      "bytes": 22
+    }
+  ]
+}

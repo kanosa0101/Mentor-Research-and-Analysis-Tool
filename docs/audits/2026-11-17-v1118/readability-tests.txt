@@ -1,0 +1,8 @@
+......                                                                   [100%]
+============================== warnings summary ===============================
+tests/test_admissions_entry_v1116.py::test_real_complete_payload_executes_in_dependency_order_without_asset_requests
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 4.78s

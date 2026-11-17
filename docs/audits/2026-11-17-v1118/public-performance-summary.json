@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-11-17T01:20:46.306010+00:00",
+  "origin": "https://8.213.137.82:8443",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "rounds": 3,
+  "definition": "Each round: fresh-browser start + same-session nav/return; separate fresh-browser discovery. OS DNS cache unchanged. No account writes.",
+  "timing_note": "TLS is included in connect_ms. TTFB includes connection; request_to_first_byte is network+server wait, not pure server CPU.",
+  "summary": {
+    "cold:start.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.871,
+        2.388,
+        1.756
+      ],
+      "ready_statistics": {
+        "min": 1.756,
+        "median": 1.871,
+        "max": 2.388
+      }
+    },
+    "navigation:discovery.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.26,
+        1.372,
+        1.031
+      ],
+      "ready_statistics": {
+        "min": 1.031,
+        "median": 1.26,
+        "max": 1.372
+      }
+    },
+    "navigation:admissions.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.19,
+        1.55,
+        1.184
+      ],
+      "ready_statistics": {
+        "min": 1.184,
+        "median": 1.19,
+        "max": 1.55
+      }
+    },
+    "navigation:opportunities.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        1.154,
+        1.239,
+        1.147
+      ],
+      "ready_statistics": {
+        "min": 1.147,
+        "median": 1.154,
+        "max": 1.239
+      }
+    },
+    "warm_return:start.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        0.733,
+        0.74,
+        0.749
+      ],
+      "ready_statistics": {
+        "min": 0.733,
+        "median": 0.74,
+        "max": 0.749
+      }
+    },
+    "cold:discovery.html": {
+      "samples": 3,
+      "passed": 3,
+      "ready_seconds": [
+        2.323,
+        2.712,
+        2.359
+      ],
+      "ready_statistics": {
+        "min": 2.323,
+        "median": 2.359,
+        "max": 2.712
+      }
+    }
+  },
+  "all_samples_passed": true,
+  "source_report_sha256": "c49084c30be237f97215799b71eb9639f04dada187c72f88b42872ff6c135a8c"
+}
