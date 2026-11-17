@@ -64,6 +64,8 @@ def test_successful_fetch_does_not_hide_missing_fields_and_uses_cooldowns(root):
     put(root/'data/professors/test/cs/teacher.yaml',person)
     state=fields.seed(root,NOW)
     assert state['summary']['fields']==4
+    assert state['summary']['optional_by_field']['homepage']==1
+    assert state['records']['test/cs/teacher']['fields']['homepage']['optional'] is True
     fields.observation(root,person,parsed={'_field_scope':'张老师\n教授\n研究方向：'},source_sha256='a'*64,fetched_at=NOW.isoformat(),now=NOW,parser_signature=recovery.signature(root,quality.load_yaml(root/'sites/test/cs.yaml')))
     row=fields.read(root)['records']['test/cs/teacher']['fields']
     assert row['email']['status']=='waiting_source' and row['supervisor']['reason_code']=='not_found_in_checked_source'

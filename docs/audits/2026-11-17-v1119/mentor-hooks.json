@@ -1,0 +1,83 @@
+{
+  "baseline_time": "2026-11-17T01:43:27.268553+00:00",
+  "profile_count_total": 7173,
+  "attempted_by_unit": {
+    "zju/cs": {
+      "targets": 438,
+      "attempted": 438,
+      "primary_states": {
+        "official_page_uncaptured_within_budget": 166,
+        "registered_department_directory_only": 269,
+        "http_forbidden": 3
+      },
+      "fields": {
+        "email": {
+          "existing": 146,
+          "official_roster_no_unique_personal_email": 247,
+          "filled": 45
+        },
+        "homepage": {
+          "official_page_uncaptured_within_budget": 166,
+          "registered_department_directory_only": 269,
+          "http_forbidden": 3
+        }
+      }
+    },
+    "hust/aia": {
+      "targets": 125,
+      "attempted": 125,
+      "primary_states": {
+        "checked_registered_personal_source": 99,
+        "official_page_uncaptured_within_budget": 26
+      },
+      "fields": {
+        "email": {
+          "no_eligible_field_in_checked_personal_source": 78,
+          "existing": 33,
+          "official_page_uncaptured_within_budget": 13,
+          "filled": 1
+        },
+        "homepage": {
+          "no_eligible_field_in_checked_personal_source": 96,
+          "official_homepage_access_restricted": 2,
+          "official_page_uncaptured_within_budget": 26,
+          "official_homepage_dns_failure": 1
+        }
+      }
+    },
+    "hust/cyber": {
+      "targets": 85,
+      "attempted": 85,
+      "primary_states": {
+        "checked_registered_personal_source": 32,
+        "official_page_uncaptured_within_budget": 53
+      },
+      "fields": {
+        "email": {
+          "existing": 5,
+          "no_eligible_field_in_checked_personal_source": 31,
+          "official_page_uncaptured_within_budget": 49
+        },
+        "homepage": {
+          "no_eligible_field_in_checked_personal_source": 32,
+          "official_page_uncaptured_within_budget": 53
+        }
+      }
+    }
+  },
+  "added": {
+    "email": 46,
+    "homepage": 0
+  },
+  "shipped_profile_files": 46,
+  "shipped_source_bodies": 3,
+  "no_unrelated_yaml_fields": true,
+  "test_cases_passed": 88,
+  "repeat": {
+    "attempted": 648,
+    "stable_contacts": 47,
+    "manual_fields_preserved": 2,
+    "further_contact_writes": []
+  },
+  "independent_homepage_candidates": 3
+}

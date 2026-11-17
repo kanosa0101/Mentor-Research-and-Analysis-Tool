@@ -257,7 +257,7 @@ def collect(raw, source_url, *, pdf_fetcher, docx_fetcher, office_fetcher=None, 
             path.write_bytes(content)
             entry['evidence_file'] = str(path.resolve())
         documents.append(entry)
-    combined = dict(doc, html_text=doc['text'], documents=documents)
+    combined = dict(doc, html_text=doc['text'], html_lines=doc['lines'], documents=documents)
     combined['text'] = '\n'.join([doc['text'], *(d['text'] for d in documents)])
     # A form following the article is not part of its last (often deadline) section.
     has_sections = any(re.search(r'申请条件|报名条件|报考条件|申请材料|报名材料', line) for line in doc['lines'])
@@ -293,6 +293,32 @@ def metadata(doc, checked_at):
             value['field_evidence'] = {'materials': dict(quote=document['text'], locator='官方' + kind.upper() + '完整正文（含表格定位）')}
             docxs.append(value)
     return pdfs, docxs
+
+
+MATERIALS_REFERENCE = re.compile(r'(?:申请|报名|提交)?材料(?:清单|要求)?(?:请)?(?:详)?见(?:官方)?附件[。.]?')
+
+
+def supplement_materials(doc, parts, section_parser):
+    """Resolve a bare reference to a uniquely identified linked materials section."""
+    def reference(line):
+        return MATERIALS_REFERENCE.fullmatch(extract.compact(line))
+
+    if not any(reference(line) for line in doc.get('html_lines', [])):
+        return
+    materials = parts.get('materials', '').splitlines()
+    if materials and not (len(materials) <= 2 and reference(materials[-1]) and (
+            len(materials) == 1 or re.fullmatch(r'(?:[一二三四五六七八九十\d]+[、.．])?\s*(?:申请|报名)材料[：:]?', materials[0].strip()))):
+        return
+    matches = []
+    for document in doc.get('documents', []):
+        lines = [line for line in document['text'].splitlines() if line.strip()]
+        value = section_parser(lines).get('materials')
+        # Exact heading alone or another file reference does not close evidence.
+        if value and len(extract.compact(value)) >= 12 and not any(reference(line) for line in value.splitlines()):
+            matches.append(value)
+    if len(matches) != 1:
+        raise EvidenceError('materials_attachment_unresolved', '材料仅指向附件，未取得唯一且完整的官方材料栏目')
+    parts['materials'] = matches[0]
 
 
 def application_entry(doc, method, source_url):

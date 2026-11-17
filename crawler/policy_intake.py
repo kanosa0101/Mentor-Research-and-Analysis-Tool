@@ -28,9 +28,9 @@ HEADINGS = {
     'application_method': ('申请方式', '报名方式', '报名程序', '报名流程', '申请流程', '报名办法', '报名申请', '网上报名'),
     'timeline': ('报名时间', '申请时间', '受理时间', '网报时间'),
     'contact': ('联系方式', '咨询方式', '联系咨询', '招生咨询'),
-    'exams': ('选拔方式', '考核方式', '考核程序', '考核与评价', '录取', '思想政治素质和品德考核', '体检'),
-    'integrity': ('违规处理', '诚信要求'),
-    'tuition': ('学费与学制', '学制与学费', '其它事项', '其他事项'),
+    'exams': ('选拔方式', '考核方式', '考核程序', '考核与评价', '录取', '思想政治素质和品德考核', '体检',
+              '违规处理', '诚信要求', '信息公开与监督机制'),
+    'tuition': ('学费与学制', '学制与学费', '奖学金', '奖助金', '其它事项', '其他事项'),
     'quota': ('招生人数及专业方向', '招生规模', '招生计划'),
 }
 
@@ -68,6 +68,7 @@ NEXT_ACTION = {
     'network_error': '按退避时间回源；持续失效需核对替代官方来源',
     'manual_review': '检查对应原文片段，确认完整适用范围后处理',
 }
+PROPOSAL_REVISION = 2
 
 
 def sections(lines):
@@ -81,7 +82,7 @@ def sections(lines):
             key = aliases[match[1]]
             if key in spans and spans[key][0] <= index < spans[key][1]:
                 continue  # A named subsection inside the complete parent procedure.
-            if key in spans and (key != 'exams' or match[1] in names[key]):
+            if key in spans and (key not in ('exams', 'tuition') or match[1] in names[key]):
                 raise ValueError('同页重复申请栏目，须区分批次或对象')
             major = bool(re.match(r'^[一二三四五六七八九十]+[、.．]', line.strip()))
             stop = re.compile(r'^[一二三四五六七八九十]+[、.．]' if major else r'^(?:[一二三四五六七八九十]+[、.．]|\d+[、.．])')
@@ -246,6 +247,9 @@ def register_candidates(root, pool, state, now):
             record.update(status='queued', reason='同一官方地址的公告标题变化，重新核验', reason_code='source_changed',
                           next_action=NEXT_ACTION['source_changed'], pending_since=now.isoformat(), next_attempt_at=now.isoformat())
             record.pop('source_hints', None)
+        elif prior.get('listing_url') and prior['listing_url'] != row['source']:
+            record.update(status='queued', reason='已登记的官方公告栏目变化，重新核验', reason_code='source_changed',
+                          next_action=NEXT_ACTION['source_changed'], next_attempt_at=now.isoformat())
         elif prior.get('pending_since') in (None, prior.get('first_seen')) and prior.get('status') not in ('published', 'historical'):
             record['pending_since'] = first
         draft = drafts.get(row['url'], {})
@@ -261,6 +265,16 @@ def register_candidates(root, pool, state, now):
             raw = evidence.read_bytes()
             if hashlib.sha256(raw).hexdigest() != sha:
                 raise ValueError('changed cache')
+            # A complete observation can detect attachment-only changes without
+            # assigning publication trust to the opportunity monitor's cache.
+            observed = dict(source_sha256=sha)
+            if fetched.get('status') == 'ok' and fetched.get('evidence_mode') == 'complete' and fetched.get('content_sha256'):
+                observed['content_sha256'] = fetched['content_sha256']
+            changed = any(prior.get(key) and prior[key] != value for key, value in observed.items())
+            if changed and prior.get('observed_evidence') != observed and prior.get('status') != 'published':
+                record.update(status='queued', reason='官方正文或附件版本已变化，重新核验', reason_code='source_changed',
+                              next_action=NEXT_ACTION['source_changed'], next_attempt_at=now.isoformat())
+            record['observed_evidence'] = observed
             hints = source_hints(row, raw, now)
             if hints:
                 record['source_hints'] = hints
@@ -277,8 +291,20 @@ def candidate_priority(row, state, now):
     record = state['records'][row['url']]
     hint = record.get('source_hints', {}).get('deadline_hint', {}).get('at', '')
     urgent = bool(hint and now.astimezone(CST).date().isoformat() <= hint[:10] <= (now+timedelta(days=7)).astimezone(CST).date().isoformat())
-    cycle = notice_util.classify_notice(row, day=now.astimezone(CST).date())['cycle']
-    return (0 if urgent else 1 if cycle in ('current', 'preparation') else 3 if cycle == 'historical' else 2,
+    day = now.astimezone(CST).date()
+    classification = notice_util.classify_notice(row, day=day)
+    cycle = classification['cycle']
+    target = day.year + (day.month >= 9)
+    year = classification['admission_year']
+    if year is None:
+        professional_years = set(re.findall(r'(20\d{2})\s*年[^，。；\d]{0,40}博士专业学位', row['title']))
+        if len(professional_years) == 1:
+            year = int(next(iter(professional_years)))
+    # Display metadata can leave a dated doctoral or specialist application
+    # without a route. Prioritize collecting its actual current evidence.
+    current = cycle in ('current', 'preparation') or cycle == 'unknown' and year is not None and year >= target
+    old = cycle == 'historical' or year is not None and year < target
+    return (0 if urgent else 1 if current else 3 if old else 2,
             hint if urgent else '', record.get('checked_at', ''), record['first_seen'], row['url'])
 
 
@@ -312,7 +338,11 @@ def prepare(root, row, raw, doc, now):
         if route == 'recommend' else (1 if now.astimezone(CST).month >= 9 else 0))
     if year < current_year:
         raise ValueError('公告为已结束招生周期，不新增为当前政策')
-    if re.search(r'第一批|第二批|分批|更正|调整为|专项', text):
+    # A requirement to have worked on a national project is still an ordinary
+    # eligibility clause. Keep its exact language in the proposed fields.
+    scope_text = re.sub(r'(主持或作为关键技术骨干参与)国家重大专项(?=[^。；\n]{0,80}(?:的经历|经验))',
+                        r'\1国家重大项目', text)
+    if re.search(r'第一批|第二批|分批|更正|调整为|专项', scope_text):
         raise ValueError('涉及批次、变更或专项对象，需独立划分政策范围')
     schools = yaml.safe_load((Path(root) / 'data/schools.yaml').read_text(encoding='utf-8'))['schools']
     school = next((s for s in schools if s['id'] == row['school']), None)
@@ -327,10 +357,9 @@ def prepare(root, row, raw, doc, now):
     elif school['name'] not in text:
         raise ValueError('未取得学校统一政策的正文身份依据')
     parts = sections(doc['lines'])
-    if any(not parts.get(key) for key in HEADINGS if key not in ('timeline', 'exams', 'integrity', 'tuition', 'quota')):
+    automatic_evidence.supplement_materials(doc, parts, sections)
+    if any(not parts.get(key) for key in HEADINGS if key not in ('timeline', 'exams', 'tuition', 'quota')):
         raise ValueError('缺少完整条件、材料、申请流程、报名时间或联系方式栏目')
-    if parts.get('integrity'):
-        parts['exams'] = '\n'.join(filter(None, (parts.get('exams'), parts.pop('integrity'))))
     intro = []
     for line in doc['lines']:
         if re.match(r'^[一二三四五六七八九十]+[、.．]', line.strip()):
@@ -386,9 +415,13 @@ def prepare(root, row, raw, doc, now):
     for event in events:
         proof = evidence(event['quote'])
         event.update(quote=proof['quote'], locator=proof['locator'], source_ids=proof['source_ids'])
+    instruction = parts['application_method']
+    if parts['materials'] not in instruction:
+        combined = parts['materials'] + '\n' + instruction
+        if any(policy_revalidation.quote_match(combined, body) for body in texts.values()):
+            instruction = combined
     action = dict(id='submit-application-materials', label='按官方要求准备并提交申请材料', stage='application',
-                  instruction=evidence(parts['application_method'] if parts['materials'] in parts['application_method'] else
-                                       parts['materials'] + '\n' + parts['application_method']), event_indexes=list(range(len(events))))
+                  instruction=evidence(instruction), event_indexes=list(range(len(events))))
     if program and not dept:
         raise ValueError('具名专业政策必须登记真实院系，不能作为学校通用政策')
     policy = dict(id=ident, school=row['school'], dept=dept, level='program' if program else 'dept' if dept else 'school', title=title,
@@ -396,7 +429,7 @@ def prepare(root, row, raw, doc, now):
         published_at=row.get('publication_date'), reviewed_at=now.astimezone(CST).date().isoformat(), review_method='automatic_evidence',
         source_id=source_id, review_hashes=hashes, fields=fields, material_actions=[action], events=events)
     checks = {key: dict(value=value['text'], quote=value['quote']) for key, value in fields.items()}
-    checks['scope'] = dict(value=dict(year=year, degree=degrees[0], route=route, school=school['name'], dept=dept), quote=title)
+    checks['scope'] = dict(value=dict(title=title, year=year, degree=degrees[0], route=route, school=school['name'], dept=dept), quote=title)
     if program:
         checks['scope']['value']['program'] = program
     # Each displayed field is checked explicitly. A nested materials/instruction
@@ -427,7 +460,7 @@ def validate_display_checks(prepared):
     if prepared['application_url'] and checks.get('application_entry', {}).get('value') != prepared['application_url']:
         raise ValueError('实际报名入口未完整绑定AI核验值，未发布')
     scope = checks.get('scope', {}).get('value', {})
-    if any(scope.get(key) != policy[key] for key in ('year', 'degree', 'route', 'dept')) or (
+    if any(scope.get(key) != policy[key] for key in ('title', 'year', 'degree', 'route', 'dept')) or (
             policy['program'] and scope.get('program') != policy['program']):
         raise ValueError('实际适用范围未完整绑定AI核验值，未发布')
 
@@ -455,16 +488,24 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
             if len(results) >= limit:
                 break
             previous = state['records'].get(row['url'], {})
-            if (previous.get('next_attempt_at', '') > now.isoformat() and previous.get('title') == row['title'] and
+            updated_rule = (
+                previous.get('status') == 'manual_required' and previous.get('proposal_revision') != PROPOSAL_REVISION
+                and previous.get('reason') in (
+                    '涉及批次、变更或专项对象，需独立划分政策范围',
+                    '缺少完整条件、材料、申请流程、报名时间或联系方式栏目',
+                )
+            )
+            if (not updated_rule and not (publish and previous.get('status') == 'eligible') and
+                    previous.get('next_attempt_at', '') > now.isoformat() and previous.get('title') == row['title'] and
                     (previous.get('policy_version') == VERSION or previous.get('status') in ('retry', 'budget_wait', 'historical'))):
                 continue
             record = dict(title=row['title'], source_url=row['url'], listing_url=row['source'],
-                          checked_at=now.isoformat(), policy_version=VERSION,
+                          checked_at=now.isoformat(), policy_version=VERSION, proposal_revision=PROPOSAL_REVISION,
                           first_seen=previous['first_seen'], registered_at=previous['registered_at'],
                           first_attempt_at=previous.get('first_attempt_at', now.isoformat()))
-            if previous.get('manual_review'):
-                # Keep the last complete manual decision through transient fetch failures.
-                record['manual_review'] = copy.deepcopy(previous['manual_review'])
+            for key in ('observed_evidence', 'manual_review', 'verified_review'):
+                if key in previous:
+                    record[key] = copy.deepcopy(previous[key])
             try:
                 raw = fetcher({'url': row['url']})
                 raw = raw.encode() if isinstance(raw, str) else raw
@@ -486,34 +527,32 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 if any(scope(old) == scope(policy) for old in data['policies']):
                     raise ValueError('已有相同招生范围政策，须核对补充或替代关系，不自动覆盖旧事实')
                 if prepared['application_url']:
-                    fetcher({'url': prepared['application_url']})
-                saved = previous.get('manual_review', previous)
+                    automatic_evidence.verify_application_entry(prepared['application_url'], row['url'], fetcher=fetcher)
+                saved = previous.get('verified_review') or previous.get('manual_review') or previous
                 cached = saved.get('ai', {})
-                unchanged = (cached.get('decision') == 'manual' and cached.get('validated_extracts') and
-                    not cached.get('truncated') and cached.get('input_text_sha256') == record['input_text_sha256'] and
-                    cached.get('input_fields_sha256') == ai_review.fields_hash(prepared['checks']) and
-                    all(saved.get(key) == record[key] for key in
-                        ('policy_version', 'source_sha256', 'content_sha256', 'input_text_sha256', 'proposal_sha256')))
+                bindings = ('policy_version', 'source_sha256', 'content_sha256', 'input_text_sha256', 'proposal_sha256')
+                unchanged = bool(cached and all(saved.get(key) == record[key] for key in bindings))
                 if unchanged:
                     try:
-                        ai_review.validate({key: cached[key] for key in ('decision', 'issues', 'checks')}, doc['text'], prepared['checks'])
-                    except (KeyError, ValueError):
+                        ai_review.validate_bound(cached, doc['text'], prepared['checks'])
+                    except ValueError:
                         unchanged = False
                 ai = copy.deepcopy(cached) if unchanged else checker(root, row['url'], doc['text'], prepared['checks'])
                 record['ai_reused'] = bool(unchanged)
                 record['ai'] = ai  # Keep real timing, decisions and issues even when publication is refused.
-                ai_review.validate({key: ai[key] for key in ('decision', 'issues', 'checks')}, doc['text'], prepared['checks'])
-                if (ai.get('truncated') or not ai.get('validated_extracts') or
-                        ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest() or
-                        ai.get('input_fields_sha256') != ai_review.fields_hash(prepared['checks'])):
-                    raise ValueError('AI未完成全部原文与附件的有效核验')
+                ai_review.validate_bound(ai, doc['text'], prepared['checks'])
+                record.pop('verified_review', None)
                 if ai['decision'] != 'consistent':
-                    record['manual_review'] = {key: copy.deepcopy(record[key]) for key in
-                        ('policy_version', 'source_sha256', 'content_sha256', 'input_text_sha256', 'proposal_sha256', 'ai')}
+                    record['manual_review'] = {key: copy.deepcopy(record[key]) for key in (*bindings, 'ai')}
+                    ai = ai_review.recheck(root, row['url'], doc['text'], prepared['checks'], ai, checker, version=VERSION)
+                    record['ai'] = ai
+                if ai['decision'] != 'consistent':
+                    record['manual_review']['ai'] = copy.deepcopy(ai)
                     raise ValueError('AI建议人工判断：' + '；'.join(ai['issues']))
                 validate_display_checks(prepared)
                 record.pop('manual_review', None)
                 record.update(ai=ai, proposed_policy=policy, proposed_sources=prepared['sources'], status='eligible')
+                record['verified_review'] = {key: copy.deepcopy(record[key]) for key in (*bindings, 'ai')}
                 if publish:
                     live = fetcher({'url': row['url']})
                     live = live.encode() if isinstance(live, str) else live
@@ -581,6 +620,6 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                       published=published, changed=published, manual_required=sum(r['status'] == 'manual_required' for r in results),
                       retry=sum(r['status'] == 'retry' for r in results), budget_wait=sum(r['status'] == 'budget_wait' for r in results),
                       counts=dict(Counter(row['status'] for row in results)),
-                      results=[{k: v for k, v in r.items() if k not in ('ai', 'manual_review', 'proposed_policy', 'proposed_sources')} for r in results])
+                      results=[{k: v for k, v in r.items() if k not in ('ai', 'manual_review', 'verified_review', 'proposed_policy', 'proposed_sources')} for r in results])
         atomic_json(root / 'cache/policy_intake/latest.json', report)
         return report

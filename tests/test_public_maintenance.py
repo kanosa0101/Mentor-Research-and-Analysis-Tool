@@ -24,7 +24,7 @@ class MaintenanceTests(unittest.TestCase):
                 self.assertEqual(maintain.main(), 1)
             policies.assert_called_once_with(root,limit=20,workers=4,timeout=15)
             mentors.assert_called_once_with(root,limit=40)
-            fields.assert_called_once_with(root,limit=6,request_budget=12)
+            fields.assert_called_once_with(root,limit=48,request_budget=96,workers=4)
             intake.assert_called_once_with(root,limit=2,publish=True)
             directories.assert_called_once_with(root,max_units=2,request_budget=16)
             rebuild.assert_called_once()

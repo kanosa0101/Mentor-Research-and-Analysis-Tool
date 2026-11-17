@@ -54,18 +54,18 @@ class Sources:
         self.fetcher, self.stamp, self.cache, self.used = fetcher, stamp, {}, []
         self.day = datetime.fromisoformat(stamp).astimezone(timezone(timedelta(hours=8))).date().isoformat()
 
-    def read(self, url, data=None, official_scope=None):
+    def read(self, url, data=None, official_scope=None, *, homepage_target=False):
         source = {'url': url, **({'method': 'POST', 'data': data} if data else {}),
-                  **({'official_scope': official_scope} if official_scope else {})}
+                  **({'official_scope': official_scope} if official_scope else {}),
+                  **({'homepage_target': True} if homepage_target else {})}
         key = json.dumps(source, sort_keys=True)
         if key not in self.cache:
             try:
                 raw = self.fetcher(source)
                 raw = raw.encode('utf-8') if isinstance(raw, str) else raw
-                digest = hashlib.sha256(raw).hexdigest()
-                (self.folder / (digest + '.body')).write_bytes(raw)
-                self.cache[key] = raw, {'url': url, 'sha256': digest, 'fetched_at': self.stamp,
-                                        **({'request': data} if data else {})}
+                self.cache[key] = raw, dict(self.capture(url, raw, self.stamp), **({'request': data} if data else {}))
+            except mentor_recovery.DiscoveryBudgetExhausted:
+                raise
             except Exception as error:
                 self.cache[key] = error, {'url': url, 'fetched_at': self.stamp, 'error': str(error)[:500]}
         raw, evidence = self.cache[key]
@@ -73,10 +73,40 @@ class Sources:
             self.used.append(evidence)
         if isinstance(raw, Exception):
             raise raw
+        if raw.startswith(b'%PDF-'):
+            return raw, ''
         text = UnicodeDammit(raw).unicode_markup
         if text is None:
             raise ValueError('无法解码官方正文')
         return raw, text
+
+    def capture(self, url, raw, fetched_at):
+        import os
+        import tempfile
+        digest = hashlib.sha256(raw).hexdigest()
+        filename = self.folder / (digest + '.body')
+        try:
+            captured = filename.read_bytes()
+        except FileNotFoundError:
+            captured = None
+        if captured != raw:
+            fd, temporary = tempfile.mkstemp(dir=self.folder, suffix='.tmp')
+            try:
+                with os.fdopen(fd, 'wb') as handle:
+                    handle.write(raw)
+                os.replace(temporary, filename)
+            finally:
+                Path(temporary).unlink(missing_ok=True)
+        return dict(url=url, sha256=digest, fetched_at=fetched_at)
+
+    def captured(self, evidence):
+        digest = evidence['sha256']
+        if not re.fullmatch('[a-f0-9]{64}', digest):
+            raise ValueError('来源证据SHA无效')
+        raw = (self.folder / (digest + '.body')).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != digest:
+            raise ValueError('缓存原文SHA不一致，未复用')
+        return raw, UnicodeDammit(raw).unicode_markup or ''
 
 
 def alternatives(original, cfg, sources):
@@ -181,8 +211,11 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                     any(original.get('provenance', {}).get(field, {}).get('origin') == 'manual'
                         for field in ('detail_url', 'profile_url'))):
                 raise ValueError('替代候选已核验，但详情或主页 URL 为人工维护，保留原地址待人工确认：' + url)
-            updated, changed, checked = legacy_refresh.merge_profile(candidate, parsed, raw,
-                sources.day)
+            # Only the field task can record a new independent homepage after
+            # opening the declared destination and checking its identity.
+            profile_fields = {key: value for key, value in parsed.items() if key != 'homepage'}
+            updated, changed, checked = legacy_refresh.merge_profile(candidate, profile_fields, raw,
+                sources.day,verified_sources=sources.used)
             if directory:
                 updated['profile_url'] = url
                 for field in ('detail_url', 'profile_url'):
@@ -192,7 +225,7 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                 sources.replacement = dict(old_url=original['detail_url'], new_url=url,
                     directory_url=directory['url'] if isinstance(directory,dict) else directory,
                     identity_basis=basis if isinstance(directory,dict) and directory.get('kind') else 'same_person_language_link' if isinstance(directory,dict) else 'name_and_email')
-            return updated, parsed, changed, checked
+            return updated, profile_fields, changed, checked
         except Exception as error:
             errors.append(str(error)[:300])
             if index == 1 and allow_alternative and not expanded:

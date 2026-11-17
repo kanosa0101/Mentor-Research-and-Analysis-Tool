@@ -40,6 +40,22 @@ class LegacyRefreshTests(unittest.TestCase):
                 refresh.merge_profile(self.original, parsed, body, '2026-11-15')
         self.assertEqual(self.original['last_fetched'], '2026-10-01')
 
+    def test_supplemental_field_requires_fetched_source_and_keeps_its_provenance(self):
+        original = copy.deepcopy(self.original)
+        original.pop('email')
+        original['provenance'].pop('email')
+        source = 'https://test.edu.cn/teachers.pdf'
+        parsed = {'email': 'teacher@test.edu.cn', '_field_sources': {'email': source}}
+        with self.assertRaises(ValueError):
+            refresh.merge_profile(original, parsed, '<p>张老师</p>', '2026-11-17')
+        evidence = [{'url': source, 'sha256': 'a' * 64, 'fetched_at': '2026-11-16T16:10:00+00:00'}]
+        updated, changed, _ = refresh.merge_profile(original, parsed, '<p>张老师</p>', '2026-11-17', verified_sources=evidence)
+        self.assertEqual(changed, ['email'])
+        self.assertEqual(updated['provenance']['email']['source'], source)
+        self.assertEqual(updated['provenance']['email']['fetched_at'], '2026-11-17')
+        repeated, _, _ = refresh.merge_profile(updated, {'email': updated['email']}, '<p>张老师</p>', '2026-11-18')
+        self.assertEqual(repeated['provenance']['email'], updated['provenance']['email'])
+
     def test_policy_refresh_is_resumable_and_keeps_reviewed_summary(self):
         sources = {key: {'url': f'https://test.edu.cn/{key}', 'format': 'html', 'selector': 'article'} for key in ('a', 'b')}
         path = self.root / 'data/admissions.yaml'

@@ -79,7 +79,7 @@ def main():
         task('professors', lambda: run(ROOT, kind='professors', limit=40, timeout=12, priority_units=priority_units()))
         task('mentor_directories', lambda: mentor_recovery.refresh_directories(ROOT, max_units=2, request_budget=16))
         task('mentor_quality', lambda: mentor_quality.run(ROOT, limit=40))
-        task('mentor_fields', lambda: mentor_quality.refresh_fields(ROOT, limit=6, request_budget=12))
+        task('mentor_fields', lambda: mentor_quality.refresh_fields(ROOT, limit=48, request_budget=96, workers=4))
         task('notices', refresh_notices)
         task('policy_intake', lambda: policy_intake.run(ROOT, limit=2, publish=True))
         task('renewed', lambda: renew(ROOT / 'cache/opportunity_review.json', ROOT))

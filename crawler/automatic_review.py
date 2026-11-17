@@ -70,6 +70,16 @@ def protected(draft):
         ('item', 'quotes', 'reviewed_fields', 'review', 'manual_edit', 'notes', 'note', 'manual_notes', 'triage')})
 
 
+def source_binding(draft, configs):
+    return ai_review.fields_hash(dict(source=draft['source_url'], listing=draft['listing_url'],
+        registered=sorted(ai_review.fields_hash({key: config.get(key) for key in ('school', 'dept', 'name', 'enabled')})
+                          for config in configs if config['url'] == draft['listing_url'])))
+
+
+def fetch_binding(fetch):
+    return {key: fetch.get(key) for key in ('status', 'error_kind', 'error_code', 'evidence_mode', 'sha256', 'content_sha256')}
+
+
 def sections(lines):
     result, active = {}, []
     aliases = {name: field for field, names in SECTIONS.items() for name in names}
@@ -234,6 +244,7 @@ def prepare_new(root, draft, doc, now, configs=()):
         organizer_name=unit, source_url=item['source_url'], quote=organizer,
         verified_at=now.astimezone(CST).date().isoformat())
     parts = sections(doc['lines'])
+    automatic_evidence.supplement_materials(doc, parts, sections)
     if any(not parts.get(key) for key in ('eligibility', 'materials', 'application_method', 'contact', 'window')):
         raise NeedsHuman('缺少独立且完整的申请对象、材料、方式、联系人或报名时间栏目')
     covered = extract.compact('\n'.join(parts.values()))
@@ -252,7 +263,8 @@ def prepare_new(root, draft, doc, now, configs=()):
     item.update(school_name=school, kind=kind, cycle='current', source_state='verified',
                 checked_at=now.astimezone(CST).date().isoformat(), verified_at=now.astimezone(CST).date().isoformat(),
                 source_sha256=draft['fetch']['sha256'], source_content_sha256=doc['content_sha256'])
-    fields = {'content_classification': dict(value=item['content_classification'], quote=organizer)}
+    fields = {'content_classification': dict(
+        value={key: value for key, value in item['content_classification'].items() if key != 'verified_at'}, quote=organizer)}
     activity_year = re.findall(r'(20\d{2})年(?:计算机)?(?:冬令营|冬季培训班|夏令营|科研实践|科研实习|科创计划)', title)
     if activity_year:
         year = int(activity_year[0])
@@ -268,7 +280,7 @@ def prepare_new(root, draft, doc, now, configs=()):
         requirements = [line for index, line in enumerate(lines)
                         if re.search(r'须|需|不得|以内|独立完成|取消.{0,8}资格|申请人签名', line) or
                         index > 0 and '申请人签名' in lines[index - 1] and re.match(r'日期\s*[:：]', line)]
-        if requirements:
+        if requirements and any(extract.compact(line) not in extract.compact(parts['materials']) for line in requirements):
             # Keep form-specific requirements attached to their own title. Two
             # detached signature lines do not tell an applicant which form to sign.
             item['materials'].append('\n'.join(dict.fromkeys([lines[0], *requirements])))
@@ -401,13 +413,29 @@ def _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher
 def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher, pdf_fetcher=None, docx_fetcher=None):
     original = copy.deepcopy(draft)
     prior = draft.get('automatic_review', {})
+    fetched = draft.get('fetch', {})
     result = dict(id=draft['id'], policy_version=POLICY_VERSION, checked_at=now.isoformat(),
-                  source_sha256=draft.get('fetch', {}).get('sha256'), content_sha256=draft.get('fetch', {}).get('content_sha256'),
+                  source_sha256=fetched.get('sha256'), content_sha256=fetched.get('content_sha256'),
+                  source_binding=source_binding(draft, configs), fetch_binding=fetch_binding(fetched),
                   input_revision=protected(draft), attempts=prior.get('attempts', 0), failures=prior.get('failures', 0), reasons=[])
+    unchanged = (prior.get('input_revision') == result['input_revision'] and
+                 prior.get('content_sha256') == result['content_sha256'] and
+                 prior.get('source_sha256', result['source_sha256']) == result['source_sha256'] and
+                 prior.get('source_binding', result['source_binding']) == result['source_binding'] and
+                 prior.get('fetch_binding', result['fetch_binding']) == result['fetch_binding'])
+    recovered_evidence = ('fetch_binding' not in prior and fetched.get('status') == 'ok' and
+                          fetched.get('evidence_mode') == 'complete' and
+                          (prior.get('error_phase') == 'source_evidence' or any(
+                              any(term in reason for term in ('完整HTML证据', '附件或下载', '图片未明确', '尚不支持'))
+                              for reason in prior.get('reasons', []))))
+    updated_materials_rule = ('fetch_binding' not in prior and fetched.get('status') == 'ok' and
+                              (fetched.get('complete_document') or {}).get('documents') and
+                              '缺少独立且完整的申请对象、材料、方式、联系人或报名时间栏目' in prior.get('reasons', []))
     recovering = bool(draft.get('review')) and review.status(draft) == 'source_error' and prior.get('state') in ('published', 'renewed')
-    if not recovering and (prior.get('policy_version') == POLICY_VERSION or prior.get('state') in ('retry', 'budget_wait')) and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and prior.get('content_sha256') == result['content_sha256'] and prior.get('input_revision') == result['input_revision']:
+    if not recovering and (prior.get('policy_version') == POLICY_VERSION or prior.get('state') in ('retry', 'budget_wait')) and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and unchanged:
         return dict(result, state='skipped', reasons=['尚未到下一次处理时间'], next_attempt_at=prior['next_attempt_at'])
-    if prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and prior.get('input_revision') == result['input_revision'] and prior.get('content_sha256') == result['content_sha256']:
+    if (prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and
+            unchanged and not (recovered_evidence or updated_materials_rule)):
         return dict(result, state='skipped', reasons=['同版本仍需人工处理'], blocked_state='manual_required')
     prepared = None
     try:
@@ -443,7 +471,8 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
                 current.setdefault('preflight_history', []).append(current['preflight'])
             current['preflight'] = copy.deepcopy(decision)
             atomic_json(queue_path, queue)
-        result.update(source_sha256=staged['fetch'].get('sha256'), content_sha256=staged['fetch'].get('content_sha256'))
+        result.update(source_sha256=staged['fetch'].get('sha256'), content_sha256=staged['fetch'].get('content_sha256'),
+                      fetch_binding=fetch_binding(staged['fetch']))
         if decision['classification'] in ('historical', 'irrelevant'):
             return _store(queue_path, draft['id'], dict(result, state='skipped', reasons=[decision['reason']]), protected(original))
         if raw is None:
@@ -467,17 +496,22 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
             automatic_evidence.verify_application_entry(staged['item']['application_url'], draft['source_url'], fetcher=fetcher)
         result.update(source_sha256=staged['fetch']['sha256'], content_sha256=doc['content_sha256'])
         cached = prior.get('ai')
-        if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and cached.get('input_text_sha256') == hashlib.sha256(doc['text'].encode()).hexdigest() and cached.get('input_fields_sha256') == ai_review.fields_hash(fields) and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('content_sha256') == doc['content_sha256'] and prior.get('input_revision') == protected(original):
-            ai = cached
-        else:
+        same_proposal = (prior.get('policy_version') == POLICY_VERSION and cached and all(
+            prior.get(key, result[key]) == result[key] for key in
+            ('source_sha256', 'content_sha256', 'input_revision', 'source_binding')))
+        ai = None
+        if same_proposal:
+            try:
+                ai = ai_review.validate_bound(cached, doc['text'], fields)
+            except ValueError:
+                pass
+        if ai is None:
             result['attempts'] += 1
-            ai = checker(root, draft['source_url'], doc['text'], fields)
-        ai_review.validate({key: ai[key] for key in ('decision', 'issues', 'checks')}, doc['text'], fields)
-        if (ai.get('truncated') or not ai.get('validated_extracts') or
-                ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest() or
-                ai.get('input_fields_sha256') != ai_review.fields_hash(fields)):
-            raise NeedsHuman('AI没有完整有效的当前原文核验结果')
+            ai = ai_review.validate_bound(checker(root, draft['source_url'], doc['text'], fields), doc['text'], fields)
         result.update(ai=ai, model=ai.get('model'))
+        if ai['decision'] != 'consistent':
+            ai = ai_review.recheck(root, draft['source_url'], doc['text'], fields, ai, checker, version=POLICY_VERSION)
+            result.update(ai=ai, model=ai.get('model'))
         if ai['decision'] != 'consistent':
             raise NeedsHuman('AI建议人工核对：' + '；'.join(ai['issues']))
         if not publish:
@@ -536,7 +570,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
 
 def assist_pending(root, queue_path, draft, configs, result, now, assistant):
     """Offer source-bound suggestions for human review without promoting any facts."""
-    if (draft.get('review') or draft['item'].get('cycle') == 'historical' or
+    if (draft.get('automatic_review', {}).get('ai') or draft.get('review') or draft['item'].get('cycle') == 'historical' or
         review.triage(draft).get('classification') in ('historical', 'irrelevant', 'blocked') or
         draft.get('fetch', {}).get('status') != 'ok'):
         return result
@@ -620,7 +654,7 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         return _store(queue_path, draft['id'], result, original)
 
 
-def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None, checker=ai_review.check, fetcher=review.fetch_source, assistant=ai_evidence.suggest):
+def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None, checker=ai_review.check, fetcher=review.fetch_source, assistant=None):
     root = Path(root)
     queue_path = Path(queue_path) if queue_path else root / 'cache/opportunity_review.json'
     now = now or datetime.now(timezone.utc)
@@ -637,7 +671,8 @@ def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None
         results, active, checked = [], 0, 0
         for row in ordered(queue, now=now, root=root):
             result = process(root, queue_path, by_id[row['id']], configs, publish=publish, now=now, checker=checker, fetcher=fetcher)
-            if (result['state'] == 'manual_required' or result.get('blocked_state') == 'manual_required') and result.get('attempts', 0) == by_id[row['id']].get('automatic_review', {}).get('attempts', 0):
+            if (assistant is not None and (result['state'] == 'manual_required' or result.get('blocked_state') == 'manual_required')
+                    and result.get('attempts', 0) == by_id[row['id']].get('automatic_review', {}).get('attempts', 0)):
                 fresh = next(d for d in review.read_queue(queue_path)['drafts'] if d['id'] == row['id'])
                 result = assist_pending(root, queue_path, fresh, configs, result, now, assistant)
             results.append(result)

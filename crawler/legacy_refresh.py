@@ -51,7 +51,7 @@ def write_yaml(path, data):
         Path(name).unlink(missing_ok=True)
 
 
-def merge_profile(original, parsed, body, day):
+def merge_profile(original, parsed, body, day, *, verified_sources=()):
     soup = BeautifulSoup(body, 'html.parser')
     text = ''.join(soup.get_text().split())
     names = []
@@ -81,8 +81,14 @@ def merge_profile(original, parsed, body, day):
     provenance = result.setdefault('provenance', {})
     changed = []
     checked = []
+    sources = {row['url']: row for row in verified_sources
+               if row.get('url') and row.get('sha256') and row.get('fetched_at')}
+    from crawler.mentor_fields import secondary_email_source
+    from crawler.mentor_recovery import personal_email
+    secondary_email = secondary_email_source(original)
     if (parsed.get('_rejected_email') and
             str(result.get('email', '')).lower() == parsed['_rejected_email'].lower() and
+            not secondary_email and
             provenance.get('email', {}).get('origin') != 'manual'):
         result.pop('email', None)
         provenance.pop('email', None)
@@ -92,10 +98,23 @@ def merge_profile(original, parsed, body, day):
         value = parsed.get(field)
         if not value or provenance.get(field, {}).get('origin') == 'manual':
             continue
+        source = (parsed.get('_field_sources') or {}).get(field)
+        if source and source not in sources:
+            continue  # A parser's URL alone does not establish fetched evidence.
+        previous = provenance.get(field, {})
+        same_value = result.get(field) == value
+        if (field == 'email' and secondary_email and not same_value and
+                not (source and personal_email(value) and (parsed.get('_verified_roster_name') or parsed.get('name')) == original['name'])):
+            continue
         if result.get(field) != value:
             changed.append(field)
         result[field] = value
-        provenance[field] = dict(origin='crawled', source=original['detail_url'], fetched_at=day, confidence='auto')
+        if source:
+            source_day = datetime.fromisoformat(sources[source]['fetched_at']).astimezone(
+                timezone(timedelta(hours=8))).date().isoformat()
+            provenance[field] = dict(origin='crawled', source=source, fetched_at=source_day, confidence='auto')
+        elif not (same_value and previous.get('source') and previous['source'] != original['detail_url']):
+            provenance[field] = dict(origin='crawled', source=original['detail_url'], fetched_at=day, confidence='auto')
         checked.append(field)
     if not checked:
         raise ValueError('可解析字段均为人工维护，本轮不改来源日期')
@@ -272,7 +291,10 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                         supplemental.append(dict(url=url,sha256=digest,fetched_at=stamp))
                         return body,UnicodeDammit(body).unicode_markup or ''
                     parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source), html, original['detail_url'])
-                    updated, changed, checked = merge_profile(original, parsed, raw, day)
+                    # The contact task verifies a declared independent homepage
+                    # by fetching the target before publishing it.
+                    parsed = {key: value for key, value in parsed.items() if key != 'homepage'}
+                    updated, changed, checked = merge_profile(original, parsed, raw, day, verified_sources=supplemental)
                     write_yaml(path, updated)
                     record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
                                  'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,

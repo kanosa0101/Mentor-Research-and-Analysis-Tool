@@ -29,13 +29,36 @@ def moment(value):
 def field_gaps(root, now):
     path = root / 'cache/mentor_quality/field-gaps.json'
     labels = {'email': '公开邮箱', 'research_direction_raw': '研究方向', 'supervisor': '招生资格', 'title': '职称'}
-    counts = {key: Counter() for key in ('by_field', 'by_unit', 'by_status', 'by_reason')}
+    counts = {key: Counter() for key in ('by_field', 'by_unit', 'by_status', 'by_reason', 'optional_by_field', 'secondary_email_by_reason')}
     entries = []
     records = json.loads(path.read_text(encoding='utf-8'))['records']
     if not isinstance(records, dict):
         raise ValueError('Invalid mentor field records')
     for ident, row in records.items():
-        fields = {key: value for key, value in row['fields'].items() if value.get('status') != 'resolved'}
+        renewal = row.get('secondary_email') or {}
+        if renewal.get('status') in ('retry','waiting_source'):
+            code=renewal.get('reason_code','secondary_email_unconfirmed')
+            counts['secondary_email_by_reason'][code]+=1
+            opened=renewal.get('failed_since') or renewal.get('checked_at')
+            next_at=renewal.get('next_check_at')
+            scheduled=moment(next_at)
+            overdue=bool(scheduled and scheduled+timedelta(hours=2)<=now)
+            due=scheduled+timedelta(hours=2) if overdue else None
+            source=(renewal.get('registration') or {}).get('source')
+            entries.append(dict(id='mentor_email_recheck:'+ident,category='mentor',title=row.get('name') or ident,
+                status='maintenance_overdue' if overdue else renewal['status'],reason_code=code,category_label='二级来源邮箱复核',
+                reasons=[renewal.get('reason','当前来源尚未重新确认旧邮箱')],next_action='retry_secondary_email',action_label='按计划重新核验官方来源',
+                opened_at=opened,due_at=due.isoformat() if due else None,overdue=overdue,priority=1 if overdue else 2,
+                next_attempt_at=next_at,last_attempt_at=renewal.get('checked_at'),source_urls=[source] if source else [],
+                fingerprint=hashlib.sha256(json.dumps(['secondary_email',ident,opened]).encode()).hexdigest()[:24]))
+        fields = {}
+        for key, value in row['fields'].items():
+            if value.get('status') == 'resolved':
+                continue
+            if key == 'homepage' or value.get('optional'):
+                counts['optional_by_field'][key] += 1
+            else:
+                fields[key] = value
         if not fields:
             continue
         for key, value in fields.items():
@@ -173,6 +196,6 @@ def refresh(root, now=None):
             mentors=sum(r['category'] == 'mentor' for r in active),
             mentor_field_gaps=sum(r['category'] == 'mentor_fields' for r in active),
             missing_fields=sum(field_breakdown.get('by_field', {}).values())),
-        audience='maintainer', note='24小时为新政策及已核验问题的处理时限；导师尚未核验的字段库存与等待官方补充不计此时限。计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。')
+        audience='maintainer', note='24小时为新政策及已核验问题的处理时限。独立个人或课题组主页为选填项。导师尚未核验的字段库存与等待官方补充不计此时限。计划复检另容许两小时调度延迟。均不是申请截止，也不向申请用户发送。')
     atomic_json(root / 'cache/quality-alerts.json', result)
     return result

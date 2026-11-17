@@ -13,6 +13,10 @@ from sites import hust_profile
 WHU_UNITS = {'信息安全系', '网络空间安全系', '密码科学与技术系'}
 
 
+def parse_contact(cfg, original):
+    return hust_profile.parse_contact(cfg, original)
+
+
 def collect(cfg, page_url, html, fetched_at):
     soup = BeautifulSoup(html, 'html.parser')
     groups = []

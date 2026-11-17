@@ -1,13 +1,16 @@
 """Classify mentor failures and discover bounded, identity-bound official replacements."""
 import hashlib
+import ipaddress
 import json
 import re
 from datetime import datetime, timedelta
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from itertools import islice
+from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 
 from crawler.email_util import normalize_email
+from sites.profile_fields import own_labelled_email
 
 VERSION = 'official-directory-recovery-v2'
 RULES = {
@@ -32,6 +35,130 @@ RULES = {
 
 class DiscoveryBudgetExhausted(RuntimeError):
     pass
+
+
+PERSONAL_LINK = re.compile(r'^(?:个人(?:主页|网站)|教师主页|学术主页|课题组(?:主页|网站)|实验室(?:主页|网站)|(?:personal|faculty|academic|lab(?:oratory)?|research group)\s+(?:home\s?page|website))\s*[:：]?$', re.I)
+CONTACT_LINK = re.compile(r'^(?:联系方式|联系我|Contact(?: Me| Information)?)$', re.I)
+CONTACT_REGION = 'h1, h2, h3, .teacher-name, .news_title, .faculty-name, .profile-name, [itemprop="name"]'
+PAGE_CHROME = 'header, footer, nav, aside, script, style, .footer, .header, .navigation, .breadcrumb, .sidebar, [hidden], [_tsites_encrypt_field], [style*="display:none"], [style*="display: none"]'
+ROLE_EMAIL = re.compile(r'^(?:admin|admissions?|office|contact|info|webmaster|postmaster|support|hr|service|lab|team|yanzhao|zhaosheng|jiaowu|helpdesk)(?:[._+-].*)?$', re.I)
+
+
+def homepage_url(value):
+    if not isinstance(value, str) or len(value) > 1500 or re.search(r'[\s\\\x00-\x1f]', value):
+        return None
+    try:
+        parts = urlsplit(value)
+        if parts.hostname:
+            try:
+                ipaddress.ip_address(parts.hostname)
+                return None
+            except ValueError:
+                pass
+        if (parts.scheme in ('http', 'https') and parts.hostname and '.' in parts.hostname
+                and not parts.username and not parts.password and parts.port in (None, 80, 443)
+                and not parts.hostname.endswith(('.localhost','.local','.internal'))):
+            return value
+    except ValueError:
+        pass
+    return None
+
+
+def personal_email(value):
+    value = normalize_email(value)
+    return value if value and not ROLE_EMAIL.fullmatch(value.split('@', 1)[0]) else None
+
+
+def named_detail(html, name):
+    doc = BeautifulSoup(html, 'html.parser')
+    for node in doc.select(PAGE_CHROME):
+        node.decompose()
+    return any(matches_name(node.get_text(' ', strip=True), name) for node in doc.select(CONTACT_REGION))
+
+
+def linked_homepage_identity(html,name,aliases=()):
+    if any(named_detail(html,alias) for alias in (name,*aliases) if alias):return True
+    doc=BeautifulSoup(html,'html.parser')
+    for node in doc.select(PAGE_CHROME):node.decompose()
+    root=doc.body or doc
+    # Some official pages open with a bilingual name rendered in a plain font
+    # tag. Both forms must appear together as one visible identity label.
+    bilingual=re.compile(r"[A-Za-z][A-Za-z .'-]{2,60}\s*[（(]\s*"+re.escape(name)+r'\s*[)）](?:[,，。 ]+Ph\.D\.)?$')
+    labels=[node.get_text(' ',strip=True) for node in root.select(CONTACT_REGION)]
+    return any(bilingual.fullmatch(label) for label in (*labels,*islice(root.stripped_strings,20)))
+
+
+def contact_details(html, url, name, *, verified=False):
+    """Inspect explicit fields in a personal profile or a distinctly named staff card."""
+    doc = BeautifulSoup(html, 'html.parser')
+    for node in doc.select(PAGE_CHROME):
+        node.decompose()
+    headings = [node for node in doc.select(CONTACT_REGION) if matches_name(node.get_text(' ', strip=True), name)]
+    cards = [node for node in doc.select('tr, [itemtype$="/Person"], .member, .person, .profile, .teacher-info, .faculty-info')
+             if any(matches_name(child.get_text(' ', strip=True), name)
+                    for child in node.select(CONTACT_REGION + ', td:first-child, dt, strong'))]
+    areas = [card for card in cards if not any(card in other.parents for other in cards if other is not card)
+             and not any(peer is not own and not matches_name(peer.get_text(' ',strip=True),name)
+                         for own in headings if card in own.parents and own.name in ('h1','h2','h3')
+                         for peer in card.find_all(own.name))]
+    if not areas:
+        for node in headings:
+            section=node.find_parent(['section','article'])
+            section=section or (node.parent if not verified else node.find_parent('main') or doc.body or doc)
+            # Personal sections may have biography/publication subheadings, but
+            # another peer identity heading makes the enclosing scope ambiguous.
+            conflicting=any(other is not node and not matches_name(other.get_text(' ',strip=True),name)
+                            for other in section.find_all(node.name,recursive=section is node.parent)
+                            if other.name in ('h1','h2','h3') or node.get('itemprop')=='name')
+            if not conflicting and section not in areas:
+                areas.append(section)
+    emails, homepages, links = set(), set(), []
+    for area in areas:
+        foreign=[]
+        for node in area.select(CONTACT_REGION):
+            label=node.get_text(' ',strip=True)
+            if not label or matches_name(label,name) or CONTACT_LINK.fullmatch(label):continue
+            section=node.find_parent(['section','article','tr'])
+            if section is None or section is area or area not in section.parents:
+                foreign=[area]
+                break
+            foreign.append(section)
+        for row in area.select('p, li, dd, tr, dt, div, [itemprop="email"]'):
+            if any(section is area or section is row or section in row.parents for section in foreign):continue
+            if row.find(['p', 'li', 'dd', 'tr', 'dt', 'div']):
+                continue
+            line = row.get_text(' ', strip=True)
+            if row.name == 'dt' and row.find_next_sibling('dd'):
+                line += ' ' + row.find_next_sibling('dd').get_text(' ', strip=True)
+            if len(line) > 240 or line.count('@')>1 or re.search(r'招生(?:办公室|咨询|联系人)|办公室|秘书|助理|学生|行政|教务|合作|团队公共|课题组邮箱|实验室邮箱|\b(?:assistant|secretary|lab email|group email|student)\b', line, re.I):
+                continue
+            email = personal_email(own_labelled_email(line))
+            if email:
+                emails.add(email)
+            if re.match(r'^(?:本人)?(?:电子邮箱|电子邮件|邮箱|e-?mail)\s*[:：]?', line, re.I) or row.get('itemprop') == 'email':
+                for link in row.select('a[href^="mailto:"]'):
+                    email = personal_email(unquote(link['href'][7:].partition('?')[0]))
+                    if email:
+                        emails.add(email)
+        for anchor in area.select('a[href]'):
+            if any(section is area or section in anchor.parents for section in foreign):continue
+            label = anchor.get_text(' ', strip=True)
+            parent_label = anchor.parent.get_text(' ', strip=True).removesuffix(label).strip()
+            personal = PERSONAL_LINK.fullmatch(label) or PERSONAL_LINK.fullmatch(parent_label)
+            contact = CONTACT_LINK.fullmatch(label)
+            if not (personal or contact):
+                continue
+            try:
+                target = homepage_url(urljoin(url, anchor['href']))
+                if not target or canonical(target) == canonical(url) or re.search(r'\.(?:pdf|docx?)(?:$|[?#])', target, re.I):
+                    continue
+            except ValueError:
+                continue
+            if personal:
+                homepages.add(target)
+            links.append(dict(url=target, kind='linked_contact' if contact and verified and urlsplit(target).hostname == urlsplit(url).hostname else 'linked'))
+    return dict(email=next(iter(emails)) if len(emails)==1 else None,
+                homepage=next(iter(homepages)) if len(homepages)==1 else None, links=links)
 
 
 def signature(root, cfg):
@@ -134,6 +261,36 @@ def allowed(url, scope):
         return False
 
 
+def same_scope(url, scope, *, allow_pdf=False):
+    from crawler.source_discovery import canonical as source_url
+    try:
+        source_url(url, scope, allow_pdf=allow_pdf)
+        return True
+    except ValueError:
+        return False
+
+
+def contact_target(url,cfg):
+    parsed=urlsplit(url)
+    target=canonical(url)
+    if parsed.scheme=='http' and parsed.hostname in cfg.get('profile_http_hosts',()):
+        return 'http:'+target.removeprefix('https:')
+    return target
+
+
+def contact_allowed(url,scope,cfg):
+    parts=urlsplit(url)
+    if parts.scheme=='http' and parts.hostname not in cfg.get('profile_http_hosts',()):
+        return False
+    return allowed(canonical(url),scope) and same_scope(url,scope,allow_pdf=profile_pdf(url,cfg))
+
+
+def profile_pdf(url,cfg):
+    parts=urlsplit(url)
+    return bool(parts.hostname in cfg.get('profile_pdf_hosts',()) and not parts.query and
+                re.fullmatch(r'/_upload/article/files/[a-f0-9]{2}/[a-f0-9]{2}/[a-f0-9]{20,64}/[a-f0-9-]{36}\.pdf',parts.path))
+
+
 def seed_urls(cfg):
     listing = cfg.get('list', {})
     seeds = list(cfg.get('profile_lookup_urls', []))
@@ -195,7 +352,7 @@ def directory_fields(cfg, html, name):
             if value.get('email'):value['email'] = normalize_email(value['email'])
             anchor = cells[columns['name']].find('a', href=True)
             matches.append((value, anchor['href'] if anchor else None))
-    unique = {json.dumps(value, sort_keys=True, ensure_ascii=False): (value, href) for value, href in matches}
+    unique = {(json.dumps(value, sort_keys=True, ensure_ascii=False),str(href)): (value, href) for value, href in matches}
     if len(unique) == 1:
         value, href = next(iter(unique.values()))
         value['_verified_roster_name'] = name
@@ -237,6 +394,15 @@ def named_link(html, directory_url, target, name):
             return True
     return any((row.get('title') or row.get('showTitle'))==name and isinstance(row.get('url'),str) and
                canonical(urljoin(directory_url,row['url']))==canonical(target) for row in inline_rows(html))
+
+
+def roster_points_at(href, roster_url, target):
+    return isinstance(href,str) and directory_target(urljoin(roster_url,href),roster_url)==target
+
+
+def directory_revision(index):
+    sources=sorted({(row['url'],row['sha256']) for row in index.get('evidence',[]) if row.get('sha256')})
+    return hashlib.sha256(json.dumps(sources).encode()).hexdigest() if sources else None
 
 
 def directory_index(root, cfg, sources, *, refresh=False, max_pages=16):

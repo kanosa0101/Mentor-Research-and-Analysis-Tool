@@ -7,19 +7,146 @@
 """
 import io
 import re
+from collections import Counter, defaultdict
+from functools import lru_cache
+from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
 from crawler import fetch
+from crawler.email_util import normalize_email
+from crawler.mentor_recovery import personal_email
 
 _LIST = "http://www.cs.zju.edu.cn/csen/27003/list.htm"
 _XLSX_ARTICLE = ("http://www.cs.zju.edu.cn/csen/2021/0915/"
                  "c27006a2421689/page.htm")
 _PERSON = re.compile(r"person\.zju\.edu\.cn/([A-Za-z0-9_]+)/?")
+_ROSTER_ARTICLE = re.compile(r"/csen/20\d{2}/\d{4}/c\d+a\d+/page\.htm")
+_ROSTER_ARTICLE_LABEL = re.compile(r"计算机学院导师与导师团队信息[-－–—](20\d{2})(?:[（(]持续更新中[）)])?")
+_ROSTER_FILE = re.compile(r"/_upload/article/files/(?:[0-9a-f]+/){3}[0-9a-f-]{36}\.pdf")
+_ROSTER_LABEL = re.compile(r"(20\d{2})全日制导师信息库[-－](0[1-9]|1[0-2])\.pdf")
 
 
 def _norm(nm):
     return re.sub(r"[\s\u3000]+", "", nm)
+
+
+@lru_cache(maxsize=4)
+def _contact_roster(raw, expected_period=None):
+    """Read the labelled Email cell of each dated, drawn mentor row."""
+    import pdfplumber
+
+    reports = defaultdict(list)
+    with pdfplumber.open(io.BytesIO(raw)) as pdf:
+        if not 1 <= len(pdf.pages) <= 20:
+            raise ValueError("浙大导师信息库页数超出范围")
+        for page_number, page in enumerate(pdf.pages, 1):
+            tables = page.extract_tables()
+            if len(tables) != 1:
+                raise ValueError("浙大导师信息库表格结构变化")
+            rows = tables[0]
+            report_title = re.fullmatch(r"研究生导师信息库-(20\d{2}\.(?:0[1-9]|1[0-2]))",
+                                        _norm(rows[0][0] or "")) if rows and rows[0] else None
+            if (len(rows) < 3 or not report_title
+                    or (expected_period and report_title[1] != expected_period)
+                    or [_norm(value or "") for value in rows[1]][:4] != ["序号", "所室机构", "姓名", "职称"]
+                    or len(rows[1]) != 10 or _norm(rows[1][7] or "") != "Email"):
+                raise ValueError("浙大导师信息库表头变化，未采纳邮箱")
+            for row_number, row in enumerate(rows[2:], 3):
+                if len(row) != 10 or not re.fullmatch(r"\d+", _norm(row[0] or "")):
+                    continue
+                label = _norm(row[2] or "")
+                name = re.sub(r"[（(][^）)]{1,16}[）)]$", "", label)
+                if not re.fullmatch(r"[\u3400-\u9fff·]{2,6}", name):
+                    continue
+                cell = _norm(row[7] or "")
+                # A PDF cell can wrap a literal address. Never choose between
+                # alternatives or derive an address from a name.
+                email = personal_email(cell) if re.fullmatch(r"[\w.%+-]+@[\w.-]+", cell, re.A) else None
+                reports[name].append((email, page_number, row_number, _norm(row[1] or "")))
+    addresses = Counter(email.casefold() for items in reports.values() for email, *_ in items if email)
+    return {
+        name: items[0] for name, items in reports.items()
+        if len(items) == 1 and items[0][0] and addresses[items[0][0].casefold()] == 1
+    }
+
+
+def _latest_roster_link(page_url, html, label_pattern, path_pattern, error):
+    links = defaultdict(set)
+    for anchor in BeautifulSoup(html, "html.parser").select("a[href]"):
+        label = label_pattern.fullmatch(_norm(anchor.get_text(strip=True)))
+        target = urljoin(page_url, anchor["href"])
+        parts = urlsplit(target)
+        if (label and parts.scheme in ("http", "https") and parts.netloc == urlsplit(page_url).netloc
+                and not parts.query and not parts.fragment and path_pattern.fullmatch(parts.path)):
+            links[label.groups()].add(target)
+    if not links or len(links[max(links)]) != 1:
+        raise ValueError(error)
+    period = max(links)
+    return next(iter(links[period])), period
+
+
+def parse_contact(cfg, original):
+    """Use the current departmental roster for a missing email."""
+    listing = cfg.get("profile_contact_roster_index")
+    reader = cfg.get("_read_source")
+    if not reader or not listing or normalize_email(original.get("email")):
+        return {}
+    _, html = reader(listing)
+    article, (article_year,) = _latest_roster_link(
+        listing, html, _ROSTER_ARTICLE_LABEL, _ROSTER_ARTICLE, "浙大招生栏目未按唯一年份链接导师与导师团队信息"
+    )
+    _, html = reader(article)
+    pdf_url, (pdf_year, pdf_month) = _latest_roster_link(
+        article, html, _ROSTER_LABEL, _ROSTER_FILE, "浙大官方栏目未按唯一日期链接全日制导师信息库"
+    )
+    if article_year != pdf_year:
+        raise ValueError("浙大导师与导师团队信息和附件年份不一致")
+    raw, _ = reader(pdf_url)
+    name = original["name"]
+    evidence = _contact_roster(raw, f"{pdf_year}.{pdf_month}").get(name)
+    if not evidence:
+        return {}
+    email, page, row, department = evidence
+    old_email = cfg.get("_previous_email")
+    if old_email and old_email.casefold() != email.casefold():
+        read_previous = cfg.get("_read_previous_email_evidence")
+        previous = read_previous() if read_previous else None
+        previous_row = _contact_roster(previous).get(name) if previous and previous.startswith(b"%PDF-") else None
+        if (not previous_row or previous_row[0].casefold() != old_email.casefold()
+                or not department or previous_row[3] != department):
+            raise ValueError("浙大换版后未通过姓名与独立身份特征匹配，旧邮箱与原出处保留")
+    return {
+        "name": name, "_verified_roster_name": name, "email": email,
+        "_field_sources": {"email": pdf_url},
+        "_contact_locator": {"email": {"index_url": listing, "article_url": article, "page": page, "table_row": row}},
+    }
+
+
+def _profile_homepage(soup):
+    homes = set()
+    for node in soup.select(".personal_bottom li, .personal_intro p"):
+        label, _, value = node.get_text(" ", strip=True).replace("：", ":").partition(":")
+        if label.strip() not in {"个人主页", "个人网站", "学术主页", "Personal homepage", "Personal website"}:
+            continue
+        anchor = node.select_one("a[href]")
+        link = anchor["href"] if anchor else value.strip()
+        parts = urlsplit(link)
+        if (parts.scheme in {"http", "https"} and parts.hostname and not parts.username and not parts.password
+                and not re.search(r"\s", link)):
+            homes.add(link)
+    return next(iter(homes)) if len(homes) == 1 else None
+
+
+def _personal_name(soup):
+    # The name is the first text node at the start of the portal identity block.
+    block = soup.select_one(".personal_name")
+    if block:
+        for text in block.stripped_strings:
+            if re.fullmatch(r"[\u3400-\u9fff·]{2,6}", _norm(text)):
+                return _norm(text)
+            break
+    return None
 
 
 def _load_xlsx_supervisors():
@@ -100,12 +227,20 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
-    if "person.zju.edu.cn" not in url:
+    if urlsplit(url).hostname != "person.zju.edu.cn":
         return {}  # xlsx-only 记录落在目录文章页，无可解析字段
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style"]):
         tag.decompose()
     out = {}
+    name = _personal_name(soup)
+    expected = cfg.get("_expected_name")
+    if expected and name != expected:
+        raise ValueError("浙大个人页姓名未与名册一致")
+    if name:
+        out["name"] = name
+        if homepage := _profile_homepage(soup):
+            out["homepage"] = homepage
     # 头部区（到「个人简介」栏目为止）：姓名 博士 | 副教授 | 博士生导师 | 职务
     body_text = soup.get_text("\n", strip=True)
     head = body_text.split("个人简介", 1)[0][:500]
@@ -118,7 +253,7 @@ def parse_detail(cfg, html, url):
     if sup:
         out["supervisor"] = "、".join(sup)
     # personal_bottom 里的字段 li（模板差异较大，按 label 文本匹配）
-    for li in soup.find_all("li"):
+    for li in soup.select(".personal_bottom li"):
         t = li.get_text(" ", strip=True)
         if "email" not in out and t.startswith("邮箱"):
             m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", t)
@@ -154,7 +289,7 @@ def parse_detail(cfg, html, url):
         for li in nav.select("li"):
             if "个人简介" in li.get_text():
                 col_id = li.get("col")
-    if apic and puid and col_id:
+    if apic and puid and col_id and not cfg.get("_read_source"):
         import json as _json
         import requests as _requests
         try:

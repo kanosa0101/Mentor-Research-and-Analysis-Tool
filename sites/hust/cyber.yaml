@@ -3,6 +3,11 @@ dept: cyber
 dept_name: 网络空间安全学院
 base_url: https://cse.hust.edu.cn
 hook: cyber_expansion
+parser_dependencies: [hust_profile.py]
+hust_contact_profile: true
+profile_http_hosts: [faculty.hust.edu.cn]
+profile_lookup_urls:
+  - https://cse.hust.edu.cn/szdw.htm
 direct: true
 explicit_supervisor_only: true
 list:

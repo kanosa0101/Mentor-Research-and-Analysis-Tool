@@ -12,6 +12,13 @@ from sites.tsites import _header_block
 TITLE = r'(?:讲席|特聘|长聘|兼职|客座|荣誉)?(?:教授|副教授|助理教授|讲师|助教|研究员|副研究员|助理研究员|教授级高级工程师|高级工程师|工程师|高级实验师|实验师|院士)'
 
 
+def parse_contact(cfg, original):
+    if cfg.get('hust_contact_profile'):
+        from sites.hust_profile import parse_contact as parse_hust_contact
+        return parse_hust_contact(cfg, original)
+    return {}
+
+
 class IdentityMismatch(ValueError):
     """官方标题或明确姓名区显示了名单之外的另一个人。"""
 

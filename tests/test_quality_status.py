@@ -60,6 +60,20 @@ def test_missing_states_are_unknown_but_initialized_empty_states_are_healthy(tmp
     assert value['active'] == []
 
 
+def test_supplemental_homepages_do_not_inflate_field_gaps_or_sla(tmp_path):
+    old = (NOW - timedelta(days=20)).isoformat()
+    pending = dict(status='pending', checked_at=old, pending_since=old)
+    save(tmp_path, 'cache/mentor_quality/field-gaps.json', {'records': {
+        'has-personal-page': {'fields': {'homepage': pending}},
+        'needs-email': {'fields': {'homepage': dict(pending, optional=True),
+            'email': dict(status='pending', first_seen=old)}}}})
+    result = refresh(tmp_path, NOW)
+    assert result['summary']['missing_fields'] == result['summary']['mentor_field_gaps'] == 1
+    assert result['summary']['overdue'] == 0
+    assert result['mentor_field_breakdown']['optional_by_field'] == {'homepage': 2}
+    assert [entry['fields'] for entry in result['active']] == [['email']]
+
+
 def test_missed_confirmed_and_resolved_rechecks_have_two_hour_scheduler_grace(tmp_path):
     scheduled = (NOW - timedelta(hours=1)).isoformat()
     save(tmp_path, 'cache/policy_revalidation/state.json', {'policies': {

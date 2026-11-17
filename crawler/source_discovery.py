@@ -45,7 +45,7 @@ def boundary(url):
     return '.'.join(host.split('.')[-3:]) if value == 'cas.cn' else value
 
 
-def canonical(url, parent=None):
+def canonical(url, parent=None, *, allow_pdf=False):
     parsed = urlsplit(urljoin(parent or '', url))
     if (parsed.scheme not in ('http', 'https') or not parsed.hostname or parsed.username or parsed.password
             or parsed.port not in (None, 80, 443) or '\\' in url or len(url) > 1500):
@@ -57,13 +57,14 @@ def canonical(url, parent=None):
     if parent and boundary(result) != boundary(parent):
         raise ValueError('发现链接跨机构，须另行人工核对来源')
     boundary(result)
-    if re.search(r'\.(?:pdf|docx?|xlsx?|zip|jpg|png|gif|mp4)(?:$|[?])', result, re.I):
+    if (re.search(r'\.(?:docx?|xlsx?|zip|jpg|png|gif|mp4)(?:$|[?])', result, re.I) or
+            not allow_pdf and re.search(r'\.pdf(?:$|[?])', result, re.I)):
         raise ValueError('非HTML来源需要专用解析，不作为新栏目接入')
     return result
 
 
-def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('text/html', 'application/xhtml+xml')):
-    initial = canonical(url, parent_url)
+def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('text/html', 'application/xhtml+xml'), allow_pdf=False):
+    initial = canonical(url, parent_url, allow_pdf=allow_pdf)
     current = initial
     with requests.Session() as session:
         session.trust_env = False
@@ -77,6 +78,8 @@ def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('te
             with session.get(current, timeout=(6, 12), stream=True, allow_redirects=False,
                              headers={'User-Agent': 'Mozilla/5.0 (official admissions source discovery)'}) as response:
                 if response.status_code in (301, 302, 303, 307, 308):
+                    if allow_pdf:
+                        raise ValueError('PDF 来源跳转须经官网索引重新核对')
                     current = canonical(response.headers.get('Location', ''), current)
                     if boundary(current) != boundary(initial):
                         raise ValueError('来源跨机构跳转，未抓取目标')

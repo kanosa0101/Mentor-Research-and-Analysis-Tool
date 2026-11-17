@@ -3,8 +3,10 @@ import hashlib
 import json
 import re
 from datetime import datetime, timezone
+from pathlib import Path
 
 from crawler import ai_evidence, ai_transport, opportunity_extract as extract, opportunity_review as review
+from crawler.opportunity_monitor import atomic_json, output_lock
 
 MAX_INPUT = 18000
 
@@ -63,10 +65,95 @@ def bind_response(payload, text, fields):
         if not isinstance(key, str) or key not in fields:
             raise ValueError('AI字段重复或缺失')
         checks.append(dict(check, quote=fields[key]['quote']))
-    return validate(dict(payload, checks=checks), text, fields)
+    issues = payload['issues']
+    findings = []
+    if isinstance(issues, list) and issues and all(isinstance(issue, dict) for issue in issues):
+        for issue in issues:
+            if (set(issue) != {'field', 'kind', 'source_quote', 'detail'} or
+                    any(not isinstance(value, str) or not value.strip() for value in issue.values()) or
+                    issue['field'] not in fields or issue['kind'] not in ('omission', 'mismatch', 'ambiguity') or
+                    len(issue['source_quote']) > 280 or len(issue['detail']) > 160 or
+                    extract.compact(issue['source_quote']) not in extract.compact(text)):
+                raise ValueError('AI核验问题未绑定明确原文')
+        findings = issues
+        issues = [issue['field'] + '：' + issue['source_quote'] + '｜' + issue['detail'] for issue in findings]
+    result = validate(dict(payload, checks=checks, issues=issues), text, fields)
+    if findings:
+        result['findings'] = findings
+    return result
 
 
-def check(root, source_url, text, fields, *, session=None):
+def validate_bound(ai, text, fields):
+    if not isinstance(ai, dict):
+        raise ValueError('AI核验结构无效')
+    validate({key: ai.get(key) for key in ('decision', 'issues', 'checks')}, text, fields)
+    if (ai.get('truncated') or not ai.get('validated_extracts') or
+            ai.get('input_text_sha256') != hashlib.sha256(text.encode()).hexdigest() or
+            ai.get('input_fields_sha256') != fields_hash(fields)):
+        raise ValueError('AI未完成当前完整原文及实际发布值的有效核验')
+    return ai
+
+
+def omission_counterevidence(ai, text, fields):
+    """Require the actual flagged value to contain its full bound official excerpt."""
+    findings = ai.get('findings', [])
+    expected = {check['field'] for check in ai['checks'] if not check['consistent']}
+    if ai['decision'] != 'manual' or not findings or len(findings) != len(ai['issues']):
+        return []
+    result = []
+    source = extract.compact(text)
+    for issue, message in zip(findings, ai['issues']):
+        if not isinstance(issue, dict) or set(issue) != {'field', 'kind', 'source_quote', 'detail'} or any(
+                not isinstance(value, str) for value in issue.values()):
+            return []
+        field, quote = issue['field'], issue['source_quote']
+        if (issue['kind'] != 'omission' or field not in expected or field.startswith('attachment_') or
+                message != field + '：' + quote + '｜' + issue['detail']):
+            return []
+        actual = fields[field]['value']
+        values = actual if isinstance(actual, list) else [actual]
+        needle = extract.compact(quote)
+        field_quote = extract.compact(fields[field]['quote'])
+        if (len(needle) < 12 or needle not in field_quote or field_quote not in source or
+                not any(isinstance(value, str) and field_quote in extract.compact(value) for value in values)):
+            return []
+        result.append(dict(field=field, source_quote=quote))
+    return result if {row['field'] for row in result} == expected else []
+
+
+def recheck(root, source_url, text, fields, ai, checker, *, version):
+    """Claim one counterevidence review per official text and actual proposal."""
+    counterevidence = omission_counterevidence(ai, text, fields)
+    if not counterevidence:
+        return ai
+    key = fields_hash([version, source_url, ai['input_text_sha256'], ai['input_fields_sha256']])
+    path = Path(root) / 'cache/ai-content-recheck.json'
+    with output_lock(path):
+        attempts = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+        if key in attempts:
+            cached = attempts[key].get('ai')
+            return validate_bound(cached, text, fields) if cached else ai
+        attempts[key] = dict(claimed_at=datetime.now(timezone.utc).isoformat(), version=version,
+                             counterevidence=counterevidence)
+        atomic_json(path, attempts)
+    try:
+        second = validate_bound(checker(root, source_url, text, fields, counterevidence=counterevidence), text, fields)
+    except (ValueError, OSError) as error:
+        if '每日调用上限' in str(error):
+            with output_lock(path):
+                attempts = json.loads(path.read_text(encoding='utf-8'))
+                attempts.pop(key, None)  # reserve_request refused before sending.
+                atomic_json(path, attempts)
+        raise
+    second = dict(second, counterevidence_review=dict(counterevidence=counterevidence, first_issues=ai['issues']))
+    with output_lock(path):
+        attempts = json.loads(path.read_text(encoding='utf-8'))
+        attempts[key]['ai'] = second
+        atomic_json(path, attempts)
+    return second
+
+
+def check(root, source_url, text, fields, *, session=None, counterevidence=()):
     review.institution(source_url)
     if not isinstance(text, str) or not text.strip() or len(text) > MAX_INPUT:
         raise ValueError('官方正文为空或超出完整核验长度，不截断后自动发布')
@@ -88,16 +175,20 @@ def check(root, source_url, text, fields, *, session=None):
               "5. 原文本身确有影响申请判断的矛盾或歧义、或字段有实际漏项/错误时，返回manual。"
               "声称原文内部矛盾，必须指出两段互不相容的原文及其相同对象、重叠适用时间；"
               "只给一个原句，再与‘通常/一般/常见’标准比较，不是内部矛盾。明确不同时间段的标准，无论数值相差多大均不得直接相互比较。"
-              "每个问题须给出原文限制短句及具体未保留或写错的字段；不要把已在对应业务字段出现的内容再报为缺失。\n"
-              '只返回JSON：{"decision":"consistent或manual","issues":["原文短句 + 有实际问题的字段及原因"],'
+              "每个问题须给出原文限制短句及具体未保留或写错的字段；不要把已在对应业务字段出现的内容再报为缺失。"
+              "若给定counterevidence，请核对其中逐字证据，只有确实保留的限制可撤销遗漏判断；仍须检查其他限制、日期、冲突和实际漏项。\n"
+              '只返回JSON：{"decision":"consistent或manual","issues":[{"field":"原字段名","kind":"omission、mismatch或ambiguity",'
+              '"source_quote":"逐字官方限制短句","detail":"具体错误或遗漏及原因"}],'
               '"checks":[{"field":"原字段名","consistent":true或false}]}。'
               "每字段恰好一个check。只有全部为true且issues为空时decision=consistent，否则manual。"
               "issues最多10项，每项160字以内；不要输出quote、代码围栏、外部解释或新增事实。")
     # The quotes have already been bound to the complete text above. Sending them
     # again hides real omissions among three copies of the same long procedure.
     proposed = {key: field['value'] for key, field in fields.items()}
-    messages = [dict(role='system', content=system), dict(role='user', content=json.dumps(
-        dict(source_url=source_url, official_text=text, proposed_fields=proposed), ensure_ascii=False))]
+    request = dict(source_url=source_url, official_text=text, proposed_fields=proposed)
+    if counterevidence:
+        request['counterevidence'] = counterevidence
+    messages = [dict(role='system', content=system), dict(role='user', content=json.dumps(request, ensure_ascii=False))]
     try:
         raw, transport = ai_transport.completion(settings, messages, session=session)
         raw = re.sub(r'^```(?:json)?\s*|\s*```$', '', raw.strip())
