@@ -21,3 +21,9 @@ CI 使用 Python 3.12、Node 24 和 Chromium。安装开发依赖后运行 `pip 
 - Windows 隔离 Python 3.12.15 环境全新安装依赖与 Chromium，`pip check` 通过。由无生成文件的归档重建后，Node 25 项通过，相关 Python 28 项和 21 个子测试通过。
 - 严格预检仍将未关闭资料问题作为退出失败。CI 的 `--allow-open-issues` 仅将已通过 Issue 结构校验的开放记录列为质量警告。隔离完整数据预检为 35 个院系质量警告与 0 项结构问题。用缺少必填字段的 Issue 和非法 JSONL 分别验证，开启该选项仍返回失败。
 - 本轮隔离构建未读取个人账号、上传材料或采集缓存，未调用真实模型。
+
+## Ubuntu 候选运行与跨平台修复
+
+候选提交 `349a8b4ba` 的 GitHub Actions 完成了干净检出、依赖检查、Chromium 安装与离线构建。Python 测试有 1,234 项通过、1 项跳过、26 项失败。其中 24 项源于测试共用加载器在 Linux 上直接使用反斜杠路径，另外 2 项源于 Git 将北大原始 HTTP 响应夹具的 CRLF 转成 LF，改变了证据 SHA-256。Node 和结构预检在该轮未执行。[候选 CI 记录](https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/44015879673)
+
+共用测试加载器兼容两种相对路径分隔符和本机绝对路径。两份响应夹具按原字节存储，逐字节对照 v1.11.8 取证归档和 v1.11.9 公开基线，原 SHA-256 断言继续生效。Windows 隔离 Python 3.12 环境针对性复验 95 项及 6 个子测试通过。修复后的完整 Ubuntu 结论以版本标签指向提交的 GitHub Actions 回执为准；最终部署指针附对应运行 ID、提交和结果。

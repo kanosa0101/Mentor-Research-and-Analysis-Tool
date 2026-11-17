@@ -1,0 +1,3 @@
+# Official HTTP response fixtures are hashed as received.
+tests/fixtures/policy_intake/pku-2027-phd.html -text -diff
+tests/fixtures/policy_intake/pku-software-2027.html -text -diff

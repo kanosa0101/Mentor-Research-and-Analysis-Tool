@@ -13,7 +13,8 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def script(name):
-    spec = importlib.util.spec_from_file_location(name, ROOT / 'scripts' / (name + '.py'))
+    path = ROOT / 'scripts' / (name.replace('\\', '/') + '.py')
+    spec = importlib.util.spec_from_file_location(name, path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
@@ -33,6 +34,12 @@ class MaintenanceTests(unittest.TestCase):
                               last_verified='2026-09-06', bio_raw='研究材料')
         store.save_professor(self.prof)
         self.crawl = script('crawl')
+
+    def test_test_module_paths_work_with_both_separators_and_native_absolute_path(self):
+        module_path = ROOT / 'sites' / 'related_roster'
+        for path in ('../sites/related_roster', r'..\sites\related_roster', str(module_path)):
+            with self.subTest(path=path):
+                self.assertEqual(Path(script(path).__file__).resolve(), module_path.with_suffix('.py'))
 
     def test_explicit_supervisor_only_does_not_infer_from_bio(self):
         class Hook:

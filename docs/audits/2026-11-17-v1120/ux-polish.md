@@ -24,3 +24,17 @@
 ```powershell
 python -m pytest -q -p no:cacheprovider tests/test_discovery_ux_v1120.py tests/test_discovery_entry.py tests/test_admissions_entry_v1116.py tests/test_request_recovery_v1117.py tests/test_entry_loading_v1116.py
 ```
+
+## 部署后公网复验
+
+2026-11-17 04:10 UTC，匿名 Playwright 直接访问已部署页面。浏览器得到 TLS 1.3 响应，使用默认证书校验。测试未替换网页、脚本或 API 响应。[公网找导师](https://8.213.137.82:8443/discovery.html)
+
+| 视口宽度 | 成功摘要顶部 | 失败提示顶部 | 顶栏底部 | 找导师、学校要求及登录页横向文档宽度 |
+| --- | ---: | ---: | ---: | ---: |
+| 1440 px | 112 px | 112 px | 70 px | 各 1440 px |
+| 390 px | 112 px | 112 px | 97 px | 各 390 px |
+| 320 px | 112 px | 112 px | 97 px | 各 320 px |
+
+三次筛选均等到单导师结果出现再取值。成功后候选区域实际得到焦点。提交 101 字姓名后，焦点移到可见提示，原单导师结果仍在。三种宽度下，点击顶部“学校要求”均实际选中浙江大学、计算机科学与技术学院、2028 年、硕士、推免和普通招生。点击顶部“我的申请”转到匿名登录页，其 `next` 保留同样六项。三种宽度均未观察到横向溢出、页面 JavaScript 错误、非只读请求或外站请求。
+
+逐项结果和截图保存在 `cache/v1120/ux-public`，本轮未登录、创建申请或修改生产。

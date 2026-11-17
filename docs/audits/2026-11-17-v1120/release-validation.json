@@ -1,0 +1,477 @@
+{
+  "version": "1.12.0",
+  "source_commit": "349a8b4ba7235cd0be02607317c9c39382b64ef1",
+  "tests": {
+    "collected": 1261,
+    "passed": 1260,
+    "skipped": 1,
+    "warnings": 3,
+    "child_returncode": 0,
+    "javascript_passed": 25,
+    "summary": "=========== 1260 passed, 1 skipped, 3 warnings in 312.41s (0:05:12) ==========="
+  },
+  "public_http": {
+    "passed": true,
+    "version": "1.12.0",
+    "checked_at": "2026-11-17T04:09:16.586180+00:00",
+    "tls_verified": true,
+    "checks": [
+      {
+        "path": "/api/health",
+        "status": 200,
+        "bytes": 30
+      },
+      {
+        "path": "/start.html",
+        "status": 200,
+        "bytes": 84830
+      },
+      {
+        "path": "/release.html",
+        "status": 200,
+        "bytes": 4158
+      },
+      {
+        "path": "/discovery.html",
+        "status": 200,
+        "bytes": 94277
+      },
+      {
+        "path": "/admissions.html",
+        "status": 200,
+        "bytes": 1088173
+      },
+      {
+        "path": "/opportunities.html",
+        "status": 200,
+        "bytes": 76679
+      },
+      {
+        "path": "/account.html",
+        "status": 200,
+        "bytes": 3979
+      },
+      {
+        "path": "/api/mentor-candidates",
+        "status": 200,
+        "bytes": 27416
+      },
+      {
+        "path": "/api/opportunities",
+        "status": 200,
+        "bytes": 234624
+      },
+      {
+        "path": "/api/workflow",
+        "status": 401,
+        "bytes": 31
+      },
+      {
+        "path": "/review.html",
+        "status": 404,
+        "bytes": 46
+      },
+      {
+        "path": "/api/review",
+        "status": 404,
+        "bytes": 73
+      },
+      {
+        "path": "/var/accounts/accounts.sqlite3",
+        "status": 404,
+        "bytes": 22
+      },
+      {
+        "path": "/data/workflow.yaml",
+        "status": 404,
+        "bytes": 22
+      },
+      {
+        "path": "/RELEASE_SOURCE.json",
+        "status": 404,
+        "bytes": 22
+      }
+    ]
+  },
+  "online_flow": {
+    "passed": true,
+    "checks": [
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors"
+    ],
+    "browser_errors": [],
+    "failed_requests": []
+  },
+  "production": {
+    "passed": true,
+    "version": "1.12.0",
+    "observed_at": "2026-11-17T04:16:47.253699+00:00",
+    "source_commit": "349a8b4ba7235cd0be02607317c9c39382b64ef1",
+    "source_paths_verified": 241,
+    "services": {
+      "mentor-public.service": "active",
+      "mentor-https.service": "active",
+      "mentor-review-ui.service": "active",
+      "mentor-maintenance.timer": "active",
+      "mentor-monitor.timer": "active",
+      "mentor-review-pipeline.timer": "active",
+      "mentor-updates.timer": "active",
+      "mentor-certificate.timer": "active"
+    },
+    "generated_pages_preserved": 7198,
+    "protected_during_install": 7585,
+    "private_permissions_verified": true,
+    "source_backup_verified": true,
+    "qa_cleanup": {
+      "synthetic_accounts_removed": 2,
+      "other_accounts_preserved": 0,
+      "original_private_files_unchanged": 1,
+      "passed": true
+    },
+    "maintenance": {
+      "completed_at": "2026-11-17T03:26:27.863509+00:00",
+      "failures": {}
+    },
+    "review": {
+      "completed_at": "2026-11-17T04:07:21.552520+00:00",
+      "failures": {},
+      "status": "attention"
+    }
+  },
+  "public_ux": {
+    "checked_at": "2026-11-17T04:10:48.523972+00:00",
+    "checks": [
+      {
+        "variant": "deployed",
+        "width": 1440,
+        "links": [
+          {
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          },
+          {
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          }
+        ],
+        "successful_result": {
+          "top": 112,
+          "header_bottom": 70,
+          "height": 720,
+          "focus": "discovery-results"
+        },
+        "invalid_search_message": {
+          "top": 112,
+          "header_bottom": 70,
+          "height": 720,
+          "focus": "discovery-message"
+        },
+        "policy_target": {
+          "school": "zju",
+          "dept": "cs",
+          "year": "2028",
+          "degree": "master",
+          "route": "recommend",
+          "track": "ordinary"
+        },
+        "anonymous_application_next": {
+          "school": [
+            "zju"
+          ],
+          "dept": [
+            "cs"
+          ],
+          "year": [
+            "2028"
+          ],
+          "degree": [
+            "master"
+          ],
+          "route": [
+            "recommend"
+          ],
+          "track": [
+            "ordinary"
+          ]
+        },
+        "page_errors": [],
+        "blocked_requests": [],
+        "page_scroll_widths": {
+          "discovery": 1440,
+          "admissions": 1440,
+          "account": 1440
+        },
+        "tls": "TLS 1.3"
+      },
+      {
+        "variant": "deployed",
+        "width": 390,
+        "links": [
+          {
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          },
+          {
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          }
+        ],
+        "successful_result": {
+          "top": 112,
+          "header_bottom": 97,
+          "height": 720,
+          "focus": "discovery-results"
+        },
+        "invalid_search_message": {
+          "top": 112,
+          "header_bottom": 97,
+          "height": 720,
+          "focus": "discovery-message"
+        },
+        "policy_target": {
+          "school": "zju",
+          "dept": "cs",
+          "year": "2028",
+          "degree": "master",
+          "route": "recommend",
+          "track": "ordinary"
+        },
+        "anonymous_application_next": {
+          "school": [
+            "zju"
+          ],
+          "dept": [
+            "cs"
+          ],
+          "year": [
+            "2028"
+          ],
+          "degree": [
+            "master"
+          ],
+          "route": [
+            "recommend"
+          ],
+          "track": [
+            "ordinary"
+          ]
+        },
+        "page_errors": [],
+        "blocked_requests": [],
+        "page_scroll_widths": {
+          "discovery": 390,
+          "admissions": 390,
+          "account": 390
+        },
+        "tls": "TLS 1.3"
+      },
+      {
+        "variant": "deployed",
+        "width": 320,
+        "links": [
+          {
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          },
+          {
+            "school": [
+              "zju"
+            ],
+            "dept": [
+              "cs"
+            ],
+            "year": [
+              "2028"
+            ],
+            "degree": [
+              "master"
+            ],
+            "route": [
+              "recommend"
+            ],
+            "track": [
+              "ordinary"
+            ]
+          }
+        ],
+        "successful_result": {
+          "top": 112,
+          "header_bottom": 97,
+          "height": 720,
+          "focus": "discovery-results"
+        },
+        "invalid_search_message": {
+          "top": 112,
+          "header_bottom": 97,
+          "height": 720,
+          "focus": "discovery-message"
+        },
+        "policy_target": {
+          "school": "zju",
+          "dept": "cs",
+          "year": "2028",
+          "degree": "master",
+          "route": "recommend",
+          "track": "ordinary"
+        },
+        "anonymous_application_next": {
+          "school": [
+            "zju"
+          ],
+          "dept": [
+            "cs"
+          ],
+          "year": [
+            "2028"
+          ],
+          "degree": [
+            "master"
+          ],
+          "route": [
+            "recommend"
+          ],
+          "track": [
+            "ordinary"
+          ]
+        },
+        "page_errors": [],
+        "blocked_requests": [],
+        "page_scroll_widths": {
+          "discovery": 320,
+          "admissions": 320,
+          "account": 320
+        },
+        "tls": "TLS 1.3"
+      }
+    ]
+  },
+  "cleanup": {
+    "historical_reports": 106,
+    "historical_core_snapshots": 3,
+    "local_research_originals": 11,
+    "generated_git_paths": 7198
+  },
+  "deployment": {
+    "source_commit": "349a8b4ba7235cd0be02607317c9c39382b64ef1",
+    "archive_sha256": "962e51de987dbe2a445d7b70fa2bcfbb59774aa4ad710a6febc629bc0a571bb8",
+    "verified_files": 241,
+    "protected_files_unchanged": 7585,
+    "generated_retired_from_git": 7198,
+    "previously_live_generated_preserved": 7198,
+    "source_backup": "/opt/mentor-assistant-stage-v1120/source-before.tar.gz",
+    "source_backup_sha256": "e09f4da80bb7704582d198ffefc07f30ed230df8698b32b25c70a9491cdc0d66",
+    "site_backup": "/opt/mentor-assistant-stage-v1120/site-before"
+  },
+  "github": {
+    "repository": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "branch": "main",
+    "tag": "v1.12.0",
+    "source_branch": "codex/reliable-maintenance",
+    "ci": "Exact commit results are recorded in GitHub Actions; final refs are bound in deployed RELEASE_SOURCE.json."
+  },
+  "qualifications": [
+    "The first local pytest run ended without a summary; its cause was not established. Eighteen surrounding cases and the complete frozen suite subsequently passed.",
+    "The first deployment wrapper returned nonzero due to one trailing CR; the verified Python installation completed successfully. The wrapper was normalized and retested without reinstalling production.",
+    "This software cleanup does not establish new admissions coverage."
+  ],
+  "ci_portability": {
+    "candidate_run_id": 44015879673,
+    "candidate_passed": 1234,
+    "candidate_failed": 26,
+    "candidate_skipped": 1,
+    "scope": "test helper paths and exact original HTTP fixture bytes only; production code unchanged",
+    "targeted_passed": 95,
+    "targeted_subtests_passed": 6,
+    "final_ci_authority": "GitHub Actions on the release tag commit; deployed RELEASE_SOURCE.json records the actual result"
+  }
+}
