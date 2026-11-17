@@ -235,6 +235,8 @@ def test_real_pku_policy_keeps_nested_materials_both_deadlines_and_external_pdf(
     assert '525' in policy['fields']['materials']['text'] and '450' in policy['fields']['materials']['text']
     assert 'EMS' in policy['material_actions'][0]['instruction']['text']
     assert '以寄达时间为准' in policy['material_actions'][0]['instruction']['text']
+    assert '昌平区' in policy['fields']['tuition']['text']
+    assert proposed['checks']['tuition']['value'] == policy['fields']['tuition']['text']
     assert len(policy['review_hashes']) == 2 and proposed['application_url'] == 'https://admission.pku.edu.cn/applications/'
     admissions_util.validate(dict(version=1, sources=proposed['sources'], policies=[policy]), {'pku': {'cs'}})
     # This validates the protocol only; it does not stand in for a real AI review.

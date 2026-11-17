@@ -1,297 +1,323 @@
 {
   "scope": "configured-official-columns",
-  "checked_at": "2026-11-15T11:20:50+00:00",
+  "checked_at": "2026-11-17T00:49:26+00:00",
   "sources": {
     "tsinghua/cs": {
       "url": "https://www.cs.tsinghua.edu.cn/zszp/zsxx.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "4f42b1673953f8a95b6563b41650d28d48e7e39a9d7b4cd367af65bad6df2cdf",
       "count": 10,
       "error": null
     },
     "pku/cs": {
       "url": "https://cs.pku.edu.cn/zsxx/yjszs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "0ad94455897b3ce7861807e2ef521c7a8e22441c488eb15bef3d84c1c884d4c8",
       "count": 19,
       "error": null
     },
     "sjtu/cs": {
       "url": "https://www.cs.sjtu.edu.cn/bsyjs_zsgz.html",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "c3e29ac5bd559b0fdb4d82f2a9651932a2996d52ab156cce0b729de3379f4b85",
       "count": 9,
       "error": null
     },
     "buaa/cyber": {
       "url": "https://cst.buaa.edu.cn/rcpy/yjsjy1/zsgz.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "5379ee76a39723b741aee555edb5059885c522f605417114e98a892e3deed86a",
       "count": 6,
       "error": null
     },
     "pku/sai": {
       "url": "https://sai.pku.edu.cn/rcpy/yjszs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "eb4912e374adda9a1a99f950343af2dd09d5372b5a441218ca2918c2fac9a129",
       "count": 15,
       "error": null
     },
     "tsinghua/auto": {
       "url": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
-      "signature": "2e08813b0730eb0d49a3fa98acd91ea687a28cecc073220693ef4480565a832c",
-      "count": 7,
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
+      "signature": "97abcb65326f71a6e2a7efff8d35051545efe526df63b76ba067de3d2c571ff4",
+      "count": 4,
       "error": null
     },
     "seu/auto": {
       "url": "https://automation.seu.edu.cn/zxtz/list.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "15203442c8c94ee7324be721aefda4cc10fd3f6d336ed27a06cff5393aa3f846",
       "count": 5,
       "error": null
     },
     "sjtu/auto": {
       "url": "https://sais.sjtu.edu.cn/yjs_zsgz.html",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "b518dc2e509cb8107cd08cd6d2152fd9ce0a204e98f8c3816bfc65dfdb01ed5b",
       "count": 8,
       "error": null
     },
     "hust/cyber": {
       "url": "https://cse.hust.edu.cn/yjsjy/tzgg.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-16",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "7c56ff3428b18aad3a1f61c78b1a4e17539f3d30537dcfbcddb8d7cfa1e0b944",
       "count": 15,
-      "error": null
+      "error": "HTTPSConnectionPool(host='cse.hust.edu.cn', port=443): Max retries exceeded with url: /yjsjy/tzgg.htm (Caused by NewConnectionError(\"HTTPSConnection(host='cse.hust.edu.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
     },
     "hust/aia": {
       "url": "https://aia.hust.edu.cn/tzgg/yjs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-16",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "0ee11fd965421c7f34dae1e09aa8ca198b39bd68284064e0014a1300057a6e41",
       "count": 2,
-      "error": null
+      "error": "HTTPSConnectionPool(host='aia.hust.edu.cn', port=443): Max retries exceeded with url: /tzgg/yjs.htm (Caused by NewConnectionError(\"HTTPSConnection(host='aia.hust.edu.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
     },
     "whu/cyber": {
       "url": "https://cse.whu.edu.cn/kjdh/tzgg/jx.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "b5b45241a882311424507f0f406a3433deece04a3928ffd794ed777c379c29bb",
       "count": 9,
       "error": null
     },
     "csu/auto": {
       "url": "https://soa.csu.edu.cn/index/tzgg.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "c8744e8cae8aca2ff6d39752007aaa2075319d1922588b7168bd3da4f2e72c3e",
       "count": 5,
       "error": null
     },
     "sysu/cs": {
       "url": "https://cse.sysu.edu.cn/admission/master",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "a51982ed5eebc61fd9cc8570654978833320fe45988fa64d74b467c099b904c3",
       "count": 17,
       "error": null
     },
     "xmu/cs": {
       "url": "https://informatics.xmu.edu.cn/zsxx.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "0faf4d2bb7b68ace1c7d90f3c0ee946a17a5719437810ecf50b46697911beca1",
       "count": 10,
       "error": null
     },
     "scut/cs": {
       "url": "https://www2.scut.edu.cn/cs/sszs/list.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "7d05edf183019fbbf65848c9b5e8ee5923d539006fc13882adfa1cd684ebd727",
       "count": 6,
       "error": null
     },
     "hnu/cs": {
       "url": "https://csee.hnu.edu.cn/zsjy/sszs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "2157ffdd5b76027fd26aac1ce052e7783e3c3f413719dc5f60797e7b0e14bb15",
       "count": 19,
       "error": null
     },
     "sustech/cs": {
       "url": "https://cse.sustech.edu.cn/graduate/graduate-admissions/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
-      "signature": "e1e5072c05d04af52cc269c9b14f89c8cedc0685dec6c227e28071c514ab9ce0",
-      "count": 10,
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
+      "signature": "8994ffdad2b2ed862bd234720fd18b0752af9bbd9d81069ca9bbcc8423b395ca",
+      "count": 9,
       "error": null
     },
     "shanghaitech/cs": {
       "url": "https://sist.shanghaitech.edu.cn/2825/list.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "472b063606ee89546d2dbe5824f876afe11eabfb330c132aa9b50ff4e0169210",
       "count": 14,
       "error": null
     },
     "pku/ai4s": {
       "url": "https://ai4s.pkusz.edu.cn/xydt/tzgg1.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "b410e36984748ea326461f8f5aedc394f7aefd739f2b1f282aac772e7d427085",
       "count": 4,
       "error": null
     },
     "ucas/sia": {
       "url": "https://sia.cas.cn/zpjy/yjsjy/zs/zsgg/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "e8c9293b6cd891bbd8da243fed770749b872fb5b5a5bd2a7b25e99c64c1b8a1f",
       "count": 16,
       "error": null
     },
     "ucas/cnic": {
       "url": "https://cnic.cas.cn/yjsjy/tzgg/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "9b45bebe08e40f6fd8ca883b3009398065e89596b7457aa9cc7f2329e2e1c428",
       "count": 14,
       "error": null
     },
     "ucas/ict": {
       "url": "https://www.ict.ac.cn/yjsjy/zsxx/sszs/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "8a486e0d7d000c59ebcfb95f2c0687e04d2f48757844047fc4dcef91ff9ddf3b",
       "count": 12,
       "error": null
     },
     "ucas/ihep": {
       "url": "https://ihep.cas.cn/edu/bks/xly/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "41cc2bce1040517abc60f83259bbd7d83c9706362c23647e0b1e2592066a5670",
       "count": 1,
       "error": null
     },
     "bit/cs": {
       "url": "https://cs.bit.edu.cn/tzgg/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "f785a379f7cccfc2faf5fe7c4d6e9e10dc1daa966938b725b9d9c73e1ad1e4a7",
       "count": 11,
       "error": null
     },
     "nju/cs": {
       "url": "https://cs.nju.edu.cn/1702/list.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "2869479df2c71b07ab39fab2d08180bb45286371bd5df378a2bc5c3e4066dd78",
       "count": 4,
       "error": null
     },
     "ucas/ia": {
       "url": "https://ia.cas.cn/yjsjy/zs/sszs/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "38470708adf1e119863b812840279f9c9947c39c33a42a7b37bbd79c42715ff5",
       "count": 13,
       "error": null
     },
     "ucas/iscas": {
       "url": "https://www.iscas.ac.cn/yjsjy/zsxx/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "8d91c86c46ca2f2747232801118833d1c61b75939921ea4edd269c1f891af5f1",
       "count": 8,
       "error": null
     },
     "ucas/iie": {
       "url": "https://iie.cas.cn/xsjy/zxtz/",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "a17bdc917a3a844df77a8171093c3f0a89ffa9afaa43b4977310fd143fadf9fb",
       "count": 10,
       "error": null
     },
     "ustc/cs": {
       "url": "https://cs.ustc.edu.cn/20160/list.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "c46fbc71262f31389e89d9f12f823d00b7982a345f52e472c9a7d53799597f49",
       "count": 6,
       "error": null
     },
     "buaa/cs": {
       "url": "https://scse.buaa.edu.cn/xwdt/gggs.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "e5f9946618563d8d2dfe8fa93930c6eb0885b1b837f26f230c853706001bc533",
       "count": 5,
       "error": null
     },
     "buaa/software": {
       "url": "https://soft.buaa.edu.cn/xwdt/gggs/tzgg.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "207abe23a66bb3fc9ec4d46e9fde2cc3defd2543a36f778c05c7bfa22eab6dc6",
       "count": 8,
       "error": null
     },
     "bnu/ai": {
       "url": "https://ai.bnu.edu.cn/ggjxz/tzgg/index.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "76facef197e694e0e4f537e6965aec381f7cd8f6af5a85bb0e8495110866ac33",
       "count": 6,
       "error": null
     },
     "uestc/admissions": {
       "url": "https://yz.uestc.edu.cn/sszs/tzgg.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "463c93da9ffa8348e1b4d4c30831caea8fc7ad52f4e361dd16f2fcfd42baf552",
       "count": 14,
       "error": null
     },
     "uestc/camps": {
       "url": "https://yz.uestc.edu.cn/zsxc1/xly.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "851a41d1c80724fc062dfe7fec8a2ea9ddf0089e63c9d4eacdc75766c4b8b778",
       "count": 1,
       "error": null
     },
     "slai/admissions": {
       "url": "https://www.slai.edu.cn/zh-hans/taxonomy/term/104",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
-      "signature": "c336ba03beb0549427a0e7bc5cae98c13886da07a1ac67c0b61c6c0c9c8b3585",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
+      "signature": "34bc8b037ba6e96bfc9a63d929b9a5af49516ff3559a1d0f9d1319fed4df9ae4",
       "count": 5,
       "error": null
     },
     "tongji/ee": {
       "url": "https://see.tongji.edu.cn/jxgz/yjsjx/zsgz.htm",
-      "fetched_at": "2026-11-15",
-      "last_attempt": "2026-11-15T11:20:50+00:00",
+      "fetched_at": "2026-11-17",
+      "last_attempt": "2026-11-16T18:21:40+00:00",
       "signature": "ae25ed0d00e73416f0744e27aa242b7b54c8c7f6740cda612957cf9f3e942707",
       "count": 13,
+      "error": null
+    },
+    "pku/software": {
+      "url": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
+      "last_attempt": "2026-11-17T00:49:26+00:00",
+      "signature": "ad40552efecc9048b9f3721939884fe4c2061f6cd7004c7ba6fc1ff2a3d7a997",
+      "count": 9,
       "error": null
     }
   },
   "notices": [
+    {
+      "id": "f1df0c90d6d4e9e0",
+      "school": "slai",
+      "dept": "admissions",
+      "unit": "深圳河套学院招生资讯",
+      "title": "预录取名单公示 | 深瞳计划第三期第二批",
+      "url": "https://www.slai.edu.cn/zh-hans/article/692",
+      "source": "https://www.slai.edu.cn/zh-hans/taxonomy/term/104",
+      "publication_date": "2026-11-16",
+      "title_years": [],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-16",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
     {
       "id": "4e2000b210c01ff8",
       "school": "xmu",
@@ -309,7 +335,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -327,7 +353,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -347,7 +373,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -367,7 +393,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -385,7 +411,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -405,7 +431,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -425,7 +451,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -445,7 +471,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -465,67 +491,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
-      "seen_in_latest_list": true
-    },
-    {
-      "id": "7e290bf454cb3b8a",
-      "school": "tsinghua",
-      "dept": "auto",
-      "unit": "清华自动化系",
-      "title": "清华大学2027年自动化系招收公开招考博士研究生拟录取名单公示",
-      "url": "https://www.au.tsinghua.edu.cn/info/1037/4644.htm",
-      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
-      "publication_date": "2026-11-03",
-      "title_years": [
-        2027
-      ],
-      "route_hint": "博士",
-      "admission_year": 2027,
-      "deadline": null,
-      "reviewed": true,
-      "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
-      "seen_in_latest_list": true
-    },
-    {
-      "id": "351d775bf3437288",
-      "school": "tsinghua",
-      "dept": "auto",
-      "unit": "清华自动化系",
-      "title": "清华大学2027年自动化系接收推荐免试直硕生拟录取名单公示",
-      "url": "https://www.au.tsinghua.edu.cn/info/1037/4645.htm",
-      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
-      "publication_date": "2026-11-03",
-      "title_years": [
-        2027
-      ],
-      "route_hint": "免试",
-      "admission_year": null,
-      "deadline": null,
-      "reviewed": false,
-      "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
-      "seen_in_latest_list": true
-    },
-    {
-      "id": "b0fd28aaafd6839e",
-      "school": "tsinghua",
-      "dept": "auto",
-      "unit": "清华自动化系",
-      "title": "清华大学2027年自动化系接收推荐免试直博生拟录取名单公示",
-      "url": "https://www.au.tsinghua.edu.cn/info/1037/4646.htm",
-      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
-      "publication_date": "2026-11-03",
-      "title_years": [
-        2027
-      ],
-      "route_hint": "免试",
-      "admission_year": null,
-      "deadline": null,
-      "reviewed": false,
-      "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -545,7 +511,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -565,7 +531,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -585,7 +551,27 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "c48172a0d5437977",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "2027年“前沿工程博士专业学位”项目电子信息专业招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zsjz/3b3a2a3833334abeaa6295b3407b6540.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-26",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
       "seen_in_latest_list": true
     },
     {
@@ -605,7 +591,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -625,7 +611,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -645,7 +631,47 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "7dd57ff705ef3c3d",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息博士专业学位研究生（全日制）“申请-考核制”招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zsjz/338e37723ea24a9e88b361387904693b.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-23",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "7e663fd737c42a07",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-23",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
       "seen_in_latest_list": true
     },
     {
@@ -665,7 +691,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -683,7 +709,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -703,7 +729,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -723,7 +749,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -743,7 +769,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -763,7 +789,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -783,7 +809,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -803,7 +829,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -823,7 +849,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -843,7 +869,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -863,7 +889,67 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "51bbac5e001d396c",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-12",
+      "title_years": [
+        2027
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "b73a60d075dd6775",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年工程硕博士培养改革专项博士研究生招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/67f64b43b62843d095d4bc876c723c25.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-12",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "95a75cdf5f31cb7f",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年工程管理专业学位硕士研究生（MEM）招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/b794fb1e153d4b899c098962a09cd14e.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-10-12",
+      "title_years": [
+        2027
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
       "seen_in_latest_list": true
     },
     {
@@ -883,7 +969,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -903,7 +989,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -923,7 +1009,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -943,7 +1029,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -963,7 +1049,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -983,7 +1069,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1003,7 +1089,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1023,7 +1109,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1043,7 +1129,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1061,7 +1147,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1081,7 +1167,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1101,7 +1187,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -1119,7 +1205,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1139,7 +1225,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1159,7 +1245,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1179,7 +1265,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1199,7 +1285,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1219,7 +1305,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1239,7 +1325,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1259,7 +1345,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1279,7 +1365,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1299,7 +1385,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1319,7 +1405,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1339,7 +1425,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1359,7 +1445,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1379,7 +1465,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1399,7 +1485,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1419,7 +1505,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -1439,7 +1525,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1459,7 +1545,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1479,7 +1565,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -1497,7 +1583,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1517,7 +1603,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1537,7 +1623,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1557,7 +1643,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1577,7 +1663,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1597,7 +1683,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1617,7 +1703,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1637,7 +1723,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1657,7 +1743,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1677,7 +1763,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1697,7 +1783,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1717,7 +1803,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1737,7 +1823,7 @@
       "deadline": null,
       "reviewed": true,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1757,7 +1843,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1777,7 +1863,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1797,7 +1883,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1817,7 +1903,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1837,7 +1923,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1857,7 +1943,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1877,7 +1963,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1897,7 +1983,47 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "ff894db7d8b7b2ff",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年接收推荐免试博士研究生招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/55e02c72d8c54e7f91d8c4d3961fb09e.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-09-01",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "4345a35f3187a645",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年接收推荐免试硕士研究生招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/99af84dbf2324a5abfa97084cc0ffaa8.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2026-09-01",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
       "seen_in_latest_list": true
     },
     {
@@ -1917,7 +2043,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1937,7 +2063,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1957,7 +2083,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1977,7 +2103,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -1997,7 +2123,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2017,7 +2143,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2037,7 +2163,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2057,7 +2183,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2077,7 +2203,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2097,7 +2223,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2117,7 +2243,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2137,7 +2263,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2157,7 +2283,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2177,27 +2303,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
-      "seen_in_latest_list": true
-    },
-    {
-      "id": "0d0158aed44619ee",
-      "school": "slai",
-      "dept": "admissions",
-      "unit": "深圳河套学院招生资讯",
-      "title": "SLAI2027级直博招生政策云端宣讲会",
-      "url": "https://www.slai.edu.cn/zh-hans/article/549",
-      "source": "https://www.slai.edu.cn/zh-hans/taxonomy/term/104",
-      "publication_date": "2026-07-25",
-      "title_years": [
-        2027
-      ],
-      "route_hint": null,
-      "admission_year": null,
-      "deadline": null,
-      "reviewed": false,
-      "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2217,7 +2323,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2237,7 +2343,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2257,7 +2363,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2277,7 +2383,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2297,7 +2403,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2317,7 +2423,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2337,7 +2443,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2357,7 +2463,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2377,7 +2483,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -2397,7 +2503,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -2417,7 +2523,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2437,7 +2543,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2457,7 +2563,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2477,7 +2583,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -2497,7 +2603,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2517,7 +2623,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2537,7 +2643,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -2557,7 +2663,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2577,7 +2683,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2597,7 +2703,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2617,7 +2723,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2637,7 +2743,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2657,7 +2763,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -2677,7 +2783,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2697,7 +2803,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2717,7 +2823,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2737,7 +2843,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2757,7 +2863,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2777,7 +2883,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2797,7 +2903,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2817,7 +2923,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2837,7 +2943,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2855,7 +2961,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2875,7 +2981,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2895,7 +3001,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2915,7 +3021,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2935,7 +3041,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2955,7 +3061,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2975,7 +3081,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -2995,7 +3101,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3015,7 +3121,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3035,7 +3141,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3055,7 +3161,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3075,7 +3181,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3095,7 +3201,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3115,7 +3221,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3135,7 +3241,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3155,7 +3261,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3175,7 +3281,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3195,7 +3301,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3215,7 +3321,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3235,7 +3341,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3255,7 +3361,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3275,7 +3381,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3295,7 +3401,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3315,7 +3421,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3335,7 +3441,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3355,7 +3461,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3375,7 +3481,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3395,7 +3501,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3415,7 +3521,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3435,7 +3541,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3455,7 +3561,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3475,7 +3581,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3495,7 +3601,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3515,7 +3621,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3535,7 +3641,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3555,7 +3661,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3575,7 +3681,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3595,7 +3701,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3615,7 +3721,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3635,7 +3741,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3655,7 +3761,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3675,7 +3781,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3695,7 +3801,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3715,7 +3821,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3735,7 +3841,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3755,7 +3861,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3775,7 +3881,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3795,7 +3901,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3815,7 +3921,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3835,7 +3941,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3855,7 +3961,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3875,7 +3981,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3895,7 +4001,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3915,7 +4021,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -3935,7 +4041,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3955,7 +4061,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3975,7 +4081,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -3995,7 +4101,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4015,7 +4121,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4035,7 +4141,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4055,7 +4161,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4075,7 +4181,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4095,7 +4201,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4115,7 +4221,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -4135,7 +4241,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4155,7 +4261,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4175,7 +4281,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4195,7 +4301,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4215,7 +4321,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4235,7 +4341,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4255,7 +4361,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4275,7 +4381,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4295,7 +4401,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4315,7 +4421,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4335,7 +4441,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4353,7 +4459,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4373,27 +4479,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
-      "seen_in_latest_list": true
-    },
-    {
-      "id": "032a6689892e1c2c",
-      "school": "sustech",
-      "dept": "cs",
-      "unit": "南方科技大学计算机科学与工程系",
-      "title": "南方科技大学计算机科学与工程系2026年博士招生优秀生源快响计划 初审通过名单公示（第二批）",
-      "url": "https://cse.sustech.edu.cn/graduate/3600.html",
-      "source": "https://cse.sustech.edu.cn/graduate/graduate-admissions/",
-      "publication_date": "2026-01-04",
-      "title_years": [
-        2026
-      ],
-      "route_hint": "博士",
-      "admission_year": null,
-      "deadline": null,
-      "reviewed": false,
-      "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4413,7 +4499,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4433,7 +4519,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4453,7 +4539,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4473,7 +4559,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4493,7 +4579,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4513,7 +4599,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4533,7 +4619,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4553,7 +4639,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4573,7 +4659,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4593,7 +4679,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4613,7 +4699,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4634,7 +4720,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4654,7 +4740,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4674,7 +4760,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4694,7 +4780,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4714,7 +4800,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4734,7 +4820,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4754,7 +4840,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4774,7 +4860,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4794,7 +4880,27 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
+      "seen_in_latest_list": true
+    },
+    {
+      "id": "7be043d10bc8063f",
+      "school": "pku",
+      "dept": "software",
+      "unit": "北大软件与微电子学院",
+      "title": "北京大学软件与微电子学院 2026年工程硕博士培养改革专项博士研究生招生说明",
+      "url": "https://ss.pku.edu.cn/zsxx/zsjz/c262c487af68468fb8d69dd026318a95.htm",
+      "source": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+      "publication_date": "2025-09-26",
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-17T00:39:57.604694+00:00",
+      "fetched_at": "2026-11-17T00:39:57.604694+00:00",
       "seen_in_latest_list": true
     },
     {
@@ -4814,7 +4920,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4832,7 +4938,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -4852,7 +4958,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4872,7 +4978,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4892,7 +4998,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4910,7 +5016,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": true
     },
     {
@@ -4930,7 +5036,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4950,7 +5056,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4970,7 +5076,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -4990,7 +5096,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5010,7 +5116,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5030,7 +5136,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5050,7 +5156,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5068,7 +5174,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5088,7 +5194,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5108,7 +5214,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5128,7 +5234,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5148,7 +5254,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5168,7 +5274,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5188,7 +5294,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5208,7 +5314,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5228,7 +5334,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5248,7 +5354,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5268,7 +5374,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5288,7 +5394,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5308,7 +5414,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5328,7 +5434,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5348,7 +5454,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5368,7 +5474,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5388,7 +5494,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5408,7 +5514,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5428,7 +5534,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5448,7 +5554,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5468,7 +5574,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5488,7 +5594,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5508,7 +5614,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5528,7 +5634,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5548,7 +5654,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5568,7 +5674,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5588,7 +5694,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5608,7 +5714,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5626,7 +5732,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5646,7 +5752,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5666,7 +5772,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5686,7 +5792,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5706,7 +5812,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5726,7 +5832,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5746,7 +5852,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5766,7 +5872,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5786,7 +5892,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5806,7 +5912,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5826,7 +5932,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5846,7 +5952,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5866,7 +5972,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5886,7 +5992,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5906,7 +6012,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5926,7 +6032,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5946,7 +6052,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5966,7 +6072,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -5986,7 +6092,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6006,7 +6112,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6026,7 +6132,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6046,7 +6152,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6064,7 +6170,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6084,7 +6190,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6104,7 +6210,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6124,7 +6230,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6144,7 +6250,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6164,7 +6270,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6184,7 +6290,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6204,7 +6310,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6224,7 +6330,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6244,7 +6350,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6264,7 +6370,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6284,7 +6390,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6304,7 +6410,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6324,7 +6430,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6344,7 +6450,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6364,7 +6470,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6384,7 +6490,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6404,7 +6510,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6424,7 +6530,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6444,7 +6550,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6464,7 +6570,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6484,7 +6590,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6504,7 +6610,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6524,7 +6630,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6544,7 +6650,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6564,7 +6670,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6584,7 +6690,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6602,7 +6708,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6622,7 +6728,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6642,7 +6748,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6662,7 +6768,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6682,7 +6788,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6702,7 +6808,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6722,7 +6828,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6742,7 +6848,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6762,7 +6868,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6782,7 +6888,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6802,7 +6908,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6822,7 +6928,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6842,7 +6948,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6862,7 +6968,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6882,7 +6988,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6902,7 +7008,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6922,7 +7028,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6942,7 +7048,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6962,7 +7068,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -6982,7 +7088,7 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
     },
     {
@@ -7002,8 +7108,88 @@
       "deadline": null,
       "reviewed": false,
       "first_seen": "2026-11-15",
-      "fetched_at": "2026-11-15",
+      "fetched_at": "2026-11-17",
       "seen_in_latest_list": true
+    },
+    {
+      "id": "7e290bf454cb3b8a",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "清华大学2027年自动化系招收公开招考博士研究生拟录取名单公示",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/4644.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2026-11-03",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "博士",
+      "admission_year": 2027,
+      "deadline": null,
+      "reviewed": true,
+      "first_seen": "2026-11-15",
+      "fetched_at": "2026-11-16",
+      "seen_in_latest_list": false
+    },
+    {
+      "id": "351d775bf3437288",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "清华大学2027年自动化系接收推荐免试直硕生拟录取名单公示",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/4645.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2026-11-03",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-15",
+      "fetched_at": "2026-11-16",
+      "seen_in_latest_list": false
+    },
+    {
+      "id": "b0fd28aaafd6839e",
+      "school": "tsinghua",
+      "dept": "auto",
+      "unit": "清华自动化系",
+      "title": "清华大学2027年自动化系接收推荐免试直博生拟录取名单公示",
+      "url": "https://www.au.tsinghua.edu.cn/info/1037/4646.htm",
+      "source": "https://www.au.tsinghua.edu.cn/zsjy/yjszs.htm",
+      "publication_date": "2026-11-03",
+      "title_years": [
+        2027
+      ],
+      "route_hint": "免试",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-15",
+      "fetched_at": "2026-11-16",
+      "seen_in_latest_list": false
+    },
+    {
+      "id": "0d0158aed44619ee",
+      "school": "slai",
+      "dept": "admissions",
+      "unit": "深圳河套学院招生资讯",
+      "title": "SLAI2027级直博招生政策云端宣讲会",
+      "url": "https://www.slai.edu.cn/zh-hans/article/549",
+      "source": "https://www.slai.edu.cn/zh-hans/taxonomy/term/104",
+      "publication_date": "2026-07-25",
+      "title_years": [
+        2027
+      ],
+      "route_hint": null,
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-15",
+      "fetched_at": "2026-11-16",
+      "seen_in_latest_list": false
     },
     {
       "id": "9dab27bbe1b4d3a6",
@@ -7123,6 +7309,26 @@
       "reviewed": false,
       "first_seen": "2026-10-14",
       "fetched_at": "2026-10-15",
+      "seen_in_latest_list": false
+    },
+    {
+      "id": "032a6689892e1c2c",
+      "school": "sustech",
+      "dept": "cs",
+      "unit": "南方科技大学计算机科学与工程系",
+      "title": "南方科技大学计算机科学与工程系2026年博士招生优秀生源快响计划 初审通过名单公示（第二批）",
+      "url": "https://cse.sustech.edu.cn/graduate/3600.html",
+      "source": "https://cse.sustech.edu.cn/graduate/graduate-admissions/",
+      "publication_date": "2026-01-04",
+      "title_years": [
+        2026
+      ],
+      "route_hint": "博士",
+      "admission_year": null,
+      "deadline": null,
+      "reviewed": false,
+      "first_seen": "2026-11-15",
+      "fetched_at": "2026-11-16",
       "seen_in_latest_list": false
     },
     {
@@ -7467,10 +7673,10 @@
     }
   ],
   "summary": {
-    "source_count": 36,
-    "sources_ok": 36,
+    "source_count": 1,
+    "sources_ok": 1,
     "sources_error": 0,
-    "changed_count": 0,
-    "notice_count": 360
+    "changed_count": 1,
+    "notice_count": 370
   }
 }

@@ -1,0 +1,171 @@
+{
+  "verdict": "deliverable_with_stated_scope",
+  "scope": "read-only final policy content audit; no production writes, no new AI calls",
+  "baseline_count": 111,
+  "final_count": 114,
+  "new_policies": 3,
+  "old_policies_and_sources_unchanged": true,
+  "notice_history_prefix_preserved": true,
+  "baseline_notice_sources_preserved": true,
+  "new_notice_source": {
+    "school": "pku",
+    "dept": "software",
+    "name": "北大软件与微电子学院",
+    "url": "https://ss.pku.edu.cn/zsxx/zsjz/index.htm",
+    "selector": ".tz-list a[href]",
+    "title_selector": "h3",
+    "date_selector": ".date"
+  },
+  "new_unit": {
+    "school": "pku",
+    "dept": "software",
+    "name": "软件与微电子学院",
+    "roster_pending": "已登记官方招生栏目与软件工程工学博士政策；导师名册尚未采集，招生要求按具体专业核对。"
+  },
+  "manifest_sha256": "9daf93b73b6c096249e5036ef5f915a9db711c77c78acf957e18ae5e3657bd08",
+  "manifest_files_verified": 7,
+  "policies": [
+    {
+      "id": "auto-11c55f7ac3b2f3f5",
+      "dept": "cs",
+      "level": "dept",
+      "program": "",
+      "year": 2027,
+      "degree": "phd",
+      "route": "assessment",
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "source_lines": 88,
+      "unstructured_source_lines": [
+        "五、信息公开与监督机制",
+        "1. 学院将成立招生工作领导小组，对博士研究生招生工作统一管理，确保招生过程科学有序、公开透明、公正公平。学院将通过网站公布博士研究生招生的相关说明、考核程序、复试名单和拟录取名单。",
+        "2. 申请人对学院博士招生环节有异议的，可向学院以书面形式具名提出，学院应当受理并予以答复；申请人对答复有异议的，可向研究生招生办公室提出复查。"
+      ],
+      "all_other_article_lines_present_in_displayed_values": true,
+      "display_fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition"
+      ],
+      "materials_exactly_bound": true,
+      "application_requirements_exactly_bound": true,
+      "deadlines": [
+        {
+          "label": "网上报名截止",
+          "at": "2026-11-26T17:00:00+08:00"
+        },
+        {
+          "label": "申请材料送达截止",
+          "at": "2026-11-30T12:00:00+08:00"
+        }
+      ],
+      "all_source_references_resolved": true,
+      "full_source_revalidation_passed": true,
+      "located_evidence_items": 9,
+      "ai_fields_hash": "86a7bc5f526c362c5824f098be0bfbc42f1a11ed4fa269de25b36a7472b43625",
+      "latest_real_ai_result": "pku3",
+      "create_application_href": "applications.html?policy=auto-11c55f7ac3b2f3f5&school=pku&year=2027&degree=phd&route=assessment&dept=cs&track=ordinary"
+    },
+    {
+      "id": "auto-5f50d6497cd986d6",
+      "dept": "sai",
+      "level": "dept",
+      "program": "",
+      "year": 2027,
+      "degree": "phd",
+      "route": "assessment",
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "source_lines": 81,
+      "unstructured_source_lines": [
+        "五、信息公开与监督机制",
+        "学院将成立招生工作小组，对博士研究生招生工作统一管理，确保招生过程科学有序、公开透明、公正公平。学院将通过网站公布博士研究生招生的相关说明、考核程序、复试名单和拟录取名单。",
+        "申请人对学院博士招生环节有异议的，可向学院以书面形式具名提出，学院应当受理并予以答复；申请人对答复有异议的，可向研究生招生办公室提出复查。"
+      ],
+      "all_other_article_lines_present_in_displayed_values": true,
+      "display_fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition"
+      ],
+      "materials_exactly_bound": true,
+      "application_requirements_exactly_bound": true,
+      "deadlines": [
+        {
+          "label": "申请报名截止",
+          "at": "2026-11-25T17:00:00+08:00"
+        },
+        {
+          "label": "申请材料送达截止",
+          "at": "2026-11-27T12:00:00+08:00"
+        }
+      ],
+      "all_source_references_resolved": true,
+      "full_source_revalidation_passed": true,
+      "located_evidence_items": 9,
+      "ai_fields_hash": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+      "latest_real_ai_result": "sai5",
+      "create_application_href": "applications.html?policy=auto-5f50d6497cd986d6&school=pku&year=2027&degree=phd&route=assessment&dept=sai&track=ordinary"
+    },
+    {
+      "id": "auto-7e663fd737c42a07",
+      "dept": "software",
+      "level": "program",
+      "program": "软件工程",
+      "year": 2027,
+      "degree": "phd",
+      "route": "assessment",
+      "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+      "source_sha256": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+      "source_lines": 81,
+      "unstructured_source_lines": [
+        "九、信息公开与监督机制",
+        "1、按照“公开、公平、公正”的原则，研究生院、学院将通过网站（http://www.ss.pku.edu.cn/）公布博士研究生招生的相关说明、考核程序、复试名单和拟录取名单。",
+        "2、研究生招生办公室与学校有关部门全程监督我院的研究生招生情况。申请人对院系博士招生环节有异议的，可向学院以书面形式具名提出，学院应当受理并予以答复；申请人对答复有异议的，可向研究生招生办公室提出复查。"
+      ],
+      "all_other_article_lines_present_in_displayed_values": true,
+      "display_fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition",
+        "quota"
+      ],
+      "materials_exactly_bound": true,
+      "application_requirements_exactly_bound": true,
+      "deadlines": [
+        {
+          "label": "申请报名截止",
+          "at": "2026-12-25T17:00:00+08:00"
+        },
+        {
+          "label": "申请材料送达截止",
+          "at": "2026-12-28T12:00:00+08:00"
+        }
+      ],
+      "all_source_references_resolved": true,
+      "full_source_revalidation_passed": true,
+      "located_evidence_items": 10,
+      "ai_fields_hash": "a2b30471917293ca7cf63272a879cd89af2fcf60555fb8b5f14a8e6144aa8db1",
+      "latest_real_ai_result": "software2",
+      "create_application_href": "applications.html?policy=auto-7e663fd737c42a07&school=pku&year=2027&degree=phd&route=assessment&dept=software&track=ordinary&program=%7C%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"
+    }
+  ],
+  "limitations": [
+    "1 university / 3 departments / 3 current 2027 PhD assessment policies; not 2028 recommended-admission or winter-camp coverage.",
+    "Software policy is program-only (软件工程工学博士); 6 is official planned intake, not remaining places; 大兴校区 is accommodation, not a claim about teaching location.",
+    "General university admissions charter is referenced by the official policies and retained in displayed text, but is not separately fully structured in these three records.",
+    "Only publication/supervision/appeal paragraphs are not duplicated in structured business values; complete official source remains directly linked.",
+    "Software faculty roster has not been collected and remains explicitly marked pending.",
+    "Rendered isolated public-page evidence verifies actual policy card/link values; final production merge/build/deployment remain parent acceptance work."
+  ],
+  "blockers": []
+}

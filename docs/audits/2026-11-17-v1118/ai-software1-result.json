@@ -1,0 +1,40 @@
+{
+  "started_at": "2026-11-17T00:47:31.470973+00:00",
+  "uid": 999,
+  "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+  "source_sha256": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+  "content_sha256": "337eba5f7f1a308066769b397d1fb9b3a78bfa99cd1226ea5b2c150b62023114",
+  "proposal_sha256": "6d0352e51d3c00e47767608480d378437970b90ac46c0ca1495ab32d8275fdf4",
+  "input_chars": 3847,
+  "input_fields_sha256": "a2b30471917293ca7cf63272a879cd89af2fcf60555fb8b5f14a8e6144aa8db1",
+  "field_count": 12,
+  "negative_control": false,
+  "before": {
+    "date": "2026-11-17",
+    "requests": 15,
+    "input_chars": 61460
+  },
+  "state": "error",
+  "error_code": "read_timeout",
+  "error_phase": "response_headers",
+  "retryable": true,
+  "transport": {
+    "first_byte_seconds": null,
+    "first_answer_seconds": null,
+    "elapsed_seconds": 30.768,
+    "response_bytes": 0,
+    "complete": false,
+    "phase": "response_headers"
+  },
+  "elapsed_seconds": 30.77,
+  "after": {
+    "date": "2026-11-17",
+    "requests": 16,
+    "input_chars": 65307
+  },
+  "ledger_owner": {
+    "uid": 999,
+    "gid": 988,
+    "mode": "0o600"
+  }
+}

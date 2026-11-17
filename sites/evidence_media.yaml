@@ -1,0 +1,20 @@
+version: 1
+images:
+  - sha256: 52434d24b2baafbfdbe1270d7cd1edb57bd2a871bbbf63b1770a3ae2026d9f34
+    kind: institution_logo
+    source_urls:
+      - https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd
+    reviewed_at: '2026-11-17'
+    reviewer: Codex-v1.11.8-visual-audit
+    description: 已查看两个原始DOCX的同字节图片，仅含北京脑科学与类脑研究所中英文名称与标志，不含条件、材料、费用或日期。
+    original_documents:
+      - https://cibr.ac.cn/file/common/download/44d8af4c5fbe42898a84882e17b51ee5
+      - https://cibr.ac.cn/file/common/download/13a079470f7d44c49e79407fdf73259c
+  - sha256: 7dcdaadbad161a7a74b300651e2e47c7049d9c2c2462487d01b764c15040790b
+    kind: historical_photos
+    source_urls:
+      - https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd
+    reviewed_at: '2026-11-17'
+    reviewer: Codex-v1.11.8-visual-audit
+    description: 已查看官网原图，四张往届参观合照，不含申请条件、材料、费用或日期；仅在正文末尾2026冬季培训班精彩瞬间栏目复用。
+    original_image_url: https://managetest.cibr.ac.cn/static/image/2ff1accb5480443b842026ec19a408efimage.png

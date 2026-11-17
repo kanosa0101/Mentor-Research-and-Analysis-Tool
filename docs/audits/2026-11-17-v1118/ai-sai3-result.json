@@ -1,0 +1,40 @@
+{
+  "started_at": "2026-11-17T00:45:20.342522+00:00",
+  "uid": 999,
+  "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+  "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+  "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+  "proposal_sha256": "1a87d904ebf2589db44352b908fabf65ed4728295c64173c5706201ea6ab946e",
+  "input_chars": 4125,
+  "input_fields_sha256": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+  "field_count": 11,
+  "negative_control": false,
+  "before": {
+    "date": "2026-11-17",
+    "requests": 13,
+    "input_chars": 50716
+  },
+  "state": "error",
+  "error_code": "read_timeout",
+  "error_phase": "response_headers",
+  "retryable": true,
+  "transport": {
+    "first_byte_seconds": null,
+    "first_answer_seconds": null,
+    "elapsed_seconds": 30.753,
+    "response_bytes": 0,
+    "complete": false,
+    "phase": "response_headers"
+  },
+  "elapsed_seconds": 30.755,
+  "after": {
+    "date": "2026-11-17",
+    "requests": 14,
+    "input_chars": 54841
+  },
+  "ledger_owner": {
+    "uid": 999,
+    "gid": 988,
+    "mode": "0o600"
+  }
+}

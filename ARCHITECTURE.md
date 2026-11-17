@@ -36,6 +36,8 @@ flowchart LR
 
 ## 公开资料与范围
 
+v1.11.8 将模型核对对象收敛为实际展示的业务字段：完整来源只发送一次，字段值逐项校验，原句和正文/字段哈希保留在本地门禁，不将重复摘录作为第二份要求。新政策的适用专业、完整报考要求、材料、各步骤时间、考试录取、校区住宿及费用等均须绑定证据；一条广义摘录不能掩盖展示值遗漏。活动的完整版本包含正文、链接、附件和已核对媒体，普通同步与续核保留同一模式，网页计数器变化与实质内容变化分别处理。受信媒体清单位于 `sites/evidence_media.yaml`，仅复用人工看过且来源与字节完全相等的校徽/往届图；陌生图片仍阻塞。规则与真实验收边界见[自动核验说明](docs/AUTOMATIC_REVIEW.md)。
+
 `data/professors` 保存导师与出处；`admissions.yaml` 保存政策、适用范围、摘要、条件、材料动作和证据定位，`admissions_checks.json` 单独保存来源检查，`admissions_entries.yaml` 保存官方入口。来源访问成功不等于人工摘要已更新，入口也不等于已覆盖具体政策。
 
 `notices.json` 是官方通知候选及其届别、渠道和阶段线索。`opportunities.json` 保留原有内容稳定ID，并以 `content_classification` 区分机构活动、导师招募、正式通知和待核验；`public_catalog` 只将机构活动放入公开列表的 `opportunities`，其他记录在 `other_contents` 保持旧链接可解析。`mentor_ids` 必须有身份依据，不能按同名绑定。分类门禁与原文、时效门禁共同决定发布；失效或待核验来源保留状态，不能默认转为开放报名。`data/coverage.json` 与 `coverage.html` 公开已整理单位及缺口。

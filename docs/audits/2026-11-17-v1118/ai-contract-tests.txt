@@ -1,0 +1,9 @@
+........................................................................ [ 51%]
+....................................................................     [100%]
+============================== warnings summary ===============================
+tests/test_ai_output_budget_v1116.py::test_complete_chinese_evidence_is_sent_without_redundant_model_echo
+  C:\Users\14376\anaconda3\Lib\site-packages\pytest_asyncio\plugin.py:1216: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+140 passed, 1 warning in 22.27s

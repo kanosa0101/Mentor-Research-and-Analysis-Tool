@@ -1,5 +1,12 @@
 # 招生通知官方栏目，覆盖统考、推免与科研活动；与机会监测共享已核对的栏目入口。
 targets:
+- school: pku
+  dept: software
+  name: 北大软件与微电子学院
+  url: https://ss.pku.edu.cn/zsxx/zsjz/index.htm
+  selector: .tz-list a[href]
+  title_selector: h3
+  date_selector: .date
 - school: tsinghua
   dept: cs
   name: 清华计算机系

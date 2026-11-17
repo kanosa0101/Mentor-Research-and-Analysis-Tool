@@ -1,0 +1,42 @@
+{
+  "previous_result": "manual",
+  "previous_issues": [
+    "application_procedure.materials中TOEFL条件写作“或者5分及以上”，原文为“或者5分及以上(自2026年1月21日后参加考试)”，缺失“自2026年1月21日后参加考试”这一时间限制，且“5分”本身疑为原文笔误，需人工核对。",
+    "application_procedure.materials未保留“请使用EMS快递”“以寄达时间为准，不以邮戳为准，逾期寄达者视为无效报名”等寄送要求，虽instruction含部分内容，但materials字段未完整表达。",
+    "application_procedure.materials未保留“仅在网上报名，未寄（送）或未按时寄（送）材料者，或只寄（送）材料而未进行网上报名者，不予受理”及“纸质版申请材料信息必须与网上申请信息完全一致，不一致者视为无效报名”等注意事项。",
+    "application_procedure.materials未保留“系统中本人姓名及身份证号码等信息必须准确，提交后不能修改”及“无论申请是否通过，申请材料均不予退还”等限制。",
+    "application_procedure.materials未保留“我院只允许填报一个志愿”及“申请人上传的照片要求半年内拍摄，真实有效，不进行美化等技术处理。入学报到时须进行人脸识别核验”等报名限制。",
+    "application_procedure.materials未保留“院系收到申请人报名材料或报名截止后，申请人的报名信息一律不作修改”及虚假信息后果由本人承担等限制。",
+    "application_procedure.materials未保留“网上报名办法详见北京大学2027年‘申请-考核制’博士研究生网上报名公告”及推荐信上传流程网址等指引信息。",
+    "application_procedure.materials未保留“请将纸质申请材料按以下顺序整理并用夹子固定, 不要装订”的整理要求。",
+    "application_procedure.materials未保留“专家须线上填写、提交推荐信，并将推荐信原件密封，在信封封口骑缝处签字后交给考生，考生将推荐信纸质签字版原件和申请材料一起快递”的完整流程限制。",
+    "application_procedure.materials未保留“已在国（境）外院校获得学历学位证书的，报名时需提交由教育部留学服务中心出具的《国（境）外学历学位认证书》”等材料提交限制。"
+  ],
+  "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+  "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+  "previous_fields_sha256": "482627acf2be37fc0f6550d9b5160c28c1317dee0fb75c774186d7eafe8f38a1",
+  "evidence": [
+    {
+      "text": "自2026年1月21日后参加考试",
+      "in_official_text": true,
+      "in_materials": true,
+      "in_instruction": true
+    },
+    {
+      "text": "请使用EMS快递",
+      "in_official_text": true,
+      "in_materials": false,
+      "in_instruction": true
+    },
+    {
+      "text": "我院只允许填报一个志愿",
+      "in_official_text": true,
+      "in_materials": false,
+      "in_instruction": true
+    }
+  ],
+  "old_user_message_chars": 13333,
+  "deduplicated_user_message_chars": 9569,
+  "all_business_values_preserved": true,
+  "no_ai_verdict_overrides": true
+}

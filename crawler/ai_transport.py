@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 
 import requests
 
-READ_TIMEOUT = 30
+READ_TIMEOUT = 45
 TOTAL_TIMEOUT = 120
 MAX_BYTES = 1_000_000
 

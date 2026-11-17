@@ -132,9 +132,19 @@ def fetch_pdf(url, source_url):
         raise ValueError('PDF重定向次数过多')
 
 
+def complete_evidence_mode(draft):
+    fetched, reviewed = draft.get('fetch', {}), draft.get('review', {})
+    return (fetched.get('evidence_mode') == 'complete' or isinstance(fetched.get('complete_document'), dict) or
+            reviewed.get('evidence_mode') == 'complete' or
+            reviewed.get('reviewer', '').startswith('自动证据核验/'))
+
+
 def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, docx_fetcher=None, complete=False):
     timestamp = (now or datetime.now(timezone.utc)).isoformat(timespec='seconds')
     previous = draft.get('fetch', {})
+    complete = complete or complete_evidence_mode(draft)
+    if complete:
+        previous = dict(previous, evidence_mode='complete')
     html_received = False
     try:
         raw = fetcher({'url': draft['source_url']})
@@ -155,7 +165,7 @@ def fetch_evidence(draft, queue_path, fetcher, now=None, pdf_fetcher=fetch_pdf, 
             from crawler import automatic_evidence
             doc = automatic_evidence.collect(raw, draft['source_url'], pdf_fetcher=pdf_fetcher,
                 docx_fetcher=docx_fetcher or attachments.fetch_docx, folder=folder, wait=getattr(fetcher, 'wait', None))
-            draft['fetch'] = dict(status='ok', checked_at=timestamp, sha256=digest,
+            draft['fetch'] = dict(status='ok', checked_at=timestamp, sha256=digest, evidence_mode='complete',
                 content_sha256=doc['content_sha256'], evidence_file=str(path.resolve()),
                 complete_document=doc, error=None)
             return raw
@@ -302,7 +312,7 @@ def sync(monitoring, queue_path, configs, *, fetcher=fetch_source, pdf_fetcher=f
                     counts['reused'] += 1
                 elif not refresh and evidence.get('status') in ('ok', 'pdf_review') and 0 <= age < interval and Path(evidence.get('evidence_file', '')).is_file() and pdf_files_exist:
                     counts['reused'] += 1
-                    if evidence.get('status') == 'ok' and not draft.get('field_evidence'):
+                    if evidence.get('status') == 'ok' and not draft.get('field_evidence') and not complete_evidence_mode(draft):
                         extracted = extraction.extract(Path(evidence['evidence_file']).read_bytes(), draft['source_url'], draft['item'].get('title', ''), opportunities.today())
                         draft.update(extracted)
                         draft['fetch']['content_sha256'] = extracted['content_sha256']
@@ -338,7 +348,7 @@ def status(draft):
         return 'needs_pdf_review'
     if evidence.get('status') not in ('ok', 'pdf_review'):
         return 'source_error'
-    if review and ((review.get('source_documents') and review.get('content_sha256') != evidence.get('content_sha256')) or
+    if review and (((review.get('source_documents') or complete_evidence_mode(draft)) and review.get('content_sha256') != evidence.get('content_sha256')) or
                    review['source_sha256'] != evidence['sha256'] and (not review.get('content_sha256') or review['content_sha256'] != evidence.get('content_sha256'))):
         return 'source_changed'
     if review and review['item_sha256'] == item_hash(draft['item']) and review['quotes'] == draft.get('quotes') and review.get('field_evidence', {}) == draft.get('reviewed_fields', {}):
@@ -490,6 +500,7 @@ second item. External edits should not run concurrently with this command.
         if expected_revision is not None and item_hash(draft) != expected_revision:
             raise ValueError('草稿已被其他操作更新，请重新打开后核验')
         check_source(draft, configs)
+        complete = complete or complete_evidence_mode(draft)
         acknowledged_fetch = copy.deepcopy(draft.get('fetch', {}))
         raw = fetch_evidence(draft, queue_path, fetcher, pdf_fetcher=pdf_fetcher, docx_fetcher=docx_fetcher, complete=complete)
         atomic_json(queue_path, queue)
@@ -555,6 +566,8 @@ second item. External edits should not run concurrently with this command.
                       item_sha256=item_hash(item), quotes=copy.deepcopy(quotes),
                       content_classification=copy.deepcopy(item['content_classification']),
                       field_evidence=copy.deepcopy(draft.get('reviewed_fields', {})))
+        if complete:
+            review['evidence_mode'] = 'complete'
         if documents:
             review['source_documents'] = copy.deepcopy(documents)
         if item.get('source_attachments'):

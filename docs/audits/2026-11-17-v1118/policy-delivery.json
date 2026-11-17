@@ -1,0 +1,275 @@
+{
+  "baseline_capture": "2026-11-17T00:30:26.043460+00:00",
+  "baseline_policies": 111,
+  "final_policies": 114,
+  "published": 3,
+  "schools": 1,
+  "departments": 3,
+  "older_policies_unchanged": true,
+  "older_sources_unchanged": true,
+  "notice_history_prefix_preserved": true,
+  "policies": [
+    {
+      "id": "auto-11c55f7ac3b2f3f5",
+      "title": "北京大学计算机学院2027年“申请-考核制” 博士研究生招生说明",
+      "school": "pku",
+      "dept": "cs",
+      "program": "",
+      "year": 2027,
+      "route": "assessment",
+      "fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition"
+      ],
+      "events": [
+        {
+          "label": "网上报名截止",
+          "kind": "deadline",
+          "at": "2026-11-26T17:00:00+08:00",
+          "quote": "- 网上报名时间： 2026 年 10 月 27 日 9:00 至 11 月 26 日 17:00",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-11c55f7ac3b2f3f5-page"
+          ]
+        },
+        {
+          "label": "申请材料送达截止",
+          "kind": "deadline",
+          "at": "2026-11-30T12:00:00+08:00",
+          "quote": "接收截止时间： 2026 年 11 月 30 日中午 12:00",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-11c55f7ac3b2f3f5-page"
+          ]
+        }
+      ],
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "input_text_sha256": "9da79edcff1cf4133506bced3a039db9ee3881c2731938e4f0c761031fa9e150",
+      "input_fields_sha256": "86a7bc5f526c362c5824f098be0bfbc42f1a11ed4fa269de25b36a7472b43625",
+      "review_method": "automatic_evidence",
+      "ai_result": "cache/v1118/pku3-result.json",
+      "ai_elapsed_seconds": 30.945,
+      "ai_generated_at": "2026-11-17T00:47:07.476983+00:00"
+    },
+    {
+      "id": "auto-7e663fd737c42a07",
+      "title": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+      "school": "pku",
+      "dept": "software",
+      "program": "软件工程",
+      "year": 2027,
+      "route": "assessment",
+      "fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition",
+        "quota"
+      ],
+      "events": [
+        {
+          "label": "申请报名截止",
+          "kind": "deadline",
+          "at": "2026-12-25T17:00:00+08:00",
+          "quote": "网报时间：2026年10月26日9:00至12月25日17:00。",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-7e663fd737c42a07-page"
+          ]
+        },
+        {
+          "label": "申请材料送达截止",
+          "kind": "deadline",
+          "at": "2026-12-28T12:00:00+08:00",
+          "quote": "材料寄达截止时间：2026年12月28日12:00前",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-7e663fd737c42a07-page"
+          ]
+        }
+      ],
+      "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+      "source_sha256": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+      "content_sha256": "337eba5f7f1a308066769b397d1fb9b3a78bfa99cd1226ea5b2c150b62023114",
+      "input_text_sha256": "a5501e93e7ca7b11cc118cff731c32cc57b89120cc8f613ec974fd6ec1671c82",
+      "input_fields_sha256": "a2b30471917293ca7cf63272a879cd89af2fcf60555fb8b5f14a8e6144aa8db1",
+      "review_method": "automatic_evidence",
+      "ai_result": "cache/v1118/software2-result.json",
+      "ai_elapsed_seconds": 8.794,
+      "ai_generated_at": "2026-11-17T00:52:39.384410+00:00"
+    },
+    {
+      "id": "auto-5f50d6497cd986d6",
+      "title": "北京大学智能学院2027年“申请-考核制”博士研究生招生说明",
+      "school": "pku",
+      "dept": "sai",
+      "program": "",
+      "year": 2027,
+      "route": "assessment",
+      "fields": [
+        "eligibility",
+        "materials",
+        "timeline",
+        "contact",
+        "exams",
+        "tuition"
+      ],
+      "events": [
+        {
+          "label": "申请报名截止",
+          "kind": "deadline",
+          "at": "2026-11-25T17:00:00+08:00",
+          "quote": "报名时间：2026年10月26日9:00-11月25日17:00",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-5f50d6497cd986d6-page"
+          ]
+        },
+        {
+          "label": "申请材料送达截止",
+          "kind": "deadline",
+          "at": "2026-11-27T12:00:00+08:00",
+          "quote": "接收截止时间：2026年11月27日中午12:00",
+          "locator": "完整官方栏目；自动联合证据核验",
+          "source_ids": [
+            "auto-5f50d6497cd986d6-page"
+          ]
+        }
+      ],
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "input_text_sha256": "58e8f33e8cb7d0013261f55bde17ca10abf6f643254610a2b469537677bac106",
+      "input_fields_sha256": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+      "review_method": "automatic_evidence",
+      "ai_result": "cache/v1118/sai5-result.json",
+      "ai_elapsed_seconds": 4.906,
+      "ai_generated_at": "2026-11-17T00:55:01.816613+00:00"
+    }
+  ],
+  "new_policy_state": "cache/v1118/policy-pilot/acceptance-root/cache/policy_intake/state.json",
+  "delivery_manifest": "cache/v1118/policy-pilot/delivery/changed-public.json",
+  "changed_files": 7,
+  "public_page": {
+    "results": [
+      {
+        "id": "auto-11c55f7ac3b2f3f5",
+        "dept": "cs",
+        "visible": true,
+        "automatic_review_label": true,
+        "material_action": true,
+        "events": [
+          {
+            "label": "网上报名截止",
+            "kind": "deadline",
+            "at": "2026-11-26T17:00:00+08:00",
+            "quote": "- 网上报名时间： 2026 年 10 月 27 日 9:00 至 11 月 26 日 17:00",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-11c55f7ac3b2f3f5-page"
+            ]
+          },
+          {
+            "label": "申请材料送达截止",
+            "kind": "deadline",
+            "at": "2026-11-30T12:00:00+08:00",
+            "quote": "接收截止时间： 2026 年 11 月 30 日中午 12:00",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-11c55f7ac3b2f3f5-page"
+            ]
+          }
+        ],
+        "create_application_href": "applications.html?policy=auto-11c55f7ac3b2f3f5&school=pku&year=2027&degree=phd&route=assessment&dept=cs&track=ordinary"
+      },
+      {
+        "id": "auto-7e663fd737c42a07",
+        "dept": "software",
+        "visible": true,
+        "automatic_review_label": true,
+        "material_action": true,
+        "events": [
+          {
+            "label": "申请报名截止",
+            "kind": "deadline",
+            "at": "2026-12-25T17:00:00+08:00",
+            "quote": "网报时间：2026年10月26日9:00至12月25日17:00。",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-7e663fd737c42a07-page"
+            ]
+          },
+          {
+            "label": "申请材料送达截止",
+            "kind": "deadline",
+            "at": "2026-12-28T12:00:00+08:00",
+            "quote": "材料寄达截止时间：2026年12月28日12:00前",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-7e663fd737c42a07-page"
+            ]
+          }
+        ],
+        "create_application_href": "applications.html?policy=auto-7e663fd737c42a07&school=pku&year=2027&degree=phd&route=assessment&dept=software&track=ordinary&program=%7C%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"
+      },
+      {
+        "id": "auto-5f50d6497cd986d6",
+        "dept": "sai",
+        "visible": true,
+        "automatic_review_label": true,
+        "material_action": true,
+        "events": [
+          {
+            "label": "申请报名截止",
+            "kind": "deadline",
+            "at": "2026-11-25T17:00:00+08:00",
+            "quote": "报名时间：2026年10月26日9:00-11月25日17:00",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-5f50d6497cd986d6-page"
+            ]
+          },
+          {
+            "label": "申请材料送达截止",
+            "kind": "deadline",
+            "at": "2026-11-27T12:00:00+08:00",
+            "quote": "接收截止时间：2026年11月27日中午12:00",
+            "locator": "完整官方栏目；自动联合证据核验",
+            "source_ids": [
+              "auto-5f50d6497cd986d6-page"
+            ]
+          }
+        ],
+        "create_application_href": "applications.html?policy=auto-5f50d6497cd986d6&school=pku&year=2027&degree=phd&route=assessment&dept=sai&track=ordinary"
+      }
+    ],
+    "errors": [],
+    "writes": []
+  },
+  "tests": {
+    "passed": 159,
+    "skipped": 1,
+    "seconds": 11.64,
+    "skip_reason": "Existing real DOC runtime test requires unprivileged Linux antiword/prlimit; Windows skips it."
+  },
+  "pending": null,
+  "new_2028_opportunities": 0,
+  "production_written": false,
+  "delivery_sha256": "9daf93b73b6c096249e5036ef5f915a9db711c77c78acf957e18ae5e3657bd08",
+  "new_units": [
+    {
+      "school": "pku",
+      "dept": "software",
+      "mentors_collected": false
+    }
+  ],
+  "new_notice_candidates": 9
+}

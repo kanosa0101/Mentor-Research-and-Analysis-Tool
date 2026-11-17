@@ -20,16 +20,18 @@ from crawler import opportunity_extract as extract, opportunity_review as review
 from crawler.legacy_refresh import write_yaml
 from crawler.opportunity_monitor import atomic_json, output_lock
 
-VERSION = 'new-official-policy-v4-bound-fields'
+VERSION = 'new-official-policy-v7-context-and-scope'
 CST = timezone(timedelta(hours=8))
 HEADINGS = {
-    'eligibility': ('申请条件', '报考条件', '报名条件', '申请资格', '招生对象', '基本条件'),
-    'materials': ('申请材料', '报名材料', '提交材料', '材料要求', '提交申请材料清单'),
+    'eligibility': ('申请条件', '报考条件', '报名条件', '申请资格', '招生对象', '基本条件', '报名基本条件'),
+    'materials': ('申请材料', '报名材料', '提交材料', '材料要求', '提交申请材料清单', '提交报名材料'),
     'application_method': ('申请方式', '报名方式', '报名程序', '报名流程', '申请流程', '报名办法', '报名申请', '网上报名'),
-    'timeline': ('报名时间', '申请时间', '受理时间'),
+    'timeline': ('报名时间', '申请时间', '受理时间', '网报时间'),
     'contact': ('联系方式', '咨询方式', '联系咨询', '招生咨询'),
-    'exams': ('选拔方式', '考核方式', '考核程序'),
+    'exams': ('选拔方式', '考核方式', '考核程序', '考核与评价', '录取', '思想政治素质和品德考核', '体检'),
     'integrity': ('违规处理', '诚信要求'),
+    'tuition': ('学费与学制', '学制与学费', '其它事项', '其他事项'),
+    'quota': ('招生人数及专业方向', '招生规模', '招生计划'),
 }
 
 
@@ -72,14 +74,14 @@ def sections(lines):
     aliases = {name: key for key, names in HEADINGS.items() for name in names}
     pattern = re.compile(r'^(?:[一二三四五六七八九十\d]+[、.．]|[（(][一二三四五六七八九十\d]+[）)])?\s*'
                          r'(' + '|'.join(aliases) + r')(?:\s*[：:（(]\s*(.*))?$')
-    result, spans = {}, {}
+    result, spans, names = {}, {}, {}
     for index, line in enumerate(lines):
         match = pattern.fullmatch(line.strip().rstrip('：:').strip())
         if match:
             key = aliases[match[1]]
             if key in spans and spans[key][0] <= index < spans[key][1]:
                 continue  # A named subsection inside the complete parent procedure.
-            if key in spans:
+            if key in spans and (key != 'exams' or match[1] in names[key]):
                 raise ValueError('同页重复申请栏目，须区分批次或对象')
             major = bool(re.match(r'^[一二三四五六七八九十]+[、.．]', line.strip()))
             stop = re.compile(r'^[一二三四五六七八九十]+[、.．]' if major else r'^(?:[一二三四五六七八九十]+[、.．]|\d+[、.．])')
@@ -87,7 +89,9 @@ def sections(lines):
             spans[key] = (index, end)
             # Preserve section boundaries, especially when assessment and integrity
             # requirements are later grouped under the same public field.
-            result[key] = '\n'.join(lines[index:end]).strip()
+            part = '\n'.join(lines[index:end]).strip()
+            result[key] = '\n'.join(filter(None, (result.get(key), part)))
+            names.setdefault(key, set()).add(match[1])
     return result
 
 
@@ -96,7 +100,7 @@ def deadline_events(parts):
     lines = (parts.get('timeline', '') + '\n' + parts['application_method']).splitlines()
     events = []
     for line in lines:
-        if not re.search(r'^\s*[-—•]?\s*(?:网上报名时间|报名(?:时间|截止)|申请(?:时间|截止)|接收截止时间|材料.{0,8}截止)', line):
+        if not re.search(r'^\s*[-—•]?\s*(?:网上报名时间|网报时间|报名(?:时间|截止)|申请(?:时间|截止)|接收截止时间|材料.{0,8}截止)', line):
             continue
         tight = extract.compact(line)
         if not re.search(r'至|截止|截至|日\d{0,2}[:：]?\d{0,2}[-—~～]\d{1,2}月', tight):
@@ -291,6 +295,10 @@ def prepare(root, row, raw, doc, now):
     if len(years) != 1:
         raise ValueError('招生年度不唯一或未明确，不由发布日期推断')
     year = int(next(iter(years)))
+    # A named discipline before an explicit doctoral degree category is narrower
+    # than the whole department. Keep that scope instead of widening applicability.
+    named_program = re.search(r'20\d{2}\s*年([\u4e00-\u9fff]{2,20}?)(?:(?:工学|理学|管理学|经济学|法学|医学)博士研究生|博士专业学位研究生)', title)
+    program = named_program[1] if named_program else ''
     degrees = [key for word, key in [('硕士', 'master'), ('博士', 'phd')] if word in title]
     if len(degrees) != 1:
         raise ValueError('学位对象不唯一，须拆分招生范围')
@@ -319,7 +327,7 @@ def prepare(root, row, raw, doc, now):
     elif school['name'] not in text:
         raise ValueError('未取得学校统一政策的正文身份依据')
     parts = sections(doc['lines'])
-    if any(not parts.get(key) for key in HEADINGS if key not in ('timeline', 'exams', 'integrity')):
+    if any(not parts.get(key) for key in HEADINGS if key not in ('timeline', 'exams', 'integrity', 'tuition', 'quota')):
         raise ValueError('缺少完整条件、材料、申请流程、报名时间或联系方式栏目')
     if parts.get('integrity'):
         parts['exams'] = '\n'.join(filter(None, (parts.get('exams'), parts.pop('integrity'))))
@@ -372,31 +380,56 @@ def prepare(root, row, raw, doc, now):
         quote = body[positions[begin]:positions[cursor - 1] + 1]
         return dict(text=value, quote=quote, locator='完整官方栏目；自动联合证据核验', source_ids=[matches[0]])
     fields = {key: evidence(parts[key]) for key in ('eligibility', 'materials', 'timeline', 'contact')}
-    if parts.get('exams'):
-        fields['exams'] = evidence(parts['exams'])
+    for optional in ('exams', 'tuition', 'quota'):
+        if parts.get(optional):
+            fields[optional] = evidence(parts[optional])
     for event in events:
         proof = evidence(event['quote'])
         event.update(quote=proof['quote'], locator=proof['locator'], source_ids=proof['source_ids'])
     action = dict(id='submit-application-materials', label='按官方要求准备并提交申请材料', stage='application',
                   instruction=evidence(parts['application_method'] if parts['materials'] in parts['application_method'] else
                                        parts['materials'] + '\n' + parts['application_method']), event_indexes=list(range(len(events))))
-    policy = dict(id=ident, school=row['school'], dept=dept, level='dept' if dept else 'school', title=title,
-        year=year, degree=degrees[0], route=route, program='', program_code='', track='ordinary',
+    if program and not dept:
+        raise ValueError('具名专业政策必须登记真实院系，不能作为学校通用政策')
+    policy = dict(id=ident, school=row['school'], dept=dept, level='program' if program else 'dept' if dept else 'school', title=title,
+        year=year, degree=degrees[0], route=route, program=program, program_code='', track='ordinary',
         published_at=row.get('publication_date'), reviewed_at=now.astimezone(CST).date().isoformat(), review_method='automatic_evidence',
         source_id=source_id, review_hashes=hashes, fields=fields, material_actions=[action], events=events)
-    checks = {key: dict(value=value['text'], quote=value['quote']) for key, value in fields.items()
-              if key not in ('materials', 'timeline')}
+    checks = {key: dict(value=value['text'], quote=value['quote']) for key, value in fields.items()}
     checks['scope'] = dict(value=dict(year=year, degree=degrees[0], route=route, school=school['name'], dept=dept), quote=title)
-    # One check covers related claims in the same full procedure, avoiding repeated
-    # long quotations in the model output while retaining every proposed value.
-    procedure = evidence(action['instruction']['text'] if all(line in action['instruction']['text'] for line in parts['timeline'].splitlines()) else
-                         action['instruction']['text'] + '\n' + parts['timeline'])
-    checks['application_procedure'] = dict(value=dict(materials=fields['materials']['text'],
-        instruction=action['instruction']['text'], timeline=fields['timeline']['text'],
-        deadlines=[dict(label=e['label'], at=e['at']) for e in events], application_url=application_url), quote=procedure['quote'])
+    if program:
+        checks['scope']['value']['program'] = program
+    # Each displayed field is checked explicitly. A nested materials/instruction
+    # object previously made the reviewer demand all process rules in each child.
+    checks['application_requirements'] = dict(value=action['instruction']['text'], quote=action['instruction']['quote'])
+    for index, event in enumerate(events):
+        checks['deadline_' + str(index)] = dict(value=dict(label=event['label'], at=event['at']), quote=event['quote'])
+    if application_url:
+        checks['application_entry'] = dict(value=application_url, quote=evidence(parts['application_method'])['quote'])
     for index, document in enumerate(doc['documents']):
         checks['attachment_' + str(index)] = dict(value=document['text'], quote=document['text'])
     return dict(policy=policy, sources=sources, checks=checks, application_url=application_url)
+
+
+def validate_display_checks(prepared):
+    """The AI proposal must include the values that the applicant will actually see."""
+    policy, checks = prepared['policy'], prepared['checks']
+    expected = {key: dict(value=field['text'], quote=field['quote']) for key, field in policy['fields'].items()}
+    actions = policy['material_actions']
+    if len(actions) != 1:
+        raise ValueError('申请材料动作尚未全部进入核验，未发布')
+    instruction = actions[0]['instruction']
+    expected['application_requirements'] = dict(value=instruction['text'], quote=instruction['quote'])
+    expected.update({'deadline_' + str(index): dict(value=dict(label=event['label'], at=event['at']), quote=event['quote'])
+                     for index, event in enumerate(policy['events'])})
+    if any(checks.get(key) != value for key, value in expected.items()):
+        raise ValueError('实际展示的条件、材料、流程或截止未完整绑定AI核验值，未发布')
+    if prepared['application_url'] and checks.get('application_entry', {}).get('value') != prepared['application_url']:
+        raise ValueError('实际报名入口未完整绑定AI核验值，未发布')
+    scope = checks.get('scope', {}).get('value', {})
+    if any(scope.get(key) != policy[key] for key in ('year', 'degree', 'route', 'dept')) or (
+            policy['program'] and scope.get('program') != policy['program']):
+        raise ValueError('实际适用范围未完整绑定AI核验值，未发布')
 
 
 def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pdf_fetcher=None, docx_fetcher=None, source_urls=()):
@@ -445,6 +478,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 doc = collect(raw, row, folder, pdf_fetcher, docx_fetcher)
                 record['content_sha256'] = doc['content_sha256']
                 prepared = prepare(root, row, raw, doc, now)
+                validate_display_checks(prepared)
                 record['input_text_sha256'] = hashlib.sha256(doc['text'].encode()).hexdigest()
                 record['proposal_sha256'] = policy_revalidation.digest(prepared['checks'])
                 policy = prepared['policy']
@@ -477,6 +511,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                     record['manual_review'] = {key: copy.deepcopy(record[key]) for key in
                         ('policy_version', 'source_sha256', 'content_sha256', 'input_text_sha256', 'proposal_sha256', 'ai')}
                     raise ValueError('AI建议人工判断：' + '；'.join(ai['issues']))
+                validate_display_checks(prepared)
                 record.pop('manual_review', None)
                 record.update(ai=ai, proposed_policy=policy, proposed_sources=prepared['sources'], status='eligible')
                 if publish:

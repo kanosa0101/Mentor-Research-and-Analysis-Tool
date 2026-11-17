@@ -15,13 +15,13 @@ from crawler import ai_evidence, ai_review, automatic_evidence, opportunity_extr
 from crawler.opportunity_monitor import atomic_json, output_lock
 from crawler import review_preflight
 
-POLICY_VERSION = 'v2.7-source-fidelity'
+POLICY_VERSION = 'v2.8-business-values'
 CST = timezone(timedelta(hours=8))
 IDENTITY = {'id', 'title', 'school_id', 'dept_id', 'unit', 'source_url'}
 SECTIONS = {
     'eligibility': ('申请条件', '申请对象', '招募对象', '报名条件', '招生对象'),
     'materials': ('申请材料', '报名材料', '材料要求'),
-    'application_method': ('申请方式', '报名方式', '申请流程'),
+    'application_method': ('申请方式', '报名方式', '申请流程', '报名步骤', '报名与选拔方式'),
     'contact': ('联系方式', '咨询方式', '联系咨询'),
     'window': ('报名时间', '申请时间', '受理时间'),
 }
@@ -71,30 +71,56 @@ def protected(draft):
 
 
 def sections(lines):
-    result, active = {}, None
+    result, active = {}, []
     aliases = {name: field for field, names in SECTIONS.items() for name in names}
-    heading = re.compile(r'^(?:[一二三四五六七八九十\d]+[、.．]|[（(][一二三四五六七八九十\d]+[）)])?'
+    prefix = r'(?:[一二三四五六七八九十]+[、.．]|\d+[、.．]|[（(][一二三四五六七八九十\d]+[）)])'
+    heading = re.compile(r'^(?:' + prefix + r')?\s*'
                          r'(' + '|'.join(aliases) + r')(?:[：:]\s*(.*))?$')
     for line in lines:
+        if re.fullmatch(r'20\d{2}年?(?:冬令营|夏令营|冬季培训班)精彩瞬间', line.strip()):
+            active = []
+            continue
         match = heading.fullmatch(line.strip())
+        rank = 3 if re.match(r'^[（(]', line.strip()) else 2 if re.match(r'^\d+[、.．]', line.strip()) else 1
+        if match or re.match(prefix, line.strip()):
+            active = [(field, level) for field, level in active if level < rank]
+        for field, _ in active:
+            result[field].append(line)
         if match:
-            active = aliases[match[1]]
-            if active in result:
+            field = aliases[match[1]]
+            if field in result and field not in {key for key, _ in active}:
                 raise NeedsHuman('存在重复申请条件或材料栏目，可能有不同对象或批次')
-            result[active] = [match[2]] if match[2] else []
-        elif re.match(r'^[一二三四五六七八九十]+[、.．]', line.strip()):
-            active = None
-        elif active:
-            result[active].append(line)
-    return {key: '\n'.join(lines).strip() for key, lines in result.items()}
+            if field not in result:
+                result[field] = [match[2]] if match[2] else []
+                active.append((field, rank))
+    if not result.get('eligibility'):
+        intro = []
+        for line in lines:
+            if re.match(r'^[一二三四五六七八九十]+[、.．]', line.strip()):
+                break
+            if re.search(r'(?:欢迎|面向).{0,250}本科.{0,100}(?:报名|申请|参加)', line):
+                intro.append(line)
+        if len(intro) == 1:
+            result['eligibility'] = intro
+    if not result.get('materials'):
+        method = result.get('application_method', [])
+        starts = [i for i, line in enumerate(method) if re.search(r'(?:以下|下列)材料', line)]
+        if len(starts) == 1:
+            start = starts[0]
+            end = next((i for i in range(start + 1, len(method)) if re.match(r'^\d+[、.．]', method[i].strip())), len(method))
+            if sum(bool(re.match(r'^[①②③④⑤⑥⑦⑧⑨⑩]', line.strip())) for line in method[start + 1:end]) >= 2:
+                result['materials'] = method[start:end]
+    return {key: '\n'.join(values).strip() for key, values in result.items()}
 
 
 def inspect_source(raw, source_url, complete_doc=None):
     try:
-        doc, links = automatic_evidence.inspect_html(raw, source_url)
-        if links and complete_doc is None:
-            raise ValueError('官方正文含附件，须联合核验完整版本')
-        doc = complete_doc or doc
+        if complete_doc is None:
+            doc, links = automatic_evidence.inspect_html(raw, source_url)
+            if links:
+                raise ValueError('官方正文含附件，须联合核验完整版本')
+        else:
+            doc = complete_doc  # Fresh collect() already verified every image and attachment.
         if len(doc['text']) > ai_review.MAX_INPUT:
             raise ValueError('官方正文超过完整AI核验长度，不能截断发布')
         return doc
@@ -130,7 +156,7 @@ def fields_for_existing(draft, item, text):
     return fields
 
 
-def prepare_new(root, draft, doc, now):
+def prepare_new(root, draft, doc, now, configs=()):
     item = copy.deepcopy(draft['item'])
     if draft.get('quotes') or draft.get('reviewed_fields') or any(v for k, v in item.items() if k not in IDENTITY):
         raise NeedsHuman('草稿已有人工或既有字段，自动任务不会覆盖')
@@ -144,41 +170,60 @@ def prepare_new(root, draft, doc, now):
     title = item['title']
     if extract.compact(title) not in extract.compact(text):
         raise NeedsHuman('栏目标题未在完整公告正文中确认')
-    kind = next((kind for label, kind in [('冬令营', 'winter_camp'), ('夏令营', 'summer_camp'),
+    kind = next((kind for label, kind in [('冬令营', 'winter_camp'), ('冬季培训班', 'winter_camp'), ('夏令营', 'summer_camp'),
         ('科研实践', 'research_program'), ('科研实习', 'research_program'), ('科创计划', 'research_program')] if label in title), None)
     if kind is None:
         raise NeedsHuman('活动类别不在自动发布范围；正式推免或学位招生需人工核对')
     schools_path = Path(root) / 'data/schools.yaml'
     schools = yaml.safe_load(schools_path.read_text(encoding='utf-8'))['schools'] if schools_path.exists() else []
     school = next((s['name'] for s in schools if s['id'] == item['school_id']), '')
+    source_institutes = {c['name'] for c in configs if c.get('url') == draft['listing_url'] and
+                         c.get('school') == item['school_id'] and c.get('dept', '') == item.get('dept_id', '') and
+                         isinstance(c.get('name'), str) and c['name'].endswith('研究所') and c.get('enabled') is not False}
+    if not school and not item.get('dept_id') and len(source_institutes) == 1:
+        school = next(iter(source_institutes))
     if not school:
         raise NeedsHuman('学校身份未登记，需先核对来源所属机构')
     # A discovered column label is not the organizer. A replacement still needs an
     # explicit organizer line naming the institution bound to that trusted source.
     unit = item['unit'].strip()
+    department = ''
+    if item.get('dept_id'):
+        if not all(re.fullmatch(r'[a-z0-9_-]+', item[key]) for key in ('school_id', 'dept_id')):
+            raise NeedsHuman('院系标识未登记，需核对主办单位')
+        path = Path(root) / 'sites' / item['school_id'] / (item['dept_id'] + '.yaml')
+        config = yaml.safe_load(path.read_text(encoding='utf-8')) if path.is_file() else {}
+        if config.get('school') == item['school_id'] and config.get('dept') == item['dept_id']:
+            department = config.get('dept_name', '')
+    bound_names = {department, school + department} if department else {school} if not item.get('dept_id') else set()
+    # A research institute need not start with the name of its degree-awarding
+    # university. Its exact official name still has to be in this source registry.
+    if not department:
+        bound_names.update(source_institutes)
     organizers = [(line, match[1].strip()) for line in doc['lines']
                   if (match := re.fullmatch(r'(?:主办单位|组织单位)\s*[:：]\s*(.+?)[。；;]?', line.strip()))]
     organizer = None
     if len(organizers) == 1:
         line, name = organizers[0]
-        if (name == unit or name.startswith(school)) and not re.search(r'[、，,；;]|联合主办', name):
+        if name in bound_names and not re.search(r'[、，,；;]|联合主办', name):
             organizer, unit = line, name
-    if not organizers and unit.startswith(school) and unit in title:
-        statements = [line for line in doc['lines'] if re.search(
-            re.escape(unit) + r'[^。；]{0,30}(?:举办|组织|开展)[^。；]{0,40}(?:冬令营|夏令营|科研实践|科创计划)', line)]
-        if len(statements) == 1 and not re.search(r'联合|共同|、', statements[0]):
-            organizer = statements[0]
-    if item.get('dept_id'):
-        # A school domain does not establish which of its departments organized
-        # an event. Bind the declared organizer to the registered department.
-        if not all(re.fullmatch(r'[a-z0-9_-]+', item[key]) for key in ('school_id', 'dept_id')):
-            raise NeedsHuman('院系标识未登记，需核对主办单位')
-        path = Path(root) / 'sites' / item['school_id'] / (item['dept_id'] + '.yaml')
-        config = yaml.safe_load(path.read_text(encoding='utf-8')) if path.is_file() else {}
-        department = config.get('dept_name', '')
-        if (config.get('school') != item['school_id'] or config.get('dept') != item['dept_id'] or
-            not department or unit not in (department, school + department)):
-            raise NeedsHuman('公告主办单位与已登记院系不一致或缺少院系身份依据')
+    if not organizers and unit not in bound_names:
+        declared = [name for name in bound_names if re.search(re.escape(name) + r'[（(]以下简称', text)]
+        if len(declared) == 1:
+            unit = declared[0]
+    if not organizers and unit in bound_names:
+        names = [unit]
+        alias = re.findall(re.escape(unit) + r'[（(]以下简称[“"\']?([^”"\'）)]+)[”"\']?[）)]', text)
+        if len(set(alias)) == 1:
+            names.append(alias[0])
+        statements = [line for line in doc['lines'] if any(re.search(
+            re.escape(name) + r'[^。；]{0,60}(?:举办|组织|开展)[^。；]{0,40}(?:冬令营|夏令营|培训班|科研实践|科创计划)', line) for name in names)]
+        if len(statements) == 1 and not re.search(r'联合举办|共同举办|联合主办|共同主办', statements[0]):
+            # Including the identity paragraph keeps the abbreviation binding in
+            # one verifiable source span, instead of asserting it from memory.
+            organizer = text if alias and unit not in statements[0] else statements[0]
+    if unit not in bound_names:
+        raise NeedsHuman('公告主办单位与已登记院系不一致或缺少院系身份依据')
     level = ('research_institute' if unit.endswith('研究所') else
              'university_research_institute' if unit.endswith('研究院') else
              'school_department' if unit.endswith(('学院', '大学', '学系')) else None)
@@ -208,7 +253,7 @@ def prepare_new(root, draft, doc, now):
                 checked_at=now.astimezone(CST).date().isoformat(), verified_at=now.astimezone(CST).date().isoformat(),
                 source_sha256=draft['fetch']['sha256'], source_content_sha256=doc['content_sha256'])
     fields = {'content_classification': dict(value=item['content_classification'], quote=organizer)}
-    activity_year = re.findall(r'(20\d{2})年(?:计算机)?(?:冬令营|夏令营|科研实践|科研实习|科创计划)', title)
+    activity_year = re.findall(r'(20\d{2})年(?:计算机)?(?:冬令营|冬季培训班|夏令营|科研实践|科研实习|科创计划)', title)
     if activity_year:
         year = int(activity_year[0])
         if len(set(activity_year)) != 1 or year not in (now.astimezone(CST).year, now.astimezone(CST).year + 1):
@@ -218,11 +263,31 @@ def prepare_new(root, draft, doc, now):
     for key in ('eligibility', 'materials', 'application_method', 'contact'):
         item[key] = [parts[key]] if key in ('eligibility', 'materials') else parts[key]
         fields[key] = dict(value=item[key], quote=parts[key])
+    for document in doc.get('documents', []):
+        lines = [line.strip() for line in document['text'].splitlines() if line.strip()]
+        requirements = [line for index, line in enumerate(lines)
+                        if re.search(r'须|需|不得|以内|独立完成|取消.{0,8}资格|申请人签名', line) or
+                        index > 0 and '申请人签名' in lines[index - 1] and re.match(r'日期\s*[:：]', line)]
+        if requirements:
+            # Keep form-specific requirements attached to their own title. Two
+            # detached signature lines do not tell an applicant which form to sign.
+            item['materials'].append('\n'.join(dict.fromkeys([lines[0], *requirements])))
+            fields['materials']['quote'] = text
     # Full forms enter the AI check and source details, not the concise materials list.
     for index, document in enumerate(doc.get('documents', [])):
         fields['attachment_' + str(index)] = dict(value=document['text'], quote=document['text'])
     window = parts['window']
     dates = list(extract.DATE.finditer(extract.compact(window)))
+    published = doc.get('published_at', {})
+    if len(dates) == 1 and re.search(r'即日起(?:至|到|截止|截至)', extract.compact(window)):
+        day, quote = published.get('value'), published.get('quote', '')
+        if not isinstance(day, str) or not re.fullmatch(r'20\d{2}-\d{2}-\d{2}', day) or not quote or extract.compact(quote) not in extract.compact(text):
+            raise NeedsHuman('即日起缺少同页可验证发布日期，不能用发现日代替')
+        parsed = list(extract.DATE.finditer(extract.compact(quote)))
+        if len(parsed) != 1 or extract.date_value(parsed[0], extract.compact(quote)) != day:
+            raise NeedsHuman('发布日期与原文日期不一致')
+        window = day + '至' + window
+        dates = list(extract.DATE.finditer(extract.compact(window)))
     rolling = re.search(r'(?:长期|全年|常年|滚动).{0,30}(?:接受|接收|招收|招募|申请|报名)', extract.compact(window))
     if rolling and not dates and re.search(r'科研|实习', title):
         item['application_window'] = dict(mode='rolling', end_month='', quote=window)
@@ -238,7 +303,10 @@ def prepare_new(root, draft, doc, now):
         if 'T' in item['deadline'] and datetime.fromisoformat(item['deadline']) <= now:
             raise NeedsHuman('报名窗口已到具体截止时点')
         for key in ('registration_start', 'deadline'):
-            fields[key] = dict(value=item[key], quote=window)
+            fields[key] = dict(value=item[key], quote=text if published and '即日起' in window else window)
+        if published and '即日起' in window:
+            item['published_at'] = published['value']
+            fields['published_at'] = published
     else:
         raise NeedsHuman('报名窗口没有唯一完整的开始/截止日期或长期科研招募原文')
     # Only a single explicitly named undergraduate cohort in the eligibility section
@@ -283,15 +351,22 @@ def _store(queue_path, draft_id, result, expected=None):
 
 
 def _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher=None, docx_fetcher=None):
-    # The exact original bytes are fetched again, without treating new counters as unchanged.
-    live = fetcher({'url': staged['source_url']})
-    live = live.encode() if isinstance(live, str) else live
-    if hashlib.sha256(live).hexdigest() != staged['fetch']['sha256']:
-        raise NeedsHuman('AI复核后原文版本再次变化，保留旧事实待人工处理')
-    fresh = automatic_evidence.collect(live, staged['source_url'], pdf_fetcher=pdf_fetcher or review.fetch_pdf,
-        docx_fetcher=docx_fetcher or review.attachments.fetch_docx, wait=getattr(fetcher, 'wait', None))
-    if fresh['content_sha256'] != staged['fetch']['content_sha256']:
-        raise NeedsHuman('AI复核后官方附件版本变化，保留旧事实待处理')
+    # Re-fetch the complete bundle just as publication does. Counter-only HTML
+    # changes may pass; text, links and every attachment/image must stay bound.
+    fresh = copy.deepcopy(staged)
+    live = review.fetch_evidence(fresh, queue_path, fetcher, now=now, complete=True,
+        pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
+    if live is None:
+        if review.evidence_error(fresh['fetch']):
+            raise EvidenceUnavailable(fresh['fetch'])
+        raise ValueError('官方原文实时获取失败')
+    if fresh['fetch']['content_sha256'] != staged['fetch']['content_sha256']:
+        raise NeedsHuman('AI复核后正文、链接、附件或图片版本变化，保留旧事实待处理')
+    confirmation = dict(mode='automatic_complete_content',
+        previous_raw_sha256=original['review']['source_sha256'],
+        acknowledged_raw_sha256=staged['fetch']['sha256'], current_raw_sha256=fresh['fetch']['sha256'],
+        content_sha256=fresh['fetch']['content_sha256'],
+        basis='完整正文、链接及全部附件图片组合版本与AI核验输入一致；发布前再次回源确认')
     with output_lock(queue_path), output_lock(Path(root) / 'data/opportunities.json'):
         queue = review.read_queue(queue_path)
         current = next(d for d in queue['drafts'] if d['id'] == original['id'])
@@ -304,16 +379,21 @@ def _renew(root, queue_path, original, staged, result, now, fetcher, pdf_fetcher
         human_review = not current['review']['reviewer'].startswith('自动证据核验/')
         previous_manual = current['review'].get('manual_verified_at', item['verified_at']) if human_review else None
         stamp = now.astimezone(CST).date().isoformat()
-        item.update(verified_at=stamp, checked_at=stamp)
+        item.update(verified_at=stamp, checked_at=stamp, source_sha256=fresh['fetch']['sha256'],
+                    source_content_sha256=fresh['fetch']['content_sha256'])
         provenance = '自动证据复核于' + stamp + ('；原人工核验日期' + previous_manual if human_review else '') + '，原申请事实未改写。'
         item['source_note'] = re.sub(r'自动证据复核于\d{4}-\d{2}-\d{2}(?:；原人工核验日期\d{4}-\d{2}-\d{2})?，原申请事实未改写。', '', item['source_note']).strip() + '\n' + provenance
-        current.update(item=copy.deepcopy(item), fetch=copy.deepcopy(staged['fetch']), automatic_review=result)
-        current['review'].update(item_sha256=review.item_hash(item), last_automatic_check_at=now.isoformat())
+        result.update(source_sha256=fresh['fetch']['sha256'], version_confirmation=confirmation)
+        current.update(item=copy.deepcopy(item), fetch=copy.deepcopy(fresh['fetch']), automatic_review=result)
+        current['review'].update(item_sha256=review.item_hash(item), last_automatic_check_at=now.isoformat(),
+            source_sha256=fresh['fetch']['sha256'], content_sha256=fresh['fetch']['content_sha256'],
+            version_confirmation=confirmation)
         if human_review:
             current['review']['manual_verified_at'] = previous_manual
         catalog.setdefault('review_log', []).append(dict(operation='automatic_evidence_recheck',
             opportunity_id=item['id'], reviewed_at=now.isoformat(), source_sha256=item['source_sha256'],
-            manual_verified_at=previous_manual, reviewer=current['review']['reviewer'], automation=copy.deepcopy(result)))
+            manual_verified_at=previous_manual, reviewer=current['review']['reviewer'],
+            version_confirmation=confirmation, automation=copy.deepcopy(result)))
         atomic_json(Path(root) / 'data/opportunities.json', catalog)
         atomic_json(queue_path, queue)
 
@@ -374,7 +454,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
         if existing:
             if review.status(staged) != 'published':
                 raise NeedsHuman('已发布事实或人工摘录变化，不能自动覆盖')
-            if staged['fetch']['content_sha256'] != draft['review'].get('content_sha256') or staged['fetch']['sha256'] != draft['review']['source_sha256']:
+            if staged['fetch']['content_sha256'] != draft['review'].get('content_sha256'):
                 raise NeedsHuman('已核验原文发生变化，需人工核对新事实')
             catalog_item = next((i for i in util.load(root)['opportunities'] if i['id'] == draft['item']['id']), None)
             if catalog_item != draft['item']:
@@ -382,10 +462,9 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
             fields = fields_for_existing(staged, staged['item'], doc['text'])
             review.validate_field_evidence(staged, staged['item'], doc['text'])
         else:
-            fields = prepare_new(root, staged, doc, now)
+            fields = prepare_new(root, staged, doc, now, configs)
         if staged['item'].get('application_url'):
-            review.institution(staged['item']['application_url'])
-            fetcher({'url': staged['item']['application_url']})  # Public GET only; never register or submit.
+            automatic_evidence.verify_application_entry(staged['item']['application_url'], draft['source_url'], fetcher=fetcher)
         result.update(source_sha256=staged['fetch']['sha256'], content_sha256=doc['content_sha256'])
         cached = prior.get('ai')
         if prior.get('policy_version') == POLICY_VERSION and cached and cached.get('decision') == 'consistent' and cached.get('input_text_sha256') == hashlib.sha256(doc['text'].encode()).hexdigest() and cached.get('input_fields_sha256') == ai_review.fields_hash(fields) and prior.get('source_sha256') == staged['fetch']['sha256'] and prior.get('content_sha256') == doc['content_sha256'] and prior.get('input_revision') == protected(original):
@@ -394,7 +473,9 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
             result['attempts'] += 1
             ai = checker(root, draft['source_url'], doc['text'], fields)
         ai_review.validate({key: ai[key] for key in ('decision', 'issues', 'checks')}, doc['text'], fields)
-        if ai.get('truncated') or not ai.get('validated_extracts') or ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest():
+        if (ai.get('truncated') or not ai.get('validated_extracts') or
+                ai.get('input_text_sha256') != hashlib.sha256(doc['text'].encode()).hexdigest() or
+                ai.get('input_fields_sha256') != ai_review.fields_hash(fields)):
             raise NeedsHuman('AI没有完整有效的当前原文核验结果')
         result.update(ai=ai, model=ai.get('model'))
         if ai['decision'] != 'consistent':
@@ -420,7 +501,7 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
             try:
                 review.publish(queue_path, draft['id'], root, configs, acknowledged_hash=staged['fetch']['sha256'],
                     reviewer='自动证据核验/' + POLICY_VERSION, note='AI交叉核对与确定性证据门禁通过；不判断个人申请资格。',
-                    expected_revision=revision, fetcher=fetcher, complete=True,
+                    expected_revision=revision, fetcher=fetcher, complete=True, acknowledged_content_hash=doc['content_sha256'],
                     pdf_fetcher=pdf_fetcher or review.fetch_pdf, docx_fetcher=docx_fetcher)
             except ValueError as error:
                 raise NeedsHuman('发布门禁拒绝：' + str(error)) from None

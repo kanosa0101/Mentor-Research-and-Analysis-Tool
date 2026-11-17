@@ -45,6 +45,18 @@ def test_cached_verdict_is_not_reused_for_changed_proposed_values(setup):
     assert calls == [1]
 
 
+@pytest.mark.parametrize('field_hash', [None, '0' * 64])
+def test_fresh_verdict_for_other_business_values_cannot_publish(setup, field_hash):
+    root, queue, process = setup
+    def check(*args):
+        ai = accepted(*args)
+        ai['input_fields_sha256'] = field_hash
+        return ai
+    result = process(checker=check)
+    assert result['state'] == 'manual_required'
+    assert not (root / 'data/opportunities.json').exists()
+
+
 def test_concurrent_human_triage_is_not_overridden_by_automatic_publication(setup):
     root, queue, process = setup
     def check(*args):

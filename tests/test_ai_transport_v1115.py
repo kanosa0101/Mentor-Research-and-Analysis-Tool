@@ -38,7 +38,7 @@ def test_fragmented_utf8_sse_requires_done_and_discards_reasoning():
     sent = client.post.call_args.kwargs
     assert sent['json']['reasoning_effort'] == 'none'
     assert sent['json']['stream'] and sent['stream'] and not sent['allow_redirects']
-    assert sent['timeout'] == (10,30)
+    assert sent['timeout'] == (10,45)
     assert client.trust_env is False
     assert 'fixture-secret' not in json.dumps(sent['json'])
     result.close.assert_called_once()

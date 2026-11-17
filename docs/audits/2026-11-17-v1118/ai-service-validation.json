@@ -1,0 +1,1132 @@
+{
+  "actual_calls": 14,
+  "all_responses_complete": false,
+  "complete_responses": 11,
+  "header_timeouts": 3,
+  "unique_policies_with_any_consistent_trial": 3,
+  "latest_context_enriched_passed": 3,
+  "negative_controls_rejected": 4,
+  "unique_negative_scenarios": 2,
+  "published_by_this_subtask": 0,
+  "ledger_before": {
+    "date": "2026-11-17",
+    "requests": 5,
+    "input_chars": 12728
+  },
+  "ledger_after": {
+    "date": "2026-11-17",
+    "requests": 21,
+    "input_chars": 81782
+  },
+  "normal_daily_limit_changed": false,
+  "acceptance_daily_ceiling": 25,
+  "verdicts_overridden": false,
+  "remaining_acceptance_budget_after_this_subtask": 4,
+  "latest_context_enriched_proposals": {
+    "sai5": "consistent",
+    "pku3": "consistent",
+    "software2": "consistent"
+  },
+  "accounting_note": "共享账本5到21包含本子任务14次及穿插CIBR子任务2次；不是本子任务调用16次。",
+  "final_frozen_contract_passes": {
+    "positive_policies": 3,
+    "negative_scenarios_rejected": 2
+  },
+  "negative_contract_note": "两个负例已在最终冻结契约下各重测一次，仍准确识别目标缺失与日期错误；额外输出噪声保留。",
+  "rows": [
+    {
+      "started_at": "2026-11-17T00:33:55.745420+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "1bdd5196dbdcd41d0e34968b4c3da01dc995d0e863d3c88e9390a28f03573464",
+      "input_chars": 4125,
+      "input_fields_sha256": "efee8d37b862bf91970850e915394477a08a909ad6aa929836378a2b85d567c7",
+      "field_count": 10,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 5,
+        "input_chars": 12728
+      },
+      "state": "consistent",
+      "elapsed_seconds": 4.546,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 6,
+        "input_chars": 16853
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai1",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.942,
+        "first_answer_seconds": 2.942,
+        "header_seconds": 2.942,
+        "elapsed_seconds": 4.542,
+        "response_bytes": 26621,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:34:39.462613+00:00",
+      "uid": 999,
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "proposal_sha256": "2ee1ca0b749183451f9faa6f1b3c9940c1778461cbf2e4b582e9e8536dcf8d70",
+      "input_chars": 6619,
+      "input_fields_sha256": "6d98d05393278fad7c978a58a413f5b0b24ef20095f689fa5f964200091d246b",
+      "field_count": 11,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 6,
+        "input_chars": 16853
+      },
+      "state": "manual",
+      "elapsed_seconds": 7.068,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 7,
+        "input_chars": 23472
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "pku1",
+      "issues": [
+        "原文“TOEFL（iBT）成绩100分及以上……或者5分及以上(自2026年1月21日后参加考试)”中“5分及以上”与TOEFL iBT通常满分及前句100分标准存在明显矛盾/疑似漏字，materials字段照录后仍无法判断该英语条件；需人工核对原文或更正。"
+      ],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": false
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        },
+        {
+          "field": "attachment_0",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 4.452,
+        "first_answer_seconds": 4.454,
+        "header_seconds": 4.452,
+        "elapsed_seconds": 7.062,
+        "response_bytes": 42102,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:35:15.673662+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "e2c8f44c865aee5c70bc6fe627572e4398a77ed5b94720e11a3582f7572145f1",
+      "input_chars": 4125,
+      "input_fields_sha256": "7d598324bed7233f882e7c84190c3103b8de46c23aaabb32c41b9fa9ce40de7b",
+      "field_count": 10,
+      "negative_control": true,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 7,
+        "input_chars": 23472
+      },
+      "state": "manual",
+      "elapsed_seconds": 4.937,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 8,
+        "input_chars": 27597
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai-materials-negative",
+      "issues": [
+        "原文“两封所报考学科专业领域副教授（或相当专业技术职称）及以上职称专家推荐信”，materials字段写为“两封所报考学科专业领域专家推荐信”，遗漏“副教授（或相当专业技术职称）及以上职称”要求"
+      ],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": false
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.342,
+        "first_answer_seconds": 2.343,
+        "header_seconds": 2.342,
+        "elapsed_seconds": 4.933,
+        "response_bytes": 36426,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:36:18.419066+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "597372efc41af488649684f0ba956a33ca89c88cfddf72bb66c8377ef17df199",
+      "input_chars": 4125,
+      "input_fields_sha256": "ee699939f281754b2a339723904ea71e7a4af48f6d3ea5b22a47ad2a7b01b978",
+      "field_count": 10,
+      "negative_control": true,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 8,
+        "input_chars": 27597
+      },
+      "state": "manual",
+      "elapsed_seconds": 4.903,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 9,
+        "input_chars": 31722
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai-deadline-negative",
+      "issues": [
+        "报名时间：2026年10月26日9:00-11月25日17:00；deadline_0写为2026-11-26T17:00:00+08:00，与原文11月25日不符",
+        "材料寄（送）要求：请使用EMS快递；application_requirements保留，但materials字段未含寄送方式，且无独立邮寄字段承载"
+      ],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": false
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": false
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.279,
+        "first_answer_seconds": 2.28,
+        "header_seconds": 2.279,
+        "elapsed_seconds": 4.898,
+        "response_bytes": 48618,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:36:56.261335+00:00",
+      "uid": 999,
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "proposal_sha256": "2ee1ca0b749183451f9faa6f1b3c9940c1778461cbf2e4b582e9e8536dcf8d70",
+      "input_chars": 6619,
+      "input_fields_sha256": "6d98d05393278fad7c978a58a413f5b0b24ef20095f689fa5f964200091d246b",
+      "field_count": 11,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 9,
+        "input_chars": 31722
+      },
+      "state": "consistent",
+      "elapsed_seconds": 4.169,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 10,
+        "input_chars": 38341
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "pku2",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        },
+        {
+          "field": "attachment_0",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.612,
+        "first_answer_seconds": 2.612,
+        "header_seconds": 2.612,
+        "elapsed_seconds": 4.164,
+        "response_bytes": 29602,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:37:44.595212+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "1bdd5196dbdcd41d0e34968b4c3da01dc995d0e863d3c88e9390a28f03573464",
+      "input_chars": 4125,
+      "input_fields_sha256": "efee8d37b862bf91970850e915394477a08a909ad6aa929836378a2b85d567c7",
+      "field_count": 10,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 10,
+        "input_chars": 38341
+      },
+      "state": "consistent",
+      "elapsed_seconds": 4.338,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 11,
+        "input_chars": 42466
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai2",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.789,
+        "first_answer_seconds": 2.789,
+        "header_seconds": 2.789,
+        "elapsed_seconds": 4.333,
+        "response_bytes": 25159,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:40:52.526563+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "e2c8f44c865aee5c70bc6fe627572e4398a77ed5b94720e11a3582f7572145f1",
+      "input_chars": 4125,
+      "input_fields_sha256": "7d598324bed7233f882e7c84190c3103b8de46c23aaabb32c41b9fa9ce40de7b",
+      "field_count": 10,
+      "negative_control": true,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 11,
+        "input_chars": 42466
+      },
+      "state": "manual",
+      "elapsed_seconds": 6.761,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 12,
+        "input_chars": 46591
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai-materials-negative-final",
+      "issues": [
+        "原文“两封所报考学科专业领域副教授（或相当专业技术职称）及以上职称专家推荐信”，materials字段写成“两封所报考学科专业领域专家推荐信”，遗漏推荐人职称要求。",
+        "原文“我院2027年在昌平北京大学新燕园校区（地点：北京市昌平区）招生”，所有业务字段均未保留培养/招生校区信息。"
+      ],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": false
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 3.567,
+        "first_answer_seconds": 3.568,
+        "header_seconds": 3.567,
+        "elapsed_seconds": 6.757,
+        "response_bytes": 42635,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:42:03.727912+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "597372efc41af488649684f0ba956a33ca89c88cfddf72bb66c8377ef17df199",
+      "input_chars": 4125,
+      "input_fields_sha256": "ee699939f281754b2a339723904ea71e7a4af48f6d3ea5b22a47ad2a7b01b978",
+      "field_count": 10,
+      "negative_control": true,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 12,
+        "input_chars": 46591
+      },
+      "state": "manual",
+      "elapsed_seconds": 6.602,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 13,
+        "input_chars": 50716
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai-deadline-negative-final",
+      "issues": [
+        "原文“报名时间：2026年10月26日9:00-11月25日17:00”，deadline_0却写为2026-11-26T17:00:00+08:00，报名截止日期错后一天",
+        "原文“接收截止时间：2026年11月27日中午12:00”，deadline_1写为2026-11-27T12:00:00+08:00，与原文一致，无问题"
+      ],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": false
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.881,
+        "first_answer_seconds": 2.882,
+        "header_seconds": 2.881,
+        "elapsed_seconds": 6.598,
+        "response_bytes": 48380,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:45:20.342522+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "1a87d904ebf2589db44352b908fabf65ed4728295c64173c5706201ea6ab946e",
+      "input_chars": 4125,
+      "input_fields_sha256": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+      "field_count": 11,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 13,
+        "input_chars": 50716
+      },
+      "state": "error",
+      "error_code": "read_timeout",
+      "error_phase": "response_headers",
+      "retryable": true,
+      "transport": {
+        "first_byte_seconds": null,
+        "first_answer_seconds": null,
+        "elapsed_seconds": 30.753,
+        "response_bytes": 0,
+        "complete": false,
+        "phase": "response_headers"
+      },
+      "elapsed_seconds": 30.755,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 14,
+        "input_chars": 54841
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai3",
+      "issues": [],
+      "checks": []
+    },
+    {
+      "started_at": "2026-11-17T00:46:36.532520+00:00",
+      "uid": 999,
+      "source_url": "https://cs.pku.edu.cn/info/1051/6700.htm",
+      "source_sha256": "b072826588f9c4ef2eb6f771463700fc0a3325a264404cfdc62efb345de3c014",
+      "content_sha256": "79171e0f87f25b2fa2fb0737032440a272ff7e058596e168aa3376985b63ddea",
+      "proposal_sha256": "d35852ee587bcd0955b1e34c1742640769be3e3fa06d696af1c07bee7983585b",
+      "input_chars": 6619,
+      "input_fields_sha256": "86a7bc5f526c362c5824f098be0bfbc42f1a11ed4fa269de25b36a7472b43625",
+      "field_count": 12,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 14,
+        "input_chars": 54841
+      },
+      "state": "consistent",
+      "elapsed_seconds": 30.945,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 15,
+        "input_chars": 61460
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "pku3",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "tuition",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        },
+        {
+          "field": "attachment_0",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 29.9,
+        "first_answer_seconds": 29.901,
+        "header_seconds": 29.9,
+        "elapsed_seconds": 30.937,
+        "response_bytes": 31843,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:47:31.470973+00:00",
+      "uid": 999,
+      "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+      "source_sha256": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+      "content_sha256": "337eba5f7f1a308066769b397d1fb9b3a78bfa99cd1226ea5b2c150b62023114",
+      "proposal_sha256": "6d0352e51d3c00e47767608480d378437970b90ac46c0ca1495ab32d8275fdf4",
+      "input_chars": 3847,
+      "input_fields_sha256": "a2b30471917293ca7cf63272a879cd89af2fcf60555fb8b5f14a8e6144aa8db1",
+      "field_count": 12,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 15,
+        "input_chars": 61460
+      },
+      "state": "error",
+      "error_code": "read_timeout",
+      "error_phase": "response_headers",
+      "retryable": true,
+      "transport": {
+        "first_byte_seconds": null,
+        "first_answer_seconds": null,
+        "elapsed_seconds": 30.768,
+        "response_bytes": 0,
+        "complete": false,
+        "phase": "response_headers"
+      },
+      "elapsed_seconds": 30.77,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 16,
+        "input_chars": 65307
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "software1",
+      "issues": [],
+      "checks": []
+    },
+    {
+      "started_at": "2026-11-17T00:51:14.505066+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "1a87d904ebf2589db44352b908fabf65ed4728295c64173c5706201ea6ab946e",
+      "input_chars": 4125,
+      "input_fields_sha256": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+      "field_count": 11,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 17,
+        "input_chars": 67496
+      },
+      "state": "error",
+      "error_code": "read_timeout",
+      "error_phase": "response_headers",
+      "retryable": true,
+      "transport": {
+        "first_byte_seconds": null,
+        "first_answer_seconds": null,
+        "elapsed_seconds": 45.746,
+        "response_bytes": 0,
+        "complete": false,
+        "phase": "response_headers"
+      },
+      "elapsed_seconds": 45.749,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 18,
+        "input_chars": 71621
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai4",
+      "issues": [],
+      "checks": []
+    },
+    {
+      "started_at": "2026-11-17T00:52:30.590908+00:00",
+      "uid": 999,
+      "source_url": "https://ss.pku.edu.cn/zsxx/zsjz/6ef1d7aef13c41db93e9eb95fc411379.htm",
+      "source_sha256": "95388667f992b534e2f7dcf50665108c62af3c12d036abd61818213b6c39bb4f",
+      "content_sha256": "337eba5f7f1a308066769b397d1fb9b3a78bfa99cd1226ea5b2c150b62023114",
+      "proposal_sha256": "6d0352e51d3c00e47767608480d378437970b90ac46c0ca1495ab32d8275fdf4",
+      "input_chars": 3847,
+      "input_fields_sha256": "a2b30471917293ca7cf63272a879cd89af2fcf60555fb8b5f14a8e6144aa8db1",
+      "field_count": 12,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 19,
+        "input_chars": 73810
+      },
+      "state": "consistent",
+      "elapsed_seconds": 8.794,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 20,
+        "input_chars": 77657
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "software2",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "tuition",
+          "consistent": true
+        },
+        {
+          "field": "quota",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 6.554,
+        "first_answer_seconds": 6.555,
+        "header_seconds": 6.554,
+        "elapsed_seconds": 8.789,
+        "response_bytes": 25975,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    },
+    {
+      "started_at": "2026-11-17T00:54:56.911308+00:00",
+      "uid": 999,
+      "source_url": "https://sai.pku.edu.cn/info/1034/11055.htm",
+      "source_sha256": "a3dc975c092b946655802d896a2b2afd711d959695d56ab5bf88e2bf5c598729",
+      "content_sha256": "bf1a66e9e75fcc722d4ac4cdb9b1acbe3ccd80f283577f4b97b198a54cf6a566",
+      "proposal_sha256": "1a87d904ebf2589db44352b908fabf65ed4728295c64173c5706201ea6ab946e",
+      "input_chars": 4125,
+      "input_fields_sha256": "7f62d3ddca9456343233640f4076f9be0cef2ecd0ea25bcaf0f16d5902d991bc",
+      "field_count": 11,
+      "negative_control": false,
+      "before": {
+        "date": "2026-11-17",
+        "requests": 20,
+        "input_chars": 77657
+      },
+      "state": "consistent",
+      "elapsed_seconds": 4.906,
+      "after": {
+        "date": "2026-11-17",
+        "requests": 21,
+        "input_chars": 81782
+      },
+      "ledger_owner": {
+        "uid": 999,
+        "gid": 988,
+        "mode": "0o600"
+      },
+      "tag": "sai5",
+      "issues": [],
+      "checks": [
+        {
+          "field": "eligibility",
+          "consistent": true
+        },
+        {
+          "field": "materials",
+          "consistent": true
+        },
+        {
+          "field": "timeline",
+          "consistent": true
+        },
+        {
+          "field": "contact",
+          "consistent": true
+        },
+        {
+          "field": "exams",
+          "consistent": true
+        },
+        {
+          "field": "tuition",
+          "consistent": true
+        },
+        {
+          "field": "scope",
+          "consistent": true
+        },
+        {
+          "field": "application_requirements",
+          "consistent": true
+        },
+        {
+          "field": "deadline_0",
+          "consistent": true
+        },
+        {
+          "field": "deadline_1",
+          "consistent": true
+        },
+        {
+          "field": "application_entry",
+          "consistent": true
+        }
+      ],
+      "transport": {
+        "first_byte_seconds": 2.613,
+        "first_answer_seconds": 2.614,
+        "header_seconds": 2.613,
+        "elapsed_seconds": 4.902,
+        "response_bytes": 27641,
+        "mode": "stream",
+        "max_tokens": 6000,
+        "reasoning_effort": "none",
+        "complete": true
+      }
+    }
+  ]
+}

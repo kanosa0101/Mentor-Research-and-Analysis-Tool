@@ -25,7 +25,8 @@ def test_complete_chinese_evidence_is_sent_without_redundant_model_echo(tmp_path
     sent = client.post.call_args.kwargs['json']
     assert sent['max_tokens'] == 6000
     proposed = json.loads(sent['messages'][1]['content'])
-    assert proposed['official_text'] == quote and proposed['proposed_fields'] == fields
+    assert proposed['official_text'] == quote
+    assert proposed['proposed_fields'] == {'procedure': quote}
     assert result['checks'][0]['quote'] == quote
     assert result['checks'][0]['consistent'] is True
     assert len(json.dumps(payload, ensure_ascii=False)) < 150
@@ -96,7 +97,7 @@ def test_locally_stored_evidence_tampering_is_rejected():
         ai_review.validate(result, TEXT, FIELDS)
 
 
-def test_prompt_limits_checks_to_supplied_sources_without_overriding_official_standards(tmp_path, monkeypatch):
+def test_all_business_values_are_sent_and_quotes_remain_bound_locally(tmp_path, monkeypatch):
     monkeypatch.setattr(ai_review.ai_evidence, 'config', lambda _: dict(model='fixture'))
     monkeypatch.setattr(ai_review.ai_evidence, 'reserve_request', lambda *a: None)
     text = '2026年托福新计分标准：总分须达到5分。'
@@ -107,24 +108,9 @@ def test_prompt_limits_checks_to_supplied_sources_without_overriding_official_st
         return json.dumps(payload([dict(field='eligibility', consistent=True)])), {}
     monkeypatch.setattr(ai_review.ai_transport, 'completion', complete)
     result = ai_review.check(tmp_path, 'https://cs.pku.edu.cn/info/1051/6700.htm', text, fields)
-    instruction = captured[0]['content']
-    assert '仅限给定官方原文、附件及来源元数据' in instruction
-    assert '不是审查官方标准的合理性、外部评分尺度或背景解释是否充分' in instruction
-    assert '相应业务字段value中实际缺失的具体限制片段' in instruction
-    assert '不能用完整quote替代value中遗漏的限制' in instruction
-    assert '不得根据外部知识、记忆或常识纠正官方公布的标准' in instruction
-    assert '原文内部存在矛盾、歧义或提议字段遗漏限制，仍须判为manual' in instruction
-    assert '按全体提议字段的集合核对完整性' in instruction
-    assert 'scope仅表示学校、院系、年度、学位与申请渠道' in instruction
-    assert '申请人身份限制由eligibility表达' in instruction
-    assert '同等学历加试要求可由exams表达' in instruction
-    assert 'attachment_N表示完整保存的附件原文，不声明其中姓名、机构等已标准化成独立实体' in instruction
-    assert '不能仅因附件原文存在就忽略业务字段漏项' in instruction
-    assert '原文明示不同适用时间区间且字段完整保留各区间和标准' in instruction
-    assert '重叠时间内必须同时满足却相互矛盾' in instruction
-    assert '适用区间不明而影响判断时，仍须manual' in instruction
     sent = json.loads(captured[1]['content'])
-    assert sent['official_text'] == text and sent['proposed_fields'] == fields
+    assert sent['official_text'] == text
+    assert sent['proposed_fields'] == {'eligibility': text}
     assert result['checks'] == [dict(field='eligibility', consistent=True, quote=text)]
 
 
