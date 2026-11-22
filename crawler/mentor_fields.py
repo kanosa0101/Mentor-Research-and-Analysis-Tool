@@ -284,7 +284,7 @@ def add_links(search,links,parent,scope,cfg,depth):
     for link in links:
         if link['kind']=='homepage_check':
             target=link['url']
-            allowed=mentor_recovery.same_scope(target,scope)
+            allowed=bool(mentor_recovery.homepage_scope(target,scope))
         else:
             target=mentor_recovery.contact_target(link['url'],cfg)
             allowed=mentor_recovery.contact_allowed(target,scope,cfg)
@@ -561,7 +561,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     def homepage_candidate(value,evidence,basis,depth):
         if not needs_contact(person,'homepage') or not value or not evidence:return
         if mentor_recovery.canonical(value)==mentor_recovery.canonical(person['detail_url']):return
-        if not mentor_recovery.same_scope(value,scope):
+        if not mentor_recovery.homepage_scope(value,scope):
             search['external_homepage_candidate']=dict(url=value,declared_at=evidence,next_review_at=(now+timedelta(days=30)).isoformat(timespec='seconds'))
             return
         add_links(search,[dict(url=value,kind='homepage_check',value=value,identity_basis=basis)],evidence,scope,cfg,depth)
@@ -711,17 +711,22 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                     break
                 continue
             item=search['queue'][0];url=item['url'];parent=item['parent']
+            parent_html=''
             if parent:
                 if not mentor_recovery.contact_allowed(mentor_recovery.contact_target(parent['url'],cfg),scope,cfg):
                     raise ValueError('来源证据离开已登记官方机构边界')
-                sources.captured(parent)
-            raw,html=sources.read(url,official_scope=scope,homepage_target=item['kind']=='homepage_check')
+                _,parent_html=sources.captured(parent)
+            request_scope=mentor_recovery.homepage_scope(url,scope) if item['kind']=='homepage_check' else scope
+            if not request_scope:raise ValueError('个人主页来源离开已登记官方关系')
+            if request_scope!=scope and not mentor_recovery.hosted_homepage_link(parent_html,person['name'],url,scope):
+                raise ValueError('托管主页缺少本人官方页面的明确链接')
+            raw,html=sources.read(url,official_scope=request_scope,homepage_target=item['kind']=='homepage_check')
             evidence=sources.capture(url,raw,stamp)
             heading=mentor_recovery.named_detail(html,person['name'])
             detail=mentor_recovery.contact_details(html,url,person['name'],verified=heading and item['kind'] in ('registered','registered_roster_link'))
             basis=None
             if item['kind']=='homepage_check':
-                if mentor_recovery.linked_homepage_identity(html,person['name'],person.get('aliases') or ()):
+                if mentor_recovery.linked_homepage_identity(html,person['name'],person.get('aliases') or (),url=url,scope=scope):
                     basis='official_person_link_and_named_section'
                     save_contact({'homepage':item['value']},parent,item['identity_basis'])
                     if 'homepage' in report['field_evidence']:report['field_evidence']['homepage']['target_evidence']=evidence

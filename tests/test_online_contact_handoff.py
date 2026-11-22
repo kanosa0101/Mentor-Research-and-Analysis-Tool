@@ -103,6 +103,7 @@ def test_mentor_project_material_and_communication_keep_contact_context(online_s
         register(page)
         page.wait_for_url('**/desk.html?**')
         page.wait_for_function('window.CONTACT_READY')
+        expect(page.locator('#incoming-goal')).to_contain_text('来访申请意向')
         page.locator('#prepare-empty a').click()
         page.wait_for_function('window.WORKFLOW_READY && !document.getElementById("workspace").disabled')
         expect(page.locator('#project-school-id')).to_have_value('bit')
@@ -136,6 +137,7 @@ def test_mentor_project_material_and_communication_keep_contact_context(online_s
         page.wait_for_function('window.CONTACT_READY && !document.getElementById("desk-workspace").disabled')
         expect(page.locator('#context-name')).to_have_text('验收导师')
         expect(page.locator('#context-project')).to_contain_text('隔离验收申请')
+        expect(page.locator('#incoming-goal')).to_contain_text('已保存项目目标')
         page.get_by_role('button', name='历史', exact=True).click()
         expect(page.locator('#contact-history')).to_contain_text('验收沟通记录')
         profile = page.locator('#context-profile')
@@ -203,4 +205,34 @@ def test_mentor_project_material_and_communication_keep_contact_context(online_s
         return_link.click()
         assert query(page.url) == query(DISCOVERY)
         assert errors == []
+        browser.close()
+
+
+def test_mentor_affiliation_does_not_appear_as_an_admission_goal(online_site):
+    base, port = online_site
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(args=['--no-proxy-server', '--explicitly-allowed-ports=' + port])
+        page = browser.new_page(ignore_https_errors=True, viewport={'width': 390, 'height': 844})
+        intent = dict(mentor=MENTOR['page'], school='bit', dept='cs', discovery_return=DISCOVERY)
+        page.goto(base + '/desk.html?' + urlencode(intent))
+        page.wait_for_url('**/account.html?**')
+        assert query(query(page.url)['next']) == intent
+        register(page)
+        page.wait_for_url('**/desk.html?**')
+        page.wait_for_function('window.CONTACT_READY')
+        expect(page.locator('#incoming-goal')).to_be_hidden()
+        card = page.locator('#prepare-empty')
+        assert card.inner_text().count(MENTOR['name']) == 1
+        expect(card).to_contain_text('北京理工大学 · 计算机学院')
+        onward = query(card.locator('a').get_attribute('href'))
+        assert {key: onward[key] for key in intent} == intent
+        page.reload()
+        page.wait_for_function('window.CONTACT_READY')
+        expect(page.locator('#incoming-goal')).to_be_hidden()
+        for scope in ({'year': 2028}, {'degree': 'master'}, {'route': 'recommend'},
+                      {'track': 'special'}, {'program': '0812|计算机科学与技术'},
+                      {'school': 'ruc'}, {'dept': ''}):
+            page.goto(base + '/desk.html?' + urlencode(dict(intent, **scope)))
+            page.wait_for_function('window.CONTACT_READY')
+            expect(page.locator('#incoming-goal')).to_be_visible()
         browser.close()

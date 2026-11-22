@@ -55,7 +55,9 @@ function renderGoal(){
   }
   const scoped=!!(incomingGoal.track||incomingGoal.program),goal=forwardedGoal();
   const intent=[incomingGoal.year,goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' · ');
-  el('incoming-goal').hidden=!Object.keys(incomingGoal).length;
+  const person=people.get(incomingMentor),keys=Object.keys(incomingGoal);
+  const affiliationOnly=!projectContext&&!target()&&person&&incomingGoal.school===person.school&&incomingGoal.dept===person.dept&&keys.every(key=>key==='school'||key==='dept');
+  el('incoming-goal').hidden=!keys.length||affiliationOnly;
   el('incoming-goal').textContent=(intent?'来访申请意向：'+intent+'。':'')+
     '来访招生范围仅供核对，尚未绑定该申请项目；不表示招生已确认，也不代表项目字段。'+
     (scoped?(target()?'已按你选择的目标继续；链接已移除未绑定的类别 / 专业。':!goal.track&&!goal.program?
@@ -320,7 +322,8 @@ function renderTargetTasks(){
 function renderIncoming(){
   if(!incomingMentor||target())return;
   el('welcome').hidden=true;
-  el('prepare-empty').innerHTML=`<h2>准备联系 ${esc(personName(incomingMentor))}</h2><p>${esc(personLabel(incomingMentor))}</p>`+(Object.keys(FLOW.projects).length?'<p>选择适用的申请项目，即可把这位导师加入目标，无需重新搜索。</p><button data-view="targets">选择项目并加入 →</button>':`<p>先为这位导师建立申请项目，再准备材料与邮件。</p><a href="${esc(manageUrl())}">为这位导师建立项目 →</a>`);
+  const person=people.get(incomingMentor),affiliation=[person.school_name||person.school,person.dept_name||person.dept].filter(Boolean).join(' · ');
+  el('prepare-empty').innerHTML=`<h2>准备联系 ${esc(personName(incomingMentor))}</h2><p>${esc(affiliation)}</p>`+(Object.keys(FLOW.projects).length?'<p>选择适用的申请项目，即可把这位导师加入目标，无需重新搜索。</p><button data-view="targets">选择项目并加入 →</button>':`<p>先为这位导师建立申请项目，再准备材料与邮件。</p><a href="${esc(manageUrl())}">为这位导师建立项目 →</a>`);
 }
 el('task-form').addEventListener('input',()=>taskDirty=true);
 el('task-reset').onclick=()=>{if(taskDirty&&!confirm('提醒尚未保存，清空修改？'))return;resetTask();};

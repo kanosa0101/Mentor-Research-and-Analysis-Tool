@@ -4,6 +4,7 @@ dept_name: 计算机学院（网络空间安全学院、密码学院）
 base_url: https://www.cs.sjtu.edu.cn
 hook: sjtu_cs
 parser_dependencies: [profile_fields.py]
+contact_hook_only: true
 list:
   url: https://www.cs.sjtu.edu.cn/active/ajax_teacher_list.html
   method: POST

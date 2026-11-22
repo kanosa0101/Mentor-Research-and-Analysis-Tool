@@ -5,6 +5,7 @@ base_url: https://ia.cas.cn
 hook: ucas_ia
 parser_dependencies: [ucas/cas_lists.py, profile_fields.py]
 roster_discovery: true
+contact_hook_only: true
 list:
   urls:
     - https://ia.cas.cn/rcdw/yjy/

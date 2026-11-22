@@ -220,6 +220,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:计算机视觉
+research_direction_raw: 计算机视觉；情感计算
 provenance:
   name:
     origin: crawled
@@ -250,6 +251,11 @@ provenance:
     origin: crawled
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202111/t20211108_6246291.html
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202111/t20211108_6246291.html
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

@@ -167,6 +167,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:安全
+research_direction_raw: 系统安全；操作系统；动态编译
 provenance:
   name:
     origin: crawled
@@ -197,4 +198,9 @@ provenance:
     origin: crawled
     source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202111/t20211102_6240310.html
     fetched_at: '2026-09-02'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://www.ict.ac.cn/sourcedb/cn/jssrck/202111/t20211102_6240310.html
+    fetched_at: '2026-11-23'
     confidence: auto

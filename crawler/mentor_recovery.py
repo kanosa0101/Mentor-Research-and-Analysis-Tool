@@ -76,7 +76,17 @@ def named_detail(html, name):
     return any(matches_name(node.get_text(' ', strip=True), name) for node in doc.select(CONTACT_REGION))
 
 
-def linked_homepage_identity(html,name,aliases=()):
+def linked_homepage_identity(html,name,aliases=(),*,url='',scope=''):
+    if scope and not same_scope(url,scope):
+        if not homepage_scope(url,scope):return False
+        doc=BeautifulSoup(html,'html.parser')
+        for node in doc.select(PAGE_CHROME):node.decompose()
+        own=doc.select_one('.b-pinfo .bp-enty > p')
+        institute={'ia.cas.cn':'自动化研究所','ict.ac.cn':'计算技术研究所'}[institution(urlsplit(scope).hostname)]
+        role=r'(?:男|女|博导|硕导|博士生导师|硕士生导师|教授|副教授|研究员|副研究员|助理研究员)'
+        identity=re.escape(name)+r'(?:[，,\s]+'+role+r')*[，,\s]+中国科学院'+institute+r'(?:[，,\s]+'+role+r')*[。.]?'
+        return bool(doc.title and doc.title.get_text(strip=True)==name+'-中国科学院大学-UCAS' and own and
+                    re.fullmatch(identity,own.get_text(' ',strip=True)))
     if any(named_detail(html,alias) for alias in (name,*aliases) if alias):return True
     doc=BeautifulSoup(html,'html.parser')
     for node in doc.select(PAGE_CHROME):node.decompose()
@@ -268,6 +278,41 @@ def same_scope(url, scope, *, allow_pdf=False, allow_contact_png=False):
         return True
     except ValueError:
         return False
+
+
+def homepage_scope(url,scope):
+    """Permit named IA/ICT profiles' explicit links to UCAS-hosted homepages."""
+    if same_scope(url,scope):return scope
+    parts=urlsplit(url)
+    if (institution(urlsplit(scope).hostname) in ('ia.cas.cn','ict.ac.cn') and parts.scheme=='https' and
+            parts.netloc=='people.ucas.ac.cn' and re.fullmatch(r'/~[A-Za-z0-9_.-]+/?',parts.path) and
+            not parts.query and not parts.fragment):
+        return 'https://people.ucas.ac.cn'
+    return None
+
+
+def hosted_homepage_link(html,name,url,scope):
+    doc=BeautifulSoup(html,'html.parser')
+    for node in doc.select(PAGE_CHROME):node.decompose()
+    if institution(urlsplit(scope).hostname)=='ict.ac.cn':
+        cards=doc.select('.main .swwls_ryxl dd.swwls_imgtextlist_dd')
+        if len(cards)!=1 or not doc.title or doc.title.get_text(strip=True)!=name+'--中国科学院计算技术研究所':return False
+        heading=cards[0].select_one('h5')
+        label=cards[0].select('p.p-people-content > b#grwy')
+        if not heading or heading.get_text(' ',strip=True).split()[0]!=name or len(label)!=1:return False
+        node=label[0].find_next_sibling('span')
+        links=node.select('a[href]') if node else []
+        return label[0].get_text(strip=True).rstrip('：:')=='个人网页' and len(links)==1 and links[0]['href']==url
+    if institution(urlsplit(scope).hostname)!='ia.cas.cn':return False
+    names=doc.select('.gunius-info .name')
+    if len(names)!=1 or ''.join(names[0].find_all(string=True,recursive=False)).strip()!=name:return False
+    declaration=r'(?:(?:招生信息)?请访问)?(?:个人|教师|学术)主页\s*[:：]?\s*'
+    for anchor in doc.select('.gunius-list a[href]'):
+        label=anchor.get_text(' ',strip=True);context=anchor.parent.get_text(' ',strip=True)
+        if anchor['href']==url and label and (re.fullmatch(declaration+re.escape(label)+r'[。.]?',context) or
+                context==label and re.fullmatch(r'(?:个人|教师|学术)主页',label)):
+            return True
+    return False
 
 
 def contact_target(url,cfg):
