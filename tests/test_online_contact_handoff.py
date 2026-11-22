@@ -30,7 +30,7 @@ def online_site(tmp_path):
     site = tmp_path / 'site'
     (site / 'p').mkdir(parents=True)
     env = build_site.template_environment()
-    for name in ('account', 'applications', 'desk'):
+    for name in ('account', 'applications', 'desk', 'compare'):
         template = env.get_template(name + '.html.j2')
         (site / (name + '.html')).write_text(template.render(), encoding='utf-8')
     detail = env.get_template('detail.html.j2').render(p=MENTOR)
@@ -45,6 +45,8 @@ def online_site(tmp_path):
         'policies': [], 'sources': {}, 'checks': {},
     }) + ';\n'
     (site / 'contact-data.js').write_text(mentors, encoding='utf-8')
+    (site / 'data.js').write_text(mentors, encoding='utf-8')
+    (site / 'compare-data.js').write_text('window.MENTOR_COMPARE = {};', encoding='utf-8')
     (site / 'application-data.js').write_text(mentors + admissions, encoding='utf-8')
     build_site.build_application_entry(site)
 
@@ -189,7 +191,9 @@ def test_mentor_project_material_and_communication_keep_contact_context(online_s
             MENTOR['page'], project, DISCOVERY,
         )
         assert 'project' not in query(page.get_by_role('link', name='学校与院系招生要求').get_attribute('href'))
-        link.click()
+        page.locator('#detail-compare').click()
+        page.locator('#detail-selection').click()
+        page.locator('.compare-contact').click()
         page.wait_for_function('window.CONTACT_READY && !document.getElementById("desk-workspace").disabled')
         expect(page.locator('#context-project')).to_contain_text('隔离验收申请')
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')

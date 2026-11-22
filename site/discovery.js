@@ -159,7 +159,7 @@ async function moreCandidates(){
   }
 }
 function returnScope(p){const q=scope(p);q.set('discovery_return','discovery.html'+location.search);return q;}
-function renderSelection(){el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent='已选 '+compareSelection.length+' 位导师';el('compare-open').href='compare.html?'+returnScope();el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
+function renderSelection(){const goal=returnScope();if(incoming.get('project')&&goal.get('school')===incoming.get('school')&&goal.get('dept')===incoming.get('dept'))goal.set('project',incoming.get('project'));el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent='已选 '+compareSelection.length+' 位导师';el('compare-open').href='compare.html?'+goal;el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
 function safeSource(p){const value=p.email_source||p.provenance?.email?.source||p.profile_url||p.detail_url;try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?u.href:'';}catch(e){return '';}}
 function render(){renderSelection();renderContext();el('discovery-count').textContent=total+' 位候选 · 当前显示 '+view.length+' 位';const p=applied;el('intent-overview').textContent=[p.name&&'姓名：'+p.name,p.topics.length&&p.topics.join('、'),p.schools.length&&p.schools.map(schoolName).join('、'),p.qualifications.length&&p.qualifications.map(x=>qualificationLabels[x]).join('或'),p.titles.length&&p.titles.map(x=>titleLabels[x]).join('、'),p.group&&[...el('intent-group').options].find(option=>option.value===p.group)?.textContent,p.include_missing_email?'包含缺邮箱资料':'有公开邮箱'].filter(Boolean).join(' · ');
 el('candidate-list').innerHTML=view.map(m=>{

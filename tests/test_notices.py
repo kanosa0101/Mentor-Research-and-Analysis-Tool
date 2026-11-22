@@ -95,13 +95,18 @@ class NoticeTests(unittest.TestCase):
     def test_render_selects_real_unit_without_losing_separate_source_ids(self):
         sources = {'doctoral': {'url': 'https://yz.tsinghua.edu.cn/doctoral/', 'scope': 'tsinghua/', 'name': '普通博士'},
                    'general': {'url': 'https://yz.tsinghua.edu.cn/general/', 'scope': 'tsinghua/', 'name': '校级公告'},
-                   'tsinghua/cs': {'url': 'https://cs.tsinghua.edu.cn/'}}
+                   'tsinghua/cs': {'url': 'https://cs.tsinghua.edu.cn/'},
+                   'xidian-ai-notices': {'url': 'https://sai.xidian.edu.cn/tzgg.htm', 'scope': 'xidian/ai',
+                                         'name': '西安电子科技大学 · 人工智能学院'}}
         html = template_environment().get_template('notices.html.j2').render(notices=[], sources=sources)
         soup = BeautifulSoup(html, 'html.parser')
-        self.assertEqual([option['value'] for option in soup.select('#school option')], ['', 'tsinghua/', 'tsinghua/cs'])
+        self.assertEqual([option['value'] for option in soup.select('#school option')],
+                         ['', 'tsinghua/', 'tsinghua/cs', 'xidian/ai'])
         self.assertEqual([entry['data-source'] for entry in soup.select('[data-source-scope="tsinghua/"]')],
                          ['doctoral', 'general'])
         self.assertEqual(soup.select_one('[data-source="doctoral"] a').get_text(strip=True), '普通博士 官方栏目')
+        self.assertEqual(soup.select_one('[data-source-scope="xidian/ai"]')['data-source-name'],
+                         '西安电子科技大学 · 人工智能学院')
 
     def test_default_order_prioritizes_current_list_then_publication_date(self):
         monitor = script('monitor_notices')

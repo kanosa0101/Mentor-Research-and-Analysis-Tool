@@ -167,8 +167,8 @@ a:hover{text-decoration:underline}
     <tr>
       <td>{{ {"name":"姓名","title":"职称","email":"邮箱","homepage":"个人主页","photo_url":"照片","phone":"电话","office_address":"办公地点","bio_raw":"个人简介","research_direction_raw":"研究方向","institutes":"所属团队","detail_url":"资料页面","profile_url":"官方资料入口","supervisor":"导师资格"}.get(k, k) }}</td>
       <td>{{ {
-            "name": p.name, "title": p.title, "email": p.email,
-            "homepage": p.homepage, "photo_url": p.photo_url,
+            "name": p.name, "title": p.title, "email": p.email, "supervisor": p.supervisor,
+            "homepage": p.homepage, "profile_url": p.profile_url, "photo_url": p.photo_url,
             "phone": p.phone, "office_address": p.office_address,
             "bio_raw": p.bio_raw|truncate(60), "research_direction_raw": p.research_direction_raw,
             "institutes": p.institutes|join("、"), "detail_url": p.detail_url
@@ -198,8 +198,8 @@ for(const a of document.querySelectorAll('a[href]')){
     const q=new URLSearchParams(detailScope);
     if(path==='../desk.html'||path==='../applications.html'){
       q.set('mentor',{{ p.page|tojson }});
-      if(detailProject)q.set('project',detailProject);
     }
+    if(detailProject&&['../desk.html','../applications.html','../compare.html','../discovery.html'].includes(path))q.set('project',detailProject);
     if(validDetailReturn&&['../compare.html','../desk.html','../applications.html'].includes(path))q.set('discovery_return',detailReturn);
     a.href=validDetailReturn&&path==='../discovery.html'?'../'+detailReturn:path+'?'+q;
   }

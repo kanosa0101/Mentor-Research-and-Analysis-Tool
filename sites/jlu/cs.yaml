@@ -3,6 +3,8 @@ dept: cs
 dept_name: 计算机科学与技术学院
 base_url: https://ccst.jlu.edu.cn
 hook: jlu_cs
+parser_dependencies: [profile_fields.py]
+profile_field_roster: https://ccst.jlu.edu.cn/szdw/zpzpjs.htm
 list:
   urls:
     # 师资全频道(荣休教师 rxjs 不收); 各频道可能有 listN 翻页

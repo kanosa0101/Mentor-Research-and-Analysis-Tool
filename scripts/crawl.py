@@ -160,7 +160,10 @@ def phase_enrich(cfg, hook, refresh):
         try:
             with fetch.refresh_scope(refresh):
                 html, meta, hit = fetch.fetch_text("GET", prof.detail_url, refresh=refresh)
-                d = hook.parse_detail(cfg, html, prof.detail_url)
+                parse_cfg = cfg
+                if cfg.get("hook") == "nwpu_cs":
+                    parse_cfg = dict(cfg, _expected_name=prof.name, _original_profile=prof.model_dump())
+                d = hook.parse_detail(parse_cfg, html, prof.detail_url)
         except Exception as e:
             store.upsert_issue(issues, "fetch_or_parse_error", prof.slug, repr(e))
             if cfg.get('hook') == 'related_v7' and (school, dept) in {('hust', 'aia'), ('csu', 'auto')} \

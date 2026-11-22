@@ -56,6 +56,36 @@ class NoticeClassificationTests(unittest.TestCase):
         self.assertIsNone(result['admission_year'])
         self.assertEqual(result['cycle'], 'historical')
 
+    def test_undergraduate_recommendation_rules_identify_scope_and_cohort(self):
+        for cohort in (2028, 2029):
+            with self.subTest(cohort=cohort):
+                row = dict(title=f'人工智能学院{cohort}届优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案',
+                           school='xidian', dept='ai', publication_date='2026-11-03',
+                           deadline=None, reviewed=False)
+                item = annotate_notices([row], day=DAY)[0]
+                result = item['classification']
+                self.assertEqual(result['graduation_year'], cohort)
+                self.assertIsNone(result['admission_year'])
+                self.assertIsNone(result['activity_year'])
+                self.assertEqual(result['routes'], ['recommend'])
+                self.assertEqual(result['cycle'], 'preparation')
+                self.assertEqual(result['stage'], 'policy')
+                self.assertEqual(result['tracks'][0]['stage_label'], '本科生推荐资格')
+                self.assertIn('以官方原文为准', result['tracks'][0]['note'])
+                self.assertIsNone(item['deadline'])
+                self.assertFalse(item['reviewed'])
+
+        intake = self.classify('人工智能学院2028年接收推荐免试研究生实施方案')
+        self.assertEqual(intake['stage'], 'application')
+        self.assertEqual(intake['admission_year'], 2028)
+        self.assertIsNone(intake['graduation_year'])
+        camp = self.classify('面向2028届本科生的2027年人工智能学院冬令营报名通知')
+        self.assertEqual(camp['routes'], ['winter_camp'])
+        self.assertEqual(camp['stage'], 'application')
+        self.assertEqual(camp['activity_year'], 2027)
+        generic = self.classify('人工智能学院优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案')
+        self.assertEqual(generic['stage'], 'unknown')
+
     def test_doctoral_cohort_is_not_undergraduate_cohort(self):
         self.assertIsNone(self.classify('2028届博士毕业生就业通知')['graduation_year'])
 

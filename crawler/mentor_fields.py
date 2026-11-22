@@ -170,11 +170,15 @@ def seed(root,now=None,*,email_owners=None):
 
 
 def observation(root,person,*,parsed=None,body=None,source_sha256=None,fetched_at=None,now=None,error=None,
-                parser_signature=None,source_url=None,contact_search=None,contact_only=False,ledger_only=False,ledger=None):
+                parser_signature=None,source_url=None,contact_search=None,contact_only=False,ledger_only=False,ledger=None,
+                verified_sources=()):
     """Record what a verified personal source did/did not disclose, per field."""
     from crawler import mentor_recovery
     root=Path(root);now=now or datetime.now(timezone.utc);stamp=now.isoformat(timespec='seconds');path=root/PATH;key=identifier(person)
     parsed=parsed or {};scope=parsed.get('_field_scope') or parsed.get('bio_raw') or ''
+    declared_sources=parsed.get('_field_sources') or {}
+    captured_sources={row['url']:row for row in verified_sources if row.get('url') and row.get('fetched_at')
+                      and re.fullmatch('[a-f0-9]{64}',row.get('sha256') or '')}
     with LEDGER_LOCK,(nullcontext() if ledger is not None else output_lock(path)):
         state=ledger if ledger is not None else read(root);record=state['records'].get(key)
         gaps=[field for field in FIELDS if not present(person,field)]
@@ -184,20 +188,29 @@ def observation(root,person,*,parsed=None,body=None,source_sha256=None,fetched_a
         for field in (set(gaps)|set(record['fields'])) & set(selected):
             prior=record['fields'].get(field,{})
             proof_source=source_url or person['detail_url']
+            proof_sha, proof_time=source_sha256, fetched_at
             verified=bool(parsed.get(field)) and not error
+            current=((person.get('provenance') or {}).get(field) or {})
+            if target:=declared_sources.get(field):
+                proof=captured_sources.get(target)
+                verified=(verified and proof is not None and current.get('origin')!='manual'
+                          and current.get('source')==target and parsed[field]==person.get(field))
+                if verified:
+                    proof_source,proof_sha,proof_time=target,proof['sha256'],proof['fetched_at']
+                else:
+                    proof_source,proof_sha=prior.get('source_url') or proof_source,None
             if field=='email' and present(person,field):
-                current=(person.get('provenance') or {}).get('email') or {}
                 verified=(verified and mentor_recovery.personal_email(parsed.get(field))==person[field] and
                           current.get('origin')!='manual' and (not current.get('source') or current['source']==proof_source))
             if present(person,field) and prior.get('status')=='resolved' and not verified:continue
             if (not contact_only and contact_search is None and field in CONTACT_FIELDS
                     and (record.get('contact_search') or {}).get('next_at') and not present(person,field)):continue
-            value=dict(prior,first_seen=prior.get('first_seen',stamp),checked_at=stamp,source_url=source_url or person['detail_url'])
+            value=dict(prior,first_seen=prior.get('first_seen',stamp),checked_at=stamp,source_url=proof_source)
             if field=='homepage':value['optional']=True
-            if source_sha256:value.update(source_sha256=source_sha256,fetched_at=fetched_at)
+            if proof_sha:value.update(source_sha256=proof_sha,fetched_at=proof_time)
             if parser_signature:value['parser_signature']=parser_signature
             if present(person,field):
-                if field=='email' and verified and source_sha256 and fetched_at:value['verified_value']=person[field]
+                if field=='email' and verified and proof_sha and proof_time:value['verified_value']=person[field]
                 elif field=='email':
                     for item in ('verified_value','source_sha256','fetched_at'):value.pop(item,None)
                 value.update(status='resolved',reason_code='field_verified' if verified else 'record_now_complete',
@@ -625,7 +638,8 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             search['directory']=bool(cfg.get('list') or cfg.get('profile_directory_format'))
             search['next_at']=stamp if search['queue'] else (now+timedelta(days=1)).isoformat(timespec='seconds') if search['directory'] else None
         observation(root,person,parsed=parsed,source_url=url,source_sha256=evidence['sha256'] if evidence else None,
-                    fetched_at=fetched_at,now=now,error=error,parser_signature=signature,contact_search=search,ledger=ledger)
+                    fetched_at=fetched_at,now=now,error=error,parser_signature=signature,contact_search=search,ledger=ledger,
+                    verified_sources=captures.values())
         if error and not report['field_evidence']:report.update(status='error',reason=str(error)[:500])
         if evidence:report.update(source_sha256=evidence['sha256'],fetched_at=evidence['fetched_at'])
 

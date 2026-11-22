@@ -422,6 +422,8 @@ def test_card_continues_matched_project_and_preserves_existing_bookmark(director
         assert detail['discovery_return'] == contact['discovery_return'] == [original_page]
         assert contact['mentor'] == ['bit-cs-fixture-1']
         assert 'project' not in requests[0]
+        card.get_by_role('button', name='加入对比').click()
+        assert href_query(page.locator('#compare-open'))['project'] == ['existing-project']
 
         page.get_by_role('button', name='换一批').click()
         expect(card).to_have_count(0)
@@ -437,4 +439,5 @@ def test_card_continues_matched_project_and_preserves_existing_bookmark(director
             params = href_query(other.get_by_role('link', name=link))
             assert 'project' not in params and params['discovery_return'] == [original_page]
         assert 'project' not in requests[-1]
+        assert 'project' not in href_query(page.locator('#compare-open'))
         browser.close()

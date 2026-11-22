@@ -3,9 +3,9 @@ name: 王继禾
 aliases: []
 school: nwpu
 dept: cs
-status: roster
+status: enriched
 institutes: []
-detail_url: http://teacher.nwpu.edu.cn/2016010200.html
+detail_url: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=4&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
 profile_url: http://teacher.nwpu.edu.cn/2016010200.html
 first_seen: '2026-09-04'
 provenance:
@@ -14,4 +14,17 @@ provenance:
     source: https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
     fetched_at: '2026-09-04'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=4&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=4&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
+    fetched_at: '2026-11-23'
+    confidence: auto
 facets: []
+research_direction_raw: 高性能人工智能系统设计、无人系统平台多源智能信息融合、新型存储器设计与优化、异构多核高能效绿色计算、分布式深度学习设计与优化等
+last_fetched: '2026-11-23'
+last_parsed: '2026-11-23'

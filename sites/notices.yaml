@@ -292,3 +292,11 @@ targets:
   name: 清华大学研究生招生网普通博士招考
   url: https://yz.tsinghua.edu.cn/zsxx/bszs/ptzk.htm
   selector: a[href*="/info/1012/"]
+- source_id: xidian-ai-notices
+  school: xidian
+  dept: ai
+  name: 西安电子科技大学 · 人工智能学院
+  url: https://sai.xidian.edu.cn/tzgg.htm
+  selector: '.n_list_text li > a[href^="info/"]'
+  title_selector: self
+  date_selector: i

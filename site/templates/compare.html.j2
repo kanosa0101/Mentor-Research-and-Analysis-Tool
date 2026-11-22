@@ -29,7 +29,7 @@ table{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
 th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:#fafbfc;font-size:12px;font-weight:600;letter-spacing:.3px;position:sticky;top:0;
   box-shadow:inset 0 -1px 0 var(--line)}
-td.lb,th.lb{width:96px;background:#fafbfd;color:var(--muted);font-size:11.5px;font-weight:600;
+td.lb,th.lb{width:96px;background:#fafbfd;color:var(--muted);font-size:var(--text-small);font-weight:600;
   white-space:normal}
 tr:last-child td{border-bottom:none}
 tbody tr:hover td{background:var(--accent-soft)}
@@ -43,7 +43,7 @@ a:hover{text-decoration:underline}
   padding:2px 8px;margin:1px 2px 1px 0}
 .pvl{font-size:11px;color:#9aa3b2;margin-left:6px;white-space:nowrap}
 .pvl:hover{color:var(--accent)}
-.pcol .pn{font-size:15px;font-weight:700}
+.pcol .pn{font-size:var(--heading-card);font-weight:700}
 .pcol .ps{font-size:11.5px;color:var(--muted);margin-top:2px}
 .pcol .rm{float:right;color:#c3cad6;cursor:pointer;font-size:16px;line-height:1}
 .pcol .rm:hover{color:#d64545}
@@ -58,7 +58,8 @@ a:hover{text-decoration:underline}
 <body class="page page-compare">
 {% include '_nav.html.j2' %}
 <div class="page-heading"><h1>导师对比</h1></div>
-<div class="wrap"><div class="context-actions"><a href="discovery.html">继续找导师</a><a href="index.html">从全量目录添加</a><span id="selection-summary" class="muted"></span><button id="clear-selection" type="button">清空选择</button></div>
+<div class="wrap"><div class="context-actions"><a href="discovery.html">继续找导师</a><a href="index.html">从全量目录添加</a><span id="selection-summary" class="muted"></span><button id="clear-selection" type="button" hidden>清空选择</button></div>
+  <p id="compare-status" role="status" hidden></p><button id="compare-retry" type="button" hidden>重新加载已选导师</button>
   <div class="hint" id="hint" style="display:none">
     尚未选择导师。选择 1 位可查看和联系，2–5 位可并排比较。可以在<a href="discovery.html">找导师</a>卡片点击“加入对比”，或在<a href="index.html">全量目录</a>勾选姓名前的复选框。
   </div>
@@ -68,29 +69,22 @@ a:hover{text-decoration:underline}
   <div class="foot">字段旁 ↗ 为官网出处（悬停看抓取日期） · 缺失字段显示"暂未收录"</div>
 </div>
 <script>
-(async()=>{
+(()=>{
 const scopeInput=new URLSearchParams(location.search);
 const discoveryReturn=scopeInput.get('discovery_return')||'';
 const validDiscoveryReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(discoveryReturn);
 // Returning to the directory must work even before selected mentor data arrives.
 if(validDiscoveryReturn)for(const a of document.querySelectorAll('a[href="discovery.html"]'))a.href=discoveryReturn;
-let requested=[];try{requested=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(x=>typeof x==='string').slice(0,5);}catch(e){}
-let DATA=[];
-if(requested.length){
- try{const response=await fetch('/api/mentors?ids='+encodeURIComponent(requested.join(',')));if(!response.ok)throw new Error('服务不可用');DATA=(await response.json()).mentors;}
- catch(error){
-  const load=file=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=file;script.onload=resolve;script.onerror=reject;document.head.append(script);});
-  await load('data.js?v=20261115-7');await load('compare-data.js?v=20261115-7');
-  DATA=window.MENTOR_DATA.filter(p=>requested.includes(p.page)).map(p=>Object.assign(p,window.MENTOR_COMPARE[p.page]));
- }
-}
-const byId = {}; DATA.forEach(p => byId[p.page] = p);
+let SEL=[];try{SEL=[...new Set(JSON.parse(localStorage.getItem('compare_sel')||'[]'))].filter(x=>typeof x==='string').slice(0,5);}catch(e){}
+let byId={},loadVersion=0;
+const status=document.getElementById('compare-status'),retry=document.getElementById('compare-retry');
+function message(text){status.textContent=text;status.hidden=!text;}
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function publicScope(p){
   const q=new URLSearchParams();
-  for(const k of ['school','dept','year','degree','route','track','program'])if(scopeInput.get(k))q.set(k,scopeInput.get(k));
+  for(const k of ['school','dept','year','degree','route','track','program','project'])if(scopeInput.get(k))q.set(k,scopeInput.get(k));
   if(validDiscoveryReturn)q.set('discovery_return',discoveryReturn);
-  if(p){if(q.get('school')!==p.school||q.get('dept')!==p.dept){q.delete('track');q.delete('program');}q.set('school',p.school);q.set('dept',p.dept);}
+  if(p){if(q.get('school')!==p.school||q.get('dept')!==p.dept){q.delete('track');q.delete('program');q.delete('project');}q.set('school',p.school);q.set('dept',p.dept);}
   return q;
 }
 const detailUrl=p=>'p/'+encodeURIComponent(p.page)+'.html?'+publicScope(p);
@@ -100,28 +94,21 @@ const FACET_LABELS = {llm:"大模型/LLM", nlp:"NLP", cv:"视觉/CV", ml:"机器
   systems:"系统与体系结构", security:"安全与密码", graphics:"图形与可视化",
   db:"数据库与大数据", network:"网络与物联网", theory:"理论", robotics:"机器人与自动驾驶",
   hci:"人机交互", bio:"AI+生物医疗"};
-let SEL = [];
-try { SEL = JSON.parse(localStorage.getItem("compare_sel")||"[]").filter(id => byId[id]); } catch(e) {}
-SEL = [...new Set(SEL)].slice(0, 5);
-
 const MIS = '<span class="missing">暂未收录</span>';
 const chips = p => (p.facets||[]).map(f => `<span class="chip">${esc(FACET_LABELS[f.id]||f.id)}</span>`).join("");
 // prov: 有出处时在值旁挂 ↗（悬停显示抓取日期）
 const ROWS = [
-  {label:"姓名", f:p=>`<a href="${esc(detailUrl(p))}">${esc(p.name)}</a>`},
-  {label:"学校", f:p=>esc(p.school_name)},
-  {label:"院系", f:p=>esc(p.dept_name||p.dept)},
-  {label:"职称", f:p=>p.title?esc(p.title):MIS, prov:"title"},
+  {label:"研究方向", f:p=>p.research_direction_raw?esc(p.research_direction_raw):MIS, prov:"research_direction_raw"},
   {label:"导师资格", f:p=>p.supervisor?`<span class="tag">${esc(p.supervisor)}</span>`:MIS, prov:"supervisor"},
-  {label:"明确研究方向", f:p=>p.research_direction_raw?esc(p.research_direction_raw):MIS, prov:"research_direction_raw"},
-  {label:"检索标签（自动提取）", f:p=>chips(p)||MIS},
+  {label:"职称", f:p=>p.title?esc(p.title):MIS, prov:"title"},
   {label:"邮箱", f:p=>p.email?`<span class="mono">${esc(p.email)}</span><button class="copybtn" data-copy="${esc(p.email)}">复制</button>`:MIS, prov:"email"},
-  {label:"电话", f:p=>p.phone?`<span class="mono">${esc(p.phone)}</span>`:MIS, prov:"phone"},
-  {label:"研究所", f:p=>(p.institutes||[]).length?esc(p.institutes.join("、")):MIS, prov:"institutes"},
-  {label:"个人主页", f:p=>p.homepage?`<a href="${esc(p.homepage)}" target="_blank">主页 ↗</a>`:MIS, prov:"homepage"},
-  {label:"官网页面", f:p=>`<a href="${esc(p.profile_url||p.detail_url)}" target="_blank">原文 ↗</a>`},
-  {label:"简介摘录", f:p=>p.bio_excerpt?esc(p.bio_excerpt):MIS, prov:"bio_raw"},
-  {label:"入库/来源抓取", f:p=>esc((p.first_seen||"—")+" / "+(p.source_date||"—"))},
+  {label:"官方资料", f:p=>p.profile_url||p.detail_url?`<a href="${esc(p.profile_url||p.detail_url)}" target="_blank">原文 ↗</a>`:MIS},
+  {label:"自动标签", f:p=>chips(p)||MIS, has:p=>(p.facets||[]).length},
+  {label:"电话", f:p=>p.phone?`<span class="mono">${esc(p.phone)}</span>`:MIS, prov:"phone", has:p=>p.phone},
+  {label:"研究所", f:p=>(p.institutes||[]).length?esc(p.institutes.join("、")):MIS, prov:"institutes", has:p=>(p.institutes||[]).length},
+  {label:"个人主页", f:p=>p.homepage?`<a href="${esc(p.homepage)}" target="_blank">主页 ↗</a>`:MIS, prov:"homepage", has:p=>p.homepage},
+  {label:"简介摘录", f:p=>p.bio_excerpt?esc(p.bio_excerpt):MIS, prov:"bio_raw", has:p=>p.bio_excerpt},
+  {label:"来源抓取", f:p=>p.source_date?esc(p.source_date):MIS},
 ];
 const provMark = (p, k) => {
   const v = (p.provenance||{})[k];
@@ -141,20 +128,23 @@ function render(){
   document.getElementById("card").style.display = "block";
   document.getElementById("thead-row").innerHTML = `<th class="lb">字段</th>` + SEL.map(id=>{
     const p = byId[id],goal=publicScope(p);goal.set('mentor',id);
-    const cleared=(scopeInput.get('track')||scopeInput.get('program'))&&(scopeInput.get('school')!==p.school||scopeInput.get('dept')!==p.dept);
+    const cleared=(scopeInput.get('project')||scopeInput.get('track')||scopeInput.get('program'))&&(scopeInput.get('school')!==p.school||scopeInput.get('dept')!==p.dept);
     return `<th class="pcol"><button class="rm" data-rm="${id}" aria-label="移出${esc(p.name)}" title="移出对比">×</button>
       <div class="pn"><a href="${esc(detailUrl(p))}">${esc(p.name)}</a></div>
-      <div class="ps">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div><a class="compare-contact" href="desk.html?${esc(goal.toString())}">准备联系 →</a>${cleared?'<p class="muted">不在原项目院系，继续时清除原专业／专项范围，请重新核对。</p>':''}</th>`;
+      <div class="ps">${esc(p.school_name)} · ${esc(p.dept_name||p.dept)}</div><a class="compare-contact" href="desk.html?${esc(goal.toString())}">准备联系 →</a>${cleared?'<p class="muted">此导师不在原申请院系，请另选申请项目并核对专业／专项。</p>':''}</th>`;
   }).join("");
-  document.querySelector("#cmp tbody").innerHTML = ROWS.map(r =>
+  document.querySelector("#cmp tbody").innerHTML = ROWS.filter(r=>!r.has||SEL.some(id=>r.has(byId[id]))).map(r =>
     `<tr><td class="lb">${r.label}</td>` + SEL.map(id=>{
       const p = byId[id];
       return `<td><div class="cell">${r.f(p)}${r.prov?provMark(p, r.prov):""}</div></td>`;
     }).join("") + `</tr>`).join("");
   document.querySelectorAll("[data-rm]").forEach(b=>b.addEventListener("click", ()=>{
+    const index=SEL.indexOf(b.dataset.rm);
     SEL = SEL.filter(x => x !== b.dataset.rm);
-    localStorage.setItem("compare_sel", JSON.stringify(SEL));
+    saveSelection();
     render();
+    const buttons=SEL.length?document.querySelectorAll('[data-rm]'):[];
+    (buttons[Math.min(index,buttons.length-1)]||document.querySelector('.context-actions a')).focus();
   }));
   document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click", ()=>{
     const done = ()=>{ b.textContent = "已复制"; b.classList.add("copied");
@@ -171,9 +161,33 @@ function render(){
       ? navigator.clipboard.writeText(b.dataset.copy) : Promise.reject()).then(done, fb);
   }));
 }
-document.getElementById("clear-selection").onclick=()=>{SEL=[];localStorage.setItem("compare_sel","[]");render();};
-render();
-})().catch(()=>{document.getElementById("hint").style.display="block";document.getElementById("hint").textContent="导师资料暂未加载成功，请刷新重试。";});
+function saveSelection(note=''){
+  try{localStorage.setItem('compare_sel',JSON.stringify(SEL));message(note);}
+  catch(error){message(note+'当前选择已更新，但浏览器无法保存；离开页面后可能无法保留。');}
+}
+async function loadSelection(){
+  const version=++loadVersion;
+  document.getElementById('clear-selection').hidden=!SEL.length;
+  document.getElementById('selection-summary').textContent=`当前选择 ${SEL.length} / 5 位`;
+  message(`正在加载已选的 ${SEL.length} 位导师…`);retry.hidden=true;
+  try{
+    const {response,data}=await OnlineAccount.readJSON('/api/mentors?ids='+encodeURIComponent(SEL.join(',')));
+    if(!response.ok||!Array.isArray(data.mentors))throw new Error('导师资料暂不可用');
+    if(version!==loadVersion)return;
+    byId=Object.fromEntries(data.mentors.filter(p=>p&&SEL.includes(p.page)).map(p=>[p.page,p]));
+    const missing=SEL.filter(id=>!Object.hasOwn(byId,id)).length;
+    SEL=SEL.filter(id=>Object.hasOwn(byId,id));
+    if(missing)saveSelection(`${missing} 位导师资料已更新或下架，请返回找导师重新选择。`);else message('');
+    render();
+  }catch(error){
+    if(version!==loadVersion)return;
+    message((error.timedOut?'导师资料读取超时。':'导师资料暂未加载成功。')+'已保留所选导师，请重试或继续找导师。');retry.hidden=false;
+  }
+}
+retry.onclick=loadSelection;
+document.getElementById("clear-selection").onclick=()=>{++loadVersion;SEL=[];retry.hidden=true;saveSelection();render();document.querySelector('.context-actions a').focus();};
+if(SEL.length)loadSelection();else render();
+})();
 </script>
 </body>
 </html>

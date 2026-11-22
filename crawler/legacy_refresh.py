@@ -309,7 +309,7 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                                  'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
                     from crawler import mentor_fields,mentor_recovery
                     mentor_fields.observation(root,updated,parsed=parsed,source_sha256=raw_hash,fetched_at=stamp,now=now,
-                                              parser_signature=mentor_recovery.signature(root,cfg))
+                                              parser_signature=mentor_recovery.signature(root,cfg),verified_sources=supplemental)
                 except Exception as error:
                     record(key, {'status': 'error', 'source_url': original['detail_url'], 'error': str(error)[:500]})
                     from crawler import mentor_fields,mentor_recovery

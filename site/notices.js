@@ -17,11 +17,12 @@ const reference=asOf?new Date(asOf+'T12:00:00+08:00'):new Date(),y=reference.get
 document.getElementById('notice-cycle-guide').textContent=(asOf?'分类截至 '+asOf+'。':'分类日期待核验。')+(m>=11?`${y+1} 年入学推免已进入结果与历史参考；${y+1} 年入学统考属于当前周期（备考与后续安排）；${y+2} 届本科生可查看下一届推免准备。`:'请按通知明确的入学年、毕业届别和申请渠道判断周期。')+' 冬令营活动年份不等于毕业届别；“当前周期”不表示报名开放。';
 const knownSchool=key=>!key.includes('/')&&units.some(u=>u.school===key);
 const inScope=(unitKey,key)=>!key||unitKey===key||(knownSchool(key)&&unitKey.startsWith(key+'/'));
+const sourceNames=new Map(Array.from(document.querySelectorAll('[data-source]'),source=>[source.dataset.sourceScope,source.dataset.sourceName]).filter(([,name])=>name));
 function nameFor(key){
   const unit=units.find(u=>u.school+'/'+u.dept===key);
   if(unit)return unit.school_name+' · '+unit.dept_name;
   const school=units.find(u=>u.school===key.replace(/\/$/,''))?.school_name;
-  return school&&key.endsWith('/')?school+' · 校级':school||key;
+  return school&&key.endsWith('/')?school+' · 校级':sourceNames.get(key)||school||key;
 }
 const rawSchool=incoming.get('school')||'',requested=rawSchool&&!rawSchool.includes('/')&&incoming.has('dept')?rawSchool+'/'+incoming.get('dept'):rawSchool;
 if(requested&&!Array.from(select.options).some(o=>o.value===requested))select.add(new Option(nameFor(requested),requested));

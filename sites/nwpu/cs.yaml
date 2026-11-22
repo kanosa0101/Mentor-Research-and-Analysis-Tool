@@ -2,8 +2,17 @@ school: nwpu
 dept: cs
 dept_name: 计算机学院
 base_url: https://jsj.nwpu.edu.cn
-hook: simple_list
-roster_only: true
+hook: nwpu_cs
+parser_dependencies: [profile_fields.py, simple_list.py]
+stable_urls: true
+advisor_roster_url: https://jsj.nwpu.edu.cn/snew/jyjx/yjs/dsfc.htm
+faculty_departments:
+  '1515': 智能计算系统系
+  '1519': 计算机科学与软件系
+  '1523': 计算机信息工程系
+  '1527': 网络与机器人系统系
+  '1533': 高性能中心
+  '1685': 计算机基础教学与实验中心
 list:
   urls:
     - https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm

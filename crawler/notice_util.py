@@ -145,9 +145,14 @@ def classify_notice(notice, day=None, opportunities=None):
     for route in routes:
         stage = _stage(title, route)
         cycle, note = _cycle(route, stage, explicit['admission_year'], explicit['graduation_year'], explicit['activity_year'], day)
+        stage_label = STAGES[stage]
+        if (stage == 'unknown' and route == 'recommend' and graduation is not None
+                and re.search(r'本科(?:毕业)?生\s*推荐免试攻读硕士(?:学位)?研究生工作实施方案$', title.strip())):
+            stage, stage_label = 'policy', '本科生推荐资格'
+            note = '本科生推荐资格遴选安排。适用院系与申请时间以官方原文为准。'
         if stage == 'results':
             note += ' 此条为结果或名单，可跟进已有申请，不能作为仍接受新申请的依据。'
-        tracks.append(dict(route=route, route_label=ROUTES[route], stage=stage, stage_label=STAGES[stage], cycle=cycle, cycle_label=CYCLES[cycle], note=note))
+        tracks.append(dict(route=route, route_label=ROUTES[route], stage=stage, stage_label=stage_label, cycle=cycle, cycle_label=CYCLES[cycle], note=note))
     cycles = {track['cycle'] for track in tracks}
     cycle = next(key for key in ('current', 'preparation', 'unknown', 'historical') if key in cycles)
     basis.append('发布日期、抓取日期和栏目仍可见均不作为届别或报名开放依据。')

@@ -3,9 +3,9 @@ name: 赵晨
 aliases: []
 school: nwpu
 dept: cs
-status: roster
+status: enriched
 institutes: []
-detail_url: http://teacher.nwpu.edu.cn/2017010148.html
+detail_url: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=5&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
 profile_url: http://teacher.nwpu.edu.cn/2017010148.html
 first_seen: '2026-09-04'
 provenance:
@@ -14,4 +14,17 @@ provenance:
     source: https://jsj.nwpu.edu.cn/snew/szdw/szmd.htm
     fetched_at: '2026-09-04'
     confidence: auto
+  title:
+    origin: crawled
+    source: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=5&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://jsj.nwpu.edu.cn/snew/szdwlist.jsp?a238672t=5&a238672p=5&a238672c=10&urltype=tree.TreeTempUrl&wbtreeid=1515
+    fetched_at: '2026-11-23'
+    confidence: auto
 facets: []
+title: 助理教授
+last_fetched: '2026-11-23'
+last_parsed: '2026-11-23'
