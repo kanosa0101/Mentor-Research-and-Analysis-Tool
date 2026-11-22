@@ -9,11 +9,12 @@ title: 教授
 supervisor: 博导
 email: yi.zeng@ruc.edu.cn
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/yizeng/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/yizeng/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/zy/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/zy/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: '人工智能伦理安全与治理、决策基础模型与智能体、人工智能与可持续发展；人工智能伦理安全与治理：研究人工智能的伦理道德模型、价值对齐、伦理评估、人工智能与智能体的近期与长远伦理、安全及其治理，并研究低风险、高度安全、具有道德的与人类和谐共生的人工智能；决策基础模型与智能体: 主要围绕面向通用人工智能的脑启发与认知决策智能基础模型与智能体开展研究，构建受自主学习、发育与演化启发的决策基础模型、多智能体协作决策及人机协同安全可控决策；人工智能与可持续发展：研究人工智能与青少年发展、人工智能促进文化传承与互鉴、人工智能赋能全球可持续发展目标的实现，人工智能对可持续发展的影响'
 provenance:
   name:
     origin: crawled
@@ -34,4 +35,19 @@ provenance:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/yizeng/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/zy/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

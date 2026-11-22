@@ -8,11 +8,12 @@ status: enriched
 title: 副教授
 email: xiaozhou@ruc.edu.cn
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx1/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx1/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/zx1/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/zx1/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: AI for Social Science、时空数据挖掘、城市计算、推荐系统及大模型（多模态大模型、医疗大模型、时空大模型、具身智能）
 provenance:
   name:
     origin: crawled
@@ -26,6 +27,23 @@ provenance:
     confidence: auto
   email:
     origin: crawled
-    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx1/index.htm
-    fetched_at: '2026-09-04'
+    source: https://ai.ruc.edu.cn/szdw/zrjs/zx1/index.htm
+    fetched_at: '2026-11-17'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-17'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/zx1/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

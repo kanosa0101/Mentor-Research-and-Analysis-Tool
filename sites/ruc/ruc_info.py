@@ -1,23 +1,40 @@
 import re
+from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 
 from crawler import fetch
 from crawler.email_util import normalize_email
+from crawler.mentor_recovery import personal_email
+from sites.profile_fields import direction_is_mixed
 
 # info.ruc.edu.cn 师资是三层 JS 跳转(师资队伍→按机构→不限)，落地
 # ajxjgcx/bx/bx1/index.htm 为全院列表，VSB 翻页 index2.htm..N.htm，
-# 条目是 32 位哈希 .htm。锚文字粘连("卞昊穹研究方向…讲授课程…")，姓名取开头汉字段。
-# 详情页无 vsb_content，主内容在 .content：简介首行"姓名，职称，…导师"，后跟
-# 电子邮箱/个人主页行。
-_NAME_RE = re.compile(r"^([\u4e00-\u9fa5·]{2,4})(?:研究方向|讲授课程|研究方向·|$)")
+# 名册卡片姓名和研究/课程摘要相邻，详情页才有完整具名栏目。
+_NAME_RE = re.compile(r"[\u4e00-\u9fa5·]{2,8}")
 _TITLE_RE = re.compile(r"副教授|副研究员|助理教授|研究员|教授|讲师")
-_SUP_RE = re.compile(r"博士生导师|硕士生导师|博士研究生导师|硕士研究生导师")
+_SUP_RE = re.compile(r"博士(?:研究)?生导师|硕士(?:研究)?生导师|博导|硕导")
+_ROLE_CONTEXT = re.compile(r"师从|曾任|历任|原任|退休|(?:无|非|未|不|没有).{0,4}(?:博[士导]|硕[士导]|导师)|导师(?:为|是|组)|取消|撤销")
+_PERSON_PATH = re.compile(r"/jsky/(?:szdw/ajxjgcx/[a-zA-Z0-9_/]+|rtjs)/[0-9a-f]{32}\.htm")
+_SECTION = re.compile(r"(?:主要)?(?:研究方向|研究领域|研究兴趣|科研方向)")
+_BLOCK = re.compile(r"</?(?:p|div|li|ol|ul|section|h[1-6]|tr)\b[^>]*>|<br\s*/?>", re.I)
+_PLACEHOLDER = re.compile(r"暂无(?:内容)?|无|待补充|未更新|--|(?:感兴趣的)?研究方向[：:]?")
+_TOPIC_END = re.compile(r"^(?:指导学生|招生|(?:对)?学生要求|期望要求|课题组|讲授课程|教授课程|课程|科研成果|科研项目|获奖|相关论文|欢迎|诚招|我正在寻找|我正在招|招收|联系我们|联系方式|具体研究内容参见)|(?:现有设备条件|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})")
+_INLINE = re.compile(r"(?:(?:目前|当前)的?)?(?:主要)?研究(?:方向|领域|兴趣)(?:为|是|包括|涉及|集中在|聚焦于|[:：])\s*[:：]?\s*([^。\n]+)")
+_TOPIC_CUE = re.compile(r"(?:^|(?<=[。；;]))\s*(?:近年|目前|具体|大的)?(?:主要)?研究(?:方向|领域|兴趣)"
+                        r"(?:为|是|包括|涉及|集中在|聚焦于|[:：])\s*[:：]?\s*")
+_ADDRESS = re.compile(r"^(?:电子)?邮箱\s*[:：]\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})(?=$|\s|<,p>)")
+
+
+def _official_person(url):
+    target = urlsplit(url)
+    return (target.scheme in ('http', 'https') and target.netloc == 'info.ruc.edu.cn'
+            and not target.query and not target.fragment and _PERSON_PATH.fullmatch(target.path))
 
 
 def iter_roster(cfg):
     people = {}
+    conflicts = set()
     meta = None
     for ch in cfg["list"]["channels"]:
         base = re.sub(r"index\.htm$", "", ch["url"])
@@ -30,36 +47,80 @@ def iter_roster(cfg):
             soup = BeautifulSoup(text or "", "html.parser")
             fresh = 0
             for a in soup.select("a[href]"):
-                if not re.search(r"[0-9a-f]{32}\.htm$", a["href"]):
+                href = urljoin(page_url, a['href'])
+                identity = a.select_one('.research-text > .text1')
+                if not identity or not _official_person(href):
                     continue
-                nm = _NAME_RE.match(re.sub(r"\s+", "", a.get_text(strip=True)))
-                if not nm:
+                name = identity.get_text(strip=True)
+                if not _NAME_RE.fullmatch(name):
                     continue
-                name = nm.group(1)
                 if name not in people:
-                    href = urljoin(page_url, a["href"])
-                    people[name] = {"name": name, "url": href,
-                                    "profile_url": href, "institutes": []}
+                    people[name] = {"name": name, "url": href, "institutes": []}
                     fresh += 1
+                elif urlsplit(people[name]['url']).path != urlsplit(href).path:
+                    conflicts.add(name)
             if fresh == 0:
                 break
-    return list(people.values()), meta
+    return [row for name, row in people.items() if name not in conflicts], meta
+
+
+def _lines(nodes):
+    doc = BeautifulSoup(''.join(map(str, nodes)), 'html.parser')
+    for embedded in doc.select('script,style,template,[hidden]'):
+        embedded.decompose()
+    blocks = BeautifulSoup(_BLOCK.sub('\n', str(doc)), 'html.parser').get_text()
+    return [re.sub(r'\s+', ' ', line).strip() for line in blocks.splitlines() if line.strip()]
+
+
+def _research_direction(content, intro):
+    sections = [heading for heading in content.select('.pro_info > .h2 > .name')
+                if _SECTION.fullmatch(heading.get_text(strip=True))]
+    if len(sections) > 1:
+        return None
+    topics = []
+    if sections:
+        for line in _lines(sections[0].parent.find_next_siblings()):
+            if _TOPIC_END.search(line) or direction_is_mixed(line):
+                break
+            if not _PLACEHOLDER.fullmatch(line):
+                topic = _TOPIC_CUE.sub('', line).strip('；;。')
+                if topic:
+                    topics.append(topic)
+    if topics:
+        return '；'.join(topics)
+    if match := _INLINE.search(intro):
+        value = re.split(r'，(?=利用前沿|主持|发表|担任|获评|在(?:国内外|管理科学|领域|国际|计算机科学))', match[1], maxsplit=1)[0]
+        if not direction_is_mixed(value) and not _TOPIC_END.search(value):
+            return value.strip(' ：:；;。')
+    return None
+
+
+def _personal_address(lines):
+    labelled = [line for line in lines if re.match(r'^(?:电子)?邮箱\s*[:：]', line)]
+    if any(line.count('@') > 1 for line in labelled):
+        return None
+    known = {match[1] for line in labelled if (match := _ADDRESS.match(line))}
+    addresses = {address for value in known if (address := personal_email(value))}
+    return next(iter(addresses)) if len(addresses) == 1 else None
 
 
 def parse_detail(cfg, html, url):
     soup = BeautifulSoup(html, "html.parser")
     out = {}
     content = soup.select_one(".content")
-    if content is None:
+    if content is None or not _official_person(url):
         return out
+    card = content.select_one(':scope > .card_box > .card')
+    name_node = card.select_one(':scope > .name') if card else None
+    name = name_node.get_text(strip=True) if name_node else ''
+    original = cfg.get('_original_profile') or {}
+    expected = cfg.get('_expected_name') or original.get('name') or name
+    page_title = soup.title.get_text(' ', strip=True) if soup.title else ''
+    if not _NAME_RE.fullmatch(name) or name != expected or not page_title.startswith(name+' -'):
+        raise ValueError('人大信息学院本人页标题或正文姓名未通过核对')
+    out['name'] = name
     lines = [l.strip() for l in content.get_text("\n", strip=True).split("\n") if l.strip()]
     for line in lines:
-        m = re.match(r"^(?:电子)?邮箱\s*[:：]\s*(.+)$", line)
-        if m:
-            v = re.sub(r"<[^>]*>|<,p>", "", m.group(1)).strip()
-            e = normalize_email(v)
-            if e:
-                out.setdefault("email", e)
         m = re.match(r"^个人主页\s*[:：]\s*(\S+)$", line)
         if m and m.group(1).startswith("http"):
             out.setdefault("homepage", m.group(1))
@@ -77,8 +138,20 @@ def parse_detail(cfg, html, url):
     t = _TITLE_RE.search(head)
     if t:
         out.setdefault("title", t.group(0))
-    sup = sorted({("博导" if "博" in s else "硕导")
-                  for s in _SUP_RE.findall(head)})
-    if sup:
-        out["supervisor"] = "、".join(sup)
+    if urlsplit(url).path.startswith('/jsky/rtjs/'):
+        return out
+    contact = card.select_one(':scope > .contact')
+    previous_email = normalize_email(original.get('email'))
+    if contact and (address := _personal_address(_lines([contact]))):
+        if not previous_email or address.casefold() == previous_email.casefold():
+            out['email'] = address
+    intro = card.select_one(':scope > .self_intro')
+    intro = re.sub(r'\s+', ' ', intro.get_text('', strip=False)).strip() if intro else ''
+    if direction := _research_direction(content, intro):
+        out['research_direction_raw'] = direction
+    opening = intro.split('。', 1)[0]
+    kinds = _SUP_RE.findall(opening) if not _ROLE_CONTEXT.search(opening) else []
+    role = '、'.join(label for label in ('博导', '硕导') if any(form[0] == label[0] for form in kinds))
+    if role and original.get('supervisor') in (None, '', role):
+        out['supervisor'] = role
     return out

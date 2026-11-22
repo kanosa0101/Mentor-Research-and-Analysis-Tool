@@ -396,9 +396,24 @@ def matches_name(label, name):
     return bool(suffix and re.fullmatch(r'(?:[、，, /]|副教授|教授|研究员|助理研究员|副研究员|讲师|博士生导师|硕士生导师|博导|硕导)+',suffix))
 
 
+def directory_link_name(anchor, directory_url):
+    parent=urlsplit(directory_url)
+    target=urlsplit(urljoin(directory_url,anchor['href']))
+    # RUC information-school cards put research and courses inside the same link.
+    # Only their separate, unique name cell establishes the directory identity.
+    if (parent.netloc==target.netloc=='info.ruc.edu.cn' and
+            re.fullmatch(r'/jsky/szdw/ajxjgcx/bx/bx1/index\d*\.htm',parent.path) and
+            re.fullmatch(r'/jsky/szdw/[^?#]+/[0-9a-f]{32}\.htm',target.path)):
+        names=anchor.select('.research-text > .text1')
+        if names:
+            value=names[0].get_text('',strip=True)
+            return value if len(names)==1 and re.fullmatch(r'[\u4e00-\u9fff·]{2,8}',value) else ''
+    return anchor.get_text(' ',strip=True)
+
+
 def named_link(html, directory_url, target, name):
     for anchor in BeautifulSoup(html,'html.parser').select('a[href]'):
-        if matches_name(anchor.get_text(' ',strip=True),name) and directory_target(urljoin(directory_url,anchor['href']),directory_url)==canonical(target):
+        if matches_name(directory_link_name(anchor,directory_url),name) and directory_target(urljoin(directory_url,anchor['href']),directory_url)==canonical(target):
             return True
     return any((row.get('title') or row.get('showTitle'))==name and isinstance(row.get('url'),str) and
                canonical(urljoin(directory_url,row['url']))==canonical(target) for row in inline_rows(html))
@@ -445,7 +460,7 @@ def directory_index(root, cfg, sources, *, refresh=False, max_pages=16):
             rosters.append(dict(url=url,sha256=hashlib.sha256(raw).hexdigest()))
         soup=BeautifulSoup(html,'html.parser')
         for a in soup.select('a[href]'):
-            text=a.get_text(' ',strip=True);target=directory_target(urljoin(url,a['href']),cfg.get('base_url') or url)
+            text=directory_link_name(a,url);target=directory_target(urljoin(url,a['href']),cfg.get('base_url') or url)
             if not allowed(target,cfg.get('base_url') or url) or target==url:continue
             if 2 <= len(text) <= 60:
                 links.append(dict(name=text,url=target,directory_url=url))

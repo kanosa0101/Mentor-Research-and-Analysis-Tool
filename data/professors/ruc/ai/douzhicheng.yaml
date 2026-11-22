@@ -15,8 +15,8 @@ bio_raw: '中国人民大学高瓴人工智能学院副院长、教授、长聘�
 
   点击访问个人主页'
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/dzc/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/dzc/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/dzc/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/dzc/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets:
@@ -30,6 +30,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 智能体 (Agent) - agentic RL, self-evolving, long-horizon tasks, OPD/OPSD, data/enviroments, memory & skills, auto-harness, etc.；后训练（Post Training）；AI自演进（RSI、Self-Evolving）；搜索智能体、智能体搜索、AI搜索（Agentic Search）- wide & deep search task, deep research, search strategy, information reliability, report quality, etc.；科学推理与智能体（Scientific Reasoning & Agent, Auto Research, AI-Scientist）；检索增强的大模型（Retrieval Augmented Generation）；多模态与跨模态（Multi-modal AI）- multi-modal agents, multi-modal embedding & search, agentic photo/album search, agentic long video understanding, etc.；数据智能体（Data Agent）；GUI智能体 (GUI Agent)；生成式检索（Generative Retrieval）；对话式搜索（Conversational Search）；大语言模型（Large Language Model）；预训练模型（Pretrained Models）；智慧司法（Legal AI) & 涉外法治大模型；个性化搜索、对话与推荐（Personalized Search, Dialogue, and Recommendation）；多样化搜索与推荐（Diversified Search and Recommendation）
 provenance:
   name:
     origin: crawled
@@ -55,4 +56,19 @@ provenance:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/dzc/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/dzc/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

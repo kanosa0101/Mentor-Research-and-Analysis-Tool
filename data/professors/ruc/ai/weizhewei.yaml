@@ -16,8 +16,8 @@ bio_raw: '魏哲巍，教授，博导，国家高层次人才。担任中国人�
 
   视频简介'
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/wzw/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/wzw/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets:
@@ -26,6 +26,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 人工智能与大数据基础算法：致力于为重要的人工智能与大数据问题设计简洁、高效、具备理论保证的算法与模型；RSI&TTT：自进化人工智能与测试时训练；AI4TCS：利用自进化人工智能求解TCS领域的难题；AI4Science：图学习在自然科学、社会科学领域的应用
 provenance:
   name:
     origin: crawled
@@ -51,4 +52,19 @@ provenance:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/wzw/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/wzw/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

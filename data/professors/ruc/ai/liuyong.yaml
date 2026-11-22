@@ -14,6 +14,7 @@ profile_url: https://ai.ruc.edu.cn/szdw/zrjs/ly/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 总方向为机器学习算法与理论；大模型学习算法与理论；Agent：大模型推理、Agent应用；推荐检索：基于大模型推荐算法研究
 provenance:
   name:
     origin: crawled
@@ -44,6 +45,11 @@ provenance:
     origin: crawled
     source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
     fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/ly/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-16'
 last_parsed: '2026-11-16'

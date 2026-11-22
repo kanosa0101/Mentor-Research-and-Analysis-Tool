@@ -8,11 +8,12 @@ status: enriched
 title: 长聘副教授
 email: hongtengxu@ruc.edu.cn
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/xht/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/xht/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/xht/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/xht/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 最优传输驱动的机器学习方法，例如最优传输问题的近似求解，基于最优传输的图机器学习，基于最优传输的生成模型学习，基于最优传输的数据对齐技术等；生成式大模型架构设计、模型压缩、模型融合技术，例如大模型的高效适配、新型注意力机制、算法驱动的模型架构设计与机理分析、非实数神经网络设计与复杂数据建模等；AI4Math以及AI4Science等前沿应用：AI辅助数学证明、药物设计、材料分析等
 provenance:
   name:
     origin: crawled
@@ -26,6 +27,23 @@ provenance:
     confidence: auto
   email:
     origin: crawled
-    source: http://ai.ruc.edu.cn/academicfaculty/szdwn/xht/index.htm
-    fetched_at: '2026-09-04'
+    source: https://ai.ruc.edu.cn/szdw/zrjs/xht/index.htm
+    fetched_at: '2026-11-16'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/xht/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

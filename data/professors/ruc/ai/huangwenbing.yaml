@@ -14,6 +14,7 @@ profile_url: https://ai.ruc.edu.cn/szdw/zrjs/hwb/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 几何深度学习基础理论方法：将图像、视频、时空序列、社交网络、科学数据等建模成具有特定对称性结构的几何对象，例如集合、流形、图等，并建立相应机器学习模型对其进行表示和处理。特别在图数据处理和图神经网络GNN设计方面有深入研究，包括图神经网络的表达性、不变与等变性、高效训练、自监督学习、对抗攻击等；几何深度学习在智能体感知与决策的应用：研究触觉力序列表示、视频分析、声音信号处理、基于多模态信息融合的机器人感知；基于模型的强化学习、不完美信息下的模仿学习等；科学和社会科学知识嵌入的几何深度学习：致力于将黎曼几何、代数群论、量子力学、计算化学、计算生物、金融工程等学科的知识嵌入到机器学习模型，并将其应用到多体问题、分子动力学模拟、药物分子性质预测、蛋白质对接、抗体设计、晶体设计、金融决策等科学问题中
 provenance:
   name:
     origin: crawled
@@ -44,6 +45,11 @@ provenance:
     origin: crawled
     source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
     fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/hwb/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-16'
 last_parsed: '2026-11-16'

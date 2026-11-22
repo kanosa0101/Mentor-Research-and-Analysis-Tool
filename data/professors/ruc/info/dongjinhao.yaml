@@ -30,17 +30,25 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/c8a4143fee2041c092d4c56b657af351.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-21'
     confidence: auto
   email:
     origin: crawled
     source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/c8a4143fee2041c092d4c56b657af351.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-21'
     confidence: auto
   title:
     origin: crawled
     source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/c8a4143fee2041c092d4c56b657af351.htm
-    fetched_at: '2026-11-15'
+    fetched_at: '2026-11-21'
     confidence: auto
-last_fetched: '2026-11-15'
-last_parsed: '2026-11-15'
+  research_direction_raw:
+    origin: crawled
+    source: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js3/c8a4143fee2041c092d4c56b657af351.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-21'
+last_parsed: '2026-11-21'
+research_direction_raw: 致力于大模型（LLM）研究，构建下一代可信、通用、自主的大模型与智能体系统；1. 代码大模型（Code LLM）：代码预训练与后训练、Code
+  Agent 强化学习；2. 大模型智能体（LLM Agent）：Agent 的规划与记忆管理、工具使用、浏览器智能体、多智能体协作、Agent 交互数据合成；3.
+  大模型基础设施（LLM Infra）：长上下文推理加速（KVCache 压缩量化）、大模型鲁棒微调；4. 通用智能体平台：OpenClaw 通用智能体系统、大规模真实用户场景数据构造与训练

@@ -16,11 +16,12 @@ bio_raw: '徐君，中国人民大学高瓴人工智能学院教授、长聘教�
 
   点击访问个人主页'
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/xj/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/xj/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/xj/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/xj/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 大模型增强的可信检索，搜索-推荐联合建模，AI+司法交叉研究
 provenance:
   name:
     origin: crawled
@@ -46,4 +47,19 @@ provenance:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/xj/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/xj/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

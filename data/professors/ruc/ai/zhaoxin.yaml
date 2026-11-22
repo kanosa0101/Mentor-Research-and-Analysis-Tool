@@ -18,8 +18,8 @@ bio_raw: '赵鑫，中国人民大学高瓴人工智能学院教授，长聘副�
 
   海报'
 institutes: []
-detail_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
-profile_url: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
+detail_url: https://ai.ruc.edu.cn/szdw/zrjs/zx/index.htm
+profile_url: https://ai.ruc.edu.cn/szdw/zrjs/zx/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets:
@@ -33,6 +33,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:自然语言处理
+research_direction_raw: ALL in 大语言模型；大模型从头预训练；通用智能体（general agents, code agents, terminal agents, Claw agents）；信息检索与推荐系统
 provenance:
   name:
     origin: crawled
@@ -53,4 +54,19 @@ provenance:
     origin: crawled
     source: http://ai.ruc.edu.cn/academicfaculty/szdwn/zx/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/zx/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

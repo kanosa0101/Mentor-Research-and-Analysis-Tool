@@ -83,7 +83,7 @@ a:hover{text-decoration:underline}
     {% if p.subjects %}<dt>招生学科</dt><dd>{{ p.subjects }}</dd>{% endif %}
     <dt>研究方向</dt><dd>{{ p.research_direction_raw or "暂未收录" }}</dd>
     <dt>公开邮箱</dt><dd>{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% else %}暂未收录，可查看官网联系渠道{% endif %}</dd>
-    {% if p.provenance.get('email') and p.email %}<dt>邮箱出处</dt><dd><a href="{{ p.provenance.email.source }}" target="_blank" rel="noopener">查看公开来源 ↗</a><span class="note"> · 收录于 {{ p.provenance.email.fetched_at }}</span></dd>{% endif %}
+    {% if p.provenance.get('email') and p.email %}<dt>邮箱出处</dt><dd><a href="{{ p.provenance.email.source }}" target="_blank" rel="noopener">查看公开来源 ↗</a><span class="note"> · 收录于 <time datetime="{{ p.provenance.email.fetched_at }}">{{ p.provenance.email.fetched_at }}</time></span></dd>{% endif %}
     {% if p.phone %}<dt>公开电话</dt><dd>{{ p.phone }}</dd>{% endif %}
     {% if p.homepage %}<dt>个人主页</dt><dd><a href="{{ p.homepage }}" target="_blank" rel="noopener">打开个人主页 ↗</a></dd>{% endif %}
     {% if p.profile_url or p.detail_url %}<dt>官方资料</dt><dd><a href="{{ p.profile_url or p.detail_url }}" target="_blank" rel="noopener">查看学校官网资料 ↗</a></dd>{% endif %}
@@ -111,31 +111,6 @@ a:hover{text-decoration:underline}
   {% endfor %}
 </section>
 {% endif %}
-<details class="card" id="obox">
-  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
-  <div id="ob-hint" class="ohint" style="display:none">登录账号后可记录跟进状态。<a href="../account.html">登录 / 注册 →</a></div>
-  <div class="obrow">
-    <label>状态</label>
-    <select id="ob-status" disabled>
-      <option value="">未标记</option>
-      <option value="interested">意向</option>
-      <option value="emailed">已发信</option>
-      <option value="replied">已回复</option>
-      <option value="meeting">推进中</option>
-      <option value="archived">归档</option>
-    </select>
-    <button id="ob-save" disabled>保存</button>
-    <button type="button" id="ob-remove" style="display:none">移出看板</button>
-    <span id="ob-msg"></span>
-  </div>
-  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
-  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
-    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
-    <label>日期 <input id="ob-due" type="date" disabled></label>
-    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
-  </div>
-  <div id="ob-history"></div>
-</details>
 {% if p.bio_raw %}
 <div class="card">
   <h3>个人简介（官网原文）</h3>
@@ -180,6 +155,31 @@ a:hover{text-decoration:underline}
     </tr>
     {% endfor %}
   </table></div>
+</details>
+<details class="card" id="obox">
+  <summary>旧套磁记录</summary><p class="note">此处为旧记录，不与申请项目同步；新联系从上方准备联系开始。</p>
+  <div id="ob-hint" class="ohint" style="display:none">登录账号后可记录跟进状态。<a href="../account.html">登录 / 注册 →</a></div>
+  <div class="obrow">
+    <label>状态</label>
+    <select id="ob-status" disabled>
+      <option value="">未标记</option>
+      <option value="interested">意向</option>
+      <option value="emailed">已发信</option>
+      <option value="replied">已回复</option>
+      <option value="meeting">推进中</option>
+      <option value="archived">归档</option>
+    </select>
+    <button id="ob-save" disabled>保存</button>
+    <button type="button" id="ob-remove" style="display:none">移出看板</button>
+    <span id="ob-msg"></span>
+  </div>
+  <textarea id="ob-notes" rows="2" placeholder="备注：沟通要点、下一步……" disabled></textarea>
+  <div class="obrow" style="margin-top:8px;flex-wrap:wrap">
+    <label>下一步 <input id="ob-next" placeholder="阅读代表作、准备问题……" disabled></label>
+    <label>日期 <input id="ob-due" type="date" disabled></label>
+    <label>私人标签 <input id="ob-tags" placeholder="逗号分隔，如：优先,待补材料" disabled></label>
+  </div>
+  <div id="ob-history"></div>
 </details>
 </div>
 <script>

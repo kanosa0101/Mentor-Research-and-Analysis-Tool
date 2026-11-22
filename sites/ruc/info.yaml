@@ -1,11 +1,13 @@
 school: ruc
 dept: info
 dept_name: 信息学院
-base_url: http://info.ruc.edu.cn
+base_url: https://info.ruc.edu.cn
 hook: ruc_info
+parser_dependencies: [profile_fields.py]
 direct: true
+stable_urls: true
 list:
   method: GET
   person_href: /[0-9a-f]{32}\.htm$
   channels:
-    - url: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/bx/bx1/index.htm
+    - url: https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/bx/bx1/index.htm

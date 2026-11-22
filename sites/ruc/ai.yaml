@@ -4,6 +4,9 @@ dept_name: 高瓴人工智能学院
 base_url: https://ai.ruc.edu.cn
 hook: ruc_ai
 direct: true
+contact_hook_only: true
+stable_urls: true
+parser_dependencies: [profile_fields.py]
 list:
   urls:
     - https://ai.ruc.edu.cn/szdw/zrjs/index.htm

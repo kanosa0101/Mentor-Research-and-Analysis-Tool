@@ -14,6 +14,7 @@ profile_url: https://ai.ruc.edu.cn/szdw/zrjs/lcx/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 机器学习，深度生成模型
 provenance:
   name:
     origin: crawled
@@ -44,6 +45,11 @@ provenance:
     origin: crawled
     source: https://ai.ruc.edu.cn/szdw/zrjs/index.htm
     fetched_at: '2026-11-16'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.ruc.edu.cn/szdw/zrjs/lcx/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-16'
 last_parsed: '2026-11-16'
