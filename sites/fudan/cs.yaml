@@ -3,6 +3,8 @@ dept: cs
 dept_name: 计算与智能创新学院
 base_url: https://cs.fudan.edu.cn
 hook: fudan_cs
+contact_hook_only: true
+parser_dependencies: [profile_fields.py, wp.py]
 list:
   channels:
     - url: https://cs.fudan.edu.cn/53161/list.htm

@@ -16,6 +16,7 @@ profile_url: http://ai.fudan.edu.cn/zzz/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 图学习理论与算法、图数据挖掘、社交网络分析、网络科学
 provenance:
   name:
     origin: crawled
@@ -46,4 +47,9 @@ provenance:
     origin: crawled
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://ai.fudan.edu.cn/zzz/list.htm
+    fetched_at: '2026-11-23'
     confidence: auto

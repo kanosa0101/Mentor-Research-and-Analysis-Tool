@@ -22,11 +22,12 @@ bio_raw: '学习经历：
 
   2021年-至今: 电子科技大学,教授（特聘）,博导;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11141.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11141.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20527?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20527?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: '机器学习: 图谱方法, 深度学习, 哈希编码 计算机视觉: 人脸识别, 大规模图像检索, 医学图像分析'
 provenance:
   name:
     origin: crawled
@@ -48,3 +49,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11141.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20527?yxsh=08
+    fetched_at: '2026-11-23'

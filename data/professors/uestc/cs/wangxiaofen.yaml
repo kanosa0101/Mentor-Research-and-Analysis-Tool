@@ -22,11 +22,12 @@ bio_raw: '1999年-2003年:电子科技大学,本科;
 
   2024年-至今：电子科技大学,教授;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11515.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11515.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11276?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11276?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 网络空间安全，主要集中于对密码学理论与技术、人工智能安全、大数据安全、区块链技术、网络和系统安全进行研究
 provenance:
   name:
     origin: crawled
@@ -48,3 +49,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11515.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11276?yxsh=08
+    fetched_at: '2026-11-23'

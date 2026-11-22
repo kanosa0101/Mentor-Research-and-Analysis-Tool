@@ -22,11 +22,12 @@ bio_raw: '1993年---1997年：杭州电子科技大学，学士
 
   2012年---至今：电子科技大学，教授'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11563.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11563.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11500?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11500?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 网络安全和密码学，对云存储安全、智能电网安全、可搜索加密、全同态加密以及基于身份加密等作了大量研究工作
 provenance:
   name:
     origin: crawled
@@ -48,3 +49,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11563.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11500?yxsh=08
+    fetched_at: '2026-11-23'

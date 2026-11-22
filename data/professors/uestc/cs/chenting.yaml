@@ -12,11 +12,12 @@ bio_raw: '2003年-2013年：电子科技大学大学 本科，硕士，博士；
 
   2014年至今：电子科技大学 讲师，副教授，教授，博导；'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11931.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11931.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12010?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12010?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 软件安全、程序分析、软件漏洞发现、定位、分析与修复
 provenance:
   name:
     origin: crawled
@@ -38,3 +39,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11931.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12010?yxsh=08
+    fetched_at: '2026-11-23'

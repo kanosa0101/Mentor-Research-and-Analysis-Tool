@@ -18,8 +18,8 @@ bio_raw: '1981年-1985年:西安电子科技大学,应用数学，本科;
 
   2004年-至今:电子科技大学,教授,博导。'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11924.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11924.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10318?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10318?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -28,6 +28,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:密码
+research_direction_raw: 应用密码学、数据安全与隐私保护、区块链技术、云计算安全、物联网安全、人工智能安全等
 provenance:
   name:
     origin: crawled
@@ -49,3 +50,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11924.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10318?yxsh=08
+    fetched_at: '2026-11-23'

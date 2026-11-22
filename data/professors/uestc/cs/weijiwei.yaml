@@ -20,11 +20,12 @@ bio_raw: '工作经历：
 
   2011年-2015年:电子科技大学,本科;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/17294.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/17294.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21628?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21628?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 多模态大模型、人工智能安全研究
 provenance:
   name:
     origin: crawled
@@ -46,3 +47,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/17294.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21628?yxsh=08
+    fetched_at: '2026-11-23'

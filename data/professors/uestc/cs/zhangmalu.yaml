@@ -14,11 +14,12 @@ bio_raw: '2014年-2019年:电子科技大学,博士;
 
   2022年至今: 电子科技大学,研究员,博导;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/12350.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/12350.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20675?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20675?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 类脑计算、深度学习
 provenance:
   name:
     origin: crawled
@@ -40,3 +41,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/12350.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20675?yxsh=08
+    fetched_at: '2026-11-23'

@@ -7,11 +7,12 @@ status: enriched
 title: 副教授
 email: niexiaowen@uestc.edu.cn
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11957.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11957.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11428?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11428?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 分布式计算、云计算、存储、P2P等，近来主要关注大规模分布式计算与存储
 provenance:
   name:
     origin: crawled
@@ -28,3 +29,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11957.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11428?yxsh=08
+    fetched_at: '2026-11-23'

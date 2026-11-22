@@ -7,11 +7,12 @@ status: enriched
 title: 副研究员
 email: LSH@uestc.edu.cn
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11282.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11282.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11439?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11439?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 计算机网络，网络测量以及下一代互联网
 provenance:
   name:
     origin: crawled
@@ -28,3 +29,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11282.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11439?yxsh=08
+    fetched_at: '2026-11-23'

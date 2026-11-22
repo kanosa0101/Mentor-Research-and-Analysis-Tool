@@ -350,7 +350,13 @@ def secondary_hook_proof(person,parsed,captures,cfg=None):
     parent=captures.get(locator.get('article_url'))
     if cfg and cfg.get('contact_hook_only'):
         if parsed.get('_verified_roster_name')!=person['name']:return None
-        if target!=person['detail_url']:
+        registered=person['detail_url']
+        original_url=urlsplit(registered)
+        https_equivalent=(cfg.get('school')=='fudan' and cfg.get('hook')=='fudan_cs' and
+                          original_url.scheme=='http' and original_url.netloc in
+                          ('ai.fudan.edu.cn','cs.fudan.edu.cn','faculty.fudan.edu.cn') and
+                          target=='https:'+registered[5:] and captures[target]['url']==target)
+        if target!=registered and not https_equivalent:
             roster=cfg.get('profile_field_roster') if cfg.get('hook')=='jlu_cs' else None
             named_roster=(roster and locator.get('directory_url')==target and
                            (target==roster or re.fullmatch(re.escape(roster.removesuffix('.htm'))+r'/\d+\.htm',target)))
@@ -404,7 +410,7 @@ def linked_secondary_proof(person,cfg,hook,scope,sources,read_related,captures,r
             detail=mentor_recovery.contact_details(html,url,person['name'],verified=heading)
             if item['kind']=='secondary_root':
                 try:parsed=hook.parse_detail(cfg,html,url) or {}
-                except mentor_recovery.DiscoveryBudgetExhausted:raise
+                except (mentor_recovery.DiscoveryBudgetExhausted,mentor_recovery.IdentityConflict):raise
                 except Exception:parsed={}
                 if parsed.get('name') and parsed['name']!=person['name']:
                     raise ValueError('详情明确姓名与原记录不符')
@@ -636,12 +642,12 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             try:
                 parsed=hook.parse_detail(parsed_cfg,html,url)
                 parsed=legacy_refresh.ordinary_profile_fields(cfg,parsed)
-            except mentor_recovery.DiscoveryBudgetExhausted:
+            except (mentor_recovery.DiscoveryBudgetExhausted,mentor_recovery.IdentityConflict):
                 raise
             except Exception as parse_error:
                 error=parse_error
             if parsed.get('name') and ''.join(parsed['name'].split())!=''.join(original['name'].split()):
-                raise ValueError('详情明确姓名与原记录不符，保留旧记录')
+                raise mentor_recovery.IdentityConflict('详情明确姓名与原记录不符，保留旧记录')
             strong_name=(parsed.get('name')==original['name'] or mentor_recovery.named_detail(html,original['name']))
             if strong_name and (not parsed.get('name') or parsed['name']==original['name']):
                 contact=mentor_recovery.contact_details(html,url,original['name'],verified=True)
@@ -686,7 +692,11 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             if not resume and not report['field_evidence'] and not report.get('secondary_email') and not search.get('external_homepage_candidate') and not search['queue']:raise
         except Exception as failure:
             error=failure
-        if not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in search_fields):
+        identity_conflict=isinstance(error,mentor_recovery.IdentityConflict)
+        if identity_conflict:
+            search.update(queue=[],directory=False,next_at=None)
+            search.pop('external_homepage_candidate',None)
+        if not identity_conflict and not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in search_fields):
             search['visited']=[primary]
             registered=[dict(url=person[f],kind='registered') for f in ('homepage','profile_url') if mentor_recovery.homepage_url(person.get(f))]
             add_links(search,registered+(contact.get('links') or []),evidence,scope,cfg,1)
@@ -695,7 +705,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
         observation(root,person,parsed=parsed,source_url=url,source_sha256=evidence['sha256'] if evidence else None,
                     fetched_at=fetched_at,now=now,error=error,parser_signature=signature,contact_search=search,ledger=ledger,
                     verified_sources=captures.values())
-        if error and not report['field_evidence']:report.update(status='error',reason=str(error)[:500])
+        if error and (identity_conflict or not report['field_evidence']):report.update(status='error',reason=str(error)[:500])
         if evidence:report.update(source_sha256=evidence['sha256'],fetched_at=evidence['fetched_at'])
 
     steps=0
@@ -733,7 +743,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             elif item['kind']=='directory':
                 try:
                     parsed=hook.parse_detail(parsed_cfg,html,url)
-                except mentor_recovery.DiscoveryBudgetExhausted:
+                except (mentor_recovery.DiscoveryBudgetExhausted,mentor_recovery.IdentityConflict):
                     raise
                 except Exception:
                     parsed={}

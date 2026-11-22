@@ -18,11 +18,12 @@ bio_raw: '1998年-2002年:桂林电子科技大学,本科;
 
   2012年-至今:电子科技大学,副教授,硕导;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11981.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11981.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11412?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11412?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 数据挖掘和基于复杂网络的信息推荐的理论及应用研究
 provenance:
   name:
     origin: crawled
@@ -44,3 +45,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11981.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11412?yxsh=08
+    fetched_at: '2026-11-23'

@@ -16,6 +16,7 @@ profile_url: http://ai.fudan.edu.cn/cbh/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 软件安全、AI系统工程等
 provenance:
   name:
     origin: crawled
@@ -46,6 +47,11 @@ provenance:
     origin: crawled
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://ai.fudan.edu.cn/cbh/list.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-16'
 last_parsed: '2026-11-16'

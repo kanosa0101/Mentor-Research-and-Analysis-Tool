@@ -37,6 +37,11 @@ class DiscoveryBudgetExhausted(RuntimeError):
     pass
 
 
+class IdentityConflict(ValueError):
+    def __init__(self,message):
+        super().__init__('身份矛盾：'+message)
+
+
 PERSONAL_LINK = re.compile(r'^(?:个人(?:主页|网站)|教师主页|学术主页|课题组(?:主页|网站)|实验室(?:主页|网站)|(?:personal|faculty|academic|lab(?:oratory)?|research group)\s+(?:home\s?page|website))\s*[:：]?$', re.I)
 CONTACT_LINK = re.compile(r'^(?:联系方式|联系我|Contact(?: Me| Information)?)$', re.I)
 CONTACT_REGION = 'h1, h2, h3, .teacher-name, .news_title, .faculty-name, .profile-name, [itemprop="name"]'
@@ -444,6 +449,21 @@ def matches_name(label, name):
 def directory_link_name(anchor, directory_url):
     parent=urlsplit(directory_url)
     target=urlsplit(urljoin(directory_url,anchor['href']))
+    if parent.netloc=='yjsjy.uestc.edu.cn' and parent.path=='/gmis/jcsjgl/dsfc/index/':
+        code=re.fullmatch(r'/gmis/jcsjgl/dsfc/dsgrjj/([0-9]+)',target.path)
+        if (parent.scheme!='https' or parent.query or parent.fragment not in ('','08') or
+                target.scheme!='https' or target.netloc!=parent.netloc or target.query!='yxsh=08' or
+                target.fragment or not code):return ''
+        heading=anchor.find_previous('td',class_='yx_class')
+        table=anchor.find_parent('table')
+        if (not heading or not table or heading.find_parent('table') is not table or
+                heading.get('id')!='08' or
+                re.sub(r'\s+','',heading.get_text())!='08计算机科学与工程学院（网络空间安全学院）'):return ''
+        cells=anchor.find_all(recursive=False)
+        if (len(cells)!=2 or [cell.name for cell in cells]!=['span','div'] or
+                cells[0].get_text(strip=True)!=code[1]):return ''
+        value=cells[1].get_text('',strip=True)
+        return value if re.fullmatch(r'[\u4e00-\u9fff·]{2,8}',value) else ''
     # RUC information-school cards put research and courses inside the same link.
     # Only their separate, unique name cell establishes the directory identity.
     if (parent.netloc==target.netloc=='info.ruc.edu.cn' and
@@ -457,8 +477,9 @@ def directory_link_name(anchor, directory_url):
 
 
 def named_link(html, directory_url, target, name):
+    expected=canonical(target)
     for anchor in BeautifulSoup(html,'html.parser').select('a[href]'):
-        if matches_name(directory_link_name(anchor,directory_url),name) and directory_target(urljoin(directory_url,anchor['href']),directory_url)==canonical(target):
+        if directory_target(urljoin(directory_url,anchor['href']),directory_url)==expected and matches_name(directory_link_name(anchor,directory_url),name):
             return True
     return any((row.get('title') or row.get('showTitle'))==name and isinstance(row.get('url'),str) and
                canonical(urljoin(directory_url,row['url']))==canonical(target) for row in inline_rows(html))

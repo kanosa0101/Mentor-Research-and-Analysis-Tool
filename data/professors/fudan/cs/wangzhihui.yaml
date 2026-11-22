@@ -16,6 +16,7 @@ profile_url: http://ai.fudan.edu.cn/wzh/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 大数据管理与分析、机器学习与数据挖掘、数据安全与隐私保护等
 provenance:
   name:
     origin: crawled
@@ -47,3 +48,10 @@ provenance:
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://ai.fudan.edu.cn/wzh/list.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-22'
+last_parsed: '2026-11-22'

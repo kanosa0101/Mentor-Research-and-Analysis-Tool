@@ -18,11 +18,12 @@ bio_raw: '2001年9月-2005年7月:电子科技大学,本科;
 
   2014年-至今:电子科技大学,副教授;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11417.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11417.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11752?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11752?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 信息安全、多媒体数据的深度学习算法等领域
 provenance:
   name:
     origin: crawled
@@ -44,3 +45,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11417.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11752?yxsh=08
+    fetched_at: '2026-11-23'

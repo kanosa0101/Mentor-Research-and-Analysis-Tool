@@ -16,11 +16,12 @@ bio_raw: '2025年2月-至今，电子科技大学，教授，成都
 
   2008年8月- 2015年7月，哈尔滨工业大学，本科和硕士，哈尔滨'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/17098.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/17098.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21502?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21502?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 计算机视觉和大模型，涉及方向包括但不限于视觉大模型，多模态大模型（视觉和语言），对抗鲁棒性（对抗和防御）、AIGC（生成和鉴别）、具身智能等
 provenance:
   name:
     origin: crawled
@@ -42,3 +43,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/17098.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/21502?yxsh=08
+    fetched_at: '2026-11-23'

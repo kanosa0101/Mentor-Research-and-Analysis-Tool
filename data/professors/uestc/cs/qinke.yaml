@@ -12,11 +12,13 @@ bio_raw: '2003年-至今，电子科技大学；
 
   2016.09-2017.03，美国，加州大学圣塔芭芭拉分校（University of California, Santa Barbara, UCSB）'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11199.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11199.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11422?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11422?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 神经网络、机器学习与数据科学等领域的研究
+supervisor: 博导
 provenance:
   name:
     origin: crawled
@@ -38,3 +40,23 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11199.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11422?yxsh=08
+    fetched_at: '2026-11-23'
+  supervisor:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11422?yxsh=08
+    fetched_at: '2026-11-23'

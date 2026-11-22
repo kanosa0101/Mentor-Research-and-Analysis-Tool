@@ -15,6 +15,7 @@ profile_url: http://ai.fudan.edu.cn/wh_37219/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 认知科学与人工智能；人工智能基础；类脑计算；神经视觉计算模型；神经回路与编码模型；智能机器人
 provenance:
   name:
     origin: crawled
@@ -46,3 +47,10 @@ provenance:
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.fudan.edu.cn/weihui/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-22'
+last_parsed: '2026-11-22'

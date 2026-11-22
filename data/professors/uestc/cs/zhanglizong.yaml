@@ -14,11 +14,12 @@ bio_raw: '2007.年-2013年: Staffordshire University,博士;
 
   2014年-至今:电子科技大学，讲师、副教授、教授;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/10973.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/10973.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12448?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12448?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 大数据技术，包括大数据系统架构关键技术、大数据分析的基础理论和方法；计算机视觉技术，包括目标检测，人脸识别，行人再识别，行为识别等；知识工程技术，围绕知识图谱技术、神经翻译技术、自然语言处理技术、模式识别等，开展人工智能模式与算法创新，并推进人工智能关键行业应用与集成创新
 provenance:
   name:
     origin: crawled
@@ -40,3 +41,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/10973.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/12448?yxsh=08
+    fetched_at: '2026-11-23'

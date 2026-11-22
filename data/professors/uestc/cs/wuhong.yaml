@@ -18,11 +18,12 @@ bio_raw: '1988年-1993年:中国科学技术大学计算机系,本科;
 
   2006年-至今:电子科技大学计算机科学与工程学院,副教授;'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11140.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11140.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10372?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10372?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 图像分析与检索、文本挖掘与检索，及它们在医学领域中的应用
 provenance:
   name:
     origin: crawled
@@ -44,3 +45,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11140.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10372?yxsh=08
+    fetched_at: '2026-11-23'

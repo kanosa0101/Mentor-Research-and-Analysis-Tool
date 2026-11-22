@@ -15,6 +15,7 @@ profile_url: http://ai.fudan.edu.cn/jlf/list.htm
 first_seen: '2026-09-05'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 编码与密码，隐私计算等
 provenance:
   name:
     origin: crawled
@@ -41,3 +42,10 @@ provenance:
     source: https://cs.fudan.edu.cn/53161/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://ai.fudan.edu.cn/jlf/list.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-18'
+last_parsed: '2026-11-18'

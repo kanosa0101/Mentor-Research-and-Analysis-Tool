@@ -18,11 +18,12 @@ bio_raw: '2003年-2007年:北京师范大学,本科
 
   2019年-至今:电子科技大学,教授,博导'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/11212.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/11212.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20131?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20131?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 计算机视觉与机器学习，重点研究有限监督下的机器学习问题和计算机视觉应用，涉及图像分类、视频识别、目标检测、语义分割、图像转换、图像生成等计算机视觉任务和领域适应、迁移学习、弱监督学习、半监督学习等机器学习理论
 provenance:
   name:
     origin: crawled
@@ -44,3 +45,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/11212.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20131?yxsh=08
+    fetched_at: '2026-11-23'

@@ -19,8 +19,8 @@ bio_raw: '2016.7-至今研究员/博士生导师
 
   2002.9-2007.6电子科大计算机学院计算机系统结构专业硕博连读。'
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/12044.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/12044.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10880?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10880?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets:
@@ -29,6 +29,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:系统结构
+research_direction_raw: 云计算（分布式文件系统、分布式数据库系统）；大规模并行数据处理技术；内容中心网络技术 分布式机器学习；深度学习；模式识别
 provenance:
   name:
     origin: crawled
@@ -55,3 +56,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/12044.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10880?yxsh=08
+    fetched_at: '2026-11-23'

@@ -5,17 +5,18 @@
 @media(max-width:850px){.page-discovery main{padding:20px 16px}.discovery-layout{grid-template-columns:1fr;gap:20px}.criteria{padding:16px}.primary-search-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.primary-search-fields label{margin-top:0}.criteria-disclosures{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.criteria-disclosures details[open],.criteria-disclosures .school-chips{grid-column:1/-1}.criteria-disclosures .school-chips{order:2}.criteria details{margin-top:8px}.intro{margin-bottom:18px}.page-discovery .results-card{height:410px;padding:16px;grid-template-rows:94px 76px 45px 43px 40px 38px}.qualification-options{gap:20px}#discovery-results{scroll-margin-top:112px}}
 @media(max-width:360px){.candidate-qualification{font-size:11px}.page-discovery .card-primary-actions>*{font-size:12px}.card-primary-actions{gap:5px}.criteria #title-options{grid-template-columns:1fr}}
 
-body.page-discovery .results-card{height:344px;grid-template-rows:auto auto 38px minmax(34px,1fr) 40px 32px;padding:15px}
+body.page-discovery #candidate-list{grid-auto-rows:1fr}
+body.page-discovery .results-card{height:auto;display:flex;flex-direction:column;padding:15px}
 body.page-discovery .candidate-heading h2{max-height:40px;line-height:20px;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
 body.page-discovery .candidate-unit{height:auto;max-height:34px;line-height:17px;margin-top:3px;overflow-wrap:anywhere}
 body.page-discovery .candidate-title,body.page-discovery .candidate-source{line-height:17px}
-body.page-discovery .candidate-source{align-self:start}
-body.page-discovery .research-preview{align-self:start;line-height:21px;-webkit-line-clamp:2}
+body.page-discovery .candidate-source{align-self:stretch}
+body.page-discovery .research-preview{align-self:stretch;line-height:21px;-webkit-line-clamp:2}
 body.page-discovery .public-email{line-height:19px}
 body.page-discovery .candidate-bookmark button{min-height:32px}
-body.page-discovery .results-card .card-primary-actions{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:stretch;gap:8px;flex-wrap:nowrap}
+body.page-discovery .results-card .card-primary-actions{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:stretch;gap:8px;flex-wrap:nowrap;margin-top:auto}
 body.page-discovery .results-card .card-primary-actions>*{min-height:40px;padding:8px 2px;font-size:13px;line-height:22px}
-@media(max-width:850px){body.page-discovery .results-card{height:350px;padding:16px;grid-template-rows:auto auto 38px minmax(34px,1fr) 44px 44px}body.page-discovery .results-card .card-primary-actions>*{min-height:44px;padding:10px 2px}body.page-discovery .candidate-bookmark button{min-height:44px}}
+@media(max-width:850px){body.page-discovery .results-card{padding:16px}body.page-discovery .results-card .card-primary-actions>*{min-height:44px;padding:10px 2px}body.page-discovery .candidate-bookmark button{min-height:44px}}
 @media(max-width:360px){body.page-discovery .results-card .card-primary-actions{gap:5px}body.page-discovery .results-card .card-primary-actions>*{font-size:12px}}
 #criteria-panel>summary{display:none}
 @media(max-width:850px){ #criteria-panel{border:1px solid var(--line);border-radius:10px;background:var(--card)}#criteria-panel>summary{display:list-item;cursor:pointer;font-size:15px;font-weight:600;padding:14px 16px;min-height:48px;box-sizing:border-box;color:var(--accent)}#criteria-panel .criteria{border:0;padding-top:0}#criteria-panel .criteria h2{display:none}#filter-draft-status{margin-left:8px;font-size:12px;font-weight:400}}

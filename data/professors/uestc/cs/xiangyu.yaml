@@ -7,11 +7,12 @@ status: enriched
 title: 教授
 email: jcxiang@uestc.edu.cn
 institutes: []
-detail_url: https://www.scse.uestc.edu.cn/info/1081/10963.htm
-profile_url: https://www.scse.uestc.edu.cn/info/1081/10963.htm
+detail_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10118?yxsh=08
+profile_url: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10118?yxsh=08
 first_seen: '2026-09-05'
 last_verified: '2026-09-05'
 facets: []
+research_direction_raw: 几何深度学习理论及应用、智能空气动力学、智能交通系统目标检测和防碰撞
 provenance:
   name:
     origin: crawled
@@ -28,3 +29,18 @@ provenance:
     source: https://www.scse.uestc.edu.cn/info/1081/10963.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  profile_url:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/index/
+    fetched_at: '2026-11-23'
+  research_direction_raw:
+    origin: crawled
+    confidence: auto
+    source: https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10118?yxsh=08
+    fetched_at: '2026-11-23'
