@@ -2,7 +2,7 @@
   "version": "1.12.1",
   "review_date": "2026-11-22",
   "timezone": "Asia/Singapore",
-  "status": "approved_candidate",
+  "status": "published_and_verified",
   "batches": {
     "hit": {
       "approved_manifest_sha256": "53db0a9b7da1365a250d3fc95e60e7d2c98b8691f91779f995367c6e6e5be516",
@@ -12000,5 +12000,6 @@
         }
       }
     }
-  }
+  },
+  "published_source_commit": "3ae11b4aac68307d75ebf9017a912c14123f87e1"
 }
