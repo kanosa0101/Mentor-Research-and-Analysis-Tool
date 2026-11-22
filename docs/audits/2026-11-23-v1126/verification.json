@@ -1,0 +1,173 @@
+{
+  "version": "1.12.6",
+  "source_commit": "afd1465bebbeab451b2accf05ca19ce6815589be",
+  "passed": true,
+  "scope": "source CI, public data, and actual HTTPS browser acceptance; final refs and service checks are recorded by the installed operational receipt",
+  "data": {
+    "batch_manifests": {
+      "info": "1baf6c70106c49c5aa1846ced30e88478badc32da122cbbc17262f31bb493e82",
+      "ai": "d2977fa55af6e027a1fbdd254b9b240106721e3bdd0a9d54ce75a28c72b2b80a"
+    },
+    "installed": {
+      "version": "1.12.6",
+      "source_commit": "afd1465bebbeab451b2accf05ca19ce6815589be",
+      "archive_sha256": "3654fefaaf9d37267fe70e6614a3ceb2a3e89b32af5588935512af7905d61d0d",
+      "profile_files": 82,
+      "config_files": 2,
+      "protected_control_files": 3,
+      "package_files": 95,
+      "protected_files_unchanged": 7871,
+      "deployment_marker_sha256": "29337746323786941b4c931bcf0e6612300ac5f6184391aee2a39f1fae687058"
+    },
+    "public_index_rows": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "units": {
+      "info": {
+        "profiles": 67,
+        "updated": 63,
+        "new_directions": 62,
+        "new_qualifications": 2,
+        "migrated_profiles": 3,
+        "directions_before": 0,
+        "directions_after": 62,
+        "api_revision": "9fc522daa134e6837e18",
+        "missing_email": 3,
+        "contactable": 64
+      },
+      "ai": {
+        "profiles": 30,
+        "updated": 19,
+        "new_directions": 19,
+        "new_qualifications": 0,
+        "migrated_profiles": 9,
+        "directions_before": 9,
+        "directions_after": 28,
+        "api_revision": "9fc522daa134e6837e18",
+        "missing_email": 0,
+        "contactable": 30
+      }
+    },
+    "verified_target_details": 82,
+    "verified_unique_details": 85,
+    "verified_api_candidates": 97
+  },
+  "windows_python": {
+    "passed": 1494,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "duration_seconds": 489.04
+  },
+  "ubuntu_source_ci": [
+    {
+      "ref": "codex/ruc-profile-quality-v1126",
+      "head_sha": "afd1465bebbeab451b2accf05ca19ce6815589be",
+      "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45068750115",
+      "run_id": 45068750115,
+      "job_id": 137350716515,
+      "job_status": "completed",
+      "job_conclusion": "success",
+      "successful_steps": [
+        "Run python -m pip install -r requirements-dev.txt",
+        "Run python -m pip check",
+        "Run python -m playwright install --with-deps chromium",
+        "Run python scripts/build_site.py",
+        "Run python -m pytest tests -q",
+        "Run node --test tests/*.cjs",
+        "Run python scripts/preflight.py --allow-open-issues"
+      ],
+      "python": {
+        "passed": 1494,
+        "skipped": 1,
+        "subtests_passed": 251,
+        "duration_seconds": 260.35
+      },
+      "node": {
+        "tests": 25,
+        "pass": 25,
+        "fail": 0,
+        "skipped": 0
+      },
+      "preflight": {
+        "structural_problems": 0,
+        "existing_open_issue_groups": 35
+      },
+      "build": {
+        "profiles": 7171,
+        "schools": 39,
+        "departments": 56
+      },
+      "job_started_utc": "2026-11-22T20:51:06Z",
+      "job_completed_utc": "2026-11-22T20:56:42Z"
+    }
+  ],
+  "online": {
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors",
+      "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+      "notice_first_screen_and_general_policy_handoff_preserve_independent_years",
+      "new_ruc_directions_survive_search_detail_compare_and_contact"
+    ],
+    "browser_errors": [],
+    "request_failures": [
+      {
+        "path": "/api/outreach",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "path": "/api/library",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "direction_flow": {
+      "mentor": "ruc-info-bianhaoqiong",
+      "topic": "云原生数据库",
+      "source": "http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/fjs2/5ae94aeb9bda4b279e9baae7260066f4.htm",
+      "contact": "desk.html?school=ruc&dept=info&discovery_return=discovery.html%3Fschool%3Druc%26dept%3Dinfo%26name%3D%25E5%258D%259E%25E6%2598%258A%25E7%25A9%25B9%26topics%3D%25E4%25BA%2591%25E5%258E%259F%25E7%2594%259F%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593&mentor=ruc-info-bianhaoqiong"
+    },
+    "qa_accounts_cleaned": 2
+  },
+  "search_before": {
+    "version": "1.12.5",
+    "mentor": "ruc-info-bianhaoqiong",
+    "topic": "云原生数据库",
+    "results": 0
+  },
+  "search_after": {
+    "version": "1.12.6",
+    "mentor": "ruc-info-bianhaoqiong",
+    "topic": "云原生数据库",
+    "results": 1
+  },
+  "screenshots": {
+    "ruc-direction-search-mobile.png": "a7dffa93dc94ea27ee1d05609598cf04593e0f1b61392442270fa633484f9703",
+    "ruc-direction-detail-mobile.png": "8417b50de3b27a4a71b8cb36e525ff772010ab3d51bf4188148600cb4ae49c8f",
+    "ruc-direction-contact-mobile.png": "f074ae6addc7e4c16bf7ca1c7495ef9528727870a71a12459aab680855c15c35"
+  },
+  "evidence_sha256": {
+    "public-acceptance.json": "0df7fc7c056a9c3100593ddae1287d2647d3e69f6c90bf3ad34a78c1a3385cf6",
+    "ci-source-verification.json": "6b66e89f498612c72ab429c443b88c69282618477397fccf29ba3a805ad39369",
+    "online-check-verified/result.json": "7096b183dfd1d7b82820b5857e784ba75ca9e7a5e4afab1eae94ffbac95cc5ed",
+    "qa-cleanup.json": "d16c3de855b9f12ea77ba3116557f66460d2d72be030570293b221f480858d85"
+  },
+  "user_acceptance": "pending"
+}

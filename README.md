@@ -19,7 +19,7 @@
 - [在线服务决策与验收标准](docs/ONLINE_SERVICE.md)、[实施计划](IMPLEMENTATION_PLAN.md)。
 - [架构](ARCHITECTURE.md)、[维护交接](HANDOVER.md)、[自动核验](docs/AUTOMATIC_REVIEW.md)。
 
-v1.12.5 把招生通知的学校、毕业届别、标题搜索和首条结果带到首屏，查看通用政策时自动清除不适用的届别条件。吉林大学计算机学院更新了 16 份已有档案的公开邮箱。通知目前共 387 条、39 个来源，本版新增已确认报名的院校活动为 0。[版本说明](RELEASE_NOTES.md) · [本版验证与部署](deploy/DELIVERY_V1.12.5_2026-11-23.md) · [全部文档索引](docs/INDEX.md)
+v1.12.6 更新了人大信息学院和高瓴人工智能学院的 82 份已有导师档案，补齐 81 条研究方向和 2 条明确导师资格，并修复 12 份档案的资料入口。导师详情统一正文样式，旧套磁记录移到资料和来源之后。 [版本说明](RELEASE_NOTES.md) · [本版验证与部署](deploy/DELIVERY_V1.12.6_2026-11-23.md) · [导师资料批次审计](docs/audits/2026-11-23-v1126/mentor-batches.md) · [全部文档索引](docs/INDEX.md)
 
 ## 开发与运维
 
