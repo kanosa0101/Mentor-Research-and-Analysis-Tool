@@ -5,6 +5,8 @@ from unittest.mock import patch
 import pytest
 import yaml
 
+from crawler.legacy_refresh import load_hook
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -96,11 +98,17 @@ def test_unregistered_pagination_fails_closed():
 
 
 def test_only_new_units_and_explicit_supervision():
-    for school, dept in [('hust', 'aia'), ('csu', 'auto')]:
+    for school, dept, expected_hook in [('hust', 'aia', 'hust_faculty'), ('csu', 'auto', 'related_v7')]:
         c = cfg(school, dept)
         assert c['explicit_supervisor_only'] is True
-        assert c['hook'] == 'related_v7'
+        assert c['hook'] == expected_hook
         assert c['roster_pending']
+
+    aia = cfg('hust', 'aia')
+    adapter = load_hook(ROOT, aia)
+    with patch.object(adapter.related_v7, 'iter_roster') as roster:
+        assert adapter.iter_roster(aia) is roster.return_value
+        roster.assert_called_once_with(aia)
 
 
 def test_detail_requires_same_person_before_field_import():
