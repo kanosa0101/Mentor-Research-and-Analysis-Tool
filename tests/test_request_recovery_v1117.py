@@ -8,8 +8,9 @@ from playwright.sync_api import sync_playwright, expect
 from scripts import build_site
 
 
+@pytest.mark.parametrize('width', [1280, 390])
 @pytest.mark.parametrize('stall_after_success', [False, True])
-def test_directory_stall_releases_controls_keeps_results_and_retries(stall_after_success):
+def test_directory_stall_releases_controls_keeps_results_and_retries(stall_after_success, width):
     row = dict(page='bit-cs-test', name='测试导师', school='bit', dept='cs',
                school_name='北京理工大学', dept_name='计算机学院', title='教授',
                supervisor='博导', research_direction_raw='计算机视觉',
@@ -18,7 +19,7 @@ def test_directory_stall_releases_controls_keeps_results_and_retries(stall_after
     calls, downloads, errors = [], [], []
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
-        page = browser.new_page()
+        page = browser.new_page(viewport={"width": width, "height": 844})
         page.on('pageerror', lambda error: errors.append(str(error)))
 
         def route(request):
@@ -42,9 +43,12 @@ def test_directory_stall_releases_controls_keeps_results_and_retries(stall_after
             page.goto('http://mentor-test.invalid/discovery.html', wait_until='domcontentloaded')
             if stall_after_success:
                 expect(page.locator('[data-candidate]')).to_have_count(1)
+                if not page.locator('#criteria-form').is_visible():
+                    page.locator('#criteria-panel > summary').click()
                 page.locator('#intent-name').fill('测试')
                 page.locator('#apply-criteria').click()
             expect(page.locator('#discovery-message')).to_contain_text('超时', timeout=11000)
+            expect(page.locator('#apply-criteria')).to_be_visible()
             expect(page.locator('#apply-criteria')).to_be_enabled()
             expect(page.locator('[data-candidate]')).to_have_count(1 if stall_after_success else 0)
             assert not downloads  # Timeout must not fetch a multi-megabyte fallback.

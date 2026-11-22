@@ -2,9 +2,11 @@ school: hust
 dept: aia
 dept_name: 人工智能与自动化学院
 base_url: https://aia.hust.edu.cn
-hook: related_v7
-parser_dependencies: [profile_fields.py, hust_profile.py]
+hook: hust_faculty
+parser_dependencies: [related_v7.py, profile_fields.py, hust_profile.py]
 hust_contact_profile: true
+contact_article_directories:
+  x: https://aia.hust.edu.cn/szdw1/axmpyszmlb/X.htm
 profile_http_hosts: [faculty.hust.edu.cn]
 profile_lookup_urls:
   - https://aia.hust.edu.cn/szdw/xysz/axmpyszmlb.htm

@@ -105,6 +105,26 @@ class PublicServerTests(unittest.TestCase):
             self.assertEqual(raw, original)
         self.assertNotIn('Content-Encoding', self.request('/health', headers={'Accept-Encoding': 'gzip'})[1])
 
+    def test_only_school_admissions_json_is_served_in_the_static_route(self):
+        directory = self.site / 'admissions'
+        directory.mkdir()
+        payload = json.dumps({'school': 'bit', 'policies': ['test policy'] * 200}).encode()
+        (directory / 'bit.json').write_bytes(payload)
+        (directory / 'Unsafe.json').write_bytes(b'{}')
+        (directory / 'more').mkdir()
+        (directory / 'more/bit.json').write_bytes(b'{}')
+        (self.site / 'other.json').write_bytes(b'{}')
+        path = '/admissions/bit.json?v=test-version'
+        code, headers, body = self.request(path, headers={'Accept-Encoding': 'gzip'})
+        self.assertEqual(code, 200)
+        self.assertEqual(headers['Content-Type'], 'application/json; charset=utf-8')
+        self.assertEqual(headers['Content-Encoding'], 'gzip')
+        self.assertEqual(gzip.decompress(body), payload)
+        self.assertEqual(self.request(path, headers={'Accept-Encoding': 'gzip', 'If-None-Match': headers['ETag']})[0], 304)
+        self.assertEqual(self.request(path, 'HEAD')[2], b'')
+        for not_public in ('/admissions/Unsafe.json', '/admissions/more/bit.json', '/other.json', '/admissions/%2e%2e/other.json'):
+            self.assertEqual(self.request(not_public)[0], 404)
+
     def test_no_private_api_files_directories_or_encoded_traversal(self):
         for path in ['/api/workflow', '/api/workflow/backup', '/api/discovery', '/api/outreach',
                      '/data/workflow.yaml', '/../secret.html', '/%2e%2e/secret.html',

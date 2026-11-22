@@ -1,15 +1,16 @@
 """浙江大学计算机科学与技术学院（www.cs.zju.edu.cn，真实站点在 /csen/ 路径下）。
-- 教师名录 /csen/27003/list.htm：JS 渲染，条目链到 person.zju.edu.cn 统一主页（64 人）
+- 在用教师名录 /csen/qyjscx_95580/list.htm：读取网页公开教师卡片使用的同源查询。
 - 导师资格目录文章页挂官方 Excel《各学科博导硕导-全》：
   4 学科（计算机/软件工程/网安/电子信息）× 博导/硕导 名单，按姓名对齐（418 人）
 - 详情页 person.zju.edu.cn：姓名/职称/导师资格/单位/邮箱/地址/研究方向 服务端渲染，
   简介等内容在 column API（apiColumn 签名在页面 JS 变量里）
 """
 import io
+import json
 import re
 from collections import Counter, defaultdict
 from functools import lru_cache
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import urlencode, urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
@@ -17,14 +18,15 @@ from crawler import fetch
 from crawler.email_util import normalize_email
 from crawler.mentor_recovery import personal_email
 
-_LIST = "http://www.cs.zju.edu.cn/csen/27003/list.htm"
+_LIST = "http://www.cs.zju.edu.cn/csen/qyjscx_95580/list.htm"
 _XLSX_ARTICLE = ("http://www.cs.zju.edu.cn/csen/2021/0915/"
                  "c27006a2421689/page.htm")
-_PERSON = re.compile(r"person\.zju\.edu\.cn/([A-Za-z0-9_]+)/?")
 _ROSTER_ARTICLE = re.compile(r"/csen/20\d{2}/\d{4}/c\d+a\d+/page\.htm")
 _ROSTER_ARTICLE_LABEL = re.compile(r"计算机学院导师与导师团队信息[-－–—](20\d{2})(?:[（(]持续更新中[）)])?")
 _ROSTER_FILE = re.compile(r"/_upload/article/files/(?:[0-9a-f]+/){3}[0-9a-f-]{36}\.pdf")
 _ROSTER_LABEL = re.compile(r"(20\d{2})全日制导师信息库[-－](0[1-9]|1[0-2])\.pdf")
+_NAME = re.compile(r"[\u3400-\u9fff·]{2,6}")
+_QUALIFICATION = {"硕导": "硕导", "硕士生导师": "硕导", "博导": "博导", "博士生导师": "博导"}
 
 
 def _norm(nm):
@@ -32,8 +34,8 @@ def _norm(nm):
 
 
 @lru_cache(maxsize=4)
-def _contact_roster(raw, expected_period=None):
-    """Read the labelled Email cell of each dated, drawn mentor row."""
+def mentor_roster_rows(raw, expected_period=None):
+    """Read dated rows from the college publication without shifting fields between people."""
     import pdfplumber
 
     reports = defaultdict(list)
@@ -57,17 +59,27 @@ def _contact_roster(raw, expected_period=None):
                     continue
                 label = _norm(row[2] or "")
                 name = re.sub(r"[（(][^）)]{1,16}[）)]$", "", label)
-                if not re.fullmatch(r"[\u3400-\u9fff·]{2,6}", name):
+                if not _NAME.fullmatch(name):
                     continue
                 cell = _norm(row[7] or "")
                 # A PDF cell can wrap a literal address. Never choose between
                 # alternatives or derive an address from a name.
                 email = personal_email(cell) if re.fullmatch(r"[\w.%+-]+@[\w.-]+", cell, re.A) else None
-                reports[name].append((email, page_number, row_number, _norm(row[1] or "")))
-    addresses = Counter(email.casefold() for items in reports.values() for email, *_ in items if email)
+                reports[name].append(dict(label=label, email=email, page=page_number, row=row_number,
+                    institute=_norm(row[1] or ""), title=_norm(row[3] or ""),
+                    research_direction_raw=(row[4] or "").replace("\n", "").strip(),
+                    research_cell_header=_norm(rows[1][4] or ""),
+                    supervisor=_QUALIFICATION.get(_norm(row[8] or ""))))
+    return reports
+
+
+def _contact_roster(raw, expected_period=None):
+    reports = mentor_roster_rows(raw, expected_period)
+    addresses = Counter(row["email"].casefold() for items in reports.values() for row in items if row["email"])
     return {
-        name: items[0] for name, items in reports.items()
-        if len(items) == 1 and items[0][0] and addresses[items[0][0].casefold()] == 1
+        name: tuple(row[k] for k in ("email", "page", "row", "institute"))
+        for name, items in reports.items() if len(items) == 1
+        for row in items if row["email"] and addresses[row["email"].casefold()] == 1
     }
 
 
@@ -86,12 +98,7 @@ def _latest_roster_link(page_url, html, label_pattern, path_pattern, error):
     return next(iter(links[period])), period
 
 
-def parse_contact(cfg, original):
-    """Use the current departmental roster for a missing email."""
-    listing = cfg.get("profile_contact_roster_index")
-    reader = cfg.get("_read_source")
-    if not reader or not listing or normalize_email(original.get("email")):
-        return {}
+def _read_current_roster(listing, reader):
     _, html = reader(listing)
     article, (article_year,) = _latest_roster_link(
         listing, html, _ROSTER_ARTICLE_LABEL, _ROSTER_ARTICLE, "浙大招生栏目未按唯一年份链接导师与导师团队信息"
@@ -103,9 +110,83 @@ def parse_contact(cfg, original):
     if article_year != pdf_year:
         raise ValueError("浙大导师与导师团队信息和附件年份不一致")
     raw, _ = reader(pdf_url)
+    return raw, article, pdf_url, f"{pdf_year}.{pdf_month}"
+
+
+def faculty_query(listing, *, name=None, page=1):
+    """The visible college directory uses this public query for its faculty cards."""
+    def pack(value):
+        return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+    columns = ("title", "f1", "f2", "f3", "url")
+    conditions = [{"orConditions": [{"field":"title", "value":f"%{name}%", "judge":"like"}]}] if name else []
+    return urljoin(listing, "/_wp3services/generalQuery") + "?" + urlencode(dict(
+        queryObj="articles", siteId=484, columnId=93624, pageIndex=page, rows=10, articleType=1, scope="",
+        conditions=pack(conditions), orders=pack([dict(field=key,type="acs") for key in ("letter","title")]),
+        returnInfos=pack([dict(field=key,name=key) for key in columns])))
+
+
+def faculty_page(html):
+    result = json.loads(html)
+    if (result.get("status")!=1 or result.get("result")!="true" or not isinstance(result.get("data"),list)
+            or not isinstance(result.get("total"),int) or not isinstance(result.get("pageCount"),int)
+            or not 0 <= result["total"] <= 600 or not 0 <= result["pageCount"] <= 60):
+        raise ValueError("浙大计算机学院公开教师查询响应不符合预期")
+    return result
+
+
+def faculty_fields(item):
+    def text(key):
+        return BeautifulSoup(str(item.get(key) or ""),"html.parser").get_text(" ",strip=True)
+    name = _norm(text("title"))
+    if not _NAME.fullmatch(name) or name in _QUALIFICATION:
+        return {}
+    result = {"name":name}
+    title = text("f1")
+    if title and title not in ("无", "待定", "暂无", "-", "—"):
+        result["title"]=title
+    direction = text("f3")
+    if direction and direction not in ("无", "暂无", "待更新", "-", "—"):
+        result["research_direction_raw"]=direction
+    address = text("f2")
+    if address.count("@") == 1 and (email := personal_email(address)):
+        result["email"]=email
+    target = urlsplit(item.get("url") or "")
+    # Generic department article URLs are deliberately not links in the school's faculty cards.
+    if (target.scheme in ("http","https") and target.hostname and not target.username and not target.password
+            and target.port in (None,80,443) and target.path not in ("", "/")
+            and not target.path.endswith(("/page.htm", "/page.psp"))):
+        result["homepage"]=target.geturl()
+    return result
+
+
+def _faculty_contact(cfg, name):
+    listing = cfg.get("profile_faculty_directory")
+    reader = cfg.get("_read_source")
+    if not listing or not reader or not _NAME.fullmatch(name) or name in _QUALIFICATION:
+        return {}, None
+    query = faculty_query(listing, name=name)
+    _, html = reader(query)
+    page = faculty_page(html)
+    if len(page["data"]) != page["total"]:
+        return {}, None
+    rows = [row for item in page["data"] if (row := faculty_fields(item)).get("name")==name]
+    return (rows[0], query) if len(rows)==1 else ({}, None)
+
+
+def parse_contact(cfg, original):
+    """Prefer the dated email roster, supplement it from the named faculty directory."""
+    listing = cfg.get("profile_contact_roster_index")
+    reader = cfg.get("_read_source")
+    if not reader or not listing or normalize_email(original.get("email")):
+        return {}
+    raw, article, pdf_url, period = _read_current_roster(listing, reader)
     name = original["name"]
-    evidence = _contact_roster(raw, f"{pdf_year}.{pdf_month}").get(name)
+    evidence = _contact_roster(raw, period).get(name)
     if not evidence:
+        if not cfg.get("_previous_email"):
+            fields, source = _faculty_contact(cfg, name)
+            if email := fields.get("email"):
+                return {"name":name,"_verified_roster_name":name,"email":email,"_field_sources":{"email":source}}
         return {}
     email, page, row, department = evidence
     old_email = cfg.get("_previous_email")
@@ -157,29 +238,29 @@ def _load_xlsx_supervisors():
     if not m:
         return {}
     raw, _, _ = fetch.fetch("GET", "http://www.cs.zju.edu.cn" + m.group(1))
-    wb = openpyxl.load_workbook(io.BytesIO(raw))
-    # 表头在前两行：每组首列是 "081200计算机科学与技术" 等学科名
-    headers = []
-    for r in wb.active.iter_rows(min_row=1, max_row=2, values_only=True):
-        headers.append(list(r))
+    wb = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
+    # 逐组确认学科列与真实姓名行，避免把“博导”“硕导”表头当作人名。
+    headers = list(wb.active.iter_rows(min_row=1,max_row=3,values_only=True))
     disc_by_group = {}
-    for gi in range(0, 15, 3):
-        for r in headers:
-            if gi < len(r) and r[gi] and re.match(r"^\d{6}", str(r[gi])):
-                disc_by_group[gi] = re.sub(r"^\d{6}", "", str(r[gi]).strip())
+    for gi in (0, 3, 6, 9):
+        if [_norm(str(label or "")) for label in headers[2][gi:gi+3]] != ["序号","博导","硕导"]:
+            raise ValueError("浙大导师资格工作表头结构变化")
+        label = str(headers[1][gi] or "")
+        if not re.match(r"^\d{6}", label):
+            raise ValueError("浙大导师资格工作表缺少明确学科代码")
+        disc_by_group[gi] = re.sub(r"^\d{6}", "", label.strip())
     out = {}
-    for row in wb.active.iter_rows(min_row=3, values_only=True):
-        for gi in (0, 3, 6, 9):
-            cells = row[gi:gi + 3] if len(row) >= gi + 3 else None
-            if not cells:
+    for row in wb.active.iter_rows(min_row=4, values_only=True):
+        for gi, disc in disc_by_group.items():
+            cells = row[gi:gi + 3]
+            if len(cells)!=3 or not str(cells[0]).isdigit():
                 continue
-            disc = disc_by_group.get(gi)
             for off, kind in ((1, "博导"), (2, "硕导")):
                 v = cells[off] if len(cells) > off else None
                 if not v:
                     continue
                 nm = _norm(str(v))
-                if not re.fullmatch(r"[\u4e00-\u9fa5·]{2,5}", nm):
+                if not _NAME.fullmatch(nm) or nm in _QUALIFICATION:
                     continue
                 rec = out.setdefault(nm, {"kinds": set(), "subjects": []})
                 rec["kinds"].add(kind)
@@ -191,19 +272,30 @@ def _load_xlsx_supervisors():
 
 
 def iter_roster(cfg):
-    people = {}
-    # 1) 教师名录（渲染页，条目链 person.zju.edu.cn）
-    html, meta, _ = fetch.fetch_rendered(cfg["list"]["urls"][0], wait_ms=3000,
-                                         scroll=True)
-    soup = BeautifulSoup(html, "html.parser")
-    for a in soup.select("a[href]"):
-        href = str(a.get("href") or "")
-        if not _PERSON.search(href):
+    listing = cfg.get("profile_faculty_directory", _LIST)
+    html, meta, _ = fetch.fetch_text("GET", faculty_query(listing))
+    first = faculty_page(html)
+    rows = list(first["data"])
+    for page in range(2,first["pageCount"]+1):
+        html, _, _ = fetch.fetch_text("GET",faculty_query(listing,page=page))
+        result = faculty_page(html)
+        if (result["total"],result["pageCount"]) != (first["total"],first["pageCount"]):
+            raise ValueError("浙大教师名录在分页中变化，请重试")
+        rows.extend(result["data"])
+    if len(rows)!=first["total"]:
+        raise ValueError("浙大教师名录分页缺条目")
+    by_name=defaultdict(list)
+    for row in rows:
+        if value:=faculty_fields(row):
+            by_name[value["name"]].append(value)
+    people={}
+    for name, values in by_name.items():
+        if len(values)!=1:
             continue
-        nm = _norm(a.get_text(strip=True))
-        u = href if href.startswith("http") else "http://www.cs.zju.edu.cn" + href
-        if nm and u not in people:
-            people[u] = {"name": nm, "url": u, "profile_url": u}
+        href=values[0].get("homepage", "")
+        personal=urlsplit(href).hostname in ("person.zju.edu.cn","mypage.zju.edu.cn")
+        u=href if personal else _XLSX_ARTICLE+"#"+name
+        people[u]={"name":name,"url":u,"profile_url":href if personal else listing}
     # 2) 官方导师资格目录 xlsx：博导/硕导 + 学科，按姓名对齐
     sup = _load_xlsx_supervisors()
     for u, p in people.items():
@@ -213,9 +305,8 @@ def iter_roster(cfg):
             if s["subjects"]:
                 p["subjects"] = "、".join(s["subjects"])
     # 3) xlsx 里有而名录没有的导师：入库为 roster 级（详情页落在目录文章页）
-    known = {p["name"] for p in people.values()}
     for nm, s in sup.items():
-        if nm in known:
+        if nm in by_name:
             continue
         people[_XLSX_ARTICLE + "#" + nm] = {
             "name": nm, "url": _XLSX_ARTICLE + "#" + nm,
@@ -227,14 +318,17 @@ def iter_roster(cfg):
 
 
 def parse_detail(cfg, html, url):
-    if urlsplit(url).hostname != "person.zju.edu.cn":
-        return {}  # xlsx-only 记录落在目录文章页，无可解析字段
+    target = urlsplit(url)
+    if target.hostname not in {"person.zju.edu.cn", "mypage.zju.edu.cn"}:
+        return _roster_profile(cfg) if target.hostname=="www.cs.zju.edu.cn" and target.path==urlsplit(_XLSX_ARTICLE).path else {}
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style"]):
         tag.decompose()
     out = {}
     name = _personal_name(soup)
     expected = cfg.get("_expected_name")
+    if not name and expected and "请验证以继续访问" in soup.get_text(" ", strip=True):
+        return _roster_profile(cfg)
     if expected and name != expected:
         raise ValueError("浙大个人页姓名未与名册一致")
     if name:
@@ -312,3 +406,35 @@ def parse_detail(cfg, html, url):
         except Exception:
             pass
     return out
+
+
+def _roster_profile(cfg):
+    """Resolve missing personal HTML against the current named college sources."""
+    expected = cfg.get("_expected_name")
+    reader = cfg.get("_read_source")
+    listing = cfg.get("profile_contact_roster_index")
+    if not expected or not reader or not listing or expected in _QUALIFICATION:
+        return {}
+    original = cfg.get("_original_profile") or {}
+    provenance = original.get("provenance") or {}
+    gaps = {key for key in ("title","research_direction_raw","homepage")
+            if not original.get(key) and (provenance.get(key) or {}).get("origin") != "manual"}
+    if not gaps:
+        return {}
+    fields, faculty_source = _faculty_contact(cfg, expected)
+    fields = {key:value for key,value in fields.items() if key in gaps}
+    field_sources = {key:faculty_source for key in fields}
+    pdf_gaps = (gaps & {"title","research_direction_raw"}) - fields.keys()
+    if pdf_gaps:
+        raw, _, pdf_url, period = _read_current_roster(listing,reader)
+        rows = mentor_roster_rows(raw,period).get(expected,[])
+        if len(rows)==1 and rows[0]["label"]==expected and rows[0]["institute"]:
+            row=rows[0]
+            for key in sorted(pdf_gaps):
+                if (row.get(key)
+                        and (key!="research_direction_raw" or row["research_cell_header"] in ("学科专长及研究方向","研究方向"))):
+                    fields[key]=row[key]
+                    field_sources[key]=pdf_url
+    if not field_sources:
+        return {}
+    return dict(fields,name=expected,_verified_roster_name=expected,_field_sources=field_sources)

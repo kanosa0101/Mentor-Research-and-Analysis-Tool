@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 from datetime import date, datetime, timedelta, timezone
@@ -84,11 +85,57 @@ def render_discovery_page(site=None, env=None):
         discovery_js=javascript, **entry_head(site))
 
 
-def render_admissions_page(site=None, env=None):
+def admissions_entry_assets(data):
+    """Keep scope browsing inline, with complete evidence in one asset per school."""
+    catalog = {key: data[key] for key in ('version', 'schools', 'groups', 'units')}
+    scope_keys = ('id', 'school', 'dept', 'level', 'year', 'degree', 'route', 'track', 'program',
+                  'program_code', 'reviewed_at')
+    catalog['policies'] = [{key: policy[key] for key in scope_keys if key in policy}
+                           for policy in data['policies']]
+    catalog['school_versions'] = {}
+    school_assets = {}
+    for school in data['schools']:
+        school_id = school['id']
+        policies = [policy for policy in data['policies'] if policy['school'] == school_id]
+        entries = [entry for entry in data.get('entries', []) if entry['school'] == school_id]
+        sources = {id_ for policy in policies for id_ in (policy['source_id'], *policy['review_hashes'])}
+        sources.update(entry['source_id'] for entry in entries)
+        payload = dict(school=school_id, policies=policies, entries=entries,
+                       sources={id_: source for id_, source in data['sources'].items() if id_ in sources},
+                       checks={id_: check for id_, check in data['checks'].items() if id_ in sources})
+        revision = hashlib.sha256(admissions_json(payload).encode('utf-8')).hexdigest()
+        catalog['school_versions'][school_id] = revision
+        school_assets[school_id] = admissions_json(payload | {'revision': revision}) + '\n'
+    return catalog, school_assets
+
+
+def admissions_json(data):
+    return json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+
+
+def build_admissions_assets(site, data):
+    catalog, school_assets = admissions_entry_assets(data)
+    directory = site / 'admissions'
+    directory.mkdir(exist_ok=True)
+    for school_id, content in school_assets.items():
+        (directory / (school_id + '.json')).write_text(content, encoding='utf-8', newline='\n')
+    for path in directory.glob('*.json'):
+        if path.stem not in school_assets:
+            path.unlink()
+    return catalog
+
+
+def render_admissions_page(site=None, env=None, *, catalog=None):
     site = SITE if site is None else Path(site)
+    if catalog is None:
+        path = site / 'admissions-data.js'
+        source = (path if path.is_file() else ROOT / 'site' / path.name).read_text(encoding='utf-8')
+        data = json.loads(source.split('=', 1)[1].strip().removesuffix(';'))
+        catalog, _ = admissions_entry_assets(data)
+    javascript = 'window.ADMISSIONS_DATA = ' + admissions_json(catalog) + ';\n' + inline_scripts(
+        site, ('admissions-core.js', 'material-actions.js', 'admissions.js'))
     return (env or template_environment()).get_template('admissions.html.j2').render(
-        **entry_head(site), admissions_js=inline_scripts(site, (
-            'admissions-data.js', 'admissions-core.js', 'material-actions.js', 'admissions.js')))
+        **entry_head(site), admissions_js=javascript)
 
 
 def safe_url(value):
@@ -310,11 +357,12 @@ def main():
     write_html(SITE / 'start.html', render_start_page(env=env))
     build_discovery_entry()
     write_html(SITE / 'discovery.html', render_discovery_page(env=env))
-    content = json.dumps(admissions, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    content = admissions_json(admissions)
     (SITE / 'admissions-data.js').write_text('window.ADMISSIONS_DATA = ' + content + ';\n', encoding='utf-8')
     (SITE / 'application-data.js').write_text(application_payload(profs, admissions), encoding='utf-8')
     build_application_entry()
-    write_html(SITE / 'admissions.html', render_admissions_page(env=env))
+    admissions_catalog = build_admissions_assets(SITE, admissions)
+    write_html(SITE / 'admissions.html', render_admissions_page(env=env, catalog=admissions_catalog))
     release_file = ROOT / 'release.json'
     if release_file.exists():
         release = json.loads(release_file.read_text(encoding='utf-8'))

@@ -514,7 +514,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
         body,text=sources.read(target,official_scope=scope)
         captures[target]=sources.capture(target,body,stamp)
         return body,text
-    parsed_cfg=dict(cfg,_expected_name=original['name'],_read_source=read_related)
+    parsed_cfg=dict(cfg,_expected_name=original['name'],_read_source=read_related,_original_profile=original)
 
     review=record.get('secondary_email')
     reviewing=secondary_due(review,signature,stamp,versions)

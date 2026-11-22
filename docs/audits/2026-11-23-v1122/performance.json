@@ -1,0 +1,51 @@
+{
+  "release": "1.12.2",
+  "status": "candidate_verified",
+  "environment": {
+    "browser": "Chromium",
+    "viewport_width": 390,
+    "download_kbps": 400,
+    "latency_ms": 300,
+    "cpu_slowdown": 4,
+    "new_context_samples_per_scenario": 3,
+    "cache": "disabled"
+  },
+  "school_page_mobile": {
+    "default": {
+      "old_ready_seconds_median": 7.849,
+      "new_ready_seconds_median": 1.851,
+      "old_gzip_bytes": 226983,
+      "new_gzip_bytes": 39133
+    },
+    "bit_complete_target": {
+      "old_ready_seconds_median": 5.651,
+      "new_ready_seconds_median": 1.873,
+      "old_gzip_bytes": 226983,
+      "new_gzip_bytes": 45514
+    }
+  },
+  "desktop_unthrottled": {
+    "default_old_ms": 145,
+    "default_new_ms": 166,
+    "bit_target_old_ms": 90,
+    "bit_target_new_ms": 122,
+    "conclusion": "No desktop speedup observed"
+  },
+  "scope": {
+    "schools": 39,
+    "policies": 114,
+    "official_entries": 96,
+    "material_actions": 315,
+    "policy_and_material_action_rendering_preserved": true
+  },
+  "raw_evidence_sha256": {
+    "baseline-public.json": "e2ab5a0f9d22654bac38b97323aaad0c5714919797b9bd8a85e71f726d841a67",
+    "baseline-loopback.json": "06b04c6ef60c0f881a000e2414d5cf31b286b0a40b4c31a4d3fc7d5dbb55dde5",
+    "candidate-loopback.json": "f60ea0d90dc631493f984c5f2f79e59c0b5b02035c794fe6581863217b8632d3",
+    "local-build.json": "7acb7bec84529f0be7f8c1917e62cf95021ac98dc44665ba1c4ec00b36b95b06"
+  },
+  "limitations": [
+    "Controlled HTTPS comparison, not a guarantee of real-world latency",
+    "Common account request excluded from both transfer counts"
+  ]
+}

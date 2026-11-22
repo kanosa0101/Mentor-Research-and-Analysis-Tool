@@ -17,8 +17,8 @@ bio_raw: '个人简介
 institutes:
 - 网络空间安全系
 research_direction_raw: 空天地一体化信息网络
-detail_url: https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
-profile_url: https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
+detail_url: https://cse-sinclab.hust.edu.cn/info/1014/1183.htm
+profile_url: https://cse-sinclab.hust.edu.cn/info/1014/1183.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-15'
 last_fetched: '2026-10-15'
@@ -55,3 +55,19 @@ provenance:
     source: http://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm
     fetched_at: '2026-10-15'
     confidence: auto
+  email:
+    origin: crawled
+    source: https://cse-sinclab.hust.edu.cn/ryjj.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cse-sinclab.hust.edu.cn/info/1014/1183.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cse-sinclab.hust.edu.cn/info/1014/1183.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+email: zhoujiaxi@hust.edu.cn

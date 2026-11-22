@@ -30,10 +30,13 @@ def load_yaml(path):
 
 def fetch_source(source, timeout=15):
     if source.get('official_scope'):
-        if not mentor_recovery.allowed(source['url'], source['official_scope']):
+        target = mentor_recovery.canonical(source['url']) if source.get('official_http') else source['url']
+        if not mentor_recovery.allowed(target, source['official_scope']):
             raise ValueError('替代来源离开已登记官方机构边界')
         from crawler.source_discovery import fetch_html
-        return fetch_html(source['url'], source['official_scope'],accepted_types=mentor_recovery.content_types(source['url']))
+        pdf = source.get('official_pdf', False)
+        return fetch_html(source['url'], source['official_scope'],allow_pdf=pdf,
+                          accepted_types=('application/pdf',) if pdf else mentor_recovery.content_types(source['url']))
     with requests.Session() as session:
         session.trust_env = False
         response = session.request(source.get('method', 'GET'), source['url'], data=source.get('data'),
@@ -54,10 +57,16 @@ class Sources:
         self.fetcher, self.stamp, self.cache, self.used = fetcher, stamp, {}, []
         self.day = datetime.fromisoformat(stamp).astimezone(timezone(timedelta(hours=8))).date().isoformat()
 
-    def read(self, url, data=None, official_scope=None, *, homepage_target=False):
+    def read(self, url, data=None, official_scope=None, *, homepage_target=False, contact_cfg=None):
         source = {'url': url, **({'method': 'POST', 'data': data} if data else {}),
                   **({'official_scope': official_scope} if official_scope else {}),
                   **({'homepage_target': True} if homepage_target else {})}
+        if contact_cfg:
+            if mentor_recovery.profile_pdf(url,contact_cfg):
+                source['official_pdf'] = True
+            target = urlsplit(url)
+            if target.scheme == 'http' and target.hostname in contact_cfg.get('profile_http_hosts', ()):
+                source['official_http'] = True
         key = json.dumps(source, sort_keys=True)
         if key not in self.cache:
             try:
@@ -175,8 +184,13 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                 if not mentor_recovery.named_link(parent,directory['url'],url,original['name']):
                     raise ValueError('当前官方目录已不再链接该姓名的候选详情，未迁移')
             raw, html = sources.read(url, official_scope=scope)
-            expected_cfg = dict(parse_cfg, _expected_name=original['name'],
-                                _read_source=lambda target:sources.read(target,official_scope=cfg.get('base_url') or url))
+            def read_related(target):
+                scope = cfg.get('base_url') or url
+                if cfg.get('profile_pdf_hosts') or cfg.get('profile_http_hosts'):
+                    return sources.read(target,official_scope=scope,contact_cfg=cfg)
+                return sources.read(target,official_scope=scope)
+            expected_cfg = dict(parse_cfg, _expected_name=original['name'], _original_profile=original,
+                                _read_source=read_related)
             if isinstance(directory,dict) and directory.get('kind')=='roster':
                 parsed, _ = mentor_recovery.directory_fields(cfg,html,original['name'])
                 if not parsed:

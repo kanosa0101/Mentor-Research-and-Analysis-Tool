@@ -286,13 +286,16 @@ class Handler(BaseHTTPRequestHandler):
         if any(not part or part.startswith('.') for part in parts):
             return self.json(404, {'error': 'Not found'})
         candidate = self.site.joinpath(*parts)
+        content_type = CONTENT_TYPES.get(candidate.suffix)
+        if re.fullmatch(r'/admissions/[a-z0-9][a-z0-9_-]*\.json', path):
+            content_type = 'application/json; charset=utf-8'
         try:
             chain = [self.site, *(self.site.joinpath(*parts[:i]) for i in range(1, len(parts) + 1))]
             if any(p.is_symlink() or getattr(p, 'is_junction', lambda: False)() for p in chain):
                 return self.json(404, {'error': 'Not found'})
-            if not candidate.resolve().is_relative_to(self.site.resolve()) or candidate.suffix not in CONTENT_TYPES or not candidate.is_file():
+            if not candidate.resolve().is_relative_to(self.site.resolve()) or not content_type or not candidate.is_file():
                 return self.json(404, {'error': 'Not found'})
-            return send_asset(self, candidate, CONTENT_TYPES[candidate.suffix], self.server.asset_cache, self.accepts_gzip())
+            return send_asset(self, candidate, content_type, self.server.asset_cache, self.accepts_gzip())
         except (OSError, ValueError):
             return self.json(404, {'error': 'Not found'})
 

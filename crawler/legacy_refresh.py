@@ -29,7 +29,9 @@ def fetch_source(source, timeout=20):
     if source.get('official_scope'):
         from crawler.source_discovery import fetch_html
         from crawler.mentor_recovery import content_types
-        return fetch_html(source['url'],source['official_scope'],accepted_types=content_types(source['url']))
+        pdf = source.get('official_pdf', False)
+        return fetch_html(source['url'],source['official_scope'],allow_pdf=pdf,
+                          accepted_types=('application/pdf',) if pdf else content_types(source['url']))
     with requests.Session() as session:
         session.trust_env = False
         response = session.request(source.get('method', 'GET'), source.get('api') or source['url'],
@@ -286,11 +288,17 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                         raise ValueError('无法解码导师正文')
                     supplemental=[]
                     def read_source(url):
-                        body=fetcher({'url':url,'official_scope':cfg.get('base_url') or original['detail_url']})
+                        from crawler.mentor_recovery import profile_pdf
+                        source = {'url':url,'official_scope':cfg.get('base_url') or original['detail_url']}
+                        if profile_pdf(url,cfg):
+                            source['official_pdf'] = True
+                        body=fetcher(source)
                         digest=evidence(key,body)
                         supplemental.append(dict(url=url,sha256=digest,fetched_at=stamp))
-                        return body,UnicodeDammit(body).unicode_markup or ''
-                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source), html, original['detail_url'])
+                        text = '' if source.get('official_pdf') else UnicodeDammit(body).unicode_markup or ''
+                        return body,text
+                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source,
+                                                    _original_profile=original), html, original['detail_url'])
                     # The contact task verifies a declared independent homepage
                     # by fetching the target before publishing it.
                     parsed = {key: value for key, value in parsed.items() if key != 'homepage'}

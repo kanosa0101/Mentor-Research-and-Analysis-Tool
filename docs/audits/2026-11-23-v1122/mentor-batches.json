@@ -1,0 +1,1630 @@
+{
+  "version": "1.12.2",
+  "review_date": "2026-11-23",
+  "timezone": "Asia/Singapore",
+  "status": "approved_candidate",
+  "batches": {
+    "zju/cs": {
+      "approved_manifest_sha256": "935db051ad84371822a2f585009356050716c757954de357ed5a3a8ed381aa9d",
+      "profiles": {
+        "data/professors/zju/cs/cenglingfang.yaml": {
+          "name": "曾令仿",
+          "before_sha256": "5021e76e44ff24f5a6f6c6fa5f8849162f3c0eac8dffe95124b3aa922f9b1544",
+          "after_sha256": "a359a4a47c6348a88e815386884804162084cd4444ac6e4161e9ebf0a3fbf0ed",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "人工智能芯片，智算集群系统，大模型训练推理，Agent 自动化系统调优",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/chenchun.yaml": {
+          "name": "陈纯",
+          "before_sha256": "e758a5f8e84ae738a29dada121d20ee6524cb8054397d39b0125021180748859",
+          "after_sha256": "9ee3d53a5d739ec6657bb561db4479394c23aac12d294c6f0a5f841eb5e22d40",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "大数据智能实时处理、人工智能等",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/chengang.yaml": {
+          "name": "陈刚",
+          "before_sha256": "853e5cca85389dc85f10fff0a5403d4fb56bf39534c31d6b8be976f0028b32dc",
+          "after_sha256": "5c612b166cd51e668f926f4a15f0a659818fd5dc66d1c85c1636a9ba5b88539d",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "数据库管理系统、数据挖掘分析、信息智能检索、海量数据管理",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/chenhao.yaml": {
+          "name": "陈昊",
+          "before_sha256": "8c6783a97dde8778960ae54e3ccd76aac443f006dde0a04fe2f7a2fc869cbb14",
+          "after_sha256": "f363c7ff86979e46572c1b4288e1adde8be5353a70fe8ffbecdeb779be91d767",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "机器学习、计算机视觉、自动驾驶感知",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=2",
+              "final_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=2",
+              "observed_utc": "2026-11-22T16:04:29+00:00",
+              "source_sha256": "89af3d1a2155029c7cd705b662d1de7ad41ff20f45c6a31fae16b6a3e84168a6"
+            }
+          }
+        },
+        "data/professors/zju/cs/chenhongyang.yaml": {
+          "name": "陈红阳",
+          "before_sha256": "517fc3d1f3864fe65c03fda2bbba38e95df76b5301b920ef155068d38a290373",
+          "after_sha256": "df1374aa6b94e1928b66724a1be64c1117b596e7496e0c940eec569688aac8c6",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "图机器学习，大数据与人工智能，科学计算，智能系统",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/chenyan.yaml": {
+          "name": "陈焰",
+          "before_sha256": "c9cc626016b2dd282d08045502e339c4f6123fb89533921fc98e494857e3b2af",
+          "after_sha256": "5fa0afd5d67fd66542e969d3e3b076bfab1accb077890602b55f3717fe15f0c6",
+          "fields": {
+            "homepage": {
+              "before": null,
+              "after": "https://users.cs.northwestern.edu/~ychen/index.html",
+              "source_url": "http://www.cs.northwestern.edu/~ychen/index.html",
+              "final_url": "https://users.cs.northwestern.edu/~ychen/index.html",
+              "observed_utc": "2026-11-22T16:17:01+00:00",
+              "source_sha256": "b287cec675069d1f5139b11ea8ec49d30af09df0fefc7c8a94b9ccea8783bb84"
+            },
+            "research_direction_raw": {
+              "before": null,
+              "after": "AI 赋能的网络和系统安全、软件安全",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/dingyaoxiang.yaml": {
+          "name": "丁尧相",
+          "before_sha256": "4fe4947926a169b7a83e9d9026c040ccad00eb4240dc0a4973a70325d3dfb820",
+          "after_sha256": "4e9f77bfeb62ad13281e369bc14a5b4eb7de7bb576495980137deb53ce479332",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "机器学习（主动学习，强化学习，迁移学习）",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "特聘研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=3",
+              "final_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=3",
+              "observed_utc": "2026-11-22T16:04:30+00:00",
+              "source_sha256": "09acd7e67bd7c304000934ddee128a7b0fc900929fa57ae60c9a63f4153fae5a"
+            }
+          }
+        },
+        "data/professors/zju/cs/duwenliang.yaml": {
+          "name": "杜文亮",
+          "before_sha256": "59a4a487efb5beff569025720c7c6677e6922175558b78ce73597b43ed12a574",
+          "after_sha256": "a782ee89cfb72a2cd97005637116c114cb14b30c4c5e258bf34a8db6039e4f29",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机网络和系统安全、面向网安的网络仿真",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "求是讲席教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/fangziquan.yaml": {
+          "name": "房子荃",
+          "before_sha256": "c62b9b5428a59e94dc714fbafcc5d0184c508c37f73b7dba21ada41d7d0b010d",
+          "after_sha256": "2c0e11cbcdf8bc48767e2bbe92b4083cccc8d9bad574f14332f6ad8ec62e6198",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "时空数据库、分布式智能计算",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            }
+          }
+        },
+        "data/professors/zju/cs/gecongcong.yaml": {
+          "name": "葛丛丛",
+          "before_sha256": "3042e71d3c7a4050859ce24f8288257ee7198c926fe6f137374cebe41741b233",
+          "after_sha256": "dff1a7123cee284b616b0ca75c3ae52bc618725de9a2a2c335ba72fb94c635bf",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "多模态数据融合、大数据治理与分析、AIAgentforDataAnalytics",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            }
+          }
+        },
+        "data/professors/zju/cs/guoqing.yaml": {
+          "name": "郭庆",
+          "before_sha256": "3589dbfcd0160509bbb429287fa66f9087567cd12fd69b3c229d4f4f6318760e",
+          "after_sha256": "c8dc66231a5c16ba624ee409b5b5380ccfdc09cab714b6532f059d52e1992105",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "Web技术、移动多媒体、人工智能",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "source_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=4",
+              "final_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=4",
+              "observed_utc": "2026-11-22T16:04:31+00:00",
+              "source_sha256": "6d493dbf41e78d7269206097080eb7c80b547bd6c873a9b4be6e6ee824721868"
+            }
+          }
+        },
+        "data/professors/zju/cs/haoyaoyao.yaml": {
+          "name": "郝耀耀",
+          "before_sha256": "acb722e779833bf4083ddbf48eb7b3b2feff1fed91e40259e91af2ba61601407",
+          "after_sha256": "6e5b0599d78764e92e02aa4f5d6f53124f7d2a4247b7f8b304d238ad709e6315",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "脑机接口，运动解码",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "observed_utc": "2026-11-22T16:09:46+00:00",
+              "source_sha256": "c6867b2ec8018185ed3cf17a4f51713a36f5a790ac6aefacfa6faea39af17f88"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "observed_utc": "2026-11-22T16:09:46+00:00",
+              "source_sha256": "c6867b2ec8018185ed3cf17a4f51713a36f5a790ac6aefacfa6faea39af17f88"
+            }
+          }
+        },
+        "data/professors/zju/cs/huawei.yaml": {
+          "name": "华炜",
+          "before_sha256": "7fe55e91b678b01cb4b4f0ac4c9412ca2dc623b99ce57bcbdf69c6317da4c22d",
+          "after_sha256": "8a71393ba99b77029cade1e16044ce498e536a54259aaa22d8c4814e74033341",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "数字孪生，智能仿真与图形，智能算法与计算，智能驾驶",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/lichao-2.yaml": {
+          "name": "李超",
+          "before_sha256": "bfca1e75f7cf81a783b4bbf57e3ee2c327c740acaade6d83691c31973d4e1b28",
+          "after_sha256": "a9d34cc50522457de0a5ca65a3dfe4189ba15a4bca80185f139c93c60299352a",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "边缘智能计算系统；深度学习；智能计算",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/lijiwei.yaml": {
+          "name": "李纪为",
+          "before_sha256": "860bd94853317f1413a17e6af6fdfe21cad5fba141431872ad6ce4651938ef85",
+          "after_sha256": "f2333bb270589ceb31f911945a62a1ab119481af99ab1efce70313a96b875b4c",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "人工智能、深度学习，自然语言处理，机器学习，生物信息学",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/linbinbin.yaml": {
+          "name": "林彬彬",
+          "before_sha256": "bc266463ec5b07c7207f27079df79cab3f799a48d0fb86038ab9354f82158ed7",
+          "after_sha256": "a8b5b5089cde69b7f5ef08eea77a593151df697cf0fb5f962f6b489e17058987",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "机器学习、视觉感知、智能决策",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            }
+          }
+        },
+        "data/professors/zju/cs/liuzhenyu.yaml": {
+          "name": "刘振宇",
+          "before_sha256": "6926afdf6b5e932b52cfad5e12c9fff95f37876f677993210a6cebcee7a10879",
+          "after_sha256": "3a7e26182d7979ccc83c3a9e7ca63b3323393157f89920a6f3a3fcc05dc2c88c",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "数字孪生、AI驱动的设计",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/liuzuozhu.yaml": {
+          "name": "刘佐珠",
+          "before_sha256": "c2aba762358d53e55069f3c6759bb7a258726481315574ce205b3cd859d041e0",
+          "after_sha256": "254b9eb5413fe60369361f58db733422ad4d9f49b78bf77da92882f50e181f67",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "深度学习，智慧医疗，无监督学习",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/maoyuren.yaml": {
+          "name": "毛玉仁",
+          "before_sha256": "357f2360148c1b061ce633c57bebfa106be8ed46569faeb5d34f802aa1c3a91b",
+          "after_sha256": "c41abeba27b81e1539d0d74585b02865a9aa1d8bfdc7fad90dd2072a1c286997",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "大模型、数据智能",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            }
+          }
+        },
+        "data/professors/zju/cs/miaoxiaoye.yaml": {
+          "name": "苗晓晔",
+          "before_sha256": "2a2decab5f95bbc85816f2ba94f258d93157db11216a41604635d98c3dbaa6e0",
+          "after_sha256": "246aadfc6390c83142cfc8d0d100649e2c269ce9f60a10819d1510135034e83f",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "AI驱动的大数据治理，数据与服务定价，数据补全与清洗",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "长聘副教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/qiujingsong.yaml": {
+          "name": "邱劲松",
+          "before_sha256": "2543658e754324de139c38cb0b73a9407843785504af56a33b16fa8605439ab1",
+          "after_sha256": "b26c4a84bd7e45d6324af2adaba6272280f0ea0f7898b00792c339aa24a5807f",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机网络、移动互联网、计算机应用",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "讲师",
+              "source_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=10",
+              "final_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=10",
+              "observed_utc": "2026-11-22T16:04:39+00:00",
+              "source_sha256": "560b39d772ce283619dc96d1f5712d085e566e7b8720855f1d9f72e766f9f0e8"
+            }
+          }
+        },
+        "data/professors/zju/cs/qiyu.yaml": {
+          "name": "祁玉",
+          "before_sha256": "f489e169cf732d86f50d0d5a265d572f710d1c22ff8f957364cf1b71c9a67cee",
+          "after_sha256": "a4fc26d694b34963c915d769133e6302252b1ac0f52bd5fccec569f0c3361c35",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "人工智能、脑机接口、脑信息解析、机器学习",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/renzujie.yaml": {
+          "name": "任祖杰",
+          "before_sha256": "a26e23bf07994f74afdd500571ae38b99146637322f6f23032ba40fa2b934a71",
+          "after_sha256": "87b7c0985b4d991803d913a238011fbfee4d9f8367c3ea2f42c74e58db46d74d",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "大数据、边缘计算、智能计算、人工智能",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/sunxianhe.yaml": {
+          "name": "孙贤和",
+          "before_sha256": "34e402a151e98a495f63ee6c2ded6a9e49b5856a2da1647d469e4e198a082c2c",
+          "after_sha256": "e5deb51f42077121f67cb18243603d779290b7828afc2681482f848e38c17307",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "智能计算、高性能计算、内存和I/O系统、大数据应用程序的软件系统以及性能评估和优化",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/wanggaoang.yaml": {
+          "name": "王高昂",
+          "before_sha256": "e875ef771b17e221b52632960d146e1e3814b70b5d62a810a93d61d6c38e359d",
+          "after_sha256": "f7a289d77fd1020fd35a878c6655fa189ce09b70ed1e7c3ecd61a62b86c5ed79",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机视觉、机器学习、人工智能",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/wanghongwei.yaml": {
+          "name": "王宏伟",
+          "before_sha256": "737bd99608f7657aaf3f975c93f3347df84d7bade162f512bc626078a1af54e5",
+          "after_sha256": "6584482914f891188152026a04faf79e8e49b0f6d8accd92da603cfe90458e41",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "协同建模与仿真、知识工程、工业大数据、数字孪生、知识图谱",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/wangpengfei.yaml": {
+          "name": "王鹏飞",
+          "before_sha256": "5a59ad916f7f1f62d0767bc1967b453e9f6aaea0ab04466a5c10e8f13af34fbe",
+          "after_sha256": "d6e12f44416906ba4214c4fa773692739a4a2404afd72b09e09682de42b34568",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "机器学习、优化",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/a33c1181-fb79-4ed6-83ad-c5551cf6e5d2.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/a33c1181-fb79-4ed6-83ad-c5551cf6e5d2.pdf",
+              "observed_utc": "2026-11-22T16:09:51+00:00",
+              "source_sha256": "dc5c5644267475f4391ca2e74bd21fc05fa7fa1e046a6e6bb78a7d7091908e8f"
+            },
+            "title": {
+              "before": null,
+              "after": "特聘副研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/a33c1181-fb79-4ed6-83ad-c5551cf6e5d2.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/a33c1181-fb79-4ed6-83ad-c5551cf6e5d2.pdf",
+              "observed_utc": "2026-11-22T16:09:51+00:00",
+              "source_sha256": "dc5c5644267475f4391ca2e74bd21fc05fa7fa1e046a6e6bb78a7d7091908e8f"
+            }
+          }
+        },
+        "data/professors/zju/cs/wangwenxiao.yaml": {
+          "name": "王闻箫",
+          "before_sha256": "2195918ce7a037d7e4fd1fb5d557dba76393ca376068f9e682ba1ac8353805de",
+          "after_sha256": "bb45214af753bb13dcb0fbbf0be4896facc46716d5d6857b14734a75c5201fa5",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "深度学习、计算机视觉、大语言模型",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            }
+          }
+        },
+        "data/professors/zju/cs/wanzhiguo.yaml": {
+          "name": "万志国",
+          "before_sha256": "286a32ed0fbe7fe8afe9ce16035d6b08a69da597dd8a86db63f59b6892a00d0d",
+          "after_sha256": "9dc74c5235550adb18d20b4ae6bfba7a6b60395b042db82568a42ff4c799a55a",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "信息安全",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/wanzhiyuan.yaml": {
+          "name": "万志远",
+          "before_sha256": "3056978f295a56698ce3b4e3597a14ed8084ee4c30228bb6c5aa8fef8e7e5e50",
+          "after_sha256": "bfc61b1692e6280f42ab410985af480dc7b44ffaa04565f711500226350a9e22",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "source_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=12",
+              "final_url": "http://www.cs.zju.edu.cn/_wp3services/generalQuery?queryObj=articles&siteId=484&columnId=93624&rows=10&conditions=%5B%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22acs%22%7D%2C%7B%22field%22%3A%22title%22%2C%22type%22%3A%22acs%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22f1%22%2C%22name%22%3A%22f1%22%7D%2C%7B%22field%22%3A%22f2%22%2C%22name%22%3A%22f2%22%7D%2C%7B%22field%22%3A%22f3%22%2C%22name%22%3A%22f3%22%7D%2C%7B%22field%22%3A%22url%22%2C%22name%22%3A%22url%22%7D%5D&articleType=1&scope=&pageIndex=12",
+              "observed_utc": "2026-11-22T16:04:41+00:00",
+              "source_sha256": "5a93008e7ffbe01b3a6bcd8f154c679e861a72f697ea737191eca64ceab27e82"
+            }
+          }
+        },
+        "data/professors/zju/cs/wenwu.yaml": {
+          "name": "文武",
+          "before_sha256": "976c252520a81764e834b0ec629c8afc870fd1649b2187069229a5785c5b4dc0",
+          "after_sha256": "07acd3e2e03ee165250500883ea3f6ba85b904959d57084f782d29cfe6b7772c",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "数字货币，金融科技，区块链",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/wuboxi.yaml": {
+          "name": "武伯熹",
+          "before_sha256": "3697dce1654d7f074931103ed7855f4fc5196a4db7308291ab54f8c50ade0c24",
+          "after_sha256": "8a5c4b3ff1a56b3456080da6ec412033f4cd58b4da25c2e88cb7da5f24422c93",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "wuboxi@zju.edu.cn",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            },
+            "research_direction_raw": {
+              "before": null,
+              "after": "强化学习、计算视觉、生成式AI",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/56f699bf-744a-4bd5-86bc-ea5a1f0bfed5.pdf",
+              "observed_utc": "2026-11-22T16:09:35+00:00",
+              "source_sha256": "a51a4bbb3ee42373d6e1edea415ec56e3aef6b6b87d3fac59a602056f218efcf"
+            }
+          }
+        },
+        "data/professors/zju/cs/wujiangxing.yaml": {
+          "name": "邬江兴",
+          "before_sha256": "bca4f0fc6dc6076c29cb34b3932c3d25ab5302e49ce4a9569cc695678fc9d6bc",
+          "after_sha256": "4cbb0f76bec4917c4150f93bd0d0b2ae7530e07fa6f9954dc52255e318e843a2",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "网络体系结构、拟态防御、大数据安全",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "院士",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/yangyuxiao.yaml": {
+          "name": "杨雨潇",
+          "before_sha256": "95ea3e9129e7e8c1da2a1fc78e211518de67b77d4262c3d8b5bf7aeb5f805584",
+          "after_sha256": "84f32d059d1e7b66e4ed368c120650d62cb1ba6201d070095c322421af039c93",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "yuxiao.yang@zju.edu.cn",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "observed_utc": "2026-11-22T16:09:46+00:00",
+              "source_sha256": "c6867b2ec8018185ed3cf17a4f51713a36f5a790ac6aefacfa6faea39af17f88"
+            },
+            "research_direction_raw": {
+              "before": null,
+              "after": "脑机接口，人工智能，神经工程",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "observed_utc": "2026-11-22T16:09:46+00:00",
+              "source_sha256": "c6867b2ec8018185ed3cf17a4f51713a36f5a790ac6aefacfa6faea39af17f88"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/9c97e914-065b-43ed-be7a-66447f1d985c.pdf",
+              "observed_utc": "2026-11-22T16:09:46+00:00",
+              "source_sha256": "c6867b2ec8018185ed3cf17a4f51713a36f5a790ac6aefacfa6faea39af17f88"
+            }
+          }
+        },
+        "data/professors/zju/cs/yaolin.yaml": {
+          "name": "姚林",
+          "before_sha256": "47e57642631b514d8eccf887a9124775d63949a738e719543de5dec4956ddee3",
+          "after_sha256": "40645cbbe89f112708312a64a65bf3aa093c85a33eacbd2835725b695a0caf06",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "脑机接口、人工智能、神经康复工程、生机电一体化系统",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/yinghaochao.yaml": {
+          "name": "应豪超",
+          "before_sha256": "0927e40255cc0a7a251174ab5882d7b849eb9ebcc30ebb1b65c254bdb83e16e5",
+          "after_sha256": "2f6f5d81bc4cb42f62b7d5a4f2348a3d2e751e9c76f24d1013c1653cb307c8a9",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "haochaoying@zju.edu.cn",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "observed_utc": "2026-11-22T16:09:44+00:00",
+              "source_sha256": "4f5e3e59eac40abc42480f0fd69455b4d23778c20b0cf491e7380321ca75df89"
+            },
+            "research_direction_raw": {
+              "before": null,
+              "after": "医学人工智能",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "observed_utc": "2026-11-22T16:09:44+00:00",
+              "source_sha256": "4f5e3e59eac40abc42480f0fd69455b4d23778c20b0cf491e7380321ca75df89"
+            },
+            "title": {
+              "before": null,
+              "after": "副研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/cb91c613-a5c5-41ab-a683-001795086840.pdf",
+              "observed_utc": "2026-11-22T16:09:44+00:00",
+              "source_sha256": "4f5e3e59eac40abc42480f0fd69455b4d23778c20b0cf491e7380321ca75df89"
+            }
+          }
+        },
+        "data/professors/zju/cs/zhengnenggan.yaml": {
+          "name": "郑能干",
+          "before_sha256": "4823ac89ccfb5711566fb2ca9c4d763ea42079d029e65c822b0f279b2ea4b736",
+          "after_sha256": "fe275a5280c3e924c705cc8c795033e23a925e5823f091b7e5b14ac11c70f802",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "人工智能、脑机接口、动物机器人、智能嵌入式系统",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        },
+        "data/professors/zju/cs/zhuyifan.yaml": {
+          "name": "朱轶凡",
+          "before_sha256": "0374dbb46bd5119893cf8ed0b1c26cd88beaf62de37b324ba7a5cdc0f2068542",
+          "after_sha256": "64f43dda7030367a1cde101ed0acf5a3f72eea93d4b38510d30bc58f9177c754",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "多模态数据管理、向量数据库、新硬件加速",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            },
+            "title": {
+              "before": null,
+              "after": "百人计划研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/af46d825-eade-428c-b4e0-9ddeded95bf8.pdf",
+              "observed_utc": "2026-11-22T16:09:33+00:00",
+              "source_sha256": "aa9f882e7bf28c7f0e1b0bb0e1f235bd70fc90319d85342a8eb0382c458a0378"
+            }
+          }
+        },
+        "data/professors/zju/cs/zouchangqing.yaml": {
+          "name": "邹常青",
+          "before_sha256": "7087d00f84c9dc5ddd4e42c5d8410e7e168fc3c2f5db1189e45a0be86f92c411",
+          "after_sha256": "6a21d5104962445423d500dccf8e5d6a5e36205e0278b77f768b89570cb303dd",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机图形学、计算机视觉",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            },
+            "title": {
+              "before": null,
+              "after": "研究员",
+              "source_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "final_url": "http://www.cs.zju.edu.cn/_upload/article/files/d4/45/e46a2ca6469693738d84d1fffc3f/7e0b4187-7b2b-44da-951d-f9439b508c1e.pdf",
+              "observed_utc": "2026-11-22T15:59:39+00:00",
+              "source_sha256": "039c87b9f1b2a30abcedd8e30ab0d44bc9736340950ac49dabb764b2f3fe6f09"
+            }
+          }
+        }
+      }
+    },
+    "hust/aia": {
+      "approved_manifest_sha256": "82e0161db61a799403c987d75c45e9c5856fb59a2931dccf1a54ff12da51c373",
+      "profiles": {
+        "data/professors/hust/aia/cengzhigang.yaml": {
+          "name": "曾志刚",
+          "before_sha256": "28eadc60e07609f5e403c099d87c730e24b96aa98da5ddcf50f090dc62f5ad73",
+          "after_sha256": "8b7218dc72016cf29e36509bce4c9b644c78c52d4198188045b5e47139a11e36",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T15:59:47+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1697/10528.htm",
+              "source_sha256": "5c1ac65a704ebf1fe60164f165947805b6310ffd124e7a8231e4a6ea2d5129a7"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:47+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1697/10528.htm",
+              "source_sha256": "5c1ac65a704ebf1fe60164f165947805b6310ffd124e7a8231e4a6ea2d5129a7"
+            }
+          }
+        },
+        "data/professors/hust/aia/hongliu.yaml": {
+          "name": "洪流",
+          "before_sha256": "a3da4bf5fa6278977515d81e04fbb7d4b5f29ace26a5a29684bf5cb463aeef1f",
+          "after_sha256": "4cd0885f730ff38be707f2f3d08802488f50d1bbe8bc40297f8e289455c45894",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T15:59:53+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1697/10512.htm",
+              "source_sha256": "f2fbc277cd0925ed8e37032b7e65c6f20d00f6ea37e71c1149ac0be6a0c723e0"
+            }
+          }
+        },
+        "data/professors/hust/aia/huangjian.yaml": {
+          "name": "黄剑",
+          "before_sha256": "c520363c45749b82e5b4c100e4602affdd2d31be2afbee86a2c6c13f154dbe92",
+          "after_sha256": "eed4e63e9f8e4566347f1a9c2800bed4b432219baffddb0f3d3e66b5d2560413",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T15:59:55+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1700/10544.htm",
+              "source_sha256": "49959668f5b8d2defbc99ec3cae99ad1e125ed80a23b1ba44cd7ad7e1d9cff94"
+            }
+          }
+        },
+        "data/professors/hust/aia/suhousheng.yaml": {
+          "name": "苏厚胜",
+          "before_sha256": "204ceb2aed88aafe6c25a2fed9abcae0ccb1a92f0184bc6d221eac3220a04c13",
+          "after_sha256": "497b85a261b574f60821bbf7eb8538234246de8c1f974c89d9e59fed84bdea7a",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T16:00:06+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1697/10520.htm",
+              "source_sha256": "29a7bc8eaa20f1af60f4a62f1287296927991220226731d4f94ef3565180f352"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T16:00:06+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1697/10520.htm",
+              "source_sha256": "29a7bc8eaa20f1af60f4a62f1287296927991220226731d4f94ef3565180f352"
+            }
+          }
+        },
+        "data/professors/hust/aia/tanshan.yaml": {
+          "name": "谭山",
+          "before_sha256": "122c51bc62834136d10f75ad8acbb45e4e19488a6433caa11592304c92ccbcf2",
+          "after_sha256": "c58d7f39434e04e2c4a5716c179024ee8769b92acedd6034d266769cc193929b",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T16:00:08+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1700/11060.htm",
+              "source_sha256": "901fd980683ab8a707c972cf349f8d4b582ce50f8542f29f66724fc9cc647c86"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T16:00:08+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1700/11060.htm",
+              "source_sha256": "901fd980683ab8a707c972cf349f8d4b582ce50f8542f29f66724fc9cc647c86"
+            }
+          }
+        },
+        "data/professors/hust/aia/xujinbang.yaml": {
+          "name": "徐金榜",
+          "before_sha256": "4c4e7b243e912b50daee1c2a7c5ba2386a9e9b7f5a5825a73267814c7eeee488",
+          "after_sha256": "f62f9550c5a73fe589b1dcfdc23014fbd053e339cf2e9fcb8c87d6de7e59f263",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "xujinbang@mail.hust.edu.cn",
+              "observed_utc": "2026-11-22T16:11:22+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1594/10112.htm",
+              "source_sha256": "6bab1bf2e0d9465ba536984606339ab461ce2107aeab2f76dfb0fb448bd6b0a0"
+            }
+          }
+        },
+        "data/professors/hust/aia/zhanghaitao.yaml": {
+          "name": "张海涛",
+          "before_sha256": "1653987d9bcc715ee71df5598224a06955340c956dbe03577abc927b6f12a734",
+          "after_sha256": "17ecdb806edc6c84f453331f0588c845f92fa0b5d16b4d4b42d47238fb8afdd1",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T16:00:21+00:00",
+              "source_url": "https://aia.hust.edu.cn/info/1691/10480.htm",
+              "source_sha256": "c55e8c79dc3f291cb8e0178fda22247fb265bd67d9da69d97e92776ecdd1bf2d"
+            }
+          }
+        }
+      }
+    },
+    "hust/cyber": {
+      "approved_manifest_sha256": "b6ec383668eb90e91d54d3d09d36dd12e9d2b2e74e01151cf05830937a1f4bfc",
+      "profiles": {
+        "data/professors/hust/cyber/biting.yaml": {
+          "name": "毕挺",
+          "before_sha256": "99fef5c6733213708523a6b2e96fff7389dcada0886d336b1957aa766657ebed",
+          "after_sha256": "98377ad716a353e11b8027062dcd30d7bd46605795f519f8cfc32208e4712782",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导",
+              "observed_utc": "2026-11-22T15:59:45+00:00",
+              "source_url": "https://cse.hust.edu.cn/info/1188/3705.htm",
+              "source_sha256": "3d297885421bded1e33b18f895581772e8c9fd714e271cb32aa88743e6ba3dd2"
+            },
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:45+00:00",
+              "source_url": "https://cse.hust.edu.cn/info/1188/3705.htm",
+              "source_sha256": "3d297885421bded1e33b18f895581772e8c9fd714e271cb32aa88743e6ba3dd2"
+            }
+          }
+        },
+        "data/professors/hust/cyber/daiyueyue.yaml": {
+          "name": "代玥玥",
+          "before_sha256": "ec22f476a72bbb310080d1552d198d101a454a89d8ce3df64841c02fbd26ce9e",
+          "after_sha256": "7324be7fdd75b322c9fa5aab52163b11f8316d4b18a8ff9819d0e79a6bbfa410",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "数字孪生、边缘智能与区块链",
+              "observed_utc": "2026-11-22T16:01:42+00:00",
+              "source_url": "http://faculty.hust.edu.cn/daiyueyue/zh_CN/index.htm",
+              "source_sha256": "a765a926ca44727db6d7862f4be2b9aaa47cab61efb98ea5403463c3e7994162"
+            }
+          }
+        },
+        "data/professors/hust/cyber/dengxianjun.yaml": {
+          "name": "邓贤君",
+          "before_sha256": "45e11e73118f096324d21f2a0d7a109e96c490cdc508d59e03443b4ba429dbb5",
+          "after_sha256": "37473fe0e405323a12ece2d3e752aba21792312f940cae30ace7f692c9ad9909",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:30+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/xxaqx.htm",
+              "source_sha256": "b9dc342ef4ee0d97e59091f7b0c1eb2152d0ca352e248c9854650d62f3806103"
+            }
+          }
+        },
+        "data/professors/hust/cyber/dongfeng.yaml": {
+          "name": "董枫",
+          "before_sha256": "c00e386c7e6c3fdac0f3e39551d4faa4e360d43d8a7e71656af805a0d61744c0",
+          "after_sha256": "52284ab56b524336a1636e5e3788f43bfe44e129b02a313e0f2ae948f70c487a",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "网络与系统安全，特别专注于APT攻击检测和漏洞攻防",
+              "observed_utc": "2026-11-22T16:01:46+00:00",
+              "source_url": "http://faculty.hust.edu.cn/DONGFENG/zh_CN/index.htm",
+              "source_sha256": "d86454de36ae44536b63b30a83f55e621cd0ebb91517a44e8528c61dc482ef53"
+            }
+          }
+        },
+        "data/professors/hust/cyber/fuquan.yaml": {
+          "name": "付铨",
+          "before_sha256": "2b38402a6079aba5265cd8ce1bc6a95c53c1ede29d8d2ec37355594338965e4c",
+          "after_sha256": "10d684917d63233edeb30c39b17fda5b151d9dcee57fdbbe2c8c66160a335b97",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:47+00:00",
+              "source_url": "https://cse.hust.edu.cn/info/1197/3699.htm",
+              "source_sha256": "59c63ec232f73a21d5dd45f582dc63cb1f5c1f1f5b94c25577a25b9b9723f66c"
+            }
+          }
+        },
+        "data/professors/hust/cyber/guiliangqi.yaml": {
+          "name": "桂良启",
+          "before_sha256": "72556eb613e0d9b6aacf09c17ba794d00ca1487a347e649af15dce4710e7461f",
+          "after_sha256": "c7198b819c1cb006b3c2b69f4d5af9d4c49657ea133b9b5c73a1667490dff03c",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "guilq@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:06:23+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/ryjj.htm",
+              "source_sha256": "171147897d7eb4f311f44efc798b9caad40a2d2cac6154ffda537e3846d8bc65"
+            }
+          }
+        },
+        "data/professors/hust/cyber/heyuanyuan.yaml": {
+          "name": "何媛媛",
+          "before_sha256": "819142811a58ea0109d6b9a1a3c45f256a303559c57b2fcf2e3f0bc37c787461",
+          "after_sha256": "32d07fc2ee3b46849a11ea6796df7206959ca36e77969516403ff42c83786ba9",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:29+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm",
+              "source_sha256": "bec1c6b3579beede2b6da7d00eebacc9c657969c59737abca51d53ca6d44aeeb"
+            }
+          }
+        },
+        "data/professors/hust/cyber/jiangtao.yaml": {
+          "name": "江涛",
+          "before_sha256": "06f4bd84196f1d0480fb92f73c9089319737389b8eaab4304660dec777ee70af",
+          "after_sha256": "94917aa7ab63c43256ef019b86309f7599db6722694c673db0e29dd5062f8df7",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "taojiang@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:06:23+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/ryjj.htm",
+              "source_sha256": "171147897d7eb4f311f44efc798b9caad40a2d2cac6154ffda537e3846d8bc65"
+            }
+          }
+        },
+        "data/professors/hust/cyber/jinrong.yaml": {
+          "name": "靳榕",
+          "before_sha256": "3b1a26dda641f3ac18fea6477fd00b2982b5efe2f7d0be8b6762b45dd34c4a09",
+          "after_sha256": "88573a13681ed8ebfc2a06a1802f31a9df5276784ec42fa5b12de27ec37b679e",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:29+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm",
+              "source_sha256": "bec1c6b3579beede2b6da7d00eebacc9c657969c59737abca51d53ca6d44aeeb"
+            }
+          }
+        },
+        "data/professors/hust/cyber/langliang.yaml": {
+          "name": "郎量",
+          "before_sha256": "235da70f361ecddc729f0372508fe56687d7c7c3f5a6d99b200584bc82f5444e",
+          "after_sha256": "0bfabf82ab86d7f7b25fab651b1e6e05596de854568d8199a9cbb0603ff218f4",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "水下电磁波 / 磁通信、微波辐射成像技术、天线以及射频电路设计",
+              "observed_utc": "2026-11-22T16:02:02+00:00",
+              "source_url": "http://faculty.hust.edu.cn/langliang/zh_CN/index.htm",
+              "source_sha256": "5964b937f82cb25a95999640a9f48b92084fd744bba92f9dcc5d8c9ee9a7ade9"
+            },
+            "email": {
+              "before": null,
+              "after": "L_Lang@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:06:23+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/ryjj.htm",
+              "source_sha256": "171147897d7eb4f311f44efc798b9caad40a2d2cac6154ffda537e3846d8bc65"
+            }
+          }
+        },
+        "data/professors/hust/cyber/liruixuan.yaml": {
+          "name": "李瑞轩",
+          "before_sha256": "e1e1535bcdf183c62e1d191f9784bc75a04cc2a093141602afbb54ee6104cc80",
+          "after_sha256": "90e5e217d9bd5b6f0685432f6848e8e98da7c7e856158a8e53c7e2ba12d5a378",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "大数据管理与分析，数据挖掘与机器学习，自然语言处理 ， 云计算与边缘计算，人工智能安全与隐私计算",
+              "observed_utc": "2026-11-22T16:02:06+00:00",
+              "source_url": "http://faculty.hust.edu.cn/rxli/zh_CN/more/1784505/jsjjgd/index.htm",
+              "source_sha256": "5dffa900fd71d18e00cc9d613ad9676a8d4c7fc3d2d62ec93f9e685c908f888a"
+            }
+          }
+        },
+        "data/professors/hust/cyber/lizhen.yaml": {
+          "name": "李珍",
+          "before_sha256": "b4f6802dada356c5d8acdaa5d2e434fcd59969185c5083b48259ace51cc98f78",
+          "after_sha256": "3fc103674490ce24421184ced06b8242a36a1b4c6e245d21098ec6bbc876bbab",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "软件安全和人工智能安全",
+              "observed_utc": "2026-11-22T15:59:51+00:00",
+              "source_url": "https://cse.hust.edu.cn/info/1191/3563.htm",
+              "source_sha256": "9b0d07ea367456db26174a5587030d6e2ab41cd36e1489a96cacf23d14ec9ad2"
+            }
+          }
+        },
+        "data/professors/hust/cyber/lizhi.yaml": {
+          "name": "李志",
+          "before_sha256": "9e21da1aac883a444bf6686d72c6f4eee1a3fbb559a60de039bf55e15966fa88",
+          "after_sha256": "9770ad9aa89748892ac2c2876ea48d615b0b290e45c14f6ea0c4e1c012f9c82e",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "云原生安全、操作系统与虚拟化安全、云原生黑产分析、AI Agent安全等",
+              "observed_utc": "2026-11-22T16:02:11+00:00",
+              "source_url": "http://faculty.hust.edu.cn/lizhi16",
+              "source_sha256": "d2316bb9b8532950d17fd84ae4f2aff374b6be89dc2fd4ea4872ffe04f358b10"
+            }
+          }
+        },
+        "data/professors/hust/cyber/lizili.yaml": {
+          "name": "李自力",
+          "before_sha256": "6c06016ebb704e648e38f87e084306516170e5bf9b225f6243ae35c58e9a5bbe",
+          "after_sha256": "56d493bd4606e94642a7e99350c187fb31993851fcebd23b185b4cd5d521e58f",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机图形与虚拟现实、多媒体信息处理、动漫与3D游戏技术、影视动画艺术",
+              "observed_utc": "2026-11-22T16:02:12+00:00",
+              "source_url": "http://faculty.hust.edu.cn/lizili/zh_CN/index.htm",
+              "source_sha256": "8fa91dbbaa132310e68b614e3ac0aa7826180310f6d48257dea0677035158381"
+            }
+          }
+        },
+        "data/professors/hust/cyber/luli.yaml": {
+          "name": "卢力",
+          "before_sha256": "4c2f306a304c320330900e5f51ca818116f9e9c7afdf7757e0128f9d93effd43",
+          "after_sha256": "f05f9dcc78e3f44a27201830eb03b75368390585e3782f4809ff3f31065432cb",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "软件工程、信息安全等",
+              "observed_utc": "2026-11-22T16:02:14+00:00",
+              "source_url": "http://faculty.hust.edu.cn/luli/zh_CN/index/251827/list/index.htm",
+              "source_sha256": "e229cac2ab1c3e00b96adbceef391f87c5a20b6b811ed5481245b49fae86f61b"
+            }
+          }
+        },
+        "data/professors/hust/cyber/lusongfeng.yaml": {
+          "name": "路松峰",
+          "before_sha256": "9c759cf2c1eedc58b26743b16cff36727ca544334a8c1753eee55c493b3499f8",
+          "after_sha256": "aec16552126ed9cd93029234ac480388dff8b837038137cd72e50ed830135e21",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "密码学、访问控制、区块链及其应用、工业互联网及其安全、自然语言处理、机器视觉、多目标优化、绝热量子计算、量子密码、量子机器学习等",
+              "observed_utc": "2026-11-22T16:02:16+00:00",
+              "source_url": "http://faculty.hust.edu.cn/lusongfeng/zh_CN/index.htm",
+              "source_sha256": "31dba44c0349795319b4913b08678ff1458b45c3e3c5409674312ea03fb46303"
+            }
+          }
+        },
+        "data/professors/hust/cyber/maxiaojing.yaml": {
+          "name": "马晓静",
+          "before_sha256": "70e90c79025828e448b8e6c2d55d793cc81c64bba23d805ad5c28fa43dfd0fc5",
+          "after_sha256": "e8ed6f275f03d6cbc46a00cce5c5d731f63f0233f29793cd42087101566230ee",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "多媒体安全，人工智能安全",
+              "observed_utc": "2026-11-22T16:02:16+00:00",
+              "source_url": "http://faculty.hust.edu.cn/maxiaojing/zh_CN/index.htm",
+              "source_sha256": "a1cad24d3270ea222805e52118a4966f3841b7e80c67dd4bea19c6309f29adcb"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:31+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/mmkxyjsx.htm",
+              "source_sha256": "c418b039464bfd517b66a7c58d6c29eb44e19dcfab30e46bad8ec3d93a645937"
+            }
+          }
+        },
+        "data/professors/hust/cyber/mudongliang.yaml": {
+          "name": "慕冬亮",
+          "before_sha256": "0f214535334831aa1afc248809992440764ee316d67c346603a4cda23b9402eb",
+          "after_sha256": "eb3a56e8f075a647abbefefd50827aa0cfeb02361acbebd4b665e869640dd400",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "软件与系统安全",
+              "observed_utc": "2026-11-22T16:02:22+00:00",
+              "source_url": "http://faculty.hust.edu.cn/mudongliang/zh_CN/index.htm",
+              "source_sha256": "d796fc6e2e9a3d400e938f0155b6141adf2711d21e44c2b584c326aef393b539"
+            }
+          }
+        },
+        "data/professors/hust/cyber/pengzhiniang.yaml": {
+          "name": "彭峙酿",
+          "before_sha256": "4614baa742e6f19c0179394b1e2639a28c736196cfbb076b24d7e2d597a4011a",
+          "after_sha256": "e20148f4bffa3d96642bb0de4a25715c94ca51796da0e451370a9f96cffc84a3",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:29+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm",
+              "source_sha256": "bec1c6b3579beede2b6da7d00eebacc9c657969c59737abca51d53ca6d44aeeb"
+            }
+          }
+        },
+        "data/professors/hust/cyber/shengang.yaml": {
+          "name": "沈刚",
+          "before_sha256": "41ead3b68a0cf6c0ddd749fabeee27b3756ae10afb88b45e9500aa8b59e66204",
+          "after_sha256": "e5924e22b0a1c3f046434435d33e5c982b91d2e7e5dd0f8fda963813b81d09b3",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "实时系统，无线通讯系统，数字通信网络和软件工程等方向",
+              "observed_utc": "2026-11-22T15:59:52+00:00",
+              "source_url": "https://cse.hust.edu.cn/info/1196/3642.htm",
+              "source_sha256": "9e30d2b4859ed2894a513462860e9d2ce35dce79d8f9ddc50ae150a27fa4b86e"
+            }
+          }
+        },
+        "data/professors/hust/cyber/tanghe.yaml": {
+          "name": "唐赫",
+          "before_sha256": "b00b5d304006336e35797346327a60df5b432973eccb3ec1958fb47064eff5e6",
+          "after_sha256": "f9f62b50ca4601a84c8dd33b6ee0ca3bfcdb07469c87a124a89ad609d089cb3b",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "多模态大模型和智慧医疗",
+              "observed_utc": "2026-11-22T16:02:27+00:00",
+              "source_url": "http://faculty.hust.edu.cn/tanghe/zh_CN/index.htm",
+              "source_sha256": "cb214d3e61d4de29fde80878617119e418a979c832da4130592cfd59f0f7684d"
+            }
+          }
+        },
+        "data/professors/hust/cyber/wanghaoyu.yaml": {
+          "name": "王浩宇",
+          "before_sha256": "3b33e4d2897d6d28fdfd42219d6c4de9be4c5b0a3673b972993d509b580ecc82",
+          "after_sha256": "f0e85ed2ecd46b39358ae04d0fdbda6a033d237b921e62419941fe61a69aed1f",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "移动系统安全、Web3/区块链系统安全、大模型系统安全、网络公害/黑灰产治理、新兴程序分析技术等",
+              "observed_utc": "2026-11-22T16:02:29+00:00",
+              "source_url": "http://faculty.hust.edu.cn/haoyuwang/zh_CN/index.htm",
+              "source_sha256": "4feb1247d1c730b7aec2a5aa456db0a036295ed0eca5aecd72ae0880855ec3af"
+            }
+          }
+        },
+        "data/professors/hust/cyber/wujianjie.yaml": {
+          "name": "武剑洁",
+          "before_sha256": "84d76d25451f52de4cfc68df99c046a72f94cd9669d639a3008cef64d93071b4",
+          "after_sha256": "468972bc8b7c904522120f8091082d15293b3b3458359a7152f8762e55308021",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "计算机辅助设计与图形学（CAD&CG）、建筑信息建模及应用（BIM）、人工智能与图像/视频处理分析、虚拟现实与增强现实（VR&AR）、软件工程、软件测试等方面研究",
+              "observed_utc": "2026-11-22T16:02:39+00:00",
+              "source_url": "http://faculty.hust.edu.cn/wujianjie/zh_CN/index.htm",
+              "source_sha256": "999f3984032691defec4ad4b04e6a7dae41163807b3368de7ca27f8be04b7ba9"
+            }
+          }
+        },
+        "data/professors/hust/cyber/wujunjun.yaml": {
+          "name": "吴俊军",
+          "before_sha256": "592b3c0529804f2e7f0ea920c035a7ef24f30435334e20827c11bdb1c9a9d475",
+          "after_sha256": "ca1a0495b3170e259a7f9d7a4715ea1aedd9043072df1bc83bb4b58ee967af1a",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "副教授",
+              "observed_utc": "2026-11-22T15:59:30+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/xxaqx.htm",
+              "source_sha256": "b9dc342ef4ee0d97e59091f7b0c1eb2152d0ca352e248c9854650d62f3806103"
+            }
+          }
+        },
+        "data/professors/hust/cyber/wuyueming.yaml": {
+          "name": "吴月明",
+          "before_sha256": "ae996a6b4638659e9658f620e80f05940f3d2c19de5f36006387edf6cdd39618",
+          "after_sha256": "b7035e948cbad138f6a520b66a0939c86f10260e03e05d7bc0799d1954bb4a82",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "软件供应链安全、移动安全、人工智能安全等",
+              "observed_utc": "2026-11-22T16:02:40+00:00",
+              "source_url": "http://faculty.hust.edu.cn/wuyueming/zh_CN/index.htm",
+              "source_sha256": "4454ba38d2a82a097e1583b7274d98fd122083039e9246070db24d8b2558354c"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:30+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/xxaqx.htm",
+              "source_sha256": "b9dc342ef4ee0d97e59091f7b0c1eb2152d0ca352e248c9854650d62f3806103"
+            }
+          }
+        },
+        "data/professors/hust/cyber/xiaolixia.yaml": {
+          "name": "肖丽霞",
+          "before_sha256": "a0f1c008f057a7071e6a714ef568999e6671b4d72e858540cc229f9739bd43fc",
+          "after_sha256": "71e9a79095e92c2c7b78a36ea0edb7de0f337f00513d4207133aaec5210fd300",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:29+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm",
+              "source_sha256": "bec1c6b3579beede2b6da7d00eebacc9c657969c59737abca51d53ca6d44aeeb"
+            },
+            "email": {
+              "before": null,
+              "after": "lixiaxiao@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:06:23+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/ryjj.htm",
+              "source_sha256": "171147897d7eb4f311f44efc798b9caad40a2d2cac6154ffda537e3846d8bc65"
+            }
+          }
+        },
+        "data/professors/hust/cyber/xupeng.yaml": {
+          "name": "徐鹏",
+          "before_sha256": "fcb5e9c7451b6120dcf34e50ed4b8d582d9f41001e7508df9cc58471d5d1bf5a",
+          "after_sha256": "5e7242e5d1d3bc5921ed51fc97756343a53b04e42d3fffb3029668dec6eb2383",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "密码学，数据安全，格密码，可搜索加密，全同态加密等",
+              "observed_utc": "2026-11-22T16:02:45+00:00",
+              "source_url": "http://faculty.hust.edu.cn/xupeng1/zh_CN/index.htm",
+              "source_sha256": "9162c98daa1a5eb2688601ea8057c64716be510e7a6d6bc9667ff74fdab1c4ae"
+            }
+          }
+        },
+        "data/professors/hust/cyber/yujunqing.yaml": {
+          "name": "于俊清",
+          "before_sha256": "099c1e83c9b689a68757db8f5b775c61e3df459ac002e62b52c81d3763cfcc45",
+          "after_sha256": "55b2f68015c8f3989905db2f97f8907bcbda4a0026ac7892680e4876aaa1c3b4",
+          "fields": {
+            "supervisor": {
+              "before": null,
+              "after": "博导、硕导",
+              "observed_utc": "2026-11-22T16:02:52+00:00",
+              "source_url": "http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm",
+              "source_sha256": "94996d39be6a6db99336a2041ea1bac5ee64ff1025099fd1db2bbbe205dc20d8"
+            },
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T16:02:52+00:00",
+              "source_url": "http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm",
+              "source_sha256": "94996d39be6a6db99336a2041ea1bac5ee64ff1025099fd1db2bbbe205dc20d8"
+            }
+          }
+        },
+        "data/professors/hust/cyber/yulinchen.yaml": {
+          "name": "余林琛",
+          "before_sha256": "39af67df54365a844657321cd73f9e2dfe288c74127dabb7d534dd29a311f64c",
+          "after_sha256": "6b986fa4916d2b9b8c0370dcaf913a5979155dcd8babbf9724ce23611c0cbf54",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "内存安全、稀疏图计算等",
+              "observed_utc": "2026-11-22T16:02:52+00:00",
+              "source_url": "http://faculty.hust.edu.cn/YULINCHEN/zh_CN/index/2263562/list/index.htm",
+              "source_sha256": "62ab4da21234ef206001345fc75ca6809eea89a588d90d6d4ad6c9203ffcaa1b"
+            },
+            "email": {
+              "before": null,
+              "after": "linchenyu@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:12:10+00:00",
+              "source_url": "http://faculty.hust.edu.cn/YULINCHEN/zh_CN/more/2263562/jsjjgd/index.htm",
+              "source_sha256": "5a87922f6ba09018ced7d19d785ae11587b0b1d47e434568aeb027c0e2b17dcd"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhangqiankun.yaml": {
+          "name": "张乾坤",
+          "before_sha256": "dfde63a6d6145fd570f2225ed8fbf5240a5d749a228af6fa50f763453737e60f",
+          "after_sha256": "23d04aa0a96fa124331d2d4621ed7c87f0f76fbecbdd550b6c3800c96b47a90f",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "（1） 理论计算机科学：致力于具有可证明性能保证的算法设计与分析；（2） 可信人工智能：致力于人工智能模型与技术的安全性、公平性、鲁棒性等研究",
+              "observed_utc": "2026-11-22T16:12:14+00:00",
+              "source_url": "http://faculty.hust.edu.cn/zhangqiankun/zh_CN/more/2403526/jsjjgd/index.htm",
+              "source_sha256": "d290859eb735b6a60956bcff3330c87d86b486adcaea1959da78613285a49290"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhaofeng.yaml": {
+          "name": "赵峰",
+          "before_sha256": "f210bebc66c310cbddb6c407cb4232d1dd6d19a49e2ffbfa4a33ada86a2e416f",
+          "after_sha256": "834f9c4e442b00383806bae4d1041a6628ad5013b56eacdb1b06f2b58d457c6c",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "自然语言处理、知识发现、大模型、语义计算、数据挖掘、信息检索、社交网络等",
+              "observed_utc": "2026-11-22T16:02:56+00:00",
+              "source_url": "http://faculty.hust.edu.cn/zffeng/zh_CN/index.htm",
+              "source_sha256": "43527f61e2ea568bb6dabb656413b2297ee3189fd0959b1ad34075796d3ea629"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhengjun.yaml": {
+          "name": "郑俊",
+          "before_sha256": "68bca8400706ac6fc4466150190e37d9e977ca585c40a87488f33089622fbb0b",
+          "after_sha256": "b4b7e577b2000804e275426ea494a0393cd3affc7b650c15aa9c599cc587b57b",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "密码学、人工智能安全、多媒体安全等",
+              "observed_utc": "2026-11-22T16:02:59+00:00",
+              "source_url": "http://faculty.hust.edu.cn/ZhengJun/zh_CN/index.htm",
+              "source_sha256": "7d6e32c8cabb4b27606e841da85281a6086323d800e1e60209162cfa87d8b23b"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhoujiaxi.yaml": {
+          "name": "周家喜",
+          "before_sha256": "d659f7b5f3c56bfe68bd6881092818438c8d48b6ce95cd36673675151d984b4c",
+          "after_sha256": "2e17cd25b6338301c63713120909d657f3b653aed2587d4245e1af60afc9fab8",
+          "fields": {
+            "email": {
+              "before": null,
+              "after": "zhoujiaxi@hust.edu.cn",
+              "observed_utc": "2026-11-22T16:06:23+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/ryjj.htm",
+              "source_sha256": "171147897d7eb4f311f44efc798b9caad40a2d2cac6154ffda537e3846d8bc65"
+            },
+            "detail_url": {
+              "before": "https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm",
+              "after": "https://cse-sinclab.hust.edu.cn/info/1014/1183.htm",
+              "observed_utc": "2026-11-22T16:13:41+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/info/1014/1183.htm",
+              "source_sha256": "75b024de19f548975eb3ef02756b2c5de5f67353b74d5cb12f3dd77c6db23cab"
+            },
+            "profile_url": {
+              "before": "https://faculty.hust.edu.cn/ZHOUJIAXI/zh_CN/index.htm",
+              "after": "https://cse-sinclab.hust.edu.cn/info/1014/1183.htm",
+              "observed_utc": "2026-11-22T16:13:41+00:00",
+              "source_url": "https://cse-sinclab.hust.edu.cn/info/1014/1183.htm",
+              "source_sha256": "75b024de19f548975eb3ef02756b2c5de5f67353b74d5cb12f3dd77c6db23cab"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhoupan.yaml": {
+          "name": "周潘",
+          "before_sha256": "bd395a8cfe63dbd299ad60b06d91d7c051c42671ee2b154ab29cdb8349d6790b",
+          "after_sha256": "6a1b0f669264a2a653bc5f50430ca9b631c6d42115915034c797a824155880ee",
+          "fields": {
+            "title": {
+              "before": null,
+              "after": "教授",
+              "observed_utc": "2026-11-22T15:59:29+00:00",
+              "source_url": "https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm",
+              "source_sha256": "bec1c6b3579beede2b6da7d00eebacc9c657969c59737abca51d53ca6d44aeeb"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhouwei.yaml": {
+          "name": "周威",
+          "before_sha256": "186fdc6e2c99fb6153806901abce6662c1e29ba4aadecd32b8197528e0b87c5e",
+          "after_sha256": "5d2768cff346b50a024993ac0646121b746c71ce8b0bbb5a54340187f62e6e9b",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "物联网安全、二进制程序分析、嵌入式设备可信计算技术",
+              "observed_utc": "2026-11-22T16:03:19+00:00",
+              "source_url": "http://faculty.hust.edu.cn/zhouwei123/zh_CN/index.htm",
+              "source_sha256": "1d6707e73800f364c3fa293ebfdb696fc8feceb170cafd5e08b9f83e76248482"
+            }
+          }
+        },
+        "data/professors/hust/cyber/zhuhong.yaml": {
+          "name": "朱虹",
+          "before_sha256": "a6ff4c93cd66e606e8603e908c15f94d8a8b92f29abdc757b8023947b796e8f9",
+          "after_sha256": "6ba170cd08bfe9be4567af422f230fc8e27cd538a086d45df4989c60d747f04e",
+          "fields": {
+            "research_direction_raw": {
+              "before": null,
+              "after": "新一代云数据库管理系统、大数据环境下的隐私保护、大数据分析与数据挖掘以及高安全等级系统的测试研究",
+              "observed_utc": "2026-11-22T16:03:20+00:00",
+              "source_url": "http://faculty.hust.edu.cn/zhuhong4/zh_CN/index.htm",
+              "source_sha256": "1da28c1904ee2a3a794feaa9f31c71e46ed139e9fb9c2b7f9d8c87e5e6933052"
+            }
+          }
+        }
+      }
+    }
+  }
+}

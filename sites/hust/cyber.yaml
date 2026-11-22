@@ -2,12 +2,16 @@ school: hust
 dept: cyber
 dept_name: 网络空间安全学院
 base_url: https://cse.hust.edu.cn
-hook: cyber_expansion
-parser_dependencies: [hust_profile.py]
+hook: hust_faculty
+parser_dependencies: [cyber_expansion.py, related_v7.py, profile_fields.py, hust_profile.py]
 hust_contact_profile: true
+contact_lab_url: https://cse-sinclab.hust.edu.cn/ryjj.htm
 profile_http_hosts: [faculty.hust.edu.cn]
 profile_lookup_urls:
   - https://cse.hust.edu.cn/szdw.htm
+  - https://cse.hust.edu.cn/szdw/axsjs/wlkjaqx.htm
+  - https://cse.hust.edu.cn/szdw/axsjs/xxaqx.htm
+  - https://cse.hust.edu.cn/szdw/axsjs/mmkxyjsx.htm
 direct: true
 explicit_supervisor_only: true
 list:

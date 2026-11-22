@@ -19,6 +19,8 @@ def browsing_pages():
         '/admissions.html': build_site.render_admissions_page(),
         '/opportunities.html': build_site.render_opportunities_page(),
     }
+    admissions = (build_site.SITE / 'admissions-data.js').read_text(encoding='utf-8')
+    _, school_assets = build_site.admissions_entry_assets(json.loads(admissions.split('=', 1)[1].strip().removesuffix(';')))
     source = (build_site.SITE / 'opportunities-data.js').read_text(encoding='utf-8')
     catalog = json.loads(source.split('=', 1)[1].strip().removesuffix(';'))
     row = copy.deepcopy(next(r for r in catalog['opportunities']
@@ -44,6 +46,8 @@ def browsing_pages():
             path = urlsplit(request.url).path
             if path in pages:
                 return route.fulfill(content_type='text/html; charset=utf-8', body=pages[path])
+            if path.startswith('/admissions/') and path.endswith('.json'):
+                return route.fulfill(content_type='application/json', body=school_assets[path.rsplit('/', 1)[1][:-5]])
             if path == '/api/opportunities':
                 return route.fulfill(json=catalog)
             if path.startswith('/api/'):

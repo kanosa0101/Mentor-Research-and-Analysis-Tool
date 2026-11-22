@@ -83,6 +83,11 @@ def href_query(link):
     return parse_qs(urlsplit(link.get_attribute('href')).query)
 
 
+def open_filters(page):
+    if not page.locator("#criteria-form").is_visible():
+        page.locator("#criteria-panel > summary").click()
+
+
 def scroll_to_submit(page):
     page.locator('#apply-criteria').evaluate(
         '(button)=>scrollTo(0, scrollY+button.getBoundingClientRect().top-160)')
@@ -90,6 +95,51 @@ def scroll_to_submit(page):
 
 def candidate_ids(page):
     return page.locator('[data-candidate]').evaluate_all('cards => cards.map(card => card.dataset.candidate)')
+
+
+@pytest.mark.parametrize('width', [320, 390])
+def test_mobile_starts_with_a_complete_card_and_preserves_collapsed_filter_draft(directory, width):
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        page = browser.new_page(viewport={'width': width, 'height': 844})
+        queries = []
+        intercept_candidates(page, directory, queries)
+        page.goto(directory + '/discovery.html')
+        page.wait_for_function('window.DISCOVERY_READY')
+        expect(page.locator('[data-candidate]')).to_have_count(4)
+        expect(page.locator('#criteria-form')).not_to_be_visible()
+        first = page.locator('[data-candidate]').first.bounding_box()
+        assert first['y'] > 0 and first['y'] + first['height'] <= 844
+        assert page.evaluate('scrollY') == 0
+        summary = page.locator('#criteria-panel > summary')
+        summary.focus()
+        page.keyboard.press('Enter')
+        expect(page.locator('#intent-name')).to_be_visible()
+        page.locator('#intent-name').fill('导师21')
+        summary.click()
+        expect(page.locator('#filter-draft-status')).to_be_visible()
+        summary.click()
+        page.locator('#intent-name').fill('')
+        summary.click()
+        expect(page.locator('#filter-draft-status')).not_to_be_visible()
+        summary.click()
+        page.locator('#intent-name').fill('导师21')
+        summary.click()
+        page.locator('#more-candidates').click()
+        expect(page.locator('#batch-status')).to_contain_text('已显示新一批')
+        assert not queries[-1].get('name')
+        summary.click()
+        expect(page.locator('#intent-name')).to_have_value('导师21')
+        page.locator('#apply-criteria').click()
+        expect(page.locator('#discovery-count')).to_have_text('1 位候选 · 当前显示 1 位')
+        expect(page.locator('#criteria-form')).not_to_be_visible()
+        expect(page.locator('#filter-draft-status')).not_to_be_visible()
+        expect(page.locator('#discovery-results')).to_be_focused()
+        page.set_viewport_size({'width': 1440, 'height': 900})
+        expect(page.locator('#criteria-form')).to_be_visible()
+        expect(summary).not_to_be_visible()
+        expect(page.locator('#intent-name')).to_have_value('导师21')
+        browser.close()
 
 
 @pytest.mark.parametrize('width', [1440, 390])
@@ -104,6 +154,7 @@ def test_explicit_filter_submit_reveals_results_empty_state_and_error(directory,
         if width == 1440:
             scroll_to_submit(page)
             assert page.locator('#discovery-results').evaluate('(node)=>node.getBoundingClientRect().top') < 0
+        open_filters(page)
         page.locator('#intent-name').fill('导师21')
         scroll_to_submit(page)
         page.locator('#apply-criteria').click()
@@ -114,12 +165,14 @@ def test_explicit_filter_submit_reveals_results_empty_state_and_error(directory,
             "document.querySelector('#discovery-count').getBoundingClientRect().top >= "
             "document.querySelector('.site-header').getBoundingClientRect().bottom")
 
+        open_filters(page)
         page.locator('#intent-name').fill('没有结果')
         scroll_to_submit(page)
         page.locator('#apply-criteria').click()
         expect(page.get_by_role('heading', name='当前条件下暂无可联系候选')).to_be_visible()
         expect(page.locator('#discovery-results')).to_be_focused()
 
+        open_filters(page)
         page.locator('#intent-name').fill('超' * 101)
         scroll_to_submit(page)
         page.locator('#apply-criteria').click()
@@ -209,6 +262,7 @@ def test_four_candidate_batches_replace_cards_and_wrap_on_mobile(directory):
         assert [int(q['offset'][0]) for q in queries] == [0, 4, 8, 12, 16, 20, 0, 3]
         assert all(q['limit'] == ['4'] and q['include_missing_email'] == ['0'] for q in queries)
         assert len({q['seed'][0] for q in queries}) == 1
+        open_filters(page)
         page.locator('#intent-name').fill('四位导师')
         page.locator('#apply-criteria').click()
         expect(page.locator('#discovery-count')).to_have_text('4 位候选 · 当前显示 4 位')
@@ -240,6 +294,7 @@ def test_failed_batch_retries_with_applied_criteria_and_handles_new_revision(dir
         page.goto(directory + '/discovery.html')
         expect(page.locator('[data-candidate]')).to_have_count(4)
         first = candidate_ids(page)
+        open_filters(page)
         page.locator('#intent-name').fill('导师21')
         more = page.get_by_role('button', name='换一批')
         status = page.locator('#batch-status')
@@ -288,6 +343,7 @@ def test_late_batch_cannot_replace_new_filter_results(directory):
         more = page.get_by_role('button', name='换一批')
         with page.expect_request('**/api/mentor-candidates?*'):
             more.click()
+        open_filters(page)
         page.locator('#intent-name').fill('导师21')
         page.locator('#apply-criteria').click()
         expect(page.locator('[data-candidate="bit-cs-fixture-21"]')).to_be_visible()

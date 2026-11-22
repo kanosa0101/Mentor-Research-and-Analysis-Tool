@@ -4,13 +4,8 @@ aliases: []
 school: hust
 dept: cyber
 status: enriched
-bio_raw: '个人简介
-
-  Personal profile
-
-  于俊清（1975-），男，博士，教授，博士生导师，国家一流（线下）本科课程负责人、国家精品课程和国家精品共享课负责人，湖北省优秀基层教学组织负责人，华中科技大学本科和研究生课程责任教授、华中科技大学计算机科学与技术学院智能媒体计算与网络安全研究团队负责人。2002年6月在武汉大学获得计算应用技术专业工学博士学位，2002.8-2003.5加拿大曼尼托巴大学学习，2003.8至今在华中科技大学任教。现任华中科技大学副校长，中...
-
-  More+'
+bio_raw: 于俊清（1975-），男，博士，教授，博士生导师，国家一流（线下）本科课程负责人、国家精品课程和国家精品共享课负责人，湖北省优秀基层教学组织负责人，华中科技大学本科和研究生课程责任教授、华中科技大学计算机科学与技术学院智能媒体计算与网络安全研究团队负责人。2002年6月在武汉大学获得计算应用技术专业工学博士学位，2002.8-2003.5加拿大曼尼托巴大学学习，2003.8至今在华中科技大学任教。现任华中科技大学副校长，中...
+  More+
 institutes:
 - 网络空间安全系
 research_direction_raw: 多核计算与流编译、网络安全与大数据处理、智能视频分析
@@ -18,8 +13,8 @@ detail_url: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
 profile_url: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
 first_seen: '2026-10-14'
 last_verified: '2026-10-14'
-last_fetched: '2026-10-14'
-last_parsed: '2026-10-14'
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'
 facets: []
 provenance:
   name:
@@ -35,10 +30,22 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-19'
     confidence: auto
   research_direction_raw:
     origin: crawled
     source: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
-    fetched_at: '2026-10-14'
+    fetched_at: '2026-11-19'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  title:
+    origin: crawled
+    source: http://faculty.hust.edu.cn/yujunqing/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+supervisor: 博导、硕导
+title: 教授

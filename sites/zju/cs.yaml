@@ -6,11 +6,12 @@ hook: zju_cs
 profile_http_hosts: [www.cs.zju.edu.cn]
 profile_pdf_hosts: [www.cs.zju.edu.cn]
 profile_contact_roster_index: http://www.cs.zju.edu.cn/csen/27006/list.htm
+profile_faculty_directory: http://www.cs.zju.edu.cn/csen/qyjscx_95580/list.htm
 profile_lookup_urls:
   - http://www.cs.zju.edu.cn/csen/qyjscx_95580/list.htm
 # person.zju.edu.cn 挂瑞数: requests 拿 200 指纹壳, fetch 按壳特征降级 CDP
 cdp_fallback: true
 list:
   urls:
-    - http://www.cs.zju.edu.cn/csen/27003/list.htm
+    - http://www.cs.zju.edu.cn/csen/qyjscx_95580/list.htm
 stable_urls: true
