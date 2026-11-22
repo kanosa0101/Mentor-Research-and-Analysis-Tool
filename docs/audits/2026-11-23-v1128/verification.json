@@ -1,0 +1,1317 @@
+{
+  "version": "1.12.8",
+  "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+  "passed": true,
+  "local_python": {
+    "passed": 1649,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "duration_seconds": 495.21
+  },
+  "source_ci": {
+    "commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+    "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "completed_successfully": true,
+    "observed_utc": "2026-11-22T23:12:42+00:00",
+    "verified_ci": [
+      {
+        "ref": "codex/mentor-card-sources-v1128",
+        "head_sha": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+        "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45081329896",
+        "run_id": 45081329896,
+        "job_id": 137389925411,
+        "job_status": "completed",
+        "job_conclusion": "success",
+        "successful_steps": [
+          "Run python -m pip install -r requirements-dev.txt",
+          "Run python -m pip check",
+          "Run python -m playwright install --with-deps chromium",
+          "Run python scripts/build_site.py",
+          "Run python -m pytest tests -q",
+          "Run node --test tests/*.cjs",
+          "Run python scripts/preflight.py --allow-open-issues"
+        ],
+        "python": {
+          "passed": 1649,
+          "skipped": 1,
+          "subtests_passed": 251,
+          "duration_seconds": 286.5
+        },
+        "node": {
+          "tests": 25,
+          "pass": 25,
+          "fail": 0,
+          "skipped": 0
+        },
+        "preflight": {
+          "structural_problems": 0,
+          "existing_open_issue_groups": 35
+        },
+        "build": {
+          "profiles": 7171,
+          "schools": 39,
+          "departments": 56
+        },
+        "job_started_utc": "2026-11-22T23:05:39Z",
+        "job_completed_utc": "2026-11-22T23:11:18Z"
+      }
+    ]
+  },
+  "node": {
+    "passed": 25,
+    "failed": 0
+  },
+  "structural_problems": 0,
+  "public": {
+    "passed": true,
+    "mode": "public",
+    "version": "1.12.8",
+    "started_utc": "2026-11-22T23:13:32.137709+00:00",
+    "finished_utc": "2026-11-22T23:14:07.024917+00:00",
+    "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+    "archive_sha256": "530b60ec2c13709be5b4c657e769f77beef1e85ce846ad62d9818786071674f0",
+    "reviewed_import_sha256": "b059364debc568bd37bd888ff19dd1aae95b58958f3732f5e11f83acc16bae44",
+    "search_baseline_sha256": {
+      "search-before.json": "8f841a6f3c4f51144af53d9e9a41d889b144e6e960411a4b8e5a90d133f6f1d7",
+      "search-before-fudan.json": "c5d920a8d4d9588a4f5a1b3eaf02fb9741ea03829f42ec83e7fc755e55d6d2a7"
+    },
+    "approved_manifest_sha256": {
+      "fudan/cs": "8932c526e7d0f90071da15d5d259312f6551ace14a1e15b41a2d142e7e9015ab",
+      "uestc/cs": "1ad99d8d41a3e035914092d1268f2a609b25feb3e1808ca84a2d6f0b49b67d65"
+    },
+    "installed": {
+      "version": "1.12.8",
+      "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+      "archive_sha256": "530b60ec2c13709be5b4c657e769f77beef1e85ce846ad62d9818786071674f0",
+      "topics_profiles": 123,
+      "configs": 2,
+      "package_files": 143,
+      "protected_files_unchanged": 7883,
+      "deployment_marker_sha256": "64c98073dab15355b9f2fbffbcdb0a3edbc5bff639599b1efb382f3a6680f7b5"
+    },
+    "public_id_set_sha256": "28d8ac14b08e666c26fc2c486fd08be3140706c1cd080ff63d67ee7ec563868f",
+    "public_catalogs": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "units": {
+      "fudan/cs": {
+        "api_profiles": 189,
+        "missing_email": 1,
+        "contactable": 188,
+        "api_revision": "4677bc367ec5b8880c05",
+        "with_direction": 88
+      },
+      "uestc/cs": {
+        "api_profiles": 189,
+        "missing_email": 4,
+        "contactable": 185,
+        "api_revision": "4677bc367ec5b8880c05",
+        "with_direction": 63
+      }
+    },
+    "verified_api_candidates": 378,
+    "verified_target_details": 123,
+    "verified_target_configs": 2,
+    "counts": {
+      "research_direction_raw": 77,
+      "detail_url": 109,
+      "profile_url": 109,
+      "supervisor": 9
+    },
+    "searches": [
+      {
+        "mentor": "uestc-cs-gonghaigang",
+        "name": "龚海刚",
+        "topic": "延迟容忍传感器网络",
+        "before": 0,
+        "after": 1,
+        "before_observed_utc": "2026-11-22T22:43:14.814601+00:00",
+        "after_query": "https://8.213.137.82:8443/api/mentor-candidates?school=uestc&context_school=uestc&dept=cs&name=%E9%BE%9A%E6%B5%B7%E5%88%9A&limit=4&offset=0&seed=v1128-proof&include_missing_email=0&topics=%5B%22%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C%22%5D"
+      },
+      {
+        "mentor": "uestc-cs-lixiong",
+        "name": "李雄",
+        "topic": "云计算与边缘计算安全",
+        "before": 0,
+        "after": 1,
+        "before_observed_utc": "2026-11-22T22:43:15.063112+00:00",
+        "after_query": "https://8.213.137.82:8443/api/mentor-candidates?school=uestc&context_school=uestc&dept=cs&name=%E6%9D%8E%E9%9B%84&limit=4&offset=0&seed=v1128-proof&include_missing_email=0&topics=%5B%22%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8%22%5D"
+      },
+      {
+        "mentor": "fudan-cs-weihui",
+        "name": "危辉",
+        "topic": "神经回路与编码模型",
+        "before": 0,
+        "after": 1,
+        "before_observed_utc": "2026-11-22T22:48:25.006385+00:00",
+        "after_query": "https://8.213.137.82:8443/api/mentor-candidates?school=fudan&context_school=fudan&dept=cs&name=%E5%8D%B1%E8%BE%89&limit=4&offset=0&seed=v1128-proof&include_missing_email=0&topics=%5B%22%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B%22%5D"
+      }
+    ]
+  },
+  "cards": {
+    "version": "1.12.8",
+    "observed_utc": "2026-11-22T23:13:55.679759+00:00",
+    "passed": true,
+    "observations": [
+      {
+        "width": 1440,
+        "height": 960,
+        "cards": [
+          {
+            "id": "ruc-ai-xujun",
+            "height": 309,
+            "bottom": 623.265625,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-09-04",
+            "controls": [
+              {
+                "height": 40,
+                "width": 128.65625,
+                "bottom": 566.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 566.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 566.265625
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-zhangfanjin",
+            "height": 309,
+            "bottom": 623.265625,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-22",
+            "controls": [
+              {
+                "height": 40,
+                "width": 128.65625,
+                "bottom": 566.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 566.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 566.265625
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-caowei",
+            "height": 309,
+            "bottom": 948.265625,
+            "source_action_gap": 25,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 40,
+                "width": 128.65625,
+                "bottom": 891.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 891.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 891.265625
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-huhe",
+            "height": 309,
+            "bottom": 948.265625,
+            "source_action_gap": 25,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 40,
+                "width": 128.65625,
+                "bottom": 891.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 891.265625
+              },
+              {
+                "height": 40,
+                "width": 128.671875,
+                "bottom": 891.265625
+              }
+            ]
+          }
+        ],
+        "api_url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+        "api_sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+        "second_batch": [
+          "ruc-ai-luzhiwu",
+          "ruc-info-licuiping",
+          "ruc-info-zhangjinling",
+          "ruc-info-kuanglini"
+        ],
+        "api_pages": {
+          "initial": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+            "status": 200,
+            "sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-xujun",
+              "ruc-info-zhangfanjin",
+              "ruc-info-caowei",
+              "ruc-info-huhe"
+            ]
+          },
+          "next": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          },
+          "reload": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          }
+        },
+        "browser_errors": [],
+        "read_only": true
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "cards": [
+          {
+            "id": "ruc-ai-xujun",
+            "height": 317,
+            "bottom": 719,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-09-04",
+            "controls": [
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 654
+              },
+              {
+                "height": 44,
+                "width": 102.671875,
+                "bottom": 654
+              },
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 654
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-zhangfanjin",
+            "height": 317,
+            "bottom": 1052,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-22",
+            "controls": [
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 987
+              },
+              {
+                "height": 44,
+                "width": 102.671875,
+                "bottom": 987
+              },
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 987
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-caowei",
+            "height": 317,
+            "bottom": 1385,
+            "source_action_gap": 25,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 1320
+              },
+              {
+                "height": 44,
+                "width": 102.671875,
+                "bottom": 1320
+              },
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 1320
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-huhe",
+            "height": 317,
+            "bottom": 1718,
+            "source_action_gap": 25,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 1653
+              },
+              {
+                "height": 44,
+                "width": 102.671875,
+                "bottom": 1653
+              },
+              {
+                "height": 44,
+                "width": 102.65625,
+                "bottom": 1653
+              }
+            ]
+          }
+        ],
+        "api_url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+        "api_sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+        "second_batch": [
+          "ruc-ai-luzhiwu",
+          "ruc-info-licuiping",
+          "ruc-info-zhangjinling",
+          "ruc-info-kuanglini"
+        ],
+        "api_pages": {
+          "initial": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+            "status": 200,
+            "sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-xujun",
+              "ruc-info-zhangfanjin",
+              "ruc-info-caowei",
+              "ruc-info-huhe"
+            ]
+          },
+          "next": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          },
+          "reload": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          }
+        },
+        "browser_errors": [],
+        "read_only": true
+      },
+      {
+        "width": 320,
+        "height": 844,
+        "cards": [
+          {
+            "id": "ruc-ai-xujun",
+            "height": 317,
+            "bottom": 765.9375,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-09-04",
+            "controls": [
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 700.9375
+              },
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 700.9375
+              },
+              {
+                "height": 44,
+                "width": 81.34375,
+                "bottom": 700.9375
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-zhangfanjin",
+            "height": 317,
+            "bottom": 1098.9375,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-22",
+            "controls": [
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1033.9375
+              },
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1033.9375
+              },
+              {
+                "height": 44,
+                "width": 81.34375,
+                "bottom": 1033.9375
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-caowei",
+            "height": 317,
+            "bottom": 1431.9375,
+            "source_action_gap": 4,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1366.9375
+              },
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1366.9375
+              },
+              {
+                "height": 44,
+                "width": 81.34375,
+                "bottom": 1366.9375
+              }
+            ]
+          },
+          {
+            "id": "ruc-info-huhe",
+            "height": 317,
+            "bottom": 1764.9375,
+            "source_action_gap": 25,
+            "caption": "中国人民大学 · 公开资料 ↗\n邮箱来源采集 2026-11-21",
+            "controls": [
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1699.9375
+              },
+              {
+                "height": 44,
+                "width": 81.328125,
+                "bottom": 1699.9375
+              },
+              {
+                "height": 44,
+                "width": 81.34375,
+                "bottom": 1699.9375
+              }
+            ]
+          }
+        ],
+        "api_url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+        "api_sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+        "second_batch": [
+          "ruc-ai-luzhiwu",
+          "ruc-info-licuiping",
+          "ruc-info-zhangjinling",
+          "ruc-info-kuanglini"
+        ],
+        "api_pages": {
+          "initial": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=0&limit=4",
+            "status": 200,
+            "sha256": "249d167ac2dcaa37b4fd080244352eafb4cdd87a259d3d77efc3115839d52613",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-xujun",
+              "ruc-info-zhangfanjin",
+              "ruc-info-caowei",
+              "ruc-info-huhe"
+            ]
+          },
+          "next": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          },
+          "reload": {
+            "url": "https://8.213.137.82:8443/api/mentor-candidates?name=&topics=%5B%5D&group=&include_missing_email=0&seed=v1128-layout-proof&school=ruc&context_school=ruc&offset=4&limit=4",
+            "status": 200,
+            "sha256": "94b41a2f4d6e9e35d1356514b5fec3454aa7663116516cc67dbcaf29572757c2",
+            "revision": "4677bc367ec5b8880c05",
+            "ids": [
+              "ruc-ai-luzhiwu",
+              "ruc-info-licuiping",
+              "ruc-info-zhangjinling",
+              "ruc-info-kuanglini"
+            ]
+          }
+        },
+        "browser_errors": [],
+        "read_only": true
+      }
+    ],
+    "blocked_requests": []
+  },
+  "direction_browser": {
+    "passed": true,
+    "version": "1.12.8",
+    "base_url": "https://8.213.137.82:8443",
+    "reviewed_import_sha256": "b059364debc568bd37bd888ff19dd1aae95b58958f3732f5e11f83acc16bae44",
+    "baseline_hashes": {
+      "search-before.json": "8f841a6f3c4f51144af53d9e9a41d889b144e6e960411a4b8e5a90d133f6f1d7",
+      "search-before-fudan.json": "c5d920a8d4d9588a4f5a1b3eaf02fb9741ea03829f42ec83e7fc755e55d6d2a7"
+    },
+    "started_utc": "2026-11-22T23:13:36.466537+00:00",
+    "completed_utc": "2026-11-22T23:14:09.192116+00:00",
+    "checks": [
+      {
+        "passed": true,
+        "case": {
+          "page": "uestc-cs-gonghaigang",
+          "name": "龚海刚",
+          "topic": "延迟容忍传感器网络",
+          "school": "uestc",
+          "dept": "cs",
+          "direction": "无线传感器网络，延迟容忍传感器网络，车载自组织网络",
+          "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10689?yxsh=08",
+          "source_date": "2026-11-23",
+          "official_profile": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10689?yxsh=08",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "screenshots": {
+          "search": {
+            "path": "uestc-cs-gonghaigang-mobile-search.png",
+            "sha256": "a6cf6c2d5c1e7c4fb651e37030ba7d6c2165951add5c32c5ec420d6cdad23289"
+          },
+          "detail": {
+            "path": "uestc-cs-gonghaigang-mobile-detail.png",
+            "sha256": "e1a9ce3bffa04a43ed1bbcd148dd751504896e27289d7da5099e20c29f253672"
+          },
+          "source": {
+            "path": "uestc-cs-gonghaigang-mobile-source.png",
+            "sha256": "575d6c39584e8cd02415a3dad2579a3a4e5abccabbfcc07baff50b57caa6610f"
+          },
+          "return": {
+            "path": "uestc-cs-gonghaigang-mobile-return.png",
+            "sha256": "ca4c0be8ca5b460cd7be22790eccdb295d18269da7563757fcc8898fc82cb888"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%5B%22%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C%22%5D&group=&include_missing_email=0&seed=65de979e-dc1b-4a0d-999d-eaa49ad42240&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "detail_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "opened_evidence_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%5B%22%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C%22%5D&group=&include_missing_email=0&seed=65de979e-dc1b-4a0d-999d-eaa49ad42240&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=uestc&dept=cs&name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "uestc-cs-lixiong",
+          "name": "李雄",
+          "topic": "云计算与边缘计算安全",
+          "school": "uestc",
+          "dept": "cs",
+          "direction": "信息安全、密码协议、云计算与边缘计算安全等",
+          "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20243?yxsh=08",
+          "source_date": "2026-11-23",
+          "official_profile": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20243?yxsh=08",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "screenshots": {
+          "search": {
+            "path": "uestc-cs-lixiong-mobile-search.png",
+            "sha256": "13b99afeb8bba0ee62e08c8143e0fe60ed6ad5fcf5f3a08307a60bc4bfc58cc7"
+          },
+          "detail": {
+            "path": "uestc-cs-lixiong-mobile-detail.png",
+            "sha256": "a4bb5df6875694241055fc205af3ec6c3ebebe04136f7bb65300ed7d0b3f49b1"
+          },
+          "source": {
+            "path": "uestc-cs-lixiong-mobile-source.png",
+            "sha256": "a6c8716522cf19fcb2b2dcf054123c3be663fab0e798945c90bdb3925c97446c"
+          },
+          "return": {
+            "path": "uestc-cs-lixiong-mobile-return.png",
+            "sha256": "a2090f8f1f0c2bfb6d853f06e59ad3b448c453ee54ce5e3db401de2cffd9565d"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E6%9D%8E%E9%9B%84&topics=%5B%22%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8%22%5D&group=&include_missing_email=0&seed=265398e9-8ad4-4c82-8867-bc9f3295855e&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "detail_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "opened_evidence_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E6%9D%8E%E9%9B%84&topics=%5B%22%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8%22%5D&group=&include_missing_email=0&seed=265398e9-8ad4-4c82-8867-bc9f3295855e&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=uestc&dept=cs&name=%E6%9D%8E%E9%9B%84&topics=%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "fudan-cs-weihui",
+          "name": "危辉",
+          "topic": "神经回路与编码模型",
+          "school": "fudan",
+          "dept": "cs",
+          "direction": "认知科学与人工智能；人工智能基础；类脑计算；神经视觉计算模型；神经回路与编码模型；智能机器人",
+          "source": "https://faculty.fudan.edu.cn/weihui/zh_CN/index.htm",
+          "source_date": "2026-11-23",
+          "official_profile": "http://ai.fudan.edu.cn/wh_37219/list.htm",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "screenshots": {
+          "search": {
+            "path": "fudan-cs-weihui-mobile-search.png",
+            "sha256": "0976ef8e1e0fa181744a20f75977179a473b721909fd6be618ce671796bc0086"
+          },
+          "detail": {
+            "path": "fudan-cs-weihui-mobile-detail.png",
+            "sha256": "25ca6bdaa9364e1e40e581700ac198850ed089fbc82da16bfae940db9fd2ca22"
+          },
+          "source": {
+            "path": "fudan-cs-weihui-mobile-source.png",
+            "sha256": "3c41eff3c5d80c4ca390eabc48fc0c43ad545241af8de198addfd29a636c9233"
+          },
+          "return": {
+            "path": "fudan-cs-weihui-mobile-return.png",
+            "sha256": "da36702185f2d39acab96ae9673fe454b9f429a0129bc72dade30feabf6d4300"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%8D%B1%E8%BE%89&topics=%5B%22%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B%22%5D&group=&include_missing_email=0&seed=f7b37210-0cb7-480a-8fed-e9c3e8f8aea5&school=fudan&context_school=fudan&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "detail_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "opened_evidence_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%8D%B1%E8%BE%89&topics=%5B%22%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B%22%5D&group=&include_missing_email=0&seed=f7b37210-0cb7-480a-8fed-e9c3e8f8aea5&school=fudan&context_school=fudan&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=fudan&dept=cs&name=%E5%8D%B1%E8%BE%89&topics=%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "uestc-cs-gonghaigang",
+          "name": "龚海刚",
+          "topic": "延迟容忍传感器网络",
+          "school": "uestc",
+          "dept": "cs",
+          "direction": "无线传感器网络，延迟容忍传感器网络，车载自组织网络",
+          "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10689?yxsh=08",
+          "source_date": "2026-11-23",
+          "official_profile": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/10689?yxsh=08",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "screenshots": {
+          "search": {
+            "path": "uestc-cs-gonghaigang-desktop-search.png",
+            "sha256": "85bdca647f4fff6cbf1b1b3bc03cf16bf6bfb017d1d0257635496a931d0aaa1b"
+          },
+          "detail": {
+            "path": "uestc-cs-gonghaigang-desktop-detail.png",
+            "sha256": "9c7b49b6a40374ac23790731dca3dd8991fc6080053927e5769b53ad99973871"
+          },
+          "source": {
+            "path": "uestc-cs-gonghaigang-desktop-source.png",
+            "sha256": "06440cdf833964458564657778c18901504e2733bfc6ddda938f98c04cf65185"
+          },
+          "return": {
+            "path": "uestc-cs-gonghaigang-desktop-return.png",
+            "sha256": "1a6333b3c5575737de96564362f5d3fb9546ed823e2b02e5c1c656fdabd6abf1"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%5B%22%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C%22%5D&group=&include_missing_email=0&seed=752ed09f-16c3-454e-ba0a-7507e6fe893a&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "detail_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "opened_evidence_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%5B%22%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C%22%5D&group=&include_missing_email=0&seed=752ed09f-16c3-454e-ba0a-7507e6fe893a&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=uestc&dept=cs&name=%E9%BE%9A%E6%B5%B7%E5%88%9A&topics=%E5%BB%B6%E8%BF%9F%E5%AE%B9%E5%BF%8D%E4%BC%A0%E6%84%9F%E5%99%A8%E7%BD%91%E7%BB%9C"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "uestc-cs-lixiong",
+          "name": "李雄",
+          "topic": "云计算与边缘计算安全",
+          "school": "uestc",
+          "dept": "cs",
+          "direction": "信息安全、密码协议、云计算与边缘计算安全等",
+          "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20243?yxsh=08",
+          "source_date": "2026-11-23",
+          "official_profile": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20243?yxsh=08",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "screenshots": {
+          "search": {
+            "path": "uestc-cs-lixiong-desktop-search.png",
+            "sha256": "7577c2042a6034f420f5e8681ad6a874ca68ce09835d74aecf41ab970bf48a00"
+          },
+          "detail": {
+            "path": "uestc-cs-lixiong-desktop-detail.png",
+            "sha256": "7ddde286a1e21d186de6d0a99be0a5083d07d175b4af3720f36f914f8d73b52d"
+          },
+          "source": {
+            "path": "uestc-cs-lixiong-desktop-source.png",
+            "sha256": "e90a7d1f20bdf2ee86d195d90af5916e3d0b3d7df074fe036745c0ee1c85098b"
+          },
+          "return": {
+            "path": "uestc-cs-lixiong-desktop-return.png",
+            "sha256": "3c0696fff14a220067c9b46d67fc35d21f122caade2149956f945c6760ff1db2"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E6%9D%8E%E9%9B%84&topics=%5B%22%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8%22%5D&group=&include_missing_email=0&seed=5431c6ee-b5ad-45e8-899b-7aab562fae6c&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "detail_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "opened_evidence_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E6%9D%8E%E9%9B%84&topics=%5B%22%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8%22%5D&group=&include_missing_email=0&seed=5431c6ee-b5ad-45e8-899b-7aab562fae6c&school=uestc&context_school=uestc&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=uestc&dept=cs&name=%E6%9D%8E%E9%9B%84&topics=%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "fudan-cs-weihui",
+          "name": "危辉",
+          "topic": "神经回路与编码模型",
+          "school": "fudan",
+          "dept": "cs",
+          "direction": "认知科学与人工智能；人工智能基础；类脑计算；神经视觉计算模型；神经回路与编码模型；智能机器人",
+          "source": "https://faculty.fudan.edu.cn/weihui/zh_CN/index.htm",
+          "source_date": "2026-11-23",
+          "official_profile": "http://ai.fudan.edu.cn/wh_37219/list.htm",
+          "before_revision": "cf03b70439415e925f86"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "screenshots": {
+          "search": {
+            "path": "fudan-cs-weihui-desktop-search.png",
+            "sha256": "34c6c2ddb4c78c7bed04483e8e0fea8ca0b4b88300742c8fafac4b7c565e9d2e"
+          },
+          "detail": {
+            "path": "fudan-cs-weihui-desktop-detail.png",
+            "sha256": "5a8a6dfef6466bc279d5fffc3d40fc67495aea3bc79dfcc3c5c807f350e0fc8d"
+          },
+          "source": {
+            "path": "fudan-cs-weihui-desktop-source.png",
+            "sha256": "947371485cec3e602f611b0b835a6e2331ae15d5e9cb797fe25bc19498fa5dd9"
+          },
+          "return": {
+            "path": "fudan-cs-weihui-desktop-return.png",
+            "sha256": "a7fded6ff97e17d0f67a6d89c4df689d57d913476329b5d2a3f40e7992a82497"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%8D%B1%E8%BE%89&topics=%5B%22%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B%22%5D&group=&include_missing_email=0&seed=887244a4-f342-4f74-b669-db7b92f95e49&school=fudan&context_school=fudan&dept=cs&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "detail_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "opened_evidence_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "4677bc367ec5b8880c05",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%8D%B1%E8%BE%89&topics=%5B%22%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B%22%5D&group=&include_missing_email=0&seed=887244a4-f342-4f74-b669-db7b92f95e49&school=fudan&context_school=fudan&dept=cs&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=fudan&dept=cs&name=%E5%8D%B1%E8%BE%89&topics=%E7%A5%9E%E7%BB%8F%E5%9B%9E%E8%B7%AF%E4%B8%8E%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9E%8B"
+      }
+    ]
+  },
+  "online": {
+    "passed": true,
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors",
+      "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+      "notice_first_screen_and_general_policy_handoff_preserve_independent_years",
+      "new_ruc_directions_survive_search_detail_compare_and_contact",
+      "contact_affiliation_is_not_misrepresented_as_admission_scope"
+    ],
+    "browser_errors": [],
+    "failed_requests": [
+      {
+        "url": "https://8.213.137.82:8443/api/outreach",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/api/library",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "recommendation_batches": {
+      "school": "ruc",
+      "first": [
+        "ruc-ai-caochao",
+        "ruc-info-zhangkun",
+        "ruc-info-yimingyang",
+        "ruc-info-zhaosuyun"
+      ],
+      "second": [
+        "ruc-info-fanju",
+        "ruc-info-bianhaoqiong",
+        "ruc-info-kuanglini",
+        "ruc-info-hejun"
+      ]
+    }
+  },
+  "qa_cleanup": {
+    "applied": true,
+    "recorded_accounts": 2,
+    "qa_account_rows": 2,
+    "qa_workspace_directories": 2,
+    "other_accounts_preserved": 0,
+    "passed": true
+  },
+  "deployment": {
+    "passed": true,
+    "version": "1.12.8",
+    "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+    "archive_sha256": "530b60ec2c13709be5b4c657e769f77beef1e85ce846ad62d9818786071674f0",
+    "verified_files": 143,
+    "protected_files_unchanged": 7883,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v1128-stage-cd1bb585e/source-before.tar.gz",
+    "source_backup_sha256": "a3c913ae78a024d34c24a082551f99766873c6c561f7721dfc0d807288d10c77",
+    "site_backup": "/opt/mentor-v1128-stage-cd1bb585e/site-before",
+    "protected_before_sha256": "11b1292bd841bc655a3f101daa11cb90beff9ed7f22241dfe4edf0eb7cb3e3cb"
+  },
+  "release_helper": {
+    "observed_at": "2026-11-22T23:07:48.591212+00:00",
+    "source_baseline": "dfedd7646b91d2013f7905e539a5cb2c74854cbf",
+    "new_version": "1.12.8",
+    "production_used": false,
+    "live_candidate_versions_checked": true,
+    "public_cas": {
+      "paths": 125,
+      "allowed": [
+        "sites/fudan/cs.yaml",
+        "sites/uestc/cs.yaml",
+        "data/professors/fudan/cs/essay.yaml",
+        "data/professors/uestc/cs/essay.yaml"
+      ],
+      "rejected": [
+        "sites/fudan/ai.yaml",
+        "sites/uestc/ee.yaml",
+        "sites/sjtu/cs.yaml",
+        "data/professors/ucas/ia/essay.yaml",
+        "data/professors/fudan/cs/sub/essay.yaml",
+        "data/professors/uestc/cs/notyaml.yml",
+        "data/private/example.yaml",
+        "data/issues/uestc-cs.yaml",
+        "data/opportunities.json",
+        "var/account.json"
+      ]
+    },
+    "final_documents_scope": {
+      "allowed_examples": [
+        "README.md",
+        "docs/INDEX.md",
+        "docs/HISTORY.md",
+        "docs/audits/2026-11-23-v1128/mentor-batches.md",
+        "docs/audits/2026-11-23-v1128/card-test.png",
+        "docs/history/2026-10/transfer.md",
+        "deploy/DELIVERY_V1.12.8_2026-11-23.md"
+      ],
+      "rejected_examples": [
+        "docs/AUTOMATIC_REVIEW.md",
+        "docs/UI_GUIDELINES.md",
+        "docs/audits/2026-11-23-v1127/verification.json",
+        "deploy/DELIVERY_V1.12.7_2026-11-23.md",
+        "tests/test_field_identity_v1128.py",
+        "site/discovery.js",
+        "cache/v1128/private.json",
+        "VERSION",
+        "docs/audits/2026-11-23-v1128/private/user.json"
+      ],
+      "repo_only": []
+    },
+    "isolated_release_results": [
+      {
+        "case": "main_archive_missing_both_version_files",
+        "false_pass": true,
+        "receipt_version": "1.12.8",
+        "installed_version": "1.12.7",
+        "service_calls": [
+          [
+            "stop",
+            [
+              "mentor-public.service",
+              "mentor-https.service"
+            ]
+          ],
+          [
+            "start",
+            [
+              "mentor-public.service",
+              "mentor-https.service"
+            ]
+          ]
+        ]
+      },
+      {
+        "case": "final_archive_missing_delivery_page",
+        "false_pass": true,
+        "marker_delivery": "deploy/DELIVERY_V1.12.8_2026-11-23.md",
+        "delivery_exists": false
+      }
+    ],
+    "exact_main_archive": {
+      "archive_sha256": "530b60ec2c13709be5b4c657e769f77beef1e85ce846ad62d9818786071674f0",
+      "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+      "source_version": "1.12.8",
+      "files": 143,
+      "approved_public_baselines": 125,
+      "actual_archive_validated_by_fixed_helper": true
+    },
+    "passed": true,
+    "finished_utc": "2026-11-22T23:13:08.860545+00:00",
+    "helper_sha256": "467ce3057696aabbc4f9f6eee6a3e92b117963e4b6b66cc012559bb2d3d1e7b4",
+    "browser_helper_sha256": "81eaa11b4b90c31a20573273fbbb1f68544e54d5728b921e97238fd0c165678b",
+    "original_helpers_sha256": {
+      "release": "4302aa06c5dad4e396c523f31e3b96d66a33ab85e454f3a269e7a78777a5e31b",
+      "browser": "73e85aecf14b3ce1cf4ee91befc9b90b77089d76cd9731ef0fe9e5f20122aedf"
+    },
+    "validation": {
+      "release_test_log_sha256": "c9766c4df24ea19817504253d6841c48f3fb470df7faf80d770274afb704a7e5",
+      "test_groups": 18,
+      "regression_checks": [
+        "missing version update and conflicting release.json rejected before Web stop PASS",
+        "missing final delivery rejected and existing delivery accepted PASS"
+      ],
+      "browser_loopback_controls": [
+        {
+          "case": "authorized",
+          "checker_passed": true,
+          "api_offsets": [
+            0,
+            4,
+            4,
+            0,
+            4,
+            4,
+            0,
+            4,
+            4
+          ],
+          "writes_that_reached_server": 0,
+          "blocked_methods": []
+        },
+        {
+          "case": "wrong-response-ids",
+          "checker_passed": false,
+          "api_offsets": [
+            0
+          ],
+          "writes_that_reached_server": 0,
+          "blocked_methods": []
+        },
+        {
+          "case": "failed-second-response",
+          "checker_passed": false,
+          "api_offsets": [
+            0,
+            4
+          ],
+          "writes_that_reached_server": 0,
+          "blocked_methods": []
+        },
+        {
+          "case": "write-attempt",
+          "checker_passed": false,
+          "api_offsets": [
+            0,
+            4,
+            4
+          ],
+          "writes_that_reached_server": 0,
+          "blocked_methods": [
+            "POST",
+            "POST"
+          ]
+        }
+      ],
+      "browser_controls_sha256": "5229fd13aea598962c680ac9fca2ce439e5f750c8fe3113de23370bd98997693",
+      "public_network_acceptance": "awaiting_deployed_candidate"
+    }
+  },
+  "evidence_archive": {
+    "passed": true,
+    "archive_sha256": "0e8aebb465a782a1a801c980ae0e9d096ddd1aafc93d0e238374e2a1958ca8db",
+    "source_commit": "cd1bb585e08998d6724a34d23ce3aeef3ccae78a",
+    "reviewed_import_sha256": "b059364debc568bd37bd888ff19dd1aae95b58958f3732f5e11f83acc16bae44",
+    "members": 405
+  },
+  "user_acceptance": "pending"
+}
