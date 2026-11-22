@@ -53,6 +53,12 @@ def write_yaml(path, data):
         Path(name).unlink(missing_ok=True)
 
 
+def ordinary_profile_fields(cfg, parsed):
+    if cfg.get('contact_hook_only'):
+        return {key: value for key, value in parsed.items() if key not in ('email', '_rejected_email')}
+    return parsed
+
+
 def merge_profile(original, parsed, body, day, *, verified_sources=()):
     soup = BeautifulSoup(body, 'html.parser')
     text = ''.join(soup.get_text().split())
@@ -299,11 +305,16 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                         return body,text
                     parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source,
                                                     _original_profile=original), html, original['detail_url'])
+                    parsed = ordinary_profile_fields(cfg, parsed)
                     # The contact task verifies a declared independent homepage
                     # by fetching the target before publishing it.
                     parsed = {key: value for key, value in parsed.items() if key != 'homepage'}
                     updated, changed, checked = merge_profile(original, parsed, raw, day, verified_sources=supplemental)
-                    write_yaml(path, updated)
+                    if cfg.get('contact_hook_only'):
+                        from crawler.mentor_quality import write_profile
+                        write_profile(path, original, updated)
+                    else:
+                        write_yaml(path, updated)
                     record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
                                  'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,
                                  'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})

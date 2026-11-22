@@ -86,6 +86,8 @@ class Sources:
         if contact_cfg:
             if mentor_recovery.profile_pdf(url,contact_cfg):
                 source['official_pdf'] = True
+            if mentor_recovery.profile_email_image(url,contact_cfg):
+                source['official_contact_png'] = True
             target = urlsplit(url)
             if target.scheme == 'http' and target.hostname in contact_cfg.get('profile_http_hosts', ()):
                 source['official_http'] = True
@@ -94,6 +96,9 @@ class Sources:
             try:
                 raw = self.fetcher(source)
                 raw = raw.encode('utf-8') if isinstance(raw, str) else raw
+                if source.get('official_contact_png'):
+                    from crawler.source_discovery import validate_contact_png
+                    validate_contact_png(raw)
                 self.cache[key] = raw, dict(self.capture(url, raw, self.stamp), **({'request': data} if data else {}))
             except mentor_recovery.DiscoveryBudgetExhausted:
                 raise
@@ -104,7 +109,7 @@ class Sources:
             self.used.append(evidence)
         if isinstance(raw, Exception):
             raise raw
-        if raw.startswith(b'%PDF-'):
+        if raw.startswith(b'%PDF-') or source.get('official_contact_png'):
             return raw, ''
         text = UnicodeDammit(raw).unicode_markup
         if text is None:
@@ -137,6 +142,8 @@ class Sources:
         raw = (self.folder / (digest + '.body')).read_bytes()
         if hashlib.sha256(raw).hexdigest() != digest:
             raise ValueError('缓存原文SHA不一致，未复用')
+        if raw.startswith(b'\x89PNG\r\n\x1a\n'):
+            return raw, ''
         return raw, UnicodeDammit(raw).unicode_markup or ''
 
 
@@ -249,7 +256,8 @@ def profile(root, original, cfg, sources, *, allow_alternative=True, raw_title=F
                 raise ValueError('替代候选已核验，但详情或主页 URL 为人工维护，保留原地址待人工确认：' + url)
             # Only the field task can record a new independent homepage after
             # opening the declared destination and checking its identity.
-            profile_fields = {key: value for key, value in parsed.items() if key != 'homepage'}
+            profile_fields = {key: value for key, value in legacy_refresh.ordinary_profile_fields(cfg, parsed).items()
+                              if key != 'homepage'}
             updated, changed, checked = legacy_refresh.merge_profile(candidate, profile_fields, raw,
                 sources.day,verified_sources=sources.used)
             if directory:

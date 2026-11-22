@@ -1,3 +1,5 @@
+from hashlib import sha256
+
 import pytest
 
 from sites.jlu import jlu_cs
@@ -6,6 +8,8 @@ from sites.jlu import jlu_cs
 PERSON = 'https://ccst.jlu.edu.cn/info/1367/1234.htm'
 ROSTER = 'https://ccst.jlu.edu.cn/szdw/zpzpjs.htm'
 NEXT = 'https://ccst.jlu.edu.cn/szdw/zpzpjs/1.htm'
+PNG = 'https://ccst.jlu.edu.cn/__local/A/BC/12/123ABC_FFC_1.png?e=.png'
+IMAGE = b'\x89PNG\r\n\x1a\nreviewed immutable image bytes'
 
 
 def profile(body, name='张老师'):
@@ -26,11 +30,7 @@ def test_jlu_explicit_named_table_and_contact_are_bounded_to_self():
     assert parsed['email'] == 'teacher@jlu.edu.cn'
 
 
-def test_jlu_maintenance_preserves_registered_fields_and_does_not_guess_image_email(monkeypatch):
-    def fail(*args):
-        pytest.fail('maintenance may not fill a missing mailbox by guessing from an image')
-
-    monkeypatch.setattr(jlu_cs, '_ocr_email_image', fail)
+def test_jlu_maintenance_preserves_registered_fields_and_does_not_guess_image_email():
     html = profile('''<table><tr><td>所研究方向：</td><td>软件工程</td></tr>
         <tr><td>Email：</td><td><img vurl="/__local/contact.png"></td></tr></table>''')
     cfg = config(research_direction_raw='人工保留的方向', provenance={'research_direction_raw': {'origin': 'manual'}})
@@ -90,3 +90,69 @@ def test_jlu_current_roster_fallback_requires_person_link_and_tracks_page_proof(
     assert 'email' not in jlu_cs.parse_detail(cfg, conflicting, PERSON)
     with pytest.raises(ValueError, match='姓名'):
         jlu_cs.parse_detail(cfg, profile('<p>研究方向：数据系统</p>', '其他人'), PERSON)
+
+    pages[PERSON] = profile('<p>暂无个人简介</p>')
+    contact = jlu_cs.parse_contact({**cfg, 'contact_hook_only': True}, cfg['_original_profile'])
+    assert contact['email'] == 'teacher@jlu.edu.cn' and contact['_field_sources'] == {'email': NEXT}
+    assert contact['_contact_locator']['email'] == dict(article_url=PERSON, named_person='张老师', directory_url=NEXT)
+
+
+def contact_config(html, image=None):
+    reads = []
+
+    def read(url):
+        reads.append(url)
+        return (html.encode(), html) if url == PERSON else (image, '')
+
+    cfg = dict(contact_hook_only=True, _read_source=read)
+    return cfg, reads
+
+
+def test_jlu_contact_reading_uses_visible_address_instead_of_inherited_mailto():
+    html = profile('<p>Email：<a href="mailto:foreign@jlu.edu.cn">teacher@jlu.edu.cn</a></p>')
+    cfg, reads = contact_config(html)
+    result = jlu_cs.parse_contact(cfg, config()['_original_profile'])
+    assert result['email'] == 'teacher@jlu.edu.cn' and result['_field_sources'] == {'email': PERSON}
+    assert reads == [PERSON]
+    assert 'email' not in jlu_cs.parse_detail({}, html, PERSON)
+    assert 'email' not in jlu_cs.parse_detail({**cfg, **config()}, html, PERSON)
+
+
+def test_jlu_contact_withholds_only_proven_misdirected_registered_address():
+    html = profile('<p>Email：first@163.com; <a href="mailto:foreign@jlu.edu.cn">teacher@jlu.edu.cn</a></p>')
+    cfg, reads = contact_config(html)
+    old = 'foreign@jlu.edu.cn'
+    person = config(email=old, provenance={'email': {'origin': 'crawled', 'source': PERSON}})['_original_profile']
+    result = jlu_cs.parse_contact(cfg, person)
+    assert 'email' not in result and result['_rejected_email'] == old
+    assert result['_field_sources'] == {'email': PERSON}
+    assert result['_contact_locator']['email']['visible_addresses'] == ['first@163.com', 'teacher@jlu.edu.cn']
+    assert jlu_cs.parse_contact(cfg, {**person, 'email': None}) == {}
+    assert jlu_cs.parse_contact(cfg, {**person, 'email': 'different@jlu.edu.cn'}) == {}
+    assert jlu_cs.parse_contact(cfg, {**person, 'provenance': {'email': {'origin': 'manual', 'source': PERSON}}}) == {}
+    assert jlu_cs.parse_contact(cfg, {**person, 'provenance': {'email': {'origin': 'crawled', 'source': ROSTER}}}) == {}
+    assert reads == [PERSON] * 4
+
+
+@pytest.mark.parametrize('outcome', ['verified', 'changed_bytes', 'unreviewed', 'changed_name', 'different_field', 'outside_host'])
+def test_jlu_png_contact_requires_named_field_link_and_reviewed_raw_bytes(outcome):
+    url = PNG if outcome != 'outside_host' else PNG.replace('ccst.jlu.edu.cn', 'outside.example.edu.cn')
+    label = '头像' if outcome == 'different_field' else 'Email'
+    name = '其他老师' if outcome == 'changed_name' else '张老师'
+    html = profile(f'<table><tr><td>{label}：</td><td><img vurl="{url}" src="thumb.png"></td></tr></table>', name)
+    cfg, reads = contact_config(html, IMAGE + b'changed' if outcome == 'changed_bytes' else IMAGE)
+    if outcome != 'unreviewed':
+        cfg['reviewed_email_images'] = {PERSON: dict(name='张老师', url=PNG, sha256=sha256(IMAGE).hexdigest(),
+                                                     text='teacher[at]jlu.edu.cn')}
+    if outcome == 'changed_name':
+        with pytest.raises(ValueError, match='姓名'):
+            jlu_cs.parse_contact(cfg, config()['_original_profile'])
+    else:
+        result = jlu_cs.parse_contact(cfg, config()['_original_profile'])
+        if outcome == 'verified':
+            assert result['email'] == 'teacher@jlu.edu.cn' and result['_field_sources'] == {'email': PNG}
+            assert result['_contact_locator']['email'] == dict(article_url=PERSON, named_person='张老师',
+                    image_sha256=sha256(IMAGE).hexdigest(), image_transcription='teacher[at]jlu.edu.cn')
+        else:
+            assert result == {}
+    assert reads == ([PERSON, PNG] if outcome in ('verified', 'changed_bytes', 'unreviewed') else [PERSON])

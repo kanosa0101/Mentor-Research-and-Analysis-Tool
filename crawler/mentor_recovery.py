@@ -261,10 +261,10 @@ def allowed(url, scope):
         return False
 
 
-def same_scope(url, scope, *, allow_pdf=False):
+def same_scope(url, scope, *, allow_pdf=False, allow_contact_png=False):
     from crawler.source_discovery import canonical as source_url
     try:
-        source_url(url, scope, allow_pdf=allow_pdf)
+        source_url(url, scope, allow_pdf=allow_pdf, allow_contact_png=allow_contact_png)
         return True
     except ValueError:
         return False
@@ -282,7 +282,15 @@ def contact_allowed(url,scope,cfg):
     parts=urlsplit(url)
     if parts.scheme=='http' and parts.hostname not in cfg.get('profile_http_hosts',()):
         return False
-    return allowed(canonical(url),scope) and same_scope(url,scope,allow_pdf=profile_pdf(url,cfg))
+    return allowed(canonical(url),scope) and same_scope(url,scope,allow_pdf=profile_pdf(url,cfg),
+                                                        allow_contact_png=profile_email_image(url,cfg))
+
+
+def profile_email_image(url,cfg):
+    if cfg.get('hook') != 'jlu_cs' or not cfg.get('contact_hook_only'):
+        return False
+    from crawler.source_discovery import jlu_contact_png
+    return jlu_contact_png(url)
 
 
 def profile_pdf(url,cfg):

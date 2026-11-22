@@ -11,7 +11,6 @@ for(const [key,id] of Object.entries(noticeControls)){
   const value=incoming.get('notice_'+key)||(['route','admission_year'].includes(key)?incoming.get(key==='route'?'route':'year'):'');
   if(value&&[...document.getElementById(id).options].some(o=>o.value===value))document.getElementById(id).value=value;
 }
-document.getElementById('notice-more-years').open=!!(document.getElementById('notice-graduation-year').value||document.getElementById('notice-activity-year').value);
 const asOf=noticeRows.map(n=>n.classification?.as_of).filter(Boolean).sort().pop();
 const reference=asOf?new Date(asOf+'T12:00:00+08:00'):new Date(),y=reference.getFullYear(),m=reference.getMonth()+1;
 document.getElementById('notice-cycle-guide').textContent=(asOf?'分类截至 '+asOf+'。':'分类日期待核验。')+(m>=11?`${y+1} 年入学推免已进入结果与历史参考；${y+1} 年入学统考属于当前周期（备考与后续安排）；${y+2} 届本科生可查看下一届推免准备。`:'请按通知明确的入学年、毕业届别和申请渠道判断周期。')+' 冬令营活动年份不等于毕业届别；“当前周期”不表示报名开放。';
@@ -48,6 +47,7 @@ function officialLink(container,key){
   else container.textContent=key?'该院系未登记官方入口。请返回学校与要求页核对目录。':'选择院系后可查看已登记的官方入口。';
 }
 function filter(){
+  document.getElementById('notice-action-status').hidden=true;
   const school=select.value,q=document.getElementById('search').value.trim().toLowerCase(),parts=school.split('/'),query=new URLSearchParams();
   const filters=Object.fromEntries(Object.entries(noticeControls).map(([key,id])=>[key,document.getElementById(id).value]));
   for(const key of scopeKeys)if(incoming.get(key))query.set(key,incoming.get(key));
@@ -68,11 +68,18 @@ function filter(){
   });
   document.getElementById('count').textContent=n+' 条通知 · 分类用于找资料，报名状态需另查原文';document.getElementById('notice-empty').hidden=n!==0;
   document.getElementById('notice-general-hint').hidden=!filters.route||filters.route==='unknown';
+  const selectedLabels=[document.getElementById('notice-cycle').selectedOptions[0].textContent];
+  if(filters.route)selectedLabels.push(document.getElementById('notice-route').selectedOptions[0].textContent);
+  if(filters.admission_year)selectedLabels.push(filters.admission_year==='unknown'?'入学年待核验':filters.admission_year+' 入学');
+  if(filters.activity_year)selectedLabels.push(filters.activity_year==='unknown'?'活动年待核验':filters.activity_year+' 年活动');
+  document.getElementById('notice-filter-summary').textContent=selectedLabels.join(' · ');
   const buckets=document.getElementById('notice-buckets');buckets.replaceChildren();
   for(const [cycle,label] of [['current','当前周期'],['preparation','下一届准备'],['historical','历史参考'],['unknown','待核验']]){const button=document.createElement('button');button.type='button';button.dataset.noticeCycle=cycle;button.textContent=label+' '+counts[cycle]+' 条';button.setAttribute('aria-pressed',String(filters.cycle===cycle));button.onclick=()=>{document.getElementById('notice-cycle').value=cycle;filter();};buckets.append(button);}
   const scope=[incoming.get('year')?incoming.get('year')+'入学':'',({master:'硕士',phd:'博士'})[incoming.get('degree')]||'',({recommend:'推免',exam:'统考',assessment:'申请考核'})[incoming.get('route')]||'',({ordinary:'普通招生',special:'专项/特定项目'})[incoming.get('track')]||'',incoming.get('program')?.replace('|',' · ')||''].filter(Boolean).join(' · ');
   const sourceCount=Array.from(document.querySelectorAll('[data-source]')).filter(e=>inScope(e.dataset.sourceScope,school)).length;
   const connected=sourceCount>0;
+  const failedSources=Array.from(document.querySelectorAll('[data-source-error]')).filter(e=>inScope(e.dataset.sourceScope,school)).length;
+  document.getElementById('notice-help-summary').textContent='届别说明与官方来源'+(failedSources?' · '+failedSources+' 个来源更新失败':'');
   context.textContent=(school?nameFor(school)+(knownSchool(school)?' · 全校已接入的 '+sourceCount+' 个院系栏目（不是全校全部通知）':connected?'':' · 尚未接入通知监测'):'全部已接入院系')+(scope?'。返回学校与要求时保留申请目标：'+scope+'。':'。')+'当前只展示所选周期与条件；未知届别和历史通知可通过上方切换查看。';
   officialLink(document.getElementById('current-source'),school);officialLink(document.getElementById('empty-source'),school);
 }
@@ -81,7 +88,16 @@ for(const id of Object.values(noticeControls))document.getElementById(id).addEve
 document.getElementById('search').value=incoming.get('q')||'';
 document.getElementById('notice-general-policy').onclick=()=>{
   const admission=document.getElementById('notice-admission-year');
+  const cleared=[];
+  if(admission.value==='unknown'){admission.value='';cleared.push('入学年待核验');}
   if(!admission.value){const years=[...new Set([...document.querySelectorAll('article[data-notice-id]:not([hidden])')].map(a=>noticeById.get(a.dataset.noticeId)?.classification?.admission_year).filter(Boolean))];if(years.length===1)admission.value=String(years[0]);}
+  if(document.getElementById('notice-graduation-year').value)cleared.push('本科毕业届别');
+  if(document.getElementById('notice-activity-year').value)cleared.push('活动年份');
+  document.getElementById('notice-graduation-year').value='';
+  document.getElementById('notice-activity-year').value='';
   document.getElementById('notice-route').value='unknown';filter();
+  const status=document.getElementById('notice-action-status');
+  status.textContent='已切换通用政策'+(cleared.length?'，清除不适用的'+cleared.join('、')+'条件':'')+'。'+(admission.value&&admission.value!=='unknown'?'保留 '+admission.value+' 年研究生入学条件。':'研究生入学年尚未明确，请核对各条政策的适用年份。');
+  status.hidden=false;
 };
 document.getElementById('clear-search').onclick=()=>{document.getElementById('search').value='';filter();document.getElementById('search').focus();};filter();

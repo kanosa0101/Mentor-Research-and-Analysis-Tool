@@ -19,6 +19,10 @@ from crawler.opportunity_monitor import activity_title, atomic_json, output_lock
 from crawler.opportunity_review import institution
 
 MAX_BYTES = 2 * 1024 * 1024
+MAX_CONTACT_PNG_BYTES = 128 * 1024
+CONTACT_PNG_MAGIC = b'\x89PNG\r\n\x1a\n'
+_JLU_CONTACT_PNG = re.compile(r'https://ccst\.jlu\.edu\.cn/__local/[0-9A-F]/[0-9A-F]{2}/[0-9A-F]{2}/'
+                              r'[0-9A-F]+_[0-9A-F]+_[0-9A-F]+\.png(?:\?e=\.png)?')
 COLUMN = re.compile(r'招生|招募|研究生教育|人才培养|培养招生|夏令营|冬令营|暑期学校|科研实践|科研实习|科创计划')
 EXCLUDED = re.compile(r'登录|注册|搜索|检索|结果|公示|名单|回顾|总结|中小学|中学生|本科招生|出国|海外|(?<![a-z0-9])(?:login|logout|search|signin)(?![a-z0-9])', re.I)
 ARTICLE_PATH = re.compile(r'/(?:info/[^/]+/[^/]+\.(?:htm|html)|(?:20\d{2})/(?:\d{2}|\d{4})/|ShowArticle/news/|article/\d+|[^/]*c\d+a\d+/page\.htm)|/t20\d{6}_|/20\d{6,}\.html', re.I)
@@ -45,7 +49,20 @@ def boundary(url):
     return '.'.join(host.split('.')[-3:]) if value == 'cas.cn' else value
 
 
-def canonical(url, parent=None, *, allow_pdf=False):
+def jlu_contact_png(url):
+    return bool(_JLU_CONTACT_PNG.fullmatch(url))
+
+
+def validate_contact_png(raw):
+    if (not 33 <= len(raw) <= MAX_CONTACT_PNG_BYTES or
+            not raw.startswith(CONTACT_PNG_MAGIC + b'\x00\x00\x00\rIHDR')):
+        raise ValueError('联系方式图片未返回预期的原始PNG')
+    width, height = (int.from_bytes(raw[offset:offset+4], 'big') for offset in (16, 20))
+    if not (1 <= width <= 1024 and 1 <= height <= 256 and width * height <= 65_536):
+        raise ValueError('联系方式图片超过尺寸上限')
+
+
+def canonical(url, parent=None, *, allow_pdf=False, allow_contact_png=False):
     parsed = urlsplit(urljoin(parent or '', url))
     if (parsed.scheme not in ('http', 'https') or not parsed.hostname or parsed.username or parsed.password
             or parsed.port not in (None, 80, 443) or '\\' in url or len(url) > 1500):
@@ -57,14 +74,21 @@ def canonical(url, parent=None, *, allow_pdf=False):
     if parent and boundary(result) != boundary(parent):
         raise ValueError('发现链接跨机构，须另行人工核对来源')
     boundary(result)
+    if allow_contact_png and jlu_contact_png(result):
+        return result
     if (re.search(r'\.(?:docx?|xlsx?|zip|jpg|png|gif|mp4)(?:$|[?])', result, re.I) or
             not allow_pdf and re.search(r'\.pdf(?:$|[?])', result, re.I)):
         raise ValueError('非HTML来源需要专用解析，不作为新栏目接入')
     return result
 
 
-def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('text/html', 'application/xhtml+xml'), allow_pdf=False):
-    initial = canonical(url, parent_url, allow_pdf=allow_pdf)
+def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('text/html', 'application/xhtml+xml'),
+               allow_pdf=False, allow_contact_png=False):
+    if allow_contact_png:
+        if not jlu_contact_png(url):
+            raise ValueError('联系方式图片离开已登记的官方原图路径')
+        accepted_types = ('image/png',)
+    initial = canonical(url, parent_url, allow_pdf=allow_pdf, allow_contact_png=allow_contact_png)
     current = initial
     with requests.Session() as session:
         session.trust_env = False
@@ -78,6 +102,8 @@ def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('te
             with session.get(current, timeout=(6, 12), stream=True, allow_redirects=False,
                              headers={'User-Agent': 'Mozilla/5.0 (official admissions source discovery)'}) as response:
                 if response.status_code in (301, 302, 303, 307, 308):
+                    if allow_contact_png:
+                        raise ValueError('联系方式图片来源跳转，须由本人页重新登记')
                     if allow_pdf:
                         raise ValueError('PDF 来源跳转须经官网索引重新核对')
                     current = canonical(response.headers.get('Location', ''), current)
@@ -88,14 +114,17 @@ def fetch_html(url, parent_url=None, *, before_request=None, accepted_types=('te
                     continue
                 response.raise_for_status()
                 if response.status_code != 200 or response.headers.get('Content-Type', '').split(';',1)[0].strip().lower() not in accepted_types:
-                    raise ValueError('来源未返回可核对的HTML栏目')
+                    raise ValueError('联系方式原图未返回image/png' if allow_contact_png else '来源未返回可核对的HTML栏目')
                 chunks, size = [], 0
                 for chunk in response.iter_content(65536):
                     size += len(chunk)
-                    if size > MAX_BYTES:
-                        raise ValueError('来源超过2MB检查上限')
+                    if size > (MAX_CONTACT_PNG_BYTES if allow_contact_png else MAX_BYTES):
+                        raise ValueError('联系方式图片超过字节上限' if allow_contact_png else '来源超过2MB检查上限')
                     chunks.append(chunk)
-                return b''.join(chunks)
+                raw = b''.join(chunks)
+                if allow_contact_png:
+                    validate_contact_png(raw)
+                return raw
         raise ValueError('来源跳转次数过多')
 
 

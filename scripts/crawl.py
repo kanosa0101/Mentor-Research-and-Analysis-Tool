@@ -49,6 +49,21 @@ def make_slug(name, used):
     return slug
 
 
+def _save_professor(cfg, prof, original):
+    if not cfg.get('contact_hook_only'):
+        store.save_professor(prof)
+        return
+    from crawler.legacy_refresh import write_yaml
+    from crawler.opportunity_monitor import output_lock
+    path = store.professors_dir(prof.school, prof.dept) / (prof.slug + '.yaml')
+    with output_lock(path):
+        current = (Professor.model_validate(yaml.safe_load(path.read_text(encoding='utf-8'))).model_dump()
+                   if path.is_file() else None)
+        if current != original:
+            raise ValueError('核验期间导师记录已变化，未覆盖')
+        write_yaml(path, prof.model_dump(mode='json', exclude_none=True))
+
+
 def phase_roster(cfg, hook, refresh):
     school, dept = cfg["school"], cfg["dept"]
     with fetch.refresh_scope(refresh):
@@ -83,6 +98,7 @@ def phase_roster(cfg, hook, refresh):
             url_matched.add(prof.slug)
             if name_only:
                 name_matched.add(prof.slug)
+        original = prof.model_dump() if prof is not None and cfg.get('contact_hook_only') else None
         if prof is None:
             slug = make_slug(rec["name"], used)
             prov_name = Provenance(source=record_source, fetched_at=record_date)
@@ -110,6 +126,8 @@ def phase_roster(cfg, hook, refresh):
         list_prov = Provenance(source=record_source, fetched_at=record_date)
         for key in ("title", "email", "phone", "supervisor", "subjects",
                     "research_direction_raw", "photo_url", "homepage", "bio_raw"):
+            if key == "email" and cfg.get("contact_hook_only"):
+                continue
             if key == "bio_raw" and prof.provenance.get(key) and prof.provenance[key].origin == "manual":
                 continue
             v = rec.get(key) or rec.get("list_" + key)
@@ -129,7 +147,7 @@ def phase_roster(cfg, hook, refresh):
                 prof.provenance.setdefault(
                     "institutes", Provenance(source=record_source, fetched_at=record_date))
                 updated += 1
-        store.save_professor(prof)
+        _save_professor(cfg, prof, original)
     current_urls = {(r["url"], r["name"]) for r in people}
     current_slugs = set()
     for prof in existing.values():
@@ -157,11 +175,12 @@ def phase_enrich(cfg, hook, refresh):
     for prof in existing.values():
         if prof.status == "verified":
             continue
+        original = prof.model_dump() if cfg.get('contact_hook_only') else None
         try:
             with fetch.refresh_scope(refresh):
                 html, meta, hit = fetch.fetch_text("GET", prof.detail_url, refresh=refresh)
                 parse_cfg = cfg
-                if cfg.get("hook") == "nwpu_cs":
+                if cfg.get("hook") == "nwpu_cs" or cfg.get("contact_hook_only"):
                     parse_cfg = dict(cfg, _expected_name=prof.name, _original_profile=prof.model_dump())
                 d = hook.parse_detail(parse_cfg, html, prof.detail_url)
         except Exception as e:
@@ -170,6 +189,8 @@ def phase_enrich(cfg, hook, refresh):
                     and isinstance(e, getattr(hook, 'IdentityMismatch', ())):
                 for field in ('title', 'supervisor', 'subjects', 'email', 'homepage', 'photo_url',
                               'phone', 'office_address', 'bio_raw', 'research_direction_raw', 'institutes'):
+                    if field == 'email' and cfg.get('contact_hook_only'):
+                        continue
                     previous = prof.provenance.get(field)
                     if previous is None or previous.origin == 'manual' or previous.source != prof.detail_url:
                         continue
@@ -181,12 +202,14 @@ def phase_enrich(cfg, hook, refresh):
                     prof.provenance.pop(field)
                 prof.status = 'roster'
                 prof.last_parsed = None
-                store.save_professor(prof)
+                _save_professor(cfg, prof, original)
             failed += 1
             continue
         prov = Provenance(source=prof.detail_url, fetched_at=meta["fetched_at"])
         for field in ("title", "supervisor", "subjects", "email", "homepage", "photo_url",
                       "phone", "office_address", "bio_raw"):
+            if field == "email" and cfg.get("contact_hook_only"):
+                continue
             _merge(prof, field, d.get(field), prov, changes)
         canonical = d.get("name")
         if canonical and canonical != prof.name and canonical not in prof.aliases:
@@ -216,7 +239,7 @@ def phase_enrich(cfg, hook, refresh):
             prof.last_verified = meta['fetched_at']
         if d.get("source_updated_at"):
             prof.source_updated_at = str(d["source_updated_at"])
-        store.save_professor(prof)
+        _save_professor(cfg, prof, original)
         done += 1
     store.save_issues(school, dept, issues)
     if changes:

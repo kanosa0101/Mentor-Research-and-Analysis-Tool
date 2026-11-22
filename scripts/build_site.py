@@ -59,6 +59,14 @@ def render_opportunities_page(site=None, env=None):
             'browser-library-core.js', 'browser-library.js')))
 
 
+def render_notices_page(notices, sources, site=None, env=None):
+    site = SITE if site is None else Path(site)
+    return (env or template_environment()).get_template('notices.html.j2').render(
+        notices=notices, sources=sources, **entry_head(site),
+        notice_js=inline_scripts(site, ('school-catalog.js', 'notices-core.js', 'notices.js',
+                                       'browser-library-core.js', 'browser-library.js')))
+
+
 def build_discovery_entry(site=None):
     site = SITE if site is None else Path(site)
     files = [site / 'school-catalog.js']
@@ -380,9 +388,9 @@ def main():
     nf = ROOT / 'data/notices.json'
     if nf.exists():
         notices = json.loads(nf.read_text(encoding='utf-8'))
-        html = env.get_template('notices.html.j2').render(
+        html = render_notices_page(
             notices=annotate_notices(notices['notices'], opportunities=opportunity_util.load(ROOT)['opportunities']),
-            sources=notices['sources'])
+            sources=notices['sources'], site=SITE, env=env)
         write_html(SITE / 'notices.html', html)
     for r in profs:
         html = env.get_template("detail.html.j2").render(p=r)

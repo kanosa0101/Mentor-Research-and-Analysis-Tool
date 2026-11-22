@@ -1,25 +1,18 @@
 """吉林大学计算机学院（ccst.jlu.edu.cn）。
-存量维护只采用本人页或现行具名名录的明确方向与公开邮箱。
-早期详情页存在图片邮箱，原始采集入口仍支持旧 OCR 解析。
+存量维护采用本人页或现行具名名录的明示字段，已核邮箱图片按原件摘要复验。
 """
+from hashlib import sha256
 import re
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from crawler import fetch
 from crawler.mentor_recovery import DiscoveryBudgetExhausted, personal_email
+from crawler.source_discovery import jlu_contact_png
 from sites.profile_fields import clean_research
 from sites.simple_list import parse_detail as _simple_parse, iter_roster as _simple_roster
 
-_EMAIL_IMG = re.compile(
-    r"(?:电子邮箱|Email|邮箱)\s*[：:]?\s*</td>\s*<td[^>]*>\s*<img\s+([^>]+)>", re.I)
-# vsb CMS 的 img 真实路径常在 vurl 属性(src 可能是丢目录的相对名)
-_VURL = re.compile(r'vurl="([^"]+)"', re.I)
-_SRC = re.compile(r'src="([^"]+)"', re.I)
 _EMAIL_OK = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
-_LOCAL_OK = re.compile(r"^[A-Za-z0-9._%+-]{2,30}$")
-_OCR = None
 _COLLEGE = "吉林大学计算机科学与技术学院"
 _PERSON = re.compile(r"https://ccst\.jlu\.edu\.cn/info/\d+/\d+\.htm")
 _ROSTER = "https://ccst.jlu.edu.cn/szdw/zpzpjs.htm"
@@ -33,77 +26,45 @@ def iter_roster(cfg):
     return _simple_roster(cfg)
 
 
-def _repair_email(boxes):
-    joined = " ".join(t for _, t, _ in boxes)
-    # 混淆写法还原: "xxx at yyy" / "xxx [AT] yyy" → "@"; 必须在去空格前做
-    joined = re.sub(r"(?i)(?<=\s)\[?\(?at\)?\]?(?=\s|$)", "@", joined)
-    joined = re.sub(r"\s+", "", joined)
-    if not joined:
-        return None
-    local = rest = None
-    if "@" in joined:
-        local, _, rest = joined.partition("@")
-    else:
-        # '@' 漏检: 从尾部剥已知域名(mail.)jlu[.edu[.cn]]
-        m = re.search(r"(mail\.?)?jlu\.?(?:edu\.?cn)?$", joined, re.I)
-        if m and m.start() >= 2:
-            local = joined[:m.start()]
-    if not (local and _LOCAL_OK.fullmatch(local)):
-        return None
-    # OCR 混淆: 行首大写 I 实为 l(lxf 误读 Ixf)
-    if re.fullmatch(r"I[a-z0-9]+", local):
-        local = "l" + local[1:]
-    # OCR 常把域名拆碎/漏字("jlu.edu" + "cn"→"jlueducn" 乃至 "eedu.ccn"),
-    # 一律去点后按已知模式匹配重组, 不信碎片整串
-    nodots = re.sub(r"[^a-z0-9]", "", (rest or "").lower())
-    if nodots.startswith("mailjlu") or nodots.startswith("mail"):
-        return local + "@mail.jlu.edu.cn"
-    if nodots.startswith("jlu") or nodots in ("", "educn", "edu", "cn"):
-        return local + "@jlu.edu.cn"
-    # 常见公共邮箱域(OCR 常见 "163.ccom" 形近错字)
-    pm = re.fullmatch(r"(163|126|qq|sohu|sina|gmail|hotmail|yeah|aliyun|139|foxmail)cc?om", nodots)
-    if pm:
-        return local + "@" + pm.group(1) + ".com"
-    if nodots == "yeahnet":
-        return local + "@yeah.net"
-    if _EMAIL_OK.fullmatch(joined):
-        parts = (rest or "").lower().split(".")
-        if len(parts) >= 2 and all(p for p in parts):
-            return joined.lower()
-    return None
-
-
-def _ocr_email_image(img_url, page_url):
-    global _OCR
-    try:
-        raw, _, _ = fetch.fetch("GET", img_url)
-    except Exception:
-        return None
-    import cv2
-    import numpy as np
-    img = cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_GRAYSCALE)
-    if img is None or min(img.shape[:2]) < 5:
-        return None
-    big = cv2.resize(img, None, fx=6, fy=6, interpolation=cv2.INTER_LANCZOS4)
-    big = cv2.copyMakeBorder(big, 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
-    if _OCR is None:
-        from rapidocr_onnxruntime import RapidOCR
-        _OCR = RapidOCR()
-    # det 模型对细长低对比单行图常丢前段, 直接调识别模型整行读
-    try:
-        res, _ = _OCR.text_recognizer(cv2.cvtColor(big, cv2.COLOR_GRAY2BGR))
-    except Exception:
-        return None
-    boxes = [[None, t, c] for t, c in (res or [])]
-    return _repair_email(boxes or [])
-
-
 def _public_address(value):
+    if value.count("[at]") == 1:
+        value = value.replace("[at]", "@")
     if not _EMAIL_OK.fullmatch(value) and value.count("AT") == 1:
         local, domain = value.split("AT")
         if re.fullmatch(r"[A-Za-z0-9-]+(?:DOT[A-Za-z0-9-]+)+", domain):
             value = local + "@" + domain.replace("DOT", ".")
     return personal_email(value) if _EMAIL_OK.fullmatch(value) else None
+
+
+def _contact_rows(scope, url):
+    addresses, misdirected, images = set(), set(), set()
+    for node in scope.select("td, th, p, li"):
+        parts = re.split(r"[:：]", node.get_text(" ", strip=True), maxsplit=1)
+        if len(parts) != 2 or not _ADDRESS.fullmatch(parts[0].strip()):
+            continue
+        cell, text = node, parts[1].strip()
+        sibling = node.find_next_sibling()
+        if not text and sibling and node.name in ("td", "th") and sibling.name == "td":
+            cell, text = sibling, sibling.get_text(" ", strip=True)
+        if text:
+            visible = [_public_address(token.strip()) for token in re.split(r"[;；,，、]", text)]
+            if not all(visible):
+                continue
+            addresses.update(visible)
+            for anchor in cell.select('a[href^="mailto:"]'):
+                label = _public_address(anchor.get_text(" ", strip=True))
+                target = _public_address(anchor["href"].removeprefix("mailto:"))
+                if label in visible and target and target.casefold() != label.casefold():
+                    misdirected.add(anchor["href"])
+        else:
+            for image in cell.select("img[src], img[vurl]"):
+                for attribute in ("src", "vurl"):
+                    if asset := image.get(attribute):
+                        target = urljoin(url, asset)
+                        if jlu_contact_png(target):
+                            images.add(target)
+    visible_hrefs = {f"mailto:{value.casefold()}" for value in addresses}
+    return addresses, {href for href in misdirected if href.casefold() not in visible_hrefs}, images
 
 
 def _labelled_fields(nodes):
@@ -159,7 +120,7 @@ def _named_roster_fields(read, name, url):
     return {field: next(iter(values.items())) for field, values in found.items() if len(values) == 1}
 
 
-def _registered_fields(cfg, html, url):
+def _person_scope(cfg, html, url):
     original = cfg["_original_profile"]
     name = original["name"]
     soup = BeautifulSoup(html, "html.parser")
@@ -168,10 +129,18 @@ def _registered_fields(cfg, html, url):
     if (not _PERSON.fullmatch(url) or expected != name or
             "".join(title.split()) != "".join(f"{name}-{_COLLEGE}".split())):
         raise ValueError("吉大本人页姓名未与当前档案一致")
-    scope = soup.select_one(".v_news_content, #vsb_content, .wp_articlecontent")
+    return soup.select_one(".v_news_content, #vsb_content, .wp_articlecontent")
+
+
+def _registered_fields(cfg, html, url):
+    original = cfg["_original_profile"]
+    name = original["name"]
+    scope = _person_scope(cfg, html, url)
     direct = _labelled_fields(scope.select("td, th, p, li")) if scope else {}
     provenance = original.get("provenance") or {}
     fields = [field for field in _FIELDS if (provenance.get(field) or {}).get("origin") != "manual"]
+    if cfg.get("contact_hook_only") and "email" in fields:
+        fields.remove("email")
     picked = {field: next(iter(values)) for field, values in direct.items()
               if field in fields and len(values) == 1}
     missing = [field for field in fields if not direct.get(field)]
@@ -187,8 +156,60 @@ def _registered_fields(cfg, html, url):
     return dict(picked, name=name, **({"_field_sources": sources} if sources else {}))
 
 
+def parse_contact(cfg, person):
+    read = cfg.get("_read_source")
+    url, name = person["detail_url"], person["name"]
+    previous = (person.get("provenance") or {}).get("email") or {}
+    if not cfg.get("contact_hook_only") or not read or previous.get("origin") == "manual" or not _PERSON.fullmatch(url):
+        return {}
+    _, html = read(url)
+    scope = _person_scope(dict(cfg, _original_profile=person), html, url)
+    if not scope:
+        return {}
+    explicit_name = _simple_parse(cfg, html, url).get("name")
+    if explicit_name and "".join(explicit_name.split()) != "".join(name.split()):
+        raise ValueError("吉大本人正文姓名未与当前档案一致")
+    visible, wrong_links, images = _contact_rows(scope, url)
+    result = {"name": name, "_verified_roster_name": name, "_field_sources": {"email": url},
+              "_contact_locator": {"email": {"article_url": url, "named_person": name}}}
+    locator = result["_contact_locator"]["email"]
+    if len(visible) == 1:
+        result["email"] = next(iter(visible))
+        return result
+    if visible:
+        old = person.get("email") or cfg.get("_previous_email")
+        old_href = f"mailto:{old}"
+        if (old and old_href in wrong_links and previous.get("origin") == "crawled"
+                and previous.get("source") == url):
+            result["_rejected_email"] = old
+            locator.update(visible_addresses=sorted(visible), rejected_mailto=old_href)
+            return result
+        return {}
+    if images:
+        if len(images) != 1:
+            return {}
+        source, = images
+        raw, _ = read(source)
+        approved = (cfg.get("reviewed_email_images") or {}).get(url) or {}
+        if (approved.get("name") == name and approved.get("url") == source
+                and raw.startswith(b"\x89PNG\r\n\x1a\n") and sha256(raw).hexdigest() == approved.get("sha256")
+                and (address := _public_address(approved.get("text", "")))):
+            result["email"] = address
+            result["_field_sources"]["email"] = source
+            locator.update(image_sha256=approved["sha256"], image_transcription=approved["text"])
+            return result
+        return {}
+    if cfg.get("profile_field_roster") == _ROSTER:
+        if field := _named_roster_fields(read, name, url).get("email"):
+            result["email"], result["_field_sources"]["email"] = field
+            locator["directory_url"] = field[1]
+            return result
+    return {}
+
+
 def parse_detail(cfg, html, url):
     out = _simple_parse(cfg, html, url)
+    out.pop("email", None)
     if cfg.get("_original_profile"):
         name = cfg["_original_profile"]["name"]
         if out.get("name") and "".join(out["name"].split()) != "".join(name.split()):
@@ -196,24 +217,6 @@ def parse_detail(cfg, html, url):
         for field in _FIELDS:
             out.pop(field, None)
         out.update(_registered_fields(cfg, html, url))
-    elif not out.get("email"):
-        m = _EMAIL_IMG.search(html)
-        if m:
-            # vurl 有两种形态: /__local/…png 原图 或 /_vsl/… 缩略图(OCR 失败), 依次回退
-            cands = []
-            for rx in (_VURL, _SRC):
-                sm = rx.search(m.group(1))
-                if sm:
-                    cands.append(sm.group(1))
-            for src in cands:
-                if src.startswith("__local"):
-                    src = "/" + src
-                if not src.startswith("http"):
-                    src = urljoin(url, src)
-                e = _ocr_email_image(src, url)
-                if e:
-                    out["email"] = e
-                    break
     if not out.get("supervisor"):
         # 基本信息表的结构化标注: "是否博导：是/否"——只取"是", "否"绝不入库
         from crawler.supervisor_util import extract_supervisor

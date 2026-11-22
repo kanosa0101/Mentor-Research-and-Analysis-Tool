@@ -45,12 +45,13 @@ def read(root):
     return json.loads(path.read_text(encoding='utf8')) if path.exists() else {'version':1,'records':{}}
 
 
-def secondary_email_source(person):
+def secondary_email_source(person,*,include_primary=False):
     provenance=(person.get('provenance') or {}).get('email') or {}
     source=mentor_recovery.homepage_url(provenance.get('source'))
     if not source or provenance.get('origin')!='crawled' or not present(person,'email'):return None
     detail=person['detail_url']
-    if mentor_recovery.canonical(source).rstrip('/')!=mentor_recovery.canonical(detail).rstrip('/') or urlsplit(source).path.lower().endswith('.pdf'):
+    if (include_primary or mentor_recovery.canonical(source).rstrip('/')!=mentor_recovery.canonical(detail).rstrip('/')
+            or urlsplit(source).path.lower().endswith('.pdf')):
         return provenance
     return None
 
@@ -59,8 +60,8 @@ def secondary_registration(person,provenance):
     return {key:provenance.get(key) for key in ('source','fetched_at')} | {'value':person['email']}
 
 
-def secondary_schedule(person,now):
-    provenance=secondary_email_source(person)
+def secondary_schedule(person,now,*,include_primary=False):
+    provenance=secondary_email_source(person,include_primary=include_primary)
     if not provenance:return None
     registration=secondary_registration(person,provenance)
     try:
@@ -74,14 +75,16 @@ def secondary_schedule(person,now):
 
 def commit_contact_profile(file,before,after,owners,owner_lock,*,recheck=False):
     from crawler.mentor_quality import write_profile
-    value=after.get('email')
-    if value and (recheck or before.get('email')!=value):
+    old,value=before.get('email'),after.get('email')
+    if recheck or old!=value:
         ident=identifier(before)
         with owner_lock:
-            if owners.get(value.casefold(),set())-{ident}:
+            if value and owners.get(value.casefold(),set())-{ident}:
                 raise ValueError('官方邮箱在其他导师记录中登记，无法确认本人独占归属')
             write_profile(file,before,after)
-            owners.setdefault(value.casefold(),set()).add(ident)
+            if old and old.casefold()!=(value or '').casefold():
+                owners.get(old.casefold(),set()).discard(ident)
+            if value:owners.setdefault(value.casefold(),set()).add(ident)
     elif after!=before:
         write_profile(file,before,after)
 
@@ -109,13 +112,18 @@ def seed(root,now=None,*,email_owners=None):
     root=Path(root);now=now or datetime.now(timezone.utc);stamp=now.isoformat(timespec='seconds');path=root/PATH
     with LEDGER_LOCK,output_lock(path):
         state=read(root)
-        signatures={};seen=set()
+        signatures={};configs={};seen=set()
         for file in sorted((root/'data/professors').glob('*/*/*.yaml')):
             person=load_yaml(file);key=identifier(person);record=state['records'].get(key)
             seen.add(key)
             if email_owners is not None and present(person,'email'):
                 email_owners.setdefault(person['email'].casefold(),set()).add(key)
-            review=secondary_schedule(person,now)
+            unit=key.rsplit('/',1)[0]
+            if unit not in configs:
+                cfg_path=root/'sites'/(unit+'.yaml')
+                configs[unit]=(load_yaml(cfg_path) or {}) if cfg_path.exists() else {}
+            cfg=configs[unit]
+            review=secondary_schedule(person,now,include_primary=bool(cfg.get('contact_hook_only')))
             gaps=[field for field in FIELDS if not present(person,field)]
             if not gaps and record is None and review is None:continue
             if record is None:
@@ -124,10 +132,8 @@ def seed(root,now=None,*,email_owners=None):
             if review is None:
                 record.pop('secondary_email',None)
             elif (record.get('secondary_email') or {}).get('registration')!=review['registration']:
-                unit=record['unit']
                 if unit not in signatures:
-                    cfg_path=root/'sites'/(unit+'.yaml')
-                    signatures[unit]=mentor_recovery.signature(root,load_yaml(cfg_path)) if cfg_path.exists() else None
+                    signatures[unit]=mentor_recovery.signature(root,cfg) if cfg else None
                 if signatures[unit]:review['parser_signature']=signatures[unit]
                 prior=record['fields'].get('email') or {}
                 if (prior.get('reason_code')=='field_verified' and prior.get('verified_value')==person['email'] and
@@ -335,15 +341,37 @@ def directory_contacts(root,person,cfg,sources,search,scope):
     return {},None,None
 
 
-def secondary_hook_proof(person,parsed,captures):
+def secondary_hook_proof(person,parsed,captures,cfg=None):
     if (parsed.get('_verified_roster_name') or parsed.get('name'))!=person['name']:return None
     value=mentor_recovery.personal_email(parsed.get('email'))
     target=(parsed.get('_field_sources') or {}).get('email')
     if not value or target not in captures:return None
     locator=(parsed.get('_contact_locator') or {}).get('email') or {}
     parent=captures.get(locator.get('article_url'))
+    if cfg and cfg.get('contact_hook_only'):
+        if parsed.get('_verified_roster_name')!=person['name']:return None
+        if target!=person['detail_url']:
+            roster=cfg.get('profile_field_roster') if cfg.get('hook')=='jlu_cs' else None
+            named_roster=(roster and locator.get('directory_url')==target and
+                           (target==roster or re.fullmatch(re.escape(roster.removesuffix('.htm'))+r'/\d+\.htm',target)))
+            if not (parent and parent['url']==person['detail_url'] and
+                    (mentor_recovery.profile_email_image(target,cfg) or named_roster)):return None
     return dict(captures[target],value=value,identity_basis='configured_official_contact_source',
                 **({'locator':locator} if locator else {}),**({'linked_from':parent} if parent else {}))
+
+
+def managed_email_rejection(person,parsed,captures,previous):
+    url=person['detail_url']
+    old=person['email']
+    locator=(parsed.get('_contact_locator') or {}).get('email') or {}
+    visible={value.casefold() for item in locator.get('visible_addresses',())
+             if (value:=mentor_recovery.personal_email(item))}
+    if (url not in captures or previous.get('source')!=url or parsed.get('_verified_roster_name')!=person['name']
+            or (parsed.get('_field_sources') or {}).get('email')!=url or parsed.get('_rejected_email')!=old
+            or locator.get('article_url')!=url or locator.get('rejected_mailto')!='mailto:'+old
+            or len(visible)<2 or old.casefold() in visible):
+        return None
+    return dict(captures[url],value=old,locator=locator,previous_provenance=previous)
 
 
 def linked_secondary_proof(person,cfg,hook,scope,sources,read_related,captures,review):
@@ -403,7 +431,8 @@ def linked_secondary_proof(person,cfg,hook,scope,sources,read_related,captures,r
 
 def attempt_secondary_email(person,file,cfg,hook,scope,sources,read_related,captures,review,signatures,owners,owner_lock,now):
     signature,versions=signatures;stamp=sources.stamp
-    previous=secondary_email_source(person)
+    managed=cfg.get('contact_hook_only')
+    previous=secondary_email_source(person,include_primary=bool(managed))
     if not previous or secondary_registration(person,previous)!=review['registration']:return person,None
     if review.get('parser_signature')!=signature or now-datetime.fromisoformat(review.get('started_at',stamp))>timedelta(days=1):
         for field in ('frontier','started_at','hook_captures'):review.pop(field,None)
@@ -435,8 +464,17 @@ def attempt_secondary_email(person,file,cfg,hook,scope,sources,read_related,capt
             context=dict(cfg,_previous_email=person['email'],_previous_email_source=previous['source'],
                          _read_previous_email_evidence=previous_body,_read_source=read_hook)
             parsed=hook.parse_contact(context,query) or {}
-            proof=secondary_hook_proof(person,parsed,captures)
-        if not captures and not proof:
+            proof=secondary_hook_proof(person,parsed,captures,cfg)
+            if managed and not proof and (withdrawal:=managed_email_rejection(person,parsed,captures,previous)):
+                sources.captured(withdrawal)
+                updated=dict(person,provenance=dict(person['provenance']))
+                updated.pop('email')
+                updated['provenance'].pop('email')
+                commit_contact_profile(file,person,updated,owners,owner_lock)
+                return updated,dict(review,status='withdrawn',checked_at=stamp,changed_value=True,
+                                    reason_code='inherited_template_mailto',withdrawal=withdrawal,
+                                    next_check_at=(now+timedelta(days=30)).isoformat(timespec='seconds'))
+        if not managed and not captures and not proof:
             proof=linked_secondary_proof(person,cfg,hook,scope,sources,read_related,captures,review)
         if not proof and (review.get('frontier') or {}).get('queue'):
             return person,dict(review,status='continuing',next_check_at=stamp)
@@ -447,6 +485,8 @@ def attempt_secondary_email(person,file,cfg,hook,scope,sources,read_related,capt
                 except (OSError,ValueError,KeyError) as error:
                     raise ValueError('二级邮箱证据原文缺失或SHA不符，需重新获取') from error
             value=proof['value']
+            if managed and value.casefold()!=person['email'].casefold() and proof['url']!=previous['source']:
+                raise ValueError('新旧官方邮箱来源不同，保留既有登记')
             day=datetime.fromisoformat(proof['fetched_at']).astimezone(LOCAL_ZONE).date().isoformat()
             provenance=dict(previous,source=proof['url'],fetched_at=day)
             updated=dict(person,email=value,provenance=dict(person['provenance'],email=provenance))
@@ -485,11 +525,13 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     file=root/'data/professors'/record['unit']/(record['ref']+'.yaml')
     original=person=mentor_quality.load_yaml(file)
     scope=cfg.get('base_url') or original['detail_url']
+    managed_email=cfg.get('contact_hook_only')
+    search_fields=('homepage',) if managed_email else CONTACT_FIELDS
     report=dict(id=record['id'],status='checked',reused_evidence=False,filled_fields=[],changed_fields=[],field_evidence={})
     search=deepcopy(record.get('contact_search') or {})
     if search.get('signature')!=signature or not search.get('next_at'):
         search=dict(signature=signature,queue=[],visited=[],directory=False,next_at=None,directory_revision=directory_revision)
-    resume=bool(search['next_at'] and search['next_at']<=stamp and any(needs_contact(person,f) for f in CONTACT_FIELDS))
+    resume=bool(search['next_at'] and search['next_at']<=stamp and any(needs_contact(person,f) for f in search_fields))
     due_other=any(f not in CONTACT_FIELDS and v.get('status') not in ('resolved','manual_review') and
                   (not v.get('next_check_at') or v['next_check_at']<=stamp or v.get('parser_signature')!=signature)
                   for f,v in record['fields'].items())
@@ -507,7 +549,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     def save_contact(values,evidence,basis,parent=None):
         day=datetime.fromisoformat(evidence['fetched_at']).astimezone(timezone(timedelta(hours=8))).date().isoformat()
         new=dict(person,provenance=dict(person.get('provenance',{})))
-        for field in CONTACT_FIELDS:
+        for field in CONTACT_FIELDS if basis=='configured_official_contact_source' else search_fields:
             if needs_contact(person,field) and values.get(field):
                 new[field]=values[field]
                 new['provenance'][field]=dict(origin='crawled',source=evidence['url'],fetched_at=day,confidence='auto')
@@ -529,7 +571,8 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     def read_related(target):
         if not mentor_recovery.contact_allowed(mentor_recovery.contact_target(target,cfg),scope,cfg):
             raise ValueError('字段来源离开已登记官方机构边界')
-        body,text=sources.read(target,official_scope=scope)
+        contact_cfg=cfg if mentor_recovery.profile_email_image(target,cfg) else None
+        body,text=sources.read(target,official_scope=scope,contact_cfg=contact_cfg)
         captures[target]=sources.capture(target,body,stamp)
         return body,text
     parsed_cfg=dict(cfg,_expected_name=original['name'],_read_source=read_related,_original_profile=original)
@@ -548,6 +591,15 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                 observation(root,person,parsed={'email':person['email']},source_url=proof['url'],source_sha256=proof['sha256'],
                             fetched_at=proof['fetched_at'],now=now,parser_signature=signature,contact_only=True,ledger=ledger)
                 if checked['changed_value']:report['changed_fields'].append('email')
+            elif checked['status']=='withdrawn':
+                proof=checked['withdrawal']
+                observation(root,person,parsed={'_rejected_email':proof['value']},source_url=proof['url'],
+                            source_sha256=proof['sha256'],fetched_at=proof['fetched_at'],now=now,
+                            parser_signature=signature,contact_only=True,ledger=ledger)
+                email_state=ledger['records'][record['id']]['fields']['email']
+                email_state.update(withdrawal=proof,status='waiting_source',next_action='wait_for_source_update',
+                                   next_check_at=checked['next_check_at'])
+                report['changed_fields'].append('email')
         if not due(record,cfg,root,stamp,directory_revision,parser_signature=signature):return report
 
     if not reviewing and getattr(hook,'parse_contact',None) and any(needs_contact(person,f) for f in CONTACT_FIELDS):
@@ -557,6 +609,8 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                 for field,validate in (('email',mentor_recovery.personal_email),('homepage',mentor_recovery.homepage_url)):
                     target=(supplemental.get('_field_sources') or {}).get(field)
                     value=validate(supplemental.get(field))
+                    if managed_email and field=='email' and not secondary_hook_proof(person,supplemental,captures,cfg):
+                        continue
                     if target in captures and value and needs_contact(person,field):
                         locator=(supplemental.get('_contact_locator') or {}).get(field)
                         parent=captures.get((locator or {}).get('article_url'))
@@ -581,6 +635,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             html=UnicodeDammit(raw).unicode_markup or ''
             try:
                 parsed=hook.parse_detail(parsed_cfg,html,url)
+                parsed=legacy_refresh.ordinary_profile_fields(cfg,parsed)
             except mentor_recovery.DiscoveryBudgetExhausted:
                 raise
             except Exception as parse_error:
@@ -594,7 +649,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                 raise ValueError('尚无本人详情来源：当前仅有名册登记')
             contact_owner=strong_name or parsed.get('_verified_roster_name')==original['name']
             for field,validate in (('email',mentor_recovery.personal_email),('homepage',mentor_recovery.homepage_url)):
-                value=(validate(parsed.get(field)) or contact.get(field)) if contact_owner and needs_contact(person,field) else None
+                value=(validate(parsed.get(field)) or contact.get(field)) if field in search_fields and contact_owner and needs_contact(person,field) else None
                 if value:parsed[field]=value
                 else:parsed.pop(field,None)
             if homepage:=parsed.pop('homepage',None):
@@ -631,7 +686,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             if not resume and not report['field_evidence'] and not report.get('secondary_email') and not search.get('external_homepage_candidate') and not search['queue']:raise
         except Exception as failure:
             error=failure
-        if not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in CONTACT_FIELDS):
+        if not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in search_fields):
             search['visited']=[primary]
             registered=[dict(url=person[f],kind='registered') for f in ('homepage','profile_url') if mentor_recovery.homepage_url(person.get(f))]
             add_links(search,registered+(contact.get('links') or []),evidence,scope,cfg,1)
@@ -644,7 +699,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
         if evidence:report.update(source_sha256=evidence['sha256'],fetched_at=evidence['fetched_at'])
 
     steps=0
-    while search['next_at'] and search['next_at']<=stamp and any(needs_contact(person,f) for f in CONTACT_FIELDS) and steps<3:
+    while search['next_at'] and search['next_at']<=stamp and any(needs_contact(person,f) for f in search_fields) and steps<3:
         steps+=1
         try:
             if not search['queue']:
@@ -706,7 +761,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                 break
         if not search['queue']:
             search['next_at']=(now+timedelta(days=1)).isoformat(timespec='seconds') if search['directory'] else None
-    if not any(needs_contact(person,f) for f in CONTACT_FIELDS):
+    if not any(needs_contact(person,f) for f in search_fields):
         search['next_at']=None
     if resume or search['visited'] or search['queue'] or search.get('external_homepage_candidate'):
         observation(root,person,now=now,parser_signature=signature,contact_search=search,ledger_only=True,ledger=ledger)
@@ -788,8 +843,10 @@ def run_locked(root,limit,request_budget,domain_budget,workers,units,fetcher,now
             try:
                 if fetcher:count_request();return fetcher(dict(source,url=url,official_scope=scope))
                 pdf=mentor_recovery.profile_pdf(url,active_cfg)
-                return fetch_html(url,scope,before_request=count_request,allow_pdf=pdf,
-                                  accepted_types=('application/pdf',) if pdf else mentor_recovery.content_types(url))
+                png=source.get('official_contact_png') and mentor_recovery.profile_email_image(url,active_cfg)
+                types=('image/png',) if png else ('application/pdf',) if pdf else mentor_recovery.content_types(url)
+                return fetch_html(url,scope,before_request=count_request,allow_pdf=pdf,accepted_types=types,
+                                  **({'allow_contact_png':True} if png else {}))
             except Exception as error:
                 if mentor_recovery.classify(str(error))['reason_code']=='rate_limited':
                     blocked_until=(now+timedelta(hours=24)).isoformat(timespec='seconds')
