@@ -19,6 +19,8 @@
 
 ## 已有版本记录
 
+- [v1.12.7 交付](../deploy/DELIVERY_V1.12.7_2026-11-23.md)及[三院导师资料批次审计](audits/2026-11-23-v1127/mentor-batches.md)
+
 - [v1.12.6 交付](../deploy/DELIVERY_V1.12.6_2026-11-23.md)及[人大导师资料批次审计](audits/2026-11-23-v1126/mentor-batches.md)
 - [v1.12.5 交付](../deploy/DELIVERY_V1.12.5_2026-11-23.md)及[通知页验收](audits/2026-11-23-v1125/candidate-notices.md)
 - [v1.12.4 交付](../deploy/DELIVERY_V1.12.4_2026-11-23.md)及[导师资料批次审计](audits/2026-11-23-v1124/mentor-batches.md)

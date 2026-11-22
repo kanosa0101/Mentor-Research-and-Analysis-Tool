@@ -1,0 +1,523 @@
+{
+  "version": "1.12.7",
+  "source_commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+  "passed": true,
+  "local_python": {
+    "passed": 1586,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "duration_seconds": 506.01
+  },
+  "source_ci": {
+    "commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+    "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "completed_successfully": true,
+    "observed_utc": "2026-11-22T22:10:03+00:00",
+    "verified_ci": [
+      {
+        "ref": "codex/mentor-profile-flow-v1127",
+        "head_sha": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+        "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45075514866",
+        "run_id": 45075514866,
+        "job_id": 137371743980,
+        "job_status": "completed",
+        "job_conclusion": "success",
+        "successful_steps": [
+          "Run python -m pip install -r requirements-dev.txt",
+          "Run python -m pip check",
+          "Run python -m playwright install --with-deps chromium",
+          "Run python scripts/build_site.py",
+          "Run python -m pytest tests -q",
+          "Run node --test tests/*.cjs",
+          "Run python scripts/preflight.py --allow-open-issues"
+        ],
+        "python": {
+          "passed": 1586,
+          "skipped": 1,
+          "subtests_passed": 251,
+          "duration_seconds": 296.49
+        },
+        "node": {
+          "tests": 25,
+          "pass": 25,
+          "fail": 0,
+          "skipped": 0
+        },
+        "preflight": {
+          "structural_problems": 0,
+          "existing_open_issue_groups": 35
+        },
+        "build": {
+          "profiles": 7171,
+          "schools": 39,
+          "departments": 56
+        },
+        "job_started_utc": "2026-11-22T22:03:26Z",
+        "job_completed_utc": "2026-11-22T22:09:25Z"
+      }
+    ]
+  },
+  "node": {
+    "passed": 25,
+    "failed": 0
+  },
+  "structural_problems": 0,
+  "public": {
+    "passed": true,
+    "mode": "public",
+    "version": "1.12.7",
+    "started_utc": "2026-11-22T22:11:01.086821+00:00",
+    "finished_utc": "2026-11-22T22:12:31.295004+00:00",
+    "source_commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+    "archive_sha256": "b40655998214f2efc9ed97347c530fc42fbc929992bc25d231568601a396fdce",
+    "reviewed_import_sha256": "ba170a748ca76cf60bb44ec7c64b1f5a28f9b9adf9c7d82cb0a739c09828d702",
+    "search_baseline_sha256": "1df7b8f96c3a1996164e0e83ddcb404ad5147791edcf6d8ff0a2fe2eb2ae5290",
+    "additional_search_baseline_sha256": "0d6593520f5d01e30a6bcd21624ce2638fe17686bdb529916202544d07fe1f5f",
+    "installed": {
+      "version": "1.12.7",
+      "source_commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+      "archive_sha256": "b40655998214f2efc9ed97347c530fc42fbc929992bc25d231568601a396fdce",
+      "topics_profiles": 357,
+      "configs": 3,
+      "package_files": 375,
+      "protected_files_unchanged": 7616,
+      "deployment_marker_sha256": "556a82a5b175e7a1d05043ef702340025998f61bc57382a9b3b31601e0c5d12a"
+    },
+    "public_id_set_sha256": "28d8ac14b08e666c26fc2c486fd08be3140706c1cd080ff63d67ee7ec563868f",
+    "public_catalogs": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "units": {
+      "sjtu/cs": {
+        "api_profiles": 289,
+        "missing_email": 4,
+        "contactable": 285,
+        "api_revision": "072143e35f3f4879a550",
+        "with_direction": 173
+      },
+      "ucas/ia": {
+        "api_profiles": 345,
+        "missing_email": 3,
+        "contactable": 342,
+        "api_revision": "072143e35f3f4879a550",
+        "with_direction": 256
+      },
+      "ucas/ict": {
+        "api_profiles": 283,
+        "missing_email": 18,
+        "contactable": 265,
+        "api_revision": "072143e35f3f4879a550",
+        "with_direction": 270
+      }
+    },
+    "verified_api_candidates": 917,
+    "verified_target_details": 357,
+    "verified_target_configs": 3,
+    "counts": {
+      "research_direction_raw": 356,
+      "homepage": 4
+    },
+    "searches": [
+      {
+        "mentor": "ucas-ict-liuyuhang",
+        "name": "刘宇航",
+        "topic": "智能并发系统",
+        "before": 0,
+        "after": 1,
+        "before_observed_utc": "2026-11-22T21:42:37.333056+00:00",
+        "after_query": "https://8.213.137.82:8443/api/mentor-candidates?school=ucas&context_school=ucas&dept=ict&name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%5B%22%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%22%5D&limit=4&offset=0&seed=v1127-proof"
+      },
+      {
+        "mentor": "ucas-ia-liuxiwei",
+        "name": "刘希未",
+        "topic": "STEM 教育",
+        "before": 0,
+        "after": 1,
+        "before_observed_utc": "2026-11-22T22:01:37.820180+00:00",
+        "after_query": "https://8.213.137.82:8443/api/mentor-candidates?school=ucas&context_school=ucas&dept=ia&name=%E5%88%98%E5%B8%8C%E6%9C%AA&limit=4&offset=0&seed=v1127-proof&topics=%5B%22STEM+%E6%95%99%E8%82%B2%22%5D"
+      }
+    ],
+    "excluded_nonincremental_search_controls": {
+      "ucas-ia-huweiming": "existing_match",
+      "sjtu-cs-huangweiran": "existing_match_filtered_by_email"
+    }
+  },
+  "online": {
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors",
+      "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+      "notice_first_screen_and_general_policy_handoff_preserve_independent_years",
+      "new_ruc_directions_survive_search_detail_compare_and_contact",
+      "contact_affiliation_is_not_misrepresented_as_admission_scope"
+    ],
+    "browser_errors": [],
+    "failed_requests": [
+      {
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/api/outreach",
+        "error": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "public_search_browser": {
+    "passed": true,
+    "base_url": "https://8.213.137.82:8443",
+    "reviewed_import_sha256": "ba170a748ca76cf60bb44ec7c64b1f5a28f9b9adf9c7d82cb0a739c09828d702",
+    "started_utc": "2026-11-22T22:11:01.038818+00:00",
+    "completed_utc": "2026-11-22T22:11:24.211711+00:00",
+    "javascript_errors": 0,
+    "blocked_non_read_requests": 0,
+    "checks": [
+      {
+        "passed": true,
+        "case": {
+          "page": "ucas-ict-liuyuhang",
+          "name": "刘宇航",
+          "topic": "智能并发系统",
+          "school": "ucas",
+          "dept": "ict",
+          "direction": "计算机体系结构；存储系统；高性能计算；数据科学；智能并发系统",
+          "source": "https://www.ict.ac.cn/sourcedb/cn/jssrck/201711/t20171114_4894348.html",
+          "source_date": "2026-11-23",
+          "official_profile": "https://www.ict.ac.cn/sourcedb/cn/jssrck/201711/t20171114_4894348.html",
+          "before_revision": "7f32b12d5bf708de80cc"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "screenshots": {
+          "search": {
+            "path": "ucas-ict-liuyuhang-mobile-search.png",
+            "sha256": "b453e53af82bd7f2cb0daa920c32fbdb9926d04c0efe31d2fd02361f9aaaa3d3"
+          },
+          "detail": {
+            "path": "ucas-ict-liuyuhang-mobile-detail.png",
+            "sha256": "fcf866e0bbcd174b0006e67baa7c7b02b980e7712b8fedb1d4e13630ae7be892"
+          },
+          "source": {
+            "path": "ucas-ict-liuyuhang-mobile-source.png",
+            "sha256": "4132ce3fe21698b483429ed8a538849f6ee03915e3ec20d6cbf83bb28d25dfd1"
+          },
+          "return": {
+            "path": "ucas-ict-liuyuhang-mobile-return.png",
+            "sha256": "186ca75a4439dc5b8bbab7934e1a540e02e1455a9a3d585e06affe2b3100db26"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%5B%22%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%22%5D&group=&include_missing_email=0&seed=75bf5ea4-7060-4b58-9edd-e5c0ee0d6496&school=ucas&context_school=ucas&dept=ict&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "detail_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "opened_evidence_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%5B%22%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%22%5D&group=&include_missing_email=0&seed=75bf5ea4-7060-4b58-9edd-e5c0ee0d6496&school=ucas&context_school=ucas&dept=ict&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=ucas&dept=ict&name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "ucas-ia-liuxiwei",
+          "name": "刘希未",
+          "topic": "STEM 教育",
+          "school": "ucas",
+          "dept": "ia",
+          "direction": "人工智能教育、 STEM 教育、物联网、大数据、复杂系统、认知建模、系统工程",
+          "source": "https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131970.html",
+          "source_date": "2026-11-23",
+          "official_profile": "https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131970.html",
+          "before_revision": "7f32b12d5bf708de80cc"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "screenshots": {
+          "search": {
+            "path": "ucas-ia-liuxiwei-mobile-search.png",
+            "sha256": "7f69a13b465702a34a7981527b7215ea7568b807418603fe0f0b68b707048e5f"
+          },
+          "detail": {
+            "path": "ucas-ia-liuxiwei-mobile-detail.png",
+            "sha256": "b1a1d57ebbc6b116566bce1f8a9175ce49abd598c57f167d0d683efc10420a6f"
+          },
+          "source": {
+            "path": "ucas-ia-liuxiwei-mobile-source.png",
+            "sha256": "d2f2e43fac128827143cbc99a45678d5605a01839b07051a56181f6f911eb854"
+          },
+          "return": {
+            "path": "ucas-ia-liuxiwei-mobile-return.png",
+            "sha256": "0b5524ec012458af26fe8ad483a440382a59cac076284cfe75bee736483baa42"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=%5B%22STEM+%E6%95%99%E8%82%B2%22%5D&group=&include_missing_email=0&seed=ed009f39-0291-4d06-b187-f6d4e8451652&school=ucas&context_school=ucas&dept=ia&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "detail_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "opened_evidence_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=%5B%22STEM+%E6%95%99%E8%82%B2%22%5D&group=&include_missing_email=0&seed=ed009f39-0291-4d06-b187-f6d4e8451652&school=ucas&context_school=ucas&dept=ia&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 390,
+          "root": 390,
+          "body": 390
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=ucas&dept=ia&name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=STEM+%E6%95%99%E8%82%B2"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "ucas-ict-liuyuhang",
+          "name": "刘宇航",
+          "topic": "智能并发系统",
+          "school": "ucas",
+          "dept": "ict",
+          "direction": "计算机体系结构；存储系统；高性能计算；数据科学；智能并发系统",
+          "source": "https://www.ict.ac.cn/sourcedb/cn/jssrck/201711/t20171114_4894348.html",
+          "source_date": "2026-11-23",
+          "official_profile": "https://www.ict.ac.cn/sourcedb/cn/jssrck/201711/t20171114_4894348.html",
+          "before_revision": "7f32b12d5bf708de80cc"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "screenshots": {
+          "search": {
+            "path": "ucas-ict-liuyuhang-desktop-search.png",
+            "sha256": "423de5cb7bbaed5c3181b71a4d50637cc4c300fe1bb24f6f065fa4b6cf8d4727"
+          },
+          "detail": {
+            "path": "ucas-ict-liuyuhang-desktop-detail.png",
+            "sha256": "9d64b2367ea5b70416cd080306b70dd8c48344accdd5f3c7ef7fbdb39d612c64"
+          },
+          "source": {
+            "path": "ucas-ict-liuyuhang-desktop-source.png",
+            "sha256": "0b027d25011a0f61d3a0355fd496ac519aecef4653665326f5d5c578b5f21214"
+          },
+          "return": {
+            "path": "ucas-ict-liuyuhang-desktop-return.png",
+            "sha256": "9782928e70bd9be5e841d0eb7922ef25920b7e4d046f000264a786ebf6cb9c91"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%5B%22%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%22%5D&group=&include_missing_email=0&seed=cc7a4092-b2f0-41f4-8efc-c6bdb3404067&school=ucas&context_school=ucas&dept=ict&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "detail_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "opened_evidence_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%5B%22%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%22%5D&group=&include_missing_email=0&seed=cc7a4092-b2f0-41f4-8efc-c6bdb3404067&school=ucas&context_school=ucas&dept=ict&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=ucas&dept=ict&name=%E5%88%98%E5%AE%87%E8%88%AA&topics=%E6%99%BA%E8%83%BD%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F"
+      },
+      {
+        "passed": true,
+        "case": {
+          "page": "ucas-ia-liuxiwei",
+          "name": "刘希未",
+          "topic": "STEM 教育",
+          "school": "ucas",
+          "dept": "ia",
+          "direction": "人工智能教育、 STEM 教育、物联网、大数据、复杂系统、认知建模、系统工程",
+          "source": "https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131970.html",
+          "source_date": "2026-11-23",
+          "official_profile": "https://ia.cas.cn/rcdw/fyjy/202404/t20240425_7131970.html",
+          "before_revision": "7f32b12d5bf708de80cc"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "screenshots": {
+          "search": {
+            "path": "ucas-ia-liuxiwei-desktop-search.png",
+            "sha256": "787f2c395be8d14a833a1fb1da9f78eb668288e1c0cf72d07d2dad767bf2c276"
+          },
+          "detail": {
+            "path": "ucas-ia-liuxiwei-desktop-detail.png",
+            "sha256": "e101310bc66c5d15dc4c8641d75fb8e554a2a468aac18805cc7fbdcd62ad6981"
+          },
+          "source": {
+            "path": "ucas-ia-liuxiwei-desktop-source.png",
+            "sha256": "aa5bb5aa04fc1268a54cccacab5e31ed53f0bed320663d451a9ed15922afcc73"
+          },
+          "return": {
+            "path": "ucas-ia-liuxiwei-desktop-return.png",
+            "sha256": "4b1b11d3a69fb3b1f5cbe8f28ae0c387924477535e3e3a5e7e5b8532033f6bc9"
+          }
+        },
+        "javascript_errors": [],
+        "browser_console_errors": [],
+        "failed_requests": [],
+        "blocked_non_read_requests": [],
+        "search_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=%5B%22STEM+%E6%95%99%E8%82%B2%22%5D&group=&include_missing_email=0&seed=9bb5fc31-04ca-4243-be2e-1a7c5480168f&school=ucas&context_school=ucas&dept=ia&offset=0&limit=4"
+        },
+        "search_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "detail_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "opened_evidence_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "returned_api": {
+          "status": 200,
+          "total": 1,
+          "revision": "072143e35f3f4879a550",
+          "requested_url": "https://8.213.137.82:8443/api/mentor-candidates?name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=%5B%22STEM+%E6%95%99%E8%82%B2%22%5D&group=&include_missing_email=0&seed=9bb5fc31-04ca-4243-be2e-1a7c5480168f&school=ucas&context_school=ucas&dept=ia&offset=0&limit=4"
+        },
+        "return_widths": {
+          "viewport": 1440,
+          "root": 1440,
+          "body": 1440
+        },
+        "final_url": "https://8.213.137.82:8443/discovery.html?school=ucas&dept=ia&name=%E5%88%98%E5%B8%8C%E6%9C%AA&topics=STEM+%E6%95%99%E8%82%B2"
+      }
+    ]
+  },
+  "evidence": {
+    "passed": true,
+    "archive_sha256": "9a1494726e4009228b3e377b9e8a19047ba653105bddc062896e07db3b3e85ba",
+    "source_commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+    "reviewed_import_sha256": "ba170a748ca76cf60bb44ec7c64b1f5a28f9b9adf9c7d82cb0a739c09828d702",
+    "members": 1155
+  },
+  "installed": {
+    "passed": true,
+    "version": "1.12.7",
+    "source_commit": "0437ca2c7522637ef133d865b075ec65537d9bc7",
+    "archive_sha256": "b40655998214f2efc9ed97347c530fc42fbc929992bc25d231568601a396fdce",
+    "verified_files": 375,
+    "protected_files_unchanged": 7616,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v1127-stage-0437ca2c7/source-before.tar.gz",
+    "source_backup_sha256": "abea135d9f4dae1fa74f60f9a8236e9e0f5167182db5b7888e6c8506ee23c13a",
+    "site_backup": "/opt/mentor-v1127-stage-0437ca2c7/site-before",
+    "protected_before_sha256": "2c24b878efe9955fe5b619b8b62230739507dcc4779049d2538c28211ede9af4"
+  },
+  "user_acceptance": "pending"
+}
