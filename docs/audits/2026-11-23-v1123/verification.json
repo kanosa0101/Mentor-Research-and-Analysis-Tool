@@ -1,5 +1,124 @@
 {
   "version": "1.12.3",
-  "status": "integration_pending",
-  "deployed": false
+  "observed_utc": "2026-11-22T18:18:07+00:00",
+  "source_commit": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+  "main_archive_sha256": "267c53ee2bf34ac9b073d83eb0e2225129ee4f9789d1d02c1cbe3dd0620de8c2",
+  "status": "source_deployed_and_publicly_verified",
+  "final_binding": "Git tag v1.12.3, server RELEASE_SOURCE.json and cache/v1123/operational-acceptance.json",
+  "windows": {
+    "python": "3.12.15",
+    "node": "24.11.1",
+    "passed": 1369,
+    "skipped": 1,
+    "subtests_passed": 249,
+    "duration_seconds": 464.12,
+    "node_tests": 25,
+    "node_failed": 0,
+    "preflight_problems": 0
+  },
+  "ubuntu_source_ci": {
+    "ref": "codex/content-quality-v1123",
+    "head_sha": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+    "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45052716169",
+    "run_id": 45052716169,
+    "job_id": 137301159691,
+    "job_status": "completed",
+    "job_conclusion": "success",
+    "successful_steps": [
+      "Run python -m pip install -r requirements-dev.txt",
+      "Run python -m pip check",
+      "Run python -m playwright install --with-deps chromium",
+      "Run python scripts/build_site.py",
+      "Run python -m pytest tests -q",
+      "Run node --test tests/*.cjs",
+      "Run python scripts/preflight.py --allow-open-issues"
+    ],
+    "python": {
+      "passed": 1369,
+      "skipped": 1,
+      "subtests_passed": 249,
+      "duration_seconds": 257.89
+    },
+    "node": {
+      "tests": 25,
+      "pass": 25,
+      "fail": 0,
+      "skipped": 0
+    },
+    "preflight": {
+      "structural_problems": 0,
+      "existing_open_issue_groups": 35
+    },
+    "build": {
+      "profiles": 7171,
+      "schools": 39,
+      "departments": 56
+    },
+    "job_started_utc": "2026-11-22T18:01:49Z",
+    "job_completed_utc": "2026-11-22T18:07:11Z"
+  },
+  "online_workflows": {
+    "passed": true,
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors"
+    ],
+    "browser_errors": [],
+    "qa_accounts_cleaned": 2,
+    "cleanup_passed": true
+  },
+  "mentor_public_verification": {
+    "details": 240,
+    "public_fields": {
+      "research_direction_raw": 237,
+      "email": 72,
+      "detail_url": 42,
+      "profile_url": 42,
+      "title": 2
+    },
+    "indices": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "raw_writes": 241,
+    "removed_sources": 2
+  },
+  "notices": {
+    "retained": 379,
+    "total": 381,
+    "sources": 38,
+    "new_current_activities": 0
+  },
+  "deployment": {
+    "verified_files": 291,
+    "protected_files_unchanged": 7651,
+    "retired_mentor_pages": [
+      "site/p/zju-cs-bodao.html",
+      "site/p/zju-cs-shuodao.html"
+    ],
+    "source_backup": "/opt/mentor-v1123-stage-b16205471/source-before.tar.gz",
+    "source_backup_sha256": "390d4a831e6ca49fd9f79dd2ec5b47f7211634d29a291a15d864e328b4f30bb7",
+    "site_backup": "/opt/mentor-v1123-stage-b16205471/site-before"
+  },
+  "limitations": [
+    "AI provider HTTP 402 insufficient balance remains externally blocked",
+    "BUPT VPS official-source HTTP 412 remains; raw evidence replay is not continuous live collection",
+    "No new verified current activity was published; explicit 2028 cohort coverage remains incomplete"
+  ]
 }

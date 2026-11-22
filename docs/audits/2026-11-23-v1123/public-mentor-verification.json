@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "started_utc": "2026-11-22T18:12:33.986754+00:00",
+  "completed_utc": "2026-11-22T18:13:17.878987+00:00",
+  "raw_server_receipt": {
+    "source_commit": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+    "archive_sha256": "267c53ee2bf34ac9b073d83eb0e2225129ee4f9789d1d02c1cbe3dd0620de8c2",
+    "raw_writes_verified": 241,
+    "removed_yaml_verified": 2,
+    "retired_pages_recorded": [
+      "site/p/zju-cs-bodao.html",
+      "site/p/zju-cs-shuodao.html"
+    ]
+  },
+  "notice_config_source_binding": {
+    "target": "sites/notices.yaml",
+    "source_commit": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+    "reviewed_sha256": "78dea614cecb808056df7574499362c77627659a11c8f80893d873995d41b47d",
+    "published_sha256": "2064f5406095e52840ceacbabd8b19e1c314f1eb3334dec6d6e6de2a093d3e91",
+    "crlf_replaced": 294,
+    "reviewed_bytes": 10331,
+    "published_bytes": 10037,
+    "git_blob_matches_archive": true
+  },
+  "public_catalogs": {
+    "data.js": 7171,
+    "contact-data.js": 7171,
+    "discovery-data.js": 7171,
+    "application-data.js": 7171,
+    "search.js": 7171,
+    "compare-data.js": 7171
+  },
+  "fully_paginated_candidate_counts": {
+    "bupt": 217,
+    "xmu": 51,
+    "zju": 436
+  },
+  "candidate_revisions": {
+    "bupt": "11ad90f597a5de627ac6",
+    "xmu": "11ad90f597a5de627ac6",
+    "zju": "11ad90f597a5de627ac6"
+  },
+  "detail_pages_verified": 240,
+  "public_fields_verified": {
+    "research_direction_raw": 237,
+    "email": 72,
+    "detail_url": 42,
+    "profile_url": 42,
+    "title": 2
+  },
+  "retired_profile_urls_returned_404": [
+    "zju-cs-bodao",
+    "zju-cs-shuodao"
+  ]
+}

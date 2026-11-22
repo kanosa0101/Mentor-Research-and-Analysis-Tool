@@ -1,0 +1,49 @@
+{
+  "commit": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+  "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+  "completed_successfully": true,
+  "observed_utc": "2026-11-22T18:08:16+00:00",
+  "verified_ci": [
+    {
+      "ref": "codex/content-quality-v1123",
+      "head_sha": "b16205471f5c3f2a49ff744926f9125b8bb3bf5c",
+      "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45052716169",
+      "run_id": 45052716169,
+      "job_id": 137301159691,
+      "job_status": "completed",
+      "job_conclusion": "success",
+      "successful_steps": [
+        "Run python -m pip install -r requirements-dev.txt",
+        "Run python -m pip check",
+        "Run python -m playwright install --with-deps chromium",
+        "Run python scripts/build_site.py",
+        "Run python -m pytest tests -q",
+        "Run node --test tests/*.cjs",
+        "Run python scripts/preflight.py --allow-open-issues"
+      ],
+      "python": {
+        "passed": 1369,
+        "skipped": 1,
+        "subtests_passed": 249,
+        "duration_seconds": 257.89
+      },
+      "node": {
+        "tests": 25,
+        "pass": 25,
+        "fail": 0,
+        "skipped": 0
+      },
+      "preflight": {
+        "structural_problems": 0,
+        "existing_open_issue_groups": 35
+      },
+      "build": {
+        "profiles": 7171,
+        "schools": 39,
+        "departments": 56
+      },
+      "job_started_utc": "2026-11-22T18:01:49Z",
+      "job_completed_utc": "2026-11-22T18:07:11Z"
+    }
+  ]
+}

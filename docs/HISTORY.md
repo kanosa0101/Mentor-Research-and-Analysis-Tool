@@ -19,6 +19,8 @@
 
 ## 已有版本记录
 
+- [v1.12.2交付](../deploy/DELIVERY_V1.12.2_2026-11-23.md)及[验收审计](audits/2026-11-23-v1122/)
+
 - [v1.11.9 交付](../deploy/DELIVERY_V1.11.9_2026-11-17.md)及[验收审计](audits/2026-11-17-v1119/)
 - [v1.11 首次在线服务交付](../deploy/DELIVERY_V1.11_2026-11-15.md)
 - [v1.10 交付](../deploy/DELIVERY_V1.10_2026-11-15.md)及[验收记录](acceptance/v1.10/README.md)

@@ -1,0 +1,49 @@
+{
+  "http_status": 200,
+  "public_html_sha256": "adb55242a5a84e521bbdef2c75e4610e773f426b1b6b3cad93a5f60fd096b802",
+  "installed_html_sha256": "adb55242a5a84e521bbdef2c75e4610e773f426b1b6b3cad93a5f60fd096b802",
+  "installed_notices_json_sha256": "d7a7e5e453131199ba0f9056917f5dfbb28620111bf86854e8352edeb2f4a98b",
+  "old_baseline_sha256": "ea041e070fa2ef05013d3532a7834cc986bff92b8b5c34c52aa191c3838a73e7",
+  "old_records_exact": 379,
+  "public_records": 381,
+  "public_source_count": 38,
+  "added_urls": [
+    "https://yz.tsinghua.edu.cn/info/1012/3265.htm",
+    "https://yz.tsinghua.edu.cn/info/1012/3296.htm"
+  ],
+  "browser_cases": [
+    {
+      "viewport": 390,
+      "exact_school_deep_link": true,
+      "blank_department_refresh": true,
+      "whole_school": true,
+      "ordinary_school_dropdown": true,
+      "excluded_from": [
+        "recommend",
+        "winter_camp"
+      ]
+    },
+    {
+      "viewport": 1440,
+      "exact_school_deep_link": true,
+      "blank_department_refresh": true,
+      "whole_school": true,
+      "ordinary_school_dropdown": true,
+      "excluded_from": [
+        "recommend",
+        "winter_camp"
+      ]
+    }
+  ],
+  "script_errors": [],
+  "non_get_requests": [],
+  "checked_utc": "2026-11-22T18:17:44.112547+00:00",
+  "url": "https://8.213.137.82:8443/notices.html?school=tsinghua&dept=&notice_cycle=unknown&notice_admission_year=2027&q=%E5%86%AC%E5%AD%A3%E6%8A%A5%E8%80%83%E9%A1%BB%E7%9F%A5",
+  "title": "清华大学2027年普通招考博士研究生冬季报考须知",
+  "official_notice": "https://yz.tsinghua.edu.cn/info/1012/3296.htm",
+  "listing": "https://yz.tsinghua.edu.cn/zsxx/bszs/ptzk.htm",
+  "publication_date": "2026-10-29",
+  "admission_year": 2027,
+  "graduation_year": null,
+  "activity_year": null
+}

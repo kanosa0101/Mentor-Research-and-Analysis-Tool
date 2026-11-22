@@ -1,0 +1,44 @@
+{
+  "catalog_current_count": 2,
+  "dated_window_count": 1,
+  "month_only_window_count": 1,
+  "previous_browser_count": "2 open-window summaries before deploy",
+  "current_detail_state": {
+    "iscas-research-2026": {
+      "url": "https://www.iscas.ac.cn/yjsjy/zsxx/202610/t20261028_8299649.html",
+      "checked_at": "2026-11-22T18:14:42.870382+00:00",
+      "status": 200,
+      "sha256": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+      "quote": "报名时间为即日起至2027年1月"
+    },
+    "cibr-winter-training-2027": {
+      "url": "https://cibr.ac.cn/detail/cibrPersonneladmissions/4c3c22415af7498da6049027ccdd65cd",
+      "checked_at": "2026-11-22T18:14:42.871007+00:00",
+      "status": 200,
+      "sha256": "b05d38c0a7597e9f62b1409d3f23be85e3b286e1280b7751f966d9bbc38d27fa",
+      "quote": "报名时间：即日起至2026年11月30日17：00"
+    }
+  },
+  "monitoring_run": "2026-11-22T18:00:09+00:00",
+  "monitoring_due": "2026-11-22T18:30:09+00:00",
+  "same_version": {
+    "iscas-research-2026": {
+      "status": "unchanged",
+      "last_success": "2026-11-22T17:30:09+00:00",
+      "next_check_at": "2026-11-22T18:30:09+00:00",
+      "hash": "af7ab1ec85ff0e2994a5e6f792b8b601c07507f44cdc5ec00a86e34faffbe121",
+      "content_sha256": "7a300488812133774292236ac924c9d646e0f9bfd30cc120d0f7ebfe879acc11"
+    },
+    "cibr-winter-training-2027": {
+      "status": "unchanged",
+      "last_success": "2026-11-22T17:30:09+00:00",
+      "next_check_at": "2026-11-22T18:30:09+00:00",
+      "hash": "00700662575064345be669fb1847cd83359ab1b5868cf5da4d8e3467f94ee009",
+      "content_sha256": "cae753ec2f064ab9dcbb0008cf18466ad89f5a1328570115655b990055f85f3b"
+    }
+  },
+  "pre_release_note": "2026-11-23 01:26:45 CST browser baseline had the same aggregate state",
+  "new_published_activities": 0,
+  "network_ai_calls": 0,
+  "production_writes": 0
+}
