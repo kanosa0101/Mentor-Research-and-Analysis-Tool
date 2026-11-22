@@ -2,7 +2,7 @@ import copy
 import json
 import os
 import unittest
-from datetime import date, timedelta
+from datetime import datetime, timedelta, timezone
 from unittest.mock import patch
 from urllib.request import Request
 from urllib.error import HTTPError
@@ -13,8 +13,12 @@ from crawler import project_util as projects
 from crawler.workflow_util import empty_workflow
 
 
+def admissions_day():
+    return datetime.now(timezone(timedelta(hours=8))).date()
+
+
 def fixture():
-    today = date.today().isoformat()
+    today = admissions_day().isoformat()
     event = dict(label='复试查验', kind='qualification', at='2026-11-01T01:00:00+00:00', quote='复试查验原件', locator='第二段')
     action = dict(id='originals', label='查验原件', stage='interview', instruction=dict(text='带原件到院系查验', quote='查验原件', locator='第二段'), event_indexes=[0])
     policy = dict(id='p', title='正式政策', school='test', dept='cs', level='dept', year=2027, degree='phd', route='assessment', track='ordinary', program='', program_code='', source_id='s', review_hashes={'s': 'a'*64}, reviewed_at=today, events=[event], material_actions=[action])
@@ -195,7 +199,7 @@ class MaterialTaskApiTests(unittest.TestCase):
         project = self.project()
         record = self.saved(project)
         checks = self.root / 'data' / 'admissions_checks.json'
-        checks.write_text(json.dumps({'s': dict(status='ok', hash='b'*64, last_success=date.today().isoformat())}), encoding='utf-8')
+        checks.write_text(json.dumps({'s': dict(status='ok', hash='b'*64, last_success=admissions_day().isoformat())}), encoding='utf-8')
         changed = self.request('/api/workflow/material-tasks')[1]['records'][record['id']]
         self.assertIn('source_changed', changed['review_reasons'])
         body = dict(expected_goal=record['goal_snapshot'], expected_action=record['action_fingerprint'], event_index=0)
@@ -214,7 +218,7 @@ class MaterialTaskApiTests(unittest.TestCase):
         checks = self.root / 'data' / 'admissions_checks.json'
         for days in [7, 8, 30, 60]:
             with self.subTest(days=days):
-                checked_at = (date.today() - timedelta(days=days)).isoformat()
+                checked_at = (admissions_day() - timedelta(days=days)).isoformat()
                 checks.write_text(json.dumps({'s': dict(status='ok', hash='a'*64, last_success=checked_at)}), encoding='utf-8')
                 row = self.row(project)
                 self.assertTrue(row['can_record'])
@@ -236,14 +240,14 @@ class MaterialTaskApiTests(unittest.TestCase):
     def test_old_summary_personal_progress_stays_unverified_until_reviewed(self):
         context = self.setup_context()
         project = self.project()
-        context['policies'][0]['reviewed_at'] = (date.today() - timedelta(days=31)).isoformat()
+        context['policies'][0]['reviewed_at'] = (admissions_day() - timedelta(days=31)).isoformat()
         self.assertEqual(self.row(project)['quality']['state'], 'review')
         record = self.saved(project, status='submitted')
         self.assertIn('source_review', record['review_reasons'])
         self.assertFalse(record['applicable'])
         reminder = dict(expected_goal=record['goal_snapshot'], expected_action=record['action_fingerprint'], event_index=0)
         self.assertEqual(self.request('/api/workflow/material-tasks/' + record['id'] + '/reminders', reminder, 'POST')[0], 409)
-        context['policies'][0]['reviewed_at'] = date.today().isoformat()
+        context['policies'][0]['reviewed_at'] = admissions_day().isoformat()
         reviewed = self.request('/api/workflow/material-tasks')[1]['records'][record['id']]
         self.assertFalse(reviewed['review_required'])
         self.assertEqual(reviewed['status'], 'submitted')
@@ -254,8 +258,8 @@ class MaterialTaskApiTests(unittest.TestCase):
         body = self.body(project)
         checks = self.root / 'data' / 'admissions_checks.json'
         for state, observation in [
-            ('changed', dict(status='ok', hash='b'*64, last_success=date.today().isoformat())),
-            ('error', dict(status='error', hash='a'*64, last_success=date.today().isoformat())),
+            ('changed', dict(status='ok', hash='b'*64, last_success=admissions_day().isoformat())),
+            ('error', dict(status='error', hash='a'*64, last_success=admissions_day().isoformat())),
             ('unknown', {})
         ]:
             with self.subTest(state=state):
