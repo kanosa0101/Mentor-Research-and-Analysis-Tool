@@ -1,0 +1,1390 @@
+{
+  "version": "1.12.5",
+  "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+  "windows": {
+    "passed": 1453,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "seconds": 482.68
+  },
+  "ubuntu_source_ci": {
+    "passed": 1453,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "seconds": 265.63,
+    "run_id": 45064249107,
+    "job_id": 137336736587
+  },
+  "node_tests": 25,
+  "structural_preflight_problems": 0,
+  "initial_full_regression": {
+    "failed_test": "PublicUpdateStageTests.test_actual_staged_rebuild_installs_inline_page_and_preserves_private_and_client_sources",
+    "cause": "notices-core.js and notices.js absent from staged build dependency list",
+    "fixed_and_full_rerun": true
+  },
+  "online": {
+    "passed": true,
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors",
+      "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+      "notice_first_screen_and_general_policy_handoff_preserve_independent_years"
+    ],
+    "browser_errors": [],
+    "recorded_request_failures": [
+      {
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/browser-library-core.js?v=20261115-7",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/api/outreach",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "qa_accounts_removed": 2,
+    "email_sent": false
+  },
+  "public_mentors": {
+    "passed": true,
+    "local_build": false,
+    "version": "1.12.5",
+    "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "archive_sha256": "30747eb6fe7bf4d9a098fe12c4b8975edf7aab7457dd4adda7e1c7affee85b20",
+    "manifest_sha256": "a4a3faa645281db7bc3e46aba86eed3308e99672ccaac91633d37782f5364ff3",
+    "import_sha256": "44399365b83e52eb3e18c116e438fd2c2d90c26f4af0d17c3a8b350cb6feaf45",
+    "raw_file_checks": 17,
+    "production_raw_receipt": {
+      "raw_writes_verified": 17,
+      "deployment_receipt_sha256": "cf479b7efc2d0e0e3bcd9058b4e7b020a82056b768067805c0ded98ad7c2f301",
+      "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+      "archive_sha256": "30747eb6fe7bf4d9a098fe12c4b8975edf7aab7457dd4adda7e1c7affee85b20",
+      "package_files": 37,
+      "protected_files_unchanged": 7922
+    },
+    "public_catalogs": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "public_id_set_sha256": "28d8ac14b08e666c26fc2c486fd08be3140706c1cd080ff63d67ee7ec563868f",
+    "public_email_counts_from_current_indexes": {
+      "nonempty": 6041,
+      "contactable": 6041
+    },
+    "jlu_candidates": {
+      "total": 185,
+      "missing_email": 34,
+      "contactable": 151,
+      "revision": "6ae72349cce45f0e7f2e"
+    },
+    "target_detail_pages": 16,
+    "preserved_detail_pages": [
+      "chehaiyan",
+      "liuyonghao"
+    ],
+    "email_changes": {
+      "corrected": 4,
+      "withdrawn": 1,
+      "filled": 11
+    },
+    "chenwei": "alternatives_original_text_only",
+    "started_utc": "2026-11-22T20:13:24.104553+00:00",
+    "completed_utc": "2026-11-22T20:13:36.081166+00:00"
+  },
+  "public_notices": {
+    "checked_at": "2026-11-22T20:14:37.799102+00:00",
+    "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "raw_public_sha256": "e066134dbf5390035fc887dd465b5c3752ad73e99d314ea98924f2acf9f2b676",
+    "installed_sha256": {
+      "site/notices.html": "e066134dbf5390035fc887dd465b5c3752ad73e99d314ea98924f2acf9f2b676",
+      "data/notices.json": "a0365b8896cf3e5f036331dd298940db5346f5b69f716a05a38a89667b7f9ccc"
+    },
+    "installed_receipt_sha256": "cf479b7efc2d0e0e3bcd9058b4e7b020a82056b768067805c0ded98ad7c2f301",
+    "unchanged_notice_payload_records": 387,
+    "sources": 39,
+    "external_css_javascript_resources": 0,
+    "official_sources": {
+      "2028": {
+        "url": "https://sai.xidian.edu.cn/info/1106/32502.htm",
+        "status": 200,
+        "original_sha256": "70eb652d16f52afe81036030423d42b7b8ea123ec1fc8e2138efcaa59a7091a8"
+      },
+      "2029": {
+        "url": "https://sai.xidian.edu.cn/info/1106/32522.htm",
+        "status": 200,
+        "original_sha256": "0da6b82cff47725c066de804af72dfe04baf792009d45e3fb48cd213dd973ff5"
+      }
+    },
+    "browser_first_screen": [
+      {
+        "case": "default",
+        "width": 390,
+        "height": 844,
+        "first_title_y": 657.59,
+        "first_title_bottom": 708.48,
+        "screenshot": "production-default-390.png"
+      },
+      {
+        "case": "xidian-2028",
+        "width": 390,
+        "height": 844,
+        "first_title_y": 660.8,
+        "first_title_bottom": 711.69,
+        "screenshot": "production-xidian-2028-390.png"
+      },
+      {
+        "case": "default",
+        "width": 1440,
+        "height": 900,
+        "first_title_y": 504.77,
+        "first_title_bottom": 526.77,
+        "screenshot": "production-default-1440.png"
+      },
+      {
+        "case": "xidian-2028",
+        "width": 1440,
+        "height": 900,
+        "first_title_y": 504.77,
+        "first_title_bottom": 526.77,
+        "screenshot": "production-xidian-2028-1440.png"
+      }
+    ],
+    "general_policy": [
+      {
+        "width": 390,
+        "admission_filter": "unset",
+        "before": 1,
+        "after": 19,
+        "admission_inferred": false
+      },
+      {
+        "width": 390,
+        "admission_filter": "unknown",
+        "before": 1,
+        "after": 19,
+        "admission_inferred": false
+      },
+      {
+        "width": 1440,
+        "admission_filter": "unset",
+        "before": 1,
+        "after": 19,
+        "admission_inferred": false
+      },
+      {
+        "width": 1440,
+        "admission_filter": "unknown",
+        "before": 1,
+        "after": 19,
+        "admission_inferred": false
+      }
+    ],
+    "page_errors": [],
+    "blocked_requests": []
+  },
+  "notices_performance": {
+    "checked_at": "2026-11-22T20:14:49.801747+00:00",
+    "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "method": "same Windows Chromium 1255 flow, direct HTTPS, two runs each width and condition, no Playwright routing for timings",
+    "baseline_sha256": "8e864af72fd0005d22be65221c99238a71c5943f562a422c0c3fa00151c41689",
+    "observations": [
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 3.2000000178813934,
+          "tls": 855.2999999821186,
+          "requestStart": 860.5,
+          "responseStart": 1178.5,
+          "responseEnd": 1636.300000011921,
+          "requestWait": 318,
+          "domInteractive": 1690.199999988079,
+          "dcl": 1695.300000011921,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1664.9000000059605,
+        "paints": {
+          "first-paint": 1460,
+          "first-contentful-paint": 1460
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 657.59375,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "计算机学院（网络空间安全学院、密码学院）2027级第一批全日制博士招生办法",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 639.59375,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 603.5,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 957.28125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1293.640625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 34,
+          "domNodes": 9648,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1755.3477000037674,
+        "url": "https://8.213.137.82:8443/notices.html?notice_cycle=active",
+        "status": 200,
+        "mode": "cold-default",
+        "width": 390,
+        "height": 844,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 1.0999999940395355,
+          "tls": 857.2999999821186,
+          "requestStart": 859.2000000178814,
+          "responseStart": 1207.9000000059605,
+          "responseEnd": 1685.1000000238419,
+          "requestWait": 348.69999998807907,
+          "domInteractive": 1749.5,
+          "dcl": 1753,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1717.6000000238419,
+        "paints": {
+          "first-paint": 1476,
+          "first-contentful-paint": 1476
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 660.796875,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "人工智能学院2028届优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 641.1875,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 606.703125,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 958.875,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1292.640625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1799.1926000104286,
+        "url": "https://8.213.137.82:8443/notices.html?school=xidian&dept=ai&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+        "status": 200,
+        "mode": "cold-xidian",
+        "width": 390,
+        "height": 844,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0,
+          "tls": 0,
+          "requestStart": 3,
+          "responseStart": 329.90000000596046,
+          "responseEnd": 621.7999999821186,
+          "requestWait": 326.90000000596046,
+          "domInteractive": 664.7999999821186,
+          "dcl": 668.1999999880791,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 644.0999999940395,
+        "paints": {
+          "first-paint": 480,
+          "first-contentful-paint": 480
+        },
+        "longTasks": [
+          {
+            "start": 493.7999999821186,
+            "duration": 119
+          }
+        ],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 660.796875,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 641.1875,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 606.703125,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 958.875,
+              "h": 187.125
+            },
+            ".notice-sources": {
+              "y": 1362.8125,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 746.3203000079375,
+        "url": "https://8.213.137.82:8443/notices.html?year=2027&degree=phd&route=assessment&school=pku&dept=software&notice_cycle=active&notice_route=assessment&notice_admission_year=2027",
+        "status": 200,
+        "mode": "site-transition",
+        "width": 390,
+        "height": 844,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 2.5,
+          "tls": 882.3000000119209,
+          "requestStart": 886,
+          "responseStart": 1223.5,
+          "responseEnd": 1699.699999988079,
+          "requestWait": 337.5,
+          "domInteractive": 1766,
+          "dcl": 1770.5,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1733.199999988079,
+        "paints": {
+          "first-paint": 1508,
+          "first-contentful-paint": 1508
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "计算机学院（网络空间安全学院、密码学院）2027级第一批全日制博士招生办法",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1136.8125,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 34,
+          "domNodes": 9648,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1818.3159999898635,
+        "url": "https://8.213.137.82:8443/notices.html?notice_cycle=active",
+        "status": 200,
+        "mode": "cold-default",
+        "width": 1440,
+        "height": 900,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0.800000011920929,
+          "tls": 864.7999999821186,
+          "requestStart": 866.4000000059605,
+          "responseStart": 1192.0999999940395,
+          "responseEnd": 1666.7999999821186,
+          "requestWait": 325.69999998807907,
+          "domInteractive": 1751.5,
+          "dcl": 1758.2999999821186,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1701.699999988079,
+        "paints": {
+          "first-paint": 1488,
+          "first-contentful-paint": 1488
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "人工智能学院2028届优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1134.21875,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1819.6853999979794,
+        "url": "https://8.213.137.82:8443/notices.html?school=xidian&dept=ai&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+        "status": 200,
+        "mode": "cold-xidian",
+        "width": 1440,
+        "height": 900,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0,
+          "tls": 0,
+          "requestStart": 3.199999988079071,
+          "responseStart": 328.39999997615814,
+          "responseEnd": 616.0999999940395,
+          "requestWait": 325.19999998807907,
+          "domInteractive": 675.3999999761581,
+          "dcl": 681.5,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 647.1999999880791,
+        "paints": {
+          "first-paint": 480,
+          "first-contentful-paint": 480
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 187.125
+            },
+            ".notice-sources": {
+              "y": 1204.390625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 722.8004999924451,
+        "url": "https://8.213.137.82:8443/notices.html?year=2027&degree=phd&route=assessment&school=pku&dept=software&notice_cycle=active&notice_route=assessment&notice_admission_year=2027",
+        "status": 200,
+        "mode": "site-transition",
+        "width": 1440,
+        "height": 900,
+        "run": 1,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 2.5,
+          "tls": 883.8000000119209,
+          "requestStart": 887.9000000059605,
+          "responseStart": 1220.699999988079,
+          "responseEnd": 1731.199999988079,
+          "requestWait": 332.7999999821186,
+          "domInteractive": 1808.7999999821186,
+          "dcl": 1814.199999988079,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1771.199999988079,
+        "paints": {
+          "first-paint": 1524,
+          "first-contentful-paint": 1524
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 657.59375,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "计算机学院（网络空间安全学院、密码学院）2027级第一批全日制博士招生办法",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 639.59375,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 603.5,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 957.28125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1293.640625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 34,
+          "domNodes": 9648,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1865.7054000068456,
+        "url": "https://8.213.137.82:8443/notices.html?notice_cycle=active",
+        "status": 200,
+        "mode": "cold-default",
+        "width": 390,
+        "height": 844,
+        "run": 2,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0.9000000059604645,
+          "tls": 857.1999999880791,
+          "requestStart": 858.9000000059605,
+          "responseStart": 1182,
+          "responseEnd": 1659.9000000059605,
+          "requestWait": 323.09999999403954,
+          "domInteractive": 1726.699999988079,
+          "dcl": 1729.9000000059605,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1688.699999988079,
+        "paints": {
+          "first-paint": 1440,
+          "first-contentful-paint": 1440
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 660.796875,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "人工智能学院2028届优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 641.1875,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 606.703125,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 958.875,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1292.640625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1781.0441000037827,
+        "url": "https://8.213.137.82:8443/notices.html?school=xidian&dept=ai&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+        "status": 200,
+        "mode": "cold-xidian",
+        "width": 390,
+        "height": 844,
+        "run": 2,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0,
+          "tls": 0,
+          "requestStart": 3.0999999940395355,
+          "responseStart": 333,
+          "responseEnd": 618,
+          "requestWait": 329.90000000596046,
+          "domInteractive": 670.7000000178814,
+          "dcl": 674.5,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 653.8000000119209,
+        "paints": {
+          "first-paint": 488,
+          "first-contentful-paint": 488
+        },
+        "longTasks": [
+          {
+            "start": 493.7000000178814,
+            "duration": 55
+          },
+          {
+            "start": 561,
+            "duration": 51
+          }
+        ],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 844,
+          "firstTitleY": 660.796875,
+          "firstTitleHeight": 50.890625,
+          "firstTitleText": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+          "fields": {
+            "#school": {
+              "y": 237.21875,
+              "h": 44
+            },
+            "#search": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-graduation-year": {
+              "y": 321.3125,
+              "h": 44
+            },
+            "#notice-cycle-guide": {
+              "y": 641.1875,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 439.703125,
+              "h": 96
+            },
+            "#count": {
+              "y": 606.703125,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 958.875,
+              "h": 187.125
+            },
+            ".notice-sources": {
+              "y": 1362.8125,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 735.6623999949079,
+        "url": "https://8.213.137.82:8443/notices.html?year=2027&degree=phd&route=assessment&school=pku&dept=software&notice_cycle=active&notice_route=assessment&notice_admission_year=2027",
+        "status": 200,
+        "mode": "site-transition",
+        "width": 390,
+        "height": 844,
+        "run": 2,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 2.5,
+          "tls": 895.2999999821186,
+          "requestStart": 899.8000000119209,
+          "responseStart": 1237.800000011921,
+          "responseEnd": 1752,
+          "requestWait": 338,
+          "domInteractive": 1828.800000011921,
+          "dcl": 1832.800000011921,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1791.7000000178814,
+        "paints": {
+          "first-paint": 1540,
+          "first-contentful-paint": 1540
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "计算机学院（网络空间安全学院、密码学院）2027级第一批全日制博士招生办法",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1136.8125,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 34,
+          "domNodes": 9648,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1879.8355000035372,
+        "url": "https://8.213.137.82:8443/notices.html?notice_cycle=active",
+        "status": 200,
+        "mode": "cold-default",
+        "width": 1440,
+        "height": 900,
+        "run": 2,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0.9000000059604645,
+          "tls": 856.0999999940395,
+          "requestStart": 857.8000000119209,
+          "responseStart": 1175.0999999940395,
+          "responseEnd": 1634,
+          "requestWait": 317.2999999821186,
+          "domInteractive": 1703.4000000059605,
+          "dcl": 1709.199999988079,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 1663.699999988079,
+        "paints": {
+          "first-paint": 1468,
+          "first-contentful-paint": 1468
+        },
+        "longTasks": [],
+        "resources": [],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "人工智能学院2028届优秀本科毕业生推荐免试攻读硕士学位研究生工作实施方案",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 116.953125
+            },
+            ".notice-sources": {
+              "y": 1134.21875,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 1762.77050000499,
+        "url": "https://8.213.137.82:8443/notices.html?school=xidian&dept=ai&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+        "status": 200,
+        "mode": "cold-xidian",
+        "width": 1440,
+        "height": 900,
+        "run": 2,
+        "pageerrors": []
+      },
+      {
+        "navigation": {
+          "protocol": "http/1.1",
+          "dns": 0,
+          "tcp": 0,
+          "tls": 0,
+          "requestStart": 3.5,
+          "responseStart": 343.09999999403954,
+          "responseEnd": 637.0999999940395,
+          "requestWait": 339.59999999403954,
+          "domInteractive": 804.7999999821186,
+          "dcl": 813.6999999880791,
+          "transfer": 105456,
+          "encoded": 105156,
+          "decoded": 1445755
+        },
+        "noticeReady": 746.6999999880791,
+        "paints": {
+          "first-paint": 500,
+          "first-contentful-paint": 500
+        },
+        "longTasks": [
+          {
+            "start": 505,
+            "duration": 130
+          },
+          {
+            "start": 700,
+            "duration": 55
+          }
+        ],
+        "resources": [
+          {
+            "path": "/api/auth/me",
+            "blocking": "non-blocking",
+            "start": 381,
+            "first": 707.5,
+            "end": 708.6999999880791,
+            "wait": 325.60000002384186,
+            "transfer": 338,
+            "encoded": 38,
+            "initiator": "fetch"
+          }
+        ],
+        "dom": {
+          "viewportHeight": 900,
+          "firstTitleY": 504.765625,
+          "firstTitleHeight": 22,
+          "firstTitleText": "北京大学软件与微电子学院2027年软件工程工学博士研究生“申请-考核制”招生说明",
+          "fields": {
+            "#school": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#search": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-graduation-year": {
+              "y": 223.484375,
+              "h": 41
+            },
+            "#notice-cycle-guide": {
+              "y": 482.765625,
+              "h": 304.6875
+            },
+            "#notice-buckets": {
+              "y": 338.875,
+              "h": 40
+            },
+            "#count": {
+              "y": 446.671875,
+              "h": 22.09375
+            },
+            "#notice-context": {
+              "y": 800.453125,
+              "h": 187.125
+            },
+            ".notice-sources": {
+              "y": 1204.390625,
+              "h": 64.78125
+            }
+          },
+          "dataBytes": 737234,
+          "cards": 387,
+          "visibleCards": 1,
+          "domNodes": 9652,
+          "horizontalOverflow": false
+        },
+        "readyObservedMs": 865.4052999918349,
+        "url": "https://8.213.137.82:8443/notices.html?year=2027&degree=phd&route=assessment&school=pku&dept=software&notice_cycle=active&notice_route=assessment&notice_admission_year=2027",
+        "status": 200,
+        "mode": "site-transition",
+        "width": 1440,
+        "height": 900,
+        "run": 2,
+        "pageerrors": []
+      }
+    ],
+    "summary_before": {
+      "cold-default": {
+        "ttfb_ms": {
+          "minimum": 1234.9,
+          "median": 1278.6,
+          "maximum": 1441
+        },
+        "ready_ms": {
+          "minimum": 2979,
+          "median": 2998.1,
+          "maximum": 3258.6
+        },
+        "connection_ms": {
+          "minimum": 891.5,
+          "median": 938.2,
+          "maximum": 1055.5
+        },
+        "html_gzip_bytes": {
+          "minimum": 86992,
+          "median": 86992.0,
+          "maximum": 86992
+        }
+      },
+      "cold-xidian": {
+        "ttfb_ms": {
+          "minimum": 1206.7,
+          "median": 1253.4,
+          "maximum": 1264
+        },
+        "ready_ms": {
+          "minimum": 2849.4,
+          "median": 2992.3,
+          "maximum": 3116.7
+        },
+        "connection_ms": {
+          "minimum": 872.4,
+          "median": 916.1,
+          "maximum": 921.8
+        },
+        "html_gzip_bytes": {
+          "minimum": 86992,
+          "median": 86992.0,
+          "maximum": 86992
+        }
+      },
+      "site-transition": {
+        "ttfb_ms": {
+          "minimum": 327,
+          "median": 336.6,
+          "maximum": 347.4
+        },
+        "ready_ms": {
+          "minimum": 1298.3,
+          "median": 1355.1,
+          "maximum": 1389.3
+        },
+        "connection_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 0
+        },
+        "html_gzip_bytes": {
+          "minimum": 86992,
+          "median": 86992.0,
+          "maximum": 86992
+        }
+      }
+    },
+    "summary_after": {
+      "cold-default": {
+        "ttfb_ms": {
+          "minimum": 1178.5,
+          "median": 1222.1,
+          "maximum": 1237.8
+        },
+        "ready_ms": {
+          "minimum": 1664.9,
+          "median": 1752.2,
+          "maximum": 1791.7
+        },
+        "connection_ms": {
+          "minimum": 858.5,
+          "median": 885.6,
+          "maximum": 897.8
+        },
+        "html_gzip_bytes": {
+          "minimum": 105156,
+          "median": 105156.0,
+          "maximum": 105156
+        }
+      },
+      "cold-xidian": {
+        "ttfb_ms": {
+          "minimum": 1175.1,
+          "median": 1187.0,
+          "maximum": 1207.9
+        },
+        "ready_ms": {
+          "minimum": 1663.7,
+          "median": 1695.2,
+          "maximum": 1717.6
+        },
+        "connection_ms": {
+          "minimum": 857.0,
+          "median": 858.2,
+          "maximum": 865.6
+        },
+        "html_gzip_bytes": {
+          "minimum": 105156,
+          "median": 105156.0,
+          "maximum": 105156
+        }
+      },
+      "site-transition": {
+        "ttfb_ms": {
+          "minimum": 328.4,
+          "median": 331.5,
+          "maximum": 343.1
+        },
+        "ready_ms": {
+          "minimum": 644.1,
+          "median": 650.5,
+          "maximum": 746.7
+        },
+        "connection_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 0
+        },
+        "html_gzip_bytes": {
+          "minimum": 105156,
+          "median": 105156.0,
+          "maximum": 105156
+        }
+      }
+    }
+  },
+  "production_native_transport": {
+    "status": "passed",
+    "source_commit": "362573d28fb73adfc13f125d38aa6ca57e73ebe7",
+    "version_before": "1.12.4",
+    "version_after": "1.12.4",
+    "release_manifest_sha256": "d048f5ca19520f3b5ba937f2cfaf886da46bdbe8518e358c7739af8be47b3e74",
+    "evidence_index_sha256": "5df7c858b87bb90d72e625c6ebbe290550053cdc9df45242222f3187b3260fd9",
+    "candidate_source_files": {
+      "crawler/source_discovery.py": "96c2a9d727191648e8aea5617a7cf24802b404e15ca1d1c8b0f493b6d6af8133",
+      "sites/jlu/cs.yaml": "b7a955c8012be63238be90580651d51972463e306cb1a91ff3aad451b0f1d759"
+    },
+    "installed_transport_before_sha256": "53e4f8cb52850a6177a1319d17038dadb749151b787fd89cb5f0f90a04aef732",
+    "installed_transport_after_sha256": "53e4f8cb52850a6177a1319d17038dadb749151b787fd89cb5f0f90a04aef732",
+    "started_utc": "2026-11-22T19:59:48.296428+00:00",
+    "completed_utc": "2026-11-22T19:59:54.412788+00:00",
+    "png_exact": 11,
+    "profile_raw_exact": 11,
+    "named_contact_slots": 11,
+    "contact_slot_sha_exact": 11,
+    "actual_official_http_requests": 22,
+    "network_limit_tests": {
+      "wrong_institution": "发现链接跨机构，须另行人工核对来源",
+      "non_approved_path": "联系方式图片离开已登记的官方原图路径",
+      "png_without_opt_in": "非HTML来源需要专用解析，不作为新栏目接入"
+    }
+  },
+  "native_transport_final_source_binding": {
+    "originally_verified_commit": "362573d28fb73adfc13f125d38aa6ca57e73ebe7",
+    "release_source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "file": "crawler/source_discovery.py",
+    "unchanged_sha256": "96c2a9d727191648e8aea5617a7cf24802b404e15ca1d1c8b0f493b6d6af8133"
+  },
+  "deployment": {
+    "passed": true,
+    "version": "1.12.5",
+    "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "archive_sha256": "30747eb6fe7bf4d9a098fe12c4b8975edf7aab7457dd4adda7e1c7affee85b20",
+    "verified_files": 37,
+    "protected_files_unchanged": 7922,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v1125-stage-0697fc09f/source-before.tar.gz",
+    "source_backup_sha256": "dc71a7dd99135abceb8833c454ec7ef2e1b822b355f6607ed58eea6511351984",
+    "site_backup": "/opt/mentor-v1125-stage-0697fc09f/site-before",
+    "protected_before_sha256": "2c6637ec4a21349657e210b4f6b3b67a5ac4859e4c64f690ce236b238f6f2b1c"
+  },
+  "public_evidence": {
+    "source_commit": "0697fc09ff3f1057c433a5b2f044dea26f7fef8c",
+    "archive": "E:\\homework\\自动化调研\\cache\\v1125\\contact-evidence.tar.gz",
+    "archive_sha256": "53280d0138d27c8a67925486a44009ed112894b022d76a58f35213bc1bb5de46",
+    "bytes": 126182,
+    "published_profiles": 16,
+    "members_including_index": 77,
+    "roles": {
+      "reviewed-receipt": 9,
+      "production-config-before": 1,
+      "release-config": 1,
+      "production-profile-before": 17,
+      "official-person-html": 17,
+      "release-profile": 16,
+      "official-email-png": 11,
+      "published-roster-profile": 1,
+      "official-roster-regression-html": 3
+    },
+    "verification": {
+      "verified": true,
+      "source_commit": "362573d28fb73adfc13f125d38aa6ca57e73ebe7",
+      "members": 77,
+      "sha256": "2cb15dbe53eab7f643b12e4eae8c85046b99d74b524be4c444c1a64005233080"
+    }
+  },
+  "limitations": {
+    "new_published_activities": 0,
+    "ai_recovery_probed_this_release": false,
+    "new_or_changed_contact_images_require_review": true
+  }
+}
