@@ -11,11 +11,12 @@
 
 ## 本版发布与验收
 
-- [版本说明](../RELEASE_NOTES.md)、[发布验收](../RELEASE_ACCEPTANCE.md)和[v1.12.3 交付记录](../deploy/DELIVERY_V1.12.3_2026-11-23.md)
-- [v1.12.3 优化计划](audits/2026-11-23-v1123/plan.md)、[导师补齐核验](audits/2026-11-23-v1123/mentor-batches.md)和[实际验收结果](audits/2026-11-23-v1123/verification.json)
+- [版本说明](../RELEASE_NOTES.md)、[发布验收](../RELEASE_ACCEPTANCE.md)和[v1.12.4 交付记录](../deploy/DELIVERY_V1.12.4_2026-11-23.md)
+- [v1.12.4 优化计划](audits/2026-11-23-v1124/plan.md)和[导师资料批次审计](audits/2026-11-23-v1124/mentor-batches.md)
 
 ## 历史与审计
 
+- [v1.12.3 交付记录](../deploy/DELIVERY_V1.12.3_2026-11-23.md)、[优化计划](audits/2026-11-23-v1123/plan.md)、[导师补齐核验](audits/2026-11-23-v1123/mentor-batches.md)和[实际验收结果](audits/2026-11-23-v1123/verification.json)
 - [v1.12.1 导师补齐核验](audits/2026-11-22-v1121/mentor-batches.md)
 
 - [历史文档索引](HISTORY.md)汇总历代交付、数据快照和整理前的主文档。

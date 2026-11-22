@@ -19,6 +19,8 @@
 
 ## 已有版本记录
 
+- [v1.12.4 交付](../deploy/DELIVERY_V1.12.4_2026-11-23.md)及[导师资料批次审计](audits/2026-11-23-v1124/mentor-batches.md)
+- [v1.12.3 交付](../deploy/DELIVERY_V1.12.3_2026-11-23.md)及[验收记录](audits/2026-11-23-v1123/verification.json)
 - [v1.12.2交付](../deploy/DELIVERY_V1.12.2_2026-11-23.md)及[验收审计](audits/2026-11-23-v1122/)
 
 - [v1.11.9 交付](../deploy/DELIVERY_V1.11.9_2026-11-17.md)及[验收审计](audits/2026-11-17-v1119/)

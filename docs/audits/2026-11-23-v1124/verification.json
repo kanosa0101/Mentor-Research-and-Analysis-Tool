@@ -1,0 +1,183 @@
+{
+  "version": "1.12.4",
+  "source_commit": "87f6c2c8c9bb693195c99060f804d0b4afb883c5",
+  "windows": {
+    "passed": 1409,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "seconds": 470.14
+  },
+  "ubuntu_source_ci": {
+    "passed": 1409,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "seconds": 263.88,
+    "run_id": 45059142852,
+    "job_id": 137320915045
+  },
+  "node_tests": 25,
+  "structural_preflight_problems": 0,
+  "online": {
+    "passed": true,
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors",
+      "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry"
+    ],
+    "browser_errors": [],
+    "recorded_request_failures": [
+      {
+        "url": "https://8.213.137.82:8443/api/outreach",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://8.213.137.82:8443/api/library",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "qa_accounts_removed": 2,
+    "prior_incomplete_qa_accounts_removed": 1,
+    "email_sent": false
+  },
+  "public_mentor_verification": {
+    "passed": true,
+    "local_build": false,
+    "source_commit": "87f6c2c8c9bb693195c99060f804d0b4afb883c5",
+    "data_import_sha256": "7d61ae3f66ee15ff517ff608886933e64e1ea2e7371c8e8a24659d68d8208885",
+    "started_utc": "2026-11-22T19:19:18.790378+00:00",
+    "completed_utc": "2026-11-22T19:19:44.019372+00:00",
+    "raw_server_receipt": {
+      "source_commit": "87f6c2c8c9bb693195c99060f804d0b4afb883c5",
+      "archive_sha256": "1822056430df7f063d420998529986f98ec92965e82adc64f26ddb1d5d83a174",
+      "deployment_receipt_sha256": "87a1130a38204d11f6d4acea0f4ff317af7eed8fcdb820d5e90128099c2ab839",
+      "raw_writes_verified": 87
+    },
+    "public_catalogs": {
+      "data.js": 7171,
+      "contact-data.js": 7171,
+      "discovery-data.js": 7171,
+      "application-data.js": 7171,
+      "search.js": 7171,
+      "compare-data.js": 7171
+    },
+    "public_id_set_sha256": "28d8ac14b08e666c26fc2c486fd08be3140706c1cd080ff63d67ee7ec563868f",
+    "fully_paginated_candidate_counts": {
+      "nwpu": 23,
+      "jlu": 185
+    },
+    "candidate_revisions": {
+      "nwpu": "cd332f98d6a31df92516",
+      "jlu": "cd332f98d6a31df92516"
+    },
+    "included_missing_email_counts": {
+      "nwpu": 23,
+      "jlu": 44
+    },
+    "detail_pages_verified": 84,
+    "public_fields_verified": {
+      "detail_url": 23,
+      "title": 22,
+      "research_direction_raw": 72,
+      "supervisor": 2,
+      "email": 3
+    },
+    "email_change_counts": {
+      "new": 2,
+      "correction": 1
+    }
+  },
+  "notices": {
+    "installed": {
+      "site/notices.html": "8b0a1f4385c3731669184174a3fab507fcedf52c3cd785f982d50b8a2d90567c",
+      "data/notices.json": "a0365b8896cf3e5f036331dd298940db5346f5b69f716a05a38a89667b7f9ccc",
+      "sites/notices.yaml": "7a4f4eceed68b464ff05882ea4c23ca0e0f388b2fd519daf285457533ac5e436"
+    },
+    "public_html_sha256": "8b0a1f4385c3731669184174a3fab507fcedf52c3cd785f982d50b8a2d90567c",
+    "public_http_status": 200,
+    "records": 387,
+    "sources": 39,
+    "retained_exact_records": 381,
+    "retained_exact_sources": 38,
+    "added_urls": [
+      "https://sai.xidian.edu.cn/info/1106/25212.htm",
+      "https://sai.xidian.edu.cn/info/1106/28372.htm",
+      "https://sai.xidian.edu.cn/info/1106/28512.htm",
+      "https://sai.xidian.edu.cn/info/1106/28522.htm",
+      "https://sai.xidian.edu.cn/info/1106/32502.htm",
+      "https://sai.xidian.edu.cn/info/1106/32522.htm"
+    ],
+    "department_url": "https://8.213.137.82:8443/notices.html?school=xidian&dept=ai&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+    "whole_school_url": "https://8.213.137.82:8443/notices.html?school=xidian&notice_cycle=preparation&notice_route=recommend&notice_graduation_year=2028",
+    "browsers": [
+      {
+        "width": 390,
+        "department_reload": true,
+        "whole_school": true,
+        "graduation_year_switch": true,
+        "exact_official_links": true,
+        "excluded_from": [
+          "winter_camp",
+          "research"
+        ]
+      },
+      {
+        "width": 1440,
+        "department_reload": true,
+        "whole_school": true,
+        "graduation_year_switch": true,
+        "exact_official_links": true,
+        "excluded_from": [
+          "winter_camp",
+          "research"
+        ]
+      }
+    ],
+    "browser_error_count": 0,
+    "write_request_count": 0,
+    "checked_utc": "2026-11-22T19:21:29.866862+00:00"
+  },
+  "public_jlu_email_counts": {
+    "checked_at_utc": "2026-11-22T19:21:07.994036+00:00",
+    "local": {
+      "contactable": 140,
+      "empty": 45
+    },
+    "live": {
+      "contactable": 141,
+      "empty": 44
+    },
+    "differing_profiles": [
+      {
+        "page": "jlu-cs-lihongliang",
+        "local": "empty",
+        "live": "contactable"
+      }
+    ]
+  },
+  "deployment": {
+    "source_files": 111,
+    "protected_files_unchanged": 7816,
+    "source_archive_sha256": "1822056430df7f063d420998529986f98ec92965e82adc64f26ddb1d5d83a174",
+    "public_evidence_members": 300,
+    "public_evidence_sha256": "1ea1d217a3bd6d4a0d1f30db64c6c556a6f1c7f6954125ce12ce98584fb2988f"
+  },
+  "limitations": {
+    "new_confirmed_open_activities": 0,
+    "ai_recovery_probed_this_release": false,
+    "initial_windows_navigation_timeout_not_reproduced": true,
+    "first_online_attempt_missing_details_expansion_in_test_script": true
+  }
+}
