@@ -140,8 +140,8 @@ bio_raw: '姓名
 
   ).'
 institutes: []
-detail_url: https://cs.tongji.edu.cn/info/1121/3834.htm
-profile_url: https://cs.tongji.edu.cn/info/1121/3834.htm
+detail_url: https://cs.tongji.edu.cn/info/1067/3590.htm
+profile_url: https://cs.tongji.edu.cn/info/1067/3590.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets: []
@@ -166,3 +166,19 @@ provenance:
     source: https://cs.tongji.edu.cn/info/1121/3834.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1067/3590.htm
+    fetched_at: '2026-11-22'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1067/3590.htm
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cs.tongji.edu.cn/info/1067/3590.htm
+    fetched_at: '2026-11-22'
+    confidence: auto
+research_direction_raw: 空间智能、多媒体分析

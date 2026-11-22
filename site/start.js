@@ -45,11 +45,14 @@
     const qs=values=>new URLSearchParams(values).toString();
     const opportunity={};if(school)opportunity.school=school.name;if(target.path==='recommend')opportunity.year=String(target.year);
     const topics=target.interest.split(/[,，、;；]+/).map(value=>value.trim()).filter(Boolean);
+    if(topics.length)opportunity.topics=topics.join(',');
+    opportunity.target_degree=degree.degree;opportunity.target_route=degree.route;
+    if(degree.year)opportunity.target_year=degree.year;
     if(topics.length===1)opportunity.query=topics[0];
     const notice={...base,notice_cycle:'current'};if(target.path==='exam'){notice.notice_route='exam';notice.notice_admission_year=String(target.year);}
     return [
       ['按兴趣找导师','discovery.html?'+qs({...degree,...(topics.length?{topics:topics.join(',')}: {})})],
-      ['学校与招生要求','admissions.html?'+qs(degree)],
+      ['学校与招生要求','admissions.html?'+qs({...degree,...(topics.length?{topics:topics.join(',')}: {})})],
       ['招生通知与进程','notices.html?'+qs(notice)],
       [target.path==='recommend'?'冬令营与科研机会':'科研与营活动（另核届别）','opportunities.html?'+qs(opportunity)],
     ];

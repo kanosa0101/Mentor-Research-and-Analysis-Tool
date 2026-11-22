@@ -16,7 +16,7 @@ def test_start_dependency_failure_has_reload_and_recovers(failed_asset):
     environment = Environment(loader=FileSystemLoader(ROOT/'site/templates'),
                               autoescape=select_autoescape())
     html = environment.get_template('start.html.j2').render()
-    assert 'start.js?v=20261116-loadguard1' in html
+    assert 'start.js?v=20261122-flow1' in html
     errors, writes, blocked, requests = [], [], [], []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(args=['--no-proxy-server'])

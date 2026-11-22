@@ -188,13 +188,19 @@ const detailReturn=detailIncoming.get('discovery_return')||'';
 const validDetailReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(detailReturn);
 for(const key of ['school','dept','year','degree','route','track','program'])if(detailIncoming.get(key))detailScope.set(key,detailIncoming.get(key));
 const detailSchool={{ p.school|tojson }},detailDept={{ p.dept|tojson }};
-if(detailScope.get('school')!==detailSchool||detailScope.get('dept')!==detailDept){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
+const sameDetailUnit=detailScope.get('school')===detailSchool&&detailScope.get('dept')===detailDept;
+const detailProject=sameDetailUnit?detailIncoming.get('project'):'';
+if(!sameDetailUnit){document.getElementById('detail-scope-warning').hidden=!(detailScope.get('track')||detailScope.get('program'));detailScope.delete('track');detailScope.delete('program');}
 detailScope.set('school',detailSchool);detailScope.set('dept',detailDept);
 for(const a of document.querySelectorAll('a[href]')){
   const path=a.getAttribute('href').split('?')[0];
   if(['../discovery.html','../compare.html','../desk.html','../admissions.html','../notices.html','../applications.html'].includes(path)){
-    const q=new URLSearchParams(detailScope);if(path==='../desk.html')q.set('mentor',{{ p.page|tojson }});
-    if(validDetailReturn&&['../compare.html','../desk.html'].includes(path))q.set('discovery_return',detailReturn);
+    const q=new URLSearchParams(detailScope);
+    if(path==='../desk.html'||path==='../applications.html'){
+      q.set('mentor',{{ p.page|tojson }});
+      if(detailProject)q.set('project',detailProject);
+    }
+    if(validDetailReturn&&['../compare.html','../desk.html','../applications.html'].includes(path))q.set('discovery_return',detailReturn);
     a.href=validDetailReturn&&path==='../discovery.html'?'../'+detailReturn:path+'?'+q;
   }
 }

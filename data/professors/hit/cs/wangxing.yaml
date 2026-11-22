@@ -7,8 +7,8 @@ dept: cs
 status: enriched
 institutes:
 - 信息对抗技术研究所
-detail_url: http://www.cs.hit.edu.cn/jsml/list.htm
-profile_url: http://www.cs.hit.edu.cn/jsml/list.htm
+detail_url: https://homepage.hit.edu.cn/wangxing?lang=zh
+profile_url: https://homepage.hit.edu.cn/wangxing?lang=zh
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
 facets: []
@@ -23,3 +23,31 @@ provenance:
     source: http://www.cs.hit.edu.cn/jsml/list.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/wangxing?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/wangxing?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/wangxing?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/wangxing?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  title:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/wangxing?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+email: w-ang@hit.edu.cn
+research_direction_raw: 社交网络大数据挖掘、网络舆情分析
+title: 助理研究员

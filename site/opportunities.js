@@ -2,6 +2,18 @@ const oe=id=>document.getElementById(id), ox=value=>String(value??'').replace(/[
 let opportunityCatalog=window.OPPORTUNITIES||{opportunities:[],other_contents:[]}, opportunityRows=opportunityCatalog.opportunities, catalogLoaded=!!window.OPPORTUNITIES, savingOpportunity=null, savedOpportunities=new Map(), saveBusy=false, publicOpportunityMode=false, opportunityModeReady=false;
 const opportunityTime=value=>value?new Date(value).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'未知';
 const opportunityParams=new URLSearchParams(location.search), opportunityToday=OpportunityRules.dayOf(new Date().toISOString());
+function opportunityListUrl(id=''){
+  const query=new URLSearchParams(opportunityParams);
+  if(id)query.set('id',id);else query.delete('id');
+  return 'opportunities.html'+(query.size?'?'+query:'');
+}
+function opportunityBrowseScope(){
+  const name=oe('opportunity-school').value;
+  const school=window.SCHOOL_CATALOG?.schools.find(s=>s.name===name)?.id||opportunityRows.find(o=>o.school_name===name)?.school_id;
+  const query=school?new URLSearchParams({school}):new URLSearchParams();
+  for(const [source,key] of [['topics','topics'],['target_year','year'],['target_degree','degree'],['target_route','route']])if(opportunityParams.get(source))query.set(key,opportunityParams.get(source));
+  return query;
+}
 function opportunityFacts(o){
   const window=o.application_window,label=!o.deadline&&window?.mode==='rolling'?'官方受理方式':!o.deadline&&window?.mode==='month'?'截止月份':'报名截止';
   const value=OpportunityRules.formatDate(o.deadline)|| (window?.mode==='rolling'?'长期 / 滚动受理':window?.mode==='month'?OpportunityRules.formatDate(window.end_month)+'（具体日期未公布）':'具体日期待确认');
@@ -37,7 +49,7 @@ function opportunitySource(o){
 function opportunityActions(o,state){
   const saved=savedOpportunities.get(o.id),urls=new Set([o.source_url]);
   const link=(url,label)=>{if(!url||urls.has(url))return '';urls.add(url);return `<a href="${ox(url)}" target="_blank" rel="noopener">${label} ↗</a>`;};
-  return `<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看官方公告 ↗</a>${o.source_state==='verified'?link(o.application_url,state==='closed'?'原报名入口':'官方报名入口'):''}${publicOpportunityMode?`<a href="${ox(OnlineAccount.loginUrl('/opportunities.html?id='+encodeURIComponent(o.id)))}">登录后加入申请</a>`:saved?`<a href="applications.html?project=${ox(saved)}">查看我的项目</a>`:`<button type="button" data-save-opportunity="${ox(o.id)}" ${opportunityModeReady?'':'disabled'}>${opportunityModeReady?(state==='closed'?'保存作参考':'加入我的申请'):'正在连接工作台…'}</button>`}</div>`;
+  return `<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看官方公告 ↗</a>${o.source_state==='verified'?link(o.application_url,state==='closed'?'原报名入口':'官方报名入口'):''}${publicOpportunityMode?`<a href="${ox(OnlineAccount.loginUrl('/'+opportunityListUrl(o.id)))}">登录后加入申请</a>`:saved?`<a href="applications.html?project=${ox(saved)}">查看我的项目</a>`:`<button type="button" data-save-opportunity="${ox(o.id)}" ${opportunityModeReady?'':'disabled'}>${opportunityModeReady?(state==='closed'?'保存作参考':'加入我的申请'):'正在连接工作台…'}</button>`}</div>`;
 }
 function opportunityCard(o,filter){
   const state=OpportunityRules.state(o),organizer=o.content_classification.organizer_name;
@@ -64,20 +76,28 @@ function movedOpportunity(o){
   const explanation={mentor_recruitment:'这是一条导师或课题组的个人招募记录，已移出院校活动列表。它不代表院校统一项目或保研名额。',admission_notice:'这是一条正式招生通知，已移出冬夏令营与院校活动列表。请按原招生轮次查阅，不把历史通知当作当前报名。',pending:'这条记录的组织方、申请对象或正文证据尚不足，暂不进入活动列表，也不能确认可以报名。'};
   const mentors=(o.mentor_ids||[]).filter(id=>/^[a-z0-9][a-z0-9-]*$/.test(id));
   const next=scope==='mentor_recruitment'?(mentors.length?mentors.map(id=>`<a href="p/${encodeURIComponent(id)}.html">查看已核对的导师资料 →</a>`).join(' '):'<p class="note">导师身份尚待可靠关联，请从下方原文确认负责人，未绑定同名导师。</p>'):scope==='admission_notice'?`<a href="notices.html?notice_cycle=all&amp;q=${encodeURIComponent(o.title)}">查对应招生通知 →</a>`:'';
-  return `<article class="opportunity-card opportunity-moved" data-other-content="${ox(o.id)}"><span class="opportunity-state">${names[scope]||names.pending}</span><h2>${ox(o.title)}</h2><p>${explanation[scope]||explanation.pending}</p>${next}<p class="note">原链接与已保存的申请快照保留。分类调整不会替你修改项目或创建新申请。</p>${opportunitySource(o)}<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看原官方记录 ↗</a><a href="opportunities.html">返回院校活动</a></div><details class="opportunity-details"><summary>查看保留的对象、时间与联系方式</summary>${opportunityFacts(o)}${opportunityList(o.eligibility,'对象需核实')}<p>${ox(o.contact)}</p><p>${ox(o.admission_note)}</p><p>${ox(o.deadline_note)}</p></details></article>`;
+  return `<article class="opportunity-card opportunity-moved" data-other-content="${ox(o.id)}"><span class="opportunity-state">${names[scope]||names.pending}</span><h2>${ox(o.title)}</h2><p>${explanation[scope]||explanation.pending}</p>${next}<p class="note">原链接与已保存的申请快照保留。分类调整不会替你修改项目或创建新申请。</p>${opportunitySource(o)}<div class="opportunity-actions"><a class="primary opportunity-primary" href="${ox(o.source_url)}" target="_blank" rel="noopener">查看原官方记录 ↗</a></div><details class="opportunity-details"><summary>查看保留的对象、时间与联系方式</summary>${opportunityFacts(o)}${opportunityList(o.eligibility,'对象需核实')}<p>${ox(o.contact)}</p><p>${ox(o.admission_note)}</p><p>${ox(o.deadline_note)}</p></details></article>`;
 }
 function renderOpportunities(){
   if(!catalogLoaded){oe('opportunity-count').textContent='正在读取最新院校活动…';return;}
   const filter={query:oe('opportunity-search').value,kind:oe('opportunity-kind').value,school:oe('opportunity-school').value,year:oe('opportunity-year').value,status:oe('opportunity-state').value};
+  for(const key of ['query','kind','school','year','state']){const value=key==='state'?filter.status:filter[key];if(value)opportunityParams.set(key,value);else opportunityParams.delete(key);}
+  history.replaceState(null,'',location.pathname+(opportunityParams.size?'?'+opportunityParams:'')+location.hash);
+  const schoolScope=opportunityBrowseScope(),noticeScope=new URLSearchParams();
+  if(schoolScope.has('school'))noticeScope.set('school',schoolScope.get('school'));
+  if(schoolScope.has('year'))noticeScope.set('notice_admission_year',schoolScope.get('year'));
+  if(schoolScope.has('route'))noticeScope.set('notice_route',schoolScope.get('route'));
+  noticeScope.set('notice_cycle',filter.status==='closed'?'all':'current');
+  for(const a of document.querySelectorAll('.site-header a[href]')){const path=a.getAttribute('href').split('?')[0];if(['discovery.html','admissions.html','notices.html'].includes(path)){const scope=path==='notices.html'?noticeScope:schoolScope;a.href=path+(scope.size?'?'+scope:'');}}
   const focus=opportunityParams.get('id'),all=[...opportunityRows,...(opportunityCatalog.other_contents||[])],focused=focus&&all.find(o=>o.id===focus);
   const rows=focus?(focused&&OpportunityRules.classification(focused)==='institutional_activity'?[focused]:[]):OpportunityRules.select(opportunityRows,filter);
   const states=rows.map(o=>OpportunityRules.state(o)),available=states.filter(s=>['open','open_month','rolling'].includes(s)).length,closed=states.filter(s=>s==='closed').length,upcoming=states.filter(s=>s==='upcoming').length;
   const cohort=filter.year?(filter.year==='unknown'?' · 毕业届别未明确':' · 明确面向 '+filter.year+' 届'):'';
   const statusSummary=[[available,'报名窗口内'],[upcoming,'尚未开始'],[rows.length-available-closed-upcoming,'待确认'],[closed,'历史']].filter(([count])=>count).map(([count,label])=>`${label} ${count} 条`).join(' · ');
   oe('opportunity-count').textContent=focus?'当前记录':`${rows.length} 条院校活动${cohort}${statusSummary?' · '+statusSummary:''}`;
-  const back=focus?'<p class="opportunity-back"><a href="opportunities.html">← 返回全部院校活动</a></p>':'';
-  const empty=`<div class="opportunity-empty"><h2>${filter.year&&filter.year!=='unknown'?'尚无符合筛选且明确面向 '+ox(filter.year)+' 届的已核验活动':'当前条件下还没有已整理的院校活动'}</h2><p>未收录不代表院校没有发布；届别未知的活动不计入明确届别结果。</p><div class="opportunity-actions">${filter.year&&filter.year!=='unknown'?'<button type="button" id="opportunity-unknown-year">查看届别未明确的活动</button>':''}<button type="button" id="opportunity-reset">清除筛选</button><button type="button" id="opportunity-history">查看历史活动</button><a href="notices.html">查官方招生通知 →</a></div></div>`;
-  oe('opportunity-list').innerHTML=back+(focus&&!focused?'<div class="opportunity-empty"><h2>当前目录未找到这条记录</h2><p>旧收藏或申请快照不会被删除。可返回活动列表，或从已保存项目中的官方出处核对。</p><a href="opportunities.html">返回活动列表 →</a></div>':focused&&OpportunityRules.classification(focused)!=='institutional_activity'?movedOpportunity(focused):rows.length?rows.map(o=>opportunityCard(o,filter)).join(''):empty);
+  const back=focus?`<p class="opportunity-back"><a href="${ox(opportunityListUrl())}">← 返回筛选结果</a></p>`:'';
+  const empty=`<div class="opportunity-empty"><h2>${filter.year&&filter.year!=='unknown'?'尚无符合筛选且明确面向 '+ox(filter.year)+' 届的已核验活动':'当前条件下还没有已整理的院校活动'}</h2><p>未收录不代表院校没有发布；届别未知的活动不计入明确届别结果。</p><div class="opportunity-actions">${filter.year&&filter.year!=='unknown'?'<button type="button" id="opportunity-unknown-year">查看届别未明确的活动</button>':''}<button type="button" id="opportunity-reset">清除筛选</button><button type="button" id="opportunity-history">查看历史活动（不限届别）</button><a href="notices.html?${noticeScope}">查官方招生通知 →</a></div></div>`;
+  oe('opportunity-list').innerHTML=back+(focus&&!focused?'<div class="opportunity-empty"><h2>当前目录未找到这条记录</h2><p>旧收藏或申请快照不会被删除。可返回活动列表，或从已保存项目中的官方出处核对。</p></div>':focused&&OpportunityRules.classification(focused)!=='institutional_activity'?movedOpportunity(focused):rows.length?rows.map(o=>opportunityCard(o,filter)).join(''):empty);
   oe('pending-contents').innerHTML=(opportunityCatalog.other_contents||[]).filter(o=>OpportunityRules.classification(o)==='pending').map(o=>`<p><a href="opportunities.html?id=${encodeURIComponent(o.id)}">${ox(o.title)}</a> · 对象或来源尚待核验，不计入活动数量。</p>`).join('');
   oe('opportunity-coverage').textContent=(opportunityCatalog.coverage_note||'当前来源范围待说明')+' 最近整理：'+(opportunityCatalog.checked_at||'未知')+'。';
 }
@@ -95,13 +115,15 @@ function refreshOpportunityOptions(){
   }
 }
 refreshOpportunityOptions();
-for(const key of ['kind','school','year','state']){const value=opportunityParams.get(key)?.slice(0,100),select=oe('opportunity-'+key);if(value&&(key==='school'||key==='year')&&![...select.options].some(o=>o.value===value))select.add(new Option(value+'（当前目录未收录）',value));if(value&&[...select.options].some(o=>o.value===value))select.value=value;select.onchange=renderOpportunities;}
-if(opportunityParams.has('id'))oe('opportunity-state').value='all';
+function changeOpportunityFilters(){opportunityParams.delete('id');renderOpportunities();}
+for(const key of ['kind','school','year','state']){const value=opportunityParams.get(key)?.slice(0,100),select=oe('opportunity-'+key);if(value&&(key==='school'||key==='year')&&![...select.options].some(o=>o.value===value))select.add(new Option(value+'（当前目录未收录）',value));if(value&&[...select.options].some(o=>o.value===value))select.value=value;select.onchange=changeOpportunityFilters;}
+if(opportunityParams.has('id')&&!opportunityParams.has('state'))oe('opportunity-state').value='all';
 if(opportunityParams.has('query'))oe('opportunity-search').value=opportunityParams.get('query').slice(0,200);
-oe('opportunity-search').oninput=renderOpportunities;
+oe('opportunity-search').oninput=changeOpportunityFilters;
 document.addEventListener('click',e=>{
-  if(e.target.id==='opportunity-unknown-year'){oe('opportunity-year').value='unknown';renderOpportunities();}
-  if(e.target.id==='opportunity-reset'||e.target.id==='opportunity-history'){for(const key of ['kind','school','year','search'])oe('opportunity-'+key).value='';opportunityParams.delete('id');oe('opportunity-state').value=e.target.id==='opportunity-history'?'closed':'current';renderOpportunities();}
+  if(e.target.id==='opportunity-unknown-year'){oe('opportunity-year').value='unknown';changeOpportunityFilters();}
+  if(e.target.id==='opportunity-reset'){for(const key of ['kind','school','year','search'])oe('opportunity-'+key).value='';oe('opportunity-state').value='current';changeOpportunityFilters();}
+  if(e.target.id==='opportunity-history'){oe('opportunity-year').value='';oe('opportunity-state').value='closed';changeOpportunityFilters();}
   const button=e.target.closest('[data-save-opportunity]');if(!button)return;
   if(publicOpportunityMode){oe('opportunity-result').textContent='请先登录，再保存申请项目、材料与提醒。';oe('opportunity-result').scrollIntoView({block:'center'});return;}
   if(!['http:','https:'].includes(location.protocol)){oe('opportunity-result').textContent='请从在线网站登录后保存项目。';return;}

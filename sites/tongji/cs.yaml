@@ -2,21 +2,16 @@ school: tongji
 dept: cs
 dept_name: 计算机科学与技术学院
 base_url: https://cs.tongji.edu.cn
-hook: wp
+hook: tongji_cs
+stable_urls: true
 list:
-  person_href: /info/\d+/\d+\.htm
-  # 分类频道在前(给职称兜底), 总表殿后补漏
+  person_href: 'https://(?:cs\.tongji\.edu\.cn/info/\d+/\d+\.htm|faculty\.tongji\.edu\.cn/[^/]+/zh_CN/[^?#]+)$'
+  # 原 jsml_azc_ 栏目已迁移。学院名单优先，校级计算机学院名单补漏。
   channels:
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js_yjy_.htm
-      cat: 教授（研究员）
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/fjs_fyjy_.htm
-      cat: 副教授（副研究员）
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/ypzljs.htm
-      cat: 预聘助理教授
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/js1.htm
-      cat: 讲师
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jfxl.htm
-      cat: 教辅系列
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_/jzjs.htm
-      cat: 兼职教授
-    - url: https://cs.tongji.edu.cn/szdw/jsml_azc_.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js_yjy_.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/fjs_fyjy_.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/ypzljs.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/js2.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jfxl.htm
+    - url: https://cs.tongji.edu.cn/szdw/jsmlx/jzjs.htm
+    - url: https://faculty.tongji.edu.cn/unit_teacherlist.jsp?id=3542&lang=zh_CN&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1004

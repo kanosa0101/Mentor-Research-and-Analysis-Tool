@@ -9,7 +9,7 @@
     if(!container)return;
     const existing=container.querySelector('[data-browser-bookmark]');
     if(existing){
-      if(existing.dataset.bookmarkId&&!existing.browserRefresh){existing.browserRefresh=()=>{const saved=CloudLibrary.read().bookmarks.some(b=>b.kind===item.kind&&b.url===core.safeUrl(item.url));existing.textContent=saved?'已收藏':'收藏到我的账号';existing.setAttribute('aria-pressed',String(saved));};existing.browserRefresh();}
+      if(existing.dataset.bookmarkId&&!existing.browserRefresh){existing.browserRefresh=()=>{const saved=CloudLibrary.read().bookmarks.some(b=>b.kind===item.kind&&b.url===core.safeUrl(existing.dataset.bookmarkUrl||item.url));existing.textContent=saved?'已收藏':'收藏到我的账号';existing.setAttribute('aria-pressed',String(saved));};existing.browserRefresh();}
       return;
     }
     const row=document.createElement('div');row.className='browser-library-action';

@@ -1,6 +1,7 @@
 const el=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const R=DiscoveryRules,incoming=new URLSearchParams(location.search),titleLabels={professor:'教授',associate_professor:'副教授',assistant_professor:'助理教授',lecturer:'讲师',researcher:'研究员',associate_researcher:'副研究员',assistant_researcher:'助理研究员',other:'其他职称',unknown:'未明确'},qualificationLabels={phd:'博导',master:'硕导'};
-let DATA=window.MENTOR_DATA||[],fullLoaded=!!window.MENTOR_DATA,publicAvailable=true,view=[],total=0,missingEmail=0,limit=20,paged=false,revision='',query='',serial=0,loadingMore=false,applied=null;
+const batchSize=4;
+let DATA=window.MENTOR_DATA||[],fullLoaded=!!window.MENTOR_DATA,publicAvailable=true,view=[],total=0,missingEmail=0,batchOffset=0,localRows=null,revision='',query='',serial=0,applied=null;
 let contextSchool=incoming.get('school')||'',contextDept=incoming.get('dept')||'',appliedScope=null;
 const viewKey='mentor-directory-v2:'+location.search;
 const orderSeed=(()=>{try{let seed=sessionStorage.getItem('discovery-order-seed');if(!seed){seed=crypto.randomUUID();sessionStorage.setItem('discovery-order-seed',seed);}return seed;}catch(e){return String(Date.now());}})();
@@ -9,6 +10,7 @@ let compareSelection=[];try{compareSelection=[...new Set(JSON.parse(localStorage
 const catalogUnit=(s,d)=>window.SCHOOL_CATALOG?.units.find(u=>u.school===s&&u.dept===d);
 const schoolName=id=>window.SCHOOL_CATALOG?.schools.find(s=>s.id===id)?.name||id;
 function message(text,error=false){el('discovery-message').textContent=text;el('discovery-message').classList.toggle('error',error);}
+function batchMessage(text,error=false){el('batch-status').textContent=text;el('batch-status').classList.toggle('error',error);}
 function checked(id){return [...el(id).querySelectorAll('input:checked')].map(x=>x.value);}
 function readCriteria(){return {name:el('intent-name').value.trim(),topics:[...new Set(el('intent-topics').value.split(/[,，]/).map(s=>s.trim()).filter(Boolean))],schools:checked('school-options'),qualifications:checked('qualification-options'),titles:checked('title-options'),group:el('intent-group').value,include_missing_email:el('include-missing-email').checked};}
 function fillCriteria(p){el('intent-name').value=p.name||'';el('intent-topics').value=(p.topics||[]).join('，');for(const [id,key] of [['school-options','schools'],['qualification-options','qualifications'],['title-options','titles']])for(const box of el(id).querySelectorAll('input'))box.checked=(p[key]||[]).includes(box.value);el('intent-group').value=p.group||'';el('include-missing-email').checked=!!p.include_missing_email;syncFilters();}
@@ -34,24 +36,137 @@ function renderContext(){
     if(path==='applications.html')link.href=applicationHref;
   }
 }
-function saveView(){if(!applied)return;try{sessionStorage.setItem(viewKey,JSON.stringify({criteria:applied,contextSchool:appliedScope?.school||'',contextDept:appliedScope?.dept||'',count:Math.min(limit,view.length),revision,scroll:scrollY,anchor:returnAnchor}));}catch(e){}}
+function saveView(){if(!applied)return;try{sessionStorage.setItem(viewKey,JSON.stringify({criteria:applied,contextSchool:appliedScope?.school||'',contextDept:appliedScope?.dept||'',offset:batchOffset,revision,scroll:scrollY,anchor:returnAnchor}));}catch(e){}}
 let restore=null;try{restore=JSON.parse(sessionStorage.getItem(viewKey)||'null');}catch(e){}
 const lazy=new Map();function script(file){if(!lazy.has(file))lazy.set(file,new Promise((resolve,reject)=>{const s=document.createElement('script'),timer=setTimeout(()=>fail('筛选资料读取超时，请重试'),8000);function fail(message){clearTimeout(timer);lazy.delete(file);s.remove();reject(new Error(message));}s.src=file+'?v=directory-v2';s.onload=()=>{clearTimeout(timer);resolve();};s.onerror=()=>fail('无法加载筛选资料，请稍后重试');document.head.appendChild(s);}));return lazy.get(file);}
 async function fullCatalog(){if(fullLoaded)return;await script('discovery-data.js');DATA=window.MENTOR_DATA||[];fullLoaded=true;}
 async function corpusFor(p){if(!p.topics.length)return {};try{const q=new URLSearchParams({terms:JSON.stringify(p.topics)});for(const school of p.schools)q.append('school',school);const {response,data}=await OnlineAccount.readJSON('/api/mentor-search?'+q);if(!response.ok)throw new Error();return data.matches;}catch(e){if(e.timedOut)throw e;}await script('search.js');return window.MENTOR_SEARCH||{};}
 function publicQuery(p){const q=new URLSearchParams({name:p.name,topics:JSON.stringify(p.topics),group:p.group,include_missing_email:p.include_missing_email?'1':'0',seed:orderSeed});for(const key of ['schools','qualifications','titles'])for(const value of p[key])q.append(key==='schools'?'school':key,value);if(contextSchool)q.set('context_school',contextSchool);if(contextDept)q.set('dept',contextDept);return q.toString();}
-async function fetchPage(q,offset=0){const {response,data:result}=await OnlineAccount.readJSON('/api/mentor-candidates?'+q+'&offset='+offset+'&limit=20');if(response.status===400){throw Object.assign(new Error(result.error||'请检查筛选条件'),{invalidCriteria:true});}if(!response.ok)throw new Error('候选服务暂不可用');if(result.version!==2||!Array.isArray(result.rows)||!Number.isInteger(result.total)||typeof result.revision!=='string')throw new Error('候选服务版本尚未更新');return result;}
+async function fetchPage(q,offset){const {response,data:result}=await OnlineAccount.readJSON('/api/mentor-candidates?'+q+'&offset='+offset+'&limit='+batchSize);if(response.status===400){throw Object.assign(new Error(result.error||'请检查筛选条件'),{invalidCriteria:true});}if(!response.ok)throw new Error('候选服务暂不可用');if(result.version!==2||!Array.isArray(result.rows)||result.rows.length>batchSize||!Number.isInteger(result.total)||typeof result.revision!=='string')throw new Error('候选服务版本尚未更新');return result;}
+async function fetchBatch(q,offset,previousRevision){
+  let result=await fetchPage(q,offset);
+  if(offset&&(result.revision!==previousRevision||offset>=result.total)){
+    offset=0;
+    result=await fetchPage(q,offset);
+  }
+  const remaining=batchSize-result.rows.length;
+  if(offset&&remaining>0){
+    const first=await fetchPage(q,0);
+    if(first.revision!==result.revision)return {...first,offset:0};
+    result.rows=result.rows.concat(first.rows.slice(0,remaining));
+  }
+  return {...result,offset};
+}
+function localBatch(rows,offset){
+  const batch=rows.slice(offset,offset+batchSize);
+  return offset?batch.concat(rows.slice(0,batchSize-batch.length)):batch;
+}
+function setPublicBatch(result){
+  view=result.rows.map(x=>x.p);
+  total=result.total;
+  missingEmail=result.missing_email||0;
+  revision=result.revision;
+  batchOffset=result.offset;
+}
 function validate(p){if(p.name.length>100||p.topics.length>20||p.topics.some(x=>x.length>100)||p.topics.join('').length>1000)throw new Error('姓名最多100字，研究词最多20个且合计不超过1000字。');}
-async function apply(saved=null){const request=++serial,p=readCriteria();el('apply-criteria').disabled=true;el('more-candidates').disabled=true;try{validate(p);let rows=[],result,wasFallback=false,nextQuery=publicQuery(p);if(publicAvailable)try{result=await fetchPage(nextQuery);if(request!==serial)return;rows=result.rows.map(x=>x.p);if(saved&&saved.revision===result.revision){const wanted=Math.min(saved.count||20,result.total);while(rows.length<wanted){const next=await fetchPage(nextQuery,rows.length);if(request!==serial)return;if(next.revision!==result.revision){result=await fetchPage(nextQuery);rows=result.rows.map(x=>x.p);message('公开资料已更新，已重新显示首20位。');break;}rows.push(...next.rows.map(x=>x.p));}}else if(saved?.revision)message('公开资料已更新，已重新显示首20位。');}catch(e){if(request!==serial)return;if(e.invalidCriteria||e.timedOut)throw e;publicAvailable=false;wasFallback=true;}
-if(!publicAvailable){await fullCatalog();const corpus=await corpusFor(p);if(request!==serial)return;const scoped=DATA.filter(x=>(!p.schools.length||p.schools.includes(x.school))&&(!p.name||x.name.toLowerCase().includes(p.name.toLowerCase()))&&(!p.group||x.unit_groups?.includes(p.group))&&(!contextSchool||x.school===contextSchool)&&(!contextDept||x.dept===contextDept)&&R.directoryMatch(x,{...p,include_missing_email:true},corpus[x.page]||''));missingEmail=scoped.filter(x=>!R.contactable(x)).length;rows=R.directoryRank(scoped.filter(x=>p.include_missing_email||R.contactable(x)),orderSeed);total=rows.length;limit=Math.min(saved?.count||20,total);revision='local';paged=false;}else{total=result.total;missingEmail=result.missing_email||0;revision=result.revision;limit=rows.length;paged=true;}
-if(request!==serial)return;view=rows;query=nextQuery;returnAnchor=saved?.anchor||'';applied=p;appliedScope={school:contextSchool,dept:contextDept};el('criteria-dirty').hidden=true;render();if(wasFallback)message('分页服务暂不可用，已使用网站公开资料在浏览器中筛选。');if(saved&&saved.revision===revision)requestAnimationFrame(()=>requestAnimationFrame(()=>(()=>{const anchor=saved.anchor&&document.querySelector('[data-candidate="'+CSS.escape(saved.anchor)+'"]');if(anchor)anchor.scrollIntoView({block:'center'});else window.scrollTo(0,saved.scroll||0);})()));saveView();return true;
-}catch(e){if(request===serial)message(e.message+(view.length?'；已保留当前结果。':'；点击“查看候选”重新读取。'),true);return false;}finally{if(request===serial){el('apply-criteria').disabled=false;el('more-candidates').disabled=false;}}}
-async function moreCandidates(){if(loadingMore||el('apply-criteria').disabled)return;const request=serial;loadingMore=true;el('more-candidates').disabled=true;try{if(paged){const result=await fetchPage(query,view.length);if(request!==serial)return;if(result.revision!==revision){await apply();message('公开资料已更新，已重新显示首20位，避免混用旧资料。');return;}view.push(...result.rows.map(x=>x.p));limit=view.length;}else limit=Math.min(limit+20,total);render();saveView();}catch(e){if(request===serial)message('下一批未能加载，已保留当前结果，请重试。',true);}finally{loadingMore=false;if(request===serial)el('more-candidates').disabled=false;}}
+async function apply(saved=null){
+  const request=++serial,p=readCriteria(),nextScope={school:contextSchool,dept:contextDept};
+  const nextQuery=publicQuery(p),savedOffset=Number.isInteger(saved?.offset)&&saved.offset>=0?saved.offset:0;
+  const more=el('more-candidates');
+  el('apply-criteria').disabled=true;
+  more.disabled=true;
+  more.removeAttribute('aria-disabled');
+  batchMessage('');
+  try{
+    validate(p);
+    let result,wasFallback=false;
+    if(publicAvailable)try{
+      result=await fetchBatch(nextQuery,saved?.revision==='local'?0:savedOffset,saved?.revision);
+      if(request!==serial)return;
+    }catch(e){
+      if(request!==serial)return;
+      if(e.invalidCriteria||e.timedOut)throw e;
+      publicAvailable=false;
+      wasFallback=true;
+    }
+    if(!publicAvailable){
+      await fullCatalog();
+      const corpus=await corpusFor(p);
+      if(request!==serial)return;
+      const scoped=DATA.filter(x=>(!p.schools.length||p.schools.includes(x.school))&&(!p.name||x.name.toLowerCase().includes(p.name.toLowerCase()))&&(!p.group||x.unit_groups?.includes(p.group))&&(!nextScope.school||x.school===nextScope.school)&&(!nextScope.dept||x.dept===nextScope.dept)&&R.directoryMatch(x,{...p,include_missing_email:true},corpus[x.page]||''));
+      missingEmail=scoped.filter(x=>!R.contactable(x)).length;
+      localRows=R.directoryRank(scoped.filter(x=>p.include_missing_email||R.contactable(x)),orderSeed);
+      total=localRows.length;
+      batchOffset=saved?.revision==='local'&&total>batchSize&&savedOffset<total?savedOffset:0;
+      view=localBatch(localRows,batchOffset);
+      revision='local';
+    }else{
+      setPublicBatch(result);
+      localRows=null;
+    }
+    query=nextQuery;
+    const restorePosition=saved?.revision===revision&&saved.offset===batchOffset;
+    returnAnchor=restorePosition?saved.anchor||'':'';
+    applied=p;
+    appliedScope=nextScope;
+    el('criteria-dirty').hidden=query===publicQuery(readCriteria());
+    render();
+    if(wasFallback)message('候选服务暂不可用，已使用网站公开资料在浏览器中筛选。');
+    else if(saved?.revision&&saved.revision!==revision)batchMessage('公开资料已更新，已重新显示首批。');
+    if(restorePosition)requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(request!==serial)return;
+      const anchor=saved.anchor&&document.querySelector('[data-candidate="'+CSS.escape(saved.anchor)+'"]');
+      if(anchor)anchor.scrollIntoView({block:'center'});
+      else window.scrollTo(0,saved.scroll||0);
+    }));
+    saveView();
+    return true;
+  }catch(e){
+    if(request===serial)message(e.message+(applied?'；已保留当前结果。':'；点击“查看候选”重新读取。'),true);
+    return false;
+  }finally{
+    if(request===serial){
+      el('apply-criteria').disabled=false;
+      more.disabled=false;
+    }
+  }
+}
+async function moreCandidates(){
+  const button=el('more-candidates');
+  if(button.disabled||button.hidden||button.hasAttribute('aria-disabled'))return;
+  const request=++serial,offset=(batchOffset+view.length)%total;
+  button.setAttribute('aria-disabled','true');
+  batchMessage('正在换一批…');
+  try{
+    const previousRevision=revision;
+    if(localRows){
+      view=localBatch(localRows,offset);
+      batchOffset=offset;
+    }else{
+      const result=await fetchBatch(query,offset,revision);
+      if(request!==serial)return;
+      setPublicBatch(result);
+    }
+    returnAnchor='';
+    render();
+    saveView();
+    batchMessage(revision!==previousRevision?'公开资料已更新，已重新显示首批。':'已显示新一批导师。');
+  }catch(e){
+    if(request===serial)batchMessage('下一批未能加载，已保留当前结果，请重试。',true);
+  }finally{
+    if(request===serial)button.removeAttribute('aria-disabled');
+  }
+}
 function returnScope(p){const q=scope(p);q.set('discovery_return','discovery.html'+location.search);return q;}
 function renderSelection(){el('compare-selection').hidden=!compareSelection.length;el('compare-count').textContent='已选 '+compareSelection.length+' 位导师';el('compare-open').href='compare.html?'+returnScope();el('compare-open').textContent=compareSelection.length===1?'查看已选导师':'查看对比';}
 function safeSource(p){const value=p.email_source||p.provenance?.email?.source||p.profile_url||p.detail_url;try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?u.href:'';}catch(e){return '';}}
-function render(){renderSelection();renderContext();el('discovery-count').textContent=total+' 位候选 · 当前显示 '+Math.min(limit,view.length)+' 位';const p=applied;el('intent-overview').textContent=[p.name&&'姓名：'+p.name,p.topics.length&&p.topics.join('、'),p.schools.length&&p.schools.map(schoolName).join('、'),p.qualifications.length&&p.qualifications.map(x=>qualificationLabels[x]).join('或'),p.titles.length&&p.titles.map(x=>titleLabels[x]).join('、'),p.group&&el('intent-group').selectedOptions[0].textContent,p.include_missing_email?'包含缺邮箱资料':'有公开邮箱'].filter(Boolean).join(' · ');
-el('candidate-list').innerHTML=view.slice(0,limit).map(m=>{const goal=returnScope(m);goal.set('mentor',m.page);const detail='p/'+encodeURIComponent(m.page)+'.html?'+returnScope(m),direction=R.researchText(m.research_direction_raw),preview=direction||m.bio_excerpt||'',source=safeSource(m),canContact=R.contactable(m),labels=(m.recruitment_labels||[]).filter(x=>typeof x==='string');return `<article class="results-card" data-candidate="${esc(m.page)}"><div class="candidate-header"><div class="candidate-heading"><h2><a href="${esc(detail)}">${esc(m.name)}</a></h2><span class="candidate-qualification">${esc(m.supervisor||'资格未明确')}</span></div><p class="candidate-unit">${esc(m.school_name||schoolName(m.school))} · ${esc(m.dept_name||m.dept)}</p><p class="candidate-title">${esc(m.title||'职称未明确')}</p></div><p class="research-preview"><span>${direction?'研究方向':preview?'官网简介':'研究资料'}</span> · ${esc(preview||'尚未整理，查看完整资料与官网。')}</p><div class="public-email">${canContact?`<span>公开邮箱</span><a href="mailto:${encodeURIComponent(m.email)}" title="${esc(m.email)}">${esc(m.email)}</a>`:'<span>公开邮箱未明确</span><span>请通过官网核对联系渠道</span>'}</div><div class="candidate-source">${source?`<a href="${esc(source)}" target="_blank" rel="noopener noreferrer">${esc(m.source_label||'公开资料来源')} ↗</a>`:'<span>来源待核对</span>'}<span>${labels.length?esc(labels.join(' · ')):m.email_source_date||m.source_date?'来源获取 '+esc(m.email_source_date||m.source_date):'来源时间未明确'}</span></div><div class="card-primary-actions"><a class="primary" href="${esc(detail)}">查看资料</a><a href="desk.html?${esc(goal)}">准备联系</a><button type="button" data-compare="${esc(m.page)}" aria-pressed="${compareSelection.includes(m.page)}">${compareSelection.includes(m.page)?'移出对比':'加入对比'}</button></div><div class="candidate-bookmark"><button type="button" data-browser-bookmark="mentor" data-bookmark-id="${esc(m.page)}" data-bookmark-url="${esc(detail)}">收藏到我的账号</button></div></article>`;}).join('')||`<div class="empty"><h2>当前条件下暂无可联系候选</h2><p>${missingEmail&&!p.include_missing_email?`有 ${missingEmail} 条匹配资料尚无格式有效且可追溯的邮箱。`:'可尝试减少关键词或调整学校、资格与职称；资料未命中不代表真实研究不适合。'}</p>${!p.include_missing_email?'<button type="button" id="empty-include-email">包含缺邮箱资料重新查找</button>':''}<p><a href="admissions.html?${esc(scope())}">查看学校与官方师资入口 →</a> · <a href="index.html">查看完整目录</a></p></div>`;el('more-candidates').hidden=limit>=total;}
+function render(){renderSelection();renderContext();el('discovery-count').textContent=total+' 位候选 · 当前显示 '+view.length+' 位';const p=applied;el('intent-overview').textContent=[p.name&&'姓名：'+p.name,p.topics.length&&p.topics.join('、'),p.schools.length&&p.schools.map(schoolName).join('、'),p.qualifications.length&&p.qualifications.map(x=>qualificationLabels[x]).join('或'),p.titles.length&&p.titles.map(x=>titleLabels[x]).join('、'),p.group&&[...el('intent-group').options].find(option=>option.value===p.group)?.textContent,p.include_missing_email?'包含缺邮箱资料':'有公开邮箱'].filter(Boolean).join(' · ');
+el('candidate-list').innerHTML=view.map(m=>{
+  const goal=returnScope(m),detailPath='p/'+encodeURIComponent(m.page)+'.html?',bookmarkUrl=detailPath+goal,project=incoming.get('project');
+  if(project&&m.school===incoming.get('school')&&m.dept===incoming.get('dept'))goal.set('project',project);
+  const detail=detailPath+goal;
+  goal.set('mentor',m.page);
+  const direction=R.researchText(m.research_direction_raw),preview=direction||m.bio_excerpt||'',source=safeSource(m),canContact=R.contactable(m),labels=(m.recruitment_labels||[]).filter(x=>typeof x==='string');return `<article class="results-card" data-candidate="${esc(m.page)}"><div class="candidate-header"><div class="candidate-heading"><h2><a href="${esc(detail)}">${esc(m.name)}</a></h2><span class="candidate-qualification">${esc(m.supervisor||'资格未明确')}</span></div><p class="candidate-unit">${esc(m.school_name||schoolName(m.school))} · ${esc(m.dept_name||m.dept)}</p><p class="candidate-title">${esc(m.title||'职称未明确')}</p></div><p class="research-preview"><span>${direction?'研究方向':preview?'官网简介':'研究资料'}</span> · ${esc(preview||'尚未整理，查看完整资料与官网。')}</p><div class="public-email">${canContact?`<span>公开邮箱</span><a href="mailto:${encodeURIComponent(m.email)}" title="${esc(m.email)}">${esc(m.email)}</a>`:'<span>公开邮箱未明确</span><span>请通过官网核对联系渠道</span>'}</div><div class="candidate-source">${source?`<a href="${esc(source)}" target="_blank" rel="noopener noreferrer">${esc(m.source_label||'公开资料来源')} ↗</a>`:'<span>来源待核对</span>'}<span>${labels.length?esc(labels.join(' · ')):m.email_source_date||m.source_date?'来源获取 '+esc(m.email_source_date||m.source_date):'来源时间未明确'}</span></div><div class="card-primary-actions"><a class="primary" href="${esc(detail)}">查看资料</a><a href="desk.html?${esc(goal)}">准备联系</a><button type="button" data-compare="${esc(m.page)}" aria-pressed="${compareSelection.includes(m.page)}">${compareSelection.includes(m.page)?'移出对比':'加入对比'}</button></div><div class="candidate-bookmark"><button type="button" data-browser-bookmark="mentor" data-bookmark-id="${esc(m.page)}" data-bookmark-url="${esc(bookmarkUrl)}">收藏到我的账号</button></div></article>`;}).join('')||`<div class="empty"><h2>当前条件下暂无可联系候选</h2><p>${missingEmail&&!p.include_missing_email?`有 ${missingEmail} 条匹配资料尚无格式有效且可追溯的邮箱。`:'可尝试减少关键词或调整学校、资格与职称；资料未命中不代表真实研究不适合。'}</p>${!p.include_missing_email?'<button type="button" id="empty-include-email">包含缺邮箱资料重新查找</button>':''}<p><a href="admissions.html?${esc(scope())}">查看学校与官方师资入口 →</a> · <a href="index.html">查看完整目录</a></p></div>`;el('more-candidates').hidden=total<=batchSize;}
 const schools=window.SCHOOL_CATALOG?.schools||[];el('school-options').innerHTML=schools.map(s=>`<label class="school-option"><input type="checkbox" value="${esc(s.id)}"><span>${esc(s.name)}</span></label>`).join('');el('title-options').innerHTML=Object.entries(titleLabels).map(([id,label])=>`<label class="check"><input type="checkbox" value="${id}">${label}</label>`).join('');
 el('filter-options').open=!matchMedia('(max-width:850px)').matches;
 el('criteria-form').addEventListener('input',e=>{if(e.target.id!=='school-search'){el('criteria-dirty').hidden=false;syncFilters();}});

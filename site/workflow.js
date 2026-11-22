@@ -30,7 +30,7 @@ const discoveryReturn=incomingGoal.get('discovery_return')||'';
 const validDiscoveryReturn=/^discovery\.html(?:\?[^#\\\x00-\x20]*)?$/.test(discoveryReturn);
 if(validDiscoveryReturn){backQuery.set('discovery_return',discoveryReturn);for(const a of document.querySelectorAll('a[href="discovery.html"]'))a.href=discoveryReturn;}
 let incomingPolicy=window.ADMISSIONS_DATA?.policies.find(p=>p.id===incomingGoal.get('policy'));
-for(const key of ['year','degree','route','school','dept','track','program','panel'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
+for(const key of ['year','degree','route','school','dept','track','program','panel','draft'])if(incomingGoal.has(key))backQuery.set(key,incomingGoal.get(key));
 el('back-desk').href='desk.html?'+backQuery;
 const chosen = {project:[],material:[],communication:[],reminder:[]};
 window.WORKFLOW_READY = false;
@@ -140,7 +140,7 @@ async function refresh(){
   WORKFLOW=await api();render();
   if(!contextReady){
     const t=WORKFLOW.targets?.[returnTarget];
-    if(t){contextMentor=t.mentor_id;el('filter-project').value=t.project_id;backQuery.set('mentor',t.mentor_id);el('back-desk').href='desk.html?'+backQuery;}
+    if(t){contextMentor=t.mentor_id;el('filter-project').value=t.project_id;backQuery.set('mentor',t.mentor_id);backQuery.set('project',t.project_id);el('back-desk').href='desk.html?'+backQuery;}
     else if(WORKFLOW.projects[returnProject]){el('filter-project').value=returnProject;backQuery.set('project',returnProject);el('back-desk').href='desk.html?'+backQuery;}
     contextReady=true;for(const key of Object.keys(chosen))reset(key);render();
   }
@@ -256,7 +256,7 @@ function render(){
   const linked=(mentorIds,projectIds)=> (!projectFilter || projectIds.includes(projectFilter)) &&
     (!contextMentor || mentorIds.includes(contextMentor) || projectIds.some(relatedProject));
   const list=(id,rows)=>el(id).innerHTML=rows.join('') || '<div class="empty">暂无记录</div>';
-  list('project-list',Object.values(WORKFLOW.projects).filter(p=>(!projectFilter || p.id===projectFilter) && (!contextMentor || p.mentor_ids.includes(contextMentor))).map(projectCard));
+  list('project-list',Object.values(WORKFLOW.projects).filter(p=>projectFilter ? p.id===projectFilter : !contextMentor || p.mentor_ids.includes(contextMentor)).map(projectCard));
   if(!el('project-list').querySelector('article'))el('project-list').innerHTML='<div class="empty">'+(Object.keys(WORKFLOW.projects).length?'当前范围暂无申请项目；可切换项目或查看全部导师。':'先在下方填写项目名称并保存，学校与招生目标可以随后补充；再添加心仪导师、材料与提醒。')+'</div>';
   const materials=Object.values(WORKFLOW.materials);
   const scopedMaterials=materials.filter(m=>linked(m.mentor_ids,m.project_ids));
@@ -381,6 +381,7 @@ document.querySelector('main').addEventListener('click',e=>{
 });
 function syncProjectContext(){
   const project=el('filter-project').value,p=WORKFLOW.projects[project];
+  const panel=backQuery.get('panel'),previousMentor=contextMentor;
   returnTarget=null;returnProject=project;incomingPolicy=null;
   for(const key of [...incomingGoal.keys()])incomingGoal.delete(key);
   if(!p||(contextMentor&&!p.mentor_ids.includes(contextMentor)))contextMentor='';
@@ -390,7 +391,8 @@ function syncProjectContext(){
   if(contextMentor)q.set('mentor',contextMentor);
   history.replaceState(null,'',location.pathname+'?'+q);
   for(const key of [...backQuery.keys()])backQuery.delete(key);
-  backQuery.set('view',project?'prepare':'today');
+  backQuery.set('view',project||contextMentor?'prepare':'today');
+  if(panel&&contextMentor&&contextMentor===previousMentor)backQuery.set('panel',panel);
   if(validDiscoveryReturn)backQuery.set('discovery_return',discoveryReturn);
   if(project)backQuery.set('project',project);
   if(contextMentor)backQuery.set('mentor',contextMentor);
@@ -398,6 +400,7 @@ function syncProjectContext(){
 }
 el('filter-project').onchange=()=>{
   if(!discardChanges()){el('filter-project').value=lastProject;return false;}
+  if(el('filter-project').value===lastProject)return true;
   lastProject=el('filter-project').value;
   materialView='current';syncProjectContext();
   for(const key of Object.keys(chosen))reset(key);render();showSection(currentSection);

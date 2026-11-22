@@ -7,8 +7,8 @@ dept: cs
 status: enriched
 institutes:
 - 软件工程实验中心
-detail_url: http://www.cs.hit.edu.cn/jsml/list.htm
-profile_url: http://www.cs.hit.edu.cn/jsml/list.htm
+detail_url: https://homepage.hit.edu.cn/liyang0?lang=zh
+profile_url: https://homepage.hit.edu.cn/liyang0?lang=zh
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
 facets: []
@@ -22,4 +22,14 @@ provenance:
     origin: crawled
     source: http://www.cs.hit.edu.cn/jsml/list.htm
     fetched_at: '2026-09-03'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/liyang0?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/liyang0?lang=zh
+    fetched_at: '2026-11-22'
     confidence: auto

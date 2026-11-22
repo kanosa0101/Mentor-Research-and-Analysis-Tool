@@ -6,7 +6,7 @@ const schools=Array.isArray(ADMISSIONS_DATA.schools)?ADMISSIONS_DATA.schools.map
 function options(select,rows,label,value=''){select.innerHTML=`<option value="">${label}</option>`+rows.map(([id,name])=>`<option value="${esc(id)}">${esc(name)}</option>`).join('');if(value&&!rows.some(r=>r[0]===value))select.add(new Option(value+'（未收录）',value));select.value=value;}
 function criteria(){return {school:el('policy-school').value,dept:el('policy-dept').value,year:el('policy-year').value,degree:el('policy-degree').value,route:el('policy-route').value,track:el('policy-track').value,group:el('policy-group').value,program:el('policy-program').value};}
 function depts(value=''){options(el('policy-dept'),ADMISSIONS_DATA.units.filter(u=>u.school===el('policy-school').value&&(!el('policy-group').value||u.groups.includes(el('policy-group').value))).map(u=>[u.dept,u.dept_name]),'全部院系',value);}
-function scopeQuery(prefs){const query=new URLSearchParams();for(const [key,value] of Object.entries(prefs))if(value)query.set(key,value);return query;}
+function scopeQuery(prefs){const query=new URLSearchParams();for(const [key,value] of Object.entries(prefs))if(value)query.set(key,value);if(incoming.get('topics'))query.set('topics',incoming.get('topics'));return query;}
 function projectQuery(policy,prefs){
   const query=new URLSearchParams({policy:policy.id,school:policy.school,year:policy.year,degree:policy.degree,route:policy.route});
   const unit=ADMISSIONS_DATA.units.find(u=>u.school===policy.school&&u.dept===prefs.dept);

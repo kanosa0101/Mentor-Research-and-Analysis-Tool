@@ -7,8 +7,8 @@ dept: cs
 status: enriched
 institutes:
 - 信息对抗技术研究所
-detail_url: http://www.cs.hit.edu.cn/jsml/list.htm
-profile_url: http://www.cs.hit.edu.cn/jsml/list.htm
+detail_url: https://homepage.hit.edu.cn/yanghongwei?lang=zh
+profile_url: https://homepage.hit.edu.cn/yanghongwei?lang=zh
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
 facets: []
@@ -23,3 +23,25 @@ provenance:
     source: http://www.cs.hit.edu.cn/jsml/list.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/yanghongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/yanghongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/yanghongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/yanghongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+email: yanghongwei@hit.edu.cn
+research_direction_raw: 数据安全与隐私保护,迁移学习,隐私计算,联邦学习

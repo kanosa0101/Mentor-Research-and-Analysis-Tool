@@ -1,6 +1,6 @@
 import json
 import re
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 import sys
 from pathlib import Path
 
@@ -54,7 +54,7 @@ def render_opportunities_page(site=None, env=None):
     site = SITE if site is None else Path(site)
     return (env or template_environment()).get_template('opportunities.html.j2').render(
         **entry_head(site), opportunity_js=inline_scripts(site, (
-            'opportunities-core.js', 'opportunities.js', 'opportunity-push.js',
+            'school-catalog.js', 'opportunities-core.js', 'opportunities.js', 'opportunity-push.js',
             'browser-library-core.js', 'browser-library.js')))
 
 
@@ -267,20 +267,25 @@ def main():
     opportunities = opportunity_util.public_catalog(all_opportunities)
     payload = json.dumps(opportunities, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     (SITE / 'opportunities-data.js').write_text('window.OPPORTUNITIES = ' + payload + ';\n', encoding='utf-8')
-    write_html(SITE / 'opportunities.html', render_opportunities_page(env=env))
     write_html(SITE / 'local.html', env.get_template('local.html.j2').render())
     write_html(SITE / 'account.html', env.get_template('account.html.j2').render())
     coverage_path = ROOT / 'data/coverage.json'
     if coverage_path.exists():
         coverage = json.loads(coverage_path.read_text(encoding='utf-8'))
+        mentor_counted_at = datetime.now(timezone(timedelta(hours=8))).date().isoformat()
         school_names = {s['id']: s['name'] for s in yaml.safe_load((ROOT / 'data/schools.yaml').read_text(encoding='utf-8'))['schools']}
         for unit in coverage['units']:
             unit['school_name'] = school_names.get(unit['school'], unit['school'])
+            members = [p for p in profs if (p['school'], p['dept']) == (unit['school'], unit['dept'])]
+            dates = [p['last_verified'] for p in members if p.get('last_verified')]
+            unit['current_mentors'] = dict(unit_coverage(members), count=len(members),
+                                           first_verified=min(dates, default=''), last_verified=max(dates, default=''))
         source_coverage_path = ROOT / 'data/source_coverage.json'
         source_coverage = json.loads(source_coverage_path.read_text(encoding='utf-8')) if source_coverage_path.exists() else {}
         source_units = {(u['school'], u['dept']): u for u in source_coverage.get('units', [])}
         write_html(SITE / 'coverage.html', env.get_template('coverage.html.j2').render(
-            coverage=coverage, safe_url=safe_url, source_coverage=source_coverage, source_units=source_units))
+            coverage=coverage, mentor_counted_at=mentor_counted_at, safe_url=safe_url,
+            source_coverage=source_coverage, source_units=source_units))
     admission_file = ROOT / 'data/admissions.yaml'
     admissions = yaml.safe_load(admission_file.read_text(encoding='utf-8')) if admission_file.exists() else {'version': 1, 'sources': {}, 'policies': []}
     configured_schools, units = load_catalog(ROOT)
@@ -301,6 +306,7 @@ def main():
                             'official_url': safe_url(c.get('base_url', '')), 'roster_url': roster_url(c)} for c in load_cfgs()]
     catalog = {'schools': configured_schools, 'units': [{k: v for k, v in unit.items() if k != 'coverage'} for unit in admissions['units']]}
     (SITE / 'school-catalog.js').write_text('window.SCHOOL_CATALOG = ' + json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n', encoding='utf-8')
+    write_html(SITE / 'opportunities.html', render_opportunities_page(env=env))
     write_html(SITE / 'start.html', render_start_page(env=env))
     build_discovery_entry()
     write_html(SITE / 'discovery.html', render_discovery_page(env=env))

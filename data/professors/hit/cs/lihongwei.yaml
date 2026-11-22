@@ -8,8 +8,8 @@ status: enriched
 supervisor: 硕导
 institutes:
 - 智能接口与人机交互研究中心
-detail_url: http://www.cs.hit.edu.cn/jsml/list.htm
-profile_url: http://www.cs.hit.edu.cn/jsml/list.htm
+detail_url: https://homepage.hit.edu.cn/lihongwei?lang=zh
+profile_url: https://homepage.hit.edu.cn/lihongwei?lang=zh
 first_seen: '2026-09-03'
 last_verified: '2026-09-03'
 facets: []
@@ -29,3 +29,25 @@ provenance:
     source: http://www.cs.hit.edu.cn/jsml/list.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/lihongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/lihongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  email:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/lihongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://homepage.hit.edu.cn/lihongwei?lang=zh
+    fetched_at: '2026-11-22'
+    confidence: auto
+email: lihongwei@hit.edu.cn
+research_direction_raw: 脑电(EEG)

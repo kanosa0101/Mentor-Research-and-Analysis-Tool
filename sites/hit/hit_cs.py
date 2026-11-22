@@ -10,6 +10,10 @@ from crawler import fetch
 # 详情无源; 但名单本身能给 roster 级补 supervisor)。渲染需 CDP。
 _SUP_PAGES = [("博导", "https://cs.hit.edu.cn/22195/list.htm"),
               ("硕导", "https://cs.hit.edu.cn/22196/list.htm")]
+_PROFILE_TITLE = re.compile(
+    r"(?:计算学部)?((?:二级|特聘|长聘|准聘|预聘|青年)?"
+    r"(?:助理|副)?(?:教授|研究员)|讲师|(?:高级)?(?:工程师|实验师))"
+)
 
 
 def _supervisor_map():
@@ -78,6 +82,13 @@ def parse_detail(cfg, html, url):
         if len(emails)==1:out['email']=next(iter(emails))
     directions=soup.select_one('#teacher_info .user-label')
     if directions and directions.get_text(strip=True):out['research_direction_raw']=directions.get_text(' ',strip=True)
+    description=soup.select_one('#teacher_info .user-describe')
+    if description:
+        for part in re.split(r'[、，,；;。/|]+',description.get_text(' ',strip=True)):
+            title=_PROFILE_TITLE.fullmatch(part.strip())
+            if title:
+                out['title']=title[1]
+                break
     holder=soup.select_one('div.teacher-body[data-tid]');reader=cfg.get('_read_source')
     if holder and reader and re.fullmatch(r'[a-f0-9]{32}',holder['data-tid']):
         _,body=reader('https://homepage.hit.edu.cn/TeacherHome/teacherBody.do?id='+holder['data-tid']+'&versionId=')
@@ -95,7 +106,7 @@ def parse_detail(cfg, html, url):
                 opening=re.split(r'[。]',bio,maxsplit=1)[0][:240]
                 if opening.startswith(out['name']):out['_identity_bio']=opening
                 match=re.search(r'(?:特聘|长聘|准聘|预聘|助理|副)?(?:教授|研究员)|讲师',opening)
-                if match:out['title']=match[0]
+                if match:out.setdefault('title',match[0])
                 # Existing HIT qualifications come from separate official lists.
                 # A shortened biography must not remove a listed qualification.
                 break

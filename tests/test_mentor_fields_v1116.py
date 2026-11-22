@@ -128,6 +128,20 @@ def test_hit_gateway_conversion_is_exact_and_still_needs_named_link():
     assert not recovery.allowed(recovery.directory_target(old,'https://other.edu.cn'),'https://other.edu.cn')
 
 
+@pytest.mark.parametrize(('description','expected'),[
+    ('副教授，博士生导师','副教授'),
+    ('计算学部副教授','副教授'),
+    ('获优秀教师奖，曾任教授',None),
+    ('硕士生导师',None),
+])
+def test_hit_profile_uses_explicit_title_in_personal_header(description,expected):
+    from sites.hit.hit_cs import parse_detail
+    html='<div id="teacher_info"><h3 class="chineseName">张老师</h3><span class="user-describe">'+description+'</span></div>'
+    parsed=parse_detail({},html,'https://homepage.hit.edu.cn/zhang')
+    assert parsed.get('title')==expected
+    assert 'supervisor' not in parsed
+
+
 def test_shared_parser_dependency_change_invalidates_repair_signature(root):
     cfg=configure(root);cfg['parser_dependencies']=['shared.py']
     dep=root/'sites/shared.py';dep.write_text('version=1')

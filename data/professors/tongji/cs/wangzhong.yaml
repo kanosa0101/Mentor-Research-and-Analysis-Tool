@@ -98,8 +98,8 @@ bio_raw: '王忠
   ji.edu.cn'
 institutes: []
 homepage: https://cszhong
-detail_url: https://cs.tongji.edu.cn/info/1121/4075.htm
-profile_url: https://cs.tongji.edu.cn/info/1121/4075.htm
+detail_url: https://faculty.tongji.edu.cn/wangzhong/zh_CN/index.htm
+profile_url: https://faculty.tongji.edu.cn/wangzhong/zh_CN/index.htm
 first_seen: '2026-09-03'
 last_verified: '2026-09-06'
 facets:
@@ -143,4 +143,14 @@ provenance:
     origin: crawled
     source: https://cs.tongji.edu.cn/info/1121/4075.htm
     fetched_at: '2026-09-03'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://faculty.tongji.edu.cn/wangzhong/zh_CN/index.htm
+    fetched_at: '2026-11-22'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://faculty.tongji.edu.cn/wangzhong/zh_CN/index.htm
+    fetched_at: '2026-11-22'
     confidence: auto

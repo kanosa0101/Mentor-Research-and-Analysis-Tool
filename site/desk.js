@@ -7,7 +7,15 @@ const priorities={high:'优先',normal:'一般',low:'暂缓'};
 const eventLabels={draft:'历史草稿',sent:'已发送',replied:'收到回复',note:'备注 / 阶段变更'};
 const params=new URLSearchParams(location.search);
 const discoveryReturn=(()=>{const value=params.get('discovery_return')||'';try{if(!/^discovery\.html(?:\?[^#]*)?$/.test(value)||/[\\\u0000-\u0020\u007f]/.test(value)||/[\\\u0000-\u001f\u007f]/.test(decodeURIComponent(value)))return '';const url=new URL(value,location.href);return url.origin===location.origin&&url.pathname.endsWith('/discovery.html')?value:'';}catch(e){return '';}})();
-function mentorProfileUrl(id){const q=new URLSearchParams();if(discoveryReturn)q.set('discovery_return',discoveryReturn);return 'p/'+encodeURIComponent(id)+'.html'+(q.size?'?'+q:'');}
+function mentorProfileUrl(id,project){
+  const q=new URLSearchParams(),person=people.get(id),goal=savedGoal(project);
+  if(person&&FLOW.projects[project]){
+    if(goal?.school===person.school&&goal.dept===person.dept)for(const [key,value] of Object.entries(goal))q.set(key,value);
+    q.set('school',person.school);q.set('dept',person.dept);q.set('project',project);
+  }
+  if(discoveryReturn)q.set('discovery_return',discoveryReturn);
+  return 'p/'+encodeURIComponent(id)+'.html'+(q.size?'?'+q:'');
+}
 let projectContext=params.get('project')||'',projectContextReady=false;
 const incomingMentor=people.has(params.get('mentor')) ? params.get('mentor') : '';
 const intentYear=Number(params.get('year'));
@@ -27,9 +35,9 @@ const personName=id=>people.get(id)?.name||id;
 const personLabel=id=>{const p=people.get(id);return p ? `${p.name} · ${p.school_name||p.school} · ${p.dept_name||p.dept}` : id;};
 const projectLabel=id=>{const p=FLOW.projects[id];return p ? `${p.name} · ${p.year??'年度未知'}` : '';};
 const target=()=>FLOW.targets[currentTarget];
-function savedGoal(){const p=FLOW.projects[target()?.project_id||projectContext];return p?.school_id&&p.dept_id&&p.year&&p.degree&&p.route&&p.track?{school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,...(p.program_name?{program:(p.program_code||'')+'|'+p.program_name}:{})}:null;}
+function savedGoal(project=target()?.project_id||projectContext){const p=FLOW.projects[project];return p?.school_id&&p.dept_id&&p.year&&p.degree&&p.route&&p.track?{school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,...(p.program_name?{program:(p.program_code||'')+'|'+p.program_name}:{})}:null;}
 function forwardedGoal(){
-  if(savedGoal())return savedGoal();
+  const saved=savedGoal();if(saved)return saved;
   const goal={...incomingGoal},p=people.get(target()?.mentor_id||incomingMentor);
   if(p){
     if(target()||goal.school!==p.school||goal.dept!==p.dept){delete goal.track;delete goal.program;}
@@ -64,7 +72,9 @@ function showView(view){
   for(const name of ['today','targets','prepare']) el('view-'+name).hidden=name!==view;
   document.querySelectorAll('.tabs [data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   const query=new URLSearchParams();query.set('view',view);query.set('panel',currentPanel);if(target()?.mentor_id||incomingMentor)query.set('mentor',target()?.mentor_id||incomingMentor);if(currentTarget)query.set('target',currentTarget);
-  if(FLOW.projects[target()?.project_id||projectContext])query.set('project',target()?.project_id||projectContext);
+  const project=target()?.project_id||projectContext;
+  if(project&&(!projectContextReady||FLOW.projects[project]))query.set('project',project);
+  if(target())query.set('draft',currentDraft);
   for(const [key,value] of Object.entries(forwardedGoal()))query.set(key,value);
   if(discoveryReturn)query.set('discovery_return',discoveryReturn);
   if(discoveryReturn)for(const link of document.querySelectorAll('a[href]'))if(link.getAttribute('href').split('?')[0]==='discovery.html')link.href=discoveryReturn;
@@ -74,11 +84,14 @@ function optionList(id,items,emptyLabel){
   const old=el(id).value;el(id).innerHTML=(emptyLabel===undefined?'':`<option value="">${esc(emptyLabel)}</option>`)+items.map(([key,name])=>`<option value="${esc(key)}">${esc(name)}</option>`).join('');
   if([...el(id).options].some(o=>o.value===old))el(id).value=old;
 }
-function manageUrl(){
-  const mentor=target()?.mentor_id||incomingMentor;
-  const q=new URLSearchParams({return:'desk',panel:currentPanel});if(mentor)q.set('mentor',mentor);if(currentTarget)q.set('target',currentTarget);
-  if(FLOW.projects[target()?.project_id||projectContext])q.set('project',target()?.project_id||projectContext);
-  for(const [key,value] of Object.entries(forwardedGoal()))q.set(key,value);
+function manageUrl(useSelection=false){
+  const t=target(),mentor=useSelection?chosenMentor:t?.mentor_id||incomingMentor;
+  const project=useSelection?el('target-project').value:t?.project_id||projectContext;
+  const q=new URLSearchParams({return:'desk',panel:currentPanel});if(mentor)q.set('mentor',mentor);
+  if(t&&t.project_id===project&&t.mentor_id===mentor){q.set('target',currentTarget);q.set('draft',currentDraft);}
+  if(FLOW.projects[project])q.set('project',project);
+  const goal=useSelection&&project?savedGoal(project)||{}:forwardedGoal();
+  for(const [key,value] of Object.entries(goal))q.set(key,value);
   if(discoveryReturn)q.set('discovery_return',discoveryReturn);
   return 'applications.html?'+q;
 }
@@ -92,11 +105,10 @@ function reminderManageUrl(reminder){
 function targetCard(t,attribute){
   const latest=Object.values(FLOW.communications).filter(e=>e.target_id===t.id&&e.kind==='sent').sort((a,b)=>b.date.localeCompare(a.date))[0];
   const next=Object.values(FLOW.reminders).filter(r=>!r.completed&&r.project_id===t.project_id&&r.mentor_id===t.mentor_id).sort((a,b)=>a.due_date.localeCompare(b.due_date))[0];
-  return `<article><h3>${esc(personLabel(t.mentor_id))}</h3><small>${esc(projectLabel(t.project_id))}</small><p><span class="badge">${esc(stages[t.stage])}</span><span class="badge">${esc(priorities[t.priority])}</span></p>${t.reason?`<p>${esc(t.reason)}</p>`:''}${latest?`<small>最近发送：${esc(latest.date)}</small>`:''}${next?`<p>下一步：${esc(next.title)} · ${esc(next.due_date)}</p>`:''}<div class="article-actions"><button ${attribute}="${t.id}">继续推进 →</button><a href="${esc(mentorProfileUrl(t.mentor_id))}">查看导师</a></div></article>`;
+  return `<article><h3>${esc(personLabel(t.mentor_id))}</h3><small>${esc(projectLabel(t.project_id))}</small><p><span class="badge">${esc(stages[t.stage])}</span><span class="badge">${esc(priorities[t.priority])}</span></p>${t.reason?`<p>${esc(t.reason)}</p>`:''}${latest?`<small>最近发送：${esc(latest.date)}</small>`:''}${next?`<p>下一步：${esc(next.title)} · ${esc(next.due_date)}</p>`:''}<div class="article-actions"><button ${attribute}="${t.id}">继续推进 →</button><a href="${esc(mentorProfileUrl(t.mentor_id,t.project_id))}">查看导师</a></div></article>`;
 }
 function render(){
   el('welcome').hidden=Object.keys(FLOW.projects).length>0;
-  for(const id of ['manage-link','welcome-manage','target-manage','draft-manage'])el(id).href=manageUrl();
   const projectItems=Object.values(FLOW.projects).map(p=>[p.id,projectLabel(p.id)]);
   optionList('target-project',projectItems,'选择申请项目');optionList('targets-project',projectItems,'全部项目');
   if(!projectContextReady){const id=target()?.project_id||projectContext;if(FLOW.projects[id]){el('target-project').value=id;el('targets-project').value=id;}projectContextReady=true;}
@@ -124,14 +136,13 @@ function render(){
   el('target-list').innerHTML=Object.values(FLOW.targets).filter(t=>(!project||t.project_id===project)&&(!stage||t.stage===stage)&&(!q||`${personLabel(t.mentor_id)} ${t.reason}`.toLowerCase().includes(q))).sort((a,b)=>['high','normal','low'].indexOf(a.priority)-['high','normal','low'].indexOf(b.priority)).map(t=>targetCard(t,'data-target')).join('')||'<div class="empty">暂无符合条件的目标。选择项目和导师即可加入。</div>';
   renderContext();renderIncoming();showPanel(currentPanel);showView(currentView);
   renderGoal();renderMentorSearch();
-  el('draft-manage').href=manageUrl()+'&section=material';
 }
 function renderContext(){
   const t=target();el('prepare-empty').hidden=!!t;el('prepare-detail').hidden=!t;if(!t)return;
   const p=people.get(t.mentor_id);
   el('context-name').textContent=personName(t.mentor_id);el('context-project').textContent=projectLabel(t.project_id);
   el('context-stage').textContent=stages[t.stage];el('context-priority').textContent=priorities[t.priority];el('context-reason').textContent=t.reason||'尚未记录选择理由';
-  el('context-profile').href=mentorProfileUrl(t.mentor_id);el('context-research').textContent=p?.research_direction_raw ? '官网方向：'+p.research_direction_raw : '暂未整理明确研究方向，请查看官网核实。';
+  el('context-profile').href=mentorProfileUrl(t.mentor_id,t.project_id);el('context-research').textContent=p?.research_direction_raw ? '官网方向：'+p.research_direction_raw : '暂未整理明确研究方向，请查看官网核实。';
   const next=Object.values(FLOW.reminders).filter(r=>!r.completed&&r.mentor_id===t.mentor_id&&r.project_id===t.project_id).sort((a,b)=>a.due_date.localeCompare(b.due_date))[0];
   renderTargetTasks();
   el('context-next').textContent=next ? '下一步：'+next.title+' · '+next.due_date : '尚未安排下一步';
@@ -151,6 +162,7 @@ function loadDraft(id=''){
   el('draft-materials').innerHTML=eligible.map(m=>`<label class="check"><input type="checkbox" value="${m.id}" data-missing="${m.missing}" ${(d?.material_ids||[]).includes(m.id)?'checked':''} ${m.missing&&!(d?.material_ids||[]).includes(m.id)?'disabled':''}>${esc(m.title)}${m.missing?'（文件缺失，可取消已选附件）':''}</label>`).join('')||`<small>暂无适用材料，可从“整理材料”上传文件并关联当前项目。</small>`;
   el('attachment-state').textContent=d?.attachments.length ? d.attachments.map(a=>`${a.title} · ${a.size} 字节`).join('；') : '保存草稿时固定本次附件版本；文件变更后需重新选择保存。';
   el('sent-confirmed').checked=false;el('sent-date').value=today();el('draft-choice').value=id;updateDraftState();
+  showPanel(currentPanel);showView(currentView);
 }
 function updateDraftState(){
   const sent=Object.values(FLOW.communications).find(e=>e.draft_id&&e.draft_id===currentDraft);
@@ -176,20 +188,27 @@ async function refresh(){
   FLOW=await api();
   if(FLOW.targets[currentTarget])chosenMentor=FLOW.targets[currentTarget].mentor_id;
   if(!FLOW.targets[currentTarget]){
+    const explicitProject=!!(incomingMentor&&FLOW.projects[projectContext]);
     const matches=Object.values(FLOW.targets).filter(t=>{
-      if(projectContext&&!FLOW.projects[projectContext])return false;
-      if(FLOW.projects[projectContext]&&t.project_id!==projectContext)return false;
+      if(incomingMentor&&t.mentor_id!==incomingMentor)return false;
+      if(projectContext&&t.project_id!==projectContext)return false;
+      if(explicitProject)return true;
       const p=FLOW.projects[t.project_id];
-      if(p.school_id&&p.dept_id){const scope={school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,program:p.program_name?(p.program_code||'')+'|'+p.program_name:''};return (!incomingMentor||t.mentor_id===incomingMentor)&&Object.entries(incomingGoal).every(([key,value])=>String(scope[key]||'')===String(value));}
-      return (!incomingMentor||t.mentor_id===incomingMentor)&&(!incomingGoal.year||p.year===incomingGoal.year)&&
+      if(p.school_id&&p.dept_id){const scope={school:p.school_id,dept:p.dept_id,year:p.year,degree:p.degree,route:p.route,track:p.track,program:p.program_name?(p.program_code||'')+'|'+p.program_name:''};return Object.entries(incomingGoal).every(([key,value])=>String(scope[key]||'')===String(value));}
+      return (!incomingGoal.year||p.year===incomingGoal.year)&&
         (!(incomingGoal.degree||incomingGoal.route)||p.application_type===[goalDegree[incomingGoal.degree],goalRoute[incomingGoal.route]].filter(Boolean).join(' / '));
     });
     const precise=matches.length===1&&FLOW.projects[matches[0].project_id]?.school_id&&FLOW.projects[matches[0].project_id]?.dept_id;
-    currentTarget=((incomingGoal.track||incomingGoal.program)&&!precise||(incomingMentor&&matches.length!==1))?'':matches[0]?.id||'';
+    currentTarget=((incomingGoal.track||incomingGoal.program)&&!precise&&!explicitProject||(incomingMentor&&matches.length!==1))?'':matches[0]?.id||'';
     if(!incomingMentor&&matches.length>1)currentTarget='';
     if(incomingMentor&&matches.length>1){currentView='targets';el('targets-query').value=personName(incomingMentor);}
   }
-  if(loadedTarget!==currentTarget){loadedTarget=currentTarget;currentDraft='';resetReply();resetTask();const drafts=Object.values(FLOW.drafts).filter(d=>d.target_id===currentTarget).sort((a,b)=>b.updated_at.localeCompare(a.updated_at));loadDraft(drafts[0]?.id||'');}
+  if(loadedTarget!==currentTarget){
+    loadedTarget=currentTarget;resetReply();resetTask();
+    const drafts=Object.values(FLOW.drafts).filter(d=>d.target_id===currentTarget).sort((a,b)=>b.updated_at.localeCompare(a.updated_at));
+    const requested=params.get('draft');params.delete('draft');
+    loadDraft(requested===''||drafts.some(d=>d.id===requested)?requested:drafts[0]?.id||'');
+  }
   render();el('desk-hint').hidden=true;window.CONTACT_READY=true;el('desk-backup').disabled=false;
 }
 async function action(task,success){
@@ -214,6 +233,7 @@ function resetReply(){el('reply-form').reset();el('reply-date').value=today();el
 function renderMentorSearch(){
   const q=el('target-query').value.toLowerCase().trim();el('target-choice').textContent=chosenMentor ? '已选择：'+personLabel(chosenMentor) : '请选择搜索结果中的导师';
   el('target-results').innerHTML=(q?[...people.values()].filter(p=>`${p.page} ${personLabel(p.page)}`.toLowerCase().includes(q)).slice(0,15):[]).map(p=>`<button type="button" data-choose-mentor="${esc(p.page)}">${esc(personLabel(p.page))}<br><small>${esc(p.page)}</small></button>`).join('');
+  el('target-manage').href=manageUrl(true);
 }
 document.querySelector('main').onclick=e=>{
   const b=e.target.closest('button');if(!b)return;
@@ -224,6 +244,7 @@ document.querySelector('main').onclick=e=>{
   if(b.dataset.completeTask)action(()=>api('/reminders/'+b.dataset.completeTask,{completed:true},'PATCH'),'待办已完成');
 };
 el('target-query').oninput=()=>{chosenMentor='';renderMentorSearch();};
+el('target-project').onchange=renderMentorSearch;
 el('target-form').onsubmit=e=>{
   statusArea='';
   e.preventDefault();if(!allowSwitch())return;action(async()=>{
@@ -285,7 +306,8 @@ function showPanel(panel){
   currentPanel=panel;
   for(const name of ['mail','tasks','reply','history'])el('prepare-'+name).hidden=name!==panel;
   document.querySelectorAll('[data-panel]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.panel===panel)));
-  for(const id of ['manage-link','welcome-manage','target-manage','draft-manage'])el(id).href=manageUrl();
+  for(const id of ['manage-link','welcome-manage'])el(id).href=manageUrl();
+  el('target-manage').href=manageUrl(true);
   el('draft-manage').href=manageUrl()+'&section=material';
 }
 function resetTask(){el('task-form').reset();editingTask='';taskDirty=false;el('task-save').textContent='新增提醒';}
