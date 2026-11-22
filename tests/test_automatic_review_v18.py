@@ -7,7 +7,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from crawler import ai_evidence, ai_review, automatic_review as automatic, opportunity_review as review
+from crawler import ai_evidence, ai_review, ai_transport, automatic_review as automatic, opportunity_review as review
 from crawler import opportunity_util as util
 
 
@@ -55,6 +55,34 @@ def test_fresh_verdict_for_other_business_values_cannot_publish(setup, field_has
     result = process(checker=check)
     assert result['state'] == 'manual_required'
     assert not (root / 'data/opportunities.json').exists()
+
+
+def test_legacy_activity_http_402_resumes_while_content_refusal_stays_manual(setup, monkeypatch):
+    root, queue, process = setup
+
+    def unavailable(*_args):
+        raise ai_transport.AIServiceError('http_402', 'HTTP 402', retryable=False)
+
+    wait = process(checker=unavailable, publish=False)
+    assert wait['state'] == 'budget_wait' and wait['failures'] == 0
+    assert wait['attempts'] == 1 and wait['next_attempt_at'] == (NOW+timedelta(hours=6)).isoformat()
+    original = review.read_queue(queue)
+
+    for code, expected in [('invalid_scope', 'skipped'), ('http_402', 'eligible'), (None, 'eligible')]:
+        previous = copy.deepcopy(original)
+        saved = previous['drafts'][0]['automatic_review']
+        saved.update(state='manual_required', error_code=code)
+        saved.pop('next_attempt_at')
+        if code is None:
+            saved['reasons'] = ['AI服务HTTP 402；没有完整核验结论']
+        review.atomic_json(queue, previous)
+        assert process(checker=accepted, publish=False)['state'] == expected
+
+    review.atomic_json(queue, original)
+    monkeypatch.setattr(ai_evidence, 'provider_retry_at', lambda _: wait['next_attempt_at'])
+    during_cooldown = process(checker=lambda *_: pytest.fail('provider called while waiting'), publish=False)
+    assert during_cooldown['blocked_state'] == 'budget_wait'
+    assert during_cooldown['attempts'] == 1
 
 
 def test_concurrent_human_triage_is_not_overridden_by_automatic_publication(setup):

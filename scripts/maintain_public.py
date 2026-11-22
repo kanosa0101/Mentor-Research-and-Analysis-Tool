@@ -48,20 +48,33 @@ def priority_units():
 def rebuild():
     # systemd ReadWritePaths uses separate bind mounts for cache and site.
     # Keep staging inside the destination mount so rename remains atomic.
-    with tempfile.TemporaryDirectory(prefix='.build-', dir=ROOT / 'site') as directory:
+    site = ROOT / 'site'
+    managed = {'p': '*.html', 'admissions': '*.json'}
+    for path in (site, *(site / name for name in managed)):
+        if path.is_symlink() or getattr(path, 'is_junction', lambda: False)():
+            raise ValueError(f'生成页面目录不能使用链接：{path}')
+    with tempfile.TemporaryDirectory(prefix='.build-', dir=site) as directory:
         stage = Path(directory)
         build_site.SITE = stage
         build_site.main()
+        generated = {path.relative_to(stage) for path in stage.rglob('*') if path.is_file()}
+        if any((site / path).is_symlink() for path in generated):
+            raise ValueError('生成页面不能覆盖符号链接')
         changed = 0
-        for path in stage.rglob('*'):
-            if not path.is_file():
-                continue
-            target = ROOT / 'site' / path.relative_to(stage)
+        for relative in sorted(generated):
+            path, target = stage / relative, site / relative
             if target.exists() and target.read_bytes() == path.read_bytes():
                 continue
             target.parent.mkdir(parents=True, exist_ok=True)
             os.replace(path, target)
             changed += 1
+        for folder, pattern in managed.items():
+            if not (stage / folder).is_dir():
+                continue
+            for target in (site / folder).glob(pattern):
+                if not target.is_symlink() and target.is_file() and target.relative_to(site) not in generated:
+                    target.unlink()
+                    changed += 1
     return changed
 
 
@@ -113,7 +126,8 @@ def main():
 if __name__ == '__main__':
     try:
         if '--build-only' in sys.argv:
-            print('Public pages updated:', rebuild())
+            with output_lock(ROOT / 'cache/public-maintenance'):
+                print('Public pages updated:', rebuild())
         else:
             sys.exit(main())
     except Exception:

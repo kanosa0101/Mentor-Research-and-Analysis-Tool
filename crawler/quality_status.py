@@ -9,7 +9,8 @@ from crawler.opportunity_monitor import atomic_json
 
 INTAKE_REASONS = {
     'awaiting_evidence': '新政策：已发现待核验',
-    'ai_budget_wait': '新政策：AI额度等待', 'unsupported_attachment': '新政策：附件格式待处理',
+    'ai_budget_wait': '新政策：AI额度等待', 'ai_service_unavailable': '新政策：AI服务不可用',
+    'unsupported_attachment': '新政策：附件格式待处理',
     'incomplete_evidence': '新政策：完整证据缺失', 'existing_policy_conflict': '新政策：既有范围冲突',
     'source_changed': '新政策：原文版本变化', 'historical_window': '新政策：历史报名窗口',
     'incomplete_fields': '新政策：关键条件缺失', 'ambiguous_scope': '新政策：适用范围待核对',

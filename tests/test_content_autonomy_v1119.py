@@ -11,7 +11,7 @@ import pytest
 import requests
 import yaml
 
-from crawler import ai_review, automatic_evidence, automatic_review as automatic, opportunity_monitor, opportunity_recovery, opportunity_review as review, policy_intake
+from crawler import ai_review, ai_transport, automatic_evidence, automatic_review as automatic, opportunity_monitor, opportunity_recovery, opportunity_review as review, policy_intake
 from scripts import maintain_public, review_opportunities
 from test_automatic_review_v18 import CONFIGS, HTML, NOW, URL, accepted, extractive_advice, setup
 from test_complete_evidence_v1116 import POLICY_HTML, docx, policy_setup
@@ -93,6 +93,23 @@ def test_only_budget_refused_before_sending_keeps_recheck_available(tmp_path):
     with pytest.raises(requests.Timeout):
         ai_review.recheck(*args, first, sent_but_failed, version='v1')
     assert ai_review.recheck(*args, first, lambda *a: pytest.fail('indeterminate request repeated'), version='v1') == first
+
+
+@pytest.mark.parametrize('code', ['http_402', 'provider_cooldown'])
+def test_provider_wait_leaves_bound_counterevidence_available_for_recovery(tmp_path, code):
+    clause = '须提交两封副教授签署的推荐信及有效成绩单。'
+    fields = {'materials': dict(value=clause, quote=clause)}
+    args = tmp_path, URL, clause, fields
+    first = finding(args, 'materials', clause)
+
+    def unavailable(*_args, **_kwargs):
+        raise ai_transport.AIServiceError(code, 'AI服务不可用', retryable=False)
+
+    with pytest.raises(ai_transport.AIServiceError):
+        ai_review.recheck(*args, first, unavailable, version='v1')
+    result = ai_review.recheck(*args, first, lambda *a, **_kw: accepted(*a), version='v1')
+    assert result['decision'] == 'consistent'
+    assert result['counterevidence_review']['first_issues'] == first['issues']
 
 
 def test_policy_budget_wait_preserves_first_result_and_schedules_recheck(policy_setup):

@@ -321,13 +321,14 @@ def save(data, body, known_ids, context, catalog):
         raise ValueError('请填写项目名称')
     if body['reminder_date']:
         core.iso_date(body['reminder_date'])
+    existing = next((p for p in data['projects'].values() if p.get('opportunity', {}).get('id') == item['id']), None)
+    if existing:
+        return data, {'project_id': existing['id'], 'duplicate': True}
+    if body['reminder_date']:
         if body['reminder_date'] < today().isoformat():
             raise ValueError('提醒日期不能早于今天')
         if state(item) == 'open' and body['reminder_date'] > item['deadline'][:10]:
             raise ValueError('报名准备提醒不能晚于已登记截止日期')
-    existing = next((p for p in data['projects'].values() if p.get('opportunity', {}).get('id') == item['id']), None)
-    if existing:
-        return data, {'project_id': existing['id'], 'duplicate': True}
     if content_scope(item) != 'institutional_activity':
         raise ValueError('此记录已归入导师招募、招生通知或待核验线索，请先查看新去向；已有申请记录保持不变')
     school = item['school_id'] if item['school_id'] in context['units'] else ''

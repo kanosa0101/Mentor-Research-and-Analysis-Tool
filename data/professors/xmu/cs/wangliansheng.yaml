@@ -6,8 +6,8 @@ dept: cs
 status: roster
 title: 教授
 institutes: []
-detail_url: https://informatics.xmu.edu.cn/info/1284/26649.htm
-profile_url: https://informatics.xmu.edu.cn/info/1284/26649.htm
+detail_url: https://faculty.xmu.edu.cn/WLS/zh_CN/index.htm
+profile_url: https://faculty.xmu.edu.cn/WLS/zh_CN/index.htm
 first_seen: '2026-09-05'
 facets: []
 provenance:
@@ -21,3 +21,25 @@ provenance:
     source: https://cs.xmu.edu.cn/szll/js.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  email:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/list_teacher.jsp?checkaggregatequeryid=1123&collegeid=1532&language=zh_CN&postdutyid=1123&urltype=tp.TpCollegeZWTeachers&wbtreeid=2171
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/WLS/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/WLS/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.xmu.edu.cn/szll/js.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+email: lswang@xmu.edu.cn
+research_direction_raw: 医学图像处理、数据挖掘、大数据应用、机器学习和深度学习，以及在医学数据、金融数据分析中的应用

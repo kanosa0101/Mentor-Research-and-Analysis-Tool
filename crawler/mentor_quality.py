@@ -17,6 +17,7 @@ from crawler.email_util import normalize_email
 from crawler.opportunity_monitor import atomic_json, output_lock
 
 EMAIL = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
+PROFILE_ISSUES = ('fetch_or_parse_error', 'unknown_detail_field', 'shared_public_contact')
 
 
 def refresh_fields(root, **kwargs):
@@ -26,6 +27,27 @@ def refresh_fields(root, **kwargs):
 
 def load_yaml(path):
     return yaml.load(path.read_text(encoding='utf-8'), Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
+
+
+def profile_missing(root, unit, ref):
+    """Confirm absence in an available record directory without opening the YAML."""
+    directory = root / 'data/professors'
+    parts = unit.split('/')
+    if len(parts) != 2 or any(part in ('', '.', '..') for part in parts):
+        return False
+    folder = directory.joinpath(*parts)
+    path = folder / (ref + '.yaml')
+    if folder.parent.parent != directory or path.parent != folder:
+        return False
+    try:
+        if not folder.is_dir() or any(path.is_symlink() for path in (directory, folder.parent, folder)):
+            return False
+        path.lstat()
+    except FileNotFoundError:
+        return folder.is_dir()
+    except OSError:
+        pass
+    return False
 
 
 def fetch_source(source, timeout=15):
@@ -353,7 +375,7 @@ def inspect_issue(root, unit, issue, sources):
     folder = root / 'data/professors' / school / dept
     path = folder / (issue['ref'] + '.yaml')
     kind = issue['kind']
-    if kind in ('fetch_or_parse_error', 'unknown_detail_field', 'shared_public_contact'):
+    if kind in PROFILE_ISSUES:
         original = load_yaml(path)
         if kind == 'unknown_detail_field':
             titles, failed, own = set(), 0, None
@@ -378,7 +400,7 @@ def inspect_issue(root, unit, issue, sources):
         known_source = (automatic.get('source_urls') or {}).get('profile') or automatic.get('current_source')
         failure_reason = ''
         if (kind == 'fetch_or_parse_error' and automatic.get('status') != 'resolved' and
-                (not known_source or known_source == original['detail_url'])):
+                known_source == original['detail_url']):
             failure_reason = automatic.get('reason') or issue.get('message', '')
         updated, parsed, changed, checked = profile(root, original, cfg, sources, failure_reason=failure_reason)
         if kind == 'shared_public_contact':
@@ -427,6 +449,27 @@ def inspect_issue(root, unit, issue, sources):
     return dict(status='pending', reason='当前问题类型没有可证明的自动修复规则，保留并周期复检')
 
 
+def retire_missing_issues(root, unit, path, stamp):
+    with output_lock(path):
+        issues = load_yaml(path) or []
+        changed = False
+        for issue in issues:
+            automatic = issue.get('automatic_check') or {}
+            if (issue.get('reviewed') or (issue.get('resolved') and automatic.get('status') != 'resolved')
+                    or issue['kind'] not in PROFILE_ISSUES
+                    or not profile_missing(root, unit, issue['ref'])):
+                continue
+            reason = '公开导师档案已移除，结束该记录的资料复核'
+            issue['resolved'] = True
+            issue.setdefault('review_history', []).append({'date': stamp, 'automatic': True, 'state': 'retired',
+                'reason': reason, 'evidence': [{'path': f"data/professors/{unit}/{issue['ref']}.yaml"}]})
+            issue['automatic_check'] = dict(automatic, status='retired', next_action='none', next_check_at=None)
+            changed = True
+        if changed:
+            legacy_refresh.write_yaml(path, issues)
+        return issues
+
+
 def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
     root = Path(root)
     now = now or datetime.now(timezone.utc)
@@ -444,7 +487,9 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
             cfg_path = root / 'sites' / (unit + '.yaml')
             cfg = configs.setdefault(unit, load_yaml(cfg_path) if cfg_path.exists() else {})
             signatures[unit] = mentor_recovery.signature(root, cfg) if cfg else ''
-            for issue in load_yaml(path) or []:
+            issues = (retire_missing_issues(root, unit, path, stamp)
+                      if not units or unit in units else load_yaml(path) or [])
+            for issue in issues:
                 key = unit + '/' + issue['kind'] + '/' + issue['ref']
                 known.add(key)
                 previous = state['records'].get(key, {})

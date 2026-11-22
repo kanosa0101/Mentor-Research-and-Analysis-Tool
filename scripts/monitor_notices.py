@@ -18,6 +18,11 @@ from crawler import fetch
 KEYWORDS = ('招生', '推免', '免试', '夏令营', '冬令营', '冬季培训班', '科研实践', '科研实习', '科研训练', '暑期研修', '春闱计划', '科创计划', '深瞳计划', '创新实践', '暑期科学营', '复试', '录取', '统考', '申请', '初试', '网上确认', '网报', '考点', '考试大纲', '专业目录')
 
 
+def graduate_application_guide(title):
+    return bool(re.search(r'(?:博士|硕士)研究生[^，。；：]{0,12}报考须知'
+                          r'|普通招考(?:博士|硕士)研究生[^，。；：]{0,12}报名(?:通知|须知|办法)', title))
+
+
 def notice_hints(title):
     return {'title_years': sorted({int(y) for y in re.findall(r'20\d{2}', title)}),
             'route_hint': next((k for k in ('冬令营', '夏令营', '推免', '免试', '统考', '博士') if k in title), None),
@@ -44,7 +49,7 @@ def parse_list(html, cfg):
         if not link:
             continue
         url = urljoin(cfg['url'], link)
-        if not title or not any(k in title for k in KEYWORDS):
+        if not (any(k in title for k in KEYWORDS) or graduate_application_guide(title)):
             continue
         if urlsplit(url).scheme not in ('http', 'https') or urlsplit(url).hostname != urlsplit(cfg['url']).hostname:
             continue
@@ -106,7 +111,9 @@ def _collect(cfgs, output, *, refresh, fetcher, writer):
     checked_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
     fetch.set_direct(True)
     for cfg in cfgs:
-        key = cfg['school'] + '/' + cfg['dept']
+        scope = cfg['school'] + '/' + cfg['dept']
+        key = cfg.get('source_id') or scope
+        display = {'scope': scope, 'name': cfg.get('name', '')} if cfg.get('source_id') else {}
         try:
             if fetcher:
                 html, meta, hit = fetcher(cfg)
@@ -140,14 +147,16 @@ def _collect(cfgs, output, *, refresh, fetcher, writer):
                 rows[r['url']] = r
             current = {r['url'] for r in found}
             for r in rows.values():
-                if r['school'] == cfg['school'] and r['dept'] == cfg['dept'] and r['url'] not in current:
+                if (r['school'] == cfg['school'] and r['dept'] == cfg['dept'] and
+                        r.get('source', cfg['url']) == cfg['url'] and r['url'] not in current):
                     r['seen_in_latest_list'] = False
             sources[key] = {'url': cfg['url'], 'fetched_at': meta['fetched_at'],
-                            'last_attempt': checked_at, 'signature': fingerprint, 'count': len(found), 'error': None}
+                            'last_attempt': checked_at, 'signature': fingerprint, 'count': len(found), 'error': None,
+                            **display}
             print(f'{key}: {len(found)} 通知 | cache={hit}')
         except Exception as e:
             failed += 1
-            sources.setdefault(key, {}).update(url=cfg['url'], last_attempt=checked_at, error=str(e)[:500])
+            sources.setdefault(key, {}).update(url=cfg['url'], last_attempt=checked_at, error=str(e)[:500], **display)
             print(f'{key}: ERROR {e}', file=sys.stderr)
     result = {'scope': 'configured-official-columns', 'checked_at': checked_at,
               'sources': sources, 'notices': sort_notices(rows.values()),

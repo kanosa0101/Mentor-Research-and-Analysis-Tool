@@ -6,8 +6,8 @@ dept: cs
 status: roster
 title: 教授
 institutes: []
-detail_url: https://informatics.xmu.edu.cn/info/1284/23629.htm
-profile_url: https://informatics.xmu.edu.cn/info/1284/23629.htm
+detail_url: https://informatics.xmu.edu.cn/info/1033/161201.htm
+profile_url: https://informatics.xmu.edu.cn/info/1033/161201.htm
 first_seen: '2026-09-05'
 facets: []
 provenance:
@@ -21,3 +21,19 @@ provenance:
     source: https://cs.xmu.edu.cn/szll/js.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/info/1033/161201.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/info/1033/161201.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/info/1033/161201.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+research_direction_raw: 非易失性内存存储系统、闪存存储系统、分布式存储系统、数据存储可靠性与安全、近数据智能存算融合系统

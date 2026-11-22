@@ -36,6 +36,11 @@ def test_replacement_boundary(url):
 
 def test_404_discovers_without_requesting_dead_url(root):
     configure(root)
+    issue_path = root / 'data/issues/test-cs.yaml'
+    issues = quality.load_yaml(issue_path)
+    issues[0]['automatic_check'] = dict(status='error', reason='HTTP 404',
+                                       source_urls={'profile': 'https://test.edu.cn/old'})
+    put(issue_path, issues)
     requested = []
     def fetch(source):
         requested.append(source['url'])
@@ -88,6 +93,36 @@ def test_changed_source_is_checked_without_replaying_prior_source_failure(root):
     assert quality.run(root,fetcher=fresh,now=NOW)['resolved']==1
 
 
+@pytest.mark.parametrize('available', [True, False])
+def test_unbound_404_checks_current_url_before_using_discovery(root, available):
+    configure(root)
+    path = root / 'data/professors/test/cs/teacher.yaml'
+    person = quality.load_yaml(path)
+    person['detail_url'] = 'https://test.edu.cn/current'
+    put(path, person)
+    issue_path = root / 'data/issues/test-cs.yaml'
+    issues = quality.load_yaml(issue_path)
+    issues[0]['automatic_check'] = dict(status='error', reason='HTTP 404')
+    put(issue_path, issues)
+    requested = []
+
+    def fetch(source):
+        requested.append(source['url'])
+        if source['url'].endswith('/current'):
+            if available:
+                return body()
+            raise ValueError('HTTP 404')
+        return '<p>没有同名候选</p>'
+
+    result = quality.run(root, fetcher=fetch, now=NOW)
+    if available:
+        assert result['resolved'] == 1 and requested == ['https://test.edu.cn/current']
+    else:
+        assert result['error'] == 1 and requested[:2] == ['https://test.edu.cn/current', 'https://test.edu.cn/people']
+        assert requested.count('https://test.edu.cn/current') == 1
+        assert result['results'][0]['source_urls']['profile'] == 'https://test.edu.cn/current'
+
+
 @pytest.mark.parametrize('field', ['detail_url', 'profile_url'])
 def test_manual_urls_block_automatic_migration(root, field):
     configure(root)
@@ -135,12 +170,18 @@ def test_roster_row_is_exact_and_conflicts_are_rejected():
     assert recovery.directory_fields(cfg, duplicate, '张老师') == (None, None)
 
 
+def missing_old(source):
+    if source['url'] == 'https://test.edu.cn/old':
+        raise ValueError('HTTP 404')
+    return '<p>无导师链接</p>'
+
+
 def test_legacy_refresh_honors_recovery_cooldown_but_parser_change_reopens(root):
     cfg = configure(root)
     path = root/'cache/legacy_refresh/state.json'
     path.parent.mkdir(parents=True)
     path.write_text(json.dumps(dict(records={'professor/test/cs/teacher.yaml':dict(status='error', source_url='https://test.edu.cn/old')})), encoding='utf-8')
-    quality.run(root, fetcher=lambda s:'<p>无导师链接</p>', now=NOW)
+    quality.run(root, fetcher=missing_old, now=NOW)
     assert legacy_refresh.run(root, kind='professors', fetcher=lambda s:pytest.fail('known dead URL still cooling down'), now=NOW+timedelta(days=1))['attempted'] == 0
     cfg['parser_revision'] = 2
     put(root/'sites/test/cs.yaml', cfg)
@@ -149,7 +190,7 @@ def test_legacy_refresh_honors_recovery_cooldown_but_parser_change_reopens(root)
 
 def test_legacy_cooldown_also_works_before_first_legacy_attempt(root):
     configure(root)
-    quality.run(root,fetcher=lambda s:'<p>无导师链接</p>',now=NOW)
+    quality.run(root,fetcher=missing_old,now=NOW)
     assert legacy_refresh.run(root,kind='professors',fetcher=lambda s:pytest.fail('known recovery issue'),now=NOW+timedelta(days=1))['attempted'] == 0
 
 

@@ -76,9 +76,60 @@ class MaintenanceTests(unittest.TestCase):
     def test_build_failure_keeps_published_pages(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'site').mkdir();(root/'site/index.html').write_text('published')
+            (root/'site/p').mkdir();(root/'site/p/old.html').write_text('old profile')
             def fail():
                 (maintain.build_site.SITE/'index.html').write_text('incomplete')
+                (maintain.build_site.SITE/'p').mkdir()
                 raise ValueError('bad source fixture')
             with patch.object(maintain,'ROOT',root),patch.object(maintain.build_site,'main',fail),patch.object(maintain.build_site,'SITE',root/'site'):
                 with self.assertRaises(ValueError):maintain.rebuild()
             self.assertEqual((root/'site/index.html').read_text(),'published')
+            self.assertEqual((root/'site/p/old.html').read_text(),'old profile')
+
+    def test_success_removes_only_stale_generated_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / 'site'
+            for folder, extension in (('p', 'html'), ('admissions', 'json')):
+                (site / folder / 'nested').mkdir(parents=True)
+                (site / folder / f'old.{extension}').write_text('old')
+                (site / folder / f'live.{extension}').write_text('keep')
+                (site / folder / f'nested/old.{extension}').write_text('nested')
+                (site / folder / 'asset.png').write_text('other extension')
+            (site / 'about.html').write_text('other location')
+
+            def build():
+                for folder, extension in (('p', 'html'), ('admissions', 'json')):
+                    path = maintain.build_site.SITE / folder
+                    path.mkdir()
+                    (path / f'live.{extension}').write_text('keep')
+
+            with patch.object(maintain, 'ROOT', root), patch.object(maintain.build_site, 'main', build), \
+                    patch.object(maintain.build_site, 'SITE', site):
+                self.assertEqual(maintain.rebuild(), 2)
+                self.assertEqual(maintain.rebuild(), 0)
+            self.assertEqual({path.relative_to(site).as_posix() for path in site.rglob('*') if path.is_file()},
+                             {'about.html', 'p/live.html', 'p/nested/old.html', 'p/asset.png',
+                              'admissions/live.json', 'admissions/nested/old.json', 'admissions/asset.png'})
+
+    def test_rebuild_does_not_traverse_linked_profile_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / 'site'
+            outside = root / 'unrelated'
+            site.mkdir(); outside.mkdir()
+            (outside / 'old.html').write_text('outside')
+            try:
+                (site / 'p').symlink_to(outside, target_is_directory=True)
+            except OSError as error:
+                self.skipTest(f'symlink creation unavailable: {type(error).__name__}')
+
+            def build():
+                path = maintain.build_site.SITE / 'p'
+                path.mkdir()
+                (path / 'new.html').write_text('generated')
+
+            with patch.object(maintain, 'ROOT', root), patch.object(maintain.build_site, 'main', build), \
+                    patch.object(maintain.build_site, 'SITE', site), self.assertRaises(ValueError):
+                maintain.rebuild()
+            self.assertEqual([path.name for path in outside.iterdir()], ['old.html'])

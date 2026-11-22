@@ -4,6 +4,9 @@ import json
 import tempfile
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+from crawler import notice_util
+from scripts.build_site import template_environment
 from test_maintenance import script
 
 
@@ -52,6 +55,53 @@ class NoticeTests(unittest.TestCase):
         cfg = dict(school='a',dept='cs',url='https://a.edu.cn/list',selector='a',title_selector='self')
         rows = monitor.parse_list('<a href="/confirm">2027年硕士网上确认</a><a href="/exam">2027年初试科目调整</a>',cfg)
         self.assertEqual(len(rows),2)
+
+    def test_winter_doctoral_guide_is_a_current_admissions_notice(self):
+        monitor = script('monitor_notices')
+        listing = 'https://yz.tsinghua.edu.cn/zsxx/bszs/ptzk.htm'
+        cfg = dict(school='tsinghua', dept='', url=listing, selector='a[href]')
+        title = '清华大学2027年普通招考博士研究生冬季报考须知'
+        html = (f'<a href="../../info/1012/3296.htm" title="{title}">'
+                '<div class="time"><em>29</em><span>2026.10</span></div></a>'
+                '<a href="/unrelated" title="旧公务员报考须知">历史新闻</a>')
+        rows = monitor.parse_list(html, cfg)
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row['url'], 'https://yz.tsinghua.edu.cn/info/1012/3296.htm')
+        self.assertEqual(row['source'], listing)
+        self.assertEqual(row['publication_date'], '2026-10-29')
+        self.assertFalse(row['reviewed'])
+        cycle = notice_util.classify_notice(row, day='2026-11-23')
+        self.assertEqual(cycle['admission_year'], 2027)
+        self.assertIsNone(cycle['graduation_year'])
+        self.assertIsNone(cycle['activity_year'])
+        self.assertNotIn('winter_camp', cycle['routes'])
+
+    def test_same_unit_distinct_sources_keep_separate_current_list_state(self):
+        monitor = script('monitor_notices')
+        configs = [dict(school='tsinghua', dept='', source_id=name, selector='a', title_selector='self',
+                        url=f'https://yz.tsinghua.edu.cn/{name}/') for name in ('doctoral', 'general')]
+
+        def fetcher(cfg):
+            return f'<a href="notice.htm">{cfg["source_id"]}招生</a>', {'fetched_at': '2026-11-22'}, False
+
+        with tempfile.TemporaryDirectory() as directory:
+            result = monitor.collect(configs, Path(directory) / 'notices.json', fetcher=fetcher)
+        self.assertEqual(set(result['sources']), {'doctoral', 'general'})
+        self.assertEqual(len(result['notices']), 2)
+        self.assertTrue(all(source['scope'] == 'tsinghua/' for source in result['sources'].values()))
+        self.assertTrue(all(row['seen_in_latest_list'] for row in result['notices']))
+
+    def test_render_selects_real_unit_without_losing_separate_source_ids(self):
+        sources = {'doctoral': {'url': 'https://yz.tsinghua.edu.cn/doctoral/', 'scope': 'tsinghua/', 'name': '普通博士'},
+                   'general': {'url': 'https://yz.tsinghua.edu.cn/general/', 'scope': 'tsinghua/', 'name': '校级公告'},
+                   'tsinghua/cs': {'url': 'https://cs.tsinghua.edu.cn/'}}
+        html = template_environment().get_template('notices.html.j2').render(notices=[], sources=sources)
+        soup = BeautifulSoup(html, 'html.parser')
+        self.assertEqual([option['value'] for option in soup.select('#school option')], ['', 'tsinghua/', 'tsinghua/cs'])
+        self.assertEqual([entry['data-source'] for entry in soup.select('[data-source-scope="tsinghua/"]')],
+                         ['doctoral', 'general'])
+        self.assertEqual(soup.select_one('[data-source="doctoral"] a').get_text(strip=True), '普通博士 官方栏目')
 
     def test_default_order_prioritizes_current_list_then_publication_date(self):
         monitor = script('monitor_notices')

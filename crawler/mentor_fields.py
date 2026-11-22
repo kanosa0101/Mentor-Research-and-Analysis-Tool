@@ -105,13 +105,14 @@ def summarize(state):
 
 def seed(root,now=None,*,email_owners=None):
     """Inventory missing/contaminated fields without making a network request."""
-    from crawler.mentor_quality import load_yaml
+    from crawler.mentor_quality import load_yaml,profile_missing
     root=Path(root);now=now or datetime.now(timezone.utc);stamp=now.isoformat(timespec='seconds');path=root/PATH
     with LEDGER_LOCK,output_lock(path):
         state=read(root)
-        signatures={}
+        signatures={};seen=set()
         for file in sorted((root/'data/professors').glob('*/*/*.yaml')):
             person=load_yaml(file);key=identifier(person);record=state['records'].get(key)
+            seen.add(key)
             if email_owners is not None and present(person,'email'):
                 email_owners.setdefault(person['email'].casefold(),set()).add(key)
             review=secondary_schedule(person,now)
@@ -160,6 +161,10 @@ def seed(root,now=None,*,email_owners=None):
                     next_action='manual_review' if manual else 'verify_field',source_url=person['detail_url'],next_check_at=None if manual else stamp)
                 if field=='homepage':record['fields'][field]['optional']=True
             record['updated_at']=stamp
+        for key in state['records'].keys()-seen:
+            record=state['records'][key]
+            if profile_missing(root,record['unit'],record['ref']):
+                del state['records'][key]
         state['scanned_at']=stamp;state['summary']=summarize(state);atomic_json(path,state)
     return state
 

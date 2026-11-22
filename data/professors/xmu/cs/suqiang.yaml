@@ -235,10 +235,24 @@ provenance:
   email:
     origin: crawled
     source: https://faculty.xmu.edu.cn/suqiang/zh_CN/index.htm
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-22'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.xmu.edu.cn/suqiang/zh_CN/index.htm
-    fetched_at: '2026-09-05'
+    fetched_at: '2026-11-22'
     confidence: auto
+  supervisor:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/suqiang/zh_CN/index.htm
+    fetched_at: '2026-11-22'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/suqiang/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+supervisor: 博导
+last_fetched: '2026-11-22'
+last_parsed: '2026-11-22'
+research_direction_raw: 智算网络、机器学习系统等

@@ -2,6 +2,9 @@ const oe=id=>document.getElementById(id), ox=value=>String(value??'').replace(/[
 let opportunityCatalog=window.OPPORTUNITIES||{opportunities:[],other_contents:[]}, opportunityRows=opportunityCatalog.opportunities, catalogLoaded=!!window.OPPORTUNITIES, savingOpportunity=null, savedOpportunities=new Map(), saveBusy=false, publicOpportunityMode=false, opportunityModeReady=false;
 const opportunityTime=value=>value?new Date(value).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'未知';
 const opportunityParams=new URLSearchParams(location.search), opportunityToday=OpportunityRules.dayOf(new Date().toISOString());
+const opportunityCompact=matchMedia('(max-width:650px)'),opportunityFilterPanel=oe('opportunity-filter-panel');
+opportunityFilterPanel.open=!opportunityCompact.matches;
+opportunityCompact.addEventListener('change',event=>{if(!event.matches)opportunityFilterPanel.open=true;});
 function opportunityListUrl(id=''){
   const query=new URLSearchParams(opportunityParams);
   if(id)query.set('id',id);else query.delete('id');
@@ -17,7 +20,7 @@ function opportunityBrowseScope(){
 function opportunityFacts(o){
   const window=o.application_window,label=!o.deadline&&window?.mode==='rolling'?'官方受理方式':!o.deadline&&window?.mode==='month'?'截止月份':'报名截止';
   const value=OpportunityRules.formatDate(o.deadline)|| (window?.mode==='rolling'?'长期 / 滚动受理':window?.mode==='month'?OpportunityRules.formatDate(window.end_month)+'（具体日期未公布）':'具体日期待确认');
-  return `<div class="opportunity-facts"><div><span class="muted">${label}</span><strong>${ox(value)}${o.deadline?.length===10?'（未注明时刻）':''}</strong></div><div><span class="muted">本科毕业届别</span><strong>${o.graduation_year?ox(o.graduation_year)+' 届':'原文未明确'}</strong></div>${o.event_start||o.event_end?`<div><span class="muted">活动时间</span><strong>${ox(OpportunityRules.formatDate(o.event_start)||'开始日期待核对')}${o.event_end?' 至 '+ox(OpportunityRules.formatDate(o.event_end)):''}</strong></div>`:''}</div>`;
+  return `<div class="opportunity-facts"><div><span class="muted">${label}</span><strong>${ox(value)}${o.deadline?.length===10?'（未注明时刻）':''}</strong></div>${o.graduation_year?`<div><span class="muted">毕业届别</span><strong>${ox(o.graduation_year)} 届</strong></div>`:''}${o.event_start||o.event_end?`<div><span class="muted">活动时间</span><strong>${ox(OpportunityRules.formatDate(o.event_start)||'开始日期待核对')}${o.event_end?' 至 '+ox(OpportunityRules.formatDate(o.event_end)):''}</strong></div>`:''}</div>`;
 }
 function opportunityWindow(o,state){
   const window=o.application_window;if(!window||o.deadline)return '';
@@ -54,6 +57,13 @@ function opportunityActions(o,state){
 function opportunityCard(o,filter){
   const state=OpportunityRules.state(o),organizer=o.content_classification.organizer_name;
   const research=o.research_directions||[];
+  const query=(filter.query||'').trim().toLowerCase(),matched=query?research.filter(r=>[r.department,r.direction,r.contact,r.email].join(' ').toLowerCase().includes(query)):[];
+  const preview=new Map();
+  for(const row of (matched.length?matched:research).slice(0,2)){
+    const contact=row.contact||row.department||'官方联系人',key=JSON.stringify([contact,row.email||'']);
+    if(!preview.has(key))preview.set(key,{contact,email:row.email,directions:[]});
+    preview.get(key).directions.push(row.direction);
+  }
   const attachmentUrls=new Set([o.source_url,o.application_url,...(o.source_documents||[]).map(d=>d.url),...(o.source_attachments||[]).map(d=>d.url)]);
   const extraAttachments=o.evidence.filter(url=>/^https?:\/\/[^\s]+\.(xlsx?|pdf|docx?)(?:\?.*)?$/i.test(url)&&!attachmentUrls.has(url)&&attachmentUrls.add(url));
   return `<article class="opportunity-card" data-opportunity="${ox(o.id)}">
@@ -61,11 +71,11 @@ function opportunityCard(o,filter){
     <h2>${ox(o.title)}</h2><p class="opportunity-organizer">主办 / 组织：${ox(organizer)}</p>
     ${opportunityFacts(o)}
     <div class="opportunity-eligibility"><h3>适合谁申请</h3>${opportunityList(o.eligibility,'申请对象尚未明确，请先核对官方公告。')}</div>
-    ${!o.graduation_year?'<p class="note opportunity-cohort">活动年份不等于毕业届别，请按上述年级和身份条件核对。</p>':''}
+    ${!o.graduation_year?'<p class="note opportunity-cohort">毕业届别未明确，请按上述年级和身份条件核对。</p>':''}
     ${o.source_state!=='verified'||state==='review'?'<p class="hint">当前来源或内容需重新核验，不能据此确认报名仍开放。</p>':''}
     ${!o.deadline&&o.application_window?.mode==='month'?'<p class="note">仅公布截止月份，请先确认具体日期，不按月底安排。</p>':''}
-    ${research.length?`<div class="opportunity-contact-preview"><h3>研究方向与联系</h3>${research.slice(0,2).map(r=>`<p>${ox(r.direction)} · ${ox(r.contact||r.department||'官方联系人')}${r.email?` · <a href="mailto:${encodeURIComponent(r.email)}">${ox(r.email)}</a>`:''}</p>`).join('')}${research.length>2?`<p class="note">共 ${research.length} 项，完整方向与出处见下方。</p>`:''}</div>`:o.contact?`<p><strong>官方咨询：</strong>${ox(o.contact)}</p>`:''}
     ${opportunitySource(o)}${opportunityActions(o,state)}
+    ${research.length?`<div class="opportunity-contact-preview"><h3>研究方向与联系</h3>${[...preview.values()].map(r=>`<p>${ox(r.directions.join('、'))}<br>${ox(r.contact)}${r.email?` · <a href="mailto:${encodeURIComponent(r.email)}">${ox(r.email)}</a>`:''}</p>`).join('')}${research.length>2?`<p class="note">共 ${research.length} 项，完整方向与出处见下方。</p>`:''}</div>`:o.contact?`<p><strong>官方咨询：</strong>${ox(o.contact)}</p>`:''}
     <details class="opportunity-details"><summary>申请材料与报名步骤</summary><h3>材料与提交阶段</h3>${opportunityList(o.materials,'材料清单尚未整理，请查官方公告。')}<h3>报名方式</h3><p>${ox(o.application_method||'请查官方公告。')}</p>${o.contact?`<p><strong>官方咨询渠道：</strong>${ox(o.contact)}</p>`:''}${extraAttachments.map(url=>`<p><a href="${ox(url)}" target="_blank" rel="noopener">官方附件 · 方向或申请材料 ↗</a></p>`).join('')}${opportunityAttachments(o)}<p>${ox(o.admission_note)}</p></details>
     ${research.length?`<details class="opportunity-details"><summary>研究方向与部门联系人 · ${research.length} 项</summary>${opportunityDirections(o,filter.query)}</details>`:''}
     <details class="opportunity-details"><summary>时间、适用轮次与核验依据</summary>${opportunityWindow(o,state)}<p>${ox(o.deadline_note)}</p><p>活动年 ${ox(o.camp_year||'未明确')} · 毕业届别 ${ox(o.graduation_year||'未明确')} · 入学年 ${ox(o.admission_year||'未明确')}</p><p>官网发布 ${ox(OpportunityRules.formatDate(o.published_at)||'未明确')} · 内容核验 ${ox(OpportunityRules.formatDate(o.verified_at))} · 最近成功检查 ${ox(OpportunityRules.formatDate(o.checked_at)||'尚未成功')}</p><p>${ox(o.source_note)}</p>${opportunityList(o.evidence,'未记录更多依据。')}${opportunityDocuments(o)}</details>
@@ -81,6 +91,8 @@ function movedOpportunity(o){
 function renderOpportunities(){
   if(!catalogLoaded){oe('opportunity-count').textContent='正在读取最新院校活动…';return;}
   const filter={query:oe('opportunity-search').value,kind:oe('opportunity-kind').value,school:oe('opportunity-school').value,year:oe('opportunity-year').value,status:oe('opportunity-state').value};
+  const applied=['school','kind','year','state'].filter(key=>oe('opportunity-'+key).value&&(key!=='state'||filter.status!=='current')).map(key=>oe('opportunity-'+key).selectedOptions[0].textContent);
+  oe('opportunity-filter-summary').textContent=applied.join(' · ')+(filter.query?(applied.length?' · ':'')+filter.query.trim():'');
   for(const key of ['query','kind','school','year','state']){const value=key==='state'?filter.status:filter[key];if(value)opportunityParams.set(key,value);else opportunityParams.delete(key);}
   history.replaceState(null,'',location.pathname+(opportunityParams.size?'?'+opportunityParams:'')+location.hash);
   const schoolScope=opportunityBrowseScope(),noticeScope=new URLSearchParams();
@@ -137,10 +149,12 @@ document.addEventListener('click',e=>{
 oe('opportunity-cancel').onclick=()=>{if(!saveBusy)oe('opportunity-save').close();};
 oe('opportunity-save').addEventListener('cancel',e=>{if(saveBusy)e.preventDefault();});
 oe('opportunity-form').onsubmit=async e=>{
-  e.preventDefault();if(saveBusy)return;saveBusy=true;oe('opportunity-confirm').disabled=true;
-  try{const r=await fetch('/api/workflow/opportunities',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({opportunity_id:savingOpportunity.id,name:oe('opportunity-name').value,reminder_date:oe('opportunity-reminder').value})});const result=await r.json();if(!r.ok)throw new Error(result.error||'保存失败');savedOpportunities.set(savingOpportunity.id,result.project_id);oe('opportunity-save').close();renderOpportunities();oe('opportunity-result').innerHTML=(result.duplicate?'这项活动已经保存，未重复创建。':'项目已保存，条件、材料和日期快照已关联。')+` <a href="applications.html?project=${ox(result.project_id)}">打开项目，关联材料 →</a>`;oe('opportunity-result').scrollIntoView({block:'center'});}
-  catch(error){oe('save-message').textContent=error.message+'。未确认保存成功，请重试；重复操作不会创建第二个项目。';}
-  finally{saveBusy=false;oe('opportunity-confirm').disabled=false;}
+  e.preventDefault();if(saveBusy)return;saveBusy=true;
+  const controls=['opportunity-name','opportunity-reminder','opportunity-confirm','opportunity-cancel'].map(oe);
+  controls.forEach(control=>{control.disabled=true;});oe('opportunity-confirm').textContent='正在保存…';oe('opportunity-form').setAttribute('aria-busy','true');oe('save-message').textContent='';
+  try{const {response:r,data:result}=await OnlineAccount.readJSON('/api/workflow/opportunities',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({opportunity_id:savingOpportunity.id,name:oe('opportunity-name').value,reminder_date:oe('opportunity-reminder').value})});if(!r.ok)throw new Error(result.error||'保存失败');savedOpportunities.set(savingOpportunity.id,result.project_id);oe('opportunity-save').close();renderOpportunities();oe('opportunity-result').innerHTML=(result.duplicate?'这项活动已有申请项目，未重复创建；名称与提醒请在项目中修改。':'项目已保存，条件、材料和日期快照已关联。')+` <a href="applications.html?project=${ox(result.project_id)}">打开项目，关联材料 →</a>`;oe('opportunity-result').scrollIntoView({block:'center'});}
+  catch(error){oe('save-message').textContent=(error.timedOut?'等待保存响应超时，结果尚未确认。':error.message+'。尚未确认保存成功。')+'输入已保留，请重试确认；重复操作不会创建第二个项目。';}
+  finally{saveBusy=false;controls.forEach(control=>{control.disabled=false;});oe('opportunity-confirm').textContent='保存项目';oe('opportunity-form').removeAttribute('aria-busy');}
 };
 renderOpportunities();
 function loadSavedOpportunities(){const failed='账号申请记录暂不可读取；仍可查阅活动，请点击重新检查后再保存。';return OnlineAccount.readJSON('/api/workflow').then(({response,data})=>{if(!response.ok)throw new Error();for(const p of Object.values(data.projects||{}))if(p.opportunity)savedOpportunities.set(p.opportunity.id,p.id);if(oe('opportunity-result').textContent===failed)oe('opportunity-result').textContent='';renderOpportunities();}).catch(()=>{oe('opportunity-result').textContent=failed;});}

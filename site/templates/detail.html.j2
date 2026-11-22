@@ -165,7 +165,7 @@ a:hover{text-decoration:underline}
     <tr><th>信息</th><th>内容</th><th>来源类型</th><th>核对状态</th><th>抓取日期</th><th>出处</th></tr>
     {% for k, v in p.provenance.items() %}
     <tr>
-      <td>{{ {"name":"姓名","title":"职称","email":"邮箱","homepage":"个人主页","photo_url":"照片","phone":"电话","office_address":"办公地点","bio_raw":"个人简介","research_direction_raw":"研究方向","institutes":"所属团队","detail_url":"资料页面","profile_url":"官方主页","supervisor":"导师资格"}.get(k, k) }}</td>
+      <td>{{ {"name":"姓名","title":"职称","email":"邮箱","homepage":"个人主页","photo_url":"照片","phone":"电话","office_address":"办公地点","bio_raw":"个人简介","research_direction_raw":"研究方向","institutes":"所属团队","detail_url":"资料页面","profile_url":"官方资料入口","supervisor":"导师资格"}.get(k, k) }}</td>
       <td>{{ {
             "name": p.name, "title": p.title, "email": p.email,
             "homepage": p.homepage, "photo_url": p.photo_url,

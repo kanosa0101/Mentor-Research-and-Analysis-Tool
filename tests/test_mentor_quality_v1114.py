@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from crawler import legacy_refresh, mentor_quality as quality, quality_status
+from crawler import legacy_refresh, mentor_fields, mentor_quality as quality, quality_status
 from crawler.model import Issue
 from sites import cyber_expansion
 from sites.hust_profile import identity_names
@@ -54,6 +54,55 @@ def test_success_is_evidenced_and_keeps_original_review_date(root):
     assert issue['automatic_check']['evidence'][0]['sha256']
     assert list((root / 'cache/mentor_quality/evidence').glob('*.body'))
     assert Issue.model_validate(issue).model_dump()['automatic_check'] == issue['automatic_check']
+
+
+def test_removed_profile_leaves_active_field_and_issue_queues_with_evidence_preserved(root):
+    mentor_fields.seed(root, now=NOW)
+    quality.run(root, fetcher=lambda _: body(), now=NOW)
+    issue_path = root / 'data/issues/test-cs.yaml'
+    before = quality.load_yaml(issue_path)[0]
+    profile = root / 'data/professors/test/cs/teacher.yaml'
+    profile.unlink()
+
+    fields = mentor_fields.seed(root, now=NOW + timedelta(days=1))
+    assert 'test/cs/teacher' not in fields['records'] and fields['summary']['fields'] == 0
+    for days in (1, 30):
+        result = quality.run(root, retry=True, fetcher=lambda _: pytest.fail('retired profile fetched'),
+                             now=NOW + timedelta(days=days))
+        assert result['attempted'] == result['active'] == 0
+    issue = quality.load_yaml(issue_path)[0]
+    assert issue['resolved'] and issue['reviewed'] is None
+    assert issue['automatic_check']['evidence'] == before['automatic_check']['evidence']
+    assert issue['review_history'][:-1] == before['review_history']
+    assert issue['review_history'][-1]['state'] == 'retired'
+    assert 'test/cs/fetch_or_parse_error/teacher' not in json.loads(
+        (root / 'cache/mentor_quality/state.json').read_text(encoding='utf-8'))['records']
+
+
+def test_unavailable_department_does_not_retire_existing_queue_records(root):
+    mentor_fields.seed(root, now=NOW)
+    folder = root / 'data/professors/test/cs'
+    folder.rename(root / 'offline')
+
+    assert 'test/cs/teacher' in mentor_fields.seed(root, now=NOW)['records']
+    report = quality.run(root, limit=0, now=NOW)
+    assert report['active'] == 1
+    assert not quality.load_yaml(root / 'data/issues/test-cs.yaml')[0]['resolved']
+
+
+def test_profile_parse_error_does_not_retire_existing_queue_records(root):
+    mentor_fields.seed(root, now=NOW)
+    profile = root / 'data/professors/test/cs/teacher.yaml'
+    profile.write_text('{', encoding='utf-8')
+    ledger = root / mentor_fields.PATH
+    before = ledger.read_bytes()
+
+    with pytest.raises(yaml.YAMLError):
+        mentor_fields.seed(root, now=NOW)
+    assert ledger.read_bytes() == before
+    with pytest.raises(yaml.YAMLError):
+        quality.run(root, now=NOW)
+    assert not quality.load_yaml(root / 'data/issues/test-cs.yaml')[0]['resolved']
 
 
 def test_recurring_check_reopens_failure_without_resetting_pending_since(root):

@@ -6,8 +6,8 @@ dept: cs
 status: roster
 title: 副教授
 institutes: []
-detail_url: https://informatics.xmu.edu.cn/info/1425/44040.htm
-profile_url: https://informatics.xmu.edu.cn/info/1425/44040.htm
+detail_url: https://faculty.xmu.edu.cn/SSQ1/zh_CN/index.htm
+profile_url: https://faculty.xmu.edu.cn/SSQ1/zh_CN/index.htm
 first_seen: '2026-09-05'
 facets: []
 provenance:
@@ -21,3 +21,25 @@ provenance:
     source: https://cs.xmu.edu.cn/szll/js.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  email:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/list_teacher.jsp?checkaggregatequeryid=1123&collegeid=1532&language=zh_CN&postdutyid=1123&urltype=tp.TpCollegeZWTeachers&wbtreeid=2171
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/SSQ1/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/SSQ1/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xmu.edu.cn/SSQ1/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+email: siqishen@xmu.edu.cn
+research_direction_raw: 多智能体感知与计算（多智能体强化学习， AI Agents, 人体动作与场景捕捉及生成， 视觉定位，具身智能等）

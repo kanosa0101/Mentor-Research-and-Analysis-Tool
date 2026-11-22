@@ -15,10 +15,11 @@ from urllib.parse import urlsplit
 import requests
 import yaml
 
-from crawler import admissions_util, ai_review, automatic_evidence, notice_util, opportunity_attachments
+from crawler import admissions_util, ai_evidence, ai_review, automatic_evidence, notice_util, opportunity_attachments
 from crawler import opportunity_extract as extract, opportunity_review as review, policy_revalidation
 from crawler.legacy_refresh import write_yaml
 from crawler.opportunity_monitor import atomic_json, output_lock
+from scripts.monitor_notices import graduate_application_guide
 
 VERSION = 'new-official-policy-v7-context-and-scope'
 CST = timezone(timedelta(hours=8))
@@ -35,10 +36,13 @@ HEADINGS = {
 }
 
 
-def reason_code(reason, status):
+def reason_code(reason, status, error_code=None):
+    if error_code in ai_evidence.PROVIDER_WAIT_CODES:
+        return 'ai_service_unavailable'
     if status == 'budget_wait':
         return 'ai_budget_wait'
-    if reason in ('公告为已结束招生周期，不新增为当前政策', '申请窗口已过，不作为当前新政策自动入库', '已到具体申请截止时点'):
+    if reason in ('公告为已结束招生周期，不新增为当前政策', '申请窗口已过，不作为当前新政策自动入库', '已到具体申请截止时点',
+                  '官方标题明确为历年复试分数线汇编，保留历史依据', '官方正文标题明确为已结束招生周期，保留历史依据'):
         return 'historical_window'
     for terms, code in [
         (('DOC/XLS/ZIP', 'XLS/ZIP', '附件类型'), 'unsupported_attachment'),
@@ -57,6 +61,7 @@ def reason_code(reason, status):
 NEXT_ACTION = {
     'awaiting_evidence': '按已发现时间排队，取得完整官方正文后核验',
     'ai_budget_wait': '等待共享AI额度恢复后继续，不重置调用账本',
+    'ai_service_unavailable': '核对AI供应商余额或服务配置；冷却结束后由下一条合格任务重试',
     'unsupported_attachment': '核对并提取官方附件的受支持文本版本',
     'incomplete_evidence': '补齐图中信息、扫描件或缺失的官方附件',
     'existing_policy_conflict': '确认是补充、替代还是独立政策，保留已有事实',
@@ -167,7 +172,8 @@ def candidates(root):
     for row in rows:
         if (row.get('source'), row.get('school'), row.get('dept', '')) not in enabled:
             continue
-        if not re.search(r'招生|招收|接收', row['title']) or not re.search(r'硕士|博士|推免|推荐免试', row['title']):
+        if not re.search(r'硕士|博士|推免|推荐免试', row['title']) or not (
+                re.search(r'招生|招收|接收', row['title']) or graduate_application_guide(row['title'])):
             continue
         if re.search(r'公示|名单|结果|冬令营|夏令营|目录|报考点|考点', row['title']):
             continue
@@ -196,38 +202,55 @@ def discovered_at(row, previous, now):
     return min(observed, default=now).isoformat()
 
 
+def has_current_or_future_date(text, day):
+    """A dated change may be outside a recognized section or spread across paragraphs."""
+    return any(value >= day for value in extract.explicit_date_values(text))
+
+
 def source_hints(row, raw, now):
     """Cheap source-bound routing before fetching attachments; never a publication gate."""
+    from bs4 import BeautifulSoup
+    title = row['title']
+    soup = BeautifulSoup(raw, 'html.parser')
+    headings = [node.get_text(' ', strip=True) for node in soup.select('title,h1,h2,h3,h4,h5,.news_title,.article-title,.article_title')]
+    if not any(extract.compact(title) in extract.compact(heading) for heading in headings):
+        return {}
     try:
         doc = extract.document(raw, row['url'])
     except ValueError:
-        return {}
-    title, text = row['title'], doc['text']
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup(raw, 'html.parser')
-    headings = [node.get_text(' ', strip=True) for node in soup.select('title,h1,h2,.news_title,.article-title,.article_title')]
-    if not any(extract.compact(title) in extract.compact(heading) for heading in headings):
-        return {}
+        # A PDF-only assessment notice can still identify its intake in the
+        # official page heading. An access barrier or empty article cannot.
+        if not re.search(r'考核及录取办法|复试录取实施细则', title) or not extract.embedded_pdf_urls(raw, row['url']):
+            return {}
+        try:
+            doc = extract.document(raw, row['url'], require_article=False)
+        except ValueError:
+            return {}
     value = dict(source_sha256=hashlib.sha256(raw).hexdigest(), checked_at=now.isoformat())
-    years = set(re.findall(r'(20\d{2})\s*年', title))
-    if len(years) == 1:
-        year = int(next(iter(years)))
-        target = now.astimezone(CST).year + (1 if now.astimezone(CST).month >= 9 else 0)
-        if re.search(r'推免|推荐免试', title):
-            target = now.astimezone(CST).year + (2 if now.astimezone(CST).month >= 11 else 1)
-        # A reused old title with a newly stated year must be reread, not archived.
-        if year < target and not any(int(y) > year for y in re.findall(r'(20\d{2})\s*年', text)):
-            return dict(value, classification='historical', reason_code='historical_window',
-                        reason='官方正文标题明确为已结束招生周期，保留历史依据',
-                        evidence=[dict(quote=title, locator='官方文章标题')])
+    day = now.astimezone(CST).date()
     try:
         parts = sections(doc['lines'])
         events = deadline_events(dict(timeline=parts.get('timeline', ''), application_method=parts.get('application_method', '')))
-        future = [event for event in events if (datetime.fromisoformat(event['at']) > now if 'T' in event['at'] else event['at'] >= now.astimezone(CST).date().isoformat())]
+        future = [event for event in events if (datetime.fromisoformat(event['at']) > now if 'T' in event['at'] else event['at'] >= day.isoformat())]
         if future:
             value['deadline_hint'] = min(future, key=lambda event: event['at'])
+            return value
     except ValueError:
         pass
+    aggregate = re.fullmatch(r'历年(?:统考)?硕士研究生招生复试分数线(?:[（(]近[0-9一二三四五六七八九十]+年[）)])?', extract.compact(title))
+    year = notice_util.classify_notice({'title': title}, day=day)['admission_year']
+    if year is None:
+        years = set(re.findall(r'(20\d{2})\s*年', title))
+        if len(years) == 1:
+            year = int(next(iter(years)))
+    target = day.year + ((2 if day.month >= 11 else 1) if re.search(r'推免|推荐免试', title) else (day.month >= 9))
+    # Any newer explicitly stated year blocks the shortcut for a reused title.
+    old = year is not None and year < target and not any(
+        int(other) > year for other in re.findall(r'(20\d{2})\s*[年级届]', doc['text']))
+    if (aggregate or old) and not has_current_or_future_date(doc['text'], day.isoformat()):
+        return dict(value, classification='historical', reason_code='historical_window',
+                    reason='官方标题明确为历年复试分数线汇编，保留历史依据' if aggregate else '官方正文标题明确为已结束招生周期，保留历史依据',
+                    evidence=[dict(quote=title, locator='官方文章标题')])
     return value
 
 
@@ -270,17 +293,26 @@ def register_candidates(root, pool, state, now):
             observed = dict(source_sha256=sha)
             if fetched.get('status') == 'ok' and fetched.get('evidence_mode') == 'complete' and fetched.get('content_sha256'):
                 observed['content_sha256'] = fetched['content_sha256']
-            changed = any(prior.get(key) and prior[key] != value for key, value in observed.items())
+            previous_evidence = prior.get('observed_evidence', {})
+            changed = any((previous_evidence.get(key) or prior.get(key)) not in (None, value)
+                          for key, value in observed.items())
             if changed and prior.get('observed_evidence') != observed and prior.get('status') != 'published':
                 record.update(status='queued', reason='官方正文或附件版本已变化，重新核验', reason_code='source_changed',
-                              next_action=NEXT_ACTION['source_changed'], next_attempt_at=now.isoformat())
+                              next_action=NEXT_ACTION['source_changed'], next_attempt_at=now.isoformat(),
+                              pending_since=record.get('pending_since', now.isoformat()))
             record['observed_evidence'] = observed
             hints = source_hints(row, raw, now)
+            record.pop('source_hints', None)
             if hints:
                 record['source_hints'] = hints
                 if hints.get('classification') == 'historical' and prior.get('status') not in ('published', 'eligible'):
+                    previous_hints = prior.get('source_hints', {})
+                    unchanged_history = (prior.get('status') == 'historical' and
+                                         previous_hints.get('source_sha256') == hints['source_sha256'])
                     record.update(status='historical', reason_code='historical_window', reason=hints['reason'],
-                                  next_action=NEXT_ACTION['historical_window'], next_attempt_at=(now+timedelta(days=7)).isoformat())
+                                  next_action=NEXT_ACTION['historical_window'],
+                                  next_attempt_at=(prior.get('next_attempt_at') if unchanged_history else None)
+                                  or (now+timedelta(days=7)).isoformat())
                     record.pop('pending_since', None)
         except (OSError, KeyError, TypeError, ValueError):
             pass
@@ -336,8 +368,6 @@ def prepare(root, row, raw, doc, now):
     route = 'recommend' if recommend else 'assessment' if assessment else 'exam'
     current_year = now.astimezone(CST).year + ((2 if now.astimezone(CST).month >= 11 else 1)
         if route == 'recommend' else (1 if now.astimezone(CST).month >= 9 else 0))
-    if year < current_year:
-        raise ValueError('公告为已结束招生周期，不新增为当前政策')
     # A requirement to have worked on a national project is still an ordinary
     # eligibility clause. Keep its exact language in the proposed fields.
     scope_text = re.sub(r'(主持或作为关键技术骨干参与)国家重大专项(?=[^。；\n]{0,80}(?:的经历|经验))',
@@ -369,6 +399,12 @@ def prepare(root, row, raw, doc, now):
     if intro:
         parts['eligibility'] = '\n'.join([*intro, parts['eligibility']])
     events = deadline_events(parts)
+    if year < current_year:
+        day = now.astimezone(CST).date().isoformat()
+        if any(datetime.fromisoformat(event['at']) > now if 'T' in event['at'] else event['at'] >= day
+               for event in events) or has_current_or_future_date(text, day):
+            raise ValueError('官方标题招生年度与正文未来申请截止不一致，需核对适用范围')
+        raise ValueError('公告为已结束招生周期，不新增为当前政策')
     parts['timeline'] = '\n'.join(event['quote'] for event in events)
     covered = extract.compact('\n'.join(parts.values()))
     for line in doc['lines']:
@@ -488,6 +524,15 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
             if len(results) >= limit:
                 break
             previous = state['records'].get(row['url'], {})
+            provider_error = (ai_evidence.provider_error_code(previous)
+                              if previous.get('status') in ('budget_wait', 'manual_required') else None)
+            if provider_error:
+                provider_retry = ai_evidence.provider_retry_at(root)
+                if provider_retry > now.isoformat():
+                    previous.update(status='budget_wait', error_code=provider_error, reason=ai_evidence.PROVIDER_WAIT_REASON,
+                                    reason_code='ai_service_unavailable', next_action=NEXT_ACTION['ai_service_unavailable'],
+                                    next_attempt_at=provider_retry)
+                    continue
             updated_rule = (
                 previous.get('status') == 'manual_required' and previous.get('proposal_revision') != PROPOSAL_REVISION
                 and previous.get('reason') in (
@@ -495,7 +540,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                     '缺少完整条件、材料、申请流程、报名时间或联系方式栏目',
                 )
             )
-            if (not updated_rule and not (publish and previous.get('status') == 'eligible') and
+            if (not provider_error and not updated_rule and not (publish and previous.get('status') == 'eligible') and
                     previous.get('next_attempt_at', '') > now.isoformat() and previous.get('title') == row['title'] and
                     (previous.get('policy_version') == VERSION or previous.get('status') in ('retry', 'budget_wait', 'historical'))):
                 continue
@@ -503,6 +548,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                           checked_at=now.isoformat(), policy_version=VERSION, proposal_revision=PROPOSAL_REVISION,
                           first_seen=previous['first_seen'], registered_at=previous['registered_at'],
                           first_attempt_at=previous.get('first_attempt_at', now.isoformat()))
+            provider_delay = ''
             for key in ('observed_evidence', 'manual_review', 'verified_review'):
                 if key in previous:
                     record[key] = copy.deepcopy(previous[key])
@@ -515,7 +561,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
                 hints = source_hints(row, raw, now)
                 record['source_hints'] = hints
                 if hints.get('classification') == 'historical':
-                    raise ValueError('公告为已结束招生周期，不新增为当前政策')
+                    raise ValueError(hints['reason'])
                 doc = collect(raw, row, folder, pdf_fetcher, docx_fetcher)
                 record['content_sha256'] = doc['content_sha256']
                 prepared = prepare(root, row, raw, doc, now)
@@ -584,13 +630,17 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
             except (ValueError, OSError, requests.RequestException) as error:
                 retryable = getattr(error, 'retryable', isinstance(error, (OSError, requests.RequestException)))
                 record.update(status='retry' if retryable else 'manual_required', reason=str(error)[:700])
-                if '每日调用上限' in str(error):
+                provider_delay = ai_evidence.provider_delay(error, now)
+                if provider_delay:
+                    record.update(status='budget_wait', reason=ai_evidence.PROVIDER_WAIT_REASON)
+                elif '每日调用上限' in str(error):
                     record['status'] = 'budget_wait'
                 if getattr(error, 'code', None):
                     record['error_code'] = error.code
                 if getattr(error, 'transport', None):
                     record['transport'] = error.transport
-            record['reason_code'] = reason_code(record.get('reason', ''), record['status']) if record['status'] not in ('published', 'eligible') else record['status']
+            record['reason_code'] = (reason_code(record.get('reason', ''), record['status'], record.get('error_code'))
+                                     if record['status'] not in ('published', 'eligible') else record['status'])
             if record['reason_code'] == 'historical_window':
                 record['status'] = 'historical'
             failures = previous.get('failure_count', 0)
@@ -600,7 +650,7 @@ def run(root, *, limit=2, publish=True, now=None, fetcher=None, checker=None, pd
             next_attempt = now + timedelta(hours=hours)
             if record['status'] == 'budget_wait':
                 next_attempt = (now.astimezone(timezone.utc) + timedelta(days=1)).replace(hour=0, minute=5, second=0, microsecond=0)
-            record['next_attempt_at'] = next_attempt.isoformat()
+            record['next_attempt_at'] = provider_delay or next_attempt.isoformat()
             record['next_action'] = NEXT_ACTION.get(record['reason_code'], '证据审核通过，等待统一发布' if record['status'] == 'eligible' else '已入库，交由来源监测与政策续核')
             if record['status'] not in ('published', 'historical'):
                 record['pending_since'] = previous.get('pending_since', record['first_seen'])

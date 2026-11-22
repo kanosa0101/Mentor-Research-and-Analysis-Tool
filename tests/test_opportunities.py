@@ -45,10 +45,41 @@ class OpportunityTests(unittest.TestCase):
     def test_invalid_date_cannot_leave_half_created_project(self):
         catalog=self.catalog();item=catalog['opportunities'][0]
         with patch.object(self.serve.opportunities,'observed',return_value=catalog):
-            code,_=self.request('/api/workflow/opportunities',dict(opportunity_id=item['id'],name='冬令营',reminder_date='2000-01-01'),'POST')
+            yesterday=(opportunities.today()-timedelta(days=1)).isoformat()
+            code,_=self.request('/api/workflow/opportunities',dict(opportunity_id=item['id'],name='冬令营',reminder_date=yesterday),'POST')
             self.assertEqual(code,400)
             self.assertFalse(self.outreach.with_name('workflow.yaml').exists())
             self.assertEqual(self.request('/api/workflow')[1]['projects'],{})
+
+    def test_lost_save_response_can_be_confirmed_after_the_reminder_date(self):
+        catalog=self.catalog();item=catalog['opportunities'][0]
+        day=opportunities.today()
+        body=dict(opportunity_id=item['id'],name='我的冬令营',reminder_date=day.isoformat())
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            code,created=self.request('/api/workflow/opportunities',body,'POST')
+            self.assertEqual(code,200,created)
+            original=self.request('/api/workflow')[1]
+            with patch.object(opportunities,'today',return_value=day+timedelta(days=1)):
+                code,retry=self.request('/api/workflow/opportunities',body,'POST')
+                self.assertEqual(code,200,retry)
+                self.assertEqual(retry,{'project_id':created['project_id'],'duplicate':True})
+                code,retry=self.request('/api/workflow/opportunities',dict(body,name='不要覆盖原项目'),'POST')
+                self.assertEqual((code,retry),(200,{'project_id':created['project_id'],'duplicate':True}))
+        self.assertEqual(self.request('/api/workflow')[1],original)
+        self.assertEqual(len(original['projects']),1)
+        self.assertEqual(len(original['reminders']),1)
+
+    def test_existing_activity_still_checks_payload_date_format_and_registered_id(self):
+        catalog=self.catalog();item=catalog['opportunities'][0]
+        body=dict(opportunity_id=item['id'],name='我的冬令营',reminder_date='')
+        with patch.object(self.serve.opportunities,'observed',return_value=catalog):
+            self.assertEqual(self.request('/api/workflow/opportunities',body,'POST')[0],200)
+            original=self.request('/api/workflow')[1]
+            for invalid in (dict(body,name='  '),dict(body,reminder_date='2026-02-30'),dict(body,extra=True)):
+                self.assertEqual(self.request('/api/workflow/opportunities',invalid,'POST')[0],400)
+        with patch.object(self.serve.opportunities,'observed',return_value=dict(catalog,opportunities=[])):
+            self.assertEqual(self.request('/api/workflow/opportunities',body,'POST')[0],404)
+        self.assertEqual(self.request('/api/workflow')[1],original)
 
     def test_pdf_evidence_survives_project_save_backup_and_restore(self):
         catalog=self.catalog();item=catalog['opportunities'][0]

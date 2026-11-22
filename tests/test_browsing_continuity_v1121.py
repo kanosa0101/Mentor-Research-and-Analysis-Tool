@@ -116,6 +116,8 @@ def test_history_preserves_school_interest_and_restores_filtered_login_return(br
     page.goto(ORIGIN + login_next)
     page.wait_for_function('catalogLoaded&&opportunityModeReady')
     assert query(page.get_by_role('link', name='← 返回筛选结果')) == values
+    if not page.locator('#opportunity-filter-panel').evaluate('(node)=>node.open'):
+        page.locator('#opportunity-filter-panel > summary').click()
     page.locator('#opportunity-search').fill('无匹配项')
     expect(page.locator('.opportunity-card')).to_have_count(0)
     assert 'id' not in parse_qs(urlsplit(page.url).query)
@@ -139,6 +141,8 @@ def test_explicit_study_target_survives_the_activity_detour(browsing_pages):
             'school': ['tsinghua'], 'topics': ['视觉,安全'], 'year': ['2028'],
             'degree': ['master'], 'route': ['exam'],
         }
+    if not page.locator('#opportunity-filter-panel').evaluate('(node)=>node.open'):
+        page.locator('#opportunity-filter-panel > summary').click()
     page.locator('#opportunity-search').fill('某活动名称')
     assert query(page.locator('.site-header nav a[href^="discovery.html"]'))['topics'] == ['视觉,安全']
     assert query(page.locator('.site-header a[href^="notices.html"]')) == {

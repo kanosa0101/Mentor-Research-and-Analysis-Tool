@@ -431,9 +431,15 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
                               (fetched.get('complete_document') or {}).get('documents') and
                               '缺少独立且完整的申请对象、材料、方式、联系人或报名时间栏目' in prior.get('reasons', []))
     recovering = bool(draft.get('review')) and review.status(draft) == 'source_error' and prior.get('state') in ('published', 'renewed')
-    if not recovering and (prior.get('policy_version') == POLICY_VERSION or prior.get('state') in ('retry', 'budget_wait')) and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and unchanged:
+    provider_error = ai_evidence.provider_error_code(prior)
+    if provider_error and unchanged:
+        retry_at = ai_evidence.provider_retry_at(root)
+        if retry_at > now.isoformat():
+            return dict(result, state='skipped', blocked_state='budget_wait', error_code=provider_error,
+                        reasons=[ai_evidence.PROVIDER_WAIT_REASON], next_attempt_at=retry_at)
+    if not provider_error and not recovering and (prior.get('policy_version') == POLICY_VERSION or prior.get('state') in ('retry', 'budget_wait')) and prior.get('next_attempt_at') and prior['next_attempt_at'] > now.isoformat() and unchanged:
         return dict(result, state='skipped', reasons=['尚未到下一次处理时间'], next_attempt_at=prior['next_attempt_at'])
-    if (prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and
+    if (not provider_error and prior.get('policy_version') == POLICY_VERSION and prior.get('state') == 'manual_required' and
             unchanged and not (recovered_evidence or updated_materials_rule)):
         return dict(result, state='skipped', reasons=['同版本仍需人工处理'], blocked_state='manual_required')
     try:
@@ -505,7 +511,12 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
                 pass
         if ai is None:
             result['attempts'] += 1
-            ai = ai_review.validate_bound(checker(root, draft['source_url'], doc['text'], fields), doc['text'], fields)
+            try:
+                ai = ai_review.validate_bound(checker(root, draft['source_url'], doc['text'], fields), doc['text'], fields)
+            except ValueError as error:
+                if getattr(error, 'code', None) == 'provider_cooldown':
+                    result['attempts'] -= 1
+                raise
         result.update(ai=ai, model=ai.get('model'))
         if ai['decision'] != 'consistent':
             ai = ai_review.recheck(root, draft['source_url'], doc['text'], fields, ai, checker, version=POLICY_VERSION)
@@ -540,7 +551,10 @@ def process(root, queue_path, draft, configs, *, publish, now, checker, fetcher,
         classified = service_failure(error)
         result.update(classified)
         transient = classified.get('retryable', transient_failure(reason))
-        if isinstance(error, NeedsHuman) or classified.get('retryable') is False or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
+        provider_delay = ai_evidence.provider_delay(error, now)
+        if provider_delay:
+            result.update(state='budget_wait', reasons=[ai_evidence.PROVIDER_WAIT_REASON], next_attempt_at=provider_delay)
+        elif isinstance(error, NeedsHuman) or classified.get('retryable') is False or isinstance(error, ValueError) and not transient and '每日调用上限' not in reason:
             result.update(state='manual_required', reasons=[reason])
         elif '每日调用上限' in reason:
             tomorrow = (now + timedelta(days=1)).astimezone(timezone.utc).replace(hour=0, minute=5, second=0, microsecond=0)
@@ -568,22 +582,25 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
     failed = draft.get('automatic_review', {}).get('assistance', {})
     original = protected(draft)
     if failed.get('state') == 'failed' and failed.get('source_sha256') == digest and draft.get('automatic_review', {}).get('state') == 'manual_required':
-        if not failed.get('retryable', transient_failure(failed.get('reason', ''))):
-            return result
-        # Recover legacy manual markers for a transport/protocol failure, while
-        # keeping a bounded wait and the original queue discovery/pending clock.
-        try:
-            checked = datetime.fromisoformat(draft['automatic_review']['checked_at'])
-            if checked.tzinfo is None:
+        if ai_evidence.provider_error_code(failed):
+            if ai_evidence.provider_retry_at(root) > now.isoformat():
+                return result
+        else:
+            if not failed.get('retryable', transient_failure(failed.get('reason', ''))):
+                return result
+            # Recover legacy manual markers for a transport/protocol failure.
+            try:
+                checked = datetime.fromisoformat(draft['automatic_review']['checked_at'])
+                if checked.tzinfo is None:
+                    checked = now
+            except (KeyError, TypeError, ValueError):
                 checked = now
-        except (KeyError, TypeError, ValueError):
-            checked = now
-        failures = max(1, draft['automatic_review'].get('failures', 0))
-        retry_at = checked + timedelta(hours=min(24, 2 ** min(failures, 5)))
-        if retry_at > now:
-            waiting = dict(result, state='retry', failures=failures, next_attempt_at=retry_at.isoformat(),
-                           assistance=copy.deepcopy(failed), reasons=[failed['reason']])
-            return _store(queue_path, draft['id'], waiting, original)
+            failures = max(1, draft['automatic_review'].get('failures', 0))
+            retry_at = checked + timedelta(hours=min(24, 2 ** min(failures, 5)))
+            if retry_at > now:
+                waiting = dict(result, state='retry', failures=failures, next_attempt_at=retry_at.isoformat(),
+                               assistance=copy.deepcopy(failed), reasons=[failed['reason']])
+                return _store(queue_path, draft['id'], waiting, original)
     result = dict(result, state='manual_required', input_revision=original)
     try:
         review.check_source(draft, configs)
@@ -625,6 +642,13 @@ def assist_pending(root, queue_path, draft, configs, result, now, assistant):
         reason = ('本地证据存储权限不足，须修复权限后重试' if isinstance(error, PermissionError) else
                   str(error) if isinstance(error, ValueError) else 'AI辅助公开证据暂时不可用')
         classified = service_failure(error)
+        provider_delay = ai_evidence.provider_delay(error, now)
+        if provider_delay:
+            if classified['error_code'] == 'provider_cooldown':
+                result['attempts'] -= 1
+            result['assistance'] = dict(state='failed', reason=ai_evidence.PROVIDER_WAIT_REASON, source_sha256=digest,
+                                        next_attempt_at=provider_delay, **classified)
+            return _store(queue_path, draft['id'], result, original)
         result.update(classified)
         transient = classified.get('retryable', transient_failure(reason))
         if '每日调用上限' in reason:
@@ -675,7 +699,8 @@ def run(root, queue_path=None, configs=None, *, limit=2, publish=False, now=None
             preflight_counts=preflight_counts, queue_busy=busy,
             mode='publish' if publish else 'evaluate', counts=dict(Counter(r['state'] for r in results)), results=results,
             published_ids=[r['id'] for r in results if r['state'] == 'published'], renewed_ids=[r['id'] for r in results if r['state'] == 'renewed'],
-            errors=[dict(id=r['id'], reasons=r['reasons']) for r in results if r['state'] in ('retry', 'budget_wait')])
+            errors=[dict(id=r['id'], reasons=r['reasons']) for r in results
+                    if r['state'] in ('retry', 'budget_wait') or r.get('blocked_state') == 'budget_wait'])
         if busy:
             report['errors'].append(dict(error_code='review_queue_busy', reasons=['审核队列由其他任务更新，下轮定时继续']))
         atomic_json(root / 'cache/automatic-review.json', report)

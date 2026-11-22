@@ -6,8 +6,8 @@ dept: cs
 status: roster
 title: 助理教授
 institutes: []
-detail_url: https://informatics.xmu.edu.cn/info/1435/25519.htm
-profile_url: https://informatics.xmu.edu.cn/info/1435/25519.htm
+detail_url: https://cs.xmu.edu.cn/szll/zljs.htm
+profile_url: https://cs.xmu.edu.cn/szll/zljs.htm
 first_seen: '2026-09-05'
 facets: []
 provenance:
@@ -21,3 +21,25 @@ provenance:
     source: https://cs.xmu.edu.cn/szll/js.htm
     fetched_at: '2026-09-05'
     confidence: auto
+  email:
+    origin: crawled
+    source: https://informatics.xmu.edu.cn/list_teacher.jsp?checkaggregatequeryid=1123&collegeid=1532&language=zh_CN&postdutyid=1123&urltype=tp.TpCollegeZWTeachers&wbtreeid=2171
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cs.xmu.edu.cn/szll/zljs.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cs.xmu.edu.cn/szll/zljs.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.xmu.edu.cn/szll/zljs.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+email: zhc@xmu.edu.cn
+research_direction_raw: 计算机图形学、计算机视觉、调和分析
