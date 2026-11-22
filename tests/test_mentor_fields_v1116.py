@@ -7,7 +7,7 @@ from sites.profile_fields import research,own_labelled_email,qualification
 from sites.ucas.cas_lists import parse_generic_detail
 from sites.sjtu.sjtu_cs import parse_detail as sjtu_detail
 from tests.test_mentor_quality_v1114 import root,put,body,NOW
-from tests.test_mentor_recovery_v1115 import configure
+from tests.test_mentor_recovery_v1115 import configure, missing_old
 
 
 def test_cas_personal_section_does_not_include_projects_or_infer_qualification():
@@ -77,7 +77,9 @@ def test_exhausted_transport_budget_preserves_next_directory(root):
 @pytest.mark.parametrize('email,expected',[('teacher@test.edu.cn',1),('other@test.edu.cn',0)])
 def test_independent_directory_job_wakes_only_identity_verified_new_source(root,email,expected):
     configure(root)
-    quality.run(root,fetcher=lambda s:'<p>暂无个人链接</p>',now=NOW)
+    initial=quality.run(root,fetcher=missing_old,now=NOW)['results'][0]
+    assert initial['next_action']=='discover_official_source'
+    assert any(row['url']=='https://test.edu.cn/old' and 'HTTP 404' in row.get('error','') for row in initial['evidence'])
     old=quality.load_yaml(root/'data/professors/test/cs/teacher.yaml')
     def fetch(source):
         return body(email=email) if source['url'].endswith('/new') else '<a href="/new">张老师</a>'
@@ -91,7 +93,8 @@ def test_independent_directory_job_wakes_only_identity_verified_new_source(root,
 
 def test_directory_job_keeps_manual_review_blocked(root):
     configure(root)
-    quality.run(root,fetcher=lambda s:'<p>暂无个人链接</p>',now=NOW)
+    initial=quality.run(root,fetcher=missing_old,now=NOW)['results'][0]
+    assert initial['next_action']=='discover_official_source'
     import json
     path=root/'cache/mentor_quality/state.json';state=json.loads(path.read_text(encoding='utf8'))
     row=next(iter(state['records'].values()));row['next_action']='manual_review';original_due=row['next_check_at']
