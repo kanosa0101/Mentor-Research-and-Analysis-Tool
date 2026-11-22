@@ -2,7 +2,7 @@
   "version": "1.12.2",
   "review_date": "2026-11-23",
   "timezone": "Asia/Singapore",
-  "status": "approved_candidate",
+  "status": "published_and_publicly_verified",
   "batches": {
     "zju/cs": {
       "approved_manifest_sha256": "935db051ad84371822a2f585009356050716c757954de357ed5a3a8ed381aa9d",
@@ -1626,5 +1626,7 @@
         }
       }
     }
-  }
+  },
+  "source_commit": "d79dadc8dd0f32478a70839b53dd9925d5ce7e03",
+  "verified_utc": "2026-11-22T16:56:49.537276+00:00"
 }

@@ -1,0 +1,168 @@
+{
+  "version": "1.12.2",
+  "observed_utc": "2026-11-22T16:56:49.537276+00:00",
+  "source_commit": "d79dadc8dd0f32478a70839b53dd9925d5ce7e03",
+  "source_archive_sha256": "e1915673a85b9e3916c7ee515d93e1a8f7f0cdf0e71633ae6761a671ace813d8",
+  "installed_files": 122,
+  "protected_files_unchanged_at_install": 7801,
+  "windows_python": {
+    "commit": "f722b591f101e810cb3b26c64e4d287f20fa2145",
+    "passed": 1319,
+    "skipped": 1,
+    "subtests_passed": 249,
+    "exit_code": 0
+  },
+  "final_source_test_only_change": {
+    "file": "tests/test_material_tasks_v19.py",
+    "scope": "Use UTC+8 fixture dates; production code unchanged",
+    "host_UTC": {
+      "passed": 18,
+      "subtests_passed": 7,
+      "exit_code": 0
+    },
+    "host_UTC_plus_8": {
+      "passed": 18,
+      "subtests_passed": 7,
+      "exit_code": 0
+    }
+  },
+  "ubuntu_python": {
+    "passed": 1319,
+    "skipped": 1,
+    "subtests_passed": 249,
+    "duration_seconds": 217.99,
+    "commit": "d79dadc8dd0f32478a70839b53dd9925d5ce7e03"
+  },
+  "node_passed": 25,
+  "preflight": {
+    "structural_problems": 0,
+    "existing_open_issue_groups": 35
+  },
+  "candidate_ci": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45045815318",
+  "online": {
+    "origin": "https://8.213.137.82:8443",
+    "passed": true,
+    "checks": [
+      "recommendation_replaces_four_with_four_distinct_candidates",
+      "https_registration_secure_cookie",
+      "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+      "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+      "history_and_selected_draft_restored_after_project_material_roundtrip",
+      "project_material_communication_reminder_and_target_saved",
+      "independent_mobile_browser_same_account_reads_same_records_and_file",
+      "other_account_cannot_read_or_modify_records",
+      "logout_revokes_private_access",
+      "local_download_retired_and_private_maintenance_files_hidden",
+      "no_browser_errors_or_account_horizontal_overflow",
+      "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+      "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+      "public_content_pages_fit_mobile_without_script_errors"
+    ],
+    "browser_errors": [],
+    "navigation_aborted_requests": 1,
+    "qa_accounts_removed": 2,
+    "qa_workspace_directories_removed": 2
+  },
+  "public_acceptance": {
+    "live_public_cas_after_files": 85,
+    "mentors": {
+      "published_records": 82,
+      "published_fields": {
+        "research_direction_raw": 61,
+        "title": 54,
+        "homepage": 1,
+        "email": 10,
+        "supervisor": 8,
+        "detail_url": 1,
+        "profile_url": 1
+      },
+      "detail_provenance_verified": 136,
+      "candidate_api_rows": 648,
+      "candidate_api_fields": {
+        "research_direction_raw": 61,
+        "title": 54,
+        "email": 10,
+        "supervisor": 8,
+        "detail_url": 1,
+        "profile_url": 1
+      },
+      "candidate_api_unit_revisions": {
+        "zju/cs": "3f7ba853bb0ed1880492",
+        "hust/aia": "3f7ba853bb0ed1880492",
+        "hust/cyber": "3f7ba853bb0ed1880492"
+      }
+    },
+    "school_assets": {
+      "schools": 39,
+      "policies": 114,
+      "entries": 96,
+      "materials": 315
+    },
+    "browser": {
+      "discovery": {
+        "390": {
+          "width": 390,
+          "scroll_width": 390,
+          "height": 900,
+          "filter_open": false,
+          "fold": 402,
+          "card_heights": [
+            350,
+            350,
+            350,
+            350
+          ],
+          "action_min": 44,
+          "batch_sizes": [
+            4,
+            4
+          ],
+          "distinct_candidates": 8
+        },
+        "1440": {
+          "width": 1440,
+          "scroll_width": 1440,
+          "height": 900,
+          "filter_open": true,
+          "fold": 314.265625,
+          "card_heights": [
+            344,
+            344,
+            344,
+            344
+          ],
+          "action_min": 40,
+          "batch_sizes": [
+            4,
+            4
+          ],
+          "distinct_candidates": 8
+        }
+      },
+      "admissions": {
+        "all_schools_requests": 0,
+        "ui_selection_requests": [
+          "/admissions/bit.json"
+        ],
+        "deep_link_requests": [
+          "/admissions/bit.json"
+        ],
+        "deep_link_policies": 5,
+        "browser_errors": []
+      }
+    }
+  },
+  "visual_evidence": {
+    "discovery-first-390.png": "bb22de258a3ef9b992dd744f92255e79ce7889f8dc218a777c69b87560435725",
+    "discovery-first-1440.png": "8a10d35ce0c998113d1ceb02b9bbeac4c5a2b372a9120cb42374a4518f85f9b6",
+    "admissions-mobile-first.png": "897f8278098c774ef773e7513187bed1e441927e35a50f5cd7b8f2b292386655",
+    "admissions-mobile-bit.png": "6ba018c72b1e0b8bf9b0be72e93ed9d7ce5bcfea5545e45fbcc94f971973de3d"
+  },
+  "limits": [
+    "Not a whole-database admissions or mentor refresh",
+    "Ambiguous identities and conflicting nonempty fields remain held",
+    "Two historical ZJU role-header records are inventoried for later cleanup"
+  ],
+  "final_operational_receipt": "cache/v1122/operational-acceptance.json",
+  "user_acceptance": "pending"
+}
