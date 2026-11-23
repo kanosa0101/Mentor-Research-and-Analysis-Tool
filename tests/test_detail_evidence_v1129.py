@@ -2,6 +2,7 @@
 from urllib.parse import urlsplit
 
 import pytest
+from bs4 import BeautifulSoup
 from playwright.sync_api import expect, sync_playwright
 
 from scripts import build_site
@@ -112,3 +113,18 @@ def test_larger_evidence_text_wraps_metadata_without_clipping_the_date(evidence,
         box = link.bounding_box()
         assert box['width'] >= 44
         if width<=760:assert box['height'] >= 44
+
+
+@pytest.mark.parametrize('dates,expected', [
+    (['2026-11-17', '2026-11-23', ''], '2026-11-23'),
+    (['', ''], '—'),
+    ([], '—'),
+])
+def test_latest_field_date_comes_from_the_fields_not_the_record_fetch_date(dates, expected):
+    provenance={field:dict(origin='crawled',confidence='auto',source=SOURCE,fetched_at=stamp)
+                for field,stamp in zip(('name','title','email'),dates)}
+    person=dict(page='bit-cs-fixture',school='bit',dept='cs',name='测试导师',
+                source_date='2026-11-15',provenance=provenance)
+    html=build_site.template_environment().get_template('detail.html.j2').render(p=person)
+    summary=BeautifulSoup(html,'html.parser').select_one('#profile-evidence .meta')
+    assert '字段来源最晚抓取：'+expected in summary.get_text()

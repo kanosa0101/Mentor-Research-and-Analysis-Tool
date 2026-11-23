@@ -146,9 +146,10 @@ a:hover{text-decoration:underline}
 <details class="card" id="profile-evidence">
   <summary>来源与核验记录</summary>
   <p class="note">{{ {"roster":"目前仅登记官方名单","enriched":"已补充官网资料","verified":"已有核对记录"}.get(p.status, p.status) }}。来源日期和整理状态不代表导师当前正在招生。</p>
+  {% set field_source_dates = p.provenance.values()|map(attribute='fetched_at')|select|list %}
   <div class="meta">
     <span>首次入库：{{ p.first_seen or "—" }}</span>
-    <span>字段来源最晚抓取：{{ p.source_date or "—" }}</span>
+    <span>字段来源最晚抓取：{{ field_source_dates|max|default("—", true) }}</span>
     {% if p.last_parsed %}<span>最近解析：{{ p.last_parsed }}</span>{% endif %}
     {% if p.source_updated_at %}<span>官网数据更新于：{{ p.source_updated_at }}</span>{% endif %}
   </div>
