@@ -1,0 +1,406 @@
+{
+  "version": "1.12.9",
+  "source_commit": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+  "passed": true,
+  "baseline_final": "036f635c80c4a721fb0ae923ee2569e287842674",
+  "local_python": {
+    "passed": 1727,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "duration_seconds": 527.04,
+    "log_sha256": "03c6838aeb10381e2bad1d1b571ef91db3cef8f393a822b5d4358bd2cafffe20"
+  },
+  "source_ci": {
+    "commit": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+    "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "completed_successfully": true,
+    "observed_utc": "2026-11-23T00:32:47+00:00",
+    "verified_ci": [
+      {
+        "ref": "codex/mentor-evidence-v1129",
+        "head_sha": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+        "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45088788855",
+        "run_id": 45088788855,
+        "job_id": 137413368790,
+        "job_status": "completed",
+        "job_conclusion": "success",
+        "successful_steps": [
+          "Run python -m pip install -r requirements-dev.txt",
+          "Run python -m pip check",
+          "Run python -m playwright install --with-deps chromium",
+          "Run python scripts/build_site.py",
+          "Run python -m pytest tests -q",
+          "Run node --test tests/*.cjs",
+          "Run python scripts/preflight.py --allow-open-issues"
+        ],
+        "python": {
+          "passed": 1727,
+          "skipped": 1,
+          "subtests_passed": 251,
+          "duration_seconds": 270.73
+        },
+        "node": {
+          "tests": 25,
+          "pass": 25,
+          "fail": 0,
+          "skipped": 0
+        },
+        "preflight": {
+          "structural_problems": 0,
+          "existing_open_issue_groups": 35
+        },
+        "build": {
+          "profiles": 7170,
+          "schools": 39,
+          "departments": 56
+        },
+        "job_started_utc": "2026-11-23T00:26:32Z",
+        "job_completed_utc": "2026-11-23T00:31:49Z"
+      }
+    ]
+  },
+  "public": {
+    "passed": true,
+    "mode": "public",
+    "transport": "chromium",
+    "ssh_transport": "configured_local_proxy",
+    "version": "1.12.9",
+    "started_utc": "2026-11-23T00:51:54.618823+00:00",
+    "finished_utc": "2026-11-23T00:53:05.474925+00:00",
+    "source_commit": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+    "archive_sha256": "c680e852b7c1ef26f4b17b993f8dd947b4bf139adcb6bdeee2f754b3240aec15",
+    "reviewed_import_sha256": "736dc6fe145036a5bcb07b2d336e3a4d0a9e6da7085dbb8df6af4b76c9e3b74c",
+    "search_baseline_sha256": {
+      "search-before.json": "32a94c47a0ee1216166524b111ab32f1d30027120aaa94635e36199e78f147a0"
+    },
+    "approved_manifest_sha256": {
+      "nju/cs": "ec8efa03906ff82bcd6544ecb049027e256457b5bcdf3c50b4851cda8a73177a",
+      "ustc/cs": "40e963e279734e9c796f8597175cf06f4ce165c5968ec2684ae8121b5671fc0a"
+    },
+    "installed": {
+      "version": "1.12.9",
+      "source_commit": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+      "archive_sha256": "c680e852b7c1ef26f4b17b993f8dd947b4bf139adcb6bdeee2f754b3240aec15",
+      "topics_profiles": 102,
+      "configs": 2,
+      "verified_targets": 105,
+      "retired": [
+        "data/professors/ustc/cs/liaojiexueyuan.yaml",
+        "site/p/ustc-cs-liaojiexueyuan.html"
+      ],
+      "package_files": 121,
+      "protected_files_unchanged": 7985,
+      "deployment_marker_sha256": "f613f1d84bc6799a2d4dc1a0df1fc5b9cf71ecf539735597fd46de9a02b4cae0"
+    },
+    "indexes_baseline_sha256": "68850bf3730a54f5b4d936f454b5e0c7685efa09521ec5525c4ac958a790bc73",
+    "public_id_set_sha256": "b49349de3e9d3887f6ee2175eefe62b7298c12e7abf818e36e46bcbd35c6fdc3",
+    "public_catalogs": {
+      "data.js": 7170,
+      "contact-data.js": 7170,
+      "discovery-data.js": 7170,
+      "application-data.js": 7170,
+      "search.js": 7170,
+      "compare-data.js": 7170
+    },
+    "units": {
+      "nju/cs": {
+        "api_profiles": 102,
+        "missing_email": 11,
+        "contactable": 91,
+        "api_revision": "55c4f67ddf680831ff8f",
+        "with_direction": 57
+      },
+      "ustc/cs": {
+        "api_profiles": 71,
+        "missing_email": 0,
+        "contactable": 71,
+        "api_revision": "55c4f67ddf680831ff8f",
+        "with_direction": 70
+      }
+    },
+    "verified_api_candidates": 173,
+    "verified_target_details": 102,
+    "verified_target_configs": 2,
+    "verified_raw_targets": 105,
+    "retirement": {
+      "retired_id": "ustc-cs-liaojiexueyuan",
+      "detail_http_status": 404,
+      "compare_api_query": {
+        "ids": "ustc-cs-liaojiexueyuan,ustc-cs-zhouxiren"
+      },
+      "compare_api_retained": [
+        "ustc-cs-zhouxiren"
+      ],
+      "compare_api_sha256": "4f9314a38ddda6fecd0017832bcb251ca04ecaa0a60c625697e9fde9d30f83cb",
+      "candidate_api_query": {
+        "context_school": "ustc",
+        "school": "ustc",
+        "dept": "cs",
+        "name": "了解学院",
+        "include_missing_email": "1",
+        "limit": "4",
+        "offset": "0",
+        "seed": "v1129-retirement"
+      },
+      "candidate_api_total": 0,
+      "candidate_api_sha256": "a6a93dce404d4c4c5fde24ab14f16adebbb67ed66ef9b8e4b164f1021c974b6d"
+    },
+    "counts": {
+      "research_direction_raw": 102,
+      "homepage": 1
+    },
+    "searches": [
+      {
+        "mentor": "nju-cs-liuqizhi",
+        "name": "刘奇志",
+        "topic": "高性能数据管理技术",
+        "before": 1,
+        "after": 1,
+        "before_direction_present": false,
+        "after_direction": "高性能数据管理技术",
+        "after_provenance": {
+          "origin": "crawled",
+          "source": "https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm",
+          "fetched_at": "2026-11-23",
+          "confidence": "auto"
+        },
+        "before_observed_utc": "2026-11-22T23:54:17.922869+00:00",
+        "before_raw_sha256": "80545a84265a42f461315c63ce12e5e81bcc91f04f12cf9dd2968959ca932aac",
+        "before_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=nju&context_school=nju&dept=cs&name=%E5%88%98%E5%A5%87%E5%BF%97&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%22%5D",
+        "after_query_params": {
+          "school": "nju",
+          "context_school": "nju",
+          "dept": "cs",
+          "name": "刘奇志",
+          "limit": "4",
+          "offset": "0",
+          "seed": "v1129-proof",
+          "include_missing_email": "0",
+          "topics": "[\"高性能数据管理技术\"]"
+        },
+        "after_observed_utc": "2026-11-23T00:52:27.518852+00:00",
+        "after_raw_sha256": "05a1e10b72e8704fccfbdcf5d3a52899e3c40c5d7232f352e44c0a9932297b8e",
+        "after_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=nju&context_school=nju&dept=cs&name=%E5%88%98%E5%A5%87%E5%BF%97&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%22%5D",
+        "after_raw_path": "search-after-raw/nju-cs-liuqizhi.json"
+      },
+      {
+        "mentor": "nju-cs-chenlijun",
+        "name": "陈力军",
+        "topic": "智能机器人",
+        "before": 1,
+        "after": 1,
+        "before_direction_present": false,
+        "after_direction": "智能机器人",
+        "after_provenance": {
+          "origin": "crawled",
+          "source": "https://cs.nju.edu.cn/58/16/c2639a153622/page.htm",
+          "fetched_at": "2026-11-23",
+          "confidence": "auto"
+        },
+        "before_observed_utc": "2026-11-22T23:54:18.187617+00:00",
+        "before_raw_sha256": "ba78253568d419d4af4b7a53c9e23493be8b7491cb73007394f6202e5482a397",
+        "before_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=nju&context_school=nju&dept=cs&name=%E9%99%88%E5%8A%9B%E5%86%9B&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%22%5D",
+        "after_query_params": {
+          "school": "nju",
+          "context_school": "nju",
+          "dept": "cs",
+          "name": "陈力军",
+          "limit": "4",
+          "offset": "0",
+          "seed": "v1129-proof",
+          "include_missing_email": "0",
+          "topics": "[\"智能机器人\"]"
+        },
+        "after_observed_utc": "2026-11-23T00:52:27.857556+00:00",
+        "after_raw_sha256": "5f650579eca281f85524e47fd8dc4ff86f0312063cfce510405244db2c15ef2f",
+        "after_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=nju&context_school=nju&dept=cs&name=%E9%99%88%E5%8A%9B%E5%86%9B&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%22%5D",
+        "after_raw_path": "search-after-raw/nju-cs-chenlijun.json"
+      },
+      {
+        "mentor": "ustc-cs-zhouxiren",
+        "name": "周熙人",
+        "topic": "时间序列分析",
+        "before": 1,
+        "after": 1,
+        "before_direction_present": false,
+        "after_direction": "机器学习、时间序列分析",
+        "after_provenance": {
+          "origin": "crawled",
+          "source": "http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm",
+          "fetched_at": "2026-11-23",
+          "confidence": "auto"
+        },
+        "before_observed_utc": "2026-11-22T23:54:18.435200+00:00",
+        "before_raw_sha256": "d93392c4ab5811540b43262043e80ec785783e0feeae53ce2e0af0d1f83ff946",
+        "before_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=ustc&context_school=ustc&dept=cs&name=%E5%91%A8%E7%86%99%E4%BA%BA&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90%22%5D",
+        "after_query_params": {
+          "school": "ustc",
+          "context_school": "ustc",
+          "dept": "cs",
+          "name": "周熙人",
+          "limit": "4",
+          "offset": "0",
+          "seed": "v1129-proof",
+          "include_missing_email": "0",
+          "topics": "[\"时间序列分析\"]"
+        },
+        "after_observed_utc": "2026-11-23T00:52:28.196175+00:00",
+        "after_raw_sha256": "3aa5b7e6d06854223e746c9d6ee234d8c3dd19e71e819fcded3e8f26869e11f7",
+        "after_query_url": "https://8.213.137.82:8443/api/mentor-candidates?school=ustc&context_school=ustc&dept=cs&name=%E5%91%A8%E7%86%99%E4%BA%BA&limit=4&offset=0&seed=v1129-proof&include_missing_email=0&topics=%5B%22%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90%22%5D",
+        "after_raw_path": "search-after-raw/ustc-cs-zhouxiren.json"
+      }
+    ]
+  },
+  "direction_browser": [
+    {
+      "page": "nju-cs-liuqizhi",
+      "viewport": 390,
+      "semantic_columns": 6,
+      "layout": "block",
+      "collection_date": "2026-11-23",
+      "source": "https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm"
+    },
+    {
+      "page": "nju-cs-chenlijun",
+      "viewport": 390,
+      "semantic_columns": 6,
+      "layout": "block",
+      "collection_date": "2026-11-23",
+      "source": "https://cs.nju.edu.cn/58/16/c2639a153622/page.htm"
+    },
+    {
+      "page": "ustc-cs-zhouxiren",
+      "viewport": 390,
+      "semantic_columns": 6,
+      "layout": "block",
+      "collection_date": "2026-11-23",
+      "source": "http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm"
+    },
+    {
+      "page": "nju-cs-liuqizhi",
+      "viewport": 1440,
+      "semantic_columns": 6,
+      "layout": "table",
+      "collection_date": "2026-11-23",
+      "source": "https://cs.nju.edu.cn/c9/6b/c2639a51563/page.htm"
+    },
+    {
+      "page": "nju-cs-chenlijun",
+      "viewport": 1440,
+      "semantic_columns": 6,
+      "layout": "table",
+      "collection_date": "2026-11-23",
+      "source": "https://cs.nju.edu.cn/58/16/c2639a153622/page.htm"
+    },
+    {
+      "page": "ustc-cs-zhouxiren",
+      "viewport": 1440,
+      "semantic_columns": 6,
+      "layout": "table",
+      "collection_date": "2026-11-23",
+      "source": "http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm"
+    }
+  ],
+  "public_screenshots": {
+    "docs/audits/2026-11-23-v1129/direction-search-mobile.png": "28d4c3afc62a81bd87aabe3d934d6123aa9eacffd285fbeabaa9d5d2d02da89b",
+    "docs/audits/2026-11-23-v1129/field-evidence-mobile.png": "a49bf6b8f55fb9044f4642518c27ba2f46929cca96c14ad9ffa86ab6999267a8",
+    "docs/audits/2026-11-23-v1129/direction-detail-mobile.png": "62df2c2c965579d98f765d8b60d8013e092a1928f130b02e4eea8da6e82653b2",
+    "docs/audits/2026-11-23-v1129/field-evidence-desktop.png": "c1dd53bd1115cd58a959ad8973a902f2cc3ce92ba8da88b79cb848f818502904"
+  },
+  "direction_browser_observed_utc": "2026-11-23T00:44:40.606279+00:00",
+  "online": {
+    "passed": true,
+    "checks_passed": 20,
+    "browser_errors": 0,
+    "failed_requests": 2,
+    "observed_failed_requests": {
+      "GET net::ERR_ABORTED": 2
+    },
+    "network_transport": "chromium",
+    "qa_accounts_removed_in_all_attempts": 4,
+    "initial_attempt": {
+      "passed": false,
+      "reason": "direct_connection_timeout",
+      "checks_completed": 9,
+      "accounts_recorded_before_abort": 1,
+      "accounts_verified_for_cleanup": 2,
+      "cleanup": {
+        "applied": true,
+        "recorded_accounts": 2,
+        "qa_account_rows": 2,
+        "qa_workspace_directories": 2,
+        "other_accounts_preserved": 0,
+        "passed": true
+      }
+    },
+    "retired_material_rejection_http_status": 400,
+    "workspace_unchanged_after_rejection": true,
+    "recommendation_batches": {
+      "first": 4,
+      "second": 4,
+      "distinct_candidates": 8
+    }
+  },
+  "network": {
+    "public_http_transport": "chromium",
+    "deployment_ssh_transport": "configured_local_proxy",
+    "direct_https_and_ssh_timeouts_observed": true,
+    "server_loopback_https_status": 200,
+    "network_configuration_changed": false,
+    "direct_recovery_verified": false,
+    "direct_recheck": {
+      "observed_utc": "2026-11-23T00:56:02.079972+00:00",
+      "error_type": "ConnectTimeout",
+      "seconds": 8.0
+    },
+    "receipt_sha256": {
+      "network-client-check.json": "eba77e2296adadb26ee3a40394c13f6bc13adaec3c4253508695a43f8f055105",
+      "network-server-check.json": "f390c7fccf8db14a3decb4be852edc9e61ac895d82118cdbfd6c58033561afae",
+      "network-direct-recheck.json": "3e81b64f6b6d663c93ad8993a633d122ddcbacaad3efe5a8b449762c5e02ebe6"
+    }
+  },
+  "qa_cleanup": {
+    "applied": true,
+    "recorded_accounts": 2,
+    "qa_account_rows": 2,
+    "qa_workspace_directories": 2,
+    "other_accounts_preserved": 0,
+    "passed": true
+  },
+  "deployment": {
+    "passed": true,
+    "version": "1.12.9",
+    "source_commit": "9ed315022be442363711322f6d69b8ff1c75a0a8",
+    "archive_sha256": "c680e852b7c1ef26f4b17b993f8dd947b4bf139adcb6bdeee2f754b3240aec15",
+    "verified_files": 121,
+    "protected_files_unchanged": 7985,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [
+      "site/p/ustc-cs-liaojiexueyuan.html"
+    ],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v1129-stage-9ed315022/source-before.tar.gz",
+    "source_backup_sha256": "3116a5f2456f23a30cde29a17993ddfea8bf7d1c1c1966ba594022037d489dfa",
+    "site_backup": "/opt/mentor-v1129-stage-9ed315022/site-before",
+    "protected_before_sha256": "515330e6c69233792e01465a04c21a1709f7c6e5360c39c4c92b4aca4ace5fd6"
+  },
+  "evidence_archive": {
+    "archive_sha256": "8c23a146a0ea320ce3f9af12397c1d6c32e0d3265bbb2f6d80b2109489f3d658",
+    "members": 365,
+    "publication_git_blobs": 106,
+    "verified_by_server": true,
+    "directory": "/opt/mentor-assistant/cache/v1129/evidence-9ed315022/"
+  },
+  "operations_before": {
+    "version": "1.12.8",
+    "observed_utc": "2026-11-23T00:02:01.371324+00:00",
+    "services_recorded": 8
+  },
+  "finalization": "pending",
+  "user_acceptance": "pending"
+}
