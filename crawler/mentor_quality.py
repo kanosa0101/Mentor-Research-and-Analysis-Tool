@@ -12,12 +12,12 @@ import requests
 import yaml
 from bs4 import BeautifulSoup, UnicodeDammit
 
-from crawler import legacy_refresh, mentor_recovery
+from crawler import legacy_refresh, mentor_direction_review, mentor_recovery
 from crawler.email_util import normalize_email
-from crawler.opportunity_monitor import atomic_json, output_lock
+from crawler.opportunity_monitor import OutputLockBusy, atomic_json, output_lock
 
 EMAIL = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
-PROFILE_ISSUES = ('fetch_or_parse_error', 'unknown_detail_field', 'shared_public_contact')
+PROFILE_ISSUES = ('fetch_or_parse_error', 'unknown_detail_field', 'shared_public_contact', mentor_direction_review.KIND)
 
 
 def refresh_fields(root, **kwargs):
@@ -322,7 +322,7 @@ def newer_attempt(attempt, checked):
         return False
 
 
-def seed_issues(root, now):
+def seed_issues(root, now, units_filter=()):
     """Turn real refresh failures and ambiguous public registrations into persistent work."""
     created = 0
     state = root / 'cache/legacy_refresh/state.json'
@@ -374,6 +374,20 @@ def seed_issues(root, now):
                     cfg['shared_public_contacts'] = shared
                     legacy_refresh.write_yaml(cfg_path, cfg)
             legacy_refresh.write_yaml(path, issues)
+    has_direction_work = ((root / 'data/issues/scu-cs.yaml').is_file() or any(
+        key.startswith('professor/scu/cs/') and row.get('research_direction_observation') for key, row in records.items()))
+    if has_direction_work and (not units_filter or mentor_direction_review.UNIT in units_filter):
+        if state.is_file():
+            # Do not consume a legacy observation while another refresh is replacing it.
+            try:
+                with output_lock(state):
+                    current = json.loads(state.read_text(encoding='utf-8')).get('records', {})
+                    created += mentor_direction_review.seed(root, current, now, load_yaml, legacy_refresh.write_yaml)
+            except OutputLockBusy as error:
+                if error.output != state:
+                    raise
+        else:
+            created += mentor_direction_review.seed(root, {}, now, load_yaml, legacy_refresh.write_yaml)
     return created
 
 
@@ -472,6 +486,8 @@ def retire_missing_issues(root, unit, path, stamp):
             issue.setdefault('review_history', []).append({'date': stamp, 'automatic': True, 'state': 'retired',
                 'reason': reason, 'evidence': [{'path': f"data/professors/{unit}/{issue['ref']}.yaml"}]})
             issue['automatic_check'] = dict(automatic, status='retired', next_action='none', next_check_at=None)
+            if issue['kind'] == mentor_direction_review.KIND:
+                issue['automatic_check'].update(checked_at=stamp, pending_since=None)
             changed = True
         if changed:
             legacy_refresh.write_yaml(path, issues)
@@ -485,7 +501,7 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
     state_path = root / 'cache/mentor_quality/state.json'
     with output_lock(state_path):
         state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {'version': 1, 'records': {}}
-        created = seed_issues(root, now)
+        created = seed_issues(root, now, units)
         selected = []
         known = set()
         configs = {}
@@ -500,6 +516,14 @@ def run(root, *, limit=40, retry=False, units=(), fetcher=None, now=None):
             for issue in issues:
                 key = unit + '/' + issue['kind'] + '/' + issue['ref']
                 known.add(key)
+                if issue['kind'] == mentor_direction_review.KIND:
+                    automatic = issue.get('automatic_check') or {}
+                    if not (issue.get('resolved') or issue.get('reviewed')) and automatic.get('status') == 'pending':
+                        state['records'][key] = dict(automatic, id=key, kind=issue['kind'], ref=issue['ref'],
+                            title=path.stem + ' · ' + issue['ref'] + ' · ' + mentor_direction_review.LABEL)
+                    else:
+                        state['records'].pop(key, None)
+                    continue
                 previous = state['records'].get(key, {})
                 if issue.get('reviewed') or (issue.get('resolved') and
                         (issue.get('automatic_check') or {}).get('status') != 'resolved'):

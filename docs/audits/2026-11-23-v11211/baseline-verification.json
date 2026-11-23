@@ -1,0 +1,137 @@
+{
+  "version": "1.12.10",
+  "final_commit": "893801fc3e146dec61ee7eed33c28c43f7b62627",
+  "passed": true,
+  "operational_receipt_sha256": "fbf376f149cf850c5a94d9db07f4e08edd68dd5c1fe8174e437799b9516c065b",
+  "ci_receipt_sha256": "9b2675197640b8f89adadd199629e00f4d00d9aa66094c571af68c6d09ec293b",
+  "ci": [
+    {
+      "ref": "main",
+      "head_sha": "893801fc3e146dec61ee7eed33c28c43f7b62627",
+      "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45121538469",
+      "run_id": 45121538469,
+      "job_id": 137516196904,
+      "job_status": "completed",
+      "job_conclusion": "success",
+      "successful_steps": [
+        "Run python -m pip install -r requirements-dev.txt",
+        "Run python -m pip check",
+        "Run python -m playwright install --with-deps chromium",
+        "Run python scripts/build_site.py",
+        "Run python -m pytest tests -q",
+        "Run node --test tests/*.cjs",
+        "Run python scripts/preflight.py --allow-open-issues"
+      ],
+      "python": {
+        "passed": 1807,
+        "skipped": 1,
+        "subtests_passed": 251,
+        "duration_seconds": 308.35
+      },
+      "node": {
+        "tests": 25,
+        "pass": 25,
+        "fail": 0,
+        "skipped": 0
+      },
+      "preflight": {
+        "structural_problems": 0,
+        "existing_open_issue_groups": 35
+      },
+      "build": {
+        "profiles": 7170,
+        "schools": 39,
+        "departments": 56
+      },
+      "job_started_utc": "2026-11-23T06:02:54Z",
+      "job_completed_utc": "2026-11-23T06:09:02Z"
+    },
+    {
+      "ref": "v1.12.10",
+      "head_sha": "893801fc3e146dec61ee7eed33c28c43f7b62627",
+      "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45121538560",
+      "run_id": 45121538560,
+      "job_id": 137516197122,
+      "job_status": "completed",
+      "job_conclusion": "success",
+      "successful_steps": [
+        "Run python -m pip install -r requirements-dev.txt",
+        "Run python -m pip check",
+        "Run python -m playwright install --with-deps chromium",
+        "Run python scripts/build_site.py",
+        "Run python -m pytest tests -q",
+        "Run node --test tests/*.cjs",
+        "Run python scripts/preflight.py --allow-open-issues"
+      ],
+      "python": {
+        "passed": 1807,
+        "skipped": 1,
+        "subtests_passed": 251,
+        "duration_seconds": 308.47
+      },
+      "node": {
+        "tests": 25,
+        "pass": 25,
+        "fail": 0,
+        "skipped": 0
+      },
+      "preflight": {
+        "structural_problems": 0,
+        "existing_open_issue_groups": 35
+      },
+      "build": {
+        "profiles": 7170,
+        "schools": 39,
+        "departments": 56
+      },
+      "job_started_utc": "2026-11-23T06:02:54Z",
+      "job_completed_utc": "2026-11-23T06:08:58Z"
+    }
+  ],
+  "services": {
+    "mentor-public.service": {
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "mentor-https.service": {
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "mentor-review-ui.service": {
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "mentor-maintenance.timer": {
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "UnitFileState": "enabled"
+    },
+    "mentor-monitor.timer": {
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "mentor-review-pipeline.timer": {
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "mentor-updates.timer": {
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "UnitFileState": "enabled"
+    },
+    "mentor-certificate.timer": {
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "UnitFileState": "enabled"
+    }
+  },
+  "original_443_pid": 65107,
+  "qa_accounts_remaining": 0,
+  "protected_root_identities_unchanged": 8,
+  "observed_utc": "2026-11-23T06:10:44.190213+00:00"
+}

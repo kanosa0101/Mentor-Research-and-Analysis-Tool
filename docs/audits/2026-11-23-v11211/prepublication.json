@@ -1,0 +1,27 @@
+{
+  "version": "1.12.11",
+  "source_files": {
+    "crawler/legacy_refresh.py": "c0e936061a8dce1bb6d36533be479e802b08fa2535743a4e9f6ebbc3ca273063",
+    "crawler/mentor_direction_review.py": "abb1f1da96843830797a2ca68bfd538bc0785386ca48f2b2f5da3d6659643366",
+    "crawler/mentor_quality.py": "4d455b9d6fc6dc078a6f637f6eb3af74097c2e8629b3b163dec008e3336c3444",
+    "crawler/store.py": "65cf8bfd0d176f1a577755569029414dccce9fede315540cb2ce992a2465cd2b",
+    "scripts/crawl.py": "5f7a36978be81303fb5b74db63fcc41a44ce285434b69abbb0232267fe55e3ea",
+    "sites/scu/scu_cs.py": "c0bb060e7ef5ed524f7fac4acda64129ed8437e5cbf0d029bf04e594fd5b340b",
+    "tests/test_scu_direction_review_v11211.py": "5b17fb36149ef31d5a8906f1b42cf7e0cbd2ccea7debae44371953f13f2f82a4"
+  },
+  "windows_full_before_final_edge_fixes": {
+    "passed": 1831,
+    "skipped": 1,
+    "subtests_passed": 251
+  },
+  "final_related_regressions_passed": 173,
+  "node_tests_passed": 25,
+  "preflight_structural_problems": 0,
+  "offline_current_record_vs_archived_official_page": {
+    "profiles": 4,
+    "new_review_items": 1,
+    "queue_network_requests": 0,
+    "public_input_files_unchanged": 6
+  },
+  "scope": "No public professor or department configuration files are included; final exact-source Ubuntu CI and deployed checks are recorded separately."
+}

@@ -6,8 +6,9 @@ from urllib.parse import urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 from crawler import fetch, mentor_recovery
+from crawler.public_discovery import research_text
 from sites import tsites
-from sites.profile_fields import clean_research
+from sites.profile_fields import BOUNDARY, clean_research
 
 
 _BASE = "https://faculty.scu.edu.cn"
@@ -19,6 +20,9 @@ _PAGER = re.compile(r"共\s*(\d+)\s*条\s*(\d+)\s*/\s*(\d+)")
 _TITLE = re.compile(r"四川大学主页平台管理系统\s+([^\s]+)--中文主页--首页")
 _CARD = "h1, h2, h3, h4, .t_name, .t_name_tit, div.name"
 _HEADING = re.compile(r"研究方向(?:\s+Research Focus)?", re.I)
+_HIDDEN_STYLE = re.compile(
+    r"(?:^|;)\s*(?:display\s*:\s*none|visibility\s*:\s*hidden)\s*(?:!\s*important\s*)?(?=;|$)", re.I
+)
 _LAYOUTS = (
     (".teacher_tit", False, "research_det"),
     ("li.direction > h4", False, "sec-item"),
@@ -69,12 +73,19 @@ def iter_roster(cfg):
     return people, meta
 
 
-def _person_page(cfg, html, url):
+def _person_page(cfg, html, url, *, visible_only=False):
     prefix = _person_path(url)
     original = cfg.get("_original_profile") or {}
     if not prefix or original.get("detail_url", url) != url:
         raise mentor_recovery.IdentityConflict("川大本人页与精确登记路径不符")
     soup = BeautifulSoup(html, "html.parser")
+    if visible_only:
+        hidden = [node for node in soup.select("[hidden], [aria-hidden], [style]")
+                  if node.has_attr("hidden") or node.get("aria-hidden", "").strip().casefold() == "true"
+                  or _HIDDEN_STYLE.search(node.get("style", ""))]
+        for node in hidden:
+            if node.parent is not None:
+                node.decompose()
     title = _TITLE.fullmatch(_text(soup.title)) if soup.title else None
     if not title:
         raise ValueError("未找到川大教师平台本人标题")
@@ -141,12 +152,43 @@ def _same_ordered_terms(old, terms):
     return old == numbered
 
 
+def _direction_observation(original, url, entries):
+    old = original.get("research_direction_raw")
+    proof = (original.get("provenance") or {}).get("research_direction_raw") or {}
+    if not (entries and old and clean_research(old) == old and proof.get("origin") == "crawled"
+            and proof.get("confidence") == "auto" and proof.get("source") == url):
+        return None
+    terms = [entry["text"] for entry in entries]
+    labels = [re.sub(r"^\[\d+\]\s*", "", term) for term in terms]
+    value = "、".join(terms)
+    if clean_research(value) != value or any(BOUNDARY.fullmatch(label) or not research_text(label)
+                                             or clean_research(label) != label for label in labels):
+        return None
+    comparison = [re.sub(rf"^\[{i}\]\s*", "", term) for i, term in enumerate(terms, 1)]
+    numbered = "、".join(rf"\[{i}\]\s*{re.escape(term)}" for i, term in enumerate(comparison, 1))
+    same = (old in (value, "、".join(comparison)) or _same_ordered_terms(old, terms)
+            or bool(re.fullmatch(numbered, old)))
+    return {"value": value, "same": same, "section": "研究方向", "entries": entries, "comparison_terms": comparison}
+
+
+def replay_direction_observation(original, html, url):
+    try:
+        _, prefix, soup = _person_page({"_original_profile": original}, html, url, visible_only=True)
+    except ValueError:
+        return None
+    return _direction_observation(original, url, research_evidence(soup, url, prefix))
+
+
 def parse_detail(cfg, html, url):
     name, prefix, soup = _person_page(cfg, html, url)
     original = cfg.get("_original_profile") or {}
     provenance = original.get("provenance") or {}
     result = {"name": name}
     entries = research_evidence(soup, url, prefix)
+    if cfg.get("_observe_research_changes"):
+        observation = replay_direction_observation(original, html, url)
+        if observation:
+            result["_research_direction_observation"] = observation
     previous = provenance.get("research_direction_raw") or {}
     if entries and previous.get("origin") != "manual" and previous.get("confidence") != "verified":
         terms = [entry["text"] for entry in entries]

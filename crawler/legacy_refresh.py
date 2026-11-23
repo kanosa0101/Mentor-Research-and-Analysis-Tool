@@ -15,7 +15,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup, UnicodeDammit
 
-from crawler import admissions_util
+from crawler import admissions_util, mentor_direction_review
 from crawler.email_util import normalize_email
 from crawler.model import Professor
 from crawler.opportunity_monitor import atomic_json, output_lock
@@ -40,6 +40,9 @@ def fetch_source(source, timeout=20):
         response.raise_for_status()
         if response.status_code != 200:
             raise ValueError('Source did not return HTTP 200')
+        if (metadata := source.get('_response_metadata')) is not None:
+            metadata.update(requested_url=source['url'], final_url=response.url, status=response.status_code,
+                            redirected=bool(response.history), observed_utc=datetime.now(timezone.utc).isoformat())
         return response.content
 
 
@@ -274,7 +277,8 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
             hooks = {}
             for path in selected:
                 key = 'professor/' + '/'.join(path.parts[-3:])
-                original = yaml.safe_load(path.read_text(encoding='utf-8'))
+                original_bytes = path.read_bytes()
+                original = yaml.safe_load(original_bytes)
                 parsed={};raw=None;raw_hash=None;cfg=None
                 try:
                     unit = original['school'] + '/' + original['dept']
@@ -287,7 +291,12 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                                      'reason': '当前配置仅支持名单或未提供详情解析器；需维护者处理，修复后用 --retry 复检。',
                                      'error': None})
                         continue
-                    raw = fetcher({'url': original['detail_url']})
+                    observe = mentor_direction_review.enabled(unit, cfg)
+                    response = {}
+                    source = {'url': original['detail_url']}
+                    if observe:
+                        source['_response_metadata'] = response
+                    raw = fetcher(source)
                     raw_hash = evidence(key, raw)
                     html = UnicodeDammit(raw).unicode_markup
                     if not html:
@@ -303,21 +312,39 @@ def run(root, *, kind='all', limit=30, units=(), workers=4, timeout=20, retry=Fa
                         supplemental.append(dict(url=url,sha256=digest,fetched_at=stamp))
                         text = '' if source.get('official_pdf') else UnicodeDammit(body).unicode_markup or ''
                         return body,text
-                    parsed = hook.parse_detail(dict(cfg, _expected_name=original['name'],_read_source=read_source,
-                                                    _original_profile=original), html, original['detail_url'])
+                    parse_cfg = dict(cfg, _expected_name=original['name'], _read_source=read_source,
+                                     _original_profile=original)
+                    if observe:
+                        parse_cfg['_observe_research_changes'] = True
+                    parsed = hook.parse_detail(parse_cfg, html, original['detail_url'])
+                    direction = (mentor_direction_review.capture(original, parsed.pop('_research_direction_observation', None),
+                                                                 response, raw_hash, stamp) if observe else None)
                     parsed = ordinary_profile_fields(cfg, parsed)
                     # The contact task verifies a declared independent homepage
                     # by fetching the target before publishing it.
                     parsed = {key: value for key, value in parsed.items() if key != 'homepage'}
-                    updated, changed, checked = merge_profile(original, parsed, raw, day, verified_sources=supplemental)
-                    if cfg.get('contact_hook_only'):
+                    if direction and not any(parsed.get(field) for field in FIELDS):
+                        updated, changed, checked = original, [], []
+                    else:
+                        updated, changed, checked = merge_profile(original, parsed, raw, day, verified_sources=supplemental)
+                    if direction:
+                        with output_lock(path):
+                            if path.read_bytes() != original_bytes:
+                                raise ValueError('核验期间导师记录已变化，未覆盖')
+                            if updated != original:
+                                write_yaml(path, updated)
+                            direction['current'] = mentor_direction_review.registration(updated)
+                    elif cfg.get('contact_hook_only'):
                         from crawler.mentor_quality import write_profile
                         write_profile(path, original, updated)
                     else:
                         write_yaml(path, updated)
-                    record(key, {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
-                                 'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,
-                                 'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None})
+                    report = {'status': 'ok', 'source_url': original['detail_url'], 'last_success': stamp,
+                              'raw_sha256': raw_hash, 'supplemental_evidence':supplemental,
+                              'changed_fields': changed, 'checked_fields': checked, 'error': None, 'reason': None}
+                    if observe:
+                        report['research_direction_observation'] = direction
+                    record(key, report)
                     from crawler import mentor_fields,mentor_recovery
                     mentor_fields.observation(root,updated,parsed=parsed,source_sha256=raw_hash,fetched_at=stamp,now=now,
                                               parser_signature=mentor_recovery.signature(root,cfg),verified_sources=supplemental)

@@ -11,7 +11,7 @@ from pypinyin import lazy_pinyin
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from crawler import fetch, store
+from crawler import fetch, mentor_direction_review, store
 from crawler.model import Provenance, Professor
 
 TODAY = datetime.date.today().isoformat()
@@ -62,6 +62,14 @@ def _save_professor(cfg, prof, original):
         if current != original:
             raise ValueError('核验期间导师记录已变化，未覆盖')
         write_yaml(path, prof.model_dump(mode='json', exclude_none=True))
+
+
+def _save_issues(cfg, issues):
+    school, dept = cfg['school'], cfg['dept']
+    if mentor_direction_review.enabled(school + '/' + dept, cfg):
+        store.save_issues(school, dept, issues, preserve_kind=mentor_direction_review.KIND)
+    else:
+        store.save_issues(school, dept, issues)
 
 
 def phase_roster(cfg, hook, refresh):
@@ -159,7 +167,7 @@ def phase_roster(cfg, hook, refresh):
     for i in issues:
         if i.kind == "missing_in_list" and i.ref in current_slugs:
             i.resolved = True
-    store.save_issues(school, dept, issues)
+    _save_issues(cfg, issues)
     return {"roster_total": len(people), "created": created,
             "institute_updates": updated, "existing": len(existing)}
 
@@ -241,7 +249,7 @@ def phase_enrich(cfg, hook, refresh):
             prof.source_updated_at = str(d["source_updated_at"])
         _save_professor(cfg, prof, original)
         done += 1
-    store.save_issues(school, dept, issues)
+    _save_issues(cfg, issues)
     if changes:
         store.append_changes(school, dept, changes)
     return {"enriched": done, "failed": failed, "field_changes": len(changes)}

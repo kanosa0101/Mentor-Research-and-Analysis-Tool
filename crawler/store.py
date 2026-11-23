@@ -51,12 +51,21 @@ def load_issues(school, dept):
     return [Issue.model_validate(i) for i in _yaml_load(f) or []]
 
 
-def save_issues(school, dept, issues):
+def save_issues(school, dept, issues, *, preserve_kind=None):
     import yaml
 
     f = issues_file(school, dept)
     f.parent.mkdir(parents=True, exist_ok=True)
     data = [i.model_dump(mode="json") for i in issues]
+    if preserve_kind:
+        from crawler.legacy_refresh import write_yaml
+        from crawler.opportunity_monitor import output_lock
+
+        with output_lock(f, wait_seconds=5):
+            current = (_yaml_load(f) or []) if f.is_file() else []
+            write_yaml(f, [row for row in data if row['kind'] != preserve_kind] +
+                       [row for row in current if row['kind'] == preserve_kind])
+        return
     f.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
 
