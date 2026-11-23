@@ -4,6 +4,11 @@ dept_name: 计算机科学与技术学院
 base_url: https://cs.xidian.edu.cn
 hook: xidian_cs
 direct: true
+stable_urls: true
+contact_hook_only: true
+homepage_hook_only: true
+profile_http_hosts: [web.xidian.edu.cn]
+parser_dependencies: [profile_fields.py, tsites.py]
 list:
   urls:
     - https://cs.xidian.edu.cn/szdw/dsjs.htm

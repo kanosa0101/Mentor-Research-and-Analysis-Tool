@@ -17,6 +17,7 @@ profile_url: http://web.xidian.edu.cn/hmchai/
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 1. 信息融合与态势评估模型、方法研究、2. 软件协同方法与实现技术研究
 provenance:
   name:
     origin: crawled
@@ -42,6 +43,11 @@ provenance:
     origin: crawled
     source: http://web.xidian.edu.cn/hmchai/
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/hmchai/
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

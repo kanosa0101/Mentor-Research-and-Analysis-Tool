@@ -22,6 +22,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 大数据分析（big data analytics），AI工程（artificial intelligence engineering）
 provenance:
   name:
     origin: crawled
@@ -47,6 +48,11 @@ provenance:
     origin: crawled
     source: http://web.xidian.edu.cn/baoliang/
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/baoliang/
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

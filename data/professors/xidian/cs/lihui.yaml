@@ -47,6 +47,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据管理
+research_direction_raw: 1．数据挖掘、信息检索 2．保护隐私的数据查询 3．社会计算
 provenance:
   name:
     origin: crawled
@@ -61,10 +62,17 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://web.xidian.edu.cn/hli/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: https://web.xidian.edu.cn/hli/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://web.xidian.edu.cn/hli/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

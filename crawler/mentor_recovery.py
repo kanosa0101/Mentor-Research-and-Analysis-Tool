@@ -425,6 +425,14 @@ def identity(original, parsed, url):
     if old_email and new_email and old_email.casefold() == new_email.casefold():
         return 'name_and_email'
     old, new = urlsplit(original['detail_url']), urlsplit(url)
+    short = re.fullmatch(r'/([A-Za-z0-9_-]+)/?', old.path)
+    if (old.scheme == new.scheme == 'https' and
+            old.netloc == new.netloc == 'faculty.xidian.edu.cn' and short and
+            not any((old.query, old.fragment, new.query, new.fragment)) and
+            new.path == f'/{short[1]}/zh_CN/index.htm' and
+            parsed.get('_identity_profile_home') == url and
+            not (old_email and new_email and old_email.casefold() != new_email.casefold())):
+        return 'same_xidian_teacher_directory_and_name'
     article = lambda path: re.search(r'/info/\d+/(\d+)\.htm$', path)
     a,b=article(old.path),article(new.path)
     if old.hostname == new.hostname and a and b and a[1] == b[1]:

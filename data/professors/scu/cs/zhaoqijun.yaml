@@ -30,6 +30,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+research_direction_raw: 计算机视觉、生物特征识别
 provenance:
   name:
     origin: crawled
@@ -55,4 +56,9 @@ provenance:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhaoqijun/zh_CN/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

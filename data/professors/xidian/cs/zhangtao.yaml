@@ -7,7 +7,7 @@ dept: cs
 status: enriched
 title: 副教授
 supervisor: 博导
-bio_raw: '张涛，陕西西安人，副教授，博士，博士生导师
+bio_raw: '张涛，陕西西安人，副教授，博士，博士生导师，陕西省物联网实验研究中心副主任
 
   2015年6月博士毕业于西安电子科技大学计算机系统结构专业；
 
@@ -23,6 +23,8 @@ facets:
   confidence: auto
   evidence:
   - keyword:系统结构
+research_direction_raw: 1. 数据安全、2. 隐私保护、3. 联邦学习、大语言模型
+email: toddzt@msn.com
 provenance:
   name:
     origin: crawled
@@ -37,10 +39,18 @@ provenance:
   supervisor:
     origin: crawled
     source: https://web.xidian.edu.cn/taozhang/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://web.xidian.edu.cn/taozhang/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
+  research_direction_raw: &id001
+    origin: crawled
+    source: https://web.xidian.edu.cn/taozhang/
+    fetched_at: '2026-11-23'
+    confidence: auto
+  email: *id001
+last_fetched: '2026-11-23'
+last_parsed: '2026-11-23'

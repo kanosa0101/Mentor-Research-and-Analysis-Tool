@@ -218,6 +218,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:生物信息
+research_direction_raw: 复杂网络理论与应用：生物分子网络、多层网络等建模和分析、机器学习算法与应用：图数据的机器学习算法、生物医学信息学：基于多组学的癌症分子机制研究、医案首页分析、深度学习：医学影像数据的深度学习模型构建和分析
 provenance:
   name:
     origin: crawled
@@ -232,15 +233,22 @@ provenance:
   supervisor:
     origin: crawled
     source: http://web.xidian.edu.cn/gmqin/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-21'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://web.xidian.edu.cn/gmqin/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-21'
     confidence: auto
   email:
     origin: crawled
     source: http://web.xidian.edu.cn/gmqin/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-21'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/gmqin/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-21'
+last_parsed: '2026-11-21'

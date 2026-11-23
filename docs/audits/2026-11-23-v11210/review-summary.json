@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "baseline_final": "d4f6974287b1a6fcaa493975eb03b0c7444db716",
+  "target_version": "1.12.10",
+  "hook_sha256": {
+    "crawler/mentor_recovery.py": "c3f3ad4f0e10dfd2ed79c7e686e02ffb0657321be218dc108a5a8b12d4515087",
+    "crawler/mentor_fields.py": "032a2b68cfeddafefd61aea0293745a2894694c442331e52c3bd7a27a10ab6fe",
+    "crawler/mentor_quality.py": "27517133643f13b108e363c66bee2f1aa4728e9139c74a7e88df8c7fb8cb7519",
+    "crawler/legacy_refresh.py": "7ac3c206ec5f19fe882568a80b044c16800793b629c0b627f95bf155237e2fec",
+    "scripts/crawl.py": "f3319ddef19fae5b92fe5820f75074cd19b3aaf353b0e96bd1f682123fbc49bc",
+    "sites/profile_fields.py": "912b2396440307b1a07b64acd238c56cca9017a4d2352832a8bdb7236476316b",
+    "sites/tsites.py": "82e5d2f65a2914853f06a7dc4cd972b9ea509be06bcfef8fa5333a37c3f125d8",
+    "sites/xidian/xidian_cs.py": "ede59fc2343a40c80ef84c4842fe1d4c5ec345a27bb44003214d0363e212044f",
+    "sites/scu/scu_cs.py": "a8e83ad8202826cc9a6a080341321bf20b2365e54bcf65ca972be953487729e1"
+  },
+  "importer_sha256": "a3166d6bc5b7db2b42e45002e00e3fef6ae0331aa9d78519b2d7776aaa2215f8",
+  "batches": {
+    "scu/cs": {
+      "manifest_path": "cache/v11210/scu-cs/delivery/manifest.json",
+      "manifest_sha256": "6d370511ce4058a691a01f08b098687fcd3dc31ee6c31495d8e11f4096e9be7f",
+      "peer_path": "cache/v11210/peer-review/scu-6d370511ce40-field-review.json",
+      "peer_sha256": "5059ac12eb50d8fabe041d012b3b6e8e2ba8bf6b62f26ff82bac85eba1b86f99",
+      "counts": {
+        "direction_fills": 31,
+        "direction_corrections": 8
+      },
+      "normalized_crlf_to_lf": [
+        "data/professors/scu/cs/wuchengen.yaml",
+        "data/professors/scu/cs/zhangweihua.yaml",
+        "data/professors/scu/cs/zhangyi-2.yaml",
+        "data/professors/scu/cs/zhaoqijun.yaml",
+        "data/professors/scu/cs/zhaoshulong.yaml",
+        "data/professors/scu/cs/zhouxin.yaml"
+      ]
+    },
+    "xidian/cs": {
+      "manifest_path": "cache/v11210/xidian-cs/delivery/manifest.json",
+      "manifest_sha256": "0f484ec14ac0f0c18f2a6ea1faba7139e3f7ed487a44fbc8cbc3dfb81a61a4d1",
+      "peer_path": "cache/v11210/peer-review/xidian-0f484ec14ac0-field-review.json",
+      "peer_sha256": "3da350bcade051a12d6b641e341589cb31d9bdb30645fc6cf095c62c998a0e85",
+      "counts": {
+        "direction_fills": 23,
+        "direction_corrections": 66,
+        "email_fills": 1,
+        "url_migrations": 2
+      },
+      "normalized_crlf_to_lf": [
+        "data/professors/xidian/cs/zhaohui.yaml",
+        "data/professors/xidian/cs/zhaoshuangrui.yaml",
+        "data/professors/xidian/cs/zhuguangming.yaml",
+        "data/professors/xidian/cs/zhuxinghui.yaml"
+      ]
+    }
+  },
+  "counts": {
+    "direction_fills": 54,
+    "direction_corrections": 74,
+    "email_fills": 1,
+    "url_migrations": 2
+  },
+  "plan_sha256": "59e4204cb981777c5adc5b2f59986f12f7e299fe6ea98ed72ef930e5fe808344",
+  "files": 130,
+  "profiles": 128,
+  "evidence_files": 437
+}

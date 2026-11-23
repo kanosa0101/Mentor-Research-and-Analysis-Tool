@@ -12,7 +12,7 @@ bio_raw: '高琳，女，博士，二级教授，博士生导师，西安电子�
 
   人工智能学会理事，
 
-  人工智能学会生物信息学与人工生命专业委员会副主任, 运筹学会计算生物信息学分会副理事长。陕西省学位委员会学科评议组第三届成员, 西安电子科技大学第八界学术委员会委员。国家科学技术奖评审专家，国家自然基金委员会信息学部评审组专家，科技部重大专项评审组专家。《
+  人工智能学会生物信息学与人工生命专业委员会副主任, 运筹学会计算生物信息学分会副理事长。陕西省学位委员会学科评议组第三届成员, 西安电子科技大学第八届学术委员会委员。国家科学技术奖评审专家，国家自然基金委员会信息学部评审组专家，科技部重大专项评审组专家。《
 
   西安电子科技大学学报》第十三届编辑委员会编委。2010年受邀参加基金委
 
@@ -146,6 +146,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:生物信息
+research_direction_raw: 数据分析基础理论与算法、1、机器学习理论与数据挖掘算法、2、图表示学习与图的结构特征、3、图论与组合优化算法、生物数据分析及其应用、1、组学数据集成建模与高效分析算法、2、单细胞多组学数据分析、3、三维基因组结构模式检测与挖掘、4、基于组学数据的复杂疾病模式挖掘
 provenance:
   name:
     origin: crawled
@@ -160,15 +161,22 @@ provenance:
   supervisor:
     origin: crawled
     source: http://web.xidian.edu.cn/lgao/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://web.xidian.edu.cn/lgao/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: http://web.xidian.edu.cn/lgao/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/lgao/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

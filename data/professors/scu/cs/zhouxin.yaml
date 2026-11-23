@@ -12,6 +12,7 @@ profile_url: https://faculty.scu.edu.cn/zhouxin1/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: 生物特征识别、智能交通系统、计算机视觉技术
 provenance:
   name:
     origin: crawled
@@ -27,4 +28,9 @@ provenance:
     origin: crawled
     source: https://faculty.scu.edu.cn/zhouxin1/zh_CN/index.htm
     fetched_at: '2026-09-04'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.scu.edu.cn/zhouxin1/zh_CN/index.htm
+    fetched_at: '2026-11-23'
     confidence: auto

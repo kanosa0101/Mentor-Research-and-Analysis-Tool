@@ -49,6 +49,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:数据管理
+research_direction_raw: 1.机器学习、2.数据挖掘、3.多媒体计算
 provenance:
   name:
     origin: crawled
@@ -63,15 +64,22 @@ provenance:
   supervisor:
     origin: crawled
     source: http://web.xidian.edu.cn/zyguan/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://web.xidian.edu.cn/zyguan/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
   email:
     origin: crawled
     source: http://web.xidian.edu.cn/zyguan/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/zyguan/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

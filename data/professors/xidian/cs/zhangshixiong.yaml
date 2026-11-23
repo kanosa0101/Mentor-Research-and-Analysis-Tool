@@ -32,7 +32,7 @@ bio_raw: '个人简介
 
   Dr. Ka-Chun Wong
 
-  from the
+  at
 
   City University of Hong Kong
 
@@ -69,65 +69,43 @@ bio_raw: '个人简介
 
   .
 
-  (* Corresponding  authorship)
+  (# Corresponding  authorship)
 
-  [11] Risheng Lu,
+  [11] Zhenglong Cheng, Jiao Zhang#, &
 
-  Shixiong Zhang*
+  Shixiong Zhang#
 
-  , & Lin Gao*. (2025)
+  . (2026) Regulatory-prior-guided attention preserves biological structure during
+  unpaired single-cell RNA-ATAC integration,
 
-  Disentangling the over-integration of single-cell and spatial multiomics data with
-  transfer learning,
+  Bioinformatics
+
+  , 42 (10), btag696.
+
+  [PDF]
+
+  [10] Risheng Lu,
+
+  Shixiong Zhang#
+
+  , & Lin Gao#. (2025)
+
+  Disentangling over-integration of single-cell and spatial multiomics data with transfer
+  learning,
 
   Big Data Mining and Analytics
 
-  ,
-
-  DOI:
-
-  10.26599/BDMA.2025.9020112
+  , 9(6), 1415-1432
 
   .
 
-  [IF 2025 = 6.2]
-
-  [CCF-T1]
-
-  [10] Zeyu Yan, Yifei Yao, Xuanbing Wen,
-
-  Shixiong Zhang
-
-  *
-
-  , Juli Zhang
-
-  *
-
-  , & Kai Fan
-
-  *
-
-  . (2025) LADSG: Label-anonymized distillation and similar gradient substitution
-  for label privacy in vertical federated learning,
-
-  International Conference on Collaborative Computing:
-
-  Networking, Applications and Worksharing (
-
-  EAI CollaborateCom 2025
-
-  )
-
-  .
-
-  [CCF-C]
+  [PDF]
 
   [9] Zhenglong Cheng, Risheng Lu, &
 
   Shixiong Zhang
 
-  *
+  #
 
   . (2025)
 
@@ -140,21 +118,15 @@ bio_raw: '个人简介
 
   [PDF]
 
-  [IF 2025 = 5.4][
-
-  CCF-A
-
-  ]
-
   [8] Meng Lan,
 
   Shixiong Zhang
 
-  *
+  #
 
   , & Lin Gao
 
-  *
+  #
 
   . (2023) Efficient generation of paired single-cell multiomics profiles by deep
   learning.
@@ -165,15 +137,13 @@ bio_raw: '个人简介
 
   [PDF]
 
-  [IF 2021 = 17.521]
-
   [7]
 
   Shixiong
 
   Zhang
 
-  *
+  #
 
   , Xiangtao Li, Jiecong Lin, Qiuzhen Lin, & Ka-Chun Wong. (2023) Review of single-cell
   RNA-seq data clustering for cell type identification and characterization.
@@ -192,8 +162,6 @@ bio_raw: '个人简介
 
   ]
 
-  [IF 2021 = 5.636]
-
   [6]
 
   Shixiong
@@ -208,7 +176,7 @@ bio_raw: '个人简介
 
   Ka-Chun Wong
 
-  *
+  #
 
   . (2020) Uncovering the key dimensions of high-throughput biomolecular data using
   deep learning.
@@ -218,8 +186,6 @@ bio_raw: '个人简介
   , 48(10), e56, 2020.
 
   [PDF]
-
-  [IF 2020 = 16.971]
 
   [5]
 
@@ -233,7 +199,7 @@ bio_raw: '个人简介
 
   Ka-Chun Wong
 
-  *
+  #
 
   . (2019) Nature-inspired compressed sensing for transcriptomic profiling from random
   composite measurement.
@@ -243,8 +209,6 @@ bio_raw: '个人简介
   , 51(9), 4476-4487.
 
   [PDF]
-
-  [IF 2020 = 11.079]
 
   [4]
 
@@ -258,7 +222,7 @@ bio_raw: '个人简介
 
   Ka-Chun Wong
 
-  *
+  #
 
   . (2019) Synergizing CRISPR/Cas9 off-target predictions for ensemble insights and
   practical applications.
@@ -268,8 +232,6 @@ bio_raw: '个人简介
   . 35 (7), 1108-1115.
 
   [PDF]
-
-  [IF 2019 = 5.610]
 
   [3] Wenyu
 
@@ -285,7 +247,7 @@ bio_raw: '个人简介
 
   Shuai Zhang
 
-  *
+  #.
 
   (2018). Two-factor high-order fuzzy-trend fts model based on BSO-FCM and improved
   KA for TAIEX stock forecasting.
@@ -295,8 +257,6 @@ bio_raw: '个人简介
   , 94(2), 1429-1446.
 
   [PDF]
-
-  [IF 2018 = 4.604]
 
   [2] Wenyu Zhang
 
@@ -314,7 +274,7 @@ bio_raw: '个人简介
 
   Shuai Zhang
 
-  *
+  #
 
   , Dejian Yu, Ningning Huang. (2018). A novel method based on FTS with both GA-FCM
   and multifactor BPNN for stock forecasting.
@@ -325,15 +285,13 @@ bio_raw: '个人简介
 
   [PDF]
 
-  [IF 2018 = 2.784]
-
   [1]
 
   Wenyu
 
   Zhang
 
-  *
+  #
 
   (Supervisor)
 
@@ -360,8 +318,6 @@ bio_raw: '个人简介
 
   [PDF]
 
-  [IF 2017 = 3.241]
-
   Group Members:
 
   Graduate Student
@@ -378,17 +334,13 @@ bio_raw: '个人简介
 
   Undergraduate
 
-  Hengyong Xu (2025-)
-
-  Chuanyang Zhou (2023-)
+  Hengyong Xu (Spatial Omics, 2025- )
 
   Alumni:
 
-  Yi Lu, BSc., 2021- 2025 (Sequence Analysis and LLM,
+  Risheng Lu, MSc., 2023-2026 (Co-supervised
 
-  National Scholarship 2024
-
-  ) --> CityUHK (PhD Programme)
+  ) --> JINGDONG
 
   Meng Lan,
 
@@ -396,7 +348,9 @@ bio_raw: '个人简介
 
   2021-2024
 
-  (Co-supervised,
+  (Co-supervised
+
+  ,
 
   National Scholarship 2023
 
@@ -404,31 +358,33 @@ bio_raw: '个人简介
 
   --> Alibaba DAMO Academy
 
-  Risheng Lu
+  Yi Lu, BSc., 2021- 2025 (
 
-  ,
+  National Scholarship 2024
 
-  MSc., 2023-2026
-
-  (Co-supervised,
-
-  Multiomics)
-
-  --> JINGDONG
+  ) --> CityUHK (PhD Programme)
 
   Scholarships and Awards
 
-  Research Tuition Scholarship (
+  Research Tuition Scholarship
+
+  , City University of Hong Kong
+
+  (
 
   2018, 2019
 
-  ), City University of Hong Kong
+  )
 
-  Outstanding Academic Performance Award (
+  Outstanding Academic Performance Award
+
+  , City University of Hong Kong
+
+  (
 
   2018, 2019, 2020
 
-  ), City University of Hong Kong
+  )
 
   Outstanding Master''s Dissertation Award of Zhejiang Province (
 
@@ -487,8 +443,7 @@ bio_raw: '个人简介
   ICONIP 2022 (PC) 2021 (PC) 2020 (PC)'
 institutes:
 - 计算机科学与技术学院
-research_direction_raw: 研究方向、Research Focus、社会兼职、Social Affiliations、Bioinformatics、Computational
-  Intelligence、Single-cell Omics Analysis、Data Science、暂无内容
+research_direction_raw: Bioinformatics、Computational Intelligence、Single-cell Omics Analysis、Data Science
 detail_url: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
 profile_url: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
 first_seen: '2026-09-04'
@@ -503,30 +458,32 @@ provenance:
   title:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   bio_raw:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   institutes:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   research_direction_raw:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/sxzhang/zh_CN/index.htm
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-23'
     confidence: auto
+last_fetched: '2026-11-23'
+last_parsed: '2026-11-23'

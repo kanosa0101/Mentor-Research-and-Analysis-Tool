@@ -97,6 +97,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:计算机网络
+research_direction_raw: 计算机网络、网络仿真、人工智能等
 provenance:
   name:
     origin: crawled
@@ -116,5 +117,12 @@ provenance:
   email:
     origin: crawled
     source: http://web.xidian.edu.cn/kdwang/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-21'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/kdwang/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-21'
+last_parsed: '2026-11-21'

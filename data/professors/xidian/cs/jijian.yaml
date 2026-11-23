@@ -23,6 +23,7 @@ profile_url: http://web.xidian.edu.cn/jijian/
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets: []
+research_direction_raw: '[1] 图像处理与分析 [2] 模式识别与机器学习 [3] 生物信息学算法'
 provenance:
   name:
     origin: crawled
@@ -37,10 +38,17 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://web.xidian.edu.cn/jijian/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: http://web.xidian.edu.cn/jijian/
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://web.xidian.edu.cn/jijian/
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

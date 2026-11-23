@@ -310,8 +310,8 @@ bio_raw: '博士、副教授，博士生导师。2019 年于西安电子科技�
   同时欢迎对计算机视觉有兴趣的本科生进组实习交流！'
 institutes:
 - 计算机科学与技术学院
-detail_url: https://faculty.xidian.edu.cn/LIYUNAN
-profile_url: https://faculty.xidian.edu.cn/LIYUNAN
+detail_url: https://faculty.xidian.edu.cn/LIYUNAN/zh_CN/index.htm
+profile_url: https://faculty.xidian.edu.cn/LIYUNAN/zh_CN/index.htm
 first_seen: '2026-09-04'
 last_verified: '2026-09-06'
 facets:
@@ -330,6 +330,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 计算机视觉、机器学习
 provenance:
   name:
     origin: crawled
@@ -339,35 +340,52 @@ provenance:
   bio_raw:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   institutes:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   email:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   office_address:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   title:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   supervisor:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
   subjects:
     origin: crawled
     source: https://faculty.xidian.edu.cn/LIYUNAN
-    fetched_at: '2026-09-04'
+    fetched_at: '2026-11-19'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://faculty.xidian.edu.cn/LIYUNAN/zh_CN/index.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  detail_url:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+  profile_url:
+    origin: crawled
+    source: https://cs.xidian.edu.cn/szdw/dsjs.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'

@@ -4,6 +4,10 @@ dept_name: 计算机学院（软件学院、智能科学与技术学院）
 base_url: https://faculty.scu.edu.cn
 hook: scu_cs
 direct: true
+contact_hook_only: true
+homepage_hook_only: true
+explicit_supervisor_only: true
+parser_dependencies: [tsites.py, profile_fields.py]
 list:
   urls:
     - "https://faculty.scu.edu.cn/xyjs.jsp?id=1035&lang=zh_CN&PAGENUM=1&totalpage=21&st=0&urltype=tsites.CollegeTeacherList&wbtreeid=1012"
