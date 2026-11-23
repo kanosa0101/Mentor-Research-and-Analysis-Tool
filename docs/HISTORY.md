@@ -19,6 +19,7 @@
 
 ## 已有版本记录
 
+- [v1.12.11 最终收尾](../deploy/DELIVERY_V1.12.11_2026-11-23.md)及[维护复核审计](audits/2026-11-23-v11211/maintenance-review.md)
 - [v1.12.10 交付](../deploy/DELIVERY_V1.12.10_2026-11-23.md)及[两院导师资料批次审计](audits/2026-11-23-v11210/mentor-batches.md)
 - [v1.12.9 交付](../deploy/DELIVERY_V1.12.9_2026-11-23.md)及[两院导师资料批次审计](audits/2026-11-23-v1129/mentor-batches.md)
 

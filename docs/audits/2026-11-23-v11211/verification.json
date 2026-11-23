@@ -1,0 +1,169 @@
+{
+  "version": "1.12.11",
+  "source_commit": "c36c715320756acade0e2395359482b9b79ed13c",
+  "passed": true,
+  "source_ci": {
+    "commit": "c36c715320756acade0e2395359482b9b79ed13c",
+    "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "completed_successfully": true,
+    "observed_utc": "2026-11-23T06:29:44+00:00",
+    "verified_ci": [
+      {
+        "ref": "codex/final-wrap-v11211",
+        "head_sha": "c36c715320756acade0e2395359482b9b79ed13c",
+        "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45123614492",
+        "run_id": 45123614492,
+        "job_id": 137522811017,
+        "job_status": "completed",
+        "job_conclusion": "success",
+        "successful_steps": [
+          "Run python -m pip install -r requirements-dev.txt",
+          "Run python -m pip check",
+          "Run python -m playwright install --with-deps chromium",
+          "Run python scripts/build_site.py",
+          "Run python -m pytest tests -q",
+          "Run node --test tests/*.cjs",
+          "Run python scripts/preflight.py --allow-open-issues"
+        ],
+        "python": {
+          "passed": 1840,
+          "skipped": 1,
+          "subtests_passed": 251,
+          "duration_seconds": 276.7
+        },
+        "node": {
+          "tests": 25,
+          "pass": 25,
+          "fail": 0,
+          "skipped": 0
+        },
+        "preflight": {
+          "structural_problems": 0,
+          "existing_open_issue_groups": 35
+        },
+        "build": {
+          "profiles": 7170,
+          "schools": 39,
+          "departments": 56
+        },
+        "job_started_utc": "2026-11-23T06:22:07Z",
+        "job_completed_utc": "2026-11-23T06:27:46Z",
+        "run_attempt": 1,
+        "official_evidence": {
+          "run": {
+            "path": "source-run.json",
+            "bytes": 14310,
+            "sha256": "2f503f9c0bea40a882926a3c7278995ff1f4b40063fd664b688d234dfcf1a998"
+          },
+          "jobs": {
+            "path": "source-jobs.json",
+            "bytes": 3615,
+            "sha256": "317cbe6f92307aa894e862c9abf89151c20532d2cb9798009fd53a3cb8d7c1fe"
+          },
+          "log": {
+            "path": "qa-ci-job-137522811017.log",
+            "bytes": 77667,
+            "sha256": "feca28a4bb8bc3a61b13ea463b342c5b20d44c11cda0d1b06902a3f61e28219e"
+          }
+        }
+      }
+    ]
+  },
+  "online_checks": [
+    "recommendation_replaces_four_with_four_distinct_candidates",
+    "https_registration_secure_cookie",
+    "retired_material_requests_return_readable_rejection_without_workspace_changes",
+    "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+    "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+    "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+    "history_and_selected_draft_restored_after_project_material_roundtrip",
+    "project_material_communication_reminder_and_target_saved",
+    "independent_mobile_browser_same_account_reads_same_records_and_file",
+    "other_account_cannot_read_or_modify_records",
+    "logout_revokes_private_access",
+    "local_download_retired_and_private_maintenance_files_hidden",
+    "no_browser_errors_or_account_horizontal_overflow",
+    "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+    "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+    "public_content_pages_fit_mobile_without_script_errors",
+    "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+    "notice_first_screen_and_general_policy_handoff_preserve_independent_years",
+    "new_ruc_directions_survive_search_detail_compare_and_contact",
+    "contact_affiliation_is_not_misrepresented_as_admission_scope"
+  ],
+  "browser_errors": [],
+  "failed_requests": [
+    {
+      "path": "/browser-library.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/browser-library.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "qa_cleanup": {
+    "applied": true,
+    "recorded_accounts": 2,
+    "qa_account_rows": 2,
+    "qa_workspace_directories": 2,
+    "other_accounts_preserved": 0,
+    "passed": true
+  },
+  "live_maintenance": {
+    "refresh": {
+      "attempted": 4,
+      "ok": 4,
+      "error": 0
+    },
+    "queue": {
+      "attempted": 0,
+      "created": 3,
+      "active": 3,
+      "pending": 0
+    },
+    "repeated_reads": 0,
+    "production_public_files_unchanged": 6,
+    "scope": "current public profiles and live official pages; isolated maintenance state",
+    "started_utc": "2026-11-23T06:30:16.082673+00:00",
+    "finished_utc": "2026-11-23T06:30:20.602957+00:00",
+    "review_refs": [
+      "lizheng",
+      "wangyunfeng",
+      "yingsancong"
+    ]
+  },
+  "installed": {
+    "passed": true,
+    "version": "1.12.11",
+    "source_commit": "c36c715320756acade0e2395359482b9b79ed13c",
+    "archive_sha256": "d6f5bc8046c04cb8997b7af75e78beaaf10a3057aac837e58ce38faeeae9cbcd",
+    "verified_files": 13,
+    "protected_files_unchanged": 8204,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v11211-stage-c36c71532/source-before.tar.gz",
+    "source_backup_sha256": "24cf0046d627dc54ce22c6a606aa1b2d9d904eaf743be1fabfdaca21e6aa5295",
+    "site_backup": "/opt/mentor-v11211-stage-c36c71532/site-before",
+    "protected_before_sha256": "9e98e027e23a47412f8dfb98171f3ea78cd699a8d127b3abd6db5e4318c9d4e0"
+  },
+  "receipt_sha256": {
+    "online-qa/result.json": "2aaae4b2e64b59b124539b1030b643065a014df7d973c6b0ad5b5d3c1ba45e78",
+    "qa-cleanup.json": "d16c3de855b9f12ea77ba3116557f66460d2d72be030570293b221f480858d85",
+    "live-maintenance-proof/result.json": "584bfbca56b7619b2001602af5137f075fd18baa40577e9fa41d1f4d10ee3d4d"
+  },
+  "final_acceptance": "Exact main/tag CI and final deployed marker recorded separately after final documentation commit"
+}

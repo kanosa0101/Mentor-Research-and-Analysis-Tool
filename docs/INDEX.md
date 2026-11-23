@@ -11,10 +11,12 @@
 
 ## 本版发布与验收
 
-- [版本说明](../RELEASE_NOTES.md)、[发布验收](../RELEASE_ACCEPTANCE.md)和[v1.12.10 交付记录](../deploy/DELIVERY_V1.12.10_2026-11-23.md)
-- [本轮计划](audits/2026-11-23-v11210/plan.md)、[两院导师批次](audits/2026-11-23-v11210/mentor-batches.md)、[界面与搜索基线](audits/2026-11-23-v11210/ui-and-search-baseline.md)及[验收回执](audits/2026-11-23-v11210/verification.json)
+- [版本说明](../RELEASE_NOTES.md)、[发布验收](../RELEASE_ACCEPTANCE.md)和[v1.12.11 最终交付](../deploy/DELIVERY_V1.12.11_2026-11-23.md)
+- [收尾计划](audits/2026-11-23-v11211/plan.md)、[维护复核边界](audits/2026-11-23-v11211/maintenance-review.md)、[验收回执](audits/2026-11-23-v11211/verification.json)
 
 ## 历史与审计
+
+- [v1.12.10 交付](../deploy/DELIVERY_V1.12.10_2026-11-23.md)及[导师批次审计](audits/2026-11-23-v11210/mentor-batches.md)
 
 - [v1.12.9 交付](../deploy/DELIVERY_V1.12.9_2026-11-23.md)及[两院导师批次](audits/2026-11-23-v1129/mentor-batches.md)
 
