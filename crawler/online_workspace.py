@@ -66,6 +66,8 @@ class Workspace(serve.Handler):
         return True
 
     def _reject_local(self, code, message):
+        if not getattr(self.transport, '_online_body_read', False):
+            self.transport.drain_small_body()
         self.transport.close_connection = True
         self._json(code, {'error': message})
         self.response_headers['Connection'] = 'close'
