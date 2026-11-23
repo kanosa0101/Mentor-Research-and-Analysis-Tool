@@ -203,6 +203,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:存储系统
+research_direction_raw: 存储系统（key-value系统、文件系统、大规模内存系统），并行与分布式系统，云计算，Serverless，智能计算系统的存储与I/O支持等
 provenance:
   name:
     origin: crawled
@@ -217,20 +218,27 @@ provenance:
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23235a627367/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

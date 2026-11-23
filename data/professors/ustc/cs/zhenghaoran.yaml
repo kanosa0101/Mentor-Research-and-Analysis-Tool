@@ -93,6 +93,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:生物信息
+research_direction_raw: 海量数据挖掘技术、小样本学习技术、计算机建模与仿真、智能计算及应用、生物信息学
 provenance:
   name:
     origin: crawled
@@ -107,15 +108,22 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23239a460152/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'

@@ -322,6 +322,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 数据科学、人工智能、大语言模型、推荐系统及 AI4Science 等
 provenance:
   name:
     origin: crawled
@@ -336,15 +337,22 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2022/0114/c23239a544029/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

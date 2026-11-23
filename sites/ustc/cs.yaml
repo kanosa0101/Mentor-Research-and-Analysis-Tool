@@ -15,3 +15,8 @@ list:
       cat: 副教授
     - url: http://cs.ustc.edu.cn/js_23242/list.htm
       cat: 讲师
+contact_hook_only: true
+homepage_hook_only: true
+parser_dependencies:
+  - profile_fields.py
+  - wp.py

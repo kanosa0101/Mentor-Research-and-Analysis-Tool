@@ -33,6 +33,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:安全
+research_direction_raw: 操作系统安全、软件安全、网络安全、安全评估与测试
 provenance:
   name:
     origin: crawled
@@ -63,6 +64,11 @@ provenance:
     origin: crawled
     source: https://cs.nju.edu.cn/58/1a/c2639a153626/page.htm
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/1a/c2639a153626/page.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

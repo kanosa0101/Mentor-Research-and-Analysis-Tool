@@ -6,7 +6,7 @@ dept: cs
 status: enriched
 title: 副教授
 email: jianhui@ustc.edu.cn
-phone: （0
+phone: （0551）63601551
 bio_raw: '电  话：
 
   （0
@@ -147,6 +147,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:大数据
+research_direction_raw: 智能计算、教育大数据、区块链等
 provenance:
   name:
     origin: crawled
@@ -161,12 +162,12 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   homepage:
     origin: crawled
@@ -176,5 +177,12 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2021/0421/c23239a481468/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

@@ -35,6 +35,9 @@ img.photo{width:112px;height:150px;object-fit:cover;border-radius:10px;float:rig
 .pv{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
 .pv th,.pv td{border:1px solid var(--line);padding:7px 10px;text-align:left}
 .pv th{background:#fafbfd;color:var(--muted);font-weight:600}
+#profile-evidence .pv{font-size:var(--text-small,13px);line-height:1.6}
+#profile-evidence .pv td{vertical-align:top;overflow-wrap:anywhere}
+#profile-evidence .pv td:first-child,#profile-evidence .pv td:last-child a{white-space:nowrap}
 .o-crawled{color:var(--accent)}.o-manual{color:var(--warn)}.o-ai{color:#7c3aed}.o-computed{color:var(--ok)}
 .c-auto{color:var(--muted)}.c-verified{color:var(--ok)}.c-unverified{color:#c53030}
 .missing{color:#b8bfcc;font-size:12px}
@@ -66,6 +69,20 @@ a:hover{text-decoration:underline}
 .h-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .h-a{color:var(--accent);font-weight:600;min-width:52px}
 @media(max-width:600px){.card{padding:16px}.dl{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}.wrap{margin-top:12px}img.photo{width:76px;height:102px}.meta{gap:8px}.context-actions{margin-bottom:16px}}
+@media(max-width:760px){
+  #profile-evidence .pv{display:block;min-width:0}
+  #profile-evidence .pv thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  #profile-evidence .pv tbody{display:block}
+  #profile-evidence .pv tbody tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(max(9em,45%),100%),1fr));gap:6px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+  #profile-evidence .pv tbody tr:last-child{border-bottom:0}
+  #profile-evidence .pv td{min-width:0;border:0;padding:0}
+  #profile-evidence .pv td:nth-child(-n+2){grid-column:1/-1}
+  #profile-evidence .pv td:first-child{font-weight:600;font-size:var(--text-body,15px)}
+  #profile-evidence .pv td:nth-child(5){align-self:center;color:var(--muted)}
+  #profile-evidence .pv td:nth-child(5)::before{content:'采集日期';display:block}
+  #profile-evidence .pv td:last-child{align-self:center;text-align:right}
+  #profile-evidence .pv td:last-child a{display:inline-flex;align-items:center;min-height:44px;min-width:64px;justify-content:flex-end}
+}
 </style>
 {% include '_ui_head.html.j2' %}</head>
 <body class="page page-detail">
@@ -83,7 +100,7 @@ a:hover{text-decoration:underline}
     {% if p.subjects %}<dt>招生学科</dt><dd>{{ p.subjects }}</dd>{% endif %}
     <dt>研究方向</dt><dd>{{ p.research_direction_raw or "暂未收录" }}</dd>
     <dt>公开邮箱</dt><dd>{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% else %}暂未收录，可查看官网联系渠道{% endif %}</dd>
-    {% if p.provenance.get('email') and p.email %}<dt>邮箱出处</dt><dd><a href="{{ p.provenance.email.source }}" target="_blank" rel="noopener">查看公开来源 ↗</a><span class="note"> · 收录于 <time datetime="{{ p.provenance.email.fetched_at }}">{{ p.provenance.email.fetched_at }}</time></span></dd>{% endif %}
+    {% if p.provenance.get('email') and p.email %}{% set email_proof = p.provenance.email %}<dt>邮箱出处</dt><dd>{% if email_proof.source and (email_proof.source.startswith('https://') or email_proof.source.startswith('http://')) %}<a href="{{ email_proof.source }}" target="_blank" rel="noopener">查看公开来源 ↗</a>{% else %}{{ email_proof.source or '来源未记录' }}{% endif %}<span class="note"> · {% if email_proof.fetched_at %}收录于 <time datetime="{{ email_proof.fetched_at }}">{{ email_proof.fetched_at }}</time>{% else %}日期未记录{% endif %}</span></dd>{% endif %}
     {% if p.phone %}<dt>公开电话</dt><dd>{{ p.phone }}</dd>{% endif %}
     {% if p.homepage %}<dt>个人主页</dt><dd><a href="{{ p.homepage }}" target="_blank" rel="noopener">打开个人主页 ↗</a></dd>{% endif %}
     {% if p.profile_url or p.detail_url %}<dt>官方资料</dt><dd><a href="{{ p.profile_url or p.detail_url }}" target="_blank" rel="noopener">查看学校官网资料 ↗</a></dd>{% endif %}
@@ -137,7 +154,8 @@ a:hover{text-decoration:underline}
   </div>
   {% if p.ai %}<p class="note">AI 提取记录：{{ p.ai.model }} · 提示版本 {{ p.ai.prompt_version }} · {{ p.ai.generated_at }}。未经人工核验。</p>{% endif %}
   <div class="proof-scroll"><table class="pv">
-    <tr><th>信息</th><th>内容</th><th>来源类型</th><th>核对状态</th><th>抓取日期</th><th>出处</th></tr>
+    <thead><tr><th scope="col">信息</th><th scope="col">内容</th><th scope="col">来源类型</th><th scope="col">核对状态</th><th scope="col">采集日期</th><th scope="col">出处</th></tr></thead>
+    <tbody>
     {% for k, v in p.provenance.items() %}
     <tr>
       <td>{{ {"name":"姓名","title":"职称","email":"邮箱","homepage":"个人主页","photo_url":"照片","phone":"电话","office_address":"办公地点","bio_raw":"个人简介","research_direction_raw":"研究方向","institutes":"所属团队","detail_url":"资料页面","profile_url":"官方资料入口","supervisor":"导师资格"}.get(k, k) }}</td>
@@ -150,10 +168,11 @@ a:hover{text-decoration:underline}
           }.get(k, "") or "—" }}</td>
       <td class="o-{{ v.origin }}">{{ {"crawled":"官网采集","manual":"人工整理","ai":"AI 提取","computed":"规则整理"}.get(v.origin, v.origin) }}</td>
       <td class="c-{{ v.confidence }}">{{ {"auto":"自动整理","verified":"已核对","unverified":"待核对"}.get(v.confidence, v.confidence) }}</td>
-      <td>{{ v.fetched_at }}</td>
-      <td><a href="{{ v.source }}" target="_blank" rel="noopener">原文 ↗</a></td>
+      <td>{% if v.fetched_at %}<time datetime="{{ v.fetched_at }}">{{ v.fetched_at }}</time>{% else %}日期未记录{% endif %}</td>
+      <td>{% if v.source and (v.source.startswith('https://') or v.source.startswith('http://')) %}<a href="{{ v.source }}" target="_blank" rel="noopener">原文 ↗</a>{% else %}{{ v.source or '来源未记录' }}{% endif %}</td>
     </tr>
     {% endfor %}
+    </tbody>
   </table></div>
 </details>
 <details class="card" id="obox">

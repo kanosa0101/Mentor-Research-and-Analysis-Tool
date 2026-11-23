@@ -96,6 +96,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:无线
+research_direction_raw: 虚拟化技术与云计算，多核计算机系统与应用，计算机系统仿真与性能优化
 provenance:
   name:
     origin: crawled
@@ -110,15 +111,22 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460139/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460139/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460139/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460139/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-18'
+last_parsed: '2026-11-18'

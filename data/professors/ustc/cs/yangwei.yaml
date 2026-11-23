@@ -125,6 +125,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:普适计算
+research_direction_raw: 量子人工智能、信息安全、计算机视觉、大数据、普适计算、区块链
 provenance:
   name:
     origin: crawled
@@ -139,20 +140,27 @@ provenance:
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460149/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460149/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460149/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a460149/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23239a460149/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'

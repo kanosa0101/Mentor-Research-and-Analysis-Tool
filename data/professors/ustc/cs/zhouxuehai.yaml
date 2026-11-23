@@ -7,7 +7,7 @@ status: enriched
 title: 教授
 supervisor: 博导
 email: xhzhou@ustc.edu.cn
-phone: (0551)63606864, 63492149
+phone: (0551)63606864,63492149E-Mail：xhzhou@ustc.edu.cn
 bio_raw: '电　话：(0551)63606864, 63492149
 
   E - Mail：xhzhou@ustc.edu.cn
@@ -96,6 +96,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:体系结构
+research_direction_raw: 异构多核体系结构、可重构系统、面向特定应用的硬件加速系统、嵌入式系统设计
 provenance:
   name:
     origin: crawled
@@ -110,17 +111,17 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
   homepage:
     origin: crawled
@@ -130,5 +131,12 @@ provenance:
   supervisor:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460092/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-20'
+last_parsed: '2026-11-20'

@@ -126,6 +126,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:无线
+research_direction_raw: 无线网络与通信，智能计算
 provenance:
   name:
     origin: crawled
@@ -140,10 +141,17 @@ provenance:
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/1203/c23239a462605/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/1203/c23239a462605/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/1203/c23239a462605/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'

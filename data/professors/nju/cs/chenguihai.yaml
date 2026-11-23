@@ -40,6 +40,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:物联网
+research_direction_raw: 分布式网络与数据处理，包括未来网络系统与协议、物联网与传感网、新型计算机体系结构、数据中心核心技术、数据分析与处理、AI模型与边缘智能等
 provenance:
   name:
     origin: crawled
@@ -75,6 +76,11 @@ provenance:
     origin: crawled
     source: https://cs.nju.edu.cn/58/26/c2639a153638/page.htm
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: https://cs.nju.edu.cn/58/26/c2639a153638/page.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

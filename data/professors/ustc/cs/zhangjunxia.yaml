@@ -63,6 +63,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+research_direction_raw: 计算机系统结构、嵌入式系统设计等
 provenance:
   name:
     origin: crawled
@@ -77,15 +78,22 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a463247/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a463247/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0905/c23239a463247/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-19'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0905/c23239a463247/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-19'
+last_parsed: '2026-11-19'

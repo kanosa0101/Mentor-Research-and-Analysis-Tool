@@ -136,6 +136,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:机器学习
+research_direction_raw: 机器学习、时间序列分析
 provenance:
   name:
     origin: crawled
@@ -150,10 +151,17 @@ provenance:
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-20'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2021/1115/c23239a532870/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-20'
+last_parsed: '2026-11-20'

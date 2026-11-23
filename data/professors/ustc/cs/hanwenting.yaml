@@ -170,15 +170,23 @@ provenance:
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460117/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-16'
     confidence: auto
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460117/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-16'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460117/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-16'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460117/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+research_direction_raw: 并行算法与软件，深度学习算法与编程框架、大数据并行存储与处理、高性能计算、计算机系统性能评价
+last_fetched: '2026-11-16'
+last_parsed: '2026-11-16'

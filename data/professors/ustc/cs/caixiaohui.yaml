@@ -130,6 +130,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:医疗
+research_direction_raw: 智能织物、新型传感器、嵌入式系统、模式识别，及以上技术在具身智能、人体工学和智慧医疗等方向的应用
 provenance:
   name:
     origin: crawled
@@ -165,6 +166,11 @@ provenance:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
     fetched_at: '2026-11-15'
+    confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0827/c23235a460074/page.htm
+    fetched_at: '2026-11-23'
     confidence: auto
 last_fetched: '2026-11-15'
 last_parsed: '2026-11-15'

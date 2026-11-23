@@ -208,6 +208,9 @@ def observation(root,person,*,parsed=None,body=None,source_sha256=None,fetched_a
             if field=='email' and present(person,field):
                 verified=(verified and mentor_recovery.personal_email(parsed.get(field))==person[field] and
                           current.get('origin')!='manual' and (not current.get('source') or current['source']==proof_source))
+            if field=='research_direction_raw' and present(person,field):
+                verified=(verified and parsed.get(field)==person[field] and current.get('origin')!='manual'
+                          and (not current.get('source') or current['source']==proof_source))
             if present(person,field) and prior.get('status')=='resolved' and not verified:continue
             if (not contact_only and contact_search is None and field in CONTACT_FIELDS
                     and (record.get('contact_search') or {}).get('next_at') and not present(person,field)):continue
@@ -217,7 +220,7 @@ def observation(root,person,*,parsed=None,body=None,source_sha256=None,fetched_a
             if parser_signature:value['parser_signature']=parser_signature
             if present(person,field):
                 if field=='email' and verified and proof_sha and proof_time:value['verified_value']=person[field]
-                elif field=='email':
+                elif field=='email' or field=='research_direction_raw' and not verified:
                     for item in ('verified_value','source_sha256','fetched_at'):value.pop(item,None)
                 value.update(status='resolved',reason_code='field_verified' if verified else 'record_now_complete',
                              reason='本人官方资料已提供该字段' if verified else '当前登记已有该字段；本轮未重新取得该字段证据',pending_since=None,next_action='none',next_check_at=None,resolved_at=stamp)
@@ -352,9 +355,10 @@ def secondary_hook_proof(person,parsed,captures,cfg=None):
         if parsed.get('_verified_roster_name')!=person['name']:return None
         registered=person['detail_url']
         original_url=urlsplit(registered)
-        https_equivalent=(cfg.get('school')=='fudan' and cfg.get('hook')=='fudan_cs' and
-                          original_url.scheme=='http' and original_url.netloc in
-                          ('ai.fudan.edu.cn','cs.fudan.edu.cn','faculty.fudan.edu.cn') and
+        https_hosts=(('ai.fudan.edu.cn','cs.fudan.edu.cn','faculty.fudan.edu.cn')
+                     if cfg.get('school')=='fudan' and cfg.get('hook')=='fudan_cs' else
+                     ('cs.ustc.edu.cn',) if cfg.get('school')=='ustc' and cfg.get('dept')=='cs' and cfg.get('hook')=='ustc_cs' else ())
+        https_equivalent=(original_url.scheme=='http' and original_url.netloc in https_hosts and
                           target=='https:'+registered[5:] and captures[target]['url']==target)
         if target!=registered and not https_equivalent:
             roster=cfg.get('profile_field_roster') if cfg.get('hook')=='jlu_cs' else None
@@ -533,10 +537,18 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     scope=cfg.get('base_url') or original['detail_url']
     managed_email=cfg.get('contact_hook_only')
     search_fields=('homepage',) if managed_email else CONTACT_FIELDS
+    generic_fields=tuple(field for field in search_fields if field!='homepage' or not cfg.get('homepage_hook_only'))
     report=dict(id=record['id'],status='checked',reused_evidence=False,filled_fields=[],changed_fields=[],field_evidence={})
     search=deepcopy(record.get('contact_search') or {})
     if search.get('signature')!=signature or not search.get('next_at'):
         search=dict(signature=signature,queue=[],visited=[],directory=False,next_at=None,directory_revision=directory_revision)
+    if cfg.get('homepage_hook_only'):
+        search['queue']=[item for item in search['queue'] if
+                         item['kind']!='homepage_check' or item.get('identity_basis')=='configured_official_contact_source']
+        if not any(needs_contact(person,field) for field in generic_fields):
+            search['queue']=[item for item in search['queue'] if item['kind']=='homepage_check']
+            search['directory']=False
+            if not search['queue']:search['next_at']=None
     resume=bool(search['next_at'] and search['next_at']<=stamp and any(needs_contact(person,f) for f in search_fields))
     due_other=any(f not in CONTACT_FIELDS and v.get('status') not in ('resolved','manual_review') and
                   (not v.get('next_check_at') or v['next_check_at']<=stamp or v.get('parser_signature')!=signature)
@@ -555,7 +567,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
     def save_contact(values,evidence,basis,parent=None):
         day=datetime.fromisoformat(evidence['fetched_at']).astimezone(timezone(timedelta(hours=8))).date().isoformat()
         new=dict(person,provenance=dict(person.get('provenance',{})))
-        for field in CONTACT_FIELDS if basis=='configured_official_contact_source' else search_fields:
+        for field in CONTACT_FIELDS if basis=='configured_official_contact_source' else generic_fields:
             if needs_contact(person,field) and values.get(field):
                 new[field]=values[field]
                 new['provenance'][field]=dict(origin='crawled',source=evidence['url'],fetched_at=day,confidence='auto')
@@ -565,6 +577,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                     source_sha256=evidence['sha256'],fetched_at=evidence['fetched_at'],now=now,parser_signature=signature,contact_only=True,ledger=ledger)
 
     def homepage_candidate(value,evidence,basis,depth):
+        if cfg.get('homepage_hook_only') and basis!='configured_official_contact_source':return
         if not needs_contact(person,'homepage') or not value or not evidence:return
         if mentor_recovery.canonical(value)==mentor_recovery.canonical(person['detail_url']):return
         if not mentor_recovery.homepage_scope(value,scope):
@@ -655,7 +668,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
                 raise ValueError('尚无本人详情来源：当前仅有名册登记')
             contact_owner=strong_name or parsed.get('_verified_roster_name')==original['name']
             for field,validate in (('email',mentor_recovery.personal_email),('homepage',mentor_recovery.homepage_url)):
-                value=(validate(parsed.get(field)) or contact.get(field)) if field in search_fields and contact_owner and needs_contact(person,field) else None
+                value=(validate(parsed.get(field)) or contact.get(field)) if field in generic_fields and contact_owner and needs_contact(person,field) else None
                 if value:parsed[field]=value
                 else:parsed.pop(field,None)
             if homepage:=parsed.pop('homepage',None):
@@ -696,7 +709,7 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
         if identity_conflict:
             search.update(queue=[],directory=False,next_at=None)
             search.pop('external_homepage_candidate',None)
-        if not identity_conflict and not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in search_fields):
+        if not identity_conflict and not resume and not record.get('contact_search',{}).get('next_at') and any(needs_contact(person,f) for f in generic_fields):
             search['visited']=[primary]
             registered=[dict(url=person[f],kind='registered') for f in ('homepage','profile_url') if mentor_recovery.homepage_url(person.get(f))]
             add_links(search,registered+(contact.get('links') or []),evidence,scope,cfg,1)
@@ -759,7 +772,8 @@ def process_record(root,record,cfg,sources,legacy,now,directory_revision,ledger,
             if basis:
                 homepage_candidate(detail.pop('homepage',None),evidence,basis,item['depth']+1)
                 save_contact(detail,evidence,basis,parent)
-                add_links(search,detail['links'],evidence,scope,cfg,item['depth']+1)
+                if any(needs_contact(person,f) for f in generic_fields):
+                    add_links(search,detail['links'],evidence,scope,cfg,item['depth']+1)
             search['visited'].append(url);search['queue'].pop(0)
         except mentor_recovery.DiscoveryBudgetExhausted:
             break

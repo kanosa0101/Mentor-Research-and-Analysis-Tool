@@ -3,6 +3,9 @@ dept: cs
 dept_name: 计算机科学与技术系
 base_url: https://cs.nju.edu.cn
 hook: nju_cs
+contact_hook_only: true
+homepage_hook_only: true
+parser_dependencies: [wp.py, profile_fields.py]
 list:
   method: GET
   person_href: /c\d+a\d+/page\.htm$

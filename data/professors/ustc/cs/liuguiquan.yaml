@@ -68,6 +68,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:安全
+research_direction_raw: 机器学习，智能信息处理与挖掘，互联网信息抽取及深度搜索与挖掘
 provenance:
   name:
     origin: crawled
@@ -82,15 +83,22 @@ provenance:
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460124/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460124/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460124/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-17'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460124/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-17'
+last_parsed: '2026-11-17'

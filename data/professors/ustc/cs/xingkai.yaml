@@ -153,6 +153,7 @@ facets:
   confidence: auto
   evidence:
   - keyword:物联网
+research_direction_raw: 理论研究方面涉及物联网/互联网、大数据与云计算、金融/医学数据挖掘、群智感知计算等领域；系统研究方面涉及无人机、无人车、IC设计、操作系统等领域
 provenance:
   name:
     origin: crawled
@@ -167,20 +168,27 @@ provenance:
   phone:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460140/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
   bio_raw:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460140/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
   email:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460140/page.htm
-    fetched_at: '2026-09-03'
+    fetched_at: '2026-11-18'
     confidence: auto
   homepage:
     origin: crawled
     source: http://cs.ustc.edu.cn/2020/0906/c23239a460140/page.htm
     fetched_at: '2026-09-03'
     confidence: auto
+  research_direction_raw:
+    origin: crawled
+    source: http://cs.ustc.edu.cn/2020/0906/c23239a460140/page.htm
+    fetched_at: '2026-11-23'
+    confidence: auto
+last_fetched: '2026-11-18'
+last_parsed: '2026-11-18'
