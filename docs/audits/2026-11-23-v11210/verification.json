@@ -1,0 +1,289 @@
+{
+  "version": "1.12.10",
+  "source_commit": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+  "passed": true,
+  "python_windows": {
+    "passed": 1807,
+    "skipped": 1,
+    "subtests_passed": 251,
+    "scope": "frozen final code before batch data import"
+  },
+  "source_ci": {
+    "source": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+    "source_commit": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+    "run": 45095335295,
+    "run_id": 45095335295,
+    "repository": "kanosa0101/Mentor-Research-and-Analysis-Tool",
+    "run_url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45095335295",
+    "status": "completed",
+    "conclusion": "success",
+    "reported_by": "GitHub connector",
+    "observed_utc": "2026-11-23T01:41:22+00:00",
+    "evidence": {
+      "run.json": {
+        "sha256": "92aeaeadf4ff1d8536080d983989876cdd738dbe6b43bc4a530834eb9c2394be",
+        "bytes": 14368
+      },
+      "jobs.json": {
+        "sha256": "a47fedf31a36f3ed6a8d95665d7bbf8024fa9145aecd38e7789aadbcfa166a7b",
+        "bytes": 3618
+      },
+      "qa-ci-job-137433796858.log": {
+        "sha256": "50caa1b732def97c5116acbea2d2c1b985918e8e0422b5f1ca98aa1b8450aa44",
+        "bytes": 77403
+      }
+    },
+    "passed": true,
+    "verified_ci": [
+      {
+        "ref": "codex/mentor-detail-v11210",
+        "head_sha": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+        "url": "https://github.com/kanosa0101/Mentor-Research-and-Analysis-Tool/actions/runs/45095335295",
+        "run_id": 45095335295,
+        "job_id": 137433796858,
+        "job_status": "completed",
+        "job_conclusion": "success",
+        "successful_steps": [
+          "Run python -m pip install -r requirements-dev.txt",
+          "Run python -m pip check",
+          "Run python -m playwright install --with-deps chromium",
+          "Run python scripts/build_site.py",
+          "Run python -m pytest tests -q",
+          "Run node --test tests/*.cjs",
+          "Run python scripts/preflight.py --allow-open-issues"
+        ],
+        "python": {
+          "passed": 1807,
+          "skipped": 1,
+          "subtests_passed": 251,
+          "duration_seconds": 290.47
+        },
+        "node": {
+          "tests": 25,
+          "pass": 25,
+          "fail": 0,
+          "skipped": 0
+        },
+        "preflight": {
+          "structural_problems": 0,
+          "existing_open_issue_groups": 35
+        },
+        "build": {
+          "profiles": 7170,
+          "schools": 39,
+          "departments": 56
+        },
+        "job_started_utc": "2026-11-23T01:34:45Z",
+        "job_completed_utc": "2026-11-23T01:40:26Z"
+      }
+    ],
+    "python": {
+      "passed": 1807,
+      "skipped": 1,
+      "subtests_passed": 251,
+      "duration_seconds": 290.47
+    },
+    "node": {
+      "tests": 25,
+      "pass": 25,
+      "fail": 0,
+      "skipped": 0
+    },
+    "preflight": {
+      "structural_problems": 0,
+      "existing_open_issue_groups": 35
+    },
+    "build": {
+      "profiles": 7170,
+      "schools": 39,
+      "departments": 56
+    }
+  },
+  "public_profiles": 128,
+  "updated_fields": 131,
+  "browser_flows": 8,
+  "online_checks": [
+    "recommendation_replaces_four_with_four_distinct_candidates",
+    "https_registration_secure_cookie",
+    "retired_material_requests_return_readable_rejection_without_workspace_changes",
+    "create_project_upload_and_record_communication_without_reselecting_project_or_mentor",
+    "discovery_registration_project_creation_and_target_use_ui_and_preserve_context",
+    "existing_application_survives_mentor_detail_comparison_and_contact_without_duplicate",
+    "history_and_selected_draft_restored_after_project_material_roundtrip",
+    "project_material_communication_reminder_and_target_saved",
+    "independent_mobile_browser_same_account_reads_same_records_and_file",
+    "other_account_cannot_read_or_modify_records",
+    "logout_revokes_private_access",
+    "local_download_retired_and_private_maintenance_files_hidden",
+    "no_browser_errors_or_account_horizontal_overflow",
+    "explicit_cohort_excludes_unknown_and_retains_unknown_activity_access",
+    "historical_recommendation_policy_and_current_cohort_gap_are_explicit",
+    "public_content_pages_fit_mobile_without_script_errors",
+    "comparison_timeout_retains_selection_and_restores_real_data_on_explicit_retry",
+    "notice_first_screen_and_general_policy_handoff_preserve_independent_years",
+    "new_ruc_directions_survive_search_detail_compare_and_contact",
+    "contact_affiliation_is_not_misrepresented_as_admission_scope"
+  ],
+  "searches": [
+    {
+      "mentor": "xidian-cs-lihe",
+      "topic": "大数据处理",
+      "observations": {
+        "identity": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "topic": {
+          "before": 0,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "all_contact_states": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        }
+      }
+    },
+    {
+      "mentor": "xidian-cs-zhangtao",
+      "topic": "联邦学习",
+      "observations": {
+        "identity": {
+          "before": 0,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "topic": {
+          "before": 0,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "all_contact_states": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        }
+      }
+    },
+    {
+      "mentor": "scu-cs-yangning",
+      "topic": "推荐系统",
+      "observations": {
+        "identity": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "topic": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "all_contact_states": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        }
+      }
+    },
+    {
+      "mentor": "scu-cs-guobing",
+      "topic": "绿色计算",
+      "observations": {
+        "identity": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "topic": {
+          "before": 0,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        },
+        "all_contact_states": {
+          "before": 1,
+          "after": 1,
+          "revision": "c74d4c43c1713bc10ae8"
+        }
+      }
+    }
+  ],
+  "browser_errors": [],
+  "failed_requests": [
+    {
+      "path": "/api/library",
+      "method": "GET",
+      "error": "net::ERR_SSL_PROTOCOL_ERROR"
+    },
+    {
+      "path": "/api/outreach",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "qa_cleanup": {
+    "applied": true,
+    "recorded_accounts": 2,
+    "qa_account_rows": 2,
+    "qa_workspace_directories": 2,
+    "other_accounts_preserved": 0,
+    "passed": true
+  },
+  "evidence": {
+    "passed": true,
+    "version": "1.12.10",
+    "source_commit": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+    "plan_sha256": "59e4204cb981777c5adc5b2f59986f12f7e299fe6ea98ed72ef930e5fe808344",
+    "search_baseline_sha256": "88221f8f98bb7ec97da906c909eede381f1180810a91febac2242b090e3bc0c1",
+    "archive_sha256": "febe31cff17b71a192bed8acd0fe8d2b606bbe79574f925e6d2fa189f197370e",
+    "members": 459,
+    "git_bindings": 142,
+    "installed_verified": 142,
+    "installed_exact": 141,
+    "installed_eol_matches": [
+      {
+        "path": "sites/tsites.py",
+        "installed_sha256": "d8674c5f66c725441d63df7c3e84632366c2970240946c81199659709f1e70da",
+        "git_sha256": "82e5d2f65a2914853f06a7dc4cd972b9ea509be06bcfef8fa5333a37c3f125d8",
+        "comparison": "exact captured original and CRLF-to-LF equality"
+      }
+    ],
+    "extracted": true
+  },
+  "deployment": {
+    "passed": true,
+    "version": "1.12.10",
+    "source_commit": "0e01d8f303b5e831d04f2d5cb10f1189495f0a2d",
+    "archive_sha256": "63d8e4054efc9633d2aac046c1c55d96d7b7b7a1c86d9c4085ba0e1bb7871327",
+    "verified_files": 144,
+    "protected_files_unchanged": 7995,
+    "generated_retired_from_git": 0,
+    "previously_live_generated_preserved": 0,
+    "retired_mentor_pages": [],
+    "repo_only": [],
+    "restored_web": [
+      "mentor-public.service",
+      "mentor-https.service"
+    ],
+    "source_backup": "/opt/mentor-v11210-stage-0e01d8f30/source-before.tar.gz",
+    "source_backup_sha256": "75dcbfa5dfe5f237bf537f61aa8efcf471fa00610cf919d2a3b77f2d8aca5ae6",
+    "site_backup": "/opt/mentor-v11210-stage-0e01d8f30/site-before",
+    "protected_before_sha256": "411d145799c1ed9a7f953909c72e66d844464183ea3e14ced59820fee72494f3"
+  },
+  "receipt_sha256": {
+    "public-content/result.json": "35b3b531775310574e84c4868b1baaf4dcc600cda6b517e62938595434728f8d",
+    "public-search/result.json": "8a96a4d91d889c2f33ced0eb821faf7f9a8684d874fd1f506247f363e3bc460f",
+    "online-qa/result.json": "67f72767f1b7a5f40b8f15b7131db4d00efafe1dabd6ac9189852c552694e0a6",
+    "qa-cleanup.json": "d16c3de855b9f12ea77ba3116557f66460d2d72be030570293b221f480858d85",
+    "evidence-verify-installed.json": "b42f11a5d323970c5ee68eb802da9899b946f353b2a666d12cc646a77e71219c"
+  },
+  "final_release_acceptance": "recorded separately after final commit, annotated tag and both CI runs",
+  "https_read_followup": {
+    "anonymous_requests": 20,
+    "all_expected_401": true,
+    "receipt_sha256": "93b09b4cef1e752beb5c05274c3b1c8b45d5d6367a29ed8cdb75d4480c4e32df",
+    "scope": "transport only; not an authenticated workflow replay"
+  }
+}

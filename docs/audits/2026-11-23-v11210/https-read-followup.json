@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "anonymous_reads": [
+    {
+      "i": 0,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 0,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 1,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 1,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 2,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 2,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 3,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 3,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 4,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 4,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 5,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 5,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 6,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 6,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 7,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 7,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 8,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 8,
+      "path": "/api/outreach",
+      "status": 401
+    },
+    {
+      "i": 9,
+      "path": "/api/library",
+      "status": 401
+    },
+    {
+      "i": 9,
+      "path": "/api/outreach",
+      "status": 401
+    }
+  ],
+  "scope": "HTTPS transport only; no authentication or user data writes"
+}
